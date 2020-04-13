@@ -1,0 +1,14 @@
+{
+	"category" : "RenderTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"operationsTree" ],
+	"name" : "DrawLayer",
+	"pools" : [
+		 ],
+	"super" : "BaseLayer",
+	"type" : "normal" }

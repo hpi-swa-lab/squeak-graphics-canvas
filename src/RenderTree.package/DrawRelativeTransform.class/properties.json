@@ -1,0 +1,14 @@
+{
+	"category" : "RenderTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"transform" ],
+	"name" : "DrawRelativeTransform",
+	"pools" : [
+		 ],
+	"super" : "DrawOperation",
+	"type" : "normal" }

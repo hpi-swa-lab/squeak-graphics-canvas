@@ -1,0 +1,1 @@
+A DrawBezierShape models the draw call to a single contour making up a bezier shape.

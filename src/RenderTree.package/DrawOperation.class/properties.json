@@ -1,0 +1,14 @@
+{
+	"category" : "RenderTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "DrawOperation",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

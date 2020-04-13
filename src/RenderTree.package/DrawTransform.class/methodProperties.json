@@ -1,0 +1,14 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"addCommand:" : "tobe 4/7/2020 11:37",
+		"clipRect" : "tobe 3/10/2020 15:49",
+		"commands" : "tobe 3/29/2020 13:08",
+		"drawOn:" : "tobe 3/29/2020 12:05",
+		"ifNotEmpty:" : "tobe 4/6/2020 21:05",
+		"initialize" : "tobe 3/10/2020 13:46",
+		"notEmpty" : "tobe 4/6/2020 21:11",
+		"origin" : "tobe 3/10/2020 15:57",
+		"transform" : "tobe 3/29/2020 10:49",
+		"transformBy:clippingTo:smoothing:" : "tobe 3/10/2020 15:35" } }

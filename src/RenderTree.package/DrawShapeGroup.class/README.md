@@ -1,0 +1,1 @@
+A DrawShapeGroup models drawing a collection of shapes. A special property of its shapes is that the winding order of the vertices decides whether a contour fills or cuts a hole into the shape. This property is needed to determine that the outer circle of an $o shall be filled, while the inner circle of the $o is cut out.

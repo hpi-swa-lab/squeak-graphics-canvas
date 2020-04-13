@@ -1,0 +1,14 @@
+{
+	"category" : "RenderTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"offset" ],
+	"name" : "BaseLayer",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

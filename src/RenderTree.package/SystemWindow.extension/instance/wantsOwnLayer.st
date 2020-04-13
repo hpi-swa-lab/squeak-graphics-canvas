@@ -1,0 +1,4 @@
+*RenderTree
+wantsOwnLayer
+
+	^ true

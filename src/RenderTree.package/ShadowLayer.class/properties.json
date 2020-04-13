@@ -1,0 +1,14 @@
+{
+	"category" : "RenderTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "ShadowLayer",
+	"pools" : [
+		 ],
+	"super" : "ContainerLayer",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "RenderTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BlurLayer",
+	"pools" : [
+		 ],
+	"super" : "ContainerLayer",
+	"type" : "normal" }
