@@ -1,0 +1,14 @@
+{
+	"category" : "Renderly",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "CanvasCommand",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

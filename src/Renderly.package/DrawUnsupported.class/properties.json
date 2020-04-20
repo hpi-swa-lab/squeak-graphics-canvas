@@ -1,0 +1,14 @@
+{
+	"category" : "Renderly",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"type" ],
+	"name" : "DrawUnsupported",
+	"pools" : [
+		 ],
+	"super" : "CanvasCommand",
+	"type" : "normal" }

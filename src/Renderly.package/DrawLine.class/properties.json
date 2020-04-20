@@ -1,0 +1,17 @@
+{
+	"category" : "Renderly",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"from",
+		"to",
+		"width",
+		"color" ],
+	"name" : "DrawLine",
+	"pools" : [
+		 ],
+	"super" : "CanvasCommand",
+	"type" : "normal" }

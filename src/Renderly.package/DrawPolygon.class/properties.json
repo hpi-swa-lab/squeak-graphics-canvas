@@ -1,0 +1,14 @@
+{
+	"category" : "Renderly",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"vertices" ],
+	"name" : "DrawPolygon",
+	"pools" : [
+		 ],
+	"super" : "DrawShape",
+	"type" : "normal" }

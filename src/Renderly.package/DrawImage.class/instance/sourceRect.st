@@ -1,0 +1,4 @@
+accessing
+sourceRect
+
+	^ sourceRect
