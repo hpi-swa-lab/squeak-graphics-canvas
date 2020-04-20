@@ -1,0 +1,14 @@
+{
+	"category" : "Renderly",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "DrawOval",
+	"pools" : [
+		 ],
+	"super" : "DrawShape",
+	"type" : "normal" }

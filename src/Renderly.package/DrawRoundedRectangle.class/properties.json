@@ -1,0 +1,14 @@
+{
+	"category" : "Renderly",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"radius" ],
+	"name" : "DrawRoundedRectangle",
+	"pools" : [
+		 ],
+	"super" : "DrawRectangle",
+	"type" : "normal" }
