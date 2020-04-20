@@ -1,0 +1,14 @@
+{
+	"category" : "RenderTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"clipRect" ],
+	"name" : "RtClipLayer",
+	"pools" : [
+		 ],
+	"super" : "RtContainerLayer",
+	"type" : "normal" }

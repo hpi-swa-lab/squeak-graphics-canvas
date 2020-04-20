@@ -1,0 +1,17 @@
+{
+	"category" : "RenderTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "tobe 3/29/2020 10:40",
+	"instvars" : [
+		"vertices",
+		"color",
+		"borderWidth",
+		"borderColor" ],
+	"name" : "RtDrawBezierShape",
+	"pools" : [
+		 ],
+	"super" : "RtDrawOperation",
+	"type" : "normal" }

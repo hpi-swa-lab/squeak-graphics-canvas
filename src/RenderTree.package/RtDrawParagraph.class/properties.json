@@ -1,0 +1,16 @@
+{
+	"category" : "RenderTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"paragraph",
+		"bounds",
+		"color" ],
+	"name" : "RtDrawParagraph",
+	"pools" : [
+		 ],
+	"super" : "RtDrawOperation",
+	"type" : "normal" }
