@@ -2,4 +2,4 @@ initialization
 initialize
 
 	super initialize.
-	currentLayer := DrawLayer new
+	commands := OrderedCollection new

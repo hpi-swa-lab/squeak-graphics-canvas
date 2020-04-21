@@ -6,11 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"currentElement",
-		"currentLayer",
 		"rootLayer" ],
-	"name" : "RecordingCanvas",
+	"name" : "CanvasReplay",
 	"pools" : [
 		 ],
-	"super" : "Canvas",
+	"super" : "Object",
 	"type" : "normal" }

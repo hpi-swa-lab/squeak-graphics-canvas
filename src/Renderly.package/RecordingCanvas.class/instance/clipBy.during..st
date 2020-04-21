@@ -2,5 +2,5 @@ drawing-support
 clipBy: newClipRect during: aBlock
 
 	self
-		beCurrentLayer: (DrawLayer clipRect: newClipRect)
+		newCurrentLayer: (DrawLayer clipRect: newClipRect)
 		during: aBlock

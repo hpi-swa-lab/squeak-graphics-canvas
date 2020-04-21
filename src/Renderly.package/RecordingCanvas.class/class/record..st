@@ -1,6 +1,6 @@
 instance creation
-fullDraw: aMorph
+record: anElement
 
 	^ self new
-		fullDraw: aMorph;
+		record: anElement;
 		yourself

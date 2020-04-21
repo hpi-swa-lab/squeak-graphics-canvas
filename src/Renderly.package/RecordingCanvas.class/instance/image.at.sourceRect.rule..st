@@ -1,7 +1,7 @@
 private
 image: aForm at: aPoint sourceRect: sourceRect rule: rule
 
-	self commands add: (DrawImage
+	self addCommand: (DrawImage
 							form: aForm
 							origin: aPoint
 							sourceRect: sourceRect

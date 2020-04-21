@@ -1,4 +1,5 @@
 accessing
 shadowColor
 
-	^ shadowColor
+	self flag: #todo. "currently ignored"
+	^ nil

@@ -6,7 +6,7 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
+		"element" ],
 	"name" : "CanvasCommand",
 	"pools" : [
 		 ],

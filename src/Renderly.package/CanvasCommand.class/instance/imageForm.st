@@ -2,7 +2,7 @@ applying
 imageForm
 
 	| canvas form |
-	form := Form extent: 1000@1000 depth: 32.
+	form := Form extent: self element bottomRight depth: 32.
 	canvas := form getCanvas.
 	self applyOn: canvas.
-	^ form
+	^ form copy: self element bounds

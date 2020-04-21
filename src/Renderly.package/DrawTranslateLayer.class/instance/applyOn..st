@@ -5,11 +5,11 @@ applyOn: aCanvas
 		ifFalse: [
 			aCanvas
 				translateBy: self offset
-				during: [:clippedCanvas |
-					self commands do: [:cmd | cmd applyOn: clippedCanvas]]]
+				during: [:translatedCanvas |
+					self commands do: [:cmd | cmd applyOn: translatedCanvas]]]
 		ifTrue: [
 			aCanvas
 				translateBy: self offset
 				clippingTo: self clipRect
-				during: [:clippedCanvas |
-					self commands do: [:cmd | cmd applyOn: clippedCanvas]]]
+				during: [:translatedCanvas |
+					self commands do: [:cmd | cmd applyOn: translatedCanvas]]]
