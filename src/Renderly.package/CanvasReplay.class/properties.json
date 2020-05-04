@@ -6,9 +6,10 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"rootLayer" ],
+		"rootLayer",
+		"canvasMorph" ],
 	"name" : "CanvasReplay",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "Model",
 	"type" : "normal" }

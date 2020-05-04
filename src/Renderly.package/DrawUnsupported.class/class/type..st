@@ -1,6 +1,7 @@
 instance creation
-type: aString
+type: aSymbol
 
+	self Remembrall add: aSymbol.
 	^ self new
-		type: aString;
+		type: aSymbol;
 		yourself
