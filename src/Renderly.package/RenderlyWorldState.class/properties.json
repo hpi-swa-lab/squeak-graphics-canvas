@@ -1,0 +1,14 @@
+{
+	"category" : "Renderly-Project",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "RenderlyWorldState",
+	"pools" : [
+		 ],
+	"super" : "WorldState",
+	"type" : "normal" }

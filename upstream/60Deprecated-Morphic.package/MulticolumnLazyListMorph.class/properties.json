@@ -1,0 +1,14 @@
+{
+	"category" : "60Deprecated-Morphic-Widgets",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"columnWidths" ],
+	"name" : "MulticolumnLazyListMorph",
+	"pools" : [
+		 ],
+	"super" : "LazyListMorph",
+	"type" : "normal" }

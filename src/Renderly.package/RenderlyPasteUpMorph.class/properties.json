@@ -1,0 +1,14 @@
+{
+	"category" : "Renderly-Project",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "RenderlyPasteUpMorph",
+	"pools" : [
+		 ],
+	"super" : "PasteUpMorph",
+	"type" : "normal" }
