@@ -1,0 +1,16 @@
+{
+	"category" : "Renderly-Record",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"currentElement",
+		"currentLayer",
+		"rootLayer" ],
+	"name" : "RecordingCanvas",
+	"pools" : [
+		 ],
+	"super" : "Canvas",
+	"type" : "normal" }

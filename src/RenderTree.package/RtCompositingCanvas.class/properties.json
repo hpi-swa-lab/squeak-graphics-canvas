@@ -1,0 +1,17 @@
+{
+	"category" : "RenderTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"currentCommand",
+		"transform",
+		"layerStack",
+		"changedMorphs" ],
+	"name" : "RtCompositingCanvas",
+	"pools" : [
+		 ],
+	"super" : "Canvas",
+	"type" : "normal" }

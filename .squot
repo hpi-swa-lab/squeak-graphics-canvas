@@ -1,3 +1,5 @@
 OrderedDictionary {
-	'src\/RenderTree.package' : #SquotCypressCodeSerializer
+	'src\/Renderly.package' : #SquotCypressCodeSerializer,
+	'src\/RenderTree.package' : #SquotCypressCodeSerializer,
+	'src\/MPOpenGL.package' : #SquotCypressCodeSerializer
 }

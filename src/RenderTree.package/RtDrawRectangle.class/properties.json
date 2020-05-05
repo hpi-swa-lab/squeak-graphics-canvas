@@ -1,0 +1,17 @@
+{
+	"category" : "RenderTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"rectangle",
+		"fillColor",
+		"borderWidth",
+		"borderColor" ],
+	"name" : "RtDrawRectangle",
+	"pools" : [
+		 ],
+	"super" : "RtDrawOperation",
+	"type" : "normal" }

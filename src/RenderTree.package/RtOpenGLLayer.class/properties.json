@@ -1,0 +1,14 @@
+{
+	"category" : "RenderTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "RtOpenGLLayer",
+	"pools" : [
+		 ],
+	"super" : "RtBaseLayer",
+	"type" : "normal" }

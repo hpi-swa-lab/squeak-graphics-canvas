@@ -1,0 +1,14 @@
+{
+	"category" : "Renderly-Record",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"Remembrall" ],
+	"commentStamp" : "",
+	"instvars" : [
+		"type" ],
+	"name" : "DrawUnsupported",
+	"pools" : [
+		 ],
+	"super" : "CanvasCommand",
+	"type" : "normal" }

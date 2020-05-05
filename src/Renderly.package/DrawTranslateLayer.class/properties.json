@@ -1,0 +1,14 @@
+{
+	"category" : "Renderly-Record",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"offset" ],
+	"name" : "DrawTranslateLayer",
+	"pools" : [
+		 ],
+	"super" : "DrawLayer",
+	"type" : "normal" }

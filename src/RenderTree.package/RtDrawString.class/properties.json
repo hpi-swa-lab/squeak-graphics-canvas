@@ -1,0 +1,19 @@
+{
+	"category" : "RenderTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"string",
+		"startIndex",
+		"stopIndex",
+		"bounds",
+		"font",
+		"color" ],
+	"name" : "RtDrawString",
+	"pools" : [
+		 ],
+	"super" : "RtDrawOperation",
+	"type" : "normal" }

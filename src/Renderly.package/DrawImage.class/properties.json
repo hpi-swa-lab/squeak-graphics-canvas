@@ -1,0 +1,17 @@
+{
+	"category" : "Renderly-Record",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"form",
+		"origin",
+		"sourceRect",
+		"rule" ],
+	"name" : "DrawImage",
+	"pools" : [
+		 ],
+	"super" : "CanvasCommand",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "Renderly-Record",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "DrawRectangle",
+	"pools" : [
+		 ],
+	"super" : "DrawShape",
+	"type" : "normal" }

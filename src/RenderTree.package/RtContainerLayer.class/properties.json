@@ -1,0 +1,15 @@
+{
+	"category" : "RenderTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"layers",
+		"ref" ],
+	"name" : "RtContainerLayer",
+	"pools" : [
+		 ],
+	"super" : "RtBaseLayer",
+	"type" : "normal" }

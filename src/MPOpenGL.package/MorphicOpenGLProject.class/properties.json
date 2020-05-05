@@ -1,0 +1,14 @@
+{
+	"category" : "MPOpenGL",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "MorphicOpenGLProject",
+	"pools" : [
+		 ],
+	"super" : "MorphicProject",
+	"type" : "normal" }

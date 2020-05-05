@@ -1,0 +1,19 @@
+{
+	"category" : "Renderly-Record",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"contents",
+		"from",
+		"to",
+		"bounds",
+		"font",
+		"color" ],
+	"name" : "DrawString",
+	"pools" : [
+		 ],
+	"super" : "CanvasCommand",
+	"type" : "normal" }

@@ -1,0 +1,17 @@
+{
+	"class" : {
+		"clipRect:" : "stlu 4/20/2020 14:25",
+		"origin:clipRect:" : "stlu 4/20/2020 18:48" },
+	"instance" : {
+		"addCommand:" : "stlu 4/20/2020 18:46",
+		"applyOn:" : "stlu 4/21/2020 17:34",
+		"clipRect" : "stlu 4/21/2020 17:33",
+		"clipRect:" : "stlu 4/20/2020 09:39",
+		"commands" : "stlu 4/20/2020 16:31",
+		"initialize" : "stlu 4/20/2020 17:11",
+		"isClipping" : "stlu 4/21/2020 17:34",
+		"isLayer" : "stlu 4/20/2020 17:42",
+		"offset" : "stlu 4/20/2020 18:43",
+		"origin" : "stlu 4/20/2020 14:26",
+		"origin:" : "stlu 4/20/2020 14:20",
+		"relativeClipRect" : "stlu 4/21/2020 17:40" } }

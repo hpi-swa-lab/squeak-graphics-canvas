@@ -1,0 +1,15 @@
+{
+	"category" : "Renderly-Record",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"transform",
+		"smoothing" ],
+	"name" : "DrawTransformLayer",
+	"pools" : [
+		 ],
+	"super" : "DrawLayer",
+	"type" : "normal" }

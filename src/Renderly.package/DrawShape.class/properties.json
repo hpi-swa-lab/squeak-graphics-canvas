@@ -1,0 +1,16 @@
+{
+	"category" : "Renderly-Record",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"bounds",
+		"fillStyle",
+		"borderStyle" ],
+	"name" : "DrawShape",
+	"pools" : [
+		 ],
+	"super" : "CanvasCommand",
+	"type" : "normal" }
