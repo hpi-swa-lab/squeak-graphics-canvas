@@ -1,0 +1,3 @@
+primitive
+OPENGL_CORE_PROFILE
+	^16r00032001
