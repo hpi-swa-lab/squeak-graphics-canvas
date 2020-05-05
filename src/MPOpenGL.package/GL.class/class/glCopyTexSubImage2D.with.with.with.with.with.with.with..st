@@ -1,0 +1,2 @@
+as yet unclassified
+glCopyTexSubImage2D: target with: level with: xoffset with: yoffset with: x with: y with: width with: height <apicall: void 'glCopyTexSubImage2D' (ulong long long long long long long long) module: 'libGL.so'> ^ self externalCallFailed

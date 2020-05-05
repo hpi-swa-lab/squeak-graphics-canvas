@@ -1,0 +1,17 @@
+{
+	"category" : "MPOpenGL",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"typesMap",
+		"registry",
+		"enums",
+		"commands" ],
+	"name" : "GLGenerator",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

@@ -1,0 +1,2 @@
+as yet unclassified
+GL_SAMPLER_2D_MULTISAMPLE_ARRAY ^ 16r910B

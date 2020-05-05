@@ -1,0 +1,2 @@
+as yet unclassified
+glGetActiveUniformName: program with: uniformIndex with: bufSize with: length with: uniformName <apicall: void 'glGetActiveUniformName' (ulong ulong long long byte) module: 'libGL.so'> ^ self externalCallFailed

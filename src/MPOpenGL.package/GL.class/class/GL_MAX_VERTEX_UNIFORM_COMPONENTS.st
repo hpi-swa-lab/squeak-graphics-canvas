@@ -1,0 +1,2 @@
+as yet unclassified
+GL_MAX_VERTEX_UNIFORM_COMPONENTS ^ 16r8B4A

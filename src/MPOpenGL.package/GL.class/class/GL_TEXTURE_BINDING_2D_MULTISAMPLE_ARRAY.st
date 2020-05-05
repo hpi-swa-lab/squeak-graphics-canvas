@@ -1,0 +1,2 @@
+as yet unclassified
+GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY ^ 16r9105

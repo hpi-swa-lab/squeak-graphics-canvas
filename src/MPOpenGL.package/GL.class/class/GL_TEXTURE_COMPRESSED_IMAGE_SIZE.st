@@ -1,0 +1,2 @@
+as yet unclassified
+GL_TEXTURE_COMPRESSED_IMAGE_SIZE ^ 16r86A0

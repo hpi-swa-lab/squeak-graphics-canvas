@@ -1,0 +1,2 @@
+as yet unclassified
+GL_IMAGE_FORMAT_COMPATIBILITY_TYPE ^ 16r90C7

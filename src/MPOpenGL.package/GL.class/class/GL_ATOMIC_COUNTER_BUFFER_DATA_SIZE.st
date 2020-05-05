@@ -1,0 +1,2 @@
+as yet unclassified
+GL_ATOMIC_COUNTER_BUFFER_DATA_SIZE ^ 16r92C4

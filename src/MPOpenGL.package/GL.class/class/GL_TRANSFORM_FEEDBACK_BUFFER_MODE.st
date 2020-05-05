@@ -1,0 +1,2 @@
+as yet unclassified
+GL_TRANSFORM_FEEDBACK_BUFFER_MODE ^ 16r8C7F

@@ -1,0 +1,2 @@
+as yet unclassified
+GL_FRAMEBUFFER_BARRIER_BIT ^ 16r00000400
