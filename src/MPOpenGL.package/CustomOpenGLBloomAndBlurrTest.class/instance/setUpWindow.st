@@ -1,21 +1,12 @@
 before each
 setUpWindow
-	| SCR_WIDTH SCR_HEIGHT framebuffer_size_callback mouse_callback scroll_callback |
-	GLFW init.
-	GLFW windowHint: GLFW _CONTEXT_VERSION_MAJOR with: 3.
-	GLFW windowHint: GLFW _CONTEXT_VERSION_MINOR with: 3.
-	GLFW windowHint: GLFW _OPENGL_PROFILE with: GLFW _OPENGL_CORE_PROFILE.
-	GLFW windowHint: GLFW _OPENGL_FORWARD_COMPAT with: GL _TRUE.
+	| SCR_WIDTH SCR_HEIGHT framebuffer_size_callback mouse_callback scroll_callback |	
+	self initGlfwWindow.
 	
 	"window width and height"
 	SCR_WIDTH := 1000.
 	SCR_HEIGHT := 1000.
-	
-	"callback inits"
-	framebuffer_size_callback := [].
-	mouse_callback := [].
-	scroll_callback := [].
-	
+		
 	"actually creating the window"
 	window := GLFW
 				createWindow: SCR_WIDTH
@@ -26,10 +17,16 @@ setUpWindow
 	window
 		ifNil: [self error: 'window was nil'].
 	
+	"callback inits"
+	framebuffer_size_callback := [].
+	mouse_callback := [].
+	scroll_callback := [].
+	
 	GLFW makeContextCurrent: window.
 	GLFW setFramebufferSizeCallback: window with: framebuffer_size_callback.
 	GLFW setCursorPosCallback: window with: mouse_callback.
 	GLFW setScrollCallback: window with: scroll_callback.
+	
 	"tell GLFW to capture our mouse"
 	GLFW
 		setInputMode: window
