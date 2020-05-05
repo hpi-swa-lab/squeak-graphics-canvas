@@ -1,2 +1,2 @@
-SystemOrganization addCategory: #'MPOpenGL-Test'!
 SystemOrganization addCategory: #MPOpenGL!
+SystemOrganization addCategory: #'MPOpenGL-Test'!
