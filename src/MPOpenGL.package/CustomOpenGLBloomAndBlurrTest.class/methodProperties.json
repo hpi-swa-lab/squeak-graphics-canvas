@@ -2,9 +2,12 @@
 	"class" : {
 		 },
 	"instance" : {
+		"createGLFWWindow" : "sr 5/5/2020 16:43",
+		"enableGLFWMouseCapture" : "sr 5/5/2020 16:42",
 		"initGlfwWindow" : "sr 5/5/2020 16:33",
 		"loadGlFunctionPointers" : "sr 5/5/2020 16:32",
-		"setUpWindow" : "sr 5/5/2020 16:35",
+		"setUpWindow" : "sr 5/5/2020 16:43",
+		"specifyCallbacks" : "sr 5/5/2020 16:41",
 		"tearDownWindow" : "sr 5/5/2020 11:39",
 		"testOpenGLVersion" : "sr 5/5/2020 14:22",
 		"testSimplyOpeningTheWindow" : "sr 5/5/2020 14:26" } }
