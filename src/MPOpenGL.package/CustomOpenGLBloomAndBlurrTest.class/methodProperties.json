@@ -4,7 +4,7 @@
 	"instance" : {
 		"createGLFWWindow" : "sr 5/5/2020 16:43",
 		"enableGLFWMouseCapture" : "sr 5/5/2020 17:04",
-		"initGlfwWindow" : "sr 5/5/2020 17:04",
+		"initGlfwWindow" : "sr 5/5/2020 17:15",
 		"loadGlFunctionPointers" : "sr 5/5/2020 16:32",
 		"setUpWindow" : "sr 5/5/2020 16:43",
 		"specifyCallbacks" : "sr 5/5/2020 16:41",
