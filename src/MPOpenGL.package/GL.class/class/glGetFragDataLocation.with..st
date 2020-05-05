@@ -1,2 +1,2 @@
 as yet unclassified
-glGetFragDataLocation: program with: name <apicall: long 'glGetFragDataLocation' (ulong byte) module: 'libGL.so'> ^ self externalCallFailed
+glGetFragDataLocation: program with: name <apicall: long 'glGetFragDataLocation' (ulong char*) module: 'libGL.so'> ^ self externalCallFailed

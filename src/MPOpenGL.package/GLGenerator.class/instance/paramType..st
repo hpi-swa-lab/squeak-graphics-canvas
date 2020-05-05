@@ -1,5 +1,8 @@
 as yet unclassified
 paramType: anElement
-	^ self convertType: (((anElement firstTagNamed: #ptype)
-		ifNotNil: [ :it | it contentString ]
-		ifNil: [ anElement contentString ]) withBlanksTrimmed)
+	| result |
+	result := ''.
+	anElement elementsAndContentsDo: [ :part | part isText
+		ifTrue: [ result := result , part ]
+		ifFalse: [ part tag = #ptype ifTrue: [ result := result , part contentString ]]].
+	^ self convertType: (result withBlanksTrimmed)

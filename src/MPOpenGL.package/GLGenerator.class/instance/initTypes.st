@@ -6,6 +6,29 @@ initTypes
 		'const void *' -> 'void*'.
 		'void **' -> 'void*'.
 		'const void *const*' -> 'void*'.
+		'const GLchar *const*' -> 'char**'.
+		'const GLubyte *' -> 'char*'.
+		'const GLchar *' -> 'char*'.
+		'GLchar *' -> 'char*'.
+		'GLfloat *' -> 'float*'.
+		'const GLfloat *' -> 'float*'.
+		'const GLdouble *' -> 'double*'.
+		'const GLint *' -> 'long*'.
+		'const GLuint *' -> 'ulong*'.
+		'const GLshort *' -> 'short*'.
+		'const GLushort *' -> 'ushort*'.
+		'const GLbyte *' -> 'char*'.
+		'GLint *' -> 'long*'.
+		'GLuint *' -> 'ulong*'.
+		'GLboolean *' -> 'uchar*'.
+		'const GLenum *' -> 'ulong*'.
+		'GLenum *' -> 'ulong*'.
+		'GLsizei *' -> 'long*'.
+		'const GLsizei *' -> 'long*'.
+		'GLint64 *' -> 'longlong*'.
+		'GLuint64 *' -> 'ulonglong*'.
+		'GLdouble *' -> 'double*'.
+		'GLshort *' -> 'short*'.
 		'GLenum' -> 'ulong'.
 		'GLboolean' -> 'uchar'.
 		'GLbitfield' -> 'ulong'.

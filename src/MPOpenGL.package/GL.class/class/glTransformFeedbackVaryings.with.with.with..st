@@ -1,2 +1,2 @@
 as yet unclassified
-glTransformFeedbackVaryings: program with: count with: varyings with: bufferMode <apicall: void 'glTransformFeedbackVaryings' (ulong long byte ulong) module: 'libGL.so'> ^ self externalCallFailed
+glTransformFeedbackVaryings: program with: count with: varyings with: bufferMode <apicall: void 'glTransformFeedbackVaryings' (ulong long char** ulong) module: 'libGL.so'> ^ self externalCallFailed

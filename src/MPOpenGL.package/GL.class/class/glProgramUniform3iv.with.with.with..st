@@ -1,2 +1,2 @@
 as yet unclassified
-glProgramUniform3iv: program with: location with: count with: value <apicall: void 'glProgramUniform3iv' (ulong long long long) module: 'libGL.so'> ^ self externalCallFailed
+glProgramUniform3iv: program with: location with: count with: value <apicall: void 'glProgramUniform3iv' (ulong long long long*) module: 'libGL.so'> ^ self externalCallFailed

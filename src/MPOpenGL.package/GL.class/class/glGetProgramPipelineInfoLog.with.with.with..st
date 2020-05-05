@@ -1,2 +1,2 @@
 as yet unclassified
-glGetProgramPipelineInfoLog: pipeline with: bufSize with: length with: infoLog <apicall: void 'glGetProgramPipelineInfoLog' (ulong long long byte) module: 'libGL.so'> ^ self externalCallFailed
+glGetProgramPipelineInfoLog: pipeline with: bufSize with: length with: infoLog <apicall: void 'glGetProgramPipelineInfoLog' (ulong long long* char*) module: 'libGL.so'> ^ self externalCallFailed

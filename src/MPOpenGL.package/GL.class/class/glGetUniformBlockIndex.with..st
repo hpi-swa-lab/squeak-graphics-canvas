@@ -1,2 +1,2 @@
 as yet unclassified
-glGetUniformBlockIndex: program with: uniformBlockName <apicall: ulong 'glGetUniformBlockIndex' (ulong byte) module: 'libGL.so'> ^ self externalCallFailed
+glGetUniformBlockIndex: program with: uniformBlockName <apicall: ulong 'glGetUniformBlockIndex' (ulong char*) module: 'libGL.so'> ^ self externalCallFailed

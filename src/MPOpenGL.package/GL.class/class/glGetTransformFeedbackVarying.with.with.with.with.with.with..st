@@ -1,2 +1,2 @@
 as yet unclassified
-glGetTransformFeedbackVarying: program with: index with: bufSize with: length with: size with: type with: name <apicall: void 'glGetTransformFeedbackVarying' (ulong ulong long long long ulong byte) module: 'libGL.so'> ^ self externalCallFailed
+glGetTransformFeedbackVarying: program with: index with: bufSize with: length with: size with: type with: name <apicall: void 'glGetTransformFeedbackVarying' (ulong ulong long long* long* ulong* char*) module: 'libGL.so'> ^ self externalCallFailed
