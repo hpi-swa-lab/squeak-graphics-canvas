@@ -1,5 +1,5 @@
 testing
-testWindow
+testOpenGLVersion
 	"given"
 	"when"
 	| ver |

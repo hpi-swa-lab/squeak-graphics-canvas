@@ -4,11 +4,11 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "sr 5/5/2020 14:02",
 	"instvars" : [
-		 ],
-	"name" : "CustomOpenGLTest",
+		"window" ],
+	"name" : "CustomOpenGLParentTestCase",
 	"pools" : [
 		 ],
-	"super" : "CustomOpenGLParentTestCase",
+	"super" : "TestCase",
 	"type" : "normal" }
