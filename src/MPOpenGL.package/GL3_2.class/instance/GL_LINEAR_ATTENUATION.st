@@ -1,0 +1,3 @@
+as yet unclassified
+GL_LINEAR_ATTENUATION
+	self shouldNotImplement

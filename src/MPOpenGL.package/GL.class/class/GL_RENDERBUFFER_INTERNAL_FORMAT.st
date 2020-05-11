@@ -1,2 +1,0 @@
-as yet unclassified
-GL_RENDERBUFFER_INTERNAL_FORMAT ^ 16r8D44

@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MAX_RECTANGLE_TEXTURE_SIZE ^ 16r84F8

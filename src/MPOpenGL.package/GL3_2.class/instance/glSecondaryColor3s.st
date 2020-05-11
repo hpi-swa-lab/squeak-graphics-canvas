@@ -1,0 +1,3 @@
+as yet unclassified
+glSecondaryColor3s
+	self shouldNotImplement

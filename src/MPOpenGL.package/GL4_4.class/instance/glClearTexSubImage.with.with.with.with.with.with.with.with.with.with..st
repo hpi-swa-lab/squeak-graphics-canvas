@@ -1,0 +1,2 @@
+as yet unclassified
+glClearTexSubImage: texture with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth with: format with: type with: data <apicall: void 'glClearTexSubImage' (ulong long long long long long long long ulong ulong void*) module: 'libGL.so'> ^ self externalCallFailed

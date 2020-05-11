@@ -1,2 +1,0 @@
-as yet unclassified
-GL_PROGRAM_BINARY_RETRIEVABLE_HINT ^ 16r8257

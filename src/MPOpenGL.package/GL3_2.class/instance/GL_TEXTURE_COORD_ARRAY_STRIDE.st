@@ -1,0 +1,3 @@
+as yet unclassified
+GL_TEXTURE_COORD_ARRAY_STRIDE
+	self shouldNotImplement

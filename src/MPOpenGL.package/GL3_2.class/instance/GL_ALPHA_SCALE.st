@@ -1,0 +1,3 @@
+as yet unclassified
+GL_ALPHA_SCALE
+	self shouldNotImplement

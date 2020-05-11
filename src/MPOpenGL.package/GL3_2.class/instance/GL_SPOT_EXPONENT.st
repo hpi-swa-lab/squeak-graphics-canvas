@@ -1,0 +1,3 @@
+as yet unclassified
+GL_SPOT_EXPONENT
+	self shouldNotImplement

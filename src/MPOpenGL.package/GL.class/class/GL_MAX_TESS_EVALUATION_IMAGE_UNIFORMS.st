@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MAX_TESS_EVALUATION_IMAGE_UNIFORMS ^ 16r90CC

@@ -1,0 +1,8 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"glMultiDrawArraysIndirectCount:with:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glMultiDrawElementsIndirectCount:with:with:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glPolygonOffsetClamp:with:with:" : "TZ 5/11/2020 16:01",
+		"glSpecializeShader:with:with:with:with:" : "TZ 5/11/2020 16:01" } }

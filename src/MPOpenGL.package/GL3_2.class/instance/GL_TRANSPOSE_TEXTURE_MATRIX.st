@@ -1,0 +1,3 @@
+as yet unclassified
+GL_TRANSPOSE_TEXTURE_MATRIX
+	self shouldNotImplement

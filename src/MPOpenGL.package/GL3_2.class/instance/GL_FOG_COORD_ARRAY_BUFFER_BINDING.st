@@ -1,0 +1,3 @@
+as yet unclassified
+GL_FOG_COORD_ARRAY_BUFFER_BINDING
+	self shouldNotImplement

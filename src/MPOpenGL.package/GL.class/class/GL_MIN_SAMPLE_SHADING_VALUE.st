@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MIN_SAMPLE_SHADING_VALUE ^ 16r8C37

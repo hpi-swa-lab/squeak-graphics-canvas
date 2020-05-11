@@ -1,0 +1,3 @@
+as yet unclassified
+GL_CLIP_PLANE2
+	self shouldNotImplement

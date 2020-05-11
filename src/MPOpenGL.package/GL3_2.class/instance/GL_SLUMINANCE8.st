@@ -1,0 +1,3 @@
+as yet unclassified
+GL_SLUMINANCE8
+	self shouldNotImplement

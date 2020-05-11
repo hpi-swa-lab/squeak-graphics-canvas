@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MAP_INVALIDATE_BUFFER_BIT ^ 16r0008

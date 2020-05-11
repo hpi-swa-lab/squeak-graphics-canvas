@@ -1,2 +1,0 @@
-as yet unclassified
-GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW ^ 16r900D

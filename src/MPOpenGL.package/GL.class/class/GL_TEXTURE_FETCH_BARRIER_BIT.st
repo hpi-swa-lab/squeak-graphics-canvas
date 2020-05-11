@@ -1,2 +1,0 @@
-as yet unclassified
-GL_TEXTURE_FETCH_BARRIER_BIT ^ 16r00000008

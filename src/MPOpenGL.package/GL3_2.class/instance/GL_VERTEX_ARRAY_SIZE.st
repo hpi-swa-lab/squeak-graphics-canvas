@@ -1,0 +1,3 @@
+as yet unclassified
+GL_VERTEX_ARRAY_SIZE
+	self shouldNotImplement

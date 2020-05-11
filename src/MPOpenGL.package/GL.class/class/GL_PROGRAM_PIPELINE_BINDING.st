@@ -1,2 +1,0 @@
-as yet unclassified
-GL_PROGRAM_PIPELINE_BINDING ^ 16r825A

@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MAX_SUBROUTINE_UNIFORM_LOCATIONS ^ 16r8DE8

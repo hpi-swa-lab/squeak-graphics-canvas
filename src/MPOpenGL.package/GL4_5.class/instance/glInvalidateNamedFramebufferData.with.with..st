@@ -1,0 +1,2 @@
+as yet unclassified
+glInvalidateNamedFramebufferData: framebuffer with: numAttachments with: attachments <apicall: void 'glInvalidateNamedFramebufferData' (ulong long ulong*) module: 'libGL.so'> ^ self externalCallFailed

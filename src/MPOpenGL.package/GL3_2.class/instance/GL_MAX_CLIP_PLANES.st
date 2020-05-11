@@ -1,0 +1,3 @@
+as yet unclassified
+GL_MAX_CLIP_PLANES
+	self shouldNotImplement

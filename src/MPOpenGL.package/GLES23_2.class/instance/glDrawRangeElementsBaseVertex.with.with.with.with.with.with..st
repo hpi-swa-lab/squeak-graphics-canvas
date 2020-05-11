@@ -1,0 +1,2 @@
+as yet unclassified
+glDrawRangeElementsBaseVertex: mode with: start with: end with: count with: type with: indices with: basevertex <apicall: void 'glDrawRangeElementsBaseVertex' (ulong ulong ulong long ulong void* long) module: 'libGL.so'> ^ self externalCallFailed

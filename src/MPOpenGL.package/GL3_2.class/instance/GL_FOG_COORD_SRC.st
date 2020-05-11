@@ -1,0 +1,3 @@
+as yet unclassified
+GL_FOG_COORD_SRC
+	self shouldNotImplement

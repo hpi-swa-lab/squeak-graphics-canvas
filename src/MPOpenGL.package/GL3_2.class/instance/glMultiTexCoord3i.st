@@ -1,0 +1,3 @@
+as yet unclassified
+glMultiTexCoord3i
+	self shouldNotImplement

@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MAX_GEOMETRY_OUTPUT_VERTICES ^ 16r8DE0

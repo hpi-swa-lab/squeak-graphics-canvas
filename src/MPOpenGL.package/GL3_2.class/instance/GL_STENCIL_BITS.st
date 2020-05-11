@@ -1,0 +1,3 @@
+as yet unclassified
+GL_STENCIL_BITS
+	self shouldNotImplement

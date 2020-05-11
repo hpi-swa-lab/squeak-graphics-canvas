@@ -4,7 +4,7 @@ generateCommand: anElement
 	
 	protoElement := anElement firstTagNamed: #proto.
 	name := (protoElement firstTagNamed: #name) contentString.
-	(commands includes: name) ifFalse: [ ^self ].
+	(commands includesKey: name) ifFalse: [ ^self ].
 	
 	code := name.
 	(anElement firstTagNamed: #param)
@@ -17,4 +17,4 @@ generateCommand: anElement
 		code := code , (self paramType: param) , ' ' ].
 	code := code withBlanksTrimmed , ') module: ''libGL.so''> ^ self externalCallFailed'.
 
-	GL class compile: code
+	(commands at: name) compile: code

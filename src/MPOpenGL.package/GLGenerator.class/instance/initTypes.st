@@ -61,5 +61,11 @@ initTypes
 		'GLint64EXT' -> 'longlong'.
 		'GLuint64' -> 'ulonglong'.
 		'GLuint64EXT' -> 'ulonglong'.
-		'GLsync' -> 'void*'
+		'GLsync' -> 'void*'.
+		'const GLsizeiptr *' -> 'longlong*'.
+		'GLDEBUGPROC' -> 'void*'.
+		'const GLboolean *' -> 'uchar*'.
+		'GLushort *' -> 'ushort*'.
+		'GLubyte *' -> 'uchar*'.
+		'const GLintptr *' -> 'int**'.
 	}as: Dictionary.

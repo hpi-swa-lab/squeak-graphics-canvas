@@ -1,0 +1,3 @@
+as yet unclassified
+GL_OPERAND0_RGB
+	self shouldNotImplement

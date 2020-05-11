@@ -1,0 +1,3 @@
+as yet unclassified
+glLightModelfv
+	self shouldNotImplement

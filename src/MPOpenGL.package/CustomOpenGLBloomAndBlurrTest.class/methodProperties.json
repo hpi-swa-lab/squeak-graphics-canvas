@@ -1,8 +1,0 @@
-{
-	"class" : {
-		 },
-	"instance" : {
-		"setUpWindow" : "sr 5/5/2020 11:38",
-		"tearDownWindow" : "sr 5/5/2020 11:39",
-		"testOpenGLVersion" : "sr 5/5/2020 14:22",
-		"testSimplyOpeningTheWindow" : "sr 5/5/2020 14:26" } }

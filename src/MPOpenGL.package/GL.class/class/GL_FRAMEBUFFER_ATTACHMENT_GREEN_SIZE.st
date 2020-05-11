@@ -1,2 +1,0 @@
-as yet unclassified
-GL_FRAMEBUFFER_ATTACHMENT_GREEN_SIZE ^ 16r8213

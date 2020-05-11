@@ -1,0 +1,3 @@
+as yet unclassified
+GL_COORD_REPLACE
+	self shouldNotImplement

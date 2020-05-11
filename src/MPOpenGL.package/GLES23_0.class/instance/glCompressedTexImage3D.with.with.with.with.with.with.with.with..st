@@ -1,0 +1,2 @@
+as yet unclassified
+glCompressedTexImage3D: target with: level with: internalformat with: width with: height with: depth with: border with: imageSize with: data <apicall: void 'glCompressedTexImage3D' (ulong long ulong long long long long long void*) module: 'libGL.so'> ^ self externalCallFailed

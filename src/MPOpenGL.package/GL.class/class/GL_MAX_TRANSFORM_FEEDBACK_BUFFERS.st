@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MAX_TRANSFORM_FEEDBACK_BUFFERS ^ 16r8E70

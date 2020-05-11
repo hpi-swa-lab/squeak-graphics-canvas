@@ -1,0 +1,3 @@
+as yet unclassified
+GL_TEXTURE_LUMINANCE_TYPE
+	self shouldNotImplement

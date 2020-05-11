@@ -1,0 +1,3 @@
+as yet unclassified
+GL_LIGHTING_BIT
+	self shouldNotImplement

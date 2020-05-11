@@ -1,2 +1,0 @@
-as yet unclassified
-GL_UNPACK_COMPRESSED_BLOCK_SIZE ^ 16r912A

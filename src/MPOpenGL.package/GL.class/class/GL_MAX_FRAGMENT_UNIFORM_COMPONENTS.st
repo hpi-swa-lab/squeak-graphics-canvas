@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MAX_FRAGMENT_UNIFORM_COMPONENTS ^ 16r8B49

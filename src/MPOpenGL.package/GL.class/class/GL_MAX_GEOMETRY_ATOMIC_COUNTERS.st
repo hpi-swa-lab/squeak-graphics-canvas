@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MAX_GEOMETRY_ATOMIC_COUNTERS ^ 16r92D5

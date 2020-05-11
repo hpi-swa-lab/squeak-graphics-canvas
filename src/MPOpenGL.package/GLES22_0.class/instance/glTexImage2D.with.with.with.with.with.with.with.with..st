@@ -1,0 +1,2 @@
+as yet unclassified
+glTexImage2D: target with: level with: internalformat with: width with: height with: border with: format with: type with: pixels <apicall: void 'glTexImage2D' (ulong long long long long long ulong ulong void*) module: 'libGL.so'> ^ self externalCallFailed

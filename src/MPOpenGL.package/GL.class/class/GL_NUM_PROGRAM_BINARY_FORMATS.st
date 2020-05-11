@@ -1,2 +1,0 @@
-as yet unclassified
-GL_NUM_PROGRAM_BINARY_FORMATS ^ 16r87FE

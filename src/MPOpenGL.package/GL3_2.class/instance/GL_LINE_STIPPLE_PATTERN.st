@@ -1,0 +1,3 @@
+as yet unclassified
+GL_LINE_STIPPLE_PATTERN
+	self shouldNotImplement

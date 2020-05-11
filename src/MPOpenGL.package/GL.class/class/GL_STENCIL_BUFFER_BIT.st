@@ -1,2 +1,0 @@
-as yet unclassified
-GL_STENCIL_BUFFER_BIT ^ 16r00000400

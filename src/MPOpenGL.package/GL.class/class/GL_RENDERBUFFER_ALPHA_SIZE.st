@@ -1,2 +1,0 @@
-as yet unclassified
-GL_RENDERBUFFER_ALPHA_SIZE ^ 16r8D53

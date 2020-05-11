@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MAX_TESS_CONTROL_INPUT_COMPONENTS ^ 16r886C

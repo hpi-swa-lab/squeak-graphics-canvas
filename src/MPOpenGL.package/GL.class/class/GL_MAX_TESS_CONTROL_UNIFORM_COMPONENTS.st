@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS ^ 16r8E7F

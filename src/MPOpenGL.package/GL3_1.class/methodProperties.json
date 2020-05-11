@@ -1,0 +1,19 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"glBindBufferBase:with:with:" : "TZ 5/11/2020 16:01",
+		"glBindBufferRange:with:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glCopyBufferSubData:with:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glDrawArraysInstanced:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glDrawElementsInstanced:with:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glGetActiveUniformBlockName:with:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glGetActiveUniformBlockiv:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glGetActiveUniformName:with:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glGetActiveUniformsiv:with:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glGetIntegeri_v:with:with:" : "TZ 5/11/2020 16:01",
+		"glGetUniformBlockIndex:with:" : "TZ 5/11/2020 16:01",
+		"glGetUniformIndices:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glPrimitiveRestartIndex:" : "TZ 5/11/2020 16:01",
+		"glTexBuffer:with:with:" : "TZ 5/11/2020 16:01",
+		"glUniformBlockBinding:with:with:" : "TZ 5/11/2020 16:01" } }
