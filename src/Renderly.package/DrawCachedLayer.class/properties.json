@@ -6,9 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"parent" ],
-	"name" : "CanvasCommand",
+		"cachedForm" ],
+	"name" : "DrawCachedLayer",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "DrawLayer",
 	"type" : "normal" }

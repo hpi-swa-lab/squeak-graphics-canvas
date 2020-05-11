@@ -6,9 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"parent" ],
-	"name" : "CanvasCommand",
+		"element" ],
+	"name" : "DrawElementLayer",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "DrawLayer",
 	"type" : "normal" }

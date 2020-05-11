@@ -19,9 +19,6 @@ displayWorld: aWorld submorphs: submorphs
 
 	handsToDraw reverseDo: [:h | canvas fullDrawMorph: h].  "draw hands onto world canvas"
 
-	"*make this true to flash damaged areas for testing*"
-	Preferences debugShowDamage ifTrue: [aWorld flashRects: allDamage color: Color black].
-
 	canvas finish: allDamage.
 
 	"quickly copy altered rects of canvas to Display:"

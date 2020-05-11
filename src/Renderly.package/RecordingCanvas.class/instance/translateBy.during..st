@@ -1,6 +1,5 @@
 drawing-support
 translateBy: delta during: aBlock
 
-	self
-		newCurrentLayer: (DrawTranslateLayer offset: delta)
-		during: aBlock
+	delta isZero ifFalse: [
+		self translateBy: delta clippingTo: self clipRect during: aBlock]

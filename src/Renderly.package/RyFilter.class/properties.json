@@ -6,8 +6,8 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"parent" ],
-	"name" : "CanvasCommand",
+		 ],
+	"name" : "RyFilter",
 	"pools" : [
 		 ],
 	"super" : "Object",

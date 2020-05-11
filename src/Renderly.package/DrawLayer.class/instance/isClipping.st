@@ -1,4 +1,4 @@
 testing
 isClipping
 
-	^ self clipRect notNil
+	^ clipRect notNil

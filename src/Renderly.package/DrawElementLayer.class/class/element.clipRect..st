@@ -1,7 +1,7 @@
 instance creation
-offset: aPoint clipRect: aRectangle
+element: anElement clipRect: aRectangle
 
 	^ self new
-		offset: aPoint;
+		element: anElement;
 		clipRect: aRectangle;
 		yourself

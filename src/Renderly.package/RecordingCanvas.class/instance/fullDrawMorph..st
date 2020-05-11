@@ -1,4 +1,6 @@
 drawing-general
 fullDrawMorph: aMorph
 
-	self newCurrentElement: aMorph during: [self fullDraw: aMorph]
+	self
+		newCurrentLayer: (DrawElementLayer element: aMorph)
+		during: [:canvas | self fullDraw: aMorph]

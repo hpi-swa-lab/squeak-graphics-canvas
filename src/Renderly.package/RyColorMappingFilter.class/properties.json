@@ -6,9 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"parent" ],
-	"name" : "CanvasCommand",
+		 ],
+	"name" : "RyColorMappingFilter",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "RyFilter",
 	"type" : "normal" }

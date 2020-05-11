@@ -6,8 +6,8 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"offset" ],
-	"name" : "DrawTranslateLayer",
+		"filter" ],
+	"name" : "DrawFilterLayer",
 	"pools" : [
 		 ],
 	"super" : "DrawLayer",
