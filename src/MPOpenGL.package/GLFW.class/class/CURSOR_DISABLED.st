@@ -1,0 +1,3 @@
+primitive
+CURSOR_DISABLED
+	^16r34003
