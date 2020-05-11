@@ -1,5 +1,6 @@
-as yet unclassified
-setGlfwWindowHints
+before each
+initGlfwWindow
+	GLFW init.
 	GLFW windowHint: GLFW CONTEXT_VERSION_MAJOR with: 3.
 	GLFW windowHint: GLFW CONTEXT_VERSION_MINOR with: 3.
 	GLFW windowHint: GLFW OPENGL_PROFILE with: GLFW OPENGL_CORE_PROFILE.

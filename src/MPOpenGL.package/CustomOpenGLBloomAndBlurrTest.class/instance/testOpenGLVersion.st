@@ -1,5 +1,5 @@
-test
-openGLVersion
+testing
+testOpenGLVersion
 	| glVersion |
 	glVersion := GL glGetString: GL GL_VERSION.
 	glVersion inspect.

@@ -1,2 +1,2 @@
-test - window generation
+as yet unclassified
 simplyOpeningTheWindow

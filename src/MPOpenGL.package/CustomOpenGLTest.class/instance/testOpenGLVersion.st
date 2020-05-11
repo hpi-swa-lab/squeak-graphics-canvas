@@ -1,4 +1,4 @@
-test
+testing
 testOpenGLVersion
 	"given"
 	"when"
