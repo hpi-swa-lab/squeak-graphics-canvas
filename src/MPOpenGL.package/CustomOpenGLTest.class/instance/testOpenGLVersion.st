@@ -6,4 +6,4 @@ testOpenGLVersion
 	glVersion := GL glGetString: GL GL_VERSION.
 	glVersion inspect.
 	"then"
-	self assert: (glVersion beginsWith: '4.6.0').
+	self assert: (glVersion beginsWith: '4').
