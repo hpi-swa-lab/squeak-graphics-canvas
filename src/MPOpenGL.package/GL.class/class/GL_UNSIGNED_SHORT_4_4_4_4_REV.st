@@ -1,2 +1,0 @@
-as yet unclassified
-GL_UNSIGNED_SHORT_4_4_4_4_REV ^ 16r8365

@@ -12,5 +12,5 @@
 	"name" : "NativeOpenGLTest",
 	"pools" : [
 		"OpenGLConstants" ],
-	"super" : "CustomOpenGLParentTestCase",
+	"super" : "AnObsoleteCustomOpenGLParentTestCase",
 	"type" : "normal" }

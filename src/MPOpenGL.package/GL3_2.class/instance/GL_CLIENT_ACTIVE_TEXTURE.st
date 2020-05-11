@@ -1,0 +1,3 @@
+as yet unclassified
+GL_CLIENT_ACTIVE_TEXTURE
+	self shouldNotImplement

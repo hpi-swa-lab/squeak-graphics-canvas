@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MAX_FRAGMENT_ATOMIC_COUNTER_BUFFERS ^ 16r92D0

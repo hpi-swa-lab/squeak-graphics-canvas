@@ -1,0 +1,3 @@
+as yet unclassified
+GL_FRAGMENT_DEPTH
+	self shouldNotImplement

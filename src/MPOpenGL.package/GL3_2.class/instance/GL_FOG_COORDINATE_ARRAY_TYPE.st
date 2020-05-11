@@ -1,0 +1,3 @@
+as yet unclassified
+GL_FOG_COORDINATE_ARRAY_TYPE
+	self shouldNotImplement

@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MAX_ATOMIC_COUNTER_BUFFER_BINDINGS ^ 16r92DC

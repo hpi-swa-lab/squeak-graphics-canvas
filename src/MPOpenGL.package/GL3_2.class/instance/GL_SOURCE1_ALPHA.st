@@ -1,0 +1,3 @@
+as yet unclassified
+GL_SOURCE1_ALPHA
+	self shouldNotImplement

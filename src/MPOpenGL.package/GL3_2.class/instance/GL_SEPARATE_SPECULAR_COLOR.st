@@ -1,0 +1,3 @@
+as yet unclassified
+GL_SEPARATE_SPECULAR_COLOR
+	self shouldNotImplement

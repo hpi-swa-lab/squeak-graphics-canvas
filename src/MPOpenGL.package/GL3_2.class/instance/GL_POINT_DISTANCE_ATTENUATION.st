@@ -1,0 +1,3 @@
+as yet unclassified
+GL_POINT_DISTANCE_ATTENUATION
+	self shouldNotImplement

@@ -1,0 +1,3 @@
+as yet unclassified
+GL_NORMAL_ARRAY
+	self shouldNotImplement

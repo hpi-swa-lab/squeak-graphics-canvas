@@ -1,0 +1,3 @@
+as yet unclassified
+GL_SHADE_MODEL
+	self shouldNotImplement

@@ -1,2 +1,0 @@
-as yet unclassified
-GL_VERTEX_ATTRIB_ARRAY_TYPE ^ 16r8625

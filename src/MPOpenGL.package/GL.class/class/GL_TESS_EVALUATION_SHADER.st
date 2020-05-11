@@ -1,2 +1,0 @@
-as yet unclassified
-GL_TESS_EVALUATION_SHADER ^ 16r8E87

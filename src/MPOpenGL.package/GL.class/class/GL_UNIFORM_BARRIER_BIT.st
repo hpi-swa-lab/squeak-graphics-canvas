@@ -1,2 +1,0 @@
-as yet unclassified
-GL_UNIFORM_BARRIER_BIT ^ 16r00000004

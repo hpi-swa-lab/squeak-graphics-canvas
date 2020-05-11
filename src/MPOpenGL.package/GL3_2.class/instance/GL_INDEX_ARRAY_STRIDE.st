@@ -1,0 +1,3 @@
+as yet unclassified
+GL_INDEX_ARRAY_STRIDE
+	self shouldNotImplement

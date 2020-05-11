@@ -1,0 +1,3 @@
+as yet unclassified
+GL_TEXTURE_GEN_Q
+	self shouldNotImplement

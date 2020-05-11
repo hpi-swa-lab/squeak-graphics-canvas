@@ -1,2 +1,0 @@
-as yet unclassified
-GL_FRAMEBUFFER_ATTACHMENT_DEPTH_SIZE ^ 16r8216

@@ -1,0 +1,3 @@
+as yet unclassified
+GL_LUMINANCE12
+	self shouldNotImplement

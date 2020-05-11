@@ -1,2 +1,0 @@
-as yet unclassified
-GL_CONTEXT_CORE_PROFILE_BIT ^ 16r00000001

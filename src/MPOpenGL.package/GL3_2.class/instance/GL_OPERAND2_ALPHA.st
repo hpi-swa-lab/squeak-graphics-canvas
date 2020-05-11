@@ -1,0 +1,3 @@
+as yet unclassified
+GL_OPERAND2_ALPHA
+	self shouldNotImplement

@@ -1,2 +1,0 @@
-as yet unclassified
-GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM ^ 16r8E8D

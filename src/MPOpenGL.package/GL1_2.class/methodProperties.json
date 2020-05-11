@@ -1,0 +1,8 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"glCopyTexSubImage3D:with:with:with:with:with:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glDrawRangeElements:with:with:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glTexImage3D:with:with:with:with:with:with:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glTexSubImage3D:with:with:with:with:with:with:with:with:with:with:" : "TZ 5/11/2020 16:01" } }

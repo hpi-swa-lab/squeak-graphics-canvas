@@ -1,0 +1,3 @@
+as yet unclassified
+GL_COMPRESSED_INTENSITY
+	self shouldNotImplement

@@ -1,0 +1,3 @@
+as yet unclassified
+GL_AUTO_NORMAL
+	self shouldNotImplement

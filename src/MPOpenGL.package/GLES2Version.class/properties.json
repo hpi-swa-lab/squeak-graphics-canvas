@@ -1,0 +1,14 @@
+{
+	"category" : "MPOpenGL",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "GLES2Version",
+	"pools" : [
+		 ],
+	"super" : "OpenGL",
+	"type" : "normal" }

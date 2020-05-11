@@ -1,0 +1,3 @@
+as yet unclassified
+GL_VERTEX_ARRAY_STRIDE
+	self shouldNotImplement

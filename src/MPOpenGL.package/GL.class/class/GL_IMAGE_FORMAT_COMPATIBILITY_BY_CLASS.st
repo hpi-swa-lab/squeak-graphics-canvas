@@ -1,2 +1,0 @@
-as yet unclassified
-GL_IMAGE_FORMAT_COMPATIBILITY_BY_CLASS ^ 16r90C9

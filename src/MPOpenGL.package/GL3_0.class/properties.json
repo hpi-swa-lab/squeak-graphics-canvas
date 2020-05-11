@@ -1,0 +1,14 @@
+{
+	"category" : "MPOpenGL",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "GL3_0",
+	"pools" : [
+		 ],
+	"super" : "GL2_1",
+	"type" : "normal" }

@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MAX_PROGRAM_TEXTURE_GATHER_OFFSET ^ 16r8E5F

@@ -1,2 +1,0 @@
-as yet unclassified
-GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE ^ 16r906B

@@ -1,2 +1,0 @@
-as yet unclassified
-GL_IMAGE_2D_MULTISAMPLE_ARRAY ^ 16r9056

@@ -1,0 +1,3 @@
+as yet unclassified
+GL_COMPRESSED_SLUMINANCE_ALPHA
+	self shouldNotImplement

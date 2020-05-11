@@ -1,2 +1,0 @@
-as yet unclassified
-GL_TRANSFORM_FEEDBACK_VARYINGS ^ 16r8C83

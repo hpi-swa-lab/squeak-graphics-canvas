@@ -1,2 +1,0 @@
-as yet unclassified
-GL_PRIMITIVES_GENERATED ^ 16r8C87

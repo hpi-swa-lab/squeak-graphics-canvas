@@ -1,0 +1,3 @@
+as yet unclassified
+GL_CURRENT_COLOR
+	self shouldNotImplement

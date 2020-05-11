@@ -1,0 +1,3 @@
+as yet unclassified
+GL_COLOR_MATERIAL_PARAMETER
+	self shouldNotImplement

@@ -1,0 +1,13 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"glBindBuffersBase:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glBindBuffersRange:with:with:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glBindImageTextures:with:with:" : "TZ 5/11/2020 16:01",
+		"glBindSamplers:with:with:" : "TZ 5/11/2020 16:01",
+		"glBindTextures:with:with:" : "TZ 5/11/2020 16:01",
+		"glBindVertexBuffers:with:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glBufferStorage:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glClearTexImage:with:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glClearTexSubImage:with:with:with:with:with:with:with:with:with:with:" : "TZ 5/11/2020 16:01" } }

@@ -1,0 +1,3 @@
+as yet unclassified
+GL_POLYGON_STIPPLE_BIT
+	self shouldNotImplement

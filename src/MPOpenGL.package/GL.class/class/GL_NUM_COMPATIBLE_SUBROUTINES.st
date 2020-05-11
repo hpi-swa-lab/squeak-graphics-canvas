@@ -1,2 +1,0 @@
-as yet unclassified
-GL_NUM_COMPATIBLE_SUBROUTINES ^ 16r8E4A

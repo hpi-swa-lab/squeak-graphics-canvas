@@ -6,9 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
+		"window" ],
 	"name" : "CustomOpenGLTest",
 	"pools" : [
 		 ],
-	"super" : "CustomOpenGLParentTestCase",
+	"super" : "TestCase",
 	"type" : "normal" }

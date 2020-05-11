@@ -9,7 +9,9 @@
 		"typesMap",
 		"registry",
 		"enums",
-		"commands" ],
+		"commands",
+		"previousClass",
+		"api" ],
 	"name" : "GLGenerator",
 	"pools" : [
 		 ],

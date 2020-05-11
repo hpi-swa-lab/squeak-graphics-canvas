@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MAX_GEOMETRY_OUTPUT_COMPONENTS ^ 16r9124

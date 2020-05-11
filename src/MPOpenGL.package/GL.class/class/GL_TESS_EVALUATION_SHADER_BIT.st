@@ -1,2 +1,0 @@
-as yet unclassified
-GL_TESS_EVALUATION_SHADER_BIT ^ 16r00000010

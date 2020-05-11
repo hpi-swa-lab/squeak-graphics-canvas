@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS ^ 16r92D3

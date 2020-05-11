@@ -1,0 +1,3 @@
+as yet unclassified
+GL_CLIENT_ALL_ATTRIB_BITS
+	self shouldNotImplement

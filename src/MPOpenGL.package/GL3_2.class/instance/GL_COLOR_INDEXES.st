@@ -1,0 +1,3 @@
+as yet unclassified
+GL_COLOR_INDEXES
+	self shouldNotImplement

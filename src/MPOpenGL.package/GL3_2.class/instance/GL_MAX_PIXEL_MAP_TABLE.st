@@ -1,0 +1,3 @@
+as yet unclassified
+GL_MAX_PIXEL_MAP_TABLE
+	self shouldNotImplement

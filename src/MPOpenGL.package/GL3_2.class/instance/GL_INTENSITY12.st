@@ -1,0 +1,3 @@
+as yet unclassified
+GL_INTENSITY12
+	self shouldNotImplement

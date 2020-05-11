@@ -1,0 +1,2 @@
+as yet unclassified
+glGetNamedBufferSubData: buffer with: offset with: size with: data <apicall: void 'glGetNamedBufferSubData' (ulong longlong longlong void*) module: 'libGL.so'> ^ self externalCallFailed

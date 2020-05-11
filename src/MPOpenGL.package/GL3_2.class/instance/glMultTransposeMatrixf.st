@@ -1,0 +1,3 @@
+as yet unclassified
+glMultTransposeMatrixf
+	self shouldNotImplement

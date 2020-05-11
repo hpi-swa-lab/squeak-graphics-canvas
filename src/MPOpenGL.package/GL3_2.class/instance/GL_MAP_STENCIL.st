@@ -1,0 +1,3 @@
+as yet unclassified
+GL_MAP_STENCIL
+	self shouldNotImplement

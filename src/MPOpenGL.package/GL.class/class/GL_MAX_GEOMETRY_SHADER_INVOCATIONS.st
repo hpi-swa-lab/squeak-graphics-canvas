@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MAX_GEOMETRY_SHADER_INVOCATIONS ^ 16r8E5A

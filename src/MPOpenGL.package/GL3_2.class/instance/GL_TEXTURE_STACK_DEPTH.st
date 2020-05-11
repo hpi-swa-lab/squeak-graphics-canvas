@@ -1,0 +1,3 @@
+as yet unclassified
+GL_TEXTURE_STACK_DEPTH
+	self shouldNotImplement

@@ -1,2 +1,0 @@
-as yet unclassified
-GL_PACK_COMPRESSED_BLOCK_SIZE ^ 16r912E

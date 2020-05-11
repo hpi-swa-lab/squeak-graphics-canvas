@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MAX_VERTEX_UNIFORM_VECTORS ^ 16r8DFB

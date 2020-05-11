@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MAX_GEOMETRY_INPUT_COMPONENTS ^ 16r9123

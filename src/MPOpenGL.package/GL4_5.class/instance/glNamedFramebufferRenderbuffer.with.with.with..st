@@ -1,0 +1,2 @@
+as yet unclassified
+glNamedFramebufferRenderbuffer: framebuffer with: attachment with: renderbuffertarget with: renderbuffer <apicall: void 'glNamedFramebufferRenderbuffer' (ulong ulong ulong ulong) module: 'libGL.so'> ^ self externalCallFailed

@@ -5,4 +5,4 @@ generateEnum: anElement
 	(enums includes: name) ifFalse: [ ^self ].
 	
 	value := self convertEnumValue: (anElement attributeAt: #value).
-	GL class compile: (name , ' ^ ' , value)
+	(enums at: name) compile: (name , ' ^ ' , value)

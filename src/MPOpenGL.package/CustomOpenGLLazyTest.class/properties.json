@@ -10,5 +10,5 @@
 	"name" : "CustomOpenGLLazyTest",
 	"pools" : [
 		 ],
-	"super" : "CustomOpenGLParentTestCase",
+	"super" : "AnObsoleteCustomOpenGLParentTestCase",
 	"type" : "normal" }

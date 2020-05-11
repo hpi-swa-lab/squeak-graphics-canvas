@@ -1,0 +1,3 @@
+as yet unclassified
+glTexCoordPointer
+	self shouldNotImplement

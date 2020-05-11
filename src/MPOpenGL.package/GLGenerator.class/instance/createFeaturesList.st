@@ -1,5 +1,7 @@
 as yet unclassified
 createFeaturesList
-	enums := Set new.
-	commands := Set new.
-	(self findFeaturesApi: 'gl' version: '4.2') do: [ :feature | feature elementsDo: [ :elem | self handleFeatureElement: elem]]
+	enums := Dictionary new.
+	commands := Dictionary new.
+	previousClass := self rootVersion.
+
+	(self findFeatures) do: [ :feature | feature elementsDo: [ :elem | self handleFeatureElement: elem versionNumber: (feature attributeAt: #number)]].

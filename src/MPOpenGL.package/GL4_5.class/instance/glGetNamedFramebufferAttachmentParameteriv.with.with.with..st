@@ -1,0 +1,2 @@
+as yet unclassified
+glGetNamedFramebufferAttachmentParameteriv: framebuffer with: attachment with: pname with: params <apicall: void 'glGetNamedFramebufferAttachmentParameteriv' (ulong ulong ulong long*) module: 'libGL.so'> ^ self externalCallFailed

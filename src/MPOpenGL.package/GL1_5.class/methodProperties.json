@@ -1,0 +1,23 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"glBeginQuery:with:" : "TZ 5/11/2020 16:01",
+		"glBindBuffer:with:" : "TZ 5/11/2020 16:01",
+		"glBufferData:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glBufferSubData:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glDeleteBuffers:with:" : "TZ 5/11/2020 16:01",
+		"glDeleteQueries:with:" : "TZ 5/11/2020 16:01",
+		"glEndQuery:" : "TZ 5/11/2020 16:01",
+		"glGenBuffers:with:" : "TZ 5/11/2020 16:01",
+		"glGenQueries:with:" : "TZ 5/11/2020 16:01",
+		"glGetBufferParameteriv:with:with:" : "TZ 5/11/2020 16:01",
+		"glGetBufferPointerv:with:with:" : "TZ 5/11/2020 16:01",
+		"glGetBufferSubData:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glGetQueryObjectiv:with:with:" : "TZ 5/11/2020 16:01",
+		"glGetQueryObjectuiv:with:with:" : "TZ 5/11/2020 16:01",
+		"glGetQueryiv:with:with:" : "TZ 5/11/2020 16:01",
+		"glIsBuffer:" : "TZ 5/11/2020 16:01",
+		"glIsQuery:" : "TZ 5/11/2020 16:01",
+		"glMapBuffer:with:" : "TZ 5/11/2020 16:01",
+		"glUnmapBuffer:" : "TZ 5/11/2020 16:01" } }

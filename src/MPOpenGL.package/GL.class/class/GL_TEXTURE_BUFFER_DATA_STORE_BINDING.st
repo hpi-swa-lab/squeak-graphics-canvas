@@ -1,2 +1,0 @@
-as yet unclassified
-GL_TEXTURE_BUFFER_DATA_STORE_BINDING ^ 16r8C2D

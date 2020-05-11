@@ -1,2 +1,0 @@
-as yet unclassified
-GL_MIN_FRAGMENT_INTERPOLATION_OFFSET ^ 16r8E5B

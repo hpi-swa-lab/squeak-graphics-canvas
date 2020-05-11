@@ -1,0 +1,3 @@
+as yet unclassified
+glGetPixelMapfv
+	self shouldNotImplement

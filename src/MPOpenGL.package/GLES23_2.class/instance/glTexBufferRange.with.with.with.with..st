@@ -1,0 +1,2 @@
+as yet unclassified
+glTexBufferRange: target with: internalformat with: buffer with: offset with: size <apicall: void 'glTexBufferRange' (ulong ulong ulong longlong longlong) module: 'libGL.so'> ^ self externalCallFailed

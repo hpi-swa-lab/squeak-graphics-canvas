@@ -1,2 +1,0 @@
-as yet unclassified
-GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE ^ 16r8CD0

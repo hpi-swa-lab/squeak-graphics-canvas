@@ -1,0 +1,10 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"glUniformMatrix2x3fv:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glUniformMatrix2x4fv:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glUniformMatrix3x2fv:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glUniformMatrix3x4fv:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glUniformMatrix4x2fv:with:with:with:" : "TZ 5/11/2020 16:01",
+		"glUniformMatrix4x3fv:with:with:with:" : "TZ 5/11/2020 16:01" } }

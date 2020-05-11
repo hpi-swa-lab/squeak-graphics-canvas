@@ -1,2 +1,0 @@
-as yet unclassified
-GL_RENDERBUFFER_SAMPLES ^ 16r8CAB

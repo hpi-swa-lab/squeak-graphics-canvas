@@ -1,2 +1,0 @@
-as yet unclassified
-GL_TRANSFORM_FEEDBACK_BUFFER ^ 16r8C8E
