@@ -1,0 +1,14 @@
+{
+	"category" : "MPOpenGL-Test",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "CustomOpenGLLazyTest",
+	"pools" : [
+		 ],
+	"super" : "CustomOpenGLParentTestCase",
+	"type" : "normal" }

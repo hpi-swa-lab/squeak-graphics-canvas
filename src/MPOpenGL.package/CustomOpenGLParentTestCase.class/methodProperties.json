@@ -2,6 +2,7 @@
 	"class" : {
 		 },
 	"instance" : {
+		"checkOpenGLVersion" : "sr 5/11/2020 14:26",
 		"setUp" : "sr 5/5/2020 11:36",
 		"setUpWindow" : "sr 5/5/2020 13:59",
 		"tearDown" : "sr 5/5/2020 11:37",
