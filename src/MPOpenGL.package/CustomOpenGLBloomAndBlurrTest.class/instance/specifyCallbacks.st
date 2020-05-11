@@ -2,9 +2,9 @@ before each
 specifyCallbacks
 	| framebuffer_size_callback mouse_callback scroll_callback |	
 	"callback inits"
-	framebuffer_size_callback := [:win :int1 :int2 | self ].
-	mouse_callback := [].
-	scroll_callback := [].
+	framebuffer_size_callback := [:win :a :b | ].
+	mouse_callback := [:win :a :b | ].
+	scroll_callback := [:win :a :b | ].
 	
 	GLFW makeContextCurrent: window.
 	GLFW setFramebufferSizeCallback: window with: framebuffer_size_callback.
