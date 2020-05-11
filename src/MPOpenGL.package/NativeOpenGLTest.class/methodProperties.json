@@ -2,6 +2,8 @@
 	"class" : {
 		 },
 	"instance" : {
-		"setUpWindow" : "sr 5/11/2020 15:19",
-		"tearDownWindow" : "sr 5/11/2020 15:19",
-		"test_example" : "sr 5/11/2020 15:24" } }
+		"setUp" : "sr 5/11/2020 16:05",
+		"setUpWindow" : "sr 5/11/2020 16:04",
+		"tearDownWindow" : "sr 5/11/2020 16:03",
+		"test_example" : "sr 5/11/2020 16:26",
+		"verifyOglInitializationWorked" : "sr 5/11/2020 16:06" } }

@@ -1,16 +1,10 @@
 test
 test_example
-	"OpenGL example"
-	"A very simple OpenGL example"
-
 	| frames startTime deltaTime framesPerSec |
-	font := StrikeFont familyName: 'Atlanta' pointSize: 11.
-	bounds := 0@0 extent: 400@400.
-	ogl := OpenGL newIn: bounds.
-	ogl ifNil:[^self error: 'Unable to **create renderer'].
-	[frames := 0.
+	frames := 0.
 	startTime := Time millisecondClockValue.
-	[Sensor anyButtonPressed] whileFalse:[
+	
+	[Sensor anyButtonPressed] whileFalse: [
 		"start counting at second frame si------**nce first frame is penalized
 		by the upload of the bitmap font outside of ogl."
 		frames = 1 ifTrue:[startTime := Time millisecondClockValue].
@@ -20,13 +14,10 @@ test_example
 
 		ogl glDisable: GLDepthTest.	"for the simple example only"
 		ogl glDisable: GLLighting.		"for the simple example only"
-
+				
 		ogl glClearColor: 1.0 with: 1.0 with: 1.0 with: 1.0.
 		ogl glClear: GLColorBufferBit.
-
-		ogl glRotatef: 5.0 with: 0.0 with: 0.0 with: 1.0.
 		ogl glColor3f: 1.0 with: 0.0 with: 0.0.
-
 		ogl glBegin: GLPolygon.
 			ogl glVertex2f: -0.7 with: -0.7.
 			ogl glVertex2f:  0.7 with: -0.7.
@@ -72,4 +63,3 @@ test_example
 		ogl swapBuffers.
 		frames := frames + 1.
 	].
-	] ensure:[ogl destroy].
