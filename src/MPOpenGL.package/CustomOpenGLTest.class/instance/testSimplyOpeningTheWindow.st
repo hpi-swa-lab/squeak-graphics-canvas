@@ -1,2 +1,2 @@
-testing - window generation
+test - window generation
 testSimplyOpeningTheWindow

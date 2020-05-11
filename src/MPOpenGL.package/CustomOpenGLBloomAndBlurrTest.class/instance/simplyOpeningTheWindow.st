@@ -1,0 +1,2 @@
+test - window generation
+simplyOpeningTheWindow

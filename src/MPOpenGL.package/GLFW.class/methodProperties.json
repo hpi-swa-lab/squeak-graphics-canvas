@@ -11,6 +11,7 @@
 		"createWindowWidth:height:title:monitor:share:" : "sr 4/21/2020 09:24",
 		"init" : "TZ 4/14/2020 16:02",
 		"makeContextCurrent:" : "TZ 4/14/2020 16:28",
+		"setCursorPosCallback:with:" : "sr 5/11/2020 10:17",
 		"setFramebufferSizeCallback:with:" : "sr 5/11/2020 09:18",
 		"setInputMode:with:with:" : "sr 5/11/2020 10:03",
 		"swapBuffers:" : "TZ 4/14/2020 16:02",

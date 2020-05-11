@@ -1,8 +1,9 @@
-testing
+test
 testOpenGLVersion
 	"given"
 	"when"
-	| ver |
-	ver := GL glGetString: GL GL_VERSION.
+	| glVersion |
+	glVersion := GL glGetString: GL GL_VERSION.
+	glVersion inspect.
 	"then"
-	self assert: (ver beginsWith: '4.6.0').
+	self assert: (glVersion beginsWith: '4.6.0').

@@ -1,4 +1,4 @@
-testing
+test
 testGreenWindow
 	"given"
 	"when"

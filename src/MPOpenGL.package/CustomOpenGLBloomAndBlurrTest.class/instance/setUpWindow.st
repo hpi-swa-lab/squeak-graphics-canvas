@@ -1,6 +1,8 @@
 before each
 setUpWindow
-	self initGlfwWindow.
+	GLFW init.
+	self setGlfwWindowHints.
 	self createGLFWWindow.
 	"self specifyCallbacks."
-	self enableGLFWMouseCapture.
+	"self enableGLFWMouseCapture."
+	GLFW makeContextCurrent: window

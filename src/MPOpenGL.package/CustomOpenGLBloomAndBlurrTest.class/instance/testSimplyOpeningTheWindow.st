@@ -1,2 +1,0 @@
-testing - window generation
-testSimplyOpeningTheWindow
