@@ -1,0 +1,16 @@
+{
+	"category" : "MPOpenGL-Test",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"font",
+		"bounds",
+		"ogl" ],
+	"name" : "NativeOpenGLTest",
+	"pools" : [
+		"OpenGLConstants" ],
+	"super" : "CustomOpenGLParentTestCase",
+	"type" : "normal" }
