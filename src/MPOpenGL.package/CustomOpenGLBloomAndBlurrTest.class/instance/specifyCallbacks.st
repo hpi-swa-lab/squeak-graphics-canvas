@@ -2,7 +2,7 @@ before each
 specifyCallbacks
 	| framebuffer_size_callback mouse_callback scroll_callback |	
 	"callback inits"
-	framebuffer_size_callback := [].
+	framebuffer_size_callback := [:win :int1 :int2 | self ].
 	mouse_callback := [].
 	scroll_callback := [].
 	
