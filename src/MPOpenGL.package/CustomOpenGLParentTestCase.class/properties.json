@@ -7,8 +7,8 @@
 	"commentStamp" : "",
 	"instvars" : [
 		 ],
-	"name" : "CustomOpenGLLazyTest",
+	"name" : "CustomOpenGLParentTestCase",
 	"pools" : [
 		 ],
-	"super" : "CustomOpenGLParentTestCase",
+	"super" : "TestCase",
 	"type" : "normal" }

@@ -10,5 +10,5 @@
 	"name" : "CustomOpenGLBloomAndBlurrTest",
 	"pools" : [
 		 ],
-	"super" : "AnObsoleteCustomOpenGLParentTestCase",
+	"super" : "CustomOpenGLParentTestCase",
 	"type" : "normal" }

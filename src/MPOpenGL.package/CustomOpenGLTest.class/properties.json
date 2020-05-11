@@ -10,5 +10,5 @@
 	"name" : "CustomOpenGLTest",
 	"pools" : [
 		 ],
-	"super" : "TestCase",
+	"super" : "CustomOpenGLParentTestCase",
 	"type" : "normal" }
