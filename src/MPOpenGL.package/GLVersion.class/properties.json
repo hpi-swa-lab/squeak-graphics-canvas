@@ -10,5 +10,5 @@
 	"name" : "GLVersion",
 	"pools" : [
 		 ],
-	"super" : "AnObsoleteOpenGL",
+	"super" : "OpenGL",
 	"type" : "normal" }

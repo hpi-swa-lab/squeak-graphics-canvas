@@ -1,0 +1,2 @@
+as yet unclassified
+GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT ^ 16r00004000

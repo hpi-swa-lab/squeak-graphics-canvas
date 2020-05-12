@@ -1,0 +1,2 @@
+as yet unclassified
+GL_POINT_DISTANCE_ATTENUATION ^ 16r8129

@@ -1,0 +1,2 @@
+as yet unclassified
+GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING ^ 16r889A

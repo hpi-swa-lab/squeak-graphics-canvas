@@ -1,0 +1,2 @@
+as yet unclassified
+GL_TEXTURE_COORD_ARRAY_POINTER ^ 16r8092

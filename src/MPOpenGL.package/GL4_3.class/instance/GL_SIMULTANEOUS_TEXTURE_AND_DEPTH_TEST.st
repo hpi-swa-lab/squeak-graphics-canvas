@@ -1,0 +1,2 @@
+as yet unclassified
+GL_SIMULTANEOUS_TEXTURE_AND_DEPTH_TEST ^ 16r82AC

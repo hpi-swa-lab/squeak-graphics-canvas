@@ -1,0 +1,2 @@
+as yet unclassified
+GL_FRAGMENT_SHADER_INVOCATIONS ^ 16r82F4

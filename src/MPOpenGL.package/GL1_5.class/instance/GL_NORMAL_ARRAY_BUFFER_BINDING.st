@@ -1,0 +1,2 @@
+as yet unclassified
+GL_NORMAL_ARRAY_BUFFER_BINDING ^ 16r8897

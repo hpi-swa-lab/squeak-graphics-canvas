@@ -1,0 +1,2 @@
+as yet unclassified
+GL_TEXTURE_COMPRESSED_BLOCK_WIDTH ^ 16r82B1

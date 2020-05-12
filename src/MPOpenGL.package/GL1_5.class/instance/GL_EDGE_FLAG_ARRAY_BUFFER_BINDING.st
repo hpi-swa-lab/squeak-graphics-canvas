@@ -1,0 +1,2 @@
+as yet unclassified
+GL_EDGE_FLAG_ARRAY_BUFFER_BINDING ^ 16r889B

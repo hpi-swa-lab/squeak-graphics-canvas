@@ -1,0 +1,2 @@
+as yet unclassified
+GL_TRANSFORM_FEEDBACK_BARRIER_BIT ^ 16r00000800

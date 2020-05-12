@@ -1,0 +1,2 @@
+as yet unclassified
+GL_MAP_UNSYNCHRONIZED_BIT ^ 16r0020

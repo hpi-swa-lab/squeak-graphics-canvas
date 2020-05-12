@@ -10,5 +10,5 @@
 	"name" : "GLES2Version",
 	"pools" : [
 		 ],
-	"super" : "AnObsoleteOpenGL",
+	"super" : "OpenGL",
 	"type" : "normal" }

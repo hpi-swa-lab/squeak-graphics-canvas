@@ -1,0 +1,2 @@
+as yet unclassified
+GL_SECONDARY_COLOR_ARRAY_SIZE ^ 16r845A

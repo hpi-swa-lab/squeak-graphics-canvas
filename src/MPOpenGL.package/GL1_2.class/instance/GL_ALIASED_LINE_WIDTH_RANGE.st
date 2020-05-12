@@ -1,0 +1,2 @@
+as yet unclassified
+GL_ALIASED_LINE_WIDTH_RANGE ^ 16r846E

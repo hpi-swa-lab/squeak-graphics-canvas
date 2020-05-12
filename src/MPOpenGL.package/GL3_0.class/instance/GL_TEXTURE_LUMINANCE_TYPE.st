@@ -1,0 +1,2 @@
+as yet unclassified
+GL_TEXTURE_LUMINANCE_TYPE ^ 16r8C14

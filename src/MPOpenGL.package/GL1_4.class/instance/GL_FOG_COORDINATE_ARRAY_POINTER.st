@@ -1,0 +1,2 @@
+as yet unclassified
+GL_FOG_COORDINATE_ARRAY_POINTER ^ 16r8456

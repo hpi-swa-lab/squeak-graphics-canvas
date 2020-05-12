@@ -1,0 +1,2 @@
+as yet unclassified
+GL_FOG_COORDINATE_ARRAY_BUFFER_BINDING ^ 16r889D
