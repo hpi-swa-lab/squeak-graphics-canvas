@@ -7,7 +7,7 @@
 	"commentStamp" : "",
 	"instvars" : [
 		 ],
-	"name" : "GLGeometryShader",
+	"name" : "FragmentShader",
 	"pools" : [
 		"OpenGLConstants" ],
 	"super" : "GLPartialShader",
