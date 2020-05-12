@@ -9,6 +9,6 @@
 		 ],
 	"name" : "GLTessEvaluationShader",
 	"pools" : [
-		"AnObsoleteOpenGLConstants" ],
+		"OpenGLConstants" ],
 	"super" : "GLPartialShader",
 	"type" : "normal" }

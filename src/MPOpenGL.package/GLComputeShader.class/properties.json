@@ -9,6 +9,6 @@
 		 ],
 	"name" : "GLComputeShader",
 	"pools" : [
-		"AnObsoleteOpenGLConstants" ],
+		"OpenGLConstants" ],
 	"super" : "GLPartialShader",
 	"type" : "normal" }

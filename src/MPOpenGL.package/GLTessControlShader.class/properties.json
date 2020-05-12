@@ -9,6 +9,6 @@
 		 ],
 	"name" : "GLTessControlShader",
 	"pools" : [
-		"AnObsoleteOpenGLConstants" ],
+		"OpenGLConstants" ],
 	"super" : "GLPartialShader",
 	"type" : "normal" }

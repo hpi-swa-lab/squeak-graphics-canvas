@@ -9,6 +9,6 @@
 		 ],
 	"name" : "GLVertexShader",
 	"pools" : [
-		"AnObsoleteOpenGLConstants" ],
+		"OpenGLConstants" ],
 	"super" : "GLPartialShader",
 	"type" : "normal" }
