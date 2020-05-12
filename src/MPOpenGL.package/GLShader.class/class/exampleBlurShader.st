@@ -1,5 +1,5 @@
 example
-exampleBlurrShader
+exampleBlurShader
 	| gl shader |
 	gl := GL4_6 new.
 	shader := self newFor: gl.

@@ -1,6 +1,6 @@
 {
 	"class" : {
-		"exampleBlurrShader" : "sr 5/12/2020 16:05",
+		"exampleBlurShader" : "sr 5/12/2020 16:18",
 		"newFor:" : "sr 5/12/2020 15:45" },
 	"instance" : {
 		"attachShaders" : "sr 5/12/2020 15:23",
