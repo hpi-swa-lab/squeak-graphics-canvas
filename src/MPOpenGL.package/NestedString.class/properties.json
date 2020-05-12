@@ -1,0 +1,14 @@
+{
+	"category" : "MPOpenGL",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "NestedString",
+	"pools" : [
+		 ],
+	"super" : "ExternalData",
+	"type" : "normal" }

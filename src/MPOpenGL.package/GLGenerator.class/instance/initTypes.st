@@ -4,9 +4,9 @@ initTypes
 		'void' -> 'void'.
 		'void *' -> 'void*'.
 		'const void *' -> 'void*'.
-		'void **' -> 'void*'.
+		'void **' -> 'void**'.
 		'const void *const*' -> 'void*'.
-		'const GLchar *const*' -> 'char**'.
+		'const GLchar *const*' -> 'NestedString*'.
 		'const GLubyte *' -> 'char*'.
 		'const GLchar *' -> 'char*'.
 		'GLchar *' -> 'char*'.
