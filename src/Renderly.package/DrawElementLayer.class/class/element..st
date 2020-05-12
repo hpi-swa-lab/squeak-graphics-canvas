@@ -1,6 +1,6 @@
 instance creation
-offset: aPoint
+element: anElement
 
 	^ self new
-		offset: aPoint;
+		element: anElement;
 		yourself

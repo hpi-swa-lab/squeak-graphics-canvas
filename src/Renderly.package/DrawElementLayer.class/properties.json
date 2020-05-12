@@ -1,0 +1,14 @@
+{
+	"category" : "Renderly-Record",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"element" ],
+	"name" : "DrawElementLayer",
+	"pools" : [
+		 ],
+	"super" : "DrawLayer",
+	"type" : "normal" }

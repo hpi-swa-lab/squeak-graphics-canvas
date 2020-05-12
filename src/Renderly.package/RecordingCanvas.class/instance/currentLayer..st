@@ -1,4 +1,4 @@
 accessing
 currentLayer: anObject
 
-	currentLayer := anObject.
+	currentLayer := anObject

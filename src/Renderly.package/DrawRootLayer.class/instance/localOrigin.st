@@ -1,0 +1,4 @@
+accessing
+localOrigin
+
+	^ self globalOrigin

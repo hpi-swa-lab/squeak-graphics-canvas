@@ -1,0 +1,14 @@
+{
+	"category" : "Renderly-Record",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"cachedForm" ],
+	"name" : "DrawCachedLayer",
+	"pools" : [
+		 ],
+	"super" : "DrawLayer",
+	"type" : "normal" }

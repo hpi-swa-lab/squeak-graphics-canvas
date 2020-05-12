@@ -1,9 +1,11 @@
 {
 	"class" : {
+		"offset:" : "stlu 5/12/2020 11:40",
+		"offset:clipRect:" : "stlu 5/12/2020 12:08",
 		"transform:clipRect:smoothing:" : "stlu 4/20/2020 09:31" },
 	"instance" : {
-		"applyOn:" : "stlu 4/21/2020 17:34",
-		"offset" : "stlu 4/20/2020 18:43",
+		"applyOn:" : "stlu 5/12/2020 12:42",
+		"origin" : "stlu 5/12/2020 12:44",
 		"smoothing" : "stlu 4/20/2020 09:32",
 		"smoothing:" : "stlu 4/20/2020 09:32",
 		"transform" : "stlu 4/20/2020 09:32",
