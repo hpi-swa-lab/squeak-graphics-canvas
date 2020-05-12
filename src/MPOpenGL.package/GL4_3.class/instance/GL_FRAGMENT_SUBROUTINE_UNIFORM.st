@@ -1,0 +1,2 @@
+as yet unclassified
+GL_FRAGMENT_SUBROUTINE_UNIFORM ^ 16r92F2

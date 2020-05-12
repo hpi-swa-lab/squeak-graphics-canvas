@@ -1,0 +1,2 @@
+as yet unclassified
+GL_COMPRESSED_LUMINANCE_ALPHA ^ 16r84EB

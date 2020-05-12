@@ -1,0 +1,2 @@
+as yet unclassified
+GL_COMPRESSED_TEXTURE_FORMATS ^ 16r86A3

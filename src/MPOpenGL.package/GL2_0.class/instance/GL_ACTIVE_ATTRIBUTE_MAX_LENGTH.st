@@ -1,0 +1,2 @@
+as yet unclassified
+GL_ACTIVE_ATTRIBUTE_MAX_LENGTH ^ 16r8B8A

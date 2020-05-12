@@ -1,0 +1,2 @@
+as yet unclassified
+GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT ^ 16r8E8F

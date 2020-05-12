@@ -1,0 +1,2 @@
+as yet unclassified
+GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE ^ 16r910A

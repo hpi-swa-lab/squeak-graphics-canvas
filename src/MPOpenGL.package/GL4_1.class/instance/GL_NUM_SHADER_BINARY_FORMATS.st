@@ -1,0 +1,2 @@
+as yet unclassified
+GL_NUM_SHADER_BINARY_FORMATS ^ 16r8DF9

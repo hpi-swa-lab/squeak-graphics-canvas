@@ -1,0 +1,2 @@
+as yet unclassified
+GL_TRIANGLE_STRIP_ADJACENCY ^ 16r000D

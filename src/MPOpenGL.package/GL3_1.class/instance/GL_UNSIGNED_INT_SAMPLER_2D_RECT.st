@@ -1,0 +1,2 @@
+as yet unclassified
+GL_UNSIGNED_INT_SAMPLER_2D_RECT ^ 16r8DD5

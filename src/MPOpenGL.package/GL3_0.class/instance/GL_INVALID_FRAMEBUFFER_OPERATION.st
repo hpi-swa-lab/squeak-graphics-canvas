@@ -1,0 +1,2 @@
+as yet unclassified
+GL_INVALID_FRAMEBUFFER_OPERATION ^ 16r0506

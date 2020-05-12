@@ -1,0 +1,2 @@
+as yet unclassified
+GL_CURRENT_RASTER_POSITION_VALID ^ 16r0B08

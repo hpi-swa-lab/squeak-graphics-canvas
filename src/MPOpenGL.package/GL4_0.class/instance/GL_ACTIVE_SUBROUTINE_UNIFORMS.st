@@ -1,0 +1,2 @@
+as yet unclassified
+GL_ACTIVE_SUBROUTINE_UNIFORMS ^ 16r8DE6

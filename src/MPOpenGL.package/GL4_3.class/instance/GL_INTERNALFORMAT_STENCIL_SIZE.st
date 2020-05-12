@@ -1,0 +1,2 @@
+as yet unclassified
+GL_INTERNALFORMAT_STENCIL_SIZE ^ 16r8276

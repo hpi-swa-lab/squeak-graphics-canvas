@@ -1,0 +1,2 @@
+as yet unclassified
+GL_TRANSFORM_FEEDBACK_BUFFER_ACTIVE ^ 16r8E24

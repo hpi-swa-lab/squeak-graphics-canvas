@@ -1,0 +1,2 @@
+as yet unclassified
+GL_INTERNALFORMAT_SUPPORTED ^ 16r826F

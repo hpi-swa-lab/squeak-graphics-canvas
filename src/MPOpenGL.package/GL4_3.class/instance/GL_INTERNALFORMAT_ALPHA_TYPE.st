@@ -1,0 +1,2 @@
+as yet unclassified
+GL_INTERNALFORMAT_ALPHA_TYPE ^ 16r827B

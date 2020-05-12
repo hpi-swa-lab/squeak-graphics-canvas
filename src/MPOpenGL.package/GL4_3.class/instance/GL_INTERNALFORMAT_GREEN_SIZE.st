@@ -1,0 +1,2 @@
+as yet unclassified
+GL_INTERNALFORMAT_GREEN_SIZE ^ 16r8272
