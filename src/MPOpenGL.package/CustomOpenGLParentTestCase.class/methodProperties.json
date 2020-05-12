@@ -2,4 +2,7 @@
 	"class" : {
 		 },
 	"instance" : {
-		 } }
+		"setUp" : "sr 5/12/2020 09:39",
+		"setUpWindow" : "sr 5/12/2020 09:40",
+		"tearDown" : "sr 5/12/2020 09:39",
+		"tearDownWindow" : "sr 5/12/2020 09:40" } }
