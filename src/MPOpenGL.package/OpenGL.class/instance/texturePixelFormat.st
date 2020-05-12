@@ -1,0 +1,3 @@
+accessing
+texturePixelFormat
+	^ platform texturePixelFormat
