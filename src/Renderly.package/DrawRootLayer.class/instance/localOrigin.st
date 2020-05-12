@@ -1,4 +1,4 @@
 accessing
-origin
+localOrigin
 
 	^ self globalOrigin

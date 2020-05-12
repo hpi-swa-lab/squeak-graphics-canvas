@@ -1,4 +1,4 @@
 accessing
 globalClipRect
-	"global clip rect (relative to global origin)"
-	^ self clipRect translateBy: self origin
+	"clipping rectangle relative to global origin (absolute coordinates)"
+	^ self clipRect
