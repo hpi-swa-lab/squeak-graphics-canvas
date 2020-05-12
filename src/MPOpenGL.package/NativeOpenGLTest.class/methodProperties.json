@@ -3,7 +3,7 @@
 		 },
 	"instance" : {
 		"setUp" : "sr 5/11/2020 16:05",
-		"setUpWindow" : "sr 5/11/2020 16:04",
+		"setUpWindow" : "sr 5/12/2020 17:45",
 		"tearDownWindow" : "sr 5/11/2020 16:03",
 		"test_example" : "sr 5/11/2020 16:26",
-		"verifyOglInitializationWorked" : "sr 5/11/2020 16:06" } }
+		"verifyOglInitializationWorked" : "sr 5/12/2020 17:46" } }

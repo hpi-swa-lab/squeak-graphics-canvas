@@ -1,7 +1,9 @@
 shader lifecycle
 created
-	| shaderInstance |
+	| shaderInstance shaderCode |
 	shaderInstance := gl glCreateShader: self kind.
-	gl glShaderSource: shaderInstance with: 1 with: (Array with: code) with: nil.
+	shaderCode := NestedString externalNew
+			string: code asUtf8ExternalData; yourself.
+	gl glShaderSource: shaderInstance with: 1 with: shaderCode with: nil.
 	gl glCompileShader: shaderInstance.
 	^shaderInstance.
