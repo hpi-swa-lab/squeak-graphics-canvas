@@ -1,0 +1,16 @@
+{
+	"category" : "MPOpenGL",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"ogl",
+		"programObjects" ],
+	"name" : "OGLShaderManager",
+	"pools" : [
+		"GLExtConstants",
+		"OpenGLConstants" ],
+	"super" : "Object",
+	"type" : "normal" }

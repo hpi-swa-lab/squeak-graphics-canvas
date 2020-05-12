@@ -9,6 +9,6 @@
 		 ],
 	"name" : "GLFragmentShader",
 	"pools" : [
-		"OpenGLConstants" ],
+		"AnObsoleteOpenGLConstants" ],
 	"super" : "GLPartialShader",
 	"type" : "normal" }

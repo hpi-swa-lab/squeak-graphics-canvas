@@ -6,6 +6,6 @@ applyOn: aCanvas
 			self commands do: [:cmd | cmd applyOn: aCanvas]]
 		ifTrue: [
 			aCanvas
-				clipBy: self clipRect
+				clipBy: self localClipRect
 				during: [:clippedCanvas |
 					self commands do: [:cmd | cmd applyOn: clippedCanvas]]]

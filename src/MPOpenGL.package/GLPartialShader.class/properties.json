@@ -11,6 +11,6 @@
 		"code" ],
 	"name" : "GLPartialShader",
 	"pools" : [
-		"OpenGLConstants" ],
+		"AnObsoleteOpenGLConstants" ],
 	"super" : "Object",
 	"type" : "normal" }

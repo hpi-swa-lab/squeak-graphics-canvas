@@ -9,6 +9,6 @@
 		 ],
 	"name" : "GLGeometryShader",
 	"pools" : [
-		"OpenGLConstants" ],
+		"AnObsoleteOpenGLConstants" ],
 	"super" : "GLPartialShader",
 	"type" : "normal" }

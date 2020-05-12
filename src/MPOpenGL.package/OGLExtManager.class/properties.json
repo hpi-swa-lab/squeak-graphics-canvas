@@ -1,0 +1,14 @@
+{
+	"category" : "MPOpenGL",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"ogl" ],
+	"name" : "OGLExtManager",
+	"pools" : [
+		"GLExtConstants" ],
+	"super" : "Object",
+	"type" : "normal" }

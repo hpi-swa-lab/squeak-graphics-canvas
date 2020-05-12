@@ -1,6 +1,6 @@
 drawing-support
-clipBy: newClipRect during: aBlock
+clipBy: localClipRect during: aBlock
 
 	self
-		newCurrentLayer: (DrawLayer clipRect: newClipRect)
+		newCurrentLayer: (DrawLayer clipRect: (localClipRect translateBy: self globalOrigin))
 		during: aBlock

@@ -1,6 +1,7 @@
 drawing-support
-translateBy: aPoint clippingTo: aRect during: aBlock
+translateBy: delta clippingTo: localClipRect during: aBlock
 
 	self
-		newCurrentLayer: (DrawTranslateLayer offset: aPoint clipRect: aRect)
+		translateTo: (self globalOrigin translateBy: delta)
+		clippingTo: (localClipRect translateBy: self globalOrigin)
 		during: aBlock
