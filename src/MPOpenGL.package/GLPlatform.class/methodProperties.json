@@ -1,0 +1,9 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"beginFrame:" : "TZ 5/12/2020 12:30",
+		"glExtCallingConvention" : "TZ 5/12/2020 12:09",
+		"glExtGetProcAddress:" : "TZ 5/12/2020 12:12",
+		"glExtModule" : "TZ 5/12/2020 12:14",
+		"openGLLibraryName" : "TZ 5/12/2020 12:20" } }

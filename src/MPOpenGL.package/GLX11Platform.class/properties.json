@@ -1,0 +1,14 @@
+{
+	"category" : "MPOpenGL",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "GLX11Platform",
+	"pools" : [
+		 ],
+	"super" : "GLPlatform",
+	"type" : "normal" }

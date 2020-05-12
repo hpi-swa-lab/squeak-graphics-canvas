@@ -1,0 +1,14 @@
+{
+	"category" : "MPOpenGL",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "GLMacOSPlatform",
+	"pools" : [
+		 ],
+	"super" : "GLPlatform",
+	"type" : "normal" }
