@@ -1,0 +1,15 @@
+{
+	"category" : "MPOpenGL-Shaders",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"shaders",
+		"id" ],
+	"name" : "GLShaderRecipe",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

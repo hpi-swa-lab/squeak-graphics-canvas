@@ -1,0 +1,16 @@
+{
+	"category" : "MPOpenGL-Shaders",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"gl",
+		"id",
+		"shaders" ],
+	"name" : "GLShader",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

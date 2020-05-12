@@ -1,0 +1,14 @@
+{
+	"category" : "MPOpenGL-Shaders",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "GLGeometryShader",
+	"pools" : [
+		"OpenGLConstants" ],
+	"super" : "GLPartialShader",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "MPOpenGL-Shaders",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "GLTessEvaluationShader",
+	"pools" : [
+		"OpenGLConstants" ],
+	"super" : "GLPartialShader",
+	"type" : "normal" }
