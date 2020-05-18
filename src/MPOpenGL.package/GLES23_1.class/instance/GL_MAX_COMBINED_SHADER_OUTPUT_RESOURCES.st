@@ -1,0 +1,2 @@
+as yet unclassified
+GL_MAX_COMBINED_SHADER_OUTPUT_RESOURCES ^ 16r8F39

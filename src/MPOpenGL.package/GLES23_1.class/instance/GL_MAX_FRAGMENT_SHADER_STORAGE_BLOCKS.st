@@ -1,0 +1,2 @@
+as yet unclassified
+GL_MAX_FRAGMENT_SHADER_STORAGE_BLOCKS ^ 16r90DA

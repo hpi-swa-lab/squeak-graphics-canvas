@@ -1,0 +1,2 @@
+as yet unclassified
+GL_MAX_COLOR_TEXTURE_SAMPLES ^ 16r910E

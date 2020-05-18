@@ -1,0 +1,2 @@
+as yet unclassified
+GL_MIN_PROGRAM_TEXTURE_GATHER_OFFSET ^ 16r8E5E

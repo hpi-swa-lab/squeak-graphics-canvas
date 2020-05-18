@@ -1,0 +1,2 @@
+as yet unclassified
+GL_MAX_FRAGMENT_INTERPOLATION_OFFSET ^ 16r8E5C

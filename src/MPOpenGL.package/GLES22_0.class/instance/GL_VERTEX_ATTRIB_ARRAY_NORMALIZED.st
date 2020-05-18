@@ -1,0 +1,2 @@
+as yet unclassified
+GL_VERTEX_ATTRIB_ARRAY_NORMALIZED ^ 16r886A

@@ -1,0 +1,2 @@
+as yet unclassified
+GL_STENCIL_BACK_WRITEMASK ^ 16r8CA5

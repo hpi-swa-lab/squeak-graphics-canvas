@@ -1,0 +1,2 @@
+as yet unclassified
+GL_MAX_SHADER_STORAGE_BLOCK_SIZE ^ 16r90DE

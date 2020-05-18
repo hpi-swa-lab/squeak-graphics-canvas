@@ -1,0 +1,2 @@
+as yet unclassified
+GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS ^ 16r8B4D

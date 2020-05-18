@@ -7,7 +7,7 @@ initTypes
 		'void **' -> 'void**'.
 		'const void *const*' -> 'void*'.
 		'const GLchar *const*' -> 'NestedString*'.
-		'const GLubyte *' -> 'char*'.
+		'const GLubyte *' -> 'void*'.
 		'const GLchar *' -> 'char*'.
 		'GLchar *' -> 'char*'.
 		'GLfloat *' -> 'float*'.
@@ -17,7 +17,7 @@ initTypes
 		'const GLuint *' -> 'ulong*'.
 		'const GLshort *' -> 'short*'.
 		'const GLushort *' -> 'ushort*'.
-		'const GLbyte *' -> 'char*'.
+		'const GLbyte *' -> 'void*'.
 		'GLint *' -> 'long*'.
 		'GLuint *' -> 'ulong*'.
 		'GLboolean *' -> 'uchar*'.
@@ -66,6 +66,6 @@ initTypes
 		'GLDEBUGPROC' -> 'void*'.
 		'const GLboolean *' -> 'uchar*'.
 		'GLushort *' -> 'ushort*'.
-		'GLubyte *' -> 'uchar*'.
+		'GLubyte *' -> 'void*'.
 		'const GLintptr *' -> 'int**'.
 	}as: Dictionary.

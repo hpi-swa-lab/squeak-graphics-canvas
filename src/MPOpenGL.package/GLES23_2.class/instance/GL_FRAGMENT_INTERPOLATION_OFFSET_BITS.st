@@ -1,0 +1,2 @@
+as yet unclassified
+GL_FRAGMENT_INTERPOLATION_OFFSET_BITS ^ 16r8E5D

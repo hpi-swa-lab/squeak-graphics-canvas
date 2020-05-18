@@ -1,0 +1,2 @@
+as yet unclassified
+GL_TEXTURE_INTERNAL_FORMAT ^ 16r1003
