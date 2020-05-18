@@ -1,0 +1,17 @@
+{
+	"category" : "MPOpenGL",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"gl",
+		"id",
+		"numElements",
+		"glType" ],
+	"name" : "GLVertexArrayObject",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

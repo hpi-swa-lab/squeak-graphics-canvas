@@ -1,13 +1,19 @@
 {
 	"class" : {
-		"newFor:" : "TZ 5/18/2020 12:06" },
+		"newFor:" : "TZ 5/18/2020 16:32" },
 	"instance" : {
-		"createProgram" : "TZ 5/18/2020 12:08",
-		"data:usage:" : "TZ 5/18/2020 12:29",
+		"componentsPerVertex" : "TZ 5/18/2020 18:48",
+		"componentsPerVertex:" : "TZ 5/18/2020 18:48",
+		"createBuffer" : "TZ 5/18/2020 16:30",
+		"data:usage:componentsPerVertex:" : "TZ 5/18/2020 18:47",
 		"draw:" : "TZ 5/18/2020 12:30",
 		"draw:from:count:" : "TZ 5/18/2020 12:28",
 		"gl" : "TZ 5/18/2020 11:45",
 		"gl:" : "TZ 5/18/2020 11:45",
+		"glType" : "TZ 5/18/2020 17:08",
+		"glType:" : "TZ 5/18/2020 18:48",
 		"id" : "TZ 5/18/2020 11:45",
 		"id:" : "TZ 5/18/2020 11:45",
-		"isGLBuffer" : "TZ 5/18/2020 13:02" } }
+		"isGLBuffer" : "TZ 5/18/2020 13:02",
+		"numElements" : "TZ 5/18/2020 17:08",
+		"numElements:" : "TZ 5/18/2020 18:48" } }

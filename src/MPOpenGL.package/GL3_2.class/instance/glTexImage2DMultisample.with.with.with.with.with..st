@@ -1,2 +1,2 @@
 as yet unclassified
-glTexImage2DMultisample: target with: samples with: internalformat with: width with: height with: fixedsamplelocations <apicall: void 'glTexImage2DMultisample' (ulong long ulong long long uchar) module: 'libGL.so'> ^ self externalCallFailed
+glTexImage2DMultisample: target with: samples with: internalformat with: width with: height with: fixedsamplelocations <apicall: void 'glTexImage2DMultisample' (ulong long ulong long long ulong) module: 'libGL.so'> ^ self externalCallFailed

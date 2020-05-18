@@ -1,2 +1,2 @@
 as yet unclassified
-glTextureStorage2DMultisample: texture with: samples with: internalformat with: width with: height with: fixedsamplelocations <apicall: void 'glTextureStorage2DMultisample' (ulong long ulong long long uchar) module: 'libGL.so'> ^ self externalCallFailed
+glTextureStorage2DMultisample: texture with: samples with: internalformat with: width with: height with: fixedsamplelocations <apicall: void 'glTextureStorage2DMultisample' (ulong long ulong long long ulong) module: 'libGL.so'> ^ self externalCallFailed

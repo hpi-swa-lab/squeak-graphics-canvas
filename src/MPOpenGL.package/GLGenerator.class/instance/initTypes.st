@@ -20,7 +20,7 @@ initTypes
 		'const GLbyte *' -> 'void*'.
 		'GLint *' -> 'long*'.
 		'GLuint *' -> 'ulong*'.
-		'GLboolean *' -> 'uchar*'.
+		'GLboolean *' -> 'ulong*'.
 		'const GLenum *' -> 'ulong*'.
 		'GLenum *' -> 'ulong*'.
 		'GLsizei *' -> 'long*'.
@@ -30,7 +30,7 @@ initTypes
 		'GLdouble *' -> 'double*'.
 		'GLshort *' -> 'short*'.
 		'GLenum' -> 'ulong'.
-		'GLboolean' -> 'uchar'.
+		'GLboolean' -> 'ulong'.
 		'GLbitfield' -> 'ulong'.
 		'GLubyte' -> 'ubyte'.
 		'GLbyte' -> 'byte'.

@@ -1,2 +1,2 @@
 as yet unclassified
-glIsShader: shader <apicall: uchar 'glIsShader' (ulong) module: 'libGL.so'> ^ self externalCallFailed
+glIsShader: shader <apicall: ulong 'glIsShader' (ulong) module: 'libGL.so'> ^ self externalCallFailed

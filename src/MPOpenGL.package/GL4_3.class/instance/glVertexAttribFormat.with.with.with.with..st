@@ -1,2 +1,2 @@
 as yet unclassified
-glVertexAttribFormat: attribindex with: size with: type with: normalized with: relativeoffset <apicall: void 'glVertexAttribFormat' (ulong long ulong uchar ulong) module: 'libGL.so'> ^ self externalCallFailed
+glVertexAttribFormat: attribindex with: size with: type with: normalized with: relativeoffset <apicall: void 'glVertexAttribFormat' (ulong long ulong ulong ulong) module: 'libGL.so'> ^ self externalCallFailed

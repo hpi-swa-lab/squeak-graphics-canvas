@@ -1,2 +1,2 @@
 as yet unclassified
-glIsRenderbuffer: renderbuffer <apicall: uchar 'glIsRenderbuffer' (ulong) module: 'libGL.so'> ^ self externalCallFailed
+glIsRenderbuffer: renderbuffer <apicall: ulong 'glIsRenderbuffer' (ulong) module: 'libGL.so'> ^ self externalCallFailed

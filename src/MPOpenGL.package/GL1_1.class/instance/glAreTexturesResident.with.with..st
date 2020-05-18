@@ -1,2 +1,2 @@
 as yet unclassified
-glAreTexturesResident: n with: textures with: residences <apicall: uchar 'glAreTexturesResident' (long ulong* uchar*) module: 'libGL.so'> ^ self externalCallFailed
+glAreTexturesResident: n with: textures with: residences <apicall: ulong 'glAreTexturesResident' (long ulong* ulong*) module: 'libGL.so'> ^ self externalCallFailed

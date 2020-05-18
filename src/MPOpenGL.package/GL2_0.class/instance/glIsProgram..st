@@ -1,2 +1,2 @@
 as yet unclassified
-glIsProgram: program <apicall: uchar 'glIsProgram' (ulong) module: 'libGL.so'> ^ self externalCallFailed
+glIsProgram: program <apicall: ulong 'glIsProgram' (ulong) module: 'libGL.so'> ^ self externalCallFailed

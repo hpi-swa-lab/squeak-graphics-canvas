@@ -1,2 +1,2 @@
 as yet unclassified
-glEdgeFlag: flag <apicall: void 'glEdgeFlag' (uchar) module: 'libGL.so'> ^ self externalCallFailed
+glEdgeFlag: flag <apicall: void 'glEdgeFlag' (ulong) module: 'libGL.so'> ^ self externalCallFailed

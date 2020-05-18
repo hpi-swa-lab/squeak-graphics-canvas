@@ -1,2 +1,2 @@
 as yet unclassified
-glColorMask: red with: green with: blue with: alpha <apicall: void 'glColorMask' (uchar uchar uchar uchar) module: 'libGL.so'> ^ self externalCallFailed
+glColorMask: red with: green with: blue with: alpha <apicall: void 'glColorMask' (ulong ulong ulong ulong) module: 'libGL.so'> ^ self externalCallFailed
