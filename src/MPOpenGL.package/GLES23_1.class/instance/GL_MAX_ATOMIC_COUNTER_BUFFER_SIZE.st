@@ -1,0 +1,2 @@
+as yet unclassified
+GL_MAX_ATOMIC_COUNTER_BUFFER_SIZE ^ 16r92D8

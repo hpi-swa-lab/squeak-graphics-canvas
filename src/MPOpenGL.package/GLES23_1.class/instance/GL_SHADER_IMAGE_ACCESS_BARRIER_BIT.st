@@ -1,0 +1,2 @@
+as yet unclassified
+GL_SHADER_IMAGE_ACCESS_BARRIER_BIT ^ 16r00000020

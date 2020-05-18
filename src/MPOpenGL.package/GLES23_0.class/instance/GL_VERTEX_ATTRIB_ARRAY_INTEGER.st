@@ -1,0 +1,2 @@
+as yet unclassified
+GL_VERTEX_ATTRIB_ARRAY_INTEGER ^ 16r88FD

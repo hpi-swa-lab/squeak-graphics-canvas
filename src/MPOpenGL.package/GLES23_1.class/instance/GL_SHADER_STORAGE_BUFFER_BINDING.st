@@ -1,0 +1,2 @@
+as yet unclassified
+GL_SHADER_STORAGE_BUFFER_BINDING ^ 16r90D3

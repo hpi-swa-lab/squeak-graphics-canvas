@@ -1,0 +1,2 @@
+as yet unclassified
+GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY ^ 16r906A

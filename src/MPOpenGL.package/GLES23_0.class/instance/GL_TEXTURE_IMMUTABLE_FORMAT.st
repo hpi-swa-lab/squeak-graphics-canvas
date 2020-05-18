@@ -1,0 +1,2 @@
+as yet unclassified
+GL_TEXTURE_IMMUTABLE_FORMAT ^ 16r912F

@@ -1,0 +1,2 @@
+as yet unclassified
+GL_MAX_VERTEX_SHADER_STORAGE_BLOCKS ^ 16r90D6

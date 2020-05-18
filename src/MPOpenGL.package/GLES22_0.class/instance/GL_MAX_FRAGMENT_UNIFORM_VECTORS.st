@@ -1,0 +1,2 @@
+as yet unclassified
+GL_MAX_FRAGMENT_UNIFORM_VECTORS ^ 16r8DFD

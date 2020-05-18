@@ -1,0 +1,2 @@
+as yet unclassified
+GL_VERTEX_ATTRIB_ARRAY_DIVISOR ^ 16r88FE

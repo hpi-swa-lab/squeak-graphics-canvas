@@ -1,2 +1,2 @@
 as yet unclassified
-glGetnPolygonStipple: bufSize with: pattern <apicall: void 'glGetnPolygonStipple' (long uchar*) module: 'libGL.so'> ^ self externalCallFailed
+glGetnPolygonStipple: bufSize with: pattern <apicall: void 'glGetnPolygonStipple' (long void*) module: 'libGL.so'> ^ self externalCallFailed

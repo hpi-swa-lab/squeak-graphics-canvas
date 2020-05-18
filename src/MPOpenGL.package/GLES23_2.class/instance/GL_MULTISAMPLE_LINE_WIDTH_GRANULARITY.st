@@ -1,0 +1,2 @@
+as yet unclassified
+GL_MULTISAMPLE_LINE_WIDTH_GRANULARITY ^ 16r9382

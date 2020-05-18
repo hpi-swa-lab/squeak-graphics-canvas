@@ -1,0 +1,2 @@
+as yet unclassified
+GL_MAX_GEOMETRY_UNIFORM_COMPONENTS ^ 16r8DDF
