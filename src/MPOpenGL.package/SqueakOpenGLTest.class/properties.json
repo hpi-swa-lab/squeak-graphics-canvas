@@ -9,7 +9,7 @@
 		"font",
 		"bounds",
 		"ogl" ],
-	"name" : "NativeOpenGLTest",
+	"name" : "SqueakOpenGLTest",
 	"pools" : [
 		"OpenGLConstants" ],
 	"super" : "CustomOpenGLParentTestCase",
