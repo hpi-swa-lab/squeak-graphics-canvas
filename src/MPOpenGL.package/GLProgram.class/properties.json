@@ -7,9 +7,10 @@
 	"commentStamp" : "",
 	"instvars" : [
 		"gl",
-		"code" ],
-	"name" : "GLPartialShader",
+		"id",
+		"shaders" ],
+	"name" : "GLProgram",
 	"pools" : [
-		"OpenGLConstants" ],
+		 ],
 	"super" : "Object",
 	"type" : "normal" }

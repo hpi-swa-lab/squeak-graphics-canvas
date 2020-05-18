@@ -10,5 +10,5 @@
 	"name" : "ComputeShader",
 	"pools" : [
 		"OpenGLConstants" ],
-	"super" : "GLPartialShader",
+	"super" : "GLShaderSource",
 	"type" : "normal" }

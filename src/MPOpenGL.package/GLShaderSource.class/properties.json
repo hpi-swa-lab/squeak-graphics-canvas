@@ -6,9 +6,10 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"shaders" ],
-	"name" : "GLShaderRecipe",
+		"gl",
+		"code" ],
+	"name" : "GLShaderSource",
 	"pools" : [
-		 ],
+		"OpenGLConstants" ],
 	"super" : "Object",
 	"type" : "normal" }
