@@ -1,18 +1,18 @@
 {
 	"class" : {
-		"exampleBlurShader" : "sr 5/12/2020 16:18",
-		"newFor:" : "sr 5/12/2020 15:45" },
+		"exampleBlurShader" : "TZ 5/18/2020 12:03",
+		"newFor:shaders:" : "TZ 5/18/2020 12:02" },
 	"instance" : {
 		"attachShaders" : "sr 5/12/2020 15:23",
 		"createProgram" : "sr 5/12/2020 15:18",
-		"deleteShaders:" : "sr 5/12/2020 15:28",
+		"deleteShaders:" : "TZ 5/18/2020 12:01",
 		"gl" : "sr 5/12/2020 15:17",
 		"gl:" : "sr 5/12/2020 15:17",
 		"id" : "sr 5/12/2020 12:14",
 		"id:" : "sr 5/12/2020 15:17",
-		"initialize" : "sr 5/12/2020 15:41",
-		"setUpProgram" : "sr 5/12/2020 15:43",
+		"setUpProgram" : "TZ 5/18/2020 12:01",
 		"shaders" : "sr 5/12/2020 12:22",
 		"shaders:" : "sr 5/12/2020 12:22",
 		"shareGlInstance" : "sr 5/12/2020 15:43",
-		"use" : "sr 5/12/2020 15:09" } }
+		"use" : "sr 5/12/2020 15:09",
+		"vertexAttib:value:" : "TZ 5/18/2020 13:03" } }

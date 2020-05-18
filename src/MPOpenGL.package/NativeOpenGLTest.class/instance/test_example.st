@@ -1,9 +1,15 @@
 test
 test_example
-	| frames startTime deltaTime framesPerSec |
+	| frames startTime deltaTime framesPerSec program vbo |
 	frames := 0.
 	startTime := Time millisecondClockValue.
 	
+	program := GLProgram newFor: ogl shaders: {VertexShader file: 'blur.vs'. FragmentShader file: 'blur.fs'}.
+	vbo := GLBuffer
+		newFor: ogl;
+		data: {-0.7. 0.7. 0.7. -0.7. 0.7. 0.7. -0.7. 0.7} asFloatArray;
+		yourself.
+
 	[Sensor anyButtonPressed] whileFalse: [
 		"start counting at second frame si------**nce first frame is penalized
 		by the upload of the bitmap font outside of ogl."
@@ -17,13 +23,9 @@ test_example
 				
 		ogl glClearColor: 1.0 with: 1.0 with: 1.0 with: 1.0.
 		ogl glClear: GLColorBufferBit.
+		
 		ogl glColor3f: 1.0 with: 0.0 with: 0.0.
-		ogl glBegin: GLPolygon.
-			ogl glVertex2f: -0.7 with: -0.7.
-			ogl glVertex2f:  0.7 with: -0.7.
-			ogl glVertex2f:  0.7 with:  0.7.
-			ogl glVertex2f: -0.7 with:  0.7.
-		ogl glEnd.
+		ogl draw: ogl GL_QUADS.
 
 	"--- here is the 2d overlay setup ---"
 

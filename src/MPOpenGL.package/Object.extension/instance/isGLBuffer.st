@@ -1,0 +1,3 @@
+*MPOpenGL
+isGLBuffer
+	^ false

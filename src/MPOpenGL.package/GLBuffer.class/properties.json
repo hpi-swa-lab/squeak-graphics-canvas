@@ -1,0 +1,16 @@
+{
+	"category" : "MPOpenGL",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"gl",
+		"id",
+		"numElements" ],
+	"name" : "GLBuffer",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
