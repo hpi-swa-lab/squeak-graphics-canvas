@@ -1,3 +1,3 @@
 before each
 verifyOglInitializationWorked
-	gl ifNil: [^self error: 'Unable to create renderer'].
+	ogl ifNil: [^self error: 'Unable to create renderer'].

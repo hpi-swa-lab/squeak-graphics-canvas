@@ -1,3 +1,3 @@
 after each
 tearDownWindow 
-	gl destroy
+	ogl destroy
