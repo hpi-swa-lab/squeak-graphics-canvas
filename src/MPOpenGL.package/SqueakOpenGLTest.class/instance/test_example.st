@@ -5,16 +5,21 @@ test_example
 	startTime := Time millisecondClockValue.
 	tex := OGLTexture new
 				form: (Display
-						copy: (0 @ 0 extent: 140 @ 80)).
+						copy: (0 @ 0 extent: 1000 @ 1000)).
 	program := GLProgram newFor: ogl shaders: {VertexShader file: 'blur.vs'. FragmentShader file: 'blur.fs'}.
 	ogl checkForError.
 	vao := GLVertexArrayObject newFor: ogl.
 	vao bind: ogl.
 	vbo := GLBuffer newFor: ogl.
 	vbo
-		data: {-0.7. -0.7. 0.7. -0.7. -0.7. 0.7. 0.7. 0.7} asFloatArray
+		data: {
+			-0.7. -0.7. 0.0 . 0.0 .
+			0.7.  -0.7. 1.0 . 0.0 .
+			 -0.7. 0.7. 0.0 . 1.0 .
+			0.7. 0.7. 1.0. 1.0
+		} asFloatArray
 		usage: ogl GL_STATIC_DRAW
-		componentsPerVertex: 2.
+		componentsPerVertex: 4.
 	ogl glDisable: ogl GL_CULL_FACE.
 	ogl checkForError.
 	[Sensor anyButtonPressed]
@@ -44,9 +49,9 @@ test_example
 			vao bind: ogl.
 			ogl glBindBuffer: ogl GL_ARRAY_BUFFER with: vbo id.
 			ogl checkForError.
-			program vertexAttib: 0 value: vbo.
+			program vertexAttib: 0 value: vbo stride: 2 offset: 0.
 			ogl checkForError.
-			program vertexAttib: 1 value: vbo.
+			program vertexAttib: 1 value: vbo stride: 2 offset: 2.
 			ogl checkForError.
 			program
 				uniform: 0
