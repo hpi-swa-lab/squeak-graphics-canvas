@@ -1,0 +1,15 @@
+{
+	"category" : "Renderly-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"canvas",
+		"colors" ],
+	"name" : "RyCanvasTest",
+	"pools" : [
+		 ],
+	"super" : "TestCase",
+	"type" : "normal" }

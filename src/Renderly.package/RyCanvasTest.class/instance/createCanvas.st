@@ -1,0 +1,4 @@
+initialization
+createCanvas
+
+	self subclassResponsibility

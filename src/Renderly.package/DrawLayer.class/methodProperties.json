@@ -1,19 +1,17 @@
 {
 	"class" : {
 		"clipRect:" : "stlu 4/20/2020 14:25",
-		"origin:clipRect:" : "stlu 4/20/2020 18:48" },
+		"position:clipRect:" : "stlu 5/18/2020 09:21" },
 	"instance" : {
 		"addCommand:" : "stlu 5/11/2020 15:25",
-		"applyOn:" : "stlu 5/12/2020 12:53",
-		"clipRect" : "stlu 5/12/2020 12:40",
+		"applyOn:" : "stlu 5/18/2020 11:08",
+		"clipRect" : "stlu 5/18/2020 11:08",
 		"clipRect:" : "stlu 4/20/2020 09:39",
 		"commands" : "stlu 4/20/2020 16:31",
-		"globalClipRect" : "stlu 5/12/2020 12:36",
-		"globalOrigin" : "stlu 5/12/2020 12:37",
 		"initialize" : "stlu 4/20/2020 17:11",
 		"isClipping" : "stlu 5/11/2020 15:52",
 		"isLayer" : "stlu 4/20/2020 17:42",
-		"localClipRect" : "stlu 5/12/2020 12:38",
-		"localOrigin" : "stlu 5/12/2020 12:38",
 		"origin" : "stlu 5/12/2020 12:35",
-		"origin:" : "stlu 4/20/2020 14:20" } }
+		"origin:" : "stlu 4/20/2020 14:20",
+		"position" : "stlu 5/18/2020 10:59",
+		"position:" : "stlu 5/18/2020 09:20" } }

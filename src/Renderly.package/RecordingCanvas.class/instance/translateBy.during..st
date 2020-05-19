@@ -2,6 +2,6 @@ drawing-support
 translateBy: delta during: aBlock
 
 	self
-		translateTo: (self globalOrigin translateBy: delta)
-		clippingTo: self globalClipRect
+		translateBy: delta
+		clippingTo: (self localClipRect translateBy: self localOrigin negated)
 		during: aBlock

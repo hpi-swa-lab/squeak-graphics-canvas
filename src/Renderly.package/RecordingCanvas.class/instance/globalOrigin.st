@@ -1,4 +1,4 @@
 accessing
 globalOrigin
 
-	^ self currentLayer globalOrigin
+	^ globalOrigin

@@ -1,4 +1,0 @@
-accessing
-rootElement
-
-	self notYetImplemented

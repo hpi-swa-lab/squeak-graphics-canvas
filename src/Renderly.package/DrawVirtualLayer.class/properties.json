@@ -1,0 +1,14 @@
+{
+	"category" : "Renderly-Record",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "DrawVirtualLayer",
+	"pools" : [
+		 ],
+	"super" : "DrawLayer",
+	"type" : "normal" }

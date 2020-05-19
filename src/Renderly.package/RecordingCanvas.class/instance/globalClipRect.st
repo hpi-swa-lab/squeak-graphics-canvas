@@ -1,4 +1,4 @@
 accessing
 globalClipRect
 
-	^ self currentLayer globalClipRect
+	^ globalClipRect

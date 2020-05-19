@@ -1,0 +1,14 @@
+{
+	"category" : "Renderly-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "RyRecordingCanvasTest",
+	"pools" : [
+		 ],
+	"super" : "RyCanvasTest",
+	"type" : "normal" }
