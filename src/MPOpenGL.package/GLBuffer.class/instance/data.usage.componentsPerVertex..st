@@ -5,3 +5,4 @@ data: anArray usage: aUsageEnum componentsPerVertex: aNumber
 	numElements := anArray size.
 	glType := anArray glType: gl.
 	componentsPerVertex := aNumber.
+	bytesPerElement := anArray byteSize / anArray size.

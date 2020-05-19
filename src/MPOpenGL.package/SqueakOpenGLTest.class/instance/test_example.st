@@ -13,10 +13,10 @@ test_example
 	vbo := GLBuffer newFor: ogl.
 	vbo
 		data: {
-			-0.7. -0.7. 0.0 . 0.0 .
-			0.7.  -0.7. 1.0 . 0.0 .
-			 -0.7. 0.7. 0.0 . 1.0 .
-			0.7. 0.7. 1.0. 1.0
+			-0.95. -0.95. 0.0 . 0.0 .
+			0.95.  -0.95. 0.0 . 1.0 .
+			-0.95. 0.95. 1.0 . 0.0	.
+			0.95.   0.95. 1.0 . 1.0
 		} asFloatArray
 		usage: ogl GL_STATIC_DRAW
 		componentsPerVertex: 4.
@@ -38,7 +38,7 @@ test_example
 			ogl glDisable: GLLighting.
 			"for the simple example only"
 			ogl
-				glClearColor: 1.0
+				glClearColor: 0.0
 				with: 0.0
 				with: 1.0
 				with: 1.0.
@@ -49,14 +49,14 @@ test_example
 			vao bind: ogl.
 			ogl glBindBuffer: ogl GL_ARRAY_BUFFER with: vbo id.
 			ogl checkForError.
-			program vertexAttib: 0 value: vbo stride: 2 offset: 0.
+			program vertexAttib: 0 value: vbo stride: 4 offset: 0.
 			ogl checkForError.
-			program vertexAttib: 1 value: vbo stride: 2 offset: 2.
+			program vertexAttib: 1 value: vbo stride: 4 offset: 2.
 			ogl checkForError.
-			program
+			"program
 				uniform: 0
-				value: (Matrix translateX: -0.2 y: 0.3).
-			"program uniform: 0 value: (Matrix identity: 4)."
+				value: (Matrix translateX: -0.2 y: 0.3)."
+			program uniform: 0 value: (Matrix identity: 4).
 			ogl checkForError.
 			vbo draw: ogl GL_TRIANGLE_STRIP.
 			ogl checkForError.

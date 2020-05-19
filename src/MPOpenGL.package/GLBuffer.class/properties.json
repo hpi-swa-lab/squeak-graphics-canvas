@@ -10,7 +10,8 @@
 		"id",
 		"numElements",
 		"glType",
-		"componentsPerVertex" ],
+		"componentsPerVertex",
+		"bytesPerElement" ],
 	"name" : "GLBuffer",
 	"pools" : [
 		 ],
