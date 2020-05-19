@@ -1,5 +1,6 @@
 OpenGL global check
 checkOpenGLVersion 
-	| version |
+	| version versionString |
 	version := ogl glGetString: ogl GL_VERSION.
-	self assert: (version startsWith: '4').
+	versionString := version fromCString.
+	self assert: (versionString startsWith: '4').
