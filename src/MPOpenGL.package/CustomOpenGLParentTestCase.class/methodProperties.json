@@ -1,9 +1,10 @@
 {
 	"class" : {
-		 },
+		"isAbstract" : "sr 5/19/2020 12:03" },
 	"instance" : {
 		"checkOpenGLVersion" : "sr 5/19/2020 12:01",
 		"setUp" : "sr 5/12/2020 09:39",
 		"setUpWindow" : "sr 5/12/2020 09:40",
 		"tearDown" : "sr 5/12/2020 09:39",
-		"tearDownWindow" : "sr 5/12/2020 09:40" } }
+		"tearDownWindow" : "sr 5/12/2020 09:40",
+		"testOpenGLVersion" : "sr 5/19/2020 12:03" } }
