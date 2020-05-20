@@ -1,4 +1,4 @@
 accessing
 clipRect: anObject
 
-	clipRect := anObject.
+	clipRect := anObject

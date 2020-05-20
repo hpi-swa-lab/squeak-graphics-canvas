@@ -1,4 +1,4 @@
 accessing
-origin: anObject
+origin: aPoint
 
-	origin := anObject.
+	origin := aPoint

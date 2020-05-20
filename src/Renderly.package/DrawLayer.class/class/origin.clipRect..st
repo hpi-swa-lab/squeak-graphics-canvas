@@ -1,7 +1,7 @@
 instance creation
-position: aPoint clipRect: aRectangle
+origin: aPoint clipRect: aRectangle
 
 	^ self new
-		position: aPoint;
+		origin: aPoint;
 		clipRect: aRectangle;
 		yourself

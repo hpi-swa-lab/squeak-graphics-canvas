@@ -8,7 +8,7 @@
 	"instvars" : [
 		"transform",
 		"smoothing",
-		"patchRect" ],
+		"bounds" ],
 	"name" : "DrawTransformLayer",
 	"pools" : [
 		 ],

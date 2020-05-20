@@ -3,6 +3,6 @@ translateBy: delta clippingTo: localClipRect during: aBlock
 
 	self
 		newCurrentLayer: (DrawLayer
-							position: delta
-							clipRect: localClipRect)
+							origin: delta
+							clipRect: (localClipRect translateBy: delta))
 		during: aBlock

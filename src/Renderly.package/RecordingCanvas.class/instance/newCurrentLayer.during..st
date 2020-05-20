@@ -1,18 +1,15 @@
 private
 newCurrentLayer: aLayer during: aBlock
 
-	| parent parentOrigin parentClipRect |
+	| parentLayer parentOrigin |
+	parentLayer := self currentLayer.
 	self addCommand: aLayer.
-	parent := self currentLayer.
 	
 	self currentLayer: aLayer.
 	parentOrigin := globalOrigin.
-	parentClipRect := globalClipRect.
-	globalClipRect := aLayer clipRect translateBy: parentOrigin.
-	globalOrigin := aLayer position translateBy: parentOrigin.
+	globalOrigin := aLayer origin translateBy: parentOrigin.
 	
 	aBlock value: self.
 	
-	self currentLayer: parent. "no ensure, since root layer is known"
+	self currentLayer: parentLayer.
 	globalOrigin := parentOrigin.
-	globalClipRect := parentClipRect

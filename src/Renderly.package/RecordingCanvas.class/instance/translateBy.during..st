@@ -2,6 +2,5 @@ drawing-support
 translateBy: delta during: aBlock
 
 	self
-		translateBy: delta
-		clippingTo: (self localClipRect translateBy: self localOrigin negated)
+		newCurrentLayer: (DrawLayer origin: delta)
 		during: aBlock
