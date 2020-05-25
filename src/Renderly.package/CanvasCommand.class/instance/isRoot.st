@@ -1,4 +1,4 @@
 testing
 isRoot
 
-	^ self parent isNil
+	^ self false

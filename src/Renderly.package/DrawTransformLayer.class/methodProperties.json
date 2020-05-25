@@ -1,11 +1,11 @@
 {
 	"class" : {
-		"offset:" : "stlu 5/12/2020 11:40",
-		"offset:clipRect:" : "stlu 5/12/2020 12:08",
-		"transform:clipRect:smoothing:" : "stlu 4/20/2020 09:31" },
+		"transform:clipRect:smoothing:" : "stlu 5/12/2020 15:24" },
 	"instance" : {
-		"applyOn:" : "stlu 5/12/2020 12:42",
-		"origin" : "stlu 5/12/2020 12:44",
+		"applyOn:" : "stlu 5/18/2020 12:48",
+		"clipRect" : "stlu 5/18/2020 12:38",
+		"patchRect" : "stlu 5/18/2020 12:39",
+		"position" : "stlu 5/18/2020 12:37",
 		"smoothing" : "stlu 4/20/2020 09:32",
 		"smoothing:" : "stlu 4/20/2020 09:32",
 		"transform" : "stlu 4/20/2020 09:32",

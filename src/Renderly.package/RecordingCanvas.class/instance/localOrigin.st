@@ -1,4 +1,4 @@
 accessing
 localOrigin
 
-	^ self currentLayer localOrigin
+	^ self currentLayer position

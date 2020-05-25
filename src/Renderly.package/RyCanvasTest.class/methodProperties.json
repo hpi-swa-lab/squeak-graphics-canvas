@@ -1,0 +1,19 @@
+{
+	"class" : {
+		"isAbstract" : "stlu 5/18/2020 16:29" },
+	"instance" : {
+		"assertForm:" : "stlu 5/19/2020 10:01",
+		"canvasExtent" : "stlu 5/18/2020 16:51",
+		"canvasForm" : "stlu 5/19/2020 10:02",
+		"colorNamed:" : "stlu 5/19/2020 09:42",
+		"createCanvas" : "stlu 5/18/2020 16:36",
+		"formDescriptionToForm:" : "stlu 5/19/2020 09:41",
+		"initialize" : "stlu 5/19/2020 09:42",
+		"setUp" : "stlu 5/19/2020 09:42",
+		"testClipBy" : "stlu 5/19/2020 18:03",
+		"testFillRectangle" : "stlu 5/19/2020 09:58",
+		"testTransformBy" : "stlu 5/19/2020 18:02",
+		"testTransformByPureTranslation" : "stlu 5/19/2020 18:02",
+		"testTranslateBy" : "stlu 5/19/2020 18:06",
+		"testTranslateByClippingTo" : "stlu 5/19/2020 18:19",
+		"testTranslateToClippingTo" : "stlu 5/19/2020 18:21" } }

@@ -3,9 +3,13 @@ applyOn: aCanvas
 
 	self isClipping
 		ifFalse: [
-			self commands do: [:cmd | cmd applyOn: aCanvas]]
+			aCanvas
+				translateBy: self position
+				during: [:newCanvas |
+					self commands do: [:cmd | cmd applyOn: newCanvas]]]
 		ifTrue: [
 			aCanvas
-				clipBy: self localClipRect
+				translateBy: self position
+				clippingTo: self clipRect
 				during: [:clippedCanvas |
 					self commands do: [:cmd | cmd applyOn: clippedCanvas]]]

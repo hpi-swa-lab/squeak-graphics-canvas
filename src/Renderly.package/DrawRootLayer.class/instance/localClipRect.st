@@ -1,4 +1,0 @@
-accessing
-localClipRect
-
-	^ self globalClipRect

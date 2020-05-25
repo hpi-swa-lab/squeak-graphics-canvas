@@ -1,4 +1,4 @@
 accessing
 clipRect
 
-	^ self localClipRect
+	^ self globalClipRect
