@@ -3,7 +3,7 @@ applyOn: aCanvas
 
 	aCanvas
 		transformBy: self transform
-		clippingTo: super clipRect
+		clippingTo: self bounds
 		during: [:transformedCanvas |
 					self commands do: [:cmd |
 						cmd applyOn: transformedCanvas]]

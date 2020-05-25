@@ -1,4 +1,4 @@
 accessing
 origin
-	"global (absolute) coordinate"
-	^ origin ifNil: [origin := self parent origin]
+	"offset within my parent"
+	^ origin ifNil: [0@0]

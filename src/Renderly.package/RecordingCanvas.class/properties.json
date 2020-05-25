@@ -8,8 +8,7 @@
 	"instvars" : [
 		"rootLayer",
 		"currentLayer",
-		"globalOrigin",
-		"globalClipRect" ],
+		"globalOrigin" ],
 	"name" : "RecordingCanvas",
 	"pools" : [
 		 ],
