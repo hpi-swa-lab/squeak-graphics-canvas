@@ -13,10 +13,10 @@ test_example
 	vbo := GLBuffer newFor: ogl.
 	vbo
 		data: {
-			-0.95. -0.95. 0.0 . 0.0 .
-			0.95.  -0.95. 0.0 . 1.0 .
-			-0.95. 0.95. 1.0 . 0.0	.
-			0.95.   0.95. 1.0 . 1.0
+			-1. -1. 0 . 0 .
+			1.  -1. 0 . 1 .
+			-1. 1. 1 . 0	.
+			1.   1. 1 . 1
 		} asFloatArray
 		usage: ogl GL_STATIC_DRAW
 		componentsPerVertex: 4.
@@ -53,13 +53,15 @@ test_example
 			ogl checkForError.
 			program vertexAttib: 1 value: vbo stride: 4 offset: 2.
 			ogl checkForError.
-			"program
+			program
 				uniform: 0
-				value: (Matrix translateX: -0.2 y: 0.3)."
-			program uniform: 0 value: (Matrix identity: 4).
+				value: (Matrix rotateZBy: (Float pi / 2) rounded).
+			"program uniform: 0 value: (Matrix identity: 4)."
 			ogl checkForError.
 			vbo draw: ogl GL_TRIANGLE_STRIP.
 			ogl checkForError.
+			
+			
 			"--- here is the 2d overlay setup ---"
 			mvp := (Matrix scaleX: 2.0 / bounds width y: -2.0 / bounds height)
 						+* (Matrix translateX: -1 y: 1).
