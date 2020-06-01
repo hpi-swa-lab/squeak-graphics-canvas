@@ -1,4 +1,0 @@
-*RenderTree
-wantsOwnLayer
-
-	^ false
