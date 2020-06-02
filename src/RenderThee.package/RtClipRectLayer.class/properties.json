@@ -1,0 +1,14 @@
+{
+	"category" : "RenderThee-LayerTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "RtClipRectLayer",
+	"pools" : [
+		 ],
+	"super" : "RtContainerLayer",
+	"type" : "normal" }

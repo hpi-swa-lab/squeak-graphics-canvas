@@ -1,0 +1,14 @@
+{
+	"category" : "RenderThee-LayerTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "RtContainerLayer",
+	"pools" : [
+		 ],
+	"super" : "RtLayer",
+	"type" : "normal" }

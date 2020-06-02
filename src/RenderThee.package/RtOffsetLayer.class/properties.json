@@ -1,0 +1,14 @@
+{
+	"category" : "RenderThee-LayerTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "RtOffsetLayer",
+	"pools" : [
+		 ],
+	"super" : "RtContainerLayer",
+	"type" : "normal" }

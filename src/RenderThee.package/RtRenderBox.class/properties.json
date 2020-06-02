@@ -1,0 +1,14 @@
+{
+	"category" : "RenderThee-RenderTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"extent" ],
+	"name" : "RtRenderBox",
+	"pools" : [
+		 ],
+	"super" : "RtRenderObject",
+	"type" : "normal" }
