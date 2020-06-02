@@ -6,9 +6,10 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"canvas" ],
-	"name" : "RtClipContext",
+		"layer",
+		"origin" ],
+	"name" : "RtRecordingCanvas",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "Canvas",
 	"type" : "normal" }
