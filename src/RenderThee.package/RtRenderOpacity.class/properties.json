@@ -1,0 +1,14 @@
+{
+	"category" : "RenderThee-RenderTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "RtRenderOpacity",
+	"pools" : [
+		 ],
+	"super" : "RtRenderProxyBox",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "RenderThee-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "RtCanvas",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

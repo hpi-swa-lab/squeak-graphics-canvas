@@ -1,0 +1,1 @@
+An object representing a sequence of recorded graphical operations.
