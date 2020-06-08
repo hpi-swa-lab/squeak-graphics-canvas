@@ -1,0 +1,14 @@
+{
+	"category" : "RenderThee-RenderTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "RtRenderClipPath",
+	"pools" : [
+		 ],
+	"super" : "RtRenderProxyBox",
+	"type" : "normal" }

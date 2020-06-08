@@ -1,0 +1,14 @@
+{
+	"category" : "RenderThee-RenderTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "stlu 6/2/2020 09:44",
+	"instvars" : [
+		 ],
+	"name" : "RtRenderBackdropFilter",
+	"pools" : [
+		 ],
+	"super" : "RtRenderProxyBox",
+	"type" : "normal" }

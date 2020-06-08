@@ -1,0 +1,15 @@
+{
+	"category" : "RenderThee-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"layer",
+		"origin" ],
+	"name" : "RtRecordingCanvas",
+	"pools" : [
+		 ],
+	"super" : "Canvas",
+	"type" : "normal" }
