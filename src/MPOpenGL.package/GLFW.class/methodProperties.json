@@ -11,12 +11,15 @@
 		"createWindowWidth:height:title:monitor:share:" : "sr 4/21/2020 09:24",
 		"destroyWindow:" : "TZ 5/26/2020 17:48",
 		"init" : "TZ 4/14/2020 16:02",
+		"initialize" : "TZ 5/28/2020 11:31",
 		"makeContextCurrent:" : "TZ 4/14/2020 16:28",
 		"setCursorPosCallback:with:" : "sr 5/11/2020 10:17",
 		"setFramebufferSizeCallback:with:" : "sr 5/11/2020 09:18",
 		"setInputMode:with:with:" : "sr 5/11/2020 10:03",
+		"startUp" : "TZ 5/28/2020 11:31",
 		"swapBuffers:" : "TZ 4/14/2020 16:02",
 		"terminate" : "sr 4/20/2020 14:50",
+		"windowHint:value:" : "TZ 6/8/2020 13:04",
 		"windowHint:with:" : "sr 5/5/2020 17:11" },
 	"instance" : {
 		 } }

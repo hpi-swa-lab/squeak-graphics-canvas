@@ -1,7 +1,8 @@
 as yet unclassified
 featureClass: anElement versionNumber: aString
-	| className result |
+	| className result splitVersion |
 	className := (api asUppercase , (aString copyReplaceAll: '.' with: '_')) asSymbol.
+	splitVersion := aString subStrings: '.'.
 	^ Smalltalk
 		at: className
 		ifAbsent: [
@@ -12,4 +13,5 @@ featureClass: anElement versionNumber: aString
 				category: 'MPOpenGL'.
 			result := Smalltalk at: className.
 			previousClass := result.
+			self addVersionMethods: aString.
 			result ].

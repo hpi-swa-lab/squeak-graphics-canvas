@@ -2,11 +2,12 @@
 	"class" : {
 		"generate:api:" : "TZ 5/11/2020 15:27" },
 	"instance" : {
+		"addVersionMethods:" : "TZ 6/8/2020 13:02",
 		"arrayFor:" : "TZ 5/11/2020 15:30",
 		"convertEnumValue:" : "TZ 5/4/2020 18:37",
 		"convertType:" : "TZ 5/11/2020 15:58",
 		"createFeaturesList" : "TZ 5/11/2020 15:45",
-		"featureClass:versionNumber:" : "TZ 5/11/2020 15:43",
+		"featureClass:versionNumber:" : "TZ 6/8/2020 12:59",
 		"findFeatures" : "TZ 5/11/2020 15:20",
 		"generate:api:" : "TZ 5/11/2020 16:00",
 		"generateAllCommands" : "TZ 5/4/2020 19:04",

@@ -40,7 +40,8 @@
 		"transparency",
 		"matrixStack",
 		"portalDepth",
-		"bufferObjects" ],
+		"bufferObjects",
+		"usesGLFW" ],
 	"name" : "OpenGL",
 	"pools" : [
 		"GLExtConstants",
