@@ -6,7 +6,10 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
+		"color",
+		"style",
+		"blendMode",
+		"strokeWidth" ],
 	"name" : "RtPaint",
 	"pools" : [
 		 ],

@@ -1,0 +1,14 @@
+{
+	"category" : "RenderThee-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"transform" ],
+	"name" : "RtCompositingFormCanvas",
+	"pools" : [
+		 ],
+	"super" : "RtCompositingCanvas",
+	"type" : "normal" }

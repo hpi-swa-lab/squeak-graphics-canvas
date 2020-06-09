@@ -4,9 +4,11 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "stlu 6/8/2020 14:16",
 	"instvars" : [
-		 ],
+		"child",
+		"extent",
+		"pixelDensity" ],
 	"name" : "RtRenderView",
 	"pools" : [
 		 ],

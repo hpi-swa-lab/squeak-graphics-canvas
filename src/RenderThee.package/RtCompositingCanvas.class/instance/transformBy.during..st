@@ -1,5 +1,6 @@
-drawing-support
-transformBy: aTransform during: aBlock 
+transformation - scoped
+transformBy: aMatrix during: aBlock
 
-
-	self transformBy: aTransform clippingTo: currentCommand clipRect during: aBlock smoothing: 2
+	self layerDuring: [
+		self concatTransform: aMatrix.
+		aBlock value]

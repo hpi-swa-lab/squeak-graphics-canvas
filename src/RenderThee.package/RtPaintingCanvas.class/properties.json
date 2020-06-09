@@ -6,7 +6,8 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
+		"containerLayer",
+		"picture" ],
 	"name" : "RtPaintingCanvas",
 	"pools" : [
 		 ],

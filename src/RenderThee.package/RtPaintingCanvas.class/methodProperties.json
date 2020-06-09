@@ -2,6 +2,13 @@
 	"class" : {
 		 },
 	"instance" : {
-		"addLayer:" : "stlu 6/2/2020 10:44",
+		"addLayer:" : "stlu 6/9/2020 11:22",
 		"clipRect:at:composited:during:" : "stlu 6/2/2020 15:56",
-		"layer:at:bounds:during:" : "stlu 6/2/2020 15:34" } }
+		"drawLineFrom:to:paint:" : "stlu 6/8/2020 16:47",
+		"drawRect:paint:" : "stlu 6/8/2020 16:47",
+		"initialize" : "stlu 6/8/2020 09:57",
+		"layer:at:bounds:during:" : "stlu 6/2/2020 18:27",
+		"newChildCanvas:bounds:" : "stlu 6/2/2020 18:29",
+		"paintChild:" : "stlu 6/9/2020 11:22",
+		"pushLayer:" : "stlu 6/8/2020 10:10",
+		"pushTransform:" : "stlu 6/8/2020 10:14" } }

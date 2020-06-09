@@ -1,4 +1,4 @@
-balloon
-transformBy: aTransform
+transformation
+transformBy: aMatrix
 
-	currentCommand addCommand: (RtDrawRelativeTransform new transform: aTransform)
+	self notYetImplemented

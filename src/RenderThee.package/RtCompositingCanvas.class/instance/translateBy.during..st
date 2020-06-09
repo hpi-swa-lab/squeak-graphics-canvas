@@ -1,4 +1,6 @@
-drawing-support
+transformation - scoped
 translateBy: aPoint during: aBlock
 
-	self transformBy: (MatrixTransform2x3 withOffset: aPoint) during: aBlock
+	self layerDuring: [
+		self translateBy: aPoint.
+		aBlock value]

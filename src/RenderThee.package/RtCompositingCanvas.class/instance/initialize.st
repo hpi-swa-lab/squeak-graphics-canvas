@@ -1,5 +1,4 @@
-accessing
+initialization
 initialize
 
-	super initialize.
-	
+	transform := Matrix identity: 4

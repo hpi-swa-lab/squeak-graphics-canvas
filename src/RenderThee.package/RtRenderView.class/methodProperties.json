@@ -1,5 +1,15 @@
 {
 	"class" : {
-		 },
+		"child:extent:" : "stlu 6/8/2020 14:38",
+		"child:extent:pixelDensity:" : "stlu 6/8/2020 14:38" },
 	"instance" : {
-		 } }
+		"child" : "stlu 6/8/2020 14:11",
+		"compositeFrame" : "stlu 6/8/2020 14:48",
+		"extent" : "stlu 6/8/2020 14:10",
+		"isRepaintBoundary" : "stlu 6/8/2020 14:15",
+		"paintBounds" : "stlu 6/8/2020 14:40",
+		"paintOn:offset:" : "stlu 6/8/2020 14:17",
+		"pixelDensity" : "stlu 6/8/2020 14:38",
+		"setChild:" : "stlu 6/8/2020 14:10",
+		"setExtent:" : "stlu 6/8/2020 14:10",
+		"setPixelDensity:" : "stlu 6/8/2020 14:38" } }

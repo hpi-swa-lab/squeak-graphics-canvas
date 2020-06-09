@@ -1,0 +1,4 @@
+testing
+isVisible: aRectangle
+
+	^ true
