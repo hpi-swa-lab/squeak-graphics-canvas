@@ -3,4 +3,4 @@ checkOpenGLVersion
 	| version versionString |
 	version := ogl glGetString: ogl GL_VERSION.
 	versionString := version fromCString.
-	self assert: (versionString startsWith: '4').
+	self assert: (versionString beginsWith: '3.3').

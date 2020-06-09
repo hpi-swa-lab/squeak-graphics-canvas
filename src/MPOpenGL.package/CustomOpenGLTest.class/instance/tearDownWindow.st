@@ -1,3 +1,3 @@
 after each
 tearDownWindow
-	GLFW terminate.
+	ogl destroy.

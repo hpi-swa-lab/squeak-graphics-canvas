@@ -1,10 +1,3 @@
 before each
 setUpWindow
-	GLFW init.
-	window := GLFW
-				createWindowWidth: 640
-				height: 480
-				title: 'ABC'
-				monitor: nil
-				share: nil.
-	GLFW makeContextCurrent: window
+	ogl := GL3_3 newIn: (Rectangle origin: 0@0 extent: 640@480).
