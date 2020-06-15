@@ -1,5 +1,5 @@
 as yet unclassified
 glCullFace: mode
 
-	<apicall: void 'glCullFace' (ulong)>
+	<apicall: void 'glCullFace' (GLenum)>
 	^ self externalCallFailed

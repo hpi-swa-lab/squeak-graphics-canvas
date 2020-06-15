@@ -1,5 +1,5 @@
 as yet unclassified
 glGenLists: range
 
-	<apicall: ulong 'glGenLists' (long)>
+	<apicall: GLuint 'glGenLists' (GLsizei)>
 	^ self externalCallFailed

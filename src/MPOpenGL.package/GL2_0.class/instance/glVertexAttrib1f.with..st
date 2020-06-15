@@ -1,5 +1,5 @@
 as yet unclassified
 glVertexAttrib1f: index with: x
 
-	<apicall: void 'glVertexAttrib1f' (ulong float)>
+	<apicall: void 'glVertexAttrib1f' (GLuint GLfloat)>
 	^ self externalCallFailed

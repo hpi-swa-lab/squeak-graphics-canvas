@@ -1,5 +1,5 @@
 as yet unclassified
 glIndexiv: c
 
-	<apicall: void 'glIndexiv' (long*)>
+	<apicall: void 'glIndexiv' (GLint*)>
 	^ self externalCallFailed

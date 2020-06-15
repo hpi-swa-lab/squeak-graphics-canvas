@@ -1,5 +1,5 @@
 as yet unclassified
 glRasterPos2f: x with: y
 
-	<apicall: void 'glRasterPos2f' (float float)>
+	<apicall: void 'glRasterPos2f' (GLfloat GLfloat)>
 	^ self externalCallFailed

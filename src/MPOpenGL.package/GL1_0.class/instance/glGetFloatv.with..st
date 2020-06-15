@@ -1,5 +1,5 @@
 as yet unclassified
 glGetFloatv: pname with: data
 
-	<apicall: void 'glGetFloatv' (ulong float*)>
+	<apicall: void 'glGetFloatv' (GLenum GLfloat*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glDrawTransformFeedbackStreamInstanced: mode with: id with: stream with: instancecount
 
-	<apicall: void 'glDrawTransformFeedbackStreamInstanced' (ulong ulong ulong long)>
+	<apicall: void 'glDrawTransformFeedbackStreamInstanced' (GLenum GLuint GLuint GLsizei)>
 	^ self externalCallFailed

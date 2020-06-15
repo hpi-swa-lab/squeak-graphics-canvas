@@ -1,5 +1,5 @@
 as yet unclassified
 glColorP3uiv: type with: color
 
-	<apicall: void 'glColorP3uiv' (ulong ulong*)>
+	<apicall: void 'glColorP3uiv' (GLenum GLuint*)>
 	^ self externalCallFailed

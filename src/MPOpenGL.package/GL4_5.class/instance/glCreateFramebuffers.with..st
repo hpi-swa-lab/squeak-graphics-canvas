@@ -1,5 +1,5 @@
 as yet unclassified
 glCreateFramebuffers: n with: framebuffers
 
-	<apicall: void 'glCreateFramebuffers' (long ulong*)>
+	<apicall: void 'glCreateFramebuffers' (GLsizei GLuint*)>
 	^ self externalCallFailed

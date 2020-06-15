@@ -1,5 +1,5 @@
 as yet unclassified
 glMultTransposeMatrixf: m
 
-	<apicall: void 'glMultTransposeMatrixf' (float*)>
+	<apicall: void 'glMultTransposeMatrixf' (GLfloat*)>
 	^ self externalCallFailed

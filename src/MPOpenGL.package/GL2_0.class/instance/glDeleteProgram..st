@@ -1,5 +1,5 @@
 as yet unclassified
 glDeleteProgram: program
 
-	<apicall: void 'glDeleteProgram' (ulong)>
+	<apicall: void 'glDeleteProgram' (GLuint)>
 	^ self externalCallFailed

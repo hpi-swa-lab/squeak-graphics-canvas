@@ -1,5 +1,5 @@
 as yet unclassified
 glNamedBufferStorage: buffer with: size with: data with: flags
 
-	<apicall: void 'glNamedBufferStorage' (ulong longlong void* ulong)>
+	<apicall: void 'glNamedBufferStorage' (GLuint GLsizeiptr void* GLbitfield)>
 	^ self externalCallFailed

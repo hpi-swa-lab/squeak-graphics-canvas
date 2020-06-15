@@ -1,5 +1,5 @@
 as yet unclassified
 glTexBufferRange: target with: internalformat with: buffer with: offset with: size
 
-	<apicall: void 'glTexBufferRange' (ulong ulong ulong longlong longlong)>
+	<apicall: void 'glTexBufferRange' (GLenum GLenum GLuint GLintptr GLsizeiptr)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glLightf: light with: pname with: param
 
-	<apicall: void 'glLightf' (ulong ulong float)>
+	<apicall: void 'glLightf' (GLenum GLenum GLfloat)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glDrawTransformFeedbackStream: mode with: id with: stream
 
-	<apicall: void 'glDrawTransformFeedbackStream' (ulong ulong ulong)>
+	<apicall: void 'glDrawTransformFeedbackStream' (GLenum GLuint GLuint)>
 	^ self externalCallFailed

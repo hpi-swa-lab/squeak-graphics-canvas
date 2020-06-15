@@ -1,5 +1,5 @@
 as yet unclassified
 glCompressedTexImage1D: target with: level with: internalformat with: width with: border with: imageSize with: data
 
-	<apicall: void 'glCompressedTexImage1D' (ulong long ulong long long long void*)>
+	<apicall: void 'glCompressedTexImage1D' (GLenum GLint GLenum GLsizei GLint GLsizei void*)>
 	^ self externalCallFailed

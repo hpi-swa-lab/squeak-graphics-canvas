@@ -1,5 +1,5 @@
 as yet unclassified
 glCreateShader: type
 
-	<apicall: ulong 'glCreateShader' (ulong)>
+	<apicall: GLuint 'glCreateShader' (GLenum)>
 	^ self externalCallFailed

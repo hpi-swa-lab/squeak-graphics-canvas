@@ -1,5 +1,5 @@
 as yet unclassified
 glAlphaFunc: func with: ref
 
-	<apicall: void 'glAlphaFunc' (ulong float)>
+	<apicall: void 'glAlphaFunc' (GLenum GLfloat)>
 	^ self externalCallFailed

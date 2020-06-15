@@ -1,5 +1,5 @@
 as yet unclassified
 glColor3ubv: v
 
-	<apicall: void 'glColor3ubv' (void*)>
+	<apicall: void 'glColor3ubv' (GLubyte*)>
 	^ self externalCallFailed

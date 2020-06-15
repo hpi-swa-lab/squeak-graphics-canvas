@@ -1,5 +1,5 @@
 as yet unclassified
 glInvalidateNamedFramebufferData: framebuffer with: numAttachments with: attachments
 
-	<apicall: void 'glInvalidateNamedFramebufferData' (ulong long ulong*)>
+	<apicall: void 'glInvalidateNamedFramebufferData' (GLuint GLsizei GLenum*)>
 	^ self externalCallFailed

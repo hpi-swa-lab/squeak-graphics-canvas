@@ -1,5 +1,5 @@
 as yet unclassified
 glFogCoordPointer: type with: stride with: pointer
 
-	<apicall: void 'glFogCoordPointer' (ulong long void*)>
+	<apicall: void 'glFogCoordPointer' (GLenum GLsizei void*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glDeleteRenderbuffers: n with: renderbuffers
 
-	<apicall: void 'glDeleteRenderbuffers' (long ulong*)>
+	<apicall: void 'glDeleteRenderbuffers' (GLsizei GLuint*)>
 	^ self externalCallFailed

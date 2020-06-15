@@ -1,5 +1,5 @@
 as yet unclassified
 glNormalP3uiv: type with: coords
 
-	<apicall: void 'glNormalP3uiv' (ulong ulong*)>
+	<apicall: void 'glNormalP3uiv' (GLenum GLuint*)>
 	^ self externalCallFailed

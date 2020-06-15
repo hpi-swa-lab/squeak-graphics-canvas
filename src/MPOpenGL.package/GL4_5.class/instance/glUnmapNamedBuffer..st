@@ -1,5 +1,5 @@
 as yet unclassified
 glUnmapNamedBuffer: buffer
 
-	<apicall: ulong 'glUnmapNamedBuffer' (ulong)>
+	<apicall: GLboolean 'glUnmapNamedBuffer' (GLuint)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glGetnUniformdv: program with: location with: bufSize with: params
 
-	<apicall: void 'glGetnUniformdv' (ulong long long double*)>
+	<apicall: void 'glGetnUniformdv' (GLuint GLint GLsizei GLdouble*)>
 	^ self externalCallFailed

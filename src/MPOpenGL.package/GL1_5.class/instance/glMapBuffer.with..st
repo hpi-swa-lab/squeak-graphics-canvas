@@ -1,5 +1,5 @@
 as yet unclassified
 glMapBuffer: target with: access
 
-	<apicall: void* 'glMapBuffer' (ulong ulong)>
+	<apicall: void* 'glMapBuffer' (GLenum GLenum)>
 	^ self externalCallFailed

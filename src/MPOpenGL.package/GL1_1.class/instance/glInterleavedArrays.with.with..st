@@ -1,5 +1,5 @@
 as yet unclassified
 glInterleavedArrays: format with: stride with: pointer
 
-	<apicall: void 'glInterleavedArrays' (ulong long void*)>
+	<apicall: void 'glInterleavedArrays' (GLenum GLsizei void*)>
 	^ self externalCallFailed

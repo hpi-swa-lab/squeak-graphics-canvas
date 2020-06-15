@@ -1,5 +1,5 @@
 as yet unclassified
 glClearDepthf: d
 
-	<apicall: void 'glClearDepthf' (float)>
+	<apicall: void 'glClearDepthf' (GLfloat)>
 	^ self externalCallFailed

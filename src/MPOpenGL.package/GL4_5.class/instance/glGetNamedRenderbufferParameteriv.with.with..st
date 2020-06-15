@@ -1,5 +1,5 @@
 as yet unclassified
 glGetNamedRenderbufferParameteriv: renderbuffer with: pname with: params
 
-	<apicall: void 'glGetNamedRenderbufferParameteriv' (ulong ulong long*)>
+	<apicall: void 'glGetNamedRenderbufferParameteriv' (GLuint GLenum GLint*)>
 	^ self externalCallFailed

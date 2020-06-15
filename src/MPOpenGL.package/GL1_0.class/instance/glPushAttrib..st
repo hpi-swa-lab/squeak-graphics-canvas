@@ -1,5 +1,5 @@
 as yet unclassified
 glPushAttrib: mask
 
-	<apicall: void 'glPushAttrib' (ulong)>
+	<apicall: void 'glPushAttrib' (GLbitfield)>
 	^ self externalCallFailed

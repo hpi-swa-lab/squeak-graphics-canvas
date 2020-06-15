@@ -1,5 +1,5 @@
 as yet unclassified
 glVertexArrayElementBuffer: vaobj with: buffer
 
-	<apicall: void 'glVertexArrayElementBuffer' (ulong ulong)>
+	<apicall: void 'glVertexArrayElementBuffer' (GLuint GLuint)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glGetPolygonStipple: mask
 
-	<apicall: void 'glGetPolygonStipple' (void*)>
+	<apicall: void 'glGetPolygonStipple' (GLubyte*)>
 	^ self externalCallFailed

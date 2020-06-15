@@ -1,5 +1,5 @@
 as yet unclassified
 glBindBuffersRange: target with: first with: count with: buffers with: offsets with: sizes
 
-	<apicall: void 'glBindBuffersRange' (ulong ulong long ulong* int** longlong*)>
+	<apicall: void 'glBindBuffersRange' (GLenum GLuint GLsizei GLuint* GLintptr* GLsizeiptr*)>
 	^ self externalCallFailed

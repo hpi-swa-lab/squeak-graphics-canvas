@@ -1,5 +1,5 @@
 as yet unclassified
 glNormal3iv: v
 
-	<apicall: void 'glNormal3iv' (long*)>
+	<apicall: void 'glNormal3iv' (GLint*)>
 	^ self externalCallFailed

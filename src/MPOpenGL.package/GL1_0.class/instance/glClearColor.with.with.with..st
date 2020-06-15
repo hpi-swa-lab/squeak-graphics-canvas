@@ -1,5 +1,5 @@
 as yet unclassified
 glClearColor: red with: green with: blue with: alpha
 
-	<apicall: void 'glClearColor' (float float float float)>
+	<apicall: void 'glClearColor' (GLfloat GLfloat GLfloat GLfloat)>
 	^ self externalCallFailed

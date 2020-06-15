@@ -1,5 +1,5 @@
 as yet unclassified
 glTexGeni: coord with: pname with: param
 
-	<apicall: void 'glTexGeni' (ulong ulong long)>
+	<apicall: void 'glTexGeni' (GLenum GLenum GLint)>
 	^ self externalCallFailed

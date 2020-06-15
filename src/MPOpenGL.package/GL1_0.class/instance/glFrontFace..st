@@ -1,5 +1,5 @@
 as yet unclassified
 glFrontFace: mode
 
-	<apicall: void 'glFrontFace' (ulong)>
+	<apicall: void 'glFrontFace' (GLenum)>
 	^ self externalCallFailed

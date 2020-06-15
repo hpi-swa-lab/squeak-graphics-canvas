@@ -1,5 +1,5 @@
 as yet unclassified
 glTextureParameterIiv: texture with: pname with: params
 
-	<apicall: void 'glTextureParameterIiv' (ulong ulong long*)>
+	<apicall: void 'glTextureParameterIiv' (GLuint GLenum GLint*)>
 	^ self externalCallFailed

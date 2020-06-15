@@ -1,5 +1,5 @@
 as yet unclassified
 glPointParameteri: pname with: param
 
-	<apicall: void 'glPointParameteri' (ulong long)>
+	<apicall: void 'glPointParameteri' (GLenum GLint)>
 	^ self externalCallFailed

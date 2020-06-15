@@ -1,5 +1,5 @@
 as yet unclassified
 glIndexdv: c
 
-	<apicall: void 'glIndexdv' (double*)>
+	<apicall: void 'glIndexdv' (GLdouble*)>
 	^ self externalCallFailed

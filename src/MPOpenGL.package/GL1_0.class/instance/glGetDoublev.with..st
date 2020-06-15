@@ -1,5 +1,5 @@
 as yet unclassified
 glGetDoublev: pname with: data
 
-	<apicall: void 'glGetDoublev' (ulong double*)>
+	<apicall: void 'glGetDoublev' (GLenum GLdouble*)>
 	^ self externalCallFailed

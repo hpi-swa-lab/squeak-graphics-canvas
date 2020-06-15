@@ -1,5 +1,5 @@
 as yet unclassified
 glCallList: list
 
-	<apicall: void 'glCallList' (ulong)>
+	<apicall: void 'glCallList' (GLuint)>
 	^ self externalCallFailed

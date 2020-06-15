@@ -1,5 +1,5 @@
 as yet unclassified
 glGetnMapfv: target with: query with: bufSize with: v
 
-	<apicall: void 'glGetnMapfv' (ulong ulong long float*)>
+	<apicall: void 'glGetnMapfv' (GLenum GLenum GLsizei GLfloat*)>
 	^ self externalCallFailed

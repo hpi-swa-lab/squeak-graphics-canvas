@@ -1,5 +1,5 @@
 as yet unclassified
 glGetInternalformati64v: target with: internalformat with: pname with: count with: params
 
-	<apicall: void 'glGetInternalformati64v' (ulong ulong ulong long longlong*)>
+	<apicall: void 'glGetInternalformati64v' (GLenum GLenum GLenum GLsizei GLint64*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glUniformMatrix4fv: location with: count with: transpose with: value
 
-	<apicall: void 'glUniformMatrix4fv' (long long ulong float*)>
+	<apicall: void 'glUniformMatrix4fv' (GLint GLsizei GLboolean GLfloat*)>
 	^ self externalCallFailed

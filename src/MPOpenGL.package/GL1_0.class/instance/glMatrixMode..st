@@ -1,5 +1,5 @@
 as yet unclassified
 glMatrixMode: mode
 
-	<apicall: void 'glMatrixMode' (ulong)>
+	<apicall: void 'glMatrixMode' (GLenum)>
 	^ self externalCallFailed

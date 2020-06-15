@@ -1,5 +1,5 @@
 as yet unclassified
 glPushName: name
 
-	<apicall: void 'glPushName' (ulong)>
+	<apicall: void 'glPushName' (GLuint)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glMultMatrixd: m
 
-	<apicall: void 'glMultMatrixd' (double*)>
+	<apicall: void 'glMultMatrixd' (GLdouble*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glColor4dv: v
 
-	<apicall: void 'glColor4dv' (double*)>
+	<apicall: void 'glColor4dv' (GLdouble*)>
 	^ self externalCallFailed

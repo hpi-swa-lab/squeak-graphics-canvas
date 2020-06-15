@@ -1,5 +1,5 @@
 as yet unclassified
 glCheckFramebufferStatus: target
 
-	<apicall: ulong 'glCheckFramebufferStatus' (ulong)>
+	<apicall: GLenum 'glCheckFramebufferStatus' (GLenum)>
 	^ self externalCallFailed

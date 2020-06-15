@@ -1,5 +1,5 @@
 as yet unclassified
 glDeleteSync: sync
 
-	<apicall: void 'glDeleteSync' (void*)>
+	<apicall: void 'glDeleteSync' (GLsync)>
 	^ self externalCallFailed

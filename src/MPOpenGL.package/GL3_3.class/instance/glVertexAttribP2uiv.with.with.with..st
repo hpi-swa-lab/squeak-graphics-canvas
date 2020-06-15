@@ -1,5 +1,5 @@
 as yet unclassified
 glVertexAttribP2uiv: index with: type with: normalized with: value
 
-	<apicall: void 'glVertexAttribP2uiv' (ulong ulong ulong ulong*)>
+	<apicall: void 'glVertexAttribP2uiv' (GLuint GLenum GLboolean GLuint*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glBindRenderbuffer: target with: renderbuffer
 
-	<apicall: void 'glBindRenderbuffer' (ulong ulong)>
+	<apicall: void 'glBindRenderbuffer' (GLenum GLuint)>
 	^ self externalCallFailed

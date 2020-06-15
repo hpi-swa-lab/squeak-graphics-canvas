@@ -1,5 +1,5 @@
 as yet unclassified
 glFogCoordf: coord
 
-	<apicall: void 'glFogCoordf' (float)>
+	<apicall: void 'glFogCoordf' (GLfloat)>
 	^ self externalCallFailed

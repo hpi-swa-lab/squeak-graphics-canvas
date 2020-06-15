@@ -1,5 +1,5 @@
 as yet unclassified
 glColor3d: red with: green with: blue
 
-	<apicall: void 'glColor3d' (double double double)>
+	<apicall: void 'glColor3d' (GLdouble GLdouble GLdouble)>
 	^ self externalCallFailed

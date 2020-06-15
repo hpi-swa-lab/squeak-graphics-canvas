@@ -1,5 +1,5 @@
 as yet unclassified
 glVertexArrayBindingDivisor: vaobj with: bindingindex with: divisor
 
-	<apicall: void 'glVertexArrayBindingDivisor' (ulong ulong ulong)>
+	<apicall: void 'glVertexArrayBindingDivisor' (GLuint GLuint GLuint)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glWindowPos3iv: v
 
-	<apicall: void 'glWindowPos3iv' (long*)>
+	<apicall: void 'glWindowPos3iv' (GLint*)>
 	^ self externalCallFailed

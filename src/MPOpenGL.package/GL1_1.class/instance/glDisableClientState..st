@@ -1,5 +1,5 @@
 as yet unclassified
 glDisableClientState: array
 
-	<apicall: void 'glDisableClientState' (ulong)>
+	<apicall: void 'glDisableClientState' (GLenum)>
 	^ self externalCallFailed

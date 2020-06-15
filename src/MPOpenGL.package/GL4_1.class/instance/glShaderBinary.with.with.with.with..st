@@ -1,5 +1,5 @@
 as yet unclassified
 glShaderBinary: count with: shaders with: binaryformat with: binary with: length
 
-	<apicall: void 'glShaderBinary' (long ulong* ulong void* long)>
+	<apicall: void 'glShaderBinary' (GLsizei GLuint* GLenum void* GLsizei)>
 	^ self externalCallFailed

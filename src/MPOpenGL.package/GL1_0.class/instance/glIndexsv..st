@@ -1,5 +1,5 @@
 as yet unclassified
 glIndexsv: c
 
-	<apicall: void 'glIndexsv' (short*)>
+	<apicall: void 'glIndexsv' (GLshort*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glTexCoord1sv: v
 
-	<apicall: void 'glTexCoord1sv' (short*)>
+	<apicall: void 'glTexCoord1sv' (GLshort*)>
 	^ self externalCallFailed

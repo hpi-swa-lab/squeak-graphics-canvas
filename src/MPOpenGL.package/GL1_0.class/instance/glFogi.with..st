@@ -1,5 +1,5 @@
 as yet unclassified
 glFogi: pname with: param
 
-	<apicall: void 'glFogi' (ulong long)>
+	<apicall: void 'glFogi' (GLenum GLint)>
 	^ self externalCallFailed

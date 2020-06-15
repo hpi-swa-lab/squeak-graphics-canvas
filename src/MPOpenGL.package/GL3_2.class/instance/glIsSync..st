@@ -1,5 +1,5 @@
 as yet unclassified
 glIsSync: sync
 
-	<apicall: ulong 'glIsSync' (void*)>
+	<apicall: GLboolean 'glIsSync' (GLsync)>
 	^ self externalCallFailed

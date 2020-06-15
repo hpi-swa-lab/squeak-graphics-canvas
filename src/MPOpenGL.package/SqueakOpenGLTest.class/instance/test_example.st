@@ -5,8 +5,7 @@ test_example
 	frames := 0.
 	startTime := Time millisecondClockValue.
 	tex := OGLTexture new
-				form: (Display
-						copy: (bounds)).
+				form: (Display copy: bounds).
 	program := GLProgram newFor: ogl shaders: {VertexShader code: self vertexShader. FragmentShader code: self fragmentShader }.
 	ogl checkForError.
 	vao := GLVertexArrayObject newFor: ogl.
@@ -18,7 +17,7 @@ test_example
 			1.  -1. 0 . 1 .
 			-1. 1. 1 . 0	.
 			1.   1. 1 . 1
-		} asFloatArray
+		} asFloat32Array
 		usage: ogl GL_STATIC_DRAW
 		componentsPerVertex: 4.
 	ogl glDisable: ogl GL_CULL_FACE.

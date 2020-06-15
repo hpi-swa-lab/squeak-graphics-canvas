@@ -1,5 +1,5 @@
 as yet unclassified
 glVertexP4uiv: type with: value
 
-	<apicall: void 'glVertexP4uiv' (ulong ulong*)>
+	<apicall: void 'glVertexP4uiv' (GLenum GLuint*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glTexEnvi: target with: pname with: param
 
-	<apicall: void 'glTexEnvi' (ulong ulong long)>
+	<apicall: void 'glTexEnvi' (GLenum GLenum GLint)>
 	^ self externalCallFailed

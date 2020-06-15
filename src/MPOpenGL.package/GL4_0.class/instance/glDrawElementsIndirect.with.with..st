@@ -1,5 +1,5 @@
 as yet unclassified
 glDrawElementsIndirect: mode with: type with: indirect
 
-	<apicall: void 'glDrawElementsIndirect' (ulong ulong void*)>
+	<apicall: void 'glDrawElementsIndirect' (GLenum GLenum void*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glDepthRangeIndexed: index with: n with: f
 
-	<apicall: void 'glDepthRangeIndexed' (ulong double double)>
+	<apicall: void 'glDepthRangeIndexed' (GLuint GLdouble GLdouble)>
 	^ self externalCallFailed

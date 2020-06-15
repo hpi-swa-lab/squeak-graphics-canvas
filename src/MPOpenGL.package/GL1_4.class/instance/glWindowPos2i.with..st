@@ -1,5 +1,5 @@
 as yet unclassified
 glWindowPos2i: x with: y
 
-	<apicall: void 'glWindowPos2i' (long long)>
+	<apicall: void 'glWindowPos2i' (GLint GLint)>
 	^ self externalCallFailed

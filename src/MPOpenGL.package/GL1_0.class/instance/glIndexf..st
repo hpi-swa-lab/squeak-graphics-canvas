@@ -1,5 +1,5 @@
 as yet unclassified
 glIndexf: c
 
-	<apicall: void 'glIndexf' (float)>
+	<apicall: void 'glIndexf' (GLfloat)>
 	^ self externalCallFailed

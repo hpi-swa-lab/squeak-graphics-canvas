@@ -1,5 +1,5 @@
 as yet unclassified
 glMateriali: face with: pname with: param
 
-	<apicall: void 'glMateriali' (ulong ulong long)>
+	<apicall: void 'glMateriali' (GLenum GLenum GLint)>
 	^ self externalCallFailed

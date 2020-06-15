@@ -1,5 +1,5 @@
 as yet unclassified
 glBeginTransformFeedback: primitiveMode
 
-	<apicall: void 'glBeginTransformFeedback' (ulong)>
+	<apicall: void 'glBeginTransformFeedback' (GLenum)>
 	^ self externalCallFailed

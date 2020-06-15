@@ -1,5 +1,5 @@
 as yet unclassified
 glPointSize: size
 
-	<apicall: void 'glPointSize' (float)>
+	<apicall: void 'glPointSize' (GLfloat)>
 	^ self externalCallFailed

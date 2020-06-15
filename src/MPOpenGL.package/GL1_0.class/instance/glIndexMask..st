@@ -1,5 +1,5 @@
 as yet unclassified
 glIndexMask: mask
 
-	<apicall: void 'glIndexMask' (ulong)>
+	<apicall: void 'glIndexMask' (GLuint)>
 	^ self externalCallFailed

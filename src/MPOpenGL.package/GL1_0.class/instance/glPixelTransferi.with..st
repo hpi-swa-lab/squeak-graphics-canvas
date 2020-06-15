@@ -1,5 +1,5 @@
 as yet unclassified
 glPixelTransferi: pname with: param
 
-	<apicall: void 'glPixelTransferi' (ulong long)>
+	<apicall: void 'glPixelTransferi' (GLenum GLint)>
 	^ self externalCallFailed

@@ -1,0 +1,4 @@
+*MPOpenGL
+GLclampd
+
+	^ self double

@@ -1,5 +1,5 @@
 as yet unclassified
 glFogfv: pname with: params
 
-	<apicall: void 'glFogfv' (ulong float*)>
+	<apicall: void 'glFogfv' (GLenum GLfloat*)>
 	^ self externalCallFailed
