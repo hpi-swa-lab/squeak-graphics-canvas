@@ -1,4 +1,4 @@
 as yet unclassified
 fields
-
-	^ #(#(#string 'char*'))
+	"self defineFields"
+	^ #(#(#string 'byte*'))

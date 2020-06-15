@@ -10,5 +10,5 @@
 	"name" : "NestedString",
 	"pools" : [
 		 ],
-	"super" : "ExternalData",
+	"super" : "ExternalStructure",
 	"type" : "normal" }

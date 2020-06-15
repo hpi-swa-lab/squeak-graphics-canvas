@@ -1,5 +1,6 @@
 test
 test_example
+	<timeout: 5>
 	| frames startTime deltaTime framesPerSec program vbo vao mvp tex |
 	frames := 0.
 	startTime := Time millisecondClockValue.
@@ -29,19 +30,23 @@ test_example
 				ifTrue: [startTime := Time millisecondClockValue].
 			ogl beginFrame.
 			ogl installTexture: tex.
+			ogl checkForError.
 			"uploads only in first frame"
-			ogl enableTexture: tex.
+			"ogl enableTexture: tex."
 			ogl checkForError.
 			"--- this is the actual scene content ---"
 			ogl glDisable: GLDepthTest.
+			ogl checkForError.
 			"for the simple example only"
-			ogl glDisable: GLLighting.
+			"ogl glDisable: GLLighting."
+			ogl checkForError.
 			"for the simple example only"
 			ogl
 				glClearColor: 0.0
 				with: 0.0
 				with: 1.0
 				with: 1.0.
+			ogl checkForError.
 			ogl glClear: GLColorBufferBit.
 			ogl checkForError.
 			program use.
@@ -54,8 +59,11 @@ test_example
 			program vertexAttib: 1 value: vbo stride: 4 offset: 2.
 			ogl checkForError.
 			program
-				uniform: 0
-				value: (Matrix rotateZBy: (Float pi / 2) rounded).
+				uniform: (ogl glGetUniformLocation: program id with: 'mvp')
+				value: (Matrix rotateZBy: "(Float pi / 2) rounded" Time utcMicrosecondClock / 100000.0).
+			program
+				uniform: (ogl glGetUniformLocation: program id with: 'image')
+				value: 0.
 			"program uniform: 0 value: (Matrix identity: 4)."
 			ogl checkForError.
 			vbo draw: ogl GL_TRIANGLE_STRIP.

@@ -1,5 +1,5 @@
 accessing
-string: anObject
+string: someExternalData
 	"This method was automatically generated. See NestedString class>>fields."
 	<generated>
-	handle pointerAt: 1 put: anObject getHandle.
+	handle longPointerAt: 1 put: someExternalData getHandle.
