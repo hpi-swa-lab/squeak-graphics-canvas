@@ -1,13 +1,13 @@
 {
-	"category" : "Renderly-Project",
+	"category" : "RenderThee-Project",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
-	"name" : "RenderlyProject",
+		"ogl" ],
+	"name" : "RtProject",
 	"pools" : [
 		 ],
 	"super" : "MorphicProject",

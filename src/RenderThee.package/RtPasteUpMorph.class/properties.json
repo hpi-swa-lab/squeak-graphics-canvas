@@ -1,13 +1,16 @@
 {
-	"category" : "Renderly-Project",
+	"category" : "RenderThee-Project",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
-	"name" : "RenderlyPasteUpMorph",
+		"vao",
+		"vbo",
+		"ogl",
+		"program" ],
+	"name" : "RtPasteUpMorph",
 	"pools" : [
 		 ],
 	"super" : "PasteUpMorph",
