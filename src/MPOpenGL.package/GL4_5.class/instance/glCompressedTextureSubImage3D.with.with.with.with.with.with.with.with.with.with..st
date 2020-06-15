@@ -1,0 +1,5 @@
+as yet unclassified
+glCompressedTextureSubImage3D: texture with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth with: format with: imageSize with: data
+
+	<apicall: void 'glCompressedTextureSubImage3D' (ulong long long long long long long long ulong long void*) module: 'libGL.so'>
+	^ self externalCallFailed

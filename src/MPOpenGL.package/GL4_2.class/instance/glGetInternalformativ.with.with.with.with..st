@@ -1,0 +1,5 @@
+as yet unclassified
+glGetInternalformativ: target with: internalformat with: pname with: count with: params
+
+	<apicall: void 'glGetInternalformativ' (ulong ulong ulong long long*) module: 'libGL.so'>
+	^ self externalCallFailed

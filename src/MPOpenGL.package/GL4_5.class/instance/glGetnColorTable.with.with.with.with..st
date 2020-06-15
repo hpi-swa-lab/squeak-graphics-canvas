@@ -1,0 +1,5 @@
+as yet unclassified
+glGetnColorTable: target with: format with: type with: bufSize with: table
+
+	<apicall: void 'glGetnColorTable' (ulong ulong ulong long void*) module: 'libGL.so'>
+	^ self externalCallFailed

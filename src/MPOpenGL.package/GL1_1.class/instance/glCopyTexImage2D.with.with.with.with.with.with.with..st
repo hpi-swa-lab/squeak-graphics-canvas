@@ -1,0 +1,5 @@
+as yet unclassified
+glCopyTexImage2D: target with: level with: internalformat with: x with: y with: width with: height with: border
+
+	<apicall: void 'glCopyTexImage2D' (ulong long ulong long long long long long) module: 'libGL.so'>
+	^ self externalCallFailed

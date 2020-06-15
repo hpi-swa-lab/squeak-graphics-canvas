@@ -1,0 +1,5 @@
+as yet unclassified
+glDrawTransformFeedbackStreamInstanced: mode with: id with: stream with: instancecount
+
+	<apicall: void 'glDrawTransformFeedbackStreamInstanced' (ulong ulong ulong long) module: 'libGL.so'>
+	^ self externalCallFailed
