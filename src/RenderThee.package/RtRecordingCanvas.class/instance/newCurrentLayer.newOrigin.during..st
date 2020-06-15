@@ -1,14 +1,11 @@
 private
 newCurrentLayer: aLayer newOrigin: newOrigin during: aBlock
 
-	| previousLayer previousOrigin |
+	| previousLayer |
 	previousLayer := self layer.
-	previousOrigin := self origin.
 	self addLayer: aLayer.
 	self layer: aLayer.
-	self origin: newOrigin.
-	aBlock value: self.
+	self newOrigin: newOrigin during: aBlock.
 	self endDrawLayer.
 	self layer: previousLayer.
-	self origin: previousOrigin.
 	^ aLayer
