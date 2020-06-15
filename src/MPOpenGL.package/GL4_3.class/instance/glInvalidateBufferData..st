@@ -1,5 +1,5 @@
 as yet unclassified
 glInvalidateBufferData: buffer
 
-	<apicall: void 'glInvalidateBufferData' (ulong) module: 'libGL.so'>
+	<apicall: void 'glInvalidateBufferData' (ulong)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glScaled: x with: y with: z
 
-	<apicall: void 'glScaled' (double double double) module: 'libGL.so'>
+	<apicall: void 'glScaled' (double double double)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glFlush
 
-	<apicall: void 'glFlush' () module: 'libGL.so'>
+	<apicall: void 'glFlush' ()>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glActiveShaderProgram: pipeline with: program
 
-	<apicall: void 'glActiveShaderProgram' (ulong ulong) module: 'libGL.so'>
+	<apicall: void 'glActiveShaderProgram' (ulong ulong)>
 	^ self externalCallFailed

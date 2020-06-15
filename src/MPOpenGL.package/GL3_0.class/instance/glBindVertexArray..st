@@ -1,5 +1,5 @@
 as yet unclassified
 glBindVertexArray: array
 
-	<apicall: void 'glBindVertexArray' (ulong) module: 'libGL.so'>
+	<apicall: void 'glBindVertexArray' (ulong)>
 	^ self externalCallFailed

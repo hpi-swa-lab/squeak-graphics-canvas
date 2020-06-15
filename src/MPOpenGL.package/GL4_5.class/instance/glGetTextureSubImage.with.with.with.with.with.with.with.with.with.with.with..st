@@ -1,5 +1,5 @@
 as yet unclassified
 glGetTextureSubImage: texture with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth with: format with: type with: bufSize with: pixels
 
-	<apicall: void 'glGetTextureSubImage' (ulong long long long long long long long ulong ulong long void*) module: 'libGL.so'>
+	<apicall: void 'glGetTextureSubImage' (ulong long long long long long long long ulong ulong long void*)>
 	^ self externalCallFailed

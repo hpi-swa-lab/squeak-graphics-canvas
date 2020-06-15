@@ -1,5 +1,5 @@
 as yet unclassified
 glSelectBuffer: size with: buffer
 
-	<apicall: void 'glSelectBuffer' (long ulong*) module: 'libGL.so'>
+	<apicall: void 'glSelectBuffer' (long ulong*)>
 	^ self externalCallFailed

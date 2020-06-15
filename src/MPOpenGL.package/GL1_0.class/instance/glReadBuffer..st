@@ -1,5 +1,5 @@
 as yet unclassified
 glReadBuffer: src
 
-	<apicall: void 'glReadBuffer' (ulong) module: 'libGL.so'>
+	<apicall: void 'glReadBuffer' (ulong)>
 	^ self externalCallFailed

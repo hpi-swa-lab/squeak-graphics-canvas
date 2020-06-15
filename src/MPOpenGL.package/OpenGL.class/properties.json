@@ -7,7 +7,7 @@
 	"commentStamp" : "das 12/27/2005 23:43",
 	"instvars" : [
 		"platform",
-		"handle",
+		"myHandle",
 		"bufRect",
 		"glExt",
 		"extensions",
@@ -46,5 +46,5 @@
 	"pools" : [
 		"GLExtConstants",
 		"OpenGLConstants" ],
-	"super" : "Object",
+	"super" : "ExternalLibrary",
 	"type" : "normal" }

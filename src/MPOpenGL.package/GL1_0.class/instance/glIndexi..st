@@ -1,5 +1,5 @@
 as yet unclassified
 glIndexi: c
 
-	<apicall: void 'glIndexi' (long) module: 'libGL.so'>
+	<apicall: void 'glIndexi' (long)>
 	^ self externalCallFailed

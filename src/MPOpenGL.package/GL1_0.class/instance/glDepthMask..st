@@ -1,5 +1,5 @@
 as yet unclassified
 glDepthMask: flag
 
-	<apicall: void 'glDepthMask' (ulong) module: 'libGL.so'>
+	<apicall: void 'glDepthMask' (ulong)>
 	^ self externalCallFailed

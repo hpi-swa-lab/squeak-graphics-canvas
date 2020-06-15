@@ -1,5 +1,5 @@
 as yet unclassified
 glStencilFunc: func with: ref with: mask
 
-	<apicall: void 'glStencilFunc' (ulong long ulong) module: 'libGL.so'>
+	<apicall: void 'glStencilFunc' (ulong long ulong)>
 	^ self externalCallFailed

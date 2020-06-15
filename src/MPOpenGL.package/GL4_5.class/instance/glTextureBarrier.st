@@ -1,5 +1,5 @@
 as yet unclassified
 glTextureBarrier
 
-	<apicall: void 'glTextureBarrier' () module: 'libGL.so'>
+	<apicall: void 'glTextureBarrier' ()>
 	^ self externalCallFailed

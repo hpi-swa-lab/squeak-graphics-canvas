@@ -1,5 +1,5 @@
 as yet unclassified
 glPushName: name
 
-	<apicall: void 'glPushName' (ulong) module: 'libGL.so'>
+	<apicall: void 'glPushName' (ulong)>
 	^ self externalCallFailed

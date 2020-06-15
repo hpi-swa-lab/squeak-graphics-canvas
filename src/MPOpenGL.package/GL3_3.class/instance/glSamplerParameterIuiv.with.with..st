@@ -1,5 +1,5 @@
 as yet unclassified
 glSamplerParameterIuiv: sampler with: pname with: param
 
-	<apicall: void 'glSamplerParameterIuiv' (ulong ulong ulong*) module: 'libGL.so'>
+	<apicall: void 'glSamplerParameterIuiv' (ulong ulong ulong*)>
 	^ self externalCallFailed

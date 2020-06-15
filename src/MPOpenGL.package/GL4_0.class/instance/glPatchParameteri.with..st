@@ -1,5 +1,5 @@
 as yet unclassified
 glPatchParameteri: pname with: value
 
-	<apicall: void 'glPatchParameteri' (ulong long) module: 'libGL.so'>
+	<apicall: void 'glPatchParameteri' (ulong long)>
 	^ self externalCallFailed

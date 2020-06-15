@@ -1,5 +1,5 @@
 as yet unclassified
 glIsSync: sync
 
-	<apicall: ulong 'glIsSync' (void*) module: 'libGL.so'>
+	<apicall: ulong 'glIsSync' (void*)>
 	^ self externalCallFailed

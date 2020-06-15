@@ -1,5 +1,5 @@
 as yet unclassified
 glBegin: mode
 
-	<apicall: void 'glBegin' (ulong) module: 'libGL.so'>
+	<apicall: void 'glBegin' (ulong)>
 	^ self externalCallFailed

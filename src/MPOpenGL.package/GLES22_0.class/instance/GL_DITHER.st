@@ -1,2 +1,4 @@
 as yet unclassified
-GL_DITHER ^ 16r0BD0
+GL_DITHER
+
+	^ 16r0BD0

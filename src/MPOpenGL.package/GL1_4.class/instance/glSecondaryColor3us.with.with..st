@@ -1,5 +1,5 @@
 as yet unclassified
 glSecondaryColor3us: red with: green with: blue
 
-	<apicall: void 'glSecondaryColor3us' (ushort ushort ushort) module: 'libGL.so'>
+	<apicall: void 'glSecondaryColor3us' (ushort ushort ushort)>
 	^ self externalCallFailed

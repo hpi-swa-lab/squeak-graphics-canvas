@@ -1,5 +1,5 @@
 as yet unclassified
 glRasterPos2sv: v
 
-	<apicall: void 'glRasterPos2sv' (short*) module: 'libGL.so'>
+	<apicall: void 'glRasterPos2sv' (short*)>
 	^ self externalCallFailed

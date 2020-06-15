@@ -1,5 +1,5 @@
 as yet unclassified
 glGenerateMipmap: target
 
-	<apicall: void 'glGenerateMipmap' (ulong) module: 'libGL.so'>
+	<apicall: void 'glGenerateMipmap' (ulong)>
 	^ self externalCallFailed

@@ -1,2 +1,4 @@
 as yet unclassified
-GL_EQUAL ^ 16r0202
+GL_EQUAL
+
+	^ 16r0202

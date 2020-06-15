@@ -1,5 +1,5 @@
 as yet unclassified
 glCreateProgram
 
-	<apicall: ulong 'glCreateProgram' () module: 'libGL.so'>
+	<apicall: ulong 'glCreateProgram' ()>
 	^ self externalCallFailed

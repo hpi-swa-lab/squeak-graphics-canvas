@@ -1,5 +1,5 @@
 as yet unclassified
 glGenLists: range
 
-	<apicall: ulong 'glGenLists' (long) module: 'libGL.so'>
+	<apicall: ulong 'glGenLists' (long)>
 	^ self externalCallFailed

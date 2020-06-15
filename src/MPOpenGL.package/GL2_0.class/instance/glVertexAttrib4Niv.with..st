@@ -1,5 +1,5 @@
 as yet unclassified
 glVertexAttrib4Niv: index with: v
 
-	<apicall: void 'glVertexAttrib4Niv' (ulong long*) module: 'libGL.so'>
+	<apicall: void 'glVertexAttrib4Niv' (ulong long*)>
 	^ self externalCallFailed

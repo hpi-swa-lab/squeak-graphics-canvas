@@ -1,2 +1,3 @@
 as yet unclassified
-majorVersion ^1
+majorVersion
+	^ 1

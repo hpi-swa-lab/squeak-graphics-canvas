@@ -1,5 +1,5 @@
 as yet unclassified
 glMinSampleShading: value
 
-	<apicall: void 'glMinSampleShading' (float) module: 'libGL.so'>
+	<apicall: void 'glMinSampleShading' (float)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glGetShaderiv: shader with: pname with: params
 
-	<apicall: void 'glGetShaderiv' (ulong ulong long*) module: 'libGL.so'>
+	<apicall: void 'glGetShaderiv' (ulong ulong long*)>
 	^ self externalCallFailed

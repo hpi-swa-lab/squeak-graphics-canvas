@@ -1,5 +1,5 @@
 as yet unclassified
 glIndexMask: mask
 
-	<apicall: void 'glIndexMask' (ulong) module: 'libGL.so'>
+	<apicall: void 'glIndexMask' (ulong)>
 	^ self externalCallFailed

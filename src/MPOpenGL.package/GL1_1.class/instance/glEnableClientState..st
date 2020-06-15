@@ -1,5 +1,5 @@
 as yet unclassified
 glEnableClientState: array
 
-	<apicall: void 'glEnableClientState' (ulong) module: 'libGL.so'>
+	<apicall: void 'glEnableClientState' (ulong)>
 	^ self externalCallFailed

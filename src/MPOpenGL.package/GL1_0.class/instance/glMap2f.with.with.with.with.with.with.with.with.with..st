@@ -1,5 +1,5 @@
 as yet unclassified
 glMap2f: target with: u1 with: u2 with: ustride with: uorder with: v1 with: v2 with: vstride with: vorder with: points
 
-	<apicall: void 'glMap2f' (ulong float float long long float float long long float*) module: 'libGL.so'>
+	<apicall: void 'glMap2f' (ulong float float long long float float long long float*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glBlendEquationSeparate: modeRGB with: modeAlpha
 
-	<apicall: void 'glBlendEquationSeparate' (ulong ulong) module: 'libGL.so'>
+	<apicall: void 'glBlendEquationSeparate' (ulong ulong)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glLoadTransposeMatrixd: m
 
-	<apicall: void 'glLoadTransposeMatrixd' (double*) module: 'libGL.so'>
+	<apicall: void 'glLoadTransposeMatrixd' (double*)>
 	^ self externalCallFailed

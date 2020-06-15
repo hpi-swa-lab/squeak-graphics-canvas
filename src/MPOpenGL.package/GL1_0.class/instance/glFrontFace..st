@@ -1,5 +1,5 @@
 as yet unclassified
 glFrontFace: mode
 
-	<apicall: void 'glFrontFace' (ulong) module: 'libGL.so'>
+	<apicall: void 'glFrontFace' (ulong)>
 	^ self externalCallFailed

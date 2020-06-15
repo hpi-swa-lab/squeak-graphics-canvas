@@ -1,5 +1,5 @@
 as yet unclassified
 glPixelTransferi: pname with: param
 
-	<apicall: void 'glPixelTransferi' (ulong long) module: 'libGL.so'>
+	<apicall: void 'glPixelTransferi' (ulong long)>
 	^ self externalCallFailed

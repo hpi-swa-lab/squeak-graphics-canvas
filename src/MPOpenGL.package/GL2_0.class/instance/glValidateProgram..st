@@ -1,5 +1,5 @@
 as yet unclassified
 glValidateProgram: program
 
-	<apicall: void 'glValidateProgram' (ulong) module: 'libGL.so'>
+	<apicall: void 'glValidateProgram' (ulong)>
 	^ self externalCallFailed

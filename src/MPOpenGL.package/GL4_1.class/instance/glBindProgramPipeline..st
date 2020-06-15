@@ -1,5 +1,5 @@
 as yet unclassified
 glBindProgramPipeline: pipeline
 
-	<apicall: void 'glBindProgramPipeline' (ulong) module: 'libGL.so'>
+	<apicall: void 'glBindProgramPipeline' (ulong)>
 	^ self externalCallFailed

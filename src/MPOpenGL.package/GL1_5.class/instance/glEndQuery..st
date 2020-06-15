@@ -1,5 +1,5 @@
 as yet unclassified
 glEndQuery: target
 
-	<apicall: void 'glEndQuery' (ulong) module: 'libGL.so'>
+	<apicall: void 'glEndQuery' (ulong)>
 	^ self externalCallFailed

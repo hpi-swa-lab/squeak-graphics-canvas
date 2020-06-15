@@ -1,5 +1,5 @@
 as yet unclassified
 glPopClientAttrib
 
-	<apicall: void 'glPopClientAttrib' () module: 'libGL.so'>
+	<apicall: void 'glPopClientAttrib' ()>
 	^ self externalCallFailed

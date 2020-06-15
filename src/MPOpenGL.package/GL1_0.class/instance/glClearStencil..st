@@ -1,5 +1,5 @@
 as yet unclassified
 glClearStencil: s
 
-	<apicall: void 'glClearStencil' (long) module: 'libGL.so'>
+	<apicall: void 'glClearStencil' (long)>
 	^ self externalCallFailed

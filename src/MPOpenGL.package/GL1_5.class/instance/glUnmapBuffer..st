@@ -1,5 +1,5 @@
 as yet unclassified
 glUnmapBuffer: target
 
-	<apicall: ulong 'glUnmapBuffer' (ulong) module: 'libGL.so'>
+	<apicall: ulong 'glUnmapBuffer' (ulong)>
 	^ self externalCallFailed

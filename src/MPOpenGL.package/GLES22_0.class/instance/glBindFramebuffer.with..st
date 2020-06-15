@@ -1,2 +1,5 @@
 as yet unclassified
-glBindFramebuffer: target with: framebuffer <apicall: void 'glBindFramebuffer' (ulong ulong) module: 'libGL.so'> ^ self externalCallFailed
+glBindFramebuffer: target with: framebuffer
+
+	<apicall: void 'glBindFramebuffer' (ulong ulong)>
+	^ self externalCallFailed

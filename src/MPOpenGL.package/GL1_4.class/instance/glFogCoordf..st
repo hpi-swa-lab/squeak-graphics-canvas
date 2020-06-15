@@ -1,5 +1,5 @@
 as yet unclassified
 glFogCoordf: coord
 
-	<apicall: void 'glFogCoordf' (float) module: 'libGL.so'>
+	<apicall: void 'glFogCoordf' (float)>
 	^ self externalCallFailed

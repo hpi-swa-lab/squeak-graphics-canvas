@@ -1,5 +1,5 @@
 as yet unclassified
 glGetError
 
-	<apicall: ulong 'glGetError' () module: 'libGL.so'>
+	<apicall: ulong 'glGetError' ()>
 	^ self externalCallFailed

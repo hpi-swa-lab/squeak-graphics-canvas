@@ -1,5 +1,5 @@
 as yet unclassified
 glCallList: list
 
-	<apicall: void 'glCallList' (ulong) module: 'libGL.so'>
+	<apicall: void 'glCallList' (ulong)>
 	^ self externalCallFailed

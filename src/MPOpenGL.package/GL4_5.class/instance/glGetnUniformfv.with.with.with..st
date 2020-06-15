@@ -1,5 +1,5 @@
 as yet unclassified
 glGetnUniformfv: program with: location with: bufSize with: params
 
-	<apicall: void 'glGetnUniformfv' (ulong long long float*) module: 'libGL.so'>
+	<apicall: void 'glGetnUniformfv' (ulong long long float*)>
 	^ self externalCallFailed

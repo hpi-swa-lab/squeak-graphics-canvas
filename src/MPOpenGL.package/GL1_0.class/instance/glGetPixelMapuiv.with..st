@@ -1,5 +1,5 @@
 as yet unclassified
 glGetPixelMapuiv: map with: values
 
-	<apicall: void 'glGetPixelMapuiv' (ulong ulong*) module: 'libGL.so'>
+	<apicall: void 'glGetPixelMapuiv' (ulong ulong*)>
 	^ self externalCallFailed

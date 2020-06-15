@@ -1,2 +1,4 @@
 as yet unclassified
-GL_RGBA32I ^ 16r8D82
+GL_RGBA32I
+
+	^ 16r8D82

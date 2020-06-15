@@ -1,5 +1,5 @@
 as yet unclassified
 glClipControl: origin with: depth
 
-	<apicall: void 'glClipControl' (ulong ulong) module: 'libGL.so'>
+	<apicall: void 'glClipControl' (ulong ulong)>
 	^ self externalCallFailed

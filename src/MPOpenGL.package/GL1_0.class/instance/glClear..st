@@ -1,5 +1,5 @@
 as yet unclassified
 glClear: mask
 
-	<apicall: void 'glClear' (ulong) module: 'libGL.so'>
+	<apicall: void 'glClear' (ulong)>
 	^ self externalCallFailed

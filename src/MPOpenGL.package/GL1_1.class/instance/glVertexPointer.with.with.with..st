@@ -1,5 +1,5 @@
 as yet unclassified
 glVertexPointer: size with: type with: stride with: pointer
 
-	<apicall: void 'glVertexPointer' (long ulong long void*) module: 'libGL.so'>
+	<apicall: void 'glVertexPointer' (long ulong long void*)>
 	^ self externalCallFailed

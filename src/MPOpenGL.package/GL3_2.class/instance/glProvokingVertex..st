@@ -1,5 +1,5 @@
 as yet unclassified
 glProvokingVertex: mode
 
-	<apicall: void 'glProvokingVertex' (ulong) module: 'libGL.so'>
+	<apicall: void 'glProvokingVertex' (ulong)>
 	^ self externalCallFailed

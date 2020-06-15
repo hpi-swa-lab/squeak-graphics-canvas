@@ -1,5 +1,5 @@
 as yet unclassified
 glUseProgram: program
 
-	<apicall: void 'glUseProgram' (ulong) module: 'libGL.so'>
+	<apicall: void 'glUseProgram' (ulong)>
 	^ self externalCallFailed

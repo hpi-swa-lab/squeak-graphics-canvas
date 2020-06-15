@@ -1,5 +1,5 @@
 as yet unclassified
 glDeleteShader: shader
 
-	<apicall: void 'glDeleteShader' (ulong) module: 'libGL.so'>
+	<apicall: void 'glDeleteShader' (ulong)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glArrayElement: i
 
-	<apicall: void 'glArrayElement' (long) module: 'libGL.so'>
+	<apicall: void 'glArrayElement' (long)>
 	^ self externalCallFailed

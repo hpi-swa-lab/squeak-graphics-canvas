@@ -1,5 +1,5 @@
 as yet unclassified
 glEnd
 
-	<apicall: void 'glEnd' () module: 'libGL.so'>
+	<apicall: void 'glEnd' ()>
 	^ self externalCallFailed

@@ -1,2 +1,5 @@
 as yet unclassified
-glFinish<apicall: void 'glFinish' () module: 'libGL.so'> ^ self externalCallFailed
+glFinish
+
+	<apicall: void 'glFinish' ()>
+	^ self externalCallFailed

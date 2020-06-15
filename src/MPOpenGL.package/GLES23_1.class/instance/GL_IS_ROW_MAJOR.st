@@ -1,2 +1,4 @@
 as yet unclassified
-GL_IS_ROW_MAJOR ^ 16r9300
+GL_IS_ROW_MAJOR
+
+	^ 16r9300

@@ -1,2 +1,4 @@
 as yet unclassified
-GL_LIGHTEN ^ 16r9298
+GL_LIGHTEN
+
+	^ 16r9298

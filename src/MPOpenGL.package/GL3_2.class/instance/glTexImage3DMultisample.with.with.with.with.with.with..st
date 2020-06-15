@@ -1,5 +1,5 @@
 as yet unclassified
 glTexImage3DMultisample: target with: samples with: internalformat with: width with: height with: depth with: fixedsamplelocations
 
-	<apicall: void 'glTexImage3DMultisample' (ulong long ulong long long long ulong) module: 'libGL.so'>
+	<apicall: void 'glTexImage3DMultisample' (ulong long ulong long long long ulong)>
 	^ self externalCallFailed

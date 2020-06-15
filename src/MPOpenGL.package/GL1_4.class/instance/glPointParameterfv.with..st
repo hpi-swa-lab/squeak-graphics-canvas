@@ -1,5 +1,5 @@
 as yet unclassified
 glPointParameterfv: pname with: params
 
-	<apicall: void 'glPointParameterfv' (ulong float*) module: 'libGL.so'>
+	<apicall: void 'glPointParameterfv' (ulong float*)>
 	^ self externalCallFailed

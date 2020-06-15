@@ -1,2 +1,4 @@
 as yet unclassified
-GL_RGB565 ^ 16r8D62
+GL_RGB565
+
+	^ 16r8D62

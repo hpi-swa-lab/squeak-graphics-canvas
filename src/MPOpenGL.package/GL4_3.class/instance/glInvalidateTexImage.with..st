@@ -1,5 +1,5 @@
 as yet unclassified
 glInvalidateTexImage: texture with: level
 
-	<apicall: void 'glInvalidateTexImage' (ulong long) module: 'libGL.so'>
+	<apicall: void 'glInvalidateTexImage' (ulong long)>
 	^ self externalCallFailed

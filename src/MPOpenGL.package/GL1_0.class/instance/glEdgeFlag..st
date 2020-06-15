@@ -1,5 +1,5 @@
 as yet unclassified
 glEdgeFlag: flag
 
-	<apicall: void 'glEdgeFlag' (ulong) module: 'libGL.so'>
+	<apicall: void 'glEdgeFlag' (ulong)>
 	^ self externalCallFailed

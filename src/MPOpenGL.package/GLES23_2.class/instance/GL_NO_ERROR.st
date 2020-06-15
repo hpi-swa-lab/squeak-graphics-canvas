@@ -1,2 +1,4 @@
 as yet unclassified
-GL_NO_ERROR ^ 0
+GL_NO_ERROR
+
+	^ 0

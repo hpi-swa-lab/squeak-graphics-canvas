@@ -1,5 +1,5 @@
 as yet unclassified
 glPolygonStipple: mask
 
-	<apicall: void 'glPolygonStipple' (void*) module: 'libGL.so'>
+	<apicall: void 'glPolygonStipple' (void*)>
 	^ self externalCallFailed

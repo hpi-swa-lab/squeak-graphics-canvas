@@ -1,5 +1,5 @@
 as yet unclassified
 glGetGraphicsResetStatus
 
-	<apicall: ulong 'glGetGraphicsResetStatus' () module: 'libGL.so'>
+	<apicall: ulong 'glGetGraphicsResetStatus' ()>
 	^ self externalCallFailed

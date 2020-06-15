@@ -1,5 +1,5 @@
 as yet unclassified
 glIsFramebuffer: framebuffer
 
-	<apicall: ulong 'glIsFramebuffer' (ulong) module: 'libGL.so'>
+	<apicall: ulong 'glIsFramebuffer' (ulong)>
 	^ self externalCallFailed

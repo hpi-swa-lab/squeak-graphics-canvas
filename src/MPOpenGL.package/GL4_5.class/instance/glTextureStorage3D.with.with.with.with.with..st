@@ -1,5 +1,5 @@
 as yet unclassified
 glTextureStorage3D: texture with: levels with: internalformat with: width with: height with: depth
 
-	<apicall: void 'glTextureStorage3D' (ulong long ulong long long long) module: 'libGL.so'>
+	<apicall: void 'glTextureStorage3D' (ulong long ulong long long long)>
 	^ self externalCallFailed

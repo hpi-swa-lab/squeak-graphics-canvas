@@ -1,2 +1,4 @@
 as yet unclassified
-GL_BUFFER_MAP_OFFSET ^ 16r9121
+GL_BUFFER_MAP_OFFSET
+
+	^ 16r9121

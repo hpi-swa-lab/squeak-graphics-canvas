@@ -1,5 +1,5 @@
 as yet unclassified
 glCompileShader: shader
 
-	<apicall: void 'glCompileShader' (ulong) module: 'libGL.so'>
+	<apicall: void 'glCompileShader' (ulong)>
 	^ self externalCallFailed

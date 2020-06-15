@@ -1,5 +1,5 @@
 as yet unclassified
 glEndTransformFeedback
 
-	<apicall: void 'glEndTransformFeedback' () module: 'libGL.so'>
+	<apicall: void 'glEndTransformFeedback' ()>
 	^ self externalCallFailed

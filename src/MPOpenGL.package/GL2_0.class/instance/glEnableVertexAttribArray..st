@@ -1,5 +1,5 @@
 as yet unclassified
 glEnableVertexAttribArray: index
 
-	<apicall: void 'glEnableVertexAttribArray' (ulong) module: 'libGL.so'>
+	<apicall: void 'glEnableVertexAttribArray' (ulong)>
 	^ self externalCallFailed

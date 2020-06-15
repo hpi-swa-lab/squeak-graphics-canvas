@@ -1,5 +1,5 @@
 as yet unclassified
 glTexCoord3iv: v
 
-	<apicall: void 'glTexCoord3iv' (long*) module: 'libGL.so'>
+	<apicall: void 'glTexCoord3iv' (long*)>
 	^ self externalCallFailed

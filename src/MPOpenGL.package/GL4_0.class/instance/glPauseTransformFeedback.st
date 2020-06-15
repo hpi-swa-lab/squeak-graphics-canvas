@@ -1,5 +1,5 @@
 as yet unclassified
 glPauseTransformFeedback
 
-	<apicall: void 'glPauseTransformFeedback' () module: 'libGL.so'>
+	<apicall: void 'glPauseTransformFeedback' ()>
 	^ self externalCallFailed

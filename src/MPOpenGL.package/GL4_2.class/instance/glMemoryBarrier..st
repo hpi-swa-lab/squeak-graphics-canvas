@@ -1,5 +1,5 @@
 as yet unclassified
 glMemoryBarrier: barriers
 
-	<apicall: void 'glMemoryBarrier' (ulong) module: 'libGL.so'>
+	<apicall: void 'glMemoryBarrier' (ulong)>
 	^ self externalCallFailed

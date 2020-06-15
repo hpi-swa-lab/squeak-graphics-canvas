@@ -1,5 +1,5 @@
 as yet unclassified
 glColor3sv: v
 
-	<apicall: void 'glColor3sv' (short*) module: 'libGL.so'>
+	<apicall: void 'glColor3sv' (short*)>
 	^ self externalCallFailed

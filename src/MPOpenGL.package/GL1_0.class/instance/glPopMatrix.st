@@ -1,5 +1,5 @@
 as yet unclassified
 glPopMatrix
 
-	<apicall: void 'glPopMatrix' () module: 'libGL.so'>
+	<apicall: void 'glPopMatrix' ()>
 	^ self externalCallFailed

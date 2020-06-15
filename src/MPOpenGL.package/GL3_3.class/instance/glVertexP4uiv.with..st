@@ -1,5 +1,5 @@
 as yet unclassified
 glVertexP4uiv: type with: value
 
-	<apicall: void 'glVertexP4uiv' (ulong ulong*) module: 'libGL.so'>
+	<apicall: void 'glVertexP4uiv' (ulong ulong*)>
 	^ self externalCallFailed

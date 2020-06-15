@@ -1,5 +1,5 @@
 as yet unclassified
 glUniform1i: location with: v0
 
-	<apicall: void 'glUniform1i' (long long) module: 'libGL.so'>
+	<apicall: void 'glUniform1i' (long long)>
 	^ self externalCallFailed

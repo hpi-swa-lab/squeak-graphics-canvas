@@ -1,2 +1,3 @@
 as yet unclassified
-minorVersion ^3
+minorVersion
+	^ 3

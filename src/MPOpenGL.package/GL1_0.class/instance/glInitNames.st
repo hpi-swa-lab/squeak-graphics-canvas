@@ -1,5 +1,5 @@
 as yet unclassified
 glInitNames
 
-	<apicall: void 'glInitNames' () module: 'libGL.so'>
+	<apicall: void 'glInitNames' ()>
 	^ self externalCallFailed

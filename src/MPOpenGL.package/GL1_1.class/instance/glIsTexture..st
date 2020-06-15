@@ -1,5 +1,5 @@
 as yet unclassified
 glIsTexture: texture
 
-	<apicall: ulong 'glIsTexture' (ulong) module: 'libGL.so'>
+	<apicall: ulong 'glIsTexture' (ulong)>
 	^ self externalCallFailed

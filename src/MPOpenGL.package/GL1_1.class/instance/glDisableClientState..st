@@ -1,5 +1,5 @@
 as yet unclassified
 glDisableClientState: array
 
-	<apicall: void 'glDisableClientState' (ulong) module: 'libGL.so'>
+	<apicall: void 'glDisableClientState' (ulong)>
 	^ self externalCallFailed

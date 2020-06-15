@@ -1,5 +1,5 @@
 as yet unclassified
 glLightf: light with: pname with: param
 
-	<apicall: void 'glLightf' (ulong ulong float) module: 'libGL.so'>
+	<apicall: void 'glLightf' (ulong ulong float)>
 	^ self externalCallFailed

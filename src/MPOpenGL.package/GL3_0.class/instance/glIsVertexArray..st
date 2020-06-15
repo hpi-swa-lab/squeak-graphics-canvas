@@ -1,5 +1,5 @@
 as yet unclassified
 glIsVertexArray: array
 
-	<apicall: ulong 'glIsVertexArray' (ulong) module: 'libGL.so'>
+	<apicall: ulong 'glIsVertexArray' (ulong)>
 	^ self externalCallFailed

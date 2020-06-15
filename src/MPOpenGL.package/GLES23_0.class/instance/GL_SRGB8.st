@@ -1,2 +1,4 @@
 as yet unclassified
-GL_SRGB8 ^ 16r8C41
+GL_SRGB8
+
+	^ 16r8C41

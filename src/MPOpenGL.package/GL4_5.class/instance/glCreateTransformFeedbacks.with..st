@@ -1,5 +1,5 @@
 as yet unclassified
 glCreateTransformFeedbacks: n with: ids
 
-	<apicall: void 'glCreateTransformFeedbacks' (long ulong*) module: 'libGL.so'>
+	<apicall: void 'glCreateTransformFeedbacks' (long ulong*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glCullFace: mode
 
-	<apicall: void 'glCullFace' (ulong) module: 'libGL.so'>
+	<apicall: void 'glCullFace' (ulong)>
 	^ self externalCallFailed

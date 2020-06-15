@@ -1,5 +1,5 @@
 as yet unclassified
 glTextureParameterIiv: texture with: pname with: params
 
-	<apicall: void 'glTextureParameterIiv' (ulong ulong long*) module: 'libGL.so'>
+	<apicall: void 'glTextureParameterIiv' (ulong ulong long*)>
 	^ self externalCallFailed

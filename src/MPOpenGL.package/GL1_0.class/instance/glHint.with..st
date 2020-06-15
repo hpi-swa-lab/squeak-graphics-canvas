@@ -1,5 +1,5 @@
 as yet unclassified
 glHint: target with: mode
 
-	<apicall: void 'glHint' (ulong ulong) module: 'libGL.so'>
+	<apicall: void 'glHint' (ulong ulong)>
 	^ self externalCallFailed

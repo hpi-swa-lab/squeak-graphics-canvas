@@ -1,5 +1,5 @@
 as yet unclassified
 glGetVertexArrayIndexed64iv: vaobj with: index with: pname with: param
 
-	<apicall: void 'glGetVertexArrayIndexed64iv' (ulong ulong ulong longlong*) module: 'libGL.so'>
+	<apicall: void 'glGetVertexArrayIndexed64iv' (ulong ulong ulong longlong*)>
 	^ self externalCallFailed

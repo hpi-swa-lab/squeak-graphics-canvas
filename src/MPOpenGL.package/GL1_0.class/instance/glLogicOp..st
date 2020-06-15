@@ -1,5 +1,5 @@
 as yet unclassified
 glLogicOp: opcode
 
-	<apicall: void 'glLogicOp' (ulong) module: 'libGL.so'>
+	<apicall: void 'glLogicOp' (ulong)>
 	^ self externalCallFailed

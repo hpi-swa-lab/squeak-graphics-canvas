@@ -1,5 +1,5 @@
 as yet unclassified
 glLinkProgram: program
 
-	<apicall: void 'glLinkProgram' (ulong) module: 'libGL.so'>
+	<apicall: void 'glLinkProgram' (ulong)>
 	^ self externalCallFailed

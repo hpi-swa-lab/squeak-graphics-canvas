@@ -1,5 +1,5 @@
 as yet unclassified
 glMultMatrixf: m
 
-	<apicall: void 'glMultMatrixf' (float*) module: 'libGL.so'>
+	<apicall: void 'glMultMatrixf' (float*)>
 	^ self externalCallFailed

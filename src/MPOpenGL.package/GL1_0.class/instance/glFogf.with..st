@@ -1,5 +1,5 @@
 as yet unclassified
 glFogf: pname with: param
 
-	<apicall: void 'glFogf' (ulong float) module: 'libGL.so'>
+	<apicall: void 'glFogf' (ulong float)>
 	^ self externalCallFailed

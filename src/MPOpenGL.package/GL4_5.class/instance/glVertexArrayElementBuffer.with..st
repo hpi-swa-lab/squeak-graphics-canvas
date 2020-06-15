@@ -1,5 +1,5 @@
 as yet unclassified
 glVertexArrayElementBuffer: vaobj with: buffer
 
-	<apicall: void 'glVertexArrayElementBuffer' (ulong ulong) module: 'libGL.so'>
+	<apicall: void 'glVertexArrayElementBuffer' (ulong ulong)>
 	^ self externalCallFailed

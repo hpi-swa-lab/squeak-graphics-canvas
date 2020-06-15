@@ -31,7 +31,7 @@ generateCommand: anElement
 			separatedBy: [stream space].
 		
 		stream
-			nextPutAll: ') module: ''libGL.so''>';
+			nextPutAll: ')>';
 			cr; tab;
 			nextPutAll: '^ self externalCallFailed'].
 

@@ -1,5 +1,5 @@
 as yet unclassified
 glBindFragDataLocation: program with: color with: name
 
-	<apicall: void 'glBindFragDataLocation' (ulong ulong char*) module: 'libGL.so'>
+	<apicall: void 'glBindFragDataLocation' (ulong ulong char*)>
 	^ self externalCallFailed

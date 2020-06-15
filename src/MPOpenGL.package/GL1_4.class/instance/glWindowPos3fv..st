@@ -1,5 +1,5 @@
 as yet unclassified
 glWindowPos3fv: v
 
-	<apicall: void 'glWindowPos3fv' (float*) module: 'libGL.so'>
+	<apicall: void 'glWindowPos3fv' (float*)>
 	^ self externalCallFailed

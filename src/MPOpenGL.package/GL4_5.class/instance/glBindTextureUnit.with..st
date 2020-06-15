@@ -1,5 +1,5 @@
 as yet unclassified
 glBindTextureUnit: unit with: texture
 
-	<apicall: void 'glBindTextureUnit' (ulong ulong) module: 'libGL.so'>
+	<apicall: void 'glBindTextureUnit' (ulong ulong)>
 	^ self externalCallFailed

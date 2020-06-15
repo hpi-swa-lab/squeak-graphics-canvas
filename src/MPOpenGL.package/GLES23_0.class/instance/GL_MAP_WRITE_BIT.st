@@ -1,2 +1,4 @@
 as yet unclassified
-GL_MAP_WRITE_BIT ^ 16r0002
+GL_MAP_WRITE_BIT
+
+	^ 16r0002

@@ -1,5 +1,5 @@
 as yet unclassified
 glShadeModel: mode
 
-	<apicall: void 'glShadeModel' (ulong) module: 'libGL.so'>
+	<apicall: void 'glShadeModel' (ulong)>
 	^ self externalCallFailed
