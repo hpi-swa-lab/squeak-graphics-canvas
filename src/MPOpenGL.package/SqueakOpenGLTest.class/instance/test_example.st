@@ -5,7 +5,8 @@ test_example
 	frames := 0.
 	startTime := Time millisecondClockValue.
 	tex := OGLTexture new
-				form: (Display copy: bounds).
+				form: (Display
+						copy: (bounds)).
 	program := GLProgram newFor: ogl shaders: {VertexShader code: self vertexShader. FragmentShader code: self fragmentShader }.
 	ogl checkForError.
 	vao := GLVertexArrayObject newFor: ogl.
@@ -17,13 +18,13 @@ test_example
 			1.  -1. 0 . 1 .
 			-1. 1. 1 . 0	.
 			1.   1. 1 . 1
-		} asFloat32Array
+		} asFloatArray
 		usage: ogl GL_STATIC_DRAW
 		componentsPerVertex: 4.
 	ogl glDisable: ogl GL_CULL_FACE.
 	ogl checkForError.
-	[Sensor anyButtonPressed]
-		whileFalse: ["start counting at second frame si------**nce first frame is
+	[Sensor anyButtonPressed not and: [ogl shouldClose not]]
+		whileTrue: ["start counting at second frame si------**nce first frame is
 			penalized by the upload of the bitmap font outside of ogl."
 			frames = 1
 				ifTrue: [startTime := Time millisecondClockValue].
@@ -36,10 +37,6 @@ test_example
 			"--- this is the actual scene content ---"
 			ogl glDisable: GLDepthTest.
 			ogl checkForError.
-			"for the simple example only"
-			"ogl glDisable: GLLighting."
-			ogl checkForError.
-			"for the simple example only"
 			ogl
 				glClearColor: 0.0
 				with: 0.0
