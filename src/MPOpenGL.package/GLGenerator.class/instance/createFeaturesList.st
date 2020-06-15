@@ -1,4 +1,4 @@
-as yet unclassified
+initialization
 createFeaturesList
 	enums := Dictionary new.
 	commands := Dictionary new.

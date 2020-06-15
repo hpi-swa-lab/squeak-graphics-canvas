@@ -1,2 +1,4 @@
 as yet unclassified
-GL_RGBA16 ^ 16r805B
+GL_RGBA16
+
+	^ 16r805B

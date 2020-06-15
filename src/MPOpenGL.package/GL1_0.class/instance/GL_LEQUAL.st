@@ -1,2 +1,4 @@
 as yet unclassified
-GL_LEQUAL ^ 16r0203
+GL_LEQUAL
+
+	^ 16r0203

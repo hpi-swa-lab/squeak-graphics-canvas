@@ -1,2 +1,4 @@
 as yet unclassified
-GL_STENCIL ^ 16r1802
+GL_STENCIL
+
+	^ 16r1802

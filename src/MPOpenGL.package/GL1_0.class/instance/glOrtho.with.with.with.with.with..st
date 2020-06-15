@@ -1,2 +1,0 @@
-as yet unclassified
-glOrtho: left with: right with: bottom with: top with: zNear with: zFar <apicall: void 'glOrtho' (double double double double double double) module: 'libGL.so'> ^ self externalCallFailed

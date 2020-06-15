@@ -1,2 +1,4 @@
 as yet unclassified
-GL_LIST_BASE ^ 16r0B32
+GL_LIST_BASE
+
+	^ 16r0B32

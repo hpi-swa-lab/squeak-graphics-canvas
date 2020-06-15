@@ -1,4 +1,4 @@
-as yet unclassified
+code generation
 featureClass: anElement versionNumber: aString
 	| className result splitVersion |
 	className := (api asUppercase , (aString copyReplaceAll: '.' with: '_')) asSymbol.

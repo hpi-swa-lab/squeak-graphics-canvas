@@ -1,3 +1,3 @@
-as yet unclassified
+accessing
 rootVersion
 	^ Smalltalk at: ((api , 'Version') asSymbol).

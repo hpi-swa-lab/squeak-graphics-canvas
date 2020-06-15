@@ -1,2 +1,4 @@
 as yet unclassified
-GL_SHININESS ^ 16r1601
+GL_SHININESS
+
+	^ 16r1601

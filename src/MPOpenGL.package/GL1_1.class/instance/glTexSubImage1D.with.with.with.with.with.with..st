@@ -1,2 +1,0 @@
-as yet unclassified
-glTexSubImage1D: target with: level with: xoffset with: width with: format with: type with: pixels <apicall: void 'glTexSubImage1D' (ulong long long long ulong ulong void*) module: 'libGL.so'> ^ self externalCallFailed

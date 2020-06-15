@@ -1,2 +1,4 @@
 as yet unclassified
-GL_AUX_BUFFERS ^ 16r0C00
+GL_AUX_BUFFERS
+
+	^ 16r0C00

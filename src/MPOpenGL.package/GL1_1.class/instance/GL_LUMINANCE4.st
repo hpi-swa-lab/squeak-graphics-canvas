@@ -1,2 +1,4 @@
 as yet unclassified
-GL_LUMINANCE4 ^ 16r803F
+GL_LUMINANCE4
+
+	^ 16r803F

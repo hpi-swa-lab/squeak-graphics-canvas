@@ -1,2 +1,4 @@
 as yet unclassified
-GL_FRAGMENT_TEXTURE ^ 16r829F
+GL_FRAGMENT_TEXTURE
+
+	^ 16r829F

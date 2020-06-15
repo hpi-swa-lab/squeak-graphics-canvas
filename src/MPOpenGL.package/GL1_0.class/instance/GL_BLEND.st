@@ -1,2 +1,4 @@
 as yet unclassified
-GL_BLEND ^ 16r0BE2
+GL_BLEND
+
+	^ 16r0BE2

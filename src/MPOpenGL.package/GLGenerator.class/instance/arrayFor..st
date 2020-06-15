@@ -1,4 +1,4 @@
-as yet unclassified
+xml helpers
 arrayFor: anElement
 	anElement tag = #enum ifTrue: [ ^enums ].
 	anElement tag = #command ifTrue: [ ^commands ].

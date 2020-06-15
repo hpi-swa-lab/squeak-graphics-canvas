@@ -1,2 +1,4 @@
 as yet unclassified
-GL_COLOR ^ 16r1800
+GL_COLOR
+
+	^ 16r1800

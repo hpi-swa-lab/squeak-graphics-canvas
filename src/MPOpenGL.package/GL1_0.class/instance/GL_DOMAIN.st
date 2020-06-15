@@ -1,2 +1,4 @@
 as yet unclassified
-GL_DOMAIN ^ 16r0A02
+GL_DOMAIN
+
+	^ 16r0A02

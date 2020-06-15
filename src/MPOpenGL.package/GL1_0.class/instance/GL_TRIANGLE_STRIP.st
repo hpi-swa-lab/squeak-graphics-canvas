@@ -1,2 +1,4 @@
 as yet unclassified
-GL_TRIANGLE_STRIP ^ 16r0005
+GL_TRIANGLE_STRIP
+
+	^ 16r0005

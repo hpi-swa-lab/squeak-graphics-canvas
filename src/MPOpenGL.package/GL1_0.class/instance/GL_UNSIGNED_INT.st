@@ -1,2 +1,4 @@
 as yet unclassified
-GL_UNSIGNED_INT ^ 16r1405
+GL_UNSIGNED_INT
+
+	^ 16r1405

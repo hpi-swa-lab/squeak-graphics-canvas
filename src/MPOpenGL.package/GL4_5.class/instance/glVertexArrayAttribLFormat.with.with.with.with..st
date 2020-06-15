@@ -1,2 +1,0 @@
-as yet unclassified
-glVertexArrayAttribLFormat: vaobj with: attribindex with: size with: type with: relativeoffset <apicall: void 'glVertexArrayAttribLFormat' (ulong ulong long ulong ulong) module: 'libGL.so'> ^ self externalCallFailed

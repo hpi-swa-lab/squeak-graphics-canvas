@@ -1,4 +1,4 @@
-as yet unclassified
+public
 generate: xml api: aString
 	registry := xml firstTagNamed: #registry.
 	api := aString asUppercase.

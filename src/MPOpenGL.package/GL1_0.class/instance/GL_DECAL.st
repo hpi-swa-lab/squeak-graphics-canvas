@@ -1,2 +1,4 @@
 as yet unclassified
-GL_DECAL ^ 16r2101
+GL_DECAL
+
+	^ 16r2101

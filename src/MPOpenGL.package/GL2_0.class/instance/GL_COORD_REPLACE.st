@@ -1,2 +1,4 @@
 as yet unclassified
-GL_COORD_REPLACE ^ 16r8862
+GL_COORD_REPLACE
+
+	^ 16r8862

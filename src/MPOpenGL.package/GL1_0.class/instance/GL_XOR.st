@@ -1,2 +1,4 @@
 as yet unclassified
-GL_XOR ^ 16r1506
+GL_XOR
+
+	^ 16r1506

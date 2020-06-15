@@ -1,2 +1,0 @@
-as yet unclassified
-glSpecializeShader: shader with: pEntryPoint with: numSpecializationConstants with: pConstantIndex with: pConstantValue <apicall: void 'glSpecializeShader' (ulong char* ulong ulong* ulong*) module: 'libGL.so'> ^ self externalCallFailed

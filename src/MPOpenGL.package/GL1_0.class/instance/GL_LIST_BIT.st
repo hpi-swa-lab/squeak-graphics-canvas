@@ -1,2 +1,4 @@
 as yet unclassified
-GL_LIST_BIT ^ 16r00020000
+GL_LIST_BIT
+
+	^ 16r00020000

@@ -1,2 +1,4 @@
 as yet unclassified
-GL_RGBA2 ^ 16r8055
+GL_RGBA2
+
+	^ 16r8055
