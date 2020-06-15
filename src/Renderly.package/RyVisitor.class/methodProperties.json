@@ -1,0 +1,16 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"visitDrawElementLayer:" : "stlu 5/25/2020 09:44",
+		"visitDrawImage:" : "stlu 5/25/2020 09:44",
+		"visitDrawLayer:" : "stlu 5/25/2020 09:44",
+		"visitDrawLine:" : "stlu 5/25/2020 09:44",
+		"visitDrawOval:" : "stlu 5/25/2020 09:44",
+		"visitDrawParagraph:" : "stlu 5/25/2020 09:44",
+		"visitDrawPolygon:" : "stlu 5/25/2020 09:44",
+		"visitDrawRectangle:" : "stlu 5/25/2020 09:45",
+		"visitDrawRoundedRectangle:" : "stlu 5/25/2020 09:45",
+		"visitDrawString:" : "stlu 5/25/2020 09:45",
+		"visitDrawTransformLayer:" : "stlu 5/25/2020 09:44",
+		"visitDrawUnsupported:" : "stlu 5/25/2020 09:45" } }

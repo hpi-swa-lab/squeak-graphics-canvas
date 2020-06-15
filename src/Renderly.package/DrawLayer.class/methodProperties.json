@@ -9,9 +9,13 @@
 		"clipRect" : "stlu 5/20/2020 15:04",
 		"clipRect:" : "stlu 5/20/2020 14:33",
 		"commands" : "stlu 4/20/2020 16:31",
+		"computeBoundingBox" : "stlu 5/25/2020 09:41",
+		"globalOrigin" : "stlu 5/20/2020 23:18",
 		"initialize" : "stlu 4/20/2020 17:11",
 		"isClipping" : "stlu 5/11/2020 15:52",
 		"isLayer" : "stlu 4/20/2020 17:42",
 		"localClipRect" : "stlu 5/20/2020 15:27",
 		"origin" : "stlu 5/20/2020 15:04",
-		"origin:" : "stlu 5/20/2020 14:30" } }
+		"origin:" : "stlu 5/20/2020 14:30",
+		"visit:" : "stlu 5/25/2020 09:46",
+		"wrap:" : "stlu 5/25/2020 12:26" } }

@@ -1,4 +1,4 @@
 accessing
 commands
 
-	^ self currentLayer commands
+	^ self layer commands

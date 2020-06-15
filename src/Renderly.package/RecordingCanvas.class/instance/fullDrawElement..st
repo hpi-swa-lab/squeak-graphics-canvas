@@ -3,4 +3,4 @@ fullDrawElement: anElement
 
 	self
 		newCurrentLayer: (DrawElementLayer element: anElement)
-		during: [:canvas | self fullDraw: anElement]
+		during: [:canvas | canvas fullDraw: anElement]

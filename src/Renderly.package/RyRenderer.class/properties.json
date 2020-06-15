@@ -6,9 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
-	"name" : "DrawRootLayer",
+		"canvas" ],
+	"name" : "RyRenderer",
 	"pools" : [
 		 ],
-	"super" : "DrawLayer",
+	"super" : "RyVisitor",
 	"type" : "normal" }

@@ -2,6 +2,6 @@ accessing
 canvasForm
 
 	| fc |
-	fc := FormCanvas extent: canvas extent.
-	canvas rootLayer applyOn: fc.
+	fc := FormCanvas extent: self canvasExtent.
+	canvas layer applyOn: fc.
 	^ fc form

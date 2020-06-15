@@ -1,4 +1,4 @@
 private
 addCommand: aCommand
 
-	self currentLayer addCommand: aCommand
+	self layer addCommand: aCommand
