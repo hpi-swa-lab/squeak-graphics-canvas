@@ -5,7 +5,7 @@ test_example
 	startTime := Time millisecondClockValue.
 	tex := OGLTexture new
 				form: (Display
-						copy: (0 @ 0 extent: 1000 @ 1000)).
+						copy: (bounds)).
 	program := GLProgram newFor: ogl shaders: {VertexShader code: self vertexShader. FragmentShader code: self fragmentShader }.
 	ogl checkForError.
 	vao := GLVertexArrayObject newFor: ogl.
