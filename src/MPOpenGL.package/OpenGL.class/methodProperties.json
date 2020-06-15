@@ -219,6 +219,7 @@
 		"glVertexAttrib4uivARB:with:" : "stlu 6/15/2020 09:34",
 		"glVertexAttrib4usvARB:with:" : "stlu 6/15/2020 09:34",
 		"glVertexAttribPointerARB:with:with:with:with:with:" : "stlu 6/15/2020 09:34",
+		"gluErrorString:" : "sr 6/15/2020 16:16",
 		"harness" : "das 11/13/2005 17:41",
 		"harness:" : "das 11/13/2005 17:41",
 		"hasArbVertexBufferObject" : "jcg 5/23/2005 18:56",
