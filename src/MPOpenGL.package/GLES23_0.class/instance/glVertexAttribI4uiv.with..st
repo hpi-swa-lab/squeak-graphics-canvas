@@ -1,5 +1,5 @@
 as yet unclassified
 glVertexAttribI4uiv: index with: v
 
-	<apicall: void 'glVertexAttribI4uiv' (ulong ulong*)>
+	<apicall: void 'glVertexAttribI4uiv' (GLuint GLuint*)>
 	^ self externalCallFailed

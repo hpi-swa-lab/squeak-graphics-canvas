@@ -1,5 +1,5 @@
 as yet unclassified
 glDrawElementsInstanced: mode with: count with: type with: indices with: instancecount
 
-	<apicall: void 'glDrawElementsInstanced' (ulong long ulong void* long)>
+	<apicall: void 'glDrawElementsInstanced' (GLenum GLsizei GLenum void* GLsizei)>
 	^ self externalCallFailed

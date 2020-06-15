@@ -1,5 +1,5 @@
 as yet unclassified
 glFenceSync: condition with: flags
 
-	<apicall: void* 'glFenceSync' (ulong ulong)>
+	<apicall: GLsync 'glFenceSync' (GLenum GLbitfield)>
 	^ self externalCallFailed

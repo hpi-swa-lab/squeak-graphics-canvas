@@ -1,5 +1,5 @@
 as yet unclassified
 glLinkProgram: program
 
-	<apicall: void 'glLinkProgram' (ulong)>
+	<apicall: void 'glLinkProgram' (GLuint)>
 	^ self externalCallFailed

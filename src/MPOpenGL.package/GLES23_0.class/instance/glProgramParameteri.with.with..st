@@ -1,5 +1,5 @@
 as yet unclassified
 glProgramParameteri: program with: pname with: value
 
-	<apicall: void 'glProgramParameteri' (ulong ulong long)>
+	<apicall: void 'glProgramParameteri' (GLuint GLenum GLint)>
 	^ self externalCallFailed

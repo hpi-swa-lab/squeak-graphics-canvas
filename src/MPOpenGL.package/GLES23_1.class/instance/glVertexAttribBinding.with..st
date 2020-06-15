@@ -1,5 +1,5 @@
 as yet unclassified
 glVertexAttribBinding: attribindex with: bindingindex
 
-	<apicall: void 'glVertexAttribBinding' (ulong ulong)>
+	<apicall: void 'glVertexAttribBinding' (GLuint GLuint)>
 	^ self externalCallFailed

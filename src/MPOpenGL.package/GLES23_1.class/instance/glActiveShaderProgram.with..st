@@ -1,5 +1,5 @@
 as yet unclassified
 glActiveShaderProgram: pipeline with: program
 
-	<apicall: void 'glActiveShaderProgram' (ulong ulong)>
+	<apicall: void 'glActiveShaderProgram' (GLuint GLuint)>
 	^ self externalCallFailed

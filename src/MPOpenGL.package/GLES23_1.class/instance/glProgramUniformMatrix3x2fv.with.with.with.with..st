@@ -1,5 +1,5 @@
 as yet unclassified
 glProgramUniformMatrix3x2fv: program with: location with: count with: transpose with: value
 
-	<apicall: void 'glProgramUniformMatrix3x2fv' (ulong long long ulong float*)>
+	<apicall: void 'glProgramUniformMatrix3x2fv' (GLuint GLint GLsizei GLboolean GLfloat*)>
 	^ self externalCallFailed

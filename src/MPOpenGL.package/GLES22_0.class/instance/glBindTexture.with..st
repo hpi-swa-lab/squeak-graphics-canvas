@@ -1,5 +1,5 @@
 as yet unclassified
 glBindTexture: target with: texture
 
-	<apicall: void 'glBindTexture' (ulong ulong)>
+	<apicall: void 'glBindTexture' (GLenum GLuint)>
 	^ self externalCallFailed

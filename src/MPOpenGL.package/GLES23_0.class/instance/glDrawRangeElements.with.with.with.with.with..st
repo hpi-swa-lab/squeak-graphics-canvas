@@ -1,5 +1,5 @@
 as yet unclassified
 glDrawRangeElements: mode with: start with: end with: count with: type with: indices
 
-	<apicall: void 'glDrawRangeElements' (ulong ulong ulong long ulong void*)>
+	<apicall: void 'glDrawRangeElements' (GLenum GLuint GLuint GLsizei GLenum void*)>
 	^ self externalCallFailed

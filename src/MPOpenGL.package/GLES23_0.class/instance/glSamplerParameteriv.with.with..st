@@ -1,5 +1,5 @@
 as yet unclassified
 glSamplerParameteriv: sampler with: pname with: param
 
-	<apicall: void 'glSamplerParameteriv' (ulong ulong long*)>
+	<apicall: void 'glSamplerParameteriv' (GLuint GLenum GLint*)>
 	^ self externalCallFailed

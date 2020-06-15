@@ -1,5 +1,5 @@
 as yet unclassified
 glGetProgramResourceLocation: program with: programInterface with: name
 
-	<apicall: long 'glGetProgramResourceLocation' (ulong ulong char*)>
+	<apicall: GLint 'glGetProgramResourceLocation' (GLuint GLenum GLchar*)>
 	^ self externalCallFailed

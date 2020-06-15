@@ -1,5 +1,5 @@
 as yet unclassified
 glEndQuery: target
 
-	<apicall: void 'glEndQuery' (ulong)>
+	<apicall: void 'glEndQuery' (GLenum)>
 	^ self externalCallFailed

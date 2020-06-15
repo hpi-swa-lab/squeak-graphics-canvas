@@ -1,5 +1,5 @@
 as yet unclassified
 glGetUniformfv: program with: location with: params
 
-	<apicall: void 'glGetUniformfv' (ulong long float*)>
+	<apicall: void 'glGetUniformfv' (GLuint GLint GLfloat*)>
 	^ self externalCallFailed

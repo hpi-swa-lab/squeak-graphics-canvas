@@ -1,5 +1,5 @@
 as yet unclassified
 glGetGraphicsResetStatus
 
-	<apicall: ulong 'glGetGraphicsResetStatus' ()>
+	<apicall: GLenum 'glGetGraphicsResetStatus' ()>
 	^ self externalCallFailed

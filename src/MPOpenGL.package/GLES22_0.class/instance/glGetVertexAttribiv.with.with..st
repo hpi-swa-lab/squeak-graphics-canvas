@@ -1,5 +1,5 @@
 as yet unclassified
 glGetVertexAttribiv: index with: pname with: params
 
-	<apicall: void 'glGetVertexAttribiv' (ulong ulong long*)>
+	<apicall: void 'glGetVertexAttribiv' (GLuint GLenum GLint*)>
 	^ self externalCallFailed

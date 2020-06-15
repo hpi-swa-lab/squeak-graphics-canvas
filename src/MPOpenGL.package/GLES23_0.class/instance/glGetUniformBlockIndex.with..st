@@ -1,5 +1,5 @@
 as yet unclassified
 glGetUniformBlockIndex: program with: uniformBlockName
 
-	<apicall: ulong 'glGetUniformBlockIndex' (ulong char*)>
+	<apicall: GLuint 'glGetUniformBlockIndex' (GLuint GLchar*)>
 	^ self externalCallFailed

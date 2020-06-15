@@ -1,5 +1,5 @@
 as yet unclassified
 glIsRenderbuffer: renderbuffer
 
-	<apicall: ulong 'glIsRenderbuffer' (ulong)>
+	<apicall: GLboolean 'glIsRenderbuffer' (GLuint)>
 	^ self externalCallFailed

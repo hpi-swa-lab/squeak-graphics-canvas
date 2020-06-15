@@ -1,5 +1,5 @@
 as yet unclassified
 glCopyBufferSubData: readTarget with: writeTarget with: readOffset with: writeOffset with: size
 
-	<apicall: void 'glCopyBufferSubData' (ulong ulong longlong longlong longlong)>
+	<apicall: void 'glCopyBufferSubData' (GLenum GLenum GLintptr GLintptr GLsizeiptr)>
 	^ self externalCallFailed

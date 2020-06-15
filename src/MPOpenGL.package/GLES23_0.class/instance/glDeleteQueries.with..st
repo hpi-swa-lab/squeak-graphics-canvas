@@ -1,5 +1,5 @@
 as yet unclassified
 glDeleteQueries: n with: ids
 
-	<apicall: void 'glDeleteQueries' (long ulong*)>
+	<apicall: void 'glDeleteQueries' (GLsizei GLuint*)>
 	^ self externalCallFailed

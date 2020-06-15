@@ -1,5 +1,5 @@
 as yet unclassified
 glDeleteShader: shader
 
-	<apicall: void 'glDeleteShader' (ulong)>
+	<apicall: void 'glDeleteShader' (GLuint)>
 	^ self externalCallFailed

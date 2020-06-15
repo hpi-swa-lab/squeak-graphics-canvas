@@ -1,5 +1,5 @@
 as yet unclassified
 glGetQueryiv: target with: pname with: params
 
-	<apicall: void 'glGetQueryiv' (ulong ulong long*)>
+	<apicall: void 'glGetQueryiv' (GLenum GLenum GLint*)>
 	^ self externalCallFailed
