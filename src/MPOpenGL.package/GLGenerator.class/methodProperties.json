@@ -1,8 +1,7 @@
 {
 	"class" : {
 		"generate:api:" : "stlu 6/15/2020 22:31",
-		"generate:fromFile:" : "stlu 6/15/2020 14:27",
-		"generateFromFile:" : "stlu 6/15/2020 14:26" },
+		"generate:fromFile:" : "stlu 6/15/2020 22:44" },
 	"instance" : {
 		"arrayFor:" : "TZ 5/11/2020 15:30",
 		"convertEnumValue:" : "TZ 5/4/2020 18:37",
