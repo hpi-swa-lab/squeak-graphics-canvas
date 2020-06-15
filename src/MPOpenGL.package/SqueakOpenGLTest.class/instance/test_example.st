@@ -23,8 +23,8 @@ test_example
 		componentsPerVertex: 4.
 	ogl glDisable: ogl GL_CULL_FACE.
 	ogl checkForError.
-	[Sensor anyButtonPressed]
-		whileFalse: ["start counting at second frame si------**nce first frame is
+	[Sensor anyButtonPressed not and: [ogl shouldClose not]]
+		whileTrue: ["start counting at second frame si------**nce first frame is
 			penalized by the upload of the bitmap font outside of ogl."
 			frames = 1
 				ifTrue: [startTime := Time millisecondClockValue].
@@ -37,10 +37,6 @@ test_example
 			"--- this is the actual scene content ---"
 			ogl glDisable: GLDepthTest.
 			ogl checkForError.
-			"for the simple example only"
-			"ogl glDisable: GLLighting."
-			ogl checkForError.
-			"for the simple example only"
 			ogl
 				glClearColor: 0.0
 				with: 0.0

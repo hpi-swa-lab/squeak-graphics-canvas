@@ -16,10 +16,13 @@
 		"setCursorPosCallback:with:" : "sr 5/11/2020 10:17",
 		"setFramebufferSizeCallback:with:" : "sr 5/11/2020 09:18",
 		"setInputMode:with:with:" : "sr 5/11/2020 10:03",
+		"setMouseButtonCallback:with:" : "tobe 6/15/2020 21:36",
 		"startUp" : "stlu 6/15/2020 09:38",
 		"swapBuffers:" : "TZ 4/14/2020 16:02",
+		"swapInterval:" : "tobe 6/15/2020 20:57",
 		"terminate" : "sr 4/20/2020 14:50",
 		"windowHint:value:" : "TZ 6/8/2020 13:04",
-		"windowHint:with:" : "sr 5/5/2020 17:11" },
+		"windowHint:with:" : "sr 5/5/2020 17:11",
+		"windowShouldClose:" : "tobe 6/15/2020 21:29" },
 	"instance" : {
 		 } }
