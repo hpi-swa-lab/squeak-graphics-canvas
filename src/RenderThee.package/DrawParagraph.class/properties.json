@@ -1,0 +1,16 @@
+{
+	"category" : "RenderThee-Drawing",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"bounds",
+		"color",
+		"paragraph" ],
+	"name" : "DrawParagraph",
+	"pools" : [
+		 ],
+	"super" : "CanvasCommand",
+	"type" : "normal" }

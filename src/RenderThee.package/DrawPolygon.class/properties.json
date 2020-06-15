@@ -1,0 +1,14 @@
+{
+	"category" : "RenderThee-Drawing",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"vertices" ],
+	"name" : "DrawPolygon",
+	"pools" : [
+		 ],
+	"super" : "DrawShape",
+	"type" : "normal" }

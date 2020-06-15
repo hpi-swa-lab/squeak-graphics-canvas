@@ -1,0 +1,14 @@
+{
+	"category" : "RenderThee-Drawing",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"parent" ],
+	"name" : "CanvasCommand",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
