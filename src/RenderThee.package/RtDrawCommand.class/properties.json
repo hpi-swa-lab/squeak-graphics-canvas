@@ -1,14 +1,14 @@
 {
-	"category" : "MPOpenGL-Core",
+	"category" : "RenderThee-Drawing",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
-	"name" : "GLVersion",
+		"parent" ],
+	"name" : "RtDrawCommand",
 	"pools" : [
 		 ],
-	"super" : "OpenGL",
+	"super" : "Object",
 	"type" : "normal" }

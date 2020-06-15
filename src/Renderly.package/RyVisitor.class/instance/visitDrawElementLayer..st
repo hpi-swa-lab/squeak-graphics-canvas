@@ -1,4 +1,0 @@
-visiting
-visitDrawElementLayer: anObject
-
-	

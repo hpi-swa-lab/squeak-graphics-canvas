@@ -3,11 +3,13 @@
 	"classinstvars" : [
 		 ],
 	"classvars" : [
-		"Remembrall" ],
+		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"type" ],
-	"name" : "DrawUnsupported",
+		"bounds",
+		"color",
+		"paragraph" ],
+	"name" : "RtDrawParagraph",
 	"pools" : [
 		 ],
 	"super" : "RtDrawCommand",

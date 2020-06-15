@@ -5,4 +5,4 @@ destroy
 		glExt := nil].
 	usesGLFW ifTrue: [ GLFW destroyWindow: myHandle ].
 	self primDestroyRenderer: myHandle.
-	handle := nil.
+	myHandle := nil.

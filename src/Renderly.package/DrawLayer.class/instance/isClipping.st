@@ -1,4 +1,0 @@
-testing
-isClipping
-
-	^ clipRect notNil

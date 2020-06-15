@@ -1,14 +1,17 @@
 {
-	"category" : "MPOpenGL-Core",
+	"category" : "RenderThee-Drawing",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
-	"name" : "GLVersion",
+		"from",
+		"to",
+		"width",
+		"color" ],
+	"name" : "RtDrawLine",
 	"pools" : [
 		 ],
-	"super" : "OpenGL",
+	"super" : "RtDrawCommand",
 	"type" : "normal" }

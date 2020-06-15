@@ -1,14 +1,14 @@
 {
-	"category" : "MPOpenGL-Core",
+	"category" : "RenderThee-Drawing",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
-	"name" : "GLVersion",
+		"radius" ],
+	"name" : "RtDrawRoundedRectangle",
 	"pools" : [
 		 ],
-	"super" : "OpenGL",
+	"super" : "RtDrawRectangle",
 	"type" : "normal" }

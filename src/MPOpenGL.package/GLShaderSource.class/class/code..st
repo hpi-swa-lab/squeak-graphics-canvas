@@ -1,6 +1,6 @@
 instance creation
 code: aString
-	| instance |
-	instance := self new.
-	instance code: aString.
-	^instance
+
+	^ self new
+		code: aString;
+		yourself

@@ -4,8 +4,6 @@
 	"instance" : {
 		"addCommand:" : "stlu 6/9/2020 11:56",
 		"commands" : "stlu 6/9/2020 11:56",
-		"debugDrawOn:" : "tobe 4/6/2020 21:15",
 		"drawOn:" : "stlu 6/9/2020 13:03",
 		"initialize" : "stlu 6/9/2020 11:57",
-		"isEmpty" : "stlu 6/15/2020 09:41",
-		"operationsTree:" : "tobe 4/6/2020 20:06" } }
+		"isEmpty" : "stlu 6/15/2020 09:41" } }

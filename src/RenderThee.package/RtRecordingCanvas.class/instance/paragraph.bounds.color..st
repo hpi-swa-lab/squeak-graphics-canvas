@@ -1,7 +1,7 @@
 drawing
 paragraph: aParagraph bounds: aRectangle color: aColor
 
-	self addCommand: (DrawParagraph
+	self addCommand: (RtDrawParagraph
 							paragraph: aParagraph
 							bounds: (aRectangle translateBy: self origin negated)
 							color: aColor)

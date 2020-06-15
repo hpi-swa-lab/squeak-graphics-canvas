@@ -1,14 +1,14 @@
 {
-	"category" : "MPOpenGL-Core",
+	"category" : "RenderThee-Drawing",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
-	"name" : "GLVersion",
+		"vertices" ],
+	"name" : "RtDrawPolygon",
 	"pools" : [
 		 ],
-	"super" : "OpenGL",
+	"super" : "RtDrawShape",
 	"type" : "normal" }
