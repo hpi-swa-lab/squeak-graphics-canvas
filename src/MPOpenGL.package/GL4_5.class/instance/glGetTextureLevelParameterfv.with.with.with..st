@@ -1,2 +1,5 @@
 as yet unclassified
-glGetTextureLevelParameterfv: texture with: level with: pname with: params <apicall: void 'glGetTextureLevelParameterfv' (ulong long ulong float*) module: 'libGL.so'> ^ self externalCallFailed
+glGetTextureLevelParameterfv: texture with: level with: pname with: params
+
+	<apicall: void 'glGetTextureLevelParameterfv' (ulong long ulong float*)>
+	^ self externalCallFailed

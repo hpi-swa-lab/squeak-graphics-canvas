@@ -1,2 +1,4 @@
 as yet unclassified
-GL_TEXTURE12 ^ 16r84CC
+GL_TEXTURE12
+
+	^ 16r84CC

@@ -1,2 +1,4 @@
 as yet unclassified
-GL_RG32F ^ 16r8230
+GL_RG32F
+
+	^ 16r8230

@@ -1,0 +1,16 @@
+{
+	"category" : "RenderThee-LayerTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"transform",
+		"extent",
+		"cachedForm" ],
+	"name" : "RtDrawBoundaryLayer",
+	"pools" : [
+		 ],
+	"super" : "RtContainerLayer",
+	"type" : "normal" }

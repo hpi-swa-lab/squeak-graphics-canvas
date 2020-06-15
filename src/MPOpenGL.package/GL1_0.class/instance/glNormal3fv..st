@@ -1,2 +1,5 @@
 as yet unclassified
-glNormal3fv: v <apicall: void 'glNormal3fv' (float*) module: 'libGL.so'> ^ self externalCallFailed
+glNormal3fv: v
+
+	<apicall: void 'glNormal3fv' (float*)>
+	^ self externalCallFailed

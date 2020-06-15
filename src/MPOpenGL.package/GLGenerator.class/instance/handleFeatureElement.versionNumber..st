@@ -1,4 +1,4 @@
-as yet unclassified
+code generation
 handleFeatureElement: anElement versionNumber: aString
 	| class |
 	class := self featureClass: anElement versionNumber: aString.

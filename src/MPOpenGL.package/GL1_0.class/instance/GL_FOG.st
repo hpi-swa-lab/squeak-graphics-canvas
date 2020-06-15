@@ -1,2 +1,4 @@
 as yet unclassified
-GL_FOG ^ 16r0B60
+GL_FOG
+
+	^ 16r0B60

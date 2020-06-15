@@ -1,0 +1,14 @@
+{
+	"category" : "RenderThee-Project",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "RtWorldState",
+	"pools" : [
+		"OpenGLConstants" ],
+	"super" : "WorldState",
+	"type" : "normal" }

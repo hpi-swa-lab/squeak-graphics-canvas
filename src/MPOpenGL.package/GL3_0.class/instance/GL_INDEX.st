@@ -1,2 +1,4 @@
 as yet unclassified
-GL_INDEX ^ 16r8222
+GL_INDEX
+
+	^ 16r8222

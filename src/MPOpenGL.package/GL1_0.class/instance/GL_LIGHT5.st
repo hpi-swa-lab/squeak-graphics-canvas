@@ -1,2 +1,4 @@
 as yet unclassified
-GL_LIGHT5 ^ 16r4005
+GL_LIGHT5
+
+	^ 16r4005

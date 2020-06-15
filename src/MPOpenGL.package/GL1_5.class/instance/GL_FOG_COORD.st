@@ -1,2 +1,4 @@
 as yet unclassified
-GL_FOG_COORD ^ 16r8451
+GL_FOG_COORD
+
+	^ 16r8451

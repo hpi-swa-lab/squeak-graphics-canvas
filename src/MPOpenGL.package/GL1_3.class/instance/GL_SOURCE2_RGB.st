@@ -1,2 +1,4 @@
 as yet unclassified
-GL_SOURCE2_RGB ^ 16r8582
+GL_SOURCE2_RGB
+
+	^ 16r8582

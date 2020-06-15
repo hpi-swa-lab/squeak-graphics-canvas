@@ -1,2 +1,5 @@
 as yet unclassified
-glMultTransposeMatrixf: m <apicall: void 'glMultTransposeMatrixf' (float*) module: 'libGL.so'> ^ self externalCallFailed
+glMultTransposeMatrixf: m
+
+	<apicall: void 'glMultTransposeMatrixf' (float*)>
+	^ self externalCallFailed

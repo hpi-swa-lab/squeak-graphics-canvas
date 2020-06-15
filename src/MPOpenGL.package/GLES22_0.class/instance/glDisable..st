@@ -1,2 +1,5 @@
 as yet unclassified
-glDisable: cap <apicall: void 'glDisable' (ulong) module: 'libGL.so'> ^ self externalCallFailed
+glDisable: cap
+
+	<apicall: void 'glDisable' (ulong)>
+	^ self externalCallFailed

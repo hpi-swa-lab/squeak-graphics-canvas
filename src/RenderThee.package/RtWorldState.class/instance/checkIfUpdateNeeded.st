@@ -1,0 +1,4 @@
+update cycle
+checkIfUpdateNeeded
+
+	^ true

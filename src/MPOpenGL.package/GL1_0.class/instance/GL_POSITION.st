@@ -1,2 +1,4 @@
 as yet unclassified
-GL_POSITION ^ 16r1203
+GL_POSITION
+
+	^ 16r1203

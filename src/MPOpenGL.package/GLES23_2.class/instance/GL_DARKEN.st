@@ -1,2 +1,4 @@
 as yet unclassified
-GL_DARKEN ^ 16r9297
+GL_DARKEN
+
+	^ 16r9297

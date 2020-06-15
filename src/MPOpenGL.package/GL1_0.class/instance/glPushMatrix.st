@@ -1,2 +1,5 @@
 as yet unclassified
-glPushMatrix<apicall: void 'glPushMatrix' () module: 'libGL.so'> ^ self externalCallFailed
+glPushMatrix
+
+	<apicall: void 'glPushMatrix' ()>
+	^ self externalCallFailed

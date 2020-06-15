@@ -1,2 +1,4 @@
 as yet unclassified
-GL_AMBIENT_AND_DIFFUSE ^ 16r1602
+GL_AMBIENT_AND_DIFFUSE
+
+	^ 16r1602

@@ -1,2 +1,4 @@
 as yet unclassified
-GL_TRIANGLES ^ 16r0004
+GL_TRIANGLES
+
+	^ 16r0004

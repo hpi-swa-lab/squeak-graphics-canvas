@@ -1,4 +1,6 @@
 drawing-general
 fullDrawMorph: aMorph
 
-	self fullDrawElement: aMorph
+	aMorph isRepaintBoundary
+		ifTrue: [	self fullDrawInNewLayer: aMorph]
+		ifFalse: [self fullDraw: aMorph]

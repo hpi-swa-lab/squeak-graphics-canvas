@@ -1,2 +1,5 @@
 as yet unclassified
-glMatrixMode: mode <apicall: void 'glMatrixMode' (ulong) module: 'libGL.so'> ^ self externalCallFailed
+glMatrixMode: mode
+
+	<apicall: void 'glMatrixMode' (ulong)>
+	^ self externalCallFailed

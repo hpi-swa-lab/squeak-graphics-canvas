@@ -1,8 +1,7 @@
 before each
 setUpWindow
 	GLFW init.
-	self setGlfwWindowHints.
-	self createGLFWWindow.
+	ogl := GL3_3 newInGLFW: 640@480.
 	"self specifyCallbacks."
 	"self enableGLFWMouseCapture."
-	GLFW makeContextCurrent: window
+	ogl beginFrame

@@ -1,0 +1,17 @@
+{
+	"category" : "RenderThee-Project",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"vao",
+		"vbo",
+		"ogl",
+		"program" ],
+	"name" : "RtPasteUpMorph",
+	"pools" : [
+		 ],
+	"super" : "PasteUpMorph",
+	"type" : "normal" }

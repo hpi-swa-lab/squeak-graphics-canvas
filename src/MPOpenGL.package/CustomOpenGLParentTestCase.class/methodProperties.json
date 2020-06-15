@@ -2,7 +2,7 @@
 	"class" : {
 		"isAbstract" : "sr 5/19/2020 12:03" },
 	"instance" : {
-		"checkOpenGLVersion" : "sr 5/19/2020 13:50",
+		"checkOpenGLVersion" : "TZ 6/9/2020 13:19",
 		"setUp" : "sr 5/12/2020 09:39",
 		"setUpWindow" : "sr 5/12/2020 09:40",
 		"tearDown" : "sr 5/12/2020 09:39",

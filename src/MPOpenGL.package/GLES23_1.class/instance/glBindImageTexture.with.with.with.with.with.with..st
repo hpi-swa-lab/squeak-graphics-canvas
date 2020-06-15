@@ -1,2 +1,5 @@
 as yet unclassified
-glBindImageTexture: unit with: texture with: level with: layered with: layer with: access with: format <apicall: void 'glBindImageTexture' (ulong ulong long ulong long ulong ulong) module: 'libGL.so'> ^ self externalCallFailed
+glBindImageTexture: unit with: texture with: level with: layered with: layer with: access with: format
+
+	<apicall: void 'glBindImageTexture' (ulong ulong long ulong long ulong ulong)>
+	^ self externalCallFailed

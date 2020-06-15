@@ -1,2 +1,4 @@
 as yet unclassified
-GL_COPY_READ_BUFFER ^ 16r8F36
+GL_COPY_READ_BUFFER
+
+	^ 16r8F36

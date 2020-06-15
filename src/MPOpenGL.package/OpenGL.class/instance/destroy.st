@@ -3,5 +3,6 @@ destroy
 	glExt ifNotNil:[
 		glExt ogl: nil.
 		glExt := nil].
-	self primDestroyRenderer: handle.
+	usesGLFW ifTrue: [ GLFW destroyWindow: myHandle ].
+	self primDestroyRenderer: myHandle.
 	handle := nil.

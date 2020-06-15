@@ -1,2 +1,4 @@
 as yet unclassified
-GL_DYNAMIC_DRAW ^ 16r88E8
+GL_DYNAMIC_DRAW
+
+	^ 16r88E8

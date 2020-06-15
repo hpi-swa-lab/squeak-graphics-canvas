@@ -1,2 +1,5 @@
 as yet unclassified
-glBindBufferRange: target with: index with: buffer with: offset with: size <apicall: void 'glBindBufferRange' (ulong ulong ulong longlong longlong) module: 'libGL.so'> ^ self externalCallFailed
+glBindBufferRange: target with: index with: buffer with: offset with: size
+
+	<apicall: void 'glBindBufferRange' (ulong ulong ulong longlong longlong)>
+	^ self externalCallFailed

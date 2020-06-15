@@ -1,2 +1,4 @@
 as yet unclassified
-GL_READ_ONLY ^ 16r88B8
+GL_READ_ONLY
+
+	^ 16r88B8

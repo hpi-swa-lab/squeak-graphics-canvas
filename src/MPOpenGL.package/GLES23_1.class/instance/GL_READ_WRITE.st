@@ -1,2 +1,4 @@
 as yet unclassified
-GL_READ_WRITE ^ 16r88BA
+GL_READ_WRITE
+
+	^ 16r88BA

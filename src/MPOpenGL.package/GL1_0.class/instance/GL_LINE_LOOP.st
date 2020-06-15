@@ -1,2 +1,4 @@
 as yet unclassified
-GL_LINE_LOOP ^ 16r0002
+GL_LINE_LOOP
+
+	^ 16r0002

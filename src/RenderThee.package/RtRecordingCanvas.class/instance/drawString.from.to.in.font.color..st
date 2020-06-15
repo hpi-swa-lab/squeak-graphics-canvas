@@ -5,6 +5,6 @@ drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil colo
 							contents: s
 							from: firstIndex
 							to: lastIndex
-							in: boundsRect
+							in: (boundsRect translateBy: self origin negated)
 							font: fontOrNil
 							color: c)

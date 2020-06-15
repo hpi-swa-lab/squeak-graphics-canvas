@@ -1,4 +1,4 @@
-as yet unclassified
+initialization
 initTypes
 	typesMap := {
 		'void' -> 'void'.

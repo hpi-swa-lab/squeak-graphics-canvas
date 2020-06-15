@@ -1,2 +1,5 @@
 as yet unclassified
-glMultiDrawElementsIndirectCount: mode with: type with: indirect with: drawcount with: maxdrawcount with: stride <apicall: void 'glMultiDrawElementsIndirectCount' (ulong ulong void* longlong long long) module: 'libGL.so'> ^ self externalCallFailed
+glMultiDrawElementsIndirectCount: mode with: type with: indirect with: drawcount with: maxdrawcount with: stride
+
+	<apicall: void 'glMultiDrawElementsIndirectCount' (ulong ulong void* longlong long long)>
+	^ self externalCallFailed

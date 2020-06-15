@@ -1,2 +1,4 @@
 as yet unclassified
-GL_SAMPLER ^ 16r82E6
+GL_SAMPLER
+
+	^ 16r82E6

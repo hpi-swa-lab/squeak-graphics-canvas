@@ -1,15 +1,9 @@
 private
 newCurrentLayer: aLayer during: aBlock
 
-	| parentLayer parentOrigin |
-	parentLayer := self currentLayer.
+	| subCanvas |
 	self addCommand: aLayer.
-	
-	self currentLayer: aLayer.
-	parentOrigin := globalOrigin.
-	globalOrigin := aLayer origin translateBy: parentOrigin.
-	
-	aBlock value: self.
-	
-	self currentLayer: parentLayer.
-	globalOrigin := parentOrigin.
+	subCanvas := self class
+					layer: aLayer
+					origin: (aLayer origin translateBy: self origin).
+	aBlock value: subCanvas

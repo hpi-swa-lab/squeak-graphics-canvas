@@ -1,2 +1,5 @@
 as yet unclassified
-glDrawElementsInstancedBaseInstance: mode with: count with: type with: indices with: instancecount with: baseinstance <apicall: void 'glDrawElementsInstancedBaseInstance' (ulong long ulong void* long ulong) module: 'libGL.so'> ^ self externalCallFailed
+glDrawElementsInstancedBaseInstance: mode with: count with: type with: indices with: instancecount with: baseinstance
+
+	<apicall: void 'glDrawElementsInstancedBaseInstance' (ulong long ulong void* long ulong)>
+	^ self externalCallFailed

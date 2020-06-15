@@ -1,2 +1,4 @@
 as yet unclassified
-GL_LEFT ^ 16r0406
+GL_LEFT
+
+	^ 16r0406

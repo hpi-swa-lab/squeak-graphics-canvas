@@ -1,6 +1,6 @@
 instance creation
 record: anElement
 
-	^ self new
+	^ self root
 		record: anElement;
 		yourself

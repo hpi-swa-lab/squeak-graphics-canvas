@@ -1,9 +1,10 @@
 drawing-support
 translateBy: delta clippingTo: localClipRect during: aBlock
 
-	(delta isZero and: [localClipRect = self clipRect]) ifTrue: [^ aBlock value: self].
+	"delta isZero ifTrue: [^ aBlock value: self]."
 	self
-		newCurrentLayer: (DrawLayer
-							origin: delta
-							clipRect: (localClipRect translateBy: delta))
+		newCurrentLayer: (RtDrawBoundaryLayer
+							transform: (Matrix4x4 withOffset: (localClipRect origin - self origin) asVector3)
+							extent: localClipRect extent)
+		newOrigin: localClipRect origin - delta
 		during: aBlock

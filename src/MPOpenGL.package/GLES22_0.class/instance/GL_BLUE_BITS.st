@@ -1,2 +1,4 @@
 as yet unclassified
-GL_BLUE_BITS ^ 16r0D54
+GL_BLUE_BITS
+
+	^ 16r0D54

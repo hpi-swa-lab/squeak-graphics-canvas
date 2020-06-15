@@ -1,1 +1,0 @@
-A rectangle upon which a backend texture is mapped.

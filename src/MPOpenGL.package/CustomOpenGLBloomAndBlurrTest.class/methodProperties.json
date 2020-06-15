@@ -4,11 +4,9 @@
 	"instance" : {
 		"createGLFWWindow" : "sr 5/5/2020 16:43",
 		"enableGLFWMouseCapture" : "sr 5/5/2020 17:04",
-		"initGlfwWindow" : "sr 5/5/2020 17:15",
 		"loadGlFunctionPointers" : "sr 5/5/2020 16:32",
-		"setGlfwWindowHints" : "sr 5/11/2020 12:09",
-		"setUpWindow" : "sr 5/11/2020 12:09",
+		"setUpWindow" : "TZ 6/9/2020 13:10",
 		"simplyOpeningTheWindow" : "sr 5/11/2020 12:08",
 		"specifyCallbacks" : "sr 5/11/2020 10:32",
-		"tearDownWindow" : "sr 5/5/2020 11:39",
+		"tearDownWindow" : "TZ 6/9/2020 13:10",
 		"testSimplyOpeningTheWindow" : "sr 5/5/2020 14:26" } }

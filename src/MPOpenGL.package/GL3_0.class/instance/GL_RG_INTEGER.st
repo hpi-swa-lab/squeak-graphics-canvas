@@ -1,2 +1,4 @@
 as yet unclassified
-GL_RG_INTEGER ^ 16r8228
+GL_RG_INTEGER
+
+	^ 16r8228

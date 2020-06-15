@@ -1,15 +1,14 @@
-as yet unclassified
+code generation
 featureClass: anElement versionNumber: aString
-	| className result |
+
+	| className |
 	className := (api asUppercase , (aString copyReplaceAll: '.' with: '_')) asSymbol.
-	^ Smalltalk
-		at: className
-		ifAbsent: [
-			previousClass subclass: className
-				instanceVariableNames: ''
-				classVariableNames: ''
-				poolDictionaries: ''
-				category: 'MPOpenGL'.
-			result := Smalltalk at: className.
-			previousClass := result.
-			result ].
+	^ (self environment classNamed: className) ifNil: [
+		previousClass := previousClass
+							subclass: className
+							instanceVariableNames: ''
+							classVariableNames: ''
+							poolDictionaries: ''
+							category: self systemCategoryName.
+		self generateVersionMethods: aString.
+		previousClass]

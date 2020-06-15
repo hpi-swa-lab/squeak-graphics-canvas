@@ -1,2 +1,4 @@
 as yet unclassified
-GL_R16_SNORM ^ 16r8F98
+GL_R16_SNORM
+
+	^ 16r8F98

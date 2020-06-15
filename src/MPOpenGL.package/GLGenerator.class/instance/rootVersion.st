@@ -1,3 +1,4 @@
-as yet unclassified
+accessing
 rootVersion
-	^ Smalltalk at: ((api , 'Version') asSymbol).
+
+	^ self environment classNamed: api , 'Version'.

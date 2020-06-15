@@ -1,3 +1,3 @@
 testing
 isOpen
-	^handle notNil
+	^myHandle notNil

@@ -1,7 +1,10 @@
 drawing-support
 translateBy: delta during: aBlock
 
-	delta isZero ifTrue: [^ aBlock value: self].
+	"delta isZero ifTrue: [^ aBlock value: self]."
 	self
-		newCurrentLayer: (DrawLayer origin: delta)
+		newCurrentLayer: (RtDrawBoundaryLayer
+							offset: delta
+							extent: self layer extent - delta)
+		newOrigin: (self origin + delta)
 		during: aBlock

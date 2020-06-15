@@ -1,2 +1,4 @@
 as yet unclassified
-GL_3D_COLOR ^ 16r0602
+GL_3D_COLOR
+
+	^ 16r0602

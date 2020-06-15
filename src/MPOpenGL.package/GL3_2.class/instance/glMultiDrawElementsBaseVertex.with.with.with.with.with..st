@@ -1,2 +1,5 @@
 as yet unclassified
-glMultiDrawElementsBaseVertex: mode with: count with: type with: indices with: drawcount with: basevertex <apicall: void 'glMultiDrawElementsBaseVertex' (ulong long* ulong void* long long*) module: 'libGL.so'> ^ self externalCallFailed
+glMultiDrawElementsBaseVertex: mode with: count with: type with: indices with: drawcount with: basevertex
+
+	<apicall: void 'glMultiDrawElementsBaseVertex' (ulong long* ulong void* long long*)>
+	^ self externalCallFailed

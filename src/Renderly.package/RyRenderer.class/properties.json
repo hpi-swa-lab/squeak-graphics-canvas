@@ -1,0 +1,14 @@
+{
+	"category" : "Renderly-Record",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"canvas" ],
+	"name" : "RyRenderer",
+	"pools" : [
+		 ],
+	"super" : "RyVisitor",
+	"type" : "normal" }

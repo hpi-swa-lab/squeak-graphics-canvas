@@ -1,2 +1,4 @@
 as yet unclassified
-GL_TEXTURE_RESIDENT ^ 16r8067
+GL_TEXTURE_RESIDENT
+
+	^ 16r8067

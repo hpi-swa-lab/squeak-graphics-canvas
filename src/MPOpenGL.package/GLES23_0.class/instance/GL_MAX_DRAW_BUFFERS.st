@@ -1,2 +1,4 @@
 as yet unclassified
-GL_MAX_DRAW_BUFFERS ^ 16r8824
+GL_MAX_DRAW_BUFFERS
+
+	^ 16r8824

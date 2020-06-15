@@ -1,2 +1,4 @@
 as yet unclassified
-GL_COMBINE ^ 16r8570
+GL_COMBINE
+
+	^ 16r8570

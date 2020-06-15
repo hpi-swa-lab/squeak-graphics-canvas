@@ -1,2 +1,4 @@
 as yet unclassified
-GL_OPERAND1_ALPHA ^ 16r8599
+GL_OPERAND1_ALPHA
+
+	^ 16r8599

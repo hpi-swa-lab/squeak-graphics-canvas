@@ -1,2 +1,4 @@
 as yet unclassified
-GL_LIGHT4 ^ 16r4004
+GL_LIGHT4
+
+	^ 16r4004

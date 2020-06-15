@@ -1,2 +1,4 @@
 as yet unclassified
-GL_TRANSFORM_BIT ^ 16r00001000
+GL_TRANSFORM_BIT
+
+	^ 16r00001000

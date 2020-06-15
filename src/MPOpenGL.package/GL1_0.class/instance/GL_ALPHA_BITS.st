@@ -1,2 +1,4 @@
 as yet unclassified
-GL_ALPHA_BITS ^ 16r0D55
+GL_ALPHA_BITS
+
+	^ 16r0D55

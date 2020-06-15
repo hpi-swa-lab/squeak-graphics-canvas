@@ -1,2 +1,4 @@
 as yet unclassified
-GL_NOOP ^ 16r1505
+GL_NOOP
+
+	^ 16r1505

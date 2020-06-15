@@ -1,2 +1,4 @@
 as yet unclassified
-GL_STEREO ^ 16r0C33
+GL_STEREO
+
+	^ 16r0C33

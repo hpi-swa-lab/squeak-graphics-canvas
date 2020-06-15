@@ -1,2 +1,4 @@
 as yet unclassified
-GL_MAX_PIXEL_MAP_TABLE ^ 16r0D34
+GL_MAX_PIXEL_MAP_TABLE
+
+	^ 16r0D34
