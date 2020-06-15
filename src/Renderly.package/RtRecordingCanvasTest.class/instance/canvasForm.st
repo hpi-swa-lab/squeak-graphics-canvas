@@ -1,4 +1,4 @@
 accessing
 canvasForm
 
-	^ canvas layer assureForm
+	^ canvas layer assuredForm

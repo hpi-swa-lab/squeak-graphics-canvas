@@ -1,4 +1,4 @@
 accessing
-assureForm
+assuredForm
 
 	^ cachedForm ifNil: [cachedForm := self rasterizeForm]

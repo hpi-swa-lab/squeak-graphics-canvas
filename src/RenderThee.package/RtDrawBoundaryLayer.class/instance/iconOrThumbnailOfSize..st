@@ -1,4 +1,4 @@
 utilities
 iconOrThumbnailOfSize: anExtent
 
-	^ self assureForm scaledIntoFormOfSize: anExtent
+	^ self assuredForm scaledIntoFormOfSize: anExtent

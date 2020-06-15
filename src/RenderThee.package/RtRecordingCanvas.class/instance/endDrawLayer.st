@@ -1,6 +1,6 @@
 private
 endDrawLayer
 
-	self currentDrawLayer commands ifNotEmpty: [
-		self layer addChild: self currentDrawLayer.
-		currentDrawLayer := nil]
+	(self drawLayer notNil and: [self drawLayer isEmpty not]) ifTrue: [
+		self layer addChild: self drawLayer.
+		self resetDrawLayer]

@@ -1,4 +1,4 @@
 utilities
 open
 
-	self assureForm asMorph openInHand
+	self assuredForm asMorph openInHand
