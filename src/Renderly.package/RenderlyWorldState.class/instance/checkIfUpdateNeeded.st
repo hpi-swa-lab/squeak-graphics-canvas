@@ -1,4 +1,0 @@
-update cycle
-checkIfUpdateNeeded
-
-	^ true
