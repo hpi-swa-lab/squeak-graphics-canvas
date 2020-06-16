@@ -28,8 +28,10 @@ testWindow
 			frames = 1
 				ifTrue: [startTime := Time millisecondClockValue].
 			ogl beginFrame.
+			ogl checkForError.
 			ogl installTexture: tex.
 			"uploads only in first frame"
+			ogl checkForError.
 			ogl enableTexture: tex.
 			ogl checkForError.
 			"--- this is the actual scene content ---"
