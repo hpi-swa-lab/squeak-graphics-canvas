@@ -1,0 +1,14 @@
+{
+	"category" : "RenderThee-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "stlu 6/16/2020 11:19",
+	"instvars" : [
+		 ],
+	"name" : "RtMorphicIntegration",
+	"pools" : [
+		 ],
+	"super" : "DynamicVariable",
+	"type" : "normal" }

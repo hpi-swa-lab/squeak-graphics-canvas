@@ -1,9 +1,8 @@
 drawing-general
 fullDrawInNewLayer: aMorph
 
-	self flag: #todo. "fullBounds"
-	aMorph setProperty: #boundaryLayer toValue: (self
-		newCurrentLayer: (RtDrawBoundaryLayer
-							bounds: (aMorph bounds translateBy: self origin negated))
+	self
+		newCurrentLayer: (RtBoundaryLayer
+							bounds: (aMorph bounds translateBy: self origin negated)) "outerBounds?"
 		newOrigin: aMorph position
-		during: [:canvas | canvas fullDraw: aMorph])
+		during: [:canvas | self fullDrawInCurrentLayer: aMorph]

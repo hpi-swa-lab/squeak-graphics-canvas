@@ -2,4 +2,8 @@
 	"class" : {
 		 },
 	"instance" : {
-		"isRepaintBoundary" : "stlu 6/9/2020 14:13" } }
+		"invalidRect:from:" : "stlu 6/16/2020 11:30",
+		"isRepaintBoundary" : "stlu 6/16/2020 09:55",
+		"markNeedsPaint" : "stlu 6/16/2020 21:40",
+		"paintLayer" : "stlu 6/16/2020 11:33",
+		"paintLayer:" : "stlu 6/16/2020 11:33" } }

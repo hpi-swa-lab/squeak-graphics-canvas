@@ -1,6 +1,6 @@
 {
 	"class" : {
-		"bounds:" : "stlu 6/9/2020 12:33",
+		"bounds:" : "stlu 6/16/2020 21:33",
 		"offset:extent:" : "stlu 6/9/2020 12:28",
 		"transform:extent:" : "stlu 6/9/2020 12:24" },
 	"instance" : {
@@ -8,8 +8,11 @@
 		"drawOn:" : "stlu 6/15/2020 09:38",
 		"extent" : "stlu 6/9/2020 16:49",
 		"iconOrThumbnailOfSize:" : "stlu 6/15/2020 09:38",
+		"invalidateCache" : "stlu 6/16/2020 21:39",
 		"open" : "stlu 6/15/2020 09:38",
 		"rasterizeForm" : "stlu 6/9/2020 12:17",
+		"replaceWith:" : "stlu 6/16/2020 21:09",
+		"setBounds:" : "stlu 6/16/2020 21:32",
 		"setExtent:" : "stlu 6/9/2020 12:25",
 		"setTransform:" : "stlu 6/9/2020 12:25",
 		"transform" : "stlu 6/9/2020 17:38" } }

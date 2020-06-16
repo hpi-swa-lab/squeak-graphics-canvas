@@ -9,7 +9,7 @@
 		"transform",
 		"extent",
 		"cachedForm" ],
-	"name" : "RtDrawBoundaryLayer",
+	"name" : "RtBoundaryLayer",
 	"pools" : [
 		 ],
 	"super" : "RtContainerLayer",
