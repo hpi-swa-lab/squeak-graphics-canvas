@@ -3,7 +3,7 @@
 		 },
 	"instance" : {
 		"beginFrame" : "",
-		"bindTexture:" : "jcg 6/12/2006 22:40",
+		"bindTexture:" : "TZ 6/16/2020 13:00",
 		"cleanup" : "das 1/8/2006 11:10",
 		"compressTextures" : "dsa 7/26/2007 11:03",
 		"compressTextures:" : "dsa 7/26/2007 11:04",
@@ -24,4 +24,4 @@
 		"textureSizeOf:" : "das 1/2/2006 19:47",
 		"updateTextures:" : "jcg 6/12/2006 22:31",
 		"uploadTexture:" : "das 1/2/2006 19:48",
-		"uploadTexture:dirtyRect:" : "TZ 5/12/2020 12:21" } }
+		"uploadTexture:dirtyRect:" : "TZ 6/16/2020 13:01" } }

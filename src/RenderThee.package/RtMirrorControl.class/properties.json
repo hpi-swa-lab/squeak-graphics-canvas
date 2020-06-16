@@ -1,0 +1,18 @@
+{
+	"category" : "RenderThee-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"ogl",
+		"program",
+		"vao",
+		"vbo",
+		"tex" ],
+	"name" : "RtMirrorControl",
+	"pools" : [
+		 ],
+	"super" : "Morph",
+	"type" : "normal" }

@@ -4,4 +4,4 @@ checkForError
 	| error |
 
 	error := self glGetError.
-	(error ~= self GL_NO_ERROR) ifTrue: [self error: (self gluErrorString: error) ]
+	(error ~= 0) ifTrue: [self error: (self gluErrorString: error) ]

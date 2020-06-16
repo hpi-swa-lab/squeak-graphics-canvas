@@ -16,7 +16,7 @@ uploadTexture: aTForm dirtyRect: aRectangle
 		dirtyRect := 0@0 extent: aTForm textureForm extent.
 	].
 	dirtyRect := dirtyRect intersect: form boundingBox.
-	ogl glBindTexture: aTForm target with: handle glID.
+	ogl glBindTexture: GLTexture2d with: handle glID.
 	ogl glTexParameteri: GLTexture2d with: GLTextureMinFilter with: aTForm minFilter.
 	ogl glTexParameteri: GLTexture2d with: GLTextureMagFilter with: aTForm magFilter.
 	autoMip ifTrue:[ogl glTexParameteri: GLTexture2d with: GLGenerateMipmapSGIS with: true].
