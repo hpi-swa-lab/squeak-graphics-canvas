@@ -1,2 +1,5 @@
 as yet unclassified
-glIsQuery: id <apicall: ulong 'glIsQuery' (ulong) module: 'libGL.so'> ^ self externalCallFailed
+glIsQuery: id
+
+	<apicall: GLboolean 'glIsQuery' (GLuint)>
+	^ self externalCallFailed

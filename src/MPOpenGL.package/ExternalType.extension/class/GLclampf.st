@@ -1,0 +1,4 @@
+*MPOpenGL
+GLclampf
+
+	^ self float

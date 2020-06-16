@@ -1,2 +1,5 @@
 as yet unclassified
-glClampColor: target with: clamp <apicall: void 'glClampColor' (ulong ulong) module: 'libGL.so'> ^ self externalCallFailed
+glClampColor: target with: clamp
+
+	<apicall: void 'glClampColor' (GLenum GLenum)>
+	^ self externalCallFailed

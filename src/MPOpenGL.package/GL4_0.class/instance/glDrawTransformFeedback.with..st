@@ -1,2 +1,5 @@
 as yet unclassified
-glDrawTransformFeedback: mode with: id <apicall: void 'glDrawTransformFeedback' (ulong ulong) module: 'libGL.so'> ^ self externalCallFailed
+glDrawTransformFeedback: mode with: id
+
+	<apicall: void 'glDrawTransformFeedback' (GLenum GLuint)>
+	^ self externalCallFailed

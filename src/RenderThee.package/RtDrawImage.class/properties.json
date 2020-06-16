@@ -1,0 +1,17 @@
+{
+	"category" : "RenderThee-Drawing",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"form",
+		"origin",
+		"sourceRect",
+		"rule" ],
+	"name" : "RtDrawImage",
+	"pools" : [
+		 ],
+	"super" : "RtDrawCommand",
+	"type" : "normal" }

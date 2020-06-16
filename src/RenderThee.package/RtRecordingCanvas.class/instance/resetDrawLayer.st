@@ -1,0 +1,4 @@
+initialization
+resetDrawLayer
+
+	drawLayer := nil

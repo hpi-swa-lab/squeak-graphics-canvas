@@ -1,4 +1,4 @@
 public
-record: anElement
+record: aMorph
 
-	self fullDrawElement: anElement
+	self fullDrawMorph: aMorph

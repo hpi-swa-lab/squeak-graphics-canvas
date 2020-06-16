@@ -1,2 +1,4 @@
 as yet unclassified
-GL_RENDERBUFFER ^ 16r8D41
+GL_RENDERBUFFER
+
+	^ 16r8D41

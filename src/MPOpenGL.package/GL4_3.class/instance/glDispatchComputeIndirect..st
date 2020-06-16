@@ -1,2 +1,5 @@
 as yet unclassified
-glDispatchComputeIndirect: indirect <apicall: void 'glDispatchComputeIndirect' (longlong) module: 'libGL.so'> ^ self externalCallFailed
+glDispatchComputeIndirect: indirect
+
+	<apicall: void 'glDispatchComputeIndirect' (GLintptr)>
+	^ self externalCallFailed

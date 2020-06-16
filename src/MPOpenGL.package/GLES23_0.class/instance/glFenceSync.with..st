@@ -1,2 +1,5 @@
 as yet unclassified
-glFenceSync: condition with: flags <apicall: void* 'glFenceSync' (ulong ulong) module: 'libGL.so'> ^ self externalCallFailed
+glFenceSync: condition with: flags
+
+	<apicall: GLsync 'glFenceSync' (GLenum GLbitfield)>
+	^ self externalCallFailed

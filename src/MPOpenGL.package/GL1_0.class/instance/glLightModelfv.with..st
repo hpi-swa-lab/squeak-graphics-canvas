@@ -1,2 +1,5 @@
 as yet unclassified
-glLightModelfv: pname with: params <apicall: void 'glLightModelfv' (ulong float*) module: 'libGL.so'> ^ self externalCallFailed
+glLightModelfv: pname with: params
+
+	<apicall: void 'glLightModelfv' (GLenum GLfloat*)>
+	^ self externalCallFailed

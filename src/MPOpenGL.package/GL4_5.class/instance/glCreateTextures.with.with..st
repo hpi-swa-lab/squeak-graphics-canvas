@@ -1,2 +1,5 @@
 as yet unclassified
-glCreateTextures: target with: n with: textures <apicall: void 'glCreateTextures' (ulong long ulong*) module: 'libGL.so'> ^ self externalCallFailed
+glCreateTextures: target with: n with: textures
+
+	<apicall: void 'glCreateTextures' (GLenum GLsizei GLuint*)>
+	^ self externalCallFailed

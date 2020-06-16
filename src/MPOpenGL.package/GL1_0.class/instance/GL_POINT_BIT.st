@@ -1,2 +1,4 @@
 as yet unclassified
-GL_POINT_BIT ^ 16r00000002
+GL_POINT_BIT
+
+	^ 16r00000002

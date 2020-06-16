@@ -1,2 +1,5 @@
 as yet unclassified
-glLoadIdentity<apicall: void 'glLoadIdentity' () module: 'libGL.so'> ^ self externalCallFailed
+glLoadIdentity
+
+	<apicall: void 'glLoadIdentity' ()>
+	^ self externalCallFailed

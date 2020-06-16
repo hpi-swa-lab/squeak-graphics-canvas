@@ -1,2 +1,4 @@
 as yet unclassified
-GL_R8UI ^ 16r8232
+GL_R8UI
+
+	^ 16r8232

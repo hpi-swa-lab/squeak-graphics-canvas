@@ -1,10 +1,10 @@
 {
-	"category" : "MPOpenGL",
+	"category" : "MPOpenGL-Constants",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "stlu 6/15/2020 22:37",
 	"instvars" : [
 		 ],
 	"name" : "GLSharedPool",

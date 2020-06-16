@@ -1,2 +1,4 @@
 as yet unclassified
-GL_SRC1_COLOR ^ 16r88F9
+GL_SRC1_COLOR
+
+	^ 16r88F9

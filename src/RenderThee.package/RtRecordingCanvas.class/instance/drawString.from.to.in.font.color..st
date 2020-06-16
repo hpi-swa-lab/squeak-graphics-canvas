@@ -1,10 +1,10 @@
 drawing-text
 drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c
 
-	self addCommand: (DrawString
+	self addCommand: (RtDrawString
 							contents: s
 							from: firstIndex
 							to: lastIndex
-							in: boundsRect
+							in: (boundsRect translateBy: self origin negated)
 							font: fontOrNil
 							color: c)

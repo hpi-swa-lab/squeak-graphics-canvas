@@ -1,2 +1,5 @@
 as yet unclassified
-glCreateTransformFeedbacks: n with: ids <apicall: void 'glCreateTransformFeedbacks' (long ulong*) module: 'libGL.so'> ^ self externalCallFailed
+glCreateTransformFeedbacks: n with: ids
+
+	<apicall: void 'glCreateTransformFeedbacks' (GLsizei GLuint*)>
+	^ self externalCallFailed

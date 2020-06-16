@@ -1,2 +1,4 @@
 as yet unclassified
-GL_RGB12 ^ 16r8053
+GL_RGB12
+
+	^ 16r8053

@@ -13,3 +13,4 @@ gluErrorString: error
 	(error = 1285) ifTrue: [ explainedError := 'out of memory' ].
 
 	^ 'gl error: ', explainedError
+

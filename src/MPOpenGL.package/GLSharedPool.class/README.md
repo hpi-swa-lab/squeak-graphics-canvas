@@ -1,0 +1,1 @@
+Subclasses also lookup bindings in superclasses.

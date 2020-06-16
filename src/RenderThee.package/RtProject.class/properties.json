@@ -1,0 +1,14 @@
+{
+	"category" : "RenderThee-Project",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"ogl" ],
+	"name" : "RtProject",
+	"pools" : [
+		 ],
+	"super" : "MorphicProject",
+	"type" : "normal" }

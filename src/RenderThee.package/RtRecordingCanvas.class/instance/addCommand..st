@@ -1,4 +1,4 @@
 private
 addCommand: aCommand
 
-	self layer addCommand: aCommand
+	self assuredDrawLayer addCommand: aCommand

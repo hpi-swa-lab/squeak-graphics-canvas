@@ -1,2 +1,5 @@
 as yet unclassified
-glRenderMode: mode <apicall: long 'glRenderMode' (ulong) module: 'libGL.so'> ^ self externalCallFailed
+glRenderMode: mode
+
+	<apicall: GLint 'glRenderMode' (GLenum)>
+	^ self externalCallFailed

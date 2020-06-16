@@ -1,2 +1,5 @@
 as yet unclassified
-glMultiDrawArraysIndirect: mode with: indirect with: drawcount with: stride <apicall: void 'glMultiDrawArraysIndirect' (ulong void* long long) module: 'libGL.so'> ^ self externalCallFailed
+glMultiDrawArraysIndirect: mode with: indirect with: drawcount with: stride
+
+	<apicall: void 'glMultiDrawArraysIndirect' (GLenum void* GLsizei GLsizei)>
+	^ self externalCallFailed

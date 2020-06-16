@@ -1,2 +1,4 @@
 as yet unclassified
-GL_VERTEX_ARRAY ^ 16r8074
+GL_VERTEX_ARRAY
+
+	^ 16r8074

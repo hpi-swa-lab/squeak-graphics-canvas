@@ -1,3 +1,3 @@
 as yet unclassified
 startUp
-	self init
+	"self init"

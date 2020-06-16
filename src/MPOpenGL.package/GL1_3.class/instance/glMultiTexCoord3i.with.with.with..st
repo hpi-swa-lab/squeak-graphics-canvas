@@ -1,2 +1,5 @@
 as yet unclassified
-glMultiTexCoord3i: target with: s with: t with: r <apicall: void 'glMultiTexCoord3i' (ulong long long long) module: 'libGL.so'> ^ self externalCallFailed
+glMultiTexCoord3i: target with: s with: t with: r
+
+	<apicall: void 'glMultiTexCoord3i' (GLenum GLint GLint GLint)>
+	^ self externalCallFailed

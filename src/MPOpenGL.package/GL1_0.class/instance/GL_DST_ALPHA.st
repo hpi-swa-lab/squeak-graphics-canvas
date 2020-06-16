@@ -1,2 +1,4 @@
 as yet unclassified
-GL_DST_ALPHA ^ 16r0304
+GL_DST_ALPHA
+
+	^ 16r0304

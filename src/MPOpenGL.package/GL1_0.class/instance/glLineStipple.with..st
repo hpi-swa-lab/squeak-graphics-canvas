@@ -1,2 +1,5 @@
 as yet unclassified
-glLineStipple: factor with: pattern <apicall: void 'glLineStipple' (long ushort) module: 'libGL.so'> ^ self externalCallFailed
+glLineStipple: factor with: pattern
+
+	<apicall: void 'glLineStipple' (GLint GLushort)>
+	^ self externalCallFailed

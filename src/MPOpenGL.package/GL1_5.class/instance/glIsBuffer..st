@@ -1,2 +1,5 @@
 as yet unclassified
-glIsBuffer: buffer <apicall: ulong 'glIsBuffer' (ulong) module: 'libGL.so'> ^ self externalCallFailed
+glIsBuffer: buffer
+
+	<apicall: GLboolean 'glIsBuffer' (GLuint)>
+	^ self externalCallFailed

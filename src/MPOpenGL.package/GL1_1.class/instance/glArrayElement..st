@@ -1,2 +1,5 @@
 as yet unclassified
-glArrayElement: i <apicall: void 'glArrayElement' (long) module: 'libGL.so'> ^ self externalCallFailed
+glArrayElement: i
+
+	<apicall: void 'glArrayElement' (GLint)>
+	^ self externalCallFailed

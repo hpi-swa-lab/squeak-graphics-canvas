@@ -1,2 +1,4 @@
 as yet unclassified
-GL_R16F ^ 16r822D
+GL_R16F
+
+	^ 16r822D

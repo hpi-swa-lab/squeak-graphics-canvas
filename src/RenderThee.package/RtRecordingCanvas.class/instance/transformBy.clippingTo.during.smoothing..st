@@ -7,9 +7,11 @@ transformBy: aDisplayTransform clippingTo: localClipRect during: aBlock smoothin
 			clippingTo: localClipRect
 			during: aBlock].
 	
+	self notYetImplemented.
+	self flag: #todo. "disregarding localClipRect origin"
 	self
-		newCurrentLayer: (DrawTransformLayer
-							transform: aDisplayTransform
-							bounds: localClipRect
-							smoothing: cellSize)
+		newCurrentLayer: (RtDrawBoundaryLayer
+							transform: (aDisplayTransform asMatrix4x4 translation: localClipRect origin asVector3)
+							extent: localClipRect extent)
+		newOrigin: aDisplayTransform offset
 		during: aBlock

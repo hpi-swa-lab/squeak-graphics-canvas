@@ -1,2 +1,5 @@
 as yet unclassified
-glBlendFunc: sfactor with: dfactor <apicall: void 'glBlendFunc' (ulong ulong) module: 'libGL.so'> ^ self externalCallFailed
+glBlendFunc: sfactor with: dfactor
+
+	<apicall: void 'glBlendFunc' (GLenum GLenum)>
+	^ self externalCallFailed

@@ -1,2 +1,4 @@
 as yet unclassified
-GL_UNIFORM ^ 16r92E1
+GL_UNIFORM
+
+	^ 16r92E1

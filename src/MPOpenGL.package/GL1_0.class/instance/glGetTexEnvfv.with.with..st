@@ -1,2 +1,5 @@
 as yet unclassified
-glGetTexEnvfv: target with: pname with: params <apicall: void 'glGetTexEnvfv' (ulong ulong float*) module: 'libGL.so'> ^ self externalCallFailed
+glGetTexEnvfv: target with: pname with: params
+
+	<apicall: void 'glGetTexEnvfv' (GLenum GLenum GLfloat*)>
+	^ self externalCallFailed

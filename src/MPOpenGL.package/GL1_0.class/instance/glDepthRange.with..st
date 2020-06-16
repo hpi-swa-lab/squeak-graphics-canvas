@@ -1,2 +1,5 @@
 as yet unclassified
-glDepthRange: n with: f <apicall: void 'glDepthRange' (double double) module: 'libGL.so'> ^ self externalCallFailed
+glDepthRange: n with: f
+
+	<apicall: void 'glDepthRange' (GLdouble GLdouble)>
+	^ self externalCallFailed

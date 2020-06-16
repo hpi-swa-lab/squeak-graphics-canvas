@@ -1,2 +1,4 @@
 as yet unclassified
-GL_PIXEL_MAP_B_TO_B ^ 16r0C78
+GL_PIXEL_MAP_B_TO_B
+
+	^ 16r0C78

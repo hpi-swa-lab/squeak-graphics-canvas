@@ -1,2 +1,5 @@
 as yet unclassified
-glGetUniformfv: program with: location with: params <apicall: void 'glGetUniformfv' (ulong long float*) module: 'libGL.so'> ^ self externalCallFailed
+glGetUniformfv: program with: location with: params
+
+	<apicall: void 'glGetUniformfv' (GLuint GLint GLfloat*)>
+	^ self externalCallFailed

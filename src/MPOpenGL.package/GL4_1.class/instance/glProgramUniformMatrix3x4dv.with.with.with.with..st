@@ -1,2 +1,5 @@
 as yet unclassified
-glProgramUniformMatrix3x4dv: program with: location with: count with: transpose with: value <apicall: void 'glProgramUniformMatrix3x4dv' (ulong long long ulong double*) module: 'libGL.so'> ^ self externalCallFailed
+glProgramUniformMatrix3x4dv: program with: location with: count with: transpose with: value
+
+	<apicall: void 'glProgramUniformMatrix3x4dv' (GLuint GLint GLsizei GLboolean GLdouble*)>
+	^ self externalCallFailed

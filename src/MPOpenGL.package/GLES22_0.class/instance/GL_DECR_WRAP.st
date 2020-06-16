@@ -1,2 +1,4 @@
 as yet unclassified
-GL_DECR_WRAP ^ 16r8508
+GL_DECR_WRAP
+
+	^ 16r8508

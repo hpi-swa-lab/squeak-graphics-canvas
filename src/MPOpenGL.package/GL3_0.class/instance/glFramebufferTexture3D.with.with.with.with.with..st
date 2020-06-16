@@ -1,2 +1,5 @@
 as yet unclassified
-glFramebufferTexture3D: target with: attachment with: textarget with: texture with: level with: zoffset <apicall: void 'glFramebufferTexture3D' (ulong ulong ulong ulong long long) module: 'libGL.so'> ^ self externalCallFailed
+glFramebufferTexture3D: target with: attachment with: textarget with: texture with: level with: zoffset
+
+	<apicall: void 'glFramebufferTexture3D' (GLenum GLenum GLenum GLuint GLint GLint)>
+	^ self externalCallFailed

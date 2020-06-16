@@ -1,0 +1,4 @@
+*MPOpenGL
+GLhalfARB
+
+	^ self GLhalf

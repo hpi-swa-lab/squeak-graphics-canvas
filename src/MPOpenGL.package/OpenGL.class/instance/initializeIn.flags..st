@@ -8,7 +8,7 @@ initializeIn: bounds flags: flags
 	16	B3DStereo
 	32	B3DSyncvbl"
 	usesGLFW := false.
-	handle := self primCreateRenderer: flags x: bounds left y: bounds top w: bounds width h: bounds height.
+	myHandle := self primCreateRenderer: flags x: bounds left y: bounds top w: bounds width h: bounds height.
 	bufRect := bounds.
-	handle ifNotNil: [glExt := OGLExtManager new ogl: self].
-	^handle ifNotNil: [self]
+	myHandle ifNotNil: [glExt := OGLExtManager new ogl: self].
+	^myHandle ifNotNil: [self]

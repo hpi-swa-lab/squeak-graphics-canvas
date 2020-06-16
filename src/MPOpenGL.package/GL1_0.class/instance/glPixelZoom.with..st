@@ -1,2 +1,5 @@
 as yet unclassified
-glPixelZoom: xfactor with: yfactor <apicall: void 'glPixelZoom' (float float) module: 'libGL.so'> ^ self externalCallFailed
+glPixelZoom: xfactor with: yfactor
+
+	<apicall: void 'glPixelZoom' (GLfloat GLfloat)>
+	^ self externalCallFailed

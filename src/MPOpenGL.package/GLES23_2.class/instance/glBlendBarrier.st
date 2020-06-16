@@ -1,2 +1,5 @@
 as yet unclassified
-glBlendBarrier<apicall: void 'glBlendBarrier' () module: 'libGL.so'> ^ self externalCallFailed
+glBlendBarrier
+
+	<apicall: void 'glBlendBarrier' ()>
+	^ self externalCallFailed

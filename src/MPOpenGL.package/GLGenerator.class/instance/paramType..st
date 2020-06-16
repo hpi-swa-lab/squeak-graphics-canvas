@@ -1,8 +1,12 @@
-as yet unclassified
+xml helpers
 paramType: anElement
+
 	| result |
-	result := ''.
-	anElement elementsAndContentsDo: [ :part | part isText
-		ifTrue: [ result := result , part ]
-		ifFalse: [ part tag = #ptype ifTrue: [ result := result , part contentString ]]].
-	^ self convertType: (result withBlanksTrimmed)
+	result := String streamContents: [:stream |
+		anElement elementsAndContentsDo: [:part |
+			part isText
+				ifTrue: [stream nextPutAll: part string]
+				ifFalse: [
+					part tag = #ptype ifTrue: [
+						stream nextPutAll: part contentString]]]].
+	^ (result copyReplaceAll: 'const' with: '') copyReplaceAll: ' ' with: ''

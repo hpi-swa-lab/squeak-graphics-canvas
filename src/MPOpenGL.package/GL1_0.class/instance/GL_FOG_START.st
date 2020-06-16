@@ -1,2 +1,4 @@
 as yet unclassified
-GL_FOG_START ^ 16r0B63
+GL_FOG_START
+
+	^ 16r0B63

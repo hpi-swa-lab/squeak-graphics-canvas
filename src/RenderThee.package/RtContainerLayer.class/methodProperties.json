@@ -2,8 +2,8 @@
 	"class" : {
 		 },
 	"instance" : {
-		"append:" : "tobe 4/6/2020 20:06",
-		"debugDrawOn:" : "tobe 4/6/2020 21:14",
-		"imageForm" : "tobe 4/6/2020 21:38",
-		"initialize" : "tobe 4/6/2020 20:07",
-		"ref:" : "tobe 4/6/2020 21:01" } }
+		"addChild:" : "stlu 6/9/2020 13:01",
+		"bounds" : "stlu 6/9/2020 17:37",
+		"drawChildrenOn:" : "stlu 6/8/2020 00:19",
+		"drawOn:" : "stlu 6/9/2020 17:38",
+		"initialize" : "stlu 6/8/2020 00:17" } }

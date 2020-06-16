@@ -1,2 +1,5 @@
 as yet unclassified
-glAccum: op with: value <apicall: void 'glAccum' (ulong float) module: 'libGL.so'> ^ self externalCallFailed
+glAccum: op with: value
+
+	<apicall: void 'glAccum' (GLenum GLfloat)>
+	^ self externalCallFailed

@@ -1,2 +1,5 @@
 as yet unclassified
-glIndexs: c <apicall: void 'glIndexs' (short) module: 'libGL.so'> ^ self externalCallFailed
+glIndexs: c
+
+	<apicall: void 'glIndexs' (GLshort)>
+	^ self externalCallFailed

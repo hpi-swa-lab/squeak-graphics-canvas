@@ -1,2 +1,5 @@
 as yet unclassified
-glGetBooleani_v: target with: index with: data <apicall: void 'glGetBooleani_v' (ulong ulong ulong*) module: 'libGL.so'> ^ self externalCallFailed
+glGetBooleani_v: target with: index with: data
+
+	<apicall: void 'glGetBooleani_v' (GLenum GLuint GLboolean*)>
+	^ self externalCallFailed

@@ -1,2 +1,4 @@
 as yet unclassified
-GL_RGB_SCALE ^ 16r8573
+GL_RGB_SCALE
+
+	^ 16r8573

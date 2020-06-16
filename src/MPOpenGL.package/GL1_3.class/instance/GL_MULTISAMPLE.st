@@ -1,2 +1,4 @@
 as yet unclassified
-GL_MULTISAMPLE ^ 16r809D
+GL_MULTISAMPLE
+
+	^ 16r809D

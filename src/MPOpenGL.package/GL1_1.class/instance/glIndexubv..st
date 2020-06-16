@@ -1,2 +1,5 @@
 as yet unclassified
-glIndexubv: c <apicall: void 'glIndexubv' (void*) module: 'libGL.so'> ^ self externalCallFailed
+glIndexubv: c
+
+	<apicall: void 'glIndexubv' (GLubyte*)>
+	^ self externalCallFailed

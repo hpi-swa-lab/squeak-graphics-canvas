@@ -1,6 +1,6 @@
 instance creation
-record: anElement
+record: aMorph
 
-	^ self root
-		record: anElement;
+	^ (self rootWithExtent: aMorph extent)
+		record: aMorph;
 		yourself

@@ -1,2 +1,4 @@
 as yet unclassified
-GL_RGBA32UI ^ 16r8D70
+GL_RGBA32UI
+
+	^ 16r8D70

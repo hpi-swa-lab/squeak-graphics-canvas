@@ -1,2 +1,4 @@
 as yet unclassified
-GL_RGBA16UI ^ 16r8D76
+GL_RGBA16UI
+
+	^ 16r8D76

@@ -1,2 +1,4 @@
 as yet unclassified
-GL_TEXTURE_SWIZZLE_G ^ 16r8E43
+GL_TEXTURE_SWIZZLE_G
+
+	^ 16r8E43

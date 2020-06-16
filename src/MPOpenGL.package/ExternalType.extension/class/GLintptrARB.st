@@ -1,0 +1,4 @@
+*MPOpenGL
+GLintptrARB
+
+	^ self GLintptr

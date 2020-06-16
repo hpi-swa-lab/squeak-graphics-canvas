@@ -1,0 +1,16 @@
+{
+	"category" : "RenderThee-Drawing",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"bounds",
+		"fillStyle",
+		"borderStyle" ],
+	"name" : "RtDrawShape",
+	"pools" : [
+		 ],
+	"super" : "RtDrawCommand",
+	"type" : "normal" }

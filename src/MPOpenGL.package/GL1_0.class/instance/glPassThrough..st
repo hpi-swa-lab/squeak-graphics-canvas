@@ -1,2 +1,5 @@
 as yet unclassified
-glPassThrough: token <apicall: void 'glPassThrough' (float) module: 'libGL.so'> ^ self externalCallFailed
+glPassThrough: token
+
+	<apicall: void 'glPassThrough' (GLfloat)>
+	^ self externalCallFailed

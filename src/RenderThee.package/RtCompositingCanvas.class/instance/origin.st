@@ -1,4 +1,0 @@
-private
-origin
-
-	^ currentCommand origin

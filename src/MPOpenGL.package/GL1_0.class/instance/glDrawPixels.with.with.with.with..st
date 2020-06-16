@@ -1,2 +1,5 @@
 as yet unclassified
-glDrawPixels: width with: height with: format with: type with: pixels <apicall: void 'glDrawPixels' (long long ulong ulong void*) module: 'libGL.so'> ^ self externalCallFailed
+glDrawPixels: width with: height with: format with: type with: pixels
+
+	<apicall: void 'glDrawPixels' (GLsizei GLsizei GLenum GLenum void*)>
+	^ self externalCallFailed

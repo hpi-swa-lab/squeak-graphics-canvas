@@ -1,0 +1,4 @@
+*RenderThee
+isRepaintBoundary
+
+	^ true

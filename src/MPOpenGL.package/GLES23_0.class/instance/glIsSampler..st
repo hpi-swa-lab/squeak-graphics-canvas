@@ -1,2 +1,5 @@
 as yet unclassified
-glIsSampler: sampler <apicall: ulong 'glIsSampler' (ulong) module: 'libGL.so'> ^ self externalCallFailed
+glIsSampler: sampler
+
+	<apicall: GLboolean 'glIsSampler' (GLuint)>
+	^ self externalCallFailed

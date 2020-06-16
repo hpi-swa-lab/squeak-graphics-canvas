@@ -1,2 +1,5 @@
 as yet unclassified
-glTexGendv: coord with: pname with: params <apicall: void 'glTexGendv' (ulong ulong double*) module: 'libGL.so'> ^ self externalCallFailed
+glTexGendv: coord with: pname with: params
+
+	<apicall: void 'glTexGendv' (GLenum GLenum GLdouble*)>
+	^ self externalCallFailed

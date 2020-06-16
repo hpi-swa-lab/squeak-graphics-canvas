@@ -1,1 +1,0 @@
-Applies a filter to the existing painted content and then paints child.

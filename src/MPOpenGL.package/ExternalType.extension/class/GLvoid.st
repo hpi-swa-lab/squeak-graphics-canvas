@@ -1,0 +1,4 @@
+*MPOpenGL
+GLvoid
+
+	^ self void

@@ -1,0 +1,15 @@
+{
+	"class" : {
+		"bounds:" : "stlu 6/9/2020 12:33",
+		"offset:extent:" : "stlu 6/9/2020 12:28",
+		"transform:extent:" : "stlu 6/9/2020 12:24" },
+	"instance" : {
+		"assuredForm" : "stlu 6/15/2020 09:37",
+		"drawOn:" : "stlu 6/15/2020 09:38",
+		"extent" : "stlu 6/9/2020 16:49",
+		"iconOrThumbnailOfSize:" : "stlu 6/15/2020 09:38",
+		"open" : "stlu 6/15/2020 09:38",
+		"rasterizeForm" : "stlu 6/9/2020 12:17",
+		"setExtent:" : "stlu 6/9/2020 12:25",
+		"setTransform:" : "stlu 6/9/2020 12:25",
+		"transform" : "stlu 6/9/2020 17:38" } }

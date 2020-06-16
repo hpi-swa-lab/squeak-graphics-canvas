@@ -1,0 +1,14 @@
+{
+	"category" : "RenderThee-Drawing",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"Remembrall" ],
+	"commentStamp" : "",
+	"instvars" : [
+		"type" ],
+	"name" : "DrawUnsupported",
+	"pools" : [
+		 ],
+	"super" : "RtDrawCommand",
+	"type" : "normal" }

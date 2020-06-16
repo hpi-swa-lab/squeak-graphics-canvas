@@ -1,2 +1,4 @@
 as yet unclassified
-GL_BYTE ^ 16r1400
+GL_BYTE
+
+	^ 16r1400

@@ -1,2 +1,5 @@
 as yet unclassified
-glNamedFramebufferReadBuffer: framebuffer with: src <apicall: void 'glNamedFramebufferReadBuffer' (ulong ulong) module: 'libGL.so'> ^ self externalCallFailed
+glNamedFramebufferReadBuffer: framebuffer with: src
+
+	<apicall: void 'glNamedFramebufferReadBuffer' (GLuint GLenum)>
+	^ self externalCallFailed

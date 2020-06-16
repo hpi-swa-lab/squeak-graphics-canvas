@@ -1,2 +1,4 @@
 as yet unclassified
-GL_DRAW_BUFFER13 ^ 16r8832
+GL_DRAW_BUFFER13
+
+	^ 16r8832

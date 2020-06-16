@@ -1,2 +1,4 @@
 as yet unclassified
-GL_COLOR_ARRAY_STRIDE ^ 16r8083
+GL_COLOR_ARRAY_STRIDE
+
+	^ 16r8083

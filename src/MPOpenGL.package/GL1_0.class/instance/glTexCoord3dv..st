@@ -1,2 +1,5 @@
 as yet unclassified
-glTexCoord3dv: v <apicall: void 'glTexCoord3dv' (double*) module: 'libGL.so'> ^ self externalCallFailed
+glTexCoord3dv: v
+
+	<apicall: void 'glTexCoord3dv' (GLdouble*)>
+	^ self externalCallFailed

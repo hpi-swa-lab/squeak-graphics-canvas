@@ -1,2 +1,5 @@
 as yet unclassified
-glBlendEquationSeparatei: buf with: modeRGB with: modeAlpha <apicall: void 'glBlendEquationSeparatei' (ulong ulong ulong) module: 'libGL.so'> ^ self externalCallFailed
+glBlendEquationSeparatei: buf with: modeRGB with: modeAlpha
+
+	<apicall: void 'glBlendEquationSeparatei' (GLuint GLenum GLenum)>
+	^ self externalCallFailed

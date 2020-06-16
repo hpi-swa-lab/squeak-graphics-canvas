@@ -1,2 +1,5 @@
 as yet unclassified
-glGetnMapdv: target with: query with: bufSize with: v <apicall: void 'glGetnMapdv' (ulong ulong long double*) module: 'libGL.so'> ^ self externalCallFailed
+glGetnMapdv: target with: query with: bufSize with: v
+
+	<apicall: void 'glGetnMapdv' (GLenum GLenum GLsizei GLdouble*)>
+	^ self externalCallFailed

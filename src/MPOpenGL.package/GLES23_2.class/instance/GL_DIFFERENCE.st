@@ -1,2 +1,4 @@
 as yet unclassified
-GL_DIFFERENCE ^ 16r929E
+GL_DIFFERENCE
+
+	^ 16r929E

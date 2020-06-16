@@ -1,2 +1,5 @@
 as yet unclassified
-glRasterPos4fv: v <apicall: void 'glRasterPos4fv' (float*) module: 'libGL.so'> ^ self externalCallFailed
+glRasterPos4fv: v
+
+	<apicall: void 'glRasterPos4fv' (GLfloat*)>
+	^ self externalCallFailed

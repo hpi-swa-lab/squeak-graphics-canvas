@@ -1,2 +1,5 @@
 as yet unclassified
-glGetQueryBufferObjecti64v: id with: buffer with: pname with: offset <apicall: void 'glGetQueryBufferObjecti64v' (ulong ulong ulong longlong) module: 'libGL.so'> ^ self externalCallFailed
+glGetQueryBufferObjecti64v: id with: buffer with: pname with: offset
+
+	<apicall: void 'glGetQueryBufferObjecti64v' (GLuint GLuint GLenum GLintptr)>
+	^ self externalCallFailed

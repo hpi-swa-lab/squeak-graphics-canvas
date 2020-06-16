@@ -1,2 +1,5 @@
 as yet unclassified
-glRasterPos3f: x with: y with: z <apicall: void 'glRasterPos3f' (float float float) module: 'libGL.so'> ^ self externalCallFailed
+glRasterPos3f: x with: y with: z
+
+	<apicall: void 'glRasterPos3f' (GLfloat GLfloat GLfloat)>
+	^ self externalCallFailed

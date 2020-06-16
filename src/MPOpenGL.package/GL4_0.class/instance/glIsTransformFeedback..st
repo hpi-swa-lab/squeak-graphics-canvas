@@ -1,2 +1,5 @@
 as yet unclassified
-glIsTransformFeedback: id <apicall: ulong 'glIsTransformFeedback' (ulong) module: 'libGL.so'> ^ self externalCallFailed
+glIsTransformFeedback: id
+
+	<apicall: GLboolean 'glIsTransformFeedback' (GLuint)>
+	^ self externalCallFailed

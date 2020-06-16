@@ -1,2 +1,4 @@
 as yet unclassified
-GL_TEXTURE_HEIGHT ^ 16r1001
+GL_TEXTURE_HEIGHT
+
+	^ 16r1001

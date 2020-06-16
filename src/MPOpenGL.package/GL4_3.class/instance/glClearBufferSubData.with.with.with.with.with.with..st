@@ -1,2 +1,5 @@
 as yet unclassified
-glClearBufferSubData: target with: internalformat with: offset with: size with: format with: type with: data <apicall: void 'glClearBufferSubData' (ulong ulong longlong longlong ulong ulong void*) module: 'libGL.so'> ^ self externalCallFailed
+glClearBufferSubData: target with: internalformat with: offset with: size with: format with: type with: data
+
+	<apicall: void 'glClearBufferSubData' (GLenum GLenum GLintptr GLsizeiptr GLenum GLenum void*)>
+	^ self externalCallFailed

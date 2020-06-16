@@ -1,2 +1,5 @@
 as yet unclassified
-glLineWidth: width <apicall: void 'glLineWidth' (float) module: 'libGL.so'> ^ self externalCallFailed
+glLineWidth: width
+
+	<apicall: void 'glLineWidth' (GLfloat)>
+	^ self externalCallFailed

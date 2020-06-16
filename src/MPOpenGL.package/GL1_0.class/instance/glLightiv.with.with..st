@@ -1,2 +1,5 @@
 as yet unclassified
-glLightiv: light with: pname with: params <apicall: void 'glLightiv' (ulong ulong long*) module: 'libGL.so'> ^ self externalCallFailed
+glLightiv: light with: pname with: params
+
+	<apicall: void 'glLightiv' (GLenum GLenum GLint*)>
+	^ self externalCallFailed

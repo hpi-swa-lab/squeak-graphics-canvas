@@ -1,2 +1,5 @@
 as yet unclassified
-glGetSubroutineIndex: program with: shadertype with: name <apicall: ulong 'glGetSubroutineIndex' (ulong ulong char*) module: 'libGL.so'> ^ self externalCallFailed
+glGetSubroutineIndex: program with: shadertype with: name
+
+	<apicall: GLuint 'glGetSubroutineIndex' (GLuint GLenum GLchar*)>
+	^ self externalCallFailed

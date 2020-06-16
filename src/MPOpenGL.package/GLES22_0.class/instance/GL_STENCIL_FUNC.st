@@ -1,2 +1,4 @@
 as yet unclassified
-GL_STENCIL_FUNC ^ 16r0B92
+GL_STENCIL_FUNC
+
+	^ 16r0B92

@@ -1,2 +1,4 @@
 as yet unclassified
-GL_PACK_ALIGNMENT ^ 16r0D05
+GL_PACK_ALIGNMENT
+
+	^ 16r0D05

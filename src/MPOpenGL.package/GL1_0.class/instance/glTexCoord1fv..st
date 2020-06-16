@@ -1,2 +1,5 @@
 as yet unclassified
-glTexCoord1fv: v <apicall: void 'glTexCoord1fv' (float*) module: 'libGL.so'> ^ self externalCallFailed
+glTexCoord1fv: v
+
+	<apicall: void 'glTexCoord1fv' (GLfloat*)>
+	^ self externalCallFailed

@@ -1,0 +1,17 @@
+{
+	"category" : "RenderThee-Drawing",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"from",
+		"to",
+		"width",
+		"color" ],
+	"name" : "RtDrawLine",
+	"pools" : [
+		 ],
+	"super" : "RtDrawCommand",
+	"type" : "normal" }

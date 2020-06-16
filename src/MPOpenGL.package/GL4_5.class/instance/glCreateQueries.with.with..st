@@ -1,2 +1,5 @@
 as yet unclassified
-glCreateQueries: target with: n with: ids <apicall: void 'glCreateQueries' (ulong long ulong*) module: 'libGL.so'> ^ self externalCallFailed
+glCreateQueries: target with: n with: ids
+
+	<apicall: void 'glCreateQueries' (GLenum GLsizei GLuint*)>
+	^ self externalCallFailed

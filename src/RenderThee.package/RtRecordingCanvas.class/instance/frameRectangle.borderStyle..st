@@ -1,6 +1,6 @@
 drawing-rectangles
 frameRectangle: aRectangle borderStyle: aBorderStyle
 
-	self addCommand: (DrawRectangle
-							bounds: aRectangle
+	self addCommand: (RtDrawRectangle
+							bounds: (aRectangle translateBy: self origin negated)
 							borderStyle: aBorderStyle)

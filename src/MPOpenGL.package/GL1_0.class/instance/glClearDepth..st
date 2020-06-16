@@ -1,2 +1,5 @@
 as yet unclassified
-glClearDepth: depth <apicall: void 'glClearDepth' (double) module: 'libGL.so'> ^ self externalCallFailed
+glClearDepth: depth
+
+	<apicall: void 'glClearDepth' (GLdouble)>
+	^ self externalCallFailed

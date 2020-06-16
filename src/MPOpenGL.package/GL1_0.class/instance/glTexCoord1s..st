@@ -1,2 +1,5 @@
 as yet unclassified
-glTexCoord1s: s <apicall: void 'glTexCoord1s' (short) module: 'libGL.so'> ^ self externalCallFailed
+glTexCoord1s: s
+
+	<apicall: void 'glTexCoord1s' (GLshort)>
+	^ self externalCallFailed
