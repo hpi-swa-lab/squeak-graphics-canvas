@@ -1,5 +1,5 @@
 as yet unclassified
 glBindAttribLocation: program with: index with: name
 
-	<apicall: void 'glBindAttribLocation' (ulong ulong char*)>
+	<apicall: void 'glBindAttribLocation' (GLuint GLuint GLchar*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glNewList: list with: mode
 
-	<apicall: void 'glNewList' (ulong ulong)>
+	<apicall: void 'glNewList' (GLuint GLenum)>
 	^ self externalCallFailed

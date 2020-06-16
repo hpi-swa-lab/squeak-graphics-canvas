@@ -1,5 +1,5 @@
 as yet unclassified
 glMultiTexCoord1d: target with: s
 
-	<apicall: void 'glMultiTexCoord1d' (ulong double)>
+	<apicall: void 'glMultiTexCoord1d' (GLenum GLdouble)>
 	^ self externalCallFailed

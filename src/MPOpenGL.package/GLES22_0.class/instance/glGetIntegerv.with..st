@@ -1,5 +1,5 @@
 as yet unclassified
 glGetIntegerv: pname with: data
 
-	<apicall: void 'glGetIntegerv' (ulong long*)>
+	<apicall: void 'glGetIntegerv' (GLenum GLint*)>
 	^ self externalCallFailed

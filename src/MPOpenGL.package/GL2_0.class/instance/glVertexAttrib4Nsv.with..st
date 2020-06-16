@@ -1,5 +1,5 @@
 as yet unclassified
 glVertexAttrib4Nsv: index with: v
 
-	<apicall: void 'glVertexAttrib4Nsv' (ulong short*)>
+	<apicall: void 'glVertexAttrib4Nsv' (GLuint GLshort*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glCreateTransformFeedbacks: n with: ids
 
-	<apicall: void 'glCreateTransformFeedbacks' (long ulong*)>
+	<apicall: void 'glCreateTransformFeedbacks' (GLsizei GLuint*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glIsEnabled: cap
 
-	<apicall: ulong 'glIsEnabled' (ulong)>
+	<apicall: GLboolean 'glIsEnabled' (GLenum)>
 	^ self externalCallFailed

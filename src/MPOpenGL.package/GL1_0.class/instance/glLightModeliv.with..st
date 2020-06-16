@@ -1,5 +1,5 @@
 as yet unclassified
 glLightModeliv: pname with: params
 
-	<apicall: void 'glLightModeliv' (ulong long*)>
+	<apicall: void 'glLightModeliv' (GLenum GLint*)>
 	^ self externalCallFailed

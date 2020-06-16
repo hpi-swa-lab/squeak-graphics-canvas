@@ -1,5 +1,5 @@
 as yet unclassified
 glTexEnviv: target with: pname with: params
 
-	<apicall: void 'glTexEnviv' (ulong ulong long*)>
+	<apicall: void 'glTexEnviv' (GLenum GLenum GLint*)>
 	^ self externalCallFailed

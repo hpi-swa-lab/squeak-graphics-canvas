@@ -1,5 +1,5 @@
 as yet unclassified
 glDepthFunc: func
 
-	<apicall: void 'glDepthFunc' (ulong)>
+	<apicall: void 'glDepthFunc' (GLenum)>
 	^ self externalCallFailed

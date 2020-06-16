@@ -1,5 +1,5 @@
 as yet unclassified
 glPassThrough: token
 
-	<apicall: void 'glPassThrough' (float)>
+	<apicall: void 'glPassThrough' (GLfloat)>
 	^ self externalCallFailed

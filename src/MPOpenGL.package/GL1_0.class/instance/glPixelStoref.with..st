@@ -1,5 +1,5 @@
 as yet unclassified
 glPixelStoref: pname with: param
 
-	<apicall: void 'glPixelStoref' (ulong float)>
+	<apicall: void 'glPixelStoref' (GLenum GLfloat)>
 	^ self externalCallFailed

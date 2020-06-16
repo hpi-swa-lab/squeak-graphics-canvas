@@ -1,5 +1,5 @@
 as yet unclassified
 glGetProgramPipelineInfoLog: pipeline with: bufSize with: length with: infoLog
 
-	<apicall: void 'glGetProgramPipelineInfoLog' (ulong long long* char*)>
+	<apicall: void 'glGetProgramPipelineInfoLog' (GLuint GLsizei GLsizei* GLchar*)>
 	^ self externalCallFailed

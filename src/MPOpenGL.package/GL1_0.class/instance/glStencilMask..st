@@ -1,5 +1,5 @@
 as yet unclassified
 glStencilMask: mask
 
-	<apicall: void 'glStencilMask' (ulong)>
+	<apicall: void 'glStencilMask' (GLuint)>
 	^ self externalCallFailed

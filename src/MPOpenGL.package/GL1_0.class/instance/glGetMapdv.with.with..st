@@ -1,5 +1,5 @@
 as yet unclassified
 glGetMapdv: target with: query with: v
 
-	<apicall: void 'glGetMapdv' (ulong ulong double*)>
+	<apicall: void 'glGetMapdv' (GLenum GLenum GLdouble*)>
 	^ self externalCallFailed

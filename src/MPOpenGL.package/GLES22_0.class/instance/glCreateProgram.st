@@ -1,5 +1,5 @@
 as yet unclassified
 glCreateProgram
 
-	<apicall: ulong 'glCreateProgram' ()>
+	<apicall: GLuint 'glCreateProgram' ()>
 	^ self externalCallFailed

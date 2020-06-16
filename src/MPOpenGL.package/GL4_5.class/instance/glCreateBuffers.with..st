@@ -1,5 +1,5 @@
 as yet unclassified
 glCreateBuffers: n with: buffers
 
-	<apicall: void 'glCreateBuffers' (long ulong*)>
+	<apicall: void 'glCreateBuffers' (GLsizei GLuint*)>
 	^ self externalCallFailed

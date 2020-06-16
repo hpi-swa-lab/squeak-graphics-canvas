@@ -1,5 +1,5 @@
 as yet unclassified
 glTexEnvfv: target with: pname with: params
 
-	<apicall: void 'glTexEnvfv' (ulong ulong float*)>
+	<apicall: void 'glTexEnvfv' (GLenum GLenum GLfloat*)>
 	^ self externalCallFailed

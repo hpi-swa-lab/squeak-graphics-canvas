@@ -1,5 +1,5 @@
 as yet unclassified
 glListBase: base
 
-	<apicall: void 'glListBase' (ulong)>
+	<apicall: void 'glListBase' (GLuint)>
 	^ self externalCallFailed

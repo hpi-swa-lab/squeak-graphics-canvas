@@ -1,5 +1,5 @@
 as yet unclassified
 glCreateSamplers: n with: samplers
 
-	<apicall: void 'glCreateSamplers' (long ulong*)>
+	<apicall: void 'glCreateSamplers' (GLsizei GLuint*)>
 	^ self externalCallFailed

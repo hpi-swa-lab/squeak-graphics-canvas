@@ -1,5 +1,5 @@
 as yet unclassified
 glIsTransformFeedback: id
 
-	<apicall: ulong 'glIsTransformFeedback' (ulong)>
+	<apicall: GLboolean 'glIsTransformFeedback' (GLuint)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glDebugMessageCallback: callback with: userParam
 
-	<apicall: void 'glDebugMessageCallback' (void* void*)>
+	<apicall: void 'glDebugMessageCallback' (GLDEBUGPROC void*)>
 	^ self externalCallFailed

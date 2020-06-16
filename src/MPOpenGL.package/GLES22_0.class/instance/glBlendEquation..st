@@ -1,5 +1,5 @@
 as yet unclassified
 glBlendEquation: mode
 
-	<apicall: void 'glBlendEquation' (ulong)>
+	<apicall: void 'glBlendEquation' (GLenum)>
 	^ self externalCallFailed

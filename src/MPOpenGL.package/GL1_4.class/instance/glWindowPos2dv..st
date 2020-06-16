@@ -1,5 +1,5 @@
 as yet unclassified
 glWindowPos2dv: v
 
-	<apicall: void 'glWindowPos2dv' (double*)>
+	<apicall: void 'glWindowPos2dv' (GLdouble*)>
 	^ self externalCallFailed

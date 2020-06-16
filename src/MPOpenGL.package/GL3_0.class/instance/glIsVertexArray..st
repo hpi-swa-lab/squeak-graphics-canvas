@@ -1,5 +1,5 @@
 as yet unclassified
 glIsVertexArray: array
 
-	<apicall: ulong 'glIsVertexArray' (ulong)>
+	<apicall: GLboolean 'glIsVertexArray' (GLuint)>
 	^ self externalCallFailed

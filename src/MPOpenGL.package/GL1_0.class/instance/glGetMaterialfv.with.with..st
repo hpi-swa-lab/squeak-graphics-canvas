@@ -1,5 +1,5 @@
 as yet unclassified
 glGetMaterialfv: face with: pname with: params
 
-	<apicall: void 'glGetMaterialfv' (ulong ulong float*)>
+	<apicall: void 'glGetMaterialfv' (GLenum GLenum GLfloat*)>
 	^ self externalCallFailed

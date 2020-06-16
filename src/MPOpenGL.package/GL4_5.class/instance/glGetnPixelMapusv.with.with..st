@@ -1,5 +1,5 @@
 as yet unclassified
 glGetnPixelMapusv: map with: bufSize with: values
 
-	<apicall: void 'glGetnPixelMapusv' (ulong long ushort*)>
+	<apicall: void 'glGetnPixelMapusv' (GLenum GLsizei GLushort*)>
 	^ self externalCallFailed

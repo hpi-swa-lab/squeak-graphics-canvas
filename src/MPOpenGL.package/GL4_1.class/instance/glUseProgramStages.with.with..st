@@ -1,5 +1,5 @@
 as yet unclassified
 glUseProgramStages: pipeline with: stages with: program
 
-	<apicall: void 'glUseProgramStages' (ulong ulong ulong)>
+	<apicall: void 'glUseProgramStages' (GLuint GLbitfield GLuint)>
 	^ self externalCallFailed

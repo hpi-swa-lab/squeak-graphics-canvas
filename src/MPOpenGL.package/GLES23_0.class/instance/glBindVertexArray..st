@@ -1,5 +1,5 @@
 as yet unclassified
 glBindVertexArray: array
 
-	<apicall: void 'glBindVertexArray' (ulong)>
+	<apicall: void 'glBindVertexArray' (GLuint)>
 	^ self externalCallFailed

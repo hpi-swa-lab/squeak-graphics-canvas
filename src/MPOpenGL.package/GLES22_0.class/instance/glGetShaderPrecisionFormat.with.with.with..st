@@ -1,5 +1,5 @@
 as yet unclassified
 glGetShaderPrecisionFormat: shadertype with: precisiontype with: range with: precision
 
-	<apicall: void 'glGetShaderPrecisionFormat' (ulong ulong long* long*)>
+	<apicall: void 'glGetShaderPrecisionFormat' (GLenum GLenum GLint* GLint*)>
 	^ self externalCallFailed

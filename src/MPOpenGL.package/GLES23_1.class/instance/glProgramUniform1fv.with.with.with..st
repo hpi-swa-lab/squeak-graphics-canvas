@@ -1,5 +1,5 @@
 as yet unclassified
 glProgramUniform1fv: program with: location with: count with: value
 
-	<apicall: void 'glProgramUniform1fv' (ulong long long float*)>
+	<apicall: void 'glProgramUniform1fv' (GLuint GLint GLsizei GLfloat*)>
 	^ self externalCallFailed

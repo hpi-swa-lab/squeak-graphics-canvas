@@ -1,5 +1,5 @@
 as yet unclassified
 glDisable: cap
 
-	<apicall: void 'glDisable' (ulong)>
+	<apicall: void 'glDisable' (GLenum)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glIsBuffer: buffer
 
-	<apicall: ulong 'glIsBuffer' (ulong)>
+	<apicall: GLboolean 'glIsBuffer' (GLuint)>
 	^ self externalCallFailed

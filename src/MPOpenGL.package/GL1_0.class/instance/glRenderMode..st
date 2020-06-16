@@ -1,5 +1,5 @@
 as yet unclassified
 glRenderMode: mode
 
-	<apicall: long 'glRenderMode' (ulong)>
+	<apicall: GLint 'glRenderMode' (GLenum)>
 	^ self externalCallFailed

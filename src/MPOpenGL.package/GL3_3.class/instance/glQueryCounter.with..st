@@ -1,5 +1,5 @@
 as yet unclassified
 glQueryCounter: id with: target
 
-	<apicall: void 'glQueryCounter' (ulong ulong)>
+	<apicall: void 'glQueryCounter' (GLuint GLenum)>
 	^ self externalCallFailed

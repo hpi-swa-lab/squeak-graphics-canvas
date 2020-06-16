@@ -1,5 +1,5 @@
 as yet unclassified
 glSecondaryColorPointer: size with: type with: stride with: pointer
 
-	<apicall: void 'glSecondaryColorPointer' (long ulong long void*)>
+	<apicall: void 'glSecondaryColorPointer' (GLint GLenum GLsizei void*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glIsTexture: texture
 
-	<apicall: ulong 'glIsTexture' (ulong)>
+	<apicall: GLboolean 'glIsTexture' (GLuint)>
 	^ self externalCallFailed

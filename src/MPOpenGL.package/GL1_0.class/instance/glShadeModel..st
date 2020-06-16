@@ -1,5 +1,5 @@
 as yet unclassified
 glShadeModel: mode
 
-	<apicall: void 'glShadeModel' (ulong)>
+	<apicall: void 'glShadeModel' (GLenum)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glVertexArrayAttribBinding: vaobj with: attribindex with: bindingindex
 
-	<apicall: void 'glVertexArrayAttribBinding' (ulong ulong ulong)>
+	<apicall: void 'glVertexArrayAttribBinding' (GLuint GLuint GLuint)>
 	^ self externalCallFailed

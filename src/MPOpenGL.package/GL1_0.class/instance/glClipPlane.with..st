@@ -1,5 +1,5 @@
 as yet unclassified
 glClipPlane: plane with: equation
 
-	<apicall: void 'glClipPlane' (ulong double*)>
+	<apicall: void 'glClipPlane' (GLenum GLdouble*)>
 	^ self externalCallFailed

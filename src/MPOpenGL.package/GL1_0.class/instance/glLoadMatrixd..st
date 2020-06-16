@@ -1,5 +1,5 @@
 as yet unclassified
 glLoadMatrixd: m
 
-	<apicall: void 'glLoadMatrixd' (double*)>
+	<apicall: void 'glLoadMatrixd' (GLdouble*)>
 	^ self externalCallFailed

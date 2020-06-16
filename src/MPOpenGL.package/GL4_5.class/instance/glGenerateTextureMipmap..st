@@ -1,5 +1,5 @@
 as yet unclassified
 glGenerateTextureMipmap: texture
 
-	<apicall: void 'glGenerateTextureMipmap' (ulong)>
+	<apicall: void 'glGenerateTextureMipmap' (GLuint)>
 	^ self externalCallFailed

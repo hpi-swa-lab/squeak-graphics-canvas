@@ -1,5 +1,5 @@
 as yet unclassified
 glGetError
 
-	<apicall: ulong 'glGetError' ()>
+	<apicall: GLenum 'glGetError' ()>
 	^ self externalCallFailed

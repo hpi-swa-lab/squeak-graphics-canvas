@@ -1,5 +1,5 @@
 as yet unclassified
 glProgramUniform2dv: program with: location with: count with: value
 
-	<apicall: void 'glProgramUniform2dv' (ulong long long double*)>
+	<apicall: void 'glProgramUniform2dv' (GLuint GLint GLsizei GLdouble*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glBindFramebuffer: target with: framebuffer
 
-	<apicall: void 'glBindFramebuffer' (ulong ulong)>
+	<apicall: void 'glBindFramebuffer' (GLenum GLuint)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glGetQueryObjectuiv: id with: pname with: params
 
-	<apicall: void 'glGetQueryObjectuiv' (ulong ulong ulong*)>
+	<apicall: void 'glGetQueryObjectuiv' (GLuint GLenum GLuint*)>
 	^ self externalCallFailed

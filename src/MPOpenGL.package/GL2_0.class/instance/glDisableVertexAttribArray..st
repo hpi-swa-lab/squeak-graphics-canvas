@@ -1,5 +1,5 @@
 as yet unclassified
 glDisableVertexAttribArray: index
 
-	<apicall: void 'glDisableVertexAttribArray' (ulong)>
+	<apicall: void 'glDisableVertexAttribArray' (GLuint)>
 	^ self externalCallFailed

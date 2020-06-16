@@ -1,5 +1,5 @@
 as yet unclassified
 glGetnPolygonStipple: bufSize with: pattern
 
-	<apicall: void 'glGetnPolygonStipple' (long void*)>
+	<apicall: void 'glGetnPolygonStipple' (GLsizei GLubyte*)>
 	^ self externalCallFailed

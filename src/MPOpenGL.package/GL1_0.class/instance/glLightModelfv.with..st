@@ -1,5 +1,5 @@
 as yet unclassified
 glLightModelfv: pname with: params
 
-	<apicall: void 'glLightModelfv' (ulong float*)>
+	<apicall: void 'glLightModelfv' (GLenum GLfloat*)>
 	^ self externalCallFailed

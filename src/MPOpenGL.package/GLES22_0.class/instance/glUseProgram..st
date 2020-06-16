@@ -1,5 +1,5 @@
 as yet unclassified
 glUseProgram: program
 
-	<apicall: void 'glUseProgram' (ulong)>
+	<apicall: void 'glUseProgram' (GLuint)>
 	^ self externalCallFailed

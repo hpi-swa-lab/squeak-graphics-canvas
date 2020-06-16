@@ -1,5 +1,5 @@
 as yet unclassified
 glTransformFeedbackVaryings: program with: count with: varyings with: bufferMode
 
-	<apicall: void 'glTransformFeedbackVaryings' (ulong long NestedString* ulong)>
+	<apicall: void 'glTransformFeedbackVaryings' (GLuint GLsizei GLchar** GLenum)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glBegin: mode
 
-	<apicall: void 'glBegin' (ulong)>
+	<apicall: void 'glBegin' (GLenum)>
 	^ self externalCallFailed

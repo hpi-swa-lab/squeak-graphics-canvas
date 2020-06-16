@@ -1,5 +1,5 @@
 as yet unclassified
 glIndexs: c
 
-	<apicall: void 'glIndexs' (short)>
+	<apicall: void 'glIndexs' (GLshort)>
 	^ self externalCallFailed

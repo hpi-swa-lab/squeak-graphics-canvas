@@ -1,5 +1,5 @@
 as yet unclassified
 glUniform3fv: location with: count with: value
 
-	<apicall: void 'glUniform3fv' (long long float*)>
+	<apicall: void 'glUniform3fv' (GLint GLsizei GLfloat*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glGetString: name
 
-	<apicall: void* 'glGetString' (ulong)>
+	<apicall: GLubyte* 'glGetString' (GLenum)>
 	^ self externalCallFailed

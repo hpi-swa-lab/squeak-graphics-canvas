@@ -1,5 +1,5 @@
 as yet unclassified
 glEnableVertexAttribArray: index
 
-	<apicall: void 'glEnableVertexAttribArray' (ulong)>
+	<apicall: void 'glEnableVertexAttribArray' (GLuint)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glTexCoordP3uiv: type with: coords
 
-	<apicall: void 'glTexCoordP3uiv' (ulong ulong*)>
+	<apicall: void 'glTexCoordP3uiv' (GLenum GLuint*)>
 	^ self externalCallFailed

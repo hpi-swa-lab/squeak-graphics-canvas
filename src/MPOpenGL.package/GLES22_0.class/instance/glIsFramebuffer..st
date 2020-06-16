@@ -1,5 +1,5 @@
 as yet unclassified
 glIsFramebuffer: framebuffer
 
-	<apicall: ulong 'glIsFramebuffer' (ulong)>
+	<apicall: GLboolean 'glIsFramebuffer' (GLuint)>
 	^ self externalCallFailed

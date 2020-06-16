@@ -1,5 +1,5 @@
 as yet unclassified
 glTranslatef: x with: y with: z
 
-	<apicall: void 'glTranslatef' (float float float)>
+	<apicall: void 'glTranslatef' (GLfloat GLfloat GLfloat)>
 	^ self externalCallFailed

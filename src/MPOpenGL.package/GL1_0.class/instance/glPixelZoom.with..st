@@ -1,5 +1,5 @@
 as yet unclassified
 glPixelZoom: xfactor with: yfactor
 
-	<apicall: void 'glPixelZoom' (float float)>
+	<apicall: void 'glPixelZoom' (GLfloat GLfloat)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glGetPixelMapuiv: map with: values
 
-	<apicall: void 'glGetPixelMapuiv' (ulong ulong*)>
+	<apicall: void 'glGetPixelMapuiv' (GLenum GLuint*)>
 	^ self externalCallFailed

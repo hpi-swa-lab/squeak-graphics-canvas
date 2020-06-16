@@ -1,5 +1,5 @@
 as yet unclassified
 glGetUniformLocation: program with: name
 
-	<apicall: long 'glGetUniformLocation' (ulong char*)>
+	<apicall: GLint 'glGetUniformLocation' (GLuint GLchar*)>
 	^ self externalCallFailed

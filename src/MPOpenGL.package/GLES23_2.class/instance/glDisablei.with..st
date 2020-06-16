@@ -1,5 +1,5 @@
 as yet unclassified
 glDisablei: target with: index
 
-	<apicall: void 'glDisablei' (ulong ulong)>
+	<apicall: void 'glDisablei' (GLenum GLuint)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glTexCoord1fv: v
 
-	<apicall: void 'glTexCoord1fv' (float*)>
+	<apicall: void 'glTexCoord1fv' (GLfloat*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glIsProgram: program
 
-	<apicall: ulong 'glIsProgram' (ulong)>
+	<apicall: GLboolean 'glIsProgram' (GLuint)>
 	^ self externalCallFailed

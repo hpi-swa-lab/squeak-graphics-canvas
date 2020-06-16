@@ -1,5 +1,5 @@
 as yet unclassified
 glCompileShader: shader
 
-	<apicall: void 'glCompileShader' (ulong)>
+	<apicall: void 'glCompileShader' (GLuint)>
 	^ self externalCallFailed

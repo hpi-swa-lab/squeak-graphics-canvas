@@ -1,5 +1,5 @@
 as yet unclassified
 glGetFramebufferParameteriv: target with: pname with: params
 
-	<apicall: void 'glGetFramebufferParameteriv' (ulong ulong long*)>
+	<apicall: void 'glGetFramebufferParameteriv' (GLenum GLenum GLint*)>
 	^ self externalCallFailed

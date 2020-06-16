@@ -1,5 +1,5 @@
 as yet unclassified
 glIsEnabledi: target with: index
 
-	<apicall: ulong 'glIsEnabledi' (ulong ulong)>
+	<apicall: GLboolean 'glIsEnabledi' (GLenum GLuint)>
 	^ self externalCallFailed

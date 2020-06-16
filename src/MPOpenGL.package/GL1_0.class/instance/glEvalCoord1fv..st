@@ -1,5 +1,5 @@
 as yet unclassified
 glEvalCoord1fv: u
 
-	<apicall: void 'glEvalCoord1fv' (float*)>
+	<apicall: void 'glEvalCoord1fv' (GLfloat*)>
 	^ self externalCallFailed

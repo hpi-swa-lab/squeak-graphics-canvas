@@ -1,5 +1,5 @@
 as yet unclassified
 glViewportIndexedfv: index with: v
 
-	<apicall: void 'glViewportIndexedfv' (ulong float*)>
+	<apicall: void 'glViewportIndexedfv' (GLuint GLfloat*)>
 	^ self externalCallFailed

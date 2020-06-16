@@ -1,5 +1,5 @@
 as yet unclassified
 glIsShader: shader
 
-	<apicall: ulong 'glIsShader' (ulong)>
+	<apicall: GLboolean 'glIsShader' (GLuint)>
 	^ self externalCallFailed

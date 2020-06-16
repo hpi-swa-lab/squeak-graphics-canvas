@@ -1,5 +1,5 @@
 as yet unclassified
 glGetNamedBufferPointerv: buffer with: pname with: params
 
-	<apicall: void 'glGetNamedBufferPointerv' (ulong ulong void**)>
+	<apicall: void 'glGetNamedBufferPointerv' (GLuint GLenum void**)>
 	^ self externalCallFailed

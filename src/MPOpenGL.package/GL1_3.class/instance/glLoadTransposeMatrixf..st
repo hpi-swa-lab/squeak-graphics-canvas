@@ -1,5 +1,5 @@
 as yet unclassified
 glLoadTransposeMatrixf: m
 
-	<apicall: void 'glLoadTransposeMatrixf' (float*)>
+	<apicall: void 'glLoadTransposeMatrixf' (GLfloat*)>
 	^ self externalCallFailed

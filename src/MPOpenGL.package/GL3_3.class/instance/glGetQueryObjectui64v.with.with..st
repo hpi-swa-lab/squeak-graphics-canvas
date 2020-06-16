@@ -1,5 +1,5 @@
 as yet unclassified
 glGetQueryObjectui64v: id with: pname with: params
 
-	<apicall: void 'glGetQueryObjectui64v' (ulong ulong ulonglong*)>
+	<apicall: void 'glGetQueryObjectui64v' (GLuint GLenum GLuint64*)>
 	^ self externalCallFailed

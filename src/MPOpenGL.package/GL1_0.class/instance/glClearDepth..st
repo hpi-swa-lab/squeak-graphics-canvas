@@ -1,5 +1,5 @@
 as yet unclassified
 glClearDepth: depth
 
-	<apicall: void 'glClearDepth' (double)>
+	<apicall: void 'glClearDepth' (GLdouble)>
 	^ self externalCallFailed

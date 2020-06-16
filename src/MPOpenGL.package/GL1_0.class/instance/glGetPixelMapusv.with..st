@@ -1,5 +1,5 @@
 as yet unclassified
 glGetPixelMapusv: map with: values
 
-	<apicall: void 'glGetPixelMapusv' (ulong ushort*)>
+	<apicall: void 'glGetPixelMapusv' (GLenum GLushort*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glCreateVertexArrays: n with: arrays
 
-	<apicall: void 'glCreateVertexArrays' (long ulong*)>
+	<apicall: void 'glCreateVertexArrays' (GLsizei GLuint*)>
 	^ self externalCallFailed

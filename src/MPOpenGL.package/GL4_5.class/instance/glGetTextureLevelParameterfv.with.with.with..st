@@ -1,5 +1,5 @@
 as yet unclassified
 glGetTextureLevelParameterfv: texture with: level with: pname with: params
 
-	<apicall: void 'glGetTextureLevelParameterfv' (ulong long ulong float*)>
+	<apicall: void 'glGetTextureLevelParameterfv' (GLuint GLint GLenum GLfloat*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glShaderSource: shader with: count with: string with: length
 
-	<apicall: void 'glShaderSource' (ulong long char* long*)>
+	<apicall: void 'glShaderSource' (GLuint GLsizei GLchar** GLint*)>
 	^ self externalCallFailed

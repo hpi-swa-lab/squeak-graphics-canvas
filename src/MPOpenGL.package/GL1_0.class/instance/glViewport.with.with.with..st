@@ -1,5 +1,5 @@
 as yet unclassified
 glViewport: x with: y with: width with: height
 
-	<apicall: void 'glViewport' (long long long long)>
+	<apicall: void 'glViewport' (GLint GLint GLsizei GLsizei)>
 	^ self externalCallFailed

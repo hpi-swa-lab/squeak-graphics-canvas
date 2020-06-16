@@ -1,5 +1,5 @@
 as yet unclassified
 glBindBufferBase: target with: index with: buffer
 
-	<apicall: void 'glBindBufferBase' (ulong ulong ulong)>
+	<apicall: void 'glBindBufferBase' (GLenum GLuint GLuint)>
 	^ self externalCallFailed

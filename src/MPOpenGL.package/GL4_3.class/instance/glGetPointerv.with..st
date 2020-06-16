@@ -1,5 +1,5 @@
 as yet unclassified
 glGetPointerv: pname with: params
 
-	<apicall: void 'glGetPointerv' (ulong void**)>
+	<apicall: void 'glGetPointerv' (GLenum void**)>
 	^ self externalCallFailed

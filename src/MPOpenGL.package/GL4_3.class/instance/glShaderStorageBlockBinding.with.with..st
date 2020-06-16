@@ -1,5 +1,5 @@
 as yet unclassified
 glShaderStorageBlockBinding: program with: storageBlockIndex with: storageBlockBinding
 
-	<apicall: void 'glShaderStorageBlockBinding' (ulong ulong ulong)>
+	<apicall: void 'glShaderStorageBlockBinding' (GLuint GLuint GLuint)>
 	^ self externalCallFailed

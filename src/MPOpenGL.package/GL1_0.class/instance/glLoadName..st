@@ -1,5 +1,5 @@
 as yet unclassified
 glLoadName: name
 
-	<apicall: void 'glLoadName' (ulong)>
+	<apicall: void 'glLoadName' (GLuint)>
 	^ self externalCallFailed

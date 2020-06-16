@@ -1,5 +1,5 @@
 as yet unclassified
 glVertexP2ui: type with: value
 
-	<apicall: void 'glVertexP2ui' (ulong ulong)>
+	<apicall: void 'glVertexP2ui' (GLenum GLuint)>
 	^ self externalCallFailed

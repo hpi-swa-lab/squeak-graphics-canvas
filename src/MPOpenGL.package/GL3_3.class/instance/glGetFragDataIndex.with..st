@@ -1,5 +1,5 @@
 as yet unclassified
 glGetFragDataIndex: program with: name
 
-	<apicall: long 'glGetFragDataIndex' (ulong char*)>
+	<apicall: GLint 'glGetFragDataIndex' (GLuint GLchar*)>
 	^ self externalCallFailed

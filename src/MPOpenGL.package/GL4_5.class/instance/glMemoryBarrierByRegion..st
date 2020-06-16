@@ -1,5 +1,5 @@
 as yet unclassified
 glMemoryBarrierByRegion: barriers
 
-	<apicall: void 'glMemoryBarrierByRegion' (ulong)>
+	<apicall: void 'glMemoryBarrierByRegion' (GLbitfield)>
 	^ self externalCallFailed

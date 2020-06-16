@@ -1,5 +1,5 @@
 as yet unclassified
 glSpecializeShader: shader with: pEntryPoint with: numSpecializationConstants with: pConstantIndex with: pConstantValue
 
-	<apicall: void 'glSpecializeShader' (ulong char* ulong ulong* ulong*)>
+	<apicall: void 'glSpecializeShader' (GLuint GLchar* GLuint GLuint* GLuint*)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glClear: mask
 
-	<apicall: void 'glClear' (ulong)>
+	<apicall: void 'glClear' (GLbitfield)>
 	^ self externalCallFailed

@@ -1,5 +1,5 @@
 as yet unclassified
 glIndexubv: c
 
-	<apicall: void 'glIndexubv' (void*)>
+	<apicall: void 'glIndexubv' (GLubyte*)>
 	^ self externalCallFailed

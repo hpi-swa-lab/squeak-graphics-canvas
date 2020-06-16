@@ -1,5 +1,5 @@
 as yet unclassified
 glGetSubroutineUniformLocation: program with: shadertype with: name
 
-	<apicall: long 'glGetSubroutineUniformLocation' (ulong ulong char*)>
+	<apicall: GLint 'glGetSubroutineUniformLocation' (GLuint GLenum GLchar*)>
 	^ self externalCallFailed

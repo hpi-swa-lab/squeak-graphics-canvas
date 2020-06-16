@@ -1,5 +1,5 @@
 as yet unclassified
 glClearStencil: s
 
-	<apicall: void 'glClearStencil' (long)>
+	<apicall: void 'glClearStencil' (GLint)>
 	^ self externalCallFailed

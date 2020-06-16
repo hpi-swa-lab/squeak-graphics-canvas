@@ -1,5 +1,5 @@
 as yet unclassified
 glScissorArrayv: first with: count with: v
 
-	<apicall: void 'glScissorArrayv' (ulong long long*)>
+	<apicall: void 'glScissorArrayv' (GLuint GLsizei GLint*)>
 	^ self externalCallFailed

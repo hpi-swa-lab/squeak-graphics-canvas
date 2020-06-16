@@ -1,5 +1,5 @@
 as yet unclassified
 glGenProgramPipelines: n with: pipelines
 
-	<apicall: void 'glGenProgramPipelines' (long ulong*)>
+	<apicall: void 'glGenProgramPipelines' (GLsizei GLuint*)>
 	^ self externalCallFailed

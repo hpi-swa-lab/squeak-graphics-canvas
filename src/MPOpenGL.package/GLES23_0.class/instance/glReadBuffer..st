@@ -1,5 +1,5 @@
 as yet unclassified
 glReadBuffer: src
 
-	<apicall: void 'glReadBuffer' (ulong)>
+	<apicall: void 'glReadBuffer' (GLenum)>
 	^ self externalCallFailed

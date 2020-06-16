@@ -1,5 +1,5 @@
 as yet unclassified
 glEdgeFlagPointer: stride with: pointer
 
-	<apicall: void 'glEdgeFlagPointer' (long void*)>
+	<apicall: void 'glEdgeFlagPointer' (GLsizei void*)>
 	^ self externalCallFailed

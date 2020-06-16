@@ -1,5 +1,5 @@
 as yet unclassified
 glSecondaryColor3ub: red with: green with: blue
 
-	<apicall: void 'glSecondaryColor3ub' (ubyte ubyte ubyte)>
+	<apicall: void 'glSecondaryColor3ub' (GLubyte GLubyte GLubyte)>
 	^ self externalCallFailed

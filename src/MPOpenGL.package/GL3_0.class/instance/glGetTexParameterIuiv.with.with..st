@@ -1,5 +1,5 @@
 as yet unclassified
 glGetTexParameterIuiv: target with: pname with: params
 
-	<apicall: void 'glGetTexParameterIuiv' (ulong ulong ulong*)>
+	<apicall: void 'glGetTexParameterIuiv' (GLenum GLenum GLuint*)>
 	^ self externalCallFailed

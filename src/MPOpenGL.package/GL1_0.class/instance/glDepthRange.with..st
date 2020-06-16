@@ -1,5 +1,5 @@
 as yet unclassified
 glDepthRange: n with: f
 
-	<apicall: void 'glDepthRange' (double double)>
+	<apicall: void 'glDepthRange' (GLdouble GLdouble)>
 	^ self externalCallFailed

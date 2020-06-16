@@ -1,5 +1,5 @@
 as yet unclassified
 glRectfv: v1 with: v2
 
-	<apicall: void 'glRectfv' (float* float*)>
+	<apicall: void 'glRectfv' (GLfloat* GLfloat*)>
 	^ self externalCallFailed

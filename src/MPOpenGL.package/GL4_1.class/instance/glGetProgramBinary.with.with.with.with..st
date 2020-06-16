@@ -1,5 +1,5 @@
 as yet unclassified
 glGetProgramBinary: program with: bufSize with: length with: binaryFormat with: binary
 
-	<apicall: void 'glGetProgramBinary' (ulong long long* ulong* void*)>
+	<apicall: void 'glGetProgramBinary' (GLuint GLsizei GLsizei* GLenum* void*)>
 	^ self externalCallFailed

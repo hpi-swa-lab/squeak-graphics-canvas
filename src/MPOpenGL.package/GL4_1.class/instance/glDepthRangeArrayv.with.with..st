@@ -1,5 +1,5 @@
 as yet unclassified
 glDepthRangeArrayv: first with: count with: v
 
-	<apicall: void 'glDepthRangeArrayv' (ulong long double*)>
+	<apicall: void 'glDepthRangeArrayv' (GLuint GLsizei GLdouble*)>
 	^ self externalCallFailed

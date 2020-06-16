@@ -1,5 +1,5 @@
 as yet unclassified
 glGenTextures: n with: textures
 
-	<apicall: void 'glGenTextures' (long ulong*)>
+	<apicall: void 'glGenTextures' (GLsizei GLuint*)>
 	^ self externalCallFailed

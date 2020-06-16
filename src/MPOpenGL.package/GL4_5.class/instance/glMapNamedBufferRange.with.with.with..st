@@ -1,5 +1,5 @@
 as yet unclassified
 glMapNamedBufferRange: buffer with: offset with: length with: access
 
-	<apicall: void* 'glMapNamedBufferRange' (ulong longlong longlong ulong)>
+	<apicall: void* 'glMapNamedBufferRange' (GLuint GLintptr GLsizeiptr GLbitfield)>
 	^ self externalCallFailed

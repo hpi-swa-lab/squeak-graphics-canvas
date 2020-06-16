@@ -1,0 +1,4 @@
+*MPOpenGL
+GLfixedARG
+
+	^ self GLfixed

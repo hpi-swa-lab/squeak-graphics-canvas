@@ -1,5 +1,5 @@
 as yet unclassified
 glEdgeFlagv: flag
 
-	<apicall: void 'glEdgeFlagv' (uchar*)>
+	<apicall: void 'glEdgeFlagv' (GLboolean*)>
 	^ self externalCallFailed

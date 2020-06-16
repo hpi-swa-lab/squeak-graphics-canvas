@@ -1,5 +1,5 @@
 as yet unclassified
 glGetBooleanv: pname with: data
 
-	<apicall: void 'glGetBooleanv' (ulong ulong*)>
+	<apicall: void 'glGetBooleanv' (GLenum GLboolean*)>
 	^ self externalCallFailed

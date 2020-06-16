@@ -1,5 +1,5 @@
 as yet unclassified
 glIsList: list
 
-	<apicall: ulong 'glIsList' (ulong)>
+	<apicall: GLboolean 'glIsList' (GLuint)>
 	^ self externalCallFailed
