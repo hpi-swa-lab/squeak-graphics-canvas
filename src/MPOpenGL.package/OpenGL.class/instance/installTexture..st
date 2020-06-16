@@ -1,4 +1,4 @@
-textures
+deprecated
 installTexture: aTForm
 	| tf |
 	changeTexture ifFalse:[^false].

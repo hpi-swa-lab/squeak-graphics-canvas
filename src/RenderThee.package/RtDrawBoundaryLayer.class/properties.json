@@ -8,7 +8,9 @@
 	"instvars" : [
 		"transform",
 		"extent",
-		"cachedForm" ],
+		"cachedForm",
+		"needsPaint",
+		"cachedTexture" ],
 	"name" : "RtDrawBoundaryLayer",
 	"pools" : [
 		 ],

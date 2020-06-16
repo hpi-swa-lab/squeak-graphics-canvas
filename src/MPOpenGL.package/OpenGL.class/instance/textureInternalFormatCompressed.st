@@ -1,3 +1,3 @@
-textures
+deprecated
 textureInternalFormatCompressed
 	^GLCompressedRgbaARB
