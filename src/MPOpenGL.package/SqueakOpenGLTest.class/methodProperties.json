@@ -4,7 +4,7 @@
 	"instance" : {
 		"fragmentShader" : "tobe 6/15/2020 20:24",
 		"setUp" : "sr 5/11/2020 16:05",
-		"setUpWindow" : "tobe 6/15/2020 21:00",
+		"setUpWindow" : "stlu 6/16/2020 09:16",
 		"tearDownWindow" : "sr 5/19/2020 11:58",
 		"test_example" : "stlu 6/15/2020 22:25",
 		"verifyOglInitializationWorked" : "sr 5/19/2020 11:58",

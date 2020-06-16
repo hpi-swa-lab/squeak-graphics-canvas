@@ -10,8 +10,8 @@ initializeGLFWIn: bounds
 	GLFW makeContextCurrent: myHandle.
 	GLFW swapInterval: 1.
 	
-	"GLFW setCursorPosCallback: myHandle with: (Callback signature: #(void (*)(const void *, double, double)) block: [:win :x :y | FileStream stdout nextPutAll: 'HI']) thunk.
-	GLFW setMouseButtonCallback: myHandle with: (Callback signature: #(void (*)(const void *, int, int, int)) block: [:win :x :y :z | self assert: false]) thunk."
+	"GLFW setCursorPosCallback: myHandle with: (Callback signature: #(void (*)(const void *, double, double)) block: [:win :x :y | Transcript showln: {'move'. x. y}]) thunk.
+	GLFW setMouseButtonCallback: myHandle with: (Callback signature: #(void (*)(const void *, int, int, int)) block: [:win :x :y :z | Transcript showln: {'click'. x. y. z}]) thunk."
 	
 	bufRect := bounds.
 	myHandle ifNotNil: [glExt := OGLExtManager new ogl: self].
