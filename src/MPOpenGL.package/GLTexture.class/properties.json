@@ -1,0 +1,14 @@
+{
+	"category" : "MPOpenGL-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"id" ],
+	"name" : "GLTexture",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
