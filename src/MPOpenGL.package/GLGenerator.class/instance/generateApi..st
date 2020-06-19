@@ -7,7 +7,4 @@ generateApi: aString
 	definedEnums := Set new.
 	definedCommands := Set new.
 
-	featureTags
-		at: api
-		ifPresent: [:features | features do: [:feature | self feature: feature]]
-		ifAbsent: [self error: 'No such api in the provided xml']
+	self api: api featuresDo: [:feature | self feature: feature]
