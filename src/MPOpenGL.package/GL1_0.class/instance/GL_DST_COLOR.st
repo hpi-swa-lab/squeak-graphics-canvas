@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DST_COLOR
 
-	^ 16r0306
+	^ 16r306

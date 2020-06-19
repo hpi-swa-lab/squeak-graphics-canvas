@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_BLUE_BITS
 
-	^ 16r0D54
+	^ 16rD54

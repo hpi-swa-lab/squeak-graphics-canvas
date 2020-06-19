@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glRectsv: v1 with: v2
 
 	<apicall: void 'glRectsv' (GLshort* GLshort*)>

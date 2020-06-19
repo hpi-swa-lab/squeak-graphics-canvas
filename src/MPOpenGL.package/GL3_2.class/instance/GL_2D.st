@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_2D
+
 	self shouldNotImplement

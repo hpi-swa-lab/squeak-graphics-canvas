@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SHADE_MODEL
 
-	^ 16r0B54
+	^ 16rB54

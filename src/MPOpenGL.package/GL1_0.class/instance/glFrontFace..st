@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glFrontFace: mode
 
 	<apicall: void 'glFrontFace' (GLenum)>

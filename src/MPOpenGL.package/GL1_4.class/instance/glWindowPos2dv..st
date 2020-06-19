@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glWindowPos2dv: v
 
 	<apicall: void 'glWindowPos2dv' (GLdouble*)>

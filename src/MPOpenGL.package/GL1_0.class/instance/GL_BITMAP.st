@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_BITMAP
 
 	^ 16r1A00

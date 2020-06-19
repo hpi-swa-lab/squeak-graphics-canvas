@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glPixelStorei: pname with: param
 
 	<apicall: void 'glPixelStorei' (GLenum GLint)>

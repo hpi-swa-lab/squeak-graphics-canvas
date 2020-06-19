@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAGMENT_DEPTH
 
 	^ 16r8452

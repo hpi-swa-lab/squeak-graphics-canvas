@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetUniformdv: program with: location with: params
 
 	<apicall: void 'glGetUniformdv' (GLuint GLint GLdouble*)>

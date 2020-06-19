@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN
 
 	^ 16r8C88

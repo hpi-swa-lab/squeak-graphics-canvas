@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIsRenderbuffer: renderbuffer
 
 	<apicall: GLboolean 'glIsRenderbuffer' (GLuint)>

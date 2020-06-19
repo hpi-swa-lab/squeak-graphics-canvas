@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TRIANGLE_STRIP_ADJACENCY
 
-	^ 16r000D
+	^ 16rD

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COLOR_MATERIAL
 
-	^ 16r0B57
+	^ 16rB57

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_HINT_BIT
 
-	^ 16r00008000
+	^ 16r8000

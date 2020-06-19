@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDeleteSync: sync
 
 	<apicall: void 'glDeleteSync' (GLsync)>

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_BLEND_DST_ALPHA
 
 	^ 16r80CA

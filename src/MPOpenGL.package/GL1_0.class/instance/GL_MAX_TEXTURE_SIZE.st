@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_TEXTURE_SIZE
 
-	^ 16r0D33
+	^ 16rD33

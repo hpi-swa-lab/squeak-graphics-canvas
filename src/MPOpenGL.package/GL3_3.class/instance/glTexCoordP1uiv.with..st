@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glTexCoordP1uiv: type with: coords
 
 	<apicall: void 'glTexCoordP1uiv' (GLenum GLuint*)>

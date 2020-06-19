@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glNormal3i: nx with: ny with: nz
 
 	<apicall: void 'glNormal3i' (GLint GLint GLint)>

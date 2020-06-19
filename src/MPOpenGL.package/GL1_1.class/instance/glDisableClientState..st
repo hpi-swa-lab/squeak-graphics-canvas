@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDisableClientState: array
 
 	<apicall: void 'glDisableClientState' (GLenum)>

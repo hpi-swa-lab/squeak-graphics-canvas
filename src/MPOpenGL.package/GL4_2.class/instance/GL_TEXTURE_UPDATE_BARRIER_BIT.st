@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_UPDATE_BARRIER_BIT
 
-	^ 16r00000100
+	^ 16r100

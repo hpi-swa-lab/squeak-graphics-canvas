@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION
 
 	^ 16r8E4C

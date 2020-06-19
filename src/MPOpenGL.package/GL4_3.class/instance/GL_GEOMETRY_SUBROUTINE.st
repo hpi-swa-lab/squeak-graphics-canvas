@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_GEOMETRY_SUBROUTINE
 
 	^ 16r92EB

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAP1_TEXTURE_COORD_3
 
-	^ 16r0D95
+	^ 16rD95

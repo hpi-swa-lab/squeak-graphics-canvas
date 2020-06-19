@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_GEOMETRY_SHADER_PRIMITIVES_EMITTED
 
 	^ 16r82F3

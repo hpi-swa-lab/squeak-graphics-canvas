@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_AUX0
 
-	^ 16r0409
+	^ 16r409

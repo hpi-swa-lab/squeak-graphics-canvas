@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIsTransformFeedback: id
 
 	<apicall: GLboolean 'glIsTransformFeedback' (GLuint)>

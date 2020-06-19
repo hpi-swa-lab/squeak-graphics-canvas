@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INT_SAMPLER_2D_MULTISAMPLE
 
 	^ 16r9109

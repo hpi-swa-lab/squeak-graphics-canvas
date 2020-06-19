@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TESS_EVALUATION_SUBROUTINE_UNIFORM
 
 	^ 16r92F0

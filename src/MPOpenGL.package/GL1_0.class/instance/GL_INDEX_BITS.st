@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INDEX_BITS
 
-	^ 16r0D51
+	^ 16rD51

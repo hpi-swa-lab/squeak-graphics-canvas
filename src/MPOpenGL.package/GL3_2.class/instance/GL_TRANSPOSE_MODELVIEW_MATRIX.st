@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_TRANSPOSE_MODELVIEW_MATRIX
+
 	self shouldNotImplement

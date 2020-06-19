@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_STENCIL_INDEX16
 
 	^ 16r8D49

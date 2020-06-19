@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEBUG_SEVERITY_LOW
 
 	^ 16r9148

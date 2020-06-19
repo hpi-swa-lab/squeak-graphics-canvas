@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MULT
 
-	^ 16r0103
+	^ 16r103

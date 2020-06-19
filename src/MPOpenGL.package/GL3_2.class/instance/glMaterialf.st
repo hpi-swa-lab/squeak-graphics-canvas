@@ -1,3 +1,4 @@
-as yet unclassified
+commands - deprecated
 glMaterialf
+
 	self shouldNotImplement

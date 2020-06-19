@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_ZOOM_Y
+
 	self shouldNotImplement

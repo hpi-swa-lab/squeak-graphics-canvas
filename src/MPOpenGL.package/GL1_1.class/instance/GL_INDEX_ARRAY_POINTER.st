@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INDEX_ARRAY_POINTER
 
 	^ 16r8091

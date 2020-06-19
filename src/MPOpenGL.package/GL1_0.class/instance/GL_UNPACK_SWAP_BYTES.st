@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNPACK_SWAP_BYTES
 
-	^ 16r0CF0
+	^ 16rCF0

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COMPUTE_SHADER
 
 	^ 16r91B9

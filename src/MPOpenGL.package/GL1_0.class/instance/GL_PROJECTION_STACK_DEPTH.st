@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PROJECTION_STACK_DEPTH
 
-	^ 16r0BA4
+	^ 16rBA4

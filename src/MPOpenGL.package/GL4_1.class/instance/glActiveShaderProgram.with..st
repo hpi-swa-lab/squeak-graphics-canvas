@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glActiveShaderProgram: pipeline with: program
 
 	<apicall: void 'glActiveShaderProgram' (GLuint GLuint)>

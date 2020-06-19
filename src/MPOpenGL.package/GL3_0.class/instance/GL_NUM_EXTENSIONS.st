@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_NUM_EXTENSIONS
 
 	^ 16r821D

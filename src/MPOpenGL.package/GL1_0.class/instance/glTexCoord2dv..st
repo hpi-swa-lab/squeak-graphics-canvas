@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glTexCoord2dv: v
 
 	<apicall: void 'glTexCoord2dv' (GLdouble*)>

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glRasterPos2sv: v
 
 	<apicall: void 'glRasterPos2sv' (GLshort*)>

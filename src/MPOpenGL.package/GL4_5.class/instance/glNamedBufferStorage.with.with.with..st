@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glNamedBufferStorage: buffer with: size with: data with: flags
 
 	<apicall: void 'glNamedBufferStorage' (GLuint GLsizeiptr void* GLbitfield)>

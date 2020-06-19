@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ALPHA_INTEGER
 
 	^ 16r8D97

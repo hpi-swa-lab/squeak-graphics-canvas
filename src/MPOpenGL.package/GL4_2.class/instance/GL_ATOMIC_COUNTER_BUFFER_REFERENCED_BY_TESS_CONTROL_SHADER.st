@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TESS_CONTROL_SHADER
 
 	^ 16r92C8

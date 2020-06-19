@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAP_UNSYNCHRONIZED_BIT
 
-	^ 16r0020
+	^ 16r20

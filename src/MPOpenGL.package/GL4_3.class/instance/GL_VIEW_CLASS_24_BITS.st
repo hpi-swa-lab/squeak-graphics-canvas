@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_VIEW_CLASS_24_BITS
 
 	^ 16r82C9

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_VERTEX_ATOMIC_COUNTERS
 
 	^ 16r92D2

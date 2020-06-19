@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glBindTextureUnit: unit with: texture
 
 	<apicall: void 'glBindTextureUnit' (GLuint GLuint)>

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT
 
-	^ 16r00004000
+	^ 16r4000

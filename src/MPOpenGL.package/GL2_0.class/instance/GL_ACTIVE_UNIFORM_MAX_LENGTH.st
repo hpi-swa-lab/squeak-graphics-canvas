@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ACTIVE_UNIFORM_MAX_LENGTH
 
 	^ 16r8B87

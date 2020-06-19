@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glUnmapBuffer: target
 
 	<apicall: GLboolean 'glUnmapBuffer' (GLenum)>

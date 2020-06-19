@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_TRANSPOSE_PROJECTION_MATRIX
+
 	self shouldNotImplement

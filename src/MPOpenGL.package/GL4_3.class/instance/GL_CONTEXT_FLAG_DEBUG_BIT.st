@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CONTEXT_FLAG_DEBUG_BIT
 
-	^ 16r00000002
+	^ 16r2

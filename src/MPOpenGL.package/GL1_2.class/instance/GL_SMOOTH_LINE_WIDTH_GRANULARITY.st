@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SMOOTH_LINE_WIDTH_GRANULARITY
 
-	^ 16r0B23
+	^ 16rB23

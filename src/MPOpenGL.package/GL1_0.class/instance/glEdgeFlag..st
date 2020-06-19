@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glEdgeFlag: flag
 
 	<apicall: void 'glEdgeFlag' (GLboolean)>

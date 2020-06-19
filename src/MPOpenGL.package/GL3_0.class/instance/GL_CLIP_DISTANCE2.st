@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CLIP_DISTANCE2
 
 	^ 16r3002

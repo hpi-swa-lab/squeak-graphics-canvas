@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glSecondaryColor3dv: v
 
 	<apicall: void 'glSecondaryColor3dv' (GLdouble*)>

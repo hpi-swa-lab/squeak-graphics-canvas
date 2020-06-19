@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glShaderStorageBlockBinding: program with: storageBlockIndex with: storageBlockBinding
 
 	<apicall: void 'glShaderStorageBlockBinding' (GLuint GLuint GLuint)>

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetTransformFeedbacki_v: xfb with: pname with: index with: param
 
 	<apicall: void 'glGetTransformFeedbacki_v' (GLuint GLenum GLuint GLint*)>

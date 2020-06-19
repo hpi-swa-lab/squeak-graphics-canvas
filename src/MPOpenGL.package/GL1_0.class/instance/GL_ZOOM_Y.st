@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ZOOM_Y
 
-	^ 16r0D17
+	^ 16rD17

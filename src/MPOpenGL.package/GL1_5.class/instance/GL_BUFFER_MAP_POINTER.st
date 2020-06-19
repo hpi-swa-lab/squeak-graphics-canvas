@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_BUFFER_MAP_POINTER
 
 	^ 16r88BD

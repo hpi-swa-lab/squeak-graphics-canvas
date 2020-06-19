@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_SHADOW
 
 	^ 16r82A1

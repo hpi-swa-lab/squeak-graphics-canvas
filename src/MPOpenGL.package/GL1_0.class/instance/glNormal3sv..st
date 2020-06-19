@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glNormal3sv: v
 
 	<apicall: void 'glNormal3sv' (GLshort*)>

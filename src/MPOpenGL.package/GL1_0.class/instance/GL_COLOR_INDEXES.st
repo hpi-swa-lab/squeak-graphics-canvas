@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COLOR_INDEXES
 
 	^ 16r1603

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER
 
 	^ 16r8A46

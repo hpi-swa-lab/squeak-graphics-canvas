@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DISPLAY_LIST
 
 	^ 16r82E7

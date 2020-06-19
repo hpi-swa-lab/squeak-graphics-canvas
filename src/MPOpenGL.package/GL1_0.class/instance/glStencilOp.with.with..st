@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glStencilOp: fail with: zfail with: zpass
 
 	<apicall: void 'glStencilOp' (GLenum GLenum GLenum)>

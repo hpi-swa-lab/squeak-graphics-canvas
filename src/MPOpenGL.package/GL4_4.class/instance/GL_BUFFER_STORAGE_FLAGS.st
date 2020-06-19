@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_BUFFER_STORAGE_FLAGS
 
 	^ 16r8220

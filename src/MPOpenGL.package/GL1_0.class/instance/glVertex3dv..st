@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glVertex3dv: v
 
 	<apicall: void 'glVertex3dv' (GLdouble*)>

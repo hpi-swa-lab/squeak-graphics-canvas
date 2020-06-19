@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glMemoryBarrierByRegion: barriers
 
 	<apicall: void 'glMemoryBarrierByRegion' (GLbitfield)>

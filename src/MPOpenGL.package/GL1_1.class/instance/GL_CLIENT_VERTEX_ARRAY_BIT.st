@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CLIENT_VERTEX_ARRAY_BIT
 
-	^ 16r00000002
+	^ 16r2

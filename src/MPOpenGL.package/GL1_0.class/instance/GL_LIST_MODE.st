@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LIST_MODE
 
-	^ 16r0B30
+	^ 16rB30

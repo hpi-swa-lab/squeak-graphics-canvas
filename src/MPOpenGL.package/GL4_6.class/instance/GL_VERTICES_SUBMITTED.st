@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_VERTICES_SUBMITTED
 
 	^ 16r82EE

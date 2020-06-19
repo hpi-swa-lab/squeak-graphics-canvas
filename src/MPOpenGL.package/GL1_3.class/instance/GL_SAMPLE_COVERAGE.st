@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SAMPLE_COVERAGE
 
 	^ 16r80A0

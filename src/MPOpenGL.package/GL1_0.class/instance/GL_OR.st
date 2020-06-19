@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_OR
 
 	^ 16r1507

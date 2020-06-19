@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glStencilMask: mask
 
 	<apicall: void 'glStencilMask' (GLuint)>

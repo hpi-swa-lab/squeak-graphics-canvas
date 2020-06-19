@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glFogf: pname with: param
 
 	<apicall: void 'glFogf' (GLenum GLfloat)>

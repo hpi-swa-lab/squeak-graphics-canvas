@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LINE_TOKEN
 
-	^ 16r0702
+	^ 16r702

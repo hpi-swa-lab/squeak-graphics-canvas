@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ALL_BARRIER_BITS
 
 	^ 16rFFFFFFFF

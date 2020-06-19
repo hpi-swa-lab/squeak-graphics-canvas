@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INTERNALFORMAT_SHARED_SIZE
 
 	^ 16r8277

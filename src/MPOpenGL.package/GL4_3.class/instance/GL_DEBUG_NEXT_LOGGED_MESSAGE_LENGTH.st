@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH
 
 	^ 16r8243

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetUniformuiv: program with: location with: params
 
 	<apicall: void 'glGetUniformuiv' (GLuint GLint GLuint*)>

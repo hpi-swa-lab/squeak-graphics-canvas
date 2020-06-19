@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_RED_BIAS
 
-	^ 16r0D15
+	^ 16rD15

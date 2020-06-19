@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LIST_INDEX
 
-	^ 16r0B33
+	^ 16rB33

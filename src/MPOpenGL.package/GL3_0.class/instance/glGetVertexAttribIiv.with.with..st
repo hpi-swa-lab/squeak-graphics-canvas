@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetVertexAttribIiv: index with: pname with: params
 
 	<apicall: void 'glGetVertexAttribIiv' (GLuint GLenum GLint*)>

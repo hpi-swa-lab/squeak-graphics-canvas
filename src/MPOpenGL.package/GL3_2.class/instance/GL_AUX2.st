@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_AUX2
+
 	self shouldNotImplement

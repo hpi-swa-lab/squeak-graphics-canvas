@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_COORD_ARRAY_STRIDE
 
 	^ 16r808A

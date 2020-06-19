@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_CUBE_MAP_POSITIVE_X
 
 	^ 16r8515

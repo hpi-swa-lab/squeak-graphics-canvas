@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CURRENT_TEXTURE_COORDS
 
-	^ 16r0B03
+	^ 16rB03

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_AUX2
 
-	^ 16r040B
+	^ 16r40B

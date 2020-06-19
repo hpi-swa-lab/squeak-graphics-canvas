@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glRectd: x1 with: y1 with: x2 with: y2
 
 	<apicall: void 'glRectd' (GLdouble GLdouble GLdouble GLdouble)>

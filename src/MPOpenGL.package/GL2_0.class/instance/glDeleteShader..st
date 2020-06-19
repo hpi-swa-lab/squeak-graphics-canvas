@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDeleteShader: shader
 
 	<apicall: void 'glDeleteShader' (GLuint)>

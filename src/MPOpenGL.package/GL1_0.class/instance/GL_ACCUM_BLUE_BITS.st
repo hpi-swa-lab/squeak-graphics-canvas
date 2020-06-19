@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ACCUM_BLUE_BITS
 
-	^ 16r0D5A
+	^ 16rD5A

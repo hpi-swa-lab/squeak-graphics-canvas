@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_NORMAL_ARRAY_STRIDE
 
 	^ 16r807F

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glPixelTransferf: pname with: param
 
 	<apicall: void 'glPixelTransferf' (GLenum GLfloat)>

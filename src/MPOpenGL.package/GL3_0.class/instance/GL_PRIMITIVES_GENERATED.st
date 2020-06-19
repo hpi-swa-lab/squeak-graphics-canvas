@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PRIMITIVES_GENERATED
 
 	^ 16r8C87

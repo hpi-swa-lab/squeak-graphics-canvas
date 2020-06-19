@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COORD_REPLACE
 
 	^ 16r8862

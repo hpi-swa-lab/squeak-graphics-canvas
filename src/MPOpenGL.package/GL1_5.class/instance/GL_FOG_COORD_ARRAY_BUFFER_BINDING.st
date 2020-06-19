@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FOG_COORD_ARRAY_BUFFER_BINDING
 
 	^ 16r889D

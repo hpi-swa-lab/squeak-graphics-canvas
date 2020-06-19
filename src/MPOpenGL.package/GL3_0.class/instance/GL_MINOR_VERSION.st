@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MINOR_VERSION
 
 	^ 16r821C

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glUniform2ui: location with: v0 with: v1
 
 	<apicall: void 'glUniform2ui' (GLint GLuint GLuint)>

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COLOR_LOGIC_OP
 
-	^ 16r0BF2
+	^ 16rBF2

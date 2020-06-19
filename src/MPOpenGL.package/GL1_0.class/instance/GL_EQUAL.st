@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_EQUAL
 
-	^ 16r0202
+	^ 16r202

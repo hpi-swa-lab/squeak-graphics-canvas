@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CURRENT_RASTER_DISTANCE
 
-	^ 16r0B09
+	^ 16rB09

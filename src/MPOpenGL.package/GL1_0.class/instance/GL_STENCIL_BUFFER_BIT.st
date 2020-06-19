@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_STENCIL_BUFFER_BIT
 
-	^ 16r00000400
+	^ 16r400

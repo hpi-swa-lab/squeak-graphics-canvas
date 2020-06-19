@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_VIEWPORT_BOUNDS_RANGE
 
 	^ 16r825D

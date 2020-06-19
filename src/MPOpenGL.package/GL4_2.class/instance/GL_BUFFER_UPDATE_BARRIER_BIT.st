@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_BUFFER_UPDATE_BARRIER_BIT
 
-	^ 16r00000200
+	^ 16r200

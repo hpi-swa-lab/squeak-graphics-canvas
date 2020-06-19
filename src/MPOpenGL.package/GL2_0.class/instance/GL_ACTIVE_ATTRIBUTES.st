@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ACTIVE_ATTRIBUTES
 
 	^ 16r8B89

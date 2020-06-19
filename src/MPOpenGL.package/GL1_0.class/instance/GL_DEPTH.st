@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEPTH
 
 	^ 16r1801

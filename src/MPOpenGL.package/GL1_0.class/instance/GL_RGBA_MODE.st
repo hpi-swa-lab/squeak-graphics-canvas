@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_RGBA_MODE
 
-	^ 16r0C31
+	^ 16rC31

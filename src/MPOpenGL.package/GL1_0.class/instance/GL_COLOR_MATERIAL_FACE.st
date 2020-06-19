@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COLOR_MATERIAL_FACE
 
-	^ 16r0B55
+	^ 16rB55

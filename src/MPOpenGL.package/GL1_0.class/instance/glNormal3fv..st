@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glNormal3fv: v
 
 	<apicall: void 'glNormal3fv' (GLfloat*)>

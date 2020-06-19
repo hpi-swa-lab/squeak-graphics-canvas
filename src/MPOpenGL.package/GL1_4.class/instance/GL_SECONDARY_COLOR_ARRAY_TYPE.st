@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SECONDARY_COLOR_ARRAY_TYPE
 
 	^ 16r845B

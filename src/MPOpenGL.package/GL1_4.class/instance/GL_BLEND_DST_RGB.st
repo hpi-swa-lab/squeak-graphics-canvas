@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_BLEND_DST_RGB
 
 	^ 16r80C8

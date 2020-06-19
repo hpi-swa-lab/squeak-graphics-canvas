@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAGMENT_TEXTURE
 
 	^ 16r829F

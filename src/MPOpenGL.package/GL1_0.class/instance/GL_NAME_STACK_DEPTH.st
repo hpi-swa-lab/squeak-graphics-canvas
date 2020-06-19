@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_NAME_STACK_DEPTH
 
-	^ 16r0D70
+	^ 16rD70

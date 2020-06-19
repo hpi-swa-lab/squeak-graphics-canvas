@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LIGHTING_BIT
 
-	^ 16r00000040
+	^ 16r40

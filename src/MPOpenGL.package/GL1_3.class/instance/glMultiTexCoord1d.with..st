@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glMultiTexCoord1d: target with: s
 
 	<apicall: void 'glMultiTexCoord1d' (GLenum GLdouble)>

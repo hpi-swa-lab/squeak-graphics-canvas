@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_TESS_EVALUATION_INPUT_COMPONENTS
 
 	^ 16r886D

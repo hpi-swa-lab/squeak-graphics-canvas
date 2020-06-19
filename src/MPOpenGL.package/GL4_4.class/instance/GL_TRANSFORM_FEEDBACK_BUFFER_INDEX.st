@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TRANSFORM_FEEDBACK_BUFFER_INDEX
 
 	^ 16r934B

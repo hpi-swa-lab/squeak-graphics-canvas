@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_GREEN_SCALE
 
-	^ 16r0D18
+	^ 16rD18

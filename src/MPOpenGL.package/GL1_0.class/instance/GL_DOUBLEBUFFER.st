@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DOUBLEBUFFER
 
-	^ 16r0C32
+	^ 16rC32

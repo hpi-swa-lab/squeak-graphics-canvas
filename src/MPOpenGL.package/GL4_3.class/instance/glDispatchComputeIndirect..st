@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDispatchComputeIndirect: indirect
 
 	<apicall: void 'glDispatchComputeIndirect' (GLintptr)>

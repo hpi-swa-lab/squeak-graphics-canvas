@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CLIP_DEPTH_MODE
 
 	^ 16r935D

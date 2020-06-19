@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SECONDARY_COLOR_ARRAY_BUFFER_BINDING
 
 	^ 16r889C

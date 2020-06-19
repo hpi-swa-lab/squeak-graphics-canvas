@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LINEAR_ATTENUATION
 
 	^ 16r1208

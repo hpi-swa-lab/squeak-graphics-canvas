@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INVALID_ENUM
 
-	^ 16r0500
+	^ 16r500

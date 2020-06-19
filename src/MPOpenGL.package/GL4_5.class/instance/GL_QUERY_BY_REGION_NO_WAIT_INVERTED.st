@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_QUERY_BY_REGION_NO_WAIT_INVERTED
 
 	^ 16r8E1A

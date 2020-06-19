@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_AUX_BUFFERS
 
-	^ 16r0C00
+	^ 16rC00

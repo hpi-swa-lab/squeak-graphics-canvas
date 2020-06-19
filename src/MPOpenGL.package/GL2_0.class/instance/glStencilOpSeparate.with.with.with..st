@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glStencilOpSeparate: face with: sfail with: dpfail with: dppass
 
 	<apicall: void 'glStencilOpSeparate' (GLenum GLenum GLenum GLenum)>

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_COMBINED_CLIP_AND_CULL_DISTANCES
 
 	^ 16r82FA

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glStencilFuncSeparate: face with: func with: ref with: mask
 
 	<apicall: void 'glStencilFuncSeparate' (GLenum GLenum GLint GLuint)>

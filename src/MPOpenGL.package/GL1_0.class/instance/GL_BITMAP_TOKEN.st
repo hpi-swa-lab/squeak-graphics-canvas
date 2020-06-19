@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_BITMAP_TOKEN
 
-	^ 16r0704
+	^ 16r704

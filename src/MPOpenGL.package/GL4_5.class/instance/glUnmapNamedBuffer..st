@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glUnmapNamedBuffer: buffer
 
 	<apicall: GLboolean 'glUnmapNamedBuffer' (GLuint)>

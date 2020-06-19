@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS
 
 	^ 16r9314

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ACTIVE_PROGRAM
 
 	^ 16r8259

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetDoublei_v: target with: index with: data
 
 	<apicall: void 'glGetDoublei_v' (GLenum GLuint GLdouble*)>

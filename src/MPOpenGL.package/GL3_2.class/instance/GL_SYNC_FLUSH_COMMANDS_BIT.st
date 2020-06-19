@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SYNC_FLUSH_COMMANDS_BIT
 
-	^ 16r00000001
+	^ 16r1

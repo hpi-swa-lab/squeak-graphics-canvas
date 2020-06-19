@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CURRENT_RASTER_SECONDARY_COLOR
 
 	^ 16r845F

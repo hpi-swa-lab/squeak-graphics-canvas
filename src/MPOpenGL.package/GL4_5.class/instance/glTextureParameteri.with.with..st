@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glTextureParameteri: texture with: pname with: param
 
 	<apicall: void 'glTextureParameteri' (GLuint GLenum GLint)>

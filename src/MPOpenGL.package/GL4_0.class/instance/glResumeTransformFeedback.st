@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glResumeTransformFeedback
 
 	<apicall: void 'glResumeTransformFeedback' ()>

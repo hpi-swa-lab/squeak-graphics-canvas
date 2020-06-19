@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_CLIP_PLANES
 
-	^ 16r0D32
+	^ 16rD32

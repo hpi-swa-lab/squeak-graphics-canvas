@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glPopName
 
 	<apicall: void 'glPopName' ()>

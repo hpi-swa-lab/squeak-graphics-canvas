@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ALPHA_TEST
 
-	^ 16r0BC0
+	^ 16rBC0

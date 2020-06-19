@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_COLOR_MATERIAL
+
 	self shouldNotImplement

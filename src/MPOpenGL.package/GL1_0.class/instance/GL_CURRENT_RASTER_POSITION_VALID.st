@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CURRENT_RASTER_POSITION_VALID
 
-	^ 16r0B08
+	^ 16rB08

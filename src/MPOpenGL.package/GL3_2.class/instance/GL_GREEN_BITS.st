@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_GREEN_BITS
+
 	self shouldNotImplement

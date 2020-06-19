@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_PIXEL_MAP_TABLE
 
-	^ 16r0D34
+	^ 16rD34

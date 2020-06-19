@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FOG_MODE
 
-	^ 16r0B65
+	^ 16rB65

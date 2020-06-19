@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COPY_PIXEL_TOKEN
 
-	^ 16r0706
+	^ 16r706

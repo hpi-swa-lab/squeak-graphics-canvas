@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INDEX_CLEAR_VALUE
 
-	^ 16r0C20
+	^ 16rC20

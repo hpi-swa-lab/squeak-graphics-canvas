@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_EDGE_FLAG
 
-	^ 16r0B43
+	^ 16rB43

@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_BLUE_BIAS
+
 	self shouldNotImplement

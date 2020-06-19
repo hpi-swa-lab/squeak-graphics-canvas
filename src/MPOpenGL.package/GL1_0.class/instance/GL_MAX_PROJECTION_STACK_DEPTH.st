@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_PROJECTION_STACK_DEPTH
 
-	^ 16r0D38
+	^ 16rD38

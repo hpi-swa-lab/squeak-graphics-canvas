@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetnColorTable: target with: format with: type with: bufSize with: table
 
 	<apicall: void 'glGetnColorTable' (GLenum GLenum GLenum GLsizei void*)>

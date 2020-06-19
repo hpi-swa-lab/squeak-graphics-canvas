@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_ATTRIB_STACK_DEPTH
 
-	^ 16r0D35
+	^ 16rD35

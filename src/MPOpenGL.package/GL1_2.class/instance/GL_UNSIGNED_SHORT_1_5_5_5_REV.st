@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNSIGNED_SHORT_1_5_5_5_REV
 
 	^ 16r8366

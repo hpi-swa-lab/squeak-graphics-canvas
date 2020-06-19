@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COEFF
 
-	^ 16r0A00
+	^ 16rA00

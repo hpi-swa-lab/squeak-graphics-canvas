@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_MAX_CLIENT_ATTRIB_STACK_DEPTH
+
 	self shouldNotImplement

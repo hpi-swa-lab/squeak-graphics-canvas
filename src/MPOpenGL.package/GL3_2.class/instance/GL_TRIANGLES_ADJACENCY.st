@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TRIANGLES_ADJACENCY
 
-	^ 16r000C
+	^ 16rC

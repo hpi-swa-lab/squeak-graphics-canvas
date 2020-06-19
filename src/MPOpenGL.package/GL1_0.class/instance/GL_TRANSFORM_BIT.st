@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TRANSFORM_BIT
 
-	^ 16r00001000
+	^ 16r1000

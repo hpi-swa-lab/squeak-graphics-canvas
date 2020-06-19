@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PIXEL_MAP_I_TO_I
 
-	^ 16r0C70
+	^ 16rC70

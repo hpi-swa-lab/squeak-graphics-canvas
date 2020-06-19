@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIndexf: c
 
 	<apicall: void 'glIndexf' (GLfloat)>

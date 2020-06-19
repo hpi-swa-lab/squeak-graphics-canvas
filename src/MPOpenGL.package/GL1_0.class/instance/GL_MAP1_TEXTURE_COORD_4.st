@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAP1_TEXTURE_COORD_4
 
-	^ 16r0D96
+	^ 16rD96

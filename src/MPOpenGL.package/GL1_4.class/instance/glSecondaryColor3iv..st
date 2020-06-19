@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glSecondaryColor3iv: v
 
 	<apicall: void 'glSecondaryColor3iv' (GLint*)>

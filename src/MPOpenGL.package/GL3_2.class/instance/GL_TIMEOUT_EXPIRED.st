@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TIMEOUT_EXPIRED
 
 	^ 16r911B

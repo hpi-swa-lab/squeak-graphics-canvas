@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ATOMIC_COUNTER_BUFFER_BINDING
 
 	^ 16r92C1

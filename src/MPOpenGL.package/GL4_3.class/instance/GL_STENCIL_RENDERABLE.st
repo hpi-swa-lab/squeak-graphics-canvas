@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_STENCIL_RENDERABLE
 
 	^ 16r8288

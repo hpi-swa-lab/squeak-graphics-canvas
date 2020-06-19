@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ACCUM
 
-	^ 16r0100
+	^ 16r100

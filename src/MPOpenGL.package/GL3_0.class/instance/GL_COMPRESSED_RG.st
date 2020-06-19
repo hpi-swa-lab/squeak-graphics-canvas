@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COMPRESSED_RG
 
 	^ 16r8226

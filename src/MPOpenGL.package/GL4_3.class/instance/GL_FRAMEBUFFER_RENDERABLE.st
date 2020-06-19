@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAMEBUFFER_RENDERABLE
 
 	^ 16r8289

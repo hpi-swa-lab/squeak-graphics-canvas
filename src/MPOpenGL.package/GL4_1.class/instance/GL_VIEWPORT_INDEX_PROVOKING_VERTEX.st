@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_VIEWPORT_INDEX_PROVOKING_VERTEX
 
 	^ 16r825F

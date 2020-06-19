@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CURRENT_INDEX
 
-	^ 16r0B01
+	^ 16rB01

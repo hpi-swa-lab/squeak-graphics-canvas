@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNSIGNED_NORMALIZED
 
 	^ 16r8C17

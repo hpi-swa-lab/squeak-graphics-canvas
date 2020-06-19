@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LINE_RESET_TOKEN
 
-	^ 16r0707
+	^ 16r707

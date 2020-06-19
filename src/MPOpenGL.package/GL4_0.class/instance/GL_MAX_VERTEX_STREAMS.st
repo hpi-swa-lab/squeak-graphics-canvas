@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_VERTEX_STREAMS
 
 	^ 16r8E71

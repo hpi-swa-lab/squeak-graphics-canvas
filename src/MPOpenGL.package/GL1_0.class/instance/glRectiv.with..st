@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glRectiv: v1 with: v2
 
 	<apicall: void 'glRectiv' (GLint* GLint*)>

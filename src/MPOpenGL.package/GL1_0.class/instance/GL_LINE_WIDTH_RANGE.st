@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LINE_WIDTH_RANGE
 
-	^ 16r0B22
+	^ 16rB22

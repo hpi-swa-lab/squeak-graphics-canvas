@@ -1,3 +1,4 @@
-as yet unclassified
+commands - deprecated
 glRasterPos2iv
+
 	self shouldNotImplement

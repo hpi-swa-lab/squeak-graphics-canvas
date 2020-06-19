@@ -1,3 +1,4 @@
-as yet unclassified
+commands - deprecated
 glVertex3s
+
 	self shouldNotImplement

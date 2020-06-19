@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIsProgramPipeline: pipeline
 
 	<apicall: GLboolean 'glIsProgramPipeline' (GLuint)>

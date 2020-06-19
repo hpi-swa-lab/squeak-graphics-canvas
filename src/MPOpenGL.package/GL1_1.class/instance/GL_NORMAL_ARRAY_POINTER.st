@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_NORMAL_ARRAY_POINTER
 
 	^ 16r808F

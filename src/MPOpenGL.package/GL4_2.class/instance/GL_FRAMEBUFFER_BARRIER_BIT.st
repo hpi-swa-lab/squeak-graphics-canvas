@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAMEBUFFER_BARRIER_BIT
 
-	^ 16r00000400
+	^ 16r400

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_POINT_SIZE
 
-	^ 16r0B11
+	^ 16rB11

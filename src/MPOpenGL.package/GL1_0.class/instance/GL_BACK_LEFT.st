@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_BACK_LEFT
 
-	^ 16r0402
+	^ 16r402

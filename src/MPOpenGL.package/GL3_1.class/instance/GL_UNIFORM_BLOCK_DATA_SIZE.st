@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNIFORM_BLOCK_DATA_SIZE
 
 	^ 16r8A40

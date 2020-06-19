@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAMEBUFFER_COMPLETE
 
 	^ 16r8CD5

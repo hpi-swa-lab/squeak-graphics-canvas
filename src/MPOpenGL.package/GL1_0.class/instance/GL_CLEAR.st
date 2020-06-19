@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CLEAR
 
 	^ 16r1500

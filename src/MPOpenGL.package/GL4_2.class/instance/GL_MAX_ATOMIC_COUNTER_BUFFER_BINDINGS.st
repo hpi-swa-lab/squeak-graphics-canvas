@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_ATOMIC_COUNTER_BUFFER_BINDINGS
 
 	^ 16r92DC

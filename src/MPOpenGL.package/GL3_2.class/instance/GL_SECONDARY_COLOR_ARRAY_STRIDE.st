@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_SECONDARY_COLOR_ARRAY_STRIDE
+
 	self shouldNotImplement

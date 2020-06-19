@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glProgramUniform1dv: program with: location with: count with: value
 
 	<apicall: void 'glProgramUniform1dv' (GLuint GLint GLsizei GLdouble*)>

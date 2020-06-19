@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetNamedFramebufferParameteriv: framebuffer with: pname with: param
 
 	<apicall: void 'glGetNamedFramebufferParameteriv' (GLuint GLenum GLint*)>

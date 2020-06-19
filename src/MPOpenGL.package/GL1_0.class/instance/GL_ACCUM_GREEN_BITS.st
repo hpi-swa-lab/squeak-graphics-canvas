@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ACCUM_GREEN_BITS
 
-	^ 16r0D59
+	^ 16rD59

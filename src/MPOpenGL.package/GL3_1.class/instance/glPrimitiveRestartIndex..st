@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glPrimitiveRestartIndex: index
 
 	<apicall: void 'glPrimitiveRestartIndex' (GLuint)>

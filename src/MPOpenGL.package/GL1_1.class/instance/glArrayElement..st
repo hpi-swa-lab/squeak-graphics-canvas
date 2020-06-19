@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glArrayElement: i
 
 	<apicall: void 'glArrayElement' (GLint)>

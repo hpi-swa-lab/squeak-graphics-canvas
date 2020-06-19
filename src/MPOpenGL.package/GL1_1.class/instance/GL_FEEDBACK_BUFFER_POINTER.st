@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FEEDBACK_BUFFER_POINTER
 
-	^ 16r0DF0
+	^ 16rDF0

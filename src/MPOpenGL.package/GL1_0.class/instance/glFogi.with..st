@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glFogi: pname with: param
 
 	<apicall: void 'glFogi' (GLenum GLint)>

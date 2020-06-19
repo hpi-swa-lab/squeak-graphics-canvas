@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_RED_SCALE
 
-	^ 16r0D14
+	^ 16rD14

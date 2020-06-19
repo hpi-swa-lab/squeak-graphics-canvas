@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_CLAMP_FRAGMENT_COLOR
+
 	self shouldNotImplement

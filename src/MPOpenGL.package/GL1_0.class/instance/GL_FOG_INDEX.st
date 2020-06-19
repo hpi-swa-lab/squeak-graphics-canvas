@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FOG_INDEX
 
-	^ 16r0B61
+	^ 16rB61

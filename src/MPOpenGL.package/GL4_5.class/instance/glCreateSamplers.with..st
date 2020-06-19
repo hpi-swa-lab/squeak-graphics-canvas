@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glCreateSamplers: n with: samplers
 
 	<apicall: void 'glCreateSamplers' (GLsizei GLuint*)>

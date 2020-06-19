@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LINE_LOOP
 
-	^ 16r0002
+	^ 16r2

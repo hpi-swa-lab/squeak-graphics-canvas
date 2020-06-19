@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_QUADRATIC_ATTENUATION
 
 	^ 16r1209

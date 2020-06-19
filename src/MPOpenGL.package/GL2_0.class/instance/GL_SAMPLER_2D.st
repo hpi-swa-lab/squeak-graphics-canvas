@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SAMPLER_2D
 
 	^ 16r8B5E

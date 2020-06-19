@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_GREEN_BIAS
 
-	^ 16r0D19
+	^ 16rD19

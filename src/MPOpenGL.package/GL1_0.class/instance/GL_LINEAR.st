@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LINEAR
 
 	^ 16r2601

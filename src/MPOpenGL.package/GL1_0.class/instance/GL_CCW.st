@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CCW
 
-	^ 16r0901
+	^ 16r901

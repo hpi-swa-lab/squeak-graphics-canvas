@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TRANSPOSE_TEXTURE_MATRIX
 
 	^ 16r84E5

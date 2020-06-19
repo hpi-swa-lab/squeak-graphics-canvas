@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glNormal3bv: v
 
 	<apicall: void 'glNormal3bv' (GLbyte*)>

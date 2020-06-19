@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_STENCIL_VALUE_MASK
 
-	^ 16r0B93
+	^ 16rB93

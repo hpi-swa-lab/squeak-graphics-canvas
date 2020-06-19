@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAP2_COLOR_4
 
-	^ 16r0DB0
+	^ 16rDB0

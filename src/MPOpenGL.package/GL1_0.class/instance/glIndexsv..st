@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIndexsv: c
 
 	<apicall: void 'glIndexsv' (GLshort*)>

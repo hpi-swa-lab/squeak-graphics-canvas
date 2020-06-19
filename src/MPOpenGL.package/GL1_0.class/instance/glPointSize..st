@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glPointSize: size
 
 	<apicall: void 'glPointSize' (GLfloat)>

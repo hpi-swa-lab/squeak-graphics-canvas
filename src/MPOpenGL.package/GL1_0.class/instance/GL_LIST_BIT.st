@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LIST_BIT
 
-	^ 16r00020000
+	^ 16r20000

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FOG_COORDINATE
 
 	^ 16r8451

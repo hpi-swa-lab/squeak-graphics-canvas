@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FOG_BIT
 
-	^ 16r00000080
+	^ 16r80

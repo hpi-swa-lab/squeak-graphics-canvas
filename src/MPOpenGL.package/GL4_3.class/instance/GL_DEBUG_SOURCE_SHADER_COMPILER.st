@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEBUG_SOURCE_SHADER_COMPILER
 
 	^ 16r8248

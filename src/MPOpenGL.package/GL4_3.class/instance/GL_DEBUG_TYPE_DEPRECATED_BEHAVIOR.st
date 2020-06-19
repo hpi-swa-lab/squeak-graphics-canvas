@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR
 
 	^ 16r824D

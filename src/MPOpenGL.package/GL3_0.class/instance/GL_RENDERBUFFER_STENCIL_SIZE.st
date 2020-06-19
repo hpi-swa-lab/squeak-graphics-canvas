@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_RENDERBUFFER_STENCIL_SIZE
 
 	^ 16r8D55

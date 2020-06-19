@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDebugMessageCallback: callback with: userParam
 
 	<apicall: void 'glDebugMessageCallback' (GLDEBUGPROC void*)>

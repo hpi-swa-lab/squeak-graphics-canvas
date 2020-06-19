@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glMapNamedBufferRange: buffer with: offset with: length with: access
 
 	<apicall: void* 'glMapNamedBufferRange' (GLuint GLintptr GLsizeiptr GLbitfield)>

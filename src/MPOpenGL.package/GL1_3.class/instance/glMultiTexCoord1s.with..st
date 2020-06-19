@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glMultiTexCoord1s: target with: s
 
 	<apicall: void 'glMultiTexCoord1s' (GLenum GLshort)>

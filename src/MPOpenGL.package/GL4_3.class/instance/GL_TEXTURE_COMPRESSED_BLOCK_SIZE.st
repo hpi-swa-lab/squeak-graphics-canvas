@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_COMPRESSED_BLOCK_SIZE
 
 	^ 16r82B3

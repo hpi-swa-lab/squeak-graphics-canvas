@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CLIENT_ATTRIB_STACK_DEPTH
 
-	^ 16r0BB1
+	^ 16rBB1

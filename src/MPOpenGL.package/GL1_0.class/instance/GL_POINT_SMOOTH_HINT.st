@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_POINT_SMOOTH_HINT
 
-	^ 16r0C51
+	^ 16rC51

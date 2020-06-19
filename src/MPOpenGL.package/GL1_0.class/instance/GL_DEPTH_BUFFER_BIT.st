@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEPTH_BUFFER_BIT
 
-	^ 16r00000100
+	^ 16r100

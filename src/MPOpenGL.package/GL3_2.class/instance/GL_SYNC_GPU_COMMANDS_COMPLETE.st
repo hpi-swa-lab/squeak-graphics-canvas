@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SYNC_GPU_COMMANDS_COMPLETE
 
 	^ 16r9117

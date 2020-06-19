@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_IMAGE_COMPATIBILITY_CLASS
 
 	^ 16r82A8

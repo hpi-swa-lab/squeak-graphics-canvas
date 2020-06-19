@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TESS_GEN_VERTEX_ORDER
 
 	^ 16r8E78

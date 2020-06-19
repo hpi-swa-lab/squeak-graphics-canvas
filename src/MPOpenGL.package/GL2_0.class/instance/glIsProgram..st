@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIsProgram: program
 
 	<apicall: GLboolean 'glIsProgram' (GLuint)>

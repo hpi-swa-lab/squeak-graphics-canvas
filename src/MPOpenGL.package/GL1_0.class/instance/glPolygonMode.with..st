@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glPolygonMode: face with: mode
 
 	<apicall: void 'glPolygonMode' (GLenum GLenum)>

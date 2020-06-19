@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glEvalCoord1f: u
 
 	<apicall: void 'glEvalCoord1f' (GLfloat)>

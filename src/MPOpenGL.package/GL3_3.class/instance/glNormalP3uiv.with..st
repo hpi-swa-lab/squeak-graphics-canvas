@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glNormalP3uiv: type with: coords
 
 	<apicall: void 'glNormalP3uiv' (GLenum GLuint*)>

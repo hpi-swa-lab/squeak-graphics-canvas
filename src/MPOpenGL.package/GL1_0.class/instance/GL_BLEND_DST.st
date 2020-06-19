@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_BLEND_DST
 
-	^ 16r0BE0
+	^ 16rBE0

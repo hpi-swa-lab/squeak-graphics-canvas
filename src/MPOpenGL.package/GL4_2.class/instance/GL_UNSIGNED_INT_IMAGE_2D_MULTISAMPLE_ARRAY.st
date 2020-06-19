@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_ARRAY
 
 	^ 16r906C

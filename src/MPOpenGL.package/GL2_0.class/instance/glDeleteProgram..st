@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDeleteProgram: program
 
 	<apicall: void 'glDeleteProgram' (GLuint)>

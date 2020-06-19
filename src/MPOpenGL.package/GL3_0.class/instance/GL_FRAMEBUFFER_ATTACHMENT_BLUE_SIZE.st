@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAMEBUFFER_ATTACHMENT_BLUE_SIZE
 
 	^ 16r8214

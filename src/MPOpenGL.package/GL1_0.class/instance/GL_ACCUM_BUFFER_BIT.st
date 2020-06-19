@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ACCUM_BUFFER_BIT
 
-	^ 16r00000200
+	^ 16r200

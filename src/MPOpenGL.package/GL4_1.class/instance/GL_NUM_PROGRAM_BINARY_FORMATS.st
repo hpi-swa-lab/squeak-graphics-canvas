@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_NUM_PROGRAM_BINARY_FORMATS
 
 	^ 16r87FE

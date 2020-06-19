@@ -1,0 +1,4 @@
+accessing
+classNamePrefix
+
+	^ api asUppercase

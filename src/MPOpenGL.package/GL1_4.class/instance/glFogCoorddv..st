@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glFogCoorddv: coord
 
 	<apicall: void 'glFogCoorddv' (GLdouble*)>

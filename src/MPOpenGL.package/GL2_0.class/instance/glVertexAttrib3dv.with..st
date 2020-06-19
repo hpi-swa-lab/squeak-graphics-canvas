@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glVertexAttrib3dv: index with: v
 
 	<apicall: void 'glVertexAttrib3dv' (GLuint GLdouble*)>

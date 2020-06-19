@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDeleteTextures: n with: textures
 
 	<apicall: void 'glDeleteTextures' (GLsizei GLuint*)>

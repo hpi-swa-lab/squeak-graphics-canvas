@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAP_STENCIL
 
-	^ 16r0D11
+	^ 16rD11

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAP2_GRID_DOMAIN
 
-	^ 16r0DD2
+	^ 16rDD2

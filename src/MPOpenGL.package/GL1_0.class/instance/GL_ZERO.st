@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ZERO
 
 	^ 0

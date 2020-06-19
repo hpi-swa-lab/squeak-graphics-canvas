@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_STENCIL_BITS
 
-	^ 16r0D57
+	^ 16rD57

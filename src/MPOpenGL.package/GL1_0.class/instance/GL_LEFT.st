@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LEFT
 
-	^ 16r0406
+	^ 16r406

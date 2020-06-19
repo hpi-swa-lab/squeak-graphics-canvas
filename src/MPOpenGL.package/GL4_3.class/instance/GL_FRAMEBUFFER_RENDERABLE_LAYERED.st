@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAMEBUFFER_RENDERABLE_LAYERED
 
 	^ 16r828A

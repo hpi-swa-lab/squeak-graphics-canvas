@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LIGHT_MODEL_TWO_SIDE
 
-	^ 16r0B52
+	^ 16rB52

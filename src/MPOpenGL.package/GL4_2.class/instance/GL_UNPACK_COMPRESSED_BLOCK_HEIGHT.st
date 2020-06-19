@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNPACK_COMPRESSED_BLOCK_HEIGHT
 
 	^ 16r9128

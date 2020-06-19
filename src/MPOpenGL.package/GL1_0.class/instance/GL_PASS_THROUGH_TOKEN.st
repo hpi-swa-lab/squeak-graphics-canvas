@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PASS_THROUGH_TOKEN
 
-	^ 16r0700
+	^ 16r700

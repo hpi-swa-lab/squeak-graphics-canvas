@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDrawTransformFeedbackStream: mode with: id with: stream
 
 	<apicall: void 'glDrawTransformFeedbackStream' (GLenum GLuint GLuint)>

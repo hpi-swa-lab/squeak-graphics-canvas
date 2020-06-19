@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CW
 
-	^ 16r0900
+	^ 16r900

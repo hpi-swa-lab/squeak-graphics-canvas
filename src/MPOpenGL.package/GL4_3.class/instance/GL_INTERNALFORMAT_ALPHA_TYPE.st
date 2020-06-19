@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INTERNALFORMAT_ALPHA_TYPE
 
 	^ 16r827B

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glTexCoord4s: s with: t with: r with: q
 
 	<apicall: void 'glTexCoord4s' (GLshort GLshort GLshort GLshort)>

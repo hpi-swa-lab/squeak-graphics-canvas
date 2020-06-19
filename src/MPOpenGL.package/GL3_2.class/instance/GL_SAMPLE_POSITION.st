@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SAMPLE_POSITION
 
 	^ 16r8E50

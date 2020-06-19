@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PIXEL_MAP_A_TO_A_SIZE
 
-	^ 16r0CB9
+	^ 16rCB9

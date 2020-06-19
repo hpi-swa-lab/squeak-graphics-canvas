@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SCISSOR_BOX
 
-	^ 16r0C10
+	^ 16rC10

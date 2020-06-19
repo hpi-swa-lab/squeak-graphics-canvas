@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAP_FLUSH_EXPLICIT_BIT
 
-	^ 16r0010
+	^ 16r10

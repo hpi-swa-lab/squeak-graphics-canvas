@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SMOOTH_POINT_SIZE_RANGE
 
-	^ 16r0B12
+	^ 16rB12

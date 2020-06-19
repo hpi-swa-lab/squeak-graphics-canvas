@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS
 
 	^ 16r8DA8

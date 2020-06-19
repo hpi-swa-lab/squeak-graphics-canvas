@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glPolygonStipple: mask
 
 	<apicall: void 'glPolygonStipple' (GLubyte*)>

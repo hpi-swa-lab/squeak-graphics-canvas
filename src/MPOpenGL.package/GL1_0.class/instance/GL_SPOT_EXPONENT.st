@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SPOT_EXPONENT
 
 	^ 16r1205

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_LIST_NESTING
 
-	^ 16r0B31
+	^ 16rB31

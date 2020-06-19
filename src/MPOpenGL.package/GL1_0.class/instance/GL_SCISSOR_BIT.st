@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SCISSOR_BIT
 
-	^ 16r00080000
+	^ 16r80000

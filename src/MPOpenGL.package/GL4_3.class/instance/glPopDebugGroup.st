@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glPopDebugGroup
 
 	<apicall: void 'glPopDebugGroup' ()>

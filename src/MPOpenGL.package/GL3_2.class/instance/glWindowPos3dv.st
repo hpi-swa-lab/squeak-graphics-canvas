@@ -1,3 +1,4 @@
-as yet unclassified
+commands - deprecated
 glWindowPos3dv
+
 	self shouldNotImplement

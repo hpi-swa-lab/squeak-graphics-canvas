@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT
 
 	^ 16r90DF

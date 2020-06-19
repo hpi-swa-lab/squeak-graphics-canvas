@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MODELVIEW_STACK_DEPTH
 
-	^ 16r0BA3
+	^ 16rBA3

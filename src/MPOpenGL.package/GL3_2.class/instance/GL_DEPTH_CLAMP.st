@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEPTH_CLAMP
 
 	^ 16r864F

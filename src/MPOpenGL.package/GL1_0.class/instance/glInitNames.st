@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glInitNames
 
 	<apicall: void 'glInitNames' ()>

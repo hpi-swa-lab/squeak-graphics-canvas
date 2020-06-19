@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ACTIVE_ATOMIC_COUNTER_BUFFERS
 
 	^ 16r92D9

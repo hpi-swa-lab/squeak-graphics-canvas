@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_REFLECTION_MAP
 
 	^ 16r8512

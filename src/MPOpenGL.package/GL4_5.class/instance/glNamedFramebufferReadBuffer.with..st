@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glNamedFramebufferReadBuffer: framebuffer with: src
 
 	<apicall: void 'glNamedFramebufferReadBuffer' (GLuint GLenum)>

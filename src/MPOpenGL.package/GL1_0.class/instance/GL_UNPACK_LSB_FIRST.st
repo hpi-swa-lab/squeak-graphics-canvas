@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNPACK_LSB_FIRST
 
-	^ 16r0CF1
+	^ 16rCF1

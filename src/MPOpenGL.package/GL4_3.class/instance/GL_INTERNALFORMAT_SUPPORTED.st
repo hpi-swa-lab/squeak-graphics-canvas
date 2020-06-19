@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INTERNALFORMAT_SUPPORTED
 
 	^ 16r826F

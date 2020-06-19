@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glPushClientAttrib: mask
 
 	<apicall: void 'glPushClientAttrib' (GLbitfield)>

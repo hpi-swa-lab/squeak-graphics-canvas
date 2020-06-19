@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glViewportIndexedfv: index with: v
 
 	<apicall: void 'glViewportIndexedfv' (GLuint GLfloat*)>

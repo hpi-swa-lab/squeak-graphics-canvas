@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER
 
 	^ 16r90ED

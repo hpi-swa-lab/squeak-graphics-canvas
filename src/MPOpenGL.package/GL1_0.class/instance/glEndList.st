@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glEndList
 
 	<apicall: void 'glEndList' ()>

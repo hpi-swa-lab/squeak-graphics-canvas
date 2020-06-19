@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LOGIC_OP_MODE
 
-	^ 16r0BF0
+	^ 16rBF0

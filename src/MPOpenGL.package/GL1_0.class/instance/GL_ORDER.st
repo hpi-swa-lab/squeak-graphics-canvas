@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ORDER
 
-	^ 16r0A01
+	^ 16rA01

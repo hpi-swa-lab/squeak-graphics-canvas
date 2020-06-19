@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_COMPUTE_IMAGE_UNIFORMS
 
 	^ 16r91BD

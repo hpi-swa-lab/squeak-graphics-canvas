@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glNormal3dv: v
 
 	<apicall: void 'glNormal3dv' (GLdouble*)>

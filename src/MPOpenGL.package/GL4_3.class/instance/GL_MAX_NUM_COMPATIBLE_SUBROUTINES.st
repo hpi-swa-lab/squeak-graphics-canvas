@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_NUM_COMPATIBLE_SUBROUTINES
 
 	^ 16r92F8

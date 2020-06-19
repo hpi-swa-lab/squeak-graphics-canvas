@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glLoadMatrixf: m
 
 	<apicall: void 'glLoadMatrixf' (GLfloat*)>

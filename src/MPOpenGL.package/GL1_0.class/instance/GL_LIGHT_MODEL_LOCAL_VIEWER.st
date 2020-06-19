@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LIGHT_MODEL_LOCAL_VIEWER
 
-	^ 16r0B51
+	^ 16rB51

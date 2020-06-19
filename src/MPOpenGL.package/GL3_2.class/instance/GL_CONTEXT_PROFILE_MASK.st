@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CONTEXT_PROFILE_MASK
 
 	^ 16r9126

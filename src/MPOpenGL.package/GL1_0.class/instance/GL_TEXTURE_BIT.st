@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_BIT
 
-	^ 16r00040000
+	^ 16r40000

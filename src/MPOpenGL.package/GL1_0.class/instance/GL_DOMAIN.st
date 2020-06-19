@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DOMAIN
 
-	^ 16r0A02
+	^ 16rA02

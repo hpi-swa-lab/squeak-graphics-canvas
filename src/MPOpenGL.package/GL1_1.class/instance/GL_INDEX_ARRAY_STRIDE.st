@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INDEX_ARRAY_STRIDE
 
 	^ 16r8086

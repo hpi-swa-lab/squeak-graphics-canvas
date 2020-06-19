@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INT_IMAGE_2D_ARRAY
 
 	^ 16r905E

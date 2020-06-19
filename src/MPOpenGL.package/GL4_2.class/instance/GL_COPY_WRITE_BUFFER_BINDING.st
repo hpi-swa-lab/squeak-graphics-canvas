@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COPY_WRITE_BUFFER_BINDING
 
 	^ 16r8F37

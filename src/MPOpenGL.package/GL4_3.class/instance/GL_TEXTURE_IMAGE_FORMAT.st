@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_IMAGE_FORMAT
 
 	^ 16r828F

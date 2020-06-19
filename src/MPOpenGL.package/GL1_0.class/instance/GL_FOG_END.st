@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FOG_END
 
-	^ 16r0B64
+	^ 16rB64

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INVALID_INDEX
 
 	^ 16rFFFFFFFF

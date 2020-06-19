@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_CURRENT_SECONDARY_COLOR
+
 	self shouldNotImplement

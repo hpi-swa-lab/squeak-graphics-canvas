@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MODELVIEW_MATRIX
 
-	^ 16r0BA6
+	^ 16rBA6

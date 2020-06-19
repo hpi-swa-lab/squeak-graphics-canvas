@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glCreateTextures: target with: n with: textures
 
 	<apicall: void 'glCreateTextures' (GLenum GLsizei GLuint*)>

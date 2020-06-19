@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetLightfv: light with: pname with: params
 
 	<apicall: void 'glGetLightfv' (GLenum GLenum GLfloat*)>

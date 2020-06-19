@@ -1,0 +1,4 @@
+constants
+GL_TEXTURE_BINDING_1D_ARRAY
+
+	^ 16r8C1C

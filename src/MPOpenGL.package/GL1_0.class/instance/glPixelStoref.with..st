@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glPixelStoref: pname with: param
 
 	<apicall: void 'glPixelStoref' (GLenum GLfloat)>

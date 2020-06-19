@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glVertexAttrib4Nusv: index with: v
 
 	<apicall: void 'glVertexAttrib4Nusv' (GLuint GLushort*)>

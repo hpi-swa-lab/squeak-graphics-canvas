@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glBindSamplers: first with: count with: samplers
 
 	<apicall: void 'glBindSamplers' (GLuint GLsizei GLuint*)>

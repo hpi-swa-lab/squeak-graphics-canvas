@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_LIGHTS
 
-	^ 16r0D31
+	^ 16rD31

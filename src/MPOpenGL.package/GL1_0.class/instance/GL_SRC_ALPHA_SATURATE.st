@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SRC_ALPHA_SATURATE
 
-	^ 16r0308
+	^ 16r308

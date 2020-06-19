@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_RESET_NOTIFICATION_STRATEGY
 
 	^ 16r8256

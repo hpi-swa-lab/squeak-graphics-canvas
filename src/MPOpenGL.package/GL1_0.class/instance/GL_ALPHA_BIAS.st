@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ALPHA_BIAS
 
-	^ 16r0D1D
+	^ 16rD1D

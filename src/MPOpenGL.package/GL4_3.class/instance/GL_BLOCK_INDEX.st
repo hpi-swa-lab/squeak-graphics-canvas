@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_BLOCK_INDEX
 
 	^ 16r92FD

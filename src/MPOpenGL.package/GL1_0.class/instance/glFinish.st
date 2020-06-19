@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glFinish
 
 	<apicall: void 'glFinish' ()>

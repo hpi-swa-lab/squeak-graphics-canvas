@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ADD
 
-	^ 16r0104
+	^ 16r104

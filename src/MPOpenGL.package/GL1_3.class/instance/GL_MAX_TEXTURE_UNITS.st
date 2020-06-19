@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_TEXTURE_UNITS
 
 	^ 16r84E2

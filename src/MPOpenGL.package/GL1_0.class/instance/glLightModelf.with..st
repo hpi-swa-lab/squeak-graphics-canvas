@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glLightModelf: pname with: param
 
 	<apicall: void 'glLightModelf' (GLenum GLfloat)>

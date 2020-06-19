@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGenQueries: n with: ids
 
 	<apicall: void 'glGenQueries' (GLsizei GLuint*)>

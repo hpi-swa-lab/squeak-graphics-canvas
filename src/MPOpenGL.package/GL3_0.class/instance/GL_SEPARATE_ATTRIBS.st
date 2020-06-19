@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SEPARATE_ATTRIBS
 
 	^ 16r8C8D

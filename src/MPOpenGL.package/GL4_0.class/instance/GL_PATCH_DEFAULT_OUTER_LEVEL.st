@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PATCH_DEFAULT_OUTER_LEVEL
 
 	^ 16r8E74

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CLIENT_STORAGE_BIT
 
-	^ 16r0200
+	^ 16r200

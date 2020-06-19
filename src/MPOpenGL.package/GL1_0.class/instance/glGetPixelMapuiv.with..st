@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetPixelMapuiv: map with: values
 
 	<apicall: void 'glGetPixelMapuiv' (GLenum GLuint*)>

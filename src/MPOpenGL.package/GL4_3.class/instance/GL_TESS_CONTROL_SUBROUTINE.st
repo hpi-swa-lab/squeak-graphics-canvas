@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TESS_CONTROL_SUBROUTINE
 
 	^ 16r92E9

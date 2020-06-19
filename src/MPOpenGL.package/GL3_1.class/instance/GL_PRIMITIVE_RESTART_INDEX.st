@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PRIMITIVE_RESTART_INDEX
 
 	^ 16r8F9E

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CURRENT_RASTER_TEXTURE_COORDS
 
-	^ 16r0B06
+	^ 16rB06

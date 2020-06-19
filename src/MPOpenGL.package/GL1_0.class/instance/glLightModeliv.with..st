@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glLightModeliv: pname with: params
 
 	<apicall: void 'glLightModeliv' (GLenum GLint*)>

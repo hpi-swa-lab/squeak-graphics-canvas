@@ -1,3 +1,4 @@
-as yet unclassified
+commands - deprecated
 glEvalMesh1
+
 	self shouldNotImplement

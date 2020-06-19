@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DRAW_PIXEL_TOKEN
 
-	^ 16r0705
+	^ 16r705

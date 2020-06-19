@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetSubroutineUniformLocation: program with: shadertype with: name
 
 	<apicall: GLint 'glGetSubroutineUniformLocation' (GLuint GLenum GLchar*)>

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_OUT_OF_MEMORY
 
-	^ 16r0505
+	^ 16r505

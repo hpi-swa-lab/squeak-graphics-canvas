@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_RG32F
 
 	^ 16r8230

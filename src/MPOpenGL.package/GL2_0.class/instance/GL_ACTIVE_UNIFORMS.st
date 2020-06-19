@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ACTIVE_UNIFORMS
 
 	^ 16r8B86

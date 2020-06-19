@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_SWIZZLE_RGBA
 
 	^ 16r8E46

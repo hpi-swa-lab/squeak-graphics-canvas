@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glMultiTexCoordP4uiv: texture with: type with: coords
 
 	<apicall: void 'glMultiTexCoordP4uiv' (GLenum GLenum GLuint*)>

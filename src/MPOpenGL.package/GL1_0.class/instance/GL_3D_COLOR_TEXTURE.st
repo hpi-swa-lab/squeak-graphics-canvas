@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_3D_COLOR_TEXTURE
 
-	^ 16r0603
+	^ 16r603

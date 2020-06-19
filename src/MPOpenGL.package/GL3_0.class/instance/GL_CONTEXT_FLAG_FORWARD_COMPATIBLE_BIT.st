@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CONTEXT_FLAG_FORWARD_COMPATIBLE_BIT
 
-	^ 16r00000001
+	^ 16r1

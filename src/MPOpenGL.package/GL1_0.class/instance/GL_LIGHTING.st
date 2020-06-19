@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LIGHTING
 
-	^ 16r0B50
+	^ 16rB50

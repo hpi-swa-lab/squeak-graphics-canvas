@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEPTH_SCALE
 
-	^ 16r0D1E
+	^ 16rD1E

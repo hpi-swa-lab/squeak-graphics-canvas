@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CURRENT_RASTER_COLOR
 
-	^ 16r0B04
+	^ 16rB04

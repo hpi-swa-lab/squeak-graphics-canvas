@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FOG_COLOR
 
-	^ 16r0B66
+	^ 16rB66

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_NORMAL_ARRAY
 
 	^ 16r8075

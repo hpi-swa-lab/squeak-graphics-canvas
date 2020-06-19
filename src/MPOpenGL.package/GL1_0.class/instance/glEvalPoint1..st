@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glEvalPoint1: i
 
 	<apicall: void 'glEvalPoint1' (GLint)>

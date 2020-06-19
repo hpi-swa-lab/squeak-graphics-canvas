@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAGMENT_SHADER_DERIVATIVE_HINT
 
 	^ 16r8B8B

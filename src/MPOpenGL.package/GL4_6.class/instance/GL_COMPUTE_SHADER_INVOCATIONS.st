@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COMPUTE_SHADER_INVOCATIONS
 
 	^ 16r82F5

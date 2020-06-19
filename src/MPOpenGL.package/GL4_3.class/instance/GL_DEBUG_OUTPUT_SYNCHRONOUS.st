@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEBUG_OUTPUT_SYNCHRONOUS
 
 	^ 16r8242

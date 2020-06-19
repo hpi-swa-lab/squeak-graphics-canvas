@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glClearDepth: depth
 
 	<apicall: void 'glClearDepth' (GLdouble)>

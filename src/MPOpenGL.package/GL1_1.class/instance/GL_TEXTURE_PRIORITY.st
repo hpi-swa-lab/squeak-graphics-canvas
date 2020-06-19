@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_PRIORITY
 
 	^ 16r8066

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glMapBuffer: target with: access
 
 	<apicall: void* 'glMapBuffer' (GLenum GLenum)>

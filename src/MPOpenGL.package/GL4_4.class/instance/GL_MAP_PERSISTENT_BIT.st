@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAP_PERSISTENT_BIT
 
-	^ 16r0040
+	^ 16r40

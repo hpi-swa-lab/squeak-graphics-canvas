@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glBegin: mode
 
 	<apicall: void 'glBegin' (GLenum)>

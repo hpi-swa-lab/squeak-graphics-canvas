@@ -1,3 +1,4 @@
-as yet unclassified
+commands - deprecated
 glEvalCoord2fv
+
 	self shouldNotImplement

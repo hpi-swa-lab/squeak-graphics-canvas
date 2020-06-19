@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAGMENT_SUBROUTINE_UNIFORM
 
 	^ 16r92F2

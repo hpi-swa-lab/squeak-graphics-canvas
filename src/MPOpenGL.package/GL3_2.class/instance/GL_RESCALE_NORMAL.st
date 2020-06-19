@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_RESCALE_NORMAL
+
 	self shouldNotImplement

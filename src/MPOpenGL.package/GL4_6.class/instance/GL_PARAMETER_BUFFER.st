@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PARAMETER_BUFFER
 
 	^ 16r80EE

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_RED_INTEGER
 
 	^ 16r8D94

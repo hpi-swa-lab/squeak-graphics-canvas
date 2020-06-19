@@ -1,3 +1,4 @@
-as yet unclassified
+commands - deprecated
 glMapGrid2d
+
 	self shouldNotImplement

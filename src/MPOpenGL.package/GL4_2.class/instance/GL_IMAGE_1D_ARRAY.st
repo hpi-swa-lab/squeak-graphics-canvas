@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_IMAGE_1D_ARRAY
 
 	^ 16r9052

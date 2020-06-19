@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COMPRESSED_RED
 
 	^ 16r8225

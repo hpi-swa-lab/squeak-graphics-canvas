@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_EXP
 
-	^ 16r0800
+	^ 16r800

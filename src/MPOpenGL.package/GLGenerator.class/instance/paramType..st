@@ -1,4 +1,4 @@
-xml helpers
+helpers
 paramType: anElement
 
 	| result |

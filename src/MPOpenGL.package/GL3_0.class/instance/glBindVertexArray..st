@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glBindVertexArray: array
 
 	<apicall: void 'glBindVertexArray' (GLuint)>

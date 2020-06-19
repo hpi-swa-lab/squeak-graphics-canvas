@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_LUMINANCE_SIZE
 
 	^ 16r8060

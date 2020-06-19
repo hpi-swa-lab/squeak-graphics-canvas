@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LINES_ADJACENCY
 
-	^ 16r000A
+	^ 16rA

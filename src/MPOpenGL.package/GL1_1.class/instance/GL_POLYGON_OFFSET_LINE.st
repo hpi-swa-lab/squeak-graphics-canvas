@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_POLYGON_OFFSET_LINE
 
 	^ 16r2A02

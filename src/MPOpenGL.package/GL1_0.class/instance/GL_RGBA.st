@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_RGBA
 
 	^ 16r1908

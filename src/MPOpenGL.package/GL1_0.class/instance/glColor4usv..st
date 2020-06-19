@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glColor4usv: v
 
 	<apicall: void 'glColor4usv' (GLushort*)>

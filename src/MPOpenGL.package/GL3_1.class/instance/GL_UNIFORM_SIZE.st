@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNIFORM_SIZE
 
 	^ 16r8A38

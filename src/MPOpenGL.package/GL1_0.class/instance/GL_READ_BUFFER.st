@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_READ_BUFFER
 
-	^ 16r0C02
+	^ 16rC02

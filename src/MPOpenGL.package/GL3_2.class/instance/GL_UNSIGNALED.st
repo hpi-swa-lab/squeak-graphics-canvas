@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNSIGNALED
 
 	^ 16r9118

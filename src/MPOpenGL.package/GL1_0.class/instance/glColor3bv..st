@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glColor3bv: v
 
 	<apicall: void 'glColor3bv' (GLbyte*)>

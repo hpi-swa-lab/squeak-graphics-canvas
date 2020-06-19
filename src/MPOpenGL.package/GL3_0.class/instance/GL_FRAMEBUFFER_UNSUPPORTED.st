@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAMEBUFFER_UNSUPPORTED
 
 	^ 16r8CDD

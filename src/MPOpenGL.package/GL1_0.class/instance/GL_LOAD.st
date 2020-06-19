@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LOAD
 
-	^ 16r0101
+	^ 16r101

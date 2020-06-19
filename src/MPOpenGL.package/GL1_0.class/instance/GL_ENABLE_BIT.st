@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ENABLE_BIT
 
-	^ 16r00002000
+	^ 16r2000

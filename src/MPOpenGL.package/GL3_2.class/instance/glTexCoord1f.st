@@ -1,3 +1,4 @@
-as yet unclassified
+commands - deprecated
 glTexCoord1f
+
 	self shouldNotImplement

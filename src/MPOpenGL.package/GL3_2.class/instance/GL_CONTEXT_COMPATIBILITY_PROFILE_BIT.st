@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CONTEXT_COMPATIBILITY_PROFILE_BIT
 
-	^ 16r00000002
+	^ 16r2

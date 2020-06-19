@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FOG_COORD_ARRAY_TYPE
 
 	^ 16r8454

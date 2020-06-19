@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glAlphaFunc: func with: ref
 
 	<apicall: void 'glAlphaFunc' (GLenum GLfloat)>

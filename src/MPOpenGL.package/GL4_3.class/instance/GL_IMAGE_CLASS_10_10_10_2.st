@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_IMAGE_CLASS_10_10_10_2
 
 	^ 16r82C3

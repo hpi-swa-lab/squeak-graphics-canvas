@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNIFORM_BUFFER_START
 
 	^ 16r8A29

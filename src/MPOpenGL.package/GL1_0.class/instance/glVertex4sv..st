@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glVertex4sv: v
 
 	<apicall: void 'glVertex4sv' (GLshort*)>

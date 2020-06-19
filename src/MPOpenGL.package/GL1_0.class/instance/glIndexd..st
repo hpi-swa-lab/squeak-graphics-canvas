@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIndexd: c
 
 	<apicall: void 'glIndexd' (GLdouble)>

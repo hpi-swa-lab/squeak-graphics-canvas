@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetShaderInfoLog: shader with: bufSize with: length with: infoLog
 
 	<apicall: void 'glGetShaderInfoLog' (GLuint GLsizei GLsizei* GLchar*)>

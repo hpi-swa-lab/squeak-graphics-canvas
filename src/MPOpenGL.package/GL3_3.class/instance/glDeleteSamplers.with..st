@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDeleteSamplers: count with: samplers
 
 	<apicall: void 'glDeleteSamplers' (GLsizei GLuint*)>

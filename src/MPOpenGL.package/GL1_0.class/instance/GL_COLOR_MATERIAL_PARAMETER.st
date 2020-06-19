@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COLOR_MATERIAL_PARAMETER
 
-	^ 16r0B56
+	^ 16rB56

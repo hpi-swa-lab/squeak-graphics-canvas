@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glPixelZoom: xfactor with: yfactor
 
 	<apicall: void 'glPixelZoom' (GLfloat GLfloat)>

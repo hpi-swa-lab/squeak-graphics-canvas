@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glLoadName: name
 
 	<apicall: void 'glLoadName' (GLuint)>

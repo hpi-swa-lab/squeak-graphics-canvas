@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS
 
 	^ 16r92CE

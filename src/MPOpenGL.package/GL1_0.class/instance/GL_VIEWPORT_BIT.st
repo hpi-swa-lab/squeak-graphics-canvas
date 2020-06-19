@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_VIEWPORT_BIT
 
-	^ 16r00000800
+	^ 16r800

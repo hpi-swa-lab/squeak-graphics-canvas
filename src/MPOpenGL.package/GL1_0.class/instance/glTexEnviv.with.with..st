@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glTexEnviv: target with: pname with: params
 
 	<apicall: void 'glTexEnviv' (GLenum GLenum GLint*)>

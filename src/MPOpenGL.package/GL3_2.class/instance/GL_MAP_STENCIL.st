@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_MAP_STENCIL
+
 	self shouldNotImplement

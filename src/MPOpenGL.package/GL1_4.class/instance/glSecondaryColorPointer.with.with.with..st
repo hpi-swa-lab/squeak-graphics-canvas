@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glSecondaryColorPointer: size with: type with: stride with: pointer
 
 	<apicall: void 'glSecondaryColorPointer' (GLint GLenum GLsizei void*)>

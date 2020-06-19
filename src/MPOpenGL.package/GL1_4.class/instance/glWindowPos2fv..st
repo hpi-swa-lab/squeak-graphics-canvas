@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glWindowPos2fv: v
 
 	<apicall: void 'glWindowPos2fv' (GLfloat*)>

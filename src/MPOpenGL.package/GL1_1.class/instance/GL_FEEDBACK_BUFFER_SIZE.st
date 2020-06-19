@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FEEDBACK_BUFFER_SIZE
 
-	^ 16r0DF1
+	^ 16rDF1

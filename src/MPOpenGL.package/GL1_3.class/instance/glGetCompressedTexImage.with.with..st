@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetCompressedTexImage: target with: level with: img
 
 	<apicall: void 'glGetCompressedTexImage' (GLenum GLint void*)>

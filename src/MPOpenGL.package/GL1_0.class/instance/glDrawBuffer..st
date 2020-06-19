@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDrawBuffer: buf
 
 	<apicall: void 'glDrawBuffer' (GLenum)>

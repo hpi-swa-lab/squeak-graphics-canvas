@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_READ_PIXELS_FORMAT
 
 	^ 16r828D

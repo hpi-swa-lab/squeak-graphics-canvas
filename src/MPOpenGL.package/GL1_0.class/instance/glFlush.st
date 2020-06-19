@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glFlush
 
 	<apicall: void 'glFlush' ()>

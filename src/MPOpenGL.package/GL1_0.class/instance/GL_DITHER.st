@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DITHER
 
-	^ 16r0BD0
+	^ 16rBD0

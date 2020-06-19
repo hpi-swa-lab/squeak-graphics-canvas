@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glCreateTransformFeedbacks: n with: ids
 
 	<apicall: void 'glCreateTransformFeedbacks' (GLsizei GLuint*)>

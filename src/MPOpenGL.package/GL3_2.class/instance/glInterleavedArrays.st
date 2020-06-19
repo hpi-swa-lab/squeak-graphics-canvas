@@ -1,3 +1,4 @@
-as yet unclassified
+commands - deprecated
 glInterleavedArrays
+
 	self shouldNotImplement

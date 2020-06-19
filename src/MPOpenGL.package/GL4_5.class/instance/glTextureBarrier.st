@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glTextureBarrier
 
 	<apicall: void 'glTextureBarrier' ()>

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDisableVertexArrayAttrib: vaobj with: index
 
 	<apicall: void 'glDisableVertexArrayAttrib' (GLuint GLuint)>

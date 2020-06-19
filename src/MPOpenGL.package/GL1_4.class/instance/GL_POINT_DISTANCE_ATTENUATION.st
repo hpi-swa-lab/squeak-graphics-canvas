@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_POINT_DISTANCE_ATTENUATION
 
 	^ 16r8129

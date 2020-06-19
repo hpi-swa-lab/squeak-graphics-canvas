@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glCopyNamedBufferSubData: readBuffer with: writeBuffer with: readOffset with: writeOffset with: size
 
 	<apicall: void 'glCopyNamedBufferSubData' (GLuint GLuint GLintptr GLintptr GLsizeiptr)>

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_STENCIL_REF
 
-	^ 16r0B97
+	^ 16rB97

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEBUG_TYPE_PERFORMANCE
 
 	^ 16r8250

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGenProgramPipelines: n with: pipelines
 
 	<apicall: void 'glGenProgramPipelines' (GLsizei GLuint*)>

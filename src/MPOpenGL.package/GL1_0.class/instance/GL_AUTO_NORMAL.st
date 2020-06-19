@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_AUTO_NORMAL
 
-	^ 16r0D80
+	^ 16rD80

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TRIANGLES
 
-	^ 16r0004
+	^ 16r4

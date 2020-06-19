@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glClientActiveTexture: texture
 
 	<apicall: void 'glClientActiveTexture' (GLenum)>

@@ -1,0 +1,4 @@
+constants
+GL_CONTEXT_RELEASE_BEHAVIOR
+
+	^ 16r82FB

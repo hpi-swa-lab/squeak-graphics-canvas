@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glEnableClientState: array
 
 	<apicall: void 'glEnableClientState' (GLenum)>

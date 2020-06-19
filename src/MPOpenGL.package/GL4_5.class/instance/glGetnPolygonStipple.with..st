@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetnPolygonStipple: bufSize with: pattern
 
 	<apicall: void 'glGetnPolygonStipple' (GLsizei GLubyte*)>

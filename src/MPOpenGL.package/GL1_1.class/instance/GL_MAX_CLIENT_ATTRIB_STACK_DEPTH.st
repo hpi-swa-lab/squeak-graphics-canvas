@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_CLIENT_ATTRIB_STACK_DEPTH
 
-	^ 16r0D3B
+	^ 16rD3B

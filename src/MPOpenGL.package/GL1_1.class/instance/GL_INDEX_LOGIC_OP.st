@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INDEX_LOGIC_OP
 
-	^ 16r0BF1
+	^ 16rBF1

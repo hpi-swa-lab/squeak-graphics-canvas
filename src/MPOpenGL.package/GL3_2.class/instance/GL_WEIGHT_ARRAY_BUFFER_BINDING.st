@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_WEIGHT_ARRAY_BUFFER_BINDING
+
 	self shouldNotImplement

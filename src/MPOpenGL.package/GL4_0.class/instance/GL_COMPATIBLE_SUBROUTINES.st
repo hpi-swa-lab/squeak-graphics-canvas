@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COMPATIBLE_SUBROUTINES
 
 	^ 16r8E4B

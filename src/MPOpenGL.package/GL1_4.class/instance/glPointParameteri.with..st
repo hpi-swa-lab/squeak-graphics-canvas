@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glPointParameteri: pname with: param
 
 	<apicall: void 'glPointParameteri' (GLenum GLint)>

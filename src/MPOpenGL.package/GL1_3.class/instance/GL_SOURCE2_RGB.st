@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SOURCE2_RGB
 
 	^ 16r8582

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INTERNALFORMAT_STENCIL_TYPE
 
 	^ 16r827D

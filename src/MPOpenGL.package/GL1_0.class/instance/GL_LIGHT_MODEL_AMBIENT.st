@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LIGHT_MODEL_AMBIENT
 
-	^ 16r0B53
+	^ 16rB53

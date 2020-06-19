@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SIMULTANEOUS_TEXTURE_AND_DEPTH_WRITE
 
 	^ 16r82AE

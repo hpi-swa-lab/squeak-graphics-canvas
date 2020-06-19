@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ACCUM_CLEAR_VALUE
 
-	^ 16r0B80
+	^ 16rB80

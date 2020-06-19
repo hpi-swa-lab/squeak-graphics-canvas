@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CULL_FACE
 
-	^ 16r0B44
+	^ 16rB44

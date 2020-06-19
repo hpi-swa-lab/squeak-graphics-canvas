@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CLAMP
 
 	^ 16r2900

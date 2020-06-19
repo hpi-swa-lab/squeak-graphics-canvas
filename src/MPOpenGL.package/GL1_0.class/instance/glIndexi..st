@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIndexi: c
 
 	<apicall: void 'glIndexi' (GLint)>

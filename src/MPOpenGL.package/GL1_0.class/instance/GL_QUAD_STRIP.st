@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_QUAD_STRIP
 
-	^ 16r0008
+	^ 16r8

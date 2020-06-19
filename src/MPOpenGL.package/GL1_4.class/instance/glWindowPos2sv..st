@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glWindowPos2sv: v
 
 	<apicall: void 'glWindowPos2sv' (GLshort*)>

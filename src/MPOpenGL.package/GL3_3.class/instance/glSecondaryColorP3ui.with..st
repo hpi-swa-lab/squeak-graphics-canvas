@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glSecondaryColorP3ui: type with: color
 
 	<apicall: void 'glSecondaryColorP3ui' (GLenum GLuint)>

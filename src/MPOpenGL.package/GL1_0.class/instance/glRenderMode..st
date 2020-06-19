@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glRenderMode: mode
 
 	<apicall: GLint 'glRenderMode' (GLenum)>

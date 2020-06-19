@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MATRIX_MODE
 
-	^ 16r0BA0
+	^ 16rBA0

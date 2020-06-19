@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TRIANGLE_STRIP
 
-	^ 16r0005
+	^ 16r5

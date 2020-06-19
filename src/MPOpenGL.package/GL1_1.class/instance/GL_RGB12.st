@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_RGB12
 
 	^ 16r8053

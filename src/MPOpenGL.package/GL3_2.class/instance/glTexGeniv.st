@@ -1,3 +1,4 @@
-as yet unclassified
+commands - deprecated
 glTexGeniv
+
 	self shouldNotImplement

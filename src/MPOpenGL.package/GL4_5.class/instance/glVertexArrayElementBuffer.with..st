@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glVertexArrayElementBuffer: vaobj with: buffer
 
 	<apicall: void 'glVertexArrayElementBuffer' (GLuint GLuint)>

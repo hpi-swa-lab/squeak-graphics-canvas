@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAP1_GRID_SEGMENTS
 
-	^ 16r0DD1
+	^ 16rDD1

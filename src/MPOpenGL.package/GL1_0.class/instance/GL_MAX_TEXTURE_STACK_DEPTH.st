@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_TEXTURE_STACK_DEPTH
 
-	^ 16r0D39
+	^ 16rD39

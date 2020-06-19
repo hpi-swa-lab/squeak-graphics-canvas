@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT
 
 	^ 16r919F

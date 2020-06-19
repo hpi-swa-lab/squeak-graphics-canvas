@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_BLUE_SIZE
 
 	^ 16r805E

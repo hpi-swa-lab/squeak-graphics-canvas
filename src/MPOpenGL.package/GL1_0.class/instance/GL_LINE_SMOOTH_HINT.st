@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LINE_SMOOTH_HINT
 
-	^ 16r0C52
+	^ 16rC52

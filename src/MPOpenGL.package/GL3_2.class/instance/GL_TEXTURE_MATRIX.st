@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_TEXTURE_MATRIX
+
 	self shouldNotImplement

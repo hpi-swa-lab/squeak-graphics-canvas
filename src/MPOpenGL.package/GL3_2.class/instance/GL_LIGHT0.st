@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_LIGHT0
+
 	self shouldNotImplement

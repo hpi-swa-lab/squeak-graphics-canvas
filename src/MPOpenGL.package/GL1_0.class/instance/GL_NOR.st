@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_NOR
 
 	^ 16r1508

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glClearNamedFramebufferfi: framebuffer with: buffer with: drawbuffer with: depth with: stencil
 
 	<apicall: void 'glClearNamedFramebufferfi' (GLuint GLenum GLint GLfloat GLint)>

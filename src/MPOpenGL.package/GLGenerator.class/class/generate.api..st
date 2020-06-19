@@ -1,4 +1,6 @@
-as yet unclassified
+instance creation
 generate: xml api: aString
 
-	self new generate: xml api: aString
+	^ (self xml: xml)
+		generateApi: aString;
+		yourself

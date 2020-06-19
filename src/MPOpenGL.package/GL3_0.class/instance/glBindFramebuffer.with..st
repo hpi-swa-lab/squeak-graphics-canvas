@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glBindFramebuffer: target with: framebuffer
 
 	<apicall: void 'glBindFramebuffer' (GLenum GLuint)>

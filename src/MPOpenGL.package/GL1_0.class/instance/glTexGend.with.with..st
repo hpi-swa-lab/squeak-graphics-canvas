@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glTexGend: coord with: pname with: param
 
 	<apicall: void 'glTexGend' (GLenum GLenum GLdouble)>

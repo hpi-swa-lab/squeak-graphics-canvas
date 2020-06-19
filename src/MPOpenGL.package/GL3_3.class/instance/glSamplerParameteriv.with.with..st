@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glSamplerParameteriv: sampler with: pname with: param
 
 	<apicall: void 'glSamplerParameteriv' (GLuint GLenum GLint*)>

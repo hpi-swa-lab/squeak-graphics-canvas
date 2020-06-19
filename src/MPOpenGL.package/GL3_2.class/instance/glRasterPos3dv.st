@@ -1,3 +1,4 @@
-as yet unclassified
+commands - deprecated
 glRasterPos3dv
+
 	self shouldNotImplement

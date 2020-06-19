@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glFeedbackBuffer: size with: type with: buffer
 
 	<apicall: void 'glFeedbackBuffer' (GLsizei GLenum GLfloat*)>

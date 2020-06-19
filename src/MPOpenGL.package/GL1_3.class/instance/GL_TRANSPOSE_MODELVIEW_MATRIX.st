@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TRANSPOSE_MODELVIEW_MATRIX
 
 	^ 16r84E3

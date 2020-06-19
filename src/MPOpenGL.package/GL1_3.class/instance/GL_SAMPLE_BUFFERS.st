@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SAMPLE_BUFFERS
 
 	^ 16r80A8

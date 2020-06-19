@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAP2_INDEX
 
-	^ 16r0DB1
+	^ 16rDB1

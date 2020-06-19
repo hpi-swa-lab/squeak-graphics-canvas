@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SIMULTANEOUS_TEXTURE_AND_STENCIL_TEST
 
 	^ 16r82AD

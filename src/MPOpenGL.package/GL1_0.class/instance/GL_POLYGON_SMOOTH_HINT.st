@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_POLYGON_SMOOTH_HINT
 
-	^ 16r0C53
+	^ 16rC53

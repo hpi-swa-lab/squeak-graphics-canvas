@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetTexLevelParameterfv: target with: level with: pname with: params
 
 	<apicall: void 'glGetTexLevelParameterfv' (GLenum GLint GLenum GLfloat*)>

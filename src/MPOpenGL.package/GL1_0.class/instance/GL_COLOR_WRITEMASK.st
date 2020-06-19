@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COLOR_WRITEMASK
 
-	^ 16r0C23
+	^ 16rC23

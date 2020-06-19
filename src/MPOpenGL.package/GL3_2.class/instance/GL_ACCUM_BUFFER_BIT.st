@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_ACCUM_BUFFER_BIT
+
 	self shouldNotImplement

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glPatchParameterfv: pname with: values
 
 	<apicall: void 'glPatchParameterfv' (GLenum GLfloat*)>

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glTexCoord1s: s
 
 	<apicall: void 'glTexCoord1s' (GLshort)>

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INDEX_MODE
 
-	^ 16r0C30
+	^ 16rC30

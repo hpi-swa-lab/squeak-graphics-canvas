@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_BLUE_BIAS
 
-	^ 16r0D1B
+	^ 16rD1B

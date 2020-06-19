@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INDEX_WRITEMASK
 
-	^ 16r0C21
+	^ 16rC21

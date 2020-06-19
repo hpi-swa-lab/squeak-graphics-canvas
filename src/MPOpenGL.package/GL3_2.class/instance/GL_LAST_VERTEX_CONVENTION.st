@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LAST_VERTEX_CONVENTION
 
 	^ 16r8E4E

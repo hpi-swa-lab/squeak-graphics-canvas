@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_MODELVIEW_STACK_DEPTH
+
 	self shouldNotImplement

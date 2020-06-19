@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_POLYGON_STIPPLE
 
-	^ 16r0B42
+	^ 16rB42

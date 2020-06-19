@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glListBase: base
 
 	<apicall: void 'glListBase' (GLuint)>

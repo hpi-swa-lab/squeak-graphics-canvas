@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_GREEN_TYPE
 
 	^ 16r8C11

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CURRENT_RASTER_INDEX
 
-	^ 16r0B05
+	^ 16rB05

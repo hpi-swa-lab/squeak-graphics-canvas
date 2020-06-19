@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNIFORM_ATOMIC_COUNTER_BUFFER_INDEX
 
 	^ 16r92DA

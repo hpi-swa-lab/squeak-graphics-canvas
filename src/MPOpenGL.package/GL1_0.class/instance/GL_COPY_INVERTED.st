@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COPY_INVERTED
 
 	^ 16r150C

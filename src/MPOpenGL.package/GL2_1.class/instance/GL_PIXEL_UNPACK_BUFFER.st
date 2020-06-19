@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PIXEL_UNPACK_BUFFER
 
 	^ 16r88EC

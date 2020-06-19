@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_FRAMEBUFFER_LAYERS
 
 	^ 16r9317

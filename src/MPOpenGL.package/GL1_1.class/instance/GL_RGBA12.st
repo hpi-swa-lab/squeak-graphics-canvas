@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_RGBA12
 
 	^ 16r805A

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetString: name
 
 	<apicall: GLubyte* 'glGetString' (GLenum)>

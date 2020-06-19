@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PERSPECTIVE_CORRECTION_HINT
 
-	^ 16r0C50
+	^ 16rC50

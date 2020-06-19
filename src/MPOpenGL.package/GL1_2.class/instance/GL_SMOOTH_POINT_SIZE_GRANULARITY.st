@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SMOOTH_POINT_SIZE_GRANULARITY
 
-	^ 16r0B13
+	^ 16rB13

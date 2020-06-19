@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glShadeModel: mode
 
 	<apicall: void 'glShadeModel' (GLenum)>

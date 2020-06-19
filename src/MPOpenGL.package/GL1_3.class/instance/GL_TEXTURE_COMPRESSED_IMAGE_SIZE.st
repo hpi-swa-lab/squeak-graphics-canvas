@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_COMPRESSED_IMAGE_SIZE
 
 	^ 16r86A0

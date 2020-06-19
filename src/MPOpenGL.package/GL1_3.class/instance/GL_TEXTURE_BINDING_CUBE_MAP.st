@@ -1,0 +1,4 @@
+constants
+GL_TEXTURE_BINDING_CUBE_MAP
+
+	^ 16r8514

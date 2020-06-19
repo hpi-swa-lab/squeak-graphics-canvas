@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_CONSTANT
+
 	self shouldNotImplement

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CAVEAT_SUPPORT
 
 	^ 16r82B8

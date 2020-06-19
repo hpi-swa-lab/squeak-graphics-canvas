@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glCreateBuffers: n with: buffers
 
 	<apicall: void 'glCreateBuffers' (GLsizei GLuint*)>

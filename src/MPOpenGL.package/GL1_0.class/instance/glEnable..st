@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glEnable: cap
 
 	<apicall: void 'glEnable' (GLenum)>

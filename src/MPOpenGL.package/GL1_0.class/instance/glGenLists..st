@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGenLists: range
 
 	<apicall: GLuint 'glGenLists' (GLsizei)>

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetProgramResourceLocationIndex: program with: programInterface with: name
 
 	<apicall: GLint 'glGetProgramResourceLocationIndex' (GLuint GLenum GLchar*)>

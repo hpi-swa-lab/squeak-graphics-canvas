@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDrawTransformFeedbackInstanced: mode with: id with: instancecount
 
 	<apicall: void 'glDrawTransformFeedbackInstanced' (GLenum GLuint GLsizei)>

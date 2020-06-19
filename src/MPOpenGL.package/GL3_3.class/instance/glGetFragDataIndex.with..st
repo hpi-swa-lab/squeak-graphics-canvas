@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetFragDataIndex: program with: name
 
 	<apicall: GLint 'glGetFragDataIndex' (GLuint GLchar*)>

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glBlendEquation: mode
 
 	<apicall: void 'glBlendEquation' (GLenum)>

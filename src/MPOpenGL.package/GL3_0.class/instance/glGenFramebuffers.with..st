@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGenFramebuffers: n with: framebuffers
 
 	<apicall: void 'glGenFramebuffers' (GLsizei GLuint*)>

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDeleteLists: list with: range
 
 	<apicall: void 'glDeleteLists' (GLuint GLsizei)>

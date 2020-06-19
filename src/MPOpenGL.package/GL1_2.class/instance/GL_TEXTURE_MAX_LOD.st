@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_MAX_LOD
 
 	^ 16r813B

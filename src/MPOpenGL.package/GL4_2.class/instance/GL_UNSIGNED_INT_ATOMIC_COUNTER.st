@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNSIGNED_INT_ATOMIC_COUNTER
 
 	^ 16r92DB

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_1D
 
-	^ 16r0DE0
+	^ 16rDE0

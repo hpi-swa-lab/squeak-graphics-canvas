@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glMatrixMode: mode
 
 	<apicall: void 'glMatrixMode' (GLenum)>

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_GEOMETRY_UNIFORM_BLOCKS
 
 	^ 16r8A2C

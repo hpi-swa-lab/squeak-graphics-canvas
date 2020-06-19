@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDepthMask: flag
 
 	<apicall: void 'glDepthMask' (GLboolean)>

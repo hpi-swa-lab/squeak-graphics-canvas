@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAMEBUFFER_DEFAULT_SAMPLES
 
 	^ 16r9313

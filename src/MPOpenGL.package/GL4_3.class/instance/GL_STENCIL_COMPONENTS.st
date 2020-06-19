@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_STENCIL_COMPONENTS
 
 	^ 16r8285

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_DRAW_BUFFERS
 
 	^ 16r8824

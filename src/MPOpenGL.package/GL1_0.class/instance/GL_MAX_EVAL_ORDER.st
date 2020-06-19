@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_EVAL_ORDER
 
-	^ 16r0D30
+	^ 16rD30

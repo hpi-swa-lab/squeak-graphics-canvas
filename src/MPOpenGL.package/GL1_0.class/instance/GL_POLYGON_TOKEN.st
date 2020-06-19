@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_POLYGON_TOKEN
 
-	^ 16r0703
+	^ 16r703

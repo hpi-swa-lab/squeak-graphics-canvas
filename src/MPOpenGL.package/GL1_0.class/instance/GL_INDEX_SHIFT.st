@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INDEX_SHIFT
 
-	^ 16r0D12
+	^ 16rD12

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LINE_SMOOTH
 
-	^ 16r0B20
+	^ 16rB20

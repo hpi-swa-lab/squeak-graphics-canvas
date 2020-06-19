@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CURRENT_VERTEX_ATTRIB
 
 	^ 16r8626

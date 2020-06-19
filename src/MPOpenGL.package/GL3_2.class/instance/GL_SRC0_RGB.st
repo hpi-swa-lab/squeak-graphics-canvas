@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_SRC0_RGB
+
 	self shouldNotImplement

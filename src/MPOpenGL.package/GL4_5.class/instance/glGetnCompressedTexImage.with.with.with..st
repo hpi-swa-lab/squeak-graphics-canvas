@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetnCompressedTexImage: target with: lod with: bufSize with: pixels
 
 	<apicall: void 'glGetnCompressedTexImage' (GLenum GLint GLsizei void*)>

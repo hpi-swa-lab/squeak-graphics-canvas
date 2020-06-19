@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INTERNALFORMAT_STENCIL_SIZE
 
 	^ 16r8276

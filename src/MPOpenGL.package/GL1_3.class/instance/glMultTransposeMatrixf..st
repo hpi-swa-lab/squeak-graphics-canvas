@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glMultTransposeMatrixf: m
 
 	<apicall: void 'glMultTransposeMatrixf' (GLfloat*)>

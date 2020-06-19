@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_NORMALIZE
 
-	^ 16r0BA1
+	^ 16rBA1

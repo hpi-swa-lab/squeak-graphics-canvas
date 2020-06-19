@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CLIENT_PIXEL_STORE_BIT
 
-	^ 16r00000001
+	^ 16r1

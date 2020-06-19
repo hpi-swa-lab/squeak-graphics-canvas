@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAP2_TEXTURE_COORD_2
 
-	^ 16r0DB4
+	^ 16rDB4

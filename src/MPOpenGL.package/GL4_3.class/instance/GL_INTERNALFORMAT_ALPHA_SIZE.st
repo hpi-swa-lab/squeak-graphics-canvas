@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INTERNALFORMAT_ALPHA_SIZE
 
 	^ 16r8274

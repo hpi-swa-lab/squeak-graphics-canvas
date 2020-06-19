@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DECAL
 
 	^ 16r2101

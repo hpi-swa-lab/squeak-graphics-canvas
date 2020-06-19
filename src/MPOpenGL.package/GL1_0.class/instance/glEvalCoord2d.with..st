@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glEvalCoord2d: u with: v
 
 	<apicall: void 'glEvalCoord2d' (GLdouble GLdouble)>

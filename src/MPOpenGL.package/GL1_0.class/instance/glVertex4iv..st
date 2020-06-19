@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glVertex4iv: v
 
 	<apicall: void 'glVertex4iv' (GLint*)>

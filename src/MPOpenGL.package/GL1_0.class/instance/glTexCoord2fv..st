@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glTexCoord2fv: v
 
 	<apicall: void 'glTexCoord2fv' (GLfloat*)>

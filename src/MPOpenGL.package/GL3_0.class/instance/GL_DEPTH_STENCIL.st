@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEPTH_STENCIL
 
 	^ 16r84F9

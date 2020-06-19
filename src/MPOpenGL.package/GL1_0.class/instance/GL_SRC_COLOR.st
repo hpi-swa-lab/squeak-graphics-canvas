@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SRC_COLOR
 
-	^ 16r0300
+	^ 16r300

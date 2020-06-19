@@ -1,3 +1,4 @@
-as yet unclassified
+commands - deprecated
 glColor4f
+
 	self shouldNotImplement

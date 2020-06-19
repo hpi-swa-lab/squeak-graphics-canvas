@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glFogCoordfv: coord
 
 	<apicall: void 'glFogCoordfv' (GLfloat*)>

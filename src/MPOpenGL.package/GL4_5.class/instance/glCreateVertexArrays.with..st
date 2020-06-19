@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glCreateVertexArrays: n with: arrays
 
 	<apicall: void 'glCreateVertexArrays' (GLsizei GLuint*)>

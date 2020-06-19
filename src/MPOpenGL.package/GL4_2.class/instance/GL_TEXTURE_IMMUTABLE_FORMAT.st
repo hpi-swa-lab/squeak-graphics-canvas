@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_IMMUTABLE_FORMAT
 
 	^ 16r912F

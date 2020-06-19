@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS
 
 	^ 16r8F39

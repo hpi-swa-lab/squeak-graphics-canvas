@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glVertexAttribI2ui: index with: x with: y
 
 	<apicall: void 'glVertexAttribI2ui' (GLuint GLuint GLuint)>

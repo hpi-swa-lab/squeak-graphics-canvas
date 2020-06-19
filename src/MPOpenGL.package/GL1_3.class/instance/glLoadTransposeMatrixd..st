@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glLoadTransposeMatrixd: m
 
 	<apicall: void 'glLoadTransposeMatrixd' (GLdouble*)>

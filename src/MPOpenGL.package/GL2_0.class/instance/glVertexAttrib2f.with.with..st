@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glVertexAttrib2f: index with: x with: y
 
 	<apicall: void 'glVertexAttrib2f' (GLuint GLfloat GLfloat)>

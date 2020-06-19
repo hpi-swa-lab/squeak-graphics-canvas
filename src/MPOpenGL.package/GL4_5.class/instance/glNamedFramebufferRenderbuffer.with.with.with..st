@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glNamedFramebufferRenderbuffer: framebuffer with: attachment with: renderbuffertarget with: renderbuffer
 
 	<apicall: void 'glNamedFramebufferRenderbuffer' (GLuint GLenum GLenum GLuint)>

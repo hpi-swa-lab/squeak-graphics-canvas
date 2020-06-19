@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_MATRIX
 
-	^ 16r0BA8
+	^ 16rBA8

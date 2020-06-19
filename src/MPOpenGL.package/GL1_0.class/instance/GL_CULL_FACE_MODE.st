@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CULL_FACE_MODE
 
-	^ 16r0B45
+	^ 16rB45

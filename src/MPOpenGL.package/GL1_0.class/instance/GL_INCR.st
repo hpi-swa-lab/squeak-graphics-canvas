@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INCR
 
 	^ 16r1E02

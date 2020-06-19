@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_MODELVIEW_STACK_DEPTH
 
-	^ 16r0D36
+	^ 16rD36

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glCompileShader: shader
 
 	<apicall: void 'glCompileShader' (GLuint)>

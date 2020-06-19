@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LINE_STIPPLE
 
-	^ 16r0B24
+	^ 16rB24

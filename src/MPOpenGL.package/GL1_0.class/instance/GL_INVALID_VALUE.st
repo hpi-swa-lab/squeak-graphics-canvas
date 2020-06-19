@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INVALID_VALUE
 
-	^ 16r0501
+	^ 16r501

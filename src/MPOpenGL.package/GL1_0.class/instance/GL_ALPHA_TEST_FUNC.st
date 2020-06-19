@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ALPHA_TEST_FUNC
 
-	^ 16r0BC1
+	^ 16rBC1

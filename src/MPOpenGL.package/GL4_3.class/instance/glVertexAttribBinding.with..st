@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glVertexAttribBinding: attribindex with: bindingindex
 
 	<apicall: void 'glVertexAttribBinding' (GLuint GLuint)>

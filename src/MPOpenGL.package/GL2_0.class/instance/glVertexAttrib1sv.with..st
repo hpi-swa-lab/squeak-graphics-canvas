@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glVertexAttrib1sv: index with: v
 
 	<apicall: void 'glVertexAttrib1sv' (GLuint GLshort*)>

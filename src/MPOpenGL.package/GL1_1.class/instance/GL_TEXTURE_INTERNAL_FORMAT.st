@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_INTERNAL_FORMAT
 
 	^ 16r1003

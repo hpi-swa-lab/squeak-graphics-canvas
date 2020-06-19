@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CONTEXT_CORE_PROFILE_BIT
 
-	^ 16r00000001
+	^ 16r1

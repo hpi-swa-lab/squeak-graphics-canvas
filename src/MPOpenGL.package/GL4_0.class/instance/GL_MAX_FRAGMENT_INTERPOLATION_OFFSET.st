@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_FRAGMENT_INTERPOLATION_OFFSET
 
 	^ 16r8E5C

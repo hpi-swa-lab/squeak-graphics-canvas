@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_INDEX_WRITEMASK
+
 	self shouldNotImplement

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LIST_BASE
 
-	^ 16r0B32
+	^ 16rB32

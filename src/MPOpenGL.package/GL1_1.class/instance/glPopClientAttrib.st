@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glPopClientAttrib
 
 	<apicall: void 'glPopClientAttrib' ()>

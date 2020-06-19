@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glUniform1d: location with: x
 
 	<apicall: void 'glUniform1d' (GLint GLdouble)>

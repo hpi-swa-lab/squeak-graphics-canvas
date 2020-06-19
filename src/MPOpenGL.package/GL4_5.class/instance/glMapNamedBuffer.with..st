@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glMapNamedBuffer: buffer with: access
 
 	<apicall: void* 'glMapNamedBuffer' (GLuint GLenum)>

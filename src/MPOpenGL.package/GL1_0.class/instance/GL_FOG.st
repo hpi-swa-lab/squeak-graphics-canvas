@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FOG
 
-	^ 16r0B60
+	^ 16rB60

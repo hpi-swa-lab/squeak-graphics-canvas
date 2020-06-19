@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FIXED
 
 	^ 16r140C

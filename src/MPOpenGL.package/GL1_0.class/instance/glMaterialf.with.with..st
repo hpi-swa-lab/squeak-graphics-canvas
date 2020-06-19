@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glMaterialf: face with: pname with: param
 
 	<apicall: void 'glMaterialf' (GLenum GLenum GLfloat)>

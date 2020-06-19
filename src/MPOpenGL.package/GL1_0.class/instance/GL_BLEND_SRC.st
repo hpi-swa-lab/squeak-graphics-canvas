@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_BLEND_SRC
 
-	^ 16r0BE1
+	^ 16rBE1

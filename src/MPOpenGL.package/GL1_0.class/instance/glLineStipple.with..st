@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glLineStipple: factor with: pattern
 
 	<apicall: void 'glLineStipple' (GLint GLushort)>

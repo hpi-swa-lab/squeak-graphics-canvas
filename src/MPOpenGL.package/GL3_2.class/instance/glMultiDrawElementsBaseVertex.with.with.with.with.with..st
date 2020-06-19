@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glMultiDrawElementsBaseVertex: mode with: count with: type with: indices with: drawcount with: basevertex
 
 	<apicall: void 'glMultiDrawElementsBaseVertex' (GLenum GLsizei* GLenum void** GLsizei GLint*)>

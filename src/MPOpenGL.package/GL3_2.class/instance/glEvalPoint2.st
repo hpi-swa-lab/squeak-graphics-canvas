@@ -1,3 +1,4 @@
-as yet unclassified
+commands - deprecated
 glEvalPoint2
+
 	self shouldNotImplement

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glColor4fv: v
 
 	<apicall: void 'glColor4fv' (GLfloat*)>

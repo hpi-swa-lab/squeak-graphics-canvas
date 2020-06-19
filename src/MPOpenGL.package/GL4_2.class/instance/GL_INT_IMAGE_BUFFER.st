@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INT_IMAGE_BUFFER
 
 	^ 16r905C

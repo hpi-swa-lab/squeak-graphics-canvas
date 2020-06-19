@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_AUX3
 
-	^ 16r040C
+	^ 16r40C

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glCullFace: mode
 
 	<apicall: void 'glCullFace' (GLenum)>

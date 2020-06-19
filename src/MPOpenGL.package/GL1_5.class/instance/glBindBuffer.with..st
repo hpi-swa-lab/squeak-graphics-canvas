@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glBindBuffer: target with: buffer
 
 	<apicall: void 'glBindBuffer' (GLenum GLuint)>

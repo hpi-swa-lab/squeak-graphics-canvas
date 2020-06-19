@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_RGB9_E5
 
 	^ 16r8C3D

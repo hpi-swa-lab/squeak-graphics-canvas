@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetActiveUniformsiv: program with: uniformCount with: uniformIndices with: pname with: params
 
 	<apicall: void 'glGetActiveUniformsiv' (GLuint GLsizei GLuint* GLenum GLint*)>

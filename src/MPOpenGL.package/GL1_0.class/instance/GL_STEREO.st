@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_STEREO
 
-	^ 16r0C33
+	^ 16rC33

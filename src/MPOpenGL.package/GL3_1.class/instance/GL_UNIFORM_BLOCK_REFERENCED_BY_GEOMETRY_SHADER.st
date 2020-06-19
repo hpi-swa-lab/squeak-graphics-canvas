@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNIFORM_BLOCK_REFERENCED_BY_GEOMETRY_SHADER
 
 	^ 16r8A45

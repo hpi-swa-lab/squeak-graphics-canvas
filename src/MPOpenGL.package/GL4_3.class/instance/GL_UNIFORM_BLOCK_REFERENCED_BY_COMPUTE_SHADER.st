@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNIFORM_BLOCK_REFERENCED_BY_COMPUTE_SHADER
 
 	^ 16r90EC

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INDEX_OFFSET
 
-	^ 16r0D13
+	^ 16rD13

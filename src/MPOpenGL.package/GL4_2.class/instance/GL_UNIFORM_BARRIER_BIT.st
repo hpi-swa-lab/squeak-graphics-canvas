@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNIFORM_BARRIER_BIT
 
-	^ 16r00000004
+	^ 16r4

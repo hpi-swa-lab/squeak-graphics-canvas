@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SELECTION_BUFFER_POINTER
 
-	^ 16r0DF3
+	^ 16rDF3

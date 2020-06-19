@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PIXEL_MODE_BIT
 
-	^ 16r00000020
+	^ 16r20

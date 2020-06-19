@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FOG_HINT
 
-	^ 16r0C54
+	^ 16rC54

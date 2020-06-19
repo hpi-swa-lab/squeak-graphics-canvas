@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS
 
 	^ 16r8E47

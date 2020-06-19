@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_NEAREST_MIPMAP_LINEAR
 
 	^ 16r2702

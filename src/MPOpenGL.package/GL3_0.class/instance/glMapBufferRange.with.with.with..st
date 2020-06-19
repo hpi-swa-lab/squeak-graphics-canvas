@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glMapBufferRange: target with: offset with: length with: access
 
 	<apicall: void* 'glMapBufferRange' (GLenum GLintptr GLsizeiptr GLbitfield)>

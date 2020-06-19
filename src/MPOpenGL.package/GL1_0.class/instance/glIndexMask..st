@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIndexMask: mask
 
 	<apicall: void 'glIndexMask' (GLuint)>

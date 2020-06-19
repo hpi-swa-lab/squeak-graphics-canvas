@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetSubroutineIndex: program with: shadertype with: name
 
 	<apicall: GLuint 'glGetSubroutineIndex' (GLuint GLenum GLchar*)>

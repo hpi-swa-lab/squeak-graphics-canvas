@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ACCUM_RED_BITS
 
-	^ 16r0D58
+	^ 16rD58

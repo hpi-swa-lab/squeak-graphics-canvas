@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FOG_START
 
-	^ 16r0B63
+	^ 16rB63

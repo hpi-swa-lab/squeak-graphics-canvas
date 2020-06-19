@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glColor4dv: v
 
 	<apicall: void 'glColor4dv' (GLdouble*)>

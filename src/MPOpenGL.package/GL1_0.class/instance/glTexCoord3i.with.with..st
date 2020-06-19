@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glTexCoord3i: s with: t with: r
 
 	<apicall: void 'glTexCoord3i' (GLint GLint GLint)>

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIsTexture: texture
 
 	<apicall: GLboolean 'glIsTexture' (GLuint)>

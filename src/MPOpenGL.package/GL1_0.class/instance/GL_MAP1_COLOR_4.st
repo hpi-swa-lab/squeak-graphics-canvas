@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAP1_COLOR_4
 
-	^ 16r0D90
+	^ 16rD90

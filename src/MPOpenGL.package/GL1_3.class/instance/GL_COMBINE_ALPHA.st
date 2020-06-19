@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COMBINE_ALPHA
 
 	^ 16r8572

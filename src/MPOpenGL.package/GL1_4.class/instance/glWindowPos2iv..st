@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glWindowPos2iv: v
 
 	<apicall: void 'glWindowPos2iv' (GLint*)>

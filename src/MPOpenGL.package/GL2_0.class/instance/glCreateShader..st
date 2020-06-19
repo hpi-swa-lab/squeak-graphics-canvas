@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glCreateShader: type
 
 	<apicall: GLuint 'glCreateShader' (GLenum)>

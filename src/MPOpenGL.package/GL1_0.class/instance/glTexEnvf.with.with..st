@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glTexEnvf: target with: pname with: param
 
 	<apicall: void 'glTexEnvf' (GLenum GLenum GLfloat)>

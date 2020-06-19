@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_RENDER_MODE
 
-	^ 16r0C40
+	^ 16rC40

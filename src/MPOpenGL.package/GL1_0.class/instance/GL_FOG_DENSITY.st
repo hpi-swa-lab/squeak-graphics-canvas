@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FOG_DENSITY
 
-	^ 16r0B62
+	^ 16rB62

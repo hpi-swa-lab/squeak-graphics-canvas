@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_VERTEX_UNIFORM_COMPONENTS
 
 	^ 16r8B4A

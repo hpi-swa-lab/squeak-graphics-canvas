@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_EVAL_BIT
 
-	^ 16r00010000
+	^ 16r10000

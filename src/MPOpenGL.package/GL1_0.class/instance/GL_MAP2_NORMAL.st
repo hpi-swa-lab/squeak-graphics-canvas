@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAP2_NORMAL
 
-	^ 16r0DB2
+	^ 16rDB2

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_GEN_T
 
-	^ 16r0C61
+	^ 16rC61

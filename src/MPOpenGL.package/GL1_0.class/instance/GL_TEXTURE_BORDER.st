@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_BORDER
 
 	^ 16r1005

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glTexCoord3d: s with: t with: r
 
 	<apicall: void 'glTexCoord3d' (GLdouble GLdouble GLdouble)>

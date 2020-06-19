@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetNamedBufferSubData: buffer with: offset with: size with: data
 
 	<apicall: void 'glGetNamedBufferSubData' (GLuint GLintptr GLsizeiptr void*)>

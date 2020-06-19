@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FEEDBACK_BUFFER_TYPE
 
-	^ 16r0DF2
+	^ 16rDF2

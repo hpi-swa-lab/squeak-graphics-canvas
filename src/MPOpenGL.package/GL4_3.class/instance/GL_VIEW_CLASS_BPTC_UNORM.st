@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_VIEW_CLASS_BPTC_UNORM
 
 	^ 16r82D2

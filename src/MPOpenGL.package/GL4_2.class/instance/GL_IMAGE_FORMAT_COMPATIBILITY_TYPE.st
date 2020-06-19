@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_IMAGE_FORMAT_COMPATIBILITY_TYPE
 
 	^ 16r90C7

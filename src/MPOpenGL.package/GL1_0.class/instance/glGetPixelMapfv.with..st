@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetPixelMapfv: map with: values
 
 	<apicall: void 'glGetPixelMapfv' (GLenum GLfloat*)>

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_POINT_SPRITE
 
 	^ 16r8861

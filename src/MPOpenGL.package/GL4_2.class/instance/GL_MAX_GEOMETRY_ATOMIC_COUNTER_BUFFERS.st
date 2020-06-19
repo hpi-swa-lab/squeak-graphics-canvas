@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS
 
 	^ 16r92CF

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MIPMAP
 
 	^ 16r8293

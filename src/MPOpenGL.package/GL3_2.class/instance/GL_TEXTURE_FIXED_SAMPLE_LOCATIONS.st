@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_FIXED_SAMPLE_LOCATIONS
 
 	^ 16r9107

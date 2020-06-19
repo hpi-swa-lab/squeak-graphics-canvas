@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glLogicOp: opcode
 
 	<apicall: void 'glLogicOp' (GLenum)>

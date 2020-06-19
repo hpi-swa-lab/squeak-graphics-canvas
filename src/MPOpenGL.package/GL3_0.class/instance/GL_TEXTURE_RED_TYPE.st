@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_RED_TYPE
 
 	^ 16r8C10

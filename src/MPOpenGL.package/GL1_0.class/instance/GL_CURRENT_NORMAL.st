@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CURRENT_NORMAL
 
-	^ 16r0B02
+	^ 16rB02

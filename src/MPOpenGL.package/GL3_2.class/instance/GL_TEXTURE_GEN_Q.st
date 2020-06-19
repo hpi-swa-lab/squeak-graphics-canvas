@@ -1,3 +1,4 @@
-as yet unclassified
+constants - deprecated
 GL_TEXTURE_GEN_Q
+
 	self shouldNotImplement

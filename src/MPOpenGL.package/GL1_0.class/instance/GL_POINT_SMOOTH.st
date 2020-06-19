@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_POINT_SMOOTH
 
-	^ 16r0B10
+	^ 16rB10

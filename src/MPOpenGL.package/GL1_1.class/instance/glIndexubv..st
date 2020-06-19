@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIndexubv: c
 
 	<apicall: void 'glIndexubv' (GLubyte*)>

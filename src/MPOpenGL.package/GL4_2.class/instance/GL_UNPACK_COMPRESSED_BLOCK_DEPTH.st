@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNPACK_COMPRESSED_BLOCK_DEPTH
 
 	^ 16r9129

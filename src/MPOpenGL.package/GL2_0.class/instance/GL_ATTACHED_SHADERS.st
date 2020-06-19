@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ATTACHED_SHADERS
 
 	^ 16r8B85

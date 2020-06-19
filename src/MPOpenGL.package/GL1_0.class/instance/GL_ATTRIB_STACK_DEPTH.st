@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ATTRIB_STACK_DEPTH
 
-	^ 16r0BB0
+	^ 16rBB0

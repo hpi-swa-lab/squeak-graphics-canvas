@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glBlendEquationSeparatei: buf with: modeRGB with: modeAlpha
 
 	<apicall: void 'glBlendEquationSeparatei' (GLuint GLenum GLenum)>

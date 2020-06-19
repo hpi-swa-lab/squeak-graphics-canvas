@@ -1,3 +1,4 @@
-as yet unclassified
+commands - deprecated
 glLightfv
+
 	self shouldNotImplement

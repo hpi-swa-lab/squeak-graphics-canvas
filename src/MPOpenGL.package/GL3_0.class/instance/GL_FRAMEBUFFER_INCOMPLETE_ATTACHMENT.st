@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT
 
 	^ 16r8CD6

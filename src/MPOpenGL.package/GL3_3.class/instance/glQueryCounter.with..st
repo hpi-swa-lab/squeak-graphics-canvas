@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glQueryCounter: id with: target
 
 	<apicall: void 'glQueryCounter' (GLuint GLenum)>

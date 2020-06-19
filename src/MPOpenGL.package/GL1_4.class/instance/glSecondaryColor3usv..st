@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glSecondaryColor3usv: v
 
 	<apicall: void 'glSecondaryColor3usv' (GLushort*)>

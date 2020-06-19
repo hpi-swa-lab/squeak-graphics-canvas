@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CONSTANT_COLOR
 
 	^ 16r8001

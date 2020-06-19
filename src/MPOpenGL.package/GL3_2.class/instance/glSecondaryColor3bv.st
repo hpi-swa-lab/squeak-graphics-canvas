@@ -1,3 +1,4 @@
-as yet unclassified
+commands - deprecated
 glSecondaryColor3bv
+
 	self shouldNotImplement

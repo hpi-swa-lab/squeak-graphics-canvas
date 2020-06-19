@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_POLYGON_MODE
 
-	^ 16r0B40
+	^ 16rB40

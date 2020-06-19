@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_POINT_TOKEN
 
-	^ 16r0701
+	^ 16r701

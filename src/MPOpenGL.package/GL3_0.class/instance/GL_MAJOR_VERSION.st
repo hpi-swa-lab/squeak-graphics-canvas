@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAJOR_VERSION
 
 	^ 16r821B

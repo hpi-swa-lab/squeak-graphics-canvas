@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_3D
 
-	^ 16r0601
+	^ 16r601

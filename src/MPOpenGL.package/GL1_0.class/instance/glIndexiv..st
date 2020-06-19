@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIndexiv: c
 
 	<apicall: void 'glIndexiv' (GLint*)>

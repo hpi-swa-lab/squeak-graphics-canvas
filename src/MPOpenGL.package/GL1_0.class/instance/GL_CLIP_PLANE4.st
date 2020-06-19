@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CLIP_PLANE4
 
 	^ 16r3004

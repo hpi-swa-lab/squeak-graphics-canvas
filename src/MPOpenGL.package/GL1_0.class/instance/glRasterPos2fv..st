@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glRasterPos2fv: v
 
 	<apicall: void 'glRasterPos2fv' (GLfloat*)>

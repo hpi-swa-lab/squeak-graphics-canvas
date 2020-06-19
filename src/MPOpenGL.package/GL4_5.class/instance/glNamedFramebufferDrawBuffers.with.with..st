@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glNamedFramebufferDrawBuffers: framebuffer with: n with: bufs
 
 	<apicall: void 'glNamedFramebufferDrawBuffers' (GLuint GLsizei GLenum*)>

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_2D
 
-	^ 16r0600
+	^ 16r600

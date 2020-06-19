@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_POINT_SIZE_MIN
 
 	^ 16r8126

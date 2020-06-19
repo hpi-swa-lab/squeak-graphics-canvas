@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_POLYGON
 
-	^ 16r0009
+	^ 16r9

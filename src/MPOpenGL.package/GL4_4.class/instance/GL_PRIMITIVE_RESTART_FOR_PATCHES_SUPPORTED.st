@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED
 
 	^ 16r8221

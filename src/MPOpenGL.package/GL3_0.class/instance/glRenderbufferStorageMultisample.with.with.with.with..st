@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glRenderbufferStorageMultisample: target with: samples with: internalformat with: width with: height
 
 	<apicall: void 'glRenderbufferStorageMultisample' (GLenum GLsizei GLenum GLsizei GLsizei)>

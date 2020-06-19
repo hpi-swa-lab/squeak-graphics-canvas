@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_IMAGE_BINDING_LAYERED
 
 	^ 16r8F3C

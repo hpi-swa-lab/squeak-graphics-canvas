@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TESS_EVALUATION_SHADER_BIT
 
-	^ 16r00000010
+	^ 16r10

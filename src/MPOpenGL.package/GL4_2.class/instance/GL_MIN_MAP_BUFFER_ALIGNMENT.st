@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MIN_MAP_BUFFER_ALIGNMENT
 
 	^ 16r90BC

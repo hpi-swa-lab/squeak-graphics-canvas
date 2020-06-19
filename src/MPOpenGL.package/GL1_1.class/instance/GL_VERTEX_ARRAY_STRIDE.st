@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_VERTEX_ARRAY_STRIDE
 
 	^ 16r807C

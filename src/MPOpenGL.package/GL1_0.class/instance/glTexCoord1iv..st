@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glTexCoord1iv: v
 
 	<apicall: void 'glTexCoord1iv' (GLint*)>

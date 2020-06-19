@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glEnableVertexAttribArray: index
 
 	<apicall: void 'glEnableVertexAttribArray' (GLuint)>

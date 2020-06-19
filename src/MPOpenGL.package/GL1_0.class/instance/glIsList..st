@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIsList: list
 
 	<apicall: GLboolean 'glIsList' (GLuint)>

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_POLYGON_SMOOTH
 
-	^ 16r0B41
+	^ 16rB41

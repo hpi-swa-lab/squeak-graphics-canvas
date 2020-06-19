@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LUMINANCE4
 
 	^ 16r803F

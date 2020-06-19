@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRONT_RIGHT
 
-	^ 16r0401
+	^ 16r401

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CURRENT_COLOR
 
-	^ 16r0B00
+	^ 16rB00

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glInvalidateBufferData: buffer
 
 	<apicall: void 'glInvalidateBufferData' (GLuint)>
