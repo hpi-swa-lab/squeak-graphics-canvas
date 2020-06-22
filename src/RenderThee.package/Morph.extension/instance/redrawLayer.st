@@ -1,9 +1,17 @@
 *RenderThee
 redrawLayer
-	self drawLayer ifNotNil: [:layer |
+
+	self assert: self isRepaintBoundary.
+
+	self boundaryLayer ifNotNil: [:layer |
                 | rc |
                 layer clear.
-                layer invalidateCache.
-                layer setBounds: self bounds.
+				layer setBounds: (self bounds translateBy: layer parent bounds origin negated).
                 rc := RtRecordingCanvas layer: layer.
-                rc fullDraw: self]
+				rc origin: self position.
+                rc fullDraw: self.
+				rc endDrawLayer.
+			
+				self assert: layer layers notEmpty.
+                layer invalidateCache.
+                ].

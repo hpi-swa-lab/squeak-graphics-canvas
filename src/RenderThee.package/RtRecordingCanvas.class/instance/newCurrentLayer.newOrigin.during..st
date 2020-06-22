@@ -7,5 +7,8 @@ newCurrentLayer: aLayer newOrigin: newOrigin during: aBlock
 	self layer: aLayer.
 	self newOrigin: newOrigin during: aBlock.
 	self endDrawLayer.
+	
+	self assert: aLayer layers notEmpty.
+	
 	self layer: previousLayer.
 	^ aLayer

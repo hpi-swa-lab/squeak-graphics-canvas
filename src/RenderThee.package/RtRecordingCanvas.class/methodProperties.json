@@ -1,7 +1,7 @@
 {
 	"class" : {
 		"example01" : "stlu 6/9/2020 17:30",
-		"layer:" : "stlu 6/9/2020 13:57",
+		"layer:" : "TZ 6/22/2020 15:54",
 		"record:" : "stlu 6/9/2020 12:31",
 		"rootWithExtent:" : "stlu 6/22/2020 11:19" },
 	"instance" : {
@@ -29,7 +29,7 @@
 		"frameAndFillRoundRect:radius:fillStyle:borderStyle:" : "stlu 6/15/2020 18:52",
 		"frameAndFillRoundRect:radius:fillStyle:borderWidth:borderColor:" : "stlu 4/16/2020 16:37",
 		"frameRectangle:borderStyle:" : "stlu 6/15/2020 18:53",
-		"fullDrawInCurrentLayer:" : "stlu 6/22/2020 11:08",
+		"fullDrawInCurrentLayer:" : "TZ 6/22/2020 15:45",
 		"fullDrawInNewLayer:" : "stlu 6/16/2020 21:12",
 		"fullDrawMorph:" : "stlu 6/16/2020 10:55",
 		"image:at:sourceRect:rule:" : "stlu 6/15/2020 18:50",
@@ -38,7 +38,7 @@
 		"layer" : "stlu 5/21/2020 09:53",
 		"layer:" : "stlu 5/21/2020 09:53",
 		"line:to:width:color:" : "stlu 6/15/2020 18:51",
-		"newCurrentLayer:newOrigin:during:" : "stlu 6/15/2020 19:00",
+		"newCurrentLayer:newOrigin:during:" : "TZ 6/22/2020 16:23",
 		"newOrigin:during:" : "stlu 6/15/2020 18:59",
 		"origin" : "stlu 5/21/2020 09:51",
 		"origin:" : "stlu 5/21/2020 09:53",
