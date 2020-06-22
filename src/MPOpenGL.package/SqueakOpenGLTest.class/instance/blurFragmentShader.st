@@ -8,27 +8,21 @@ in vec2 TexCoords;
 uniform sampler2D image;
 
 uniform bool horizontal;
-uniform float weight[5] = float[] (0.2270270270, 0.1945945946, 0.1216216216, 0.0540540541, 0.0162162162);
+uniform float weight[6] = float[] (1.0, 0.2270270270, 0.1945945946, 0.1216216216, 0.0540540541, 0.0162162162);
 
 void main()
 {             
      vec2 tex_offset = 1.0 / textureSize(image, 0); // gets size of single texel
-     vec3 result = texture(image, TexCoords).rgb * weight[0];
-     if(horizontal)
-     {
-         for(int i = 1; i < 5; ++i)
+     vec3 result = vec3(0.0); // texture(image, TexCoords).rgb * weight[0];
+	float sum = 0;
+         for(int i = -5; i <= 5; ++i)
          {
-            result += texture(image, TexCoords + vec2(tex_offset.x * i, 0.0)).rgb * weight[i];
-            result += texture(image, TexCoords - vec2(tex_offset.x * i, 0.0)).rgb * weight[i];
+		for(int j = -5; j <= 5; ++j)
+		{
+			float z = weight[abs(i)] * weight[abs(j)];
+			sum += z;
+			result += texture(image, TexCoords + tex_offset * vec2(i, j)).rgb * z;
+		}
          }
-     }
-     else
-     {
-         for(int i = 1; i < 5; ++i)
-         {
-             result += texture(image, TexCoords + vec2(0.0, tex_offset.y * i)).rgb * weight[i];
-             result += texture(image, TexCoords - vec2(0.0, tex_offset.y * i)).rgb * weight[i];
-         }
-     }
-     FragColor = vec4(result, 1.0);
+     FragColor = vec4(result / sum, 1.0);
 }' withUnixLineEndings
