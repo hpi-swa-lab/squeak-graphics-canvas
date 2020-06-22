@@ -2,8 +2,12 @@
 	"class" : {
 		 },
 	"instance" : {
-		"invalidRect:from:" : "stlu 6/16/2020 11:30",
+		"drawLayer" : "stlu 6/22/2020 11:07",
+		"drawLayer:" : "stlu 6/22/2020 11:07",
+		"invalidRect:from:" : "stlu 6/22/2020 11:08",
 		"isRepaintBoundary" : "stlu 6/16/2020 09:55",
-		"markNeedsPaint" : "stlu 6/16/2020 21:40",
-		"paintLayer" : "stlu 6/16/2020 11:33",
-		"paintLayer:" : "stlu 6/16/2020 11:33" } }
+		"markNeedsRedraw" : "stlu 6/22/2020 11:36",
+		"morphsToRedraw" : "stlu 6/22/2020 11:36",
+		"morphsToRedraw:" : "stlu 6/22/2020 11:34",
+		"needsRedraw" : "stlu 6/22/2020 11:07",
+		"needsRedraw:" : "stlu 6/22/2020 11:07" } }

@@ -1,5 +1,5 @@
-drawing
+compositing
 drawOn: aCanvas
 
 	commands do: [:cmd |
-		cmd applyOn: aCanvas]
+		cmd drawOn: aCanvas]

@@ -4,7 +4,7 @@ initialize
 	
 	self extent: 200@200.
 	
-	ogl := GL3_3 newInGLFW: ActiveWorld bounds.
+	ogl := GL3_3 newInGLFW: Display bounds.
 	
 	ogl makeCurrentDuring: [
 		tex := GLTexture new.

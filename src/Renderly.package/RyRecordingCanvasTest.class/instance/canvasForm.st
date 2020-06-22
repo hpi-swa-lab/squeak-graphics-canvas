@@ -3,5 +3,5 @@ canvasForm
 
 	| fc |
 	fc := FormCanvas extent: self canvasExtent.
-	canvas layer applyOn: fc.
+	canvas layer drawOn: fc.
 	^ fc form

@@ -1,5 +1,5 @@
 drawing-general
 fullDrawInCurrentLayer: aMorph
 
-	aMorph paintLayer: self layer.
+	aMorph drawLayer: self layer.
 	self fullDraw: aMorph
