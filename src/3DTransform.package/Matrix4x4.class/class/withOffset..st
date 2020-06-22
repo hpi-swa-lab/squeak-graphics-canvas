@@ -1,3 +1,4 @@
 instance creation
-withOffset: amount
-	^self identity setTranslation: amount
+withOffset: aVector
+
+	^ self identity setTranslation: aVector asVector3

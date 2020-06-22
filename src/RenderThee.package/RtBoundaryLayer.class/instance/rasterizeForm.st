@@ -3,5 +3,5 @@ rasterizeForm
 
 	| fc |
 	fc := FormCanvas extent: extent.
-	super drawOn: fc.
+	(RtCanvasCompositor canvas: fc) visitContainerLayer: self.
 	^ fc form
