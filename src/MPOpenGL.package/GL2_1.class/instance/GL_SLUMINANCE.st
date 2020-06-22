@@ -1,4 +1,0 @@
-constants
-GL_SLUMINANCE
-
-	^ 16r8C46

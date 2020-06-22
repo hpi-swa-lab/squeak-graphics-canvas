@@ -1,4 +1,0 @@
-constants
-GL_ACCUM_CLEAR_VALUE
-
-	^ 16rB80

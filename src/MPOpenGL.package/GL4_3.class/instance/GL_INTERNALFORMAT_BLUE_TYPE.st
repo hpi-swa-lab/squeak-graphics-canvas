@@ -1,4 +1,0 @@
-constants
-GL_INTERNALFORMAT_BLUE_TYPE
-
-	^ 16r827A

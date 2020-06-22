@@ -1,4 +1,0 @@
-constants
-GL_RENDERBUFFER_SAMPLES
-
-	^ 16r8CAB

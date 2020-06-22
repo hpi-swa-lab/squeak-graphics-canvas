@@ -1,4 +1,0 @@
-constants
-GL_ACCUM_GREEN_BITS
-
-	^ 16rD59

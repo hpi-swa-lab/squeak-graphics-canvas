@@ -1,4 +1,0 @@
-constants
-GL_COMPUTE_SUBROUTINE_UNIFORM
-
-	^ 16r92F3

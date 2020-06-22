@@ -1,4 +1,0 @@
-constants
-GL_ELEMENT_ARRAY_BUFFER_BINDING
-
-	^ 16r8895

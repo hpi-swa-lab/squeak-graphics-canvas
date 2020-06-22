@@ -1,4 +1,0 @@
-constants
-GL_CURRENT_INDEX
-
-	^ 16rB01

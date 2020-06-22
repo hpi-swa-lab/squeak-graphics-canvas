@@ -1,4 +1,0 @@
-constants
-GL_ACCUM_BUFFER_BIT
-
-	^ 16r200

@@ -1,4 +1,0 @@
-constants
-GL_INVALID_INDEX
-
-	^ 16rFFFFFFFF

@@ -1,4 +1,0 @@
-constants
-GL_CURRENT_RASTER_TEXTURE_COORDS
-
-	^ 16rB06

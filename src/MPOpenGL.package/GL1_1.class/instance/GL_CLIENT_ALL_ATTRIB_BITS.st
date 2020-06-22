@@ -1,4 +1,0 @@
-constants
-GL_CLIENT_ALL_ATTRIB_BITS
-
-	^ 16rFFFFFFFF

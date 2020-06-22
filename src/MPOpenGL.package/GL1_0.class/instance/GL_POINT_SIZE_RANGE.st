@@ -1,4 +1,0 @@
-constants
-GL_POINT_SIZE_RANGE
-
-	^ 16rB12

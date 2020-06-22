@@ -1,4 +1,0 @@
-constants
-GL_ARRAY_BUFFER
-
-	^ 16r8892

@@ -1,4 +1,0 @@
-constants
-GL_MAP_COHERENT_BIT
-
-	^ 16r80

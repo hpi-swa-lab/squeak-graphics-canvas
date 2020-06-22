@@ -1,4 +1,0 @@
-constants
-GL_PERSPECTIVE_CORRECTION_HINT
-
-	^ 16rC50

@@ -1,4 +1,0 @@
-constants
-GL_POLYGON_TOKEN
-
-	^ 16r703

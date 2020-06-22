@@ -1,4 +1,0 @@
-constants
-GL_DEPTH_RENDERABLE
-
-	^ 16r8287

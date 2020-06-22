@@ -1,4 +1,0 @@
-constants
-GL_PASS_THROUGH_TOKEN
-
-	^ 16r700

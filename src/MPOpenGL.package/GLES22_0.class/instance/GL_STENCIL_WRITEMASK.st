@@ -1,4 +1,0 @@
-constants
-GL_STENCIL_WRITEMASK
-
-	^ 16rB98

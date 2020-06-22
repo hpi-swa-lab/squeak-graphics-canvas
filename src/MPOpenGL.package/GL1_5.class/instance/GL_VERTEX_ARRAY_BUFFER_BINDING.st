@@ -1,4 +1,0 @@
-constants
-GL_VERTEX_ARRAY_BUFFER_BINDING
-
-	^ 16r8896

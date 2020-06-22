@@ -1,4 +1,0 @@
-constants
-GL_TEXTURE_BUFFER_OFFSET
-
-	^ 16r919D

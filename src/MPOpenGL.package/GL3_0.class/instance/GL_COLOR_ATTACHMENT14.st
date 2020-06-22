@@ -1,4 +1,0 @@
-constants
-GL_COLOR_ATTACHMENT14
-
-	^ 16r8CEE

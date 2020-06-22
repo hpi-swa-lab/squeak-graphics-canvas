@@ -1,4 +1,0 @@
-constants
-GL_MAX_CLIENT_ATTRIB_STACK_DEPTH
-
-	^ 16rD3B

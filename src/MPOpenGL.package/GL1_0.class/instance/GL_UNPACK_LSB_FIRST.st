@@ -1,4 +1,0 @@
-constants
-GL_UNPACK_LSB_FIRST
-
-	^ 16rCF1

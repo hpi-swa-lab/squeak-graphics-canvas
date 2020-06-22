@@ -1,4 +1,0 @@
-constants
-GL_PACK_SWAP_BYTES
-
-	^ 16rD00

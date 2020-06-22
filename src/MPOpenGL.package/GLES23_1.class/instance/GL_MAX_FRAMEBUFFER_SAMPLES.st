@@ -1,4 +1,0 @@
-constants
-GL_MAX_FRAMEBUFFER_SAMPLES
-
-	^ 16r9318

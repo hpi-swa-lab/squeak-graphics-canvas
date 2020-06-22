@@ -1,4 +1,0 @@
-constants
-GL_UNPACK_SWAP_BYTES
-
-	^ 16rCF0

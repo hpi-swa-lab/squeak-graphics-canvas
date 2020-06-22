@@ -1,4 +1,0 @@
-constants
-GL_SELECTION_BUFFER_SIZE
-
-	^ 16rDF4

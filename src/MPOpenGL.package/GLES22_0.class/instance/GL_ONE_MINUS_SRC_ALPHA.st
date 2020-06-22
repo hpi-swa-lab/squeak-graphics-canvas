@@ -1,4 +1,0 @@
-constants
-GL_ONE_MINUS_SRC_ALPHA
-
-	^ 16r303

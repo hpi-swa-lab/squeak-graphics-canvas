@@ -1,4 +1,0 @@
-constants
-GL_RENDERBUFFER_GREEN_SIZE
-
-	^ 16r8D51

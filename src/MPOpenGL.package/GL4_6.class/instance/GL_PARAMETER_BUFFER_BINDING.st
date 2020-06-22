@@ -1,4 +1,0 @@
-constants
-GL_PARAMETER_BUFFER_BINDING
-
-	^ 16r80EF

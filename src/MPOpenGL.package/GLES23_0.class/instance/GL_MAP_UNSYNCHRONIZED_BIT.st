@@ -1,4 +1,0 @@
-constants
-GL_MAP_UNSYNCHRONIZED_BIT
-
-	^ 16r20

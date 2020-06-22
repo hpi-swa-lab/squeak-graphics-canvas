@@ -1,4 +1,0 @@
-constants
-GL_NEAREST_MIPMAP_NEAREST
-
-	^ 16r2700

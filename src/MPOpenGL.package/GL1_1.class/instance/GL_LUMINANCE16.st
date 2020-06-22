@@ -1,4 +1,0 @@
-constants
-GL_LUMINANCE16
-
-	^ 16r8042

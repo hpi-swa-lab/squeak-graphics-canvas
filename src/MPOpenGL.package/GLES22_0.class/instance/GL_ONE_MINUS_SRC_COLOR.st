@@ -1,4 +1,0 @@
-constants
-GL_ONE_MINUS_SRC_COLOR
-
-	^ 16r301

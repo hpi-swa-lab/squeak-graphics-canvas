@@ -1,4 +1,0 @@
-constants
-GL_COMPUTE_SHADER_BIT
-
-	^ 16r20

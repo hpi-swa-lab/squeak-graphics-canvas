@@ -1,4 +1,0 @@
-constants
-GL_ONE_MINUS_CONSTANT_COLOR
-
-	^ 16r8002

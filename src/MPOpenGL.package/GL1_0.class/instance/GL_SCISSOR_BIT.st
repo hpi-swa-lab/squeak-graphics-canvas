@@ -1,4 +1,0 @@
-constants
-GL_SCISSOR_BIT
-
-	^ 16r80000

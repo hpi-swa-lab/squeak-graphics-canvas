@@ -1,4 +1,0 @@
-constants
-GL_TEXTURE_BINDING_BUFFER
-
-	^ 16r8C2C

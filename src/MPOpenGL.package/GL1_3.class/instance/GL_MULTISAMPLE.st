@@ -1,4 +1,0 @@
-constants
-GL_MULTISAMPLE
-
-	^ 16r809D

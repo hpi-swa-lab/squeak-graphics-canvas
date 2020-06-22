@@ -1,4 +1,0 @@
-constants
-GL_TEXTURE_COMPONENTS
-
-	^ 16r1003

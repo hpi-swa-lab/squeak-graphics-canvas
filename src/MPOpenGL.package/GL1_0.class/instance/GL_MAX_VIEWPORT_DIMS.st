@@ -1,4 +1,0 @@
-constants
-GL_MAX_VIEWPORT_DIMS
-
-	^ 16rD3A

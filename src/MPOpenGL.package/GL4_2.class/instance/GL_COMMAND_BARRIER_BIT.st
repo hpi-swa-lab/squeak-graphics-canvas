@@ -1,4 +1,0 @@
-constants
-GL_COMMAND_BARRIER_BIT
-
-	^ 16r40

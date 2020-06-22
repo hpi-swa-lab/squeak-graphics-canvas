@@ -1,4 +1,0 @@
-constants
-GL_POLYGON_STIPPLE_BIT
-
-	^ 16r10

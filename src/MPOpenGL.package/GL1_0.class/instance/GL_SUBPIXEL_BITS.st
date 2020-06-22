@@ -1,4 +1,0 @@
-constants
-GL_SUBPIXEL_BITS
-
-	^ 16rD50

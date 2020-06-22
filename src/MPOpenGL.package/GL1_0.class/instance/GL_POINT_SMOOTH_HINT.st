@@ -1,4 +1,0 @@
-constants
-GL_POINT_SMOOTH_HINT
-
-	^ 16rC51

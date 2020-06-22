@@ -1,4 +1,0 @@
-constants
-GL_PROJECTION_STACK_DEPTH
-
-	^ 16rBA4

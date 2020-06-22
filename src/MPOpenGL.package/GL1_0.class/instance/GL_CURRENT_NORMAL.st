@@ -1,4 +1,0 @@
-constants
-GL_CURRENT_NORMAL
-
-	^ 16rB02

@@ -1,4 +1,0 @@
-constants
-GL_MAX_COMBINED_ATOMIC_COUNTERS
-
-	^ 16r92D7

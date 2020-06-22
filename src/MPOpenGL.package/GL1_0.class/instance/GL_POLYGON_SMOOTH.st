@@ -1,4 +1,0 @@
-constants
-GL_POLYGON_SMOOTH
-
-	^ 16rB41

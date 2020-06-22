@@ -1,4 +1,0 @@
-constants
-GL_TESS_CONTROL_OUTPUT_VERTICES
-
-	^ 16r8E75

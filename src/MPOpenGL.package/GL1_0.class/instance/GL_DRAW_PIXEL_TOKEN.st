@@ -1,4 +1,0 @@
-constants
-GL_DRAW_PIXEL_TOKEN
-
-	^ 16r705

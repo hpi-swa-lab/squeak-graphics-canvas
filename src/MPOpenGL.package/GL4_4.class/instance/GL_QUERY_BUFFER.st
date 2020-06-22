@@ -1,4 +1,0 @@
-constants
-GL_QUERY_BUFFER
-
-	^ 16r9192

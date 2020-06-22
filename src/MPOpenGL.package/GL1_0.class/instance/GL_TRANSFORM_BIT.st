@@ -1,4 +1,0 @@
-constants
-GL_TRANSFORM_BIT
-
-	^ 16r1000

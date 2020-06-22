@@ -1,4 +1,0 @@
-constants
-GL_CURRENT_COLOR
-
-	^ 16rB00

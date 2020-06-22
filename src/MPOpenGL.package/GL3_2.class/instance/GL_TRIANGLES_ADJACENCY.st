@@ -1,4 +1,0 @@
-constants
-GL_TRIANGLES_ADJACENCY
-
-	^ 16rC

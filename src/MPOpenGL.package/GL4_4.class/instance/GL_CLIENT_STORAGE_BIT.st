@@ -1,4 +1,0 @@
-constants
-GL_CLIENT_STORAGE_BIT
-
-	^ 16r200

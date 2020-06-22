@@ -1,4 +1,0 @@
-constants
-GL_MAX_VERTEX_OUTPUT_COMPONENTS
-
-	^ 16r9122

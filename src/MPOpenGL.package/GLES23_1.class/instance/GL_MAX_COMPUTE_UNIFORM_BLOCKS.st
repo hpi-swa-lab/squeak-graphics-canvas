@@ -1,4 +1,0 @@
-constants
-GL_MAX_COMPUTE_UNIFORM_BLOCKS
-
-	^ 16r91BB

@@ -1,4 +1,0 @@
-constants
-GL_INVALID_OPERATION
-
-	^ 16r502

@@ -1,4 +1,0 @@
-constants
-GL_STENCIL_CLEAR_VALUE
-
-	^ 16rB91

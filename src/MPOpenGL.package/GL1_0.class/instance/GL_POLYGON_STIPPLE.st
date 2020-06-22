@@ -1,4 +1,0 @@
-constants
-GL_POLYGON_STIPPLE
-
-	^ 16rB42

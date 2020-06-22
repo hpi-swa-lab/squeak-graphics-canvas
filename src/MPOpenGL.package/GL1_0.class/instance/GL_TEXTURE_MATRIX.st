@@ -1,4 +1,0 @@
-constants
-GL_TEXTURE_MATRIX
-
-	^ 16rBA8

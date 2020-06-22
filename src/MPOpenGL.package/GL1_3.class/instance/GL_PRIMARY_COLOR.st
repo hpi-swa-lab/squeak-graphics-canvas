@@ -1,4 +1,0 @@
-constants
-GL_PRIMARY_COLOR
-
-	^ 16r8577

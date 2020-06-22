@@ -1,4 +1,0 @@
-constants
-GL_MAX_SUBROUTINES
-
-	^ 16r8DE7

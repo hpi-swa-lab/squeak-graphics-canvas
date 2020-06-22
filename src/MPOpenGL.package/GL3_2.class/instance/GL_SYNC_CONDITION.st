@@ -1,4 +1,0 @@
-constants
-GL_SYNC_CONDITION
-
-	^ 16r9113

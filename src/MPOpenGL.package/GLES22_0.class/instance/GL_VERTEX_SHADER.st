@@ -1,4 +1,0 @@
-constants
-GL_VERTEX_SHADER
-
-	^ 16r8B31

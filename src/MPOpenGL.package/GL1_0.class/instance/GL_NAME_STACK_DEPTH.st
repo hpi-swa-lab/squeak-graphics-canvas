@@ -1,4 +1,0 @@
-constants
-GL_NAME_STACK_DEPTH
-
-	^ 16rD70

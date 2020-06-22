@@ -1,4 +1,0 @@
-constants
-GL_CURRENT_RASTER_DISTANCE
-
-	^ 16rB09

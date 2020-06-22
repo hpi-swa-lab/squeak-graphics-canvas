@@ -1,4 +1,0 @@
-constants
-GL_COMPUTE_SUBROUTINE
-
-	^ 16r92ED

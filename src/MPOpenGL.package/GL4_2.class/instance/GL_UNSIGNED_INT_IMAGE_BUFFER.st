@@ -1,4 +1,0 @@
-constants
-GL_UNSIGNED_INT_IMAGE_BUFFER
-
-	^ 16r9067

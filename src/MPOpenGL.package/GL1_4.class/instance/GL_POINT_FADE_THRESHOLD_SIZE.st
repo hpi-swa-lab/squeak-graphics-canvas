@@ -1,4 +1,0 @@
-constants
-GL_POINT_FADE_THRESHOLD_SIZE
-
-	^ 16r8128

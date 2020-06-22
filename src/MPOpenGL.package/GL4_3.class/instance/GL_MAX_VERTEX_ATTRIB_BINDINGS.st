@@ -1,4 +1,0 @@
-constants
-GL_MAX_VERTEX_ATTRIB_BINDINGS
-
-	^ 16r82DA

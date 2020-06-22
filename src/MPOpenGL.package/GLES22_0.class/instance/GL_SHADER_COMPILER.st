@@ -1,4 +1,0 @@
-constants
-GL_SHADER_COMPILER
-
-	^ 16r8DFA

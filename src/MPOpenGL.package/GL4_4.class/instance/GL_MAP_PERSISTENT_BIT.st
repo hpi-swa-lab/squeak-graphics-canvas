@@ -1,4 +1,0 @@
-constants
-GL_MAP_PERSISTENT_BIT
-
-	^ 16r40

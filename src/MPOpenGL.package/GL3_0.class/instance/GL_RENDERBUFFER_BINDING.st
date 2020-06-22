@@ -1,4 +1,0 @@
-constants
-GL_RENDERBUFFER_BINDING
-
-	^ 16r8CA7

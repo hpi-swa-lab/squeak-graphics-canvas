@@ -1,4 +1,0 @@
-constants
-GL_LINE_RESET_TOKEN
-
-	^ 16r707

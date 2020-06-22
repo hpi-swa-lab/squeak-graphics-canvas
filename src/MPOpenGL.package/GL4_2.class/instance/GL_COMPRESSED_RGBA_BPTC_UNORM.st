@@ -1,4 +1,0 @@
-constants
-GL_COMPRESSED_RGBA_BPTC_UNORM
-
-	^ 16r8E8C

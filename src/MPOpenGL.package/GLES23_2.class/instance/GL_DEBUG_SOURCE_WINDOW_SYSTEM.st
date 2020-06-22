@@ -1,4 +1,0 @@
-constants
-GL_DEBUG_SOURCE_WINDOW_SYSTEM
-
-	^ 16r8247

@@ -1,4 +1,0 @@
-constants
-GL_EXTENSIONS
-
-	^ 16r1F03

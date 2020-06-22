@@ -1,4 +1,0 @@
-constants
-GL_CLAMP_READ_COLOR
-
-	^ 16r891C

@@ -1,4 +1,0 @@
-constants
-GL_VIEW_CLASS_64_BITS
-
-	^ 16r82C6

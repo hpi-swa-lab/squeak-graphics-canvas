@@ -1,4 +1,0 @@
-constants
-GL_SHADER_IMAGE_ATOMIC
-
-	^ 16r82A6

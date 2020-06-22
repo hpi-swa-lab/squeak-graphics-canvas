@@ -1,4 +1,0 @@
-constants
-GL_LIGHT_MODEL_TWO_SIDE
-
-	^ 16rB52

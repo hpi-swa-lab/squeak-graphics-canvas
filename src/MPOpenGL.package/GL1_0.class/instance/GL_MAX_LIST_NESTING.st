@@ -1,4 +1,0 @@
-constants
-GL_MAX_LIST_NESTING
-
-	^ 16rB31

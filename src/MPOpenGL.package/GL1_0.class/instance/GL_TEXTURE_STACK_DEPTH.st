@@ -1,4 +1,0 @@
-constants
-GL_TEXTURE_STACK_DEPTH
-
-	^ 16rBA5

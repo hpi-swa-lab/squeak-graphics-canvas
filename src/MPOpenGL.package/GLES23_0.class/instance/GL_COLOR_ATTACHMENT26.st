@@ -1,4 +1,0 @@
-constants
-GL_COLOR_ATTACHMENT26
-
-	^ 16r8CFA

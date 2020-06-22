@@ -1,4 +1,0 @@
-constants
-GL_PACK_ROW_LENGTH
-
-	^ 16rD02

@@ -1,4 +1,0 @@
-constants
-GL_SHADER_STORAGE_BARRIER_BIT
-
-	^ 16r2000

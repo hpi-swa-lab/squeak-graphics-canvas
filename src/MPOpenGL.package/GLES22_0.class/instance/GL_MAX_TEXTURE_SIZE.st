@@ -1,4 +1,0 @@
-constants
-GL_MAX_TEXTURE_SIZE
-
-	^ 16rD33

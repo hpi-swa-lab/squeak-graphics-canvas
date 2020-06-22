@@ -1,4 +1,0 @@
-constants
-GL_LINE_WIDTH_RANGE
-
-	^ 16rB22

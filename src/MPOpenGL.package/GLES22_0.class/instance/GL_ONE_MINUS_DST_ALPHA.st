@@ -1,4 +1,0 @@
-constants
-GL_ONE_MINUS_DST_ALPHA
-
-	^ 16r305

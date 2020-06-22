@@ -1,4 +1,0 @@
-constants
-GL_LIGHT_MODEL_LOCAL_VIEWER
-
-	^ 16rB51

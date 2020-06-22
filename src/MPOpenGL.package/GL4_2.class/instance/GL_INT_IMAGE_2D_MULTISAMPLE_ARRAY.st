@@ -1,4 +1,0 @@
-constants
-GL_INT_IMAGE_2D_MULTISAMPLE_ARRAY
-
-	^ 16r9061

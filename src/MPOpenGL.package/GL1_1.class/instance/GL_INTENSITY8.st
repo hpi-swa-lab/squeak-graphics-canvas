@@ -1,4 +1,0 @@
-constants
-GL_INTENSITY8
-
-	^ 16r804B

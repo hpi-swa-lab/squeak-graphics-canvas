@@ -1,4 +1,0 @@
-constants
-GL_QUERY_TARGET
-
-	^ 16r82EA

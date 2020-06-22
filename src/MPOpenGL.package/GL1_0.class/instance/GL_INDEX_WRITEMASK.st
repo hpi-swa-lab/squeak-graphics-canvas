@@ -1,4 +1,0 @@
-constants
-GL_INDEX_WRITEMASK
-
-	^ 16rC21

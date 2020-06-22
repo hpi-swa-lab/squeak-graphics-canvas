@@ -1,4 +1,0 @@
-constants
-GL_INT_IMAGE_2D_MULTISAMPLE
-
-	^ 16r9060

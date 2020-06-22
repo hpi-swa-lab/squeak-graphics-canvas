@@ -1,4 +1,0 @@
-constants
-GL_QUERY_BUFFER_BARRIER_BIT
-
-	^ 16r8000

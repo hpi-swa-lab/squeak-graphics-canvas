@@ -1,4 +1,0 @@
-constants
-GL_LINE_STIPPLE_REPEAT
-
-	^ 16rB26

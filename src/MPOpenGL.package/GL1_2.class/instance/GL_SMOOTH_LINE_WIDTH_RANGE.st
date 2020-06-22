@@ -1,4 +1,0 @@
-constants
-GL_SMOOTH_LINE_WIDTH_RANGE
-
-	^ 16rB22

@@ -1,4 +1,0 @@
-constants
-GL_UNIFORM_BARRIER_BIT
-
-	^ 16r4

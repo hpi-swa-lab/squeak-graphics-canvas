@@ -1,4 +1,0 @@
-constants
-GL_VERTEX_ARRAY_STRIDE
-
-	^ 16r807C

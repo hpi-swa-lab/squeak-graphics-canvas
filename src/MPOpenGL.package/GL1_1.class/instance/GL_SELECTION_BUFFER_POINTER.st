@@ -1,4 +1,0 @@
-constants
-GL_SELECTION_BUFFER_POINTER
-
-	^ 16rDF3

@@ -1,4 +1,0 @@
-constants
-GL_DEPTH_CLEAR_VALUE
-
-	^ 16rB73

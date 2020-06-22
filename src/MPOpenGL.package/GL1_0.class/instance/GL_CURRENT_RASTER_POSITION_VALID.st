@@ -1,4 +1,0 @@
-constants
-GL_CURRENT_RASTER_POSITION_VALID
-
-	^ 16rB08

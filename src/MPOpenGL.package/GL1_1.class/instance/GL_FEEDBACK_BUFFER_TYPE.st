@@ -1,4 +1,0 @@
-constants
-GL_FEEDBACK_BUFFER_TYPE
-
-	^ 16rDF2

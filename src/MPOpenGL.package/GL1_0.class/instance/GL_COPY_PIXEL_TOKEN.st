@@ -1,4 +1,0 @@
-constants
-GL_COPY_PIXEL_TOKEN
-
-	^ 16r706

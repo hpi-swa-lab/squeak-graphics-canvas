@@ -1,4 +1,0 @@
-constants
-GL_DISPATCH_INDIRECT_BUFFER
-
-	^ 16r90EE

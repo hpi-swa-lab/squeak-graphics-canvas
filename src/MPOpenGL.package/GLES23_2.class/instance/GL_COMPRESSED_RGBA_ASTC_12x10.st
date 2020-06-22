@@ -1,4 +1,0 @@
-constants
-GL_COMPRESSED_RGBA_ASTC_12x10
-
-	^ 16r93BC

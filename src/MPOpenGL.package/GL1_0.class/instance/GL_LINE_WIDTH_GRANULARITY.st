@@ -1,4 +1,0 @@
-constants
-GL_LINE_WIDTH_GRANULARITY
-
-	^ 16rB23

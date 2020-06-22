@@ -1,4 +1,0 @@
-constants
-GL_GEOMETRY_TEXTURE
-
-	^ 16r829E

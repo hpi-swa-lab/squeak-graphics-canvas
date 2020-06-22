@@ -1,4 +1,0 @@
-constants
-GL_DIFFERENCE
-
-	^ 16r929E

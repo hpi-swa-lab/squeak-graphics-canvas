@@ -1,4 +1,0 @@
-constants
-GL_DEPTH_BUFFER_BIT
-
-	^ 16r100

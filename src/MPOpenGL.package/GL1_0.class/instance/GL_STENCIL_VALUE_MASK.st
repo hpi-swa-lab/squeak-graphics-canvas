@@ -1,4 +1,0 @@
-constants
-GL_STENCIL_VALUE_MASK
-
-	^ 16rB93

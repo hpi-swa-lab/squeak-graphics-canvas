@@ -1,4 +1,0 @@
-constants
-GL_UNIFORM_BUFFER_BINDING
-
-	^ 16r8A28

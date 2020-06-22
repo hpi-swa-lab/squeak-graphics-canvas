@@ -1,4 +1,0 @@
-constants
-GL_UNSIGNED_INT_SAMPLER_BUFFER
-
-	^ 16r8DD8

@@ -1,4 +1,0 @@
-constants
-GL_FLOAT_32_UNSIGNED_INT_24_8_REV
-
-	^ 16r8DAD

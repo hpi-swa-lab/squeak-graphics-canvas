@@ -1,4 +1,0 @@
-constants
-GL_UNPACK_ROW_LENGTH
-
-	^ 16rCF2

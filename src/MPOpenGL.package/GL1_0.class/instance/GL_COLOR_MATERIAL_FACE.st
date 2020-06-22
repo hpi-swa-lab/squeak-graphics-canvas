@@ -1,4 +1,0 @@
-constants
-GL_COLOR_MATERIAL_FACE
-
-	^ 16rB55

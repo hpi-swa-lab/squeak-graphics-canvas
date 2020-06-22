@@ -1,4 +1,0 @@
-constants
-GL_UNPACK_ALIGNMENT
-
-	^ 16rCF5

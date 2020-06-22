@@ -1,4 +1,0 @@
-constants
-GL_MAP2_GRID_DOMAIN
-
-	^ 16rDD2

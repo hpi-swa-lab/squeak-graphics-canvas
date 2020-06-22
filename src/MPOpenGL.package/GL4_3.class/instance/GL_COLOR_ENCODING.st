@@ -1,4 +1,0 @@
-constants
-GL_COLOR_ENCODING
-
-	^ 16r8296

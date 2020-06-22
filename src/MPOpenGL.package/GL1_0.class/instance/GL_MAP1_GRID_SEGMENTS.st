@@ -1,4 +1,0 @@
-constants
-GL_MAP1_GRID_SEGMENTS
-
-	^ 16rDD1

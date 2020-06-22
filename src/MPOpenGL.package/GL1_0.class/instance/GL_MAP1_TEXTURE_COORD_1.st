@@ -1,4 +1,0 @@
-constants
-GL_MAP1_TEXTURE_COORD_1
-
-	^ 16rD93

@@ -1,4 +1,0 @@
-constants
-GL_FOG_COORDINATE_ARRAY_STRIDE
-
-	^ 16r8455

@@ -1,4 +1,0 @@
-constants
-GL_PROJECTION
-
-	^ 16r1701

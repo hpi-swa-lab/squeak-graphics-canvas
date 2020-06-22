@@ -1,4 +1,0 @@
-constants
-GL_MAP2_TEXTURE_COORD_4
-
-	^ 16rDB6

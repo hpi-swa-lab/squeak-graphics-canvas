@@ -1,4 +1,0 @@
-constants
-GL_COMPRESSED_SIGNED_RG11_EAC
-
-	^ 16r9273

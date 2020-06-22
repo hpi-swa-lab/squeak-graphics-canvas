@@ -1,4 +1,0 @@
-constants
-GL_MAX_PIXEL_MAP_TABLE
-
-	^ 16rD34

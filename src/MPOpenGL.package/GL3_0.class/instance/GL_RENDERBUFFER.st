@@ -1,4 +1,0 @@
-constants
-GL_RENDERBUFFER
-
-	^ 16r8D41

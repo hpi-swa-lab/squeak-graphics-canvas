@@ -1,4 +1,0 @@
-constants
-GL_DRAW_BUFFER6
-
-	^ 16r882B

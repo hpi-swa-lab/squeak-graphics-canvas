@@ -1,4 +1,0 @@
-constants
-GL_MAX_COMBINED_DIMENSIONS
-
-	^ 16r8282

@@ -1,4 +1,0 @@
-constants
-GL_MODELVIEW_STACK_DEPTH
-
-	^ 16rBA3

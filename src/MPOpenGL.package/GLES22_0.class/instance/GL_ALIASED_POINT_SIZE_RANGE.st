@@ -1,4 +1,0 @@
-constants
-GL_ALIASED_POINT_SIZE_RANGE
-
-	^ 16r846D

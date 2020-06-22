@@ -1,4 +1,0 @@
-constants
-GL_ONE_MINUS_CONSTANT_ALPHA
-
-	^ 16r8004

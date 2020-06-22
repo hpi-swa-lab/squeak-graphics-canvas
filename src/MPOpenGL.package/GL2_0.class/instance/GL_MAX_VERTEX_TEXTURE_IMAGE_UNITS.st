@@ -1,4 +1,0 @@
-constants
-GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS
-
-	^ 16r8B4C

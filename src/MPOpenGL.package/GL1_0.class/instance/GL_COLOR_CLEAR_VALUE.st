@@ -1,4 +1,0 @@
-constants
-GL_COLOR_CLEAR_VALUE
-
-	^ 16rC22

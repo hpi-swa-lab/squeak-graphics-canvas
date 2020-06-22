@@ -1,4 +1,0 @@
-constants
-GL_CONSTANT_ATTENUATION
-
-	^ 16r1207

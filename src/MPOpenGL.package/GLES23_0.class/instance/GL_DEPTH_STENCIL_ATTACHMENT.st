@@ -1,4 +1,0 @@
-constants
-GL_DEPTH_STENCIL_ATTACHMENT
-
-	^ 16r821A

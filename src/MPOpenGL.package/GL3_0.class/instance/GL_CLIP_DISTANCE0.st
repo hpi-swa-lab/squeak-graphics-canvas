@@ -1,4 +1,0 @@
-constants
-GL_CLIP_DISTANCE0
-
-	^ 16r3000

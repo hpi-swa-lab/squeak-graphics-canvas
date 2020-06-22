@@ -1,4 +1,0 @@
-constants
-GL_MAP_INVALIDATE_RANGE_BIT
-
-	^ 16r4

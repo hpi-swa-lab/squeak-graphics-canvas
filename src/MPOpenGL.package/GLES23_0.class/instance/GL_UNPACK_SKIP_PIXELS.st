@@ -1,4 +1,0 @@
-constants
-GL_UNPACK_SKIP_PIXELS
-
-	^ 16rCF4

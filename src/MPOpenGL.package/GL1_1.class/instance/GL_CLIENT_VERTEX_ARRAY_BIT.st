@@ -1,4 +1,0 @@
-constants
-GL_CLIENT_VERTEX_ARRAY_BIT
-
-	^ 16r2

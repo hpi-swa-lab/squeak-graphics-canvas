@@ -1,4 +1,0 @@
-constants
-GL_TEXTURE_MIN_LOD
-
-	^ 16r813A

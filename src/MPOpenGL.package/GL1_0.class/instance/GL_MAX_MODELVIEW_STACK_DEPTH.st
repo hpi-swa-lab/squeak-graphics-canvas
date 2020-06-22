@@ -1,4 +1,0 @@
-constants
-GL_MAX_MODELVIEW_STACK_DEPTH
-
-	^ 16rD36

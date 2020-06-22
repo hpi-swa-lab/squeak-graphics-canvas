@@ -1,4 +1,0 @@
-constants
-GL_SPOT_DIRECTION
-
-	^ 16r1204

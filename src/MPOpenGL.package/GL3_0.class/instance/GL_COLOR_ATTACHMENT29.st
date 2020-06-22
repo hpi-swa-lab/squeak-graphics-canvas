@@ -1,4 +1,0 @@
-constants
-GL_COLOR_ATTACHMENT29
-
-	^ 16r8CFD

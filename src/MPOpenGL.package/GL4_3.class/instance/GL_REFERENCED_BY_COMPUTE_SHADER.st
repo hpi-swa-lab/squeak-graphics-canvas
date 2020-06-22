@@ -1,4 +1,0 @@
-constants
-GL_REFERENCED_BY_COMPUTE_SHADER
-
-	^ 16r930B

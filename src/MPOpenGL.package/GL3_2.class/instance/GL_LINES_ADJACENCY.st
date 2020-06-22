@@ -1,4 +1,0 @@
-constants
-GL_LINES_ADJACENCY
-
-	^ 16rA

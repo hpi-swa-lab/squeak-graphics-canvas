@@ -1,4 +1,0 @@
-constants
-GL_DEPTH_STENCIL_TEXTURE_MODE
-
-	^ 16r90EA

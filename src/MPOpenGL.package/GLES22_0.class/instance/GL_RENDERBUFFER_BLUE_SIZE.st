@@ -1,4 +1,0 @@
-constants
-GL_RENDERBUFFER_BLUE_SIZE
-
-	^ 16r8D52

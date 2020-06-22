@@ -1,4 +1,0 @@
-constants
-GL_PROXY_TEXTURE_CUBE_MAP_ARRAY
-
-	^ 16r900B

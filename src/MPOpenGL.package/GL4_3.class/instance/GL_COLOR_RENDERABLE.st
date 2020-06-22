@@ -1,4 +1,0 @@
-constants
-GL_COLOR_RENDERABLE
-
-	^ 16r8286

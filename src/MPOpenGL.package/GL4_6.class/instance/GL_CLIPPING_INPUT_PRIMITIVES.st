@@ -1,4 +1,0 @@
-constants
-GL_CLIPPING_INPUT_PRIMITIVES
-
-	^ 16r82F6

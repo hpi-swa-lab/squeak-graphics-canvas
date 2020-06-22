@@ -1,4 +1,0 @@
-constants
-GL_ATOMIC_COUNTER_BUFFER_INDEX
-
-	^ 16r9301

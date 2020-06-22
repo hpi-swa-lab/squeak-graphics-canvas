@@ -1,4 +1,0 @@
-constants
-GL_BLEND_EQUATION
-
-	^ 16r8009

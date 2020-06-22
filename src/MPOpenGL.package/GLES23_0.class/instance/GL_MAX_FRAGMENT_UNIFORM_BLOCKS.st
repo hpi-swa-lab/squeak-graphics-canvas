@@ -1,4 +1,0 @@
-constants
-GL_MAX_FRAGMENT_UNIFORM_BLOCKS
-
-	^ 16r8A2D

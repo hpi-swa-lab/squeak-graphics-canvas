@@ -1,4 +1,0 @@
-constants
-GL_BUFFER_UPDATE_BARRIER_BIT
-
-	^ 16r200

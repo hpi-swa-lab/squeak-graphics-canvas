@@ -1,4 +1,0 @@
-constants
-GL_TEXTURE_BIT
-
-	^ 16r40000

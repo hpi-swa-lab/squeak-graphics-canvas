@@ -1,4 +1,0 @@
-constants
-GL_LINE_SMOOTH_HINT
-
-	^ 16rC52

@@ -1,4 +1,0 @@
-constants
-GL_PROJECTION_MATRIX
-
-	^ 16rBA7

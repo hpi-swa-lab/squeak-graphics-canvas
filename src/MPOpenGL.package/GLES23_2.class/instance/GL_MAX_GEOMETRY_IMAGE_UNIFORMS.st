@@ -1,4 +1,0 @@
-constants
-GL_MAX_GEOMETRY_IMAGE_UNIFORMS
-
-	^ 16r90CD

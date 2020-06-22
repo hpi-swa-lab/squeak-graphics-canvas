@@ -1,4 +1,0 @@
-constants
-GL_SECONDARY_COLOR_ARRAY_STRIDE
-
-	^ 16r845C

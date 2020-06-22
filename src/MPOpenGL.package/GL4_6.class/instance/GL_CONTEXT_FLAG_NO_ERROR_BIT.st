@@ -1,4 +1,0 @@
-constants
-GL_CONTEXT_FLAG_NO_ERROR_BIT
-
-	^ 16r8

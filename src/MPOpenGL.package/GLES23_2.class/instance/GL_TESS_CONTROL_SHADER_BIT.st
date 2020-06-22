@@ -1,4 +1,0 @@
-constants
-GL_TESS_CONTROL_SHADER_BIT
-
-	^ 16r8

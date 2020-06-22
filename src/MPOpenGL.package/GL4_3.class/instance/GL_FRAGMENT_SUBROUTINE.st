@@ -1,4 +1,0 @@
-constants
-GL_FRAGMENT_SUBROUTINE
-
-	^ 16r92EC

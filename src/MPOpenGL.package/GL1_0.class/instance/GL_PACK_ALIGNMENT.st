@@ -1,4 +1,0 @@
-constants
-GL_PACK_ALIGNMENT
-
-	^ 16rD05

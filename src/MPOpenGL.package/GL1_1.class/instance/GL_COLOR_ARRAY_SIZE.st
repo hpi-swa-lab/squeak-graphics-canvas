@@ -1,4 +1,0 @@
-constants
-GL_COLOR_ARRAY_SIZE
-
-	^ 16r8081

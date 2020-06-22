@@ -1,4 +1,0 @@
-constants
-GL_CLIENT_ATTRIB_STACK_DEPTH
-
-	^ 16rBB1

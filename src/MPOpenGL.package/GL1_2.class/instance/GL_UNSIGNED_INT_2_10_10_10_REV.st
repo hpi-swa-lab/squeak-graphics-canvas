@@ -1,4 +1,0 @@
-constants
-GL_UNSIGNED_INT_2_10_10_10_REV
-
-	^ 16r8368

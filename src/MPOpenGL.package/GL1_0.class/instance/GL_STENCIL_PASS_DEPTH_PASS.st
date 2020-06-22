@@ -1,4 +1,0 @@
-constants
-GL_STENCIL_PASS_DEPTH_PASS
-
-	^ 16rB96

@@ -1,4 +1,0 @@
-constants
-GL_COLOR_MATERIAL
-
-	^ 16rB57

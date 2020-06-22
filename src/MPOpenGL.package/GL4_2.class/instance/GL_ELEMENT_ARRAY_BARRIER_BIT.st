@@ -1,4 +1,0 @@
-constants
-GL_ELEMENT_ARRAY_BARRIER_BIT
-
-	^ 16r2

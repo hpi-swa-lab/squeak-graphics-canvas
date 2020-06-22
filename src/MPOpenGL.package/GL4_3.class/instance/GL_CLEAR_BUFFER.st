@@ -1,4 +1,0 @@
-constants
-GL_CLEAR_BUFFER
-
-	^ 16r82B4

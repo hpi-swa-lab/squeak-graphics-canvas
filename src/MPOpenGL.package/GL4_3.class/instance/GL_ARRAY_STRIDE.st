@@ -1,4 +1,0 @@
-constants
-GL_ARRAY_STRIDE
-
-	^ 16r92FE

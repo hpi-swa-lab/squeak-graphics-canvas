@@ -1,4 +1,0 @@
-constants
-GL_COLOR_BUFFER_BIT
-
-	^ 16r4000

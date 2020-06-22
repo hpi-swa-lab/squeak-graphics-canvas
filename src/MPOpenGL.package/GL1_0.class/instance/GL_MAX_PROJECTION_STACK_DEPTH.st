@@ -1,4 +1,0 @@
-constants
-GL_MAX_PROJECTION_STACK_DEPTH
-
-	^ 16rD38

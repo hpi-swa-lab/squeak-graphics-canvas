@@ -1,4 +1,0 @@
-constants
-GL_DEPTH_WRITEMASK
-
-	^ 16rB72

@@ -1,4 +1,0 @@
-constants
-GL_COLOR_WRITEMASK
-
-	^ 16rC23

@@ -1,4 +1,0 @@
-constants
-GL_TEXTURE_COMPRESSION_HINT
-
-	^ 16r84EF

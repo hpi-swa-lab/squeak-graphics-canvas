@@ -1,4 +1,0 @@
-constants
-GL_MAX_DUAL_SOURCE_DRAW_BUFFERS
-
-	^ 16r88FC

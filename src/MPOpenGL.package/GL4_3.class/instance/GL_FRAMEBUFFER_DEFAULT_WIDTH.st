@@ -1,4 +1,0 @@
-constants
-GL_FRAMEBUFFER_DEFAULT_WIDTH
-
-	^ 16r9310

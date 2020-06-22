@@ -1,4 +1,0 @@
-constants
-GL_PIXEL_MAP_B_TO_B_SIZE
-
-	^ 16rCB8

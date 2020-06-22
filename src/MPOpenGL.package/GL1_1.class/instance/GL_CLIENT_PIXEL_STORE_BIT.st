@@ -1,4 +1,0 @@
-constants
-GL_CLIENT_PIXEL_STORE_BIT
-
-	^ 16r1

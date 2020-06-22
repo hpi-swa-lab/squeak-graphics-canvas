@@ -1,4 +1,0 @@
-constants
-GL_LINE_STIPPLE_PATTERN
-
-	^ 16rB25

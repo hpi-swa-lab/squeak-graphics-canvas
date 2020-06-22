@@ -1,4 +1,0 @@
-constants
-GL_CURRENT_RASTER_INDEX
-
-	^ 16rB05

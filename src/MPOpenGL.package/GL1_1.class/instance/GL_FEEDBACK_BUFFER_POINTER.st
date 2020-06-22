@@ -1,4 +1,0 @@
-constants
-GL_FEEDBACK_BUFFER_POINTER
-
-	^ 16rDF0

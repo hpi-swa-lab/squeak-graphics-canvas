@@ -1,4 +1,0 @@
-constants
-GL_ATOMIC_COUNTER_BUFFER_START
-
-	^ 16r92C2

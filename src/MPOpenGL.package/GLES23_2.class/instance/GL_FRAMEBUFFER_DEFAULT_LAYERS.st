@@ -1,4 +1,0 @@
-constants
-GL_FRAMEBUFFER_DEFAULT_LAYERS
-
-	^ 16r9312

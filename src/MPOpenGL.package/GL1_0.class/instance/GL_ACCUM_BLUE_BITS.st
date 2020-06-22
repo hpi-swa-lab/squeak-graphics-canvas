@@ -1,4 +1,0 @@
-constants
-GL_ACCUM_BLUE_BITS
-
-	^ 16rD5A

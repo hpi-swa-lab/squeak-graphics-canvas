@@ -1,4 +1,0 @@
-constants
-GL_TEXTURE_SWIZZLE_G
-
-	^ 16r8E43

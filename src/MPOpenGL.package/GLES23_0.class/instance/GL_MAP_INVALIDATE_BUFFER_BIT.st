@@ -1,4 +1,0 @@
-constants
-GL_MAP_INVALIDATE_BUFFER_BIT
-
-	^ 16r8

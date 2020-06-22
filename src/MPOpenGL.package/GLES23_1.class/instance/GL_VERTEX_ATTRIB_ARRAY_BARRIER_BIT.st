@@ -1,4 +1,0 @@
-constants
-GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT
-
-	^ 16r1

@@ -1,4 +1,0 @@
-constants
-GL_FRAMEBUFFER_BARRIER_BIT
-
-	^ 16r400

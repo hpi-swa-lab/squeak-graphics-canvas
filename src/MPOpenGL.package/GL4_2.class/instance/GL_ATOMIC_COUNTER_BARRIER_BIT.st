@@ -1,4 +1,0 @@
-constants
-GL_ATOMIC_COUNTER_BARRIER_BIT
-
-	^ 16r1000

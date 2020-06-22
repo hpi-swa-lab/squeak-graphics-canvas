@@ -1,4 +1,0 @@
-constants
-GL_PACK_SKIP_PIXELS
-
-	^ 16rD04

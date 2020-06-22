@@ -1,4 +1,0 @@
-constants
-GL_TEXTURE_CUBE_MAP_NEGATIVE_X
-
-	^ 16r8516

@@ -1,4 +1,0 @@
-constants
-GL_MODELVIEW_MATRIX
-
-	^ 16rBA6

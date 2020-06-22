@@ -1,4 +1,0 @@
-constants
-GL_IMAGE_BUFFER
-
-	^ 16r9051

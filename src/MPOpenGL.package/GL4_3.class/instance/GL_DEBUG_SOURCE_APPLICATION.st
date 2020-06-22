@@ -1,4 +1,0 @@
-constants
-GL_DEBUG_SOURCE_APPLICATION
-
-	^ 16r824A

@@ -1,4 +1,0 @@
-constants
-GL_POINT_SIZE_GRANULARITY
-
-	^ 16rB13

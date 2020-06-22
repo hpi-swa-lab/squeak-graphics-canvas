@@ -1,4 +1,0 @@
-constants
-GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT
-
-	^ 16r4

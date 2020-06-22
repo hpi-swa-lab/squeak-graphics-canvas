@@ -1,4 +1,0 @@
-constants
-GL_INTERNALFORMAT_GREEN_TYPE
-
-	^ 16r8279

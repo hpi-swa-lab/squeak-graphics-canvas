@@ -1,4 +1,0 @@
-constants
-GL_TEXTURE_BUFFER_SIZE
-
-	^ 16r919E

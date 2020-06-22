@@ -1,4 +1,0 @@
-constants
-GL_ALPHA_TEST_FUNC
-
-	^ 16rBC1

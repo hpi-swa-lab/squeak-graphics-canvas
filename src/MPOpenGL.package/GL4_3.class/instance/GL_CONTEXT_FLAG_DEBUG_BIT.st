@@ -1,4 +1,0 @@
-constants
-GL_CONTEXT_FLAG_DEBUG_BIT
-
-	^ 16r2

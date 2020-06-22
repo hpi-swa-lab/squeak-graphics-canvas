@@ -1,4 +1,0 @@
-constants
-GL_FEEDBACK_BUFFER_SIZE
-
-	^ 16rDF1

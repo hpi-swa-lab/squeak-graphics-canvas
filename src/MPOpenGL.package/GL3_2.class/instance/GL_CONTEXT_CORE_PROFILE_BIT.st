@@ -1,4 +1,0 @@
-constants
-GL_CONTEXT_CORE_PROFILE_BIT
-
-	^ 16r1

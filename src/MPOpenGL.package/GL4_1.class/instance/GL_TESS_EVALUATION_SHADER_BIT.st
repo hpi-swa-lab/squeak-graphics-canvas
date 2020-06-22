@@ -1,4 +1,0 @@
-constants
-GL_TESS_EVALUATION_SHADER_BIT
-
-	^ 16r10

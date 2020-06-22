@@ -1,4 +1,0 @@
-constants
-GL_MAX_COMBINED_IMAGE_UNIFORMS
-
-	^ 16r90CF

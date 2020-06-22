@@ -1,4 +1,0 @@
-constants
-GL_MAX_CLIP_PLANES
-
-	^ 16rD32

@@ -1,4 +1,0 @@
-constants
-GL_SEPARATE_SPECULAR_COLOR
-
-	^ 16r81FA

@@ -1,4 +1,0 @@
-constants
-GL_SPHERE_MAP
-
-	^ 16r2402

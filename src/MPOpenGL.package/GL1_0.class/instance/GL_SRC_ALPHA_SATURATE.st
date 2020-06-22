@@ -1,4 +1,0 @@
-constants
-GL_SRC_ALPHA_SATURATE
-
-	^ 16r308

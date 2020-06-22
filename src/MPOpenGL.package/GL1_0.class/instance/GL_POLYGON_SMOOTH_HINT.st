@@ -1,4 +1,0 @@
-constants
-GL_POLYGON_SMOOTH_HINT
-
-	^ 16rC53

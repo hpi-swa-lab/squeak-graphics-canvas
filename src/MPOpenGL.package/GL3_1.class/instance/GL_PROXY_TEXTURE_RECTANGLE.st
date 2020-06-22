@@ -1,4 +1,0 @@
-constants
-GL_PROXY_TEXTURE_RECTANGLE
-
-	^ 16r84F7
