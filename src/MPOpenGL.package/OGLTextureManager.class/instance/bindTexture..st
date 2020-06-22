@@ -6,4 +6,4 @@ bindTexture: aTForm
 		handle timeStamp: ogl timeStamp.
 		memFrame := memFrame + handle bytesUsed.
 	].
-	ogl glBindTexture: ogl GL_TEXTURE_2D with: handle glID.
+	ogl glBindTexture: GL_TEXTURE_2D with: handle glID.

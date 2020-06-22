@@ -1,23 +1,23 @@
 test
-test_example
+test_blurredExample
 	<timeout: 5>
 	| frames startTime deltaTime framesPerSec program vbo vao mvp tex |
 	frames := 0.
 	startTime := Time millisecondClockValue.
 	tex := OGLTexture new
 				form: (Display copy: bounds).
-	program := GLProgram newFor: ogl shaders: {VertexShader code: self vertexShader. FragmentShader code: self fragmentShader }.
+	program := GLProgram newFor: ogl shaders: {VertexShader code: self blurVertexShader. FragmentShader code: self blurFragmentShader }.
 	ogl checkForError.
 	vao := GLVertexArrayObject newFor: ogl.
 	vao bind: ogl.
 	vbo := GLBuffer newFor: ogl.
 	vbo
 		data: {
-			-1. -1. 0 . 0 .
-			1.  -1. 0 . 1 .
-			-1. 1. 1 . 0	.
-			1.   1. 1 . 1
-		} asFloat32Array
+				-1. -1. 0 . 1 .
+				1.  -1. 1 . 1 .
+				-1. 1. 0 . 0	.
+				1.   1. 1 . 0
+			} asFloat32Array
 		usage: GL_STATIC_DRAW
 		componentsPerVertex: 4.
 	ogl glDisable: GL_CULL_FACE.

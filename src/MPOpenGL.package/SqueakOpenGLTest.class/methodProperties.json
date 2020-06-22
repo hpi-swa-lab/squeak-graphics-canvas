@@ -2,10 +2,13 @@
 	"class" : {
 		 },
 	"instance" : {
+		"blurFragmentShader" : "sr 6/22/2020 11:37",
+		"blurVertexShader" : "sr 6/22/2020 11:36",
 		"fragmentShader" : "tobe 6/15/2020 20:24",
 		"setUp" : "sr 5/11/2020 16:05",
 		"setUpWindow" : "stlu 6/16/2020 09:16",
 		"tearDownWindow" : "sr 5/19/2020 11:58",
-		"test_example" : "stlu 6/15/2020 22:25",
+		"test_blurredExample" : "sr 6/22/2020 11:40",
+		"test_example" : "sr 6/22/2020 11:33",
 		"verifyOglInitializationWorked" : "sr 5/19/2020 11:58",
 		"vertexShader" : "sr 6/22/2020 11:29" } }
