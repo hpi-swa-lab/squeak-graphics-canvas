@@ -59,6 +59,9 @@ test_example
 			program
 				uniform: (ogl glGetUniformLocation: program id with: 'image')
 				value: 0.
+			program
+				uniform: (ogl glGetUniformLocation: program id with: 'horizontal')
+				value: 1.	
 			"program uniform: 0 value: (Matrix identity: 4)."
 			ogl checkForError.
 			vbo draw: GL_TRIANGLE_STRIP.
