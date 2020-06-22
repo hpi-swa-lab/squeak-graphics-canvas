@@ -5,7 +5,8 @@ step
 		ogl beginFrame.
 		
 		ogl glActiveTexture: GL_TEXTURE0.
- 			tex texImage: Display.
+		ActiveWorld redrawFrame.
+		tex texImage: ActiveWorld drawLayer assuredForm.
 		
 		ogl checkForError.
 		"--- this is the actual scene content ---"

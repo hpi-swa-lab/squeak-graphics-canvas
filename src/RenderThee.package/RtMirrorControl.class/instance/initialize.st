@@ -2,6 +2,8 @@ initialization
 initialize
 	super initialize.
 	
+	RtRecordingCanvas record: ActiveWorld.
+	
 	self extent: 200@200.
 	
 	ogl := GL3_3 newInGLFW: ActiveWorld bounds.
