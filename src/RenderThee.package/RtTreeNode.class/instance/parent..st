@@ -1,4 +1,4 @@
 private
-setParent: aNode
+parent: aNode
 
 	parent := aNode

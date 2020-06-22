@@ -6,7 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
+		"transform",
+		"extent",
+		"cachedForm" ],
 	"name" : "RtLayer",
 	"pools" : [
 		 ],

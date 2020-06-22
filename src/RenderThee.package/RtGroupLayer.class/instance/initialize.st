@@ -2,4 +2,4 @@ initialization
 initialize
 
 	super initialize.
-	layer := RtContainerLayer new
+	children := OrderedCollection new

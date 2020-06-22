@@ -2,5 +2,10 @@
 	"class" : {
 		 },
 	"instance" : {
+		"bounds:" : "TZ 6/22/2020 21:38",
 		"drawOn:" : "stlu 6/8/2020 00:11",
+		"extent" : "TZ 6/22/2020 21:35",
+		"extent:" : "TZ 6/22/2020 21:34",
+		"transform" : "TZ 6/22/2020 21:34",
+		"transform:" : "TZ 6/22/2020 21:34",
 		"visit:" : "stlu 6/22/2020 11:53" } }

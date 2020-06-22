@@ -6,7 +6,7 @@ redrawLayer
 	self boundaryLayer ifNotNil: [:layer |
                 | rc |
                 layer clear.
-				layer setBounds: (self bounds translateBy: layer parent bounds origin negated).
+				layer bounds: (self bounds translateBy: layer parent bounds origin negated).
                 rc := RtRecordingCanvas layer: layer.
 				rc origin: self position.
                 rc fullDraw: self.

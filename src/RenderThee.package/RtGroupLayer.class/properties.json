@@ -6,11 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"transform",
-		"extent",
-		"cachedForm" ],
-	"name" : "RtBoundaryLayer",
+		"children" ],
+	"name" : "RtGroupLayer",
 	"pools" : [
 		 ],
-	"super" : "RtContainerLayer",
+	"super" : "RtLayer",
 	"type" : "normal" }

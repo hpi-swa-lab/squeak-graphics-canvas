@@ -1,19 +1,20 @@
 {
 	"class" : {
-		"bounds:" : "stlu 6/16/2020 21:33",
+		"bounds:" : "TZ 6/22/2020 21:38",
 		"offset:extent:" : "stlu 6/9/2020 12:28",
-		"transform:extent:" : "stlu 6/9/2020 12:24" },
+		"transform:extent:" : "TZ 6/22/2020 21:36" },
 	"instance" : {
+		"addChild:" : "TZ 6/22/2020 21:45",
 		"assuredForm" : "stlu 6/15/2020 09:37",
-		"drawOn:" : "stlu 6/15/2020 09:38",
-		"extent" : "stlu 6/9/2020 16:49",
+		"bounds" : "stlu 6/9/2020 17:37",
+		"clear" : "TZ 6/22/2020 21:43",
+		"drawChildrenOn:" : "TZ 6/22/2020 21:27",
+		"drawOn:" : "stlu 6/9/2020 17:38",
 		"iconOrThumbnailOfSize:" : "stlu 6/15/2020 09:38",
+		"initialize" : "TZ 6/22/2020 21:44",
 		"invalidateCache" : "stlu 6/16/2020 21:39",
+		"layers" : "TZ 6/22/2020 21:27",
 		"open" : "stlu 6/15/2020 09:38",
 		"rasterizeForm" : "stlu 6/22/2020 12:07",
 		"replaceWith:" : "stlu 6/16/2020 21:09",
-		"setBounds:" : "stlu 6/16/2020 21:32",
-		"setExtent:" : "stlu 6/9/2020 12:25",
-		"setTransform:" : "stlu 6/9/2020 12:25",
-		"transform" : "stlu 6/9/2020 17:38",
 		"visit:" : "stlu 6/22/2020 11:55" } }

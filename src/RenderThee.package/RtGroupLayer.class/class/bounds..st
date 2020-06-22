@@ -2,5 +2,5 @@ instance creation
 bounds: aRectangle
 
 	^ self new
-		setBounds: aRectangle;
+		bounds: aRectangle;
 		yourself

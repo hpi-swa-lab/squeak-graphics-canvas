@@ -1,4 +1,4 @@
 managing children
 removeChild: childNode
 
-	childNode setParent: nil
+	childNode parent: nil

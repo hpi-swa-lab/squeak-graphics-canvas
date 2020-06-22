@@ -2,7 +2,7 @@
 	"class" : {
 		 },
 	"instance" : {
-		"addChild:" : "stlu 6/1/2020 18:29",
+		"addChild:" : "TZ 6/22/2020 21:45",
 		"parent" : "stlu 6/1/2020 15:24",
-		"removeChild:" : "stlu 6/1/2020 18:29",
-		"setParent:" : "stlu 6/1/2020 18:10" } }
+		"parent:" : "TZ 6/22/2020 21:45",
+		"removeChild:" : "TZ 6/22/2020 21:45" } }
