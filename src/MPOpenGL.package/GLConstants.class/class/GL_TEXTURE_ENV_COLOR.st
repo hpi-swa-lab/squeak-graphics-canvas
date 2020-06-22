@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE_ENV_COLOR
+
+	^ GL_TEXTURE_ENV_COLOR

@@ -1,0 +1,4 @@
+accessing
+GL_RENDERBUFFER
+
+	^ GL_RENDERBUFFER

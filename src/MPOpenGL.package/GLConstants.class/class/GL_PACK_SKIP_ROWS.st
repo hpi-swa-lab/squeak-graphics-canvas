@@ -1,0 +1,4 @@
+accessing
+GL_PACK_SKIP_ROWS
+
+	^ GL_PACK_SKIP_ROWS

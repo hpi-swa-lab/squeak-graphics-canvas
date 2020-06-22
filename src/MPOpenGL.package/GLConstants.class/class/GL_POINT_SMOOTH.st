@@ -1,0 +1,4 @@
+accessing
+GL_POINT_SMOOTH
+
+	^ GL_POINT_SMOOTH

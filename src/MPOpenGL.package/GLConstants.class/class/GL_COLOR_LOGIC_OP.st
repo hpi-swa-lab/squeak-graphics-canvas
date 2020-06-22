@@ -1,0 +1,4 @@
+accessing
+GL_COLOR_LOGIC_OP
+
+	^ GL_COLOR_LOGIC_OP

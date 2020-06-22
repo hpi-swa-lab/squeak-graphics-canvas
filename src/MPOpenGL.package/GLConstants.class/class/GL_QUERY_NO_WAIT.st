@@ -1,0 +1,4 @@
+accessing
+GL_QUERY_NO_WAIT
+
+	^ GL_QUERY_NO_WAIT

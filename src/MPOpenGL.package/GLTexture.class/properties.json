@@ -9,6 +9,6 @@
 		"id" ],
 	"name" : "GLTexture",
 	"pools" : [
-		 ],
+		"GLConstants" ],
 	"super" : "Object",
 	"type" : "normal" }

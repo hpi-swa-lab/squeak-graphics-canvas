@@ -1,0 +1,4 @@
+accessing
+GL_WRITE_ONLY
+
+	^ GL_WRITE_ONLY

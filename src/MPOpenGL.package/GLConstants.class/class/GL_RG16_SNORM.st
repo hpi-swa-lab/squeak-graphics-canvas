@@ -1,0 +1,4 @@
+accessing
+GL_RG16_SNORM
+
+	^ GL_RG16_SNORM

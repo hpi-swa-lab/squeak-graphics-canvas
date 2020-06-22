@@ -12,6 +12,6 @@
 		"glType" ],
 	"name" : "GLVertexArrayObject",
 	"pools" : [
-		 ],
+		"GLConstants" ],
 	"super" : "Object",
 	"type" : "normal" }

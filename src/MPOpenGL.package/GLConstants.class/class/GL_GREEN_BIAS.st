@@ -1,0 +1,4 @@
+accessing
+GL_GREEN_BIAS
+
+	^ GL_GREEN_BIAS

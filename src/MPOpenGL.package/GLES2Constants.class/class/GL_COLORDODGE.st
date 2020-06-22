@@ -1,0 +1,4 @@
+accessing
+GL_COLORDODGE
+
+	^ GL_COLORDODGE

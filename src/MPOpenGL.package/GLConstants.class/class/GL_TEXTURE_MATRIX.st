@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE_MATRIX
+
+	^ GL_TEXTURE_MATRIX

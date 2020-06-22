@@ -1,0 +1,4 @@
+accessing
+GL_IMAGE_CLASS_1_X_8
+
+	^ GL_IMAGE_CLASS_1_X_8

@@ -1,0 +1,4 @@
+accessing
+GL_COORD_REPLACE
+
+	^ GL_COORD_REPLACE

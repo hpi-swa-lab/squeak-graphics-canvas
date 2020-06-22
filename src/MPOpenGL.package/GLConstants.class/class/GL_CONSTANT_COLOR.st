@@ -1,0 +1,4 @@
+accessing
+GL_CONSTANT_COLOR
+
+	^ GL_CONSTANT_COLOR

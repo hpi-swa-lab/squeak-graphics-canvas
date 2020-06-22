@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE_DEPTH
+
+	^ GL_TEXTURE_DEPTH

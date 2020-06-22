@@ -1,0 +1,4 @@
+accessing
+GL_DRAW_BUFFER10
+
+	^ GL_DRAW_BUFFER10

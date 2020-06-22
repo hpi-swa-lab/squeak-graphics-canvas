@@ -1,0 +1,4 @@
+accessing
+GL_OPERAND0_ALPHA
+
+	^ GL_OPERAND0_ALPHA

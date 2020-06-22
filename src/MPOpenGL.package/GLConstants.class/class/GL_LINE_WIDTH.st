@@ -1,0 +1,4 @@
+accessing
+GL_LINE_WIDTH
+
+	^ GL_LINE_WIDTH

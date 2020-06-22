@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE25
+
+	^ GL_TEXTURE25

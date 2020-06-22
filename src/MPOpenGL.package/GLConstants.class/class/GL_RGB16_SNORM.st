@@ -1,0 +1,4 @@
+accessing
+GL_RGB16_SNORM
+
+	^ GL_RGB16_SNORM

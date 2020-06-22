@@ -1,4 +1,5 @@
-initialization
+binding
 bind
-	GL value glBindTexture: GL value GL_TEXTURE_2D with: id.
+
+	GL value glBindTexture: GL_TEXTURE_2D with: id.
 	GL value checkForError

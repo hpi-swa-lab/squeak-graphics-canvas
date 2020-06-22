@@ -1,0 +1,4 @@
+accessing
+GL_SOFTLIGHT
+
+	^ GL_SOFTLIGHT

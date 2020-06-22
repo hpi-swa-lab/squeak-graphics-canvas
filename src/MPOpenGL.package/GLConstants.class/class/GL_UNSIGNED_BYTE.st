@@ -1,0 +1,4 @@
+accessing
+GL_UNSIGNED_BYTE
+
+	^ GL_UNSIGNED_BYTE

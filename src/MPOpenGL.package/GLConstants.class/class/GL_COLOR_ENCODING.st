@@ -1,0 +1,4 @@
+accessing
+GL_COLOR_ENCODING
+
+	^ GL_COLOR_ENCODING

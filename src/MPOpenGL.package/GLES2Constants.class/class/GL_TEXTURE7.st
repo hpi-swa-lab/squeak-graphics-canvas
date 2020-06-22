@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE7
+
+	^ GL_TEXTURE7

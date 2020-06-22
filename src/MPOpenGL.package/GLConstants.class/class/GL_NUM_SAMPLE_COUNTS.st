@@ -1,0 +1,4 @@
+accessing
+GL_NUM_SAMPLE_COUNTS
+
+	^ GL_NUM_SAMPLE_COUNTS

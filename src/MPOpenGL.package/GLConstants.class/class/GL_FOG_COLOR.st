@@ -1,0 +1,4 @@
+accessing
+GL_FOG_COLOR
+
+	^ GL_FOG_COLOR

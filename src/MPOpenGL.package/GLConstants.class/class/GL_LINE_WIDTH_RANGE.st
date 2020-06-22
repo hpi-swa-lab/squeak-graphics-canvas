@@ -1,0 +1,4 @@
+accessing
+GL_LINE_WIDTH_RANGE
+
+	^ GL_LINE_WIDTH_RANGE

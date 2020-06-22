@@ -1,0 +1,4 @@
+accessing
+GL_MULTIPLY
+
+	^ GL_MULTIPLY

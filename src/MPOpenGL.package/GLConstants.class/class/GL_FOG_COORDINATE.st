@@ -1,0 +1,4 @@
+accessing
+GL_FOG_COORDINATE
+
+	^ GL_FOG_COORDINATE

@@ -1,0 +1,4 @@
+accessing
+GL_FRAGMENT_DEPTH
+
+	^ GL_FRAGMENT_DEPTH

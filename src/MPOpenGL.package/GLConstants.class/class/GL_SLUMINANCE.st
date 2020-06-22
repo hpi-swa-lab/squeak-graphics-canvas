@@ -1,0 +1,4 @@
+accessing
+GL_SLUMINANCE
+
+	^ GL_SLUMINANCE

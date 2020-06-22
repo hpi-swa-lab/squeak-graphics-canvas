@@ -1,0 +1,4 @@
+accessing
+GL_FOG_INDEX
+
+	^ GL_FOG_INDEX

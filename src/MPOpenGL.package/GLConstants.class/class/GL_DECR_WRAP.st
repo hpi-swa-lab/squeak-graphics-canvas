@@ -1,0 +1,4 @@
+accessing
+GL_DECR_WRAP
+
+	^ GL_DECR_WRAP

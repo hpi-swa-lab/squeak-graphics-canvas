@@ -1,0 +1,4 @@
+accessing
+GL_ENABLE_BIT
+
+	^ GL_ENABLE_BIT

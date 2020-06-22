@@ -1,0 +1,4 @@
+accessing
+GL_SAMPLER_2D_ARRAY
+
+	^ GL_SAMPLER_2D_ARRAY

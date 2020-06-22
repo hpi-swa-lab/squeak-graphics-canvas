@@ -1,0 +1,4 @@
+accessing
+GL_VIEW_CLASS_RGTC2_RG
+
+	^ GL_VIEW_CLASS_RGTC2_RG

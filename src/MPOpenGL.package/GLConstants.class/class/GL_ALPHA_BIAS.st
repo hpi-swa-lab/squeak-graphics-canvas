@@ -1,0 +1,4 @@
+accessing
+GL_ALPHA_BIAS
+
+	^ GL_ALPHA_BIAS

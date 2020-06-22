@@ -1,0 +1,4 @@
+accessing
+GL_ARRAY_STRIDE
+
+	^ GL_ARRAY_STRIDE

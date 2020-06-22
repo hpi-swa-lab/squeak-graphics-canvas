@@ -1,0 +1,4 @@
+accessing
+GL_LIST_MODE
+
+	^ GL_LIST_MODE

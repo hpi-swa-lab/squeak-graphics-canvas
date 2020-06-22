@@ -1,0 +1,4 @@
+accessing
+GL_EDGE_FLAG_ARRAY
+
+	^ GL_EDGE_FLAG_ARRAY

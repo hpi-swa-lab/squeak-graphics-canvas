@@ -1,0 +1,4 @@
+accessing
+GL_DIFFERENCE
+
+	^ GL_DIFFERENCE

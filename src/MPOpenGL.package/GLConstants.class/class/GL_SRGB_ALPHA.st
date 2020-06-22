@@ -1,0 +1,4 @@
+accessing
+GL_SRGB_ALPHA
+
+	^ GL_SRGB_ALPHA

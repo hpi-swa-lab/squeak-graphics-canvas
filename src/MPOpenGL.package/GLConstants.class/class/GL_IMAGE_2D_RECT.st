@@ -1,0 +1,4 @@
+accessing
+GL_IMAGE_2D_RECT
+
+	^ GL_IMAGE_2D_RECT

@@ -1,0 +1,4 @@
+accessing
+GL_SAMPLE_BUFFERS
+
+	^ GL_SAMPLE_BUFFERS

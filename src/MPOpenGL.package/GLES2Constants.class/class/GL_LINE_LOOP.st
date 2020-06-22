@@ -1,0 +1,4 @@
+accessing
+GL_LINE_LOOP
+
+	^ GL_LINE_LOOP

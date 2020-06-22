@@ -1,0 +1,4 @@
+accessing
+GL_STENCIL_BITS
+
+	^ GL_STENCIL_BITS

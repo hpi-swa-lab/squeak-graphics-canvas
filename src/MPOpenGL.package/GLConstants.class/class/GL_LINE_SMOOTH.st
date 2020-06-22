@@ -1,0 +1,4 @@
+accessing
+GL_LINE_SMOOTH
+
+	^ GL_LINE_SMOOTH

@@ -1,0 +1,4 @@
+accessing
+GL_FRACTIONAL_EVEN
+
+	^ GL_FRACTIONAL_EVEN

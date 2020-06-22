@@ -1,0 +1,4 @@
+accessing
+GL_ALPHA12
+
+	^ GL_ALPHA12

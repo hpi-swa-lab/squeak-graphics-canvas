@@ -1,0 +1,4 @@
+accessing
+GL_COLOR_MATERIAL
+
+	^ GL_COLOR_MATERIAL

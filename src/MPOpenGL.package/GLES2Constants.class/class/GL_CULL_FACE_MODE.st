@@ -1,0 +1,4 @@
+accessing
+GL_CULL_FACE_MODE
+
+	^ GL_CULL_FACE_MODE

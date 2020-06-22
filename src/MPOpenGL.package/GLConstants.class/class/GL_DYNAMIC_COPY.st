@@ -1,0 +1,4 @@
+accessing
+GL_DYNAMIC_COPY
+
+	^ GL_DYNAMIC_COPY

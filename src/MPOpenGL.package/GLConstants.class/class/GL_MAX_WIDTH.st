@@ -1,0 +1,4 @@
+accessing
+GL_MAX_WIDTH
+
+	^ GL_MAX_WIDTH

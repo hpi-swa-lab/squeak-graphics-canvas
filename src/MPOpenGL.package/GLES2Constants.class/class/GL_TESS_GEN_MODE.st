@@ -1,0 +1,4 @@
+accessing
+GL_TESS_GEN_MODE
+
+	^ GL_TESS_GEN_MODE

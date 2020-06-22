@@ -1,0 +1,4 @@
+accessing
+GL_UNSIGNED_SHORT_4_4_4_4
+
+	^ GL_UNSIGNED_SHORT_4_4_4_4

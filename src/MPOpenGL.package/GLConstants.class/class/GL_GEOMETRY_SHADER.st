@@ -1,0 +1,4 @@
+accessing
+GL_GEOMETRY_SHADER
+
+	^ GL_GEOMETRY_SHADER

@@ -1,0 +1,4 @@
+accessing
+GL_OBJECT_LINEAR
+
+	^ GL_OBJECT_LINEAR

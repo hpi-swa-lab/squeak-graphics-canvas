@@ -1,0 +1,4 @@
+accessing
+GL_BLEND_SRC_ALPHA
+
+	^ GL_BLEND_SRC_ALPHA

@@ -1,0 +1,4 @@
+accessing
+GL_RED_SCALE
+
+	^ GL_RED_SCALE

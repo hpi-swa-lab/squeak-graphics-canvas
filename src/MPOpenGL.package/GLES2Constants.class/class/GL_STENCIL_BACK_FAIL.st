@@ -1,0 +1,4 @@
+accessing
+GL_STENCIL_BACK_FAIL
+
+	^ GL_STENCIL_BACK_FAIL

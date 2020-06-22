@@ -1,0 +1,4 @@
+accessing
+GL_RGB10_A2UI
+
+	^ GL_RGB10_A2UI

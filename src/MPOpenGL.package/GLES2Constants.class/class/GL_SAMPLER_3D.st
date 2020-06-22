@@ -1,0 +1,4 @@
+accessing
+GL_SAMPLER_3D
+
+	^ GL_SAMPLER_3D

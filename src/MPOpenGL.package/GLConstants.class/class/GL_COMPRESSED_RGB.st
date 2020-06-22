@@ -1,0 +1,4 @@
+accessing
+GL_COMPRESSED_RGB
+
+	^ GL_COMPRESSED_RGB

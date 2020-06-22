@@ -1,0 +1,4 @@
+accessing
+GL_INDEX_CLEAR_VALUE
+
+	^ GL_INDEX_CLEAR_VALUE

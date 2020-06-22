@@ -1,0 +1,4 @@
+accessing
+GL_BUFFER_VARIABLE
+
+	^ GL_BUFFER_VARIABLE

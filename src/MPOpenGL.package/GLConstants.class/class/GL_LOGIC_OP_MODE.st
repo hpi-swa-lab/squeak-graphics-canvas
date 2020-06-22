@@ -1,0 +1,4 @@
+accessing
+GL_LOGIC_OP_MODE
+
+	^ GL_LOGIC_OP_MODE

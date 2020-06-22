@@ -1,0 +1,4 @@
+accessing
+GL_MAP2_VERTEX_3
+
+	^ GL_MAP2_VERTEX_3

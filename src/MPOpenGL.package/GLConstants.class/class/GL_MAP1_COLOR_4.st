@@ -1,0 +1,4 @@
+accessing
+GL_MAP1_COLOR_4
+
+	^ GL_MAP1_COLOR_4

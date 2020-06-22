@@ -1,0 +1,4 @@
+accessing
+GL_SAMPLER_2D_RECT
+
+	^ GL_SAMPLER_2D_RECT

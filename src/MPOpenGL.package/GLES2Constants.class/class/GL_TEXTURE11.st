@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE11
+
+	^ GL_TEXTURE11

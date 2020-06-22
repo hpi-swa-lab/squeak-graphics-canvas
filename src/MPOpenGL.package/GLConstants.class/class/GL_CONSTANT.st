@@ -1,0 +1,4 @@
+accessing
+GL_CONSTANT
+
+	^ GL_CONSTANT

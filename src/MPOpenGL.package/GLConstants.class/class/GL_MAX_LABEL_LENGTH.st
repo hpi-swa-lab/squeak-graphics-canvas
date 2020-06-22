@@ -1,0 +1,4 @@
+accessing
+GL_MAX_LABEL_LENGTH
+
+	^ GL_MAX_LABEL_LENGTH

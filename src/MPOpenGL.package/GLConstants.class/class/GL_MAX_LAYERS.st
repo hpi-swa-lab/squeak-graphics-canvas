@@ -1,0 +1,4 @@
+accessing
+GL_MAX_LAYERS
+
+	^ GL_MAX_LAYERS

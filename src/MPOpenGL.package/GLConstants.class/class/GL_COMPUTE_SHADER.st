@@ -1,0 +1,4 @@
+accessing
+GL_COMPUTE_SHADER
+
+	^ GL_COMPUTE_SHADER

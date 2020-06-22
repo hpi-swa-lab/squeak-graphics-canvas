@@ -1,0 +1,4 @@
+accessing
+GL_MAX_PIXEL_MAP_TABLE
+
+	^ GL_MAX_PIXEL_MAP_TABLE

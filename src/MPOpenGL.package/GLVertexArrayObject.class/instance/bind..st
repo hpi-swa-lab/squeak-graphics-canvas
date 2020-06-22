@@ -1,3 +1,4 @@
 usage
 bind: ogl
-	ogl glBindVertexArray: id.
+
+	ogl glBindVertexArray: id

@@ -1,0 +1,4 @@
+accessing
+GL_PROGRAM
+
+	^ GL_PROGRAM

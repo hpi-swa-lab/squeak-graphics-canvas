@@ -1,0 +1,4 @@
+accessing
+GL_LOCATION_INDEX
+
+	^ GL_LOCATION_INDEX

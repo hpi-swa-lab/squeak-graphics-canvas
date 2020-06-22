@@ -1,0 +1,4 @@
+accessing
+GL_IMAGE_CUBE
+
+	^ GL_IMAGE_CUBE

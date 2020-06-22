@@ -1,0 +1,4 @@
+accessing
+GL_BLUE_SCALE
+
+	^ GL_BLUE_SCALE

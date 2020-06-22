@@ -1,6 +1,6 @@
 *MPOpenGL
 putAtGL: gl Uniform: location
-	{ncols. nrows} caseOf: {
-		[#(4 4)] -> [ ^gl glUniformMatrix4fv: location with: 1 with: gl GL_FALSE with: self asFloat32Array  ]
-	}.
-	self notYetImplemented.
+
+	(ncols = 4 and: [nrows = 4]) ifTrue: [
+		^ gl glUniformMatrix4fv: location with: 1 with: GLConstants GL_FALSE with: self asFloat32Array].
+	self notYetImplemented

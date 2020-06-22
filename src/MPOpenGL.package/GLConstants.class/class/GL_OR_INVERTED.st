@@ -1,0 +1,4 @@
+accessing
+GL_OR_INVERTED
+
+	^ GL_OR_INVERTED

@@ -1,0 +1,4 @@
+accessing
+GL_MAX_TEXTURE_UNITS
+
+	^ GL_MAX_TEXTURE_UNITS

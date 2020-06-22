@@ -1,0 +1,4 @@
+accessing
+GL_COLOR_ARRAY
+
+	^ GL_COLOR_ARRAY

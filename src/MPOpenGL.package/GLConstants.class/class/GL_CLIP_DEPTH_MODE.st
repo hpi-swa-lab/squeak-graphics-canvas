@@ -1,0 +1,4 @@
+accessing
+GL_CLIP_DEPTH_MODE
+
+	^ GL_CLIP_DEPTH_MODE

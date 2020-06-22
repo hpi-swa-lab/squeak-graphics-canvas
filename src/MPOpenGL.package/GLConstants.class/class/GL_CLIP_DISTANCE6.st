@@ -1,0 +1,4 @@
+accessing
+GL_CLIP_DISTANCE6
+
+	^ GL_CLIP_DISTANCE6

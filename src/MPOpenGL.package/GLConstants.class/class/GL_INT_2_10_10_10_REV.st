@@ -1,0 +1,4 @@
+accessing
+GL_INT_2_10_10_10_REV
+
+	^ GL_INT_2_10_10_10_REV

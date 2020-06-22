@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE_MAX_LOD
+
+	^ GL_TEXTURE_MAX_LOD

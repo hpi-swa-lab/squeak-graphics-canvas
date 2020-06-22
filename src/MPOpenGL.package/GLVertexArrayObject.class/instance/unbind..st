@@ -1,3 +1,4 @@
 usage
 unbind: ogl
-	ogl glBindVertexArray: 0.
+
+	ogl glBindVertexArray: GL_NONE

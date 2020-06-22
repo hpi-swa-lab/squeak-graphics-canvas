@@ -1,0 +1,4 @@
+accessing
+GL_SAMPLER_1D_SHADOW
+
+	^ GL_SAMPLER_1D_SHADOW

@@ -1,0 +1,4 @@
+accessing
+GL_BOOL_VEC4
+
+	^ GL_BOOL_VEC4

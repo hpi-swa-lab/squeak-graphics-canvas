@@ -1,0 +1,4 @@
+accessing
+GL_COMPRESSED_RG
+
+	^ GL_COMPRESSED_RG

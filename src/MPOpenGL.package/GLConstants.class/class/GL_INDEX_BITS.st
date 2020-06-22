@@ -1,0 +1,4 @@
+accessing
+GL_INDEX_BITS
+
+	^ GL_INDEX_BITS

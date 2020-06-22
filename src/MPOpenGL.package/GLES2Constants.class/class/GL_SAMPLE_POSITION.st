@@ -1,0 +1,4 @@
+accessing
+GL_SAMPLE_POSITION
+
+	^ GL_SAMPLE_POSITION

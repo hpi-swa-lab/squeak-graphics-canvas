@@ -1,0 +1,4 @@
+accessing
+GL_UNSIGNED_INT_10_10_10_2
+
+	^ GL_UNSIGNED_INT_10_10_10_2

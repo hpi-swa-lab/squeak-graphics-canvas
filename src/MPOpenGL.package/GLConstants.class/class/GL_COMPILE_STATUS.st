@@ -1,0 +1,4 @@
+accessing
+GL_COMPILE_STATUS
+
+	^ GL_COMPILE_STATUS

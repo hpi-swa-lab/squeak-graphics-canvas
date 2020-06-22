@@ -1,0 +1,4 @@
+accessing
+GL_BGR_INTEGER
+
+	^ GL_BGR_INTEGER

@@ -1,0 +1,4 @@
+accessing
+GL_TESS_GEN_SPACING
+
+	^ GL_TESS_GEN_SPACING

@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE_GEN_MODE
+
+	^ GL_TEXTURE_GEN_MODE

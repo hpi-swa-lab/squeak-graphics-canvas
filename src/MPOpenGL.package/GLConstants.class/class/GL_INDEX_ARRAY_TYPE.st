@@ -1,0 +1,4 @@
+accessing
+GL_INDEX_ARRAY_TYPE
+
+	^ GL_INDEX_ARRAY_TYPE

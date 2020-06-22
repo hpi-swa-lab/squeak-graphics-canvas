@@ -1,3 +1,4 @@
 shader kind
-kind 
-	^gl GL_GEOMETRY_SHADER
+kind
+
+	^ GL_GEOMETRY_SHADER

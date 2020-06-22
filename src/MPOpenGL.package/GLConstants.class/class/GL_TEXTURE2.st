@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE2
+
+	^ GL_TEXTURE2

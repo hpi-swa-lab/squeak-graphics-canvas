@@ -1,0 +1,4 @@
+accessing
+GL_STATIC_DRAW
+
+	^ GL_STATIC_DRAW

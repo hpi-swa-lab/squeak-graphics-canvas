@@ -1,0 +1,4 @@
+accessing
+GL_SPHERE_MAP
+
+	^ GL_SPHERE_MAP

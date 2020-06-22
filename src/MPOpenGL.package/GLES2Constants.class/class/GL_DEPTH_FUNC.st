@@ -1,0 +1,4 @@
+accessing
+GL_DEPTH_FUNC
+
+	^ GL_DEPTH_FUNC

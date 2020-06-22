@@ -1,0 +1,4 @@
+accessing
+GL_ONE_MINUS_DST_COLOR
+
+	^ GL_ONE_MINUS_DST_COLOR

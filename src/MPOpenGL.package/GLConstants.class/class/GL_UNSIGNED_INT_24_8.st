@@ -1,0 +1,4 @@
+accessing
+GL_UNSIGNED_INT_24_8
+
+	^ GL_UNSIGNED_INT_24_8

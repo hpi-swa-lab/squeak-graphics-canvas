@@ -1,0 +1,4 @@
+accessing
+GL_VERTEX_SHADER_BIT
+
+	^ GL_VERTEX_SHADER_BIT

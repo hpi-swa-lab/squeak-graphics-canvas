@@ -1,0 +1,4 @@
+accessing
+GL_CONTEXT_FLAGS
+
+	^ GL_CONTEXT_FLAGS

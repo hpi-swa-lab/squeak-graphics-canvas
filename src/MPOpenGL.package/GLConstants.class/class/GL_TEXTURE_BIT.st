@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE_BIT
+
+	^ GL_TEXTURE_BIT

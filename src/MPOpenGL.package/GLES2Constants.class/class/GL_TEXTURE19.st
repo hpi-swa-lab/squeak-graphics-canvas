@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE19
+
+	^ GL_TEXTURE19

@@ -1,0 +1,4 @@
+accessing
+GL_INDEX_SHIFT
+
+	^ GL_INDEX_SHIFT

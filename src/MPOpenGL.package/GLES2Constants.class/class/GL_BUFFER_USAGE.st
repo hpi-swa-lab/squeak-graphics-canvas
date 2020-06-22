@@ -1,0 +1,4 @@
+accessing
+GL_BUFFER_USAGE
+
+	^ GL_BUFFER_USAGE

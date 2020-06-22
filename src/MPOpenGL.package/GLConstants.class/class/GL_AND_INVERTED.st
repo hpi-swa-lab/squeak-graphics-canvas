@@ -1,0 +1,4 @@
+accessing
+GL_AND_INVERTED
+
+	^ GL_AND_INVERTED

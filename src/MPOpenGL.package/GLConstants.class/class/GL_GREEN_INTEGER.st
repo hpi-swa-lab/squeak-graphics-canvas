@@ -1,0 +1,4 @@
+accessing
+GL_GREEN_INTEGER
+
+	^ GL_GREEN_INTEGER

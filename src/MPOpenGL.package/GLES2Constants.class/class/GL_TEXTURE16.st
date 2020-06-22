@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE16
+
+	^ GL_TEXTURE16

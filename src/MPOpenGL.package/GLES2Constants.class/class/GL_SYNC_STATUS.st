@@ -1,0 +1,4 @@
+accessing
+GL_SYNC_STATUS
+
+	^ GL_SYNC_STATUS

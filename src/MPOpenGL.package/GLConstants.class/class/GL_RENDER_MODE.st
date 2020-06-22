@@ -1,0 +1,4 @@
+accessing
+GL_RENDER_MODE
+
+	^ GL_RENDER_MODE

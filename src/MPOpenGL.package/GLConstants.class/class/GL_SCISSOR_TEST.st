@@ -1,0 +1,4 @@
+accessing
+GL_SCISSOR_TEST
+
+	^ GL_SCISSOR_TEST

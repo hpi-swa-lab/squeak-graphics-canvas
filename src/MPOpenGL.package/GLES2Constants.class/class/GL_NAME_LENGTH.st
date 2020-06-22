@@ -1,0 +1,4 @@
+accessing
+GL_NAME_LENGTH
+
+	^ GL_NAME_LENGTH

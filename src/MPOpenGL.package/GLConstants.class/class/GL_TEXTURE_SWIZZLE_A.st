@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE_SWIZZLE_A
+
+	^ GL_TEXTURE_SWIZZLE_A

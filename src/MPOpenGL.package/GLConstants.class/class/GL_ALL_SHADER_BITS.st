@@ -1,0 +1,4 @@
+accessing
+GL_ALL_SHADER_BITS
+
+	^ GL_ALL_SHADER_BITS

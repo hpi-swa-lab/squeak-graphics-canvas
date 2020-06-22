@@ -1,0 +1,4 @@
+accessing
+GL_SOURCE0_ALPHA
+
+	^ GL_SOURCE0_ALPHA

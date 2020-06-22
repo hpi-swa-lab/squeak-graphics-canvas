@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE_MAX_LEVEL
+
+	^ GL_TEXTURE_MAX_LEVEL

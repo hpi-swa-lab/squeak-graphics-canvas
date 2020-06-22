@@ -1,0 +1,4 @@
+accessing
+GL_MAX_3D_TEXTURE_SIZE
+
+	^ GL_MAX_3D_TEXTURE_SIZE

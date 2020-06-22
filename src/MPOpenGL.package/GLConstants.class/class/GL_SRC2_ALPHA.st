@@ -1,0 +1,4 @@
+accessing
+GL_SRC2_ALPHA
+
+	^ GL_SRC2_ALPHA

@@ -1,0 +1,4 @@
+accessing
+GL_ACCUM_RED_BITS
+
+	^ GL_ACCUM_RED_BITS

@@ -1,0 +1,4 @@
+accessing
+GL_PIXEL_MAP_A_TO_A
+
+	^ GL_PIXEL_MAP_A_TO_A

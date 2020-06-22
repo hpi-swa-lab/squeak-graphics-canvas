@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE_BUFFER
+
+	^ GL_TEXTURE_BUFFER

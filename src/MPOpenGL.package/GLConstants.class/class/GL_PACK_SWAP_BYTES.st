@@ -1,0 +1,4 @@
+accessing
+GL_PACK_SWAP_BYTES
+
+	^ GL_PACK_SWAP_BYTES

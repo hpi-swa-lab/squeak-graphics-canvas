@@ -1,0 +1,4 @@
+accessing
+GL_RGB_SCALE
+
+	^ GL_RGB_SCALE

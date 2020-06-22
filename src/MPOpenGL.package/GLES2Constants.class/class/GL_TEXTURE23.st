@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE23
+
+	^ GL_TEXTURE23

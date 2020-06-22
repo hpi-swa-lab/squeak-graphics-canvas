@@ -1,0 +1,4 @@
+accessing
+GL_SPECULAR
+
+	^ GL_SPECULAR

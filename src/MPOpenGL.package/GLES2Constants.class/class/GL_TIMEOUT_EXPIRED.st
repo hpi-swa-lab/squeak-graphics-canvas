@@ -1,0 +1,4 @@
+accessing
+GL_TIMEOUT_EXPIRED
+
+	^ GL_TIMEOUT_EXPIRED

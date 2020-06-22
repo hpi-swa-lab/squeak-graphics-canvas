@@ -1,0 +1,4 @@
+accessing
+GL_CLEAR_BUFFER
+
+	^ GL_CLEAR_BUFFER

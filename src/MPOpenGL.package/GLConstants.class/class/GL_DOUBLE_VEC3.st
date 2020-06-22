@@ -1,0 +1,4 @@
+accessing
+GL_DOUBLE_VEC3
+
+	^ GL_DOUBLE_VEC3

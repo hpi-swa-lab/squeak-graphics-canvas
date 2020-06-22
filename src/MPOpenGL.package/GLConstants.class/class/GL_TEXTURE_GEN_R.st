@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE_GEN_R
+
+	^ GL_TEXTURE_GEN_R

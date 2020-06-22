@@ -1,0 +1,4 @@
+accessing
+GL_READ_PIXELS
+
+	^ GL_READ_PIXELS

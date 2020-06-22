@@ -1,0 +1,4 @@
+accessing
+GL_INVALID_INDEX
+
+	^ GL_INVALID_INDEX

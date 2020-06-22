@@ -1,0 +1,4 @@
+accessing
+GL_OBJECT_PLANE
+
+	^ GL_OBJECT_PLANE

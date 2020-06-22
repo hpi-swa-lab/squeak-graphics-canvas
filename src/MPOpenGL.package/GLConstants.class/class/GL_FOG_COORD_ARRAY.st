@@ -1,0 +1,4 @@
+accessing
+GL_FOG_COORD_ARRAY
+
+	^ GL_FOG_COORD_ARRAY

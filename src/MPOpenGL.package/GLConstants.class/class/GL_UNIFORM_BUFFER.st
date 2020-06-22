@@ -1,0 +1,4 @@
+accessing
+GL_UNIFORM_BUFFER
+
+	^ GL_UNIFORM_BUFFER

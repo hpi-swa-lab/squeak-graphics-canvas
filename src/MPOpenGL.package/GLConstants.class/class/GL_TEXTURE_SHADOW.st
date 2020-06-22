@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE_SHADOW
+
+	^ GL_TEXTURE_SHADOW

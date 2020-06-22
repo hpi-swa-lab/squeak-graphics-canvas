@@ -1,0 +1,4 @@
+accessing
+GL_BUFFER_MAPPED
+
+	^ GL_BUFFER_MAPPED

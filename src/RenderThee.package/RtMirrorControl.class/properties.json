@@ -13,6 +13,6 @@
 		"tex" ],
 	"name" : "RtMirrorControl",
 	"pools" : [
-		 ],
+		"GLConstants" ],
 	"super" : "Morph",
 	"type" : "normal" }

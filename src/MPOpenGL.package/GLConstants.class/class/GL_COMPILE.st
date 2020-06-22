@@ -1,0 +1,4 @@
+accessing
+GL_COMPILE
+
+	^ GL_COMPILE

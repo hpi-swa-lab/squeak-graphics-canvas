@@ -1,0 +1,4 @@
+accessing
+GL_SOURCE2_RGB
+
+	^ GL_SOURCE2_RGB

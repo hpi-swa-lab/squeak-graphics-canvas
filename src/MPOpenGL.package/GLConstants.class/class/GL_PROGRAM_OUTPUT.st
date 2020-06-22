@@ -1,0 +1,4 @@
+accessing
+GL_PROGRAM_OUTPUT
+
+	^ GL_PROGRAM_OUTPUT

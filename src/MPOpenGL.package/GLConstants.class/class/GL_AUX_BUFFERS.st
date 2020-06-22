@@ -1,0 +1,4 @@
+accessing
+GL_AUX_BUFFERS
+
+	^ GL_AUX_BUFFERS

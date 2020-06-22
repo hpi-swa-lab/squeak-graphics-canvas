@@ -1,0 +1,4 @@
+accessing
+GL_RGBA_INTEGER
+
+	^ GL_RGBA_INTEGER

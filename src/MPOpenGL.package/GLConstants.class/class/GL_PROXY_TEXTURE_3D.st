@@ -1,0 +1,4 @@
+accessing
+GL_PROXY_TEXTURE_3D
+
+	^ GL_PROXY_TEXTURE_3D

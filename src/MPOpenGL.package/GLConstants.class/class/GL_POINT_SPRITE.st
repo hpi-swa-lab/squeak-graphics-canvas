@@ -1,0 +1,4 @@
+accessing
+GL_POINT_SPRITE
+
+	^ GL_POINT_SPRITE

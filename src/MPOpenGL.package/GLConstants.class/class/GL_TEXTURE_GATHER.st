@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE_GATHER
+
+	^ GL_TEXTURE_GATHER

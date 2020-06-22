@@ -1,0 +1,4 @@
+accessing
+GL_FASTEST
+
+	^ GL_FASTEST

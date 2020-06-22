@@ -1,0 +1,4 @@
+accessing
+GL_INDEX_LOGIC_OP
+
+	^ GL_INDEX_LOGIC_OP

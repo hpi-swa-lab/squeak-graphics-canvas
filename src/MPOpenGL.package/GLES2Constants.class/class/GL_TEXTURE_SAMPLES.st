@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE_SAMPLES
+
+	^ GL_TEXTURE_SAMPLES

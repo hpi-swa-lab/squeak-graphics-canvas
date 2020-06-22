@@ -1,0 +1,4 @@
+accessing
+GL_MAX_NAME_LENGTH
+
+	^ GL_MAX_NAME_LENGTH

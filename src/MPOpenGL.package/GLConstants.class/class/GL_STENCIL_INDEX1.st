@@ -1,0 +1,4 @@
+accessing
+GL_STENCIL_INDEX1
+
+	^ GL_STENCIL_INDEX1

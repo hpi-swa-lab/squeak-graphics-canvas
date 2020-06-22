@@ -1,0 +1,4 @@
+accessing
+GL_SAMPLE_COVERAGE
+
+	^ GL_SAMPLE_COVERAGE

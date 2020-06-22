@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE_ENV
+
+	^ GL_TEXTURE_ENV

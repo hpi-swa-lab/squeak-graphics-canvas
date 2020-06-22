@@ -1,0 +1,4 @@
+accessing
+GL_COPY_PIXEL_TOKEN
+
+	^ GL_COPY_PIXEL_TOKEN

@@ -1,0 +1,4 @@
+accessing
+GL_POLYGON_MODE
+
+	^ GL_POLYGON_MODE

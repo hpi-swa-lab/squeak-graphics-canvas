@@ -1,0 +1,4 @@
+accessing
+GL_FOG_DENSITY
+
+	^ GL_FOG_DENSITY

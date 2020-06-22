@@ -1,0 +1,4 @@
+accessing
+GL_DOUBLE_VEC2
+
+	^ GL_DOUBLE_VEC2

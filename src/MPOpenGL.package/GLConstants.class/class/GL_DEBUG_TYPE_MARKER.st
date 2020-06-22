@@ -1,0 +1,4 @@
+accessing
+GL_DEBUG_TYPE_MARKER
+
+	^ GL_DEBUG_TYPE_MARKER

@@ -1,0 +1,4 @@
+accessing
+GL_VIEW_CLASS_128_BITS
+
+	^ GL_VIEW_CLASS_128_BITS

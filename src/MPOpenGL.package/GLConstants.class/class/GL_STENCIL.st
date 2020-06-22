@@ -1,0 +1,4 @@
+accessing
+GL_STENCIL
+
+	^ GL_STENCIL

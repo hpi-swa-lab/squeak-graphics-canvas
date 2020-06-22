@@ -1,0 +1,4 @@
+accessing
+GL_PACK_ROW_LENGTH
+
+	^ GL_PACK_ROW_LENGTH

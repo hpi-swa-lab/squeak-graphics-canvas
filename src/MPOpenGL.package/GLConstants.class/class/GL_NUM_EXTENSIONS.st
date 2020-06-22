@@ -1,0 +1,4 @@
+accessing
+GL_NUM_EXTENSIONS
+
+	^ GL_NUM_EXTENSIONS

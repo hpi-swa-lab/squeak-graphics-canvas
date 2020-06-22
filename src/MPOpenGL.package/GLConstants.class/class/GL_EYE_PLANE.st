@@ -1,0 +1,4 @@
+accessing
+GL_EYE_PLANE
+
+	^ GL_EYE_PLANE

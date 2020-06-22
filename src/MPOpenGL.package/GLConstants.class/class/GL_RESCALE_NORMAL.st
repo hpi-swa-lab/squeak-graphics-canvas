@@ -1,0 +1,4 @@
+accessing
+GL_RESCALE_NORMAL
+
+	^ GL_RESCALE_NORMAL

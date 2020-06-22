@@ -1,0 +1,4 @@
+accessing
+GL_LUMINANCE
+
+	^ GL_LUMINANCE

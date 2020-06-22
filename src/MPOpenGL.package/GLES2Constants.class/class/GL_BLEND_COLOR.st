@@ -1,0 +1,4 @@
+accessing
+GL_BLEND_COLOR
+
+	^ GL_BLEND_COLOR

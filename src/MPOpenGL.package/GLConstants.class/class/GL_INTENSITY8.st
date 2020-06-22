@@ -1,0 +1,4 @@
+accessing
+GL_INTENSITY8
+
+	^ GL_INTENSITY8

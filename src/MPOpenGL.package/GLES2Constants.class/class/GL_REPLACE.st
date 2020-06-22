@@ -1,0 +1,4 @@
+accessing
+GL_REPLACE
+
+	^ GL_REPLACE

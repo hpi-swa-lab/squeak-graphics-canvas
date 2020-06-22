@@ -1,0 +1,4 @@
+accessing
+GL_TRANSFORM_BIT
+
+	^ GL_TRANSFORM_BIT

@@ -1,0 +1,4 @@
+accessing
+GL_SHADE_MODEL
+
+	^ GL_SHADE_MODEL

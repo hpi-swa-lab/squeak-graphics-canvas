@@ -1,0 +1,4 @@
+accessing
+GL_COPY_INVERTED
+
+	^ GL_COPY_INVERTED

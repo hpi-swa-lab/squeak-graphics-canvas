@@ -1,0 +1,4 @@
+accessing
+GL_DYNAMIC_DRAW
+
+	^ GL_DYNAMIC_DRAW

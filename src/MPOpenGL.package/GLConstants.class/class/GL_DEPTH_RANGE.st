@@ -1,0 +1,4 @@
+accessing
+GL_DEPTH_RANGE
+
+	^ GL_DEPTH_RANGE

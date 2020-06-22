@@ -1,0 +1,4 @@
+accessing
+GL_POINT_SMOOTH_HINT
+
+	^ GL_POINT_SMOOTH_HINT

@@ -1,0 +1,4 @@
+accessing
+GL_SIGNALED
+
+	^ GL_SIGNALED

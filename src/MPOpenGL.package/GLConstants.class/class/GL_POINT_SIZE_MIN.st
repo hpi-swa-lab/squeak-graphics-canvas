@@ -1,0 +1,4 @@
+accessing
+GL_POINT_SIZE_MIN
+
+	^ GL_POINT_SIZE_MIN

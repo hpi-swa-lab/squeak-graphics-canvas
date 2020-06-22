@@ -1,0 +1,4 @@
+accessing
+GL_SRGB_READ
+
+	^ GL_SRGB_READ

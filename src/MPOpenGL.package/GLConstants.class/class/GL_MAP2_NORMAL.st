@@ -1,0 +1,4 @@
+accessing
+GL_MAP2_NORMAL
+
+	^ GL_MAP2_NORMAL

@@ -1,0 +1,4 @@
+accessing
+GL_STENCIL_BACK_REF
+
+	^ GL_STENCIL_BACK_REF

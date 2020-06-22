@@ -1,0 +1,4 @@
+accessing
+GL_TIMEOUT_IGNORED
+
+	^ GL_TIMEOUT_IGNORED

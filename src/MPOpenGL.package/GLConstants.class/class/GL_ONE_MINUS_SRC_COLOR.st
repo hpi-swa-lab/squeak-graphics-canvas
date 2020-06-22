@@ -1,0 +1,4 @@
+accessing
+GL_ONE_MINUS_SRC_COLOR
+
+	^ GL_ONE_MINUS_SRC_COLOR

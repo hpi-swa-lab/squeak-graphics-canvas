@@ -1,0 +1,4 @@
+accessing
+GL_VERTEX_ARRAY_TYPE
+
+	^ GL_VERTEX_ARRAY_TYPE

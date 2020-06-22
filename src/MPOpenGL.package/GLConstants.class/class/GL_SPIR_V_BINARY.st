@@ -1,0 +1,4 @@
+accessing
+GL_SPIR_V_BINARY
+
+	^ GL_SPIR_V_BINARY

@@ -1,0 +1,4 @@
+accessing
+GL_DEPTH_BIAS
+
+	^ GL_DEPTH_BIAS

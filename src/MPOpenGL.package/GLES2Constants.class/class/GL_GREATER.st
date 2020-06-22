@@ -1,0 +1,4 @@
+accessing
+GL_GREATER
+
+	^ GL_GREATER

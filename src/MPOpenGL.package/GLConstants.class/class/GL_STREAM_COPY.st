@@ -1,0 +1,4 @@
+accessing
+GL_STREAM_COPY
+
+	^ GL_STREAM_COPY

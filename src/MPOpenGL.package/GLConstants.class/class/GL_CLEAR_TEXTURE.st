@@ -1,0 +1,4 @@
+accessing
+GL_CLEAR_TEXTURE
+
+	^ GL_CLEAR_TEXTURE

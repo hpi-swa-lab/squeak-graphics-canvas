@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE27
+
+	^ GL_TEXTURE27

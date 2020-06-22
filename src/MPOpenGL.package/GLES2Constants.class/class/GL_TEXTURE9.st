@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE9
+
+	^ GL_TEXTURE9

@@ -1,0 +1,4 @@
+accessing
+GL_RGBA16I
+
+	^ GL_RGBA16I

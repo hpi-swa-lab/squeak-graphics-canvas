@@ -1,0 +1,4 @@
+accessing
+GL_CONSTANT_ALPHA
+
+	^ GL_CONSTANT_ALPHA

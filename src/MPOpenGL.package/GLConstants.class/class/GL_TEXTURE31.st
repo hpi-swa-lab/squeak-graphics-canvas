@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE31
+
+	^ GL_TEXTURE31

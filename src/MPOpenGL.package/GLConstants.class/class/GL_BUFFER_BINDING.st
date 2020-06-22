@@ -1,0 +1,4 @@
+accessing
+GL_BUFFER_BINDING
+
+	^ GL_BUFFER_BINDING

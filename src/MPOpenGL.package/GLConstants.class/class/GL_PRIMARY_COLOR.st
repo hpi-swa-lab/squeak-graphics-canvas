@@ -1,0 +1,4 @@
+accessing
+GL_PRIMARY_COLOR
+
+	^ GL_PRIMARY_COLOR

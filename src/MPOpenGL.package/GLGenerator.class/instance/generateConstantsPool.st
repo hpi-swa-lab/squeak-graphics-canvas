@@ -6,4 +6,8 @@ generateConstantsPool
 	pool theMetaClass
 		compile: self generateConstantsPoolIntializeMethod
 		classified: 'initialization'.
-	pool initialize
+	pool initialize.
+	definedEnums do: [:name |
+		pool theMetaClass
+			compile: (self generateConstantMethod: name value: name)
+			classified: 'accessing']

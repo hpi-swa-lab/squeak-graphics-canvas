@@ -1,0 +1,4 @@
+accessing
+GL_POSITION
+
+	^ GL_POSITION

@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE4
+
+	^ GL_TEXTURE4

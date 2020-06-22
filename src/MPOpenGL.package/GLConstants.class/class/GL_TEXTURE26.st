@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE26
+
+	^ GL_TEXTURE26

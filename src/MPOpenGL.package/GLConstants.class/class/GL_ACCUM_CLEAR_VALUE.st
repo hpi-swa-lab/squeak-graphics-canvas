@@ -1,0 +1,4 @@
+accessing
+GL_ACCUM_CLEAR_VALUE
+
+	^ GL_ACCUM_CLEAR_VALUE

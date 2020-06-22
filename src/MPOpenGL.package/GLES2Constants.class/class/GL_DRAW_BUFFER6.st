@@ -1,0 +1,4 @@
+accessing
+GL_DRAW_BUFFER6
+
+	^ GL_DRAW_BUFFER6

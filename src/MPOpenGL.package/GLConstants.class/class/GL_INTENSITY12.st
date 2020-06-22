@@ -1,0 +1,4 @@
+accessing
+GL_INTENSITY12
+
+	^ GL_INTENSITY12

@@ -1,3 +1,4 @@
 accessing
 bytesPerElement
+
 	^ bytesPerElement

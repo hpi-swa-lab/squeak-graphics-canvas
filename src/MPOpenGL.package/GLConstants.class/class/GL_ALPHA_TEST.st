@@ -1,0 +1,4 @@
+accessing
+GL_ALPHA_TEST
+
+	^ GL_ALPHA_TEST

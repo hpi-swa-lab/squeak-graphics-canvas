@@ -1,0 +1,4 @@
+accessing
+GL_DEPTH_STENCIL
+
+	^ GL_DEPTH_STENCIL

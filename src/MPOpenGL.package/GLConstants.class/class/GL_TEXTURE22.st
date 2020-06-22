@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE22
+
+	^ GL_TEXTURE22

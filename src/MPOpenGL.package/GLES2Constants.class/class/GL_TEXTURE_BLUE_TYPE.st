@@ -1,0 +1,4 @@
+accessing
+GL_TEXTURE_BLUE_TYPE
+
+	^ GL_TEXTURE_BLUE_TYPE

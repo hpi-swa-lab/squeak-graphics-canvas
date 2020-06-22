@@ -1,0 +1,4 @@
+accessing
+GL_DYNAMIC_READ
+
+	^ GL_DYNAMIC_READ

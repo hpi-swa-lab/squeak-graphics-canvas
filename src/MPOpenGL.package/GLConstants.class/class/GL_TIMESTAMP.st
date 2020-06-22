@@ -1,0 +1,4 @@
+accessing
+GL_TIMESTAMP
+
+	^ GL_TIMESTAMP

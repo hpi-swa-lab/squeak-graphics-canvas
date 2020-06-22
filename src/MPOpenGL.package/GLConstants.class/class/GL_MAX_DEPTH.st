@@ -1,0 +1,4 @@
+accessing
+GL_MAX_DEPTH
+
+	^ GL_MAX_DEPTH

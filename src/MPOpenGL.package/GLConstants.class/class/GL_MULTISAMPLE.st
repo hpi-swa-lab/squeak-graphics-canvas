@@ -1,0 +1,4 @@
+accessing
+GL_MULTISAMPLE
+
+	^ GL_MULTISAMPLE

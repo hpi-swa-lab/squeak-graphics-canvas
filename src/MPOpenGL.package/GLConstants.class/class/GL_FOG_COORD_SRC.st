@@ -1,0 +1,4 @@
+accessing
+GL_FOG_COORD_SRC
+
+	^ GL_FOG_COORD_SRC

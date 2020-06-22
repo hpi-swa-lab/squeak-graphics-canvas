@@ -1,3 +1,4 @@
 shader kind
 kind
-	^gl GL_COMPUTE_SHADER
+
+	^ GL_COMPUTE_SHADER

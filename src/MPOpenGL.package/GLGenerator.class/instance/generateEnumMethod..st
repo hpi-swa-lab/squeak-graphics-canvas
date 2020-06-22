@@ -1,4 +1,4 @@
-code generation
+constants pool
 generateEnumMethod: enumTag
 
 	| name value |

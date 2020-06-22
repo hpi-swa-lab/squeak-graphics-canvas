@@ -1,0 +1,4 @@
+accessing
+GL_SPOT_DIRECTION
+
+	^ GL_SPOT_DIRECTION

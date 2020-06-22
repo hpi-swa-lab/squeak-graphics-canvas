@@ -1,0 +1,4 @@
+accessing
+GL_SAMPLE_MASK_VALUE
+
+	^ GL_SAMPLE_MASK_VALUE

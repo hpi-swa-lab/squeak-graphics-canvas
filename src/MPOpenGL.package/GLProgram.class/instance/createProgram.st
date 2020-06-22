@@ -1,3 +1,4 @@
 initialize-release
 createProgram
-	id := gl glCreateProgram.
+
+	id := gl glCreateProgram

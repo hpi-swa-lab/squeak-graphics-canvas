@@ -1,0 +1,4 @@
+accessing
+GL_DST_ALPHA
+
+	^ GL_DST_ALPHA

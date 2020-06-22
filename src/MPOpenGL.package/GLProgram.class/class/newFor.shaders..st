@@ -1,7 +1,8 @@
 instance creation
 newFor: openGlInterface shaders: aCollection
-	^self new
+
+	^ self new
 		gl: openGlInterface;
 		shaders: aCollection;
 		setUpProgram;
-		yourself.
+		yourself

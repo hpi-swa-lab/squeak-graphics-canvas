@@ -1,4 +1,5 @@
 initialize-release
 attachShaders
-	^shaders collect: [:shader |
+
+	^ shaders collect: [:shader |
 		gl glAttachShader: id with: shader created]

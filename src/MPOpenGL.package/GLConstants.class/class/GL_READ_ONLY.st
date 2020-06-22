@@ -1,0 +1,4 @@
+accessing
+GL_READ_ONLY
+
+	^ GL_READ_ONLY

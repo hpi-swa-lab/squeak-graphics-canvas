@@ -1,0 +1,4 @@
+accessing
+GL_ACTIVE_TEXTURE
+
+	^ GL_ACTIVE_TEXTURE

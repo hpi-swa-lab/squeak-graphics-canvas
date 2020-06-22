@@ -1,0 +1,4 @@
+accessing
+GL_PATCH_VERTICES
+
+	^ GL_PATCH_VERTICES

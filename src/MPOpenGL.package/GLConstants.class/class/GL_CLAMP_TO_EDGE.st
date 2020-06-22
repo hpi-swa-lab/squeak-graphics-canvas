@@ -1,0 +1,4 @@
+accessing
+GL_CLAMP_TO_EDGE
+
+	^ GL_CLAMP_TO_EDGE

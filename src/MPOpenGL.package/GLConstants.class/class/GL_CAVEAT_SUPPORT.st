@@ -1,0 +1,4 @@
+accessing
+GL_CAVEAT_SUPPORT
+
+	^ GL_CAVEAT_SUPPORT

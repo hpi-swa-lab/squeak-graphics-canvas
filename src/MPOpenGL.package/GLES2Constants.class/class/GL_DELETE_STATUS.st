@@ -1,0 +1,4 @@
+accessing
+GL_DELETE_STATUS
+
+	^ GL_DELETE_STATUS

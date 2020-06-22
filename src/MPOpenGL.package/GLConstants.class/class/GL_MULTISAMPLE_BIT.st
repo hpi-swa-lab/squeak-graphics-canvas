@@ -1,0 +1,4 @@
+accessing
+GL_MULTISAMPLE_BIT
+
+	^ GL_MULTISAMPLE_BIT

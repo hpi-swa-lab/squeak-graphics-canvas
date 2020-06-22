@@ -1,0 +1,4 @@
+accessing
+GL_SUBPIXEL_BITS
+
+	^ GL_SUBPIXEL_BITS

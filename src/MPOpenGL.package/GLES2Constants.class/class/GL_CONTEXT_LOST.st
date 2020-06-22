@@ -1,0 +1,4 @@
+accessing
+GL_CONTEXT_LOST
+
+	^ GL_CONTEXT_LOST

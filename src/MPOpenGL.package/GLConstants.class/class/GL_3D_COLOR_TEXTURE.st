@@ -1,0 +1,4 @@
+accessing
+GL_3D_COLOR_TEXTURE
+
+	^ GL_3D_COLOR_TEXTURE

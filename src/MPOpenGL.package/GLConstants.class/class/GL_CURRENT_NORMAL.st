@@ -1,0 +1,4 @@
+accessing
+GL_CURRENT_NORMAL
+
+	^ GL_CURRENT_NORMAL

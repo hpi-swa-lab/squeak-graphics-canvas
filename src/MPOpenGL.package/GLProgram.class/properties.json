@@ -11,6 +11,6 @@
 		"shaders" ],
 	"name" : "GLProgram",
 	"pools" : [
-		 ],
+		"GLConstants" ],
 	"super" : "Object",
 	"type" : "normal" }

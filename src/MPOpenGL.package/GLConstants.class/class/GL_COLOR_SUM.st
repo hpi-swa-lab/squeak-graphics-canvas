@@ -1,0 +1,4 @@
+accessing
+GL_COLOR_SUM
+
+	^ GL_COLOR_SUM

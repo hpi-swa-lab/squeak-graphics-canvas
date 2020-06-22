@@ -1,0 +1,4 @@
+accessing
+GL_COMPRESSED_RGBA
+
+	^ GL_COMPRESSED_RGBA

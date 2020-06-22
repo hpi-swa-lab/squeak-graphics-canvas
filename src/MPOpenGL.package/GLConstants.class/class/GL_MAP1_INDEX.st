@@ -1,0 +1,4 @@
+accessing
+GL_MAP1_INDEX
+
+	^ GL_MAP1_INDEX

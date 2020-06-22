@@ -1,0 +1,4 @@
+accessing
+GL_QUAD_STRIP
+
+	^ GL_QUAD_STRIP

@@ -1,0 +1,4 @@
+accessing
+GL_SCISSOR_BIT
+
+	^ GL_SCISSOR_BIT

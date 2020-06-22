@@ -1,0 +1,4 @@
+accessing
+GL_BLUE_INTEGER
+
+	^ GL_BLUE_INTEGER

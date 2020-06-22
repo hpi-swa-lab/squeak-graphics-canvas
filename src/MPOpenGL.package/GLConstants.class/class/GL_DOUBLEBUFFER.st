@@ -1,0 +1,4 @@
+accessing
+GL_DOUBLEBUFFER
+
+	^ GL_DOUBLEBUFFER

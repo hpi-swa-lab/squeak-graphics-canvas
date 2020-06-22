@@ -1,0 +1,4 @@
+accessing
+GL_STENCIL_TEST
+
+	^ GL_STENCIL_TEST

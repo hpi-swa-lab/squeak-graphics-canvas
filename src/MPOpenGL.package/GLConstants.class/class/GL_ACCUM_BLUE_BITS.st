@@ -1,0 +1,4 @@
+accessing
+GL_ACCUM_BLUE_BITS
+
+	^ GL_ACCUM_BLUE_BITS

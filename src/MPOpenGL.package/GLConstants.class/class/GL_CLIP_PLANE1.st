@@ -1,0 +1,4 @@
+accessing
+GL_CLIP_PLANE1
+
+	^ GL_CLIP_PLANE1

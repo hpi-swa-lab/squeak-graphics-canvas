@@ -1,0 +1,4 @@
+accessing
+GL_MAX_TESS_GEN_LEVEL
+
+	^ GL_MAX_TESS_GEN_LEVEL

@@ -1,0 +1,4 @@
+accessing
+GL_SAMPLER_CUBE
+
+	^ GL_SAMPLER_CUBE

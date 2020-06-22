@@ -1,0 +1,4 @@
+accessing
+GL_ALPHA_SCALE
+
+	^ GL_ALPHA_SCALE

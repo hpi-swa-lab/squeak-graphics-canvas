@@ -1,0 +1,4 @@
+accessing
+GL_LINK_STATUS
+
+	^ GL_LINK_STATUS
