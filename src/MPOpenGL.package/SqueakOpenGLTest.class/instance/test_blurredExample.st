@@ -55,10 +55,13 @@ test_blurredExample
 			ogl checkForError.
 			program
 				uniform: (ogl glGetUniformLocation: program id with: 'mvp')
-				value: (Matrix rotateZBy: "(Float pi / 2) rounded" Time utcMicrosecondClock / 100000.0).
+				value: (Matrix rotateZBy: "(Float pi / 2) rounded" Time utcMicrosecondClock / 10000000.0).
 			program
 				uniform: (ogl glGetUniformLocation: program id with: 'image')
 				value: 0.
+			program
+				uniform: (ogl glGetUniformLocation: program id with: 'horizontal')
+				value: 1.	
 			"program uniform: 0 value: (Matrix identity: 4)."
 			ogl checkForError.
 			vbo draw: GL_TRIANGLE_STRIP.
