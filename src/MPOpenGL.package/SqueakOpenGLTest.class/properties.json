@@ -10,6 +10,7 @@
 		"bounds" ],
 	"name" : "SqueakOpenGLTest",
 	"pools" : [
+		"GLConstants",
 		"OpenGLConstants" ],
 	"super" : "CustomOpenGLParentTestCase",
 	"type" : "normal" }
