@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_STACK_OVERFLOW
 
-	^ 16r0503
+	^ 16r503

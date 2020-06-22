@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNPACK_ROW_LENGTH
 
-	^ 16r0CF2
+	^ 16rCF2

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MULTISAMPLE_LINE_WIDTH_RANGE
 
 	^ 16r9381

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PATCHES
 
-	^ 16r000E
+	^ 16rE

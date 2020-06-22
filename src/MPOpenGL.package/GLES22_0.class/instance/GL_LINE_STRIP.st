@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LINE_STRIP
 
-	^ 16r0003
+	^ 16r3

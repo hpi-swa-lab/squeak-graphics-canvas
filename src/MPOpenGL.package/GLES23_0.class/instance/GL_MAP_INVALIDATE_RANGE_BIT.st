@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAP_INVALIDATE_RANGE_BIT
 
-	^ 16r0004
+	^ 16r4

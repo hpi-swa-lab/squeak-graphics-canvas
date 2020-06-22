@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIsShader: shader
 
 	<apicall: GLboolean 'glIsShader' (GLuint)>

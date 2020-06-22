@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_BLUE
 
 	^ 16r1905

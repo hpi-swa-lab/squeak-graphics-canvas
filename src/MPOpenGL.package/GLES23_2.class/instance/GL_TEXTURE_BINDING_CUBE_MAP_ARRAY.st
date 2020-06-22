@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_BINDING_CUBE_MAP_ARRAY
 
 	^ 16r900A

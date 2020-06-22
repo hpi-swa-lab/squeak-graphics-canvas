@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glPatchParameteri: pname with: value
 
 	<apicall: void 'glPatchParameteri' (GLenum GLint)>

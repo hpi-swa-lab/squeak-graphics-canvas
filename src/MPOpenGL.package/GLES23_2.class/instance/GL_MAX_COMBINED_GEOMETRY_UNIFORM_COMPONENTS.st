@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS
 
 	^ 16r8A32

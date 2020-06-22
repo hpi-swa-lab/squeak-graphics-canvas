@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_VERTEX_ATTRIB_ARRAY_POINTER
 
 	^ 16r8645

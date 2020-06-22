@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PACK_SKIP_PIXELS
 
-	^ 16r0D04
+	^ 16rD04

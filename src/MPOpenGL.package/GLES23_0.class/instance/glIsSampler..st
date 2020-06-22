@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIsSampler: sampler
 
 	<apicall: GLboolean 'glIsSampler' (GLuint)>

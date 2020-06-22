@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNPACK_SKIP_ROWS
 
-	^ 16r0CF3
+	^ 16rCF3

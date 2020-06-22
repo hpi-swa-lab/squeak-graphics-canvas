@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_READ_FRAMEBUFFER
 
 	^ 16r8CA8

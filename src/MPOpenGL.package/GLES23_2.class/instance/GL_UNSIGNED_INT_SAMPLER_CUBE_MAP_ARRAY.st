@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY
 
 	^ 16r900F

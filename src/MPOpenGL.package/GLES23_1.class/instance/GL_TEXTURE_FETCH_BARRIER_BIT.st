@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_FETCH_BARRIER_BIT
 
-	^ 16r00000008
+	^ 16r8

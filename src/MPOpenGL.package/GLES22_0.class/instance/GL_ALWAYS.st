@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ALWAYS
 
-	^ 16r0207
+	^ 16r207

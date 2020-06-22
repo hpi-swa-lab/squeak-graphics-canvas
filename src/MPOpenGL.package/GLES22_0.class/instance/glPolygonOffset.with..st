@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glPolygonOffset: factor with: units
 
 	<apicall: void 'glPolygonOffset' (GLfloat GLfloat)>

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PROGRAM_BINARY_RETRIEVABLE_HINT
 
 	^ 16r8257

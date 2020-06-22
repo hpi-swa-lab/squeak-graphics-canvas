@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEPTH_FUNC
 
-	^ 16r0B74
+	^ 16rB74

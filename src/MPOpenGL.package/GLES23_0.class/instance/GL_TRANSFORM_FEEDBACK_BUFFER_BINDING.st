@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TRANSFORM_FEEDBACK_BUFFER_BINDING
 
 	^ 16r8C8F

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MIN
 
 	^ 16r8007

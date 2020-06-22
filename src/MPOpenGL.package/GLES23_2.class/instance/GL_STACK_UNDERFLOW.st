@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_STACK_UNDERFLOW
 
-	^ 16r0504
+	^ 16r504

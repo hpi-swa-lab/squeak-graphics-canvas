@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEPTH_WRITEMASK
 
-	^ 16r0B72
+	^ 16rB72

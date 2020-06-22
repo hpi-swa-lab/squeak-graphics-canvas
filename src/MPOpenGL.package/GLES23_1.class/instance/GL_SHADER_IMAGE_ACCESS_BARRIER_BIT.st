@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SHADER_IMAGE_ACCESS_BARRIER_BIT
 
-	^ 16r00000020
+	^ 16r20

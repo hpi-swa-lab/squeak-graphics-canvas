@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNIFORM_OFFSET
 
 	^ 16r8A3B

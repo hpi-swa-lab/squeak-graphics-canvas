@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glBindRenderbuffer: target with: renderbuffer
 
 	<apicall: void 'glBindRenderbuffer' (GLenum GLuint)>

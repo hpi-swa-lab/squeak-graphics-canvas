@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDrawBuffers: n with: bufs
 
 	<apicall: void 'glDrawBuffers' (GLsizei GLenum*)>

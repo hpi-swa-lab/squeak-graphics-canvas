@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2
 
 	^ 16r9276

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL
 
 	^ 16r8CD2

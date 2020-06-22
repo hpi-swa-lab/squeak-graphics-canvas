@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDepthRangef: n with: f
 
 	<apicall: void 'glDepthRangef' (GLfloat GLfloat)>

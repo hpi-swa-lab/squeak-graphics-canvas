@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SRC_ALPHA
 
-	^ 16r0302
+	^ 16r302

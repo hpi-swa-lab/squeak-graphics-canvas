@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ALIASED_LINE_WIDTH_RANGE
 
 	^ 16r846E

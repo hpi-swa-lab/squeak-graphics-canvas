@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS
 
 	^ 16r8E1E

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CONTEXT_FLAGS
 
 	^ 16r821E

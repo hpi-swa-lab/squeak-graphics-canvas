@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_WRAP_R
 
 	^ 16r8072

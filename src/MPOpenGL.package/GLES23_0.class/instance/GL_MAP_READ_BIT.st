@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAP_READ_BIT
 
-	^ 16r0001
+	^ 16r1

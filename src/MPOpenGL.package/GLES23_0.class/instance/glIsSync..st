@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIsSync: sync
 
 	<apicall: GLboolean 'glIsSync' (GLsync)>

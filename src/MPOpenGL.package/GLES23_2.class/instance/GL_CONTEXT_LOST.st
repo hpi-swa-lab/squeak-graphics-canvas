@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CONTEXT_LOST
 
-	^ 16r0507
+	^ 16r507

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_VIEWPORT_DIMS
 
-	^ 16r0D3A
+	^ 16rD3A

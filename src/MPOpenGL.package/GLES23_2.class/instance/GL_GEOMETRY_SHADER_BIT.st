@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_GEOMETRY_SHADER_BIT
 
-	^ 16r00000004
+	^ 16r4

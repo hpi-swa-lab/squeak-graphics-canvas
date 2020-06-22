@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glClear: mask
 
 	<apicall: void 'glClear' (GLbitfield)>

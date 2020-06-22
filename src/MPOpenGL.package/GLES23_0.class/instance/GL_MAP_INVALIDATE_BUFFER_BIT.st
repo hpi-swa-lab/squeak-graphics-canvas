@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAP_INVALIDATE_BUFFER_BIT
 
-	^ 16r0008
+	^ 16r8

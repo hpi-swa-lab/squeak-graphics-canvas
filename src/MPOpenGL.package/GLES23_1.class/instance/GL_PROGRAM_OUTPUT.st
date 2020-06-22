@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PROGRAM_OUTPUT
 
 	^ 16r92E4

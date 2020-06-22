@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGenerateMipmap: target
 
 	<apicall: void 'glGenerateMipmap' (GLenum)>

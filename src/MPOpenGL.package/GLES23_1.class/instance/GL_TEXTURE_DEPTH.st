@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_DEPTH
 
 	^ 16r8071

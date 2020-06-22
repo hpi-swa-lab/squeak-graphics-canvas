@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_WIDTH
 
 	^ 16r1000

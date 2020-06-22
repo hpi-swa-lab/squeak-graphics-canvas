@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEPTH_BITS
 
-	^ 16r0D56
+	^ 16rD56

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glLineWidth: width
 
 	<apicall: void 'glLineWidth' (GLfloat)>

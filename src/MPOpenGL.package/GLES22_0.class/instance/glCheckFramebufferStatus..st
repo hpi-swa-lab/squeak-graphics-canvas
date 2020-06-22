@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glCheckFramebufferStatus: target
 
 	<apicall: GLenum 'glCheckFramebufferStatus' (GLenum)>

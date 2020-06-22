@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ELEMENT_ARRAY_BARRIER_BIT
 
-	^ 16r00000002
+	^ 16r2

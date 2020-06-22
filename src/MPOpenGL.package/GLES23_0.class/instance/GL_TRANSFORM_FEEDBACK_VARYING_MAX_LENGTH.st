@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH
 
 	^ 16r8C76

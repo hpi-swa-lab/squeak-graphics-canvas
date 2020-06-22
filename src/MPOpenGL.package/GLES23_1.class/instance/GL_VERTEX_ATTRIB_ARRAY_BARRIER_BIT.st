@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT
 
-	^ 16r00000001
+	^ 16r1

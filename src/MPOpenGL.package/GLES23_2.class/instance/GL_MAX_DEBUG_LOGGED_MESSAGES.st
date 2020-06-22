@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_DEBUG_LOGGED_MESSAGES
 
 	^ 16r9144

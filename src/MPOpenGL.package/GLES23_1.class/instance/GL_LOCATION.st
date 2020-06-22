@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LOCATION
 
 	^ 16r930E

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_VIEWPORT
 
-	^ 16r0BA2
+	^ 16rBA2

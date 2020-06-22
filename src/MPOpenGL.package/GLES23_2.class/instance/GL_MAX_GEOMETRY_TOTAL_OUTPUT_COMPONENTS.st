@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS
 
 	^ 16r8DE1

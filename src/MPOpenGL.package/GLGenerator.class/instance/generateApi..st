@@ -7,4 +7,6 @@ generateApi: aString
 	definedEnums := Set new.
 	definedCommands := Set new.
 
-	self api: api featuresDo: [:feature | self feature: feature]
+	self api: api featuresDo: [:feature | self feature: feature].
+	
+	self generateConstantsPool

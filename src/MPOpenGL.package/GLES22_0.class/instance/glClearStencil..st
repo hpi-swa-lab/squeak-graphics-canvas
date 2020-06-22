@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glClearStencil: s
 
 	<apicall: void 'glClearStencil' (GLint)>

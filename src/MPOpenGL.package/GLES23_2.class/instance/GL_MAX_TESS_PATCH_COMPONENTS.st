@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_TESS_PATCH_COMPONENTS
 
 	^ 16r8E84

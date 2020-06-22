@@ -1,4 +1,0 @@
-constants - deprecated
-GL_PERSPECTIVE_CORRECTION_HINT
-
-	self shouldNotImplement

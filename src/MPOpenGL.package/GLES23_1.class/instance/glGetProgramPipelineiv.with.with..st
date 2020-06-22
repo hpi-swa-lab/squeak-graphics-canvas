@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetProgramPipelineiv: pipeline with: pname with: params
 
 	<apicall: void 'glGetProgramPipelineiv' (GLuint GLenum GLint*)>

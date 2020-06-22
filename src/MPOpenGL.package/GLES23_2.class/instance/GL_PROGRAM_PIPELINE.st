@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PROGRAM_PIPELINE
 
 	^ 16r82E4

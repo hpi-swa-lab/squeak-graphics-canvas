@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glHint: target with: mode
 
 	<apicall: void 'glHint' (GLenum GLenum)>

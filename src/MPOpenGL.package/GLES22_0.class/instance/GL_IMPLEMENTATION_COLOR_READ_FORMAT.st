@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_IMPLEMENTATION_COLOR_READ_FORMAT
 
 	^ 16r8B9B

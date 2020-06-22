@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_UNIFORM_LOCATIONS
 
 	^ 16r826E

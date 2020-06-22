@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glEndQuery: target
 
 	<apicall: void 'glEndQuery' (GLenum)>

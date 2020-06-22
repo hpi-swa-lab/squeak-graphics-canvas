@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS
 
 	^ 16r90D8

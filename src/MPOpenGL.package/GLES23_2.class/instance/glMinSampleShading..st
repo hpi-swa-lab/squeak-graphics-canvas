@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glMinSampleShading: value
 
 	<apicall: void 'glMinSampleShading' (GLfloat)>

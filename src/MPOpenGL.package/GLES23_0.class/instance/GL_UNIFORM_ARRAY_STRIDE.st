@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNIFORM_ARRAY_STRIDE
 
 	^ 16r8A3C

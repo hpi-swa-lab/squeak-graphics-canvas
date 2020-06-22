@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEBUG_TYPE_OTHER
 
 	^ 16r8251

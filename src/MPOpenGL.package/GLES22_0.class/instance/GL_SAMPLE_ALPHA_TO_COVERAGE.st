@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SAMPLE_ALPHA_TO_COVERAGE
 
 	^ 16r809E

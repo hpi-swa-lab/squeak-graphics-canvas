@@ -1,4 +1,0 @@
-constants - deprecated
-GL_T2F_C4F_N3F_V3F
-
-	self shouldNotImplement

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_STENCIL_CLEAR_VALUE
 
-	^ 16r0B91
+	^ 16rB91

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNSIGNED_INT
 
 	^ 16r1405

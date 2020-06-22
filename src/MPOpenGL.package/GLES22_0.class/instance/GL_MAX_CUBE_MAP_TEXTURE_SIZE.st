@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_CUBE_MAP_TEXTURE_SIZE
 
 	^ 16r851C

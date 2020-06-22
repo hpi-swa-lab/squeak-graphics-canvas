@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetTexParameterIuiv: target with: pname with: params
 
 	<apicall: void 'glGetTexParameterIuiv' (GLenum GLenum GLuint*)>

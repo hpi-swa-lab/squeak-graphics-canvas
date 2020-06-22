@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetPointerv: pname with: params
 
 	<apicall: void 'glGetPointerv' (GLenum void**)>

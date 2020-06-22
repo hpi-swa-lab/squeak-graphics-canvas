@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_STENCIL_WRITEMASK
 
-	^ 16r0B98
+	^ 16rB98

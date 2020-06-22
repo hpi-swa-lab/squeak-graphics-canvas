@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIsFramebuffer: framebuffer
 
 	<apicall: GLboolean 'glIsFramebuffer' (GLuint)>

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS
 
 	^ 16r8C80

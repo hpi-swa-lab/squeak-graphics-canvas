@@ -1,4 +1,0 @@
-constants - deprecated
-GL_COMPRESSED_SLUMINANCE_ALPHA
-
-	self shouldNotImplement

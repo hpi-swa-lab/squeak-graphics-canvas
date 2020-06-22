@@ -1,4 +1,0 @@
-constants - deprecated
-GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING
-
-	self shouldNotImplement

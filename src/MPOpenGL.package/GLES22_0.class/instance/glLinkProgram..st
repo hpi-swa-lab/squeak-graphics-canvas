@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glLinkProgram: program
 
 	<apicall: void 'glLinkProgram' (GLuint)>

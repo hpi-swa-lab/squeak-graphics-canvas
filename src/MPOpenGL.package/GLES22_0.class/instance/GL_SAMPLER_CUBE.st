@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SAMPLER_CUBE
 
 	^ 16r8B60

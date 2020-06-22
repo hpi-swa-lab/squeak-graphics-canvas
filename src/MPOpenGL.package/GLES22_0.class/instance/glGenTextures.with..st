@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGenTextures: n with: textures
 
 	<apicall: void 'glGenTextures' (GLsizei GLuint*)>

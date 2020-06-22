@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DRAW_BUFFER1
 
 	^ 16r8826

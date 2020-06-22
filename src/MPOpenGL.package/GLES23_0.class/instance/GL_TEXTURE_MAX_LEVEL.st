@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_MAX_LEVEL
 
 	^ 16r813D

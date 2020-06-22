@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ONE_MINUS_SRC_COLOR
 
-	^ 16r0301
+	^ 16r301

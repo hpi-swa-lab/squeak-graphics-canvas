@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PACK_ALIGNMENT
 
-	^ 16r0D05
+	^ 16rD05

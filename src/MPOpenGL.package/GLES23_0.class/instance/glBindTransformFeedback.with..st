@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glBindTransformFeedback: target with: id
 
 	<apicall: void 'glBindTransformFeedback' (GLenum GLuint)>

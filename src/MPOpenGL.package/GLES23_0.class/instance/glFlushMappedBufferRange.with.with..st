@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glFlushMappedBufferRange: target with: offset with: length
 
 	<apicall: void 'glFlushMappedBufferRange' (GLenum GLintptr GLsizeiptr)>

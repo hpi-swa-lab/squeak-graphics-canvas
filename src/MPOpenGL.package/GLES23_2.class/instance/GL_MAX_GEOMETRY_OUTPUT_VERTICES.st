@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_GEOMETRY_OUTPUT_VERTICES
 
 	^ 16r8DE0

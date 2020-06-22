@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DST_ALPHA
 
-	^ 16r0304
+	^ 16r304

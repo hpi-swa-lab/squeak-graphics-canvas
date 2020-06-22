@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ONE_MINUS_DST_COLOR
 
-	^ 16r0307
+	^ 16r307

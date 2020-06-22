@@ -1,4 +1,0 @@
-constants - deprecated
-GL_CURRENT_RASTER_SECONDARY_COLOR
-
-	self shouldNotImplement

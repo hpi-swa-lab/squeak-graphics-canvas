@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PRIMITIVE_BOUNDING_BOX
 
 	^ 16r92BE

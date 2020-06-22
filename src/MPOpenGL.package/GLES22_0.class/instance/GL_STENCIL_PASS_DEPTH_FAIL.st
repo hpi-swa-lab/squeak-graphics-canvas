@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_STENCIL_PASS_DEPTH_FAIL
 
-	^ 16r0B95
+	^ 16rB95

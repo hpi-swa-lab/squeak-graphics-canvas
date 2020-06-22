@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glEndTransformFeedback
 
 	<apicall: void 'glEndTransformFeedback' ()>

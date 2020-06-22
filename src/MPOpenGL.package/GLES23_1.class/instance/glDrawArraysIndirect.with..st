@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDrawArraysIndirect: mode with: indirect
 
 	<apicall: void 'glDrawArraysIndirect' (GLenum void*)>

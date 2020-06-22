@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_COMPUTE_SHARED_MEMORY_SIZE
 
 	^ 16r8262

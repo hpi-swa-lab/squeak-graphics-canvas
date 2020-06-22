@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_GREATER
 
-	^ 16r0204
+	^ 16r204

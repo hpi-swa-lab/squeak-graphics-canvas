@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIsVertexArray: array
 
 	<apicall: GLboolean 'glIsVertexArray' (GLuint)>

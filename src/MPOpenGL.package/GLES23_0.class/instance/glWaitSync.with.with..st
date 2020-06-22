@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glWaitSync: sync with: flags with: timeout
 
 	<apicall: void 'glWaitSync' (GLsync GLbitfield GLuint64)>

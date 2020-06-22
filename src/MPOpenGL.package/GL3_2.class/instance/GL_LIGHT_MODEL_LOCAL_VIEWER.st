@@ -1,4 +1,0 @@
-constants - deprecated
-GL_LIGHT_MODEL_LOCAL_VIEWER
-
-	self shouldNotImplement

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_NOTEQUAL
 
-	^ 16r0205
+	^ 16r205

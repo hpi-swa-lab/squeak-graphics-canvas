@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glTexParameterfv: target with: pname with: params
 
 	<apicall: void 'glTexParameterfv' (GLenum GLenum GLfloat*)>

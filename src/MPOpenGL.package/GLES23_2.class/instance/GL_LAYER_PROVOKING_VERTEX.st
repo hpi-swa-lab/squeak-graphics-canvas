@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LAYER_PROVOKING_VERTEX
 
 	^ 16r825E

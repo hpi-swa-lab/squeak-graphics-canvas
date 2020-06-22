@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ALPHA_BITS
 
-	^ 16r0D55
+	^ 16rD55

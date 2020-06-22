@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_NUM_SHADER_BINARY_FORMATS
 
 	^ 16r8DF9

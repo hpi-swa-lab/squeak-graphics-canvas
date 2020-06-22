@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_SHADER_STORAGE_BUFFER_BINDINGS
 
 	^ 16r90DD

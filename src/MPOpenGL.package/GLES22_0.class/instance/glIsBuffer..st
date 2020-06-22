@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIsBuffer: buffer
 
 	<apicall: GLboolean 'glIsBuffer' (GLuint)>

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_2D_MULTISAMPLE_ARRAY
 
 	^ 16r9102

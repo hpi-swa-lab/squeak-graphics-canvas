@@ -1,4 +1,0 @@
-constants - deprecated
-GL_EDGE_FLAG_ARRAY
-
-	self shouldNotImplement

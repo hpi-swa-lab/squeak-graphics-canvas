@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_POINTS
 
-	^ 16r0000
+	^ 16r0

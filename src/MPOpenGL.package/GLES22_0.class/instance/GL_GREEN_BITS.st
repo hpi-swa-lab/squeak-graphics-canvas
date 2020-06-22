@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_GREEN_BITS
 
-	^ 16r0D53
+	^ 16rD53

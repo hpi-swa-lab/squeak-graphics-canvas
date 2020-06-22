@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_GENERATE_MIPMAP_HINT
 
 	^ 16r8192

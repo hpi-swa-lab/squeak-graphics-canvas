@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glCreateShaderProgramv: type with: count with: strings
 
 	<apicall: GLuint 'glCreateShaderProgramv' (GLenum GLsizei GLchar**)>

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetQueryiv: target with: pname with: params
 
 	<apicall: void 'glGetQueryiv' (GLenum GLenum GLint*)>

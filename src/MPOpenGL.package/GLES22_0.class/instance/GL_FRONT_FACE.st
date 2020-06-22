@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRONT_FACE
 
-	^ 16r0B46
+	^ 16rB46

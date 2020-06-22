@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SUBPIXEL_BITS
 
-	^ 16r0D50
+	^ 16rD50

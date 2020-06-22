@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LESS
 
-	^ 16r0201
+	^ 16r201

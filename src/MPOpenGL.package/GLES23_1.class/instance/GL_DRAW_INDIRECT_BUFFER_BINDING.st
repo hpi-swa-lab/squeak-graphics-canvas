@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DRAW_INDIRECT_BUFFER_BINDING
 
 	^ 16r8F43

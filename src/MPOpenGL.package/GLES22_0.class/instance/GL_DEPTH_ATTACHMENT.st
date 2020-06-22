@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEPTH_ATTACHMENT
 
 	^ 16r8D00

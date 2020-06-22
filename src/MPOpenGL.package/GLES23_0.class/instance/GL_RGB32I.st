@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_RGB32I
 
 	^ 16r8D83

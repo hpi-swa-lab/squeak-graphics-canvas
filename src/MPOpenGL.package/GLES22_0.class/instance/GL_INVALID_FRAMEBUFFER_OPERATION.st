@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INVALID_FRAMEBUFFER_OPERATION
 
-	^ 16r0506
+	^ 16r506

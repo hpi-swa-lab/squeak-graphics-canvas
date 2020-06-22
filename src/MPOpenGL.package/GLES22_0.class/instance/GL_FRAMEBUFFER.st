@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAMEBUFFER
 
 	^ 16r8D40

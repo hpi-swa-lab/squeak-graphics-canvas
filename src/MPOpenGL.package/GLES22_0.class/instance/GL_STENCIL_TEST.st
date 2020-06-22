@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_STENCIL_TEST
 
-	^ 16r0B90
+	^ 16rB90

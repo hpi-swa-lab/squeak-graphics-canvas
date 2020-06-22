@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_VERTEX_ATTRIB_RELATIVE_OFFSET
 
 	^ 16r82D9

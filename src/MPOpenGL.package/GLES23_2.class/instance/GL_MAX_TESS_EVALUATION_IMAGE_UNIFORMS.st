@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_TESS_EVALUATION_IMAGE_UNIFORMS
 
 	^ 16r90CC

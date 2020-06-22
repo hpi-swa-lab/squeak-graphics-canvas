@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glValidateProgram: program
 
 	<apicall: void 'glValidateProgram' (GLuint)>

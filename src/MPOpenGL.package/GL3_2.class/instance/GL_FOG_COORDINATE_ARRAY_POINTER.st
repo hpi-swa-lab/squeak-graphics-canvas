@@ -1,4 +1,0 @@
-constants - deprecated
-GL_FOG_COORDINATE_ARRAY_POINTER
-
-	self shouldNotImplement

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_FRAMEBUFFER_HEIGHT
 
 	^ 16r9316

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glBeginQuery: target with: id
 
 	<apicall: void 'glBeginQuery' (GLenum GLuint)>

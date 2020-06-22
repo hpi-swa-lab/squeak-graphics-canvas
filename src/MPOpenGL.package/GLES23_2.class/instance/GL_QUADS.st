@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_QUADS
 
-	^ 16r0007
+	^ 16r7

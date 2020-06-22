@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ACTIVE_UNIFORM_BLOCKS
 
 	^ 16r8A36

@@ -1,4 +1,0 @@
-constants
-GL_STACK_UNDERFLOW
-
-	^ 16r504

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetIntegerv: pname with: data
 
 	<apicall: void 'glGetIntegerv' (GLenum GLint*)>

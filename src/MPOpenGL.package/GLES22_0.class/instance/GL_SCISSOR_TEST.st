@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_SCISSOR_TEST
 
-	^ 16r0C11
+	^ 16rC11

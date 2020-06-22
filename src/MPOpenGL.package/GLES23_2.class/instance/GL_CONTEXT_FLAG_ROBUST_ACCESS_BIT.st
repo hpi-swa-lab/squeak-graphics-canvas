@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT
 
-	^ 16r00000004
+	^ 16r4

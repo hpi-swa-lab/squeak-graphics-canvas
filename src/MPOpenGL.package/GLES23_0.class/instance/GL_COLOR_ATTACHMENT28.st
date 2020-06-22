@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COLOR_ATTACHMENT28
 
 	^ 16r8CFC

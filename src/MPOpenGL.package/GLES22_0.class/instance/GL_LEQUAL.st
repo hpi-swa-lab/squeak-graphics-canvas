@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LEQUAL
 
-	^ 16r0203
+	^ 16r203

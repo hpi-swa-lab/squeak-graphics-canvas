@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LINES
 
-	^ 16r0001
+	^ 16r1

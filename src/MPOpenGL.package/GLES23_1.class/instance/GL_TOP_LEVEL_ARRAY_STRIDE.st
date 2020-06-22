@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TOP_LEVEL_ARRAY_STRIDE
 
 	^ 16r930D

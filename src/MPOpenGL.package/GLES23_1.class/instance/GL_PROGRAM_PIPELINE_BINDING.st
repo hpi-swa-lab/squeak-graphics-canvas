@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PROGRAM_PIPELINE_BINDING
 
 	^ 16r825A

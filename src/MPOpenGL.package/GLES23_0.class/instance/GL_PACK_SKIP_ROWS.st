@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_PACK_SKIP_ROWS
 
-	^ 16r0D03
+	^ 16rD03

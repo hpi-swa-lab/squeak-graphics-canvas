@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DARKEN
 
 	^ 16r9297

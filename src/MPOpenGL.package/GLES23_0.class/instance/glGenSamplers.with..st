@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGenSamplers: count with: samplers
 
 	<apicall: void 'glGenSamplers' (GLsizei GLuint*)>

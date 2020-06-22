@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDetachShader: program with: shader
 
 	<apicall: void 'glDetachShader' (GLuint GLuint)>

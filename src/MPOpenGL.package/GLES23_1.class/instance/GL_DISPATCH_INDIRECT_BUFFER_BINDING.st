@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DISPATCH_INDIRECT_BUFFER_BINDING
 
 	^ 16r90EF

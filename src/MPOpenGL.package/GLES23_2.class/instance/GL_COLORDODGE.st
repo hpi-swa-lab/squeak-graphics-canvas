@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COLORDODGE
 
 	^ 16r9299

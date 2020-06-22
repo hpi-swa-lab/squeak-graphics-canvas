@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEPTH_CLEAR_VALUE
 
-	^ 16r0B73
+	^ 16rB73

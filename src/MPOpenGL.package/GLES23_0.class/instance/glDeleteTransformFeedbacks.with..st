@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDeleteTransformFeedbacks: n with: ids
 
 	<apicall: void 'glDeleteTransformFeedbacks' (GLsizei GLuint*)>

@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetUniformBlockIndex: program with: uniformBlockName
 
 	<apicall: GLuint 'glGetUniformBlockIndex' (GLuint GLchar*)>

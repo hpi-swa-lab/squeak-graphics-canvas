@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glDrawElementsInstancedBaseVertex: mode with: count with: type with: indices with: instancecount with: basevertex
 
 	<apicall: void 'glDrawElementsInstancedBaseVertex' (GLenum GLsizei GLenum void* GLsizei GLint)>

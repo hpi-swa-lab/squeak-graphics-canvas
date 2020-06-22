@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_INVALID_OPERATION
 
-	^ 16r0502
+	^ 16r502

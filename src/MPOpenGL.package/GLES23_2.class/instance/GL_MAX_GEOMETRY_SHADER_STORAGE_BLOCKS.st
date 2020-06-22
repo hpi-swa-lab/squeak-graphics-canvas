@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS
 
 	^ 16r90D7

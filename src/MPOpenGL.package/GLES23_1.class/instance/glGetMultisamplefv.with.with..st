@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGetMultisamplefv: pname with: index with: val
 
 	<apicall: void 'glGetMultisamplefv' (GLenum GLuint GLfloat*)>

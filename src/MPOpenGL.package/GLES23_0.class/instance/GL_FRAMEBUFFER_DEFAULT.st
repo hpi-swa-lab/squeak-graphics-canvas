@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAMEBUFFER_DEFAULT
 
 	^ 16r8218

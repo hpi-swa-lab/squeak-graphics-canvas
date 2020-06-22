@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_COMPILE_STATUS
 
 	^ 16r8B81

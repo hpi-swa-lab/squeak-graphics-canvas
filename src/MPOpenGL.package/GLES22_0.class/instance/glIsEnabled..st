@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glIsEnabled: cap
 
 	<apicall: GLboolean 'glIsEnabled' (GLenum)>

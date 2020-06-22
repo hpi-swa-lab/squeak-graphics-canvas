@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS
 
 	^ 16r8E1F

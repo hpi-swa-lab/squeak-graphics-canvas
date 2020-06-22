@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_STENCIL_FUNC
 
-	^ 16r0B92
+	^ 16rB92

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_BOOL_VEC4
 
 	^ 16r8B59

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TIMEOUT_IGNORED
 
 	^ 16rFFFFFFFFFFFFFFFF

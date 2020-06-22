@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_GEQUAL
 
-	^ 16r0206
+	^ 16r206

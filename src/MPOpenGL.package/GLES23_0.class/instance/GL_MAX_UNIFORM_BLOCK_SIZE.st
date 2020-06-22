@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_MAX_UNIFORM_BLOCK_SIZE
 
 	^ 16r8A30

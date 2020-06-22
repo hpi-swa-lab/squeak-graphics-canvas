@@ -11,6 +11,6 @@ generateFeatureClass: featureTag
 				instanceVariableNames: ''
 				classVariableNames: ''
 				poolDictionaries: ''
-				category: self systemCategoryName]
+				category: 'MPOpenGL-Versions']
 		ifNotNil: [
 			self error: 'Class with this name already exists']

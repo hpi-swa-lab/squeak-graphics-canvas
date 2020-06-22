@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_RENDERBUFFER_WIDTH
 
 	^ 16r8D42

@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_VERTEX_ARRAY
 
 	^ 16r8074

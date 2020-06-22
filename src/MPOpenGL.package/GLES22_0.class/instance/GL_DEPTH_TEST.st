@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEPTH_TEST
 
-	^ 16r0B71
+	^ 16rB71

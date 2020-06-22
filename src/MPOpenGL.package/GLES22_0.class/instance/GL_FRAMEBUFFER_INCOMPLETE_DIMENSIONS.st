@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS
 
 	^ 16r8CD9

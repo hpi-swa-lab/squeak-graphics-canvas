@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEPTH_RANGE
 
-	^ 16r0B70
+	^ 16rB70

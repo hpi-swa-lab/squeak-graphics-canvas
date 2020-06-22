@@ -1,4 +1,0 @@
-constants - deprecated
-GL_CURRENT_RASTER_POSITION_VALID
-
-	self shouldNotImplement

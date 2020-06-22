@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE
 
 	^ 16r1702

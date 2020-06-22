@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TRIANGLE_FAN
 
-	^ 16r0006
+	^ 16r6

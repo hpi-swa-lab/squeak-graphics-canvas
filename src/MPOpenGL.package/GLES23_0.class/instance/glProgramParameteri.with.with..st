@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glProgramParameteri: program with: pname with: value
 
 	<apicall: void 'glProgramParameteri' (GLuint GLenum GLint)>

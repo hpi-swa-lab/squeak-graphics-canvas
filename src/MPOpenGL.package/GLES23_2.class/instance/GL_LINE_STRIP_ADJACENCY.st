@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_LINE_STRIP_ADJACENCY
 
-	^ 16r000B
+	^ 16rB

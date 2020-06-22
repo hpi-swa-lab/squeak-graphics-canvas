@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glBlendFunci: buf with: src with: dst
 
 	<apicall: void 'glBlendFunci' (GLuint GLenum GLenum)>

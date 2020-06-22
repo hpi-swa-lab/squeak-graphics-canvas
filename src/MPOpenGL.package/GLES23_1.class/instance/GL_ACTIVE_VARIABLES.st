@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_ACTIVE_VARIABLES
 
 	^ 16r9305

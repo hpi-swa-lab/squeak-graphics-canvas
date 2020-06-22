@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_DEPTH_COMPONENT
 
 	^ 16r1902

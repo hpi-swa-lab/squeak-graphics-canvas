@@ -1,4 +1,0 @@
-accessing
-systemCategoryName
-
-	^ 'MPOpenGL-Versions'

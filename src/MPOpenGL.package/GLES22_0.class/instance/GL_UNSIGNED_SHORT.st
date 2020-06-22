@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_UNSIGNED_SHORT
 
 	^ 16r1403

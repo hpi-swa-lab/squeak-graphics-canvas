@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glBlendFuncSeparate: sfactorRGB with: dfactorRGB with: sfactorAlpha with: dfactorAlpha
 
 	<apicall: void 'glBlendFuncSeparate' (GLenum GLenum GLenum GLenum)>

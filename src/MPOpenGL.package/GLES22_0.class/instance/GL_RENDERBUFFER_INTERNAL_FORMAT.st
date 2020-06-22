@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_RENDERBUFFER_INTERNAL_FORMAT
 
 	^ 16r8D44

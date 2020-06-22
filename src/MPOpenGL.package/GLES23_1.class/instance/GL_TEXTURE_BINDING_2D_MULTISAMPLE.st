@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_TEXTURE_BINDING_2D_MULTISAMPLE
 
 	^ 16r9104

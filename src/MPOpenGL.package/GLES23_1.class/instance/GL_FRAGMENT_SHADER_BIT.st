@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAGMENT_SHADER_BIT
 
-	^ 16r00000002
+	^ 16r2

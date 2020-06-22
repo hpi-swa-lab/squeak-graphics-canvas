@@ -1,4 +1,4 @@
-as yet unclassified
+commands
 glGenVertexArrays: n with: arrays
 
 	<apicall: void 'glGenVertexArrays' (GLsizei GLuint*)>

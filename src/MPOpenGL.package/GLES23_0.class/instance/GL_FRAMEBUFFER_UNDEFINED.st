@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_FRAMEBUFFER_UNDEFINED
 
 	^ 16r8219

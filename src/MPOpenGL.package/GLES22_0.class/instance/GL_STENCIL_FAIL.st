@@ -1,4 +1,4 @@
-as yet unclassified
+constants
 GL_STENCIL_FAIL
 
-	^ 16r0B94
+	^ 16rB94

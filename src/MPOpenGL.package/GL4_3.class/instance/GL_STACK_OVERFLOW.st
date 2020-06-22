@@ -1,4 +1,0 @@
-constants
-GL_STACK_OVERFLOW
-
-	^ 16r503
