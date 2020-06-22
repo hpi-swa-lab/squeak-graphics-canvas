@@ -1,0 +1,14 @@
+{
+	"category" : "RenderThee-LayerTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"canvas" ],
+	"name" : "RtRasterizeVisitor",
+	"pools" : [
+		 ],
+	"super" : "RtLayerTreeVisitor",
+	"type" : "normal" }

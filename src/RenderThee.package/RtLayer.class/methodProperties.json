@@ -2,10 +2,16 @@
 	"class" : {
 		 },
 	"instance" : {
+		"assuredForm" : "tobe 6/22/2020 22:29",
 		"bounds:" : "TZ 6/22/2020 21:38",
+		"clipRect" : "tobe 6/22/2020 22:51",
 		"drawOn:" : "stlu 6/8/2020 00:11",
 		"extent" : "TZ 6/22/2020 21:35",
 		"extent:" : "TZ 6/22/2020 21:34",
+		"invalidateCache" : "tobe 6/22/2020 22:12",
+		"isRasterized" : "tobe 6/22/2020 22:35",
+		"needsRasterize" : "tobe 6/22/2020 23:38",
+		"rasterizeForm" : "tobe 6/22/2020 22:54",
 		"transform" : "TZ 6/22/2020 21:34",
 		"transform:" : "TZ 6/22/2020 21:34",
 		"visit:" : "stlu 6/22/2020 11:53" } }

@@ -1,4 +1,4 @@
 transforming
 inverseTransformation
 	"Return the inverse matrix of the receiver."
-	^self clone inplaceHouseHolderInvert.
+	^self copy inplaceHouseHolderInvert.

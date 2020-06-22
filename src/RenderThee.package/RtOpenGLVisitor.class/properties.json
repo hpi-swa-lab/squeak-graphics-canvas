@@ -6,9 +6,10 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"canvas" ],
-	"name" : "RtCanvasCompositor",
+		"matrixStack",
+		"drawCallback" ],
+	"name" : "RtOpenGLVisitor",
 	"pools" : [
-		 ],
+		"GLConstants" ],
 	"super" : "RtLayerTreeVisitor",
 	"type" : "normal" }
