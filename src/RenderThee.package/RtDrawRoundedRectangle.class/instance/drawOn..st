@@ -1,5 +1,5 @@
-applying
-applyOn: aCanvas
+drawing
+drawOn: aCanvas
 
 	aCanvas
 		frameAndFillRoundRect: self bounds

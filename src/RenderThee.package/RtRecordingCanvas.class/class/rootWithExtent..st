@@ -1,4 +1,4 @@
 instance creation
 rootWithExtent: aPoint
 
-	^ self layer: (RtDrawBoundaryLayer offset: 0@0 extent: aPoint)
+	^ self layer: (RtBoundaryLayer offset: 0@0 extent: aPoint)

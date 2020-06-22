@@ -1,5 +1,5 @@
-applying
-applyOn: aCanvas
+drawing
+drawOn: aCanvas
 
 	self flag: #todo.
 	aCanvas
