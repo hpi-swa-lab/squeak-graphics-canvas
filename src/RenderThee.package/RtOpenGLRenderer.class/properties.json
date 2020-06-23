@@ -10,7 +10,9 @@
 		"program",
 		"vbo",
 		"vao",
-		"mvpUniform" ],
+		"mvpUniform",
+		"currentFramebuffer",
+		"currentExtent" ],
 	"name" : "RtOpenGLRenderer",
 	"pools" : [
 		"GLConstants" ],

@@ -10,4 +10,4 @@ renderLayer: aLayer
 				texture bind.
 				vbo draw: GL_TRIANGLE_STRIP].
 			
-	aLayer visit: visitor.
+	aLayer children do: [ :child | child visit: visitor ].

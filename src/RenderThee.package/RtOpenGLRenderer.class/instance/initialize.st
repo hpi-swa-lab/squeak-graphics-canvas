@@ -6,6 +6,8 @@ initialize
 	
 	ogl := GL3_3 newInGLFW: ActiveWorld bounds.
 	
+	self currentExtent: ActiveWorld extent.
+	
 	
 	ogl makeCurrentDuring: [
 		self initializeProgram.
@@ -37,7 +39,6 @@ initialize
 		program vertexAttib: 1 value: vbo stride: 4 offset: 2.
 		ogl checkForError.
 
-		
 		program
 			uniform: (ogl glGetUniformLocation: program id with: 'image')
 			value: 0.
