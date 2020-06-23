@@ -1,7 +1,8 @@
 initialize-release
 create
-	| n |
-	n := 1.
-	bufferArray := IntegerArray new: 1.
-	gl glGenRenderbuffers: n with: bufferArray.
+	"generate renderbuffer object name (id)"
+	| ids |
+	ids := IntegerArray new: 1.
+	gl glGenRenderbuffers: 1 with: ids.
+	id := ids first.
 	

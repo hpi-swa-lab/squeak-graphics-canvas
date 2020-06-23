@@ -1,0 +1,3 @@
+destruction
+create
+	self subclassResponsibility 

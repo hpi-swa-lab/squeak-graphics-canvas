@@ -4,13 +4,12 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "sr 6/23/2020 10:30",
+	"commentStamp" : "",
 	"instvars" : [
-		"height",
-		"width",
-		"internalFormat" ],
-	"name" : "GLRenderBuffer",
+		"gl",
+		"id" ],
+	"name" : "AbstractGLBuffer",
 	"pools" : [
 		"GLConstants" ],
-	"super" : "AbstractGLBuffer",
+	"super" : "Object",
 	"type" : "normal" }

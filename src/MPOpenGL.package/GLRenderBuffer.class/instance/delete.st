@@ -1,5 +1,4 @@
 destruction
 delete
-	| n |
-	n := 1.
-	gl glDeleteRenderbuffers: n with: bufferArray.
+	"delete renderbuffer object"
+	gl glDeleteRenderbuffers: 1 with: (IntegerArray with: id).
