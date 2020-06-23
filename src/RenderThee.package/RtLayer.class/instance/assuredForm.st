@@ -1,4 +1,4 @@
 visiting
 assuredForm
 
-	^ cachedForm ifNil: [cachedForm := self rasterizeForm]
+	^ cache ifNil: [cache := self rasterizeForm]
