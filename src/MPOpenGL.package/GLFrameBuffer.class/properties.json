@@ -1,0 +1,14 @@
+{
+	"category" : "MPOpenGL-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "sr 6/23/2020 13:03",
+	"instvars" : [
+		"target" ],
+	"name" : "GLFrameBuffer",
+	"pools" : [
+		"GLConstants" ],
+	"super" : "AbstractGLBuffer",
+	"type" : "normal" }

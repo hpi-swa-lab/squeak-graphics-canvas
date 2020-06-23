@@ -2,6 +2,7 @@
 	"class" : {
 		 },
 	"instance" : {
+		"bind" : "sr 6/23/2020 12:58",
 		"create" : "sr 6/23/2020 11:59",
 		"createBuffer" : "sr 6/23/2020 11:58",
 		"delete" : "sr 6/23/2020 11:59",
