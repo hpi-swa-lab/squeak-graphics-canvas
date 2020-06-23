@@ -33,6 +33,5 @@ rasterizeTexture: aRendender
 	aRendender currentExtent: oldExtent.
 	oldFramebuffer ifNotNil: [ oldFramebuffer bind ].
 	
-	
 	^ texture
 	
