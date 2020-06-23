@@ -1,5 +1,5 @@
 initialize-release
-createBuffer
+create
 
 	| ids |
 	ids := IntegerArray new: 1.

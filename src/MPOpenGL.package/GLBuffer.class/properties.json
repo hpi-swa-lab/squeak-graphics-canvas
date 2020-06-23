@@ -6,8 +6,6 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"gl",
-		"id",
 		"numElements",
 		"glType",
 		"componentsPerVertex",
@@ -15,5 +13,5 @@
 	"name" : "GLBuffer",
 	"pools" : [
 		"GLConstants" ],
-	"super" : "Object",
+	"super" : "AbstractGLBuffer",
 	"type" : "normal" }
