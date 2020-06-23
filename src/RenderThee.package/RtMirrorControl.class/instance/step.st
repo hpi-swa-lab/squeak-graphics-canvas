@@ -1,7 +1,7 @@
 initialization
 step
 
-	| mvpUniform extentUniform |
+	| mvpUniform |
 	ogl makeCurrentDuring: [
 		ogl beginFrame.
 		
@@ -33,28 +33,27 @@ step
 		ogl checkForError.
 		ogl glViewport: 0 with: 0 with: ActiveWorld width with: ActiveWorld height.
 		
-		"program
+		program
 			uniform: (ogl glGetUniformLocation: program id with: 'image')
-			value: 0."
+			value: 0.
 		
 		ogl glActiveTexture: GL_TEXTURE0.
 		
 		mvpUniform := ogl glGetUniformLocation: program id with: 'mvp'.
-		extentUniform := ogl glGetUniformLocation: program id with: 'scale'.
 		
 		RtOpenGLVisitor new
 			rootMatrix: (Matrix4x4 withOffset: -1 @ 1 @ 0) * (Matrix4x4 withScale: (2.0 / ActiveWorld width) @ (-2.0 / ActiveWorld height) @ 1.0);
-			drawCallback: [:transform :form |
+			drawCallback: [:transform :texture |
 				program
 					uniform: mvpUniform
 					value: transform.
-				program
-					uniform: extentUniform
-					value: (Vector2 x: form width asFloat y: form height asFloat).
-				tex bind.
-				tex texImage: form.
-				vbo draw: GL_TRIANGLE_STRIP];
+				texture bind.
+				vbo draw: GL_TRIANGLE_STRIP.
+				
+	];
 			visitLayer: ActiveWorld groupLayer.
+			
+						"self halt."
 		
 		ogl checkForError.
 		"--- end the end frame operations"

@@ -1,4 +1,4 @@
 visiting
 needsRasterize
 
-	^ transform isPureTranslation not
+	^ "transform isPureTranslation not" false
