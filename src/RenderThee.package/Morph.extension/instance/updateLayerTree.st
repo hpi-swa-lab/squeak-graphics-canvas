@@ -1,5 +1,5 @@
 *RenderThee
-redrawFrame
+updateLayerTree
 	"we have:
 	- morphs to redraw
 	- nun-current layer tree
@@ -7,5 +7,5 @@ redrawFrame
 	we want:
 	- current layer tree"
 	
-	self morphsToRedraw do: [ :morph | morph redrawLayer ].
+	self morphsToRedraw do: [ :morph | morph updateLayer ].
 	self morphsToRedraw: nil.

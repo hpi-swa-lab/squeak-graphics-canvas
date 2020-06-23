@@ -2,9 +2,7 @@
 	"class" : {
 		 },
 	"instance" : {
-		"delete" : "TZ 6/16/2020 16:51",
-		"fragmentShader" : "TZ 6/23/2020 11:23",
-		"initialize" : "TZ 6/23/2020 11:50",
-		"step" : "TZ 6/23/2020 12:18",
-		"stepTime" : "TZ 6/22/2020 16:56",
-		"vertexShader" : "TZ 6/23/2020 12:17" } }
+		"delete" : "TZ 6/23/2020 12:33",
+		"initialize" : "TZ 6/23/2020 12:38",
+		"step" : "TZ 6/23/2020 12:32",
+		"stepTime" : "TZ 6/22/2020 16:56" } }

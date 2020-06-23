@@ -1,7 +1,4 @@
-initialization
+deletion
 delete
-
-	ogl makeCurrentDuring: [ tex delete ].
-	ogl destroy.
-	
+	renderer release.
 	super delete

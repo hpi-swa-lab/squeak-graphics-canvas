@@ -6,9 +6,13 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"renderer" ],
-	"name" : "RtMirrorControl",
+		"ogl",
+		"program",
+		"vbo",
+		"vao",
+		"mvpUniform" ],
+	"name" : "RtOpenGLRenderer",
 	"pools" : [
 		"GLConstants" ],
-	"super" : "Morph",
+	"super" : "Object",
 	"type" : "normal" }

@@ -1,5 +1,5 @@
 *RenderThee
-redrawLayer
+updateLayer
 
 	self assert: self isRepaintBoundary.
 	
