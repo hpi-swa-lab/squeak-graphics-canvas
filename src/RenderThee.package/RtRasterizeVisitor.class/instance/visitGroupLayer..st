@@ -1,5 +1,5 @@
 visiting
-visitBoundaryLayer: aLayer
+visitGroupLayer: aLayer
 
 	canvas
 		translateBy: aLayer transform translation asPoint

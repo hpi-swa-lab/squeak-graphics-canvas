@@ -1,4 +1,4 @@
 visiting
-visitDrawLayer: aLayer
+visitGroupLayer: aLayer
 
 	self visitLayer: aLayer

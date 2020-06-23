@@ -1,4 +1,4 @@
-as yet unclassified
+visiting
 visitLayer: aLayer
 
 	matrixStack addLast: matrixStack last * aLayer transform.

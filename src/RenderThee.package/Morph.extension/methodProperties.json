@@ -2,12 +2,13 @@
 	"class" : {
 		 },
 	"instance" : {
-		"boundaryLayer" : "TZ 6/22/2020 15:42",
-		"boundaryLayer:" : "TZ 6/22/2020 15:45",
+		"groupLayer" : "stlu 6/23/2020 10:23",
+		"groupLayer:" : "stlu 6/23/2020 10:23",
+		"invalidRect:" : "stlu 6/23/2020 09:54",
 		"invalidRect:from:" : "tobe 6/22/2020 22:09",
 		"isRepaintBoundary" : "stlu 6/16/2020 09:55",
 		"markNeedsRedraw" : "stlu 6/22/2020 14:46",
 		"morphsToRedraw" : "stlu 6/22/2020 11:36",
 		"morphsToRedraw:" : "stlu 6/22/2020 11:34",
 		"redrawFrame" : "TZ 6/22/2020 15:15",
-		"redrawLayer" : "tobe 6/22/2020 22:06" } }
+		"redrawLayer" : "stlu 6/23/2020 10:23" } }

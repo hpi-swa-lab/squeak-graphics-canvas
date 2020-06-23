@@ -1,4 +1,4 @@
 visiting
-visitBoundaryLayer: aLayer
+visitGroupLayer: aLayer
 
 	self subclassResponsibility
