@@ -54,7 +54,7 @@ step
 				tex bind.
 				tex texImage: form.
 				vbo draw: GL_TRIANGLE_STRIP];
-			visitLayer: ActiveWorld boundaryLayer.
+			visitLayer: ActiveWorld groupLayer.
 		
 		ogl checkForError.
 		"--- end the end frame operations"

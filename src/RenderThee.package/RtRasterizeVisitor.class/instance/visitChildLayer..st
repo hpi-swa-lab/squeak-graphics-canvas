@@ -1,5 +1,5 @@
 visiting
-visitBoundaryLayer: aLayer
+visitChildLayer: aLayer
 
 	canvas
 		translateBy: aLayer transform translation asPoint
@@ -7,6 +7,6 @@ visitBoundaryLayer: aLayer
 		during: [:childCanvas | | previousCanvas |
 			previousCanvas := canvas.
 			canvas := childCanvas.
-			aLayer children do: [:childLayer | childLayer visit: self].
+			aLayer visit: self.
 			canvas := previousCanvas.
 			childCanvas drawString: aLayer transform translation asString at: 0 @ 0 font: nil color: Color red]

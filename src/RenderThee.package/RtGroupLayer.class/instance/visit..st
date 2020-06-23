@@ -1,4 +1,4 @@
 visiting
 visit: aVisitor
 
-	aVisitor visitBoundaryLayer: self
+	aVisitor visitGroupLayer: self

@@ -1,4 +1,4 @@
-as yet unclassified
+accessing
 rootMatrix: aMatrix
 
 	matrixStack := OrderedCollection with: aMatrix
