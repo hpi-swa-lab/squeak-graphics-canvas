@@ -21,9 +21,9 @@ initialize
 		vbo := GLBuffer newFor: ogl.
 		vbo
 			data: {
-				-1. -1. 0 . 1 .
-				1.  -1. 1 . 1 .
-				-1. 1. 0 . 0	.
+				0. 0. 0 . 1 .
+				1.  0. 1 . 1 .
+				0. 1. 0 . 0	.
 				1.   1. 1 . 0
 			} asFloat32Array
 			usage: GL_STATIC_DRAW

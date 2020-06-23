@@ -37,13 +37,13 @@ step
 			uniform: (ogl glGetUniformLocation: program id with: 'image')
 			value: 0."
 		
-		tex bind.
+		ogl glActiveTexture: GL_TEXTURE0.
 		
 		mvpUniform := ogl glGetUniformLocation: program id with: 'mvp'.
 		extentUniform := ogl glGetUniformLocation: program id with: 'scale'.
 		
 		RtOpenGLVisitor new
-			rootMatrix: (Matrix4x4 ortho: ActiveWorld bounds near: -1 far: 1);
+			rootMatrix: (Matrix4x4 withOffset: -1 @ 1 @ 0) * (Matrix4x4 withScale: (2.0 / ActiveWorld width) @ (-2.0 / ActiveWorld height) @ 1.0);
 			drawCallback: [:transform :form |
 				program
 					uniform: mvpUniform
@@ -51,12 +51,10 @@ step
 				program
 					uniform: extentUniform
 					value: (Vector2 x: form width asFloat y: form height asFloat).
-				"tex texImage: form."
 				tex bind.
+				tex texImage: form.
 				vbo draw: GL_TRIANGLE_STRIP];
 			visitLayer: ActiveWorld boundaryLayer.
-		
-		tex unbind.
 		
 		ogl checkForError.
 		"--- end the end frame operations"
