@@ -6,4 +6,8 @@
 		"renderBufferClass" : "sr 6/23/2020 10:23",
 		"setUp" : "sr 6/23/2020 10:43",
 		"tearDown" : "sr 6/23/2020 10:44",
-		"testNewFor" : "sr 6/23/2020 11:04" } }
+		"testDimensionsAreRectangle" : "sr 6/23/2020 12:22",
+		"testDimensionsByPoint" : "sr 6/23/2020 12:19",
+		"testNewFor" : "sr 6/23/2020 11:04",
+		"testWidthAndHeightInitialize" : "sr 6/23/2020 12:17",
+		"testWidthAndHeightSetting" : "sr 6/23/2020 12:16" } }
