@@ -4,11 +4,12 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "sr 6/23/2020 12:28",
+	"commentStamp" : "sr 6/23/2020 12:37",
 	"instvars" : [
 		"height",
 		"width",
-		"internalFormat" ],
+		"internalFormat",
+		"samples" ],
 	"name" : "GLRenderBuffer",
 	"pools" : [
 		"GLConstants" ],

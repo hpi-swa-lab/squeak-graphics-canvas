@@ -6,4 +6,7 @@ https://www.khronos.org/opengl/wiki/Renderbuffer_Object
 https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glRenderbufferStorage.xhtml
 
 Instance Variables
-	internalFormat:  specifies the internal format to be used for the renderbuffer object's storage and must be a color-renderable, depth-renderable, or stencil-renderable format
+	internalFormat: specifies the internal format to be used for the renderbuffer object's storage and must be a color-renderable, depth-renderable, or stencil-renderable format
+	samples: 		is the number of samples in the buffer. It must be less than GL_MAX_SAMPLES
+	width: 			width in pixels
+	height: 			height in pixels
