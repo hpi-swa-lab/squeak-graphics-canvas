@@ -1,5 +1,6 @@
 stepping
 step2
 
-	renderer renderFrame.
-	
+	renderer shouldClose
+		ifTrue: [self delete]
+		ifFalse: [renderer renderFrame]
