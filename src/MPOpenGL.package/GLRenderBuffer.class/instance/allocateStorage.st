@@ -2,6 +2,7 @@ storage
 allocateStorage
 	"renderbuffers are empty at initialization. Before you can bind them to
 	a Framebuffer Object, you must allocate storage for the renderbuffer"
+	self bind.
 	isStorageAllocated
 		ifTrue: ["calling this function on a renderbuffer that has already had
 			this function called on it will cause it to deallocate any
@@ -13,4 +14,5 @@ allocateStorage
 				with: samples
 				with: internalFormat
 				with: width
-				with: height]
+				with: height].
+		self unbind.

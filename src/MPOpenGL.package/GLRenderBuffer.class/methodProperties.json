@@ -2,9 +2,10 @@
 	"class" : {
 		 },
 	"instance" : {
-		"allocateStorage" : "sr 6/23/2020 12:44",
+		"allocateStorage" : "TZ 6/23/2020 16:00",
+		"attachTo:" : "TZ 6/23/2020 16:07",
 		"attachTo:attachment:" : "sr 6/23/2020 15:31",
-		"bind" : "sr 6/23/2020 12:05",
+		"bind" : "TZ 6/23/2020 16:01",
 		"create" : "sr 6/23/2020 12:06",
 		"delete" : "sr 6/23/2020 12:06",
 		"dimensions:" : "sr 6/23/2020 12:07",
@@ -17,5 +18,6 @@
 		"isStorageAllocated" : "sr 6/23/2020 12:44",
 		"samples" : "sr 6/23/2020 12:33",
 		"samples:" : "sr 6/23/2020 12:33",
+		"unbind" : "TZ 6/23/2020 16:01",
 		"width" : "sr 6/23/2020 11:59",
 		"width:" : "sr 6/23/2020 11:59" } }

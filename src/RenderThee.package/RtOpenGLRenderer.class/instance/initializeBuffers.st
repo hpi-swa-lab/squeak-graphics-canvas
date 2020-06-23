@@ -2,7 +2,7 @@ initialization
 initializeBuffers
 		vao := GLVertexArrayObject newFor: ogl.
 		vao bind: ogl.
-		vbo := GLBuffer newFor: ogl.
+		vbo := GLBuffer new.
 		vbo
 			data: {
 				0. 0. 0 . 0 .

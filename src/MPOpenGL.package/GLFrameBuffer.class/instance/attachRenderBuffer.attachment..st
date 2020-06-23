@@ -11,9 +11,15 @@ attachRenderBuffer: aRenderBuffer attachment: attachment
 				with: id
 				with: attachment
 				with: GL_RENDERBUFFER
-				with: renderBuffer]
-		ifFalse: [gl glFramebufferRenderbuffer
-				with: GL_FRAMEBUFFER
+				with: renderBuffer.
+			self bind.
+			self checkComplete.
+			self unbind.]
+		ifFalse: [
+			self bind.
+			gl glFramebufferRenderbuffer: GL_FRAMEBUFFER
 				with: attachment
 				with: GL_RENDERBUFFER
-				with: renderBuffer]
+				with: renderBuffer.
+			self checkComplete.
+			self unbind]

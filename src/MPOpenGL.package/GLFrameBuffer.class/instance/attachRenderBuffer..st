@@ -1,0 +1,3 @@
+binding
+attachRenderBuffer: aRenderBuffer
+	self attachRenderBuffer: aRenderBuffer attachment: GL_COLOR_ATTACHMENT0
