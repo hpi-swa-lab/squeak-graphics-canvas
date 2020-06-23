@@ -16,7 +16,7 @@ renderFrame
 		
 		ogl glActiveTexture: GL_TEXTURE0.
 		
-		self renderLayer: ActiveWorld.
+		self renderLayer: ActiveWorld groupLayer.
 		
 		ogl checkForError.
 		"--- end the end frame operations"

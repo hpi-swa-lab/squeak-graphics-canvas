@@ -3,7 +3,7 @@
 		 },
 	"instance" : {
 		"assuredForm" : "TZ 6/23/2020 11:55",
-		"assuredTexture" : "TZ 6/23/2020 11:55",
+		"assuredTexture:" : "TZ 6/23/2020 15:12",
 		"bounds:" : "TZ 6/22/2020 21:38",
 		"clipRect" : "tobe 6/22/2020 22:51",
 		"drawOn:" : "stlu 6/8/2020 00:11",
@@ -12,7 +12,7 @@
 		"iconOrThumbnailOfSize:" : "stlu 6/23/2020 09:39",
 		"invalidateCache" : "TZ 6/23/2020 11:55",
 		"isRasterized" : "tobe 6/22/2020 22:35",
-		"needsRasterize" : "TZ 6/23/2020 11:39",
+		"needsRasterize" : "TZ 6/23/2020 14:57",
 		"open" : "stlu 6/23/2020 09:38",
 		"rasterizeForm" : "tobe 6/22/2020 22:54",
 		"transform" : "TZ 6/22/2020 21:34",

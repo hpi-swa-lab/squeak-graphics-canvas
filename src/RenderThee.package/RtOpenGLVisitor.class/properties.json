@@ -7,7 +7,8 @@
 	"commentStamp" : "",
 	"instvars" : [
 		"matrixStack",
-		"drawCallback" ],
+		"drawCallback",
+		"renderer" ],
 	"name" : "RtOpenGLVisitor",
 	"pools" : [
 		"GLConstants" ],

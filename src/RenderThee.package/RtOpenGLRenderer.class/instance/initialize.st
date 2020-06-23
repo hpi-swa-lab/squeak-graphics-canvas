@@ -3,8 +3,9 @@ initialize
 	super initialize.
 	
 	RtRecordingCanvas record: ActiveWorld.
-
+	
 	ogl := GL3_3 newInGLFW: ActiveWorld bounds.
+	
 	
 	ogl makeCurrentDuring: [
 		self initializeProgram.

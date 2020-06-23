@@ -1,5 +1,5 @@
 visiting
-rasterizeTexture
+rasterizeTexture: aRenderer
 	| tex form |
 	form := self rasterizeForm.
 	tex := GLTexture new.

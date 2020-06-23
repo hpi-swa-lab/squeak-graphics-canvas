@@ -1,6 +1,6 @@
 {
 	"class" : {
-		"newFor:" : "sr 6/23/2020 10:19" },
+		 },
 	"instance" : {
 		"allocateStorage" : "sr 6/23/2020 12:44",
 		"bind" : "sr 6/23/2020 12:05",
@@ -9,7 +9,7 @@
 		"dimensions:" : "sr 6/23/2020 12:07",
 		"height" : "sr 6/23/2020 11:59",
 		"height:" : "sr 6/23/2020 11:59",
-		"initialize" : "sr 6/23/2020 12:44",
+		"initialize" : "TZ 6/23/2020 15:39",
 		"internalFormat" : "sr 6/23/2020 11:59",
 		"internalFormat:" : "sr 6/23/2020 11:59",
 		"isMultisampleRenderBuffer" : "sr 6/23/2020 12:33",
