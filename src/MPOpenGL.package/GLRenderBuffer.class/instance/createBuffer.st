@@ -1,2 +1,3 @@
 initialize-release
-createBuffer 
+createBuffer
+	self create

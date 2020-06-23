@@ -1,0 +1,3 @@
+destruction
+deleteBuffer
+	self delete

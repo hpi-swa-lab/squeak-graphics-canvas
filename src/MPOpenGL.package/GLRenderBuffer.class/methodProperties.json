@@ -2,6 +2,11 @@
 	"class" : {
 		"newFor:" : "sr 6/23/2020 10:19" },
 	"instance" : {
-		"createBuffer" : "sr 6/23/2020 10:20",
+		"bufferArray" : "sr 6/23/2020 10:40",
+		"bufferArray:" : "sr 6/23/2020 10:40",
+		"create" : "sr 6/23/2020 11:03",
+		"createBuffer" : "sr 6/23/2020 10:32",
+		"delete" : "sr 6/23/2020 11:07",
+		"deleteBuffer" : "sr 6/23/2020 10:40",
 		"gl" : "sr 6/23/2020 10:20",
 		"gl:" : "sr 6/23/2020 10:20" } }

@@ -4,9 +4,10 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "sr 6/23/2020 10:30",
 	"instvars" : [
-		"gl" ],
+		"gl",
+		"bufferArray" ],
 	"name" : "GLRenderBuffer",
 	"pools" : [
 		"GLConstants" ],
