@@ -1,0 +1,14 @@
+{
+	"category" : "MPOpenGL-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"gl" ],
+	"name" : "GLRenderBuffer",
+	"pools" : [
+		"GLConstants" ],
+	"super" : "Object",
+	"type" : "normal" }

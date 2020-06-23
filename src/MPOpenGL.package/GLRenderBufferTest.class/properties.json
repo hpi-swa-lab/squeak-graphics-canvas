@@ -1,0 +1,15 @@
+{
+	"category" : "MPOpenGL-Test",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "GLRenderBufferTest",
+	"pools" : [
+		"GLConstants",
+		"OpenGLConstants" ],
+	"super" : "TestCase",
+	"type" : "normal" }
