@@ -1,5 +1,5 @@
 initialization
 release
 
-	ogl destroy.
+	ogl ~= #glSuspended ifTrue: [ogl destroy].
 	super release

@@ -9,6 +9,6 @@
 		"children" ],
 	"name" : "RtGroupLayer",
 	"pools" : [
-		 ],
+		"GLConstants" ],
 	"super" : "RtLayer",
 	"type" : "normal" }

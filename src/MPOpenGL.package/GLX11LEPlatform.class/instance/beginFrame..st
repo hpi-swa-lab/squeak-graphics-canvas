@@ -1,3 +1,3 @@
 intitialize
 beginFrame: aGLInstance
-	aGLInstance glPixelStorei: GLUnpackLsbFirst with: 0.
+	aGLInstance glPixelStorei: GLUnpackLsbFirst with: 0
