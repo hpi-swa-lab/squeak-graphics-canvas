@@ -1,6 +1,8 @@
 drawing
 rasterizeTexture: aRendender
-	| texture framebuffer oldFramebuffer oldExtent |
+	| texture framebuffer oldFramebuffer oldExtent ogl |
+	ogl := GL value.
+	
 	oldFramebuffer := aRendender currentFramebuffer.
 	oldExtent := aRendender currentExtent.
 	
@@ -13,19 +15,19 @@ rasterizeTexture: aRendender
 	aRendender currentExtent: self extent.
 	
 	framebuffer bind.
-	GL value glViewport: 0 with: 0 with: self extent x with: self extent y.
-	GL value glClearColor: 0.5 with: 1 with: 1 with: 1.
-	GL value glClear: GLConstants GL_COLOR_BUFFER_BIT.
-	aRendender renderLayer: self.
-	framebuffer unbind.
-	GL value glViewport: 0 with: 0 with: ActiveWorld extent x with: ActiveWorld extent y.
+	framebuffer boundDo: [
+		ogl
+			glViewport: 0 with: 0 with: self extent x with: self extent y;
+			glClearColor: 0.5 with: 1 with: 1 with: 1;
+			glClear: GLConstants GL_COLOR_BUFFER_BIT.
+		aRendender renderLayer: self].
+	
+	ogl glViewport: 0 with: 0 with: ActiveWorld extent x with: ActiveWorld extent y.
 	
 	framebuffer delete.
-	"renderbuffer delete."
 	
 	aRendender currentFramebuffer: oldFramebuffer.
 	aRendender currentExtent: oldExtent.
 	oldFramebuffer ifNotNil: [ oldFramebuffer bind ].
 	
 	^ texture
-	
