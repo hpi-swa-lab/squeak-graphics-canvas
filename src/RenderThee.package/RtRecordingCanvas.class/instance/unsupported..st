@@ -1,4 +1,4 @@
 private
 unsupported: selector
 
-	self addCommand: (DrawUnsupported type: selector)
+	self addCommand: (RtUnsupportedCommand type: selector)

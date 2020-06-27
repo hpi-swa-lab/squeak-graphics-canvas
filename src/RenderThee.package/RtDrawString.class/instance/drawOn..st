@@ -2,9 +2,9 @@ drawing
 drawOn: aCanvas
 
 	aCanvas
-		drawString: self contents
-		from: self from
-		to: self to
-		in: self bounds
-		font: self font
-		color: self color
+		drawString: contents
+		from: from
+		to: to
+		in: bounds
+		font: font
+		color: color

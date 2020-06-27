@@ -1,8 +1,7 @@
 drawing-support
 clipBy: localClipRect during: aBlock
 
+	self addCommand: RtSaveCommand new.
+	self addCommand: (RtClipCommand clipRect: (localClipRect translateBy: self origin negated)).
 	aBlock value: self.
-	"self
-		newCurrentLayer: (RtDrawBoundaryLayer bounds: (localClipRect translateBy: self origin negated))
-		newOrigin: localClipRect origin
-		during: aBlock"
+	self addCommand: RtRestoreCommand new

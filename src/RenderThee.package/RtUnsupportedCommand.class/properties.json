@@ -1,0 +1,14 @@
+{
+	"category" : "RenderThee-CanvasCommands",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"Remembrall" ],
+	"commentStamp" : "",
+	"instvars" : [
+		"type" ],
+	"name" : "RtUnsupportedCommand",
+	"pools" : [
+		 ],
+	"super" : "RtCanvasCommand",
+	"type" : "normal" }

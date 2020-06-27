@@ -2,7 +2,7 @@ drawing
 drawOn: aCanvas
 
 	aCanvas
-		drawPolygon: self vertices
-		fillStyle: self fillStyle
-		borderWidth: self borderStyle width
-		borderColor: self borderStyle color
+		drawPolygon: vertices
+		fillStyle: fillStyle
+		borderWidth: borderStyle width
+		borderColor: borderStyle color

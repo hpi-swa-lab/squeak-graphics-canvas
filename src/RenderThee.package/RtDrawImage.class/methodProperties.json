@@ -1,8 +1,8 @@
 {
 	"class" : {
-		"form:origin:sourceRect:rule:" : "stlu 5/11/2020 15:19" },
+		"form:origin:sourceRect:rule:" : "stlu 6/27/2020 14:38" },
 	"instance" : {
-		"drawOn:" : "stlu 6/22/2020 11:12",
+		"drawOn:" : "stlu 6/27/2020 14:36",
 		"form" : "stlu 4/16/2020 15:35",
 		"form:" : "stlu 4/16/2020 15:35",
 		"origin" : "stlu 4/16/2020 15:35",
@@ -10,5 +10,4 @@
 		"rule" : "stlu 4/16/2020 15:35",
 		"rule:" : "stlu 4/16/2020 15:35",
 		"sourceRect" : "stlu 4/16/2020 15:35",
-		"sourceRect:" : "stlu 4/16/2020 15:35",
-		"visit:" : "stlu 5/25/2020 09:43" } }
+		"sourceRect:" : "stlu 4/16/2020 15:35" } }

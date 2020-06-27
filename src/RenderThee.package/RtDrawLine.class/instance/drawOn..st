@@ -1,4 +1,8 @@
 drawing
 drawOn: aCanvas
 
-	aCanvas line: self from to: self to width: self width color: self color
+	aCanvas
+		line: from
+		to: to
+		width: width
+		color: color

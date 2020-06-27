@@ -2,6 +2,6 @@ drawing
 drawOn: aCanvas
 
 	aCanvas
-		frameAndFillRectangle: self bounds
-		fillStyle: self fillStyle
-		borderStyle: self borderStyle
+		frameAndFillRectangle: bounds
+		fillStyle: fillStyle
+		borderStyle: borderStyle
