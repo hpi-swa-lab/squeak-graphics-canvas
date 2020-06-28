@@ -1,0 +1,3 @@
+as yet unclassified
+vkGetPhysicalDeviceFormatProperties2KHR
+	^ self vkGetPhysicalDeviceFormatProperties2

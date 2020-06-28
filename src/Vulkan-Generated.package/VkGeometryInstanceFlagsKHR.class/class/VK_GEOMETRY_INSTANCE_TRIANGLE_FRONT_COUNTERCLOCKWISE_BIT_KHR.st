@@ -1,0 +1,4 @@
+as yet unclassified
+VK_GEOMETRY_INSTANCE_TRIANGLE_FRONT_COUNTERCLOCKWISE_BIT_KHR
+
+	^ self on: (1 bitShift: 1)

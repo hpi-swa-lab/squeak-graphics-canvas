@@ -1,0 +1,14 @@
+{
+	"category" : "Vulkan-Generated",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "VkMemoryPropertyFlags",
+	"pools" : [
+		 ],
+	"super" : "ExternalTypeAlias",
+	"type" : "normal" }

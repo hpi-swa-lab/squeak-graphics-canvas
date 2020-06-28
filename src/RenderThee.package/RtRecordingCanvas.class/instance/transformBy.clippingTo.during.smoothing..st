@@ -7,11 +7,17 @@ transformBy: aDisplayTransform clippingTo: localClipRect during: aBlock smoothin
 			clippingTo: localClipRect
 			during: aBlock].
 	
-	self notYetImplemented.
+	"self notYetImplemented."
 	self flag: #todo. "disregarding localClipRect origin"
 	self
+		newCurrentLayer: (RtGroupLayer transform: aDisplayTransform asMatrix4x4 extent: localClipRect extent)
+		newOrigin: localClipRect origin + aDisplayTransform offset
+		during: [:canvas | aBlock value: canvas].
+	
+	
+	"self
 		newCurrentLayer: (RtBoundaryLayer
 							transform: (aDisplayTransform asMatrix4x4 translation: localClipRect origin asVector3)
 							extent: localClipRect extent)
 		newOrigin: aDisplayTransform offset
-		during: aBlock
+		during: aBlock"

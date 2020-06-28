@@ -1,0 +1,4 @@
+as yet unclassified
+VK_CONSERVATIVE_RASTERIZATION_MODE_OVERESTIMATE_EXT
+
+	^ self on: (1)

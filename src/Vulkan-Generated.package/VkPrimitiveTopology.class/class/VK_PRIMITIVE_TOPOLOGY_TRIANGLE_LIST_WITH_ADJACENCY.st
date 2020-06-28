@@ -1,0 +1,4 @@
+as yet unclassified
+VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST_WITH_ADJACENCY
+
+	^ self on: (8)

@@ -1,0 +1,4 @@
+as yet unclassified
+VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_OBJECT_KHR
+
+	^ self on: (0)

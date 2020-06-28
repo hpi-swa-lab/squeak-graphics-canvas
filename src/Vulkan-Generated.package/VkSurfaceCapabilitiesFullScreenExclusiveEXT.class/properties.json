@@ -1,0 +1,14 @@
+{
+	"category" : "Vulkan-Generated",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "VkSurfaceCapabilitiesFullScreenExclusiveEXT",
+	"pools" : [
+		 ],
+	"super" : "ExternalStructure",
+	"type" : "normal" }

@@ -1,0 +1,3 @@
+as yet unclassified
+vkGetPhysicalDeviceMemoryProperties2KHR
+	^ self vkGetPhysicalDeviceMemoryProperties2

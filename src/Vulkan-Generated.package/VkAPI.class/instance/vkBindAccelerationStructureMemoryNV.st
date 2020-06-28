@@ -1,0 +1,3 @@
+as yet unclassified
+vkBindAccelerationStructureMemoryNV
+	^ self vkBindAccelerationStructureMemoryKHR

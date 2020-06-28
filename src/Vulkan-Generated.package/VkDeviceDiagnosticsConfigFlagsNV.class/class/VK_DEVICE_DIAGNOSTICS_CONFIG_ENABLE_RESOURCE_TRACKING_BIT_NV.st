@@ -1,0 +1,4 @@
+as yet unclassified
+VK_DEVICE_DIAGNOSTICS_CONFIG_ENABLE_RESOURCE_TRACKING_BIT_NV
+
+	^ self on: (1 bitShift: 1)

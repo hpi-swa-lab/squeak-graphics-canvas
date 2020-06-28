@@ -1,0 +1,14 @@
+{
+	"category" : "Vulkan-Generated",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "VkImportFenceWin32HandleInfoKHR",
+	"pools" : [
+		 ],
+	"super" : "ExternalStructure",
+	"type" : "normal" }

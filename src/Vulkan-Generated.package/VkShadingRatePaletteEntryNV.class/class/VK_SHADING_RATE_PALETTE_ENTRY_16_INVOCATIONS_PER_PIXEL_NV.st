@@ -1,0 +1,4 @@
+as yet unclassified
+VK_SHADING_RATE_PALETTE_ENTRY_16_INVOCATIONS_PER_PIXEL_NV
+
+	^ self on: (1)

@@ -1,0 +1,14 @@
+{
+	"category" : "Vulkan-Generated",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "VkGeometryFlagBitsNV",
+	"pools" : [
+		 ],
+	"super" : "ExternalTypeAlias",
+	"type" : "normal" }

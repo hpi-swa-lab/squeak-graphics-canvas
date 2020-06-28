@@ -1,0 +1,9 @@
+{
+	"class" : {
+		"VK_DISPLAY_PLANE_ALPHA_GLOBAL_BIT_KHR" : "tobe 6/28/2020 19:10",
+		"VK_DISPLAY_PLANE_ALPHA_OPAQUE_BIT_KHR" : "tobe 6/28/2020 19:10",
+		"VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_BIT_KHR" : "tobe 6/28/2020 19:10",
+		"VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_PREMULTIPLIED_BIT_KHR" : "tobe 6/28/2020 19:10",
+		"originalTypeName" : "tobe 6/28/2020 19:54" },
+	"instance" : {
+		 } }

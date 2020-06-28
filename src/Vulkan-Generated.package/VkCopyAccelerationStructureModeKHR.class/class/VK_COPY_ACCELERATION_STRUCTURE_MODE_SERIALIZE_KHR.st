@@ -1,0 +1,4 @@
+as yet unclassified
+VK_COPY_ACCELERATION_STRUCTURE_MODE_SERIALIZE_KHR
+
+	^ self on: (2)

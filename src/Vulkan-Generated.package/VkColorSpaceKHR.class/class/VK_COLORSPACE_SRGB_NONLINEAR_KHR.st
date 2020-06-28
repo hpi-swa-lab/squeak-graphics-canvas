@@ -1,0 +1,4 @@
+as yet unclassified
+VK_COLORSPACE_SRGB_NONLINEAR_KHR
+
+	^ self on: (self VK_COLOR_SPACE_SRGB_NONLINEAR_KHR)

@@ -1,0 +1,4 @@
+as yet unclassified
+VK_STRUCTURE_TYPE_PIPELINE_TESSELLATION_STATE_CREATE_INFO
+
+	^ self on: (21)

@@ -1,0 +1,4 @@
+as yet unclassified
+VK_MEMORY_OVERALLOCATION_BEHAVIOR_DISALLOWED_AMD
+
+	^ self on: (2)

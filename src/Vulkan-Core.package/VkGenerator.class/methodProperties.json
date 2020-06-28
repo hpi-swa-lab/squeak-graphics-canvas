@@ -1,0 +1,27 @@
+{
+	"class" : {
+		"fromFile:" : "tobe 6/27/2020 21:04" },
+	"instance" : {
+		"commandDefinitionFor:" : "tobe 6/28/2020 08:01",
+		"createCommandAlias:" : "tobe 6/28/2020 08:31",
+		"createCommandMethod:" : "tobe 6/28/2020 08:31",
+		"createCommands" : "tobe 6/28/2020 07:42",
+		"createEnums" : "tobe 6/28/2020 11:51",
+		"createExtension:" : "tobe 6/28/2020 11:02",
+		"createExtensionFrom:" : "tobe 6/28/2020 11:52",
+		"createExternalStructure:from:" : "tobe 6/28/2020 00:03",
+		"createStruct:" : "tobe 6/27/2020 23:39",
+		"createTypeFor:" : "tobe 6/28/2020 19:08",
+		"createTypedef:" : "tobe 6/27/2020 23:09",
+		"createTypedef:type:" : "tobe 6/27/2020 23:26",
+		"createTypes" : "tobe 6/27/2020 23:51",
+		"createUnion:" : "tobe 6/27/2020 23:39",
+		"enumNameFor:" : "tobe 6/27/2020 23:17",
+		"formatNumber:" : "tobe 6/27/2020 21:28",
+		"getAPIClass" : "tobe 6/28/2020 08:28",
+		"initializeWithXML:" : "tobe 6/28/2020 11:02",
+		"paramType:" : "tobe 6/28/2020 08:06",
+		"patchCAMetalLayer" : "tobe 6/28/2020 08:35",
+		"printValueOf:on:" : "tobe 6/27/2020 21:31",
+		"signatureStringFor:params:" : "tobe 6/28/2020 07:59",
+		"typeName:from:" : "FFI 6/28/2020 00:02" } }

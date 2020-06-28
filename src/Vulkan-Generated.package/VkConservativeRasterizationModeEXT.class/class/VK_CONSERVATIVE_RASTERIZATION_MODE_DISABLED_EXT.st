@@ -1,0 +1,4 @@
+as yet unclassified
+VK_CONSERVATIVE_RASTERIZATION_MODE_DISABLED_EXT
+
+	^ self on: (0)

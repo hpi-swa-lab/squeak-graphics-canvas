@@ -1,0 +1,8 @@
+{
+	"class" : {
+		"VK_BUFFER_CREATE_SPARSE_ALIASED_BIT" : "tobe 6/28/2020 19:10",
+		"VK_BUFFER_CREATE_SPARSE_BINDING_BIT" : "tobe 6/28/2020 19:10",
+		"VK_BUFFER_CREATE_SPARSE_RESIDENCY_BIT" : "tobe 6/28/2020 19:10",
+		"originalTypeName" : "tobe 6/28/2020 19:54" },
+	"instance" : {
+		 } }

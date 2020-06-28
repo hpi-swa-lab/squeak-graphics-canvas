@@ -1,0 +1,5 @@
+as yet unclassified
+vkGetPhysicalDeviceExternalSemaphoreProperties: physicalDevice with: pExternalSemaphoreInfo with: pExternalSemaphoreProperties
+
+	<apicall: void 'vkGetPhysicalDeviceExternalSemaphoreProperties' (VkPhysicalDevice VkPhysicalDeviceExternalSemaphoreInfo* VkExternalSemaphoreProperties*)>
+	^ self externalCallFailed

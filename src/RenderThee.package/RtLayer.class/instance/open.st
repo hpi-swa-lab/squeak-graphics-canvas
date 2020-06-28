@@ -1,4 +1,4 @@
 utilities
 open
 
-	self assuredForm asMorph openInHand
+	self rasterizeForm asMorph openInHand

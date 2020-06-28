@@ -1,0 +1,3 @@
+as yet unclassified
+vkGetDeviceGroupPeerMemoryFeaturesKHR
+	^ self vkGetDeviceGroupPeerMemoryFeatures

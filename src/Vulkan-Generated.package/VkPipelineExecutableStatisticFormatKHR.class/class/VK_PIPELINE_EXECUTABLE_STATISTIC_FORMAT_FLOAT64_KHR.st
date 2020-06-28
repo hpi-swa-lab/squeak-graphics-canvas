@@ -1,0 +1,4 @@
+as yet unclassified
+VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_FLOAT64_KHR
+
+	^ self on: (3)

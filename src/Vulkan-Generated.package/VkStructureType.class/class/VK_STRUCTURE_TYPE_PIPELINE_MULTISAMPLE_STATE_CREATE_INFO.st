@@ -1,0 +1,4 @@
+as yet unclassified
+VK_STRUCTURE_TYPE_PIPELINE_MULTISAMPLE_STATE_CREATE_INFO
+
+	^ self on: (24)

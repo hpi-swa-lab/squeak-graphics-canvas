@@ -1,0 +1,17 @@
+{
+	"category" : "Vulkan-Examples",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"window",
+		"instance",
+		"debugCallback",
+		"debugMessenger" ],
+	"name" : "VkExample",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

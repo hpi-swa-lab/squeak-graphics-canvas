@@ -1,0 +1,4 @@
+as yet unclassified
+VK_PIPELINE_CREATION_FEEDBACK_APPLICATION_PIPELINE_CACHE_HIT_BIT_EXT
+
+	^ self on: (1 bitShift: 1)

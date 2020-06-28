@@ -1,0 +1,14 @@
+{
+	"category" : "Vulkan-Generated",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "VkExternalFenceFeatureFlagsKHR",
+	"pools" : [
+		 ],
+	"super" : "ExternalTypeAlias",
+	"type" : "normal" }

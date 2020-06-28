@@ -1,0 +1,4 @@
+as yet unclassified
+VK_PIPELINE_CREATION_FEEDBACK_BASE_PIPELINE_ACCELERATION_BIT_EXT
+
+	^ self on: (1 bitShift: 2)

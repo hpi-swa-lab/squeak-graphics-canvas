@@ -1,0 +1,3 @@
+as yet unclassified
+vkGetRayTracingShaderGroupHandlesNV
+	^ self vkGetRayTracingShaderGroupHandlesKHR

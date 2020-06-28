@@ -1,0 +1,4 @@
+as yet unclassified
+VK_FULL_SCREEN_EXCLUSIVE_APPLICATION_CONTROLLED_EXT
+
+	^ self on: (3)

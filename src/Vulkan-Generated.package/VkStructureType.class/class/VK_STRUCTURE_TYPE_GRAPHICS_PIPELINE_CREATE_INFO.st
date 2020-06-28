@@ -1,0 +1,4 @@
+as yet unclassified
+VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO
+
+	^ self on: (28)

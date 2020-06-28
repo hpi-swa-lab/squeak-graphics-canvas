@@ -1,0 +1,4 @@
+as yet unclassified
+VK_INDIRECT_COMMANDS_LAYOUT_USAGE_EXPLICIT_PREPROCESS_BIT_NV
+
+	^ self on: (1 bitShift: 0)

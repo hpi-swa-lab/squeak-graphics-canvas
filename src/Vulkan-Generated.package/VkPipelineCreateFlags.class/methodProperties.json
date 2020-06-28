@@ -1,0 +1,8 @@
+{
+	"class" : {
+		"VK_PIPELINE_CREATE_ALLOW_DERIVATIVES_BIT" : "tobe 6/28/2020 19:10",
+		"VK_PIPELINE_CREATE_DERIVATIVE_BIT" : "tobe 6/28/2020 19:10",
+		"VK_PIPELINE_CREATE_DISABLE_OPTIMIZATION_BIT" : "tobe 6/28/2020 19:10",
+		"originalTypeName" : "tobe 6/28/2020 19:54" },
+	"instance" : {
+		 } }

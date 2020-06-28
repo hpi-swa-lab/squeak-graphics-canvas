@@ -1,0 +1,4 @@
+as yet unclassified
+VK_VALIDATION_FEATURE_DISABLE_OBJECT_LIFETIMES_EXT
+
+	^ self on: (4)

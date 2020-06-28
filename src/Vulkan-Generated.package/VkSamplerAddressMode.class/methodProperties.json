@@ -1,0 +1,9 @@
+{
+	"class" : {
+		"VK_SAMPLER_ADDRESS_MODE_CLAMP_TO_BORDER" : "tobe 6/28/2020 19:10",
+		"VK_SAMPLER_ADDRESS_MODE_CLAMP_TO_EDGE" : "tobe 6/28/2020 19:10",
+		"VK_SAMPLER_ADDRESS_MODE_MIRRORED_REPEAT" : "tobe 6/28/2020 19:10",
+		"VK_SAMPLER_ADDRESS_MODE_REPEAT" : "tobe 6/28/2020 19:10",
+		"originalTypeName" : "tobe 6/28/2020 19:10" },
+	"instance" : {
+		 } }

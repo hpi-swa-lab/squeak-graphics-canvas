@@ -2,5 +2,8 @@ OrderedDictionary {
 	'src/MPOpenGL.package' : #SquotCypressCodeSerializer,
 	'src/RenderThee.package' : #SquotCypressCodeSerializer,
 	'src/Renderly.package' : #SquotCypressCodeSerializer,
-	'src/3DTransform.package' : #SquotCypressCodeSerializer
+	'src/3DTransform.package' : #SquotCypressCodeSerializer,
+	'src/Vulkan-Core.package' : #SquotCypressCodeSerializer,
+	'src/Vulkan-Generated.package' : #SquotCypressCodeSerializer,
+	'src/Vulkan-Examples.package' : #SquotCypressCodeSerializer
 }

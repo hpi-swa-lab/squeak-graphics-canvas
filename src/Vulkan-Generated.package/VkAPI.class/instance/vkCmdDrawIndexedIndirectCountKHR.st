@@ -1,0 +1,3 @@
+as yet unclassified
+vkCmdDrawIndexedIndirectCountKHR
+	^ self vkCmdDrawIndexedIndirectCount

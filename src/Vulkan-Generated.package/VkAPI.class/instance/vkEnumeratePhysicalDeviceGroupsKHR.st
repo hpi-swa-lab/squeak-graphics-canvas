@@ -1,0 +1,3 @@
+as yet unclassified
+vkEnumeratePhysicalDeviceGroupsKHR
+	^ self vkEnumeratePhysicalDeviceGroups

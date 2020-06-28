@@ -1,0 +1,3 @@
+as yet unclassified
+vkGetImageSparseMemoryRequirements2KHR
+	^ self vkGetImageSparseMemoryRequirements2

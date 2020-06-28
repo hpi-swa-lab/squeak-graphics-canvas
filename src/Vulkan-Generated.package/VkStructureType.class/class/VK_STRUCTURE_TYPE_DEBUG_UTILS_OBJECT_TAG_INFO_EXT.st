@@ -1,0 +1,4 @@
+as yet unclassified
+VK_STRUCTURE_TYPE_DEBUG_UTILS_OBJECT_TAG_INFO_EXT
+
+	^ self on: (1000128001)

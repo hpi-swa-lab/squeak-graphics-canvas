@@ -1,0 +1,9 @@
+{
+	"class" : {
+		"VK_SCOPE_DEVICE_NV" : "tobe 6/28/2020 19:10",
+		"VK_SCOPE_QUEUE_FAMILY_NV" : "tobe 6/28/2020 19:10",
+		"VK_SCOPE_SUBGROUP_NV" : "tobe 6/28/2020 19:10",
+		"VK_SCOPE_WORKGROUP_NV" : "tobe 6/28/2020 19:10",
+		"originalTypeName" : "tobe 6/28/2020 19:10" },
+	"instance" : {
+		 } }

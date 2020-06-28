@@ -1,0 +1,8 @@
+{
+	"class" : {
+		"VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT" : "tobe 6/28/2020 19:10",
+		"VK_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT" : "tobe 6/28/2020 19:10",
+		"VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT" : "tobe 6/28/2020 19:10",
+		"originalTypeName" : "tobe 6/28/2020 19:54" },
+	"instance" : {
+		 } }

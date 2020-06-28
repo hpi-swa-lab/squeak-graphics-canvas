@@ -1,0 +1,4 @@
+as yet unclassified
+VK_PERFORMANCE_PARAMETER_TYPE_HW_COUNTERS_SUPPORTED_INTEL
+
+	^ self on: (0)

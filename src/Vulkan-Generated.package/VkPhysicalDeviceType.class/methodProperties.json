@@ -1,0 +1,10 @@
+{
+	"class" : {
+		"VK_PHYSICAL_DEVICE_TYPE_CPU" : "tobe 6/28/2020 19:10",
+		"VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU" : "tobe 6/28/2020 19:10",
+		"VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU" : "tobe 6/28/2020 19:10",
+		"VK_PHYSICAL_DEVICE_TYPE_OTHER" : "tobe 6/28/2020 19:10",
+		"VK_PHYSICAL_DEVICE_TYPE_VIRTUAL_GPU" : "tobe 6/28/2020 19:10",
+		"originalTypeName" : "tobe 6/28/2020 19:10" },
+	"instance" : {
+		 } }

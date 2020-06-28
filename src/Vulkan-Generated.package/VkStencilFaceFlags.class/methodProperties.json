@@ -1,0 +1,9 @@
+{
+	"class" : {
+		"VK_STENCIL_FACE_BACK_BIT" : "tobe 6/28/2020 19:10",
+		"VK_STENCIL_FACE_FRONT_AND_BACK" : "tobe 6/28/2020 19:10",
+		"VK_STENCIL_FACE_FRONT_BIT" : "tobe 6/28/2020 19:10",
+		"VK_STENCIL_FRONT_AND_BACK" : "tobe 6/28/2020 19:10",
+		"originalTypeName" : "tobe 6/28/2020 19:54" },
+	"instance" : {
+		 } }

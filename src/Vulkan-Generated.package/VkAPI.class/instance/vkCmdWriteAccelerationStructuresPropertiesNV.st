@@ -1,0 +1,3 @@
+as yet unclassified
+vkCmdWriteAccelerationStructuresPropertiesNV
+	^ self vkCmdWriteAccelerationStructuresPropertiesKHR
