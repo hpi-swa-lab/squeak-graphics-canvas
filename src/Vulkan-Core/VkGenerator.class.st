@@ -302,7 +302,8 @@ VkGenerator >> initializeWithXML: anXML [
 	self createTypes.
 	self createEnums.
 	self createCommands.
-	self createExtension: 'VK_EXT_debug_utils'
+	self createExtension: 'VK_EXT_debug_utils'.
+	self createExtension: 'VK_KHR_swapchain'
 ]
 
 { #category : #'as yet unclassified' }

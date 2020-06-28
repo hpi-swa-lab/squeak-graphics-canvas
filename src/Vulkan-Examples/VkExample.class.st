@@ -22,6 +22,23 @@ VkExample >> checkError: aResult [
 ]
 
 { #category : #'as yet unclassified' }
+VkExample >> chooseSwapPresentMode: aCollection [
+
+	aCollection do: [:mode |
+		mode value = VkPresentModeKHR VK_PRESENT_MODE_MAILBOX_KHR ifTrue: [mode]].
+	^ VkPresentModeKHR VK_PRESENT_MODE_FIFO_KHR
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> chooseSwapSurfaceFormat: anArray [
+
+	anArray do: [:format |
+		(format format value = VkFormat VK_FORMAT_B8G8R8_SRGB and: [
+			format colorSpace value = VkColorSpaceKHR VK_COLOR_SPACE_SRGB_NONLINEAR_KHR]) ifTrue: [^ format]].
+	^ anArray at: 1
+]
+
+{ #category : #'as yet unclassified' }
 VkExample >> cleanup [
 
 	SBToggledCode
@@ -180,6 +197,39 @@ VkExample >> createSurface [
 ]
 
 { #category : #'as yet unclassified' }
+VkExample >> createSwapChain [
+
+	| capabilities formatCount formats surfaceFormat presentMode presentModes presentModeCount swapExtent imageCount |
+	capabilities := VkSurfaceCapabilitiesKHR externalNew.
+	VkAPI new vkGetPhysicalDeviceSurfaceCapabilitiesKHR: physicalDevice with: surface with: capabilities.
+	
+	formatCount := IntegerArray new: 1.
+	VkAPI new vkGetPhysicalDeviceSurfaceFormatsKHR: physicalDevice with: surface with: formatCount with: nil.
+	formats := VkSurfaceFormatKHR allocate: formatCount first.
+	VkAPI new
+		vkGetPhysicalDeviceSurfaceFormatsKHR: physicalDevice
+		with: surface
+		with: formatCount
+		with: (VkSurfaceFormatKHR fromHandle: formats getHandle).
+	
+	presentModeCount := IntegerArray new: 1.
+	VkAPI new vkGetPhysicalDeviceSurfacePresentModesKHR: physicalDevice with: surface with: presentModeCount with: nil.
+	presentModes := VkSurfaceFormatKHR allocate: presentModeCount first.
+	VkAPI new
+		vkGetPhysicalDeviceSurfacePresentModesKHR: physicalDevice
+		with: surface
+		with: presentModeCount
+		with: (VkSurfaceFormatKHR fromHandle: presentModes getHandle).
+	
+	surfaceFormat := self chooseSwapSurfaceFormat: formats.
+	presentMode := self chooseSwapPresentMode: presentModes.
+	swapExtent := capabilities currentExtent.
+	
+	imageCount := capabilities minImageCount + 1.
+	(capabilities maxImageCount > 0 and: [imageCount > capabilities maxImageCount]) ifTrue: [imageCount := capabilities maxImageCount]
+]
+
+{ #category : #'as yet unclassified' }
 VkExample >> destroyDebugUtilsMessengerEXT: instance with: messenger with: pAllocator [
 
 	| funcAddr method |
@@ -234,7 +284,8 @@ VkExample >> initVulkan [
 	self setupDebugMessenger.
 	self createSurface.
 	self pickPhysicalDevice.
-	self createLogicalDevice
+	self createLogicalDevice.
+	self createSwapChain
 ]
 
 { #category : #'as yet unclassified' }
