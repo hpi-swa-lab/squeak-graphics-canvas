@@ -9,7 +9,12 @@
 		"window",
 		"instance",
 		"debugCallback",
-		"debugMessenger" ],
+		"debugMessenger",
+		"device",
+		"physicalDevice",
+		"graphicsQueue",
+		"surface",
+		"swapChain" ],
 	"name" : "VkExample",
 	"pools" : [
 		 ],

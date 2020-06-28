@@ -3,4 +3,6 @@ initVulkan
 
 	self createInstance.
 	self setupDebugMessenger.
-	self pickPhysicalDevice
+	self createSurface.
+	self pickPhysicalDevice.
+	self createLogicalDevice
