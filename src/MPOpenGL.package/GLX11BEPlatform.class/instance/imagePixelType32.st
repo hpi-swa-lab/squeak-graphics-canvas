@@ -1,3 +1,0 @@
-accessing
-imagePixelType32
-	^GLUnsignedInt8888Rev

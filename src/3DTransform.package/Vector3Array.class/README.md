@@ -1,1 +1,0 @@
-I am an efficient representation of Vector3 elements.

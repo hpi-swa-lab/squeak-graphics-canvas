@@ -1,4 +1,0 @@
-as yet unclassified
-VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO
-
-	^ self on: (32)

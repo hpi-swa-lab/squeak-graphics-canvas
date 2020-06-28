@@ -1,4 +1,0 @@
-accessing
-GL_BLEND_SRC
-
-	^ GL_BLEND_SRC

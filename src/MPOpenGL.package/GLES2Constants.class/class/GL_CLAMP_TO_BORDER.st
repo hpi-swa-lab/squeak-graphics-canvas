@@ -1,4 +1,0 @@
-accessing
-GL_CLAMP_TO_BORDER
-
-	^ GL_CLAMP_TO_BORDER

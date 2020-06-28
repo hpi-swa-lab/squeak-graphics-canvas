@@ -1,4 +1,0 @@
-accessing
-GL_ALPHA_TEST_REF
-
-	^ GL_ALPHA_TEST_REF

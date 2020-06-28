@@ -1,4 +1,0 @@
-accessing
-GL_VIEWPORT_BIT
-
-	^ GL_VIEWPORT_BIT

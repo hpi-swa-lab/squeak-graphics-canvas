@@ -1,4 +1,0 @@
-accessing
-GL_INDEX_ARRAY
-
-	^ GL_INDEX_ARRAY

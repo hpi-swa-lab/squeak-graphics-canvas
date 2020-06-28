@@ -1,4 +1,0 @@
-accessing
-GL_VIEW_CLASS_32_BITS
-
-	^ GL_VIEW_CLASS_32_BITS

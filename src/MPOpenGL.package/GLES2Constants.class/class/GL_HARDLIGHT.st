@@ -1,4 +1,0 @@
-accessing
-GL_HARDLIGHT
-
-	^ GL_HARDLIGHT

@@ -1,4 +1,0 @@
-accessing
-GL_VALIDATE_STATUS
-
-	^ GL_VALIDATE_STATUS

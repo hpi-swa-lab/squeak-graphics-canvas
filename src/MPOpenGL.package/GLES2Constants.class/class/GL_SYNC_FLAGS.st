@@ -1,4 +1,0 @@
-accessing
-GL_SYNC_FLAGS
-
-	^ GL_SYNC_FLAGS

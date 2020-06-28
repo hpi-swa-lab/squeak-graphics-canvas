@@ -1,4 +1,0 @@
-as yet unclassified
-VK_VALIDATION_FEATURE_DISABLE_API_PARAMETERS_EXT
-
-	^ self on: (3)

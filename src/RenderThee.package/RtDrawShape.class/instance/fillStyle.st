@@ -1,4 +1,0 @@
-accessing
-fillStyle
-
-	^ fillStyle

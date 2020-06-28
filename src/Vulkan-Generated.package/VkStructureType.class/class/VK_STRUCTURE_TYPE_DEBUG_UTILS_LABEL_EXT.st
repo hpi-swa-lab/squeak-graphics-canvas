@@ -1,4 +1,0 @@
-as yet unclassified
-VK_STRUCTURE_TYPE_DEBUG_UTILS_LABEL_EXT
-
-	^ self on: (1000128002)

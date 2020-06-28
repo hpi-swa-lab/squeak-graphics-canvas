@@ -1,4 +1,0 @@
-accessing
-GL_EYE_LINEAR
-
-	^ GL_EYE_LINEAR

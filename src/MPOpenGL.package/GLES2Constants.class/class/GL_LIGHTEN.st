@@ -1,4 +1,0 @@
-accessing
-GL_LIGHTEN
-
-	^ GL_LIGHTEN

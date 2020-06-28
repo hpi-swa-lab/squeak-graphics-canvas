@@ -1,4 +1,0 @@
-accessing
-GL_SLUMINANCE8
-
-	^ GL_SLUMINANCE8

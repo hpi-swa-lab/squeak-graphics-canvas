@@ -1,4 +1,0 @@
-accessing
-GL_SCISSOR_BOX
-
-	^ GL_SCISSOR_BOX

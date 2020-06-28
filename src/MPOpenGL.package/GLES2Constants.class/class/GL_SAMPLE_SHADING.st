@@ -1,4 +1,0 @@
-accessing
-GL_SAMPLE_SHADING
-
-	^ GL_SAMPLE_SHADING

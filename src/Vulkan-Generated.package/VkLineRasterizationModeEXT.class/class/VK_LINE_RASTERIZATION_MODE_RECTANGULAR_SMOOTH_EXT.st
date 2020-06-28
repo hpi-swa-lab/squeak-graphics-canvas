@@ -1,4 +1,0 @@
-as yet unclassified
-VK_LINE_RASTERIZATION_MODE_RECTANGULAR_SMOOTH_EXT
-
-	^ self on: (3)

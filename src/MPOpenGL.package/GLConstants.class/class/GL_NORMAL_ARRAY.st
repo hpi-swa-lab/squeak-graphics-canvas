@@ -1,4 +1,0 @@
-accessing
-GL_NORMAL_ARRAY
-
-	^ GL_NORMAL_ARRAY

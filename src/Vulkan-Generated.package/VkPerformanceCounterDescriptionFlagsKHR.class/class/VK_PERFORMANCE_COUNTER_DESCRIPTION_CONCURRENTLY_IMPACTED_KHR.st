@@ -1,4 +1,0 @@
-as yet unclassified
-VK_PERFORMANCE_COUNTER_DESCRIPTION_CONCURRENTLY_IMPACTED_KHR
-
-	^ self on: (1 bitShift: 1)

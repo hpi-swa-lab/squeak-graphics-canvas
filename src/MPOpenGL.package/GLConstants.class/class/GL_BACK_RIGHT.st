@@ -1,4 +1,0 @@
-accessing
-GL_BACK_RIGHT
-
-	^ GL_BACK_RIGHT

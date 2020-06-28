@@ -1,4 +1,0 @@
-accessing
-GL_GENERATE_MIPMAP
-
-	^ GL_GENERATE_MIPMAP

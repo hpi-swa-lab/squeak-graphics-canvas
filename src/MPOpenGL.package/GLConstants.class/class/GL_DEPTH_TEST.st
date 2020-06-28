@@ -1,4 +1,0 @@
-accessing
-GL_DEPTH_TEST
-
-	^ GL_DEPTH_TEST

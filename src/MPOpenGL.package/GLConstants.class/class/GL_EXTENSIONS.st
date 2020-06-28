@@ -1,4 +1,0 @@
-accessing
-GL_EXTENSIONS
-
-	^ GL_EXTENSIONS

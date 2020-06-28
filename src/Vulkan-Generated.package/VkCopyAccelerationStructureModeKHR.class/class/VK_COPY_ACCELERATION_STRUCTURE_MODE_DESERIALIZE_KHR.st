@@ -1,4 +1,0 @@
-as yet unclassified
-VK_COPY_ACCELERATION_STRUCTURE_MODE_DESERIALIZE_KHR
-
-	^ self on: (3)

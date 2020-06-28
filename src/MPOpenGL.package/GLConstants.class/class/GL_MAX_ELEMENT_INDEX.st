@@ -1,4 +1,0 @@
-accessing
-GL_MAX_ELEMENT_INDEX
-
-	^ GL_MAX_ELEMENT_INDEX

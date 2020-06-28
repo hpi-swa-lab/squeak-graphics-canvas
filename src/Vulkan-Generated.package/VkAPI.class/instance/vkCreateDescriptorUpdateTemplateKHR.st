@@ -1,3 +1,0 @@
-as yet unclassified
-vkCreateDescriptorUpdateTemplateKHR
-	^ self vkCreateDescriptorUpdateTemplate

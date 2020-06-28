@@ -1,5 +1,0 @@
-as yet unclassified
-vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV: physicalDevice with: pCombinationCount with: pCombinations
-
-	<apicall: VkResult 'vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV' (VkPhysicalDevice uint32_t* VkFramebufferMixedSamplesCombinationNV*)>
-	^ self externalCallFailed

@@ -1,1 +1,0 @@
-I am the superclass for all floating point vector objects in Croquet.

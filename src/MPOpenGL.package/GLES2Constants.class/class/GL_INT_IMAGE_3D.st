@@ -1,4 +1,0 @@
-accessing
-GL_INT_IMAGE_3D
-
-	^ GL_INT_IMAGE_3D

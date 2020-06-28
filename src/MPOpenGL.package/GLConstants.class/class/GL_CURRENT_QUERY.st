@@ -1,4 +1,0 @@
-accessing
-GL_CURRENT_QUERY
-
-	^ GL_CURRENT_QUERY

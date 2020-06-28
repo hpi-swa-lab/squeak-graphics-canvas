@@ -1,4 +1,0 @@
-as yet unclassified
-VK_DEVICE_DIAGNOSTICS_CONFIG_ENABLE_AUTOMATIC_CHECKPOINTS_BIT_NV
-
-	^ self on: (1 bitShift: 2)

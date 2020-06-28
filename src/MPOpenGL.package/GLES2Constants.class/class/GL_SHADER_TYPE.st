@@ -1,4 +1,0 @@
-accessing
-GL_SHADER_TYPE
-
-	^ GL_SHADER_TYPE

@@ -1,4 +1,0 @@
-testing
-isVisible: aRectangle
-
-	^ true

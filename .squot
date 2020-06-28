@@ -1,9 +1,9 @@
 OrderedDictionary {
-	'src/MPOpenGL.package' : #SquotCypressCodeSerializer,
-	'src/RenderThee.package' : #SquotCypressCodeSerializer,
-	'src/Renderly.package' : #SquotCypressCodeSerializer,
-	'src/3DTransform.package' : #SquotCypressCodeSerializer,
-	'src/Vulkan-Core.package' : #SquotCypressCodeSerializer,
-	'src/Vulkan-Generated.package' : #SquotCypressCodeSerializer,
-	'src/Vulkan-Examples.package' : #SquotCypressCodeSerializer
+	'src/3DTransform' : #SquotTonelSerializer,
+	'src/MPOpenGL' : #SquotTonelSerializer,
+	'src/Vulkan-Generated' : #SquotTonelSerializer,
+	'src/Vulkan-Core' : #SquotTonelSerializer,
+	'src/Vulkan-Examples' : #SquotTonelSerializer,
+	'src/RenderThee' : #SquotTonelSerializer,
+	'src/Renderly' : #SquotTonelSerializer
 }

@@ -1,4 +1,0 @@
-accessing
-GL_STACK_OVERFLOW
-
-	^ GL_STACK_OVERFLOW

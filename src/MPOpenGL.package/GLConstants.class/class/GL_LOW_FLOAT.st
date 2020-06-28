@@ -1,4 +1,0 @@
-accessing
-GL_LOW_FLOAT
-
-	^ GL_LOW_FLOAT

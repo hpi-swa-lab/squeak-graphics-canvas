@@ -1,4 +1,0 @@
-accessing
-GL_INTERPOLATE
-
-	^ GL_INTERPOLATE

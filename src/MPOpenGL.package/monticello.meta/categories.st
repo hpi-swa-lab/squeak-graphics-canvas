@@ -1,7 +1,0 @@
-SystemOrganization addCategory: #'MPOpenGL-Deprecated'!
-SystemOrganization addCategory: #'MPOpenGL-Core'!
-SystemOrganization addCategory: #'MPOpenGL-Shaders'!
-SystemOrganization addCategory: #'MPOpenGL-Test'!
-SystemOrganization addCategory: #'MPOpenGL-Constants'!
-SystemOrganization addCategory: #'MPOpenGL-Generation'!
-SystemOrganization addCategory: #'MPOpenGL-Versions'!

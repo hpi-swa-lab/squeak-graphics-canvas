@@ -1,4 +1,0 @@
-as yet unclassified
-VK_VALIDATION_FEATURE_ENABLE_GPU_ASSISTED_RESERVE_BINDING_SLOT_EXT
-
-	^ self on: (1)

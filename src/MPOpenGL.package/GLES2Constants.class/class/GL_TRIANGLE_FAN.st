@@ -1,4 +1,0 @@
-accessing
-GL_TRIANGLE_FAN
-
-	^ GL_TRIANGLE_FAN

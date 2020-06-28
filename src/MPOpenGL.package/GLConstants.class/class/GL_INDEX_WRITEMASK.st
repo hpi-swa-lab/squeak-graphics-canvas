@@ -1,4 +1,0 @@
-accessing
-GL_INDEX_WRITEMASK
-
-	^ GL_INDEX_WRITEMASK

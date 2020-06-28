@@ -1,4 +1,0 @@
-accessing
-GL_LUMINANCE16
-
-	^ GL_LUMINANCE16

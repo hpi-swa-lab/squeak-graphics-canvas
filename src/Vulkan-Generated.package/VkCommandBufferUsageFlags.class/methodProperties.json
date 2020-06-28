@@ -1,8 +1,0 @@
-{
-	"class" : {
-		"VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT" : "tobe 6/28/2020 19:10",
-		"VK_COMMAND_BUFFER_USAGE_RENDER_PASS_CONTINUE_BIT" : "tobe 6/28/2020 19:10",
-		"VK_COMMAND_BUFFER_USAGE_SIMULTANEOUS_USE_BIT" : "tobe 6/28/2020 19:10",
-		"originalTypeName" : "tobe 6/28/2020 19:54" },
-	"instance" : {
-		 } }

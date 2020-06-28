@@ -1,4 +1,0 @@
-accessing
-GL_R11F_G11F_B10F
-
-	^ GL_R11F_G11F_B10F

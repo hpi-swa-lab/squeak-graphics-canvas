@@ -1,4 +1,0 @@
-as yet unclassified
-VK_STRUCTURE_TYPE_COMMAND_BUFFER_INHERITANCE_INFO
-
-	^ self on: (41)

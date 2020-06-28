@@ -1,3 +1,0 @@
-as yet unclassified
-vkGetImageMemoryRequirements2KHR
-	^ self vkGetImageMemoryRequirements2

@@ -1,4 +1,0 @@
-accessing
-GL_CLIP_PLANE2
-
-	^ GL_CLIP_PLANE2

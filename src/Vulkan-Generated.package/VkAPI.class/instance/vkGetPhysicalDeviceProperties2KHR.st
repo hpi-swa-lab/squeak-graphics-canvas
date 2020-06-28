@@ -1,3 +1,0 @@
-as yet unclassified
-vkGetPhysicalDeviceProperties2KHR
-	^ self vkGetPhysicalDeviceProperties2

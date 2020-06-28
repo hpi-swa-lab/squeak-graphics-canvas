@@ -1,4 +1,0 @@
-as yet unclassified
-VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_2X1_PIXELS_NV
-
-	^ self on: (6)

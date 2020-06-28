@@ -1,4 +1,0 @@
-accessing
-GL_TEXTURE8
-
-	^ GL_TEXTURE8

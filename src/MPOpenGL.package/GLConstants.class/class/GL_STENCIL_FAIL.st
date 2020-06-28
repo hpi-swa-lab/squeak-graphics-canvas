@@ -1,4 +1,0 @@
-accessing
-GL_STENCIL_FAIL
-
-	^ GL_STENCIL_FAIL

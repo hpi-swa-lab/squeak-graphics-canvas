@@ -1,4 +1,0 @@
-accessing
-GL_POLYGON_BIT
-
-	^ GL_POLYGON_BIT

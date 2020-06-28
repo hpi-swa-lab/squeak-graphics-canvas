@@ -1,4 +1,0 @@
-accessing
-GL_STENCIL_INDEX16
-
-	^ GL_STENCIL_INDEX16

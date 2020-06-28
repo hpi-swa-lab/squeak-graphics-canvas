@@ -1,9 +1,0 @@
-{
-	"class" : {
-		"VK_PRESENT_MODE_FIFO_KHR" : "tobe 6/28/2020 19:10",
-		"VK_PRESENT_MODE_FIFO_RELAXED_KHR" : "tobe 6/28/2020 19:10",
-		"VK_PRESENT_MODE_IMMEDIATE_KHR" : "tobe 6/28/2020 19:10",
-		"VK_PRESENT_MODE_MAILBOX_KHR" : "tobe 6/28/2020 19:10",
-		"originalTypeName" : "tobe 6/28/2020 19:10" },
-	"instance" : {
-		 } }

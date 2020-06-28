@@ -1,4 +1,0 @@
-accessing
-GL_PACK_LSB_FIRST
-
-	^ GL_PACK_LSB_FIRST

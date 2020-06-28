@@ -1,4 +1,0 @@
-initialization
-resetDrawLayer
-
-	drawLayer := nil

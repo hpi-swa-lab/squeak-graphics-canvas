@@ -1,4 +1,0 @@
-accessing
-GL_READ_PIXELS_TYPE
-
-	^ GL_READ_PIXELS_TYPE

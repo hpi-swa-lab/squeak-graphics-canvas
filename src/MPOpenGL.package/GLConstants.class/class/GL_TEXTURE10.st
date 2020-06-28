@@ -1,4 +1,0 @@
-accessing
-GL_TEXTURE10
-
-	^ GL_TEXTURE10

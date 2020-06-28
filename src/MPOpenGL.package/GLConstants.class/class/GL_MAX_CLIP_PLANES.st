@@ -1,4 +1,0 @@
-accessing
-GL_MAX_CLIP_PLANES
-
-	^ GL_MAX_CLIP_PLANES

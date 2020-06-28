@@ -1,4 +1,0 @@
-accessing
-GL_MATRIX_STRIDE
-
-	^ GL_MATRIX_STRIDE

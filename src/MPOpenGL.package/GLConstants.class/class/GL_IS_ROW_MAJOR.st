@@ -1,4 +1,0 @@
-accessing
-GL_IS_ROW_MAJOR
-
-	^ GL_IS_ROW_MAJOR

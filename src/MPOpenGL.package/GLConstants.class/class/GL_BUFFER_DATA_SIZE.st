@@ -1,4 +1,0 @@
-accessing
-GL_BUFFER_DATA_SIZE
-
-	^ GL_BUFFER_DATA_SIZE

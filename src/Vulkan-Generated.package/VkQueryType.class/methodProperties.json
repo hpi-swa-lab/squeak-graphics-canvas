@@ -1,8 +1,0 @@
-{
-	"class" : {
-		"VK_QUERY_TYPE_OCCLUSION" : "tobe 6/28/2020 19:10",
-		"VK_QUERY_TYPE_PIPELINE_STATISTICS" : "tobe 6/28/2020 19:10",
-		"VK_QUERY_TYPE_TIMESTAMP" : "tobe 6/28/2020 19:10",
-		"originalTypeName" : "tobe 6/28/2020 19:10" },
-	"instance" : {
-		 } }

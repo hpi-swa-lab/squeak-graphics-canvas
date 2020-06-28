@@ -1,4 +1,0 @@
-as yet unclassified
-VK_FORMAT_R8G8_SINT
-
-	^ self on: (21)

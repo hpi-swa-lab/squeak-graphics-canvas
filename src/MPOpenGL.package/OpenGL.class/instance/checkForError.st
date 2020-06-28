@@ -1,7 +1,0 @@
-debugging
-checkForError
-	"Check for any OpenGL errors, and raise an Error if any exist."
-	| error |
-
-	error := self glGetError.
-	(error ~= 0) ifTrue: [self error: (self gluErrorString: error) ]

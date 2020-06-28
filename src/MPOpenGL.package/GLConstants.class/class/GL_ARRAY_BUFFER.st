@@ -1,4 +1,0 @@
-accessing
-GL_ARRAY_BUFFER
-
-	^ GL_ARRAY_BUFFER

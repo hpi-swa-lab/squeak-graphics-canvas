@@ -1,4 +1,0 @@
-accessing
-GL_NORMALIZE
-
-	^ GL_NORMALIZE

@@ -1,4 +1,0 @@
-as yet unclassified
-VK_STRUCTURE_TYPE_PIPELINE_DYNAMIC_STATE_CREATE_INFO
-
-	^ self on: (27)

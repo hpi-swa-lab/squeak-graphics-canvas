@@ -1,4 +1,0 @@
-accessing
-GL_UNPACK_LSB_FIRST
-
-	^ GL_UNPACK_LSB_FIRST

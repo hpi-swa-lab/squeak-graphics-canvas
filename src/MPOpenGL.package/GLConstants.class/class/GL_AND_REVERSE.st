@@ -1,4 +1,0 @@
-accessing
-GL_AND_REVERSE
-
-	^ GL_AND_REVERSE

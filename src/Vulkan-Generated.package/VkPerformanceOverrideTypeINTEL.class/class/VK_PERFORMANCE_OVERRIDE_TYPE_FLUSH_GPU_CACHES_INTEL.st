@@ -1,4 +1,0 @@
-as yet unclassified
-VK_PERFORMANCE_OVERRIDE_TYPE_FLUSH_GPU_CACHES_INTEL
-
-	^ self on: (1)

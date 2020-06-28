@@ -1,4 +1,0 @@
-accessing
-GL_TEXTURE_CUBE_MAP
-
-	^ GL_TEXTURE_CUBE_MAP

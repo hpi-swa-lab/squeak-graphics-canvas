@@ -1,4 +1,0 @@
-accessing
-GL_BLUE_BIAS
-
-	^ GL_BLUE_BIAS

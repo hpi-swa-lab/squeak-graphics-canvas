@@ -1,4 +1,0 @@
-accessing
-GL_DST_COLOR
-
-	^ GL_DST_COLOR

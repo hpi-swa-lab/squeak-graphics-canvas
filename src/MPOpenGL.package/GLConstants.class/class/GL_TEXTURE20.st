@@ -1,4 +1,0 @@
-accessing
-GL_TEXTURE20
-
-	^ GL_TEXTURE20

@@ -1,4 +1,0 @@
-accessing
-GL_NEAREST
-
-	^ GL_NEAREST

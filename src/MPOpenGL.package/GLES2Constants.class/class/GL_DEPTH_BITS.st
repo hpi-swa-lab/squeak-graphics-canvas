@@ -1,4 +1,0 @@
-accessing
-GL_DEPTH_BITS
-
-	^ GL_DEPTH_BITS

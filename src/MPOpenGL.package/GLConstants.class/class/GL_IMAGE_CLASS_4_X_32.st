@@ -1,4 +1,0 @@
-accessing
-GL_IMAGE_CLASS_4_X_32
-
-	^ GL_IMAGE_CLASS_4_X_32

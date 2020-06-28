@@ -1,4 +1,0 @@
-accessing
-GL_COLOR_CLEAR_VALUE
-
-	^ GL_COLOR_CLEAR_VALUE

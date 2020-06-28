@@ -1,4 +1,0 @@
-accessing
-GL_COLOR_INDEXES
-
-	^ GL_COLOR_INDEXES

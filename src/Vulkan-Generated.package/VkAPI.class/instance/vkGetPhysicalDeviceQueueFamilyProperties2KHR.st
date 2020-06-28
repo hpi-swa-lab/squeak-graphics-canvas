@@ -1,3 +1,0 @@
-as yet unclassified
-vkGetPhysicalDeviceQueueFamilyProperties2KHR
-	^ self vkGetPhysicalDeviceQueueFamilyProperties2

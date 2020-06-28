@@ -1,4 +1,0 @@
-accessing
-GL_BLEND_EQUATION
-
-	^ GL_BLEND_EQUATION

@@ -1,4 +1,0 @@
-accessing
-GL_MAJOR_VERSION
-
-	^ GL_MAJOR_VERSION

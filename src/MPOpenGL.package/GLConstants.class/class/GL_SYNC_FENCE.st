@@ -1,4 +1,0 @@
-accessing
-GL_SYNC_FENCE
-
-	^ GL_SYNC_FENCE

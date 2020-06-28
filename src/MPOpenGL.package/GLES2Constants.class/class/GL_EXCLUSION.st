@@ -1,4 +1,0 @@
-accessing
-GL_EXCLUSION
-
-	^ GL_EXCLUSION

@@ -1,4 +1,0 @@
-accessing
-GL_INT_IMAGE_2D_RECT
-
-	^ GL_INT_IMAGE_2D_RECT

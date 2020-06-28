@@ -1,4 +1,0 @@
-accessing
-GL_ACTIVE_UNIFORMS
-
-	^ GL_ACTIVE_UNIFORMS

@@ -1,4 +1,0 @@
-accessing
-GL_MAX_IMAGE_SAMPLES
-
-	^ GL_MAX_IMAGE_SAMPLES

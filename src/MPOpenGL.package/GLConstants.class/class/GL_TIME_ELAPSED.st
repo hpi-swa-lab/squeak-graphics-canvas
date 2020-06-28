@@ -1,4 +1,0 @@
-accessing
-GL_TIME_ELAPSED
-
-	^ GL_TIME_ELAPSED

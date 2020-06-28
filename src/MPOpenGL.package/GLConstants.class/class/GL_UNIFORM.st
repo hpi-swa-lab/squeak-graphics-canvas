@@ -1,4 +1,0 @@
-accessing
-GL_UNIFORM
-
-	^ GL_UNIFORM

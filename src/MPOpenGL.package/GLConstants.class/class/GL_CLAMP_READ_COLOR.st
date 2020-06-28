@@ -1,4 +1,0 @@
-accessing
-GL_CLAMP_READ_COLOR
-
-	^ GL_CLAMP_READ_COLOR

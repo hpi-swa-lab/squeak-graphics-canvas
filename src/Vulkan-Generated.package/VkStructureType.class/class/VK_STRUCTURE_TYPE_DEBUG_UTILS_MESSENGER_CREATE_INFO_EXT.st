@@ -1,4 +1,0 @@
-as yet unclassified
-VK_STRUCTURE_TYPE_DEBUG_UTILS_MESSENGER_CREATE_INFO_EXT
-
-	^ self on: (1000128004)

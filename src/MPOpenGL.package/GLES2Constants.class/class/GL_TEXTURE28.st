@@ -1,4 +1,0 @@
-accessing
-GL_TEXTURE28
-
-	^ GL_TEXTURE28

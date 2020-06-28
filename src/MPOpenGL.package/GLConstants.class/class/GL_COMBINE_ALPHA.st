@@ -1,4 +1,0 @@
-accessing
-GL_COMBINE_ALPHA
-
-	^ GL_COMBINE_ALPHA

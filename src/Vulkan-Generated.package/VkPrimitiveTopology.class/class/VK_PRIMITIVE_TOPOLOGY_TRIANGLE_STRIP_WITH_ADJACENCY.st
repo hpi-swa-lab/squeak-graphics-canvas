@@ -1,4 +1,0 @@
-as yet unclassified
-VK_PRIMITIVE_TOPOLOGY_TRIANGLE_STRIP_WITH_ADJACENCY
-
-	^ self on: (9)

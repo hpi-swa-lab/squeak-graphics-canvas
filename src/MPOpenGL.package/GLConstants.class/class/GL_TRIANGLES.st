@@ -1,4 +1,0 @@
-accessing
-GL_TRIANGLES
-
-	^ GL_TRIANGLES

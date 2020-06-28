@@ -1,3 +1,0 @@
-accessing
-contentsClass
-	^Vector3

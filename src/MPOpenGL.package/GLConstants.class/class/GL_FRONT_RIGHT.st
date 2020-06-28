@@ -1,4 +1,0 @@
-accessing
-GL_FRONT_RIGHT
-
-	^ GL_FRONT_RIGHT

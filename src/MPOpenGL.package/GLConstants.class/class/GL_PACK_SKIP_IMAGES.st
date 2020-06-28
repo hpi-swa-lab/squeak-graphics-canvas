@@ -1,4 +1,0 @@
-accessing
-GL_PACK_SKIP_IMAGES
-
-	^ GL_PACK_SKIP_IMAGES

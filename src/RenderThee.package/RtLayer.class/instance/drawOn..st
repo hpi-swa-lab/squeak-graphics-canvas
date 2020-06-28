@@ -1,2 +1,0 @@
-compositing
-drawOn: canvas

@@ -1,4 +1,0 @@
-as yet unclassified
-VK_PERFORMANCE_PARAMETER_TYPE_STREAM_MARKER_VALID_BITS_INTEL
-
-	^ self on: (1)

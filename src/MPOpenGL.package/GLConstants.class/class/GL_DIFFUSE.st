@@ -1,4 +1,0 @@
-accessing
-GL_DIFFUSE
-
-	^ GL_DIFFUSE

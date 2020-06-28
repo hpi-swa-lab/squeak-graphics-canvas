@@ -1,9 +1,0 @@
-{
-	"class" : {
-		"VK_QUEUE_COMPUTE_BIT" : "tobe 6/28/2020 19:10",
-		"VK_QUEUE_GRAPHICS_BIT" : "tobe 6/28/2020 19:10",
-		"VK_QUEUE_SPARSE_BINDING_BIT" : "tobe 6/28/2020 19:10",
-		"VK_QUEUE_TRANSFER_BIT" : "tobe 6/28/2020 19:10",
-		"originalTypeName" : "tobe 6/28/2020 19:54" },
-	"instance" : {
-		 } }

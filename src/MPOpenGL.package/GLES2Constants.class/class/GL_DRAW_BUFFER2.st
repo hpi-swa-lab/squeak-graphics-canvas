@@ -1,4 +1,0 @@
-accessing
-GL_DRAW_BUFFER2
-
-	^ GL_DRAW_BUFFER2

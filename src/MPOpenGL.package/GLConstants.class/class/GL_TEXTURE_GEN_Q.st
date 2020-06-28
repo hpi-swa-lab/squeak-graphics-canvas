@@ -1,4 +1,0 @@
-accessing
-GL_TEXTURE_GEN_Q
-
-	^ GL_TEXTURE_GEN_Q

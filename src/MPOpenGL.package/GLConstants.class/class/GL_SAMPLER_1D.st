@@ -1,4 +1,0 @@
-accessing
-GL_SAMPLER_1D
-
-	^ GL_SAMPLER_1D

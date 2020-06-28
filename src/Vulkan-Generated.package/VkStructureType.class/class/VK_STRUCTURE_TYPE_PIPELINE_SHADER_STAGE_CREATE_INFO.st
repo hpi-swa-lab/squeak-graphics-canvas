@@ -1,4 +1,0 @@
-as yet unclassified
-VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO
-
-	^ self on: (18)

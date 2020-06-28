@@ -1,4 +1,0 @@
-accessing
-GL_BLEND_DST_ALPHA
-
-	^ GL_BLEND_DST_ALPHA

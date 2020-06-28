@@ -1,4 +1,0 @@
-accessing
-GL_SINGLE_COLOR
-
-	^ GL_SINGLE_COLOR

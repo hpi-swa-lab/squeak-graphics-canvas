@@ -1,4 +1,0 @@
-accessing
-GL_LIGHTING
-
-	^ GL_LIGHTING

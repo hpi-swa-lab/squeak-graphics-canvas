@@ -1,4 +1,0 @@
-accessing
-GL_BGRA_INTEGER
-
-	^ GL_BGRA_INTEGER

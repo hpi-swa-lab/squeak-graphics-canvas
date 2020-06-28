@@ -1,4 +1,0 @@
-accessing
-GL_MEDIUM_INT
-
-	^ GL_MEDIUM_INT

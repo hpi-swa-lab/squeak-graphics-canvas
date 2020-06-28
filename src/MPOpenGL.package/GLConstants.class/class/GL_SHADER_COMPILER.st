@@ -1,4 +1,0 @@
-accessing
-GL_SHADER_COMPILER
-
-	^ GL_SHADER_COMPILER

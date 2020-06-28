@@ -1,4 +1,0 @@
-accessing
-GL_LUMINANCE4
-
-	^ GL_LUMINANCE4

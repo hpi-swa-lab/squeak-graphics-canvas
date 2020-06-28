@@ -1,4 +1,0 @@
-as yet unclassified
-VK_VALIDATION_FEATURE_DISABLE_UNIQUE_HANDLES_EXT
-
-	^ self on: (6)

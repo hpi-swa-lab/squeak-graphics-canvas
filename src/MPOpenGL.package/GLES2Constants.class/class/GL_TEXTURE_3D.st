@@ -1,4 +1,0 @@
-accessing
-GL_TEXTURE_3D
-
-	^ GL_TEXTURE_3D

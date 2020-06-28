@@ -1,4 +1,0 @@
-accessing
-GL_PIXEL_PACK_BUFFER
-
-	^ GL_PIXEL_PACK_BUFFER

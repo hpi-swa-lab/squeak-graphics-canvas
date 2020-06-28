@@ -1,4 +1,0 @@
-accessing
-GL_FLOAT_MAT3x4
-
-	^ GL_FLOAT_MAT3x4

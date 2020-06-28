@@ -1,4 +1,0 @@
-accessing
-GL_LUMINANCE_ALPHA
-
-	^ GL_LUMINANCE_ALPHA

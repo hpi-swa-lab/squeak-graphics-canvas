@@ -1,4 +1,0 @@
-as yet unclassified
-VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_BIT_NV
-
-	^ self on: (1 bitShift: 0)

@@ -1,4 +1,0 @@
-accessing
-GL_LIGHTING_BIT
-
-	^ GL_LIGHTING_BIT

@@ -1,4 +1,0 @@
-accessing
-GL_POINT_SIZE
-
-	^ GL_POINT_SIZE

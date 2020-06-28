@@ -1,9 +1,0 @@
-{
-	"class" : {
-		"VK_COMPOSITE_ALPHA_INHERIT_BIT_KHR" : "tobe 6/28/2020 19:10",
-		"VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR" : "tobe 6/28/2020 19:10",
-		"VK_COMPOSITE_ALPHA_POST_MULTIPLIED_BIT_KHR" : "tobe 6/28/2020 19:10",
-		"VK_COMPOSITE_ALPHA_PRE_MULTIPLIED_BIT_KHR" : "tobe 6/28/2020 19:10",
-		"originalTypeName" : "tobe 6/28/2020 19:54" },
-	"instance" : {
-		 } }

@@ -1,4 +1,0 @@
-accessing
-GL_OPERAND2_ALPHA
-
-	^ GL_OPERAND2_ALPHA

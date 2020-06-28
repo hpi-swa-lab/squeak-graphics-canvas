@@ -1,4 +1,0 @@
-accessing
-GL_INFO_LOG_LENGTH
-
-	^ GL_INFO_LOG_LENGTH

@@ -1,4 +1,0 @@
-accessing
-GL_ADD_SIGNED
-
-	^ GL_ADD_SIGNED

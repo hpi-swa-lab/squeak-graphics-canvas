@@ -1,4 +1,0 @@
-accessing
-GL_NAME_STACK_DEPTH
-
-	^ GL_NAME_STACK_DEPTH

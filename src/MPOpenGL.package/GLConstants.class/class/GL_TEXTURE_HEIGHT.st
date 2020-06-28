@@ -1,4 +1,0 @@
-accessing
-GL_TEXTURE_HEIGHT
-
-	^ GL_TEXTURE_HEIGHT

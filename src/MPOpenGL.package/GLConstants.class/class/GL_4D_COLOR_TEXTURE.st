@@ -1,4 +1,0 @@
-accessing
-GL_4D_COLOR_TEXTURE
-
-	^ GL_4D_COLOR_TEXTURE

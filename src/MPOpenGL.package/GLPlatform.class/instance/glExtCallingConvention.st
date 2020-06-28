@@ -1,3 +1,0 @@
-extensions
-glExtCallingConvention
-	^ self subclassResponsibility

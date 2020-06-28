@@ -1,4 +1,0 @@
-accessing
-GL_CLIP_ORIGIN
-
-	^ GL_CLIP_ORIGIN

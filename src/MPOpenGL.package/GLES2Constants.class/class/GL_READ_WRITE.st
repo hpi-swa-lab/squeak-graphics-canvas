@@ -1,4 +1,0 @@
-accessing
-GL_READ_WRITE
-
-	^ GL_READ_WRITE

@@ -1,3 +1,0 @@
-as yet unclassified
-vkGetBufferMemoryRequirements2KHR
-	^ self vkGetBufferMemoryRequirements2

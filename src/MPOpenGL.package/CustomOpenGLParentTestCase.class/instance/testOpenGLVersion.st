@@ -1,3 +1,0 @@
-testing
-testOpenGLVersion
-	self checkOpenGLVersion 

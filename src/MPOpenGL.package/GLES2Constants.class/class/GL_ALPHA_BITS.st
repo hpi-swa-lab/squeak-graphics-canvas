@@ -1,4 +1,0 @@
-accessing
-GL_ALPHA_BITS
-
-	^ GL_ALPHA_BITS

@@ -1,4 +1,0 @@
-accessing
-GL_DONT_CARE
-
-	^ GL_DONT_CARE

@@ -1,4 +1,0 @@
-accessing
-GL_IMAGE_BUFFER
-
-	^ GL_IMAGE_BUFFER

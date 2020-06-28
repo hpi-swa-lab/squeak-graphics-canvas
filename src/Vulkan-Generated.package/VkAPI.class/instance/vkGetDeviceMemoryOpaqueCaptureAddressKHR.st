@@ -1,3 +1,0 @@
-as yet unclassified
-vkGetDeviceMemoryOpaqueCaptureAddressKHR
-	^ self vkGetDeviceMemoryOpaqueCaptureAddress

@@ -1,4 +1,0 @@
-accessing
-GL_MINOR_VERSION
-
-	^ GL_MINOR_VERSION

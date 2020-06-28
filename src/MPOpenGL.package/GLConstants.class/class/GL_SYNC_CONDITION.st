@@ -1,4 +1,0 @@
-accessing
-GL_SYNC_CONDITION
-
-	^ GL_SYNC_CONDITION

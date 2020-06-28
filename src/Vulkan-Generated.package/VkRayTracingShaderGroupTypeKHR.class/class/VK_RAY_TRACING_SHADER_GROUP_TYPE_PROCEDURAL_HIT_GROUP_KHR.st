@@ -1,4 +1,0 @@
-as yet unclassified
-VK_RAY_TRACING_SHADER_GROUP_TYPE_PROCEDURAL_HIT_GROUP_KHR
-
-	^ self on: (2)

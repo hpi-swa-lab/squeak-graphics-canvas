@@ -1,4 +1,0 @@
-accessing
-GL_COLOR_ARRAY_SIZE
-
-	^ GL_COLOR_ARRAY_SIZE

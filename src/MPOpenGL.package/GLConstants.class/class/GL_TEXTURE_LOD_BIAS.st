@@ -1,4 +1,0 @@
-accessing
-GL_TEXTURE_LOD_BIAS
-
-	^ GL_TEXTURE_LOD_BIAS

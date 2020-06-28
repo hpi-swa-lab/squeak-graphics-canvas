@@ -1,4 +1,0 @@
-accessing
-GL_RGB32UI
-
-	^ GL_RGB32UI

@@ -1,4 +1,0 @@
-accessing
-GL_INTENSITY4
-
-	^ GL_INTENSITY4

@@ -1,4 +1,0 @@
-accessing
-GL_RGBA16F
-
-	^ GL_RGBA16F

@@ -1,4 +1,0 @@
-accessing
-GL_DOUBLE_VEC4
-
-	^ GL_DOUBLE_VEC4

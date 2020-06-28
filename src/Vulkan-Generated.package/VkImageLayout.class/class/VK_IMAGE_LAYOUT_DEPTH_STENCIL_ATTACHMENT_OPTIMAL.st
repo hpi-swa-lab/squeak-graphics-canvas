@@ -1,4 +1,0 @@
-as yet unclassified
-VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL
-
-	^ self on: (3)

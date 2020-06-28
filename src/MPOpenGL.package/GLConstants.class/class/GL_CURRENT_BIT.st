@@ -1,4 +1,0 @@
-accessing
-GL_CURRENT_BIT
-
-	^ GL_CURRENT_BIT

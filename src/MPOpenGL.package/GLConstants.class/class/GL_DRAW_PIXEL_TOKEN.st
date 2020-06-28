@@ -1,4 +1,0 @@
-accessing
-GL_DRAW_PIXEL_TOKEN
-
-	^ GL_DRAW_PIXEL_TOKEN

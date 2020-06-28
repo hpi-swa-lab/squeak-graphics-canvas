@@ -1,4 +1,0 @@
-accessing
-GL_MIRRORED_REPEAT
-
-	^ GL_MIRRORED_REPEAT

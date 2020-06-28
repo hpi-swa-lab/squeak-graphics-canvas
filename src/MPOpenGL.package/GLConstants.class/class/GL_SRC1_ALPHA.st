@@ -1,4 +1,0 @@
-accessing
-GL_SRC1_ALPHA
-
-	^ GL_SRC1_ALPHA

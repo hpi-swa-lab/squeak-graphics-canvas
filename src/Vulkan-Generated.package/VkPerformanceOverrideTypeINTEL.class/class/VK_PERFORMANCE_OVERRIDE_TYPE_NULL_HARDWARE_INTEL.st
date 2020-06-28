@@ -1,4 +1,0 @@
-as yet unclassified
-VK_PERFORMANCE_OVERRIDE_TYPE_NULL_HARDWARE_INTEL
-
-	^ self on: (0)

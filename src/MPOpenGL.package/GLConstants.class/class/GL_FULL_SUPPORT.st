@@ -1,4 +1,0 @@
-accessing
-GL_FULL_SUPPORT
-
-	^ GL_FULL_SUPPORT

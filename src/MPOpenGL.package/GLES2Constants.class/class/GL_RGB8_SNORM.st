@@ -1,4 +1,0 @@
-accessing
-GL_RGB8_SNORM
-
-	^ GL_RGB8_SNORM

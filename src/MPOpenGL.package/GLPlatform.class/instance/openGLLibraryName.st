@@ -1,3 +1,0 @@
-initialize
-openGLLibraryName
-	^self subclassResponsibility

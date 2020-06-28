@@ -1,4 +1,0 @@
-accessing
-GL_MAX_EVAL_ORDER
-
-	^ GL_MAX_EVAL_ORDER

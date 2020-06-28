@@ -1,4 +1,0 @@
-accessing
-GL_RGBA8_SNORM
-
-	^ GL_RGBA8_SNORM

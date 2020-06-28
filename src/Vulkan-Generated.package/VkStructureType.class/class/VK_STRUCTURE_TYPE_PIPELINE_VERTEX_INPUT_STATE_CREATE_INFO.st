@@ -1,4 +1,0 @@
-as yet unclassified
-VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO
-
-	^ self on: (19)

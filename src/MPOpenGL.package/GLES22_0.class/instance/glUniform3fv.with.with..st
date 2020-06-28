@@ -1,5 +1,0 @@
-commands
-glUniform3fv: location with: count with: value
-
-	<apicall: void 'glUniform3fv' (GLint GLsizei GLfloat*)>
-	^ self externalCallFailed

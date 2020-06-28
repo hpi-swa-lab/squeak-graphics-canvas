@@ -1,4 +1,0 @@
-accessing
-GL_CURRENT_FOG_COORD
-
-	^ GL_CURRENT_FOG_COORD

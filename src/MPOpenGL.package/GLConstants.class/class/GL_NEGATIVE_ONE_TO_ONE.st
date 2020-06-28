@@ -1,4 +1,0 @@
-accessing
-GL_NEGATIVE_ONE_TO_ONE
-
-	^ GL_NEGATIVE_ONE_TO_ONE

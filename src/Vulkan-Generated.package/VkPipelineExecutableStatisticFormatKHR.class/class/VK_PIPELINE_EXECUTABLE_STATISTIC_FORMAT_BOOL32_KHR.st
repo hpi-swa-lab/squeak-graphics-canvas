@@ -1,4 +1,0 @@
-as yet unclassified
-VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_BOOL32_KHR
-
-	^ self on: (0)

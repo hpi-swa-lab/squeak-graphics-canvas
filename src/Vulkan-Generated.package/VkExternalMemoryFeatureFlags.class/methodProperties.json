@@ -1,8 +1,0 @@
-{
-	"class" : {
-		"VK_EXTERNAL_MEMORY_FEATURE_DEDICATED_ONLY_BIT" : "tobe 6/28/2020 19:10",
-		"VK_EXTERNAL_MEMORY_FEATURE_EXPORTABLE_BIT" : "tobe 6/28/2020 19:10",
-		"VK_EXTERNAL_MEMORY_FEATURE_IMPORTABLE_BIT" : "tobe 6/28/2020 19:10",
-		"originalTypeName" : "tobe 6/28/2020 19:54" },
-	"instance" : {
-		 } }

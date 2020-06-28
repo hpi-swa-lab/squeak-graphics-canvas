@@ -1,9 +1,0 @@
-{
-	"class" : {
-		"VK_IMAGE_ASPECT_COLOR_BIT" : "tobe 6/28/2020 19:10",
-		"VK_IMAGE_ASPECT_DEPTH_BIT" : "tobe 6/28/2020 19:10",
-		"VK_IMAGE_ASPECT_METADATA_BIT" : "tobe 6/28/2020 19:10",
-		"VK_IMAGE_ASPECT_STENCIL_BIT" : "tobe 6/28/2020 19:10",
-		"originalTypeName" : "tobe 6/28/2020 19:54" },
-	"instance" : {
-		 } }

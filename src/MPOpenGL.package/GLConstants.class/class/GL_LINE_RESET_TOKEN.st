@@ -1,4 +1,0 @@
-accessing
-GL_LINE_RESET_TOKEN
-
-	^ GL_LINE_RESET_TOKEN

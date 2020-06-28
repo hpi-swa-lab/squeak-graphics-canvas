@@ -1,4 +1,0 @@
-accessing
-GL_DEPTH_CLAMP
-
-	^ GL_DEPTH_CLAMP

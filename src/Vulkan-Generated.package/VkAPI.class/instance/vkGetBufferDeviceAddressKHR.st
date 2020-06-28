@@ -1,3 +1,0 @@
-as yet unclassified
-vkGetBufferDeviceAddressKHR
-	^ self vkGetBufferDeviceAddress

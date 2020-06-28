@@ -1,4 +1,0 @@
-accessing
-GL_VERTEX_TEXTURE
-
-	^ GL_VERTEX_TEXTURE

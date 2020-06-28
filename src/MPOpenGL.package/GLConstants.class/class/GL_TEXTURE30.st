@@ -1,4 +1,0 @@
-accessing
-GL_TEXTURE30
-
-	^ GL_TEXTURE30

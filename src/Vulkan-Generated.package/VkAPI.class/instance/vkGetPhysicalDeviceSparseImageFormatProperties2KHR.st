@@ -1,3 +1,0 @@
-as yet unclassified
-vkGetPhysicalDeviceSparseImageFormatProperties2KHR
-	^ self vkGetPhysicalDeviceSparseImageFormatProperties2
