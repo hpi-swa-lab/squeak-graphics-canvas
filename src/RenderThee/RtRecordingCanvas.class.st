@@ -6,7 +6,7 @@ Class {
 		'layer',
 		'origin'
 	],
-	#category : #'RenderThee-Core'
+	#category : 'RenderThee-Core'
 }
 
 { #category : #examples }

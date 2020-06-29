@@ -13,7 +13,7 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : 'RenderThee-Core'
+	#category : #'RenderThee-Core'
 }
 
 { #category : #accessing }
@@ -51,8 +51,8 @@ void main() {
 		FragColor = vec4(1.0, 0.0, 0.0, 1.0);
 	else*/
 
-     FragColor = vec4(TexCoords.xy, 0.0, 0.3);
-     //FragColor = texture(image, TexCoords);
+     //FragColor = vec4(TexCoords.xy, 0.0, 0.3);
+     FragColor = texture(image, TexCoords);
 }' withUnixLineEndings
 
 ]
@@ -98,9 +98,9 @@ RtOpenGLRenderer >> initialize [
 		program vertexAttib: 1 value: vbo stride: 4 offset: 2.
 		ogl checkForError.
 
-		"program
+		program
 			uniform: (ogl glGetUniformLocation: program id with: 'image')
-			value: 0."
+			value: 0.
 		
 		ogl checkForError ]
 ]
