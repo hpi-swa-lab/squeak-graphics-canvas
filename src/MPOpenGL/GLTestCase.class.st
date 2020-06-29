@@ -33,5 +33,4 @@ GLTestCase >> setUp [
 { #category : #'after each' }
 GLTestCase >> tearDown [
 	super tearDown.
-	gl destroy
 ]

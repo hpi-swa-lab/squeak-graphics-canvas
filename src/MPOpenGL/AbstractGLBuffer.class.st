@@ -9,9 +9,9 @@ Class {
 
 { #category : #'instance creation' }
 AbstractGLBuffer class >> newFor: gl [ 
-	^ gl
-		ifNil: [self new; useDynamicGLContext; createBuffer; yourself]
-		ifNotNil: [self new; gl: gl; createBuffer; yourself]
+	^ self new gl: gl;
+		 createBuffer;
+		 yourself
 ]
 
 { #category : #binding }
