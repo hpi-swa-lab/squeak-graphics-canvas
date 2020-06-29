@@ -32,6 +32,7 @@ RtFormCanvas >> initialize [
 RtFormCanvas >> restore [
 
 	| pop |
+	saveStack ifEmpty: [^ self].
 	pop := saveStack removeLast.
 	self setClipRect: pop first.
 	self setTransform: pop second
