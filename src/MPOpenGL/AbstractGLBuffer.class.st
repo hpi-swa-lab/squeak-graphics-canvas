@@ -1,15 +1,18 @@
 Class {
 	#name : #AbstractGLBuffer,
-	#superclass : #Object,
-	#instVars : [
-		'gl',
-		'id'
-	],
+	#superclass : #AbstractGLObject,
 	#pools : [
 		'GLConstants'
 	],
-	#category : 'MPOpenGL-Core'
+	#category : #'MPOpenGL-Core'
 }
+
+{ #category : #'instance creation' }
+AbstractGLBuffer class >> newFor: gl [ 
+	^ self new gl: gl;
+		 createBuffer;
+		 yourself
+]
 
 { #category : #binding }
 AbstractGLBuffer >> bind [
@@ -42,32 +45,6 @@ AbstractGLBuffer >> delete [
 { #category : #destruction }
 AbstractGLBuffer >> deleteBuffer [
 	self delete
-]
-
-{ #category : #accessing }
-AbstractGLBuffer >> gl [
-	^ gl
-]
-
-{ #category : #accessing }
-AbstractGLBuffer >> gl: anObject [
-	gl := anObject
-]
-
-{ #category : #accessing }
-AbstractGLBuffer >> id [
-	^ id
-]
-
-{ #category : #accessing }
-AbstractGLBuffer >> id: anObject [
-	id := anObject
-]
-
-{ #category : #'initialize-release' }
-AbstractGLBuffer >> initialize [
-	self gl: GL value.
-	self createBuffer.
 ]
 
 { #category : #binding }

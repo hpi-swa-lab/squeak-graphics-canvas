@@ -109,7 +109,7 @@ RtOpenGLRenderer >> initialize [
 RtOpenGLRenderer >> initializeBuffers [
 		vao := GLVertexArrayObject newFor: ogl.
 		vao bind: ogl.
-		vbo := GLBuffer new.
+		vbo := GLBuffer newFor: ogl.
 		vbo
 			data: {
 				0. 0. 0. 0 .

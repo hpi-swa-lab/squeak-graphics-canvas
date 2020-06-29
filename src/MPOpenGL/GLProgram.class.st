@@ -1,9 +1,7 @@
 Class {
 	#name : #GLProgram,
-	#superclass : #Object,
+	#superclass : #AbstractGLObject,
 	#instVars : [
-		'gl',
-		'id',
 		'shaders'
 	],
 	#pools : [
@@ -50,30 +48,6 @@ GLProgram >> getProgramInfoLog: program [
 	infoLog := ExternalData fromHandle: (ExternalAddress gcallocate: infoLogLength) type: ExternalType string.
 	gl glGetProgramInfoLog: program with: infoLogLength with: nil with: infoLog.
 	^ infoLog fromCString
-]
-
-{ #category : #accessing }
-GLProgram >> gl [
-
-	^ gl
-]
-
-{ #category : #accessing }
-GLProgram >> gl: anObject [
-
-	gl := anObject
-]
-
-{ #category : #accessing }
-GLProgram >> id [
-
-	^ id
-]
-
-{ #category : #accessing }
-GLProgram >> id: anObject [
-
-	id := anObject
 ]
 
 { #category : #'initialize-release' }
