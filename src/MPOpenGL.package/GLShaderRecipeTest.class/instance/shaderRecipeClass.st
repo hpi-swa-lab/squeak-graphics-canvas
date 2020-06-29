@@ -1,0 +1,3 @@
+reference
+shaderRecipeClass
+	^GLShaderRecipe 

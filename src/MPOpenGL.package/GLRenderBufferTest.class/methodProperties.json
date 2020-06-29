@@ -2,10 +2,9 @@
 	"class" : {
 		 },
 	"instance" : {
-		"glVersion" : "sr 6/23/2020 10:24",
 		"renderBufferClass" : "sr 6/23/2020 10:23",
-		"setUp" : "sr 6/23/2020 10:43",
-		"tearDown" : "sr 6/23/2020 10:44",
+		"setUp" : "sr 6/29/2020 09:39",
+		"tearDown" : "sr 6/29/2020 09:35",
 		"testDimensionsAreRectangle" : "sr 6/23/2020 12:22",
 		"testDimensionsByPoint" : "sr 6/23/2020 12:19",
 		"testMultisampleRenderbufferFlag" : "sr 6/23/2020 12:47",
