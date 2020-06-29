@@ -1,16 +1,14 @@
 Class {
 	#name : #GLVertexArrayObject,
-	#superclass : #Object,
+	#superclass : #AbstractGLObject,
 	#instVars : [
-		'gl',
-		'id',
 		'numElements',
 		'glType'
 	],
 	#pools : [
 		'GLConstants'
 	],
-	#category : 'MPOpenGL-Core'
+	#category : #'MPOpenGL-Core'
 }
 
 { #category : #'instance creation' }
@@ -21,10 +19,20 @@ GLVertexArrayObject class >> newFor: openGlInterface [
 		yourself.
 ]
 
+{ #category : #binding }
+GLVertexArrayObject >> bind [
+	self flag: #todo
+]
+
 { #category : #usage }
 GLVertexArrayObject >> bind: ogl [
 
 	ogl glBindVertexArray: id
+]
+
+{ #category : #binding }
+GLVertexArrayObject >> bindable [
+	^true
 ]
 
 { #category : #'initialize-release' }
@@ -59,33 +67,9 @@ GLVertexArrayObject >> draw: aModeEnum from: startIndex count: count [
 ]
 
 { #category : #accessing }
-GLVertexArrayObject >> gl [
-
-	^ gl
-]
-
-{ #category : #accessing }
-GLVertexArrayObject >> gl: anObject [
-
-	gl := anObject
-]
-
-{ #category : #accessing }
 GLVertexArrayObject >> glType [
 
 	^ glType
-]
-
-{ #category : #accessing }
-GLVertexArrayObject >> id [
-
-	^ id
-]
-
-{ #category : #accessing }
-GLVertexArrayObject >> id: anObject [
-
-	id := anObject
 ]
 
 { #category : #accessing }
@@ -98,6 +82,11 @@ GLVertexArrayObject >> isGLBuffer [
 GLVertexArrayObject >> numElements [
 
 	^ numElements
+]
+
+{ #category : #binding }
+GLVertexArrayObject >> unbind [
+	self flag: #todo
 ]
 
 { #category : #usage }
