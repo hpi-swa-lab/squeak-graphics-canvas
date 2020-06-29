@@ -49,7 +49,7 @@ RtDrawLayer >> needsRasterize [
 RtDrawLayer >> rasterizeTexture: aRenderer [
 	| tex form |
 	form := self rasterizeForm.
-	tex := GLTexture new.
+	tex := GLTexture newFor: GL value.
 	tex texImage: form.
 	^ tex
 

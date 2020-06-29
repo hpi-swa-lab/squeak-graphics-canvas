@@ -1,14 +1,17 @@
 Class {
 	#name : #GLTexture,
-	#superclass : #Object,
-	#instVars : [
-		'id'
-	],
+	#superclass : #AbstractGLObject,
 	#pools : [
 		'GLConstants'
 	],
-	#category : 'MPOpenGL-Core'
+	#category : #'MPOpenGL-Core'
 }
+
+{ #category : #'instance creation' }
+GLTexture class >> newFor: gl [ 
+	^ self new gl: gl;
+		 yourself
+]
 
 { #category : #binding }
 GLTexture >> bind [
@@ -17,18 +20,18 @@ GLTexture >> bind [
 	GL value checkForError
 ]
 
+{ #category : #binding }
+GLTexture >> bindable [ 
+	^true
+]
+
 { #category : #deletion }
 GLTexture >> delete [
 
-	|texIDs|
+	| texIDs |
 	texIDs := IntegerArray with: id.
 	GL value glDeleteTextures: 1 with: texIDs.
 	GL value checkForError.
-]
-
-{ #category : #accessing }
-GLTexture >> id [
-	^id
 ]
 
 { #category : #initialization }

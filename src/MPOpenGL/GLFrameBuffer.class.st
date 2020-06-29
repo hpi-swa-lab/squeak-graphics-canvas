@@ -31,7 +31,7 @@ GLFrameBuffer >> asForm [
 	GL value glGetIntegerv: GL_VIEWPORT with: viewport.
 	data := ByteArray new: viewport third * (viewport fourth * 4).
 	
-	self boundDo: [
+	self boundDuring: [
 		GL value
 			glReadPixels: 0
 			with: 0
@@ -60,7 +60,7 @@ GLFrameBuffer >> attachRenderBuffer: aRenderBuffer attachment: attachment [
 	| renderBuffer |
 	renderBuffer := aRenderBuffer isNumber ifTrue: [aRenderBuffer] ifFalse: [aRenderBuffer id].
 	
-	self boundDo: [
+	self boundDuring: [
 		"Since GL 4.5, one can bind renderbuffers by referencing"
 		(gl isKindOf: GL4_5)
 			ifTrue: [

@@ -11,6 +11,29 @@ Class {
 	#category : #'MPOpenGL-Core'
 }
 
+{ #category : #'instance creation' }
+AbstractGLObject class >> newFor: gl [
+	self subclassResponsibility  
+]
+
+{ #category : #binding }
+AbstractGLObject >> bind [
+	self subclassResponsibility
+]
+
+{ #category : #binding }
+AbstractGLObject >> bindable [
+	self subclassResponsibility 
+]
+
+{ #category : #binding }
+AbstractGLObject >> boundDuring: aBlock [
+
+	self bind.
+	aBlock ensure: [self unbind].
+	
+]
+
 { #category : #accessing }
 AbstractGLObject >> gl [
 	^ gl
@@ -28,9 +51,9 @@ AbstractGLObject >> id [
 	^ id
 ]
 
-{ #category : #accessing }
-AbstractGLObject >> id: anObject [
-	id := anObject
+{ #category : #binding }
+AbstractGLObject >> unbind [
+	self subclassResponsibility 
 ]
 
 { #category : #'gl version' }

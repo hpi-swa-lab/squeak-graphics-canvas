@@ -20,11 +20,8 @@ AbstractGLBuffer >> bind [
 ]
 
 { #category : #binding }
-AbstractGLBuffer >> boundDo: aBlock [
-
-	self bind.
-	aBlock value.
-	self unbind
+AbstractGLBuffer >> bindable [
+	^true
 ]
 
 { #category : #destruction }
