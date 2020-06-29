@@ -1,6 +1,6 @@
 Class {
 	#name : #VkAccelerationStructureGeometryDataKHR,
-	#superclass : #ExternalStructure,
+	#superclass : #ExternalUnion,
 	#category : #'Vulkan-Generated'
 }
 

@@ -1,6 +1,6 @@
 Class {
 	#name : #VkDeviceOrHostAddressConstKHR,
-	#superclass : #ExternalStructure,
+	#superclass : #ExternalUnion,
 	#category : #'Vulkan-Generated'
 }
 

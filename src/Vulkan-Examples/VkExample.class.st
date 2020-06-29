@@ -13,7 +13,19 @@ Class {
 		'swapChain',
 		'swapChainImages',
 		'swapChainImageFormat',
-		'swapChainImageViews'
+		'swapChainImageViews',
+		'swapExtent',
+		'pipelineLayout',
+		'renderPass',
+		'graphicsPipeline',
+		'swapChainFramebuffers',
+		'commandPool',
+		'commandBuffers',
+		'imageAvailableSemaphores',
+		'renderFinishedSemaphores',
+		'inFlightFences',
+		'imagesInFlight',
+		'currentFrame'
 	],
 	#category : #'Vulkan-Examples'
 }
@@ -28,7 +40,7 @@ VkExample >> checkError: aResult [
 VkExample >> chooseSwapPresentMode: aCollection [
 
 	aCollection do: [:mode |
-		mode value = VkPresentModeKHR VK_PRESENT_MODE_MAILBOX_KHR ifTrue: [mode]].
+		mode value = VkPresentModeKHR VK_PRESENT_MODE_MAILBOX_KHR value ifTrue: [^ mode]].
 	^ VkPresentModeKHR VK_PRESENT_MODE_FIFO_KHR
 ]
 
@@ -36,30 +48,113 @@ VkExample >> chooseSwapPresentMode: aCollection [
 VkExample >> chooseSwapSurfaceFormat: anArray [
 
 	anArray do: [:format |
-		(format format value = VkFormat VK_FORMAT_B8G8R8_SRGB and: [
-			format colorSpace value = VkColorSpaceKHR VK_COLOR_SPACE_SRGB_NONLINEAR_KHR]) ifTrue: [^ format]].
+		(format format value = VkFormat VK_FORMAT_B8G8R8A8_SRGB value and: [
+			format colorSpace value = VkColorSpaceKHR VK_COLOR_SPACE_SRGB_NONLINEAR_KHR value]) ifTrue: [^ format]].
 	^ anArray at: 1
 ]
 
 { #category : #'as yet unclassified' }
 VkExample >> cleanup [
 
-	SBToggledCode
-		comment: ''
-		active: 0
-		do: {
-			[
-				debugMessenger ifNotNil: [
-					self destroyDebugUtilsMessengerEXT: instance with: debugMessenger with: nil]]
-		}.
+	1
+		to: self maxFramesInFlight
+		do: [:index |
+			VkAPI new vkDestroySemaphore: device with: (renderFinishedSemaphores at: index) with: nil.
+			VkAPI new vkDestroySemaphore: device with: (imageAvailableSemaphores at: index) with: nil.
+			VkAPI new vkDestroyFence: device with: (inFlightFences at: index) with: nil].
+	VkAPI new vkDestroyCommandPool: device with: commandPool with: nil.
+	swapChainFramebuffers do: [:framebuffer |
+		VkAPI new vkDestroyFramebuffer: device with: framebuffer with: nil].
+	VkAPI new vkDestroyPipeline: device with: graphicsPipeline with: nil.
+	VkAPI new vkDestroyPipelineLayout: device with: pipelineLayout with: nil.
+	VkAPI new vkDestroyRenderPass: device with: renderPass with: nil.
 	swapChainImageViews do: [:view |
 		VkAPI new vkDestroyImageView: device with: view with: nil].
 	VkAPI new vkDestroySwapchainKHR: device with: swapChain with: nil.
 	VkAPI new vkDestroyDevice: device with: nil.
+	debugMessenger ifNotNil: [
+		self destroyDebugUtilsMessengerEXT: instance with: debugMessenger with: nil].
 	VkAPI new vkDestroySurfaceKHR: instance with: surface with: nil.
 	VkAPI new vkDestroyInstance: instance with: nil.
 	GLFW destroyWindow: window.
 	GLFW terminate
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> createCommandBuffers [
+
+	| allocInfo |
+	allocInfo := VkCommandBufferAllocateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
+		commandPool: commandPool;
+		level: VkCommandBufferLevel VK_COMMAND_BUFFER_LEVEL_PRIMARY;
+		commandBufferCount: swapChainFramebuffers size.
+	
+	self
+		passArrayOfPointers: swapChainFramebuffers size
+		of: VkCommandBuffer
+		to: [:pointer :array |
+			self checkError: (VkAPI new vkAllocateCommandBuffers: device with: allocInfo with: pointer).
+			commandBuffers := array].
+	
+	1
+		to: commandBuffers size
+		do: [:index | | beginInfo renderPassInfo clearColor commandBuffer framebuffer |
+			commandBuffer := commandBuffers at: index.
+			framebuffer := swapChainFramebuffers at: index.
+			beginInfo := VkCommandBufferBeginInfo externalNew
+				zeroAllFields;
+				sType: VkStructureType VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO.
+			self checkError: (VkAPI new vkBeginCommandBuffer: commandBuffer with: beginInfo).
+			
+			renderPassInfo := VkRenderPassBeginInfo externalNew
+				zeroAllFields;
+				sType: VkStructureType VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
+				renderPass: renderPass;
+				framebuffer: framebuffer.
+			renderPassInfo renderArea offset
+				x: 0;
+				y: 0.
+			renderPassInfo renderArea extent: swapExtent.
+			
+			clearColor := VkClearValue externalNew zeroAllFields.
+			clearColor color uint32: Color red pixelWord32.
+			
+			renderPassInfo
+				clearValueCount: 1;
+				pClearValues: clearColor.
+			
+			VkAPI new
+				vkCmdBeginRenderPass: commandBuffer
+				with: renderPassInfo
+				with: VkSubpassContents VK_SUBPASS_CONTENTS_INLINE.
+			VkAPI new
+				vkCmdBindPipeline: commandBuffer
+				with: VkPipelineBindPoint VK_PIPELINE_BIND_POINT_GRAPHICS
+				with: graphicsPipeline.
+			VkAPI new vkCmdDraw: commandBuffer with: 3 with: 1 with: 0 with: 0.
+			VkAPI new vkCmdEndRenderPass: commandBuffer.
+			
+			self checkError: (VkAPI new vkEndCommandBuffer: commandBuffer)]
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> createCommandPool [
+
+	| poolInfo |
+	poolInfo := VkCommandPoolCreateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
+		queueFamilyIndex: self graphicsQueueIndex;
+		flags: (VkCommandPoolCreateFlags on: 0).
+	
+	self
+		passArrayOfPointers: 1
+		of: VkCommandPool
+		to: [:pointer :array |
+			self checkError: (VkAPI new vkCreateCommandPool: device with: poolInfo with: nil with: pointer).
+			commandPool := array at: 1]
 ]
 
 { #category : #'as yet unclassified' }
@@ -69,6 +164,9 @@ VkExample >> createDebugMessenger [
 		debugCallback := FFICallback
 			signature: '<callback: VkBool32 (*)(VkDebugUtilsMessageSeverityFlagsEXT VkDebugUtilsMessageTypeFlagsEXT VkDebugUtilsMessengerCallbackDataEXT* void*)>'
 			block: [:messageSeverity :messageTypes :pCallbackData :pUserData |
+				((messageSeverity value bitAnd: VkDebugUtilsMessageSeverityFlagsEXT VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT value) ~= 0 and: [
+					(pCallbackData pMessage includesSubstring: 'wrong ELF class') not]) ifTrue: [
+					SBToggledCode comment: '' active: 1 do: {[self halt]}].
 				Transcript
 					nextPutAll: (self messageSeverityToString: messageSeverity);
 					nextPutAll: ': ';
@@ -77,6 +175,7 @@ VkExample >> createDebugMessenger [
 					flush.
 				0]].
 	^ VkDebugUtilsMessengerCreateInfoEXT externalNew
+		zeroAllFields;
 		sType: VkStructureType VK_STRUCTURE_TYPE_DEBUG_UTILS_MESSENGER_CREATE_INFO_EXT;
 		messageSeverity: (VkDebugUtilsMessageSeverityFlagsEXT on: (VkDebugUtilsMessageSeverityFlagsEXT VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT bitOr: VkDebugUtilsMessageSeverityFlagsEXT VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT));
 		messageType: (VkDebugUtilsMessageTypeFlagsEXT on: ((VkDebugUtilsMessageTypeFlagsEXT VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT bitOr: VkDebugUtilsMessageTypeFlagsEXT VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT) bitOr: VkDebugUtilsMessageTypeFlagsEXT VK_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT));
@@ -112,6 +211,171 @@ VkExample >> createDebugUtilsMessengerEXT: instance with: createInfo with: pAllo
 ]
 
 { #category : #'as yet unclassified' }
+VkExample >> createFramebuffers [
+
+	swapChainFramebuffers := Array new: swapChainImageViews size.
+	1
+		to: swapChainFramebuffers size
+		do: [:index | | createInfo attachment |
+			attachment := ExternalData fromHandle: (ExternalAddress allocate: VkImageView byteSize) type: VkImageView externalType asPointerType.
+			attachment at: 1 put: (swapChainImageViews at: index).
+			
+			createInfo := VkFramebufferCreateInfo externalNew
+				zeroAllFields;
+				sType: VkStructureType VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
+				renderPass: renderPass;
+				attachmentCount: 1;
+				pAttachments: attachment;
+				width: swapExtent width;
+				height: swapExtent height;
+				layers: 1.
+			
+			self
+				passArrayOfPointers: 1
+				of: VkFramebuffer
+				to: [:pointer :array |
+					self checkError: (VkAPI new vkCreateFramebuffer: device with: createInfo with: nil with: pointer).
+					swapChainFramebuffers at: index put: (array at: 1)]]
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> createGraphicsPipeline [
+
+	| vertex fragment vertexCreateInfo fragmentCreateInfo vertexInputInfo inputAssembly viewport scissor viewportState multisampling colorBlendAttachment colorBlending pipelineLayoutInfo rasterizer pipelineInfo shaderStages |
+	vertex := self createShaderModuleFrom: '/home/tom/Code/squeak/squeak-morphic-layers/vert.spv'.
+	fragment := self createShaderModuleFrom: '/home/tom/Code/squeak/squeak-morphic-layers/frag.spv'.
+	
+	shaderStages := ExternalData
+		fromHandle: (ExternalAddress allocate: VkPipelineShaderStageCreateInfo byteSize * 2)
+		type: VkPipelineShaderStageCreateInfo externalType asPointerType.
+	(shaderStages at: 1)
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
+		stage: VkShaderStageFlags VK_SHADER_STAGE_VERTEX_BIT;
+		module: vertex;
+		pName: 'main' asExternalString.
+	(shaderStages at: 2)
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
+		stage: VkShaderStageFlags VK_SHADER_STAGE_FRAGMENT_BIT;
+		module: fragment;
+		pName: 'main' asExternalString.
+	
+	vertexInputInfo := VkPipelineVertexInputStateCreateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
+		vertexBindingDescriptionCount: 0;
+		vertexAttributeDescriptionCount: 0.
+	
+	inputAssembly := VkPipelineInputAssemblyStateCreateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
+		topology: VkPrimitiveTopology VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
+		primitiveRestartEnable: (VkBool32 on: 0).
+	
+	viewport := VkViewport externalNew
+		zeroAllFields;
+		x: 0.0;
+		y: 0.0;
+		width: swapExtent width;
+		height: swapExtent height;
+		minDepth: 0.0;
+		maxDepth: 1.0.
+	
+	scissor := VkRect2D externalNew.
+	scissor offset
+		x: 0;
+		y: 0.
+	scissor extent: swapExtent.
+	
+	viewportState := VkPipelineViewportStateCreateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
+		viewportCount: 1;
+		pViewports: viewport;
+		scissorCount: 1;
+		pScissors: scissor.
+	
+	rasterizer := VkPipelineRasterizationStateCreateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_CREATE_INFO;
+		depthClampEnable: (VkBool32 on: 0);
+		rasterizerDiscardEnable: (VkBool32 on: 0);
+		polygonMode: VkPolygonMode VK_POLYGON_MODE_FILL;
+		lineWidth: 1.0;
+		cullMode: VkCullModeFlags VK_CULL_MODE_BACK_BIT;
+		frontFace: VkFrontFace VK_FRONT_FACE_CLOCKWISE;
+		depthBiasEnable: (VkBool32 on: 0).
+	
+	multisampling := VkPipelineMultisampleStateCreateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_PIPELINE_MULTISAMPLE_STATE_CREATE_INFO;
+		sampleShadingEnable: (VkBool32 on: 0);
+		rasterizationSamples: VkSampleCountFlags VK_SAMPLE_COUNT_1_BIT.
+	
+	colorBlendAttachment := VkPipelineColorBlendAttachmentState externalNew
+		zeroAllFields;
+		colorWriteMask: (VkColorComponentFlags on: (VkColorComponentFlags VK_COLOR_COMPONENT_R_BIT bitOr: (VkColorComponentFlags VK_COLOR_COMPONENT_G_BIT bitOr: (VkColorComponentFlags VK_COLOR_COMPONENT_B_BIT bitOr: VkColorComponentFlags VK_COLOR_COMPONENT_A_BIT))));
+		blendEnable: (VkBool32 on: 0).
+	colorBlending := VkPipelineColorBlendStateCreateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_STATE_CREATE_INFO;
+		logicOpEnable: (VkBool32 on: 0);
+		logicOp: VkLogicOp VK_LOGIC_OP_COPY;
+		attachmentCount: 1;
+		pAttachments: colorBlendAttachment;
+		blendConstants1: 0.0;
+		blendConstants2: 0.0;
+		blendConstants3: 0.0;
+		blendConstants4: 0.0.
+	
+	pipelineLayoutInfo := VkPipelineLayoutCreateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
+		setLayoutCount: 0;
+		pushConstantRangeCount: 0.
+	
+	self
+		passArrayOfPointers: 1
+		of: VkPipelineLayout
+		to: [:pointer :array |
+			self checkError: (VkAPI new vkCreatePipelineLayout: device with: pipelineLayoutInfo with: nil with: pointer).
+			pipelineLayout := array at: 1].
+	
+	pipelineInfo := VkGraphicsPipelineCreateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
+		stageCount: 2;
+		pStages: shaderStages;
+		pVertexInputState: vertexInputInfo;
+		pInputAssemblyState: inputAssembly;
+		pViewportState: viewportState;
+		pRasterizationState: rasterizer;
+		pMultisampleState: multisampling;
+		pColorBlendState: colorBlending;
+		layout: pipelineLayout;
+		renderPass: renderPass;
+		subpass: 0;
+		basePipelineHandle: (VkPipeline on: 0).
+	self
+		passArrayOfPointers: 1
+		of: VkPipeline
+		to: [:pointer :array |
+			self checkError: (VkAPI new
+				vkCreateGraphicsPipelines: device
+				with: (VkPipelineCache on: 0)
+				with: 1
+				with: pipelineInfo
+				with: nil
+				with: pointer).
+			graphicsPipeline := array at: 1].
+	
+	VkAPI new
+		vkDestroyShaderModule: device with: vertex with: nil;
+		vkDestroyShaderModule: device with: fragment with: nil
+]
+
+{ #category : #'as yet unclassified' }
 VkExample >> createImageViews [
 
 	swapChainImageViews := Array new: swapChainImages size.
@@ -119,27 +383,27 @@ VkExample >> createImageViews [
 		self
 			passArrayOfPointers: 1
 			of: VkImageView
-			to: [:pointer :array |
-				VkImageViewCreateInfo externalNewDo: [:createInfo |
-					createInfo
-						zeroAllFields;
-						sType: VkStructureType VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
-						image: image;
-						viewType: VkImageViewType VK_IMAGE_VIEW_TYPE_2D;
-						format: swapChainImageFormat.
-					createInfo components
-						r: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY;
-						g: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY;
-						b: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY;
-						a: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY.
-					createInfo subresourceRange
-						aspectMask: VkImageAspectFlags VK_IMAGE_ASPECT_COLOR_BIT;
-						baseMipLevel: 0;
-						levelCount: 1;
-						baseArrayLayer: 0;
-						layerCount: 1.
-					VkAPI new vkCreateImageView: device with: createInfo with: nil with: pointer.
-					swapChainImageViews at: index put: (array at: 1)]]]
+			to: [:pointer :array | | createInfo |
+				createInfo := VkImageViewCreateInfo externalNew
+					zeroAllFields;
+					sType: VkStructureType VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
+					image: image;
+					viewType: VkImageViewType VK_IMAGE_VIEW_TYPE_2D;
+					format: swapChainImageFormat.
+				createInfo components
+					r: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY;
+					g: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY;
+					b: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY;
+					a: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY.
+				createInfo subresourceRange
+					aspectMask: VkImageAspectFlags VK_IMAGE_ASPECT_COLOR_BIT;
+					baseMipLevel: 0;
+					levelCount: 1;
+					baseArrayLayer: 0;
+					layerCount: 1.
+				
+				self checkError: (VkAPI new vkCreateImageView: device with: createInfo with: nil with: pointer).
+				swapChainImageViews at: index put: (array at: 1)]]
 ]
 
 { #category : #'as yet unclassified' }
@@ -171,18 +435,18 @@ VkExample >> createInstance [
 		ppEnabledLayerNames: layerNames;
 		pNext: debugUtilsMessengerCreateInfo.
 	
-	"instancePtr := ExternalData fromHandle: (ExternalAddress allocate: VkInstance byteSize) type: VkInstance externalType.
-	self checkError: (VkAPI new vkCreateInstance: createInfo with: nil with: (VkInstance fromHandle: instancePtr getHandle)).
-	instance := at: 1."
-	self passArrayOfPointers: 1 of: VkInstance to: [:pointer :array |
-		self checkError: (VkAPI new vkCreateInstance: createInfo with: nil with: pointer).
-		instance := array at: 1]
+	self
+		passArrayOfPointers: 1
+		of: VkInstance
+		to: [:pointer :array |
+			self checkError: (VkAPI new vkCreateInstance: createInfo with: nil with: pointer).
+			instance := array at: 1]
 ]
 
 { #category : #'as yet unclassified' }
 VkExample >> createLogicalDevice [
 
-	| queueCreateInfo queueCount queues createInfo graphicsQueueIndex extensionsAndCount |
+	| queueCreateInfo queueCount queues createInfo graphicsQueueIndex extensionsAndCount prioritiesPtr |
 	queueCount := IntegerArray new: 1.
 	VkAPI new vkGetPhysicalDeviceQueueFamilyProperties: physicalDevice with: queueCount with: nil.
 	self assert: queueCount first = 1.
@@ -191,20 +455,24 @@ VkExample >> createLogicalDevice [
 	
 	self checkError: (VkAPI new vkGetPhysicalDeviceQueueFamilyProperties: physicalDevice with: queueCount with: queues).
 	self assert: (queues queueFlags value bitAnd: VkQueueFlags VK_QUEUE_GRAPHICS_BIT) ~= 0.
-	graphicsQueueIndex := 0.
+	graphicsQueueIndex := self graphicsQueueIndex.
 	
-	self passArrayOfPointers: 1 of: VkBool32 to: [:pointer :array |
-		VkAPI new
-			vkGetPhysicalDeviceSurfaceSupportKHR: physicalDevice
-			with: graphicsQueueIndex
-			with: surface
-			with: pointer.
-		self assert: (array at: 1) = (VkBool32 on: 1)].
+	self
+		passArrayOfPointers: 1
+		of: VkBool32
+		to: [:pointer :array |
+			VkAPI new vkGetPhysicalDeviceSurfaceSupportKHR: physicalDevice with: graphicsQueueIndex with: surface with: pointer.
+			self assert: (array at: 1) = (VkBool32 on: 1)].
 	
+	prioritiesPtr := ExternalData
+		fromHandle: (ExternalAddress allocate: ExternalType float byteSize)
+		type: ExternalType float asPointerType.
+	prioritiesPtr at: 1 put: 1.0.
 	queueCreateInfo := VkDeviceQueueCreateInfo externalNew
 		zeroAllFields;
 		sType: VkStructureType VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO;
 		queueFamilyIndex: graphicsQueueIndex;
+		pQueuePriorities: prioritiesPtr;
 		queueCount: 1.
 	
 	extensionsAndCount := self getDeviceExtensionNamesAndCount.
@@ -214,17 +482,100 @@ VkExample >> createLogicalDevice [
 		pQueueCreateInfos: queueCreateInfo;
 		queueCreateInfoCount: 1;
 		pEnabledFeatures: VkPhysicalDeviceFeatures externalNew zeroAllFields;
-		ppEnabledExtensionNames: (extensionsAndCount first  asType: ExternalType string);
+		ppEnabledExtensionNames: (extensionsAndCount first asType: ExternalType string);
 		enabledExtensionCount: extensionsAndCount second;
-		enabledLayerCount: 0.
+		ppEnabledLayerNames: self layerNames;
+		enabledLayerCount: 1.
 	
-	self passArrayOfPointers: 1 of: VkDevice to: [:pointer :array |
-		self checkError: (VkAPI new vkCreateDevice: physicalDevice with: createInfo with: nil with: pointer).
-		device := array at: 1].
+	self
+		passArrayOfPointers: 1
+		of: VkDevice
+		to: [:pointer :array |
+			self checkError: (VkAPI new vkCreateDevice: physicalDevice with: createInfo with: nil with: pointer).
+			device := array at: 1].
 	
-	self passArrayOfPointers: 1 of: VkQueue to: [:pointer :array |
-		VkAPI new vkGetDeviceQueue: device with: graphicsQueueIndex with: 0 with: pointer.
-		graphicsQueue := array at: 1]
+	self
+		passArrayOfPointers: 1
+		of: VkQueue
+		to: [:pointer :array |
+			VkAPI new vkGetDeviceQueue: device with: graphicsQueueIndex with: 0 with: pointer.
+			graphicsQueue := array at: 1]
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> createRenderPass [
+
+	| colorAttachmentRef colorAttachment subpass renderPassInfo dependency |
+	colorAttachment := VkAttachmentDescription externalNew
+		zeroAllFields;
+		format: swapChainImageFormat;
+		samples: VkSampleCountFlags VK_SAMPLE_COUNT_1_BIT;
+		loadOp: VkAttachmentLoadOp VK_ATTACHMENT_LOAD_OP_CLEAR;
+		storeOp: VkAttachmentStoreOp VK_ATTACHMENT_STORE_OP_STORE;
+		stencilLoadOp: VkAttachmentLoadOp VK_ATTACHMENT_LOAD_OP_DONT_CARE;
+		stencilStoreOp: VkAttachmentStoreOp VK_ATTACHMENT_STORE_OP_DONT_CARE;
+		initialLayout: VkImageLayout VK_IMAGE_LAYOUT_UNDEFINED;
+		finalLayout: VkImageLayout VK_IMAGE_LAYOUT_PRESENT_SRC_KHR.
+	
+	colorAttachmentRef := VkAttachmentReference externalNew
+		zeroAllFields;
+		attachment: 0;
+		layout: VkImageLayout VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL.
+	
+	subpass := VkSubpassDescription externalNew
+		zeroAllFields;
+		pipelineBindPoint: VkPipelineBindPoint VK_PIPELINE_BIND_POINT_GRAPHICS;
+		colorAttachmentCount: 1;
+		pColorAttachments: colorAttachmentRef.
+	
+	dependency := VkSubpassDependency externalNew
+		zeroAllFields;
+		srcSubpass: VkAPIConstants VK_SUBPASS_EXTERNAL value;
+		dstSubpass: 0;
+		srcStageMask: VkPipelineStageFlags VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+		srcAccessMask: (VkAccessFlags on: 0);
+		dstStageMask: VkPipelineStageFlags VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+		dstAccessMask: VkAccessFlags VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT.
+	
+	renderPassInfo := VkRenderPassCreateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
+		attachmentCount: 1;
+		pAttachments: colorAttachment;
+		subpassCount: 1;
+		pSubpasses: subpass;
+		dependencyCount: 1;
+		pDependencies: dependency.
+	
+	self
+		passArrayOfPointers: 1
+		of: VkRenderPass
+		to: [:pointer :array |
+			self checkError: (VkAPI new vkCreateRenderPass: device with: renderPassInfo with: nil with: pointer).
+			renderPass := array at: 1]
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> createShaderModuleFrom: aString [
+
+	| source |
+	source := FileStream readOnlyFileNamed: aString do: [:file |
+		file
+			binary;
+			contents].
+	^ VkShaderModuleCreateInfo externalNewDo: [:createInfo |
+		createInfo
+			zeroAllFields;
+			sType: VkStructureType VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
+			codeSize: source size;
+			pCode: (source copyToExternalMemoryType: ExternalType uint32_t asPointerType).
+		
+		self
+			passArrayOfPointers: 1
+			of: VkShaderModule
+			to: [:pointer :array |
+				self checkError: (VkAPI new vkCreateShaderModule: device with: createInfo with: nil with: pointer).
+				array at: 1]]
 ]
 
 { #category : #'as yet unclassified' }
@@ -239,7 +590,7 @@ VkExample >> createSurface [
 { #category : #'as yet unclassified' }
 VkExample >> createSwapChain [
 
-	| capabilities formatCount formats surfaceFormat presentMode presentModes presentModeCount swapExtent imageCount createInfo ptr imageCountRet |
+	| capabilities formatCount formats surfaceFormat presentMode presentModes presentModeCount imageCount createInfo imageCountRet |
 	capabilities := VkSurfaceCapabilitiesKHR externalNew.
 	VkAPI new vkGetPhysicalDeviceSurfaceCapabilitiesKHR: physicalDevice with: surface with: capabilities.
 	
@@ -288,22 +639,66 @@ VkExample >> createSwapChain [
 		compositeAlpha: VkCompositeAlphaFlagsKHR VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR;
 		presentMode: presentMode;
 		clipped: (VkBool32 on: 1).
-	
 	self
 		passArrayOfPointers: 1
 		of: VkSwapchainKHR
 		to: [:pointer :array |
-			VkAPI new vkCreateSwapchainKHR: device with: createInfo with: nil with: pointer.
+			self checkError: (VkAPI new vkCreateSwapchainKHR: device with: createInfo with: nil with: pointer).
 			swapChain := array at: 1].
 	
 	imageCountRet := IntegerArray new: 1.
 	VkAPI new vkGetSwapchainImagesKHR: device with: swapChain with: imageCountRet with: nil.
+	
 	self
 		passArrayOfPointers: imageCountRet first
 		of: VkImage
 		to: [:pointer :array |
-			VkAPI new vkGetSwapchainImagesKHR: device with: swapChain with: imageCountRet with: pointer.
+			self checkError: (VkAPI new vkGetSwapchainImagesKHR: device with: swapChain with: imageCountRet with: pointer).
 			swapChainImages := array]
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> createSyncObjects [
+
+	| semaphoreInfo fenceInfo |
+	currentFrame := 1.
+	
+	semaphoreInfo := VkSemaphoreCreateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO.
+	fenceInfo := VkFenceCreateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_FENCE_CREATE_INFO;
+		flags: VkFenceCreateFlags VK_FENCE_CREATE_SIGNALED_BIT.
+	
+	imageAvailableSemaphores := Array new: self maxFramesInFlight.
+	renderFinishedSemaphores := Array new: self maxFramesInFlight.
+	inFlightFences := Array new: self maxFramesInFlight.
+	
+	imagesInFlight := Array new: swapChainImages size.
+	1 to: swapChainImages size do: [:index | imagesInFlight at: index put: (VkFence on: 0)].
+	
+	1
+		to: self maxFramesInFlight
+		do: [:index |
+			self
+				passArrayOfPointers: 1
+				of: VkFence
+				to: [:pointer :array |
+					self checkError: (VkAPI new vkCreateFence: device with: fenceInfo with: nil with: pointer).
+					inFlightFences at: index put: (array at: 1)].
+			self
+				passArrayOfPointers: 1
+				of: VkSemaphore
+				to: [:pointer :array |
+					self checkError: (VkAPI new vkCreateSemaphore: device with: semaphoreInfo with: nil with: pointer).
+					imageAvailableSemaphores at: index put: (array at: 1)].
+			self
+				passArrayOfPointers: 1
+				of: VkSemaphore
+				to: [:pointer :array |
+					self checkError: (VkAPI new vkCreateSemaphore: device with: semaphoreInfo with: nil with: pointer).
+					renderFinishedSemaphores at: index put: (array at: 1)]]
 ]
 
 { #category : #'as yet unclassified' }
@@ -316,6 +711,87 @@ VkExample >> destroyDebugUtilsMessengerEXT: instance with: messenger with: pAllo
 	method := VkAPI >> #vkDestroyDebugUtilsMessengerEXT:with:with:.
 	(method literalAt: 1) setHandle: funcAddr getHandle.
 	^ VkAPI new vkDestroyDebugUtilsMessengerEXT: instance with: messenger with: pAllocator
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> drawFrame [
+
+	| imageIndex submitInfo presentInfo signalSemaphores waitSemaphores waitStages swapChains imageIndices currentInFlight |
+	currentInFlight := ExternalData fromHandle: (ExternalAddress allocate: VkFence byteSize) type: VkFence externalType asPointerType.
+	currentInFlight at: 1 put: (inFlightFences at: currentFrame).
+	VkAPI new
+		vkWaitForFences: device
+		with: 1
+		with: (VkFence fromHandle: currentInFlight getHandle)
+		with: (VkBool32 on: 1)
+		with: self waitTimeout.
+	
+	imageIndex := IntegerArray new: 1.
+	VkAPI new
+		vkAcquireNextImageKHR: device
+		with: swapChain
+		with: self waitTimeout
+		with: (imageAvailableSemaphores at: currentFrame)
+		with: (VkFence on: 0)
+		with: imageIndex.
+	
+	(imagesInFlight at: imageIndex first + 1) = (VkFence on: 0) ifFalse: [ | currentImagesInFlight |
+		currentImagesInFlight := ExternalData fromHandle: (ExternalAddress allocate: VkFence byteSize) type: VkFence externalType asPointerType.
+		currentImagesInFlight at: 1 put: (imagesInFlight at: imageIndex first + 1).
+		VkAPI new
+			vkWaitForFences: device
+			with: 1
+			with: (VkFence fromHandle: currentImagesInFlight getHandle)
+			with: (VkBool32 on: 1)
+			with: self waitTimeout].
+	imagesInFlight at: imageIndex first + 1 put: (inFlightFences at: currentFrame).
+	
+	waitSemaphores := ExternalData fromHandle: (ExternalAddress allocate: VkSemaphore byteSize) type: VkSemaphore externalType asPointerType.
+	waitSemaphores at: 1 put: (imageAvailableSemaphores at: currentFrame).
+	signalSemaphores := ExternalData fromHandle: (ExternalAddress allocate: VkSemaphore byteSize) type: VkSemaphore externalType asPointerType.
+	signalSemaphores at: 1 put: (renderFinishedSemaphores at: currentFrame).
+	waitStages := ExternalData
+		fromHandle: (ExternalAddress allocate: VkPipelineStageFlags byteSize)
+		type: VkPipelineStageFlags externalType asPointerType.
+	waitStages at: 1 put: VkPipelineStageFlags VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT.
+	submitInfo := VkSubmitInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_SUBMIT_INFO;
+		waitSemaphoreCount: 1;
+		pWaitSemaphores: waitSemaphores;
+		pWaitDstStageMask: waitStages;
+		commandBufferCount: 1;
+		pCommandBuffers: (ExternalData
+			fromHandle: commandBuffers getHandle + (imageIndex first * VkCommandBuffer byteSize)
+			type: VkCommandBuffer externalType asPointerType);
+		signalSemaphoreCount: 1;
+		pSignalSemaphores: signalSemaphores.
+	
+	currentInFlight at: 1 put: (inFlightFences at: currentFrame).
+	VkAPI new vkResetFences: device with: 1 with: (VkFence fromHandle: currentInFlight getHandle).
+	
+	self checkError: (VkAPI new vkQueueSubmit: graphicsQueue with: 1 with: submitInfo with: (inFlightFences at: currentFrame)).
+	
+	swapChains := ExternalData
+		fromHandle: (ExternalAddress allocate: VkSwapchainKHR byteSize)
+		type: VkSwapchainKHR externalType asPointerType.
+	swapChains at: 1 put: swapChain.
+	imageIndices := ExternalData
+		fromHandle: (ExternalAddress allocate: ExternalType uint32_t byteSize)
+		type: ExternalType uint32_t asPointerType.
+	imageIndices at: 1 put: imageIndex first.
+	
+	presentInfo := VkPresentInfoKHR externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
+		waitSemaphoreCount: 1;
+		pWaitSemaphores: signalSemaphores;
+		swapchainCount: 1;
+		pSwapchains: swapChains;
+		pImageIndices: imageIndices.
+	VkAPI new vkQueuePresentKHR: graphicsQueue with: presentInfo.
+	
+	currentFrame := (currentFrame \\ self maxFramesInFlight) + 1
 ]
 
 { #category : #'as yet unclassified' }
@@ -355,6 +831,12 @@ VkExample >> getExtensionNamesAndCount [
 ]
 
 { #category : #'as yet unclassified' }
+VkExample >> graphicsQueueIndex [
+
+	^ 0
+]
+
+{ #category : #'as yet unclassified' }
 VkExample >> initVulkan [
 
 	self createInstance.
@@ -363,7 +845,13 @@ VkExample >> initVulkan [
 	self pickPhysicalDevice.
 	self createLogicalDevice.
 	self createSwapChain.
-	self createImageViews
+	self createImageViews.
+	self createRenderPass.
+	self createGraphicsPipeline.
+	self createFramebuffers.
+	self createCommandPool.
+	self createCommandBuffers.
+	self createSyncObjects
 ]
 
 { #category : #'as yet unclassified' }
@@ -404,7 +892,16 @@ VkExample >> layerNames [
 { #category : #'as yet unclassified' }
 VkExample >> mainLoop [
 
-	[(GLFW windowShouldClose: window) ~= 0] whileFalse: [GLFW pollEvents]
+	[(GLFW windowShouldClose: window) ~= 0] whileFalse: [
+		GLFW pollEvents.
+		self drawFrame].
+	VkAPI new vkDeviceWaitIdle: device
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> maxFramesInFlight [
+
+	^ 2
 ]
 
 { #category : #'as yet unclassified' }
@@ -465,7 +962,12 @@ VkExample >> setupDebugMessenger [
 	| createInfo |
 	createInfo := self createDebugMessenger.
 	debugMessenger := VkDebugUtilsMessengerEXT externalNew.
-	self checkError: (self createDebugUtilsMessengerEXT: instance with: createInfo with: nil with: debugMessenger).
+	self
+		passArrayOfPointers: 1
+		of: VkDebugUtilsMessengerEXT
+		to: [:pointer :array |
+			self checkError: (self createDebugUtilsMessengerEXT: instance with: createInfo with: nil with: pointer).
+			debugMessenger := array at: 1].
 	createInfo free
 ]
 
@@ -474,4 +976,10 @@ VkExample >> vkMakeVersionMajor: major minor: minor patch: patch [
 
 	SBExample self: [VkExample basicNew] args: [{1. 0. 0}] label: 'example'.
 	^ (major << 22 bitOr: minor << 12) bitOr: patch
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> waitTimeout [
+
+	^ 900000000
 ]

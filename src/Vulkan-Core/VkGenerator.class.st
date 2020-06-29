@@ -144,7 +144,7 @@ VkGenerator >> createExternalStructure: aClass from: type [
 
 	| class |
 	self assert: ((type attributeAt: #name) occurrencesOf: Character space) = 0.
-	class := ExternalStructure
+	class := aClass
 		subclass: (type attributeAt: #name) asSymbol
 		instanceVariableNames: ''
 		classVariableNames: ''

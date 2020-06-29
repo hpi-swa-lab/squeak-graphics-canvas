@@ -1,6 +1,6 @@
 Class {
 	#name : #VkPerformanceCounterResultKHR,
-	#superclass : #ExternalStructure,
+	#superclass : #ExternalUnion,
 	#category : #'Vulkan-Generated'
 }
 

@@ -1,6 +1,6 @@
 Class {
 	#name : #VkClearValue,
-	#superclass : #ExternalStructure,
+	#superclass : #ExternalUnion,
 	#category : #'Vulkan-Generated'
 }
 

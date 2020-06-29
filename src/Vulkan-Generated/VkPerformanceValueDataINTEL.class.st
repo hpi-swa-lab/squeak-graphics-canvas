@@ -1,6 +1,6 @@
 Class {
 	#name : #VkPerformanceValueDataINTEL,
-	#superclass : #ExternalStructure,
+	#superclass : #ExternalUnion,
 	#category : #'Vulkan-Generated'
 }
 

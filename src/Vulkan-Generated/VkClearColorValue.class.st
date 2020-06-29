@@ -1,6 +1,6 @@
 Class {
 	#name : #VkClearColorValue,
-	#superclass : #ExternalStructure,
+	#superclass : #ExternalUnion,
 	#category : #'Vulkan-Generated'
 }
 
