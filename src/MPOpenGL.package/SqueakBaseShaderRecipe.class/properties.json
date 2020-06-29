@@ -1,0 +1,14 @@
+{
+	"category" : "MPOpenGL-Shaders",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "SqueakBaseShaderRecipe",
+	"pools" : [
+		 ],
+	"super" : "GLShaderRecipe",
+	"type" : "normal" }

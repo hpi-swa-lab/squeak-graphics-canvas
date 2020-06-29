@@ -1,0 +1,14 @@
+{
+	"category" : "MPOpenGL-Shaders",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BlurShaderRecipe",
+	"pools" : [
+		 ],
+	"super" : "GLShaderRecipe",
+	"type" : "normal" }

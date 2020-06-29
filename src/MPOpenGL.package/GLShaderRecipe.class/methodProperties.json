@@ -1,0 +1,9 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"build" : "sr 6/29/2020 09:03",
+		"buildFor:" : "sr 6/29/2020 09:03",
+		"fragmentShader" : "sr 6/29/2020 08:49",
+		"programClass" : "sr 6/29/2020 08:55",
+		"vertexShader" : "sr 6/29/2020 08:53" } }

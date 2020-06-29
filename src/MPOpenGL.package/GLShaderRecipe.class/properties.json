@@ -6,8 +6,8 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"shaders" ],
-	"name" : "GLProgramRecipe",
+		 ],
+	"name" : "GLShaderRecipe",
 	"pools" : [
 		 ],
 	"super" : "Object",
