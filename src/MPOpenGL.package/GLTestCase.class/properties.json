@@ -6,10 +6,10 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"renderBuffer" ],
-	"name" : "GLRenderBufferTest",
+		"gl" ],
+	"name" : "GLTestCase",
 	"pools" : [
 		"GLConstants",
 		"OpenGLConstants" ],
-	"super" : "GLTestCase",
+	"super" : "TestCase",
 	"type" : "normal" }
