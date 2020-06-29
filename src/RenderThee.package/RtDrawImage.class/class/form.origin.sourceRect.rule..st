@@ -1,9 +1,9 @@
 instance creation
-form: aForm origin: aPoint sourceRect: aRectangle rule: anInteger
+form: aForm origin: aPoint sourceRect: sourceRect rule: rule
 
 	^ self new
 		form: aForm;
 		origin: aPoint;
-		sourceRect: aRectangle;
-		rule: anInteger;
+		sourceRect: sourceRect;
+		rule: rule;
 		yourself

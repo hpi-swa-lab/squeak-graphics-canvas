@@ -2,7 +2,6 @@
 	"class" : {
 		"bounds:radius:fillStyle:borderStyle:" : "stlu 4/16/2020 16:56" },
 	"instance" : {
-		"drawOn:" : "stlu 6/22/2020 11:12",
+		"drawOn:" : "stlu 6/27/2020 14:40",
 		"radius" : "stlu 4/16/2020 16:56",
-		"radius:" : "stlu 4/16/2020 16:56",
-		"visit:" : "stlu 5/25/2020 09:48" } }
+		"radius:" : "stlu 4/16/2020 16:56" } }

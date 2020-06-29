@@ -3,7 +3,7 @@
 		 },
 	"instance" : {
 		"assuredForm" : "TZ 6/23/2020 11:55",
-		"assuredTexture:" : "tobe 6/23/2020 18:44",
+		"assuredTexture:" : "tobe 6/24/2020 16:05",
 		"bounds:" : "TZ 6/22/2020 21:38",
 		"clipRect" : "tobe 6/22/2020 22:51",
 		"drawOn:" : "stlu 6/8/2020 00:11",
@@ -14,7 +14,7 @@
 		"isRasterized" : "tobe 6/22/2020 22:35",
 		"needsRasterize" : "TZ 6/23/2020 14:57",
 		"open" : "stlu 6/23/2020 09:38",
-		"rasterizeForm" : "tobe 6/22/2020 22:54",
+		"rasterizeForm" : "stlu 6/27/2020 15:42",
 		"transform" : "TZ 6/22/2020 21:34",
 		"transform:" : "TZ 6/22/2020 21:34",
 		"visit:" : "stlu 6/22/2020 11:53" } }

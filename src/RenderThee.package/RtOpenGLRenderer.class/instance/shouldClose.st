@@ -1,0 +1,3 @@
+accessing
+shouldClose
+	^ ogl shouldClose

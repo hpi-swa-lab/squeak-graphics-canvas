@@ -2,6 +2,6 @@ visiting
 rasterizeForm
 
 	| fc |
-	fc := FormCanvas extent: extent.
+	fc := RtFormCanvas extent: extent.
 	self visit: (RtRasterizeVisitor canvas: fc).
 	^ fc form

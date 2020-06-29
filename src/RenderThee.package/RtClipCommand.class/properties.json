@@ -1,0 +1,14 @@
+{
+	"category" : "RenderThee-CanvasCommands",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"clipRect" ],
+	"name" : "RtClipCommand",
+	"pools" : [
+		 ],
+	"super" : "RtCanvasCommand",
+	"type" : "normal" }

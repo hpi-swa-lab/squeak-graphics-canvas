@@ -1,4 +1,7 @@
 drawing
 drawOn: aCanvas
 
-	aCanvas paragraph: self paragraph bounds: self bounds color: self color
+	aCanvas
+		paragraph: paragraph
+		bounds: bounds
+		color: color

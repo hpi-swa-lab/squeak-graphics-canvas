@@ -1,0 +1,15 @@
+{
+	"category" : "RenderThee-CanvasCommands",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"saveStack",
+		"transform" ],
+	"name" : "RtFormCanvas",
+	"pools" : [
+		 ],
+	"super" : "FormCanvas",
+	"type" : "normal" }
