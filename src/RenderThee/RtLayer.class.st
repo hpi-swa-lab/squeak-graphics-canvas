@@ -6,7 +6,7 @@ Class {
 		'extent',
 		'cache'
 	],
-	#category : #'RenderThee-LayerTree'
+	#category : 'RenderThee-LayerTree'
 }
 
 { #category : #visiting }

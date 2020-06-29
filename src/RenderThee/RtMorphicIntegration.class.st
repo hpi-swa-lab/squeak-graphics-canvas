@@ -4,7 +4,7 @@ Activates / deactivates behavior that modifies existing Morphic code paths.
 Class {
 	#name : #RtMorphicIntegration,
 	#superclass : #DynamicVariable,
-	#category : #'RenderThee-Core'
+	#category : 'RenderThee-Core'
 }
 
 { #category : #accessing }

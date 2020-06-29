@@ -1,8 +1,7 @@
 Class {
 	#name : #GLShaderSource,
-	#superclass : #Object,
+	#superclass : #AbstractGLObject,
 	#instVars : [
-		'gl',
 		'code'
 	],
 	#pools : [
@@ -78,18 +77,6 @@ GLShaderSource >> getShaderInfoLog: vertexShader [
 				type: ExternalType string.
 	gl glGetShaderInfoLog: vertexShader with: infoLogLength with: nil with: infoLog.
 	^ infoLog fromCString
-]
-
-{ #category : #accessing }
-GLShaderSource >> gl [
-
-	^ gl
-]
-
-{ #category : #accessing }
-GLShaderSource >> gl: anObject [
-
-	gl := anObject
 ]
 
 { #category : #'shader kind' }

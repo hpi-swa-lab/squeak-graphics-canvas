@@ -1,7 +1,7 @@
 Class {
 	#name : #SqueakBaseShaderRecipe,
 	#superclass : #GLShaderRecipe,
-	#category : 'MPOpenGL-Shaders'
+	#category : #'MPOpenGL-Shaders'
 }
 
 { #category : #code }

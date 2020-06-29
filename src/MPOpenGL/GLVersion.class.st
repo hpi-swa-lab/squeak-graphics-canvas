@@ -1,5 +1,5 @@
 Class {
 	#name : #GLVersion,
 	#superclass : #OpenGL,
-	#category : #'MPOpenGL-Versions'
+	#category : 'MPOpenGL-Versions'
 }

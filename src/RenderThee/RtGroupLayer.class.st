@@ -96,7 +96,7 @@ RtGroupLayer >> rasterizeTexture: aRendender [
 	^ self restoreFramebufferOf: aRendender after: [ | texture framebuffer ogl |
 		ogl := GL value.
 		
-		framebuffer := GLFrameBuffer new.
+		framebuffer := GLFrameBuffer newFor: nil.
 		texture := GLTexture new.
 		texture texImageExtent: self extent.
 		framebuffer texture2D: texture.

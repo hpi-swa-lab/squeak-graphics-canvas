@@ -1,7 +1,7 @@
 Class {
 	#name : #'GLES23_0',
 	#superclass : #'GLES22_0',
-	#category : #'MPOpenGL-Versions'
+	#category : 'MPOpenGL-Versions'
 }
 
 { #category : #commands }
