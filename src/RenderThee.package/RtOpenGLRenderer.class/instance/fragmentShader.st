@@ -8,6 +8,6 @@ in vec2 TexCoords;
 uniform sampler2D image;
 
 void main() {
-     //FragColor = vec4(TexCoords.xy, 0.0, 0.3);
-     FragColor = texture(image, TexCoords);
+     FragColor = vec4(TexCoords.xy, 0.0, 0.3);
+     //FragColor = texture(image, TexCoords);
 }' withUnixLineEndings

@@ -39,8 +39,8 @@ initialize
 		program vertexAttib: 1 value: vbo stride: 4 offset: 2.
 		ogl checkForError.
 
-		program
+		"program
 			uniform: (ogl glGetUniformLocation: program id with: 'image')
-			value: 0.
+			value: 0."
 		
 		ogl checkForError ]
