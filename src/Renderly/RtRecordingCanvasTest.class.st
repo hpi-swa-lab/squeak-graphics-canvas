@@ -13,5 +13,5 @@ RtRecordingCanvasTest >> canvasForm [
 { #category : #initialization }
 RtRecordingCanvasTest >> createCanvas [
 
-	^ RtRecordingCanvas rootWithExtent: self canvasExtent
+	^ RtRecordingCanvas extent: self canvasExtent
 ]

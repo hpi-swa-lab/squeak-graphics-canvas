@@ -2,13 +2,14 @@ Class {
 	#name : #RtMirrorControl,
 	#superclass : #Morph,
 	#instVars : [
+		'renderInfo',
 		'renderer',
 		'ogl'
 	],
 	#pools : [
 		'GLConstants'
 	],
-	#category : 'RenderThee-Core'
+	#category : #'RenderThee-Core'
 }
 
 { #category : #deletion }
@@ -17,10 +18,20 @@ RtMirrorControl >> delete [
 	super delete
 ]
 
+{ #category : #accessing }
+RtMirrorControl >> frameTime: milliseconds [
+
+	renderInfo contents: milliseconds asString
+]
+
 { #category : #initialization }
 RtMirrorControl >> initialize [
 	super initialize.
 	self extent: 200@200.
+	
+	renderInfo := StringMorph new.
+	renderInfo layoutFrame: LayoutFrame fullFrame.
+	self addMorph: renderInfo.
 
 	renderer := RtOpenGLRenderer new.
 	
@@ -30,8 +41,7 @@ self stopStepping.
 { #category : #stepping }
 RtMirrorControl >> step [
 
-	"renderer renderFrame."
-	
+	self step2
 ]
 
 { #category : #stepping }
@@ -39,7 +49,8 @@ RtMirrorControl >> step2 [
 
 	renderer shouldClose
 		ifTrue: [self delete]
-		ifFalse: [renderer renderFrame]
+		ifFalse: [
+			self frameTime: [renderer renderFrame] timeToRunWithoutGC]
 ]
 
 { #category : #stepping }
