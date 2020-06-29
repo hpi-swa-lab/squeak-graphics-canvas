@@ -1,4 +1,0 @@
-accessing
-GL_TEXTURE_MIN_LOD
-
-	^ GL_TEXTURE_MIN_LOD

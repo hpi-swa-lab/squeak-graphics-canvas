@@ -1,4 +1,0 @@
-accessing
-GL_COLOR_WRITEMASK
-
-	^ GL_COLOR_WRITEMASK

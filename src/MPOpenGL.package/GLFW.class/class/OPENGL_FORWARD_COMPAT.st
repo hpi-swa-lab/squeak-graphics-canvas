@@ -1,3 +1,0 @@
-primitive
-OPENGL_FORWARD_COMPAT
-	^16r22006

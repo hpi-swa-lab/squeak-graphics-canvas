@@ -1,4 +1,0 @@
-accessing
-GL_IMAGE_TEXEL_SIZE
-
-	^ GL_IMAGE_TEXEL_SIZE

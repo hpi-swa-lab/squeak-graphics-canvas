@@ -1,4 +1,0 @@
-accessing
-GL_INDEX_MODE
-
-	^ GL_INDEX_MODE

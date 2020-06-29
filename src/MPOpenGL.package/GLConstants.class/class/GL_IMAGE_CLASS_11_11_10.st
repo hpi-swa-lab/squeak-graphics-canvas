@@ -1,4 +1,0 @@
-accessing
-GL_IMAGE_CLASS_11_11_10
-
-	^ GL_IMAGE_CLASS_11_11_10

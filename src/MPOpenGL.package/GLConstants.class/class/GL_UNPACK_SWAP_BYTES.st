@@ -1,4 +1,0 @@
-accessing
-GL_UNPACK_SWAP_BYTES
-
-	^ GL_UNPACK_SWAP_BYTES

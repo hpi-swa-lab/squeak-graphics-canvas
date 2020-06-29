@@ -1,4 +1,0 @@
-accessing
-GL_DOUBLE_MAT3
-
-	^ GL_DOUBLE_MAT3

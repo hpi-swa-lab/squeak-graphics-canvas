@@ -1,4 +1,0 @@
-accessing
-GL_FOG_COORD
-
-	^ GL_FOG_COORD

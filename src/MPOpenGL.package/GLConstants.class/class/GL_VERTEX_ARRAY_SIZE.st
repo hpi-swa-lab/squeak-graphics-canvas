@@ -1,4 +1,0 @@
-accessing
-GL_VERTEX_ARRAY_SIZE
-
-	^ GL_VERTEX_ARRAY_SIZE

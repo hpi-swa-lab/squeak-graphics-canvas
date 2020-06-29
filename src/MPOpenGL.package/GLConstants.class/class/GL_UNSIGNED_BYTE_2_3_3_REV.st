@@ -1,4 +1,0 @@
-accessing
-GL_UNSIGNED_BYTE_2_3_3_REV
-
-	^ GL_UNSIGNED_BYTE_2_3_3_REV

@@ -1,4 +1,0 @@
-accessing
-GL_MAX_SUBROUTINES
-
-	^ GL_MAX_SUBROUTINES

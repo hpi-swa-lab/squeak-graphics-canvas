@@ -1,4 +1,0 @@
-accessing
-GL_OPERAND1_RGB
-
-	^ GL_OPERAND1_RGB

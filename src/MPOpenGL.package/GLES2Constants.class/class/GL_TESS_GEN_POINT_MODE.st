@@ -1,4 +1,0 @@
-accessing
-GL_TESS_GEN_POINT_MODE
-
-	^ GL_TESS_GEN_POINT_MODE

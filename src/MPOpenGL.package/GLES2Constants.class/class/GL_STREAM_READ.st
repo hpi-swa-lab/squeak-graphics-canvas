@@ -1,4 +1,0 @@
-accessing
-GL_STREAM_READ
-
-	^ GL_STREAM_READ

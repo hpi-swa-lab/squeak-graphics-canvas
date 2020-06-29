@@ -1,4 +1,0 @@
-accessing
-GL_ISOLINES
-
-	^ GL_ISOLINES

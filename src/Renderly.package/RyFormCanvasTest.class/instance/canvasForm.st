@@ -1,4 +1,0 @@
-accessing
-canvasForm
-
-	^ canvas form

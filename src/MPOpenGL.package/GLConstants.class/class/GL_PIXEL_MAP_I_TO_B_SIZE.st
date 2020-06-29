@@ -1,4 +1,0 @@
-accessing
-GL_PIXEL_MAP_I_TO_B_SIZE
-
-	^ GL_PIXEL_MAP_I_TO_B_SIZE

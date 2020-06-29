@@ -1,4 +1,0 @@
-accessing
-GL_UNSIGNED_SHORT_5_5_5_1
-
-	^ GL_UNSIGNED_SHORT_5_5_5_1

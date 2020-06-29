@@ -1,4 +1,0 @@
-accessing
-GL_WAIT_FAILED
-
-	^ GL_WAIT_FAILED

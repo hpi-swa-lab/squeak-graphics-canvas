@@ -1,4 +1,0 @@
-accessing
-GL_BUFFER_MAP_OFFSET
-
-	^ GL_BUFFER_MAP_OFFSET

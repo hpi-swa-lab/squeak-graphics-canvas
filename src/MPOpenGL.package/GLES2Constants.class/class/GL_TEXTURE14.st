@@ -1,4 +1,0 @@
-accessing
-GL_TEXTURE14
-
-	^ GL_TEXTURE14

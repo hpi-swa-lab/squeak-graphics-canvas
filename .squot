@@ -1,6 +1,6 @@
 OrderedDictionary {
-	'src/MPOpenGL.package' : #SquotCypressCodeSerializer,
-	'src/RenderThee.package' : #SquotCypressCodeSerializer,
-	'src/Renderly.package' : #SquotCypressCodeSerializer,
-	'src/3DTransform.package' : #SquotCypressCodeSerializer
+	'src/3DTransform' : #SquotTonelSerializer,
+	'src/MPOpenGL' : #SquotTonelSerializer,
+	'src/RenderThee' : #SquotTonelSerializer,
+	'src/Renderly' : #SquotTonelSerializer
 }

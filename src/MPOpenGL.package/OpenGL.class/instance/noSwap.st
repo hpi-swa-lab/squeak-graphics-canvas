@@ -1,4 +1,0 @@
-accessing
-noSwap
-
-	noSwap := true.

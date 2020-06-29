@@ -1,4 +1,0 @@
-accessing
-GL_GREEN_SCALE
-
-	^ GL_GREEN_SCALE

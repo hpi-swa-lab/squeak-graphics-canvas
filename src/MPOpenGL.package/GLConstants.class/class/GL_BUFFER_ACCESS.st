@@ -1,4 +1,0 @@
-accessing
-GL_BUFFER_ACCESS
-
-	^ GL_BUFFER_ACCESS

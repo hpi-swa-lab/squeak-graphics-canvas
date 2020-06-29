@@ -1,4 +1,0 @@
-accessing
-GL_RGBA32F
-
-	^ GL_RGBA32F

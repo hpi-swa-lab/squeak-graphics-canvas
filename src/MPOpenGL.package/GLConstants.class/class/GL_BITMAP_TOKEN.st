@@ -1,4 +1,0 @@
-accessing
-GL_BITMAP_TOKEN
-
-	^ GL_BITMAP_TOKEN

@@ -1,4 +1,0 @@
-version
-minorVersion
-
-	^ 3

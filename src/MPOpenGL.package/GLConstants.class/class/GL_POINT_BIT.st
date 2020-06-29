@@ -1,4 +1,0 @@
-accessing
-GL_POINT_BIT
-
-	^ GL_POINT_BIT

@@ -1,4 +1,0 @@
-toolbuilder
-panelChildren
-
-	^ { self newCanvasMorph }

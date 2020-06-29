@@ -1,4 +1,0 @@
-accessing
-GL_FRACTIONAL_ODD
-
-	^ GL_FRACTIONAL_ODD

@@ -1,4 +1,0 @@
-accessing
-GL_FOG_START
-
-	^ GL_FOG_START

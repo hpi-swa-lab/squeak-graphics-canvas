@@ -1,4 +1,0 @@
-accessing
-GL_COLORBURN
-
-	^ GL_COLORBURN

@@ -1,3 +1,0 @@
-code
-fragmentShader
-	self subclassResponsibility 

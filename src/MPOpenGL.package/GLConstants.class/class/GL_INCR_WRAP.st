@@ -1,4 +1,0 @@
-accessing
-GL_INCR_WRAP
-
-	^ GL_INCR_WRAP

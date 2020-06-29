@@ -1,4 +1,0 @@
-accessing
-GL_POLYGON_STIPPLE
-
-	^ GL_POLYGON_STIPPLE

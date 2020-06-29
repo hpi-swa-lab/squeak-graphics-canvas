@@ -1,4 +1,0 @@
-accessing
-GL_TEXTURE29
-
-	^ GL_TEXTURE29

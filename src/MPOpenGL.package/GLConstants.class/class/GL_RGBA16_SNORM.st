@@ -1,4 +1,0 @@
-accessing
-GL_RGBA16_SNORM
-
-	^ GL_RGBA16_SNORM

@@ -1,4 +1,0 @@
-accessing
-GL_SPIR_V_EXTENSIONS
-
-	^ GL_SPIR_V_EXTENSIONS

@@ -1,4 +1,0 @@
-accessing
-GL_HIGH_FLOAT
-
-	^ GL_HIGH_FLOAT

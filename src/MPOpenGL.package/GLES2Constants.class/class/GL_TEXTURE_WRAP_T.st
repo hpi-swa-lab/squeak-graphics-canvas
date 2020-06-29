@@ -1,4 +1,0 @@
-accessing
-GL_TEXTURE_WRAP_T
-
-	^ GL_TEXTURE_WRAP_T

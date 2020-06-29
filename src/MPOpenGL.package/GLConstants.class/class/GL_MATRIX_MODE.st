@@ -1,4 +1,0 @@
-accessing
-GL_MATRIX_MODE
-
-	^ GL_MATRIX_MODE

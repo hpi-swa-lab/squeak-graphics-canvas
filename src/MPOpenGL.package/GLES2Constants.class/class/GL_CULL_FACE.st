@@ -1,4 +1,0 @@
-accessing
-GL_CULL_FACE
-
-	^ GL_CULL_FACE

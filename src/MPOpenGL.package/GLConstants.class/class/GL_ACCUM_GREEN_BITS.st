@@ -1,4 +1,0 @@
-accessing
-GL_ACCUM_GREEN_BITS
-
-	^ GL_ACCUM_GREEN_BITS

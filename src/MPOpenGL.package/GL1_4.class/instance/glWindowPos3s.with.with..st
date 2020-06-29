@@ -1,5 +1,0 @@
-commands
-glWindowPos3s: x with: y with: z
-
-	<apicall: void 'glWindowPos3s' (GLshort GLshort GLshort)>
-	^ self externalCallFailed

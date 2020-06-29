@@ -1,4 +1,0 @@
-accessing
-GL_PIXEL_MAP_G_TO_G
-
-	^ GL_PIXEL_MAP_G_TO_G

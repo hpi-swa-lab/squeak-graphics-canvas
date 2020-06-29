@@ -1,1 +1,0 @@
-I represent simple 2D coordinates in Croquet. I may be used to represent both, 2D points and 2D texture coordinates. 

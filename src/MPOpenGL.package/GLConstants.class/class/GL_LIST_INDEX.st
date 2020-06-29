@@ -1,4 +1,0 @@
-accessing
-GL_LIST_INDEX
-
-	^ GL_LIST_INDEX

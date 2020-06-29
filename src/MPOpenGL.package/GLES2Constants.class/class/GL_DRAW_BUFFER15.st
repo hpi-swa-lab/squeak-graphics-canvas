@@ -1,4 +1,0 @@
-accessing
-GL_DRAW_BUFFER15
-
-	^ GL_DRAW_BUFFER15

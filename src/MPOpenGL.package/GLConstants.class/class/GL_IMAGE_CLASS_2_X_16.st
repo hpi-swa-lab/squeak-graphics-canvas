@@ -1,4 +1,0 @@
-accessing
-GL_IMAGE_CLASS_2_X_16
-
-	^ GL_IMAGE_CLASS_2_X_16

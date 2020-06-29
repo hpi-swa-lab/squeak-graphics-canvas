@@ -1,4 +1,0 @@
-accessing
-GL_MAX_LIST_NESTING
-
-	^ GL_MAX_LIST_NESTING

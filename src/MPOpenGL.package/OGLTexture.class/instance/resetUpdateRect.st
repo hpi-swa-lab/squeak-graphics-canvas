@@ -1,3 +1,0 @@
-updating
-resetUpdateRect
-	updateRect := nil.

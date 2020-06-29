@@ -1,4 +1,0 @@
-accessing
-GL_COMPRESSED_RED
-
-	^ GL_COMPRESSED_RED

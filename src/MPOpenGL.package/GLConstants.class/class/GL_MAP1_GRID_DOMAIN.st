@@ -1,4 +1,0 @@
-accessing
-GL_MAP1_GRID_DOMAIN
-
-	^ GL_MAP1_GRID_DOMAIN

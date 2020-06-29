@@ -1,4 +1,0 @@
-accessing
-GL_QUERY_BUFFER
-
-	^ GL_QUERY_BUFFER

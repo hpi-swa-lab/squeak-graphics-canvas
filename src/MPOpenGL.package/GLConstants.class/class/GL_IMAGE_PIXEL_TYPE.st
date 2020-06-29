@@ -1,4 +1,0 @@
-accessing
-GL_IMAGE_PIXEL_TYPE
-
-	^ GL_IMAGE_PIXEL_TYPE

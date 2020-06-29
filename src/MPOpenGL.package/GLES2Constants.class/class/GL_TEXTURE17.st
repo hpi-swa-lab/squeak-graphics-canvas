@@ -1,4 +1,0 @@
-accessing
-GL_TEXTURE17
-
-	^ GL_TEXTURE17

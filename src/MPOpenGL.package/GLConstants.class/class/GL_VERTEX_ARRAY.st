@@ -1,4 +1,0 @@
-accessing
-GL_VERTEX_ARRAY
-
-	^ GL_VERTEX_ARRAY

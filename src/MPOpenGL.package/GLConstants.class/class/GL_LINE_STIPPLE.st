@@ -1,4 +1,0 @@
-accessing
-GL_LINE_STIPPLE
-
-	^ GL_LINE_STIPPLE

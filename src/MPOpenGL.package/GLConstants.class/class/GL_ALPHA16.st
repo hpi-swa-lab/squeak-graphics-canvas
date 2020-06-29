@@ -1,4 +1,0 @@
-accessing
-GL_ALPHA16
-
-	^ GL_ALPHA16

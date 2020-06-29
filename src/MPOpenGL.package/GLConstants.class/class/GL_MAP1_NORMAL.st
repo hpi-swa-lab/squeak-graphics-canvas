@@ -1,4 +1,0 @@
-accessing
-GL_MAP1_NORMAL
-
-	^ GL_MAP1_NORMAL

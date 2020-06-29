@@ -1,3 +1,0 @@
-code
-vertexShader
-	self subclassResponsibility 

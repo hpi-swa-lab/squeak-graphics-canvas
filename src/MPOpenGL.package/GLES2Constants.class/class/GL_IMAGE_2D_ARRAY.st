@@ -1,4 +1,0 @@
-accessing
-GL_IMAGE_2D_ARRAY
-
-	^ GL_IMAGE_2D_ARRAY

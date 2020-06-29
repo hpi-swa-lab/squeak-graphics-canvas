@@ -1,4 +1,0 @@
-accessing
-GL_ALL_BARRIER_BITS
-
-	^ GL_ALL_BARRIER_BITS

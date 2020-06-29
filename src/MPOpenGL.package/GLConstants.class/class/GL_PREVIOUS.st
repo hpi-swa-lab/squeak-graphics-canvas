@@ -1,4 +1,0 @@
-accessing
-GL_PREVIOUS
-
-	^ GL_PREVIOUS

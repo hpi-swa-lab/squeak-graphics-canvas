@@ -1,3 +1,0 @@
-accessing
-origin
-	^bufRect origin

@@ -1,4 +1,0 @@
-accessing
-GL_CURRENT_PROGRAM
-
-	^ GL_CURRENT_PROGRAM

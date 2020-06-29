@@ -1,4 +1,0 @@
-accessing
-GL_TRIANGLE_STRIP
-
-	^ GL_TRIANGLE_STRIP

@@ -1,4 +1,0 @@
-accessing
-GL_MAX_DRAW_BUFFERS
-
-	^ GL_MAX_DRAW_BUFFERS

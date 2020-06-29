@@ -1,4 +1,0 @@
-*MPOpenGL
-GLchar
-
-	^ self signedChar

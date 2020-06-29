@@ -1,4 +1,0 @@
-accessing
-GL_PIXEL_MODE_BIT
-
-	^ GL_PIXEL_MODE_BIT

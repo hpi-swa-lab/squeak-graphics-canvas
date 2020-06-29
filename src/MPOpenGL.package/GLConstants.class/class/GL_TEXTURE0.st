@@ -1,4 +1,0 @@
-accessing
-GL_TEXTURE0
-
-	^ GL_TEXTURE0

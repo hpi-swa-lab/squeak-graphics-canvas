@@ -1,4 +1,0 @@
-accessing
-GL_UNSIGNALED
-
-	^ GL_UNSIGNALED

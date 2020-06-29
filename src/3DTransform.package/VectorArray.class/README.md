@@ -1,1 +1,0 @@
-I am an array of Vectors.

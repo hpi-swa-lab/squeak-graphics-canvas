@@ -1,4 +1,0 @@
-*RenderThee
-isRepaintBoundary
-
-	^ false

@@ -1,4 +1,0 @@
-accessing
-GL_ALPHA_INTEGER
-
-	^ GL_ALPHA_INTEGER

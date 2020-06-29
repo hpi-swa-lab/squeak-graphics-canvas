@@ -1,4 +1,0 @@
-accessing
-GL_MAP_COHERENT_BIT
-
-	^ GL_MAP_COHERENT_BIT

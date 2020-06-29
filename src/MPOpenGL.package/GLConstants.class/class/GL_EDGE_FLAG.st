@@ -1,4 +1,0 @@
-accessing
-GL_EDGE_FLAG
-
-	^ GL_EDGE_FLAG

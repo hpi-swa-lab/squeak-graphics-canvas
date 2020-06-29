@@ -1,4 +1,0 @@
-accessing
-GL_RGBA16UI
-
-	^ GL_RGBA16UI

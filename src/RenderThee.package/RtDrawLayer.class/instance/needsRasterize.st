@@ -1,4 +1,0 @@
-visiting
-needsRasterize
-
-	^ true

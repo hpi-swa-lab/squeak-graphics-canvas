@@ -1,4 +1,0 @@
-accessing
-GL_SHADER_IMAGE_LOAD
-
-	^ GL_SHADER_IMAGE_LOAD

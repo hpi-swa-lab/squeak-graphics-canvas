@@ -1,4 +1,0 @@
-accessing
-GL_ARRAY_SIZE
-
-	^ GL_ARRAY_SIZE

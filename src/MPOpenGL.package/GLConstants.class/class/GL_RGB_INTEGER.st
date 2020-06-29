@@ -1,4 +1,0 @@
-accessing
-GL_RGB_INTEGER
-
-	^ GL_RGB_INTEGER

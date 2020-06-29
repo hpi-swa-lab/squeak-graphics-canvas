@@ -1,5 +1,0 @@
-commands
-glProgramUniform4d: program with: location with: v0 with: v1 with: v2 with: v3
-
-	<apicall: void 'glProgramUniform4d' (GLuint GLint GLdouble GLdouble GLdouble GLdouble)>
-	^ self externalCallFailed

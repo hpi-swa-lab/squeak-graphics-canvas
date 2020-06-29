@@ -1,4 +1,0 @@
-accessing
-GL_REFLECTION_MAP
-
-	^ GL_REFLECTION_MAP

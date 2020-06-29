@@ -1,4 +1,0 @@
-accessing
-GL_INT_IMAGE_CUBE
-
-	^ GL_INT_IMAGE_CUBE

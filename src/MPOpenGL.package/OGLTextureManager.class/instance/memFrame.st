@@ -1,3 +1,0 @@
-stats
-memFrame
-	^memFrame

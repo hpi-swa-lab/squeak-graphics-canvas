@@ -1,4 +1,0 @@
-accessing
-GL_ZERO_TO_ONE
-
-	^ GL_ZERO_TO_ONE

@@ -1,4 +1,0 @@
-accessing
-GL_VERTEX_SHADER
-
-	^ GL_VERTEX_SHADER

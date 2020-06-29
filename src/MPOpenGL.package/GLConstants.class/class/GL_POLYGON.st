@@ -1,4 +1,0 @@
-accessing
-GL_POLYGON
-
-	^ GL_POLYGON

@@ -1,4 +1,0 @@
-accessing
-GL_IS_PER_PATCH
-
-	^ GL_IS_PER_PATCH

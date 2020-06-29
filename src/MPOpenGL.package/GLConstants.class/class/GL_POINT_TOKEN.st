@@ -1,4 +1,0 @@
-accessing
-GL_POINT_TOKEN
-
-	^ GL_POINT_TOKEN

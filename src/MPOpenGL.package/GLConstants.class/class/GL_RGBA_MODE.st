@@ -1,4 +1,0 @@
-accessing
-GL_RGBA_MODE
-
-	^ GL_RGBA_MODE

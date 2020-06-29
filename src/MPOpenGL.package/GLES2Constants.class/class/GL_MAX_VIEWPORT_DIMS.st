@@ -1,4 +1,0 @@
-accessing
-GL_MAX_VIEWPORT_DIMS
-
-	^ GL_MAX_VIEWPORT_DIMS

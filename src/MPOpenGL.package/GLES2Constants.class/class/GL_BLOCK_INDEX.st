@@ -1,4 +1,0 @@
-accessing
-GL_BLOCK_INDEX
-
-	^ GL_BLOCK_INDEX

@@ -1,4 +1,0 @@
-accessing
-GL_OUT_OF_MEMORY
-
-	^ GL_OUT_OF_MEMORY

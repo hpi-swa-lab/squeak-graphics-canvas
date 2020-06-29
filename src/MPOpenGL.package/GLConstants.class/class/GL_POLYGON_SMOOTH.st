@@ -1,4 +1,0 @@
-accessing
-GL_POLYGON_SMOOTH
-
-	^ GL_POLYGON_SMOOTH

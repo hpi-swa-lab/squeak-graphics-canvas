@@ -1,4 +1,0 @@
-accessing
-GL_DEPTH_WRITEMASK
-
-	^ GL_DEPTH_WRITEMASK

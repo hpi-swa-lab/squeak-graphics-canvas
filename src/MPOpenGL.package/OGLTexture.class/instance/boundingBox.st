@@ -1,3 +1,0 @@
-updating
-boundingBox
-	^form boundingBox

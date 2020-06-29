@@ -1,4 +1,0 @@
-accessing
-GL_MAP_READ_BIT
-
-	^ GL_MAP_READ_BIT

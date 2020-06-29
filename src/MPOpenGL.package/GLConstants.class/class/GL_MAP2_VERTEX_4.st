@@ -1,4 +1,0 @@
-accessing
-GL_MAP2_VERTEX_4
-
-	^ GL_MAP2_VERTEX_4

@@ -1,4 +1,0 @@
-accessing
-GL_LINE_STRIP
-
-	^ GL_LINE_STRIP

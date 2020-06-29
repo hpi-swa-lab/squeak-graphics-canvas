@@ -1,4 +1,0 @@
-accessing
-GL_HSL_LUMINOSITY
-
-	^ GL_HSL_LUMINOSITY

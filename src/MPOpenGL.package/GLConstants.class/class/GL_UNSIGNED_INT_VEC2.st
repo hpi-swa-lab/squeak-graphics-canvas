@@ -1,4 +1,0 @@
-accessing
-GL_UNSIGNED_INT_VEC2
-
-	^ GL_UNSIGNED_INT_VEC2

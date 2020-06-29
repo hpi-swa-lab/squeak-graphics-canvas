@@ -1,4 +1,0 @@
-accessing
-GL_SRGB_WRITE
-
-	^ GL_SRGB_WRITE

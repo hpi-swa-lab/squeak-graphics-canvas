@@ -1,4 +1,0 @@
-accessing
-GL_LUMINANCE8
-
-	^ GL_LUMINANCE8

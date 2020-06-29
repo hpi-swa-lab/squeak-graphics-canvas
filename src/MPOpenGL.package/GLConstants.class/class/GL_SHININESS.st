@@ -1,4 +1,0 @@
-accessing
-GL_SHININESS
-
-	^ GL_SHININESS

@@ -1,4 +1,0 @@
-converting
-asVectorColor
-
-	^self

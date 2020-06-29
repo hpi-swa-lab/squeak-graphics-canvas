@@ -1,4 +1,0 @@
-accessing
-GL_STACK_UNDERFLOW
-
-	^ GL_STACK_UNDERFLOW

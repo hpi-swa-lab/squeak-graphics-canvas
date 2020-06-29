@@ -1,4 +1,0 @@
-accessing
-GL_PROXY_TEXTURE_2D
-
-	^ GL_PROXY_TEXTURE_2D

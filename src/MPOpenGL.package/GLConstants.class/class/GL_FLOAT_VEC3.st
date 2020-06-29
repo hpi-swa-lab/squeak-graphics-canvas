@@ -1,4 +1,0 @@
-accessing
-GL_FLOAT_VEC3
-
-	^ GL_FLOAT_VEC3

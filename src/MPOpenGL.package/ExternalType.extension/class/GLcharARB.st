@@ -1,4 +1,0 @@
-*MPOpenGL
-GLcharARB
-
-	^ self GLchar

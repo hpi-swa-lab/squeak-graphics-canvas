@@ -1,4 +1,0 @@
-accessing
-GL_BLEND_DST_RGB
-
-	^ GL_BLEND_DST_RGB

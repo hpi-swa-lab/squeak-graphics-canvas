@@ -1,4 +1,0 @@
-accessing
-GL_STREAM_DRAW
-
-	^ GL_STREAM_DRAW

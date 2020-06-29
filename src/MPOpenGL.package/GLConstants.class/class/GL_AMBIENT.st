@@ -1,4 +1,0 @@
-accessing
-GL_AMBIENT
-
-	^ GL_AMBIENT

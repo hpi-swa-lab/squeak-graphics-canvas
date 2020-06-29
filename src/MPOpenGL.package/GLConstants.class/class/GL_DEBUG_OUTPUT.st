@@ -1,4 +1,0 @@
-accessing
-GL_DEBUG_OUTPUT
-
-	^ GL_DEBUG_OUTPUT

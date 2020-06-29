@@ -1,4 +1,0 @@
-accessing
-GL_BLUE_BITS
-
-	^ GL_BLUE_BITS

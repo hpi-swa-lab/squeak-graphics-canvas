@@ -1,4 +1,0 @@
-accessing
-GL_SPOT_CUTOFF
-
-	^ GL_SPOT_CUTOFF

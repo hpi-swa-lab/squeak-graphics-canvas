@@ -1,3 +1,0 @@
-primitive
-CONTEXT_VERSION_MAJOR
-	^16r22002

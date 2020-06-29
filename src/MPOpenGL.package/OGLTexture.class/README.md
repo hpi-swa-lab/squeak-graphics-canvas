@@ -1,1 +1,0 @@
-This is a wrapper for a Form, mimicking Croquet's TForms.

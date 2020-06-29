@@ -1,4 +1,0 @@
-accessing
-GL_EMISSION
-
-	^ GL_EMISSION

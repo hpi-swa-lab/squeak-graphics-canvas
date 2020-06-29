@@ -1,4 +1,0 @@
-accessing
-GL_OBJECT_TYPE
-
-	^ GL_OBJECT_TYPE

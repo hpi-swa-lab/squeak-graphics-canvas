@@ -1,4 +1,0 @@
-accessing
-inGLBlock
-
-	^ inGLBlock.

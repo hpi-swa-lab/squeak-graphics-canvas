@@ -1,1 +1,0 @@
-I represent the generic Unix OpenGL version.

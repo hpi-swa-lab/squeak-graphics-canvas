@@ -1,4 +1,0 @@
-version
-majorVersion
-
-	^ 4

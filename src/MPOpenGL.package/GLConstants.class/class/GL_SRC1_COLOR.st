@@ -1,4 +1,0 @@
-accessing
-GL_SRC1_COLOR
-
-	^ GL_SRC1_COLOR

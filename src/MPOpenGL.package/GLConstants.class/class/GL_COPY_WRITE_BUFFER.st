@@ -1,4 +1,0 @@
-accessing
-GL_COPY_WRITE_BUFFER
-
-	^ GL_COPY_WRITE_BUFFER

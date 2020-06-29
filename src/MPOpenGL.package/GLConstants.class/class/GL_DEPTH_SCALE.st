@@ -1,4 +1,0 @@
-accessing
-GL_DEPTH_SCALE
-
-	^ GL_DEPTH_SCALE

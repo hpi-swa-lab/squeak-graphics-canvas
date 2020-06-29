@@ -1,4 +1,0 @@
-accessing
-GL_INVALID_VALUE
-
-	^ GL_INVALID_VALUE

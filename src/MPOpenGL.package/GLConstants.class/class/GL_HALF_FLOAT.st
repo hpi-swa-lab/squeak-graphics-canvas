@@ -1,4 +1,0 @@
-accessing
-GL_HALF_FLOAT
-
-	^ GL_HALF_FLOAT

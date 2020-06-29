@@ -1,4 +1,0 @@
-accessing
-GL_HSL_COLOR
-
-	^ GL_HSL_COLOR

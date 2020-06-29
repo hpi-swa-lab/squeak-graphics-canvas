@@ -1,4 +1,0 @@
-accessing
-GL_COMPUTE_TEXTURE
-
-	^ GL_COMPUTE_TEXTURE

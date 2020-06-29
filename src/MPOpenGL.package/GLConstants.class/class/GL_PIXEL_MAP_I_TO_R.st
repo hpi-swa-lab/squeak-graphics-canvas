@@ -1,4 +1,0 @@
-accessing
-GL_PIXEL_MAP_I_TO_R
-
-	^ GL_PIXEL_MAP_I_TO_R

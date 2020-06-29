@@ -1,4 +1,0 @@
-accessing
-GL_CURRENT_COLOR
-
-	^ GL_CURRENT_COLOR

@@ -1,4 +1,0 @@
-*MPOpenGL
-GLsizeiptrARB
-
-	^ self GLsizeiptr

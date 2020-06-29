@@ -1,4 +1,0 @@
-accessing
-GL_DEPTH_CLEAR_VALUE
-
-	^ GL_DEPTH_CLEAR_VALUE

@@ -1,4 +1,0 @@
-accessing
-GL_QUERY_RESULT
-
-	^ GL_QUERY_RESULT

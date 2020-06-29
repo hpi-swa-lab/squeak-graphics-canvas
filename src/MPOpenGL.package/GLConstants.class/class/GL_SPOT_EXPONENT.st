@@ -1,4 +1,0 @@
-accessing
-GL_SPOT_EXPONENT
-
-	^ GL_SPOT_EXPONENT

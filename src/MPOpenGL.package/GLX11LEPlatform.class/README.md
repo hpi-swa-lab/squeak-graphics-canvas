@@ -1,1 +1,0 @@
-I represent the little endian Unix OpenGL version.

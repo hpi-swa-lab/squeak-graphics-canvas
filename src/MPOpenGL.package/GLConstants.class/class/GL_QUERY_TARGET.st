@@ -1,4 +1,0 @@
-accessing
-GL_QUERY_TARGET
-
-	^ GL_QUERY_TARGET

@@ -1,4 +1,0 @@
-accessing
-GL_DOT3_RGBA
-
-	^ GL_DOT3_RGBA

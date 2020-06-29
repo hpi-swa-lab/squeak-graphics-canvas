@@ -1,3 +1,0 @@
-references
-programClass
-	^GLProgram 

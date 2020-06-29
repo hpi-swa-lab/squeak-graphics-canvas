@@ -1,4 +1,0 @@
-accessing
-GL_STATIC_READ
-
-	^ GL_STATIC_READ

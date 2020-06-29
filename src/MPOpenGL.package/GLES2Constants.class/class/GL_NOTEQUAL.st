@@ -1,4 +1,0 @@
-accessing
-GL_NOTEQUAL
-
-	^ GL_NOTEQUAL

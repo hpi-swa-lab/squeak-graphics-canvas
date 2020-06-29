@@ -1,4 +1,0 @@
-accessing
-GL_CLIP_DISTANCE1
-
-	^ GL_CLIP_DISTANCE1

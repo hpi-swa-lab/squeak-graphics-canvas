@@ -1,4 +1,0 @@
-accessing
-GL_UNIFORM_OFFSET
-
-	^ GL_UNIFORM_OFFSET

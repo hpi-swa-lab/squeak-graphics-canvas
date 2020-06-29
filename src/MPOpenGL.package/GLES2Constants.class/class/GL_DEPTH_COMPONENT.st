@@ -1,4 +1,0 @@
-accessing
-GL_DEPTH_COMPONENT
-
-	^ GL_DEPTH_COMPONENT

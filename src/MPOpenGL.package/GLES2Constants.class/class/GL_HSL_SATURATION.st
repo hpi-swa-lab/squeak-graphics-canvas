@@ -1,4 +1,0 @@
-accessing
-GL_HSL_SATURATION
-
-	^ GL_HSL_SATURATION
