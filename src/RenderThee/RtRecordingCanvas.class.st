@@ -4,9 +4,10 @@ Class {
 	#instVars : [
 		'drawLayer',
 		'layer',
-		'origin'
+		'origin',
+		'isReRecording'
 	],
-	#category : 'RenderThee-Core'
+	#category : #'RenderThee-Core'
 }
 
 { #category : #examples }
@@ -27,6 +28,12 @@ RtRecordingCanvas class >> example01 [
 ]
 
 { #category : #'instance creation' }
+RtRecordingCanvas class >> extent: aPoint [
+
+	^ self layer: (RtGroupLayer offset: 0@0 extent: aPoint)
+]
+
+{ #category : #'instance creation' }
 RtRecordingCanvas class >> layer: aLayer [
 
 	^ self new
@@ -38,15 +45,8 @@ RtRecordingCanvas class >> layer: aLayer [
 { #category : #'instance creation' }
 RtRecordingCanvas class >> record: aMorph [
 
-	^ (self rootWithExtent: aMorph extent)
-		record: aMorph;
-		yourself
-]
-
-{ #category : #'instance creation' }
-RtRecordingCanvas class >> rootWithExtent: aPoint [
-
-	^ self layer: (RtGroupLayer offset: 0@0 extent: aPoint)
+	^ (self extent: aMorph extent)
+		record: aMorph
 ]
 
 { #category : #private }
@@ -55,7 +55,7 @@ RtRecordingCanvas >> addCommand: aCommand [
 	self assuredDrawLayer addCommand: aCommand
 ]
 
-{ #category : #private }
+{ #category : #accessing }
 RtRecordingCanvas >> addLayer: aLayer [
 
 	self endDrawLayer.
@@ -87,6 +87,13 @@ RtRecordingCanvas >> clipRect [
 RtRecordingCanvas >> commands [
 
 	^ self layer commands
+]
+
+{ #category : #accessing }
+RtRecordingCanvas >> currentLayer: aGroupLayer [
+
+	self endDrawLayer.
+	self layer: aGroupLayer
 ]
 
 { #category : #'drawing-images' }
@@ -267,9 +274,13 @@ RtRecordingCanvas >> fullDrawInNewLayer: aMorph [
 { #category : #'drawing-general' }
 RtRecordingCanvas >> fullDrawMorph: aMorph [
 
-	aMorph isRepaintBoundary
-		ifTrue: [	self fullDrawInNewLayer: aMorph]
-		ifFalse: [self fullDrawInCurrentLayer: aMorph]
+	aMorph isRepaintBoundary ifFalse: [
+		^ self fullDrawInCurrentLayer: aMorph].
+	self isReusingLayers ifTrue: [
+		aMorph groupLayer ifNotNil: [:reusableLayer |
+			^ self addLayer: reusableLayer]].
+	self fullDrawInNewLayer: aMorph
+		
 ]
 
 { #category : #private }
@@ -280,6 +291,24 @@ RtRecordingCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 							origin: (aPoint translateBy: self origin negated)
 							sourceRect: sourceRect
 							rule: rule)
+]
+
+{ #category : #accessing }
+RtRecordingCanvas >> isReRecording [
+
+	^ isReRecording ifNil: [false]
+]
+
+{ #category : #accessing }
+RtRecordingCanvas >> isReRecording: anObject [
+
+	isReRecording := anObject
+]
+
+{ #category : #testing }
+RtRecordingCanvas >> isReusingLayers [
+
+	^ self isReRecording
 ]
 
 { #category : #testing }
@@ -316,10 +345,9 @@ RtRecordingCanvas >> newCurrentLayer: aLayer newOrigin: newOrigin during: aBlock
 	| previousLayer |
 	previousLayer := self layer.
 	self addLayer: aLayer.
-	self layer: aLayer.
+	self currentLayer: aLayer.
 	self newOrigin: newOrigin during: aBlock.
-	self endDrawLayer.
-	self layer: previousLayer.
+	self currentLayer: previousLayer.
 	^ aLayer
 ]
 
@@ -369,9 +397,19 @@ RtRecordingCanvas >> preserveStateDuring: aBlock [
 ]
 
 { #category : #public }
+RtRecordingCanvas >> reRecord: aMorph [
+
+	self isReRecording: true.
+	self record: aMorph
+]
+
+{ #category : #public }
 RtRecordingCanvas >> record: aMorph [
 
-	self fullDrawMorph: aMorph
+	self
+		origin: aMorph position;
+		fullDrawInCurrentLayer: aMorph;
+		endDrawLayer
 ]
 
 { #category : #drawing }
