@@ -10,7 +10,10 @@ Class {
 		'physicalDevice',
 		'graphicsQueue',
 		'surface',
-		'swapChain'
+		'swapChain',
+		'swapChainImages',
+		'swapChainImageFormat',
+		'swapChainImageViews'
 	],
 	#category : #'Vulkan-Examples'
 }
@@ -49,6 +52,8 @@ VkExample >> cleanup [
 				debugMessenger ifNotNil: [
 					self destroyDebugUtilsMessengerEXT: instance with: debugMessenger with: nil]]
 		}.
+	swapChainImageViews do: [:view |
+		VkAPI new vkDestroyImageView: device with: view with: nil].
 	VkAPI new vkDestroySwapchainKHR: device with: swapChain with: nil.
 	VkAPI new vkDestroyDevice: device with: nil.
 	VkAPI new vkDestroySurfaceKHR: instance with: surface with: nil.
@@ -107,9 +112,40 @@ VkExample >> createDebugUtilsMessengerEXT: instance with: createInfo with: pAllo
 ]
 
 { #category : #'as yet unclassified' }
+VkExample >> createImageViews [
+
+	swapChainImageViews := Array new: swapChainImages size.
+	swapChainImages withIndexDo: [:image :index |
+		self
+			passArrayOfPointers: 1
+			of: VkImageView
+			to: [:pointer :array |
+				VkImageViewCreateInfo externalNewDo: [:createInfo |
+					createInfo
+						zeroAllFields;
+						sType: VkStructureType VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
+						image: image;
+						viewType: VkImageViewType VK_IMAGE_VIEW_TYPE_2D;
+						format: swapChainImageFormat.
+					createInfo components
+						r: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY;
+						g: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY;
+						b: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY;
+						a: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY.
+					createInfo subresourceRange
+						aspectMask: VkImageAspectFlags VK_IMAGE_ASPECT_COLOR_BIT;
+						baseMipLevel: 0;
+						levelCount: 1;
+						baseArrayLayer: 0;
+						layerCount: 1.
+					VkAPI new vkCreateImageView: device with: createInfo with: nil with: pointer.
+					swapChainImageViews at: index put: (array at: 1)]]]
+]
+
+{ #category : #'as yet unclassified' }
 VkExample >> createInstance [
 
-	| appInfo createInfo applicationName engineName layerNames debugUtilsMessengerCreateInfo extensionsAndCount instancePtr |
+	| appInfo createInfo applicationName engineName layerNames debugUtilsMessengerCreateInfo extensionsAndCount |
 	layerNames := self layerNames.
 	applicationName := 'Hello Triangle' asExternalString.
 	engineName := 'No Engine' asExternalString.
@@ -135,15 +171,18 @@ VkExample >> createInstance [
 		ppEnabledLayerNames: layerNames;
 		pNext: debugUtilsMessengerCreateInfo.
 	
-	instancePtr := ExternalData fromHandle: (ExternalAddress allocate: 8) type: ExternalType intptr_t asPointerType.
-	self checkError: (VkAPI new vkCreateInstance: createInfo with: nil with: instancePtr).
-	instance := VkInstance on: (instancePtr at: 1)
+	"instancePtr := ExternalData fromHandle: (ExternalAddress allocate: VkInstance byteSize) type: VkInstance externalType.
+	self checkError: (VkAPI new vkCreateInstance: createInfo with: nil with: (VkInstance fromHandle: instancePtr getHandle)).
+	instance := at: 1."
+	self passArrayOfPointers: 1 of: VkInstance to: [:pointer :array |
+		self checkError: (VkAPI new vkCreateInstance: createInfo with: nil with: pointer).
+		instance := array at: 1]
 ]
 
 { #category : #'as yet unclassified' }
 VkExample >> createLogicalDevice [
 
-	| queueCreateInfo queueCount queues devicePtr createInfo graphicsQueueIndex queuePtr presentSupport extensionsAndCount |
+	| queueCreateInfo queueCount queues createInfo graphicsQueueIndex extensionsAndCount |
 	queueCount := IntegerArray new: 1.
 	VkAPI new vkGetPhysicalDeviceQueueFamilyProperties: physicalDevice with: queueCount with: nil.
 	self assert: queueCount first = 1.
@@ -153,13 +192,14 @@ VkExample >> createLogicalDevice [
 	self checkError: (VkAPI new vkGetPhysicalDeviceQueueFamilyProperties: physicalDevice with: queueCount with: queues).
 	self assert: (queues queueFlags value bitAnd: VkQueueFlags VK_QUEUE_GRAPHICS_BIT) ~= 0.
 	graphicsQueueIndex := 0.
-	presentSupport := IntegerArray new: 1.
-	VkAPI new
-		vkGetPhysicalDeviceSurfaceSupportKHR: physicalDevice
-		with: graphicsQueueIndex
-		with: surface
-		with: presentSupport.
-	self assert: presentSupport first = 1.
+	
+	self passArrayOfPointers: 1 of: VkBool32 to: [:pointer :array |
+		VkAPI new
+			vkGetPhysicalDeviceSurfaceSupportKHR: physicalDevice
+			with: graphicsQueueIndex
+			with: surface
+			with: pointer.
+		self assert: (array at: 1) = (VkBool32 on: 1)].
 	
 	queueCreateInfo := VkDeviceQueueCreateInfo externalNew
 		zeroAllFields;
@@ -178,13 +218,13 @@ VkExample >> createLogicalDevice [
 		enabledExtensionCount: extensionsAndCount second;
 		enabledLayerCount: 0.
 	
-	devicePtr := ExternalData fromHandle: (ExternalAddress allocate: 8) type: ExternalType intptr_t asPointerType.
-	self checkError: (VkAPI new vkCreateDevice: physicalDevice with: createInfo with: nil with: devicePtr).
-	device := VkDevice on: (devicePtr at: 1).
+	self passArrayOfPointers: 1 of: VkDevice to: [:pointer :array |
+		self checkError: (VkAPI new vkCreateDevice: physicalDevice with: createInfo with: nil with: pointer).
+		device := array at: 1].
 	
-	queuePtr := ExternalData fromHandle: (ExternalAddress allocate: 8) type: ExternalType intptr_t asPointerType.
-	VkAPI new vkGetDeviceQueue: device with: graphicsQueueIndex with: 0 with: queuePtr.
-	graphicsQueue := VkQueue on: (queuePtr at: 1)
+	self passArrayOfPointers: 1 of: VkQueue to: [:pointer :array |
+		VkAPI new vkGetDeviceQueue: device with: graphicsQueueIndex with: 0 with: pointer.
+		graphicsQueue := array at: 1]
 ]
 
 { #category : #'as yet unclassified' }
@@ -199,7 +239,7 @@ VkExample >> createSurface [
 { #category : #'as yet unclassified' }
 VkExample >> createSwapChain [
 
-	| capabilities formatCount formats surfaceFormat presentMode presentModes presentModeCount swapExtent imageCount |
+	| capabilities formatCount formats surfaceFormat presentMode presentModes presentModeCount swapExtent imageCount createInfo ptr imageCountRet |
 	capabilities := VkSurfaceCapabilitiesKHR externalNew.
 	VkAPI new vkGetPhysicalDeviceSurfaceCapabilitiesKHR: physicalDevice with: surface with: capabilities.
 	
@@ -214,19 +254,56 @@ VkExample >> createSwapChain [
 	
 	presentModeCount := IntegerArray new: 1.
 	VkAPI new vkGetPhysicalDeviceSurfacePresentModesKHR: physicalDevice with: surface with: presentModeCount with: nil.
-	presentModes := VkSurfaceFormatKHR allocate: presentModeCount first.
-	VkAPI new
-		vkGetPhysicalDeviceSurfacePresentModesKHR: physicalDevice
-		with: surface
-		with: presentModeCount
-		with: (VkSurfaceFormatKHR fromHandle: presentModes getHandle).
+	self
+		passArrayOfPointers: presentModeCount first
+		of: VkPresentModeKHR
+		to: [:pointer :array |
+			VkAPI new
+				vkGetPhysicalDeviceSurfacePresentModesKHR: physicalDevice
+				with: surface
+				with: presentModeCount
+				with: pointer.
+			presentModes := array].
 	
 	surfaceFormat := self chooseSwapSurfaceFormat: formats.
+	swapChainImageFormat := surfaceFormat format.
 	presentMode := self chooseSwapPresentMode: presentModes.
 	swapExtent := capabilities currentExtent.
 	
 	imageCount := capabilities minImageCount + 1.
-	(capabilities maxImageCount > 0 and: [imageCount > capabilities maxImageCount]) ifTrue: [imageCount := capabilities maxImageCount]
+	(capabilities maxImageCount > 0 and: [imageCount > capabilities maxImageCount]) ifTrue: [imageCount := capabilities maxImageCount].
+	
+	createInfo := VkSwapchainCreateInfoKHR externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR;
+		surface: surface;
+		minImageCount: imageCount;
+		imageFormat: surfaceFormat format;
+		imageColorSpace: surfaceFormat colorSpace;
+		imageExtent: swapExtent;
+		imageArrayLayers: 1;
+		imageUsage: VkImageUsageFlags VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT;
+		imageSharingMode: VkSharingMode VK_SHARING_MODE_EXCLUSIVE;
+		preTransform: capabilities currentTransform;
+		compositeAlpha: VkCompositeAlphaFlagsKHR VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR;
+		presentMode: presentMode;
+		clipped: (VkBool32 on: 1).
+	
+	self
+		passArrayOfPointers: 1
+		of: VkSwapchainKHR
+		to: [:pointer :array |
+			VkAPI new vkCreateSwapchainKHR: device with: createInfo with: nil with: pointer.
+			swapChain := array at: 1].
+	
+	imageCountRet := IntegerArray new: 1.
+	VkAPI new vkGetSwapchainImagesKHR: device with: swapChain with: imageCountRet with: nil.
+	self
+		passArrayOfPointers: imageCountRet first
+		of: VkImage
+		to: [:pointer :array |
+			VkAPI new vkGetSwapchainImagesKHR: device with: swapChain with: imageCountRet with: pointer.
+			swapChainImages := array]
 ]
 
 { #category : #'as yet unclassified' }
@@ -285,7 +362,8 @@ VkExample >> initVulkan [
 	self createSurface.
 	self pickPhysicalDevice.
 	self createLogicalDevice.
-	self createSwapChain
+	self createSwapChain.
+	self createImageViews
 ]
 
 { #category : #'as yet unclassified' }
@@ -349,6 +427,16 @@ VkExample >> messageTypeToString: aMessageType [
 ]
 
 { #category : #'as yet unclassified' }
+VkExample >> passArrayOfPointers: aNumber of: aClass to: aBlock [
+
+	| ptr |
+	ptr := (ExternalData fromHandle: (ExternalAddress allocate: aClass byteSize * aNumber) type: aClass externalType)
+		size: aNumber;
+		yourself.
+	^ aBlock value: (aClass fromHandle: ptr getHandle) value: ptr
+]
+
+{ #category : #'as yet unclassified' }
 VkExample >> pickPhysicalDevice [
 
 	| deviceCount devices properties |
@@ -359,8 +447,8 @@ VkExample >> pickPhysicalDevice [
 	devices := ExternalData
 		fromHandle: (ExternalAddress allocate: VkPhysicalDevice byteSize * deviceCount first)
 		type: ExternalType intptr_t asPointerType.
-	self checkError: (VkAPI new vkEnumeratePhysicalDevices: instance with: deviceCount with: devices).
-	physicalDevice := VkPhysicalDevice on: (devices getHandle unsignedLongLongAt: 1).
+	self checkError: (VkAPI new vkEnumeratePhysicalDevices: instance with: deviceCount with: (VkPhysicalDevice fromHandle: devices getHandle)).
+	physicalDevice := VkPhysicalDevice on: (devices at: 1).
 	SBToggledCode
 		comment: ''
 		active: 0

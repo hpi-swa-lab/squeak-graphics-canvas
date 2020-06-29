@@ -35,6 +35,12 @@ VkImageLayout class >> VK_IMAGE_LAYOUT_PREINITIALIZED [
 ]
 
 { #category : #'as yet unclassified' }
+VkImageLayout class >> VK_IMAGE_LAYOUT_PRESENT_SRC_KHR [
+
+	^ self on: (1000001002)
+]
+
+{ #category : #'as yet unclassified' }
 VkImageLayout class >> VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL [
 
 	^ self on: (5)

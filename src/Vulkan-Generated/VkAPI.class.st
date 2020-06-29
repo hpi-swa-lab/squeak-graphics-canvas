@@ -1084,7 +1084,7 @@ VkAPI >> vkCreateDescriptorUpdateTemplateKHR [
 { #category : #'as yet unclassified' }
 VkAPI >> vkCreateDevice: physicalDevice with: pCreateInfo with: pAllocator with: pDevice [
 
-	<apicall: VkResult 'vkCreateDevice' (VkPhysicalDevice VkDeviceCreateInfo* VkAllocationCallbacks* intptr_t*)>
+	<apicall: VkResult 'vkCreateDevice' (VkPhysicalDevice VkDeviceCreateInfo* VkAllocationCallbacks* VkDevice*)>
 	^ self externalCallFailed
 ]
 
@@ -1175,7 +1175,7 @@ VkAPI >> vkCreateIndirectCommandsLayoutNV: device with: pCreateInfo with: pAlloc
 { #category : #'as yet unclassified' }
 VkAPI >> vkCreateInstance: pCreateInfo with: pAllocator with: pInstance [
 
-	<apicall: VkResult 'vkCreateInstance' (VkInstanceCreateInfo* VkAllocationCallbacks* intptr_t*)>
+	<apicall: VkResult 'vkCreateInstance' (VkInstanceCreateInfo* VkAllocationCallbacks* VkInstance*)>
 	^ self externalCallFailed
 ]
 
@@ -1688,7 +1688,7 @@ VkAPI >> vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR: physic
 { #category : #'as yet unclassified' }
 VkAPI >> vkEnumeratePhysicalDevices: instance with: pPhysicalDeviceCount with: pPhysicalDevices [
 
-	<apicall: VkResult 'vkEnumeratePhysicalDevices' (VkInstance uint32_t* intptr_t*)>
+	<apicall: VkResult 'vkEnumeratePhysicalDevices' (VkInstance uint32_t* VkPhysicalDevice*)>
 	^ self externalCallFailed
 ]
 
@@ -1912,7 +1912,7 @@ VkAPI >> vkGetDeviceQueue2: device with: pQueueInfo with: pQueue [
 { #category : #'as yet unclassified' }
 VkAPI >> vkGetDeviceQueue: device with: queueFamilyIndex with: queueIndex with: pQueue [
 
-	<apicall: void 'vkGetDeviceQueue' (VkDevice uint32_t uint32_t intptr_t*)>
+	<apicall: void 'vkGetDeviceQueue' (VkDevice uint32_t uint32_t VkQueue*)>
 	^ self externalCallFailed
 ]
 
@@ -2420,7 +2420,7 @@ VkAPI >> vkGetPhysicalDeviceSurfacePresentModesKHR: physicalDevice with: surface
 { #category : #'as yet unclassified' }
 VkAPI >> vkGetPhysicalDeviceSurfaceSupportKHR: physicalDevice with: queueFamilyIndex with: surface with: pSupported [
 
-	<apicall: VkResult 'vkGetPhysicalDeviceSurfaceSupportKHR' (VkPhysicalDevice uint32_t VkSurfaceKHR long*)>
+	<apicall: VkResult 'vkGetPhysicalDeviceSurfaceSupportKHR' (VkPhysicalDevice uint32_t VkSurfaceKHR VkBool32*)>
 	^ self externalCallFailed
 ]
 

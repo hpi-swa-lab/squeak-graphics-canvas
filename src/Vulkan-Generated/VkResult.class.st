@@ -59,6 +59,12 @@ VkResult class >> VK_ERROR_MEMORY_MAP_FAILED [
 ]
 
 { #category : #'as yet unclassified' }
+VkResult class >> VK_ERROR_OUT_OF_DATE_KHR [
+
+	^ self on: (-1000001004)
+]
+
+{ #category : #'as yet unclassified' }
 VkResult class >> VK_ERROR_OUT_OF_DEVICE_MEMORY [
 
 	^ self on: (-2)
@@ -104,6 +110,12 @@ VkResult class >> VK_INCOMPLETE [
 VkResult class >> VK_NOT_READY [
 
 	^ self on: (1)
+]
+
+{ #category : #'as yet unclassified' }
+VkResult class >> VK_SUBOPTIMAL_KHR [
+
+	^ self on: (1000001003)
 ]
 
 { #category : #'as yet unclassified' }

@@ -161,6 +161,12 @@ VkObjectType class >> VK_OBJECT_TYPE_SHADER_MODULE [
 ]
 
 { #category : #'as yet unclassified' }
+VkObjectType class >> VK_OBJECT_TYPE_SWAPCHAIN_KHR [
+
+	^ self on: (1000001000)
+]
+
+{ #category : #'as yet unclassified' }
 VkObjectType class >> VK_OBJECT_TYPE_UNKNOWN [
 
 	^ self on: (0)

@@ -5,9 +5,21 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
+VkStructureType class >> VK_STRUCTURE_TYPE_ACQUIRE_NEXT_IMAGE_INFO_KHR [
+
+	^ self on: (1000060010)
+]
+
+{ #category : #'as yet unclassified' }
 VkStructureType class >> VK_STRUCTURE_TYPE_APPLICATION_INFO [
 
 	^ self on: (0)
+]
+
+{ #category : #'as yet unclassified' }
+VkStructureType class >> VK_STRUCTURE_TYPE_BIND_IMAGE_MEMORY_SWAPCHAIN_INFO_KHR [
+
+	^ self on: (1000060009)
 ]
 
 { #category : #'as yet unclassified' }
@@ -125,6 +137,24 @@ VkStructureType class >> VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO [
 ]
 
 { #category : #'as yet unclassified' }
+VkStructureType class >> VK_STRUCTURE_TYPE_DEVICE_GROUP_PRESENT_CAPABILITIES_KHR [
+
+	^ self on: (1000060007)
+]
+
+{ #category : #'as yet unclassified' }
+VkStructureType class >> VK_STRUCTURE_TYPE_DEVICE_GROUP_PRESENT_INFO_KHR [
+
+	^ self on: (1000060011)
+]
+
+{ #category : #'as yet unclassified' }
+VkStructureType class >> VK_STRUCTURE_TYPE_DEVICE_GROUP_SWAPCHAIN_CREATE_INFO_KHR [
+
+	^ self on: (1000060012)
+]
+
+{ #category : #'as yet unclassified' }
 VkStructureType class >> VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO [
 
 	^ self on: (2)
@@ -164,6 +194,12 @@ VkStructureType class >> VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO [
 VkStructureType class >> VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER [
 
 	^ self on: (45)
+]
+
+{ #category : #'as yet unclassified' }
+VkStructureType class >> VK_STRUCTURE_TYPE_IMAGE_SWAPCHAIN_CREATE_INFO_KHR [
+
+	^ self on: (1000060008)
 ]
 
 { #category : #'as yet unclassified' }
@@ -281,6 +317,12 @@ VkStructureType class >> VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO [
 ]
 
 { #category : #'as yet unclassified' }
+VkStructureType class >> VK_STRUCTURE_TYPE_PRESENT_INFO_KHR [
+
+	^ self on: (1000001001)
+]
+
+{ #category : #'as yet unclassified' }
 VkStructureType class >> VK_STRUCTURE_TYPE_QUERY_POOL_CREATE_INFO [
 
 	^ self on: (11)
@@ -320,6 +362,12 @@ VkStructureType class >> VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO [
 VkStructureType class >> VK_STRUCTURE_TYPE_SUBMIT_INFO [
 
 	^ self on: (4)
+]
+
+{ #category : #'as yet unclassified' }
+VkStructureType class >> VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR [
+
+	^ self on: (1000001000)
 ]
 
 { #category : #'as yet unclassified' }
