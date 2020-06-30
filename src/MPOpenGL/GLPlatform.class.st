@@ -4,7 +4,7 @@ Class {
 	#pools : [
 		'OpenGLConstants'
 	],
-	#category : #'MPOpenGL-Core'
+	#category : 'MPOpenGL-Core'
 }
 
 { #category : #initialize }

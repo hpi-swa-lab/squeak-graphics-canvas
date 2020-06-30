@@ -30,7 +30,7 @@ Class {
 		'api',
 		'featureTags'
 	],
-	#category : #'MPOpenGL-Generation'
+	#category : 'MPOpenGL-Generation'
 }
 
 { #category : #'instance creation' }

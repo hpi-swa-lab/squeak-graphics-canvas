@@ -8,7 +8,7 @@ Class {
 		'GLConstants',
 		'OpenGLConstants'
 	],
-	#category : 'MPOpenGL-Test'
+	#category : #'MPOpenGL-Test'
 }
 
 { #category : #'before each' }
@@ -43,7 +43,9 @@ GLShaderRecipeTest >> testGeneratingTestShaderRecipe [
 { #category : #testing }
 GLShaderRecipeTest >> testShaderRecipe [
 	"given"
+	shaderRecipe compile: 'fragmentShader ^self' classified: #code.
+	shaderRecipe compile: 'vertexShader ^self' classified: #code.
 	"when"
-	"then"
+	self assert: [shaderRecipe buildFor: gl] throws: Error.
 	
 ]

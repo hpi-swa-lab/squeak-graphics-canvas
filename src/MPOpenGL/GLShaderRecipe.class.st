@@ -1,17 +1,17 @@
 Class {
 	#name : #GLShaderRecipe,
 	#superclass : #Object,
-	#category : 'MPOpenGL-Shaders'
+	#category : #'MPOpenGL-Shaders'
 }
 
 { #category : #usage }
 GLShaderRecipe class >> build [
-	self new; build; yourself
+	self new build; yourself
 ]
 
 { #category : #usage }
 GLShaderRecipe class >> buildFor: gl [ 
-	self new; buildFor: gl; yourself
+	self new buildFor: gl; yourself
 ]
 
 { #category : #usage }
