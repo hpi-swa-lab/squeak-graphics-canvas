@@ -11,6 +11,11 @@ Class {
 	#category : #'MPOpenGL-Test'
 }
 
+{ #category : #reference }
+GLShaderRecipeTest >> glObject [
+	^GLObject 
+]
+
 { #category : #'before each' }
 GLShaderRecipeTest >> setUp [
 	super setUp.
@@ -35,6 +40,16 @@ GLShaderRecipeTest >> tearDown [
 ]
 
 { #category : #testing }
+GLShaderRecipeTest >> testCookingProducesGLObject [
+	"given"
+	shaderRecipe compile: 'fragmentShader ^self' classified: #code.
+	shaderRecipe compile: 'vertexShader ^self' classified: #code.
+	"when"
+	self assert: [shaderRecipe buildFor: gl] throws: Error.
+	
+]
+
+{ #category : #testing }
 GLShaderRecipeTest >> testGeneratingTestShaderRecipe [
 	"nothing to do, if this fails, the setup and teardown logic was faulty"
 	^ self
@@ -42,10 +57,16 @@ GLShaderRecipeTest >> testGeneratingTestShaderRecipe [
 
 { #category : #testing }
 GLShaderRecipeTest >> testShaderRecipe [
+	| program |
 	"given"
-	shaderRecipe compile: 'fragmentShader ^self' classified: #code.
-	shaderRecipe compile: 'vertexShader ^self' classified: #code.
 	"when"
-	self assert: [shaderRecipe buildFor: gl] throws: Error.
+	program := self workingShaderExample cookWith: gl.
+	"then"
+	self assert: (program isKindOf: self glObject)
 	
+]
+
+{ #category : #reference }
+GLShaderRecipeTest >> workingShaderExample [
+	^SqueakBaseShaderRecipe 
 ]
