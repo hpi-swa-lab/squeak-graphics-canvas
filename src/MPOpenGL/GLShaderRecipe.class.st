@@ -24,10 +24,10 @@ GLShaderRecipe >> build [
 GLShaderRecipe >> buildFor: gl [
 	"call instance creation of gl programm class with recipe"
 	^self programClass
-		newFor: gl
+		context: gl
 		shaders: (OrderedCollection
-				with: (VertexShader code: self vertexShader)
-				with: (FragmentShader code: self fragmentShader))
+				with: (VertexShader context: gl code: self vertexShader)
+				with: (FragmentShader context: gl code: self fragmentShader))
 ]
 
 { #category : #code }

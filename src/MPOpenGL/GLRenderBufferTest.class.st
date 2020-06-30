@@ -19,8 +19,9 @@ GLRenderBufferTest >> renderBufferClass [
 
 { #category : #'before each' }
 GLRenderBufferTest >> setUp [
+
 	super setUp.
-	renderBuffer := self renderBufferClass newFor: gl.
+	renderBuffer := self renderBufferClass context: gl
 ]
 
 { #category : #'after each' }

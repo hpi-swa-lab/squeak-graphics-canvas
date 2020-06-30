@@ -7,7 +7,7 @@ Class {
 	#category : 'MPOpenGL-Shaders'
 }
 
-{ #category : #'shader kind' }
+{ #category : #accessing }
 ComputeShader >> kind [
 
 	^ GL_COMPUTE_SHADER

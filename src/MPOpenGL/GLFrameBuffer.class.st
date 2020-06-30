@@ -13,14 +13,14 @@ Instance Variables
 "
 Class {
 	#name : #GLFrameBuffer,
-	#superclass : #AbstractGLBuffer,
+	#superclass : #GLBuffer,
 	#instVars : [
 		'target'
 	],
 	#pools : [
 		'GLConstants'
 	],
-	#category : 'MPOpenGL-Core'
+	#category : #'MPOpenGL-Core'
 }
 
 { #category : #binding }
@@ -80,16 +80,7 @@ GLFrameBuffer >> attachRenderBuffer: aRenderBuffer attachment: attachment [
 { #category : #binding }
 GLFrameBuffer >> bind [
 	"bind a framebuffer to a framebuffer target"
-	gl glBindFramebuffer: target with: id.
-	gl checkForError.
-
-
-]
-
-{ #category : #usage }
-GLFrameBuffer >> bindToTarget: target [
-	self target: target.
-	self bind.
+	gl glBindFramebuffer: target with: id
 ]
 
 { #category : #usage }
@@ -98,24 +89,20 @@ GLFrameBuffer >> checkComplete [
 ]
 
 { #category : #'initialize-release' }
-GLFrameBuffer >> create [
-	"generate framebuffer object name (id)"
-	| ids |
-	ids := IntegerArray new: 1.
-	gl glGenFramebuffers: 1 with: ids.
-	id := ids first.
-]
-
-{ #category : #destruction }
 GLFrameBuffer >> delete [
 	"delete framebuffer object"
 	gl glDeleteFramebuffers: 1 with: (IntegerArray with: id).
 ]
 
 { #category : #'initialize-release' }
-GLFrameBuffer >> initialize [ 
-	super initialize.
-	target := GL_FRAMEBUFFER
+GLFrameBuffer >> initializeWith: glContext [
+	"generate framebuffer object name (id)"
+	| ids |
+	super initializeWith: glContext.
+	target := GL_FRAMEBUFFER.
+	ids := IntegerArray new: 1.
+	gl glGenFramebuffers: 1 with: ids.
+	id := ids first
 ]
 
 { #category : #reference }
@@ -140,20 +127,19 @@ GLFrameBuffer >> texture2D: aTexture [
 
 { #category : #usage }
 GLFrameBuffer >> texture2D: aTexture attachment: anAttachment [
-	self bind.
-	gl glFramebufferTexture2D: GL_FRAMEBUFFER
-		with: anAttachment
-		with: GL_TEXTURE_2D
-		with: aTexture id
-		with: 0.
-	gl checkForError.
-	self unbind.
+	
+	self boundDuring: [
+		gl glFramebufferTexture2D: GL_FRAMEBUFFER
+			with: anAttachment
+			with: GL_TEXTURE_2D
+			with: aTexture id
+			with: 0.
+		gl checkForError]
 ]
 
 { #category : #binding }
 GLFrameBuffer >> unbind [
 	"bind no framebuffer to a framebuffer target"
-	gl glBindFramebuffer: target with: 0.
-	gl checkForError.
+	gl glBindFramebuffer: target with: GL_NONE
 
 ]

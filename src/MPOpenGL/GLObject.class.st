@@ -13,7 +13,7 @@ Instance Variables
 
 "
 Class {
-	#name : #AbstractGLObject,
+	#name : #GLObject,
 	#superclass : #Object,
 	#instVars : [
 		'gl',
@@ -26,47 +26,61 @@ Class {
 }
 
 { #category : #'instance creation' }
-AbstractGLObject class >> newFor: gl [
-	self subclassResponsibility  
+GLObject class >> context: glContext [
+
+	^ self basicNew
+		initializeWith: glContext;
+		yourself
 ]
 
 { #category : #binding }
-AbstractGLObject >> bind [
+GLObject >> bind [
+
 	self subclassResponsibility
 ]
 
 { #category : #binding }
-AbstractGLObject >> boundDuring: aBlock [
+GLObject >> boundDuring: aBlock [
 
 	self bind.
-	aBlock ensure: [self unbind].
+	gl checkForError.
+	aBlock ensure: [
+		self unbind.
+		gl checkForError].
 	
 ]
 
 { #category : #accessing }
-AbstractGLObject >> gl [
+GLObject >> gl [
 	^ gl
 ]
 
 { #category : #accessing }
-AbstractGLObject >> gl: anObject [ 
+GLObject >> gl: anObject [ 
 	anObject
 		ifNil: [self useDynamicGLContext]
 		ifNotNil: [gl := anObject]
 ]
 
 { #category : #accessing }
-AbstractGLObject >> id [
+GLObject >> id [
 	^ id
 ]
 
+{ #category : #initialization }
+GLObject >> initializeWith: glContext [
+
+	self gl: glContext
+]
+
 { #category : #binding }
-AbstractGLObject >> unbind [
+GLObject >> unbind [
+
 	self subclassResponsibility 
 ]
 
 { #category : #'gl version' }
-AbstractGLObject >> useDynamicGLContext [
+GLObject >> useDynamicGLContext [
 	"use GL from dynamic variable"
 	self gl: GL value.
 	

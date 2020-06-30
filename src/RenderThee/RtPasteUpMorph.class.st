@@ -44,16 +44,16 @@ RtPasteUpMorph >> initOpenGL [
 	ogl := GL4_6 newIn: self bounds.
 	ogl ifNil: [^ false].
 	self log: 'created ogl'.
-	program := GLProgram newFor: ogl shaders: {
+	program := GLProgram context: ogl shaders: {
 					VertexShader code: self vertexShader.
 					FragmentShader code: self fragmentShader}.
 	ogl errorString ifNotNil: [:str | self log: str].
 	program ifNil: [^ false].
 	self log: 'created program'.
-	vao := GLVertexArrayObject newFor: ogl.
+	vao := GLVertexArrayObject context: ogl.
 	vao ifNil: [^ false].
 	self log: 'created vao'.
-	vbo := GLBuffer newFor: ogl.
+	vbo := GLVertexBufferObject context: ogl.
 	vbo ifNil: [^ false].
 	self log: 'created vbo'.
 	vao bind: ogl.

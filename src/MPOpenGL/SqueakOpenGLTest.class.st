@@ -103,11 +103,13 @@ SqueakOpenGLTest >> test_blurredExample [
 	startTime := Time millisecondClockValue.
 	tex := OGLTexture new
 				form: (Display copy: bounds).
-	program := GLProgram newFor: ogl shaders: {VertexShader code: self blurVertexShader. FragmentShader code: self blurFragmentShader }.
+	program := GLProgram context: ogl shaders: {
+					VertexShader context: ogl code: self blurVertexShader.
+					FragmentShader context: ogl code: self blurFragmentShader }.
 	ogl checkForError.
-	vao := GLVertexArrayObject newFor: ogl.
-	vao bind: ogl.
-	vbo := GLBuffer newFor: ogl.
+	vao := GLVertexArrayObject context: ogl.
+	vao bind.
+	vbo := GLVertexBufferObject context: ogl.
 	vbo
 		data: {
 				-1. -1. 0 . 1 .
@@ -143,7 +145,7 @@ SqueakOpenGLTest >> test_blurredExample [
 			ogl checkForError.
 			program use.
 			ogl checkForError.
-			vao bind: ogl.
+			vao bind.
 			ogl glBindBuffer: GL_ARRAY_BUFFER with: vbo id.
 			ogl checkForError.
 			program vertexAttib: 0 value: vbo stride: 4 offset: 0.
@@ -197,11 +199,13 @@ SqueakOpenGLTest >> test_example [
 	startTime := Time millisecondClockValue.
 	tex := OGLTexture new
 				form: (Display copy: bounds).
-	program := GLProgram newFor: ogl shaders: {VertexShader code: self vertexShader. FragmentShader code: self fragmentShader }.
+	program := GLProgram context: ogl shaders: {
+					VertexShader context: ogl code: self blurVertexShader.
+					FragmentShader context: ogl code: self blurFragmentShader }.
 	ogl checkForError.
-	vao := GLVertexArrayObject newFor: ogl.
-	vao bind: ogl.
-	vbo := GLBuffer newFor: ogl.
+	vao := GLVertexArrayObject context: ogl.
+	vao bind.
+	vbo := GLVertexBufferObject context: ogl.
 	vbo
 		data: {
 			-1. -1. 0 . 0 .
@@ -237,7 +241,7 @@ SqueakOpenGLTest >> test_example [
 			ogl checkForError.
 			program use.
 			ogl checkForError.
-			vao bind: ogl.
+			vao bind.
 			ogl glBindBuffer: GL_ARRAY_BUFFER with: vbo id.
 			ogl checkForError.
 			program vertexAttib: 0 value: vbo stride: 4 offset: 0.

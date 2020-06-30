@@ -7,7 +7,7 @@ Class {
 	#category : 'MPOpenGL-Shaders'
 }
 
-{ #category : #'shader kind' }
+{ #category : #accessing }
 VertexShader >> kind [
 
 	^ GL_VERTEX_SHADER

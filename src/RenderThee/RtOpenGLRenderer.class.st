@@ -86,7 +86,7 @@ RtOpenGLRenderer >> initialize [
 		program use.
 		ogl checkForError.
 		
-		vao bind: ogl.
+		vao bind.
 		ogl checkForError.
 		
 		ogl glBindBuffer: GL_ARRAY_BUFFER with: vbo id.
@@ -107,29 +107,30 @@ RtOpenGLRenderer >> initialize [
 
 { #category : #initialization }
 RtOpenGLRenderer >> initializeBuffers [
-		vao := GLVertexArrayObject newFor: ogl.
-		vao bind: ogl.
-		vbo := GLBuffer newFor: ogl.
-		vbo
-			data: {
-				0. 0. 0. 0 .
-				1. 0. 1. 0.
-				0. 1. 0. 1.
-				1. 1. 1. 1.
-			} asFloat32Array
-			usage: GL_STATIC_DRAW
-			componentsPerVertex: 4.
-	
-		ogl checkForError.
+
+	vao := GLVertexArrayObject context: ogl.
+	vao bind.
+	vbo := GLVertexBufferObject context: ogl.
+	vbo
+		data: {
+			0. 0. 0. 0 .
+			1. 0. 1. 0.
+			0. 1. 0. 1.
+			1. 1. 1. 1.
+		} asFloat32Array
+		usage: GL_STATIC_DRAW
+		componentsPerVertex: 4.
+
+	ogl checkForError
 ]
 
 { #category : #initialization }
 RtOpenGLRenderer >> initializeProgram [
 	program := GLProgram
-						newFor: ogl
+						context: ogl
 						shaders: {
-							VertexShader code: self vertexShader.
-							FragmentShader code: self fragmentShader }.
+							VertexShader context: ogl code: self vertexShader.
+							FragmentShader context: ogl code: self fragmentShader }.
 	ogl checkForError.
 		
 	mvpUniform := ogl glGetUniformLocation: program id with: 'mvp'.
@@ -180,6 +181,7 @@ RtOpenGLRenderer >> renderLayer: aLayer [
 { #category : #rendering }
 RtOpenGLRenderer >> renderLayer: aLayer flipVertical: aBoolean [
 	| visitor |
+	self flag: #todo. "formatting & scoped bind possible ?"
 	visitor := RtOpenGLVisitor new: self.
 	visitor rootMatrix: (Matrix4x4 ortho: (aBoolean ifTrue: [0 @ aLayer extent y corner: aLayer extent x @ 0] ifFalse: [0 @ 0 corner: aLayer extent]) near: 0 far: 1)
 		;

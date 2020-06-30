@@ -7,7 +7,7 @@ Class {
 	#category : 'MPOpenGL-Shaders'
 }
 
-{ #category : #'shader kind' }
+{ #category : #accessing }
 TessControlShader >> kind [
 
 	^ GL_TESS_CONTROL_SHADER

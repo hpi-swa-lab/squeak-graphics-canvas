@@ -1,6 +1,6 @@
 Class {
 	#name : #GLProgram,
-	#superclass : #AbstractGLObject,
+	#superclass : #GLObject,
 	#instVars : [
 		'shaders'
 	],
@@ -11,10 +11,9 @@ Class {
 }
 
 { #category : #'instance creation' }
-GLProgram class >> newFor: openGlInterface shaders: aCollection [
+GLProgram class >> context: glContext shaders: aCollection [
 
-	^ self new
-		gl: openGlInterface;
+	^ (super context: glContext)
 		shaders: aCollection;
 		setUpProgram;
 		yourself
@@ -24,7 +23,7 @@ GLProgram class >> newFor: openGlInterface shaders: aCollection [
 GLProgram >> attachShaders [
 
 	^ shaders collect: [:shader |
-		gl glAttachShader: id with: shader created]
+		gl glAttachShader: id with: shader id]
 ]
 
 { #category : #'initialize-release' }

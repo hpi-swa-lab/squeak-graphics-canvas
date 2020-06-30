@@ -15,7 +15,7 @@ Instance Variables
 "
 Class {
 	#name : #GLRenderBuffer,
-	#superclass : #AbstractGLBuffer,
+	#superclass : #GLBuffer,
 	#instVars : [
 		'height',
 		'width',
@@ -26,27 +26,27 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : 'MPOpenGL-Core'
+	#category : #'MPOpenGL-Core'
 }
 
 { #category : #storage }
 GLRenderBuffer >> allocateStorage [
 	"renderbuffers are empty at initialization. Before you can bind them to
 	a Framebuffer Object, you must allocate storage for the renderbuffer"
-	self bind.
-	isStorageAllocated
-		ifTrue: ["calling this function on a renderbuffer that has already had
-			this function called on it will cause it to deallocate any
-			resources associated with the previous call and allocate new
-			storage "
-			self error: 'Renderbuffer asked to allocate storage twice']
-		ifFalse: [gl
-				glRenderbufferStorageMultisample: GL_RENDERBUFFER
-				with: samples
-				with: internalFormat
-				with: width
-				with: height].
-		self unbind.
+	self boundDuring: [
+		isStorageAllocated
+			ifTrue: ["calling this function on a renderbuffer that has already had
+				this function called on it will cause it to deallocate any
+				resources associated with the previous call and allocate new
+				storage "
+				self error: 'Renderbuffer asked to allocate storage twice']
+			ifFalse: [
+				gl
+					glRenderbufferStorageMultisample: GL_RENDERBUFFER
+					with: samples
+					with: internalFormat
+					with: width
+					with: height]]
 ]
 
 { #category : #binding }
@@ -66,17 +66,6 @@ GLRenderBuffer >> bind [
 ]
 
 { #category : #'initialize-release' }
-GLRenderBuffer >> create [
-	"generate renderbuffer object name (id)"
-	| ids |
-	ids := IntegerArray new: 1.
-	gl glGenRenderbuffers: 1 with: ids.
-	id := ids first.
-	
-
-]
-
-{ #category : #destruction }
 GLRenderBuffer >> delete [
 	"delete renderbuffer object"
 	gl glDeleteRenderbuffers: 1 with: (IntegerArray with: id).
@@ -108,14 +97,18 @@ GLRenderBuffer >> height: anObject [
 ]
 
 { #category : #'initialize-release' }
-GLRenderBuffer >> initialize [
-	super initialize.
+GLRenderBuffer >> initializeWith: glContext [
+
+	| ids |
+	super initializeWith: glContext.
 	height := 0.
 	width := 0.
 	samples := 0.
 	isStorageAllocated := false.
 	internalFormat := GL_RGBA8.
-
+	ids := IntegerArray new: 1.
+	gl glGenRenderbuffers: 1 with: ids.
+	id := ids first
 ]
 
 { #category : #accessing }
@@ -151,7 +144,7 @@ GLRenderBuffer >> samples: anObject [
 { #category : #binding }
 GLRenderBuffer >> unbind [
 	"bind no renderbuffer to a renderbuffer target"
-	gl glBindRenderbuffer: GL_RENDERBUFFER with: 0
+	gl glBindRenderbuffer: GL_RENDERBUFFER with: GL_NONE
 ]
 
 { #category : #accessing }

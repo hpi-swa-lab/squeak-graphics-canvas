@@ -7,7 +7,7 @@ Class {
 	#category : 'MPOpenGL-Shaders'
 }
 
-{ #category : #'shader kind' }
+{ #category : #accessing }
 FragmentShader >> kind [
 
 	^ GL_FRAGMENT_SHADER

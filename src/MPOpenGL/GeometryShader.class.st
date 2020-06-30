@@ -7,7 +7,7 @@ Class {
 	#category : 'MPOpenGL-Shaders'
 }
 
-{ #category : #'shader kind' }
+{ #category : #accessing }
 GeometryShader >> kind [
 
 	^ GL_GEOMETRY_SHADER

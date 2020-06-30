@@ -47,9 +47,10 @@ RtDrawLayer >> needsRasterize [
 
 { #category : #visiting }
 RtDrawLayer >> rasterizeTexture: aRenderer [
+
 	| tex form |
 	form := self rasterizeForm.
-	tex := GLTexture newFor: GL value.
+	tex := GLTexture context: GL value.
 	tex texImage: form.
 	^ tex
 

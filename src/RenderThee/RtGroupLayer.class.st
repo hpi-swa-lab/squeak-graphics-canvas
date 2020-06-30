@@ -93,11 +93,12 @@ RtGroupLayer >> layers [
 
 { #category : #drawing }
 RtGroupLayer >> rasterizeTexture: aRendender [
+
 	^ self restoreFramebufferOf: aRendender after: [ | texture framebuffer ogl |
 		ogl := GL value.
 		
-		framebuffer := GLFrameBuffer newFor: ogl.
-		texture := GLTexture newFor: ogl.
+		framebuffer := GLFrameBuffer context: ogl.
+		texture := GLTexture context: ogl.
 		texture texImageExtent: self extent.
 		framebuffer texture2D: texture.
 		
@@ -129,6 +130,7 @@ RtGroupLayer >> restoreFramebufferOf: aRenderer after: aBlock [
 	
 	aRenderer currentFramebuffer: oldFramebuffer.
 	aRenderer currentExtent: oldExtent.
+	self flag: #todo. "scoped bind possible ?"
 	oldFramebuffer ifNotNil: [ oldFramebuffer bind ].
 	ogl glViewport: oldViewport first with: oldViewport second with: oldViewport third with: oldViewport fourth.
 	

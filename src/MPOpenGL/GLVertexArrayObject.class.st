@@ -1,6 +1,6 @@
 Class {
 	#name : #GLVertexArrayObject,
-	#superclass : #AbstractGLObject,
+	#superclass : #GLObject,
 	#instVars : [
 		'numElements',
 		'glType'
@@ -11,32 +11,10 @@ Class {
 	#category : #'MPOpenGL-Core'
 }
 
-{ #category : #'instance creation' }
-GLVertexArrayObject class >> newFor: openGlInterface [
-	^ self new
-		gl: openGlInterface;
-		createBuffer;
-		yourself.
-]
-
 { #category : #binding }
 GLVertexArrayObject >> bind [
-	self flag: #todo
-]
 
-{ #category : #usage }
-GLVertexArrayObject >> bind: ogl [
-
-	ogl glBindVertexArray: id
-]
-
-{ #category : #'initialize-release' }
-GLVertexArrayObject >> createBuffer [
-
-	| ids |
-	ids := IntegerArray new: 1.
-	gl glGenVertexArrays: 1 with: ids.
-	id := ids at: 1
+	gl glBindVertexArray: id
 ]
 
 { #category : #usage }
@@ -46,6 +24,12 @@ GLVertexArrayObject >> data: anArray usage: aUsageEnum [
 	gl glBufferData: GL_ARRAY_BUFFER with: anArray byteSize with: anArray with: aUsageEnum.
 	numElements := anArray size.
 	glType := anArray glType
+]
+
+{ #category : #'initialize-release' }
+GLVertexArrayObject >> delete [
+
+	self notYetImplemented
 ]
 
 { #category : #usage }
@@ -67,6 +51,16 @@ GLVertexArrayObject >> glType [
 	^ glType
 ]
 
+{ #category : #'initialize-release' }
+GLVertexArrayObject >> initializeWith: glContext [
+
+	| ids |
+	super initializeWith: glContext.
+	ids := IntegerArray new: 1.
+	gl glGenVertexArrays: 1 with: ids.
+	id := ids first
+]
+
 { #category : #accessing }
 GLVertexArrayObject >> isGLBuffer [
 
@@ -81,11 +75,6 @@ GLVertexArrayObject >> numElements [
 
 { #category : #binding }
 GLVertexArrayObject >> unbind [
-	self flag: #todo
-]
 
-{ #category : #usage }
-GLVertexArrayObject >> unbind: ogl [
-
-	ogl glBindVertexArray: GL_NONE
+	gl glBindVertexArray: GL_NONE
 ]

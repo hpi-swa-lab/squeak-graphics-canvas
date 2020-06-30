@@ -1,48 +1,41 @@
 Class {
 	#name : #GLTexture,
-	#superclass : #AbstractGLObject,
+	#superclass : #GLObject,
 	#pools : [
 		'GLConstants'
 	],
 	#category : #'MPOpenGL-Core'
 }
 
-{ #category : #'instance creation' }
-GLTexture class >> newFor: gl [ 
-	^ self new gl: gl;
-		 yourself
-]
-
 { #category : #binding }
 GLTexture >> bind [
 
-	GL value glBindTexture: GL_TEXTURE_2D with: id.
-	GL value checkForError
+	gl glBindTexture: GL_TEXTURE_2D with: id
 ]
 
-{ #category : #deletion }
+{ #category : #'initialize-release' }
 GLTexture >> delete [
 
 	| texIDs |
 	texIDs := IntegerArray with: id.
-	GL value glDeleteTextures: 1 with: texIDs.
-	GL value checkForError.
+	gl glDeleteTextures: 1 with: texIDs
 ]
 
-{ #category : #initialization }
-GLTexture >> initialize [
+{ #category : #'initialize-release' }
+GLTexture >> initializeWith: glContext [
 
 	| texIDs |
+	super initializeWith: glContext.
 	texIDs := IntegerArray new: 1.
-	GL value glGenTextures: 1 with: texIDs.
-	GL value checkForError.
-	id := texIDs at: 1.
+	gl glGenTextures: 1 with: texIDs.
+	id := texIDs first
 ]
 
 { #category : #accessing }
-GLTexture >> texImage: aForm [ 
+GLTexture >> texImage: aForm [
+
 	self boundDuring: [
-			GL value
+			gl
 				glTexImage2D: GL_TEXTURE_2D
 				with: 0
 				with: GL_RGBA
@@ -52,21 +45,22 @@ GLTexture >> texImage: aForm [
 				with: GL_BGRA
 				with: GL_UNSIGNED_BYTE
 				with: (aForm asFormOfDepth: 32) bits.
-			GL value checkForError.
-			GL value
+			gl checkForError.
+			gl
 				glTexParameteri: GL_TEXTURE_2D
 				with: GL_TEXTURE_MIN_FILTER
 				with: GL_LINEAR.
-			GL value
+			gl
 				glTexParameteri: GL_TEXTURE_2D
 				with: GL_TEXTURE_MAG_FILTER
 				with: GL_LINEAR]
 ]
 
 { #category : #accessing }
-GLTexture >> texImageExtent: aPoint [ 
+GLTexture >> texImageExtent: aPoint [
+
 	self	boundDuring: [
-			GL value
+			gl
 				glTexImage2D: GL_TEXTURE_2D
 				with: 0
 				with: GL_RGBA
@@ -76,12 +70,12 @@ GLTexture >> texImageExtent: aPoint [
 				with: GL_BGRA
 				with: GL_UNSIGNED_BYTE
 				with: nil.
-			GL value checkForError.
-			GL value
+			gl checkForError.
+			gl
 				glTexParameteri: GL_TEXTURE_2D
 				with: GL_TEXTURE_MIN_FILTER
 				with: GL_LINEAR.
-			GL value
+			gl
 				glTexParameteri: GL_TEXTURE_2D
 				with: GL_TEXTURE_MAG_FILTER
 				with: GL_LINEAR]
@@ -90,6 +84,5 @@ GLTexture >> texImageExtent: aPoint [
 { #category : #binding }
 GLTexture >> unbind [
 
-	GL value glBindTexture: GL_TEXTURE_2D with: 0.
-	GL value checkForError
+	gl glBindTexture: GL_TEXTURE_2D with: GL_NONE
 ]
