@@ -30,11 +30,6 @@ GLVertexArrayObject >> bind: ogl [
 	ogl glBindVertexArray: id
 ]
 
-{ #category : #binding }
-GLVertexArrayObject >> bindable [
-	^true
-]
-
 { #category : #'initialize-release' }
 GLVertexArrayObject >> createBuffer [
 

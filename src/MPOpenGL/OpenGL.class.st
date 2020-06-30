@@ -54,7 +54,7 @@ Class {
 		'GLExtConstants',
 		'OpenGLConstants'
 	],
-	#category : 'MPOpenGL-Versions'
+	#category : #'MPOpenGL-Versions'
 }
 
 { #category : #compiling }

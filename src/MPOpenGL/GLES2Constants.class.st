@@ -1004,7 +1004,7 @@ Class {
 		'GL_WRITE_ONLY',
 		'GL_ZERO'
 	],
-	#category : 'MPOpenGL-Constants'
+	#category : #'MPOpenGL-Constants'
 }
 
 { #category : #accessing }

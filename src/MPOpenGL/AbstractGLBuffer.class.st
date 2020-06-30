@@ -19,11 +19,6 @@ AbstractGLBuffer >> bind [
 	self subclassResponsibility 
 ]
 
-{ #category : #binding }
-AbstractGLBuffer >> bindable [
-	^true
-]
-
 { #category : #destruction }
 AbstractGLBuffer >> create [
 	self subclassResponsibility 

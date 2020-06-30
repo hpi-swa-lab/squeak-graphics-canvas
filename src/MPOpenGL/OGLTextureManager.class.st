@@ -14,7 +14,7 @@ Class {
 		'GLExtConstants',
 		'OpenGLConstants'
 	],
-	#category : #'MPOpenGL-Deprecated'
+	#category : 'MPOpenGL-Deprecated'
 }
 
 { #category : #initialize }

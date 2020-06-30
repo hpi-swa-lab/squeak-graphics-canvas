@@ -4,7 +4,7 @@ Subclasses also lookup bindings in superclasses.
 Class {
 	#name : #GLSharedPool,
 	#superclass : #SharedPool,
-	#category : 'MPOpenGL-Constants'
+	#category : #'MPOpenGL-Constants'
 }
 
 { #category : #'as yet unclassified' }

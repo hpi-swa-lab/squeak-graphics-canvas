@@ -26,7 +26,7 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'MPOpenGL-Core'
+	#category : 'MPOpenGL-Core'
 }
 
 { #category : #storage }

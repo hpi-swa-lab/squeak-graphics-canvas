@@ -36,11 +36,6 @@ AbstractGLObject >> bind [
 ]
 
 { #category : #binding }
-AbstractGLObject >> bindable [
-	self subclassResponsibility 
-]
-
-{ #category : #binding }
 AbstractGLObject >> boundDuring: aBlock [
 
 	self bind.

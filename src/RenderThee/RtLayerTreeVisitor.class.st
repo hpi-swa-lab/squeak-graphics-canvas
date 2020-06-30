@@ -1,7 +1,7 @@
 Class {
 	#name : #RtLayerTreeVisitor,
 	#superclass : #Object,
-	#category : 'RenderThee-LayerTree'
+	#category : #'RenderThee-LayerTree'
 }
 
 { #category : #visiting }

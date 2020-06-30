@@ -4,7 +4,7 @@ I represent the little endian Unix OpenGL version.
 Class {
 	#name : #GLX11LEPlatform,
 	#superclass : #GLX11Platform,
-	#category : 'MPOpenGL-Core'
+	#category : #'MPOpenGL-Core'
 }
 
 { #category : #intitialize }

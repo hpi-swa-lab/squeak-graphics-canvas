@@ -4,7 +4,7 @@ I represent the Win32 OpenGL version.
 Class {
 	#name : #GLWindowsPlatform,
 	#superclass : #GLPlatform,
-	#category : 'MPOpenGL-Core'
+	#category : #'MPOpenGL-Core'
 }
 
 { #category : #initialize }

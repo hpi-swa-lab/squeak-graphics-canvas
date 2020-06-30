@@ -4,7 +4,7 @@ Class {
 	#pools : [
 		'OpenGLConstants'
 	],
-	#category : 'RenderThee-Project'
+	#category : #'RenderThee-Project'
 }
 
 { #category : #canvas }

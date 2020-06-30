@@ -725,7 +725,7 @@ Class {
 		'TAlphaNoAlpha',
 		'TNoAlpha'
 	],
-	#category : 'MPOpenGL-Constants'
+	#category : #'MPOpenGL-Constants'
 }
 
 { #category : #'pool initialization' }

@@ -7,7 +7,7 @@ Class {
 		'sourceRect',
 		'rule'
 	],
-	#category : 'RenderThee-CanvasCommands'
+	#category : #'RenderThee-CanvasCommands'
 }
 
 { #category : #'instance creation' }

@@ -20,11 +20,6 @@ GLTexture >> bind [
 	GL value checkForError
 ]
 
-{ #category : #binding }
-GLTexture >> bindable [ 
-	^true
-]
-
 { #category : #deletion }
 GLTexture >> delete [
 

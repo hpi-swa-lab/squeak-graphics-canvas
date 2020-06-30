@@ -21,7 +21,9 @@ RtMirrorControl >> delete [
 { #category : #accessing }
 RtMirrorControl >> frameTime: milliseconds [
 
-	renderInfo contents: milliseconds asString
+	FileStream stdout
+		nextPutAll: milliseconds asString;
+		lf
 ]
 
 { #category : #initialization }
