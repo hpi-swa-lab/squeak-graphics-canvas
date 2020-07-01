@@ -25,7 +25,9 @@ Class {
 		'renderFinishedSemaphores',
 		'inFlightFences',
 		'imagesInFlight',
-		'currentFrame'
+		'currentFrame',
+		'framebufferWasResized',
+		'framebufferSizeCallback'
 	],
 	#category : #'Vulkan-Examples'
 }
@@ -56,28 +58,44 @@ VkExample >> chooseSwapSurfaceFormat: anArray [
 { #category : #'as yet unclassified' }
 VkExample >> cleanup [
 
+	self cleanupSwapChain.
+	
 	1
 		to: self maxFramesInFlight
 		do: [:index |
 			VkAPI new vkDestroySemaphore: device with: (renderFinishedSemaphores at: index) with: nil.
 			VkAPI new vkDestroySemaphore: device with: (imageAvailableSemaphores at: index) with: nil.
 			VkAPI new vkDestroyFence: device with: (inFlightFences at: index) with: nil].
+	
 	VkAPI new vkDestroyCommandPool: device with: commandPool with: nil.
+	VkAPI new vkDestroyDevice: device with: nil.
+	
+	debugMessenger ifNotNil: [
+		self destroyDebugUtilsMessengerEXT: instance with: debugMessenger with: nil].
+	
+	VkAPI new vkDestroySurfaceKHR: instance with: surface with: nil.
+	VkAPI new vkDestroyInstance: instance with: nil.
+	
+	GLFW destroyWindow: window.
+	GLFW terminate
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> cleanupSwapChain [
+
 	swapChainFramebuffers do: [:framebuffer |
 		VkAPI new vkDestroyFramebuffer: device with: framebuffer with: nil].
+	
+	VkAPI new vkFreeCommandBuffers: device with: commandPool with: commandBuffers size with: (VkCommandBuffer fromHandle: commandBuffers getHandle).
+	
 	VkAPI new vkDestroyPipeline: device with: graphicsPipeline with: nil.
 	VkAPI new vkDestroyPipelineLayout: device with: pipelineLayout with: nil.
 	VkAPI new vkDestroyRenderPass: device with: renderPass with: nil.
+	
 	swapChainImageViews do: [:view |
 		VkAPI new vkDestroyImageView: device with: view with: nil].
-	VkAPI new vkDestroySwapchainKHR: device with: swapChain with: nil.
-	VkAPI new vkDestroyDevice: device with: nil.
-	debugMessenger ifNotNil: [
-		self destroyDebugUtilsMessengerEXT: instance with: debugMessenger with: nil].
-	VkAPI new vkDestroySurfaceKHR: instance with: surface with: nil.
-	VkAPI new vkDestroyInstance: instance with: nil.
-	GLFW destroyWindow: window.
-	GLFW terminate
+	
+	VkAPI new vkDestroySwapchainKHR: device with: swapChain with: nil
 ]
 
 { #category : #'as yet unclassified' }
@@ -716,7 +734,7 @@ VkExample >> destroyDebugUtilsMessengerEXT: instance with: messenger with: pAllo
 { #category : #'as yet unclassified' }
 VkExample >> drawFrame [
 
-	| imageIndex submitInfo presentInfo signalSemaphores waitSemaphores waitStages swapChains imageIndices currentInFlight |
+	| imageIndex submitInfo presentInfo signalSemaphores waitSemaphores waitStages swapChains imageIndices currentInFlight result |
 	currentInFlight := ExternalData fromHandle: (ExternalAddress allocate: VkFence byteSize) type: VkFence externalType asPointerType.
 	currentInFlight at: 1 put: (inFlightFences at: currentFrame).
 	VkAPI new
@@ -727,13 +745,17 @@ VkExample >> drawFrame [
 		with: self waitTimeout.
 	
 	imageIndex := IntegerArray new: 1.
-	VkAPI new
+	result := VkResult on: (VkAPI new
 		vkAcquireNextImageKHR: device
 		with: swapChain
 		with: self waitTimeout
 		with: (imageAvailableSemaphores at: currentFrame)
 		with: (VkFence on: 0)
-		with: imageIndex.
+		with: imageIndex).
+	result = VkResult VK_ERROR_OUT_OF_DATE_KHR
+		ifTrue: [^ self recreateSwapChain]
+		ifFalse: [
+			(result = VkResult VK_SUCCESS or: [result = VkResult VK_SUBOPTIMAL_KHR]) ifFalse: [self error: 'Failed to acquire swap chain image']].
 	
 	(imagesInFlight at: imageIndex first + 1) = (VkFence on: 0) ifFalse: [ | currentImagesInFlight |
 		currentImagesInFlight := ExternalData fromHandle: (ExternalAddress allocate: VkFence byteSize) type: VkFence externalType asPointerType.
@@ -789,7 +811,15 @@ VkExample >> drawFrame [
 		swapchainCount: 1;
 		pSwapchains: swapChains;
 		pImageIndices: imageIndices.
-	VkAPI new vkQueuePresentKHR: graphicsQueue with: presentInfo.
+	result := VkResult on: (VkAPI new vkQueuePresentKHR: graphicsQueue with: presentInfo).
+	
+	(result = VkResult VK_ERROR_OUT_OF_DATE_KHR or: [
+		result = VkResult VK_SUBOPTIMAL_KHR or: [framebufferWasResized]])
+		ifTrue: [
+			framebufferWasResized := false.
+			self recreateSwapChain]
+		ifFalse: [
+			result = VkResult VK_SUCCESS ifFalse: [self error: 'failed to present swap chan image']].
 	
 	currentFrame := (currentFrame \\ self maxFramesInFlight) + 1
 ]
@@ -859,12 +889,17 @@ VkExample >> initWindow [
 
 	GLFW init.
 	GLFW windowHint: GLFW GLFW_CLIENT_API with: GLFW GLFW_NO_API.
-	window := GLFW createWindowWidth: 800 height: 600 title: 'Vulkan' monitor: nil share: nil
+	window := GLFW createWindowWidth: 800 height: 600 title: 'Vulkan' monitor: nil share: nil.
+	GLFW
+		setFramebufferSizeCallback: window
+		with: ((framebufferSizeCallback := FFICallback signature: '<callback: void(*) (void* long long)>' block: [:win :x :y | framebufferWasResized := true]) thunk)
 ]
 
 { #category : #'as yet unclassified' }
 VkExample >> initialize [
 
+	framebufferWasResized := false.
+	
 	self initWindow.
 	self initVulkan.
 	self mainLoop.
@@ -954,6 +989,29 @@ VkExample >> pickPhysicalDevice [
 				properties := VkPhysicalDeviceProperties externalNew.
 				VkAPI new vkGetPhysicalDeviceProperties: device with: properties]
 		}
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> recreateSwapChain [
+
+	| width height |
+	width := IntegerArray new: 1.
+	height := IntegerArray new: 1.
+	GLFW getFramebufferSize: window with: width with: height.
+	[width = 0 or: [height = 0]] whileTrue: [
+		GLFW waitEvents.
+		GLFW getFramebufferSize: window with: width with: height].
+	
+	VkAPI new vkDeviceWaitIdle: device.
+	
+	self cleanupSwapChain.
+	
+	self createSwapChain.
+	self createImageViews.
+	self createRenderPass.
+	self createGraphicsPipeline.
+	self createFramebuffers.
+	self createCommandBuffers
 ]
 
 { #category : #'as yet unclassified' }
