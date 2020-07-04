@@ -11,6 +11,6 @@ VkDebugUtilsLabelEXT class >> fields [
 		(sType 'VkStructureType')
 		(pNext 'void*')
 		(pLabelName 'char*')
-		(color 'float')
+		(color 'float[4]')
 	)
 ]

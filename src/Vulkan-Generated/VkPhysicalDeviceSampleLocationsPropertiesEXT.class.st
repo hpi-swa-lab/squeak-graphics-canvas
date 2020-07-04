@@ -12,7 +12,7 @@ VkPhysicalDeviceSampleLocationsPropertiesEXT class >> fields [
 		(pNext 'void*')
 		(sampleLocationSampleCounts 'VkSampleCountFlags')
 		(maxSampleLocationGridSize 'VkExtent2D')
-		(sampleLocationCoordinateRange 'float')
+		(sampleLocationCoordinateRange 'float[2]')
 		(sampleLocationSubPixelBits 'uint32_t')
 		(variableSampleLocations 'VkBool32')
 	)

@@ -11,8 +11,8 @@ VkPerformanceCounterDescriptionKHR class >> fields [
 		(sType 'VkStructureType')
 		(pNext 'void*')
 		(flags 'VkPerformanceCounterDescriptionFlagsKHR')
-		(name 'char')
-		(category 'char')
-		(description 'char')
+		(name 'char[256]')
+		(category 'char[256]')
+		(description 'char[256]')
 	)
 ]

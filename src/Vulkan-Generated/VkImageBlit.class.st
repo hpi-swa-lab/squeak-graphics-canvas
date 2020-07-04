@@ -9,8 +9,8 @@ VkImageBlit class >> fields [
 
 	^ #(
 		(srcSubresource 'VkImageSubresourceLayers')
-		(srcOffsets 'VkOffset3D')
+		(srcOffsets 'VkOffset3D[2]')
 		(dstSubresource 'VkImageSubresourceLayers')
-		(dstOffsets 'VkOffset3D')
+		(dstOffsets 'VkOffset3D[2]')
 	)
 ]

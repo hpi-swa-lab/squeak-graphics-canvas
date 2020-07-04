@@ -14,6 +14,6 @@ VkShaderStatisticsInfoAMD class >> fields [
 		(numPhysicalSgprs 'uint32_t')
 		(numAvailableVgprs 'uint32_t')
 		(numAvailableSgprs 'uint32_t')
-		(computeWorkGroupSize 'uint32_t')
+		(computeWorkGroupSize 'uint32_t[3]')
 	)
 ]

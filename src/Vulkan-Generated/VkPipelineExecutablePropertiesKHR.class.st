@@ -11,8 +11,8 @@ VkPipelineExecutablePropertiesKHR class >> fields [
 		(sType 'VkStructureType')
 		(pNext 'void*')
 		(stages 'VkShaderStageFlags')
-		(name 'char')
-		(description 'char')
+		(name 'char[256]')
+		(description 'char[256]')
 		(subgroupSize 'uint32_t')
 	)
 ]

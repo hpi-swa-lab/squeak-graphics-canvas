@@ -13,6 +13,6 @@ VkPerformanceCounterKHR class >> fields [
 		(unit 'VkPerformanceCounterUnitKHR')
 		(scope 'VkPerformanceCounterScopeKHR')
 		(storage 'VkPerformanceCounterStorageKHR')
-		(uuid 'uint8_t')
+		(uuid 'uint8_t[16]')
 	)
 ]

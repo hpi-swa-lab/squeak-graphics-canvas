@@ -10,8 +10,8 @@ VkPipelineExecutableInternalRepresentationKHR class >> fields [
 	^ #(
 		(sType 'VkStructureType')
 		(pNext 'void*')
-		(name 'char')
-		(description 'char')
+		(name 'char[256]')
+		(description 'char[256]')
 		(isText 'VkBool32')
 		(dataSize 'size_t')
 		(pData 'void*')

@@ -10,9 +10,9 @@ VkPhysicalDeviceVulkan11Properties class >> fields [
 	^ #(
 		(sType 'VkStructureType')
 		(pNext 'void*')
-		(deviceUUID 'uint8_t')
-		(driverUUID 'uint8_t')
-		(deviceLUID 'uint8_t')
+		(deviceUUID 'uint8_t[16]')
+		(driverUUID 'uint8_t[16]')
+		(deviceLUID 'uint8_t[8]')
 		(deviceNodeMask 'uint32_t')
 		(deviceLUIDValid 'VkBool32')
 		(subgroupSize 'uint32_t')

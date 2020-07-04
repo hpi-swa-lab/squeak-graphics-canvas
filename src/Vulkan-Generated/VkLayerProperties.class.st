@@ -8,9 +8,9 @@ Class {
 VkLayerProperties class >> fields [
 
 	^ #(
-		(layerName 'char')
+		(layerName 'char[256]')
 		(specVersion 'uint32_t')
 		(implementationVersion 'uint32_t')
-		(description 'char')
+		(description 'char[256]')
 	)
 ]

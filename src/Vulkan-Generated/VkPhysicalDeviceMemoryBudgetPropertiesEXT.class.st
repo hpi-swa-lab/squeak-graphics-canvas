@@ -10,7 +10,7 @@ VkPhysicalDeviceMemoryBudgetPropertiesEXT class >> fields [
 	^ #(
 		(sType 'VkStructureType')
 		(pNext 'void*')
-		(heapBudget 'VkDeviceSize')
-		(heapUsage 'VkDeviceSize')
+		(heapBudget 'VkDeviceSize[16]')
+		(heapUsage 'VkDeviceSize[16]')
 	)
 ]

@@ -8,7 +8,7 @@ Class {
 VkExtensionProperties class >> fields [
 
 	^ #(
-		(extensionName 'char')
+		(extensionName 'char[256]')
 		(specVersion 'uint32_t')
 	)
 ]

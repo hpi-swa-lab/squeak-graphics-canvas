@@ -170,7 +170,7 @@ VkGenerator >> createExternalStructure: aClass from: type [
 					nextPutAll: (member elementAt: #name) contentString;
 					space;
 					nextPut: $';
-					nextPutAll: (self typeName: (member elementAt: #type) contentString from: member);
+					nextPutAll: (self typeNameFrom: member);
 					nextPut: $';
 					nextPut: $);
 					crtab].
@@ -187,23 +187,30 @@ VkGenerator >> createStruct: aType [
 VkGenerator >> createTypeFor: type [
 
 	(type attributeAt: #category) = #handle ifTrue: [
-		SBLabel text: ['not sure if void* or uint64_t'].
+		SBLabel text: ['not sure if void* or intptr_t'].
 		^ self createTypedef: type type: 'intptr_t'].
+	
 	(type attributeAt: #category) = #bitmask ifTrue: [ | class |
 		^ (type attributeAt: #alias)
 			ifNotNil: [:alias | self createTypedef: type type: alias]
 			ifNil: [
 				class := self createTypedef: type type: 'long'.
 				(type attributeAt: #requires) ifNotNil: [:req | bitmaskTypes at: req put: class]]].
+	
 	(type attributeAt: #category) = #funcpointer ifTrue: [^ self createTypedef: type type: 'void*'].
+	
 	((type attributeAt: #category) = #enum and: [(type attributeAt: #alias) notNil]) ifTrue: [
-		^ self createTypedef: type type: (self typeName: (type attributeAt: #alias) from: nil)].
+		^ self createTypedef: type type: (self typeName: (type attributeAt: #alias))].
+	
 	(type attributeAt: #category) = #basetype ifTrue: [
 		(type contentString beginsWith: 'typedef') ifTrue: [^ self createTypedef: type].
 		(type contentString beginsWith: 'struct') ifTrue: [
 			^ externalTypes add: (type elementAt: #name) contentString]].
+	
 	(type attributeAt: #category) = #struct ifTrue: [^ self createStruct: type].
+	
 	(type attributeAt: #category) = #union ifTrue: [^ self createUnion: type].
+	
 	(type attributeAt: #requires) ifNotNil: [:req |
 		SBLabel text: [
 			'vk_platform defines are just our standard types like uint64_t'].
@@ -363,6 +370,20 @@ VkGenerator >> signatureStringFor: aString params: aCollection [
 ]
 
 { #category : #'as yet unclassified' }
+VkGenerator >> typeName: aString [
+
+	| typeName |
+	typeName := aString.
+	bitmaskTypes
+		at: typeName
+		ifPresent: [:actualType |
+			SBLabel text: ['the *Bits and *Flags enums are both used?'].
+			typeName := actualType name].
+	(externalTypes includes: typeName) ifTrue: [typeName := 'void'].
+	^ typeName
+]
+
+{ #category : #'as yet unclassified' }
 VkGenerator >> typeName: aString from: member [
 
 	| typeName |
@@ -375,5 +396,30 @@ VkGenerator >> typeName: aString from: member [
 	(externalTypes includes: typeName) ifTrue: [typeName := 'void'].
 	(member notNil and: [
 		member contents anySatisfy: [:t | t string includes: $*]]) ifTrue: [typeName := typeName, '*'].
+	(member notNil and: [
+		member contents anySatisfy: [:t | t string includes: $[]]) ifTrue: [self halt].
 	^ typeName
+]
+
+{ #category : #'as yet unclassified' }
+VkGenerator >> typeNameFrom: member [
+
+	^ (((String streamContents: [:stream |
+		member elementsAndContentsDo: [:el |
+			el isText
+				ifTrue: [
+					stream nextPutAll: ((el string
+						copyReplaceAll: 'const' with: '')
+						copyReplaceAll: 'struct' with: '')]
+				ifFalse: [
+					el tag caseOf: {
+						[#type] -> [stream nextPutAll: (self typeName: el contentString)].
+						[#enum] -> [stream print: ((Smalltalk at: #VkAPIConstants) perform: (el contentString asSymbol)) value].
+						[#comment] -> [].
+						[#name] -> [].
+					}]]])
+						copyReplaceAll: ' ' with: '')
+						copyReplaceAll: '**' with: '*')
+						" some structs define bitfield sizes, which are potentially ignored anyways in the C impl? "
+						copyWithRegex: '\:\d+' matchesReplacedWith: ''
 ]

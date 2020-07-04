@@ -10,10 +10,10 @@ VkPhysicalDeviceToolPropertiesEXT class >> fields [
 	^ #(
 		(sType 'VkStructureType')
 		(pNext 'void*')
-		(name 'char')
-		(version 'char')
+		(name 'char[256]')
+		(version 'char[256]')
 		(purposes 'VkToolPurposeFlagsEXT')
-		(description 'char')
-		(layer 'char')
+		(description 'char[256]')
+		(layer 'char[256]')
 	)
 ]

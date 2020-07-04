@@ -11,6 +11,6 @@ VkDebugMarkerMarkerInfoEXT class >> fields [
 		(sType 'VkStructureType')
 		(pNext 'void*')
 		(pMarkerName 'char*')
-		(color 'float')
+		(color 'float[4]')
 	)
 ]

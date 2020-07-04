@@ -8,8 +8,8 @@ Class {
 VkClearColorValue class >> fields [
 
 	^ #(
-		(float32 'float')
-		(int32 'int32_t')
-		(uint32 'uint32_t')
+		(float32 'float[4]')
+		(int32 'int32_t[4]')
+		(uint32 'uint32_t[4]')
 	)
 ]

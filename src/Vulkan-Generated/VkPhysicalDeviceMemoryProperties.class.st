@@ -9,8 +9,8 @@ VkPhysicalDeviceMemoryProperties class >> fields [
 
 	^ #(
 		(memoryTypeCount 'uint32_t')
-		(memoryTypes 'VkMemoryType')
+		(memoryTypes 'VkMemoryType[32]')
 		(memoryHeapCount 'uint32_t')
-		(memoryHeaps 'VkMemoryHeap')
+		(memoryHeaps 'VkMemoryHeap[16]')
 	)
 ]

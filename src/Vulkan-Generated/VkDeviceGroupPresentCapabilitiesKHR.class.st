@@ -10,7 +10,7 @@ VkDeviceGroupPresentCapabilitiesKHR class >> fields [
 	^ #(
 		(sType 'VkStructureType')
 		(pNext 'void*')
-		(presentMask 'uint32_t')
+		(presentMask 'uint32_t[32]')
 		(modes 'VkDeviceGroupPresentModeFlagsKHR')
 	)
 ]

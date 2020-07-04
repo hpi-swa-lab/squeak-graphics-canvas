@@ -10,8 +10,8 @@ VkPipelineExecutableStatisticKHR class >> fields [
 	^ #(
 		(sType 'VkStructureType')
 		(pNext 'void*')
-		(name 'char')
-		(description 'char')
+		(name 'char[256]')
+		(description 'char[256]')
 		(format 'VkPipelineExecutableStatisticFormatKHR')
 		(value 'VkPipelineExecutableStatisticValueKHR')
 	)

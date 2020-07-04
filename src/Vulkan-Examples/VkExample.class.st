@@ -27,7 +27,9 @@ Class {
 		'imagesInFlight',
 		'currentFrame',
 		'framebufferWasResized',
-		'framebufferSizeCallback'
+		'framebufferSizeCallback',
+		'vertexBuffer',
+		'vertexBufferMemory'
 	],
 	#category : #'Vulkan-Examples'
 }
@@ -59,6 +61,9 @@ VkExample >> chooseSwapSurfaceFormat: anArray [
 VkExample >> cleanup [
 
 	self cleanupSwapChain.
+	
+	VkAPI new vkDestroyBuffer: device with: vertexBuffer with: nil.
+	VkAPI new vkFreeMemory: device with: vertexBufferMemory with: nil.
 	
 	1
 		to: self maxFramesInFlight
@@ -96,6 +101,107 @@ VkExample >> cleanupSwapChain [
 		VkAPI new vkDestroyImageView: device with: view with: nil].
 	
 	VkAPI new vkDestroySwapchainKHR: device with: swapChain with: nil
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> copyBufferFrom: srcBuffer to: dstBuffer size: bufferSize [
+
+	| allocInfo commandBuffer beginInfo copyRegion submitInfo bufferPointer |
+	allocInfo := VkCommandBufferAllocateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
+		level: VkCommandBufferLevel VK_COMMAND_BUFFER_LEVEL_PRIMARY;
+		commandPool: commandPool;
+		commandBufferCount: 1.
+	
+	commandBuffer := self
+		passArrayOfPointers: 1
+		of: VkCommandBuffer
+		to: [:pointer :array |
+			self checkError: (VkAPI new vkAllocateCommandBuffers: device with: allocInfo with: pointer).
+			array at: 1].
+	
+	beginInfo := VkCommandBufferBeginInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
+		flags: VkCommandBufferUsageFlags VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT.
+	
+	copyRegion := VkBufferCopy externalNew
+		zeroAllFields;
+		size: bufferSize.
+	
+	VkAPI new vkBeginCommandBuffer: commandBuffer with: beginInfo.
+	VkAPI new vkCmdCopyBuffer: commandBuffer with: srcBuffer with: dstBuffer with: 1 with: copyRegion.
+	VkAPI new vkEndCommandBuffer: commandBuffer.
+	
+	bufferPointer := ExternalData fromHandle: (ExternalAddress allocate: ExternalAddress wordSize) type: ExternalType intptr_t.
+	bufferPointer at: 1 put: commandBuffer getHandle.
+	
+	submitInfo := VkSubmitInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_SUBMIT_INFO;
+		commandBufferCount: 1;
+		pCommandBuffers: (VkCommandBuffer fromHandle: bufferPointer getHandle).
+	VkAPI new vkQueueSubmit: graphicsQueue with: 1 with: submitInfo with: (VkFence on: 0).
+	VkAPI new vkQueueWaitIdle: graphicsQueue.
+	
+	VkAPI new vkFreeCommandBuffers: device with: commandPool with: 1 with: (VkCommandBuffer fromHandle: bufferPointer getHandle)
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> createBuffer: size usage: usage properties: properties map: aBoolean do: aBlock [
+
+	| buffer memory bufferInfo memRequirements |
+	bufferInfo := VkBufferCreateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO;
+		size: size;
+		usage: usage;
+		sharingMode: VkSharingMode VK_SHARING_MODE_EXCLUSIVE.
+	self
+		passArrayOfPointers: 1
+		of: VkBuffer
+		to: [:pointer :array |
+			self checkError: (VkAPI new vkCreateBuffer: device with: bufferInfo with: nil with: pointer).
+			buffer := array at: 1].
+	
+	memRequirements := self
+		passArrayOfPointers: 1
+		of: VkMemoryRequirements
+		to: [:pointer :array |
+			VkAPI new vkGetBufferMemoryRequirements: device with: buffer with: pointer.
+			array at: 1].
+	
+	self
+		passArrayOfPointers: 1
+		of: VkDeviceMemory
+		to: [:pointer :array | | allocInfo |
+			allocInfo := VkMemoryAllocateInfo new
+				sType: VkStructureType VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
+				allocationSize: memRequirements size;
+				memoryTypeIndex: (self findMemoryType: memRequirements memoryTypeBits properties: properties).
+			self checkError: (VkAPI new vkAllocateMemory: device with: allocInfo with: nil with: pointer).
+			memory := array at: 1].
+	
+	self checkError: (VkAPI new vkBindBufferMemory: device with: buffer with: memory with: (VkDeviceSize on: 0)).
+	
+	^ aBoolean
+		ifTrue: [ | externalData ret dataPointer |
+			dataPointer := ExternalData fromHandle: (ExternalAddress allocate: ExternalAddress wordSize) type: ExternalType intptr_t.
+			self checkError: (VkAPI new
+				vkMapMemory: device
+				with: memory
+				with: (VkDeviceSize on: 0)
+				with: bufferInfo size
+				with: (VkMemoryMapFlags on: 0)
+				with: dataPointer).
+			externalData := (ExternalData fromHandle: (ExternalAddress fromInteger: (dataPointer at: 1)) type: ExternalType float)
+				size: bufferInfo size value;
+				yourself.
+			ret := aBlock value: buffer value: memory value: externalData.
+			VkAPI new vkUnmapMemory: device with: memory.
+			ret]
+		ifFalse: [aBlock value: buffer value: memory]
 ]
 
 { #category : #'as yet unclassified' }
@@ -137,7 +243,11 @@ VkExample >> createCommandBuffers [
 			renderPassInfo renderArea extent: swapExtent.
 			
 			clearColor := VkClearValue externalNew zeroAllFields.
-			clearColor color uint32: Color red pixelWord32.
+			clearColor color float32
+				at: 1 put: 1.0;
+				at: 2 put: 0.0;
+				at: 3 put: 0.0;
+				at: 4 put: 1.0.
 			
 			renderPassInfo
 				clearValueCount: 1;
@@ -151,6 +261,13 @@ VkExample >> createCommandBuffers [
 				vkCmdBindPipeline: commandBuffer
 				with: VkPipelineBindPoint VK_PIPELINE_BIND_POINT_GRAPHICS
 				with: graphicsPipeline.
+			
+			self passArrayOfPointers: 1 of: VkBuffer to: [:bufferPointer :bufferArray |
+				bufferArray at: 1 put: vertexBuffer.
+				self passArrayOfPointers: 1 of: VkDeviceSize to: [:sizePointer :sizeArray |
+					sizeArray at: 1 put: (VkDeviceSize on: 0).
+					VkAPI new vkCmdBindVertexBuffers: commandBuffer with: 0 with: 1 with: bufferPointer with: sizePointer]].
+			
 			VkAPI new vkCmdDraw: commandBuffer with: 3 with: 1 with: 0 with: 0.
 			VkAPI new vkCmdEndRenderPass: commandBuffer.
 			
@@ -282,8 +399,10 @@ VkExample >> createGraphicsPipeline [
 	vertexInputInfo := VkPipelineVertexInputStateCreateInfo externalNew
 		zeroAllFields;
 		sType: VkStructureType VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
-		vertexBindingDescriptionCount: 0;
-		vertexAttributeDescriptionCount: 0.
+		vertexBindingDescriptionCount: 1;
+		pVertexBindingDescriptions: self createVertexBindingDescription;
+		vertexAttributeDescriptionCount: 2;
+		pVertexAttributeDescriptions: self createVertexAttributeDescription.
 	
 	inputAssembly := VkPipelineInputAssemblyStateCreateInfo externalNew
 		zeroAllFields;
@@ -469,7 +588,7 @@ VkExample >> createLogicalDevice [
 	VkAPI new vkGetPhysicalDeviceQueueFamilyProperties: physicalDevice with: queueCount with: nil.
 	self assert: queueCount first = 1.
 	
-	queues := VkQueueFamilyProperties externalNew.
+	queues := VkQueueFamilyProperties externalNew zeroAllFields.
 	
 	self checkError: (VkAPI new vkGetPhysicalDeviceQueueFamilyProperties: physicalDevice with: queueCount with: queues).
 	self assert: (queues queueFlags value bitAnd: VkQueueFlags VK_QUEUE_GRAPHICS_BIT) ~= 0.
@@ -609,7 +728,7 @@ VkExample >> createSurface [
 VkExample >> createSwapChain [
 
 	| capabilities formatCount formats surfaceFormat presentMode presentModes presentModeCount imageCount createInfo imageCountRet |
-	capabilities := VkSurfaceCapabilitiesKHR externalNew.
+	capabilities := VkSurfaceCapabilitiesKHR externalNew zeroAllFields.
 	VkAPI new vkGetPhysicalDeviceSurfaceCapabilitiesKHR: physicalDevice with: surface with: capabilities.
 	
 	formatCount := IntegerArray new: 1.
@@ -720,6 +839,67 @@ VkExample >> createSyncObjects [
 ]
 
 { #category : #'as yet unclassified' }
+VkExample >> createVertexAttributeDescription [
+
+	^ self
+		passArrayOfPointers: 2
+		of: VkVertexInputAttributeDescription
+		to: [:pointer :array |
+			(array at: 1)
+				binding: 0;
+				location: 0;
+				format: VkFormat VK_FORMAT_R32G32_SFLOAT;
+				offset: ExternalType float byteSize * 0.
+			(array at: 2)
+				binding: 0;
+				location: 1;
+				format: VkFormat VK_FORMAT_R32G32B32_SFLOAT;
+				offset: ExternalType float byteSize * 2.
+			pointer]
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> createVertexBindingDescription [
+
+	^ VkVertexInputBindingDescription externalNew
+		zeroAllFields;
+		binding: 0;
+		stride: ExternalType float byteSize * 5;
+		inputRate: VkVertexInputRate VK_VERTEX_INPUT_RATE_VERTEX
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> createVertexBuffer [
+
+	| bufferSize stagingBuffer stagingBufferMemory |
+	bufferSize := VkDeviceSize on: ExternalType float byteSize * (3 * 5).
+	self
+		createBuffer: bufferSize
+		usage: VkBufferUsageFlags VK_BUFFER_USAGE_TRANSFER_SRC_BIT
+		properties: VkMemoryPropertyFlags VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT value + VkMemoryPropertyFlags VK_MEMORY_PROPERTY_HOST_COHERENT_BIT value
+		map: true
+		do: [:buffer :memory :externalData | | data |
+			data := {0.0. -0.5. 1.0. 0.0. 0.0. 0.5. 0.5. 0.0. 1.0. 0.0. -0.5. 0.5. 0.0. 0.0. 1.0}.
+			1 to: data size do: [:index | externalData floatAt: index put: (data at: index)].
+			stagingBuffer := buffer.
+			stagingBufferMemory := memory].
+	
+	self
+		createBuffer: bufferSize
+		usage: (VkBufferUsageFlags on: VkBufferUsageFlags VK_BUFFER_USAGE_VERTEX_BUFFER_BIT value + VkBufferUsageFlags VK_BUFFER_USAGE_TRANSFER_DST_BIT value)
+		properties: VkMemoryPropertyFlags VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT
+		map: false
+		do: [:buffer :memory | | data |
+			data := {0.0. -0.5. 1.0. 0.0. 0.0. 0.5. 0.5. 0.0. 1.0. 0.0. -0.5. 0.5. 0.0. 0.0. 1.0}.
+			vertexBuffer := buffer.
+			vertexBufferMemory := memory.
+			self copyBufferFrom: stagingBuffer to: vertexBuffer size: bufferSize].
+	
+	VkAPI new vkDestroyBuffer: device with: stagingBuffer with: nil.
+	VkAPI new vkFreeMemory: device with: stagingBufferMemory with: nil
+]
+
+{ #category : #'as yet unclassified' }
 VkExample >> destroyDebugUtilsMessengerEXT: instance with: messenger with: pAllocator [
 
 	| funcAddr method |
@@ -825,6 +1005,24 @@ VkExample >> drawFrame [
 ]
 
 { #category : #'as yet unclassified' }
+VkExample >> findMemoryType: typeFilter properties: properties [
+
+	| memProperties |
+	memProperties := self
+		passArrayOfPointers: 1
+		of: VkPhysicalDeviceMemoryProperties
+		to: [:pointer :array |
+			VkAPI new vkGetPhysicalDeviceMemoryProperties: physicalDevice with: pointer.
+			array at: 1].
+	0
+		to: memProperties memoryTypeCount - 1
+		do: [:index |
+			((typeFilter bitAnd: 1 << index) ~= 0 and: [
+				((memProperties memoryTypes at: index + 1) propertyFlags value bitAnd: properties value) = properties value]) ifTrue: [^ index]].
+	self error: 'failed to find suitable memory type'
+]
+
+{ #category : #'as yet unclassified' }
 VkExample >> getDeviceExtensionNamesAndCount [
 
 	| names extensions |
@@ -880,6 +1078,7 @@ VkExample >> initVulkan [
 	self createGraphicsPipeline.
 	self createFramebuffers.
 	self createCommandPool.
+	self createVertexBuffer.
 	self createCommandBuffers.
 	self createSyncObjects
 ]
@@ -986,7 +1185,7 @@ VkExample >> pickPhysicalDevice [
 		active: 0
 		do: {
 			[
-				properties := VkPhysicalDeviceProperties externalNew.
+				properties := VkPhysicalDeviceProperties externalNew zeroAllFields.
 				VkAPI new vkGetPhysicalDeviceProperties: device with: properties]
 		}
 ]
@@ -1019,7 +1218,7 @@ VkExample >> setupDebugMessenger [
 
 	| createInfo |
 	createInfo := self createDebugMessenger.
-	debugMessenger := VkDebugUtilsMessengerEXT externalNew.
+	debugMessenger := VkDebugUtilsMessengerEXT externalNew zeroAllFields.
 	self
 		passArrayOfPointers: 1
 		of: VkDebugUtilsMessengerEXT

@@ -15,6 +15,6 @@ VkPipelineColorBlendStateCreateInfo class >> fields [
 		(logicOp 'VkLogicOp')
 		(attachmentCount 'uint32_t')
 		(pAttachments 'VkPipelineColorBlendAttachmentState*')
-		(blendConstants 'float')
+		(blendConstants 'float[4]')
 	)
 ]
