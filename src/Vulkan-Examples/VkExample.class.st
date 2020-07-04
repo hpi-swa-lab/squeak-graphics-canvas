@@ -29,7 +29,9 @@ Class {
 		'framebufferWasResized',
 		'framebufferSizeCallback',
 		'vertexBuffer',
-		'vertexBufferMemory'
+		'vertexBufferMemory',
+		'indexBuffer',
+		'indexBufferMemory'
 	],
 	#category : #'Vulkan-Examples'
 }
@@ -64,6 +66,9 @@ VkExample >> cleanup [
 	
 	VkAPI new vkDestroyBuffer: device with: vertexBuffer with: nil.
 	VkAPI new vkFreeMemory: device with: vertexBufferMemory with: nil.
+	
+	VkAPI new vkDestroyBuffer: device with: indexBuffer with: nil.
+	VkAPI new vkFreeMemory: device with: indexBufferMemory with: nil.
 	
 	1
 		to: self maxFramesInFlight
@@ -149,7 +154,7 @@ VkExample >> copyBufferFrom: srcBuffer to: dstBuffer size: bufferSize [
 ]
 
 { #category : #'as yet unclassified' }
-VkExample >> createBuffer: size usage: usage properties: properties map: aBoolean do: aBlock [
+VkExample >> createBuffer: size usage: usage properties: properties type: anExternalType do: aBlock [
 
 	| buffer memory bufferInfo memRequirements |
 	bufferInfo := VkBufferCreateInfo externalNew
@@ -185,8 +190,8 @@ VkExample >> createBuffer: size usage: usage properties: properties map: aBoolea
 	
 	self checkError: (VkAPI new vkBindBufferMemory: device with: buffer with: memory with: (VkDeviceSize on: 0)).
 	
-	^ aBoolean
-		ifTrue: [ | externalData ret dataPointer |
+	^ anExternalType
+		ifNotNil: [ | externalData ret dataPointer |
 			dataPointer := ExternalData fromHandle: (ExternalAddress allocate: ExternalAddress wordSize) type: ExternalType intptr_t.
 			self checkError: (VkAPI new
 				vkMapMemory: device
@@ -195,13 +200,13 @@ VkExample >> createBuffer: size usage: usage properties: properties map: aBoolea
 				with: bufferInfo size
 				with: (VkMemoryMapFlags on: 0)
 				with: dataPointer).
-			externalData := (ExternalData fromHandle: (ExternalAddress fromInteger: (dataPointer at: 1)) type: ExternalType float)
+			externalData := (ExternalData fromHandle: (ExternalAddress fromInteger: (dataPointer at: 1)) type: anExternalType)
 				size: bufferInfo size value;
 				yourself.
 			ret := aBlock value: buffer value: memory value: externalData.
 			VkAPI new vkUnmapMemory: device with: memory.
 			ret]
-		ifFalse: [aBlock value: buffer value: memory]
+		ifNil: [aBlock value: buffer value: memory]
 ]
 
 { #category : #'as yet unclassified' }
@@ -244,7 +249,7 @@ VkExample >> createCommandBuffers [
 			
 			clearColor := VkClearValue externalNew zeroAllFields.
 			clearColor color float32
-				at: 1 put: 1.0;
+				at: 1 put: 0.0;
 				at: 2 put: 0.0;
 				at: 3 put: 0.0;
 				at: 4 put: 1.0.
@@ -262,13 +267,24 @@ VkExample >> createCommandBuffers [
 				with: VkPipelineBindPoint VK_PIPELINE_BIND_POINT_GRAPHICS
 				with: graphicsPipeline.
 			
-			self passArrayOfPointers: 1 of: VkBuffer to: [:bufferPointer :bufferArray |
-				bufferArray at: 1 put: vertexBuffer.
-				self passArrayOfPointers: 1 of: VkDeviceSize to: [:sizePointer :sizeArray |
-					sizeArray at: 1 put: (VkDeviceSize on: 0).
-					VkAPI new vkCmdBindVertexBuffers: commandBuffer with: 0 with: 1 with: bufferPointer with: sizePointer]].
+			self
+				passArrayOfPointers: 1
+				of: VkBuffer
+				to: [:bufferPointer :bufferArray |
+					bufferArray at: 1 put: vertexBuffer.
+					self
+						passArrayOfPointers: 1
+						of: VkDeviceSize
+						to: [:sizePointer :sizeArray |
+							sizeArray at: 1 put: (VkDeviceSize on: 0).
+							VkAPI new vkCmdBindVertexBuffers: commandBuffer with: 0 with: 1 with: bufferPointer with: sizePointer.
+							VkAPI new
+								vkCmdBindIndexBuffer: commandBuffer
+								with: indexBuffer
+								with: (VkDeviceSize on: 0)
+								with: VkIndexType VK_INDEX_TYPE_UINT16]].
 			
-			VkAPI new vkCmdDraw: commandBuffer with: 3 with: 1 with: 0 with: 0.
+			VkAPI new vkCmdDrawIndexed: commandBuffer with: 6 with: 1 with: 0 with: 0 with: 0.
 			VkAPI new vkCmdEndRenderPass: commandBuffer.
 			
 			self checkError: (VkAPI new vkEndCommandBuffer: commandBuffer)]
@@ -541,6 +557,37 @@ VkExample >> createImageViews [
 				
 				self checkError: (VkAPI new vkCreateImageView: device with: createInfo with: nil with: pointer).
 				swapChainImageViews at: index put: (array at: 1)]]
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> createIndexBuffer [
+
+	| bufferSize stagingBuffer stagingBufferMemory |
+	bufferSize := VkDeviceSize on: ExternalType float byteSize * (3 * 5).
+	self
+		createBuffer: bufferSize
+		usage: VkBufferUsageFlags VK_BUFFER_USAGE_TRANSFER_SRC_BIT
+		properties: VkMemoryPropertyFlags VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT value + VkMemoryPropertyFlags VK_MEMORY_PROPERTY_HOST_COHERENT_BIT value
+		type: ExternalType unsignedShort
+		do: [:buffer :memory :externalData | | data |
+			data := {0. 1. 2. 2. 3. 0}.
+			1 to: data size do: [:index |
+				externalData unsignedShortAt: index put: (data at: index)].
+			stagingBuffer := buffer.
+			stagingBufferMemory := memory].
+	
+	self
+		createBuffer: bufferSize
+		usage: (VkBufferUsageFlags on: VkBufferUsageFlags VK_BUFFER_USAGE_INDEX_BUFFER_BIT value + VkBufferUsageFlags VK_BUFFER_USAGE_TRANSFER_DST_BIT value)
+		properties: VkMemoryPropertyFlags VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT
+		type: nil
+		do: [:buffer :memory | | data |
+			indexBuffer := buffer.
+			indexBufferMemory := memory.
+			self copyBufferFrom: stagingBuffer to: indexBuffer size: bufferSize].
+	
+	VkAPI new vkDestroyBuffer: device with: stagingBuffer with: nil.
+	VkAPI new vkFreeMemory: device with: stagingBufferMemory with: nil
 ]
 
 { #category : #'as yet unclassified' }
@@ -872,14 +919,14 @@ VkExample >> createVertexBindingDescription [
 VkExample >> createVertexBuffer [
 
 	| bufferSize stagingBuffer stagingBufferMemory |
-	bufferSize := VkDeviceSize on: ExternalType float byteSize * (3 * 5).
+	bufferSize := VkDeviceSize on: ExternalType float byteSize * (4 * 5).
 	self
 		createBuffer: bufferSize
 		usage: VkBufferUsageFlags VK_BUFFER_USAGE_TRANSFER_SRC_BIT
 		properties: VkMemoryPropertyFlags VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT value + VkMemoryPropertyFlags VK_MEMORY_PROPERTY_HOST_COHERENT_BIT value
-		map: true
+		type: ExternalType float
 		do: [:buffer :memory :externalData | | data |
-			data := {0.0. -0.5. 1.0. 0.0. 0.0. 0.5. 0.5. 0.0. 1.0. 0.0. -0.5. 0.5. 0.0. 0.0. 1.0}.
+			data := {-0.5. -0.5. 1.0. 0.0. 0.0. 0.5. -0.5. 0.0. 1.0. 0.0. 0.5. 0.5. 0.0. 0.0. 1.0. -0.5. 0.5. 1.0. 1.0. 1.0}.
 			1 to: data size do: [:index | externalData floatAt: index put: (data at: index)].
 			stagingBuffer := buffer.
 			stagingBufferMemory := memory].
@@ -888,9 +935,8 @@ VkExample >> createVertexBuffer [
 		createBuffer: bufferSize
 		usage: (VkBufferUsageFlags on: VkBufferUsageFlags VK_BUFFER_USAGE_VERTEX_BUFFER_BIT value + VkBufferUsageFlags VK_BUFFER_USAGE_TRANSFER_DST_BIT value)
 		properties: VkMemoryPropertyFlags VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT
-		map: false
+		type: nil
 		do: [:buffer :memory | | data |
-			data := {0.0. -0.5. 1.0. 0.0. 0.0. 0.5. 0.5. 0.0. 1.0. 0.0. -0.5. 0.5. 0.0. 0.0. 1.0}.
 			vertexBuffer := buffer.
 			vertexBufferMemory := memory.
 			self copyBufferFrom: stagingBuffer to: vertexBuffer size: bufferSize].
@@ -1079,6 +1125,7 @@ VkExample >> initVulkan [
 	self createFramebuffers.
 	self createCommandPool.
 	self createVertexBuffer.
+	self createIndexBuffer.
 	self createCommandBuffers.
 	self createSyncObjects
 ]
