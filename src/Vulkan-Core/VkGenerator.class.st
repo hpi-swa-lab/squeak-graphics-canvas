@@ -358,6 +358,27 @@ VkGenerator >> printValueOf: enum on: stream [
 ]
 
 { #category : #'as yet unclassified' }
+VkGenerator >> runCommand: aString stdin: anotherString [
+
+	| proc d in input |
+	in := OSPipe blockingPipe.
+	input := in reader.
+	
+	d := Delay forMilliseconds: 50.
+	proc := UnixProcess
+		forkJob: ExternalUnixOSProcess defaultShellPath
+		arguments: (Array with: '-c' with: aString)
+		environment: nil
+		descriptors: (Array with: input with: nil with: nil).
+	input close.
+	in writer nextPutAll: anotherString; close.
+	
+	proc ifNil: [self class noAccessorAvailable].
+	[proc runState == #complete] whileFalse: [d wait].
+	^ proc exitStatus
+]
+
+{ #category : #'as yet unclassified' }
 VkGenerator >> signatureStringFor: aString params: aCollection [
 
 	^ String streamContents: [:stream |
@@ -367,6 +388,22 @@ VkGenerator >> signatureStringFor: aString params: aCollection [
 			do: [:param |
 				stream nextPutAll: (param firstTagNamed: #name) contentString]
 			separatedBy: [stream nextPutAll: ' with: ']]
+]
+
+{ #category : #'as yet unclassified' }
+VkGenerator >> testCommand: aString [
+
+	| proc d |
+	d := Delay forMilliseconds: 50.
+	proc := OSProcess thisOSProcess
+		forkJob: aString
+		arguments: nil
+		environment: nil
+		descriptors: nil.
+	proc ifNil: [self class noAccessorAvailable].
+	[proc runState == #complete] whileFalse: [d wait].
+self halt.
+	^ proc exitStatus
 ]
 
 { #category : #'as yet unclassified' }
@@ -422,4 +459,23 @@ VkGenerator >> typeNameFrom: member [
 						copyReplaceAll: '**' with: '*')
 						" some structs define bitfield sizes, which are potentially ignored anyways in the C impl? "
 						copyWithRegex: '\:\d+' matchesReplacedWith: ''
+]
+
+{ #category : #'as yet unclassified' }
+VkGenerator >> verifyStructSize: aClass [
+
+	| actualSize generatedSize |
+	(aClass fields notEmpty and: [(self runCommand: 'gcc -x c - -o vktestsize' stdin: '#include <vulkan/vulkan.h>
+#include <stdio.h>
+int main() { printf("%li", sizeof(', aClass name, ')); return 0; }') = 0]) ifTrue: [
+		actualSize := (OSProcess thisOSProcess waitForCommandOutput: './vktestsize') asInteger.
+		generatedSize := aClass externalType byteSize.
+		self assert: actualSize = generatedSize]
+]
+
+{ #category : #'as yet unclassified' }
+VkGenerator >> verifyStructSizes [
+
+	(ExternalStructure allSubclasses select: [:class | class category = 'Vulkan-Generated'])
+		do: [:class | self verifyStructSize: class] displayingProgress: 'Verifying Struct Sizes'
 ]
