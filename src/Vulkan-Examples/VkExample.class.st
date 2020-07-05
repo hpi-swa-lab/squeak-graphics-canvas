@@ -36,7 +36,11 @@ Class {
 		'uniformBuffers',
 		'uniformBuffersMemory',
 		'descriptorPool',
-		'descriptorSets'
+		'descriptorSets',
+		'textureImageMemory',
+		'textureImage',
+		'textureImageView',
+		'textureSampler'
 	],
 	#category : #'Vulkan-Examples'
 }
@@ -68,6 +72,11 @@ VkExample >> chooseSwapSurfaceFormat: anArray [
 VkExample >> cleanup [
 
 	self cleanupSwapChain.
+	
+	VkAPI new vkDestroySampler: device with: textureSampler with: nil.
+	VkAPI new vkDestroyImageView: device with: textureImageView with: nil.
+	VkAPI new vkDestroyImage: device with: textureImage with: nil.
+	VkAPI new vkFreeMemory: device with: textureImageMemory with: nil.
 	
 	VkAPI new vkDestroyDescriptorSetLayout: device with: descriptorSetLayout with: nil.
 	
@@ -140,48 +149,50 @@ VkExample >> cleanupSwapChain [
 ]
 
 { #category : #'as yet unclassified' }
+VkExample >> copyBuffer: buffer toImage: image width: width height: height [
+
+	self singleTimeCommandDo: [:commandBuffer | | region |
+		region := VkBufferImageCopy externalNew
+			zeroAllFields;
+			bufferOffset: (VkDeviceSize on: 0);
+			bufferRowLength: 0;
+			bufferImageHeight: 0.
+		
+		region imageSubresource
+			aspectMask: VkImageAspectFlags VK_IMAGE_ASPECT_COLOR_BIT;
+			mipLevel: 0;
+			baseArrayLayer: 0;
+			layerCount: 1.
+		
+		region imageOffset
+			x: 0;
+			y: 0;
+			z: 0.
+		
+		region imageExtent
+			width: width;
+			height: height;
+			depth: 1.
+		
+		VkAPI new
+			vkCmdCopyBufferToImage: commandBuffer
+			with: buffer
+			with: image
+			with: VkImageLayout VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL
+			with: 1
+			with: region]
+]
+
+{ #category : #'as yet unclassified' }
 VkExample >> copyBufferFrom: srcBuffer to: dstBuffer size: bufferSize [
 
-	| allocInfo commandBuffer beginInfo copyRegion submitInfo bufferPointer |
-	allocInfo := VkCommandBufferAllocateInfo externalNew
-		zeroAllFields;
-		sType: VkStructureType VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
-		level: VkCommandBufferLevel VK_COMMAND_BUFFER_LEVEL_PRIMARY;
-		commandPool: commandPool;
-		commandBufferCount: 1.
-	
-	commandBuffer := self
-		passArrayOfPointers: 1
-		of: VkCommandBuffer
-		to: [:pointer :array |
-			self checkError: (VkAPI new vkAllocateCommandBuffers: device with: allocInfo with: pointer).
-			array at: 1].
-	
-	beginInfo := VkCommandBufferBeginInfo externalNew
-		zeroAllFields;
-		sType: VkStructureType VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
-		flags: VkCommandBufferUsageFlags VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT.
-	
-	copyRegion := VkBufferCopy externalNew
-		zeroAllFields;
-		size: bufferSize.
-	
-	VkAPI new vkBeginCommandBuffer: commandBuffer with: beginInfo.
-	VkAPI new vkCmdCopyBuffer: commandBuffer with: srcBuffer with: dstBuffer with: 1 with: copyRegion.
-	VkAPI new vkEndCommandBuffer: commandBuffer.
-	
-	bufferPointer := ExternalData fromHandle: (ExternalAddress allocate: ExternalAddress wordSize) type: ExternalType intptr_t.
-	bufferPointer at: 1 put: commandBuffer getHandle.
-	
-	submitInfo := VkSubmitInfo externalNew
-		zeroAllFields;
-		sType: VkStructureType VK_STRUCTURE_TYPE_SUBMIT_INFO;
-		commandBufferCount: 1;
-		pCommandBuffers: (VkCommandBuffer fromHandle: bufferPointer getHandle).
-	self checkError: (VkAPI new vkQueueSubmit: graphicsQueue with: 1 with: submitInfo with: (VkFence on: 0)).
-	VkAPI new vkQueueWaitIdle: graphicsQueue.
-	
-	VkAPI new vkFreeCommandBuffers: device with: commandPool with: 1 with: (VkCommandBuffer fromHandle: bufferPointer getHandle)
+	| copyRegion |
+	self singleTimeCommandDo: [:commandBuffer |
+		copyRegion := VkBufferCopy externalNew
+			zeroAllFields;
+			size: bufferSize.
+		
+		VkAPI new vkCmdCopyBuffer: commandBuffer with: srcBuffer with: dstBuffer with: 1 with: copyRegion]
 ]
 
 { #category : #'as yet unclassified' }
@@ -344,14 +355,17 @@ VkExample >> createDebugMessenger [
 	debugCallback ifNil: [
 		debugCallback := FFICallback
 			signature: '<callback: VkBool32 (*)(VkDebugUtilsMessageSeverityFlagsEXT VkDebugUtilsMessageTypeFlagsEXT VkDebugUtilsMessengerCallbackDataEXT* void*)>'
-			block: [:messageSeverity :messageTypes :pCallbackData :pUserData |
+			block: [:messageSeverity :messageTypes :pCallbackData :pUserData | | message |
+				message := pCallbackData pMessage.
+				
 				((messageSeverity value bitAnd: VkDebugUtilsMessageSeverityFlagsEXT VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT value) ~= 0 and: [
 					(pCallbackData pMessage includesSubstring: 'wrong ELF class') not]) ifTrue: [
-					SBToggledCode comment: '' active: 0 do: {[self halt]}].
+					SBToggledCode comment: '' active: 1 do: {[self halt]}].
+				
 				Transcript
 					nextPutAll: (self messageSeverityToString: messageSeverity);
 					nextPutAll: ': ';
-					nextPutAll: pCallbackData pMessage;
+					nextPutAll: message;
 					cr;
 					flush.
 				0]].
@@ -395,16 +409,25 @@ VkExample >> createDebugUtilsMessengerEXT: instance with: createInfo with: pAllo
 VkExample >> createDescriptorPool [
 
 	| poolSize poolInfo |
-	poolSize := VkDescriptorPoolSize externalNew
-		zeroAllFields;
-		type: VkDescriptorType VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
-		descriptorCount: swapChainImages size.
-	poolInfo := VkDescriptorPoolCreateInfo externalNew
-		zeroAllFields;
-		sType: VkStructureType VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
-		poolSizeCount: 1;
-		pPoolSizes: poolSize;
-		maxSets: swapChainImages size.
+	self
+		passArrayOfPointers: 2
+		of: VkDescriptorPoolSize
+		to: [:sizesPointer :sizesArray |
+			(sizesArray at: 1)
+				zeroAllFields;
+				type: VkDescriptorType VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+				descriptorCount: swapChainImages size.
+			(sizesArray at: 2)
+				zeroAllFields;
+				type: VkDescriptorType VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+				descriptorCount: swapChainImages size.
+			
+			poolInfo := VkDescriptorPoolCreateInfo externalNew
+				zeroAllFields;
+				sType: VkStructureType VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
+				poolSizeCount: 2;
+				pPoolSizes: sizesPointer;
+				maxSets: swapChainImages size].
 	
 	self
 		passArrayOfPointers: 1
@@ -417,20 +440,32 @@ VkExample >> createDescriptorPool [
 { #category : #'as yet unclassified' }
 VkExample >> createDescriptorSetLayout [
 
-	| uboLayoutBinding layoutInfo |
-	uboLayoutBinding := VkDescriptorSetLayoutBinding externalNew
-		zeroAllFields;
-		binding: 0;
-		descriptorType: VkDescriptorType VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
-		descriptorCount: 1;
-		stageFlags: VkShaderStageFlags VK_SHADER_STAGE_VERTEX_BIT;
-		pImmutableSamplers: (VkSampler fromHandle: ExternalAddress new beNull).
-	
-	layoutInfo := VkDescriptorSetLayoutCreateInfo externalNew
-		zeroAllFields;
-		sType: VkStructureType VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
-		bindingCount: 1;
-		pBindings: uboLayoutBinding.
+	| layoutInfo |
+	self
+		passArrayOfPointers: 2
+		of: VkDescriptorSetLayoutBinding
+		to: [:pointer :array |
+			(array at: 1)
+				zeroAllFields;
+				binding: 0;
+				descriptorType: VkDescriptorType VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+				descriptorCount: 1;
+				stageFlags: VkShaderStageFlags VK_SHADER_STAGE_VERTEX_BIT;
+				pImmutableSamplers: (VkSampler fromHandle: ExternalAddress new beNull).
+			
+			(array at: 2)
+				zeroAllFields;
+				binding: 1;
+				descriptorCount: 1;
+				descriptorType: VkDescriptorType VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+				stageFlags: VkShaderStageFlags VK_SHADER_STAGE_FRAGMENT_BIT;
+				pImmutableSamplers: (VkSampler fromHandle: ExternalAddress new beNull).
+			
+			layoutInfo := VkDescriptorSetLayoutCreateInfo externalNew
+				zeroAllFields;
+				sType: VkStructureType VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
+				bindingCount: 2;
+				pBindings: pointer].
 	
 	self
 		passArrayOfPointers: 1
@@ -443,7 +478,6 @@ VkExample >> createDescriptorSetLayout [
 { #category : #'as yet unclassified' }
 VkExample >> createDescriptorSets [
 
-	| descriptorWrite |
 	self
 		passArrayOfPointers: swapChainImages size
 		of: VkDescriptorSet
@@ -465,23 +499,44 @@ VkExample >> createDescriptorSets [
 					descriptorSets := setsArray]].
 	1
 		to: swapChainImages size
-		do: [:index | | bufferInfo |
+		do: [:index | | bufferInfo imageInfo |
 			bufferInfo := VkDescriptorBufferInfo externalNew
 				zeroAllFields;
 				buffer: (uniformBuffers at: index);
 				offset: (VkDeviceSize on: 0);
 				range: (VkDeviceSize on: self uniformDataSize).
 			
-			descriptorWrite := VkWriteDescriptorSet externalNew
+			imageInfo := VkDescriptorImageInfo externalNew
 				zeroAllFields;
-				sType: VkStructureType VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
-				dstSet: (descriptorSets at: index);
-				dstBinding: 0;
-				dstArrayElement: 0;
-				descriptorType: VkDescriptorType VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
-				descriptorCount: 1;
-				pBufferInfo: bufferInfo.
-			VkAPI new vkUpdateDescriptorSets: device with: 1 with: descriptorWrite with: 0 with: nil]
+				imageLayout: VkImageLayout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
+				imageView: textureImageView;
+				sampler: textureSampler.
+			
+			self
+				passArrayOfPointers: 2
+				of: VkWriteDescriptorSet
+				to: [:pointer :array |
+					(array at: 1)
+						zeroAllFields;
+						sType: VkStructureType VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+						dstSet: (descriptorSets at: index);
+						dstBinding: 0;
+						dstArrayElement: 0;
+						descriptorType: VkDescriptorType VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+						descriptorCount: 1;
+						pBufferInfo: bufferInfo.
+					
+					(array at: 2)
+						zeroAllFields;
+						sType: VkStructureType VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+						dstSet: (descriptorSets at: index);
+						dstBinding: 1;
+						dstArrayElement: 0;
+						descriptorType: VkDescriptorType VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+						descriptorCount: 1;
+						pImageInfo: imageInfo.
+					
+					VkAPI new vkUpdateDescriptorSets: device with: 2 with: pointer with: 0 with: nil]]
 ]
 
 { #category : #'as yet unclassified' }
@@ -515,7 +570,7 @@ VkExample >> createFramebuffers [
 { #category : #'as yet unclassified' }
 VkExample >> createGraphicsPipeline [
 
-	| vertex fragment vertexCreateInfo fragmentCreateInfo vertexInputInfo inputAssembly viewport scissor viewportState multisampling colorBlendAttachment colorBlending pipelineLayoutInfo rasterizer pipelineInfo shaderStages |
+	| vertex fragment vertexInputInfo inputAssembly viewport scissor viewportState multisampling colorBlendAttachment colorBlending pipelineLayoutInfo rasterizer pipelineInfo shaderStages |
 	vertex := self createShaderModuleFrom: '/home/tom/Code/squeak/squeak-morphic-layers/vert.spv'.
 	fragment := self createShaderModuleFrom: '/home/tom/Code/squeak/squeak-morphic-layers/frag.spv'.
 	
@@ -540,7 +595,7 @@ VkExample >> createGraphicsPipeline [
 		sType: VkStructureType VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
 		vertexBindingDescriptionCount: 1;
 		pVertexBindingDescriptions: self createVertexBindingDescription;
-		vertexAttributeDescriptionCount: 2;
+		vertexAttributeDescriptionCount: 3;
 		pVertexAttributeDescriptions: self createVertexAttributeDescription.
 	
 	inputAssembly := VkPipelineInputAssemblyStateCreateInfo externalNew
@@ -658,34 +713,92 @@ VkExample >> createGraphicsPipeline [
 ]
 
 { #category : #'as yet unclassified' }
+VkExample >> createImageSized: aPoint format: aFormat tiling: aTilingMode usage: aUsage memoryProperties: aMemoryProperties do: aBlock [
+
+	| imageInfo memRequirements allocInfo image memory |
+	imageInfo := VkImageCreateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO;
+		imageType: VkImageType VK_IMAGE_TYPE_2D;
+		mipLevels: 1;
+		arrayLayers: 1;
+		format: aFormat;
+		tiling: aTilingMode;
+		initialLayout: VkImageLayout VK_IMAGE_LAYOUT_UNDEFINED;
+		usage: aUsage;
+		samples: VkSampleCountFlags VK_SAMPLE_COUNT_1_BIT;
+		sharingMode: VkSharingMode VK_SHARING_MODE_EXCLUSIVE.
+	imageInfo extent
+		depth: 1;
+		width: aPoint x;
+		height: aPoint y.
+	
+	image := self
+		passArrayOfPointers: 1
+		of: VkImage
+		to: [:pointer :array |
+			self checkError: (VkAPI new vkCreateImage: device with: imageInfo with: nil with: pointer).
+			array at: 1].
+	memRequirements := self
+		passArrayOfPointers: 1
+		of: VkMemoryRequirements
+		to: [:pointer :array |
+			VkAPI new vkGetImageMemoryRequirements: device with: image with: pointer.
+			array at: 1].
+	allocInfo := VkMemoryAllocateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
+		allocationSize: memRequirements size;
+		memoryTypeIndex: (self findMemoryType: memRequirements memoryTypeBits properties: aMemoryProperties).
+	
+	memory := self
+		passArrayOfPointers: 1
+		of: VkDeviceMemory
+		to: [:pointer :array |
+			self checkError: (VkAPI new vkAllocateMemory: device with: allocInfo with: nil with: pointer).
+			array at: 1].
+	
+	VkAPI new vkBindImageMemory: device with: image with: memory with: (VkDeviceSize on: 0).
+	
+	^ aBlock value: image value: memory
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> createImageView: anImage format: aFormat [
+
+	| viewInfo |
+	viewInfo := VkImageViewCreateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
+		image: anImage;
+		viewType: VkImageViewType VK_IMAGE_VIEW_TYPE_2D;
+		format: aFormat.
+	viewInfo components
+		r: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY;
+		g: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY;
+		b: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY;
+		a: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY.
+	viewInfo subresourceRange
+		aspectMask: VkImageAspectFlags VK_IMAGE_ASPECT_COLOR_BIT;
+		baseMipLevel: 0;
+		levelCount: 1;
+		baseArrayLayer: 0;
+		layerCount: 1.
+	
+	^ self
+		passArrayOfPointers: 1
+		of: VkImageView
+		to: [:pointer :array |
+			self checkError: (VkAPI new vkCreateImageView: device with: viewInfo with: nil with: pointer).
+			array at: 1]
+]
+
+{ #category : #'as yet unclassified' }
 VkExample >> createImageViews [
 
 	swapChainImageViews := Array new: swapChainImages size.
 	swapChainImages withIndexDo: [:image :index |
-		self
-			passArrayOfPointers: 1
-			of: VkImageView
-			to: [:pointer :array | | createInfo |
-				createInfo := VkImageViewCreateInfo externalNew
-					zeroAllFields;
-					sType: VkStructureType VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
-					image: image;
-					viewType: VkImageViewType VK_IMAGE_VIEW_TYPE_2D;
-					format: swapChainImageFormat.
-				createInfo components
-					r: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY;
-					g: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY;
-					b: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY;
-					a: VkComponentSwizzle VK_COMPONENT_SWIZZLE_IDENTITY.
-				createInfo subresourceRange
-					aspectMask: VkImageAspectFlags VK_IMAGE_ASPECT_COLOR_BIT;
-					baseMipLevel: 0;
-					levelCount: 1;
-					baseArrayLayer: 0;
-					layerCount: 1.
-				
-				self checkError: (VkAPI new vkCreateImageView: device with: createInfo with: nil with: pointer).
-				swapChainImageViews at: index put: (array at: 1)]]
+		swapChainImageViews at: index put: (self createImageView: image format: swapChainImageFormat)]
 ]
 
 { #category : #'as yet unclassified' }
@@ -799,7 +912,10 @@ VkExample >> createLogicalDevice [
 		sType: VkStructureType VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;
 		pQueueCreateInfos: queueCreateInfo;
 		queueCreateInfoCount: 1;
-		pEnabledFeatures: VkPhysicalDeviceFeatures externalNew zeroAllFields;
+		pEnabledFeatures: (VkPhysicalDeviceFeatures externalNew
+			zeroAllFields;
+			samplerAnisotropy: (VkBool32 on: 1)
+			yourself);
 		ppEnabledExtensionNames: (extensionsAndCount first asType: ExternalType string);
 		enabledExtensionCount: extensionsAndCount second;
 		ppEnabledLayerNames: self layerNames;
@@ -1020,6 +1136,90 @@ VkExample >> createSyncObjects [
 ]
 
 { #category : #'as yet unclassified' }
+VkExample >> createTextureImage [
+
+	| stagingBuffer form stagingBufferMemory |
+	form := Display copy: (0 @ 0 extent: 100 @ 100).
+	
+	self
+		createBuffer: (VkDeviceSize on: form bits byteSize)
+		usage: VkBufferUsageFlags VK_BUFFER_USAGE_TRANSFER_SRC_BIT
+		properties: (VkMemoryPropertyFlags on: VkMemoryPropertyFlags VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT value + VkMemoryPropertyFlags VK_MEMORY_PROPERTY_HOST_COHERENT_BIT value)
+		type: ExternalType unsignedLong
+		do: [:buffer :memory :externalData |
+			1
+				to: form bits size
+				do: [:index | | color |
+					color := form bits at: index.
+					color := (color bitAnd: 4278190080) bitOr: (((color bitAnd: 16711680) bitShift: -16) bitOr: ((color bitAnd: 65280) bitOr: ((color bitAnd: 255) bitShift: 16))).
+					externalData unsignedLongAt: index put: color].
+			stagingBuffer := buffer.
+			stagingBufferMemory := memory].
+	
+	self
+		createImageSized: form extent
+		format: VkFormat VK_FORMAT_R8G8B8A8_SRGB
+		tiling: VkImageTiling VK_IMAGE_TILING_OPTIMAL
+		usage: (VkImageUsageFlags on: VkImageUsageFlags VK_IMAGE_USAGE_TRANSFER_DST_BIT value + VkImageUsageFlags VK_IMAGE_USAGE_SAMPLED_BIT value)
+		memoryProperties: VkMemoryPropertyFlags VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT
+		do: [:image :memory |
+			textureImage := image.
+			textureImageMemory := memory].
+	
+	self
+		transitionImageLayout: textureImage
+		format: VkFormat VK_FORMAT_R8G8B8A8_SRGB
+		oldLayout: VkImageLayout VK_IMAGE_LAYOUT_UNDEFINED
+		newLayout: VkImageLayout VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL.
+	self copyBuffer: stagingBuffer toImage: textureImage width: form width height: form height.
+	self
+		transitionImageLayout: textureImage
+		format: VkFormat VK_FORMAT_R8G8B8A8_SRGB
+		oldLayout: VkImageLayout VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL
+		newLayout: VkImageLayout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL.
+	
+	VkAPI new vkDestroyBuffer: device with: stagingBuffer with: nil.
+	VkAPI new vkFreeMemory: device with: stagingBufferMemory with: nil
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> createTextureImageViews [
+
+	textureImageView := self createImageView: textureImage format: VkFormat VK_FORMAT_R8G8B8A8_SRGB
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> createTextureSampler [
+
+	| samplerInfo |
+	samplerInfo := VkSamplerCreateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_SAMPLER_CREATE_INFO;
+		magFilter: VkFilter VK_FILTER_LINEAR;
+		minFilter: VkFilter VK_FILTER_LINEAR;
+		addressModeU: VkSamplerAddressMode VK_SAMPLER_ADDRESS_MODE_REPEAT;
+		addressModeV: VkSamplerAddressMode VK_SAMPLER_ADDRESS_MODE_REPEAT;
+		addressModeW: VkSamplerAddressMode VK_SAMPLER_ADDRESS_MODE_REPEAT;
+		anisotropyEnable: (VkBool32 on: 1);
+		maxAnisotropy: 16.0;
+		borderColor: VkBorderColor VK_BORDER_COLOR_INT_OPAQUE_BLACK;
+		unnormalizedCoordinates: (VkBool32 on: 0);
+		compareEnable: (VkBool32 on: 0);
+		compareOp: VkCompareOp VK_COMPARE_OP_ALWAYS;
+		mipmapMode: VkSamplerMipmapMode VK_SAMPLER_MIPMAP_MODE_LINEAR;
+		mipLodBias: 0.0;
+		minLod: 0.0;
+		maxLod: 0.0.
+	
+	textureSampler := self
+		passArrayOfPointers: 1
+		of: VkSampler
+		to: [:pointer :array |
+			self checkError: (VkAPI new vkCreateSampler: device with: samplerInfo with: nil with: pointer).
+			array at: 1]
+]
+
+{ #category : #'as yet unclassified' }
 VkExample >> createUniformBuffers [
 
 	uniformBuffers := Array new: swapChainImages size.
@@ -1042,7 +1242,7 @@ VkExample >> createUniformBuffers [
 VkExample >> createVertexAttributeDescription [
 
 	^ self
-		passArrayOfPointers: 2
+		passArrayOfPointers: 3
 		of: VkVertexInputAttributeDescription
 		to: [:pointer :array |
 			(array at: 1)
@@ -1055,6 +1255,11 @@ VkExample >> createVertexAttributeDescription [
 				location: 1;
 				format: VkFormat VK_FORMAT_R32G32B32_SFLOAT;
 				offset: ExternalType float byteSize * 2.
+			(array at: 3)
+				binding: 0;
+				location: 2;
+				format: VkFormat VK_FORMAT_R32G32_SFLOAT;
+				offset: ExternalType float byteSize * 5.
 			pointer]
 ]
 
@@ -1355,6 +1560,9 @@ VkExample >> initVulkan [
 	self createGraphicsPipeline.
 	self createFramebuffers.
 	self createCommandPool.
+	self createTextureImage.
+	self createTextureImageViews.
+	self createTextureSampler.
 	self createVertexBuffer.
 	self createIndexBuffer.
 	self createUniformBuffers.
@@ -1534,6 +1742,104 @@ VkExample >> setupDebugMessenger [
 ]
 
 { #category : #'as yet unclassified' }
+VkExample >> singleTimeCommandDo: aBlock [
+
+	| commandBuffer allocInfo beginInfo bufferPointer submitInfo |
+	allocInfo := VkCommandBufferAllocateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
+		level: VkCommandBufferLevel VK_COMMAND_BUFFER_LEVEL_PRIMARY;
+		commandPool: commandPool;
+		commandBufferCount: 1.
+	
+	commandBuffer := self
+		passArrayOfPointers: 1
+		of: VkCommandBuffer
+		to: [:pointer :array |
+			self checkError: (VkAPI new vkAllocateCommandBuffers: device with: allocInfo with: pointer).
+			array at: 1].
+	
+	beginInfo := VkCommandBufferBeginInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
+		flags: VkCommandBufferUsageFlags VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT.
+	VkAPI new vkBeginCommandBuffer: commandBuffer with: beginInfo.
+	
+	aBlock value: commandBuffer.
+	
+	VkAPI new vkEndCommandBuffer: commandBuffer.
+	
+	bufferPointer := ExternalData fromHandle: (ExternalAddress allocate: ExternalAddress wordSize) type: ExternalType intptr_t.
+	bufferPointer at: 1 put: commandBuffer getHandle.
+	
+	submitInfo := VkSubmitInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_SUBMIT_INFO;
+		commandBufferCount: 1;
+		pCommandBuffers: (VkCommandBuffer fromHandle: bufferPointer getHandle).
+	self checkError: (VkAPI new vkQueueSubmit: graphicsQueue with: 1 with: submitInfo with: (VkFence on: 0)).
+	VkAPI new vkQueueWaitIdle: graphicsQueue.
+	
+	VkAPI new
+		vkFreeCommandBuffers: device
+		with: commandPool
+		with: 1
+		with: (VkCommandBuffer fromHandle: bufferPointer getHandle)
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> transitionImageLayout: image format: aFormat oldLayout: anOldLayout newLayout: aNewLayout [
+
+	self singleTimeCommandDo: [:commandBuffer | | barrier sourceStage destinationStage |
+		barrier := VkImageMemoryBarrier externalNew
+			zeroAllFields;
+			sType: VkStructureType VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER;
+			oldLayout: anOldLayout;
+			newLayout: aNewLayout;
+			srcQueueFamilyIndex: VkAPIConstants VK_QUEUE_FAMILY_IGNORED value;
+			dstQueueFamilyIndex: VkAPIConstants VK_QUEUE_FAMILY_IGNORED value;
+			image: image.
+		barrier subresourceRange
+			aspectMask: VkImageAspectFlags VK_IMAGE_ASPECT_COLOR_BIT;
+			baseMipLevel: 0;
+			levelCount: 1;
+			baseArrayLayer: 0;
+			layerCount: 1.
+		
+		(anOldLayout = VkImageLayout VK_IMAGE_LAYOUT_UNDEFINED and: [
+			aNewLayout = VkImageLayout VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL]) ifTrue: [
+			barrier
+				srcAccessMask: (VkAccessFlags on: 0);
+				dstAccessMask: VkAccessFlags VK_ACCESS_TRANSFER_WRITE_BIT.
+			
+			sourceStage := VkPipelineStageFlags VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT.
+			destinationStage := VkPipelineStageFlags VK_PIPELINE_STAGE_TRANSFER_BIT].
+		
+		(anOldLayout = VkImageLayout VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL and: [
+			aNewLayout = VkImageLayout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL]) ifTrue: [
+			barrier
+				srcAccessMask: VkAccessFlags VK_ACCESS_TRANSFER_WRITE_BIT;
+				dstAccessMask: VkAccessFlags VK_ACCESS_SHADER_READ_BIT.
+			
+			sourceStage := VkPipelineStageFlags VK_PIPELINE_STAGE_TRANSFER_BIT.
+			destinationStage := VkPipelineStageFlags VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT].
+		
+		sourceStage ifNil: [self error: 'unsupported transition'].
+		
+		VkAPI new
+			vkCmdPipelineBarrier: commandBuffer
+			with: sourceStage
+			with: destinationStage
+			with: (VkDependencyFlags on: 0)
+			with: 0
+			with: nil
+			with: 0
+			with: nil
+			with: 1
+			with: barrier]
+]
+
+{ #category : #'as yet unclassified' }
 VkExample >> uniformDataSize [
 
 	^ Matrix4x4 new byteSize
@@ -1556,13 +1862,13 @@ VkExample >> updateUniformBuffer: imageIndex [
 { #category : #'as yet unclassified' }
 VkExample >> vertexData [
 
-	^ {-0.5. -0.5. 1.0. 0.0. 0.0. 0.5. -0.5. 0.0. 1.0. 0.0. 0.5. 0.5. 0.0. 0.0. 1.0. -0.5. 0.5. 1.0. 1.0. 1.0}
+	^ {-0.5. -0.5. 1.0. 0.0. 0.0. 0.0. 0.0. 0.5. -0.5. 0.0. 1.0. 0.0. 1.0. 0.0. 0.5. 0.5. 0.0. 0.0. 1.0. 1.0. 1.0. -0.5. 0.5. 1.0. 1.0. 1.0. 0.0. 1.0}
 ]
 
 { #category : #'as yet unclassified' }
 VkExample >> vertexDataStride [
 
-	^ ExternalType float byteSize * 5
+	^ ExternalType float byteSize * 7
 ]
 
 { #category : #'as yet unclassified' }
