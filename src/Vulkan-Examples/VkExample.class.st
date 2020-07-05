@@ -31,7 +31,12 @@ Class {
 		'vertexBuffer',
 		'vertexBufferMemory',
 		'indexBuffer',
-		'indexBufferMemory'
+		'indexBufferMemory',
+		'descriptorSetLayout',
+		'uniformBuffers',
+		'uniformBuffersMemory',
+		'descriptorPool',
+		'descriptorSets'
 	],
 	#category : #'Vulkan-Examples'
 }
@@ -64,6 +69,8 @@ VkExample >> cleanup [
 
 	self cleanupSwapChain.
 	
+	VkAPI new vkDestroyDescriptorSetLayout: device with: descriptorSetLayout with: nil.
+	
 	VkAPI new vkDestroyBuffer: device with: vertexBuffer with: nil.
 	VkAPI new vkFreeMemory: device with: vertexBufferMemory with: nil.
 	
@@ -95,17 +102,38 @@ VkExample >> cleanupSwapChain [
 
 	swapChainFramebuffers do: [:framebuffer |
 		VkAPI new vkDestroyFramebuffer: device with: framebuffer with: nil].
+	swapChainFramebuffers := nil.
 	
-	VkAPI new vkFreeCommandBuffers: device with: commandPool with: commandBuffers size with: (VkCommandBuffer fromHandle: commandBuffers getHandle).
+	VkAPI new
+		vkFreeCommandBuffers: device
+		with: commandPool
+		with: commandBuffers size
+		with: (VkCommandBuffer fromHandle: commandBuffers getHandle).
+	commandBuffers := nil.
 	
 	VkAPI new vkDestroyPipeline: device with: graphicsPipeline with: nil.
+	graphicsPipeline := nil.
 	VkAPI new vkDestroyPipelineLayout: device with: pipelineLayout with: nil.
+	pipelineLayout := nil.
 	VkAPI new vkDestroyRenderPass: device with: renderPass with: nil.
+	renderPass := nil.
 	
 	swapChainImageViews do: [:view |
 		VkAPI new vkDestroyImageView: device with: view with: nil].
+	swapChainImageViews := nil.
 	
-	VkAPI new vkDestroySwapchainKHR: device with: swapChain with: nil
+	VkAPI new vkDestroySwapchainKHR: device with: swapChain with: nil.
+	
+	1
+		to: swapChainImages size
+		do: [:index |
+			VkAPI new vkDestroyBuffer: device with: (uniformBuffers at: index) with: nil.
+			VkAPI new vkFreeMemory: device with: (uniformBuffersMemory at: index) with: nil].
+	uniformBuffers := nil.
+	uniformBuffersMemory := nil.
+	
+	VkAPI new vkDestroyDescriptorPool: device with: descriptorPool with: nil.
+	descriptorPool := nil
 ]
 
 { #category : #'as yet unclassified' }
@@ -147,7 +175,7 @@ VkExample >> copyBufferFrom: srcBuffer to: dstBuffer size: bufferSize [
 		sType: VkStructureType VK_STRUCTURE_TYPE_SUBMIT_INFO;
 		commandBufferCount: 1;
 		pCommandBuffers: (VkCommandBuffer fromHandle: bufferPointer getHandle).
-	VkAPI new vkQueueSubmit: graphicsQueue with: 1 with: submitInfo with: (VkFence on: 0).
+	self checkError: (VkAPI new vkQueueSubmit: graphicsQueue with: 1 with: submitInfo with: (VkFence on: 0)).
 	VkAPI new vkQueueWaitIdle: graphicsQueue.
 	
 	VkAPI new vkFreeCommandBuffers: device with: commandPool with: 1 with: (VkCommandBuffer fromHandle: bufferPointer getHandle)
@@ -181,7 +209,8 @@ VkExample >> createBuffer: size usage: usage properties: properties type: anExte
 		passArrayOfPointers: 1
 		of: VkDeviceMemory
 		to: [:pointer :array | | allocInfo |
-			allocInfo := VkMemoryAllocateInfo new
+			allocInfo := VkMemoryAllocateInfo externalNew
+				zeroAllFields;
 				sType: VkStructureType VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
 				allocationSize: memRequirements size;
 				memoryTypeIndex: (self findMemoryType: memRequirements memoryTypeBits properties: properties).
@@ -191,21 +220,9 @@ VkExample >> createBuffer: size usage: usage properties: properties type: anExte
 	self checkError: (VkAPI new vkBindBufferMemory: device with: buffer with: memory with: (VkDeviceSize on: 0)).
 	
 	^ anExternalType
-		ifNotNil: [ | externalData ret dataPointer |
-			dataPointer := ExternalData fromHandle: (ExternalAddress allocate: ExternalAddress wordSize) type: ExternalType intptr_t.
-			self checkError: (VkAPI new
-				vkMapMemory: device
-				with: memory
-				with: (VkDeviceSize on: 0)
-				with: bufferInfo size
-				with: (VkMemoryMapFlags on: 0)
-				with: dataPointer).
-			externalData := (ExternalData fromHandle: (ExternalAddress fromInteger: (dataPointer at: 1)) type: anExternalType)
-				size: bufferInfo size value;
-				yourself.
-			ret := aBlock value: buffer value: memory value: externalData.
-			VkAPI new vkUnmapMemory: device with: memory.
-			ret]
+		ifNotNil: [
+			self mapBuffer: memory size: bufferInfo size value type: anExternalType do: [:externalData |
+				aBlock value: buffer value: memory value: externalData]]
 		ifNil: [aBlock value: buffer value: memory]
 ]
 
@@ -277,12 +294,22 @@ VkExample >> createCommandBuffers [
 						of: VkDeviceSize
 						to: [:sizePointer :sizeArray |
 							sizeArray at: 1 put: (VkDeviceSize on: 0).
-							VkAPI new vkCmdBindVertexBuffers: commandBuffer with: 0 with: 1 with: bufferPointer with: sizePointer.
-							VkAPI new
-								vkCmdBindIndexBuffer: commandBuffer
-								with: indexBuffer
-								with: (VkDeviceSize on: 0)
-								with: VkIndexType VK_INDEX_TYPE_UINT16]].
+							VkAPI new vkCmdBindVertexBuffers: commandBuffer with: 0 with: 1 with: bufferPointer with: sizePointer]].
+			
+			VkAPI new
+				vkCmdBindIndexBuffer: commandBuffer
+				with: indexBuffer
+				with: (VkDeviceSize on: 0)
+				with: VkIndexType VK_INDEX_TYPE_UINT16.
+			VkAPI new
+				vkCmdBindDescriptorSets: commandBuffer
+				with: VkPipelineBindPoint VK_PIPELINE_BIND_POINT_GRAPHICS
+				with: pipelineLayout
+				with: 0
+				with: 1
+				with: (VkDescriptorSet fromHandle: (descriptorSets getHandle + (index - 1 * VkDescriptorSet externalType byteSize)))
+				with: 0
+				with: nil.
 			
 			VkAPI new vkCmdDrawIndexed: commandBuffer with: 6 with: 1 with: 0 with: 0 with: 0.
 			VkAPI new vkCmdEndRenderPass: commandBuffer.
@@ -359,6 +386,99 @@ VkExample >> createDebugUtilsMessengerEXT: instance with: createInfo with: pAllo
 				(method literalAt: 1) setHandle: funcAddr getHandle.
 				VkAPI new vkCreateDebugUtilsMessengerEXT: instance with: createInfo with: pAllocator with: pDebugMessenger]
 		}
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> createDescriptorPool [
+
+	| poolSize poolInfo |
+	poolSize := VkDescriptorPoolSize externalNew
+		zeroAllFields;
+		type: VkDescriptorType VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+		descriptorCount: swapChainImages size.
+	poolInfo := VkDescriptorPoolCreateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
+		poolSizeCount: 1;
+		pPoolSizes: poolSize;
+		maxSets: swapChainImages size.
+	
+	self
+		passArrayOfPointers: 1
+		of: VkDescriptorPool
+		to: [:poolPointer :poolArray |
+			self checkError: (VkAPI new vkCreateDescriptorPool: device with: poolInfo with: nil with: poolPointer).
+			descriptorPool := poolArray at: 1]
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> createDescriptorSetLayout [
+
+	| uboLayoutBinding layoutInfo |
+	uboLayoutBinding := VkDescriptorSetLayoutBinding externalNew
+		zeroAllFields;
+		binding: 0;
+		descriptorType: VkDescriptorType VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+		descriptorCount: 1;
+		stageFlags: VkShaderStageFlags VK_SHADER_STAGE_VERTEX_BIT;
+		pImmutableSamplers: (VkSampler fromHandle: ExternalAddress new beNull).
+	
+	layoutInfo := VkDescriptorSetLayoutCreateInfo externalNew
+		zeroAllFields;
+		sType: VkStructureType VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
+		bindingCount: 1;
+		pBindings: uboLayoutBinding.
+	
+	self
+		passArrayOfPointers: 1
+		of: VkDescriptorSetLayout
+		to: [:pointer :array |
+			self checkError: (VkAPI new vkCreateDescriptorSetLayout: device with: layoutInfo with: nil with: pointer).
+			descriptorSetLayout := array at: 1]
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> createDescriptorSets [
+
+	| descriptorWrite |
+	self
+		passArrayOfPointers: swapChainImages size
+		of: VkDescriptorSet
+		to: [:setsPointer :setsArray |
+			self
+				passArrayOfPointers: swapChainImages size
+				of: VkDescriptorSetLayout
+				to: [:layoutPointer :layoutArray | | allocInfo |
+					1 to: swapChainImages size do: [:index | layoutArray at: index put: descriptorSetLayout].
+					allocInfo := VkDescriptorSetAllocateInfo externalNew
+						zeroAllFields;
+						sType: VkStructureType VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;
+						descriptorPool: descriptorPool;
+						descriptorSetCount: swapChainImages size;
+						pSetLayouts: layoutPointer.
+					
+					self checkError: (VkAPI new vkAllocateDescriptorSets: device with: allocInfo with: setsPointer).
+					
+					descriptorSets := setsArray]].
+	1
+		to: swapChainImages size
+		do: [:index | | bufferInfo |
+			bufferInfo := VkDescriptorBufferInfo externalNew
+				zeroAllFields;
+				buffer: (uniformBuffers at: index);
+				offset: (VkDeviceSize on: 0);
+				range: (VkDeviceSize on: self uniformDataSize).
+			
+			descriptorWrite := VkWriteDescriptorSet externalNew
+				zeroAllFields;
+				sType: VkStructureType VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+				dstSet: (descriptorSets at: index);
+				dstBinding: 0;
+				dstArrayElement: 0;
+				descriptorType: VkDescriptorType VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+				descriptorCount: 1;
+				pBufferInfo: bufferInfo.
+			VkAPI new vkUpdateDescriptorSets: device with: 1 with: descriptorWrite with: 0 with: nil]
 ]
 
 { #category : #'as yet unclassified' }
@@ -482,11 +602,17 @@ VkExample >> createGraphicsPipeline [
 		blendConstants3: 0.0;
 		blendConstants4: 0.0.
 	
-	pipelineLayoutInfo := VkPipelineLayoutCreateInfo externalNew
-		zeroAllFields;
-		sType: VkStructureType VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
-		setLayoutCount: 0;
-		pushConstantRangeCount: 0.
+	self
+		passArrayOfPointers: 1
+		of: VkDescriptorSetLayout
+		to: [:pointer :array |
+			array at: 1 put: descriptorSetLayout.
+			pipelineLayoutInfo := VkPipelineLayoutCreateInfo externalNew
+				zeroAllFields;
+				sType: VkStructureType VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
+				setLayoutCount: 1;
+				pSetLayouts: pointer;
+				pushConstantRangeCount: 0].
 	
 	self
 		passArrayOfPointers: 1
@@ -563,16 +689,15 @@ VkExample >> createImageViews [
 VkExample >> createIndexBuffer [
 
 	| bufferSize stagingBuffer stagingBufferMemory |
-	bufferSize := VkDeviceSize on: ExternalType float byteSize * (3 * 5).
+	bufferSize := VkDeviceSize on: self indexData size * ExternalType unsignedShort byteSize.
 	self
 		createBuffer: bufferSize
 		usage: VkBufferUsageFlags VK_BUFFER_USAGE_TRANSFER_SRC_BIT
 		properties: VkMemoryPropertyFlags VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT value + VkMemoryPropertyFlags VK_MEMORY_PROPERTY_HOST_COHERENT_BIT value
 		type: ExternalType unsignedShort
-		do: [:buffer :memory :externalData | | data |
-			data := {0. 1. 2. 2. 3. 0}.
-			1 to: data size do: [:index |
-				externalData unsignedShortAt: index put: (data at: index)].
+		do: [:buffer :memory :externalData | | |
+			1 to: self indexData size do: [:index |
+				externalData unsignedShortAt: index put: (self indexData at: index)].
 			stagingBuffer := buffer.
 			stagingBufferMemory := memory].
 	
@@ -581,7 +706,7 @@ VkExample >> createIndexBuffer [
 		usage: (VkBufferUsageFlags on: VkBufferUsageFlags VK_BUFFER_USAGE_INDEX_BUFFER_BIT value + VkBufferUsageFlags VK_BUFFER_USAGE_TRANSFER_DST_BIT value)
 		properties: VkMemoryPropertyFlags VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT
 		type: nil
-		do: [:buffer :memory | | data |
+		do: [:buffer :memory | 
 			indexBuffer := buffer.
 			indexBufferMemory := memory.
 			self copyBufferFrom: stagingBuffer to: indexBuffer size: bufferSize].
@@ -593,8 +718,7 @@ VkExample >> createIndexBuffer [
 { #category : #'as yet unclassified' }
 VkExample >> createInstance [
 
-	| appInfo createInfo applicationName engineName layerNames debugUtilsMessengerCreateInfo extensionsAndCount |
-	layerNames := self layerNames.
+	| appInfo createInfo applicationName engineName extensionsAndCount |
 	applicationName := 'Hello Triangle' asExternalString.
 	engineName := 'No Engine' asExternalString.
 	appInfo := VkApplicationInfo externalNew
@@ -607,17 +731,24 @@ VkExample >> createInstance [
 		apiVersion: (self vkMakeVersionMajor: 1 minor: 0 patch: 0).
 	
 	extensionsAndCount := self getExtensionNamesAndCount.
-	debugUtilsMessengerCreateInfo := self createDebugMessenger.
 	
 	createInfo := VkInstanceCreateInfo externalNew
 		zeroAllFields;
 		sType: VkStructureType VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
 		pApplicationInfo: appInfo;
 		enabledExtensionCount: extensionsAndCount second;
-		ppEnabledExtensionNames: (extensionsAndCount first asType: ExternalType string);
-		enabledLayerCount: 1;
-		ppEnabledLayerNames: layerNames;
-		pNext: debugUtilsMessengerCreateInfo.
+		ppEnabledExtensionNames: (extensionsAndCount first asType: ExternalType string).
+	
+	self enableValidationLayer
+		ifTrue: [ | debugUtilsMessengerCreateInfo layerNames |
+			layerNames := self layerNames.
+			debugUtilsMessengerCreateInfo := self createDebugMessenger.
+			createInfo
+				enabledLayerCount: 1;
+				ppEnabledLayerNames: layerNames;
+				pNext: debugUtilsMessengerCreateInfo]
+		ifFalse: [
+			createInfo enabledLayerCount: 0].
 	
 	self
 		passArrayOfPointers: 1
@@ -742,24 +873,24 @@ VkExample >> createRenderPass [
 { #category : #'as yet unclassified' }
 VkExample >> createShaderModuleFrom: aString [
 
-	| source |
+	| source createInfo |
 	source := FileStream readOnlyFileNamed: aString do: [:file |
 		file
 			binary;
 			contents].
-	^ VkShaderModuleCreateInfo externalNewDo: [:createInfo |
-		createInfo
+	
+	createInfo := VkShaderModuleCreateInfo externalNew
 			zeroAllFields;
 			sType: VkStructureType VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
 			codeSize: source size;
 			pCode: (source copyToExternalMemoryType: ExternalType uint32_t asPointerType).
 		
-		self
-			passArrayOfPointers: 1
-			of: VkShaderModule
-			to: [:pointer :array |
-				self checkError: (VkAPI new vkCreateShaderModule: device with: createInfo with: nil with: pointer).
-				array at: 1]]
+	^ self
+		passArrayOfPointers: 1
+		of: VkShaderModule
+		to: [:pointer :array |
+			self checkError: (VkAPI new vkCreateShaderModule: device with: createInfo with: nil with: pointer).
+			array at: 1]
 ]
 
 { #category : #'as yet unclassified' }
@@ -886,6 +1017,25 @@ VkExample >> createSyncObjects [
 ]
 
 { #category : #'as yet unclassified' }
+VkExample >> createUniformBuffers [
+
+	uniformBuffers := Array new: swapChainImages size.
+	uniformBuffersMemory := Array new: swapChainImages size.
+	
+	1
+		to: swapChainImages size
+		do: [:index |
+			self
+				createBuffer: (VkDeviceSize on: self uniformDataSize)
+				usage: VkBufferUsageFlags VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT
+				properties: VkMemoryPropertyFlags VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT value + VkMemoryPropertyFlags VK_MEMORY_PROPERTY_HOST_COHERENT_BIT value
+				type: nil
+				do: [:buffer :memory |
+					uniformBuffers at: index put: buffer.
+					uniformBuffersMemory at: index put: memory]]
+]
+
+{ #category : #'as yet unclassified' }
 VkExample >> createVertexAttributeDescription [
 
 	^ self
@@ -911,7 +1061,7 @@ VkExample >> createVertexBindingDescription [
 	^ VkVertexInputBindingDescription externalNew
 		zeroAllFields;
 		binding: 0;
-		stride: ExternalType float byteSize * 5;
+		stride: self vertexDataStride;
 		inputRate: VkVertexInputRate VK_VERTEX_INPUT_RATE_VERTEX
 ]
 
@@ -919,15 +1069,14 @@ VkExample >> createVertexBindingDescription [
 VkExample >> createVertexBuffer [
 
 	| bufferSize stagingBuffer stagingBufferMemory |
-	bufferSize := VkDeviceSize on: ExternalType float byteSize * (4 * 5).
+	bufferSize := VkDeviceSize on: ExternalType float byteSize * self vertexData size.
 	self
 		createBuffer: bufferSize
 		usage: VkBufferUsageFlags VK_BUFFER_USAGE_TRANSFER_SRC_BIT
 		properties: VkMemoryPropertyFlags VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT value + VkMemoryPropertyFlags VK_MEMORY_PROPERTY_HOST_COHERENT_BIT value
 		type: ExternalType float
-		do: [:buffer :memory :externalData | | data |
-			data := {-0.5. -0.5. 1.0. 0.0. 0.0. 0.5. -0.5. 0.0. 1.0. 0.0. 0.5. 0.5. 0.0. 0.0. 1.0. -0.5. 0.5. 1.0. 1.0. 1.0}.
-			1 to: data size do: [:index | externalData floatAt: index put: (data at: index)].
+		do: [:buffer :memory :externalData | | |
+			1 to: self vertexData size do: [:index | externalData floatAt: index put: (self vertexData at: index)].
 			stagingBuffer := buffer.
 			stagingBufferMemory := memory].
 	
@@ -936,7 +1085,7 @@ VkExample >> createVertexBuffer [
 		usage: (VkBufferUsageFlags on: VkBufferUsageFlags VK_BUFFER_USAGE_VERTEX_BUFFER_BIT value + VkBufferUsageFlags VK_BUFFER_USAGE_TRANSFER_DST_BIT value)
 		properties: VkMemoryPropertyFlags VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT
 		type: nil
-		do: [:buffer :memory | | data |
+		do: [:buffer :memory | 
 			vertexBuffer := buffer.
 			vertexBufferMemory := memory.
 			self copyBufferFrom: stagingBuffer to: vertexBuffer size: bufferSize].
@@ -982,6 +1131,8 @@ VkExample >> drawFrame [
 		ifTrue: [^ self recreateSwapChain]
 		ifFalse: [
 			(result = VkResult VK_SUCCESS or: [result = VkResult VK_SUBOPTIMAL_KHR]) ifFalse: [self error: 'Failed to acquire swap chain image']].
+	
+	self updateUniformBuffer: imageIndex first + 1.
 	
 	(imagesInFlight at: imageIndex first + 1) = (VkFence on: 0) ifFalse: [ | currentImagesInFlight |
 		currentImagesInFlight := ExternalData fromHandle: (ExternalAddress allocate: VkFence byteSize) type: VkFence externalType asPointerType.
@@ -1045,9 +1196,15 @@ VkExample >> drawFrame [
 			framebufferWasResized := false.
 			self recreateSwapChain]
 		ifFalse: [
-			result = VkResult VK_SUCCESS ifFalse: [self error: 'failed to present swap chan image']].
+			result = VkResult VK_SUCCESS ifFalse: [self error: 'failed to present swap chain image']].
 	
 	currentFrame := (currentFrame \\ self maxFramesInFlight) + 1
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> enableValidationLayer [
+
+	^ false
 ]
 
 { #category : #'as yet unclassified' }
@@ -1111,23 +1268,53 @@ VkExample >> graphicsQueueIndex [
 ]
 
 { #category : #'as yet unclassified' }
+VkExample >> indexData [
+
+	^ {0. 1. 2. 2. 3. 0}
+]
+
+{ #category : #'as yet unclassified' }
 VkExample >> initVulkan [
 
+	FileStream stdout showln: 'create instance'.
 	self createInstance.
+	FileStream stdout showln: 'setup debug messenger'.
 	self setupDebugMessenger.
+	FileStream stdout showln: 'create surface'.
 	self createSurface.
+	FileStream stdout showln: 'pick physical device'.
 	self pickPhysicalDevice.
+	FileStream stdout showln: 'create logical device'.
 	self createLogicalDevice.
+	FileStream stdout showln: 'create swap chain'.
 	self createSwapChain.
+	FileStream stdout showln: 'create image view'.
 	self createImageViews.
+	FileStream stdout showln: 'create render pass'.
 	self createRenderPass.
+	FileStream stdout showln: 'create descriptor set layout'.
+	self createDescriptorSetLayout.
+	FileStream stdout showln: 'create graphics pipeline'.
 	self createGraphicsPipeline.
+	FileStream stdout showln: 'create framebuffers'.
 	self createFramebuffers.
+	FileStream stdout showln: 'create command pool'.
 	self createCommandPool.
+	FileStream stdout showln: 'create vertex buffer'.
 	self createVertexBuffer.
+	FileStream stdout showln: 'create index buffer'.
 	self createIndexBuffer.
+	FileStream stdout showln: 'create uniform buffers'.
+	self createUniformBuffers.
+	FileStream stdout showln: 'create descriptor pool'.
+	self createDescriptorPool.
+	FileStream stdout showln: 'create descriptor sets'.
+	self createDescriptorSets.
+	FileStream stdout showln: 'create commad buffers'.
 	self createCommandBuffers.
-	self createSyncObjects
+	FileStream stdout showln: 'create sync objects'.
+	self createSyncObjects.
+	FileStream stdout showln: '* init complete'
 ]
 
 { #category : #'as yet unclassified' }
@@ -1136,9 +1323,9 @@ VkExample >> initWindow [
 	GLFW init.
 	GLFW windowHint: GLFW GLFW_CLIENT_API with: GLFW GLFW_NO_API.
 	window := GLFW createWindowWidth: 800 height: 600 title: 'Vulkan' monitor: nil share: nil.
-	GLFW
+	"GLFW
 		setFramebufferSizeCallback: window
-		with: ((framebufferSizeCallback := FFICallback signature: '<callback: void(*) (void* long long)>' block: [:win :x :y | framebufferWasResized := true]) thunk)
+		with: ((framebufferSizeCallback := FFICallback signature: '<callback: void(*) (void* long long)>' block: [:win :x :y | framebufferWasResized := true]) thunk)"
 ]
 
 { #category : #'as yet unclassified' }
@@ -1156,8 +1343,6 @@ VkExample >> initialize [
 VkExample >> layerNames [
 
 	| layer addr data layers |
-	SBLabel text: [
-		'TODO: we''re leaking the memory for the layers here'].
 	layer := 'VK_LAYER_KHRONOS_validation'.
 	addr := ExternalAddress allocate: layer size + 1.
 	data := ExternalData fromHandle: addr type: ExternalType string.
@@ -1177,6 +1362,26 @@ VkExample >> mainLoop [
 		GLFW pollEvents.
 		self drawFrame].
 	VkAPI new vkDeviceWaitIdle: device
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> mapBuffer: aBufferMemory size: aNumber type: aType do: aBlock [
+
+	| dataPointer externalData ret |
+	dataPointer := ExternalData fromHandle: (ExternalAddress allocate: ExternalAddress wordSize) type: ExternalType intptr_t.
+	self checkError: (VkAPI new
+		vkMapMemory: device
+		with: aBufferMemory
+		with: (VkDeviceSize on: 0)
+		with: (VkDeviceSize on: aNumber)
+		with: (VkMemoryMapFlags on: 0)
+		with: dataPointer).
+	externalData := (ExternalData fromHandle: (ExternalAddress fromInteger: (dataPointer at: 1)) type: aType)
+		size: aNumber;
+		yourself.
+	ret := aBlock value: externalData.
+	VkAPI new vkUnmapMemory: device with: aBufferMemory.
+	^ ret
 ]
 
 { #category : #'as yet unclassified' }
@@ -1257,6 +1462,9 @@ VkExample >> recreateSwapChain [
 	self createRenderPass.
 	self createGraphicsPipeline.
 	self createFramebuffers.
+	self createUniformBuffers.
+	self createDescriptorPool.
+	self createDescriptorSets.
 	self createCommandBuffers
 ]
 
@@ -1264,6 +1472,8 @@ VkExample >> recreateSwapChain [
 VkExample >> setupDebugMessenger [
 
 	| createInfo |
+	self enableValidationLayer ifFalse: [^ self].
+	
 	createInfo := self createDebugMessenger.
 	debugMessenger := VkDebugUtilsMessengerEXT externalNew zeroAllFields.
 	self
@@ -1271,8 +1481,40 @@ VkExample >> setupDebugMessenger [
 		of: VkDebugUtilsMessengerEXT
 		to: [:pointer :array |
 			self checkError: (self createDebugUtilsMessengerEXT: instance with: createInfo with: nil with: pointer).
-			debugMessenger := array at: 1].
-	createInfo free
+			debugMessenger := array at: 1]
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> uniformDataSize [
+
+	^ Matrix4x4 new byteSize
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> updateUniformBuffer: imageIndex [
+
+	| matrix |
+	matrix := Matrix4x4 withOffset: Time millisecondClockValue sin @ 0 @ 0.
+	FileStream stdout showln: Time millisecondClockValue sin asString.
+	self
+		mapBuffer: (uniformBuffersMemory at: imageIndex)
+		size: self uniformDataSize
+		type: ExternalType float
+		do: [:externalData |
+			1 to: matrix size do: [:index |
+				externalData floatAt: index put: (matrix at: index)]]
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> vertexData [
+
+	^ {-0.5. -0.5. 1.0. 0.0. 0.0. 0.5. -0.5. 0.0. 1.0. 0.0. 0.5. 0.5. 0.0. 0.0. 1.0. -0.5. 0.5. 1.0. 1.0. 1.0}
+]
+
+{ #category : #'as yet unclassified' }
+VkExample >> vertexDataStride [
+
+	^ ExternalType float byteSize * 5
 ]
 
 { #category : #'as yet unclassified' }
