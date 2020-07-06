@@ -4,9 +4,10 @@ Class {
 	#instVars : [
 		'transform',
 		'extent',
-		'cache'
+		'cache',
+		'morph'
 	],
-	#category : 'RenderThee-LayerTree'
+	#category : #'RenderThee-LayerTree'
 }
 
 { #category : #visiting }
@@ -15,17 +16,23 @@ RtLayer >> assuredForm [
 	^ cache ifNil: [cache := self rasterizeForm]
 ]
 
-{ #category : #visiting }
-RtLayer >> assuredTexture: aRenderer [
-
-	^ cache ifNil: [cache := self rasterizeTexture: aRenderer]
-]
-
 { #category : #initialization }
 RtLayer >> bounds: aRectangle [
 
 	self transform: (Matrix4x4 withOffset: aRectangle topLeft asVector3).
 	self extent: aRectangle extent
+]
+
+{ #category : #accessing }
+RtLayer >> cache [
+
+	^ cache
+]
+
+{ #category : #accessing }
+RtLayer >> cache: anObject [
+
+	^ cache := anObject
 ]
 
 { #category : #initialization }
@@ -40,18 +47,14 @@ RtLayer >> drawOn: canvas [
 
 { #category : #accessing }
 RtLayer >> extent [
+
 	^ extent
 ]
 
 { #category : #accessing }
 RtLayer >> extent: anObject [
+
 	extent := anObject
-]
-
-{ #category : #utilities }
-RtLayer >> iconOrThumbnailOfSize: anExtent [
-
-	^ self assuredForm scaledIntoFormOfSize: anExtent
 ]
 
 { #category : #compositing }
@@ -66,6 +69,18 @@ RtLayer >> isRasterized [
 
 	self flag: #todo.
 	^ self needsRasterize
+]
+
+{ #category : #accessing }
+RtLayer >> morph [
+
+	^ morph
+]
+
+{ #category : #accessing }
+RtLayer >> morph: anObject [
+
+	morph := anObject
 ]
 
 { #category : #visiting }
@@ -91,11 +106,13 @@ RtLayer >> rasterizeForm [
 
 { #category : #accessing }
 RtLayer >> transform [
+
 	^ transform
 ]
 
 { #category : #accessing }
 RtLayer >> transform: anObject [
+
 	transform := anObject
 ]
 

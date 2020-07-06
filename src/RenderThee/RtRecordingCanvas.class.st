@@ -264,9 +264,11 @@ RtRecordingCanvas >> fullDrawInCurrentLayer: aMorph [
 { #category : #'drawing-general' }
 RtRecordingCanvas >> fullDrawInNewLayer: aMorph [
 
+	| newLayer |
+	newLayer := RtGroupLayer bounds: (aMorph bounds translateBy: self origin negated). "outerBounds?"
+	newLayer morph: aMorph.
 	self
-		newCurrentLayer: (RtGroupLayer
-							bounds: (aMorph bounds translateBy: self origin negated)) "outerBounds?"
+		newCurrentLayer: newLayer
 		newOrigin: aMorph position
 		during: [:canvas | self fullDrawInCurrentLayer: aMorph]
 ]

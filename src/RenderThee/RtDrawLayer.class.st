@@ -46,17 +46,6 @@ RtDrawLayer >> needsRasterize [
 ]
 
 { #category : #visiting }
-RtDrawLayer >> rasterizeTexture: aRenderer [
-
-	| tex form |
-	form := self rasterizeForm.
-	tex := GLTexture context: GL value.
-	tex texImage: form.
-	^ tex
-
-]
-
-{ #category : #visiting }
 RtDrawLayer >> visit: aVisitor [
 
 	^ aVisitor visitDrawLayer: self

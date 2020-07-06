@@ -72,12 +72,6 @@ RtGroupLayer >> drawOn: aCanvas [
 	self drawChildrenOn: aCanvas
 ]
 
-{ #category : #utilities }
-RtGroupLayer >> iconOrThumbnailOfSize: anExtent [
-
-	^ self assuredForm scaledIntoFormOfSize: anExtent
-]
-
 { #category : #initialization }
 RtGroupLayer >> initialize [
 
@@ -89,31 +83,6 @@ RtGroupLayer >> initialize [
 RtGroupLayer >> layers [
 
 	^ children
-]
-
-{ #category : #drawing }
-RtGroupLayer >> rasterizeTexture: aRendender [
-
-	^ self restoreFramebufferOf: aRendender after: [ | texture framebuffer ogl |
-		ogl := GL value.
-		
-		framebuffer := GLFrameBuffer context: ogl.
-		texture := GLTexture context: ogl.
-		texture texImageExtent: self extent.
-		framebuffer texture2D: texture.
-		
-		aRendender currentFramebuffer: framebuffer.
-		aRendender currentExtent: self extent.
-		
-		framebuffer boundDuring: [
-			ogl
-				glViewport: 0 with: 0 with: self extent x with: self extent y;
-				glClearColor: 0.5 with: 1 with: 1 with: 1;
-				glClear: GL_COLOR_BUFFER_BIT.
-			aRendender renderLayer: self].
-		
-		framebuffer delete.
-		texture]
 ]
 
 { #category : #drawing }
