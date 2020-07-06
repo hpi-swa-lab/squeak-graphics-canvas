@@ -6,12 +6,24 @@ Class {
 
 { #category : #usage }
 GLShaderRecipe class >> build [
-	self new; build; yourself
+	^self new build; yourself
 ]
 
 { #category : #usage }
 GLShaderRecipe class >> buildFor: gl [ 
-	self new; buildFor: gl; yourself
+	^self new buildFor: gl; yourself
+]
+
+{ #category : #usage }
+GLShaderRecipe class >> cook [
+	
+	^self build
+]
+
+{ #category : #usage }
+GLShaderRecipe class >> cookWith: glContext [
+
+	self buildFor: glContext
 ]
 
 { #category : #usage }
