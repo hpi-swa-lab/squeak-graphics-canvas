@@ -5,7 +5,10 @@ Class {
 		'transform',
 		'extent',
 		'cache',
-		'morph'
+		'drawTime',
+		'rasterizationTime',
+		'drawsSinceInvalidation',
+		'drawsSinceUpdate'
 	],
 	#category : #'RenderThee-LayerTree'
 }
@@ -46,6 +49,26 @@ RtLayer >> drawOn: canvas [
 ]
 
 { #category : #accessing }
+RtLayer >> drawsSinceInvalidation [
+	^ drawsSinceInvalidation
+]
+
+{ #category : #accessing }
+RtLayer >> drawsSinceInvalidation: anObject [
+	drawsSinceInvalidation := anObject
+]
+
+{ #category : #accessing }
+RtLayer >> drawsSinceUpdate [
+	^ drawsSinceUpdate
+]
+
+{ #category : #accessing }
+RtLayer >> drawsSinceUpdate: anObject [
+	drawsSinceUpdate := anObject
+]
+
+{ #category : #accessing }
 RtLayer >> extent [
 
 	^ extent
@@ -57,11 +80,27 @@ RtLayer >> extent: anObject [
 	extent := anObject
 ]
 
+{ #category : #visiting }
+RtLayer >> incrementDrawCounter [
+
+	drawsSinceUpdate := drawsSinceUpdate + 1.
+	drawsSinceInvalidation := drawsSinceInvalidation + 1
+]
+
+{ #category : #initialization }
+RtLayer >> initialize [
+
+	super initialize.
+	drawsSinceUpdate := 0.
+	drawsSinceInvalidation := 0
+]
+
 { #category : #compositing }
 RtLayer >> invalidateCache [
 
 	self parent ifNotNil: [:p | p invalidateCache].
-	cache := nil
+	cache := nil.
+	drawsSinceInvalidation := 0
 ]
 
 { #category : #visiting }
@@ -71,22 +110,10 @@ RtLayer >> isRasterized [
 	^ self needsRasterize
 ]
 
-{ #category : #accessing }
-RtLayer >> morph [
-
-	^ morph
-]
-
-{ #category : #accessing }
-RtLayer >> morph: anObject [
-
-	morph := anObject
-]
-
 { #category : #visiting }
 RtLayer >> needsRasterize [
 
-	^ "transform isPureTranslation not" true
+	^ drawsSinceInvalidation >= 30
 ]
 
 { #category : #utilities }

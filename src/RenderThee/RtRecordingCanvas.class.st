@@ -408,6 +408,7 @@ RtRecordingCanvas >> reRecord: aMorph [
 { #category : #public }
 RtRecordingCanvas >> record: aMorph [
 
+	self layer morph: aMorph.
 	self
 		origin: aMorph position;
 		fullDrawInCurrentLayer: aMorph;

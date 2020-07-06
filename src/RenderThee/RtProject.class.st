@@ -7,6 +7,12 @@ Class {
 	#category : #'RenderThee-Project'
 }
 
+{ #category : #testing }
+RtProject >> canApplyUserInterfaceTheme [
+
+	^ false "for now"
+]
+
 { #category : #enter }
 RtProject >> finalEnterActions: leavingProject [
 

@@ -20,13 +20,14 @@ RtMirrorControl >> delete [
 { #category : #accessing }
 RtMirrorControl >> frameTime: milliseconds [
 
-	FileStream stdout
+	"FileStream stdout
 		nextPutAll: milliseconds asString;
-		lf
+		lf"
 ]
 
 { #category : #initialization }
 RtMirrorControl >> initialize [
+
 	super initialize.
 	self extent: 200@200.
 	

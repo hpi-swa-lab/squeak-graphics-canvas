@@ -7,13 +7,14 @@ Class {
 		'vbo',
 		'vao',
 		'mvpUniform',
+		'showOutlineUniform',
 		'currentFramebuffer',
 		'currentExtent'
 	],
 	#pools : [
 		'GLConstants'
 	],
-	#category : 'RenderThee-Core'
+	#category : #'RenderThee-Core'
 }
 
 { #category : #accessing }
@@ -44,23 +45,26 @@ out vec4 FragColor;
 in vec2 TexCoords;
 
 uniform sampler2D image;
+uniform bool showOutline;
 
 void main() {
-	/*if (any(lessThan(TexCoords.xy, vec2(0.01, 0.01))) ||
-	    any(greaterThan(TexCoords.xy, vec2(0.99, 0.99))))
-		FragColor = vec4(1.0, 0.0, 0.0, 1.0);
-	else*/
-
-     //FragColor = vec4(TexCoords.xy, 0.0, 0.3);
-     FragColor = texture(image, TexCoords);
+  if (showOutline) {
+    vec2 distToMid = abs(vec2(0.5, 0.5) - TexCoords);
+    float distToEdge = max(distToMid.x, distToMid.y);
+    float factor = clamp((distToEdge * 20.0) - 9.4, 0.0, 1.0); //0.0 -> 1.0 towards edge
+    FragColor = vec4(factor, 0.0, 0.0, factor)
+                  + texture(image, TexCoords);
+  }	else {
+    FragColor = texture(image, TexCoords);
+  }
 }' withUnixLineEndings
-
 ]
 
 { #category : #initialization }
 RtOpenGLRenderer >> initialize [
 	super initialize.
 	
+	ActiveWorld morphsToRedraw: nil.
 	RtRecordingCanvas record: ActiveWorld.
 	
 	ogl := GL3_3 newInGLFW: ActiveWorld bounds.
@@ -102,6 +106,8 @@ RtOpenGLRenderer >> initialize [
 			uniform: (ogl glGetUniformLocation: program id with: 'image')
 			value: 0.
 		
+		self showOutline: true.
+		
 		ogl checkForError ]
 ]
 
@@ -134,6 +140,7 @@ RtOpenGLRenderer >> initializeProgram [
 	ogl checkForError.
 		
 	mvpUniform := ogl glGetUniformLocation: program id with: 'mvp'.
+	showOutlineUniform := ogl glGetUniformLocation: program id with: 'showOutline'
 ]
 
 { #category : #initialization }
@@ -199,6 +206,14 @@ RtOpenGLRenderer >> renderLayer: aLayer flipVertical: aBoolean [
 { #category : #accessing }
 RtOpenGLRenderer >> shouldClose [
 	^ ogl shouldClose
+]
+
+{ #category : #accessing }
+RtOpenGLRenderer >> showOutline: aBoolean [
+
+	program
+		uniform: showOutlineUniform
+		value: aBoolean
 ]
 
 { #category : #shaders }

@@ -2,12 +2,13 @@ Class {
 	#name : #RtGroupLayer,
 	#superclass : #RtLayer,
 	#instVars : [
-		'children'
+		'children',
+		'morph'
 	],
 	#pools : [
 		'GLConstants'
 	],
-	#category : 'RenderThee-LayerTree'
+	#category : #'RenderThee-LayerTree'
 }
 
 { #category : #'instance creation' }
@@ -46,7 +47,7 @@ RtGroupLayer >> bounds [
 	^ self transform translation asPoint extent: self extent
 ]
 
-{ #category : #visiting }
+{ #category : #accessing }
 RtGroupLayer >> children [
 
 	^ children
@@ -85,6 +86,16 @@ RtGroupLayer >> layers [
 	^ children
 ]
 
+{ #category : #accessing }
+RtGroupLayer >> morph [
+	^ morph
+]
+
+{ #category : #accessing }
+RtGroupLayer >> morph: anObject [
+	morph := anObject
+]
+
 { #category : #drawing }
 RtGroupLayer >> restoreFramebufferOf: aRenderer after: aBlock [
 	| oldFramebuffer oldExtent ogl oldViewport ret |
@@ -104,6 +115,21 @@ RtGroupLayer >> restoreFramebufferOf: aRenderer after: aBlock [
 	ogl glViewport: oldViewport first with: oldViewport second with: oldViewport third with: oldViewport fourth.
 	
 	^ ret
+]
+
+{ #category : #initialization }
+RtGroupLayer >> update [
+
+	self
+		clear;
+		invalidateCache.
+		
+	self parent ifNotNil: [:parent |
+		self bounds: (morph bounds translateBy: parent bounds origin negated)].
+	
+	(RtRecordingCanvas layer: self) reRecord: morph.
+	
+	drawsSinceUpdate := 0
 ]
 
 { #category : #visiting }

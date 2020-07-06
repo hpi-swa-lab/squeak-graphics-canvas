@@ -37,6 +37,7 @@ RtOpenGLVisitor >> initialize: aRenderer [
 { #category : #helpers }
 RtOpenGLVisitor >> layer: aLayer during: aBlock [
 
+	aLayer incrementDrawCounter.
 	self matrix: matrix * aLayer transform during: aBlock
 ]
 

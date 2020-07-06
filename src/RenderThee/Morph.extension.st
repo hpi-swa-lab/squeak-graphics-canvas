@@ -130,15 +130,7 @@ Morph >> updateLayer [
 
 	self assert: self isRepaintBoundary.
 	
-	self groupLayer ifNotNil: [:layer |
-		layer
-			clear;
-			invalidateCache.
-		
-		layer parent ifNotNil: [:parent |
-			layer bounds: (self bounds translateBy: parent bounds origin negated)].
-		
-		(RtRecordingCanvas layer: layer) reRecord: self]
+	self groupLayer ifNotNil: [:layer | layer update]
 ]
 
 { #category : #'*RenderThee' }
