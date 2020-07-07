@@ -37,7 +37,6 @@ RtOpenGLVisitor >> initialize: aRenderer [
 { #category : #helpers }
 RtOpenGLVisitor >> layer: aLayer during: aBlock [
 
-	aLayer incrementDrawCounter.
 	self matrix: matrix * aLayer transform during: aBlock
 ]
 
@@ -84,7 +83,7 @@ RtOpenGLVisitor >> texturizeGroupLayer: aLayer [
 				glViewport: 0 with: 0 with: aLayer extent x with: aLayer extent y;
 				glClearColor: 1 with: 1 with: 1 with: 0;
 				glClear: GL_COLOR_BUFFER_BIT.
-			renderer renderLayer: aLayer flipVertical: false outlineColor: Color red].
+			renderer renderLayer: aLayer flipVertical: false outlineColor: false].
 		
 		framebuffer delete.
 		texture]
@@ -95,8 +94,10 @@ RtOpenGLVisitor >> visitDrawLayer: aLayer [
 
 	self layer: aLayer during: [
 		| texture |
-		texture := aLayer cache ifNil: [aLayer cache: (self texturizeDrawLayer: aLayer)].
-	
+		texture := aLayer cache ifNil: [
+			aLayer incrementDrawCounter.
+			aLayer cache: (self texturizeDrawLayer: aLayer)].
+		
 		drawCallback
 			value: matrix * (Matrix4x4 withScale: aLayer extent @ 1)
 			value: texture
@@ -110,11 +111,14 @@ RtOpenGLVisitor >> visitGroupLayer: aLayer [
 		aLayer isRasterized
 			ifTrue: [
 				| texture |
-				texture := aLayer cache ifNil: [aLayer cache: (self texturizeGroupLayer: aLayer)].
+				texture := aLayer cache ifNil: [
+					aLayer incrementDrawCounter.
+					aLayer cache: (self texturizeGroupLayer: aLayer)].
 				drawCallback
 					value: matrix * (Matrix4x4 withScale: aLayer extent @ 1)
 					value: texture
 					value: false]
 			ifFalse: [
+				aLayer incrementDrawCounter.
 				aLayer children do: [:child | child visit: self]]]
 ]

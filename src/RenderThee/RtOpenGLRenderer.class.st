@@ -156,7 +156,7 @@ RtOpenGLRenderer >> renderFrame [
 		
 		ogl glActiveTexture: GL_TEXTURE0.
 		
-		self renderLayer: ActiveWorld groupLayer flipVertical: true outlineColor: Color blue.
+		self renderLayer: ActiveWorld groupLayer flipVertical: true outlineColor: true.
 		
 		ogl checkForError. ]
 	
@@ -188,7 +188,7 @@ RtOpenGLRenderer >> renderLayer: aLayer flipVertical: aBoolean [
 ]
 
 { #category : #rendering }
-RtOpenGLRenderer >> renderLayer: aLayer flipVertical: aBoolean outlineColor: aColor [
+RtOpenGLRenderer >> renderLayer: aLayer flipVertical: aBoolean outlineColor: anOutlineBoolean [
 	| visitor |
 	self flag: #todo. "formatting & scoped bind possible ?"
 	visitor := RtOpenGLVisitor new: self.
@@ -196,10 +196,11 @@ RtOpenGLRenderer >> renderLayer: aLayer flipVertical: aBoolean outlineColor: aCo
 		rootMatrix: (Matrix4x4 ortho: (aBoolean ifTrue: [0 @ aLayer extent y corner: aLayer extent x @ 0] ifFalse: [0 @ 0 corner: aLayer extent]) near: 0 far: 1);
 		drawCallback: [:transform :texture :isDrawLayer |
 			self drawTexture: texture transform: transform.
-			self
-				drawOutline: "(isDrawLayer ifTrue: [Color green] ifFalse: [aColor])" (Color h: aLayer drawsCount * 0.1 \\ 360 s: 1 v: 1)
+			anOutlineBoolean ifTrue: [self
+				drawOutline: "(isDrawLayer ifTrue: [Color green] ifFalse: [aColor])"
+					(aLayer cache notNil ifTrue: [Color black] ifFalse: [Color h: aLayer drawsCount * 2 \\ 360 s: 1 v: 1])
 				extent: texture extent
-				transform: transform].
+				transform: transform]].
 	
 	aLayer children do: [ :child | child visit: visitor ].
 
