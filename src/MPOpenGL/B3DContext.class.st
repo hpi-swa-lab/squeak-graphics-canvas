@@ -49,6 +49,17 @@ B3DContext class >> primitiveSetVerboseLevel: newLevel [
 	<primitive:'primitiveSetVerboseLevel' module:'B3DAcceleratorPlugin'>
 ]
 
+{ #category : #activation }
+B3DContext >> activate [
+    "Hack! We can't make it explicitly but getting a property requires to have me current, so..."
+    self primRender: handle getProperty: 1.
+]
+
+{ #category : #activation }
+B3DContext >> deactivate [
+    "we can't really do that"
+]
+
 { #category : #'initialize-release' }
 B3DContext >> destroy [
 	self primDestroyRenderer: handle.

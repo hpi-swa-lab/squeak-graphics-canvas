@@ -29,7 +29,7 @@ GLFWContext >> destroy [
 
 { #category : #'initialize-release' }
 GLFWContext >> endFrame [
-	self makeCurrentDuring: [ GLFW pollEvents ]
+	GLFW pollEvents
 ]
 
 { #category : #'initialize-release' }
