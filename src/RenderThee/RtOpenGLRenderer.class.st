@@ -72,9 +72,11 @@ RtOpenGLRenderer >> initialize [
 			glClearColor: 1.0
 			with: 0.0
 			with: 1.0
-			with: 1.0.
+			with: 0.0.
 		ogl glEnable: GL_BLEND.
-		ogl glBlendFunc: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA.
+		"ogl glBlendFunc: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA."
+		"ogl glBlendFunc: GL_ONE with: GL_ONE."
+		ogl glBlendFuncSeparate:  GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA with: GL_ONE with: GL_ONE.
 		
 		
 		textureProgram use.
@@ -185,12 +187,11 @@ RtOpenGLRenderer >> renderLayer: aLayer flipVertical: aBoolean outlineColor: aCo
 	visitor rootMatrix: (Matrix4x4 ortho: (aBoolean ifTrue: [0 @ aLayer extent y corner: aLayer extent x @ 0] ifFalse: [0 @ 0 corner: aLayer extent]) near: 0 far: 1)
 		;
 			drawCallback: [:transform :texture :isDrawLayer |
+				self drawOutline: transform color: (isDrawLayer ifTrue: [Color green] ifFalse: [aColor]).
 				textureProgram use.
 				textureProgram mvp: transform.
 				texture bind.
-				vbo draw: GL_TRIANGLE_STRIP.
-				
-				self drawOutline: transform color: (isDrawLayer ifTrue: [Color green] ifFalse: [aColor])].
+				vbo draw: GL_TRIANGLE_STRIP].
 			
 	aLayer children do: [ :child | child visit: visitor ].
 

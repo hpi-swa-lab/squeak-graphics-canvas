@@ -15,7 +15,8 @@ Class {
 	#name : #GLFrameBuffer,
 	#superclass : #GLBuffer,
 	#instVars : [
-		'target'
+		'target',
+		'colorAttachment0'
 	],
 	#category : #'MPOpenGL-Core'
 }
@@ -85,6 +86,11 @@ GLFrameBuffer >> checkComplete [
 	self assert: ((gl glCheckFramebufferStatus: GL_FRAMEBUFFER) = GL_FRAMEBUFFER_COMPLETE)
 ]
 
+{ #category : #accessing }
+GLFrameBuffer >> colorAttachment0 [
+	^ colorAttachment0
+]
+
 { #category : #'initialize-release' }
 GLFrameBuffer >> delete [
 	"delete framebuffer object"
@@ -126,6 +132,8 @@ GLFrameBuffer >> texture2D: aTexture [
 GLFrameBuffer >> texture2D: aTexture attachment: anAttachment [
 	
 	self boundDuring: [
+		anAttachment = GL_COLOR_ATTACHMENT0 ifTrue: [
+			colorAttachment0 := aTexture ].
 		gl glFramebufferTexture2D: GL_FRAMEBUFFER
 			with: anAttachment
 			with: GL_TEXTURE_2D

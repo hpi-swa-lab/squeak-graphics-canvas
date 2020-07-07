@@ -1,7 +1,7 @@
 Class {
 	#name : #GL,
 	#superclass : #DynamicVariable,
-	#category : 'MPOpenGL-Core'
+	#category : #'MPOpenGL-Core'
 }
 
 { #category : #accessing }

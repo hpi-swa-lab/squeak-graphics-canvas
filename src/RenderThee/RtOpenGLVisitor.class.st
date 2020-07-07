@@ -81,8 +81,9 @@ RtOpenGLVisitor >> texturizeGroupLayer: aLayer [
 		
 		framebuffer boundDuring: [
 			ogl
+				glDisable: GL_DEPTH_TEST;
 				glViewport: 0 with: 0 with: aLayer extent x with: aLayer extent y;
-				glClearColor: 0.5 with: 1 with: 1 with: 1;
+				glClearColor: 1 with: 1 with: 1 with: 0;
 				glClear: GL_COLOR_BUFFER_BIT.
 			renderer renderLayer: aLayer flipVertical: false outlineColor: Color red].
 		
