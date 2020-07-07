@@ -3,17 +3,19 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'ogl',
-		'program',
 		'vbo',
 		'vao',
 		'mvpUniform',
 		'currentFramebuffer',
-		'currentExtent'
+		'currentExtent',
+		'textureProgram',
+		'outlineProgram',
+		'colorUniform'
 	],
 	#pools : [
 		'GLConstants'
 	],
-	#category : 'RenderThee-Core'
+	#category : #'RenderThee-Core'
 }
 
 { #category : #accessing }
@@ -36,31 +38,29 @@ RtOpenGLRenderer >> currentFramebuffer: anObject [
 	currentFramebuffer := anObject
 ]
 
-{ #category : #shaders }
-RtOpenGLRenderer >> fragmentShader [
-	^'#version 330 core
-out vec4 FragColor;
+{ #category : #rendering }
+RtOpenGLRenderer >> drawOutline: transformMatrix color: aColor [
+	| color |
 
-in vec2 TexCoords;
-
-uniform sampler2D image;
-
-void main() {
-	/*if (any(lessThan(TexCoords.xy, vec2(0.01, 0.01))) ||
-	    any(greaterThan(TexCoords.xy, vec2(0.99, 0.99))))
-		FragColor = vec4(1.0, 0.0, 0.0, 1.0);
-	else*/
-
-     //FragColor = vec4(TexCoords.xy, 0.0, 0.3);
-     FragColor = texture(image, TexCoords);
-}' withUnixLineEndings
-
+	outlineProgram use.
+	outlineProgram
+		uniform: mvpUniform
+		value: transformMatrix.
+		
+	color := FloatArray withAll: aColor rgbTriplet.
+	outlineProgram
+		uniform: colorUniform
+		value:  color.
+		vbo draw: GL_TRIANGLE_STRIP
+	
+	
 ]
 
 { #category : #initialization }
 RtOpenGLRenderer >> initialize [
 	super initialize.
 	
+	ActiveWorld morphsToRedraw: nil.
 	RtRecordingCanvas record: ActiveWorld.
 	
 	ogl := GL3_3 newInGLFW: ActiveWorld bounds.
@@ -69,7 +69,7 @@ RtOpenGLRenderer >> initialize [
 	
 	
 	ogl makeCurrentDuring: [
-		self initializeProgram.
+		self initializePrograms.
 		self initializeBuffers.
 		ogl glDisable: GL_CULL_FACE.
 		ogl glDisable: GL_DEPTH_TEST.
@@ -83,7 +83,7 @@ RtOpenGLRenderer >> initialize [
 		ogl glBlendFunc: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA.
 		
 		
-		program use.
+		textureProgram use.
 		ogl checkForError.
 		
 		vao bind.
@@ -92,14 +92,21 @@ RtOpenGLRenderer >> initialize [
 		ogl glBindBuffer: GL_ARRAY_BUFFER with: vbo id.
 		ogl checkForError.
 		
-		program vertexAttib: 0 value: vbo stride: 4 offset: 0.
+		textureProgram vertexAttib: 0 value: vbo stride: 4 offset: 0.
 		ogl checkForError.
 		
-		program vertexAttib: 1 value: vbo stride: 4 offset: 2.
+		textureProgram vertexAttib: 1 value: vbo stride: 4 offset: 2.
+		ogl checkForError.
+		
+		outlineProgram vertexAttib: 0 value: vbo stride: 4 offset: 0.
+		ogl checkForError.
+		
+		outlineProgram vertexAttib: 1 value: vbo stride: 4 offset: 2.
 		ogl checkForError.
 
-		program
-			uniform: (ogl glGetUniformLocation: program id with: 'image')
+
+		textureProgram
+			uniform: (ogl glGetUniformLocation: textureProgram id with: 'image')
 			value: 0.
 		
 		ogl checkForError ]
@@ -125,15 +132,12 @@ RtOpenGLRenderer >> initializeBuffers [
 ]
 
 { #category : #initialization }
-RtOpenGLRenderer >> initializeProgram [
-	program := GLProgram
-						context: ogl
-						shaders: {
-							VertexShader context: ogl code: self vertexShader.
-							FragmentShader context: ogl code: self fragmentShader }.
-	ogl checkForError.
+RtOpenGLRenderer >> initializePrograms [
+	textureProgram := RtTextureProgram cookWith: ogl.
+	outlineProgram := RtOutlineProgram cookWith: ogl.			 
 		
-	mvpUniform := ogl glGetUniformLocation: program id with: 'mvp'.
+	mvpUniform := ogl glGetUniformLocation: textureProgram id with: 'mvp'.
+	colorUniform := ogl glGetUniformLocation: outlineProgram id with: 'color'
 ]
 
 { #category : #initialization }
@@ -153,7 +157,7 @@ RtOpenGLRenderer >> renderFrame [
 		ogl glClear: GL_COLOR_BUFFER_BIT.
 		ogl checkForError.
 		
-		
+
 		
 		ogl glViewport: 0 with: 0 with: ActiveWorld width with: ActiveWorld height.
 		
@@ -161,7 +165,7 @@ RtOpenGLRenderer >> renderFrame [
 		
 		ogl glActiveTexture: GL_TEXTURE0.
 		
-		self renderLayer: ActiveWorld groupLayer flipVertical: true.
+		self renderLayer: ActiveWorld groupLayer flipVertical: true outlineColor: Color blue.
 		
 		ogl checkForError.
 		"--- end the end frame operations"
@@ -186,7 +190,8 @@ RtOpenGLRenderer >> renderLayer: aLayer flipVertical: aBoolean [
 	visitor rootMatrix: (Matrix4x4 ortho: (aBoolean ifTrue: [0 @ aLayer extent y corner: aLayer extent x @ 0] ifFalse: [0 @ 0 corner: aLayer extent]) near: 0 far: 1)
 		;
 			drawCallback: [:transform :texture |
-				program
+				textureProgram use.
+				textureProgram
 					uniform: mvpUniform
 					value: transform.
 				texture bind.
@@ -194,25 +199,32 @@ RtOpenGLRenderer >> renderLayer: aLayer flipVertical: aBoolean [
 			
 	aLayer children do: [ :child | child visit: visitor ].
 
+
+]
+
+{ #category : #rendering }
+RtOpenGLRenderer >> renderLayer: aLayer flipVertical: aBoolean outlineColor: aColor [
+	| visitor |
+	self flag: #todo. "formatting & scoped bind possible ?"
+	visitor := RtOpenGLVisitor new: self.
+	visitor rootMatrix: (Matrix4x4 ortho: (aBoolean ifTrue: [0 @ aLayer extent y corner: aLayer extent x @ 0] ifFalse: [0 @ 0 corner: aLayer extent]) near: 0 far: 1)
+		;
+			drawCallback: [:transform :texture :isDrawLayer |
+				textureProgram use.
+				textureProgram
+					uniform: mvpUniform
+					value: transform.
+				texture bind.
+				vbo draw: GL_TRIANGLE_STRIP.
+				
+				self drawOutline: transform color: (isDrawLayer ifTrue: [Color green] ifFalse: [aColor])].
+			
+	aLayer children do: [ :child | child visit: visitor ].
+
+
 ]
 
 { #category : #accessing }
 RtOpenGLRenderer >> shouldClose [
 	^ ogl shouldClose
-]
-
-{ #category : #shaders }
-RtOpenGLRenderer >> vertexShader [
-	^'#version 330 core
-layout (location = 0) in vec2 aPos;
-layout (location = 1) in vec2 aTexCoords;
-
-uniform mat4 mvp;
-out vec2 TexCoords;
-
-void main()
-{
-    TexCoords = aTexCoords;
-    gl_Position = mvp * vec4(aPos, 0.0, 1.0);
-}' withUnixLineEndings
 ]

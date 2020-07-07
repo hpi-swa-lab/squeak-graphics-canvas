@@ -5,7 +5,7 @@ Class {
 		'saveStack',
 		'transform'
 	],
-	#category : #'RenderThee-CanvasCommands'
+	#category : 'RenderThee-CanvasCommands'
 }
 
 { #category : #accessing }

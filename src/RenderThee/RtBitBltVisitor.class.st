@@ -1,14 +1,14 @@
 Class {
-	#name : #RtRasterizeVisitor,
+	#name : #RtBitBltVisitor,
 	#superclass : #RtLayerTreeVisitor,
 	#instVars : [
 		'canvas'
 	],
-	#category : 'RenderThee-LayerTree'
+	#category : #'RenderThee-LayerTree'
 }
 
 { #category : #'instance creation' }
-RtRasterizeVisitor class >> canvas: aCanvas [
+RtBitBltVisitor class >> canvas: aCanvas [
 
 	^ self new
 		canvas: aCanvas;
@@ -16,13 +16,13 @@ RtRasterizeVisitor class >> canvas: aCanvas [
 ]
 
 { #category : #accessing }
-RtRasterizeVisitor >> canvas: aCanvas [
+RtBitBltVisitor >> canvas: aCanvas [
 
 	canvas := aCanvas
 ]
 
 { #category : #visiting }
-RtRasterizeVisitor >> visitChildLayer: aLayer [
+RtBitBltVisitor >> visitChildLayer: aLayer [
 
 	canvas save.
 	canvas clipRect: aLayer clipRect.
@@ -34,14 +34,14 @@ RtRasterizeVisitor >> visitChildLayer: aLayer [
 ]
 
 { #category : #visiting }
-RtRasterizeVisitor >> visitDrawLayer: aLayer [
+RtBitBltVisitor >> visitDrawLayer: aLayer [
 
 	aLayer commands do: [:cmd |
 		cmd drawOn: canvas]
 ]
 
 { #category : #visiting }
-RtRasterizeVisitor >> visitGroupLayer: aLayer [
+RtBitBltVisitor >> visitGroupLayer: aLayer [
 
 	aLayer children do: [:childLayer |
 		self visitChildLayer: childLayer]

@@ -4,8 +4,14 @@ Class {
 	#instVars : [
 		'ogl'
 	],
-	#category : #'RenderThee-Project'
+	#category : 'RenderThee-Project'
 }
+
+{ #category : #testing }
+RtProject >> canApplyUserInterfaceTheme [
+
+	^ false "for now"
+]
 
 { #category : #enter }
 RtProject >> finalEnterActions: leavingProject [
