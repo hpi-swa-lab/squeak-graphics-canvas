@@ -18,10 +18,24 @@ GLTexture >> delete [
 	gl glDeleteTextures: 1 with: texIDs
 ]
 
-{ #category : #binding }
+{ #category : #accessing }
 GLTexture >> extent [
+	^ self width @ self height
+]
 
-	^ 30 @ 30
+{ #category : #accessing }
+GLTexture >> getTextureParameterI: parameter [
+	| array |
+	self bind.
+	array := IntegerArray new: 1.
+	gl glGetTexLevelParameteriv: GL_TEXTURE_2D with: 0 with: parameter with: array.
+	self unbind.
+	^ array first
+]
+
+{ #category : #accessing }
+GLTexture >> height [
+	^ self getTextureParameterI: GL_TEXTURE_HEIGHT
 ]
 
 { #category : #'initialize-release' }
@@ -67,8 +81,8 @@ GLTexture >> texImageExtent: aPoint [
 				glTexImage2D: GL_TEXTURE_2D
 				with: 0
 				with: GL_RGBA
-				with: aPoint x
-				with: aPoint y
+				with: aPoint x truncated
+				with: aPoint y truncated
 				with: 0
 				with: GL_BGRA
 				with: GL_UNSIGNED_BYTE
@@ -88,4 +102,9 @@ GLTexture >> texImageExtent: aPoint [
 GLTexture >> unbind [
 
 	gl glBindTexture: GL_TEXTURE_2D with: GL_NONE
+]
+
+{ #category : #accessing }
+GLTexture >> width [
+	^ self getTextureParameterI: GL_TEXTURE_WIDTH
 ]
