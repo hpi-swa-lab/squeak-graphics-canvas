@@ -67,6 +67,16 @@ GLShaderRecipeTest >> testShaderRecipe [
 	
 ]
 
+{ #category : #testing }
+GLShaderRecipeTest >> testValidRecipeProducesValidProgram [
+	"given"
+	"when"
+	| program |
+	program := self workingShaderExample buildFor: gl.
+	"then"
+	self assert: program shaders size equals: 2.
+]
+
 { #category : #reference }
 GLShaderRecipeTest >> workingShaderExample [
 	^ RtTextureProgram 

@@ -15,8 +15,8 @@ Class {
 
 { #category : #binding }
 GLVertexBufferObject >> bind [
-
-	self notYetImplemented
+	"bind a vbo"
+	gl glBindBuffer: GL_ARRAY_BUFFER with: id
 ]
 
 { #category : #accessing }
@@ -126,6 +126,6 @@ GLVertexBufferObject >> numElements: anObject [
 
 { #category : #binding }
 GLVertexBufferObject >> unbind [
-
-	self notYetImplemented
+	"unbind a vbo"
+	gl glBindBuffer: GL_ARRAY_BUFFER with: GL_NONE 
 ]
