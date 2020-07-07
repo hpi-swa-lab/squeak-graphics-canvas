@@ -11,7 +11,7 @@ Class {
 	#superclass : #ExternalLibrary,
 	#instVars : [
 		'platform',
-		'myHandle',
+		'context',
 		'usesGLFW'
 	],
 	#pools : [
@@ -19,11 +19,6 @@ Class {
 	],
 	#category : #'MPOpenGL-Core'
 }
-
-{ #category : #'instance creation' }
-OpenGL class >> defaultFlags [
-	^ 1 "B3DSoftwareRenderer" + 2 "B3DHardwareRenderer" + 4 "B3DStencilBuffer" 
-]
 
 { #category : #example }
 OpenGL class >> example [	"OpenGL example"
@@ -191,11 +186,6 @@ OpenGL class >> initialize [
 
 ]
 
-{ #category : #primitives }
-OpenGL class >> isB3DAvailable [
-	^self pluginVersion > 0
-]
-
 { #category : #accessing }
 OpenGL class >> moduleName [
 
@@ -204,39 +194,18 @@ OpenGL class >> moduleName [
 
 { #category : #'instance creation' }
 OpenGL class >> newB3DIn: bounds [
-	^self newB3DIn: bounds flags: self defaultFlags
-]
-
-{ #category : #'instance creation' }
-OpenGL class >> newB3DIn: bounds flags: flags [
-	^(self new) initializeB3DIn: bounds flags: flags
+	| inst |
+	inst := self new.
+	inst context: (B3DContext newIn: bounds).
+	^ inst
 ]
 
 { #category : #'class initialization' }
 OpenGL class >> newGLFWIn: bounds [
-	^ (self new) initializeGLFWIn: bounds
-]
-
-{ #category : #primitives }
-OpenGL class >> pluginVersion [
-	"OpenGL pluginVersion"
-	<primitive:'primitiveRendererVersion' module:'B3DAcceleratorPlugin'>
-	^0
-]
-
-{ #category : #primitives }
-OpenGL class >> primitiveSetVerboseLevel: newLevel [
-	"Primitive. Set the reporting level for the engine. Values are
-		0 - print NO information ever
-		1 - print critical debug errors
-		2 - print debug warnings
-		3 - print extra information
-		4 - print extra warnings
-		5 - print information about primitive execution
-
-	   10 - print information about each vertex and face
-	"
-	<primitive:'primitiveSetVerboseLevel' module:'B3DAcceleratorPlugin'>
+	| inst |
+	inst := self new.
+	inst context: (GLFWContext newIn: bounds for: inst).
+	^ inst
 ]
 
 { #category : #'class initialization' }
@@ -245,7 +214,7 @@ OpenGL class >> shutDown [
 
 ]
 
-{ #category : #initialize }
+{ #category : #'initialize-release' }
 OpenGL >> beginFrame [
 	self glPixelStorei: GL_UNPACK_ALIGNMENT with: 4.
 	platform beginFrame: self
@@ -261,16 +230,26 @@ OpenGL >> checkForError [
 
 ]
 
-{ #category : #initialize }
-OpenGL >> destroy [
-	usesGLFW ifTrue: [ GLFW destroyWindow: myHandle ].
-	self primDestroyRenderer: myHandle.
-	myHandle := nil.
+{ #category : #accessing }
+OpenGL >> context [
+	^ context
 ]
 
-{ #category : #initialize }
+{ #category : #accessing }
+OpenGL >> context: anObject [
+	context := anObject
+]
+
+{ #category : #'initialize-release' }
+OpenGL >> destroy [
+	context ifNotNil: [ context destroy ].
+	context := nil
+
+]
+
+{ #category : #'initialize-release' }
 OpenGL >> endFrame [
-	usesGLFW ifTrue: [GLFW pollEvents]
+	context endFrame
 ]
 
 { #category : #'as yet unclassified' }
@@ -1168,106 +1147,28 @@ OpenGL >> gluErrorString: error [
 
 ]
 
-{ #category : #initialize }
+{ #category : #'initialize-release' }
 OpenGL >> initialize [
 	platform := GLPlatform identifyPlatform new.
 	super initialize.
 ]
 
-{ #category : #initialize }
-OpenGL >> initializeB3DIn: bounds [
-	^self initializeB3DIn: bounds flags: self class defaultFlags
-]
-
-{ #category : #initialize }
-OpenGL >> initializeB3DIn: bounds flags: flags [
-	"flag is a bitwise OR of
-	1	B3DSoftwareRenderer
-	2	B3DHardwareRenderer
-	4	B3DStencilBuffer
-	8	B3DAntialiasing
-	16	B3DStereo
-	32	B3DSyncvbl"
-	usesGLFW := false.
-	myHandle := self primCreateRenderer: flags x: bounds left y: bounds top w: bounds width h: bounds height.
-	^myHandle ifNotNil: [self]
-]
-
-{ #category : #initialize }
-OpenGL >> initializeGLFWIn: bounds [
-	usesGLFW := true.
-	
-	GLFW init.
-	GLFW windowHint: GLFW CONTEXT_VERSION_MAJOR value: self majorVersion.
-	GLFW windowHint: GLFW CONTEXT_VERSION_MINOR value: self minorVersion.
-	
-	myHandle := GLFW createWindowWidth: bounds width height: bounds height title: 'GLFW Window' monitor: nil share: nil.
-	self makeCurrentDuring: [GLFW swapInterval: 1].
-	
-	"GLFW setCursorPosCallback: myHandle with: (Callback signature: #(void (*)(const void *, double, double)) block: [:win :x :y | Transcript showln: {'move'. x. y}]) thunk.
-	GLFW setMouseButtonCallback: myHandle with: (Callback signature: #(void (*)(const void *, int, int, int)) block: [:win :x :y :z | Transcript showln: {'click'. x. y. z}]) thunk."
-	
-	^myHandle ifNotNil: [self]
-
-]
-
-{ #category : #accessing }
+{ #category : #activation }
 OpenGL >> makeCurrentDuring: aBlock [
 	| oldContext |
-	oldContext := GLFW getCurrentContext.
-	[ GLFW makeContextCurrent: self glfwWindow.
-		GL value: self during: aBlock ] ensure: [ GLFW makeContextCurrent: oldContext ]
-]
-
-{ #category : #primitives }
-OpenGL >> primCreateRenderer: flags x: x y: y w: w h: h [
-	<primitive: 'primitiveCreateRendererFlags' module:'B3DAcceleratorPlugin'>
-	^nil
-]
-
-{ #category : #primitives }
-OpenGL >> primDestroyRenderer: aHandle [
-	<primitive: 'primitiveDestroyRenderer' module:'B3DAcceleratorPlugin'>
-	^nil
-]
-
-{ #category : #primitives }
-OpenGL >> primRender: aHandle getProperty: propNumber [
-	"Primitive. Get some property."
-	<primitive:'primitiveGetIntProperty' module:'B3DAcceleratorPlugin'>
-	^nil
-]
-
-{ #category : #primitives }
-OpenGL >> primRender: aHandle setBufferRectX: left y: top w: width h: height [
-	<primitive:'primitiveSetBufferRect' module:'B3DAcceleratorPlugin'>
-	^nil
-]
-
-{ #category : #primitives }
-OpenGL >> primRender: aHandle setProperty: propNumber toInteger: value [
-	"Primitive. Set some property."
-	<primitive:'primitiveSetIntProperty' module:'B3DAcceleratorPlugin'>
-	^nil
-]
-
-{ #category : #primitives }
-OpenGL >> primSwapBuffers: aHandle [
-	"Primitive. Finish all rendering operations on the receiver.
-	Do not return before all rendering operations have taken effect."
-	<primitive: 'primitiveSwapRendererBuffers' module:'B3DAcceleratorPlugin'>
-	^nil
+	oldContext := GL value ifNotNil: [ :gl | gl context deactivate ].
+	context activate.
+	[ GL value: self during: aBlock ] ensure: [
+		context deactivate.
+		oldContext ifNotNil: [ :ctx | ctx activate ]]
 ]
 
 { #category : #accessing }
 OpenGL >> shouldClose [
-
-    ^ usesGLFW ifTrue: [(GLFW windowShouldClose: myHandle) ~= 0] ifFalse: [false]
+	^ context shouldClose
 ]
 
-{ #category : #initialize }
+{ #category : #'initialize-release' }
 OpenGL >> swapBuffers [
-	"Swap the receiver's buffers. Return true if successful, false otherwise"
-	usesGLFW ifTrue: [^ GLFW swapBuffers: self glfwWindow].
-	^(self primSwapBuffers: myHandle) notNil
+	context swapBuffers
 ]

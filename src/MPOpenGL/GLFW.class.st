@@ -114,7 +114,7 @@ GLFW class >> setMouseButtonCallback: anExternalData with: aBlockClosure [
 
 { #category : #'as yet unclassified' }
 GLFW class >> startUp [
-	"self init"
+	[ self init ] on: Error do: [ "do nothing" ]
 ]
 
 { #category : #'as yet unclassified' }

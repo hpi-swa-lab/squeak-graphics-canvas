@@ -9,7 +9,7 @@ Class {
 
 { #category : #initialize }
 GLWindowsPlatform >> beginFrame: aGLInstance [
-	aGLInstance glPixelStorei: GL_UNPACK_LSB_FIRST with: 0.
+	aGLInstance glPixelStorei: GL_UNPACK_LSB_FIRST with: GL_FALSE.
 
 ]
 

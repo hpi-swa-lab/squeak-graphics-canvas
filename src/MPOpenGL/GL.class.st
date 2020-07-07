@@ -14,5 +14,5 @@ GL class >> activate: aContext during: aBlock [
 
 { #category : #accessing }
 GL class >> default [
-	self error: 'There is no active OpenGL context'
+	^ nil
 ]
