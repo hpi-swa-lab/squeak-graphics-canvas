@@ -4,7 +4,7 @@ Class {
 	#pools : [
 		'OpenGLConstants'
 	],
-	#category : 'RenderThee-Project'
+	#category : #'RenderThee-Project'
 }
 
 { #category : #canvas }
@@ -51,8 +51,8 @@ RtWorldState >> displayWorld: aWorld submorphs: submorphs [
 	ogl glBindBuffer: ogl GL_ARRAY_BUFFER with: aWorld vbo id.
 	aWorld program
 		use;
-		vertexAttib: 0 value: aWorld vbo stride: 4 offset: 0;
-		vertexAttib: 1 value: aWorld vbo stride: 4 offset: 2;
+		vertexAttrib: 0 value: aWorld vbo stride: 4 offset: 0;
+		vertexAttrib: 1 value: aWorld vbo stride: 4 offset: 2;
 		uniform: 0 value: (Matrix4x4 withRotation: 90.0 around: 0@0@1).
 	aWorld vbo draw: ogl GL_TRIANGLE_STRIP.
 	ogl

@@ -58,9 +58,10 @@ GLShaderRecipeTest >> testGeneratingTestShaderRecipe [
 { #category : #testing }
 GLShaderRecipeTest >> testShaderRecipe [
 	| program |
+	self flag: #todo. "naming shader recipe obsolete"
 	"given"
 	"when"
-	program := self workingShaderExample cookWith: gl.
+	program := self workingShaderExample context: gl.
 	"then"
 	self assert: (program isKindOf: self glObject)
 	
@@ -68,5 +69,5 @@ GLShaderRecipeTest >> testShaderRecipe [
 
 { #category : #reference }
 GLShaderRecipeTest >> workingShaderExample [
-	^SqueakBaseShaderRecipe 
+	^ RtTextureProgram 
 ]

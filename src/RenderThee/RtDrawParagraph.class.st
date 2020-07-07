@@ -6,7 +6,7 @@ Class {
 		'color',
 		'paragraph'
 	],
-	#category : 'RenderThee-CanvasCommands'
+	#category : #'RenderThee-CanvasCommands'
 }
 
 { #category : #'instance creation' }

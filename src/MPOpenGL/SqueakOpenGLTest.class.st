@@ -148,9 +148,9 @@ SqueakOpenGLTest >> test_blurredExample [
 			vao bind.
 			ogl glBindBuffer: GL_ARRAY_BUFFER with: vbo id.
 			ogl checkForError.
-			program vertexAttib: 0 value: vbo stride: 4 offset: 0.
+			program vertexAttrib: 0 value: vbo stride: 4 offset: 0.
 			ogl checkForError.
-			program vertexAttib: 1 value: vbo stride: 4 offset: 2.
+			program vertexAttrib: 1 value: vbo stride: 4 offset: 2.
 			ogl checkForError.
 			program
 				uniform: (ogl glGetUniformLocation: program id with: 'mvp')
@@ -244,9 +244,9 @@ SqueakOpenGLTest >> test_example [
 			vao bind.
 			ogl glBindBuffer: GL_ARRAY_BUFFER with: vbo id.
 			ogl checkForError.
-			program vertexAttib: 0 value: vbo stride: 4 offset: 0.
+			program vertexAttrib: 0 value: vbo stride: 4 offset: 0.
 			ogl checkForError.
-			program vertexAttib: 1 value: vbo stride: 4 offset: 2.
+			program vertexAttrib: 1 value: vbo stride: 4 offset: 2.
 			ogl checkForError.
 			program
 				uniform: (ogl glGetUniformLocation: program id with: 'mvp')

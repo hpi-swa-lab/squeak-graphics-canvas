@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'vertices'
 	],
-	#category : 'RenderThee-CanvasCommands'
+	#category : #'RenderThee-CanvasCommands'
 }
 
 { #category : #'instance creation' }

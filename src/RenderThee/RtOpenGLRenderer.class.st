@@ -5,12 +5,10 @@ Class {
 		'ogl',
 		'vbo',
 		'vao',
-		'mvpUniform',
 		'currentFramebuffer',
 		'currentExtent',
 		'textureProgram',
-		'outlineProgram',
-		'colorUniform'
+		'outlineProgram'
 	],
 	#pools : [
 		'GLConstants'
@@ -43,15 +41,11 @@ RtOpenGLRenderer >> drawOutline: transformMatrix color: aColor [
 	| color |
 
 	outlineProgram use.
-	outlineProgram
-		uniform: mvpUniform
-		value: transformMatrix.
+	outlineProgram mvp: transformMatrix.
 		
 	color := FloatArray withAll: aColor rgbTriplet.
-	outlineProgram
-		uniform: colorUniform
-		value:  color.
-		vbo draw: GL_TRIANGLE_STRIP
+	outlineProgram color: color.
+	vbo draw: GL_TRIANGLE_STRIP
 	
 	
 ]
@@ -92,24 +86,19 @@ RtOpenGLRenderer >> initialize [
 		ogl glBindBuffer: GL_ARRAY_BUFFER with: vbo id.
 		ogl checkForError.
 		
-		textureProgram vertexAttib: 0 value: vbo stride: 4 offset: 0.
+		textureProgram image: 0.
+		
+		textureProgram vertexAttrib: textureProgram aPosLocation value: vbo stride: 4 offset: 0.
 		ogl checkForError.
 		
-		textureProgram vertexAttib: 1 value: vbo stride: 4 offset: 2.
+		textureProgram vertexAttrib: textureProgram aTexCoordsLocation value: vbo stride: 4 offset: 2.
 		ogl checkForError.
 		
-		outlineProgram vertexAttib: 0 value: vbo stride: 4 offset: 0.
+		outlineProgram vertexAttrib: textureProgram aPosLocation value: vbo stride: 4 offset: 0.
 		ogl checkForError.
 		
-		outlineProgram vertexAttib: 1 value: vbo stride: 4 offset: 2.
-		ogl checkForError.
-
-
-		textureProgram
-			uniform: (ogl glGetUniformLocation: textureProgram id with: 'image')
-			value: 0.
-		
-		ogl checkForError ]
+		outlineProgram vertexAttrib: textureProgram aTexCoordsLocation value: vbo stride: 4 offset: 2.
+		ogl checkForError]
 ]
 
 { #category : #initialization }
@@ -133,11 +122,9 @@ RtOpenGLRenderer >> initializeBuffers [
 
 { #category : #initialization }
 RtOpenGLRenderer >> initializePrograms [
-	textureProgram := RtTextureProgram cookWith: ogl.
-	outlineProgram := RtOutlineProgram cookWith: ogl.			 
-		
-	mvpUniform := ogl glGetUniformLocation: textureProgram id with: 'mvp'.
-	colorUniform := ogl glGetUniformLocation: outlineProgram id with: 'color'
+
+	textureProgram := RtTextureProgram context: ogl.
+	outlineProgram := RtOutlineProgram context: ogl
 ]
 
 { #category : #initialization }
@@ -191,9 +178,7 @@ RtOpenGLRenderer >> renderLayer: aLayer flipVertical: aBoolean [
 		;
 			drawCallback: [:transform :texture |
 				textureProgram use.
-				textureProgram
-					uniform: mvpUniform
-					value: transform.
+				textureProgram mvp: transform.
 				texture bind.
 				vbo draw: GL_TRIANGLE_STRIP].
 			
@@ -211,9 +196,7 @@ RtOpenGLRenderer >> renderLayer: aLayer flipVertical: aBoolean outlineColor: aCo
 		;
 			drawCallback: [:transform :texture :isDrawLayer |
 				textureProgram use.
-				textureProgram
-					uniform: mvpUniform
-					value: transform.
+				textureProgram mvp: transform.
 				texture bind.
 				vbo draw: GL_TRIANGLE_STRIP.
 				
