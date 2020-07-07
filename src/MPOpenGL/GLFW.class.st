@@ -1,7 +1,7 @@
 Class {
 	#name : #GLFW,
 	#superclass : #Object,
-	#category : #'MPOpenGL-Core'
+	#category : 'MPOpenGL-Core'
 }
 
 { #category : #primitive }

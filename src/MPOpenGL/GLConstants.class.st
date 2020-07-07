@@ -1798,7 +1798,7 @@ Class {
 		'GL_ZOOM_X',
 		'GL_ZOOM_Y'
 	],
-	#category : #'MPOpenGL-Constants'
+	#category : 'MPOpenGL-Constants'
 }
 
 { #category : #accessing }

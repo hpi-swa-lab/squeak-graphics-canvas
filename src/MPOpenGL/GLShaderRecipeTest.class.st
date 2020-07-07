@@ -8,7 +8,7 @@ Class {
 		'GLConstants',
 		'OpenGLConstants'
 	],
-	#category : 'MPOpenGL-Test'
+	#category : #'MPOpenGL-Test'
 }
 
 { #category : #reference }
@@ -64,6 +64,16 @@ GLShaderRecipeTest >> testShaderRecipe [
 	"then"
 	self assert: (program isKindOf: self glObject)
 	
+]
+
+{ #category : #testing }
+GLShaderRecipeTest >> testValidRecipeProducesValidProgram [
+	"given"
+	"when"
+	| program |
+	program := self workingShaderExample buildFor: gl.
+	"then"
+	self assert: program shaders size equals: 2.
 ]
 
 { #category : #reference }

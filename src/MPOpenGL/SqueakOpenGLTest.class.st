@@ -9,7 +9,7 @@ Class {
 		'GLConstants',
 		'OpenGLConstants'
 	],
-	#category : 'MPOpenGL-Test'
+	#category : #'MPOpenGL-Test'
 }
 
 { #category : #utility }
