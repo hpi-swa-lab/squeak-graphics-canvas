@@ -11,7 +11,7 @@ GLShaderRecipe class >> build [
 
 { #category : #usage }
 GLShaderRecipe class >> buildFor: gl [ 
-	^self new buildFor: gl; yourself
+	^self new buildFor: gl
 ]
 
 { #category : #usage }
@@ -23,7 +23,7 @@ GLShaderRecipe class >> cook [
 { #category : #usage }
 GLShaderRecipe class >> cookWith: glContext [
 
-	self buildFor: glContext
+	^self buildFor: glContext
 ]
 
 { #category : #usage }

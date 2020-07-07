@@ -127,7 +127,7 @@ RtLayer >> rasterizeForm [
 
 	| fc |
 	fc := RtFormCanvas extent: extent.
-	self visit: (RtRasterizeVisitor canvas: fc).
+	self visit: (RtBitBltVisitor canvas: fc).
 	^ fc form
 ]
 
