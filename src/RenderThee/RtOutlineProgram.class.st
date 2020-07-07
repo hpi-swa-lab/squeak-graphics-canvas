@@ -5,7 +5,8 @@ Class {
 		'colorLocation',
 		'mvpLocation',
 		'aPosLocation',
-		'aTexCoordsLocation'
+		'aTexCoordsLocation',
+		'aTextureSize'
 	],
 	#category : #'RenderThee-Core'
 }
@@ -17,13 +18,16 @@ out vec4 FragColor;
 
 in vec2 TexCoords;
 
+uniform vec2 aTextureSize;
 uniform vec3 color;
 
 void main() {
-  vec2 distToMid = abs(vec2(0.5, 0.5) - TexCoords);
-    float distToEdge = max(distToMid.x, distToMid.y);
-  float factor = clamp((distToEdge * 20.0) - 9.4, 0.0, 1.0); //0.0 -> 1.0 towards edge
-  FragColor = vec4(color, factor);
+	vec2 point = aTextureSize * TexCoords;
+	if (any(greaterThan(vec2(1, 1), point)) || any(lessThan(aTextureSize, point))) {
+		FragColor = vec4(color, 1.0);
+	} else {
+		discard;
+	}
 }' withUnixLineEndings
 ]
 
@@ -75,6 +79,9 @@ RtOutlineProgram >> initializeLocations [
 	self assert: mvpLocation >= 0.
 	colorLocation := gl glGetUniformLocation: id with: 'color'.
 	self assert: colorLocation >= 0.
+	aTextureSize := gl glGetUniformLocation: id with: 'aTextureSize'.
+	self assert: aTextureSize >= 0.
+	
 	aPosLocation := gl glGetAttribLocation: id with: 'aPos'.
 	self assert: aPosLocation >= 0.
 	aTexCoordsLocation := gl glGetAttribLocation: id with: 'aTexCoords'.
@@ -91,4 +98,10 @@ RtOutlineProgram >> mvp: anObject [
 RtOutlineProgram >> mvpLocation [
 
 	^ mvpLocation
+]
+
+{ #category : #initialization }
+RtOutlineProgram >> textureSize: aPoint [
+
+	self uniform: aTextureSize value: aPoint
 ]

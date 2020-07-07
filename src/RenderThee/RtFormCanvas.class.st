@@ -28,7 +28,7 @@ RtFormCanvas >> initialize [
 	transform := Matrix4x4 identity
 ]
 
-{ #category : #'saving \/ restoring' }
+{ #category : #'saving / restoring' }
 RtFormCanvas >> restore [
 
 	| pop |
@@ -38,13 +38,13 @@ RtFormCanvas >> restore [
 	self setTransform: pop second
 ]
 
-{ #category : #'saving \/ restoring' }
+{ #category : #'saving / restoring' }
 RtFormCanvas >> save [
 
 	saveStack add: { clipRect . transform . form }
 ]
 
-{ #category : #'saving \/ restoring' }
+{ #category : #'saving / restoring' }
 RtFormCanvas >> saveLayer: bounds [
 
 	self notYetImplemented.

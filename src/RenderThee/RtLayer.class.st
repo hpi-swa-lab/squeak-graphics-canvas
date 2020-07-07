@@ -8,7 +8,8 @@ Class {
 		'drawTime',
 		'rasterizationTime',
 		'drawsSinceInvalidation',
-		'drawsSinceUpdate'
+		'drawsSinceUpdate',
+		'drawsCount'
 	],
 	#category : #'RenderThee-LayerTree'
 }
@@ -48,6 +49,12 @@ RtLayer >> clipRect [
 RtLayer >> drawOn: canvas [
 ]
 
+{ #category : #visiting }
+RtLayer >> drawsCount [
+
+	^ drawsCount
+]
+
 { #category : #accessing }
 RtLayer >> drawsSinceInvalidation [
 	^ drawsSinceInvalidation
@@ -84,7 +91,8 @@ RtLayer >> extent: anObject [
 RtLayer >> incrementDrawCounter [
 
 	drawsSinceUpdate := drawsSinceUpdate + 1.
-	drawsSinceInvalidation := drawsSinceInvalidation + 1
+	drawsSinceInvalidation := drawsSinceInvalidation + 1.
+	drawsCount := drawsCount + 1
 ]
 
 { #category : #initialization }
@@ -92,7 +100,8 @@ RtLayer >> initialize [
 
 	super initialize.
 	drawsSinceUpdate := 0.
-	drawsSinceInvalidation := 0
+	drawsSinceInvalidation := 0.
+	drawsCount := 0
 ]
 
 { #category : #compositing }

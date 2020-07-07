@@ -18,6 +18,12 @@ GLTexture >> delete [
 	gl glDeleteTextures: 1 with: texIDs
 ]
 
+{ #category : #binding }
+GLTexture >> extent [
+
+	^ 30 @ 30
+]
+
 { #category : #'initialize-release' }
 GLTexture >> initializeWith: glContext [
 

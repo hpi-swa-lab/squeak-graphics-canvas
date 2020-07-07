@@ -37,17 +37,27 @@ RtOpenGLRenderer >> currentFramebuffer: anObject [
 ]
 
 { #category : #rendering }
-RtOpenGLRenderer >> drawOutline: transformMatrix color: aColor [
+RtOpenGLRenderer >> drawOutline: aColor extent: aPoint transform: transformMatrix [
 	| color |
 
 	outlineProgram use.
 	outlineProgram mvp: transformMatrix.
-		
+	
 	color := FloatArray withAll: aColor rgbTriplet.
+	outlineProgram textureSize: aPoint.
 	outlineProgram color: color.
 	vbo draw: GL_TRIANGLE_STRIP
 	
 	
+]
+
+{ #category : #rendering }
+RtOpenGLRenderer >> drawTexture: texture transform: transform [
+
+	textureProgram use.
+	textureProgram mvp: transform.
+	texture bind.
+	vbo draw: GL_TRIANGLE_STRIP.
 ]
 
 { #category : #initialization }
@@ -69,12 +79,12 @@ RtOpenGLRenderer >> initialize [
 		ogl glDisable: GL_DEPTH_TEST.
 		ogl glActiveTexture: GL_TEXTURE0.
 		ogl
-			glClearColor: 1.0
-			with: 0.0
-			with: 1.0
-			with: 1.0.
+			glClearColor: 1
+			with: 1
+			with: 1
+			with: 0.
 		ogl glEnable: GL_BLEND.
-		ogl glBlendFunc: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA.
+		ogl glBlendFuncSeparate: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA with: GL_ONE with: GL_ONE.
 		
 		
 		textureProgram use.
@@ -182,16 +192,15 @@ RtOpenGLRenderer >> renderLayer: aLayer flipVertical: aBoolean outlineColor: aCo
 	| visitor |
 	self flag: #todo. "formatting & scoped bind possible ?"
 	visitor := RtOpenGLVisitor new: self.
-	visitor rootMatrix: (Matrix4x4 ortho: (aBoolean ifTrue: [0 @ aLayer extent y corner: aLayer extent x @ 0] ifFalse: [0 @ 0 corner: aLayer extent]) near: 0 far: 1)
-		;
-			drawCallback: [:transform :texture :isDrawLayer |
-				textureProgram use.
-				textureProgram mvp: transform.
-				texture bind.
-				vbo draw: GL_TRIANGLE_STRIP.
-				
-				self drawOutline: transform color: (isDrawLayer ifTrue: [Color green] ifFalse: [aColor])].
-			
+	visitor
+		rootMatrix: (Matrix4x4 ortho: (aBoolean ifTrue: [0 @ aLayer extent y corner: aLayer extent x @ 0] ifFalse: [0 @ 0 corner: aLayer extent]) near: 0 far: 1);
+		drawCallback: [:transform :texture :isDrawLayer |
+			self drawTexture: texture transform: transform.
+			self
+				drawOutline: "(isDrawLayer ifTrue: [Color green] ifFalse: [aColor])" (Color h: aLayer drawsCount * 0.1 \\ 360 s: 1 v: 1)
+				extent: texture extent
+				transform: transform].
+	
 	aLayer children do: [ :child | child visit: visitor ].
 
 
