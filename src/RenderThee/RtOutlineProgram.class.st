@@ -23,7 +23,7 @@ uniform vec3 color;
 
 void main() {
 	vec2 point = aTextureSize * TexCoords;
-	if (any(greaterThan(vec2(1, 1), point)) || any(lessThan(aTextureSize, point))) {
+	if (any(greaterThan(vec2(2, 2), point)) || any(lessThan(aTextureSize - vec2(2, 2), point))) {
 		FragColor = vec4(color, 1.0);
 	} else {
 		discard;
