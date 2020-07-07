@@ -5,9 +5,6 @@ Class {
 		'numElements',
 		'glType'
 	],
-	#pools : [
-		'GLConstants'
-	],
 	#category : #'MPOpenGL-Core'
 }
 

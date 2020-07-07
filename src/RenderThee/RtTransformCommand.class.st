@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'matrix'
 	],
-	#category : #'RenderThee-CanvasCommands'
+	#category : 'RenderThee-CanvasCommands'
 }
 
 { #category : #drawing }

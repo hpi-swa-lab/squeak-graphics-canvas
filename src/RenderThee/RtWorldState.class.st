@@ -2,7 +2,7 @@ Class {
 	#name : #RtWorldState,
 	#superclass : #WorldState,
 	#pools : [
-		'OpenGLConstants'
+		'AnObsoleteOpenGLConstants'
 	],
 	#category : #'RenderThee-Project'
 }

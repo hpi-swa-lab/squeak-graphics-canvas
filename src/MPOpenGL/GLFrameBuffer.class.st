@@ -17,9 +17,6 @@ Class {
 	#instVars : [
 		'target'
 	],
-	#pools : [
-		'GLConstants'
-	],
 	#category : #'MPOpenGL-Core'
 }
 

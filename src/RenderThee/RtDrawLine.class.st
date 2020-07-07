@@ -7,7 +7,7 @@ Class {
 		'width',
 		'color'
 	],
-	#category : #'RenderThee-CanvasCommands'
+	#category : 'RenderThee-CanvasCommands'
 }
 
 { #category : #'instance creation' }

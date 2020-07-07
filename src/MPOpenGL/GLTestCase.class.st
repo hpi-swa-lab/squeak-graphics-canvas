@@ -5,10 +5,10 @@ Class {
 		'gl'
 	],
 	#pools : [
-		'GLConstants',
-		'OpenGLConstants'
+		'AnObsoleteOpenGLConstants',
+		'GLConstants'
 	],
-	#category : 'MPOpenGL-Test'
+	#category : #'MPOpenGL-Test'
 }
 
 { #category : #testing }

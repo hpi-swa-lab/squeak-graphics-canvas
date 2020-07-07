@@ -23,9 +23,6 @@ Class {
 		'samples',
 		'isStorageAllocated'
 	],
-	#pools : [
-		'GLConstants'
-	],
 	#category : #'MPOpenGL-Core'
 }
 

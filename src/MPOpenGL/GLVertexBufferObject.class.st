@@ -7,9 +7,6 @@ Class {
 		'componentsPerVertex',
 		'bytesPerElement'
 	],
-	#pools : [
-		'GLConstants'
-	],
 	#category : #'MPOpenGL-Core'
 }
 

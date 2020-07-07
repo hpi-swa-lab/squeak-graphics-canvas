@@ -1,9 +1,6 @@
 Class {
 	#name : #GLTexture,
 	#superclass : #GLObject,
-	#pools : [
-		'GLConstants'
-	],
 	#category : #'MPOpenGL-Core'
 }
 

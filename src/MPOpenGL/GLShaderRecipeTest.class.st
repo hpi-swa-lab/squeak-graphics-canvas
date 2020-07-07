@@ -5,10 +5,9 @@ Class {
 		'shaderRecipe'
 	],
 	#pools : [
-		'GLConstants',
-		'OpenGLConstants'
+		'GLConstants'
 	],
-	#category : 'MPOpenGL-Test'
+	#category : #'MPOpenGL-Test'
 }
 
 { #category : #reference }

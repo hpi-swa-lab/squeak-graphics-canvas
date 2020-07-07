@@ -9,10 +9,10 @@ Class {
 
 { #category : #accessing }
 GLX11BEPlatform >> imagePixelType32 [
-	^GLUnsignedInt8888Rev
+	^GL_UNSIGNED_INT_8_8_8_8_REV
 ]
 
 { #category : #accessing }
 GLX11BEPlatform >> texturePixelType [
-	^GLUnsignedInt8888Rev
+	^GL_UNSIGNED_INT_8_8_8_8_REV
 ]

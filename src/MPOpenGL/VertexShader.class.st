@@ -1,10 +1,7 @@
 Class {
 	#name : #VertexShader,
 	#superclass : #GLShaderSource,
-	#pools : [
-		'OpenGLConstants'
-	],
-	#category : 'MPOpenGL-Shaders'
+	#category : #'MPOpenGL-Shaders'
 }
 
 { #category : #accessing }

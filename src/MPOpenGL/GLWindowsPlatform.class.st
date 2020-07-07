@@ -9,49 +9,36 @@ Class {
 
 { #category : #initialize }
 GLWindowsPlatform >> beginFrame: aGLInstance [
-	aGLInstance glPixelStorei: GLUnpackLsbFirst with: 0.
+	aGLInstance glPixelStorei: GL_UNPACK_LSB_FIRST with: 0.
 
-]
-
-{ #category : #accessing }
-GLWindowsPlatform >> glExtCallingConvention [
-	"Answer the calling convention for extension functions"
-	^ExternalFunction callTypeAPI
-]
-
-{ #category : #accessing }
-GLWindowsPlatform >> glExtGetProcAddress: aString [
-	"Answer the function address for the given extension function"
-	<apicall: ulong 'wglGetProcAddress' (char*) module: 'opengl32.dll'>
-	^self externalCallFailed
 ]
 
 { #category : #accessing }
 GLWindowsPlatform >> imagePixelFormat32 [
-	^GLBgra
+	^GL_BGRA
 ]
 
 { #category : #accessing }
 GLWindowsPlatform >> imagePixelType32 [
-	^GLUnsignedByte
+	^GL_UNSIGNED_BYTE
 ]
 
 { #category : #initialize }
-GLWindowsPlatform >> openGLLibraryName [
+GLWindowsPlatform >> moduleName [
 	^'opengl32.dll'
 ]
 
 { #category : #accessing }
 GLWindowsPlatform >> textureInternalFormat [
-	^GLRgba
+	^GL_RGBA
 ]
 
 { #category : #accessing }
 GLWindowsPlatform >> texturePixelFormat [
-	^GLBgra
+	^GL_BGRA
 ]
 
 { #category : #accessing }
 GLWindowsPlatform >> texturePixelType [
-	^GLUnsignedByte
+	^GL_UNSIGNED_BYTE
 ]

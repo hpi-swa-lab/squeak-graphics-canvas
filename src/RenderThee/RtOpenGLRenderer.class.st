@@ -57,7 +57,7 @@ RtOpenGLRenderer >> initialize [
 	ActiveWorld morphsToRedraw: nil.
 	RtRecordingCanvas record: ActiveWorld.
 	
-	ogl := GL3_3 newInGLFW: ActiveWorld bounds.
+	ogl := GL3_3 newGLFWIn: ActiveWorld bounds.
 	
 	self currentExtent: ActiveWorld extent.
 	

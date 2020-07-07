@@ -4,9 +4,6 @@ Class {
 	#instVars : [
 		'shaders'
 	],
-	#pools : [
-		'GLConstants'
-	],
 	#category : #'MPOpenGL-Shaders'
 }
 

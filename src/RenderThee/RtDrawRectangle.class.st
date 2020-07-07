@@ -1,7 +1,7 @@
 Class {
 	#name : #RtDrawRectangle,
 	#superclass : #RtDrawShape,
-	#category : #'RenderThee-CanvasCommands'
+	#category : 'RenderThee-CanvasCommands'
 }
 
 { #category : #drawing }

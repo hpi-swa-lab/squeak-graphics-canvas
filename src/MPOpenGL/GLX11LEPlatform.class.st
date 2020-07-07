@@ -9,15 +9,15 @@ Class {
 
 { #category : #intitialize }
 GLX11LEPlatform >> beginFrame: aGLInstance [
-	aGLInstance glPixelStorei: GLUnpackLsbFirst with: 0
+	aGLInstance glPixelStorei: GL_UNPACK_LSB_FIRST with: 0
 ]
 
 { #category : #accessing }
 GLX11LEPlatform >> imagePixelType32 [
-	^GLUnsignedByte
+	^GL_UNSIGNED_BYTE
 ]
 
 { #category : #accessing }
 GLX11LEPlatform >> texturePixelType [
-	^GLUnsignedByte
+	^GL_UNSIGNED_BYTE
 ]
