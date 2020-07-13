@@ -40,12 +40,6 @@ RtDrawLayer >> isEmpty [
 ]
 
 { #category : #visiting }
-RtDrawLayer >> needsRasterize [
-
-	^ true
-]
-
-{ #category : #visiting }
 RtDrawLayer >> visit: aVisitor [
 
 	^ aVisitor visitDrawLayer: self

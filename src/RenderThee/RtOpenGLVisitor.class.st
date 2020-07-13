@@ -22,6 +22,43 @@ RtOpenGLVisitor class >> new: aRenderer [
 	^ (self basicNew) initialize: aRenderer
 ]
 
+{ #category : #texturization }
+RtOpenGLVisitor >> compositeDrawLayer: aLayer [
+
+	| elapsedTime tex |
+	elapsedTime := Time microsecondsToRun: [
+		tex := GLTexture context: GL value.
+		tex texImage: aLayer rasterizeForm].
+	^ tex
+]
+
+{ #category : #texturization }
+RtOpenGLVisitor >> compositeGroupLayer: aLayer [
+
+	^ aLayer restoreFramebufferOf: renderer after: [ | texture framebuffer ogl elapsedTime |
+		elapsedTime := Time microsecondsToRun: [
+			ogl := GL value.
+		
+			framebuffer := GLFrameBuffer context: ogl.
+			texture := GLTexture context: ogl.
+			texture texImageExtent: aLayer extent.
+			framebuffer texture2D: texture.
+			
+			renderer currentFramebuffer: framebuffer.
+			renderer currentExtent: aLayer extent.
+			
+			framebuffer boundDuring: [
+				ogl
+					glViewport: 0 with: 0 with: aLayer extent x with: aLayer extent y;
+					glClearColor: 1 with: 1 with: 1 with: 0;
+					glClear: GL_COLOR_BUFFER_BIT.
+				renderer renderLayer: aLayer flipVertical: false outlineColor: true].
+			
+			framebuffer delete].
+		aLayer compositeTime: elapsedTime.
+		texture]
+]
+
 { #category : #accessing }
 RtOpenGLVisitor >> drawCallback: aBlock [
 
@@ -37,7 +74,9 @@ RtOpenGLVisitor >> initialize: aRenderer [
 { #category : #helpers }
 RtOpenGLVisitor >> layer: aLayer during: aBlock [
 
-	self matrix: matrix * aLayer transform during: aBlock
+	| elapsedTime |
+	elapsedTime := Time microsecondsToRun: [self matrix: matrix * aLayer transform during: aBlock].
+	aLayer drawTime: elapsedTime
 ]
 
 { #category : #helpers }
@@ -56,68 +95,35 @@ RtOpenGLVisitor >> rootMatrix: aMatrix [
 	matrix := aMatrix
 ]
 
-{ #category : #texturization }
-RtOpenGLVisitor >> texturizeDrawLayer: aLayer [
-
-	^ (GLTexture context: GL value)
-		texImage: aLayer rasterizeForm;
-		yourself
-]
-
-{ #category : #texturization }
-RtOpenGLVisitor >> texturizeGroupLayer: aLayer [
-
-	^ aLayer restoreFramebufferOf: renderer after: [ | texture framebuffer ogl |
-		ogl := GL value.
-		
-		framebuffer := GLFrameBuffer context: ogl.
-		texture := GLTexture context: ogl.
-		texture texImageExtent: aLayer extent.
-		framebuffer texture2D: texture.
-		
-		renderer currentFramebuffer: framebuffer.
-		renderer currentExtent: aLayer extent.
-		
-		framebuffer boundDuring: [
-			ogl
-				glViewport: 0 with: 0 with: aLayer extent x with: aLayer extent y;
-				glClearColor: 1 with: 1 with: 1 with: 0;
-				glClear: GL_COLOR_BUFFER_BIT.
-			renderer renderLayer: aLayer flipVertical: false outlineColor: false].
-		
-		framebuffer delete.
-		texture]
-]
-
 { #category : #visiting }
 RtOpenGLVisitor >> visitDrawLayer: aLayer [
 
 	self layer: aLayer during: [
 		| texture |
-		texture := aLayer cache ifNil: [
+		texture := aLayer isComposited ifFalse: [
 			aLayer incrementDrawCounter.
-			aLayer cache: (self texturizeDrawLayer: aLayer)].
+			aLayer cache: (self compositeDrawLayer: aLayer)].
 		
 		drawCallback
 			value: matrix * (Matrix4x4 withScale: aLayer extent @ 1)
 			value: texture
-			value: true]
+			value: aLayer]
 ]
 
 { #category : #visiting }
 RtOpenGLVisitor >> visitGroupLayer: aLayer [
 
 	self layer: aLayer during: [
-		aLayer isRasterized
+		aLayer shouldBeComposited
 			ifTrue: [
 				| texture |
-				texture := aLayer cache ifNil: [
+				texture := aLayer isComposited ifFalse: [
 					aLayer incrementDrawCounter.
-					aLayer cache: (self texturizeGroupLayer: aLayer)].
+					aLayer cache: (self compositeGroupLayer: aLayer)].
 				drawCallback
 					value: matrix * (Matrix4x4 withScale: aLayer extent @ 1)
 					value: texture
-					value: false]
+					value: aLayer]
 			ifFalse: [
 				aLayer incrementDrawCounter.
 				aLayer children do: [:child | child visit: self]]]

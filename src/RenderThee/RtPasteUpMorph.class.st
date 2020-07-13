@@ -7,7 +7,7 @@ Class {
 		'ogl',
 		'program'
 	],
-	#category : 'RenderThee-Project'
+	#category : #'RenderThee-Project'
 }
 
 { #category : #'world state' }

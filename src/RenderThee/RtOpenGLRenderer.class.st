@@ -188,21 +188,23 @@ RtOpenGLRenderer >> renderLayer: aLayer flipVertical: aBoolean [
 ]
 
 { #category : #rendering }
-RtOpenGLRenderer >> renderLayer: aLayer flipVertical: aBoolean outlineColor: anOutlineBoolean [
+RtOpenGLRenderer >> renderLayer: rootLayer flipVertical: aBoolean outlineColor: anOutlineBoolean [
 	| visitor |
 	self flag: #todo. "formatting & scoped bind possible ?"
 	visitor := RtOpenGLVisitor new: self.
 	visitor
-		rootMatrix: (Matrix4x4 ortho: (aBoolean ifTrue: [0 @ aLayer extent y corner: aLayer extent x @ 0] ifFalse: [0 @ 0 corner: aLayer extent]) near: 0 far: 1);
-		drawCallback: [:transform :texture :isDrawLayer |
+		rootMatrix: (Matrix4x4 ortho: (aBoolean ifTrue: [0 @ rootLayer extent y corner: rootLayer extent x @ 0] ifFalse: [0 @ 0 corner: rootLayer extent]) near: 0 far: 1);
+		drawCallback: [:transform :texture :aLayer |
 			self drawTexture: texture transform: transform.
-			anOutlineBoolean ifTrue: [self
+			(anOutlineBoolean and: [aLayer isKindOf: RtGroupLayer]) ifTrue: [self
 				drawOutline: "(isDrawLayer ifTrue: [Color green] ifFalse: [aColor])"
-					(aLayer cache notNil ifTrue: [Color black] ifFalse: [Color h: aLayer drawsCount * 2 \\ 360 s: 1 v: 1])
+					("aLayer cache notNil"false
+						ifTrue: [Color transparent]
+						ifFalse: [Color h: aLayer drawsCount * 0.1 \\ 360 s: 1 v: 1])
 				extent: texture extent
 				transform: transform]].
 	
-	aLayer children do: [ :child | child visit: visitor ].
+	rootLayer children do: [ :child | child visit: visitor ].
 
 
 ]

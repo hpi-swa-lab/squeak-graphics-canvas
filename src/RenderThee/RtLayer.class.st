@@ -6,7 +6,7 @@ Class {
 		'extent',
 		'cache',
 		'drawTime',
-		'rasterizationTime',
+		'compositeTime',
 		'drawsSinceInvalidation',
 		'drawsSinceUpdate',
 		'drawsCount'
@@ -45,8 +45,28 @@ RtLayer >> clipRect [
 	^ self transform translation asPoint extent: self extent
 ]
 
+{ #category : #accessing }
+RtLayer >> compositeTime [
+	^ compositeTime
+]
+
+{ #category : #accessing }
+RtLayer >> compositeTime: anObject [
+	compositeTime := anObject
+]
+
 { #category : #compositing }
 RtLayer >> drawOn: canvas [
+]
+
+{ #category : #accessing }
+RtLayer >> drawTime [
+	^ drawTime
+]
+
+{ #category : #accessing }
+RtLayer >> drawTime: anObject [
+	drawTime := anObject
 ]
 
 { #category : #visiting }
@@ -112,17 +132,10 @@ RtLayer >> invalidateCache [
 	drawsSinceInvalidation := 0
 ]
 
-{ #category : #visiting }
-RtLayer >> isRasterized [
+{ #category : #testing }
+RtLayer >> isComposited [
 
-	self flag: #todo.
-	^ self needsRasterize
-]
-
-{ #category : #visiting }
-RtLayer >> needsRasterize [
-
-	^ drawsSinceInvalidation >= 30
+	^ cache notNil
 ]
 
 { #category : #utilities }
@@ -138,6 +151,12 @@ RtLayer >> rasterizeForm [
 	fc := RtFormCanvas extent: extent.
 	self visit: (RtBitBltVisitor canvas: fc).
 	^ fc form
+]
+
+{ #category : #testing }
+RtLayer >> shouldBeComposited [
+
+	^ drawsSinceInvalidation >= 100
 ]
 
 { #category : #accessing }
