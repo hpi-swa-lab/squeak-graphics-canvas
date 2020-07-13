@@ -4,21 +4,20 @@ Class {
 	#instVars : [
 		'transform',
 		'extent',
-		'cache'
+		'cache',
+		'drawTime',
+		'compositeTime',
+		'drawsSinceInvalidation',
+		'drawsSinceUpdate',
+		'drawsCount'
 	],
-	#category : 'RenderThee-LayerTree'
+	#category : #'RenderThee-LayerTree'
 }
 
 { #category : #visiting }
 RtLayer >> assuredForm [
 
 	^ cache ifNil: [cache := self rasterizeForm]
-]
-
-{ #category : #visiting }
-RtLayer >> assuredTexture: aRenderer [
-
-	^ cache ifNil: [cache := self rasterizeTexture: aRenderer]
 ]
 
 { #category : #initialization }
@@ -28,10 +27,32 @@ RtLayer >> bounds: aRectangle [
 	self extent: aRectangle extent
 ]
 
+{ #category : #accessing }
+RtLayer >> cache [
+
+	^ cache
+]
+
+{ #category : #accessing }
+RtLayer >> cache: anObject [
+
+	^ cache := anObject
+]
+
 { #category : #initialization }
 RtLayer >> clipRect [
 
 	^ self transform translation asPoint extent: self extent
+]
+
+{ #category : #accessing }
+RtLayer >> compositeTime [
+	^ compositeTime
+]
+
+{ #category : #accessing }
+RtLayer >> compositeTime: anObject [
+	compositeTime := anObject
 ]
 
 { #category : #compositing }
@@ -39,63 +60,114 @@ RtLayer >> drawOn: canvas [
 ]
 
 { #category : #accessing }
+RtLayer >> drawTime [
+	^ drawTime
+]
+
+{ #category : #accessing }
+RtLayer >> drawTime: anObject [
+	drawTime := anObject
+]
+
+{ #category : #visiting }
+RtLayer >> drawsCount [
+
+	^ drawsCount
+]
+
+{ #category : #accessing }
+RtLayer >> drawsSinceInvalidation [
+	^ drawsSinceInvalidation
+]
+
+{ #category : #accessing }
+RtLayer >> drawsSinceInvalidation: anObject [
+	drawsSinceInvalidation := anObject
+]
+
+{ #category : #accessing }
+RtLayer >> drawsSinceUpdate [
+	^ drawsSinceUpdate
+]
+
+{ #category : #accessing }
+RtLayer >> drawsSinceUpdate: anObject [
+	drawsSinceUpdate := anObject
+]
+
+{ #category : #accessing }
 RtLayer >> extent [
+
 	^ extent
 ]
 
 { #category : #accessing }
 RtLayer >> extent: anObject [
+
 	extent := anObject
 ]
 
-{ #category : #utilities }
-RtLayer >> iconOrThumbnailOfSize: anExtent [
+{ #category : #visiting }
+RtLayer >> incrementDrawCounter [
 
-	^ self assuredForm scaledIntoFormOfSize: anExtent
+	drawsSinceUpdate := drawsSinceUpdate + 1.
+	drawsSinceInvalidation := drawsSinceInvalidation + 1.
+	drawsCount := drawsCount + 1
+]
+
+{ #category : #initialization }
+RtLayer >> initialize [
+
+	super initialize.
+	drawsSinceUpdate := 0.
+	drawsSinceInvalidation := 0.
+	drawsCount := 0
 ]
 
 { #category : #compositing }
 RtLayer >> invalidateCache [
 
 	self parent ifNotNil: [:p | p invalidateCache].
-	cache := nil
+	cache := nil.
+	drawsSinceInvalidation := 0
 ]
 
-{ #category : #visiting }
-RtLayer >> isRasterized [
+{ #category : #testing }
+RtLayer >> isComposited [
 
-	self flag: #todo.
-	^ self needsRasterize
-]
-
-{ #category : #visiting }
-RtLayer >> needsRasterize [
-
-	^ "transform isPureTranslation not" true
+	^ cache notNil
 ]
 
 { #category : #utilities }
 RtLayer >> open [
 
-	self rasterizeForm asMorph openInHand
+	self assuredForm asMorph openInHand
 ]
 
 { #category : #visiting }
 RtLayer >> rasterizeForm [
 
 	| fc |
-	fc := FormCanvas extent: extent.
-	self visit: (RtRasterizeVisitor canvas: fc).
+	fc := RtFormCanvas extent: extent.
+	self visit: (RtBitBltVisitor canvas: fc).
 	^ fc form
+]
+
+{ #category : #testing }
+RtLayer >> shouldBeComposited [
+
+	^ drawsSinceInvalidation >= 100
 ]
 
 { #category : #accessing }
 RtLayer >> transform [
+
 	^ transform
 ]
 
 { #category : #accessing }
 RtLayer >> transform: anObject [
+
 	transform := anObject
 ]
 

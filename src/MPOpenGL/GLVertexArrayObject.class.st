@@ -1,39 +1,17 @@
 Class {
 	#name : #GLVertexArrayObject,
-	#superclass : #Object,
+	#superclass : #GLObject,
 	#instVars : [
-		'gl',
-		'id',
 		'numElements',
 		'glType'
 	],
-	#pools : [
-		'GLConstants'
-	],
-	#category : 'MPOpenGL-Core'
+	#category : #'MPOpenGL-Core'
 }
 
-{ #category : #'instance creation' }
-GLVertexArrayObject class >> newFor: openGlInterface [
-	^ self new
-		gl: openGlInterface;
-		createBuffer;
-		yourself.
-]
+{ #category : #binding }
+GLVertexArrayObject >> bind [
 
-{ #category : #usage }
-GLVertexArrayObject >> bind: ogl [
-
-	ogl glBindVertexArray: id
-]
-
-{ #category : #'initialize-release' }
-GLVertexArrayObject >> createBuffer [
-
-	| ids |
-	ids := IntegerArray new: 1.
-	gl glGenVertexArrays: 1 with: ids.
-	id := ids at: 1
+	gl glBindVertexArray: id
 ]
 
 { #category : #usage }
@@ -43,6 +21,12 @@ GLVertexArrayObject >> data: anArray usage: aUsageEnum [
 	gl glBufferData: GL_ARRAY_BUFFER with: anArray byteSize with: anArray with: aUsageEnum.
 	numElements := anArray size.
 	glType := anArray glType
+]
+
+{ #category : #'initialize-release' }
+GLVertexArrayObject >> delete [
+
+	self notYetImplemented
 ]
 
 { #category : #usage }
@@ -59,33 +43,19 @@ GLVertexArrayObject >> draw: aModeEnum from: startIndex count: count [
 ]
 
 { #category : #accessing }
-GLVertexArrayObject >> gl [
-
-	^ gl
-]
-
-{ #category : #accessing }
-GLVertexArrayObject >> gl: anObject [
-
-	gl := anObject
-]
-
-{ #category : #accessing }
 GLVertexArrayObject >> glType [
 
 	^ glType
 ]
 
-{ #category : #accessing }
-GLVertexArrayObject >> id [
+{ #category : #'initialize-release' }
+GLVertexArrayObject >> initializeWith: glContext [
 
-	^ id
-]
-
-{ #category : #accessing }
-GLVertexArrayObject >> id: anObject [
-
-	id := anObject
+	| ids |
+	super initializeWith: glContext.
+	ids := IntegerArray new: 1.
+	gl glGenVertexArrays: 1 with: ids.
+	id := ids first
 ]
 
 { #category : #accessing }
@@ -100,8 +70,8 @@ GLVertexArrayObject >> numElements [
 	^ numElements
 ]
 
-{ #category : #usage }
-GLVertexArrayObject >> unbind: ogl [
+{ #category : #binding }
+GLVertexArrayObject >> unbind [
 
-	ogl glBindVertexArray: GL_NONE
+	gl glBindVertexArray: GL_NONE
 ]

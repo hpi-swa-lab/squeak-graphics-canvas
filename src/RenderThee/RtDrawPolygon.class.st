@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'vertices'
 	],
-	#category : 'RenderThee-Drawing'
+	#category : #'RenderThee-CanvasCommands'
 }
 
 { #category : #'instance creation' }
@@ -21,10 +21,10 @@ RtDrawPolygon class >> vertices: collectionOfPoints fillStyle: aFillStyle border
 RtDrawPolygon >> drawOn: aCanvas [
 
 	aCanvas
-		drawPolygon: self vertices
-		fillStyle: self fillStyle
-		borderWidth: self borderStyle width
-		borderColor: self borderStyle color
+		drawPolygon: vertices
+		fillStyle: fillStyle
+		borderWidth: borderStyle width
+		borderColor: borderStyle color
 ]
 
 { #category : #accessing }
@@ -37,10 +37,4 @@ RtDrawPolygon >> vertices [
 RtDrawPolygon >> vertices: anObject [
 
 	vertices := anObject.
-]
-
-{ #category : #visiting }
-RtDrawPolygon >> visit: aVisitor [
-
-	^ aVisitor visitDrawPolygon: self
 ]

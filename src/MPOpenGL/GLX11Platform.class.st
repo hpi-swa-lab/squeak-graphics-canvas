@@ -4,21 +4,8 @@ I represent the generic Unix OpenGL version.
 Class {
 	#name : #GLX11Platform,
 	#superclass : #GLPlatform,
-	#category : 'MPOpenGL-Core'
+	#category : #'MPOpenGL-Core'
 }
-
-{ #category : #extensions }
-GLX11Platform >> glExtCallingConvention [
-	"Answer the calling convention for extension functions"
-	^ExternalFunction callTypeCDecl
-]
-
-{ #category : #accessing }
-GLX11Platform >> glExtGetProcAddress: aString [
-	"Answer the function address for the given extension function"
-	<cdecl: ulong 'glXGetProcAddressARB' (char*) module: 'GL'>
-	^self externalCallFailed
-]
 
 { #category : #accessing }
 GLX11Platform >> imagePixelFormat32 [
@@ -31,9 +18,9 @@ GLX11Platform >> imagePixelType32 [
 ]
 
 { #category : #initialize }
-GLX11Platform >> openGLLibraryName [
+GLX11Platform >> moduleName [
 	^Smalltalk osVersion = 'linux-gnu'
-		ifTrue: ['libGL.so.1']
+		ifTrue: ['libGL.so']
 		ifFalse: ['GL']
 
 ]
@@ -50,5 +37,5 @@ GLX11Platform >> texturePixelFormat [
 
 { #category : #accessing }
 GLX11Platform >> texturePixelType [
-	^GLUnsignedByte
+	^GL_UNSIGNED_BYTE
 ]

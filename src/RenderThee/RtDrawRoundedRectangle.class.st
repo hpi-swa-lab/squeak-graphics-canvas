@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'radius'
 	],
-	#category : 'RenderThee-Drawing'
+	#category : #'RenderThee-CanvasCommands'
 }
 
 { #category : #'instance creation' }
@@ -22,10 +22,10 @@ RtDrawRoundedRectangle class >> bounds: aRectangle radius: cornerRadius fillStyl
 RtDrawRoundedRectangle >> drawOn: aCanvas [
 
 	aCanvas
-		frameAndFillRoundRect: self bounds
-		radius: self radius
-		fillStyle: self fillStyle
-		borderStyle: self borderStyle
+		frameAndFillRoundRect: bounds
+		radius: radius
+		fillStyle: fillStyle
+		borderStyle: borderStyle
 ]
 
 { #category : #accessing }
@@ -38,10 +38,4 @@ RtDrawRoundedRectangle >> radius [
 RtDrawRoundedRectangle >> radius: anObject [
 
 	radius := anObject.
-]
-
-{ #category : #visiting }
-RtDrawRoundedRectangle >> visit: aVisitor [
-
-	^ aVisitor visitDrawRoundedRectangle: self
 ]

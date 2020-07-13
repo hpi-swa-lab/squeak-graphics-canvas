@@ -8,7 +8,7 @@ Class {
 	#classVars : [
 		'ZeroVertex'
 	],
-	#category : '3DTransform-Arrays'
+	#category : #'3DTransform-Arrays'
 }
 
 { #category : #'instance creation' }

@@ -7,7 +7,7 @@ Class {
 		'width',
 		'color'
 	],
-	#category : 'RenderThee-Drawing'
+	#category : #'RenderThee-CanvasCommands'
 }
 
 { #category : #'instance creation' }
@@ -36,7 +36,11 @@ RtDrawLine >> color: anObject [
 { #category : #drawing }
 RtDrawLine >> drawOn: aCanvas [
 
-	aCanvas line: self from to: self to width: self width color: self color
+	aCanvas
+		line: from
+		to: to
+		width: width
+		color: color
 ]
 
 { #category : #accessing }
@@ -61,12 +65,6 @@ RtDrawLine >> to [
 RtDrawLine >> to: anObject [
 
 	to := anObject.
-]
-
-{ #category : #visiting }
-RtDrawLine >> visit: aVisitor [
-
-	^ aVisitor visitDrawLine: self
 ]
 
 { #category : #accessing }

@@ -16,7 +16,7 @@ Class {
 	#classVars : [
 		'QuaternionIdentity'
 	],
-	#category : '3DTransform-Vectors'
+	#category : #'3DTransform-Vectors'
 }
 
 { #category : #'instance creation' }

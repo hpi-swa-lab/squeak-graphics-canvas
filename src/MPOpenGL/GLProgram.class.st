@@ -1,56 +1,58 @@
 Class {
 	#name : #GLProgram,
-	#superclass : #Object,
+	#superclass : #GLObject,
 	#instVars : [
-		'gl',
-		'id',
 		'shaders'
 	],
-	#pools : [
-		'GLConstants'
-	],
-	#category : 'MPOpenGL-Shaders'
+	#category : #'MPOpenGL-Shaders'
 }
 
-{ #category : #example }
-GLProgram class >> exampleBlurShader [
+{ #category : #'instance creation' }
+GLProgram class >> context: glContext [
 
-	| gl shader |
-	gl := GL4_6 new.
-	shader := self newFor: gl shaders: (OrderedCollection
-				with: (VertexShader file: 'blur.vs')
-				with: (FragmentShader file: 'blur.fs')).
-	^ shader
+	^ self
+		context: glContext
+		shaders: {
+			VertexShader context: glContext code: self vertexShader.
+			FragmentShader context: glContext code: self fragmentShader
+		}
 ]
 
 { #category : #'instance creation' }
-GLProgram class >> newFor: openGlInterface shaders: aCollection [
+GLProgram class >> context: glContext shaders: aCollection [
 
-	^ self new
-		gl: openGlInterface;
+	^ (super context: glContext)
 		shaders: aCollection;
 		setUpProgram;
 		yourself
 ]
 
+{ #category : #'shader code' }
+GLProgram class >> fragmentShader [
+
+	self subclassResponsibility
+]
+
+{ #category : #'shader code' }
+GLProgram class >> vertexShader [
+
+	self subclassResponsibility
+]
+
 { #category : #'initialize-release' }
 GLProgram >> attachShaders [
 
-	^ shaders collect: [:shader |
-		gl glAttachShader: id with: shader created]
+	shaders do: [:shader |
+		gl glAttachShader: id with: shader id.
+		gl checkForError]
 ]
 
 { #category : #'initialize-release' }
-GLProgram >> createProgram [
+GLProgram >> deleteShaders [
 
-	id := gl glCreateProgram
-]
-
-{ #category : #'initialize-release' }
-GLProgram >> deleteShaders: someShaders [
-
-	someShaders do: [:shader |
-		gl glDeleteShader: shader]
+	shaders do: [:shader |
+		gl glDeleteShader: shader id.
+		gl checkForError]
 ]
 
 { #category : #usage }
@@ -63,42 +65,28 @@ GLProgram >> getProgramInfoLog: program [
 	^ infoLog fromCString
 ]
 
-{ #category : #accessing }
-GLProgram >> gl [
+{ #category : #'initialize-release' }
+GLProgram >> initializeLocations [
 
-	^ gl
-]
-
-{ #category : #accessing }
-GLProgram >> gl: anObject [
-
-	gl := anObject
-]
-
-{ #category : #accessing }
-GLProgram >> id [
-
-	^ id
-]
-
-{ #category : #accessing }
-GLProgram >> id: anObject [
-
-	id := anObject
+	
 ]
 
 { #category : #'initialize-release' }
 GLProgram >> setUpProgram [
 
-	| attachedShaders status |
-	self createProgram.
-	self shareGlInstance.
-	attachedShaders := self attachShaders.
+	| status |
+	gl checkForError.
+	id := gl glCreateProgram.
+	gl checkForError.
+	self attachShaders.
 	gl glLinkProgram: id.
+	gl checkForError.
 	status := IntegerArray new: 1.
 	gl glGetProgramiv: id with: GL_LINK_STATUS with: status.
+	gl checkForError.
 	status first = 0 ifTrue: [self error: 'failed to link shader: ', (self getProgramInfoLog: id)].
-	self deleteShaders: attachedShaders.
+	self deleteShaders.
+	self initializeLocations
 ]
 
 { #category : #accessing }
@@ -111,13 +99,6 @@ GLProgram >> shaders [
 GLProgram >> shaders: anObject [
 
 	shaders := anObject
-]
-
-{ #category : #'initialize-release' }
-GLProgram >> shareGlInstance [
-
-	shaders do: [:shader |
-		shader gl: gl]
 ]
 
 { #category : #usage }
@@ -134,7 +115,7 @@ GLProgram >> use [
 ]
 
 { #category : #usage }
-GLProgram >> vertexAttib: position value: value stride: stride offset: offset [
+GLProgram >> vertexAttrib: position value: value stride: stride offset: offset [
 
  	| byteOffset |
 	byteOffset := ExternalAddress new fromInteger: offset * value bytesPerElement.

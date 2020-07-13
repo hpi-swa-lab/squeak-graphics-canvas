@@ -8,7 +8,7 @@ Class {
 	#classVars : [
 		'Zero4x4Matrix'
 	],
-	#category : '3DTransform-Arrays'
+	#category : #'3DTransform-Arrays'
 }
 
 { #category : #'as yet unclassified' }

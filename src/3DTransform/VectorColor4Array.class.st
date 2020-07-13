@@ -5,7 +5,7 @@ Class {
 	#name : #VectorColor4Array,
 	#superclass : #VectorArray,
 	#type : #words,
-	#category : '3DTransform-Arrays'
+	#category : #'3DTransform-Arrays'
 }
 
 { #category : #'instance creation' }

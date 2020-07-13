@@ -4,21 +4,19 @@ Class {
 	#instVars : [
 		'ogl'
 	],
-	#category : 'RenderThee-Project'
+	#category : #'RenderThee-Project'
 }
+
+{ #category : #testing }
+RtProject >> canApplyUserInterfaceTheme [
+
+	^ false "for now"
+]
 
 { #category : #enter }
 RtProject >> finalEnterActions: leavingProject [
 
 	super finalEnterActions: leavingProject.
-	self world initOpenGL ifFalse: [
-		OSProcess thisOSProcess stdOut
-			nextPutAll: 'Failed';
-			cr; lf.
-		self exit].
-	OSProcess thisOSProcess stdOut
-			nextPutAll: 'Succeeded';
-			cr; lf.
 ]
 
 { #category : #enter }

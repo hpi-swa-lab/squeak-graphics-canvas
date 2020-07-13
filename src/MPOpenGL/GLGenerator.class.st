@@ -30,7 +30,7 @@ Class {
 		'api',
 		'featureTags'
 	],
-	#category : 'MPOpenGL-Generation'
+	#category : #'MPOpenGL-Generation'
 }
 
 { #category : #'instance creation' }
@@ -180,6 +180,30 @@ GLGenerator >> generateApi: aString [
 ]
 
 { #category : #'code generation' }
+GLGenerator >> generateCommandDeprecationMethod: commandTag [
+
+	| name params protoTag |
+	protoTag := commandTag firstTagNamed: #proto.
+	name := (protoTag firstTagNamed: #name) contentString.
+	
+	params := Array streamContents: [:stream |
+		commandTag tagsNamed: #param do: [:param |
+			stream nextPut: param]].
+	
+	^ String streamContents: [:stream |
+		stream nextPutAll: name.
+		
+		params ifNotEmpty: [stream nextPutAll: ': '].
+		params
+			do: [:param | stream nextPutAll: ((param firstTagNamed: #name ) contentString)]
+			separatedBy: [stream nextPutAll: ' with: '].
+		
+		stream
+			cr; cr; tab;
+			nextPutAll: 'self shouldNotImplement']
+]
+
+{ #category : #'code generation' }
 GLGenerator >> generateCommandMethod: commandTag [
 
 	| name params protoTag |
@@ -286,14 +310,6 @@ GLGenerator >> generateConstantsPoolIntializeMethod [
 						nextPut: $.]]]]
 ]
 
-{ #category : #'code generation' }
-GLGenerator >> generateDeprecationMethod: name [
-
-	^ name , '
-
-	self shouldNotImplement'
-]
-
 { #category : #'constants pool' }
 GLGenerator >> generateEnumMethod: enumTag [
 
@@ -374,9 +390,11 @@ GLGenerator >> remove: removeTag [
 { #category : #features }
 GLGenerator >> removeCommand: name [
 
+	| methodSource |
 	definedCommands remove: name ifAbsent: [^ self].
+	methodSource := self generateCommandDeprecationMethod: (commandTags at: name).
 	currentFeatureClass
-		compile: (self generateDeprecationMethod: name)
+		compile: methodSource
 		classified: 'commands - deprecated'
 ]
 

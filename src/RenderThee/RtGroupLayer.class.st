@@ -2,7 +2,8 @@ Class {
 	#name : #RtGroupLayer,
 	#superclass : #RtLayer,
 	#instVars : [
-		'children'
+		'children',
+		'morph'
 	],
 	#pools : [
 		'GLConstants'
@@ -46,7 +47,7 @@ RtGroupLayer >> bounds [
 	^ self transform translation asPoint extent: self extent
 ]
 
-{ #category : #visiting }
+{ #category : #accessing }
 RtGroupLayer >> children [
 
 	^ children
@@ -72,12 +73,6 @@ RtGroupLayer >> drawOn: aCanvas [
 	self drawChildrenOn: aCanvas
 ]
 
-{ #category : #utilities }
-RtGroupLayer >> iconOrThumbnailOfSize: anExtent [
-
-	^ self assuredForm scaledIntoFormOfSize: anExtent
-]
-
 { #category : #initialization }
 RtGroupLayer >> initialize [
 
@@ -91,28 +86,14 @@ RtGroupLayer >> layers [
 	^ children
 ]
 
-{ #category : #drawing }
-RtGroupLayer >> rasterizeTexture: aRendender [
-	^ self restoreFramebufferOf: aRendender after: [ | texture framebuffer ogl |
-		ogl := GL value.
-		
-		framebuffer := GLFrameBuffer new.
-		texture := GLTexture new.
-		texture texImageExtent: self extent.
-		framebuffer texture2D: texture.
-		
-		aRendender currentFramebuffer: framebuffer.
-		aRendender currentExtent: self extent.
-		
-		framebuffer boundDo: [
-			ogl
-				glViewport: 0 with: 0 with: self extent x with: self extent y;
-				glClearColor: 0.5 with: 1 with: 1 with: 1;
-				glClear: GL_COLOR_BUFFER_BIT.
-			aRendender renderLayer: self].
-		
-		framebuffer delete.
-		texture]
+{ #category : #accessing }
+RtGroupLayer >> morph [
+	^ morph
+]
+
+{ #category : #accessing }
+RtGroupLayer >> morph: anObject [
+	morph := anObject
 ]
 
 { #category : #drawing }
@@ -129,10 +110,26 @@ RtGroupLayer >> restoreFramebufferOf: aRenderer after: aBlock [
 	
 	aRenderer currentFramebuffer: oldFramebuffer.
 	aRenderer currentExtent: oldExtent.
+	self flag: #todo. "scoped bind possible ?"
 	oldFramebuffer ifNotNil: [ oldFramebuffer bind ].
 	ogl glViewport: oldViewport first with: oldViewport second with: oldViewport third with: oldViewport fourth.
 	
 	^ ret
+]
+
+{ #category : #initialization }
+RtGroupLayer >> update [
+
+	self
+		clear;
+		invalidateCache.
+		
+	self parent ifNotNil: [:parent |
+		self bounds: (morph bounds translateBy: parent bounds origin negated)].
+	
+	(RtRecordingCanvas layer: self) reRecord: morph.
+	
+	drawsSinceUpdate := 0
 ]
 
 { #category : #visiting }

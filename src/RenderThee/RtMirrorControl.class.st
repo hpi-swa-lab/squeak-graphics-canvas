@@ -17,21 +17,27 @@ RtMirrorControl >> delete [
 	super delete
 ]
 
+{ #category : #accessing }
+RtMirrorControl >> frameTime: milliseconds [
+
+	"FileStream stdout
+		nextPutAll: milliseconds asString;
+		lf"
+]
+
 { #category : #initialization }
 RtMirrorControl >> initialize [
+
 	super initialize.
 	self extent: 200@200.
-
-	renderer := RtOpenGLRenderer new.
 	
-self stopStepping.
+	renderer := RtOpenGLRenderer new
 ]
 
 { #category : #stepping }
 RtMirrorControl >> step [
 
-	"renderer renderFrame."
-	
+	self step2
 ]
 
 { #category : #stepping }
@@ -39,7 +45,8 @@ RtMirrorControl >> step2 [
 
 	renderer shouldClose
 		ifTrue: [self delete]
-		ifFalse: [renderer renderFrame]
+		ifFalse: [
+			self frameTime: [renderer renderFrame] timeToRun]
 ]
 
 { #category : #stepping }

@@ -9,7 +9,7 @@ Class {
 		'font',
 		'color'
 	],
-	#category : 'RenderThee-Drawing'
+	#category : #'RenderThee-CanvasCommands'
 }
 
 { #category : #'instance creation' }
@@ -65,12 +65,12 @@ RtDrawString >> contents: anObject [
 RtDrawString >> drawOn: aCanvas [
 
 	aCanvas
-		drawString: self contents
-		from: self from
-		to: self to
-		in: self bounds
-		font: self font
-		color: self color
+		drawString: contents
+		from: from
+		to: to
+		in: bounds
+		font: font
+		color: color
 ]
 
 { #category : #accessing }
@@ -107,10 +107,4 @@ RtDrawString >> to [
 RtDrawString >> to: anObject [
 
 	to := anObject.
-]
-
-{ #category : #visiting }
-RtDrawString >> visit: aVisitor [
-
-	^ aVisitor visitDrawString: self
 ]

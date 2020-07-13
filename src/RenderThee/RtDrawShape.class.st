@@ -6,7 +6,7 @@ Class {
 		'fillStyle',
 		'borderStyle'
 	],
-	#category : 'RenderThee-Drawing'
+	#category : #'RenderThee-CanvasCommands'
 }
 
 { #category : #'instance creation' }

@@ -1,22 +1,15 @@
 Class {
 	#name : #GLRenderBufferTest,
-	#superclass : #TestCase,
+	#superclass : #GLTestCase,
 	#instVars : [
-		'gl',
 		'renderBuffer'
 	],
 	#pools : [
-		'GLConstants',
-		'OpenGLConstants'
+		'AnObsoleteOpenGLConstants',
+		'GLConstants'
 	],
-	#category : 'MPOpenGL-Test'
+	#category : #'MPOpenGL-Test'
 }
-
-{ #category : #references }
-GLRenderBufferTest >> glVersion [
-	^GL4_6
-
-]
 
 { #category : #references }
 GLRenderBufferTest >> renderBufferClass [
@@ -26,15 +19,15 @@ GLRenderBufferTest >> renderBufferClass [
 
 { #category : #'before each' }
 GLRenderBufferTest >> setUp [
+
 	super setUp.
-	gl := self glVersion new.
-	renderBuffer := self renderBufferClass newFor: gl.
+	renderBuffer := self renderBufferClass context: gl
 ]
 
 { #category : #'after each' }
 GLRenderBufferTest >> tearDown [
 	super tearDown.
-	renderBuffer delete
+	renderBuffer delete.
 	
 	
 ]
@@ -87,14 +80,10 @@ GLRenderBufferTest >> testMultisampleRenderbufferFlag [
 
 { #category : #tests }
 GLRenderBufferTest >> testNewFor [
-	| buffer |
 	"given"
 	"when"
-	buffer := self renderBufferClass newFor: gl.
 	"then"
-	self assert: (buffer gl) equals: gl description: 'GL Versions are the same'.
-	"tear down"
-	buffer delete.
+	self assert: renderBuffer gl equals: gl description: 'GL Versions are the same'.
 ]
 
 { #category : #tests }

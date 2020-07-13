@@ -1,7 +1,7 @@
 Class {
 	#name : #'GL2_1',
 	#superclass : #'GL2_0',
-	#category : 'MPOpenGL-Versions'
+	#category : #'MPOpenGL-Versions'
 }
 
 { #category : #commands }

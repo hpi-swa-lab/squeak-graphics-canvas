@@ -10,7 +10,7 @@ Class {
 		'p3',
 		'p4'
 	],
-	#category : '3DTransform-Vectors'
+	#category : #'3DTransform-Vectors'
 }
 
 { #category : #'instance creation' }

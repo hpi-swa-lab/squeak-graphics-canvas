@@ -1,13 +1,10 @@
 Class {
 	#name : #TessControlShader,
 	#superclass : #GLShaderSource,
-	#pools : [
-		'OpenGLConstants'
-	],
-	#category : 'MPOpenGL-Shaders'
+	#category : #'MPOpenGL-Shaders'
 }
 
-{ #category : #'shader kind' }
+{ #category : #accessing }
 TessControlShader >> kind [
 
 	^ GL_TESS_CONTROL_SHADER

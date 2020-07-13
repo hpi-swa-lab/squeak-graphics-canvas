@@ -6,7 +6,7 @@ Class {
 		'color',
 		'paragraph'
 	],
-	#category : 'RenderThee-Drawing'
+	#category : #'RenderThee-CanvasCommands'
 }
 
 { #category : #'instance creation' }
@@ -46,7 +46,10 @@ RtDrawParagraph >> color: anObject [
 { #category : #drawing }
 RtDrawParagraph >> drawOn: aCanvas [
 
-	aCanvas paragraph: self paragraph bounds: self bounds color: self color
+	aCanvas
+		paragraph: paragraph
+		bounds: bounds
+		color: color
 ]
 
 { #category : #accessing }
@@ -59,10 +62,4 @@ RtDrawParagraph >> paragraph [
 RtDrawParagraph >> paragraph: anObject [
 
 	paragraph := anObject.
-]
-
-{ #category : #visiting }
-RtDrawParagraph >> visit: aVisitor [
-
-	^ aVisitor visitDrawParagraph: self
 ]

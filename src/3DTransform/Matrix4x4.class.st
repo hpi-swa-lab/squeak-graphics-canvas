@@ -9,7 +9,7 @@ Class {
 		'IdentityMatrix',
 		'ZeroMatrix'
 	],
-	#category : '3DTransform-Vectors'
+	#category : #'3DTransform-Vectors'
 }
 
 { #category : #'instance creation' }

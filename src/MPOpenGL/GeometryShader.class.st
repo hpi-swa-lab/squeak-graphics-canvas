@@ -1,13 +1,10 @@
 Class {
 	#name : #GeometryShader,
 	#superclass : #GLShaderSource,
-	#pools : [
-		'OpenGLConstants'
-	],
-	#category : 'MPOpenGL-Shaders'
+	#category : #'MPOpenGL-Shaders'
 }
 
-{ #category : #'shader kind' }
+{ #category : #accessing }
 GeometryShader >> kind [
 
 	^ GL_GEOMETRY_SHADER

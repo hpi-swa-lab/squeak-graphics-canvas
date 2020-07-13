@@ -2,35 +2,37 @@ Class {
 	#name : #GLPlatform,
 	#superclass : #Object,
 	#pools : [
-		'OpenGLConstants'
+		'GLConstants'
 	],
-	#category : 'MPOpenGL-Core'
+	#category : #'MPOpenGL-Core'
 }
+
+{ #category : #'platform detection' }
+GLPlatform class >> identifyPlatform [
+	Smalltalk platformName = 'Win32' ifTrue:[^GLWindowsPlatform].
+	Smalltalk platformName = 'unix'
+		ifTrue:
+			[(Smalltalk windowSystemName = 'Quartz')
+				"implicitly big endian"
+				ifTrue: [ self shouldBeImplemented ].
+				"default to X11 window system"
+				Smalltalk isLittleEndian
+					ifTrue: [ ^GLX11LEPlatform ]
+					ifFalse: [ ^GLX11BEPlatform ]].
+	Smalltalk platformName = 'Mac OS' ifTrue:[
+		Smalltalk osVersion asNumber < 1000 
+			ifTrue: [ self shouldBeImplemented ]
+			ifFalse:[ ^GLMacOSPlatform ].
+	].
+	^self error:'Cannot identify platform'
+]
 
 { #category : #initialize }
 GLPlatform >> beginFrame: aGLInstance [
 	"do nothing"
 ]
 
-{ #category : #extensions }
-GLPlatform >> glExtCallingConvention [
-	^ self subclassResponsibility
-]
-
-{ #category : #extensions }
-GLPlatform >> glExtGetProcAddress: aString [
-	"Answer the function address for the given extension function"
-	^self subclassResponsibility
-]
-
-{ #category : #extensions }
-GLPlatform >> glExtModule [
-	"GL extension functions are usually looked up per glExtGetProcAddress, so this MUST be nil. Except for Apple OpenGL where there is no glExtGetProcAddress and we bind to the actual module using a regular FFI call"
-	^self openGLLibraryName
-
-]
-
 { #category : #initialize }
-GLPlatform >> openGLLibraryName [
+GLPlatform >> moduleName [
 	^self subclassResponsibility
 ]

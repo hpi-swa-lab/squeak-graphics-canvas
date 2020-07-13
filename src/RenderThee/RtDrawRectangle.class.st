@@ -1,20 +1,14 @@
 Class {
 	#name : #RtDrawRectangle,
 	#superclass : #RtDrawShape,
-	#category : 'RenderThee-Drawing'
+	#category : #'RenderThee-CanvasCommands'
 }
 
 { #category : #drawing }
 RtDrawRectangle >> drawOn: aCanvas [
 
 	aCanvas
-		frameAndFillRectangle: self bounds
-		fillStyle: self fillStyle
-		borderStyle: self borderStyle
-]
-
-{ #category : #visiting }
-RtDrawRectangle >> visit: aVisitor [
-
-	^ aVisitor visitDrawRectangle: self
+		frameAndFillRectangle: bounds
+		fillStyle: fillStyle
+		borderStyle: borderStyle
 ]

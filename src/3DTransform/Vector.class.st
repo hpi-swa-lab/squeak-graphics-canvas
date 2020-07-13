@@ -5,7 +5,7 @@ Class {
 	#name : #Vector,
 	#superclass : #Float32Array,
 	#type : #words,
-	#category : '3DTransform-Vectors'
+	#category : #'3DTransform-Vectors'
 }
 
 { #category : #island }

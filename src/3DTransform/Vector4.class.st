@@ -5,7 +5,7 @@ Class {
 	#name : #Vector4,
 	#superclass : #Vector,
 	#type : #words,
-	#category : '3DTransform-Vectors'
+	#category : #'3DTransform-Vectors'
 }
 
 { #category : #'instance creation' }

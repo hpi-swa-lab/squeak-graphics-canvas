@@ -40,22 +40,6 @@ RtDrawLayer >> isEmpty [
 ]
 
 { #category : #visiting }
-RtDrawLayer >> needsRasterize [
-
-	^ true
-]
-
-{ #category : #visiting }
-RtDrawLayer >> rasterizeTexture: aRenderer [
-	| tex form |
-	form := self rasterizeForm.
-	tex := GLTexture new.
-	tex texImage: form.
-	^ tex
-
-]
-
-{ #category : #visiting }
 RtDrawLayer >> visit: aVisitor [
 
 	^ aVisitor visitDrawLayer: self

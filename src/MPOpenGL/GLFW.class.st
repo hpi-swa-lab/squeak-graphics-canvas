@@ -1,7 +1,7 @@
 Class {
 	#name : #GLFW,
 	#superclass : #Object,
-	#category : 'MPOpenGL-Core'
+	#category : #'MPOpenGL-Core'
 }
 
 { #category : #primitive }
@@ -24,16 +24,6 @@ GLFW class >> CURSOR [
 GLFW class >> CURSOR_DISABLED [
 	^16r34003
 
-]
-
-{ #category : #primitive }
-GLFW class >> GLFW_CLIENT_API [
-	^16r00022001
-]
-
-{ #category : #primitive }
-GLFW class >> GLFW_NO_API [
-	^0
 ]
 
 { #category : #primitive }
@@ -72,12 +62,6 @@ GLFW class >> destroyWindow: handle [
 { #category : #'as yet unclassified' }
 GLFW class >> getCurrentContext [
 <apicall: void* 'glfwGetCurrentContext' () module: 'libglfw.so'>
-	^self externalCallFailed
-]
-
-{ #category : #'as yet unclassified' }
-GLFW class >> getRequiredInstanceExtensions: count [
-	<apicall: byte* 'glfwGetRequiredInstanceExtensions' (uint32_t*) module: 'libglfw.so'>
 	^self externalCallFailed
 ]
 
@@ -130,7 +114,7 @@ GLFW class >> setMouseButtonCallback: anExternalData with: aBlockClosure [
 
 { #category : #'as yet unclassified' }
 GLFW class >> startUp [
-	"self init"
+	[ self init ] on: Error do: [ "do nothing" ]
 ]
 
 { #category : #'as yet unclassified' }

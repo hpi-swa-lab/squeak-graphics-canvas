@@ -7,7 +7,7 @@ Class {
 		'sourceRect',
 		'rule'
 	],
-	#category : 'RenderThee-Drawing'
+	#category : #'RenderThee-CanvasCommands'
 }
 
 { #category : #'instance creation' }
@@ -24,7 +24,11 @@ RtDrawImage class >> form: aForm origin: aPoint sourceRect: aRectangle rule: anI
 { #category : #drawing }
 RtDrawImage >> drawOn: aCanvas [
 
-	aCanvas image: self form at: self origin sourceRect: self sourceRect rule: self rule
+	aCanvas
+		image: form
+		at: origin
+		sourceRect: sourceRect
+		rule: rule
 ]
 
 { #category : #accessing }
@@ -73,10 +77,4 @@ RtDrawImage >> sourceRect [
 RtDrawImage >> sourceRect: anObject [
 
 	sourceRect := anObject.
-]
-
-{ #category : #visiting }
-RtDrawImage >> visit: aVisitor [
-
-	^ aVisitor visitDrawImage: self
 ]
