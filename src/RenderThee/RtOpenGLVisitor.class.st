@@ -28,7 +28,7 @@ RtOpenGLVisitor >> compositeDrawLayer: aLayer [
 	| elapsedTime tex |
 	elapsedTime := Time microsecondsToRun: [
 		tex := GLTexture context: GL value.
-		tex texImage: aLayer rasterizeForm].
+		tex image: aLayer rasterizeForm].
 	^ tex
 ]
 
@@ -41,7 +41,7 @@ RtOpenGLVisitor >> compositeGroupLayer: aLayer [
 		
 			framebuffer := GLFrameBuffer context: ogl.
 			texture := GLTexture context: ogl.
-			texture texImageExtent: aLayer extent.
+			texture extent: aLayer extent.
 			framebuffer texture2D: texture.
 			
 			renderer currentFramebuffer: framebuffer.

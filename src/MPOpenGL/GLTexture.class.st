@@ -24,6 +24,31 @@ GLTexture >> extent [
 ]
 
 { #category : #accessing }
+GLTexture >> extent: aPoint [
+
+	self	boundDuring: [
+		gl
+			glTexImage2D: GL_TEXTURE_2D
+			with: 0
+			with: GL_RGBA
+			with: aPoint x truncated
+			with: aPoint y truncated
+			with: 0
+			with: GL_BGRA
+			with: GL_UNSIGNED_BYTE
+			with: nil.
+		gl checkForError.
+		gl
+			glTexParameteri: GL_TEXTURE_2D
+			with: GL_TEXTURE_MIN_FILTER
+			with: GL_LINEAR.
+		gl
+			glTexParameteri: GL_TEXTURE_2D
+			with: GL_TEXTURE_MAG_FILTER
+			with: GL_LINEAR]
+]
+
+{ #category : #accessing }
 GLTexture >> getTextureParameterI: parameter [
 	| array |
 	self bind.
@@ -38,18 +63,8 @@ GLTexture >> height [
 	^ self getTextureParameterI: GL_TEXTURE_HEIGHT
 ]
 
-{ #category : #'initialize-release' }
-GLTexture >> initializeWith: glContext [
-
-	| texIDs |
-	super initializeWith: glContext.
-	texIDs := IntegerArray new: 1.
-	gl glGenTextures: 1 with: texIDs.
-	id := texIDs first
-]
-
 { #category : #accessing }
-GLTexture >> texImage: aForm [
+GLTexture >> image: aForm [
 
 	self boundDuring: [
 			gl
@@ -73,29 +88,14 @@ GLTexture >> texImage: aForm [
 				with: GL_LINEAR]
 ]
 
-{ #category : #accessing }
-GLTexture >> texImageExtent: aPoint [
+{ #category : #'initialize-release' }
+GLTexture >> initializeWith: glContext [
 
-	self	boundDuring: [
-			gl
-				glTexImage2D: GL_TEXTURE_2D
-				with: 0
-				with: GL_RGBA
-				with: aPoint x truncated
-				with: aPoint y truncated
-				with: 0
-				with: GL_BGRA
-				with: GL_UNSIGNED_BYTE
-				with: nil.
-			gl checkForError.
-			gl
-				glTexParameteri: GL_TEXTURE_2D
-				with: GL_TEXTURE_MIN_FILTER
-				with: GL_LINEAR.
-			gl
-				glTexParameteri: GL_TEXTURE_2D
-				with: GL_TEXTURE_MAG_FILTER
-				with: GL_LINEAR]
+	| texIDs |
+	super initializeWith: glContext.
+	texIDs := IntegerArray new: 1.
+	gl glGenTextures: 1 with: texIDs.
+	id := texIDs first
 ]
 
 { #category : #binding }
