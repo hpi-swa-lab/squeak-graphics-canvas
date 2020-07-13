@@ -5,7 +5,7 @@ Class {
 		'renderBuffer'
 	],
 	#pools : [
-		'AnObsoleteOpenGLConstants',
+		'OpenGLConstants',
 		'GLConstants'
 	],
 	#category : #'MPOpenGL-Test'

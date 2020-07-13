@@ -5,7 +5,7 @@ Class {
 		'shaderRecipe'
 	],
 	#pools : [
-		'AnObsoleteOpenGLConstants',
+		'OpenGLConstants',
 		'GLConstants'
 	],
 	#category : #'MPOpenGL-Test'
