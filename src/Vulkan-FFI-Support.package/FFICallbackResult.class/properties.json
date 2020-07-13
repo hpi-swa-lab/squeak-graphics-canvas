@@ -1,0 +1,14 @@
+{
+	"category" : "Vulkan-FFI-Support",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "FFICallbackResult",
+	"pools" : [
+		 ],
+	"super" : "ExternalUnion",
+	"type" : "normal" }

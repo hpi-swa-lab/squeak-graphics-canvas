@@ -1,0 +1,17 @@
+{
+	"category" : "Vulkan-FFI-Support",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"AccessProtect",
+		"AllocatedThunks",
+		"ExecutablePages",
+		"LifoCallbackSemaphore" ],
+	"commentStamp" : "mt 6/17/2020 12:24",
+	"instvars" : [
+		 ],
+	"name" : "FFICallbackMemory",
+	"pools" : [
+		 ],
+	"super" : "ByteArray",
+	"type" : "bytes" }

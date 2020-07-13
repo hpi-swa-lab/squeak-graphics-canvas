@@ -1,0 +1,18 @@
+{
+	"category" : "Vulkan-FFI-Support",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"ThunkToCallbackMap" ],
+	"commentStamp" : "",
+	"instvars" : [
+		"abi",
+		"type",
+		"evaluableObject",
+		"thunk",
+		"argTypes" ],
+	"name" : "FFICallback",
+	"pools" : [
+		 ],
+	"super" : "ExternalObject",
+	"type" : "normal" }

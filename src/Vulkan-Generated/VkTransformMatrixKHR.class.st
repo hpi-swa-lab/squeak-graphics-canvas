@@ -8,6 +8,6 @@ Class {
 VkTransformMatrixKHR class >> fields [
 
 	^ #(
-		(matrix 'float[3][4]')
+		(matrix 'float[12]')
 	)
 ]

@@ -1,0 +1,10 @@
+instance lookup
+evaluateCallbackForContext: callbackContext "<FFIallbackContext> ^<Integer> typeCode"
+
+	(ThunkToCallbackMap
+		at: callbackContext thunkp getHandle
+		ifAbsent: [^self error: 'could not locate Callback instance corresponding to thunk address'])
+		ifNil: [self error: 'Callback instance for this thunk address has been garbage collected']
+		ifNotNil:
+			[:callback|
+			^callback valueInContext: callbackContext]

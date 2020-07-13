@@ -1,0 +1,20 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"asNonPointerType" : "tobe 7/5/2020 13:01",
+		"byteAlignment" : "tobe 7/4/2020 10:38",
+		"byteSize" : "tobe 7/5/2020 08:18",
+		"embeddedSpecWithSize:" : "tobe 7/4/2020 10:20",
+		"handle:at:" : "tobe 7/4/2020 08:14",
+		"handle:at:put:" : "tobe 7/4/2020 10:56",
+		"isArrayType" : "tobe 7/1/2020 15:17",
+		"isAtomic" : "tobe 7/4/2020 10:19",
+		"isVoid" : "tobe 7/4/2020 10:19",
+		"numberOfItems" : "tobe 7/4/2020 07:06",
+		"numberOfItems:" : "tobe 7/4/2020 07:06",
+		"printOn:" : "tobe 7/4/2020 08:11",
+		"readFieldAt:" : "tobe 7/4/2020 10:55",
+		"type:" : "tobe 7/4/2020 08:12",
+		"writeFieldArgName" : "tobe 7/4/2020 10:20",
+		"writeFieldAt:with:" : "tobe 7/4/2020 07:06" } }

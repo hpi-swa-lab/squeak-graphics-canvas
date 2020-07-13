@@ -1,0 +1,11 @@
+{
+	"class" : {
+		"fields" : "mt 6/17/2020 17:27",
+		"fromHandle:" : "mt 6/16/2020 20:10" },
+	"instance" : {
+		"errorResult" : "mt 6/18/2020 07:27",
+		"externalObjectResult:" : "mt 6/17/2020 12:03",
+		"floatResult:" : "mt 6/16/2020 21:04",
+		"pointerResult:" : "mt 6/17/2020 12:02",
+		"voidResult" : "mt 6/17/2020 12:04",
+		"wordResult:" : "mt 6/18/2020 07:27" } }

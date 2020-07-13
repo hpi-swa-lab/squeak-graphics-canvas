@@ -359,8 +359,7 @@ VkExample >> createDebugMessenger [
 				message := pCallbackData pMessage.
 				
 				((messageSeverity value bitAnd: VkDebugUtilsMessageSeverityFlagsEXT VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT value) ~= 0 and: [
-					(pCallbackData pMessage includesSubstring: 'wrong ELF class') not]) ifTrue: [
-					SBToggledCode comment: '' active: 1 do: {[self halt]}].
+					(pCallbackData pMessage includesSubstring: 'wrong ELF class') not]) ifTrue: [self halt].
 				
 				Transcript
 					nextPutAll: (self messageSeverityToString: messageSeverity);
@@ -368,13 +367,13 @@ VkExample >> createDebugMessenger [
 					nextPutAll: message;
 					cr;
 					flush.
-				0]].
+				(VkBool32 on: 0)]].
 	^ VkDebugUtilsMessengerCreateInfoEXT externalNew
 		zeroAllFields;
 		sType: VkStructureType VK_STRUCTURE_TYPE_DEBUG_UTILS_MESSENGER_CREATE_INFO_EXT;
 		messageSeverity: (VkDebugUtilsMessageSeverityFlagsEXT on: (VkDebugUtilsMessageSeverityFlagsEXT VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT bitOr: VkDebugUtilsMessageSeverityFlagsEXT VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT));
 		messageType: (VkDebugUtilsMessageTypeFlagsEXT on: ((VkDebugUtilsMessageTypeFlagsEXT VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT bitOr: VkDebugUtilsMessageTypeFlagsEXT VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT) bitOr: VkDebugUtilsMessageTypeFlagsEXT VK_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT));
-		pfnUserCallback: (debugCallback thunk asType: (ExternalType structTypeNamed: #'PFN_vkDebugUtilsMessengerCallbackEXT'))
+		pfnUserCallback: (PFN_vkDebugUtilsMessengerCallbackEXT on: (debugCallback thunk asType: ExternalType void asPointerType))
 ]
 
 { #category : #'as yet unclassified' }
@@ -654,11 +653,12 @@ VkExample >> createGraphicsPipeline [
 		logicOpEnable: (VkBool32 on: 0);
 		logicOp: VkLogicOp VK_LOGIC_OP_COPY;
 		attachmentCount: 1;
-		pAttachments: colorBlendAttachment;
-		blendConstants1: 0.0;
-		blendConstants2: 0.0;
-		blendConstants3: 0.0;
-		blendConstants4: 0.0.
+		pAttachments: colorBlendAttachment.
+	colorBlending blendConstants
+		at: 1 put: 0.0;
+		at: 2 put: 0.0;
+		at: 3 put: 0.0;
+		at: 4 put: 0.0.
 	
 	self
 		passArrayOfPointers: 1
@@ -862,7 +862,7 @@ VkExample >> createInstance [
 			createInfo
 				enabledLayerCount: 1;
 				ppEnabledLayerNames: layerNames;
-				pNext: debugUtilsMessengerCreateInfo]
+				pNext: (debugUtilsMessengerCreateInfo asExternalData asType: ExternalType void asPointerType)]
 		ifFalse: [
 			createInfo enabledLayerCount: 0].
 	
@@ -1516,7 +1516,7 @@ VkExample >> getDeviceExtensionNamesAndCount [
 VkExample >> getExtensionNamesAndCount [
 
 	| names extensionCount glfwExtensions count |
-	SBExample self: [VkExample basicNew] args: [{}] label: 'example'.
+	"SBExample self: [VkExample basicNew] args: [{}] label: 'example'."
 	extensionCount := IntegerArray new: 1.
 	glfwExtensions := GLFW getRequiredInstanceExtensions: extensionCount.
 	
@@ -1649,7 +1649,7 @@ VkExample >> maxFramesInFlight [
 { #category : #'as yet unclassified' }
 VkExample >> messageSeverityToString: aMessageSeverity [
 
-	SBLabel text: ['TODO: can be multiple severities?'].
+	"SBLabel text: ['TODO: can be multiple severities?']."
 	(aMessageSeverity bitAnd: VkDebugUtilsMessageSeverityFlagsEXT VK_DEBUG_UTILS_MESSAGE_SEVERITY_INFO_BIT_EXT) ~= 0 ifTrue: [^ 'INFO'].
 	(aMessageSeverity bitAnd: VkDebugUtilsMessageSeverityFlagsEXT VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT) ~= 0 ifTrue: [^ 'WARNING'].
 	(aMessageSeverity bitAnd: VkDebugUtilsMessageSeverityFlagsEXT VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT) ~= 0 ifTrue: [^ 'VERBOSE'].
@@ -1874,7 +1874,7 @@ VkExample >> vertexDataStride [
 { #category : #'as yet unclassified' }
 VkExample >> vkMakeVersionMajor: major minor: minor patch: patch [
 
-	SBExample self: [VkExample basicNew] args: [{1. 0. 0}] label: 'example'.
+	"SBExample self: [VkExample basicNew] args: [{1. 0. 0}] label: 'example'."
 	^ (major << 22 bitOr: minor << 12) bitOr: patch
 ]
 
