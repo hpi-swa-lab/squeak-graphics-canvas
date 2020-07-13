@@ -379,29 +379,14 @@ VkExample >> createDebugMessenger [
 { #category : #'as yet unclassified' }
 VkExample >> createDebugUtilsMessengerEXT: instance with: createInfo with: pAllocator with: pDebugMessenger [
 
-	| funcAddr |
+	| funcAddr method |
 	VkAPI new vkGetInstanceProcAddr: instance with: 'vkEnumeratePhysicalDevices'.
 	funcAddr := VkAPI new vkGetInstanceProcAddr: instance with: 'vkCreateDebugUtilsMessengerEXT'.
 	funcAddr isNull ifTrue: [self error: 'extension method could not be loaded'].
 	
-	^ SBToggledCode
-		comment: ''
-		active: 2
-		do: {
-			[
-				(ExternalLibraryFunction
-					name: 'vkCreateDebugUtilsMessengerEXT'
-					module: nil
-					callType: ExternalLibraryFunction callTypeAPI
-					returnType: VkResult externalType
-					argumentTypes: (ExternalType lookupTypes: #(#VkInstance #VkDebugUtilsMessengerCreateInfoEXT #* #VkAllocationCallbacks #* #VkDebugUtilsMessengerEXT #*)))
-					setHandle: funcAddr getHandle;
-					invokeWith: instance with: createInfo with: pAllocator with: pDebugMessenger].
-			[ | method |
-				method := VkAPI >> #vkCreateDebugUtilsMessengerEXT:with:with:with:.
-				(method literalAt: 1) setHandle: funcAddr getHandle.
-				VkAPI new vkCreateDebugUtilsMessengerEXT: instance with: createInfo with: pAllocator with: pDebugMessenger]
-		}
+	method := VkAPI >> #vkCreateDebugUtilsMessengerEXT:with:with:with:.
+	(method literalAt: 1) setHandle: funcAddr getHandle.
+	^ VkAPI new vkCreateDebugUtilsMessengerEXT: instance with: createInfo with: pAllocator with: pDebugMessenger
 ]
 
 { #category : #'as yet unclassified' }
@@ -1679,7 +1664,7 @@ VkExample >> passArrayOfPointers: aNumber of: aClass to: aBlock [
 { #category : #'as yet unclassified' }
 VkExample >> pickPhysicalDevice [
 
-	| deviceCount devices properties |
+	| deviceCount devices |
 	deviceCount := IntegerArray with: 0.
 	self checkError: (VkAPI new vkEnumeratePhysicalDevices: instance with: deviceCount with: nil).
 	deviceCount first < 1 ifTrue: [self error: 'no devices with Vulkan support found'].
@@ -1688,15 +1673,7 @@ VkExample >> pickPhysicalDevice [
 		fromHandle: (ExternalAddress allocate: VkPhysicalDevice byteSize * deviceCount first)
 		type: ExternalType intptr_t asPointerType.
 	self checkError: (VkAPI new vkEnumeratePhysicalDevices: instance with: deviceCount with: (VkPhysicalDevice fromHandle: devices getHandle)).
-	physicalDevice := VkPhysicalDevice on: (devices at: 1).
-	SBToggledCode
-		comment: ''
-		active: 0
-		do: {
-			[
-				properties := VkPhysicalDeviceProperties externalNew zeroAllFields.
-				VkAPI new vkGetPhysicalDeviceProperties: device with: properties]
-		}
+	physicalDevice := VkPhysicalDevice on: (devices at: 1)
 ]
 
 { #category : #'as yet unclassified' }
