@@ -33,6 +33,12 @@ GLObject class >> context: glContext [
 		yourself
 ]
 
+{ #category : #'instance creation' }
+GLObject class >> new [
+
+	^ self context: nil
+]
+
 { #category : #binding }
 GLObject >> bind [
 

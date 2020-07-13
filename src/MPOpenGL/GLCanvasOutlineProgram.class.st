@@ -1,5 +1,5 @@
 Class {
-	#name : #RtOutlineProgram,
+	#name : #GLCanvasOutlineProgram,
 	#superclass : #GLProgram,
 	#instVars : [
 		'colorLocation',
@@ -8,11 +8,11 @@ Class {
 		'aTexCoordsLocation',
 		'aTextureSize'
 	],
-	#category : #'RenderThee-Core'
+	#category : #'MPOpenGL-Canvas'
 }
 
 { #category : #'shader code' }
-RtOutlineProgram class >> fragmentShader [
+GLCanvasOutlineProgram class >> fragmentShader [
 	^'#version 330 core
 out vec4 FragColor;
 
@@ -32,7 +32,7 @@ void main() {
 ]
 
 { #category : #'shader code' }
-RtOutlineProgram class >> vertexShader [
+GLCanvasOutlineProgram class >> vertexShader [
 	^'#version 330 core
 in vec2 aPos;
 in vec2 aTexCoords;
@@ -48,31 +48,31 @@ void main()
 ]
 
 { #category : #accessing }
-RtOutlineProgram >> aPosLocation [
+GLCanvasOutlineProgram >> aPosLocation [
 
 	^ aPosLocation
 ]
 
 { #category : #accessing }
-RtOutlineProgram >> aTexCoordsLocation [
+GLCanvasOutlineProgram >> aTexCoordsLocation [
 
 	^ aTexCoordsLocation
 ]
 
 { #category : #'uniform accessing' }
-RtOutlineProgram >> color: anObject [
+GLCanvasOutlineProgram >> color: anObject [
 
 	self uniform: colorLocation value: anObject
 ]
 
 { #category : #accessing }
-RtOutlineProgram >> colorLocation [
+GLCanvasOutlineProgram >> colorLocation [
 
 	^ colorLocation
 ]
 
 { #category : #initialization }
-RtOutlineProgram >> initializeLocations [
+GLCanvasOutlineProgram >> initializeLocations [
 
 	super initializeLocations.
 	mvpLocation := gl glGetUniformLocation: id with: 'mvp'.
@@ -89,19 +89,19 @@ RtOutlineProgram >> initializeLocations [
 ]
 
 { #category : #'uniform accessing' }
-RtOutlineProgram >> mvp: anObject [
+GLCanvasOutlineProgram >> mvp: anObject [
 
 	self uniform: mvpLocation value: anObject
 ]
 
 { #category : #accessing }
-RtOutlineProgram >> mvpLocation [
+GLCanvasOutlineProgram >> mvpLocation [
 
 	^ mvpLocation
 ]
 
 { #category : #initialization }
-RtOutlineProgram >> textureSize: aPoint [
+GLCanvasOutlineProgram >> textureSize: aPoint [
 
 	self uniform: aTextureSize value: aPoint
 ]

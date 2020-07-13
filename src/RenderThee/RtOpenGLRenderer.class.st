@@ -133,8 +133,8 @@ RtOpenGLRenderer >> initializeBuffers [
 { #category : #initialization }
 RtOpenGLRenderer >> initializePrograms [
 
-	textureProgram := RtTextureProgram context: ogl.
-	outlineProgram := RtOutlineProgram context: ogl
+	textureProgram := GLCanvasTextureProgram context: ogl.
+	outlineProgram := GLCanvasOutlineProgram context: ogl
 ]
 
 { #category : #initialization }

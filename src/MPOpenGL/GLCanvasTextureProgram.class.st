@@ -1,5 +1,5 @@
 Class {
-	#name : #RtTextureProgram,
+	#name : #GLCanvasTextureProgram,
 	#superclass : #GLProgram,
 	#instVars : [
 		'mvpLocation',
@@ -7,11 +7,11 @@ Class {
 		'aPosLocation',
 		'aTexCoordsLocation'
 	],
-	#category : #'RenderThee-Core'
+	#category : #'MPOpenGL-Canvas'
 }
 
 { #category : #'shader code' }
-RtTextureProgram class >> fragmentShader [
+GLCanvasTextureProgram class >> fragmentShader [
 	^'#version 330 core
 out vec4 FragColor;
 
@@ -25,7 +25,7 @@ void main() {
 ]
 
 { #category : #'shader code' }
-RtTextureProgram class >> vertexShader [
+GLCanvasTextureProgram class >> vertexShader [
 	^'#version 330 core
 in vec2 aPos;
 in vec2 aTexCoords;
@@ -41,31 +41,31 @@ void main()
 ]
 
 { #category : #accessing }
-RtTextureProgram >> aPosLocation [
+GLCanvasTextureProgram >> aPosLocation [
 
 	^ aPosLocation
 ]
 
 { #category : #accessing }
-RtTextureProgram >> aTexCoordsLocation [
+GLCanvasTextureProgram >> aTexCoordsLocation [
 
 	^ aTexCoordsLocation
 ]
 
 { #category : #'uniform accessing' }
-RtTextureProgram >> image: anObject [
+GLCanvasTextureProgram >> image: anObject [
 
 	self uniform: imageLocation value: anObject
 ]
 
 { #category : #accessing }
-RtTextureProgram >> imageLocation [
+GLCanvasTextureProgram >> imageLocation [
 
 	^ imageLocation
 ]
 
 { #category : #initialization }
-RtTextureProgram >> initializeLocations [
+GLCanvasTextureProgram >> initializeLocations [
 
 	super initializeLocations.
 	mvpLocation := gl glGetUniformLocation: id with: 'mvp'.
@@ -79,13 +79,13 @@ RtTextureProgram >> initializeLocations [
 ]
 
 { #category : #'uniform accessing' }
-RtTextureProgram >> mvp: anObject [
+GLCanvasTextureProgram >> mvp: anObject [
 
 	self uniform: mvpLocation value: anObject
 ]
 
 { #category : #accessing }
-RtTextureProgram >> mvpLocation [
+GLCanvasTextureProgram >> mvpLocation [
 
 	^ mvpLocation
 ]

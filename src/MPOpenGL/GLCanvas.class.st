@@ -4,24 +4,14 @@ Class {
 	#instVars : [
 		'extent',
 		'framebuffer',
-		'texture',
-		'programs'
+		'programs',
+		'baseTransform'
 	],
 	#pools : [
 		'GLConstants'
 	],
 	#category : #'MPOpenGL-Canvas'
 }
-
-{ #category : #'instance creation' }
-GLCanvas class >> extent: aPoint programs: canvasPrograms [
-
-	^ self new
-		extent: aPoint;
-		programs: canvasPrograms;
-		createFramebuffer;
-		yourself
-]
 
 { #category : #'instance creation' }
 GLCanvas class >> extent: aPoint programs: canvasPrograms framebuffer: glFrameBuffer [
@@ -33,31 +23,21 @@ GLCanvas class >> extent: aPoint programs: canvasPrograms framebuffer: glFrameBu
 		yourself
 ]
 
-{ #category : #initialization }
-GLCanvas >> createFramebuffer [
+{ #category : #'drawing-textures' }
+GLCanvas >> createTexture: aForm [
 
-	| ogl |
-	ogl := GL value.
-	
-	framebuffer := GLFrameBuffer context: ogl.
-	texture := GLTexture context: ogl.
-	texture extent: extent.
-	framebuffer texture2D: texture.
-		
-	framebuffer boundDuring: [
-		ogl
-			glViewport: 0 with: 0 with: extent x with: extent y;
-			glClearColor: 1 with: 1 with: 1 with: 0;
-			glClear: GL_COLOR_BUFFER_BIT]
+	^ GLTexture new
+		image: aForm;
+		yourself
 ]
 
-{ #category : #'drawing-images' }
+{ #category : #'drawing-textures' }
 GLCanvas >> drawTexture: glTexture transform: aMatrix [
 
 	self textureProgram
 		use;
-		mvp: aMatrix.
-	texture bind.
+		mvp: baseTransform * aMatrix.
+	glTexture bind.
 	self vbo draw: GL_TRIANGLE_STRIP
 ]
 
@@ -68,9 +48,10 @@ GLCanvas >> extent [
 ]
 
 { #category : #accessing }
-GLCanvas >> extent: anObject [
+GLCanvas >> extent: aPoint [
 
-	extent := anObject.
+	extent := aPoint.
+	baseTransform := Matrix4x4 ortho: (0 @ 0 corner: aPoint) near: 0 far: 1
 ]
 
 { #category : #accessing }
@@ -86,9 +67,24 @@ GLCanvas >> framebuffer: anObject [
 ]
 
 { #category : #'drawing-images' }
-GLCanvas >> paintImage: aForm at: aPoint sourceRect: sourceRect [
+GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
-	
+	| form tex transform ogl |
+	ogl := GL value.
+	form := (sourceRect origin isZero and: [sourceRect extent = aForm extent])
+				ifTrue: [aForm]
+				ifFalse: [aForm contentsOfArea: sourceRect].
+	tex := self createTexture: form.
+	transform := Matrix4x4 withOffset: aPoint.
+	self flag: #todo. "currently ignores rules / correct blending"
+	self drawTexture: tex transform: transform.
+	tex delete
+]
+
+{ #category : #accessing }
+GLCanvas >> outlineProgram [
+
+	^ programs outlineProgram
 ]
 
 { #category : #accessing }
@@ -101,4 +97,22 @@ GLCanvas >> programs [
 GLCanvas >> programs: anObject [
 
 	programs := anObject.
+]
+
+{ #category : #accessing }
+GLCanvas >> textureProgram [
+
+	^ programs textureProgram
+]
+
+{ #category : #accessing }
+GLCanvas >> vao [
+
+	^ programs vao
+]
+
+{ #category : #accessing }
+GLCanvas >> vbo [
+
+	^ programs vbo
 ]

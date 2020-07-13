@@ -79,5 +79,5 @@ GLShaderRecipeTest >> testValidRecipeProducesValidProgram [
 
 { #category : #reference }
 GLShaderRecipeTest >> workingShaderExample [
-	^ RtTextureProgram 
+	^ GLCanvasTextureProgram 
 ]
