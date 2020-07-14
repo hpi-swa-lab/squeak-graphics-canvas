@@ -5,6 +5,27 @@ Class {
 }
 
 { #category : #binding }
+GLTexture >> asForm [
+
+	| bufSize data |
+	bufSize := self extent area * 4.
+	data := ByteArray new: bufSize.
+	gl
+		glGetTextureImage: id
+		with: 0
+		with: GL_BGRA
+		with: GL_UNSIGNED_INT_8_8_8_8
+		with: bufSize
+		with: data.
+	^ Form
+		extent: self extent
+		depth: 32
+		bits: ((Bitmap new: bufSize)
+			copyFromByteArray: data;
+			yourself)
+]
+
+{ #category : #binding }
 GLTexture >> bind: anID [
 
 	gl glBindTexture: GL_TEXTURE_2D with: anID

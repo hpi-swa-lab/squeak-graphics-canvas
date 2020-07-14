@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'clipRect'
 	],
-	#category : #'RenderThee-CanvasCommands'
+	#category : 'RenderThee-CanvasCommands'
 }
 
 { #category : #'instance creation' }

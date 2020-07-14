@@ -59,6 +59,19 @@ GLCanvas >> extent [
 ]
 
 { #category : #accessing }
+GLCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
+
+	self boundDuring: [
+		self textureProgram boundDuring: [
+			self textureProgram
+				sourcePosition: 0 @ 0;
+				sourceExtent: 1 @ 1;
+				color: fillColor;
+				mvp: transform * (Matrix4x4 withOffset: r origin) * (Matrix4x4 withScale: r extent @ 1).
+			self vbo draw: GL_TRIANGLE_STRIP]]
+]
+
+{ #category : #accessing }
 GLCanvas >> framebuffer [
 
 	^ framebuffer
@@ -86,10 +99,12 @@ GLCanvas >> paintImageStore: aStore transform: aMatrix sourceRect: sourceRect [
 		self textureProgram boundDuring: [
 			aStore glTextureDo: [:texture |
 				texture boundDuring: [
+					
+					aStore framebuffer ifNil: [self haltOnce].
 					self textureProgram
 						sourcePosition: sourceRect origin / aStore extent asFloatPoint;
 						sourceExtent: sourceRect extent / aStore extent asFloatPoint;
-						mvp: transform * aMatrix.
+						mvp: transform * aMatrix * (Matrix4x4 withScale: aStore extent @ 1).
 					self vbo draw: GL_TRIANGLE_STRIP]]]]
 ]
 

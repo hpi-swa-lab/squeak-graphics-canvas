@@ -26,10 +26,7 @@ RtOpenGLVisitor class >> new [
 { #category : #texturization }
 RtOpenGLVisitor >> compositeDrawLayer: aLayer [
 
-	| store |
-	store := RtFramebufferStore extent: aLayer extent.
-	store texture image: aLayer rasterizeForm.
-	^ store
+	^ RtFramebufferStore form: aLayer rasterizeForm
 ]
 
 { #category : #texturization }
@@ -74,6 +71,9 @@ RtOpenGLVisitor >> visitGroupLayer: aLayer [
 						aLayer incrementDrawCounter.
 						self compositeGroupLayer: aLayer].
 			aLayer cache: store.
+			
+			canvas fillRectangle: (0 @ 0 extent: 100 @ 100) color: Color red.
+			
 			canvas transformBy: aLayer transform clippingTo: aLayer clipRect during: [:c |
 				c
 					paintImageStore: store

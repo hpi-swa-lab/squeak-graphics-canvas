@@ -26,11 +26,11 @@ GLFrameBuffer >> asForm [
 
 	| viewport data |
 	viewport := IntegerArray new: 4.
-	GL value glGetIntegerv: GL_VIEWPORT with: viewport.
+	gl glGetIntegerv: GL_VIEWPORT with: viewport.
 	data := ByteArray new: viewport third * (viewport fourth * 4).
 	
 	self boundDuring: [
-		GL value
+		gl
 			glReadPixels: 0
 			with: 0
 			with: viewport third

@@ -1,7 +1,7 @@
 Class {
 	#name : #RtRestoreCommand,
 	#superclass : #RtCanvasCommand,
-	#category : #'RenderThee-CanvasCommands'
+	#category : 'RenderThee-CanvasCommands'
 }
 
 { #category : #drawing }

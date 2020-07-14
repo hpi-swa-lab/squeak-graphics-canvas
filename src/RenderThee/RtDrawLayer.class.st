@@ -24,10 +24,7 @@ RtDrawLayer >> drawOn: aCanvas [
 
 	| store |
 	store := cache ifNil: [RtFramebufferStore form: self rasterizeForm].
-	aCanvas
-		paintImageStore: store
-		transform: transform
-		sourceRect: store boundingBox
+	aCanvas paintImageStore: store transform: transform sourceRect: store boundingBox
 ]
 
 { #category : #initialization }

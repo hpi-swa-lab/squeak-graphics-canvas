@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'ogl'
 	],
-	#category : #'RenderThee-Project'
+	#category : 'RenderThee-Project'
 }
 
 { #category : #testing }

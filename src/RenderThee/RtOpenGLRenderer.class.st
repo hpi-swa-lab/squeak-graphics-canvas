@@ -7,7 +7,7 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'RenderThee-Core'
+	#category : #'RenderThee-LayerTree'
 }
 
 { #category : #initialization }
@@ -19,7 +19,7 @@ RtOpenGLRenderer >> initialize [
 		m groupLayer: nil].
 	RtRecordingCanvas record: ActiveWorld.
 	
-	ogl := GL3_3 newGLFWIn: ActiveWorld bounds.
+	ogl := GL4_5 newGLFWIn: ActiveWorld bounds.
 	
 	ogl makeCurrentDuring: [
 		ogl glDisable: GL_CULL_FACE.

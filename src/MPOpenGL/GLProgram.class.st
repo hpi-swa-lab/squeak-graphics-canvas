@@ -104,6 +104,15 @@ GLProgram >> initializeWithContext: glContext [
 	self initializeLocations
 ]
 
+{ #category : #'initialize-release' }
+GLProgram >> registerUniform: aString [
+
+	| location |
+	location := gl glGetUniformLocation: id with: aString.
+	self assert: location >= 0.
+	^ location
+]
+
 { #category : #accessing }
 GLProgram >> shaders [
 

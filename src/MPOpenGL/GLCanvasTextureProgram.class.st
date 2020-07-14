@@ -7,7 +7,8 @@ Class {
 		'sourceExtentLocation',
 		'imageLocation',
 		'aPosLocation',
-		'aTexCoordsLocation'
+		'aTexCoordsLocation',
+		'colorLocation'
 	],
 	#category : #'MPOpenGL-Canvas'
 }
@@ -20,9 +21,11 @@ out vec4 FragColor;
 in vec2 TexCoords;
 
 uniform sampler2D image;
+uniform vec4 color;
 
 void main() {
-  FragColor = texture(image, TexCoords);
+  vec4 tmp = texture(image, TexCoords);
+  FragColor = (tmp * vec4(1.0)) + (color * vec4(0.01));
 }' withUnixLineEndings
 ]
 
@@ -56,6 +59,12 @@ GLCanvasTextureProgram >> aTexCoordsLocation [
 	^ aTexCoordsLocation
 ]
 
+{ #category : #accessing }
+GLCanvasTextureProgram >> color: aColor [
+
+	self uniform: colorLocation value: aColor asVectorColor
+]
+
 { #category : #'uniform accessing' }
 GLCanvasTextureProgram >> image: anObject [
 
@@ -78,6 +87,8 @@ GLCanvasTextureProgram >> initializeLocations [
 	self assert: sourceExtentLocation >= 0.
 	sourcePositionLocation := gl glGetUniformLocation: id with: 'sourcePosition'.
 	self assert: sourcePositionLocation >= 0.
+	colorLocation := self registerUniform: 'color'.
+	
 	imageLocation := gl glGetUniformLocation: id with: 'image'.
 	self assert: imageLocation >= 0.
 	aPosLocation := gl glGetAttribLocation: id with: 'aPos'.
@@ -104,18 +115,8 @@ GLCanvasTextureProgram >> sourceExtent: aPoint [
 	self uniform: sourceExtentLocation value: aPoint
 ]
 
-{ #category : #accessing }
-GLCanvasTextureProgram >> sourceExtentLocation [
-	^ sourceExtentLocation
-]
-
 { #category : #'uniform accessing' }
 GLCanvasTextureProgram >> sourcePosition: aPoint [
 
 	self uniform: sourcePositionLocation value: aPoint
-]
-
-{ #category : #accessing }
-GLCanvasTextureProgram >> sourcePositionLocation [
-	^ sourcePositionLocation
 ]

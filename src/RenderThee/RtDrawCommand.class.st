@@ -1,7 +1,7 @@
 Class {
 	#name : #RtDrawCommand,
 	#superclass : #RtCanvasCommand,
-	#category : #'RenderThee-CanvasCommands'
+	#category : 'RenderThee-CanvasCommands'
 }
 
 { #category : #testing }
