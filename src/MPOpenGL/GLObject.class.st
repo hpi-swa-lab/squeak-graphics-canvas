@@ -28,15 +28,26 @@ Class {
 { #category : #'instance creation' }
 GLObject class >> context: glContext [
 
+	self deprecated: 'use GL value createObject: ', self name.
+	
 	^ self basicNew
 		initializeWith: glContext;
 		yourself
 ]
 
 { #category : #'instance creation' }
-GLObject class >> new [
+GLObject class >> create [
 
-	^ self context: nil
+	^ GL value createObject: self
+]
+
+{ #category : #'instance creation' }
+GLObject class >> privateCreateFor: glContext [
+	" method used by GLResources to create this object. Don't call directly but use OpenGL>>#createObject: "
+
+	^ self basicNew
+		initializeWith: glContext;
+		yourself
 ]
 
 { #category : #binding }
@@ -54,6 +65,12 @@ GLObject >> boundDuring: aBlock [
 		self unbind.
 		gl checkForError].
 	
+]
+
+{ #category : #'gl version' }
+GLObject >> cleanup [
+
+	id := 0
 ]
 
 { #category : #accessing }

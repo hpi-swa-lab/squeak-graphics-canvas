@@ -12,7 +12,8 @@ Class {
 	#instVars : [
 		'platform',
 		'context',
-		'usesGLFW'
+		'usesGLFW',
+		'resources'
 	],
 	#pools : [
 		'GLConstants'
@@ -195,9 +196,16 @@ OpenGL >> context: anObject [
 	context := anObject
 ]
 
+{ #category : #resources }
+OpenGL >> createObject: aClass [
+
+	^ resources createObject: aClass context: self
+]
+
 { #category : #'initialize-release' }
 OpenGL >> destroy [
 	context ifNotNil: [ context destroy ].
+	resources cleanup.
 	context := nil
 
 ]
@@ -205,6 +213,12 @@ OpenGL >> destroy [
 { #category : #'initialize-release' }
 OpenGL >> endFrame [
 	context endFrame
+]
+
+{ #category : #resources }
+OpenGL >> getShaderProgram: aClass [
+
+	resources getShaderProgram: aClass context: self
 ]
 
 { #category : #'as yet unclassified' }
@@ -1105,6 +1119,7 @@ OpenGL >> gluErrorString: error [
 { #category : #'initialize-release' }
 OpenGL >> initialize [
 	platform := GLPlatform identifyPlatform new.
+	resources := GLResources new.
 	super initialize.
 ]
 
