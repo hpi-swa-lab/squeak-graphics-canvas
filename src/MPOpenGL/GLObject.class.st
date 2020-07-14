@@ -129,5 +129,5 @@ GLObject >> initializeWithContext: glContext [
 { #category : #binding }
 GLObject >> unbind [
 
-	self subclassResponsibility 
+	self bind: GL_NONE
 ]

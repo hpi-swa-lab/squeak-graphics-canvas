@@ -15,6 +15,8 @@ RtOpenGLRenderer >> initialize [
 	super initialize.
 	
 	ActiveWorld morphsToRedraw: nil.
+	ActiveWorld allMorphsDo: [:m |
+		m groupLayer: nil].
 	RtRecordingCanvas record: ActiveWorld.
 	
 	ogl := GL3_3 newGLFWIn: ActiveWorld bounds.
@@ -41,7 +43,7 @@ RtOpenGLRenderer >> release [
 
 { #category : #rendering }
 RtOpenGLRenderer >> renderFrame [
-	| canvas visitor |
+	| canvas visitor framebuffer |
 	ogl newFrameDo: [
 		ActiveWorld updateLayerTree.
 
@@ -51,8 +53,9 @@ RtOpenGLRenderer >> renderFrame [
 		ogl glViewport: 0 with: 0 with: ActiveWorld width with: ActiveWorld height.
 		
 		ogl glActiveTexture: GL_TEXTURE0.
-		
-		canvas := GLCanvas extent: ActiveWorld extent framebuffer: nil.
+
+		framebuffer := ogl createObject: GLDisplayFrameBuffer.
+		canvas := GLCanvas extent: ActiveWorld extent framebuffer: framebuffer.
 		visitor := RtOpenGLVisitor canvas: canvas.
 		ActiveWorld groupLayer visit: visitor.
 		

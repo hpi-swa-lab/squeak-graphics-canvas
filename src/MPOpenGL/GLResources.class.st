@@ -27,7 +27,7 @@ GLResources >> createObject: aClass context: aContext [
 GLResources >> getShaderProgram: aClass context: aContext [
 
 	^ shaders at: aClass ifAbsentPut: [ | shader |
-		shader := self createObject: aClass.
+		shader := aContext createObject: aClass.
 		shader]
 ]
 

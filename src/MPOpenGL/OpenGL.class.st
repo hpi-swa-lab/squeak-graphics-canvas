@@ -228,7 +228,7 @@ OpenGL >> endFrame [
 { #category : #resources }
 OpenGL >> getShaderProgram: aClass [
 
-	resources getShaderProgram: aClass context: self
+	^ resources getShaderProgram: aClass context: self
 ]
 
 { #category : #'as yet unclassified' }

@@ -52,8 +52,8 @@ RtFramebufferStore >> initializeWithExtent: aPoint [
 	extent := aPoint.
 	ogl := GL value.
 	
-	framebuffer := GLFrameBuffer context: ogl.
-	texture := GLTexture context: ogl.
+	framebuffer := ogl createObject: GLFrameBuffer.
+	texture := ogl createObject: GLTexture.
 	texture extent: extent.
 	framebuffer texture2D: texture.
 		

@@ -98,9 +98,21 @@ GLCanvasTextureProgram >> mvpLocation [
 	^ mvpLocation
 ]
 
+{ #category : #'uniform accessing' }
+GLCanvasTextureProgram >> sourceExtent: aPoint [
+
+	self uniform: sourceExtentLocation value: aPoint
+]
+
 { #category : #accessing }
 GLCanvasTextureProgram >> sourceExtentLocation [
 	^ sourceExtentLocation
+]
+
+{ #category : #'uniform accessing' }
+GLCanvasTextureProgram >> sourcePosition: aPoint [
+
+	self uniform: sourcePositionLocation value: aPoint
 ]
 
 { #category : #accessing }

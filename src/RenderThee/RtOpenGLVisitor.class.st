@@ -26,9 +26,10 @@ RtOpenGLVisitor class >> new [
 { #category : #texturization }
 RtOpenGLVisitor >> compositeDrawLayer: aLayer [
 
-	^ (RtFramebufferStore extent: aLayer extent)
-		texture image: aLayer rasterizeForm;
-		yourself
+	| store |
+	store := RtFramebufferStore extent: aLayer extent.
+	store texture image: aLayer rasterizeForm.
+	^ store
 ]
 
 { #category : #texturization }
@@ -58,7 +59,7 @@ RtOpenGLVisitor >> visitDrawLayer: aLayer [
 		c
 			paintImageStore: store
 			transform: Matrix4x4 identity
-			sourceRect: store extent]
+			sourceRect: store boundingBox]
 ]
 
 { #category : #visiting }

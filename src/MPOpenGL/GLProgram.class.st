@@ -39,14 +39,6 @@ GLProgram class >> vertexShader [
 	self subclassResponsibility
 ]
 
-{ #category : #'initialize-release' }
-GLProgram >> attachShaders [
-
-	shaders do: [:shader |
-		gl glAttachShader: id with: shader id.
-		gl checkForError]
-]
-
 { #category : #binding }
 GLProgram >> bind: anID [
 
@@ -57,14 +49,6 @@ GLProgram >> bind: anID [
 GLProgram >> bindingEnum [
 
 	^ GL_CURRENT_PROGRAM
-]
-
-{ #category : #'initialize-release' }
-GLProgram >> deleteShaders [
-
-	shaders do: [:shader |
-		gl glDeleteShader: shader id.
-		gl checkForError]
 ]
 
 { #category : #usage }
@@ -83,39 +67,40 @@ GLProgram >> initializeLocations [
 	
 ]
 
-{ #category : #usage }
-GLProgram >> registerAttribute: aString [
-
-	| location |
-	location := gl glGetAttribLocation: id with: aString.
-	self assert: location >= 0.
-	^ location
-]
-
-{ #category : #usage }
-GLProgram >> registerUniform: aString [
-
-	| location |
-	location := gl glGetUniformLocation: id with: aString.
-	self assert: location >= 0.
-	^ location
-]
-
 { #category : #'initialize-release' }
-GLProgram >> setUpProgram [
+GLProgram >> initializeShaders [
 
-	| status |
-	gl checkForError.
-	id := gl glCreateProgram.
-	gl checkForError.
-	self attachShaders.
+	| shaders status |
+	shaders := {
+		VertexShader context: gl code: self class vertexShader.
+		FragmentShader context: gl code: self class fragmentShader
+	}.
+	
+	"attaching shaders"
+	shaders do: [:shader |
+		gl glAttachShader: id with: shader id.
+		gl checkForError].
+	
+	"linking program"
 	gl glLinkProgram: id.
 	gl checkForError.
 	status := IntegerArray new: 1.
 	gl glGetProgramiv: id with: GL_LINK_STATUS with: status.
 	gl checkForError.
 	status first = 0 ifTrue: [self error: 'failed to link shader: ', (self getProgramInfoLog: id)].
-	self deleteShaders.
+	
+	"deleting shaders"
+	shaders do: [:shader |
+		gl glDeleteShader: shader id.
+		gl checkForError]
+]
+
+{ #category : #'initialize-release' }
+GLProgram >> initializeWithContext: glContext [
+
+	super initializeWithContext: glContext.
+	id := gl glCreateProgram.
+	self initializeShaders.
 	self initializeLocations
 ]
 

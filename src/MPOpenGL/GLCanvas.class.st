@@ -89,7 +89,7 @@ GLCanvas >> paintImageStore: aStore transform: aMatrix sourceRect: sourceRect [
 					self textureProgram
 						sourcePosition: sourceRect origin / aStore extent asFloatPoint;
 						sourceExtent: sourceRect extent / aStore extent asFloatPoint;
-						mvp: baseTransform * aMatrix.
+						mvp: transform * aMatrix.
 					self vbo draw: GL_TRIANGLE_STRIP]]]]
 ]
 

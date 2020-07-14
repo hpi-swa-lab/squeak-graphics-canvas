@@ -23,10 +23,10 @@ GLCanvasPrograms class >> create [
 GLCanvasPrograms >> initialize [
 
 	super initialize.
+	GL value checkForError.
 	self initializePrograms.
 	self initializeBuffers.
-	self initializeProgramAttributes.
-	GL value checkForError
+	self initializeProgramAttributes
 ]
 
 { #category : #initialization }
@@ -43,25 +43,31 @@ GLCanvasPrograms >> initializeBuffers [
 			1. 1. 1. 1.
 		} asFloat32Array
 		usage: GL_STATIC_DRAW
-		componentsPerVertex: 4
+		componentsPerVertex: 4.
+	GL value checkForError
 ]
 
 { #category : #initialization }
 GLCanvasPrograms >> initializeProgramAttributes [
 
-	textureProgram image: 0.
-	textureProgram vertexAttrib: textureProgram aPosLocation value: vbo stride: 4 offset: 0.
-	textureProgram vertexAttrib: textureProgram aTexCoordsLocation value: vbo stride: 4 offset: 2.
+	textureProgram boundDuring: [
+		textureProgram image: 0.
+		textureProgram vertexAttrib: textureProgram aPosLocation value: vbo stride: 4 offset: 0.
+		textureProgram vertexAttrib: textureProgram aTexCoordsLocation value: vbo stride: 4 offset: 2.
+		GL value checkForError].
 	
 	outlineProgram vertexAttrib: textureProgram aPosLocation value: vbo stride: 4 offset: 0.
-	outlineProgram vertexAttrib: textureProgram aTexCoordsLocation value: vbo stride: 4 offset: 2
+	GL value checkForError.
+	outlineProgram vertexAttrib: textureProgram aTexCoordsLocation value: vbo stride: 4 offset: 2.
+	GL value checkForError
 ]
 
 { #category : #initialization }
 GLCanvasPrograms >> initializePrograms [
 
 	textureProgram := GL value getShaderProgram: GLCanvasTextureProgram.
-	outlineProgram := GL value getShaderProgram: GLCanvasOutlineProgram
+	outlineProgram := GL value getShaderProgram: GLCanvasOutlineProgram.
+	GL value checkForError
 ]
 
 { #category : #accessing }
