@@ -10,8 +10,9 @@ Canvas >> drawDrawLayer: aLayer [
 { #category : #'*RenderThee-LayerTree' }
 Canvas >> drawGroupLayer: aLayer [
 
+"this method is not used anyways"
 	aLayer children do: [:childLayer |
-		self transformBy:	aLayer transform clippingTo: aLayer clipRect during: [ :c | c drawLayer: childLayer ]]
+		self "transformBy:	aLayer transform clippingTo: aLayer clipRect during: [ :c | c" drawLayer: childLayer ]"]"
 ]
 
 { #category : #'*RenderThee-LayerTree' }

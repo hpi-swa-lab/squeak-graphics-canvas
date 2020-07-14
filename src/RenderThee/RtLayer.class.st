@@ -14,12 +14,6 @@ Class {
 	#category : #'RenderThee-LayerTree'
 }
 
-{ #category : #visiting }
-RtLayer >> assuredForm [
-
-	^ cache ifNil: [cache := self rasterizeForm]
-]
-
 { #category : #initialization }
 RtLayer >> bounds: aRectangle [
 
@@ -57,6 +51,7 @@ RtLayer >> compositeTime: anObject [
 
 { #category : #compositing }
 RtLayer >> drawOn: canvas [
+	self subclassResponsibility
 ]
 
 { #category : #accessing }

@@ -52,18 +52,18 @@ GLCanvas >> drawDrawLayer: aLayer [
 	aLayer cache ifNil: [
 		aLayer cache: (RtFramebufferStore form: aLayer rasterizeForm)].
 	store := aLayer cache.
-	self paintImageStore: store transform: transform sourceRect: store boundingBox
+	self paintImageStore: store transform: aLayer transform sourceRect: store boundingBox
 ]
 
 { #category : #accessing }
 GLCanvas >> drawGroupLayer: aLayer [
 
 	aLayer cache
-		ifNil: [aLayer children do: [:layer |
-			self transformBy: transform clippingTo: (0 @ 0 extent: self extent) during: [:c | self drawLayer: layer]]]
+		ifNil: [  aLayer children do: [:layer |
+			self transformBy: aLayer transform clippingTo: (0 @ 0 extent: self extent) during: [:c | self drawLayer: layer]]]
 		ifNotNil: [:store | self
 			paintImageStore: store
-			transform: transform
+			transform: aLayer transform
 			sourceRect: store boundingBox]
 ]
 
