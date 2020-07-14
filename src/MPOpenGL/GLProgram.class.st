@@ -47,6 +47,18 @@ GLProgram >> attachShaders [
 		gl checkForError]
 ]
 
+{ #category : #binding }
+GLProgram >> bind: anID [
+
+	gl glUseProgram: anID
+]
+
+{ #category : #binding }
+GLProgram >> bindingEnum [
+
+	^ GL_CURRENT_PROGRAM
+]
+
 { #category : #'initialize-release' }
 GLProgram >> deleteShaders [
 
@@ -111,7 +123,7 @@ GLProgram >> uniform: location value: anObject [
 { #category : #usage }
 GLProgram >> use [
 
-	gl glUseProgram: id
+	self bind
 ]
 
 { #category : #usage }

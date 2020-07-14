@@ -136,7 +136,6 @@ OpenGL class >> exampleTex [	"OpenGL exampleTex"
 { #category : #'class initialization' }
 OpenGL class >> initialize [
 	"OpenGL initialize"
-	Smalltalk addToStartUpList: self.
 	Smalltalk addToShutDownList: self.
 
 ]
@@ -144,7 +143,18 @@ OpenGL class >> initialize [
 { #category : #accessing }
 OpenGL class >> moduleName [
 
-	^ GLPlatform identifyPlatform new moduleName.
+	Smalltalk platformName = 'Win32' ifTrue: [
+		^ 'opengl32.dll'].
+	Smalltalk platformName = 'Mac OS' ifTrue:[
+		^ Smalltalk osVersion asNumber < 1000 
+			ifTrue: [self notYetImplemented]
+			ifFalse:['OpenGL.framework']].
+	Smalltalk platformName = 'unix' ifTrue: [
+		"default to X11 window system"
+		^ Smalltalk osVersion = 'linux-gnu'
+			ifTrue: ['libGL.so']
+			ifFalse: ['GL']].
+	self error: 'Cannot identify platform'
 ]
 
 { #category : #'instance creation' }
@@ -1113,7 +1123,7 @@ OpenGL >> makeCurrentDuring: aBlock [
 	| oldContext |
 	oldContext := GL value ifNotNil: [ :gl | gl context deactivate ].
 	context activate.
-	[ GL value: self during: aBlock ] ensure: [
+	^ [ GL value: self during: aBlock ] ensure: [
 		context deactivate.
 		oldContext ifNotNil: [ :ctx | ctx activate ]]
 ]

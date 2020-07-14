@@ -5,7 +5,9 @@ Class {
 		'extent',
 		'framebuffer',
 		'programs',
-		'baseTransform'
+		'transform',
+		'baseTransform',
+		'clipRect'
 	],
 	#pools : [
 		'GLConstants'
@@ -14,31 +16,34 @@ Class {
 }
 
 { #category : #'instance creation' }
-GLCanvas class >> extent: aPoint programs: canvasPrograms framebuffer: glFrameBuffer [
+GLCanvas class >> extent: aPoint framebuffer: glFrameBuffer [
 
 	^ self new
-		extent: aPoint;
-		programs: canvasPrograms;
-		framebuffer: glFrameBuffer;
+		initializeWithExtent: aPoint framebuffer: glFrameBuffer;
 		yourself
 ]
 
-{ #category : #'drawing-textures' }
-GLCanvas >> createTexture: aForm [
+{ #category : #binding }
+GLCanvas >> boundDuring: aBlock [
 
-	^ GLTexture new
-		image: aForm;
-		yourself
+	framebuffer boundDuring: aBlock
 ]
 
-{ #category : #'drawing-textures' }
-GLCanvas >> drawTexture: glTexture transform: aMatrix [
+{ #category : #'drawing-support' }
+GLCanvas >> clipBy: aRectangle during: aBlock [
 
-	self textureProgram
-		use;
-		mvp: baseTransform * aMatrix.
-	glTexture bind.
-	self vbo draw: GL_TRIANGLE_STRIP
+	self flag: #todo. "transform rectangle?? seems excessive"
+	self clipRect: clipRect during: aBlock
+]
+
+{ #category : #'drawing-support' }
+GLCanvas >> clipRect: aRectangle during: aBlock [
+
+	| previousClipRect |
+	previousClipRect := clipRect.
+	clipRect := aRectangle.
+	aBlock cull: self.
+	clipRect := previousClipRect
 ]
 
 { #category : #accessing }
@@ -48,43 +53,37 @@ GLCanvas >> extent [
 ]
 
 { #category : #accessing }
-GLCanvas >> extent: aPoint [
-
-	extent := aPoint.
-	baseTransform := Matrix4x4 ortho: (0 @ 0 corner: aPoint) near: 0 far: 1
-]
-
-{ #category : #accessing }
 GLCanvas >> framebuffer [
 
 	^ framebuffer
 ]
 
-{ #category : #accessing }
-GLCanvas >> framebuffer: anObject [
+{ #category : #initialization }
+GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 
-	framebuffer := anObject.
-]
-
-{ #category : #'drawing-images' }
-GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
-
-	| form tex transform ogl |
-	ogl := GL value.
-	form := (sourceRect origin isZero and: [sourceRect extent = aForm extent])
-				ifTrue: [aForm]
-				ifFalse: [aForm contentsOfArea: sourceRect].
-	tex := self createTexture: form.
-	transform := Matrix4x4 withOffset: aPoint.
-	self flag: #todo. "currently ignores rules / correct blending"
-	self drawTexture: tex transform: transform.
-	tex delete
+	extent := aPoint.
+	transform := Matrix4x4 ortho: (0 @ 0 corner: extent) near: 0 far: 1.
+	framebuffer := aFrameBuffer
 ]
 
 { #category : #accessing }
 GLCanvas >> outlineProgram [
 
 	^ programs outlineProgram
+]
+
+{ #category : #'drawing-images' }
+GLCanvas >> paintImageStore: aStore transform: aMatrix sourceRect: sourceRect [
+
+	self boundDuring: [
+		self textureProgram boundDuring: [
+			aStore glTextureDo: [:texture |
+				texture boundDuring: [
+					self textureProgram
+						sourcePosition: sourceRect origin / aStore extent asFloatPoint;
+						sourceExtent: sourceRect extent / aStore extent asFloatPoint;
+						mvp: baseTransform * aMatrix.
+					self vbo draw: GL_TRIANGLE_STRIP]]]]
 ]
 
 { #category : #accessing }
@@ -94,15 +93,52 @@ GLCanvas >> programs [
 ]
 
 { #category : #accessing }
-GLCanvas >> programs: anObject [
-
-	programs := anObject.
-]
-
-{ #category : #accessing }
 GLCanvas >> textureProgram [
 
 	^ programs textureProgram
+]
+
+{ #category : #accessing }
+GLCanvas >> transform [
+	^ transform
+]
+
+{ #category : #'drawing-support' }
+GLCanvas >> transform: aMatrix during: aBlock [
+
+	| previousTransform |
+	previousTransform := transform.
+	transform := aMatrix.
+	aBlock cull: self.
+	transform := previousTransform
+]
+
+{ #category : #'drawing-support' }
+GLCanvas >> transformBy: aMatrix clippingTo: aRectangle during: aBlock smoothing: cellSize [
+
+	self clipBy: aRectangle during: [
+		self transformBy: aMatrix during: aBlock]
+]
+
+{ #category : #'drawing-support' }
+GLCanvas >> transformBy: aMatrix during: aBlock [
+
+	self transform: transform * aMatrix during: aBlock
+]
+
+{ #category : #'drawing-support' }
+GLCanvas >> translateBy: aPoint clippingTo: aRectangle during: aBlock [
+
+	self clipBy: aRectangle during: [
+		self translateBy: aPoint during: aBlock]
+]
+
+{ #category : #'drawing-support' }
+GLCanvas >> translateBy: aPoint during: aBlock [
+
+	self
+		transformBy: (Matrix4x4 withOffset: aPoint)
+		during: aBlock
 ]
 
 { #category : #accessing }

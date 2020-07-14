@@ -1,6 +1,6 @@
 Class {
-	#name : #RtOpenGLLayerCache,
-	#superclass : #RtLayerCache,
+	#name : #RtFramebufferStore,
+	#superclass : #RtImageStore,
 	#instVars : [
 		'texture',
 		'framebuffer',
@@ -13,7 +13,7 @@ Class {
 }
 
 { #category : #'instance creation' }
-RtOpenGLLayerCache class >> extent: aPoint [
+RtFramebufferStore class >> extent: aPoint [
 
 	^ self new
 		initializeWithExtent: aPoint;
@@ -21,13 +21,19 @@ RtOpenGLLayerCache class >> extent: aPoint [
 ]
 
 { #category : #accessing }
-RtOpenGLLayerCache >> framebuffer [
+RtFramebufferStore >> framebuffer [
 
 	^ framebuffer
 ]
 
+{ #category : #accessing }
+RtFramebufferStore >> glTextureDo: aBlock [
+
+	aBlock value: texture
+]
+
 { #category : #initialization }
-RtOpenGLLayerCache >> initializeWithExtent: aPoint [
+RtFramebufferStore >> initializeWithExtent: aPoint [
 
 	| ogl |
 	extent := aPoint.
@@ -46,7 +52,7 @@ RtOpenGLLayerCache >> initializeWithExtent: aPoint [
 ]
 
 { #category : #accessing }
-RtOpenGLLayerCache >> texture [
+RtFramebufferStore >> texture [
 
 	^ texture
 ]

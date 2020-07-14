@@ -9,9 +9,15 @@ Class {
 }
 
 { #category : #binding }
-GLVertexArrayObject >> bind [
+GLVertexArrayObject >> bind: anID [
 
-	gl glBindVertexArray: id
+	gl glBindVertexArray: anID
+]
+
+{ #category : #binding }
+GLVertexArrayObject >> bindingEnum [
+
+	^ GL_VERTEX_ARRAY_BUFFER_BINDING
 ]
 
 { #category : #usage }
@@ -49,10 +55,10 @@ GLVertexArrayObject >> glType [
 ]
 
 { #category : #'initialize-release' }
-GLVertexArrayObject >> initializeWith: glContext [
+GLVertexArrayObject >> initializeWithContext: glContext [
 
 	| ids |
-	super initializeWith: glContext.
+	super initializeWithContext: glContext.
 	ids := IntegerArray new: 1.
 	gl glGenVertexArrays: 1 with: ids.
 	id := ids first

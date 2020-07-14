@@ -3,8 +3,7 @@ Class {
 	#superclass : #RtLayerTreeVisitor,
 	#instVars : [
 		'matrix',
-		'drawCallback',
-		'renderer'
+		'canvas'
 	],
 	#pools : [
 		'GLConstants'
@@ -13,23 +12,24 @@ Class {
 }
 
 { #category : #'instance creation' }
-RtOpenGLVisitor class >> new [
-	self shouldNotImplement
+RtOpenGLVisitor class >> canvas: aCanvas [
+
+	^ self basicNew
+		initializeWithCanvas: aCanvas;
+		yourself
 ]
 
 { #category : #'instance creation' }
-RtOpenGLVisitor class >> new: aRenderer [
-	^ (self basicNew) initialize: aRenderer
+RtOpenGLVisitor class >> new [
+	self shouldNotImplement
 ]
 
 { #category : #texturization }
 RtOpenGLVisitor >> compositeDrawLayer: aLayer [
 
-	| elapsedTime tex |
-	elapsedTime := Time microsecondsToRun: [
-		tex := GLTexture context: GL value.
-		tex image: aLayer rasterizeForm].
-	^ tex
+	^ (RtFramebufferStore extent: aLayer extent)
+		texture image: aLayer rasterizeForm;
+		yourself
 ]
 
 { #category : #texturization }
@@ -59,16 +59,10 @@ RtOpenGLVisitor >> compositeGroupLayer: aLayer [
 		texture]
 ]
 
-{ #category : #accessing }
-RtOpenGLVisitor >> drawCallback: aBlock [
-
-	drawCallback := aBlock
-]
-
 { #category : #initialization }
-RtOpenGLVisitor >> initialize: aRenderer [
+RtOpenGLVisitor >> initializeWithCanvas: aCanvas [
 
-	renderer := aRenderer
+	canvas := aCanvas
 ]
 
 { #category : #helpers }
@@ -99,27 +93,29 @@ RtOpenGLVisitor >> rootMatrix: aMatrix [
 RtOpenGLVisitor >> visitDrawLayer: aLayer [
 
 	self layer: aLayer during: [
-		| texture |
-		texture := aLayer isComposited ifFalse: [
+		| store |
+		store := aLayer isComposited ifFalse: [
 			aLayer incrementDrawCounter.
 			aLayer cache: (self compositeDrawLayer: aLayer)].
 		
-		drawCallback
-			value: matrix * (Matrix4x4 withScale: aLayer extent @ 1)
-			value: texture
-			value: aLayer]
+		canvas transformBy: aLayer transform clippingTo: aLayer clipRect during: [:c |
+			c
+				paintImageStore: store
+				transform: Matrix4x4 identity
+				sourceRect: store extent]]
 ]
 
 { #category : #visiting }
 RtOpenGLVisitor >> visitGroupLayer: aLayer [
 
+	| drawCallback |
 	self layer: aLayer during: [
 		aLayer shouldBeComposited
 			ifTrue: [
 				| texture |
 				texture := aLayer isComposited ifFalse: [
 					aLayer incrementDrawCounter.
-					aLayer cache: (self compositeGroupLayer: aLayer)].
+					self compositeGroupLayer: aLayer].
 				drawCallback
 					value: matrix * (Matrix4x4 withScale: aLayer extent @ 1)
 					value: texture

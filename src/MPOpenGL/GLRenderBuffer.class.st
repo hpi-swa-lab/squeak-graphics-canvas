@@ -57,9 +57,15 @@ GLRenderBuffer >> attachTo: aFrameBuffer attachment: attachment [
 ]
 
 { #category : #binding }
-GLRenderBuffer >> bind [
+GLRenderBuffer >> bind: anID [
 	"bind a renderbuffer to a renderbuffer target"
-	gl glBindRenderbuffer: GL_RENDERBUFFER with: id
+	gl glBindRenderbuffer: GL_RENDERBUFFER with: anID
+]
+
+{ #category : #binding }
+GLRenderBuffer >> bindingEnum [
+
+	^ GL_RENDERBUFFER_BINDING
 ]
 
 { #category : #'initialize-release' }
@@ -94,10 +100,10 @@ GLRenderBuffer >> height: anObject [
 ]
 
 { #category : #'initialize-release' }
-GLRenderBuffer >> initializeWith: glContext [
+GLRenderBuffer >> initializeWithContext: glContext [
 
 	| ids |
-	super initializeWith: glContext.
+	super initializeWithContext: glContext.
 	height := 0.
 	width := 0.
 	samples := 0.

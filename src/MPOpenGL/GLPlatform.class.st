@@ -31,8 +31,3 @@ GLPlatform class >> identifyPlatform [
 GLPlatform >> beginFrame: aGLInstance [
 	"do nothing"
 ]
-
-{ #category : #initialize }
-GLPlatform >> moduleName [
-	^self subclassResponsibility
-]

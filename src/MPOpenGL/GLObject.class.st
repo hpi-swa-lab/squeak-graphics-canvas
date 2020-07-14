@@ -29,7 +29,7 @@ Class {
 GLObject class >> context: glContext [
 
 	^ self basicNew
-		initializeWith: glContext;
+		initializeWithContext: glContext;
 		yourself
 ]
 
@@ -42,52 +42,69 @@ GLObject class >> new [
 { #category : #binding }
 GLObject >> bind [
 
+	self bind: id
+]
+
+{ #category : #binding }
+GLObject >> bind: anID [
+
+	self subclassResponsibility
+]
+
+{ #category : #accessing }
+GLObject >> bindingEnum [
+
 	self subclassResponsibility
 ]
 
 { #category : #binding }
 GLObject >> boundDuring: aBlock [
 
+	| previousBinding |
+	previousBinding := self currentBinding.
+	previousBinding = id ifTrue: [^ aBlock value].
 	self bind.
 	gl checkForError.
 	aBlock ensure: [
-		self unbind.
-		gl checkForError].
-	
+		self bind: previousBinding.
+		gl checkForError]
+]
+
+{ #category : #binding }
+GLObject >> currentBinding [
+
+	| id |
+	id := IntegerArray new: 1.
+	gl glGetIntegerv: self bindingEnum with: id.
+	^ id first
 ]
 
 { #category : #accessing }
 GLObject >> gl [
+
 	^ gl
 ]
 
 { #category : #accessing }
 GLObject >> gl: anObject [ 
-	anObject
-		ifNil: [self useDynamicGLContext]
-		ifNotNil: [gl := anObject]
+
+	gl := anObject
 ]
 
 { #category : #accessing }
 GLObject >> id [
+
 	^ id
 ]
 
 { #category : #initialization }
-GLObject >> initializeWith: glContext [
+GLObject >> initializeWithContext: glContext [
 
-	self gl: glContext
+	gl := glContext ifNil: [GL value]
 ]
 
 { #category : #binding }
 GLObject >> unbind [
 
 	self subclassResponsibility 
-]
-
-{ #category : #'gl version' }
-GLObject >> useDynamicGLContext [
-	"use GL from dynamic variable"
-	self gl: GL value.
-	
 ]

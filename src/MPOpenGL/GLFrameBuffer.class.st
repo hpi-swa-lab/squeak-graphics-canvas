@@ -76,9 +76,15 @@ GLFrameBuffer >> attachRenderBuffer: aRenderBuffer attachment: attachment [
 ]
 
 { #category : #binding }
-GLFrameBuffer >> bind [
+GLFrameBuffer >> bind: anID [
 	"bind a framebuffer to a framebuffer target"
-	gl glBindFramebuffer: target with: id
+	gl glBindFramebuffer: target with: anID
+]
+
+{ #category : #binding }
+GLFrameBuffer >> bindingEnum [
+	"note: there is also GL_READ_FRAMEBUFFER_BINDING which we ignore completely"
+	^ GL_DRAW_FRAMEBUFFER_BINDING
 ]
 
 { #category : #usage }
@@ -98,10 +104,10 @@ GLFrameBuffer >> delete [
 ]
 
 { #category : #'initialize-release' }
-GLFrameBuffer >> initializeWith: glContext [
+GLFrameBuffer >> initializeWithContext: glContext [
 	"generate framebuffer object name (id)"
 	| ids |
-	super initializeWith: glContext.
+	super initializeWithContext: glContext.
 	target := GL_FRAMEBUFFER.
 	ids := IntegerArray new: 1.
 	gl glGenFramebuffers: 1 with: ids.

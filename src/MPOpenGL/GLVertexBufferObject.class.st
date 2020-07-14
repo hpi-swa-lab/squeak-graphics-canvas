@@ -11,9 +11,15 @@ Class {
 }
 
 { #category : #binding }
-GLVertexBufferObject >> bind [
+GLVertexBufferObject >> bind: anID [
 	"bind a vbo"
-	gl glBindBuffer: GL_ARRAY_BUFFER with: id
+	gl glBindBuffer: GL_ARRAY_BUFFER with: anID
+]
+
+{ #category : #binding }
+GLVertexBufferObject >> bindingEnum [
+
+	^ GL_VERTEX_BINDING_BUFFER
 ]
 
 { #category : #accessing }
@@ -94,10 +100,10 @@ GLVertexBufferObject >> glType: anObject [
 ]
 
 { #category : #'initialize-release' }
-GLVertexBufferObject >> initializeWith: glContext [
+GLVertexBufferObject >> initializeWithContext: glContext [
 
 	| ids |
-	super initializeWith: glContext.
+	super initializeWithContext: glContext.
 	ids := IntegerArray new: 1.
 	gl glGenBuffers: 1 with: ids.
 	id := ids first

@@ -5,9 +5,15 @@ Class {
 }
 
 { #category : #binding }
-GLTexture >> bind [
+GLTexture >> bind: anID [
 
-	gl glBindTexture: GL_TEXTURE_2D with: id
+	gl glBindTexture: GL_TEXTURE_2D with: anID
+]
+
+{ #category : #binding }
+GLTexture >> bindingEnum [
+
+	^ GL_TEXTURE_BINDING_2D
 ]
 
 { #category : #'initialize-release' }
@@ -89,10 +95,10 @@ GLTexture >> image: aForm [
 ]
 
 { #category : #'initialize-release' }
-GLTexture >> initializeWith: glContext [
+GLTexture >> initializeWithContext: glContext [
 
 	| texIDs |
-	super initializeWith: glContext.
+	super initializeWithContext: glContext.
 	texIDs := IntegerArray new: 1.
 	gl glGenTextures: 1 with: texIDs.
 	id := texIDs first

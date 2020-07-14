@@ -17,7 +17,7 @@ GLShaderSource class >> context: glContext [
 GLShaderSource class >> context: glContext code: aString [
 
 	^ self basicNew
-		initializeWith: glContext code: aString;
+		initializeWithContext: glContext code: aString;
 		yourself
 ]
 
@@ -46,10 +46,10 @@ GLShaderSource >> getShaderInfoLog: vertexShader [
 ]
 
 { #category : #'shader lifecycle' }
-GLShaderSource >> initializeWith: glContext code: aString [
+GLShaderSource >> initializeWithContext: glContext code: aString [
 
 	| utf8 |
-	super initializeWith: glContext.
+	super initializeWithContext: glContext.
 	self code: aString.
 	utf8 := code utf8Encoded.
 	

@@ -3,6 +3,8 @@ Class {
 	#superclass : #GLProgram,
 	#instVars : [
 		'mvpLocation',
+		'sourcePositionLocation',
+		'sourceExtentLocation',
 		'imageLocation',
 		'aPosLocation',
 		'aTexCoordsLocation'
@@ -26,16 +28,18 @@ void main() {
 
 { #category : #'shader code' }
 GLCanvasTextureProgram class >> vertexShader [
-	^'#version 330 core
+    ^'#version 330 core
 in vec2 aPos;
 in vec2 aTexCoords;
 
 uniform mat4 mvp;
+uniform vec2 sourcePosition;
+uniform vec2 sourceExtent;
 out vec2 TexCoords;
 
 void main()
 {
-    TexCoords = aTexCoords;
+    TexCoords = aTexCoords * sourceExtent + sourcePosition;
     gl_Position = mvp * vec4(aPos, 0.0, 1.0);
 }' withUnixLineEndings
 ]
@@ -70,6 +74,10 @@ GLCanvasTextureProgram >> initializeLocations [
 	super initializeLocations.
 	mvpLocation := gl glGetUniformLocation: id with: 'mvp'.
 	self assert: mvpLocation >= 0.
+	sourceExtentLocation := gl glGetUniformLocation: id with: 'sourceExtent'.
+	self assert: sourceExtentLocation >= 0.
+	sourcePositionLocation := gl glGetUniformLocation: id with: 'sourcePosition'.
+	self assert: sourcePositionLocation >= 0.
 	imageLocation := gl glGetUniformLocation: id with: 'image'.
 	self assert: imageLocation >= 0.
 	aPosLocation := gl glGetAttribLocation: id with: 'aPos'.
@@ -88,4 +96,14 @@ GLCanvasTextureProgram >> mvp: anObject [
 GLCanvasTextureProgram >> mvpLocation [
 
 	^ mvpLocation
+]
+
+{ #category : #accessing }
+GLCanvasTextureProgram >> sourceExtentLocation [
+	^ sourceExtentLocation
+]
+
+{ #category : #accessing }
+GLCanvasTextureProgram >> sourcePositionLocation [
+	^ sourcePositionLocation
 ]
