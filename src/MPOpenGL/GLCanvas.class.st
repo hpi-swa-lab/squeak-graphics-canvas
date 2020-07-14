@@ -33,7 +33,7 @@ GLCanvas >> boundDuring: aBlock [
 GLCanvas >> clipBy: aRectangle during: aBlock [
 
 	self flag: #todo. "transform rectangle?? seems excessive"
-	self clipRect: clipRect during: aBlock
+	self clipRect: aRectangle during: aBlock
 ]
 
 { #category : #'drawing-support' }
@@ -44,6 +44,12 @@ GLCanvas >> clipRect: aRectangle during: aBlock [
 	clipRect := aRectangle.
 	aBlock cull: self.
 	clipRect := previousClipRect
+]
+
+{ #category : #accessing }
+GLCanvas >> drawLayer: aLayer [
+
+	aLayer drawOn: self
 ]
 
 { #category : #accessing }
@@ -63,7 +69,8 @@ GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 
 	extent := aPoint.
 	transform := Matrix4x4 ortho: (0 @ 0 corner: extent) near: 0 far: 1.
-	framebuffer := aFrameBuffer
+	framebuffer := aFrameBuffer.
+	programs := GLCanvasPrograms create
 ]
 
 { #category : #accessing }

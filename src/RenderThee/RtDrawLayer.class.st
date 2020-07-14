@@ -22,8 +22,12 @@ RtDrawLayer >> commands [
 { #category : #compositing }
 RtDrawLayer >> drawOn: aCanvas [
 
-	commands do: [:cmd |
-		cmd drawOn: aCanvas]
+	| store |
+	store := cache ifNil: [RtFramebufferStore form: self rasterizeForm].
+	aCanvas
+		paintImageStore: store
+		transform: transform
+		sourceRect: store boundingBox
 ]
 
 { #category : #initialization }

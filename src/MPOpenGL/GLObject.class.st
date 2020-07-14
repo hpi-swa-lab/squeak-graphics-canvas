@@ -31,7 +31,7 @@ GLObject class >> context: glContext [
 	self deprecated: 'use GL value createObject: ', self name.
 	
 	^ self basicNew
-		initializeWith: glContext;
+		initializeWithContext: glContext;
 		yourself
 ]
 
@@ -44,7 +44,7 @@ GLObject class >> create [
 { #category : #'instance creation' }
 GLObject class >> new [
 
-	^ self context: nil
+	self shouldNotImplement
 ]
 
 { #category : #'instance creation' }
@@ -52,7 +52,7 @@ GLObject class >> privateCreateFor: glContext [
 	" method used by GLResources to create this object. Don't call directly but use OpenGL>>#createObject: "
 
 	^ self basicNew
-		initializeWith: glContext;
+		initializeWithContext: glContext;
 		yourself
 ]
 

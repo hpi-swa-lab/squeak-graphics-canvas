@@ -13,6 +13,12 @@ Class {
 	#category : #'MPOpenGL-Canvas'
 }
 
+{ #category : #'instance creation' }
+GLCanvasPrograms class >> create [
+
+	^ self new
+]
+
 { #category : #initialization }
 GLCanvasPrograms >> initialize [
 
@@ -26,9 +32,9 @@ GLCanvasPrograms >> initialize [
 { #category : #initialization }
 GLCanvasPrograms >> initializeBuffers [
 
-	vao := GLVertexArrayObject new.
+	vao := GL value createObject: GLVertexArrayObject.
 	vao bind.
-	vbo := GLVertexBufferObject new.
+	vbo := GL value createObject: GLVertexBufferObject.
 	vbo
 		data: {
 			0. 0. 0. 0 .
@@ -54,8 +60,8 @@ GLCanvasPrograms >> initializeProgramAttributes [
 { #category : #initialization }
 GLCanvasPrograms >> initializePrograms [
 
-	textureProgram := GLCanvasTextureProgram new.
-	outlineProgram := GLCanvasOutlineProgram new
+	textureProgram := GL value getShaderProgram: GLCanvasTextureProgram.
+	outlineProgram := GL value getShaderProgram: GLCanvasOutlineProgram
 ]
 
 { #category : #accessing }

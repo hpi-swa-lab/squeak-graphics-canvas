@@ -20,6 +20,19 @@ RtFramebufferStore class >> extent: aPoint [
 		yourself
 ]
 
+{ #category : #'instance creation' }
+RtFramebufferStore class >> form: aForm [
+
+	^ self new
+		initializeWithForm: aForm;
+		yourself
+]
+
+{ #category : #accessing }
+RtFramebufferStore >> extent [
+	^ extent
+]
+
 { #category : #accessing }
 RtFramebufferStore >> framebuffer [
 
@@ -49,6 +62,14 @@ RtFramebufferStore >> initializeWithExtent: aPoint [
 			glViewport: 0 with: 0 with: extent x with: extent y;
 			glClearColor: 1 with: 1 with: 1 with: 0;
 			glClear: GL_COLOR_BUFFER_BIT]
+]
+
+{ #category : #initialization }
+RtFramebufferStore >> initializeWithForm: aForm [
+
+	extent := aForm extent.
+	texture := GL value createObject: GLTexture.
+	texture image: aForm
 ]
 
 { #category : #accessing }

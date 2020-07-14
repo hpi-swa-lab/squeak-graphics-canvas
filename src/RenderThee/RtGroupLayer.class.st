@@ -70,7 +70,12 @@ RtGroupLayer >> drawChildrenOn: canvas [
 { #category : #drawing }
 RtGroupLayer >> drawOn: aCanvas [
 
-	self drawChildrenOn: aCanvas
+	cache
+		ifNil: [children do: [:layer | aCanvas drawLayer: layer]]
+		ifNotNil: [:store | aCanvas
+							paintImageStore: store
+							transform: transform
+							sourceRect: store boundingBox]
 ]
 
 { #category : #initialization }
@@ -94,27 +99,6 @@ RtGroupLayer >> morph [
 { #category : #accessing }
 RtGroupLayer >> morph: anObject [
 	morph := anObject
-]
-
-{ #category : #drawing }
-RtGroupLayer >> restoreFramebufferOf: aRenderer after: aBlock [
-	| oldFramebuffer oldExtent ogl oldViewport ret |
-	ogl := GL value.
-	
-	oldFramebuffer := aRenderer currentFramebuffer.
-	oldExtent := aRenderer currentExtent.
-	oldViewport := IntegerArray new: 4.
-	ogl glGetIntegerv: GL_VIEWPORT with: oldViewport.
-	
-	ret := aBlock value.
-	
-	aRenderer currentFramebuffer: oldFramebuffer.
-	aRenderer currentExtent: oldExtent.
-	self flag: #todo. "scoped bind possible ?"
-	oldFramebuffer ifNotNil: [ oldFramebuffer bind ].
-	ogl glViewport: oldViewport first with: oldViewport second with: oldViewport third with: oldViewport fourth.
-	
-	^ ret
 ]
 
 { #category : #initialization }
