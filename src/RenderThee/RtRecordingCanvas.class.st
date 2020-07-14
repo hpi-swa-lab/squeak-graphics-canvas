@@ -265,7 +265,7 @@ RtRecordingCanvas >> fullDrawInCurrentLayer: aMorph [
 RtRecordingCanvas >> fullDrawInNewLayer: aMorph [
 
 	| newLayer |
-	newLayer := RtGroupLayer bounds: (aMorph bounds translateBy: self origin negated). "outerBounds?"
+	newLayer := RtGroupLayer bounds: (aMorph bounds truncated translateBy: self origin negated). "outerBounds?"
 	newLayer morph: aMorph.
 	self
 		newCurrentLayer: newLayer
