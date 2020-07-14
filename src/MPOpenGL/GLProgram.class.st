@@ -83,6 +83,24 @@ GLProgram >> initializeLocations [
 	
 ]
 
+{ #category : #usage }
+GLProgram >> registerAttribute: aString [
+
+	| location |
+	location := gl glGetAttribLocation: id with: aString.
+	self assert: location >= 0.
+	^ location
+]
+
+{ #category : #usage }
+GLProgram >> registerUniform: aString [
+
+	| location |
+	location := gl glGetUniformLocation: id with: aString.
+	self assert: location >= 0.
+	^ location
+]
+
 { #category : #'initialize-release' }
 GLProgram >> setUpProgram [
 
