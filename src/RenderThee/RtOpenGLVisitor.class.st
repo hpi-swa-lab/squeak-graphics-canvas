@@ -35,7 +35,8 @@ RtOpenGLVisitor >> compositeGroupLayer: aLayer [
 	| store subCanvas |
 	store := RtFramebufferStore extent: aLayer extent.
 	subCanvas := GLCanvas extent: aLayer extent framebuffer: store framebuffer.
-	subCanvas drawLayer: aLayer.
+	subCanvas transformBy: aLayer transform inverseTransformation clippingTo: (0 @ 0 extent: aLayer extent) during: [:c | 
+		c drawLayer: aLayer].
 	^ store
 ]
 
@@ -64,22 +65,20 @@ RtOpenGLVisitor >> visitDrawLayer: aLayer [
 { #category : #visiting }
 RtOpenGLVisitor >> visitGroupLayer: aLayer [
 
-	aLayer shouldBeComposited
-		ifTrue: [
-			| store |
-			store := aLayer cache ifNil: [
-						aLayer incrementDrawCounter.
-						self compositeGroupLayer: aLayer].
-			aLayer cache: store.
-			
-			canvas fillRectangle: (0 @ 0 extent: 100 @ 100) color: Color red.
-			
-			canvas transformBy: aLayer transform clippingTo: aLayer clipRect during: [:c |
+	canvas transformBy: aLayer transform clippingTo: aLayer clipRect during: [:c |
+		aLayer shouldBeComposited
+			ifTrue: [
+				| store |
+				store := aLayer cache ifNil: [
+							aLayer incrementDrawCounter.
+							self compositeGroupLayer: aLayer].
+				aLayer cache: store.
+				
 				c
 					paintImageStore: store
 					transform: Matrix4x4 identity
-					sourceRect: store boundingBox]]
-		ifFalse: [
-			aLayer incrementDrawCounter.
-			aLayer children do: [:child | child visit: self]]
+					sourceRect: store boundingBox]
+			ifFalse: [
+				aLayer incrementDrawCounter.
+				aLayer children do: [:child | child visit: self]]]
 ]

@@ -53,14 +53,15 @@ RtOpenGLRenderer >> renderFrame [
 		ogl glViewport: 0 with: 0 with: ActiveWorld width with: ActiveWorld height.
 		
 		ogl glActiveTexture: GL_TEXTURE0.
-
+		
 		framebuffer := ogl createObject: GLDisplayFrameBuffer.
 		canvas := GLCanvas extent: ActiveWorld extent framebuffer: framebuffer.
 		visitor := RtOpenGLVisitor canvas: canvas.
-		ActiveWorld groupLayer visit: visitor.
 		
-		ogl checkForError. ]
-	
+		canvas transformBy: (Matrix4x4 withScale: 1 @ -1 @ 1) * (Matrix4x4 withOffset: 0 @ ActiveWorld height negated @ 0) clippingTo: ActiveWorld bounds during: [:c |
+			ActiveWorld groupLayer visit: visitor].
+		
+		ogl checkForError]
 ]
 
 { #category : #accessing }
