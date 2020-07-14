@@ -1,17 +1,17 @@
 Class {
-	#name : #RtLayerTreeVisitor,
+	#name : #RtCompositor,
 	#superclass : #Object,
 	#category : #'RenderThee-LayerTree'
 }
 
 { #category : #visiting }
-RtLayerTreeVisitor >> visitDrawLayer: aLayer [
+RtCompositor >> visitDrawLayer: aLayer [
 
 	self subclassResponsibility
 ]
 
 { #category : #visiting }
-RtLayerTreeVisitor >> visitGroupLayer: aLayer [
+RtCompositor >> visitGroupLayer: aLayer [
 
 	self subclassResponsibility
 ]

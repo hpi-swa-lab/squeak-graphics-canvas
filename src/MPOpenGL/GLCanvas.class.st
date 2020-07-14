@@ -47,9 +47,24 @@ GLCanvas >> clipRect: aRectangle during: aBlock [
 ]
 
 { #category : #accessing }
-GLCanvas >> drawLayer: aLayer [
+GLCanvas >> drawDrawLayer: aLayer [
+	| store |
+	aLayer cache ifNil: [
+		aLayer cache: (RtFramebufferStore form: aLayer rasterizeForm)].
+	store := aLayer cache.
+	self paintImageStore: store transform: transform sourceRect: store boundingBox
+]
 
-	aLayer drawOn: self
+{ #category : #accessing }
+GLCanvas >> drawGroupLayer: aLayer [
+
+	aLayer cache
+		ifNil: [aLayer children do: [:layer |
+			self transformBy: transform clippingTo: (0 @ 0 extent: self extent) during: [:c | self drawLayer: layer]]]
+		ifNotNil: [:store | self
+			paintImageStore: store
+			transform: transform
+			sourceRect: store boundingBox]
 ]
 
 { #category : #accessing }

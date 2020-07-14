@@ -7,7 +7,7 @@ Class {
 	#classVars : [
 		'Remembrall'
 	],
-	#category : 'RenderThee-CanvasCommands'
+	#category : #'RenderThee-CanvasCommands'
 }
 
 { #category : #accessing }

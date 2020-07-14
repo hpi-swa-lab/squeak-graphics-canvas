@@ -1,6 +1,6 @@
 Class {
-	#name : #RtOpenGLVisitor,
-	#superclass : #RtLayerTreeVisitor,
+	#name : #RtOpenGLCompositor,
+	#superclass : #RtCompositor,
 	#instVars : [
 		'canvas'
 	],
@@ -11,7 +11,7 @@ Class {
 }
 
 { #category : #'instance creation' }
-RtOpenGLVisitor class >> canvas: aCanvas [
+RtOpenGLCompositor class >> canvas: aCanvas [
 
 	^ self basicNew
 		initializeWithCanvas: aCanvas;
@@ -19,18 +19,18 @@ RtOpenGLVisitor class >> canvas: aCanvas [
 ]
 
 { #category : #'instance creation' }
-RtOpenGLVisitor class >> new [
+RtOpenGLCompositor class >> new [
 	self shouldNotImplement
 ]
 
 { #category : #texturization }
-RtOpenGLVisitor >> compositeDrawLayer: aLayer [
+RtOpenGLCompositor >> compositeDrawLayer: aLayer [
 
 	^ RtFramebufferStore form: aLayer rasterizeForm
 ]
 
 { #category : #texturization }
-RtOpenGLVisitor >> compositeGroupLayer: aLayer [
+RtOpenGLCompositor >> compositeGroupLayer: aLayer [
 
 	| store subCanvas |
 	store := RtFramebufferStore extent: aLayer extent.
@@ -41,13 +41,13 @@ RtOpenGLVisitor >> compositeGroupLayer: aLayer [
 ]
 
 { #category : #initialization }
-RtOpenGLVisitor >> initializeWithCanvas: aCanvas [
+RtOpenGLCompositor >> initializeWithCanvas: aCanvas [
 
 	canvas := aCanvas
 ]
 
 { #category : #visiting }
-RtOpenGLVisitor >> visitDrawLayer: aLayer [
+RtOpenGLCompositor >> visitDrawLayer: aLayer [
 
 	| store |
 	store := aLayer cache ifNil: [
@@ -63,7 +63,7 @@ RtOpenGLVisitor >> visitDrawLayer: aLayer [
 ]
 
 { #category : #visiting }
-RtOpenGLVisitor >> visitGroupLayer: aLayer [
+RtOpenGLCompositor >> visitGroupLayer: aLayer [
 
 	canvas transformBy: aLayer transform clippingTo: aLayer clipRect during: [:c |
 		aLayer shouldBeComposited

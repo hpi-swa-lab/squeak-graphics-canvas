@@ -1,6 +1,6 @@
 Class {
-	#name : #RtBitBltVisitor,
-	#superclass : #RtLayerTreeVisitor,
+	#name : #RtBitBltCompositor,
+	#superclass : #RtCompositor,
 	#instVars : [
 		'canvas'
 	],
@@ -8,7 +8,7 @@ Class {
 }
 
 { #category : #'instance creation' }
-RtBitBltVisitor class >> canvas: aCanvas [
+RtBitBltCompositor class >> canvas: aCanvas [
 
 	^ self new
 		canvas: aCanvas;
@@ -16,13 +16,13 @@ RtBitBltVisitor class >> canvas: aCanvas [
 ]
 
 { #category : #accessing }
-RtBitBltVisitor >> canvas: aCanvas [
+RtBitBltCompositor >> canvas: aCanvas [
 
 	canvas := aCanvas
 ]
 
 { #category : #visiting }
-RtBitBltVisitor >> visitChildLayer: aLayer [
+RtBitBltCompositor >> visitChildLayer: aLayer [
 
 	canvas save.
 	canvas clipRect: aLayer clipRect.
@@ -34,14 +34,14 @@ RtBitBltVisitor >> visitChildLayer: aLayer [
 ]
 
 { #category : #visiting }
-RtBitBltVisitor >> visitDrawLayer: aLayer [
+RtBitBltCompositor >> visitDrawLayer: aLayer [
 
 	aLayer commands do: [:cmd |
 		cmd drawOn: canvas]
 ]
 
 { #category : #visiting }
-RtBitBltVisitor >> visitGroupLayer: aLayer [
+RtBitBltCompositor >> visitGroupLayer: aLayer [
 
 	aLayer children do: [:childLayer |
 		self visitChildLayer: childLayer]

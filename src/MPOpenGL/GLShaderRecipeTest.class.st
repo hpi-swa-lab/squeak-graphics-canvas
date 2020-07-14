@@ -5,7 +5,6 @@ Class {
 		'shaderRecipe'
 	],
 	#pools : [
-		'AnObsoleteOpenGLConstants',
 		'GLConstants'
 	],
 	#category : #'MPOpenGL-Test'
@@ -79,5 +78,5 @@ GLShaderRecipeTest >> testValidRecipeProducesValidProgram [
 
 { #category : #reference }
 GLShaderRecipeTest >> workingShaderExample [
-	^ GLCanvasTextureProgram 
+	^ RtTextureProgram 
 ]
