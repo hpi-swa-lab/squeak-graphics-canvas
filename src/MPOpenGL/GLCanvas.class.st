@@ -23,6 +23,16 @@ GLCanvas class >> extent: aPoint framebuffer: glFrameBuffer [
 		yourself
 ]
 
+{ #category : #'instance creation' }
+GLCanvas class >> extent: aPoint store: anImageStoreClass do: aBlock [
+
+	| store canvas |
+	store := RtFramebufferStore extent: aPoint.
+	canvas := GLCanvas extent: aPoint framebuffer: store framebuffer.
+	aBlock value: canvas.
+	^ store
+]
+
 { #category : #binding }
 GLCanvas >> boundDuring: aBlock [
 
@@ -49,9 +59,7 @@ GLCanvas >> clipRect: aRectangle during: aBlock [
 { #category : #accessing }
 GLCanvas >> drawDrawLayer: aLayer [
 	| store |
-	aLayer cache ifNil: [
-		aLayer cache: (RtFramebufferStore form: aLayer rasterizeForm)].
-	store := aLayer cache.
+	store := aLayer cache ifNil: [aLayer cache: (aLayer createStoreOf: RtFramebufferStore using: FormCanvas); cache].
 	self paintImageStore: store transform: aLayer transform sourceRect: store boundingBox
 ]
 
@@ -114,8 +122,6 @@ GLCanvas >> paintImageStore: aStore transform: aMatrix sourceRect: sourceRect [
 		self textureProgram boundDuring: [
 			aStore glTextureDo: [:texture |
 				texture boundDuring: [
-					
-					aStore framebuffer ifNil: [self haltOnce].
 					self textureProgram
 						sourcePosition: sourceRect origin / aStore extent asFloatPoint;
 						sourceExtent: sourceRect extent / aStore extent asFloatPoint;

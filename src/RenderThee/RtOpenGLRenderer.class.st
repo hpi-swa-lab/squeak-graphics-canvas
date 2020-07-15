@@ -56,7 +56,7 @@ RtOpenGLRenderer >> renderFrame [
 		
 		framebuffer := ogl createObject: GLDisplayFrameBuffer.
 		canvas := GLCanvas extent: ActiveWorld extent framebuffer: framebuffer.
-		visitor := RtOpenGLVisitor canvas: canvas.
+		visitor := RtOpenGLCompositor canvas: canvas.
 		
 		canvas transformBy: (Matrix4x4 withScale: 1 @ -1 @ 1) * (Matrix4x4 withOffset: 0 @ ActiveWorld height negated @ 0) clippingTo: ActiveWorld bounds during: [:c |
 			ActiveWorld groupLayer visit: visitor].
@@ -66,5 +66,5 @@ RtOpenGLRenderer >> renderFrame [
 
 { #category : #accessing }
 RtOpenGLRenderer >> shouldClose [
-	^ ogl shouldClose
+	^ ogl = #glSuspended or: [ogl shouldClose]
 ]

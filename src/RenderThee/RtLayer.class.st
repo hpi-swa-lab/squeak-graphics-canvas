@@ -49,6 +49,16 @@ RtLayer >> compositeTime: anObject [
 	compositeTime := anObject
 ]
 
+{ #category : #initialization }
+RtLayer >> createStoreOf: anImageStoreClass using: aCanvasClass [
+
+	^ aCanvasClass extent: self extent store: anImageStoreClass do: [:canvas | | previousTransform |
+		previousTransform := self transform.
+		self transform: Matrix4x4 identity.
+		canvas drawLayer: self.
+		self transform: previousTransform]
+]
+
 { #category : #compositing }
 RtLayer >> drawOn: canvas [
 	self subclassResponsibility
@@ -137,15 +147,6 @@ RtLayer >> isComposited [
 RtLayer >> open [
 
 	self assuredForm asMorph openInHand
-]
-
-{ #category : #visiting }
-RtLayer >> rasterizeForm [
-
-	| fc |
-	fc := RtFormCanvas extent: extent.
-	fc drawLayer: self.
-	^ fc form
 ]
 
 { #category : #testing }

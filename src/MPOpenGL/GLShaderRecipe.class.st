@@ -1,7 +1,7 @@
 Class {
 	#name : #GLShaderRecipe,
 	#superclass : #Object,
-	#category : #'MPOpenGL-Shaders'
+	#category : 'MPOpenGL-Shaders'
 }
 
 { #category : #usage }

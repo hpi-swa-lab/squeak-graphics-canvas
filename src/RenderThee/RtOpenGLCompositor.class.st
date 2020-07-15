@@ -24,12 +24,6 @@ RtOpenGLCompositor class >> new [
 ]
 
 { #category : #texturization }
-RtOpenGLCompositor >> compositeDrawLayer: aLayer [
-
-	^ RtFramebufferStore form: aLayer rasterizeForm
-]
-
-{ #category : #texturization }
 RtOpenGLCompositor >> compositeGroupLayer: aLayer [
 
 	| store subCanvas |
@@ -52,7 +46,7 @@ RtOpenGLCompositor >> visitDrawLayer: aLayer [
 	| store |
 	store := aLayer cache ifNil: [
 				aLayer incrementDrawCounter.
-				self compositeDrawLayer: aLayer].
+				aLayer createStoreOf: RtFramebufferStore using: RtFormCanvas].
 	aLayer cache: store.
 	
 	canvas transformBy: aLayer transform clippingTo: aLayer clipRect during: [:c |
