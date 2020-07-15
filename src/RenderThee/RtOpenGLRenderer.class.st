@@ -43,25 +43,12 @@ RtOpenGLRenderer >> release [
 
 { #category : #rendering }
 RtOpenGLRenderer >> renderFrame [
-	| canvas visitor framebuffer |
-	ogl newFrameDo: [
-		ActiveWorld updateLayerTree.
 
-		ogl glClear: GL_COLOR_BUFFER_BIT.
-		ogl checkForError.
-		
-		ogl glViewport: 0 with: 0 with: ActiveWorld width with: ActiveWorld height.
-		
-		ogl glActiveTexture: GL_TEXTURE0.
-		
-		framebuffer := ogl createObject: GLDisplayFrameBuffer.
-		canvas := GLCanvas extent: ActiveWorld extent framebuffer: framebuffer.
-		visitor := RtOpenGLCompositor canvas: canvas.
-		
-		canvas transformBy: (Matrix4x4 withScale: 1 @ -1 @ 1) * (Matrix4x4 withOffset: 0 @ ActiveWorld height negated @ 0) clippingTo: ActiveWorld bounds during: [:c |
-			ActiveWorld groupLayer visit: visitor].
-		
-		ogl checkForError]
+	ActiveWorld updateLayerTree.
+	
+	ogl makeCurrentDuring: [
+		GLCanvas extent: ActiveWorld extent store: RtDisplayFramebufferStore do: [:canvas |
+			ActiveWorld groupLayer visit: (RtOpenGLCompositor canvas: canvas cachingStrategy: RtConservativeCaching new)]]
 ]
 
 { #category : #accessing }

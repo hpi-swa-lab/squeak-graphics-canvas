@@ -63,15 +63,7 @@ RtGroupLayer >> clear [
 
 { #category : #drawing }
 RtGroupLayer >> drawOn: aCanvas [
-^	aCanvas drawGroupLayer: self
-
-	"cache
-		ifNil: [children do: [:layer |
-			aCanvas transformBy: transform clippingTo: (0 @ 0 extent: self extent) during: [:c | aCanvas drawLayer: layer]]]
-		ifNotNil: [:store | aCanvas
-			paintImageStore: store
-			transform: transform
-			sourceRect: store boundingBox]"
+	^	aCanvas drawGroupLayer: self
 ]
 
 { #category : #initialization }

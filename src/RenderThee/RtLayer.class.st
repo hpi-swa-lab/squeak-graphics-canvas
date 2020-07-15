@@ -49,10 +49,11 @@ RtLayer >> compositeTime: anObject [
 	compositeTime := anObject
 ]
 
-{ #category : #initialization }
+{ #category : #compositing }
 RtLayer >> createStoreOf: anImageStoreClass using: aCanvasClass [
 
 	^ aCanvasClass extent: self extent store: anImageStoreClass do: [:canvas | | previousTransform |
+		" note that our layer carries its own transform, but we want to paint it in the origin "
 		previousTransform := self transform.
 		self transform: Matrix4x4 identity.
 		canvas drawLayer: self.
@@ -137,22 +138,10 @@ RtLayer >> invalidateCache [
 	drawsSinceInvalidation := 0
 ]
 
-{ #category : #testing }
-RtLayer >> isComposited [
-
-	^ cache notNil
-]
-
 { #category : #utilities }
 RtLayer >> open [
 
 	self assuredForm asMorph openInHand
-]
-
-{ #category : #testing }
-RtLayer >> shouldBeComposited [
-
-	^ drawsSinceInvalidation >= 100
 ]
 
 { #category : #accessing }
@@ -165,6 +154,13 @@ RtLayer >> transform [
 RtLayer >> transform: anObject [
 
 	transform := anObject
+]
+
+{ #category : #compositing }
+RtLayer >> updateStoreOf: anImageStoreClass using: aCanvasClass [
+
+	cache := self createStoreOf: anImageStoreClass using: aCanvasClass.
+	^ cache
 ]
 
 { #category : #visiting }
