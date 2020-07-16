@@ -7,14 +7,67 @@ Class {
 	#category : #'MPOpenGL-Shaders'
 }
 
+{ #category : #generation }
+GLProgram class >> attributes [
+	" return the names of all attributes your shader possesses here "
+
+	^ #()
+]
+
+{ #category : #generation }
+GLProgram class >> compileAccessors [
+	" call this method to automatically generate accessors for your attributes and uniforms "
+
+	| source |
+	self addInstVarNames: ((self uniforms, self attributes) collect: [:name | name, 'Location']).
+	
+	source := String streamContents: [:stream |
+		stream
+			nextPutAll: 'initializeLocations';
+			cr;
+			crtab;
+			nextPutAll: 'super initializeLocations.'.
+		
+		stream crtab.
+		self uniforms do: [:uniform |
+			stream crtab;
+				nextPutAll: uniform;
+				nextPutAll: 'Location := self registerUniform: '; store: uniform; nextPut: $.].
+		
+		stream crtab.
+		self attributes do: [:attribute |
+			stream crtab;
+				nextPutAll: attribute;
+				nextPutAll: 'Location := self registerAttribute: '; store: attribute; nextPut: $.]].
+		
+	self compile: source classified: 'generated'.
+	
+	self uniforms do: [:uniform |
+		source := String streamContents: [:stream |
+			stream
+				nextPutAll: uniform; nextPut: $:; nextPutAll: ' anObject';
+				cr; crtab;
+				nextPutAll: 'self uniform: '; nextPutAll: uniform; nextPutAll: 'Location value: anObject'].
+		self compile: source classified: 'generated'].
+	
+	self attributes do: [:attribute |
+		source := String streamContents: [:stream |
+			stream
+				nextPutAll: attribute;
+				nextPutAll: 'Location';
+				cr; crtab;
+				nextPutAll: '^ '; nextPutAll: attribute; nextPutAll: 'Location'].
+		self compile: source classified: 'generated']
+]
+
 { #category : #'instance creation' }
 GLProgram class >> context: glContext [
 
 	^ self
 		context: glContext
 		shaders: {
-			VertexShader context: glContext code: self vertexShader.
-			FragmentShader context: glContext code: self fragmentShader
+			VertexShader context: glContext code: self vertexShader withUnixLineEndings.
+			FragmentShader context: glContext code: self fragmentShader withUnixLineEndings.
 		}
 ]
 
@@ -31,6 +84,13 @@ GLProgram class >> context: glContext shaders: aCollection [
 GLProgram class >> fragmentShader [
 
 	self subclassResponsibility
+]
+
+{ #category : #generation }
+GLProgram class >> uniforms [
+	" return the names of all uniforms your shader possesses here "
+
+	^ #()
 ]
 
 { #category : #'shader code' }
@@ -72,8 +132,8 @@ GLProgram >> initializeShaders [
 
 	| shaders status |
 	shaders := {
-		VertexShader context: gl code: self class vertexShader.
-		FragmentShader context: gl code: self class fragmentShader
+		VertexShader context: gl code: self class vertexShader withUnixLineEndings.
+		FragmentShader context: gl code: self class fragmentShader withUnixLineEndings.
 	}.
 	
 	"attaching shaders"
@@ -102,6 +162,15 @@ GLProgram >> initializeWithContext: glContext [
 	id := gl glCreateProgram.
 	self initializeShaders.
 	self initializeLocations
+]
+
+{ #category : #'initialize-release' }
+GLProgram >> registerAttribute: aString [
+
+	| location |
+	location := gl glGetAttribLocation: id with: aString.
+	self assert: location >= 0.
+	^ location
 ]
 
 { #category : #'initialize-release' }

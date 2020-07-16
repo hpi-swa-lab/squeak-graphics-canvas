@@ -15,23 +15,11 @@ RtOpenGLRenderer >> initialize [
 	super initialize.
 	
 	ActiveWorld morphsToRedraw: nil.
-	ActiveWorld allMorphsDo: [:m |
-		m groupLayer: nil].
+	ActiveWorld allMorphsDo: [:m | m groupLayer: nil].
+	
 	RtRecordingCanvas record: ActiveWorld.
 	
-	ogl := GL4_5 newGLFWIn: ActiveWorld bounds.
-	
-	ogl makeCurrentDuring: [
-		ogl glDisable: GL_CULL_FACE.
-		ogl glDisable: GL_DEPTH_TEST.
-		ogl glActiveTexture: GL_TEXTURE0.
-		ogl
-			glClearColor: 1
-			with: 1
-			with: 1
-			with: 0.
-		ogl glEnable: GL_BLEND.
-		ogl glBlendFuncSeparate: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA with: GL_ONE with: GL_ONE]
+	ogl := GL4_5 newGLFWIn: ActiveWorld bounds
 ]
 
 { #category : #initialization }
