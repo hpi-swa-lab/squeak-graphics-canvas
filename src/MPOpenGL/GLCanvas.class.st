@@ -15,6 +15,22 @@ Class {
 	#category : #'MPOpenGL-Canvas'
 }
 
+{ #category : #example }
+GLCanvas class >> exampleWindow [
+	"self exampleWindow"
+
+	| gl |
+	gl := GL4_1 newGLFWIn: (0 @ 0 extent: 900 asPoint).
+	gl makeCurrentDuring: [
+		gl glEnable: GL_BLEND.
+		gl glBlendFuncSeparate: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA with: GL_ONE with: GL_ONE.
+		GLCanvas extent: 900 asPoint store: RtDisplayFramebufferStore do: [:c |
+			c fullDraw: ((ToolBuilder build: Browser new) position: 0 @ 0)]].
+	
+	[Sensor anyButtonPressed] whileFalse: [2 milliSeconds wait].
+	gl destroy
+]
+
 { #category : #'instance creation' }
 GLCanvas class >> extent: aPoint framebuffer: glFrameBuffer [
 
