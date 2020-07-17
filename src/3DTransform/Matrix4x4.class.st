@@ -769,8 +769,7 @@ Matrix4x4 >> isZero [
 { #category : #transforming }
 Matrix4x4 >> localBoundsToGlobal: aRectangle [
 
-	^Rectangle encompassing: (self globalPointsToLocal: aRectangle corners)
-
+	^ Rectangle encompassing: (self localPointsToGlobal: aRectangle corners)
 	
 ]
 
@@ -806,6 +805,12 @@ Matrix4x4 >> localPointToGlobal: aVector [
 	rw := (x * self a41) + (y * self a42) + (z * self a43) + self a44.
 
 	^Vector3 x:(rx/rw) y: (ry/rw) z: (rz/rw)
+]
+
+{ #category : #transforming }
+Matrix4x4 >> localPointsToGlobal: aCollection [
+
+	^ aCollection collect:[:pt | self localPointToGlobal: pt]
 ]
 
 { #category : #'row-access' }
@@ -907,6 +912,16 @@ Matrix4x4 >> pitchYawRoll: ypr [
 	self loadFrom: mz * my * mx.
 	self translation: offset
 
+]
+
+{ #category : #testing }
+Matrix4x4 >> preservesAxisAlignment [
+
+	"
+	x 0 0
+	0 y 0
+	0 0 z"
+	^ self a12 = 0 and: [self a13 = 0 and: [self a21 = 0 and: [self a23 = 0 and: [self a31 = 0 and: [self a32 = 0]]]]]
 ]
 
 { #category : #'double dispatching' }

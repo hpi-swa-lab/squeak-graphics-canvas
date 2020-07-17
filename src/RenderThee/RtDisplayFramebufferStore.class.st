@@ -51,6 +51,7 @@ RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 			with: 1
 			with: 0.
 		ogl glEnable: GL_BLEND.
+		ogl glEnable: GL_SCISSOR_TEST.
 		ogl glBlendFuncSeparate: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA with: GL_ONE with: GL_ONE.
 		
 		ogl
@@ -64,5 +65,6 @@ RtDisplayFramebufferStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
 	aCanvas transformBy: self displayTransform clippingTo: (0 @ 0 extent: extent) during: [
 		framebuffer gl newFrameDo: aBlock.
+		framebuffer gl glScissor: 0 with: 0 with: extent x with: extent y.
 		framebuffer gl checkForError]
 ]

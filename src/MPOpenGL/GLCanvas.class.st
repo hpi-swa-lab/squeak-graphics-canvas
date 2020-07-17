@@ -57,11 +57,23 @@ GLCanvas >> clipRect [
 { #category : #'drawing-support' }
 GLCanvas >> clipRect: aRectangle during: aBlock [
 
-	| previousClipRect |
+	| previousClipRect gl rect viewTransform |
+	viewTransform := baseTransform inverseTransformation * transform.
+	
 	previousClipRect := clipRect.
+	gl := GL value.
+	
 	clipRect := aRectangle.
+	viewTransform preservesAxisAlignment ifTrue: [
+		rect := viewTransform localBoundsToGlobal: clipRect.
+		gl glScissor: rect left with: rect top with: rect width with: rect height].
+	
 	aBlock cull: self.
-	clipRect := previousClipRect
+	
+	clipRect := previousClipRect.
+	viewTransform preservesAxisAlignment ifTrue: [
+		rect := viewTransform localBoundsToGlobal: clipRect.
+		gl glScissor: rect left with: rect top with: rect width with: rect height]
 ]
 
 { #category : #accessing }
@@ -156,7 +168,7 @@ GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 
 	extent := aPoint.
-	transform := Matrix4x4 ortho: (0 @ 0 corner: extent) near: 0 far: 1.
+	baseTransform := transform := Matrix4x4 ortho: (0 @ 0 corner: extent) near: 0 far: 1.
 	framebuffer := aFrameBuffer.
 	programs := GLCanvasPrograms create.
 	clipRect := 0 @ 0 extent: aPoint
