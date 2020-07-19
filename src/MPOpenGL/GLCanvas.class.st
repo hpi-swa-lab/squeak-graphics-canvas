@@ -7,7 +7,8 @@ Class {
 		'programs',
 		'transform',
 		'baseTransform',
-		'clipRect'
+		'clipRect',
+		'lastTransform'
 	],
 	#pools : [
 		'GLConstants'
@@ -67,13 +68,13 @@ GLCanvas >> clipBy: aRectangle during: aBlock [
 { #category : #'drawing-support' }
 GLCanvas >> clipRect [
 
-	^ clipRect
+	^ lastTransform globalBoundsToLocal: clipRect
 ]
 
 { #category : #'drawing-support' }
 GLCanvas >> clipRect: aRectangle during: aBlock [
 
-	| previousClipRect gl rect viewTransform |
+	| previousClipRect gl viewTransform rect |
 	viewTransform := baseTransform inverseTransformation * transform.
 	
 	previousClipRect := clipRect.
@@ -185,6 +186,7 @@ GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 
 	extent := aPoint.
 	baseTransform := transform := Matrix4x4 ortho: (0 @ 0 corner: extent) near: 0 far: 1.
+	lastTransform := Matrix4x4 identity.
 	framebuffer := aFrameBuffer.
 	programs := GLCanvasPrograms create.
 	clipRect := 0 @ 0 extent: aPoint
@@ -214,10 +216,14 @@ GLCanvas >> paintImageStore: aStore transform: aMatrix sourceRect: sourceRect [
 GLCanvas >> paragraph: paragraph bounds: bounds color: c [
 
 	| scanner |
-	scanner := DisplayScanner new text: paragraph text textStyle: paragraph textStyle
-		foreground: c background: Color transparent fillBlt: self
+	scanner := GLCanvasDisplayScanner new
+		text: paragraph text
+		textStyle: paragraph textStyle
+		foreground: c
+		background: Color transparent
+		fillBlt: self
 		ignoreColorChanges: false.
-	scanner setPort: self.
+	
 	paragraph displayOn: self using: scanner at: bounds topLeft
 ]
 
@@ -252,7 +258,11 @@ GLCanvas >> transformBy: aMatrix clippingTo: aRectangle during: aBlock smoothing
 { #category : #'drawing-support' }
 GLCanvas >> transformBy: aMatrix during: aBlock [
 
-	self transform: transform * aMatrix during: aBlock
+	| previousLastTransform |
+	previousLastTransform := lastTransform.
+	lastTransform := aMatrix.
+	self transform: transform * aMatrix during: aBlock.
+	lastTransform := previousLastTransform
 ]
 
 { #category : #'drawing-support' }

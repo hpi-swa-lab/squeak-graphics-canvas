@@ -25,7 +25,10 @@ GLCanvasPrograms class >> create [
 { #category : #accessing }
 GLCanvasPrograms >> font: aFont [
 
-	^ fonts at: (aFont ifNil: [TextStyle defaultFont]) ifAbsentPut: [GLBitmapFont new font: aFont]
+	| font |
+	font := aFont ifNil: [TextStyle defaultFont].
+	
+	^ fonts at: font ifAbsentPut: [GLBitmapFont new font: font]
 ]
 
 { #category : #accessing }
