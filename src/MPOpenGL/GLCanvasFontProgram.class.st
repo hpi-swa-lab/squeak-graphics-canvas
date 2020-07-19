@@ -56,7 +56,7 @@ out vec2 TexCoords;
 
 void main()
 {
-    TexCoords = aPos * extent / textureSize(image, 0) + vec2(offsetX / textureSize(image, 0).x, 0.0);
+    TexCoords = (aPos * extent + vec2(offsetX, 0.0)) / textureSize(image, 0);
     gl_Position = mvp * vec4(aPos * extent, 0.0, 1.0);
 }' withUnixLineEndings
 ]

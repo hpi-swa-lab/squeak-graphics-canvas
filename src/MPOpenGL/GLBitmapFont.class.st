@@ -61,7 +61,8 @@ GLBitmapFont >> indexForCharacter: aCharacter [
 { #category : #'as yet unclassified' }
 GLBitmapFont >> offsetFor: aCharacter [
 
-	^ (offsets at: (self indexForCharacter: aCharacter) ifAbsent: [0]) @ (font ascent - (font characterFormAt: aCharacter) offset y)
+	^ ((offsets at: (self indexForCharacter: aCharacter) ifAbsent: [0]) @ font ascent)
+		 - (font characterFormAt: aCharacter) offset
 ]
 
 { #category : #'as yet unclassified' }
