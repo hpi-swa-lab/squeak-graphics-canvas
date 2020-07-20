@@ -8,6 +8,12 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
+RtFormStore class >> defaultCanvasClass [
+
+	^ FormCanvas
+]
+
+{ #category : #'as yet unclassified' }
 RtFormStore class >> form: aForm [
 
 	^ self new

@@ -23,7 +23,7 @@ GLCanvas class >> exampleWindow [
 	| gl |
 	gl := GL4_1 newGLFWIn: (0 @ 0 extent: 900 asPoint).
 	gl makeCurrentDuring: [
-		GLCanvas extent: 900 asPoint store: RtDisplayFramebufferStore do: [:c |
+		RtDisplayFramebufferStore extent: 900 asPoint withCanvasDo: [:c |
 			c fullDraw: ((ToolBuilder build: (Browser new setClass: Morph selector: #submorphs)) position: 0 @ 0)]].
 	
 	[Sensor anyButtonPressed] whileFalse: [2 milliSeconds wait].

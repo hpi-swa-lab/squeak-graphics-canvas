@@ -4,6 +4,18 @@ Class {
 	#category : #'RenderThee-LayerTree'
 }
 
+{ #category : #'as yet unclassified' }
+RtImageStore class >> defaultCanvasClass [
+
+	^ self subclassResponsibility
+]
+
+{ #category : #'as yet unclassified' }
+RtImageStore class >> extent: aPoint withCanvasDo: aBlock [
+
+	self defaultCanvasClass extent: aPoint store: self do: aBlock
+]
+
 { #category : #accessing }
 RtImageStore >> boundingBox [
 

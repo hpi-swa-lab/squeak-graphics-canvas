@@ -12,6 +12,12 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
+RtDisplayFramebufferStore class >> defaultCanvasClass [
+
+	^ GLCanvas
+]
+
+{ #category : #'as yet unclassified' }
 RtDisplayFramebufferStore class >> extent: aPoint [
 
 	^ self new
