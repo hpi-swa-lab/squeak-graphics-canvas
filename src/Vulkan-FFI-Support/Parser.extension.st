@@ -30,3 +30,22 @@ Parser >> callback [
 	self addPragma: (Pragma keyword: #callback: arguments: {{retType}, args contents}).
 	^true
 ]
+
+{ #category : #'*Vulkan-FFI-Support' }
+Parser >> externalType: descriptorClass [
+	"Parse and return an external type"
+	| xType typeName |
+	typeName := here. "Note that pointer token is not yet parsed!"
+	(xType := descriptorClass typeNamed: typeName)
+		ifNil: [
+			"Raise an error if user is there"
+			self interactive ifTrue: [^nil].
+			"otherwise go over it silently -- use an unknown struct type"
+			xType := descriptorClass newTypeNamed: here].
+	self advance.
+	^ (self matchToken: #*)
+		ifTrue:[xType asPointerType]
+		ifFalse:[(self matchToken: #**)
+			ifTrue: [xType asPointerToPointerType]
+			ifFalse: [xType]]
+]
