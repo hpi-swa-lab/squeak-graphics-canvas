@@ -11,6 +11,12 @@ ExternalType >> asArrayType: aNumber [
 		yourself
 ]
 
+{ #category : #'*Vulkan-FFI-Support' }
+ExternalType >> isTypeAlias [
+
+	^ false
+]
+
 { #category : #'*Vulkan-FFI-Support-override' }
 ExternalType class >> lookupTypes: signature [
 	"
