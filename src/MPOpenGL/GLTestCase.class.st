@@ -5,7 +5,6 @@ Class {
 		'gl'
 	],
 	#pools : [
-		'AnObsoleteOpenGLConstants',
 		'GLConstants'
 	],
 	#category : #'MPOpenGL-Test'
