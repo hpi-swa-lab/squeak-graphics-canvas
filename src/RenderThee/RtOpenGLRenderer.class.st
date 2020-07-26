@@ -12,6 +12,7 @@ Class {
 
 { #category : #initialization }
 RtOpenGLRenderer >> initialize [
+
 	super initialize.
 	
 	ActiveWorld morphsToRedraw: nil.
@@ -19,7 +20,19 @@ RtOpenGLRenderer >> initialize [
 	
 	RtRecordingCanvas record: ActiveWorld.
 	
-	ogl := GL4_5 newGLFWIn: ActiveWorld bounds
+	ogl := GL4_5 newGLFWIn: ActiveWorld bounds.
+	
+	ogl context cursorCallback: [:x :y |
+		ActiveHand handleEvent: (MouseMoveEvent new setType: #mouseMove startPoint: x @ y endPoint: x @ y trail: nil buttons: 0 hand: ActiveHand stamp: 0)].
+	
+	ogl context mouseButtonCallback: [:button :down :mods |
+		ActiveHand handleEvent: (MouseButtonEvent new
+			setType: (down ifTrue: [#mouseDown] ifFalse: [#mouseUp])
+			position: ActiveHand position
+			which: button
+			buttons: button
+			hand: ActiveHand
+			stamp: 0)]
 ]
 
 { #category : #initialization }

@@ -794,7 +794,6 @@ Matrix4x4 >> localPointToGlobal: aVector [
 	"Multiply aVector (temporarily converted to 4D) with the receiver"
 	| x y z rx ry rz rw |
 	<primitive: 'primitiveTransformVector3' module: 'CroquetPlugin'>
-
 	x := aVector x.
 	y := aVector y.
 	z := aVector z.
@@ -810,7 +809,7 @@ Matrix4x4 >> localPointToGlobal: aVector [
 { #category : #transforming }
 Matrix4x4 >> localPointsToGlobal: aCollection [
 
-	^ aCollection collect:[:pt | self localPointToGlobal: pt]
+	^ aCollection collect:[:pt | self localPointToGlobal: pt asVector3]
 ]
 
 { #category : #'row-access' }
