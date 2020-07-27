@@ -5,7 +5,10 @@ Class {
 		'vao',
 		'vbo',
 		'textureProgram',
-		'outlineProgram'
+		'outlineProgram',
+		'rectangleProgram',
+		'fonts',
+		'fontProgram'
 	],
 	#pools : [
 		'GLConstants'
@@ -19,11 +22,28 @@ GLCanvasPrograms class >> create [
 	^ self new
 ]
 
+{ #category : #accessing }
+GLCanvasPrograms >> font: aFont [
+
+	| font |
+	font := aFont ifNil: [TextStyle defaultFont].
+	
+	^ fonts at: font ifAbsentPut: [GLBitmapFont new font: font]
+]
+
+{ #category : #accessing }
+GLCanvasPrograms >> fontProgram [
+
+	^ fontProgram
+]
+
 { #category : #initialization }
 GLCanvasPrograms >> initialize [
 
 	super initialize.
-	GL value checkForError.
+	
+	fonts := Dictionary new.
+	
 	self initializePrograms.
 	self initializeBuffers.
 	self initializeProgramAttributes
@@ -56,10 +76,13 @@ GLCanvasPrograms >> initializeProgramAttributes [
 		textureProgram vertexAttrib: textureProgram aTexCoordsLocation value: vbo stride: 4 offset: 2.
 		GL value checkForError].
 	
-	outlineProgram vertexAttrib: textureProgram aPosLocation value: vbo stride: 4 offset: 0.
+	outlineProgram vertexAttrib: outlineProgram aPosLocation value: vbo stride: 4 offset: 0.
 	GL value checkForError.
-	outlineProgram vertexAttrib: textureProgram aTexCoordsLocation value: vbo stride: 4 offset: 2.
-	GL value checkForError
+	outlineProgram vertexAttrib: outlineProgram aTexCoordsLocation value: vbo stride: 4 offset: 2.
+	GL value checkForError.
+	
+	rectangleProgram boundDuring: [
+		rectangleProgram vertexAttrib: rectangleProgram aPosLocation value: vbo stride: 4 offset: 0]
 ]
 
 { #category : #initialization }
@@ -67,6 +90,8 @@ GLCanvasPrograms >> initializePrograms [
 
 	textureProgram := GL value getShaderProgram: GLCanvasTextureProgram.
 	outlineProgram := GL value getShaderProgram: GLCanvasOutlineProgram.
+	rectangleProgram := GL value getShaderProgram: GLCanvasRectangleProgram.
+	fontProgram := GL value getShaderProgram: GLCanvasFontProgram.
 	GL value checkForError
 ]
 
@@ -77,21 +102,15 @@ GLCanvasPrograms >> outlineProgram [
 ]
 
 { #category : #accessing }
-GLCanvasPrograms >> outlineProgram: anObject [
+GLCanvasPrograms >> rectangleProgram [
 
-	outlineProgram := anObject.
+	^ rectangleProgram
 ]
 
 { #category : #accessing }
 GLCanvasPrograms >> textureProgram [
 
 	^ textureProgram
-]
-
-{ #category : #accessing }
-GLCanvasPrograms >> textureProgram: anObject [
-
-	textureProgram := anObject.
 ]
 
 { #category : #accessing }

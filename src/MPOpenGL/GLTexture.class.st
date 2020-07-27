@@ -53,7 +53,7 @@ GLTexture >> extent [
 { #category : #accessing }
 GLTexture >> extent: aPoint [
 
-	self	boundDuring: [
+	self boundDuring: [
 		gl
 			glTexImage2D: GL_TEXTURE_2D
 			with: 0
@@ -123,6 +123,24 @@ GLTexture >> initializeWithContext: glContext [
 	texIDs := IntegerArray new: 1.
 	gl glGenTextures: 1 with: texIDs.
 	id := texIDs first
+]
+
+{ #category : #'as yet unclassified' }
+GLTexture >> subImage: aForm at: aPoint [
+
+	self boundDuring: [
+		gl checkForError.
+		gl
+			glTexSubImage2D: GL_TEXTURE_2D
+			with: 0
+			with: aPoint x
+			with: aPoint y
+			with: aForm width
+			with: aForm height
+			with: GL_BGRA
+			with: GL_UNSIGNED_BYTE
+			with: (aForm asFormOfDepth: 32) bits.
+		gl checkForError]
 ]
 
 { #category : #binding }

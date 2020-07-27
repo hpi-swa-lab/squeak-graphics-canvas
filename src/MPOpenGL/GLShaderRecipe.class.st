@@ -38,8 +38,8 @@ GLShaderRecipe >> buildFor: gl [
 	^self programClass
 		context: gl
 		shaders: (OrderedCollection
-				with: (VertexShader context: gl code: self vertexShader)
-				with: (FragmentShader context: gl code: self fragmentShader))
+				with: (VertexShader context: gl code: self vertexShader withUnixLineEndings)
+				with: (FragmentShader context: gl code: self fragmentShader withUnixLineEndings))
 ]
 
 { #category : #code }

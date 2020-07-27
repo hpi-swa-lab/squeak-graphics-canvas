@@ -62,7 +62,7 @@ GLCanvasTextureProgram >> aTexCoordsLocation [
 { #category : #accessing }
 GLCanvasTextureProgram >> color: aColor [
 
-	self uniform: colorLocation value: aColor asVectorColor
+	self uniform: colorLocation value: aColor
 ]
 
 { #category : #'uniform accessing' }

@@ -12,26 +12,27 @@ Class {
 
 { #category : #initialization }
 RtOpenGLRenderer >> initialize [
+
 	super initialize.
 	
 	ActiveWorld morphsToRedraw: nil.
-	ActiveWorld allMorphsDo: [:m |
-		m groupLayer: nil].
+	ActiveWorld allMorphsDo: [:m | m groupLayer: nil].
+	
 	RtRecordingCanvas record: ActiveWorld.
 	
 	ogl := GL4_5 newGLFWIn: ActiveWorld bounds.
 	
-	ogl makeCurrentDuring: [
-		ogl glDisable: GL_CULL_FACE.
-		ogl glDisable: GL_DEPTH_TEST.
-		ogl glActiveTexture: GL_TEXTURE0.
-		ogl
-			glClearColor: 1
-			with: 1
-			with: 1
-			with: 0.
-		ogl glEnable: GL_BLEND.
-		ogl glBlendFuncSeparate: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA with: GL_ONE with: GL_ONE]
+	ogl context cursorCallback: [:x :y |
+		ActiveHand handleEvent: (MouseMoveEvent new setType: #mouseMove startPoint: x @ y endPoint: x @ y trail: nil buttons: 0 hand: ActiveHand stamp: 0)].
+	
+	ogl context mouseButtonCallback: [:button :down :mods |
+		ActiveHand handleEvent: (MouseButtonEvent new
+			setType: (down ifTrue: [#mouseDown] ifFalse: [#mouseUp])
+			position: ActiveHand position
+			which: button
+			buttons: button
+			hand: ActiveHand
+			stamp: 0)]
 ]
 
 { #category : #initialization }
