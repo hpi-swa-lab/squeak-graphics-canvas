@@ -2,21 +2,23 @@ Class {
 	#name : #RtDrawLayer,
 	#superclass : #RtLayer,
 	#instVars : [
-		'commands'
+		'picture'
 	],
-	#category : 'RenderThee-LayerTree'
+	#category : #'RenderThee-LayerTree'
 }
 
-{ #category : #accessing }
-RtDrawLayer >> addCommand: aCommand [
+{ #category : #'instance creation' }
+RtDrawLayer class >> picture: aPicture [
 
-	commands add: aCommand
-]
-
-{ #category : #accessing }
-RtDrawLayer >> commands [
-
-	^ commands
+	| bounds pic |
+	bounds := aPicture estimatedBounds.
+	pic := aPicture copy.
+	pic transformBy: (MatrixTransform2x3 withOffset: bounds topLeft negated).
+	^ self new
+		transform: (Matrix4x4 withOffset: bounds topLeft);
+		extent: bounds extent;
+		picture: pic;
+		yourself
 ]
 
 { #category : #compositing }
@@ -25,17 +27,16 @@ RtDrawLayer >> drawOn: aCanvas [
 	aCanvas drawDrawLayer: self
 ]
 
-{ #category : #initialization }
-RtDrawLayer >> initialize [
+{ #category : #accessing }
+RtDrawLayer >> picture [
 
-	super initialize.
-	commands := OrderedCollection new
+	^ picture
 ]
 
-{ #category : #testing }
-RtDrawLayer >> isEmpty [
+{ #category : #accessing }
+RtDrawLayer >> picture: anObject [
 
-	^ self commands isEmpty
+	picture := anObject
 ]
 
 { #category : #visiting }

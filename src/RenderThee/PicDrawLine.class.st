@@ -1,17 +1,17 @@
 Class {
-	#name : #RtDrawLine,
-	#superclass : #RtDrawCommand,
+	#name : #PicDrawLine,
+	#superclass : #PicDraw,
 	#instVars : [
 		'from',
 		'to',
 		'width',
 		'color'
 	],
-	#category : 'RenderThee-CanvasCommands'
+	#category : #'RenderThee-Pictures'
 }
 
 { #category : #'instance creation' }
-RtDrawLine class >> from: from to: to width: width color: color [
+PicDrawLine class >> from: from to: to width: width color: color [
 
 	^ self new
 		from: from;
@@ -22,19 +22,19 @@ RtDrawLine class >> from: from to: to width: width color: color [
 ]
 
 { #category : #accessing }
-RtDrawLine >> color [
+PicDrawLine >> color [
 
 	^ color
 ]
 
 { #category : #accessing }
-RtDrawLine >> color: anObject [
+PicDrawLine >> color: anObject [
 
 	color := anObject.
 ]
 
 { #category : #drawing }
-RtDrawLine >> drawOn: aCanvas [
+PicDrawLine >> drawOn: aCanvas [
 
 	aCanvas
 		line: from
@@ -44,37 +44,43 @@ RtDrawLine >> drawOn: aCanvas [
 ]
 
 { #category : #accessing }
-RtDrawLine >> from [
+PicDrawLine >> estimatedBounds [
+
+	^ from rect: to
+]
+
+{ #category : #accessing }
+PicDrawLine >> from [
 
 	^ from
 ]
 
 { #category : #accessing }
-RtDrawLine >> from: anObject [
+PicDrawLine >> from: anObject [
 
 	from := anObject.
 ]
 
 { #category : #accessing }
-RtDrawLine >> to [
+PicDrawLine >> to [
 
 	^ to
 ]
 
 { #category : #accessing }
-RtDrawLine >> to: anObject [
+PicDrawLine >> to: anObject [
 
 	to := anObject.
 ]
 
 { #category : #accessing }
-RtDrawLine >> width [
+PicDrawLine >> width [
 
 	^ width
 ]
 
 { #category : #accessing }
-RtDrawLine >> width: anObject [
+PicDrawLine >> width: anObject [
 
 	width := anObject.
 ]

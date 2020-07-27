@@ -1,14 +1,14 @@
 Class {
-	#name : #RtDrawRoundedRectangle,
-	#superclass : #RtDrawRectangle,
+	#name : #PicDrawRoundedRectangle,
+	#superclass : #PicDrawRectangle,
 	#instVars : [
 		'radius'
 	],
-	#category : 'RenderThee-CanvasCommands'
+	#category : #'RenderThee-Pictures'
 }
 
 { #category : #'instance creation' }
-RtDrawRoundedRectangle class >> bounds: aRectangle radius: cornerRadius fillStyle: aFillStyle borderStyle: aBorderStyle [
+PicDrawRoundedRectangle class >> bounds: aRectangle radius: cornerRadius fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	^ self new
 		bounds: aRectangle;
@@ -19,7 +19,7 @@ RtDrawRoundedRectangle class >> bounds: aRectangle radius: cornerRadius fillStyl
 ]
 
 { #category : #drawing }
-RtDrawRoundedRectangle >> drawOn: aCanvas [
+PicDrawRoundedRectangle >> drawOn: aCanvas [
 
 	aCanvas
 		frameAndFillRoundRect: bounds
@@ -29,13 +29,13 @@ RtDrawRoundedRectangle >> drawOn: aCanvas [
 ]
 
 { #category : #accessing }
-RtDrawRoundedRectangle >> radius [
+PicDrawRoundedRectangle >> radius [
 
 	^ radius
 ]
 
 { #category : #accessing }
-RtDrawRoundedRectangle >> radius: anObject [
+PicDrawRoundedRectangle >> radius: anObject [
 
 	radius := anObject.
 ]

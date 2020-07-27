@@ -1,16 +1,16 @@
 Class {
-	#name : #RtDrawParagraph,
-	#superclass : #RtDrawCommand,
+	#name : #PicDrawParagraph,
+	#superclass : #PicDraw,
 	#instVars : [
 		'bounds',
 		'color',
 		'paragraph'
 	],
-	#category : 'RenderThee-CanvasCommands'
+	#category : #'RenderThee-Pictures'
 }
 
 { #category : #'instance creation' }
-RtDrawParagraph class >> paragraph: aParagraph bounds: aRectangle color: aColor [
+PicDrawParagraph class >> paragraph: aParagraph bounds: aRectangle color: aColor [
 
 	^ self new
 		paragraph: aParagraph;
@@ -20,31 +20,31 @@ RtDrawParagraph class >> paragraph: aParagraph bounds: aRectangle color: aColor 
 ]
 
 { #category : #accessing }
-RtDrawParagraph >> bounds [
+PicDrawParagraph >> bounds [
 
 	^ bounds
 ]
 
 { #category : #accessing }
-RtDrawParagraph >> bounds: anObject [
+PicDrawParagraph >> bounds: anObject [
 
 	bounds := anObject.
 ]
 
 { #category : #accessing }
-RtDrawParagraph >> color [
+PicDrawParagraph >> color [
 
 	^ color
 ]
 
 { #category : #accessing }
-RtDrawParagraph >> color: anObject [
+PicDrawParagraph >> color: anObject [
 
 	color := anObject.
 ]
 
 { #category : #drawing }
-RtDrawParagraph >> drawOn: aCanvas [
+PicDrawParagraph >> drawOn: aCanvas [
 
 	aCanvas
 		paragraph: paragraph
@@ -53,13 +53,19 @@ RtDrawParagraph >> drawOn: aCanvas [
 ]
 
 { #category : #accessing }
-RtDrawParagraph >> paragraph [
+PicDrawParagraph >> estimatedBounds [
+
+	^ bounds
+]
+
+{ #category : #accessing }
+PicDrawParagraph >> paragraph [
 
 	^ paragraph
 ]
 
 { #category : #accessing }
-RtDrawParagraph >> paragraph: anObject [
+PicDrawParagraph >> paragraph: anObject [
 
 	paragraph := anObject.
 ]

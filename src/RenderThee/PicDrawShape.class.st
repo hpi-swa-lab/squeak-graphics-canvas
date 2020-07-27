@@ -1,16 +1,16 @@
 Class {
-	#name : #RtDrawShape,
-	#superclass : #RtDrawCommand,
+	#name : #PicDrawShape,
+	#superclass : #PicDraw,
 	#instVars : [
 		'bounds',
 		'fillStyle',
 		'borderStyle'
 	],
-	#category : 'RenderThee-CanvasCommands'
+	#category : #'RenderThee-Pictures'
 }
 
 { #category : #'instance creation' }
-RtDrawShape class >> bounds: aRectangle borderStyle: aBorderStyle [
+PicDrawShape class >> bounds: aRectangle borderStyle: aBorderStyle [
 
 	^ self
 		bounds: aRectangle
@@ -19,7 +19,7 @@ RtDrawShape class >> bounds: aRectangle borderStyle: aBorderStyle [
 ]
 
 { #category : #'instance creation' }
-RtDrawShape class >> bounds: aRectangle fillStyle: aFillStyle [
+PicDrawShape class >> bounds: aRectangle fillStyle: aFillStyle [
 
 	^ self
 		bounds: aRectangle
@@ -28,7 +28,7 @@ RtDrawShape class >> bounds: aRectangle fillStyle: aFillStyle [
 ]
 
 { #category : #'instance creation' }
-RtDrawShape class >> bounds: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
+PicDrawShape class >> bounds: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	^ self new
 		bounds: aRectangle;
@@ -38,37 +38,43 @@ RtDrawShape class >> bounds: aRectangle fillStyle: aFillStyle borderStyle: aBord
 ]
 
 { #category : #accessing }
-RtDrawShape >> borderStyle [
+PicDrawShape >> borderStyle [
 
 	^ borderStyle
 ]
 
 { #category : #accessing }
-RtDrawShape >> borderStyle: anObject [
+PicDrawShape >> borderStyle: anObject [
 
 	borderStyle := anObject.
 ]
 
 { #category : #accessing }
-RtDrawShape >> bounds [
+PicDrawShape >> bounds [
 
 	^ bounds
 ]
 
 { #category : #accessing }
-RtDrawShape >> bounds: anObject [
+PicDrawShape >> bounds: anObject [
 
 	bounds := anObject.
 ]
 
 { #category : #accessing }
-RtDrawShape >> fillStyle [
+PicDrawShape >> estimatedBounds [
+
+	^ bounds
+]
+
+{ #category : #accessing }
+PicDrawShape >> fillStyle [
 
 	^ fillStyle
 ]
 
 { #category : #accessing }
-RtDrawShape >> fillStyle: anObject [
+PicDrawShape >> fillStyle: anObject [
 
 	fillStyle := anObject.
 ]

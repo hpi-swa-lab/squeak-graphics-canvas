@@ -85,6 +85,11 @@ Matrix4x4 class >> withOffset: aVector [
 ]
 
 { #category : #'instance creation' }
+Matrix4x4 class >> withRotation: angle [
+	^ self withRotation: angle around: (0@0@1)
+]
+
+{ #category : #'instance creation' }
 Matrix4x4 class >> withRotation: angle around: axis [
 	^self new rotation: angle around: axis
 ]
@@ -612,18 +617,17 @@ Matrix4x4 >> getFrom: m2 [
 { #category : #transforming }
 Matrix4x4 >> globalBoundsToLocal: aRectangle [
 
-	"Convenience method for inverse of localPointToGlobal."
-	^ self inverseTransformation localBoundsToGlobal: aRectangle
+	^ Rectangle encompassing: (self globalPointsToLocal: aRectangle corners)
 ]
 
 { #category : #transforming }
 Matrix4x4 >> globalDirToLocal: aPoint [
+
 	^ self inverseTransformation localDirToGlobal: aPoint
 ]
 
 { #category : #transforming }
 Matrix4x4 >> globalPointToLocal: aPoint [
-
 	"Convenience method for inverse of localPointToGlobal."
 	^ self inverseTransformation localPointToGlobal: aPoint
 ]
@@ -631,7 +635,7 @@ Matrix4x4 >> globalPointToLocal: aPoint [
 { #category : #transforming }
 Matrix4x4 >> globalPointsToLocal: inArray [
 	"Transform all the points of inArray from global into local coordinates"
-	^inArray collect:[:pt| self globalPointToLocal: pt]
+	^ self inverseTransformation localPointsToGlobal: inArray
 ]
 
 { #category : #solving }
@@ -769,9 +773,7 @@ Matrix4x4 >> isZero [
 { #category : #transforming }
 Matrix4x4 >> localBoundsToGlobal: aRectangle [
 
-	^Rectangle encompassing: (self globalPointsToLocal: aRectangle corners)
-
-	
+	^ Rectangle encompassing: (self localPointsToGlobal: aRectangle corners)
 ]
 
 { #category : #transforming }
@@ -806,6 +808,12 @@ Matrix4x4 >> localPointToGlobal: aVector [
 	rw := (x * self a41) + (y * self a42) + (z * self a43) + self a44.
 
 	^Vector3 x:(rx/rw) y: (ry/rw) z: (rz/rw)
+]
+
+{ #category : #transforming }
+Matrix4x4 >> localPointsToGlobal: inArray [
+	"Transform all the points of inArray from local into global coordinates"
+	^ inArray collect: [:pt | (self localPointToGlobal: pt asVector3) asPoint]
 ]
 
 { #category : #'row-access' }
@@ -851,7 +859,7 @@ Matrix4x4 >> orientation [
 "This is used to return just the orientation part of the matrix.The translation part is 0.0."
 	| mat |
 
-	mat := self clone.
+	mat := self shallowCopy.
 	mat translationX: 0.0 y: 0.0 z: 0.0.
 	^ mat.
 ]
@@ -860,7 +868,7 @@ Matrix4x4 >> orientation [
 Matrix4x4 >> orthoNormInverse [
 	| m x y z rx ry rz |
 	<primitive: 'primitiveOrthoNormInverseMatrix' module: 'CroquetPlugin'>
-	m := self clone.
+	m := self shallowCopy.
 	"transpose upper 3x3 matrix"
 	m a11: self a11; a12: self a21; a13: self a31.
 	m a21: self a12; a22: self a22; a23: self a32.
@@ -876,7 +884,7 @@ Matrix4x4 >> orthoNormInverse [
 	m a14: 0.0-rx; a24: 0.0-ry; a34: 0.0-rz.
 	^m
 " Used to be:
-	m := self clone.
+	m := self shallowCopy.
 	v := m translation.
 	m translation: Vector3 zero.
 	m := m transposed.
@@ -1510,7 +1518,7 @@ Matrix4x4 >> solve3x3: aVector [
 	"Solve a 3x3 system of linear equations. Assume that all the a[4,x] and a[x,4] are zero.
 	NOTE: This is a hack, but it's the fastest way for now."
 	| m |
-	m := self clone.
+	m := self shallowCopy.
 	m a44: 1. "need this for inversion"
 	m := m inplaceHouseHolderInvert.
 	m ifNil:[^nil].
@@ -1520,9 +1528,9 @@ Matrix4x4 >> solve3x3: aVector [
 { #category : #solving }
 Matrix4x4 >> solve: aVector [
 
-	^self clone inplaceHouseHolderTransform: aVector
+	^self shallowCopy inplaceHouseHolderTransform: aVector
 	"or:
-	^self clone inplaceDecomposeLU solveLU: aVector
+	^self shallowCopy inplaceDecomposeLU solveLU: aVector
 	"
 ]
 

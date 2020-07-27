@@ -61,7 +61,7 @@ GLCanvas >> clipRect: aRectangle during: aBlock [
 { #category : #accessing }
 GLCanvas >> drawDrawLayer: aLayer [
 	| store |
-	store := aLayer cache ifNil: [aLayer cache: (aLayer createStoreOf: RtFramebufferStore using: RtFormCanvas); cache].
+	store := aLayer cache ifNil: [aLayer cache: (aLayer createStoreOf: RtFramebufferStore using: FormCanvas); cache].
 	self paintImageStore: store transform: aLayer transform sourceRect: store boundingBox
 ]
 
@@ -169,13 +169,6 @@ GLCanvas >> transformBy: aMatrix clippingTo: aRectangle during: aBlock smoothing
 GLCanvas >> transformBy: aMatrix during: aBlock [
 
 	self transform: transform * aMatrix during: aBlock
-]
-
-{ #category : #'drawing-support' }
-GLCanvas >> translateBy: aPoint clippingTo: aRectangle during: aBlock [
-
-	self clipBy: aRectangle during: [
-		self translateBy: aPoint during: aBlock]
 ]
 
 { #category : #'drawing-support' }

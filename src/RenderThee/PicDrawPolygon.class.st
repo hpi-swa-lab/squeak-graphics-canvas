@@ -1,14 +1,14 @@
 Class {
-	#name : #RtDrawPolygon,
-	#superclass : #RtDrawShape,
+	#name : #PicDrawPolygon,
+	#superclass : #PicDrawShape,
 	#instVars : [
 		'vertices'
 	],
-	#category : 'RenderThee-CanvasCommands'
+	#category : #'RenderThee-Pictures'
 }
 
 { #category : #'instance creation' }
-RtDrawPolygon class >> vertices: collectionOfPoints fillStyle: aFillStyle borderStyle: aBorderStyle [
+PicDrawPolygon class >> vertices: collectionOfPoints fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	^ self new
 		vertices: collectionOfPoints;
@@ -18,7 +18,7 @@ RtDrawPolygon class >> vertices: collectionOfPoints fillStyle: aFillStyle border
 ]
 
 { #category : #drawing }
-RtDrawPolygon >> drawOn: aCanvas [
+PicDrawPolygon >> drawOn: aCanvas [
 
 	aCanvas
 		drawPolygon: vertices
@@ -28,13 +28,19 @@ RtDrawPolygon >> drawOn: aCanvas [
 ]
 
 { #category : #accessing }
-RtDrawPolygon >> vertices [
+PicDrawPolygon >> estimatedBounds [
+
+	^ Rectangle encompassing: vertices
+]
+
+{ #category : #accessing }
+PicDrawPolygon >> vertices [
 
 	^ vertices
 ]
 
 { #category : #accessing }
-RtDrawPolygon >> vertices: anObject [
+PicDrawPolygon >> vertices: anObject [
 
 	vertices := anObject.
 ]

@@ -1,11 +1,11 @@
 Class {
-	#name : #RtDrawOval,
-	#superclass : #RtDrawShape,
-	#category : 'RenderThee-CanvasCommands'
+	#name : #PicDrawOval,
+	#superclass : #PicDrawShape,
+	#category : #'RenderThee-Pictures'
 }
 
 { #category : #drawing }
-RtDrawOval >> drawOn: aCanvas [
+PicDrawOval >> drawOn: aCanvas [
 
 	self flag: #todo.
 	aCanvas

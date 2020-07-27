@@ -1,23 +1,23 @@
 Class {
-	#name : #RtUnsupportedCommand,
-	#superclass : #RtCanvasCommand,
+	#name : #PicUnsupported,
+	#superclass : #PicCommand,
 	#instVars : [
 		'type'
 	],
 	#classVars : [
 		'Remembrall'
 	],
-	#category : 'RenderThee-CanvasCommands'
+	#category : #'RenderThee-Pictures'
 }
 
 { #category : #accessing }
-RtUnsupportedCommand class >> Remembrall [
+PicUnsupported class >> Remembrall [
 
 	^ Remembrall ifNil: [Remembrall := Set new]
 ]
 
 { #category : #'instance creation' }
-RtUnsupportedCommand class >> type: aSymbol [
+PicUnsupported class >> type: aSymbol [
 
 	self Remembrall add: aSymbol.
 	^ self new
@@ -26,19 +26,25 @@ RtUnsupportedCommand class >> type: aSymbol [
 ]
 
 { #category : #drawing }
-RtUnsupportedCommand >> drawOn: aCanvas [
+PicUnsupported >> drawOn: aCanvas [
 
 	"do nothing"
 ]
 
 { #category : #accessing }
-RtUnsupportedCommand >> type [
+PicUnsupported >> estimatedBounds [
+
+	^ 0@0 extent: 1@1
+]
+
+{ #category : #accessing }
+PicUnsupported >> type [
 
 	^ type
 ]
 
 { #category : #accessing }
-RtUnsupportedCommand >> type: anObject [
+PicUnsupported >> type: anObject [
 
 	type := anObject.
 ]

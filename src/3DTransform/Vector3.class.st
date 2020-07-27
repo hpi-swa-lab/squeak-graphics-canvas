@@ -117,6 +117,12 @@ Vector3 >> interpolateTo: end at: amountDone [
 ]
 
 { #category : #testing }
+Vector3 >> isVector3 [
+
+	^ true
+]
+
+{ #category : #testing }
 Vector3 >> isZero [
 	^self = Vector3 zero
 ]
@@ -151,6 +157,18 @@ Vector3 >> normalize [
 Vector3 >> normalized [
 
 	^self / self length
+]
+
+{ #category : #printing }
+Vector3 >> printOn: aStream [ 
+
+	self x printOn: aStream.
+	aStream nextPut: $@.
+	(self y isNumber and: [self y negative]) ifTrue: [aStream space].
+	self y printOn: aStream.
+	aStream nextPut: $@.
+	(self z isNumber and: [self z negative]) ifTrue: [aStream space].
+	self z printOn: aStream
 ]
 
 { #category : #private }

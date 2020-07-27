@@ -1,6 +1,6 @@
 Class {
-	#name : #RtDrawString,
-	#superclass : #RtDrawCommand,
+	#name : #PicDrawString,
+	#superclass : #PicDraw,
 	#instVars : [
 		'contents',
 		'from',
@@ -9,11 +9,11 @@ Class {
 		'font',
 		'color'
 	],
-	#category : 'RenderThee-CanvasCommands'
+	#category : #'RenderThee-Pictures'
 }
 
 { #category : #'instance creation' }
-RtDrawString class >> contents: aString from: startIndex to: stopIndex in: boundsRect font: fontOrNil color: aColor [
+PicDrawString class >> contents: aString from: startIndex to: stopIndex in: boundsRect font: fontOrNil color: aColor [
 
 	^ self new
 		contents: aString;
@@ -26,43 +26,43 @@ RtDrawString class >> contents: aString from: startIndex to: stopIndex in: bound
 ]
 
 { #category : #accessing }
-RtDrawString >> bounds [
+PicDrawString >> bounds [
 
 	^ bounds
 ]
 
 { #category : #accessing }
-RtDrawString >> bounds: anObject [
+PicDrawString >> bounds: anObject [
 
 	bounds := anObject.
 ]
 
 { #category : #accessing }
-RtDrawString >> color [
+PicDrawString >> color [
 
 	^ color
 ]
 
 { #category : #accessing }
-RtDrawString >> color: anObject [
+PicDrawString >> color: anObject [
 
 	color := anObject.
 ]
 
 { #category : #accessing }
-RtDrawString >> contents [
+PicDrawString >> contents [
 
 	^ contents
 ]
 
 { #category : #accessing }
-RtDrawString >> contents: anObject [
+PicDrawString >> contents: anObject [
 
 	contents := anObject.
 ]
 
 { #category : #drawing }
-RtDrawString >> drawOn: aCanvas [
+PicDrawString >> drawOn: aCanvas [
 
 	aCanvas
 		drawString: contents
@@ -74,37 +74,43 @@ RtDrawString >> drawOn: aCanvas [
 ]
 
 { #category : #accessing }
-RtDrawString >> font [
+PicDrawString >> estimatedBounds [
+
+	^ bounds
+]
+
+{ #category : #accessing }
+PicDrawString >> font [
 
 	^ font
 ]
 
 { #category : #accessing }
-RtDrawString >> font: anObject [
+PicDrawString >> font: anObject [
 
 	font := anObject.
 ]
 
 { #category : #accessing }
-RtDrawString >> from [
+PicDrawString >> from [
 
 	^ from
 ]
 
 { #category : #accessing }
-RtDrawString >> from: anObject [
+PicDrawString >> from: anObject [
 
 	from := anObject.
 ]
 
 { #category : #accessing }
-RtDrawString >> to [
+PicDrawString >> to [
 
 	^ to
 ]
 
 { #category : #accessing }
-RtDrawString >> to: anObject [
+PicDrawString >> to: anObject [
 
 	to := anObject.
 ]

@@ -1,11 +1,11 @@
 Class {
 	#name : #RtRecordingCanvas,
-	#superclass : #Canvas,
+	#superclass : #RtWrapperCanvas,
 	#instVars : [
-		'drawLayer',
-		'layer',
-		'origin',
-		'isReRecording'
+		'offsetToLastTransform',
+		'canvasStack',
+		'isReRecording',
+		'groupLayer'
 	],
 	#category : #'RenderThee-Core'
 }
@@ -37,7 +37,6 @@ RtRecordingCanvas class >> extent: aPoint [
 RtRecordingCanvas class >> layer: aLayer [
 
 	^ self new
-		origin: 0@0;
 		layer: aLayer;
 		yourself
 ]
@@ -49,250 +48,80 @@ RtRecordingCanvas class >> record: aMorph [
 		record: aMorph
 ]
 
-{ #category : #private }
-RtRecordingCanvas >> addCommand: aCommand [
-
-	self assuredDrawLayer addCommand: aCommand
-]
-
 { #category : #accessing }
 RtRecordingCanvas >> addLayer: aLayer [
 
-	self endDrawLayer.
-	self layer addChild: aLayer
+	self endPicture.
+	groupLayer addChild: aLayer
 ]
 
-{ #category : #accessing }
-RtRecordingCanvas >> assuredDrawLayer [
+{ #category : #'repaint boundaries' }
+RtRecordingCanvas >> changeGroupLayerTo: aLayer withOffset: aPoint during: aBlock [
 
-	^ drawLayer ifNil: [drawLayer := RtDrawLayer new]
+	self endPicture.
+	
+	self groupLayer: aLayer during: [
+		self pictureCanvas: PicPictureCanvas new during: [
+			self translateBy: aPoint negated during: [:c |
+				aBlock cull: c.
+				self endPicture]]].
+	
+	groupLayer addChild: aLayer
 ]
 
-{ #category : #'drawing-support' }
-RtRecordingCanvas >> clipBy: localClipRect during: aBlock [
+{ #category : #'repaint boundaries' }
+RtRecordingCanvas >> endPicture [
 
-	self addCommand: RtSaveCommand new.
-	self addCommand: (RtClipCommand clipRect: (localClipRect translateBy: self origin negated)).
-	aBlock value: self.
-	self addCommand: RtRestoreCommand new
+	| picture |
+	picture := wrappedCanvas getPicture.
+	wrappedCanvas clear.
+	picture isDrawing ifTrue: [
+		groupLayer addChild: (RtDrawLayer picture: picture)]
 ]
 
-{ #category : #accessing }
-RtRecordingCanvas >> clipRect [
-	"Clipping area relative to current origin."
-	^ -99999 @ -99999 corner: 99999 @ 99999 "better would be some sort of infinite rectangle"
+{ #category : #'repaint boundaries' }
+RtRecordingCanvas >> fullDraw: anObject [
+
+	anObject groupLayer: groupLayer.
+	super fullDraw: anObject
 ]
 
-{ #category : #accessing }
-RtRecordingCanvas >> commands [
-
-	^ self layer commands
-]
-
-{ #category : #accessing }
-RtRecordingCanvas >> currentLayer: aGroupLayer [
-
-	self endDrawLayer.
-	self layer: aGroupLayer
-]
-
-{ #category : #'drawing-images' }
-RtRecordingCanvas >> drawImage: aForm at: aPoint sourceRect: sourceRect [
-
-	self flag: #todo.
-	super drawImage: aForm at: aPoint sourceRect: sourceRect
-]
-
-{ #category : #accessing }
-RtRecordingCanvas >> drawLayer [
-
-	^ drawLayer
-]
-
-{ #category : #'drawing-polygons' }
-RtRecordingCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderColor: bc [
-
-	self
-		drawPolygon: vertices
-		fillStyle: (SolidFillStyle color: aColor)
-		borderWidth: bw borderColor: bc
-]
-
-{ #category : #'drawing-polygons' }
-RtRecordingCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBorderStyle [
-
-	self flag: #todo. "coordinates"
-	self addCommand: (RtDrawPolygon
-							vertices: vertices
-							fillStyle: aFillStyle
-							borderStyle: aBorderStyle)
-]
-
-{ #category : #'drawing-polygons' }
-RtRecordingCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: bw borderColor: bc [
-
-	self
-		drawPolygon: vertices
-		fillStyle: aFillStyle
-		borderStyle: (SimpleBorder width: bw color: bc)
-]
-
-{ #category : #'drawing-text' }
-RtRecordingCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c [
-
-	self addCommand: (RtDrawString
-							contents: s
-							from: firstIndex
-							to: lastIndex
-							in: (boundsRect translateBy: self origin negated)
-							font: fontOrNil
-							color: c)
-]
-
-{ #category : #private }
-RtRecordingCanvas >> endDrawLayer [
-
-	(self drawLayer notNil and: [self drawLayer isEmpty not]) ifTrue: [
-		self layer addChild: (self drawLayer
-			transform: Matrix4x4 identity;
-			extent: self layer extent;
-			yourself).
-		self resetDrawLayer]
-]
-
-{ #category : #'drawing-ovals' }
-RtRecordingCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderColor [
-
-	self
-		fillOval: r
-		fillStyle: (SolidFillStyle color: c)
-		borderWidth: borderWidth
-		borderColor: borderColor
-]
-
-{ #category : #'drawing-ovals' }
-RtRecordingCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
-
-	self addCommand: (RtDrawOval
-							bounds: (aRectangle translateBy: self origin negated)
-							fillStyle: aFillStyle
-							borderStyle: aBorderStyle)
-]
-
-{ #category : #'drawing-ovals' }
-RtRecordingCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderWidth: bw borderColor: bc [
-
-	self
-		fillOval: aRectangle
-		fillStyle: aFillStyle
-		borderStyle: (SimpleBorder width: bw color: bc)
-]
-
-{ #category : #'drawing-rectangles' }
-RtRecordingCanvas >> fillRectangle: aRectangle fillStyle: aFillStyle [
-
-	self addCommand: (RtDrawRectangle
-							bounds: (aRectangle translateBy: self origin negated)
-							fillStyle: aFillStyle)
-]
-
-{ #category : #initialization }
-RtRecordingCanvas >> finish [
-
-	self flag: #todo
-]
-
-{ #category : #initialization }
-RtRecordingCanvas >> flush [
-
-	self flag: #todo
-]
-
-{ #category : #'drawing-rectangles' }
-RtRecordingCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
-
-	self
-		frameAndFillRectangle: r
-		fillStyle: (SolidFillStyle color: fillColor)
-		borderStyle: (SimpleBorder width: borderWidth color: borderColor)
-]
-
-{ #category : #'drawing-rectangles' }
-RtRecordingCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
-
-	self addCommand: (RtDrawRectangle
-							bounds: (aRectangle translateBy: self origin negated)
-							fillStyle: aFillStyle
-							borderStyle: aBorderStyle)
-]
-
-{ #category : #'drawing-rectangles' }
-RtRecordingCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: aFillStyle borderStyle: aBorderStyle [
-
-	self addCommand: (RtDrawRoundedRectangle
-							bounds: (aRectangle translateBy: self origin negated)
-							radius: cornerRadius
-							fillStyle: aFillStyle
-							borderStyle: aBorderStyle)
-]
-
-{ #category : #'drawing-rectangles' }
-RtRecordingCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: fillStyle borderWidth: bw borderColor: bc [
-
-	self
-		frameAndFillRoundRect: aRectangle
-		radius: cornerRadius
-		fillStyle: fillStyle
-		borderStyle: (SimpleBorder width: bw color: bc)
-]
-
-{ #category : #'drawing-rectangles' }
-RtRecordingCanvas >> frameRectangle: aRectangle borderStyle: aBorderStyle [
-
-	self addCommand: (RtDrawRectangle
-							bounds: (aRectangle translateBy: self origin negated)
-							borderStyle: aBorderStyle)
-]
-
-{ #category : #'drawing-general' }
-RtRecordingCanvas >> fullDrawInCurrentLayer: aMorph [
-
-	aMorph groupLayer: self layer.
-	self fullDraw: aMorph
-]
-
-{ #category : #'drawing-general' }
-RtRecordingCanvas >> fullDrawInNewLayer: aMorph [
-
-	| newLayer |
-	newLayer := RtGroupLayer bounds: (aMorph bounds truncated translateBy: self origin negated). "outerBounds?"
-	newLayer morph: aMorph.
-	self
-		newCurrentLayer: newLayer
-		newOrigin: aMorph position
-		during: [:canvas | self fullDrawInCurrentLayer: aMorph]
-]
-
-{ #category : #'drawing-general' }
+{ #category : #'repaint boundaries' }
 RtRecordingCanvas >> fullDrawMorph: aMorph [
 
+	"continue drawing normally unless aMorph is a repaint boundary"
 	aMorph isRepaintBoundary ifFalse: [
-		^ self fullDrawInCurrentLayer: aMorph].
-	self isReusingLayers ifTrue: [
+		^ self fullDraw: aMorph].
+	
+	"can we reuse an existing layer and skip drawing aMorph completely?"
+	(self isReusingLayers and: aMorph isRepaintBoundary) ifTrue: [
 		aMorph groupLayer ifNotNil: [:reusableLayer |
+			reusableLayer transform: (self transformForOffset: aMorph position).
 			^ self addLayer: reusableLayer]].
-	self fullDrawInNewLayer: aMorph
-		
+	
+	"we need to create a new layer for aMorph"
+	self
+		changeGroupLayerTo: (self newGroupLayerFor: aMorph)
+		withOffset: aMorph position
+		during: [self fullDraw: aMorph]
 ]
 
-{ #category : #private }
-RtRecordingCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
+{ #category : #'scoped state' }
+RtRecordingCanvas >> groupLayer: aLayer during: aBlock [
 
-	self addCommand: (RtDrawImage
-							form: aForm
-							origin: (aPoint translateBy: self origin negated)
-							sourceRect: sourceRect
-							rule: rule)
+	| previousLayer |
+	previousLayer := groupLayer.
+	groupLayer := aLayer.
+	aBlock cull: self.
+	groupLayer := previousLayer
+]
+
+{ #category : #initialization }
+RtRecordingCanvas >> initialize [
+
+	super initialize.
+	wrappedCanvas := PicPictureCanvas new.
+	offsetToLastTransform := 0@0
 ]
 
 { #category : #accessing }
@@ -313,183 +142,82 @@ RtRecordingCanvas >> isReusingLayers [
 	^ self isReRecording
 ]
 
-{ #category : #testing }
-RtRecordingCanvas >> isVisible: aRectangle [
-
-	^ true
-]
-
 { #category : #accessing }
 RtRecordingCanvas >> layer [
 
-	^ layer
+	^ groupLayer
 ]
 
 { #category : #accessing }
 RtRecordingCanvas >> layer: anObject [
 
-	layer := anObject
+	groupLayer := anObject
 ]
 
-{ #category : #drawing }
-RtRecordingCanvas >> line: from to: to width: width color: color [
+{ #category : #'repaint boundaries' }
+RtRecordingCanvas >> newGroupLayerFor: aMorph [
 
-	self addCommand: (RtDrawLine
-							from: (from translateBy: self origin negated)
-							to: (to translateBy: self origin negated)
-							width: width
-							color: color)
+	| newLayer |
+	newLayer := RtGroupLayer
+					transform: (self transformForOffset: aMorph position)
+					extent: aMorph extent truncated. "outerBounds?"
+	newLayer morph: aMorph.
+	^ newLayer
 ]
 
-{ #category : #private }
-RtRecordingCanvas >> newCurrentLayer: aLayer newOrigin: newOrigin during: aBlock [
+{ #category : #'scoped state' }
+RtRecordingCanvas >> offsetToLastTransform: aPoint during: aBlock [
 
-	| previousLayer |
-	previousLayer := self layer.
-	self addLayer: aLayer.
-	self currentLayer: aLayer.
-	self newOrigin: newOrigin during: aBlock.
-	self currentLayer: previousLayer.
-	^ aLayer
+	| previousOffset |
+	previousOffset := offsetToLastTransform.
+	offsetToLastTransform := aPoint.
+	aBlock cull: self.
+	offsetToLastTransform := previousOffset
 ]
 
-{ #category : #private }
-RtRecordingCanvas >> newOrigin: newOrigin during: aBlock [
+{ #category : #'scoped state' }
+RtRecordingCanvas >> pictureCanvas: aCanvas during: aBlock [
 
-	| previousOrigin |
-	previousOrigin := self origin.
-	self origin: newOrigin.
-	aBlock value: self.
-	self origin: previousOrigin
+	| previousCanvas |
+	previousCanvas := wrappedCanvas.
+	wrappedCanvas := aCanvas.
+	aBlock cull: self.
+	wrappedCanvas := previousCanvas
 ]
 
-{ #category : #accessing }
-RtRecordingCanvas >> origin [
-	"Origin relative to root layer."
-	^ origin
-]
-
-{ #category : #accessing }
-RtRecordingCanvas >> origin: aPoint [
-
-	origin := aPoint
-]
-
-{ #category : #'drawing-images' }
-RtRecordingCanvas >> paintImage: aForm at: aPoint sourceRect: sourceRect [
-
-	self flag: #todo.
-	super paintImage: aForm at: aPoint sourceRect: sourceRect
-]
-
-{ #category : #drawing }
-RtRecordingCanvas >> paragraph: aParagraph bounds: aRectangle color: aColor [
-
-	self addCommand: (RtDrawParagraph
-							paragraph: aParagraph
-							bounds: (aRectangle translateBy: self origin negated)
-							color: aColor)
-]
-
-{ #category : #'drawing-support' }
-RtRecordingCanvas >> preserveStateDuring: aBlock [
-
-	self unsupported: #preserveStateDuring.
-	aBlock value: self
-]
-
-{ #category : #public }
+{ #category : #recording }
 RtRecordingCanvas >> reRecord: aMorph [
 
 	self isReRecording: true.
 	self record: aMorph
 ]
 
-{ #category : #public }
+{ #category : #recording }
 RtRecordingCanvas >> record: aMorph [
 
-	self layer morph: aMorph.
-	self
-		origin: aMorph position;
-		fullDrawInCurrentLayer: aMorph;
-		endDrawLayer
-]
-
-{ #category : #drawing }
-RtRecordingCanvas >> render: anObject [
-
-	self unsupported: #'render:'
-]
-
-{ #category : #initialization }
-RtRecordingCanvas >> reset [
-
-	self flag: #todo
-]
-
-{ #category : #initialization }
-RtRecordingCanvas >> resetDrawLayer [
-
-	drawLayer := nil
-]
-
-{ #category : #accessing }
-RtRecordingCanvas >> shadowColor [
-
-	self flag: #todo. "currently ignored"
-	^ nil
-]
-
-{ #category : #'drawing-images' }
-RtRecordingCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor [
-
-	self unsupported: #'stencil:at:sourceRect:color:'
+	groupLayer morph: aMorph.
+	self translateBy: aMorph position negated during: [:c |
+		self fullDraw: aMorph.
+		self endPicture]
 ]
 
 { #category : #'drawing-support' }
-RtRecordingCanvas >> transformBy: aDisplayTransform clippingTo: localClipRect during: aBlock smoothing: cellSize [
+RtRecordingCanvas >> transformBy: aDisplayTransform during: aBlock [
 
-	aDisplayTransform isPureTranslation ifTrue: [
-		^ self
-			translateBy: aDisplayTransform offset negated truncated
-			clippingTo: localClipRect
-			during: aBlock].
-	
-	self notYetImplemented.
-	self flag: #todo. "disregarding localClipRect origin"
-	self
-		newCurrentLayer: (RtBoundaryLayer
-							transform: (aDisplayTransform asMatrix4x4 translation: localClipRect origin asVector3)
-							extent: localClipRect extent)
-		newOrigin: aDisplayTransform offset
-		during: aBlock
+	self offsetToLastTransform: 0@0 during: [
+		super transformBy: aDisplayTransform during: aBlock]
 ]
 
-{ #category : #'drawing-support' }
-RtRecordingCanvas >> translateBy: delta clippingTo: localClipRect during: aBlock [
+{ #category : #'repaint boundaries' }
+RtRecordingCanvas >> transformForOffset: aPoint [
 
-	self clipBy: localClipRect during: [:canvas |
-		self
-			newOrigin: self origin - delta
-			during: aBlock]
+	^ (wrappedCanvas transform
+		composedWithLocal: (MatrixTransform2x3 withOffset: aPoint)) asMatrix4x4
 ]
 
 { #category : #'drawing-support' }
 RtRecordingCanvas >> translateBy: delta during: aBlock [
 
-	self
-		newOrigin: self origin - delta
-		during: aBlock
-]
-
-{ #category : #private }
-RtRecordingCanvas >> unsupported: selector [
-
-	self addCommand: (RtUnsupportedCommand type: selector)
-]
-
-{ #category : #'drawing-images' }
-RtRecordingCanvas >> warpImage: aForm transform: aTransform at: extraOffset sourceRect: sourceRect cellSize: cellSize [
-
-	self unsupported: #'warpImage:transform:at:sourceRect:cellSize:'
+	self offsetToLastTransform: 0@0 during: [
+		super translateBy: delta during: aBlock]
 ]

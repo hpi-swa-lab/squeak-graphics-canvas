@@ -63,7 +63,7 @@ RtOpenGLCompositor >> initializeWithCanvas: aCanvas [
 RtOpenGLCompositor >> visitDrawLayer: aLayer [
 
 	canvas transformBy: aLayer transform clippingTo: aLayer clipRect during: [:c |
-		self drawLayerCached: aLayer using: RtFormCanvas on: c]
+		self drawLayerCached: aLayer using: FormCanvas on: c]
 ]
 
 { #category : #visiting }
