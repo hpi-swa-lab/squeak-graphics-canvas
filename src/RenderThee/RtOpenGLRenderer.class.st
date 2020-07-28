@@ -48,8 +48,15 @@ RtOpenGLRenderer >> renderFrame [
 	ActiveWorld updateLayerTree.
 	
 	ogl makeCurrentDuring: [
-		GLCanvas extent: ActiveWorld extent store: RtDisplayFramebufferStore do: [:canvas |
-			ActiveWorld groupLayer visit: (RtOpenGLCompositor canvas: canvas cachingStrategy: RtConservativeCaching new)]]
+		GLCanvas
+			extent: ActiveWorld extent
+			store: RtDisplayFramebufferStore
+			do: [:canvas |
+				| compositor |
+				compositor := RtOpenGLCompositor
+								canvas: canvas
+								cachingStrategy: (RtCacheAfterUnchangedDraws threshold: 100).
+				ActiveWorld groupLayer visit: compositor]]
 ]
 
 { #category : #accessing }
