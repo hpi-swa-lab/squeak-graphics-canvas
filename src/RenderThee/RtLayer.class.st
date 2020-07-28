@@ -1,7 +1,8 @@
 Class {
 	#name : #RtLayer,
-	#superclass : #RtTreeNode,
+	#superclass : #Object,
 	#instVars : [
+		'parent',
 		'transform',
 		'extent',
 		'cache',
@@ -142,6 +143,18 @@ RtLayer >> invalidateCache [
 RtLayer >> open [
 
 	self assuredForm asMorph openInHand
+]
+
+{ #category : #accessing }
+RtLayer >> parent [
+
+	^ parent
+]
+
+{ #category : #accessing }
+RtLayer >> parent: aLayer [
+
+	parent := aLayer
 ]
 
 { #category : #accessing }

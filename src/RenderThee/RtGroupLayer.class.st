@@ -53,14 +53,6 @@ RtGroupLayer >> children [
 	^ children
 ]
 
-{ #category : #accessing }
-RtGroupLayer >> clear [
-
-	children do: [ :child | child parent: nil ].
-
-	children := OrderedCollection new
-]
-
 { #category : #drawing }
 RtGroupLayer >> drawOn: aCanvas [
 	^	aCanvas drawGroupLayer: self
@@ -89,11 +81,18 @@ RtGroupLayer >> morph: anObject [
 	morph := anObject
 ]
 
+{ #category : #accessing }
+RtGroupLayer >> removeAllChildren [
+
+	children do: [ :child | child parent: nil ].
+	children reset
+]
+
 { #category : #initialization }
 RtGroupLayer >> update [
 
 	self
-		clear;
+		removeAllChildren;
 		invalidateCache.
 		
 	self parent ifNotNil: [:parent |

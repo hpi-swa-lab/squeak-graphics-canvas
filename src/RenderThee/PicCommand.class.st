@@ -31,3 +31,9 @@ PicCommand >> isDrawing [
 
 	^ false
 ]
+
+{ #category : #debugging }
+PicCommand >> open [
+
+	 ^ self asForm asMorph openInHand
+]

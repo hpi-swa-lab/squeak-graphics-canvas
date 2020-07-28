@@ -37,12 +37,6 @@ RtMirrorControl >> initialize [
 { #category : #stepping }
 RtMirrorControl >> step [
 
-	self step2
-]
-
-{ #category : #stepping }
-RtMirrorControl >> step2 [
-
 	renderer shouldClose
 		ifTrue: [self delete]
 		ifFalse: [
