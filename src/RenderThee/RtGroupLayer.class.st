@@ -81,6 +81,21 @@ RtGroupLayer >> morph: anObject [
 	morph := anObject
 ]
 
+{ #category : #printing }
+RtGroupLayer >> printOn: aStream [
+
+	super printOn: aStream.
+	aStream
+		space;
+		nextPut: $[;
+		nextPutAll: children size asString;
+		nextPut: $].
+	
+	morph ifNotNil: [:m |
+		aStream nextPutAll: ' for '.
+		m printOn: aStream]
+]
+
 { #category : #accessing }
 RtGroupLayer >> removeAllChildren [
 

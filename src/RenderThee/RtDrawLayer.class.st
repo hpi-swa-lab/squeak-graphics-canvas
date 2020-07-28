@@ -39,6 +39,17 @@ RtDrawLayer >> picture: anObject [
 	picture := anObject
 ]
 
+{ #category : #printing }
+RtDrawLayer >> printOn: aStream [
+
+	super printOn: aStream.
+	aStream space; nextPut: $(.
+	transform offset printOn: aStream.
+	aStream nextPutAll: ' extent: '.
+	extent printOn: aStream.
+	aStream space; nextPut: $).
+]
+
 { #category : #visiting }
 RtDrawLayer >> visit: aVisitor [
 
