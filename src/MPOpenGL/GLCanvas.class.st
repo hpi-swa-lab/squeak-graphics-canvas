@@ -102,12 +102,12 @@ GLCanvas >> drawDrawLayer: aLayer [
 GLCanvas >> drawGroupLayer: aLayer [
 
 	aLayer cache
-		ifNil: [  aLayer children do: [:layer |
-			self transformBy: aLayer transform clippingTo: (0 @ 0 extent: self extent) during: [:c | self drawLayer: layer]]]
-		ifNotNil: [:store | self
-			paintImageStore: store
-			transform: aLayer transform
-			sourceRect: store boundingBox]
+		ifNil: [super drawGroupLayer: aLayer]
+		ifNotNil: [:store |
+			self
+				paintImageStore: store
+				transform: aLayer transform
+				sourceRect: store boundingBox]
 ]
 
 { #category : #'drawing-text' }

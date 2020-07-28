@@ -55,12 +55,6 @@ RtWrapperCanvas >> doesRoundedCorners [
 	^ wrappedCanvas doesRoundedCorners
 ]
 
-{ #category : #'*RenderThee-LayerTree' }
-RtWrapperCanvas >> drawGroupLayer: aLayer [ 
-
-	wrappedCanvas drawGroupLayer: aLayer 
-]
-
 { #category : #'drawing-images' }
 RtWrapperCanvas >> drawImage: aForm at: aPoint [
 

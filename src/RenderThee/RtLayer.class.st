@@ -15,6 +15,12 @@ Class {
 	#category : #'RenderThee-LayerTree'
 }
 
+{ #category : #visiting }
+RtLayer >> accept: aVisitor [
+
+	self subclassResponsibility
+]
+
 { #category : #initialization }
 RtLayer >> bounds: aRectangle [
 
@@ -37,7 +43,7 @@ RtLayer >> cache: anObject [
 { #category : #initialization }
 RtLayer >> clipRect [
 
-	^ self transform translation asPoint extent: self extent
+	^ transform localBoundsToGlobal: (0@0 extent: extent)
 ]
 
 { #category : #accessing }
@@ -172,12 +178,5 @@ RtLayer >> transform: anObject [
 { #category : #compositing }
 RtLayer >> updateStoreOf: anImageStoreClass using: aCanvasClass [
 
-	cache := self createStoreOf: anImageStoreClass using: aCanvasClass.
-	^ cache
-]
-
-{ #category : #visiting }
-RtLayer >> visit: aVisitor [
-
-	self subclassResponsibility
+	^ cache := self createStoreOf: anImageStoreClass using: aCanvasClass
 ]

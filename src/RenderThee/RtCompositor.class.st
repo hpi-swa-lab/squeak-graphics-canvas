@@ -5,6 +5,12 @@ Class {
 }
 
 { #category : #visiting }
+RtCompositor >> visit: anObject [
+
+	^ anObject accept: self
+]
+
+{ #category : #visiting }
 RtCompositor >> visitDrawLayer: aLayer [
 
 	self subclassResponsibility

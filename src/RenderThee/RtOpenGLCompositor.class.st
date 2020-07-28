@@ -74,5 +74,5 @@ RtOpenGLCompositor >> visitGroupLayer: aLayer [
 			ifTrue: [self drawLayerCached: aLayer using: GLCanvas on: c]
 			ifFalse: [
 				aLayer incrementDrawCounter.
-				aLayer children do: [:child | child visit: self]]]
+				aLayer children do: [:child | child accept: self]]]
 ]

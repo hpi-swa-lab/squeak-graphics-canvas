@@ -9,8 +9,12 @@ Canvas >> drawDrawLayer: aLayer [
 { #category : #'*RenderThee-LayerTree' }
 Canvas >> drawGroupLayer: aLayer [
 
-	self transformBy: aLayer transform clippingTo: aLayer clipRect during: [ :c |
-		aLayer children do: [:childLayer | self drawLayer: childLayer]]
+	self
+		transformBy: aLayer transform
+		clippingTo: aLayer clipRect
+		during: [ :c |
+			aLayer children do: [:childLayer |
+				self drawLayer: childLayer]]
 ]
 
 { #category : #'*RenderThee-LayerTree' }

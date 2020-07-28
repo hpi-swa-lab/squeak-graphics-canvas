@@ -34,6 +34,12 @@ RtGroupLayer class >> transform: aMatrix extent: extent [
 		yourself
 ]
 
+{ #category : #visiting }
+RtGroupLayer >> accept: aVisitor [
+
+	^ aVisitor visitGroupLayer: self
+]
+
 { #category : #accessing }
 RtGroupLayer >> addChild: aLayer [
 
@@ -116,10 +122,4 @@ RtGroupLayer >> update [
 	(RtRecordingCanvas layer: self) reRecord: morph.
 	
 	drawsSinceUpdate := 0
-]
-
-{ #category : #visiting }
-RtGroupLayer >> visit: aVisitor [
-
-	aVisitor visitGroupLayer: self
 ]

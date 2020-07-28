@@ -56,7 +56,7 @@ RtOpenGLRenderer >> renderFrame [
 				compositor := RtOpenGLCompositor
 								canvas: canvas
 								cachingStrategy: (RtCacheAfterUnchangedDraws threshold: 100).
-				ActiveWorld groupLayer visit: compositor]]
+				compositor visit: ActiveWorld groupLayer]]
 ]
 
 { #category : #accessing }

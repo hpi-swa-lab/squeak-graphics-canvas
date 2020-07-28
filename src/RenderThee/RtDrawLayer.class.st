@@ -21,6 +21,12 @@ RtDrawLayer class >> picture: aPicture [
 		yourself
 ]
 
+{ #category : #visiting }
+RtDrawLayer >> accept: aVisitor [
+
+	^ aVisitor visitDrawLayer: self
+]
+
 { #category : #compositing }
 RtDrawLayer >> drawOn: aCanvas [
 
@@ -48,10 +54,4 @@ RtDrawLayer >> printOn: aStream [
 	aStream nextPutAll: ' extent: '.
 	extent printOn: aStream.
 	aStream space; nextPut: $).
-]
-
-{ #category : #visiting }
-RtDrawLayer >> visit: aVisitor [
-
-	^ aVisitor visitDrawLayer: self
 ]
