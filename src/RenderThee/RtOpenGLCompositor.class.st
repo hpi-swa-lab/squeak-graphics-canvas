@@ -1,12 +1,8 @@
 Class {
 	#name : #RtOpenGLCompositor,
-	#superclass : #RtCompositor,
+	#superclass : #RtLayerVisitor,
 	#instVars : [
-		'canvas',
-		'cachingStrategy'
-	],
-	#pools : [
-		'GLConstants'
+		'canvas'
 	],
 	#category : #'RenderThee-LayerTree'
 }
@@ -20,23 +16,8 @@ RtOpenGLCompositor class >> canvas: aCanvas [
 ]
 
 { #category : #'instance creation' }
-RtOpenGLCompositor class >> canvas: aCanvas cachingStrategy: aStrategy [
-
-	^ self basicNew
-		initializeWithCanvas: aCanvas;
-		cachingStrategy: aStrategy;
-		yourself
-]
-
-{ #category : #'instance creation' }
 RtOpenGLCompositor class >> new [
 	self shouldNotImplement
-]
-
-{ #category : #visiting }
-RtOpenGLCompositor >> cachingStrategy: aStrategy [
-
-	cachingStrategy := aStrategy
 ]
 
 { #category : #visiting }
@@ -69,10 +50,10 @@ RtOpenGLCompositor >> visitDrawLayer: aLayer [
 { #category : #visiting }
 RtOpenGLCompositor >> visitGroupLayer: aLayer [
 
-	canvas transformBy: aLayer transform clippingTo: aLayer clipRect during: [:c |
-		(cachingStrategy shouldCacheGroupLayer: aLayer)
-			ifTrue: [self drawLayerCached: aLayer using: GLCanvas on: c]
-			ifFalse: [
+	canvas transformBy: aLayer transform clippingTo: aLayer clipRect during: [:canvas |
+		aLayer cachingCanvasClass
+			ifNotNil: [:canvasClass | self drawLayerCached: aLayer using: canvasClass on: canvas]
+			ifNil: [
 				aLayer incrementDrawCounter.
-				aLayer children do: [:child | child accept: self]]]
+				super visitGroupLayer: aLayer]]
 ]

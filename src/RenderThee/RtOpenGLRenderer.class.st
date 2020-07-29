@@ -1,6 +1,6 @@
 Class {
 	#name : #RtOpenGLRenderer,
-	#superclass : #Object,
+	#superclass : #RtRenderer,
 	#instVars : [
 		'ogl'
 	],
@@ -23,7 +23,16 @@ RtOpenGLRenderer >> initialize [
 	ogl := GL4_5 newGLFWIn: ActiveWorld bounds.
 	
 	ogl context cursorCallback: [:x :y |
-		ActiveHand handleEvent: (MouseMoveEvent new setType: #mouseMove startPoint: x @ y endPoint: x @ y trail: nil buttons: 0 hand: ActiveHand stamp: 0)].
+		| evt |
+		evt := MouseMoveEvent new
+				setType: #mouseMove
+				startPoint: x @ y
+				endPoint: x @ y
+				trail: nil
+				buttons: 0
+				hand: ActiveHand
+				stamp: 0.
+		ActiveHand handleEvent: evt].
 	
 	ogl context mouseButtonCallback: [:button :down :mods |
 		ActiveHand handleEvent: (MouseButtonEvent new
@@ -45,7 +54,16 @@ RtOpenGLRenderer >> release [
 { #category : #rendering }
 RtOpenGLRenderer >> renderFrame [
 
+	| cacheDecider rootLayer |
 	ActiveWorld updateLayerTree.
+	
+	rootLayer := ActiveWorld groupLayer.
+	
+	cacheDecider := RtCacheDecider new
+						canvasClass: GLCanvas;
+						cachingStrategy: (RtCacheAfterUnchangedDraws threshold: 100);
+						yourself.
+	cacheDecider visit: rootLayer. 
 	
 	ogl makeCurrentDuring: [
 		GLCanvas
@@ -54,9 +72,8 @@ RtOpenGLRenderer >> renderFrame [
 			do: [:canvas |
 				| compositor |
 				compositor := RtOpenGLCompositor
-								canvas: canvas
-								cachingStrategy: (RtCacheAfterUnchangedDraws threshold: 100).
-				compositor visit: ActiveWorld groupLayer]]
+								canvas: canvas.
+				compositor visit: rootLayer]]
 ]
 
 { #category : #accessing }

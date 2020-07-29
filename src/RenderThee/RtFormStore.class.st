@@ -29,6 +29,12 @@ RtFormStore >> createGLTexture [
 		yourself
 ]
 
+{ #category : #accessing }
+RtFormStore >> extent [
+
+	^ form extent
+]
+
 { #category : #textures }
 RtFormStore >> form [
 

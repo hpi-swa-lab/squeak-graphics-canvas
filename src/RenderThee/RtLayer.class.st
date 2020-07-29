@@ -6,6 +6,7 @@ Class {
 		'transform',
 		'extent',
 		'cache',
+		'cachingCanvasClass',
 		'drawTime',
 		'compositeTime',
 		'drawsSinceInvalidation',
@@ -37,7 +38,17 @@ RtLayer >> cache [
 { #category : #accessing }
 RtLayer >> cache: anObject [
 
-	^ cache := anObject
+	cache := anObject
+]
+
+{ #category : #accessing }
+RtLayer >> cachingCanvasClass [
+	^ cachingCanvasClass
+]
+
+{ #category : #accessing }
+RtLayer >> cachingCanvasClass: anObject [
+	cachingCanvasClass := anObject
 ]
 
 { #category : #initialization }
@@ -142,7 +153,8 @@ RtLayer >> invalidateCache [
 
 	self parent ifNotNil: [:p | p invalidateCache].
 	cache := nil.
-	drawsSinceInvalidation := 0
+	drawsSinceInvalidation := 0.
+	cachingCanvasClass := nil
 ]
 
 { #category : #utilities }

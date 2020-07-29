@@ -23,6 +23,12 @@ RtImageStore >> boundingBox [
 ]
 
 { #category : #accessing }
+RtImageStore >> extent [
+
+	self subclassResponsibility
+]
+
+{ #category : #accessing }
 RtImageStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
 	aBlock value

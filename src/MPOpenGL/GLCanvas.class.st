@@ -43,7 +43,7 @@ GLCanvas class >> extent: aPoint store: anImageStoreClass do: aBlock [
 
 	| store canvas |
 	store := anImageStoreClass extent: aPoint.
-	canvas := GLCanvas extent: aPoint framebuffer: store framebuffer.
+	canvas := self extent: aPoint framebuffer: store framebuffer.
 	
 	store prepareForDrawingOn: canvas during: [
 		aBlock value: canvas].
@@ -93,8 +93,13 @@ GLCanvas >> clipRect: aRectangle during: aBlock [
 
 { #category : #accessing }
 GLCanvas >> drawDrawLayer: aLayer [
+
 	| store |
-	store := aLayer cache ifNil: [aLayer cache: (aLayer createStoreOf: RtFramebufferStore using: FormCanvas); cache].
+	store := aLayer cache ifNil: [
+				aLayer
+					createStoreOf: RtFramebufferStore
+					using: FormCanvas].
+	aLayer cache: store.
 	self paintImageStore: store transform: aLayer transform sourceRect: store boundingBox
 ]
 

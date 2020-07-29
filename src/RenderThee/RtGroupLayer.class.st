@@ -61,7 +61,8 @@ RtGroupLayer >> children [
 
 { #category : #drawing }
 RtGroupLayer >> drawOn: aCanvas [
-	^	aCanvas drawGroupLayer: self
+
+	aCanvas drawGroupLayer: self
 ]
 
 { #category : #initialization }

@@ -32,6 +32,12 @@ RtDisplayFramebufferStore >> displayTransform [
 	^ (Matrix4x4 withScale: 1 @ -1 @ 1) * (Matrix4x4 withOffset: 0 @ extent y negated @ 0)
 ]
 
+{ #category : #accessing }
+RtDisplayFramebufferStore >> extent [
+
+	^ extent
+]
+
 { #category : #'as yet unclassified' }
 RtDisplayFramebufferStore >> framebuffer [
 
