@@ -1,5 +1,5 @@
 Class {
-	#name : #RtOpenGLCompositor,
+	#name : #RtCompositor,
 	#superclass : #RtLayerVisitor,
 	#instVars : [
 		'canvas'
@@ -8,7 +8,7 @@ Class {
 }
 
 { #category : #'instance creation' }
-RtOpenGLCompositor class >> canvas: aCanvas [
+RtCompositor class >> canvas: aCanvas [
 
 	^ self basicNew
 		initializeWithCanvas: aCanvas;
@@ -16,12 +16,12 @@ RtOpenGLCompositor class >> canvas: aCanvas [
 ]
 
 { #category : #'instance creation' }
-RtOpenGLCompositor class >> new [
+RtCompositor class >> new [
 	self shouldNotImplement
 ]
 
 { #category : #visiting }
-RtOpenGLCompositor >> drawLayerCached: aLayer using: aCanvasClass on: aCanvas [
+RtCompositor >> drawLayerCached: aLayer using: aCanvasClass on: aCanvas [
 
 	| store |
 	store := aLayer cache ifNil: [
@@ -35,20 +35,20 @@ RtOpenGLCompositor >> drawLayerCached: aLayer using: aCanvasClass on: aCanvas [
 ]
 
 { #category : #initialization }
-RtOpenGLCompositor >> initializeWithCanvas: aCanvas [
+RtCompositor >> initializeWithCanvas: aCanvas [
 
 	canvas := aCanvas
 ]
 
 { #category : #visiting }
-RtOpenGLCompositor >> visitDrawLayer: aLayer [
+RtCompositor >> visitDrawLayer: aLayer [
 
 	canvas transformBy: aLayer transform clippingTo: aLayer clipRect during: [:c |
 		self drawLayerCached: aLayer using: FormCanvas on: c]
 ]
 
 { #category : #visiting }
-RtOpenGLCompositor >> visitGroupLayer: aLayer [
+RtCompositor >> visitGroupLayer: aLayer [
 
 	canvas transformBy: aLayer transform clippingTo: aLayer clipRect during: [:canvas |
 		aLayer cachingCanvasClass

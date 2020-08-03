@@ -29,6 +29,12 @@ RtImageStore >> extent [
 ]
 
 { #category : #accessing }
+RtImageStore >> extent: aPoint [
+
+	self subclassResponsibility
+]
+
+{ #category : #accessing }
 RtImageStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
 	aBlock value

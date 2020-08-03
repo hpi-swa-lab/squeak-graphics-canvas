@@ -1,5 +1,5 @@
 Class {
-	#name : #RtCacheDecider,
+	#name : #RtCacheMarker,
 	#superclass : #RtLayerVisitor,
 	#instVars : [
 		'cachingStrategy',
@@ -9,27 +9,27 @@ Class {
 }
 
 { #category : #accessing }
-RtCacheDecider >> cachingStrategy [
+RtCacheMarker >> cachingStrategy [
 	^ cachingStrategy
 ]
 
 { #category : #accessing }
-RtCacheDecider >> cachingStrategy: anObject [
+RtCacheMarker >> cachingStrategy: anObject [
 	cachingStrategy := anObject
 ]
 
 { #category : #accessing }
-RtCacheDecider >> canvasClass [
+RtCacheMarker >> canvasClass [
 	^ canvasClass
 ]
 
 { #category : #accessing }
-RtCacheDecider >> canvasClass: anObject [
+RtCacheMarker >> canvasClass: anObject [
 	canvasClass := anObject
 ]
 
 { #category : #visiting }
-RtCacheDecider >> visitDrawLayer: aLayer [
+RtCacheMarker >> visitDrawLayer: aLayer [
 
 	(cachingStrategy shouldCacheDrawLayer: aLayer) ifTrue: [
 		aLayer cachingCanvasClass: canvasClass].
@@ -37,7 +37,7 @@ RtCacheDecider >> visitDrawLayer: aLayer [
 ]
 
 { #category : #visiting }
-RtCacheDecider >> visitGroupLayer: aLayer [
+RtCacheMarker >> visitGroupLayer: aLayer [
 
 	(cachingStrategy shouldCacheGroupLayer: aLayer) ifTrue: [
 		aLayer cachingCanvasClass: canvasClass].
