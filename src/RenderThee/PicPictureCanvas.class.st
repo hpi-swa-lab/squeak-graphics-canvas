@@ -242,7 +242,7 @@ PicPictureCanvas >> initialize [
 
 	super initialize.
 	groupStack := OrderedCollection with: PicGroup new.
-	transform := MatrixTransform2x3 identity.
+	transform := Matrix2x3 identity.
 	clipRect := Rectangle infinite
 ]
 
@@ -329,9 +329,8 @@ PicPictureCanvas >> transformBy: aTransform during: aBlock [
 	| transformedClip matrix2x3 |
 	aTransform isIdentity ifTrue: [^ aBlock value: self].
 	
-	matrix2x3 := aTransform asMatrixTransform2x3.
-	"don't lose calls to visibility checks due to poor rounding"
-	transformedClip := (matrix2x3 globalBoundsToLocal: clipRect) outsetBy: 1.
+	matrix2x3 := aTransform asMatrix2x3.
+	transformedClip := (matrix2x3 globalBoundsToLocal: clipRect) expanded.
 	self clipRect: transformedClip during: [
 		self transform: (transform composedWithLocal: matrix2x3) during: [
 			self group: (PicTransform matrix: matrix2x3) during: aBlock]]
@@ -341,7 +340,7 @@ PicPictureCanvas >> transformBy: aTransform during: aBlock [
 PicPictureCanvas >> translateBy: aPoint during: aBlock [
 
 	self
-		transformBy: (MatrixTransform2x3 withOffset: aPoint)
+		transformBy: (Matrix2x3 withOffset: aPoint)
 		during: aBlock
 ]
 

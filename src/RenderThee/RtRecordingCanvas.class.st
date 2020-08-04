@@ -212,7 +212,7 @@ RtRecordingCanvas >> transformBy: aDisplayTransform during: aBlock [
 RtRecordingCanvas >> transformForOffset: aPoint [
 
 	^ (wrappedCanvas transform
-		composedWithLocal: (MatrixTransform2x3 withOffset: aPoint)) asMatrix4x4
+		composedWithLocal: (Matrix2x3 withOffset: aPoint)) asMatrix4x4
 ]
 
 { #category : #'drawing-support' }

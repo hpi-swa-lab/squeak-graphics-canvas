@@ -152,6 +152,12 @@ Matrix2x3 >> a23: anObject [
 ]
 
 { #category : #converting }
+Matrix2x3 >> asMatrix2x3 [
+
+	^ self
+]
+
+{ #category : #converting }
 Matrix2x3 >> asMatrixTransform2x3 [
 
 	^ self
