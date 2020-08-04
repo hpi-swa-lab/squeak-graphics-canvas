@@ -1,6 +1,6 @@
 Class {
 	#name : #Matrix2x3,
-	#superclass : #Object,
+	#superclass : #DisplayTransform,
 	#instVars : [
 		'a11',
 		'a12',
@@ -13,7 +13,7 @@ Class {
 		'Identity',
 		'Zero'
 	],
-	#category : #'RenderThee-Core'
+	#category : #'RenderThee-Transform'
 }
 
 { #category : #'instance creation' }
@@ -38,25 +38,45 @@ Matrix2x3 class >> new [
 { #category : #'instance creation' }
 Matrix2x3 class >> withAngle: degrees [
 
-	^ self new setAngle: degrees
+	^ self identity setAngle: degrees
 ]
 
 { #category : #'instance creation' }
 Matrix2x3 class >> withOffset: aScalar [
 
-	^ self identity setOffset: aScalar
+	^ self identity setOffset: aScalar asPoint
 ]
 
 { #category : #'instance creation' }
 Matrix2x3 class >> withRotation: degrees [
 
-	^ self new setAngle: degrees
+	^ self withAngle: degrees
+]
+
+{ #category : #'instance creation' }
+Matrix2x3 class >> withScale: aScalar [
+
+	^ self identity setScale: aScalar asPoint
 ]
 
 { #category : #'instance creation' }
 Matrix2x3 class >> zero [
 
 	^ Zero shallowCopy
+]
+
+{ #category : #comparing }
+Matrix2x3 >> = aMatrix2x3 [
+
+	self == aMatrix2x3 ifTrue: [^ true].
+	self species == aMatrix2x3 species ifFalse: [^ false].
+	a11 = aMatrix2x3 a11 ifFalse: [^ false].
+	a12 = aMatrix2x3 a12 ifFalse: [^ false].
+	a13 = aMatrix2x3 a13 ifFalse: [^ false].
+	a21 = aMatrix2x3 a21 ifFalse: [^ false].
+	a22 = aMatrix2x3 a22 ifFalse: [^ false].
+	a23 = aMatrix2x3 a23 ifFalse: [^ false].
+	^ true
 ]
 
 { #category : #accessing }
@@ -184,27 +204,144 @@ Matrix2x3 >> composedWithLocal: aMatrix2x3 into: result [
 	^ result
 ]
 
-{ #category : #transforming }
-Matrix2x3 >> globalPointToLocal: aPoint [
-	"Transform aPoint from global coordinates into local coordinates"
-	| x y det detX detY |
-	x := aPoint x asFloat - a13.
-	y := aPoint y asFloat - a23.
-	det := (a11 * a22) - (a12 * a21).
-	det = 0.0 ifTrue: [^ 0.0@0.0]. "So we have at least a valid result"
-	det := 1.0 / det.
-	detX := (x * a22) - (a12 * y).
-	detY := (a11 * y) - (x * a21).
-	^ (detX * det) @ (detY * det)
+{ #category : #'transforming rects' }
+Matrix2x3 >> globalBoundsToLocal: aRectangle [
+	"not the prettiest method, but quite a bit faster than super"
+	| minX minY maxX maxY pt |
+	self isPureTranslation ifTrue: [
+		"atm most transforms in use are pure translations, making this fast path well worth it"
+		^ (self globalPointToLocal: aRectangle topLeft)
+			corner: (self globalPointToLocal: aRectangle bottomRight)].
+	
+	pt := self globalPointToLocal: aRectangle topLeft.
+	minX := maxX := pt x.
+	minY := maxY := pt y.
+	
+	pt := self globalPointToLocal: aRectangle topRight.
+	minX := minX min: pt x.
+	maxX := maxX max: pt x.
+	minY := minY min: pt y.
+	maxY := maxY max: pt y.
+	
+	pt := self globalPointToLocal: aRectangle bottomRight.
+	minX := minX min: pt x.
+	maxX := maxX max: pt x.
+	minY := minY min: pt y.
+	maxY := maxY max: pt y.
+	
+	pt := self globalPointToLocal: aRectangle bottomLeft.
+	minX := minX min: pt x.
+	maxX := maxX max: pt x.
+	minY := minY min: pt y.
+	maxY := maxY max: pt y.
+	
+	^ Rectangle origin: (minX @ minY) corner: (maxX @ maxY)
 ]
 
-{ #category : #transforming }
+{ #category : #'transforming points' }
+Matrix2x3 >> globalPointToLocal: aPoint [
+	"Transform aPoint from global coordinates into local coordinates"
+	| x y det |
+	det := (a11 * a22) - (a12 * a21).
+	det = 0.0 ifTrue: [^ 0.0@0.0]. "So we have at least a valid result"
+	x := aPoint x asFloat - a13.
+	y := aPoint y asFloat - a23.
+	^ (((x * a22) - (a12 * y)) / det)
+		@ (((a11 * y) - (x * a21)) / det)
+]
+
+{ #category : #comparing }
+Matrix2x3 >> hash [
+
+	^ (((((self species hash
+		bitXor: a11 hash)
+			bitXor: a12 hash)
+				bitXor: a13 hash)
+					bitXor: a21 hash)
+						bitXor: a22 hash)
+							bitXor: a23 hash
+]
+
+{ #category : #testing }
+Matrix2x3 >> isIdentity [
+
+	a13 = 0.0 ifFalse: [^ false].
+	a23 = 0.0 ifFalse: [^ false].
+	a11 = 1.0 ifFalse: [^ false].
+	a22 = 1.0 ifFalse: [^ false].
+	a12 = 0.0 ifFalse: [^ false].
+	^ a21 = 0.0
+]
+
+{ #category : #testing }
+Matrix2x3 >> isMatrix2x3 [
+
+	^ true
+]
+
+{ #category : #testing }
+Matrix2x3 >> isPureTranslation [
+
+	a11 = 1.0 ifFalse: [^ false].
+	a22 = 1.0 ifFalse: [^ false].
+	a12 = 0.0 ifFalse: [^ false].
+	^ a21 = 0.0
+]
+
+{ #category : #'transforming rects' }
+Matrix2x3 >> localBoundsToGlobal: aRectangle [
+	"not the prettiest method, but quite a bit faster than super"
+	| minX minY maxX maxY pt |
+	self isPureTranslation ifTrue: [
+		"atm most transforms in use are pure translations, making this fast path well worth it"
+		^ (self localPointToGlobal: aRectangle topLeft)
+			corner: (self localPointToGlobal: aRectangle bottomRight)].
+	
+	pt := self localPointToGlobal: aRectangle topLeft.
+	minX := maxX := pt x.
+	minY := maxY := pt y.
+	
+	pt := self localPointToGlobal: aRectangle topRight.
+	minX := minX min: pt x.
+	maxX := maxX max: pt x.
+	minY := minY min: pt y.
+	maxY := maxY max: pt y.
+	
+	pt := self localPointToGlobal: aRectangle bottomRight.
+	minX := minX min: pt x.
+	maxX := maxX max: pt x.
+	minY := minY min: pt y.
+	maxY := maxY max: pt y.
+	
+	pt := self localPointToGlobal: aRectangle bottomLeft.
+	minX := minX min: pt x.
+	maxX := maxX max: pt x.
+	minY := minY min: pt y.
+	maxY := maxY max: pt y.
+	
+	^ Rectangle origin: (minX @ minY) corner: (maxX @ maxY)
+]
+
+{ #category : #'transforming points' }
 Matrix2x3 >> localPointToGlobal: aPoint [
 	"Transform aPoint from local coordinates into global coordinates"
 	| x y |
-	x := (aPoint x * a11) + (aPoint y * a12) + a13.
-	y := (aPoint x * a21) + (aPoint y * a22) + a23.
-	^ x @ y
+	x := aPoint x asFloat.
+	y := aPoint y asFloat.
+	^ ((x * a11) + (y * a12) + a13)
+		@ ((x * a21) + (y * a22) + a23)
+]
+
+{ #category : #accessing }
+Matrix2x3 >> offset [
+
+	^ a13 @ a23
+]
+
+{ #category : #accessing }
+Matrix2x3 >> offset: aScalar [
+
+	self setOffset: aScalar asPoint
 ]
 
 { #category : #printing }
@@ -237,21 +374,17 @@ Matrix2x3 >> setIdentity [
 ]
 
 { #category : #private }
-Matrix2x3 >> setOffset: aScalar [
+Matrix2x3 >> setOffset: aPoint [
 	"Set the raw offset in the receiver"
-	| pt |
-	pt := aScalar asPoint.
-	a13 := pt x asFloat.
-	a23 := pt y asFloat
+	a13 := aPoint x asFloat.
+	a23 := aPoint y asFloat
 ]
 
 { #category : #private }
-Matrix2x3 >> setScale: aScalar [
+Matrix2x3 >> setScale: aPoint [
 	"Set the raw scale in the receiver"
-	| pt |
-	pt := aScalar asPoint.
-	a11 := pt x asFloat.
-	a22 := pt y asFloat
+	a11 := aPoint x asFloat.
+	a22 := aPoint y asFloat
 ]
 
 { #category : #private }
