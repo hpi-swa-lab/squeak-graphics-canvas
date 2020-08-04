@@ -65,6 +65,18 @@ Matrix2x3 class >> zero [
 	^ Zero shallowCopy
 ]
 
+{ #category : #composing }
+Matrix2x3 >> * m2 [
+	"Perform a matrix multiplication."
+	^ self composedWithLocal: m2
+]
+
+{ #category : #composing }
+Matrix2x3 >> *= m2 [
+	"Perform a matrix multiplication."
+	self composeWithLocal: m2
+]
+
 { #category : #comparing }
 Matrix2x3 >> = aMatrix2x3 [
 
@@ -176,10 +188,10 @@ Matrix2x3 >> composeWithLocal: aMatrix2x3 [
 	a13 := a13 + (a11 * b13) + (a12 * b23).
 	a23 := a23 + (a21 * b13) + (a22 * b23).
 	tmp := a11.
-	a11 := (a11 * b11) + (a12 * b21).
+	a11 := (tmp * b11) + (a12 * b21).
 	a12 := (tmp * b12) + (a12 * b22).
 	tmp := a21.
-	a21 := (a21 * b11) + (a22 * b21).
+	a21 := (tmp * b11) + (a22 * b21).
 	a22 := (tmp * b12) + (a22 * b22)
 	
 ]
@@ -187,27 +199,7 @@ Matrix2x3 >> composeWithLocal: aMatrix2x3 [
 { #category : #composing }
 Matrix2x3 >> composedWithLocal: aTransformation [
 	"Return the composition of the receiver and the local transformation passed in"
-	^ self shallowCopy composeWithLocal: aTransformation asMatrixTransform2x3
-]
-
-{ #category : #composing }
-Matrix2x3 >> composedWithLocal: aMatrix2x3 into: result [
-	"Return the composition of the receiver and the local transformation passed in.
-	Store the composed matrix into result."
-	| b11 b12 b13 b21 b22 b23 |
-	b11 := aMatrix2x3 a11.
-	b12 := aMatrix2x3 a12.
-	b13 := aMatrix2x3 a13.
-	b21 := aMatrix2x3 a21.
-	b22 := aMatrix2x3 a22.
-	b23 := aMatrix2x3 a23.
-	result a11: (a11 * b11) + (a12 * b21).
-	result a12: (a11 * b12) + (a12 * b22).
-	result a13: a13 + (a11 * b13) + (a12 * b23).
-	result a21: (a21 * b11) + (a22 * b21).
-	result a22: (a21 * b12) + (a22 * b22).
-	result a23: a23 + (a21 * b13) + (a22 * b23).
-	^ result
+	^ self shallowCopy composeWithLocal: aTransformation asMatrix2x3
 ]
 
 { #category : #'transforming rects' }
@@ -266,6 +258,25 @@ Matrix2x3 >> hash [
 					bitXor: a21 hash)
 						bitXor: a22 hash)
 							bitXor: a23 hash
+]
+
+{ #category : #transforming }
+Matrix2x3 >> inverseTransformation [
+	"Return the inverse transformation of the receiver."
+	^ self shallowCopy invert
+]
+
+{ #category : #transforming }
+Matrix2x3 >> invert [
+	"The inverse transformation is computed by first calculating
+	the inverse offset and then computing transformations
+	for the two identity vectors (1@0) and (0@1)"
+	| r1 r2 r3 |
+	r3 := self globalPointToLocal: 0.0 @ 0.0.
+	r1 := (self globalPointToLocal: 1.0 @ 0.0) - r3.
+	r2 := (self globalPointToLocal: 0.0 @ 1.0) - r3.
+	a11 := r1 x. a12 := r2 x. a13 := r3 x.
+	a21 := r1 y. a22 := r2 y. a23 := r3 y
 ]
 
 { #category : #testing }
@@ -334,8 +345,8 @@ Matrix2x3 >> localPointToGlobal: aPoint [
 	| x y |
 	x := aPoint x asFloat.
 	y := aPoint y asFloat.
-	^ ((x * a11) + (y * a12) + a13)
-		@ ((x * a21) + (y * a22) + a23)
+	^ (a13 + (x * a11) + (y * a12))
+		@ (a23 + (x * a21) + (y * a22))
 ]
 
 { #category : #accessing }

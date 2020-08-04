@@ -22,7 +22,7 @@ RtGroupLayer class >> bounds: aRectangle [
 { #category : #'instance creation' }
 RtGroupLayer class >> offset: offset extent: extent [
 
-	^ self transform: (Matrix4x4 withOffset: offset asVector3) extent: extent
+	^ self transform: (Matrix2x3 withOffset: offset) extent: extent
 ]
 
 { #category : #'instance creation' }
@@ -50,7 +50,8 @@ RtGroupLayer >> addChild: aLayer [
 { #category : #accessing }
 RtGroupLayer >> bounds [
 
-	^ self transform translation asPoint extent: self extent
+	self flag: #todo. "assumes pure translations"
+	^ self transform offset extent: self extent
 ]
 
 { #category : #accessing }

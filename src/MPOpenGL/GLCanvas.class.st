@@ -213,16 +213,16 @@ GLCanvas >> outlineProgram [
 ]
 
 { #category : #'drawing-images' }
-GLCanvas >> paintImageStore: aStore transform: aMatrix sourceRect: sourceRect [
+GLCanvas >> paintImageStore: aStore transform: aTransform sourceRect: sourceRect [
 
 	self boundDuring: [
 		self textureProgram boundDuring: [
 			aStore glTextureDo: [:texture |
 				texture boundDuring: [
 					self textureProgram
-						sourcePosition: sourceRect origin / aStore extent asFloatPoint;
-						sourceExtent: sourceRect extent / aStore extent asFloatPoint;
-						mvp: transform * aMatrix * (Matrix4x4 withScale: aStore extent @ 1).
+						sourcePosition: sourceRect origin asFloatPoint / aStore extent asFloatPoint;
+						sourceExtent: sourceRect extent asFloatPoint / aStore extent asFloatPoint;
+						mvp: transform * aTransform asMatrix4x4 * (Matrix4x4 withScale: aStore extent @ 1.0).
 					self vbo draw: GL_TRIANGLE_STRIP]]]]
 ]
 
@@ -275,7 +275,7 @@ GLCanvas >> transformBy: aMatrix during: aBlock [
 	| previousLastTransform |
 	previousLastTransform := lastTransform.
 	lastTransform := aMatrix.
-	self transform: transform * aMatrix during: aBlock.
+	self transform: transform * aMatrix asMatrix4x4 during: aBlock.
 	lastTransform := previousLastTransform
 ]
 

@@ -25,7 +25,7 @@ RtLayer >> accept: aVisitor [
 { #category : #initialization }
 RtLayer >> bounds: aRectangle [
 
-	self transform: (Matrix4x4 withOffset: aRectangle topLeft asVector3).
+	self transform: (Matrix2x3 withOffset: aRectangle topLeft).
 	self extent: aRectangle extent
 ]
 
@@ -73,7 +73,7 @@ RtLayer >> createStoreOf: anImageStoreClass using: aCanvasClass [
 	^ aCanvasClass extent: self extent store: anImageStoreClass do: [:canvas | | previousTransform |
 		" note that our layer carries its own transform, but we want to paint it in the origin "
 		previousTransform := self transform.
-		self transform: Matrix4x4 identity.
+		self transform: Matrix2x3 identity.
 		canvas drawLayer: self.
 		self transform: previousTransform]
 ]

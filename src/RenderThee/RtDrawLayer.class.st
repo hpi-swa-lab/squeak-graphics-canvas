@@ -15,7 +15,7 @@ RtDrawLayer class >> picture: aPicture [
 	pic := aPicture copy.
 	pic transformBy: (Matrix2x3 withOffset: bounds topLeft negated).
 	^ self new
-		transform: (Matrix4x4 withOffset: bounds topLeft);
+		transform: (Matrix2x3 withOffset: bounds topLeft);
 		extent: bounds extent;
 		picture: pic;
 		yourself

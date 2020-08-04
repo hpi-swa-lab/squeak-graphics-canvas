@@ -20,7 +20,7 @@ RtDisplayFramebufferStore >> canvasDo: aBlock [
 { #category : #accessing }
 RtDisplayFramebufferStore >> displayTransform [
 	" a transform that translates this store's coordinate system to have 0,0 in the top left "
-	^ (Matrix4x4 withScale: 1 @ -1 @ 1) * (Matrix4x4 withOffset: 0 @ extent y negated @ 0)
+	^ (Matrix2x3 withScale: 1.0 @ -1.0) * (Matrix2x3 withOffset: 0 @ extent y negated)
 ]
 
 { #category : #initialization }

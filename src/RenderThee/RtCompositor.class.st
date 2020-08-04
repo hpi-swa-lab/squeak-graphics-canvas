@@ -30,7 +30,7 @@ RtCompositor >> drawLayerCached: aLayer using: aCanvasClass on: aCanvas [
 	
 	aCanvas
 		paintImageStore: store
-		transform: Matrix4x4 identity
+		transform: Matrix2x3 identity
 		sourceRect: store boundingBox
 ]
 
