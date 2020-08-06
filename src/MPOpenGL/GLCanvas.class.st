@@ -19,15 +19,13 @@ Class {
 { #category : #example }
 GLCanvas class >> exampleWindow [
 	"self exampleWindow"
-
-	| gl |
-	gl := GL4_1 newGLFWIn: (0 @ 0 extent: 900 asPoint).
-	gl makeCurrentDuring: [
-		RtDisplayFramebufferStore extent: 900 asPoint withCanvasDo: [:c |
-			c fullDraw: ((ToolBuilder build: (Browser new setClass: Morph selector: #submorphs)) position: 0 @ 0)]].
+	| display window |
+	window := (ToolBuilder build: (Browser new setClass: Morph selector: #submorphs)) position: 0 @ 0.
+	display := RtDisplayFramebufferStore extent: window extent.
+	display canvasDo: [:c | c fullDraw: window].
 	
 	[Sensor anyButtonPressed] whileFalse: [2 milliSeconds wait].
-	gl destroy
+	display glLibrary destroy
 ]
 
 { #category : #'instance creation' }
@@ -102,30 +100,6 @@ GLCanvas >> clipRect: aRectangle during: aBlock [
 		gl glScissor: rect left with: rect top with: rect width with: rect height]
 ]
 
-{ #category : #accessing }
-GLCanvas >> drawDrawLayer: aLayer [
-
-	| store |
-	store := aLayer cache ifNil: [
-				aLayer
-					createStoreOf: RtFramebufferStore
-					using: FormCanvas].
-	aLayer cache: store.
-	self paintImageStore: store transform: aLayer transform sourceRect: store boundingBox
-]
-
-{ #category : #accessing }
-GLCanvas >> drawGroupLayer: aLayer [
-
-	aLayer cache
-		ifNil: [super drawGroupLayer: aLayer]
-		ifNotNil: [:store |
-			self
-				paintImageStore: store
-				transform: aLayer transform
-				sourceRect: store boundingBox]
-]
-
 { #category : #'drawing-text' }
 GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c [
 
@@ -184,15 +158,8 @@ GLCanvas >> framebuffer [
 { #category : #'drawing-images' }
 GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
-	self boundDuring: [
-		self textureProgram boundDuring: [
-			(RtFormStore form: aForm) glTextureDo: [:texture |
-				texture boundDuring: [
-					self textureProgram
-						sourcePosition: sourceRect origin / aForm extent asFloatPoint;
-						sourceExtent: sourceRect extent / aForm extent asFloatPoint;
-						mvp: transform * (Matrix4x4 withOffset: aPoint) * (Matrix4x4 withScale: aForm extent @ 1).
-					self vbo draw: GL_TRIANGLE_STRIP]]]]
+	self translateBy: aPoint during: [:c |
+		c paintImageStore: (RtFormStore form: aForm) sourceRect: sourceRect]
 ]
 
 { #category : #initialization }
@@ -210,20 +177,6 @@ GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 GLCanvas >> outlineProgram [
 
 	^ programs outlineProgram
-]
-
-{ #category : #'drawing-images' }
-GLCanvas >> paintImageStore: aStore transform: aTransform sourceRect: sourceRect [
-
-	self boundDuring: [
-		self textureProgram boundDuring: [
-			aStore glTextureDo: [:texture |
-				texture boundDuring: [
-					self textureProgram
-						sourcePosition: sourceRect origin asFloatPoint / aStore extent asFloatPoint;
-						sourceExtent: sourceRect extent asFloatPoint / aStore extent asFloatPoint;
-						mvp: transform * aTransform asMatrix4x4 * (Matrix4x4 withScale: aStore extent @ 1.0).
-					self vbo draw: GL_TRIANGLE_STRIP]]]]
 ]
 
 { #category : #'drawing-text' }

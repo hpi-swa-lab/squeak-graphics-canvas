@@ -7,16 +7,6 @@ Class {
 	#category : #'RenderThee-LayerTree'
 }
 
-{ #category : #drawing }
-RtDisplayFramebufferStore >> canvasDo: aBlock [
-
-	glLibrary makeCurrentDuring: [
-		| canvas |
-		canvas := self getCanvas.
-		self prepareForDrawingOn: canvas during: [
-			aBlock value: canvas]]
-]
-
 { #category : #accessing }
 RtDisplayFramebufferStore >> displayTransform [
 	" a transform that translates this store's coordinate system to have 0,0 in the top left "
@@ -26,14 +16,13 @@ RtDisplayFramebufferStore >> displayTransform [
 { #category : #initialization }
 RtDisplayFramebufferStore >> extentChanged [
 
-	framebuffer boundDuring: [
-		glLibrary glViewport: 0 with: 0 with: extent x with: extent y]
+	framebuffer boundDuring: [self resetViewport]
 ]
 
 { #category : #accessing }
-RtDisplayFramebufferStore >> getCanvas [
+RtDisplayFramebufferStore >> glLibrary [
 
-	^ GLCanvas extent: extent framebuffer: framebuffer
+	^ glLibrary
 ]
 
 { #category : #initialization }
@@ -55,9 +44,10 @@ RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 	glLibrary := GL4_5 newGLFWIn: (0@0 extent: extent).
 	framebuffer := glLibrary createObject: GLDisplayFrameBuffer.
 	
-	self initializeGLSettings.
-	self extentChanged.
-	self clear
+	framebuffer boundDuring: [
+		self initializeGLSettings.
+		self resetViewport.
+		self clear]
 ]
 
 { #category : #drawing }

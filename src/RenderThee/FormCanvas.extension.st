@@ -9,6 +9,12 @@ FormCanvas class >> extent: aPoint store: anImageStoreClass do: aBlock [
 	^ anImageStoreClass form: canvas form
 ]
 
+{ #category : #'*RenderThee' }
+FormCanvas >> imageStoreClass [
+
+	^ RtFormStore
+]
+
 { #category : #'*RenderThee-override' }
 FormCanvas >> transformBy: aDisplayTransform clippingTo: aClipRect during: aBlock smoothing: cellSize [
 	"Note: This method has been originally copied from TransformationMorph."

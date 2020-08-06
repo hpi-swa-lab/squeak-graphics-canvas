@@ -2,8 +2,7 @@ Class {
 	#name : #RtCacheMarker,
 	#superclass : #RtLayerVisitor,
 	#instVars : [
-		'cachingStrategy',
-		'canvasClass'
+		'cachingStrategy'
 	],
 	#category : #'RenderThee-LayerTree'
 }
@@ -18,28 +17,28 @@ RtCacheMarker >> cachingStrategy: anObject [
 	cachingStrategy := anObject
 ]
 
-{ #category : #accessing }
-RtCacheMarker >> canvasClass [
-	^ canvasClass
+{ #category : #testing }
+RtCacheMarker >> shouldCacheDrawLayer: aLayer [
+
+	^ cachingStrategy shouldCacheDrawLayer: aLayer
 ]
 
-{ #category : #accessing }
-RtCacheMarker >> canvasClass: anObject [
-	canvasClass := anObject
+{ #category : #testing }
+RtCacheMarker >> shouldCacheGroupLayer: aLayer [
+
+	^ cachingStrategy shouldCacheGroupLayer: aLayer
 ]
 
 { #category : #visiting }
 RtCacheMarker >> visitDrawLayer: aLayer [
 
-	(cachingStrategy shouldCacheDrawLayer: aLayer) ifTrue: [
-		aLayer cachingCanvasClass: canvasClass].
+	aLayer needsCaching: (self shouldCacheDrawLayer: aLayer).
 	super visitDrawLayer: aLayer
 ]
 
 { #category : #visiting }
 RtCacheMarker >> visitGroupLayer: aLayer [
 
-	(cachingStrategy shouldCacheGroupLayer: aLayer) ifTrue: [
-		aLayer cachingCanvasClass: canvasClass].
+	aLayer needsCaching: (self shouldCacheGroupLayer: aLayer).
 	super visitGroupLayer: aLayer
 ]

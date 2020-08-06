@@ -2,7 +2,6 @@ Class {
 	#name : #RtRecordingCanvas,
 	#superclass : #RtWrapperCanvas,
 	#instVars : [
-		'offsetToLastTransform',
 		'canvasStack',
 		'isReRecording',
 		'groupLayer'
@@ -30,7 +29,7 @@ RtRecordingCanvas class >> example01 [
 { #category : #'instance creation' }
 RtRecordingCanvas class >> extent: aPoint [
 
-	^ self layer: (RtGroupLayer offset: 0@0 extent: aPoint)
+	^ self layer: (RtGroupLayer bounds: (0@0 extent: aPoint))
 ]
 
 { #category : #'instance creation' }
@@ -56,13 +55,13 @@ RtRecordingCanvas >> addLayer: aLayer [
 ]
 
 { #category : #'repaint boundaries' }
-RtRecordingCanvas >> changeGroupLayerTo: aLayer withOffset: aPoint during: aBlock [
+RtRecordingCanvas >> changeGroupLayerTo: aLayer during: aBlock [
 
 	self endPicture.
 	
 	self groupLayer: aLayer during: [
 		self pictureCanvas: PicPictureCanvas new during: [
-			self translateBy: aPoint negated during: [:c |
+			self translateBy: aLayer offset negated during: [:c |
 				aBlock cull: c.
 				self endPicture]]].
 	
@@ -102,7 +101,6 @@ RtRecordingCanvas >> fullDrawMorph: aMorph [
 	"we need to create a new layer for aMorph"
 	self
 		changeGroupLayerTo: (self newGroupLayerFor: aMorph)
-		withOffset: aMorph position
 		during: [self fullDraw: aMorph]
 ]
 
@@ -120,8 +118,7 @@ RtRecordingCanvas >> groupLayer: aLayer during: aBlock [
 RtRecordingCanvas >> initialize [
 
 	super initialize.
-	wrappedCanvas := PicPictureCanvas new.
-	offsetToLastTransform := 0@0
+	wrappedCanvas := PicPictureCanvas new
 ]
 
 { #category : #accessing }
@@ -159,20 +156,10 @@ RtRecordingCanvas >> newGroupLayerFor: aMorph [
 
 	| newLayer |
 	newLayer := RtGroupLayer
-					transform: (self transformForOffset: aMorph position)
-					extent: aMorph extent truncated. "outerBounds?"
+					outerTransform: wrappedCanvas transform
+					bounds: aMorph bounds. "outerBounds?"
 	newLayer morph: aMorph.
 	^ newLayer
-]
-
-{ #category : #'scoped state' }
-RtRecordingCanvas >> offsetToLastTransform: aPoint during: aBlock [
-
-	| previousOffset |
-	previousOffset := offsetToLastTransform.
-	offsetToLastTransform := aPoint.
-	aBlock cull: self.
-	offsetToLastTransform := previousOffset
 ]
 
 { #category : #'scoped state' }
@@ -199,25 +186,4 @@ RtRecordingCanvas >> record: aMorph [
 	self translateBy: aMorph position negated during: [:c |
 		self fullDraw: aMorph.
 		self endPicture]
-]
-
-{ #category : #'drawing-support' }
-RtRecordingCanvas >> transformBy: aDisplayTransform during: aBlock [
-
-	self offsetToLastTransform: 0@0 during: [
-		super transformBy: aDisplayTransform during: aBlock]
-]
-
-{ #category : #'repaint boundaries' }
-RtRecordingCanvas >> transformForOffset: aPoint [
-
-	^ (wrappedCanvas transform
-		composedWithLocal: (Matrix2x3 withOffset: aPoint)) asMatrix4x4
-]
-
-{ #category : #'drawing-support' }
-RtRecordingCanvas >> translateBy: delta during: aBlock [
-
-	self offsetToLastTransform: 0@0 during: [
-		super translateBy: delta during: aBlock]
 ]

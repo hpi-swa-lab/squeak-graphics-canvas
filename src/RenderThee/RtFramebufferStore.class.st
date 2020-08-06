@@ -34,7 +34,14 @@ RtFramebufferStore class >> form: aForm [
 		yourself
 ]
 
-{ #category : #initialization }
+{ #category : #drawing }
+RtFramebufferStore >> canvasDo: aBlock [
+
+	framebuffer gl makeCurrentDuring: [
+		super canvasDo: aBlock]
+]
+
+{ #category : #'gl calls' }
 RtFramebufferStore >> clear [
 
 	framebuffer boundDuring: [
@@ -65,6 +72,18 @@ RtFramebufferStore >> framebuffer [
 	^ framebuffer
 ]
 
+{ #category : #private }
+RtFramebufferStore >> getCanvas [
+
+	^ self class defaultCanvasClass extent: extent framebuffer: framebuffer
+]
+
+{ #category : #accessing }
+RtFramebufferStore >> glLibrary [
+
+	^ framebuffer gl
+]
+
 { #category : #accessing }
 RtFramebufferStore >> glTextureDo: aBlock [
 
@@ -85,9 +104,8 @@ RtFramebufferStore >> initializeWithExtent: aPoint [
 	framebuffer texture2D: texture.
 	
 	framebuffer boundDuring: [
-		ogl
-			glViewport: 0 with: 0 with: extent x with: extent y;
-			glClearColor: 1 with: 1 with: 1 with: 0.
+		self resetViewport.
+		self glLibrary glClearColor: 1 with: 1 with: 1 with: 0.
 		self clear].
 ]
 
@@ -99,10 +117,10 @@ RtFramebufferStore >> initializeWithForm: aForm [
 	texture image: aForm
 ]
 
-{ #category : #initialization }
+{ #category : #'gl calls' }
 RtFramebufferStore >> resetViewport [
 
-	framebuffer gl glViewport: 0 with: 0 with: extent x with: extent y
+	self glLibrary glViewport: 0 with: 0 with: extent x with: extent y
 ]
 
 { #category : #accessing }

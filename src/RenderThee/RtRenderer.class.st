@@ -56,21 +56,18 @@ RtRenderer >> morph: anObject [
 { #category : #rendering }
 RtRenderer >> renderFrame [
 
-	| cacheDecider rootLayer |
+	| cacheMarker rootLayer |
 	morph updateLayerTree.
 	
 	rootLayer := morph groupLayer.
 	
-	cacheDecider := RtCacheMarker new
-						canvasClass: GLCanvas;
+	cacheMarker := RtCacheMarker new
 						"cachingStrategy: (RtNeverCaching new);"
 						cachingStrategy: (RtCacheAfterUnchangedDraws threshold: 100);
 						yourself.
-	cacheDecider visit: rootLayer. 
+	cacheMarker visit: rootLayer. 
 	
-	imageStore extent: morph extent.
+	"imageStore extent: morph extent."
 	imageStore canvasDo: [:canvas |
-		| compositor |
-		compositor := RtCompositor canvas: canvas.
-		compositor visit: rootLayer]
+		rootLayer compositeOn: canvas]
 ]
