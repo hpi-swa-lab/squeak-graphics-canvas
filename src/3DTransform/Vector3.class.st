@@ -26,7 +26,8 @@ Vector3 class >> value: aFloat [
 
 { #category : #'instance creation' }
 Vector3 class >> x: x y: y z: z [
-	^self new x: x y: y z: z
+
+	^ self new x: x y: y z: z
 ]
 
 { #category : #'instance creation' }
@@ -66,7 +67,8 @@ Vector3 >> asTurnDirection [
 
 { #category : #converting }
 Vector3 >> asVector3 [
-	^self
+
+	^ self
 ]
 
 { #category : #converting }
@@ -237,9 +239,10 @@ Vector3 >> x: aFloat [
 
 { #category : #initialize }
 Vector3 >> x: x y: y z: z [
-	self x: x.
-	self y: y.
-	self z: z.
+
+	self x: x asFloat.
+	self y: y asFloat.
+	self z: z asFloat
 ]
 
 { #category : #accessing }

@@ -31,10 +31,9 @@ RtImageStore >> boundingBox [
 { #category : #drawing }
 RtImageStore >> canvasDo: aBlock [
 
-	| canvas |
-	canvas := self getCanvas.
-	self prepareForDrawingOn: canvas during: [
-		aBlock value: canvas]
+	self
+		prepareForDrawingOn: self getCanvas
+		during: [:c | aBlock value: c]
 ]
 
 { #category : #accessing }
@@ -64,5 +63,5 @@ RtImageStore >> glTextureDo: aBlock [
 { #category : #drawing }
 RtImageStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
-	aBlock value
+	aBlock cull: aCanvas
 ]

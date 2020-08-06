@@ -17,18 +17,17 @@ RtCompositingCanvas >> compositeLayer: aLayer [
 { #category : #compositing }
 RtCompositingCanvas >> drawLayer: aLayer [
 
-	(writesCaches and: [aLayer needsCaching]) ifTrue: [
-		self updateLayerCache: aLayer].
+	(writesCaches and: [aLayer needsCaching and: [aLayer isCached not]])
+		ifTrue: [self updateLayerCache: aLayer].
 
-	self transformBy: aLayer transform during: [:canvas |
-		(readsCaches and: [aLayer isCached])
-			ifTrue: [
-				wrappedCanvas
-					paintImageStore: aLayer cache
-					sourceRect: aLayer cache boundingBox]
-			ifFalse: [
-				aLayer incrementDrawCounter.
-				aLayer drawOn: canvas]]
+	(readsCaches and: [aLayer isCached])
+		ifTrue: [
+			wrappedCanvas
+				paintImageStore: aLayer cache
+				sourceRect: aLayer cache boundingBox]
+		ifFalse: [
+			aLayer incrementDrawCounter.
+			aLayer drawOn: self]
 ]
 
 { #category : #initialization }

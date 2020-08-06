@@ -21,7 +21,8 @@ Vector4 class >> numElements [
 
 { #category : #'instance creation' }
 Vector4 class >> x: x y: y z: z [
-	^self x: x y: y z: z w: 1.0
+
+	^ self x: x y: y z: z w: 1.0
 ]
 
 { #category : #'instance creation' }
@@ -36,10 +37,14 @@ Vector4 class >> zero [
 
 { #category : #converting }
 Vector4 >> asVector3 [
+
 	| wValue |
 	wValue := self w.
-	wValue = 0.0 ifTrue:[^Vector3 zero].
-	^Vector3 x: self x / wValue y: self y / wValue z: self z / wValue
+	wValue = 0.0 ifTrue: [^ Vector3 zero].
+	^ Vector3
+		x: self x / wValue
+		y: self y / wValue
+		z: self z / wValue
 ]
 
 { #category : #converting }

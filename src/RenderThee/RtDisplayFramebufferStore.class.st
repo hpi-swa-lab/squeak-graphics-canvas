@@ -53,12 +53,6 @@ RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 { #category : #drawing }
 RtDisplayFramebufferStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
-	aCanvas transformBy: self displayTransform clippingTo: (0 @ 0 extent: extent) during: [
-		framebuffer gl newFrameDo: [
-			self initializeGLSettings.
-			self resetViewport.
-			self clear.
-			aBlock value].
-		framebuffer gl glScissor: 0 with: 0 with: extent x with: extent y.
-		framebuffer gl checkForError]
+	self glLibrary newFrameDo: [
+		super prepareForDrawingOn: aCanvas during: aBlock]
 ]

@@ -31,7 +31,10 @@ RtGroupLayer >> children [
 RtGroupLayer >> drawOn: aCanvas [
 
 	children do: [:childLayer |
-		aCanvas drawLayer: childLayer]
+		aCanvas
+			transformBy: childLayer transform
+			"clippingTo: childLayer clipRect"
+			during: [:c | c drawLayer: childLayer]]
 ]
 
 { #category : #initialization }
@@ -72,6 +75,13 @@ RtGroupLayer >> printOn: aStream [
 	morph ifNotNil: [:m |
 		aStream nextPutAll: ' for '.
 		m printOn: aStream]
+]
+
+{ #category : #caching }
+RtGroupLayer >> removeAllCaches [
+
+	cache := nil.
+	children do: [:child | child removeAllCaches]
 ]
 
 { #category : #accessing }
