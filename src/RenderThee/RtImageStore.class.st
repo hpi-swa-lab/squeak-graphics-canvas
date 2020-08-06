@@ -16,12 +16,6 @@ RtImageStore class >> extent: aPoint [
 	self subclassResponsibility
 ]
 
-{ #category : #'as yet unclassified' }
-RtImageStore class >> extent: aPoint withCanvasDo: aBlock [
-
-	self defaultCanvasClass extent: aPoint store: self do: aBlock
-]
-
 { #category : #'instance creation' }
 RtImageStore class >> form: aForm [
 

@@ -36,29 +36,6 @@ GLCanvas class >> extent: aPoint framebuffer: glFrameBuffer [
 		yourself
 ]
 
-{ #category : #'instance creation' }
-GLCanvas class >> extent: aPoint store: anImageStoreClass do: aBlock [
-
-	| store canvas |
-	store := anImageStoreClass extent: aPoint.
-	canvas := self extent: aPoint framebuffer: store framebuffer.
-	
-	store prepareForDrawingOn: canvas during: [
-		aBlock value: canvas].
-	^ store
-]
-
-{ #category : #'instance creation' }
-GLCanvas class >> store: anImageStore do: aBlock [
-
-	| canvas |
-	canvas := self extent: anImageStore extent framebuffer: anImageStore framebuffer.
-	
-	anImageStore prepareForDrawingOn: canvas during: [
-		aBlock value: canvas].
-	^ anImageStore
-]
-
 { #category : #binding }
 GLCanvas >> boundDuring: aBlock [
 
