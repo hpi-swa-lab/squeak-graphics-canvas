@@ -27,7 +27,8 @@ RtCompositingCanvas >> drawLayer: aLayer [
 				sourceRect: aLayer cache boundingBox]
 		ifFalse: [
 			aLayer incrementDrawCounter.
-			aLayer drawOn: self]
+			aLayer drawOn: self].
+	 self frameRectangle: (0@0 extent: aLayer extent) color: Color red
 ]
 
 { #category : #initialization }
