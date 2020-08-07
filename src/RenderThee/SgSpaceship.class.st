@@ -15,11 +15,33 @@ SgSpaceship >> initialize [
 
 	super initialize.
 	self newImage: SgImages spaceship.
-	self extent: 200@200
+	self extent: 80@80.
+
+]
+
+{ #category : #initialization }
+SgSpaceship >> initializeRotation [
+
+	|degrees|
+	degrees := (Random new nextInt: 180).
+	self rotationDegrees: degrees.
+	
 ]
 
 { #category : #'repaint boundary' }
 SgSpaceship >> isRepaintBoundary [
 
 	^ true
+]
+
+{ #category : #'stepping and presenter' }
+SgSpaceship >> step [
+
+	self y: ((self y) - 1)
+]
+
+{ #category : #'stepping and presenter' }
+SgSpaceship >> stepTime [
+
+	^ 0
 ]
