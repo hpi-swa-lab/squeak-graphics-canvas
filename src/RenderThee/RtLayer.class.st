@@ -1,3 +1,19 @@
+"
+A RtLayer is a generic vertex of the layer tree (scene graph).
+It knows how to draw itself in a cached or uncached way.
+
+Instance Variables
+	cache:		the cache used by this layer
+	compositeTime:		<Object>
+	drawTime:		<Object>
+	drawsCount:		<Object>
+	drawsSinceInvalidation:		<Object>
+	drawsSinceUpdate:		<Object>
+	extent:		<Object>
+	parent:		<Object>
+	transform:		<Object>
+
+"
 Class {
 	#name : #RtLayer,
 	#superclass : #Object,

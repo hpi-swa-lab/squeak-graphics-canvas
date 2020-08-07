@@ -1,3 +1,9 @@
+"
+A RtImageStore acts as a target for storing drawing operations in pixels.
+
+Instance Variables
+
+"
 Class {
 	#name : #RtImageStore,
 	#superclass : #Object,

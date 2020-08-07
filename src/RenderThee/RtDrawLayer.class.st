@@ -1,3 +1,11 @@
+"
+A RtDrawLayer is a node of the layer tree that only contains drawing operations.
+
+Instance Variables
+	picture:		<Object>
+
+
+"
 Class {
 	#name : #RtDrawLayer,
 	#superclass : #RtLayer,
