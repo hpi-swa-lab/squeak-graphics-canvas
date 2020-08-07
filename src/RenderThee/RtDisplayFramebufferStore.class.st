@@ -1,76 +1,58 @@
 Class {
 	#name : #RtDisplayFramebufferStore,
-	#superclass : #RtImageStore,
+	#superclass : #RtFramebufferStore,
 	#instVars : [
-		'extent',
-		'framebuffer'
-	],
-	#pools : [
-		'GLConstants'
+		'glLibrary'
 	],
 	#category : #'RenderThee-LayerTree'
 }
 
-{ #category : #'as yet unclassified' }
-RtDisplayFramebufferStore class >> defaultCanvasClass [
-
-	^ GLCanvas
-]
-
-{ #category : #'as yet unclassified' }
-RtDisplayFramebufferStore class >> extent: aPoint [
-
-	^ self new
-		initializeWithExtent: aPoint;
-		yourself
-]
-
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 RtDisplayFramebufferStore >> displayTransform [
 	" a transform that translates this store's coordinate system to have 0,0 in the top left "
-
-	^ (Matrix4x4 withScale: 1 @ -1 @ 1) * (Matrix4x4 withOffset: 0 @ extent y negated @ 0)
+	^ (Matrix2x3 withScale: 1.0 @ -1.0) * (Matrix2x3 withOffset: 0 @ extent y negated)
 ]
 
-{ #category : #'as yet unclassified' }
-RtDisplayFramebufferStore >> framebuffer [
+{ #category : #initialization }
+RtDisplayFramebufferStore >> extentChanged [
 
-	^ framebuffer
+	framebuffer boundDuring: [self resetViewport]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
+RtDisplayFramebufferStore >> glLibrary [
+
+	^ glLibrary
+]
+
+{ #category : #initialization }
+RtDisplayFramebufferStore >> initializeGLSettings [
+
+	glLibrary glDisable: GL_CULL_FACE.
+	glLibrary glDisable: GL_DEPTH_TEST.
+	glLibrary glActiveTexture: GL_TEXTURE0.
+	glLibrary glEnable: GL_BLEND.
+	glLibrary glEnable: GL_SCISSOR_TEST.
+	glLibrary glBlendFuncSeparate: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA with: GL_ONE with: GL_ONE.
+	glLibrary glClearColor: 1 with: 1 with: 1 with: 0.
+]
+
+{ #category : #initialization }
 RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 
-	| ogl |
 	extent := aPoint.
-	ogl := GL value.
-	
-	framebuffer := ogl createObject: GLDisplayFrameBuffer.
+	glLibrary := GL4_5 newGLFWIn: (0@0 extent: extent).
+	framebuffer := glLibrary createObject: GLDisplayFrameBuffer.
 	
 	framebuffer boundDuring: [
-		ogl glDisable: GL_CULL_FACE.
-		ogl glDisable: GL_DEPTH_TEST.
-		ogl glActiveTexture: GL_TEXTURE0.
-		ogl
-			glClearColor: 1
-			with: 1
-			with: 1
-			with: 0.
-		ogl glEnable: GL_BLEND.
-		ogl glEnable: GL_SCISSOR_TEST.
-		ogl glBlendFuncSeparate: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA with: GL_ONE with: GL_ONE.
-		
-		ogl
-			glViewport: 0 with: 0 with: extent x with: extent y;
-			glClearColor: 1 with: 1 with: 1 with: 0;
-			glClear: GL_COLOR_BUFFER_BIT]
+		self initializeGLSettings.
+		self resetViewport.
+		self clear]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #drawing }
 RtDisplayFramebufferStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
-	aCanvas transformBy: self displayTransform clippingTo: (0 @ 0 extent: extent) during: [
-		framebuffer gl newFrameDo: aBlock.
-		framebuffer gl glScissor: 0 with: 0 with: extent x with: extent y.
-		framebuffer gl checkForError]
+	self glLibrary newFrameDo: [
+		super prepareForDrawingOn: aCanvas during: aBlock]
 ]

@@ -1,12 +1,18 @@
 Extension { #name : #FormCanvas }
 
 { #category : #'*RenderThee-LayerTree' }
-FormCanvas class >> extent: aPoint store: anImageStoreClass do: aBlock [
+FormCanvas >> imageStoreClass [
 
-	| canvas |
-	canvas := self extent: aPoint.
-	aBlock value: canvas.
-	^ anImageStoreClass form: canvas form
+	^ RtFormStore
+]
+
+{ #category : #'*RenderThee-LayerTree' }
+FormCanvas >> paintImageStore: anImageStore sourceRect: aRectangle [
+
+	self
+		translucentImage: anImageStore form
+		at: 0@0
+		sourceRect: aRectangle
 ]
 
 { #category : #'*RenderThee-override' }

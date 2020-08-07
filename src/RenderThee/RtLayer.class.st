@@ -19,9 +19,12 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'parent',
-		'transform',
+		'outerTransform',
+		'offset',
 		'extent',
 		'cache',
+		'needsCaching',
+		'isCached',
 		'drawTime',
 		'compositeTime',
 		'drawsSinceInvalidation',
@@ -31,17 +34,40 @@ Class {
 	#category : #'RenderThee-LayerTree'
 }
 
+{ #category : #'instance creation' }
+RtLayer class >> bounds: aRectangle [
+
+	^ self
+		outerTransform: Matrix2x3 identity
+		bounds: aRectangle
+]
+
+{ #category : #'instance creation' }
+RtLayer class >> outerTransform: aMatrix bounds: aRectangle [
+
+	^ self new
+		outerTransform: aMatrix;
+		bounds: aRectangle;
+		yourself
+]
+
 { #category : #visiting }
 RtLayer >> accept: aVisitor [
 
 	self subclassResponsibility
 ]
 
-{ #category : #initialization }
+{ #category : #accessing }
+RtLayer >> bounds [
+
+	^ offset extent: extent
+]
+
+{ #category : #accessing }
 RtLayer >> bounds: aRectangle [
 
-	self transform: (Matrix4x4 withOffset: aRectangle topLeft asVector3).
-	self extent: aRectangle extent
+	offset := aRectangle origin floor.
+	extent := aRectangle extent ceiling
 ]
 
 { #category : #accessing }
@@ -53,52 +79,50 @@ RtLayer >> cache [
 { #category : #accessing }
 RtLayer >> cache: anObject [
 
-	^ cache := anObject
+	cache := anObject
 ]
 
-{ #category : #initialization }
+{ #category : #accessing }
 RtLayer >> clipRect [
 
-	^ transform localBoundsToGlobal: (0@0 extent: extent)
+	^ outerTransform localBoundsToGlobal: self bounds
+]
+
+{ #category : #compositing }
+RtLayer >> compositeOn: aCanvas [
+
+	(RtCompositingCanvas canvas: aCanvas) compositeLayer: self
 ]
 
 { #category : #accessing }
 RtLayer >> compositeTime [
+
 	^ compositeTime
 ]
 
-{ #category : #accessing }
-RtLayer >> compositeTime: anObject [
-	compositeTime := anObject
-]
+{ #category : #caching }
+RtLayer >> createCacheOfType: anImageStoreClass [
 
-{ #category : #compositing }
-RtLayer >> createStoreOf: anImageStoreClass using: aCanvasClass [
-
-	^ aCanvasClass extent: self extent store: anImageStoreClass do: [:canvas | | previousTransform |
-		" note that our layer carries its own transform, but we want to paint it in the origin "
-		previousTransform := self transform.
-		self transform: Matrix4x4 identity.
-		canvas drawLayer: self.
-		self transform: previousTransform]
+	| store |
+	store := anImageStoreClass extent: extent.
+	store canvasDo: [:canvas |
+		self compositeOn: canvas].
+	^ store
 ]
 
 { #category : #compositing }
 RtLayer >> drawOn: canvas [
+
 	self subclassResponsibility
 ]
 
 { #category : #accessing }
 RtLayer >> drawTime [
+
 	^ drawTime
 ]
 
 { #category : #accessing }
-RtLayer >> drawTime: anObject [
-	drawTime := anObject
-]
-
-{ #category : #visiting }
 RtLayer >> drawsCount [
 
 	^ drawsCount
@@ -106,22 +130,14 @@ RtLayer >> drawsCount [
 
 { #category : #accessing }
 RtLayer >> drawsSinceInvalidation [
+
 	^ drawsSinceInvalidation
 ]
 
 { #category : #accessing }
-RtLayer >> drawsSinceInvalidation: anObject [
-	drawsSinceInvalidation := anObject
-]
-
-{ #category : #accessing }
 RtLayer >> drawsSinceUpdate [
-	^ drawsSinceUpdate
-]
 
-{ #category : #accessing }
-RtLayer >> drawsSinceUpdate: anObject [
-	drawsSinceUpdate := anObject
+	^ drawsSinceUpdate
 ]
 
 { #category : #accessing }
@@ -136,7 +152,7 @@ RtLayer >> extent: anObject [
 	extent := anObject
 ]
 
-{ #category : #visiting }
+{ #category : #accessing }
 RtLayer >> incrementDrawCounter [
 
 	drawsSinceUpdate := drawsSinceUpdate + 1.
@@ -150,21 +166,65 @@ RtLayer >> initialize [
 	super initialize.
 	drawsSinceUpdate := 0.
 	drawsSinceInvalidation := 0.
-	drawsCount := 0
+	drawsCount := 0.
+	isCached := false.
+	needsCaching := false
 ]
 
-{ #category : #compositing }
+{ #category : #caching }
 RtLayer >> invalidateCache [
 
-	self parent ifNotNil: [:p | p invalidateCache].
-	cache := nil.
+	parent ifNotNil: [:p | p invalidateCache].
+	isCached := false.
 	drawsSinceInvalidation := 0
+]
+
+{ #category : #accessing }
+RtLayer >> isCached [
+
+	^ isCached
+]
+
+{ #category : #accessing }
+RtLayer >> needsCaching [
+
+	^ needsCaching
+]
+
+{ #category : #accessing }
+RtLayer >> needsCaching: anObject [
+
+	needsCaching := anObject
+]
+
+{ #category : #accessing }
+RtLayer >> offset [
+
+	^ offset
+]
+
+{ #category : #accessing }
+RtLayer >> offset: anObject [
+
+	offset := anObject
 ]
 
 { #category : #utilities }
 RtLayer >> open [
 
 	self assuredForm asMorph openInHand
+]
+
+{ #category : #accessing }
+RtLayer >> outerTransform [
+
+	^ outerTransform
+]
+
+{ #category : #accessing }
+RtLayer >> outerTransform: anObject [
+
+	outerTransform := anObject
 ]
 
 { #category : #accessing }
@@ -182,17 +242,19 @@ RtLayer >> parent: aLayer [
 { #category : #accessing }
 RtLayer >> transform [
 
-	^ transform
+	^ outerTransform composedWithLocal: (Matrix2x3 withOffset: offset)
 ]
 
-{ #category : #accessing }
-RtLayer >> transform: anObject [
+{ #category : #caching }
+RtLayer >> updateCacheFor: aCanvas [
 
-	transform := anObject
+	self subclassResponsibility
 ]
 
-{ #category : #compositing }
-RtLayer >> updateStoreOf: anImageStoreClass using: aCanvasClass [
+{ #category : #caching }
+RtLayer >> validCache: anImageStore [
 
-	^ cache := self createStoreOf: anImageStoreClass using: aCanvasClass
+	cache := anImageStore.
+	isCached := true.
+	needsCaching := false
 ]

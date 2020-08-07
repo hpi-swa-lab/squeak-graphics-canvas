@@ -3,17 +3,15 @@ Class {
 	#superclass : #Morph,
 	#instVars : [
 		'renderer',
-		'ogl'
+		'store'
 	],
-	#pools : [
-		'GLConstants'
-	],
-	#category : 'RenderThee-Core'
+	#category : #'RenderThee-Core'
 }
 
 { #category : #deletion }
 RtMirrorControl >> delete [
-	renderer release.
+
+	self glLibrary ~= #glSuspended ifTrue: [self glLibrary destroy].
 	super delete
 ]
 
@@ -25,22 +23,33 @@ RtMirrorControl >> frameTime: milliseconds [
 		lf"
 ]
 
+{ #category : #accessing }
+RtMirrorControl >> glLibrary [
+
+	^ store framebuffer gl
+]
+
 { #category : #initialization }
 RtMirrorControl >> initialize [
 
 	super initialize.
 	self extent: 200@200.
 	
-	renderer := RtOpenGLRenderer new
+	store := RtDisplayFramebufferStore extent: ActiveWorld extent.
+	renderer := RtRenderer morph: ActiveWorld imageStore: store
+]
+
+{ #category : #testing }
+RtMirrorControl >> shouldClose [
+
+	^ self glLibrary = #glSuspended or: [self glLibrary shouldClose]
 ]
 
 { #category : #stepping }
 RtMirrorControl >> step [
 
-	renderer shouldClose
-		ifTrue: [self delete]
-		ifFalse: [
-			self frameTime: [renderer renderFrame] timeToRun]
+	self shouldClose ifTrue: [^ self delete].
+	renderer renderFrame
 ]
 
 { #category : #stepping }

@@ -7,13 +7,19 @@ Class {
 	#category : #'RenderThee-LayerTree'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 RtFormStore class >> defaultCanvasClass [
 
 	^ FormCanvas
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'instance creation' }
+RtFormStore class >> extent: aPoint [
+
+	^ self form: (Form extent: aPoint depth: Display depth)
+]
+
+{ #category : #'instance creation' }
 RtFormStore class >> form: aForm [
 
 	^ self new
@@ -29,6 +35,12 @@ RtFormStore >> createGLTexture [
 		yourself
 ]
 
+{ #category : #accessing }
+RtFormStore >> extent [
+
+	^ form extent
+]
+
 { #category : #textures }
 RtFormStore >> form [
 
@@ -39,6 +51,12 @@ RtFormStore >> form [
 RtFormStore >> form: aForm [
 
 	form := aForm
+]
+
+{ #category : #accessing }
+RtFormStore >> getCanvas [
+
+	^ form getCanvas
 ]
 
 { #category : #textures }

@@ -1,26 +1,15 @@
 Extension { #name : #Canvas }
 
 { #category : #'*RenderThee-LayerTree' }
-Canvas >> drawDrawLayer: aLayer [
+Canvas >> cacheLayer: aLayer [
 
-	aLayer picture drawOn: self
+	aLayer validCache: (aLayer createCacheOfType: self imageStoreClass)
 ]
 
 { #category : #'*RenderThee-LayerTree' }
-Canvas >> drawGroupLayer: aLayer [
+Canvas >> imageStoreClass [
 
-	self
-		transformBy: aLayer transform
-		clippingTo: aLayer clipRect
-		during: [ :c |
-			aLayer children do: [:childLayer |
-				self drawLayer: childLayer]]
-]
-
-{ #category : #'*RenderThee-LayerTree' }
-Canvas >> drawLayer: aLayer [
-
-	aLayer drawOn: self
+	self subclassResponsibility
 ]
 
 { #category : #'*RenderThee-override' }
@@ -47,4 +36,22 @@ Canvas >> translateBy: aPoint clippingTo: aRectangle during: aBlock [
 
 	self clipBy: aRectangle during: [:c |
 		c translateBy: aPoint during: aBlock]
+]
+
+{ #category : #'*RenderThee-LayerTree' }
+Canvas >> updateDrawLayerCache: aLayer [
+
+	self cacheLayer: aLayer
+]
+
+{ #category : #'*RenderThee-LayerTree' }
+Canvas >> updateGroupLayerCache: aLayer [
+
+	self cacheLayer: aLayer
+]
+
+{ #category : #'*RenderThee-LayerTree' }
+Canvas >> updateLayerCache: aLayer [
+
+	aLayer updateCacheFor: self
 ]

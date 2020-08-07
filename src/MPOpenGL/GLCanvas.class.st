@@ -19,15 +19,13 @@ Class {
 { #category : #example }
 GLCanvas class >> exampleWindow [
 	"self exampleWindow"
-
-	| gl |
-	gl := GL4_1 newGLFWIn: (0 @ 0 extent: 900 asPoint).
-	gl makeCurrentDuring: [
-		RtDisplayFramebufferStore extent: 900 asPoint withCanvasDo: [:c |
-			c fullDraw: ((ToolBuilder build: (Browser new setClass: Morph selector: #submorphs)) position: 0 @ 0)]].
+	| display window |
+	window := (ToolBuilder build: (Browser new setClass: Morph selector: #submorphs)) position: 0 @ 0.
+	display := RtDisplayFramebufferStore extent: window extent.
+	display canvasDo: [:c | c fullDraw: window].
 	
 	[Sensor anyButtonPressed] whileFalse: [2 milliSeconds wait].
-	gl destroy
+	display glLibrary destroy
 ]
 
 { #category : #'instance creation' }
@@ -38,18 +36,6 @@ GLCanvas class >> extent: aPoint framebuffer: glFrameBuffer [
 		yourself
 ]
 
-{ #category : #'instance creation' }
-GLCanvas class >> extent: aPoint store: anImageStoreClass do: aBlock [
-
-	| store canvas |
-	store := anImageStoreClass extent: aPoint.
-	canvas := GLCanvas extent: aPoint framebuffer: store framebuffer.
-	
-	store prepareForDrawingOn: canvas during: [
-		aBlock value: canvas].
-	^ store
-]
-
 { #category : #binding }
 GLCanvas >> boundDuring: aBlock [
 
@@ -57,57 +43,41 @@ GLCanvas >> boundDuring: aBlock [
 ]
 
 { #category : #'drawing-support' }
-GLCanvas >> clipBy: aRectangle during: aBlock [
+GLCanvas >> clipBy: aRectangle [
 
-	self flag: #todo. "transform rectangle?? seems excessive"
-	self clipRect: aRectangle during: aBlock
-]
-
-{ #category : #'drawing-support' }
-GLCanvas >> clipRect [
-
-	^ lastTransform globalBoundsToLocal: clipRect
-]
-
-{ #category : #'drawing-support' }
-GLCanvas >> clipRect: aRectangle during: aBlock [
-
-	| previousClipRect gl viewTransform rect |
+	"| rect viewTransform |
 	viewTransform := baseTransform inverseTransformation * transform.
 	
+	viewTransform preservesAxisAlignment ifTrue: [
+		rect := viewTransform localBoundsToGlobal: aRectangle.
+		self glLibrary
+				glScissor: rect left
+				with: rect top
+				with: rect width
+				with: rect height]"
+]
+
+{ #category : #'drawing-support' }
+GLCanvas >> clipBy: aRectangle during: aBlock [
+
+	self clipRect: aRectangle during: aBlock.
+	self clipBy: aRectangle
+]
+
+{ #category : #accessing }
+GLCanvas >> clipRect [
+
+	^ clipRect
+]
+
+{ #category : #'scoped state' }
+GLCanvas >> clipRect: aRectangle during: aBlock [
+
+	| previousClipRect |
 	previousClipRect := clipRect.
-	gl := GL value.
-	
 	clipRect := aRectangle.
-	viewTransform preservesAxisAlignment ifTrue: [
-		rect := viewTransform localBoundsToGlobal: clipRect.
-		gl glScissor: rect left with: rect top with: rect width with: rect height].
-	
 	aBlock cull: self.
-	
-	clipRect := previousClipRect.
-	viewTransform preservesAxisAlignment ifTrue: [
-		rect := viewTransform localBoundsToGlobal: clipRect.
-		gl glScissor: rect left with: rect top with: rect width with: rect height]
-]
-
-{ #category : #accessing }
-GLCanvas >> drawDrawLayer: aLayer [
-	| store |
-	store := aLayer cache ifNil: [aLayer cache: (aLayer createStoreOf: RtFramebufferStore using: FormCanvas); cache].
-	self paintImageStore: store transform: aLayer transform sourceRect: store boundingBox
-]
-
-{ #category : #accessing }
-GLCanvas >> drawGroupLayer: aLayer [
-
-	aLayer cache
-		ifNil: [super drawGroupLayer: aLayer]
-		ifNotNil: [:store |
-			self
-				paintImageStore: store
-				transform: aLayer transform
-				sourceRect: store boundingBox]
+	clipRect := previousClipRect
 ]
 
 { #category : #'drawing-text' }
@@ -165,49 +135,33 @@ GLCanvas >> framebuffer [
 	^ framebuffer
 ]
 
+{ #category : #accessing }
+GLCanvas >> glLibrary [
+
+	^ framebuffer gl
+]
+
 { #category : #'drawing-images' }
 GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
-	self boundDuring: [
-		self textureProgram boundDuring: [
-			(RtFormStore form: aForm) glTextureDo: [:texture |
-				texture boundDuring: [
-					self textureProgram
-						sourcePosition: sourceRect origin / aForm extent asFloatPoint;
-						sourceExtent: sourceRect extent / aForm extent asFloatPoint;
-						mvp: transform * (Matrix4x4 withOffset: aPoint) * (Matrix4x4 withScale: aForm extent @ 1).
-					self vbo draw: GL_TRIANGLE_STRIP]]]]
+	self translateBy: aPoint during: [:c |
+		c paintImageStore: (RtFormStore form: aForm) sourceRect: sourceRect]
 ]
 
 { #category : #initialization }
 GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 
 	extent := aPoint.
-	baseTransform := transform := Matrix4x4 ortho: (0 @ 0 corner: extent) near: 0 far: 1.
-	lastTransform := Matrix4x4 identity.
 	framebuffer := aFrameBuffer.
 	programs := GLCanvasPrograms create.
-	clipRect := 0 @ 0 extent: aPoint
+	clipRect := 0 @ 0 extent: extent.
+	baseTransform := transform := Matrix4x4 ortho: clipRect near: 0 far: 1
 ]
 
 { #category : #accessing }
 GLCanvas >> outlineProgram [
 
 	^ programs outlineProgram
-]
-
-{ #category : #'drawing-images' }
-GLCanvas >> paintImageStore: aStore transform: aMatrix sourceRect: sourceRect [
-
-	self boundDuring: [
-		self textureProgram boundDuring: [
-			aStore glTextureDo: [:texture |
-				texture boundDuring: [
-					self textureProgram
-						sourcePosition: sourceRect origin / aStore extent asFloatPoint;
-						sourceExtent: sourceRect extent / aStore extent asFloatPoint;
-						mvp: transform * aMatrix * (Matrix4x4 withScale: aStore extent @ 1).
-					self vbo draw: GL_TRIANGLE_STRIP]]]]
 ]
 
 { #category : #'drawing-text' }
@@ -236,7 +190,7 @@ GLCanvas >> transform [
 	^ transform
 ]
 
-{ #category : #'drawing-support' }
+{ #category : #'scoped state' }
 GLCanvas >> transform: aMatrix during: aBlock [
 
 	| previousTransform |
@@ -247,20 +201,12 @@ GLCanvas >> transform: aMatrix during: aBlock [
 ]
 
 { #category : #'drawing-support' }
-GLCanvas >> transformBy: aMatrix clippingTo: aRectangle during: aBlock smoothing: cellSize [
+GLCanvas >> transformBy: aTransform during: aBlock [
 
-	self clipBy: aRectangle during: [
-		self transformBy: aMatrix asMatrix4x4 during: aBlock]
-]
-
-{ #category : #'drawing-support' }
-GLCanvas >> transformBy: aMatrix during: aBlock [
-
-	| previousLastTransform |
-	previousLastTransform := lastTransform.
-	lastTransform := aMatrix.
-	self transform: transform * aMatrix during: aBlock.
-	lastTransform := previousLastTransform
+	| transformedClip |
+	transformedClip := (aTransform globalBoundsToLocal: clipRect) expanded.
+	self clipRect: transformedClip during: [
+		self transform: transform * aTransform asMatrix4x4 during: aBlock]
 ]
 
 { #category : #'drawing-support' }

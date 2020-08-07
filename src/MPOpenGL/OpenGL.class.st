@@ -196,6 +196,29 @@ OpenGL >> checkForError [
 
 ]
 
+{ #category : #helpers }
+OpenGL >> clearColor [
+
+	| color |
+	color := Float32Array new: 4.
+	self glGetIntegerv: GL_COLOR_CLEAR_VALUE with: color.
+	^ Color
+		r: color first
+		g: color second
+		b: color third
+		alpha: color fourth
+]
+
+{ #category : #helpers }
+OpenGL >> clearColor: aColor [
+
+	self
+		glClearColor: aColor red
+		with: aColor green
+		with: aColor blue
+		with: aColor alpha
+]
+
 { #category : #accessing }
 OpenGL >> context [
 	^ context
@@ -1136,11 +1159,13 @@ OpenGL >> initialize [
 { #category : #activation }
 OpenGL >> makeCurrentDuring: aBlock [
 	| oldContext |
-	oldContext := GL value ifNotNil: [ :gl | gl context deactivate ].
+	oldContext := GL value.
+	oldContext == self ifTrue: [^ aBlock value].
+	oldContext ifNotNil: [oldContext context deactivate].
 	context activate.
-	^ [ GL value: self during: aBlock ] ensure: [
+	[GL value: self during: aBlock] ensure: [
 		context deactivate.
-		oldContext ifNotNil: [ :ctx | ctx activate ]]
+		oldContext ifNotNil: [:ctx | ctx activate]]
 ]
 
 { #category : #activation }
@@ -1162,4 +1187,35 @@ OpenGL >> shouldClose [
 { #category : #'initialize-release' }
 OpenGL >> swapBuffers [
 	context swapBuffers
+]
+
+{ #category : #helpers }
+OpenGL >> viewport [
+
+	| viewport |
+	viewport := IntegerArray new: 4.
+	self glGetIntegerv: GL_VIEWPORT with: viewport.
+	^ Rectangle
+		origin: viewport first @ viewport second
+		extent: viewport third @ viewport fourth
+]
+
+{ #category : #helpers }
+OpenGL >> viewport: aRectangle [
+
+	self
+		glViewport: aRectangle left
+		with: aRectangle top
+		with: aRectangle width
+		with: aRectangle height
+]
+
+{ #category : #helpers }
+OpenGL >> viewport: aRectangle during: aBlock [
+
+	| previousViewport |
+	previousViewport := self viewport.
+	self viewport: aRectangle.
+	aBlock value.
+	self viewport: previousViewport
 ]

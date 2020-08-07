@@ -21,6 +21,7 @@ RtCacheAfterUnchangedDraws class >> threshold: numUnchangedDraws [
 { #category : #rules }
 RtCacheAfterUnchangedDraws >> shouldCacheDrawLayer: aLayer [
 
+	"^ aLayer drawsSinceInvalidation >= threshold"
 	^ true
 ]
 

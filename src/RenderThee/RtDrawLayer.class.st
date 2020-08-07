@@ -21,10 +21,10 @@ RtDrawLayer class >> picture: aPicture [
 	| bounds pic |
 	bounds := aPicture estimatedBounds.
 	pic := aPicture copy.
-	pic transformBy: (MatrixTransform2x3 withOffset: bounds topLeft negated).
+	pic transformBy: (Matrix2x3 withOffset: bounds topLeft negated).
 	^ self new
-		transform: (Matrix4x4 withOffset: bounds topLeft);
-		extent: bounds extent;
+		outerTransform: Matrix2x3 identity;
+		bounds: bounds;
 		picture: pic;
 		yourself
 ]
@@ -38,7 +38,7 @@ RtDrawLayer >> accept: aVisitor [
 { #category : #compositing }
 RtDrawLayer >> drawOn: aCanvas [
 
-	aCanvas drawDrawLayer: self
+	aCanvas draw: picture
 ]
 
 { #category : #accessing }
@@ -58,8 +58,14 @@ RtDrawLayer >> printOn: aStream [
 
 	super printOn: aStream.
 	aStream space; nextPut: $(.
-	transform offset printOn: aStream.
+	offset printOn: aStream.
 	aStream nextPutAll: ' extent: '.
 	extent printOn: aStream.
 	aStream space; nextPut: $).
+]
+
+{ #category : #caching }
+RtDrawLayer >> updateCacheFor: aCanvas [
+
+	aCanvas updateDrawLayerCache: self
 ]

@@ -5,34 +5,8 @@ Class {
 		'children',
 		'morph'
 	],
-	#pools : [
-		'GLConstants'
-	],
 	#category : #'RenderThee-LayerTree'
 }
-
-{ #category : #'instance creation' }
-RtGroupLayer class >> bounds: aRectangle [
-
-	^ self new
-		bounds: aRectangle;
-		yourself
-]
-
-{ #category : #'instance creation' }
-RtGroupLayer class >> offset: offset extent: extent [
-
-	^ self transform: (Matrix4x4 withOffset: offset asVector3) extent: extent
-]
-
-{ #category : #'instance creation' }
-RtGroupLayer class >> transform: aMatrix extent: extent [
-
-	^ self new
-		transform: aMatrix;
-		extent: extent;
-		yourself
-]
 
 { #category : #visiting }
 RtGroupLayer >> accept: aVisitor [
@@ -48,20 +22,19 @@ RtGroupLayer >> addChild: aLayer [
 ]
 
 { #category : #accessing }
-RtGroupLayer >> bounds [
-
-	^ self transform translation asPoint extent: self extent
-]
-
-{ #category : #accessing }
 RtGroupLayer >> children [
 
 	^ children
 ]
 
-{ #category : #drawing }
+{ #category : #compositing }
 RtGroupLayer >> drawOn: aCanvas [
-	^	aCanvas drawGroupLayer: self
+
+	children do: [:childLayer |
+		aCanvas
+			transformBy: childLayer transform
+			clippingTo: childLayer clipRect
+			during: [:c | c drawLayer: childLayer]]
 ]
 
 { #category : #initialization }
@@ -79,11 +52,13 @@ RtGroupLayer >> layers [
 
 { #category : #accessing }
 RtGroupLayer >> morph [
+
 	^ morph
 ]
 
 { #category : #accessing }
 RtGroupLayer >> morph: anObject [
+
 	morph := anObject
 ]
 
@@ -102,6 +77,13 @@ RtGroupLayer >> printOn: aStream [
 		m printOn: aStream]
 ]
 
+{ #category : #caching }
+RtGroupLayer >> removeAllCaches [
+
+	cache := nil.
+	children do: [:child | child removeAllCaches]
+]
+
 { #category : #accessing }
 RtGroupLayer >> removeAllChildren [
 
@@ -112,14 +94,19 @@ RtGroupLayer >> removeAllChildren [
 { #category : #initialization }
 RtGroupLayer >> update [
 
-	self
-		removeAllChildren;
-		invalidateCache.
-		
-	self parent ifNotNil: [:parent |
-		self bounds: (morph bounds translateBy: parent bounds origin negated)].
+	self removeAllChildren.
+	self invalidateCache.
+	
+	parent ifNotNil: [:parent |
+		self bounds: morph bounds].
 	
 	(RtRecordingCanvas layer: self) reRecord: morph.
 	
 	drawsSinceUpdate := 0
+]
+
+{ #category : #caching }
+RtGroupLayer >> updateCacheFor: aCanvas [
+
+	aCanvas updateGroupLayerCache: self
 ]

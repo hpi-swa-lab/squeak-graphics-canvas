@@ -7,6 +7,14 @@ Class {
 	#category : #'RenderThee-Core'
 }
 
+{ #category : #'instance creation' }
+RtWrapperCanvas class >> canvas: aCanvas [
+
+	^ self new
+		wrappedCanvas: aCanvas;
+		yourself
+]
+
 { #category : #converting }
 RtWrapperCanvas >> asShadowDrawingCanvas: aColor [ 
 
@@ -16,13 +24,15 @@ RtWrapperCanvas >> asShadowDrawingCanvas: aColor [
 { #category : #'drawing-support' }
 RtWrapperCanvas >> cache: aRectangle using: aCache during: aBlock [
 
-	wrappedCanvas cache: aRectangle using: aCache during: [:c | aBlock value: self]
+	wrappedCanvas cache: aRectangle using: aCache during: [:c |
+		self wrappedCanvas: c during: [aBlock value: self]]
 ]
 
 { #category : #'drawing-support' }
 RtWrapperCanvas >> clipBy: aRectangle during: aBlock [
 
-	wrappedCanvas clipBy: aRectangle during: [:c | aBlock value: self]
+	wrappedCanvas clipBy: aRectangle during: [:c |
+		self wrappedCanvas: c during: [aBlock value: self]]
 ]
 
 { #category : #accessing }
@@ -423,7 +433,8 @@ RtWrapperCanvas >> point: p color: c [
 { #category : #'drawing-support' }
 RtWrapperCanvas >> preserveStateDuring: aBlock [
 
-	wrappedCanvas preserveStateDuring: [:c | aBlock value: self]
+	wrappedCanvas preserveStateDuring: [:c |
+		self wrappedCanvas: c during: [aBlock value: self]]
 ]
 
 { #category : #drawing }
@@ -471,37 +482,46 @@ RtWrapperCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color:
 { #category : #'drawing-support' }
 RtWrapperCanvas >> transformBy: aDisplayTransform clippingTo: aClipRect during: aBlock [
 
-	wrappedCanvas transformBy: aDisplayTransform clippingTo: aClipRect during: [:c | aBlock value: self]
+	wrappedCanvas transformBy: aDisplayTransform clippingTo: aClipRect during: [:c |
+		self wrappedCanvas: c during: [aBlock value: self]]
 ]
 
 { #category : #'drawing-support' }
 RtWrapperCanvas >> transformBy: aDisplayTransform clippingTo: aClipRect during: aBlock smoothing: cellSize [
 
-	wrappedCanvas transformBy: aDisplayTransform clippingTo: aClipRect during: [:c | aBlock value: self] smoothing: cellSize
+	wrappedCanvas
+		transformBy: aDisplayTransform
+		clippingTo: aClipRect
+		during: [:c | self wrappedCanvas: c during: [aBlock value: self]]
+		smoothing: cellSize
 ]
 
 { #category : #'drawing-support' }
 RtWrapperCanvas >> transformBy: aDisplayTransform during: aBlock [
 
-	wrappedCanvas transformBy: aDisplayTransform during: [:c | aBlock value: self]
+	wrappedCanvas transformBy: aDisplayTransform during: [:c |
+		self wrappedCanvas: c during: [aBlock value: self]]
 ]
 
 { #category : #'drawing-support' }
 RtWrapperCanvas >> translateBy: delta clippingTo: aRect during: aBlock [
 
-	wrappedCanvas translateBy: delta clippingTo: aRect during: [:c | aBlock value: self]
+	wrappedCanvas translateBy: delta clippingTo: aRect during: [:c |
+		self wrappedCanvas: c during: [aBlock value: self]]
 ]
 
 { #category : #'drawing-support' }
 RtWrapperCanvas >> translateBy: delta during: aBlock [
 
-	wrappedCanvas translateBy: delta during: [:c | aBlock value: self]
+	wrappedCanvas translateBy: delta during: [:c |
+		self wrappedCanvas: c during: [aBlock value: self]]
 ]
 
 { #category : #'drawing-support' }
 RtWrapperCanvas >> translateTo: newOrigin clippingTo: aRectangle during: aBlock [
 
-	wrappedCanvas translateTo: newOrigin clippingTo: aRectangle during: [:c | aBlock value: self]
+	wrappedCanvas translateTo: newOrigin clippingTo: aRectangle during: [:c |
+		self wrappedCanvas: c during: [aBlock value: self]]
 ]
 
 { #category : #'drawing-images' }
@@ -532,4 +552,26 @@ RtWrapperCanvas >> warpImage: aForm transform: aTransform at: extraOffset [
 RtWrapperCanvas >> warpImage: aForm transform: aTransform at: extraOffset sourceRect: sourceRect cellSize: cellSize [
 
 	wrappedCanvas warpImage: aForm transform: aTransform at: extraOffset sourceRect: sourceRect cellSize: cellSize
+]
+
+{ #category : #accessing }
+RtWrapperCanvas >> wrappedCanvas [
+
+	^ wrappedCanvas
+]
+
+{ #category : #accessing }
+RtWrapperCanvas >> wrappedCanvas: anObject [
+
+	wrappedCanvas := anObject
+]
+
+{ #category : #private }
+RtWrapperCanvas >> wrappedCanvas: aCanvas during: aBlock [
+
+	| previousCanvas |
+	previousCanvas := wrappedCanvas.
+	wrappedCanvas := aCanvas.
+	aBlock value.
+	wrappedCanvas := previousCanvas
 ]
