@@ -919,12 +919,16 @@ Matrix4x4 >> pitchYawRoll: ypr [
 
 { #category : #testing }
 Matrix4x4 >> preservesAxisAlignment [
-
 	"
 	x 0 0
 	0 y 0
 	0 0 z"
-	^ self a12 = 0 and: [self a13 = 0 and: [self a21 = 0 and: [self a23 = 0 and: [self a31 = 0 and: [self a32 = 0]]]]]
+	self a12 = 0.0 ifFalse: [^ false].
+	self a13 = 0.0 ifFalse: [^ false].
+	self a21 = 0.0 ifFalse: [^ false].
+	self a23 = 0.0 ifFalse: [^ false].
+	self a31 = 0.0 ifFalse: [^ false].
+	^ self a32 = 0.0
 ]
 
 { #category : #'double dispatching' }

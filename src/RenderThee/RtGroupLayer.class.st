@@ -33,7 +33,7 @@ RtGroupLayer >> drawOn: aCanvas [
 	children do: [:childLayer |
 		aCanvas
 			transformBy: childLayer transform
-			"clippingTo: childLayer clipRect"
+			clippingTo: childLayer clipRect
 			during: [:c | c drawLayer: childLayer]]
 ]
 

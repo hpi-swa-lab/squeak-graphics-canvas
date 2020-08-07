@@ -135,7 +135,7 @@ RtFramebufferStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
 	aCanvas
 		transformBy: self displayTransform
-		clippingTo: (0 @ 0 extent: extent)
+		"clippingTo: (0 @ 0 extent: extent)"
 		during: [:c |
 			framebuffer boundDuring: [
 				self glLibrary viewport: (0@0 extent: extent) during: [

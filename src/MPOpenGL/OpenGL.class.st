@@ -1196,10 +1196,8 @@ OpenGL >> viewport [
 	viewport := IntegerArray new: 4.
 	self glGetIntegerv: GL_VIEWPORT with: viewport.
 	^ Rectangle
-		left: viewport first
-		right: viewport third
-		top: viewport second
-		bottom: viewport fourth
+		origin: viewport first @ viewport second
+		extent: viewport third @ viewport fourth
 ]
 
 { #category : #helpers }
@@ -1208,8 +1206,8 @@ OpenGL >> viewport: aRectangle [
 	self
 		glViewport: aRectangle left
 		with: aRectangle top
-		with: aRectangle right
-		with: aRectangle bottom
+		with: aRectangle width
+		with: aRectangle height
 ]
 
 { #category : #helpers }
