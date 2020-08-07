@@ -1,3 +1,13 @@
+"
+A RtRecordingCanvas records incoming draw calls to build a layer tree.
+The built tree will consist of objects of RtLayer. RtRecordingCanvas is used for damaged morphs.
+
+Instance Variables
+	canvasStack:		<Object>
+	groupLayer:		<Object>
+	isReRecording:		<Object>
+	offsetToLastTransform:		<Object>
+"
 Class {
 	#name : #RtRecordingCanvas,
 	#superclass : #RtWrapperCanvas,

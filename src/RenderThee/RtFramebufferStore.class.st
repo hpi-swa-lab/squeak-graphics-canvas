@@ -1,3 +1,14 @@
+"
+A RtFramebufferStore is a target for storing drawing operations in pixels utilizing OpenGL Framebuffers.
+To act accordingly, the RtFramebufferStore uses a OpenGL Framebuffer and Texture objects.
+
+Instance Variables
+	extent:		of the Framebuffer and Texture respectively
+	framebuffer:		OpenGL fbo linked in this Image Store
+	texture:		Texture used in harmony with the framebuffer
+
+
+"
 Class {
 	#name : #RtFramebufferStore,
 	#superclass : #RtImageStore,
