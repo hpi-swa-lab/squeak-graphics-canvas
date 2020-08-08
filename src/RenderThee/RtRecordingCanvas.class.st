@@ -103,10 +103,10 @@ RtRecordingCanvas >> fullDrawMorph: aMorph [
 		^ self fullDraw: aMorph].
 	
 	"can we reuse an existing layer and skip drawing aMorph completely?"
-	"(self isReusingLayers and: aMorph isRepaintBoundary) ifTrue: [
+	(self isReusingLayers and: aMorph isRepaintBoundary) ifTrue: [
 		aMorph groupLayer ifNotNil: [:reusableLayer |
-			reusableLayer transform: (self transformForOffset: aMorph position).
-			^ self addLayer: reusableLayer]]."
+			reusableLayer bounds: aMorph bounds.
+			^ self addLayer: reusableLayer]].
 	
 	"we need to create a new layer for aMorph"
 	self

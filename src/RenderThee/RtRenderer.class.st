@@ -62,8 +62,9 @@ RtRenderer >> renderFrame [
 	rootLayer := morph groupLayer.
 	
 	cacheMarker := RtCacheMarker new
+						"cachingStrategy: (RtAlwaysCaching new);"
 						"cachingStrategy: (RtNeverCaching new);"
-						cachingStrategy: (RtCacheAfterUnchangedDraws threshold: 100);
+						cachingStrategy: (RtCacheAfterUnchangedDraws threshold: 3);
 						yourself.
 	cacheMarker visit: rootLayer. 
 	

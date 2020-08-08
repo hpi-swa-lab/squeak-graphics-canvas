@@ -1,6 +1,6 @@
 Class {
 	#name : #SgSpaceGame,
-	#superclass : #ThumbnailImageMorph,
+	#superclass : #Morph,
 	#category : #'RenderThee-Demo'
 }
 
@@ -18,17 +18,10 @@ SgSpaceGame >> isRepaintBoundary [
 
 { #category : #initialization }
 SgSpaceGame >> open [
-	|backgroud|
 	self openInWorld.
-	"form := SgImages space.
-	self newImage: (form magnifyBy: (self world extent / form extent))."
-	
-	backgroud := RectangleMorph new.
-	backgroud color: (Color black).
+	self color: (Color black).
 
-	self addMorph: backgroud.
 	self bounds: self owner bounds.
-	backgroud bounds: self bounds.
 	
 	1 to: 40000 do: [:i |
 		| star |

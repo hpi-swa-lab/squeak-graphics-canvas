@@ -97,9 +97,7 @@ RtGroupLayer >> update [
 	self removeAllChildren.
 	self invalidateCache.
 	
-	parent ifNotNil: [:parent |
-		self bounds: morph bounds].
-	
+	self bounds: morph bounds.
 	(RtRecordingCanvas layer: self) reRecord: morph.
 	
 	drawsSinceUpdate := 0
