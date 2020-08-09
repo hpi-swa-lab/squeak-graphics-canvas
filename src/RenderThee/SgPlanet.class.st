@@ -24,28 +24,3 @@ SgPlanet >> id: anInteger [
 	self newImage: form.
 	self extent: (form extent scaleBy: (0.5 to: 2.0 by: 0.1) atRandom asPoint)
 ]
-
-{ #category : #initialization }
-SgPlanet >> initialize [
-
-	super initialize.
-	rotationSpeed := (0.1 to: 2.0 by: 0.1) atRandom
-]
-
-{ #category : #'repaint boundary' }
-SgPlanet >> isRepaintBoundary [
-
-	^ false
-]
-
-{ #category : #'stepping and presenter' }
-SgPlanet >> step [
-
-	self rotationDegrees: self rotationDegrees + rotationSpeed
-]
-
-{ #category : #'stepping and presenter' }
-SgPlanet >> stepTime [
-
-	^ 0
-]

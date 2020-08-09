@@ -106,6 +106,7 @@ RtRecordingCanvas >> fullDrawMorph: aMorph [
 	(self isReusingLayers and: aMorph isRepaintBoundary) ifTrue: [
 		aMorph groupLayer ifNotNil: [:reusableLayer |
 			reusableLayer bounds: aMorph bounds.
+			reusableLayer outerTransform: wrappedCanvas transform.
 			^ self addLayer: reusableLayer]].
 	
 	"we need to create a new layer for aMorph"

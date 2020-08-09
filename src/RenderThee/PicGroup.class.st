@@ -7,6 +7,14 @@ Class {
 	#category : #'RenderThee-Pictures'
 }
 
+{ #category : #'instance creation' }
+PicGroup class >> children: aCollection [
+
+	^ self new
+		children: aCollection;
+		yourself
+]
+
 { #category : #accessing }
 PicGroup >> addChild: aCommand [
 
