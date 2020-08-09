@@ -28,6 +28,12 @@ RtGroupLayer >> children [
 ]
 
 { #category : #compositing }
+RtGroupLayer >> drawLayerOn: aCanvas [
+
+	aCanvas drawGroupLayer: self
+]
+
+{ #category : #compositing }
 RtGroupLayer >> drawOn: aCanvas [
 
 	children do: [:childLayer |
@@ -87,7 +93,9 @@ RtGroupLayer >> removeAllCaches [
 { #category : #accessing }
 RtGroupLayer >> removeAllChildren [
 
-	children do: [ :child | child parent: nil ].
+	children do: [ :child |
+		child class == RtDrawLayer ifTrue: [child deleteCache].
+		child parent: nil ].
 	children reset
 ]
 

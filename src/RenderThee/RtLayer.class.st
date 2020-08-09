@@ -110,6 +110,20 @@ RtLayer >> createCacheOfType: anImageStoreClass [
 	^ store
 ]
 
+{ #category : #caching }
+RtLayer >> deleteCache [
+
+	cache ifNotNil: [cache release].
+	cache := nil.
+	isCached := false.
+]
+
+{ #category : #compositing }
+RtLayer >> drawLayerOn: canvas [
+
+	self subclassResponsibility
+]
+
 { #category : #compositing }
 RtLayer >> drawOn: canvas [
 
@@ -175,7 +189,7 @@ RtLayer >> initialize [
 RtLayer >> invalidateCache [
 
 	parent ifNotNil: [:p | p invalidateCache].
-	isCached := false.
+	self deleteCache.
 	drawsSinceInvalidation := 0
 ]
 

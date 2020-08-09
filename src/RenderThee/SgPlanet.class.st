@@ -35,7 +35,7 @@ SgPlanet >> initialize [
 { #category : #'repaint boundary' }
 SgPlanet >> isRepaintBoundary [
 
-	^ true
+	^ false
 ]
 
 { #category : #'stepping and presenter' }

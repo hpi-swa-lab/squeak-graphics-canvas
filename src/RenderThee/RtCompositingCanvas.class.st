@@ -22,16 +22,14 @@ RtCompositingCanvas >> drawLayer: aLayer [
 
 	(readsCaches and: [aLayer isCached])
 		ifTrue: [
-			wrappedCanvas
-				paintImageStore: aLayer cache
-				sourceRect: aLayer cache boundingBox.
-			"aLayer class == RtGroupLayer ifTrue: [
-				self frameRectangle: (0@0 extent: aLayer extent) color: Color green]"]
+			wrappedCanvas paintImageStore: aLayer cache.
+			aLayer class == RtGroupLayer ifTrue: [
+				self frameRectangle: (0@0 extent: aLayer extent) color: Color green]]
 		ifFalse: [
 			aLayer incrementDrawCounter.
 			aLayer drawOn: self.
-			"aLayer class == RtGroupLayer ifTrue: [
-				self frameRectangle: (0@0 extent: aLayer extent) color: Color red]"]
+			aLayer class == RtGroupLayer ifTrue: [
+				self frameRectangle: (0@0 extent: aLayer extent) color: Color red]]
 ]
 
 { #category : #initialization }

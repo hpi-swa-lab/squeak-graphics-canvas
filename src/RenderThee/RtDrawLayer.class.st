@@ -36,6 +36,12 @@ RtDrawLayer >> accept: aVisitor [
 ]
 
 { #category : #compositing }
+RtDrawLayer >> drawLayerOn: aCanvas [
+
+	aCanvas drawDrawLayer: self
+]
+
+{ #category : #compositing }
 RtDrawLayer >> drawOn: aCanvas [
 
 	aCanvas draw: picture

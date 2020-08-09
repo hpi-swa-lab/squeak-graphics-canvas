@@ -18,19 +18,17 @@ SgSpaceGame >> isRepaintBoundary [
 
 { #category : #initialization }
 SgSpaceGame >> open [
+	
+	| background |
 	self openInWorld.
-	self color: (Color black).
+	self color: (Color red).
 
 	self bounds: self owner bounds.
+	background := SgSpace new.
+	background bounds: self bounds.
+	background createStars: 40000.
+	self addMorph: background.
 	
-	1 to: 40000 do: [:i |
-		| star |
-		star := EllipseMorph new.
-		star borderColor: (Color random).
-		star color: (Color white).
-		star extent: ((1@1)+((i/40000)@(i/40000) truncated)).
-		star center: (self bounds insetBy: star extent // 2) randomPoint.
-		self addMorph: star].
 	1 to: 4 do: [:i |
 		| planet |
 		planet := SgPlanet planet: i.

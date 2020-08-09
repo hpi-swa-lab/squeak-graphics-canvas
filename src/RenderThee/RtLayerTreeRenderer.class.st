@@ -32,19 +32,17 @@ RtLayerTreeRenderer >> release [
 { #category : #rendering }
 RtLayerTreeRenderer >> renderFrame [
 
-	| cacheMarker rootLayer |
-	morph updateLayerTree.
-	
-	rootLayer := morph groupLayer.
-	
-	cacheMarker := RtCacheMarker new
-						"cachingStrategy: (RtAlwaysCaching new);"
-						"cachingStrategy: (RtNeverCaching new);"
-						cachingStrategy: (RtCacheAfterUnchangedDraws threshold: 50);
-						yourself.
-	cacheMarker visit: rootLayer. 
-	
-	"imageStore extent: morph extent."
 	imageStore canvasDo: [:canvas |
+		| cacheMarker rootLayer |
+		morph updateLayerTree.
+	
+		rootLayer := morph groupLayer.
+	
+		cacheMarker := RtCacheMarker new
+							"cachingStrategy: (RtAlwaysCaching new);"
+							"cachingStrategy: (RtNeverCaching new);"
+							cachingStrategy: (RtCacheAfterUnchangedDraws threshold: 50);
+							yourself.
+		cacheMarker visit: rootLayer. 
 		rootLayer compositeOn: canvas]
 ]

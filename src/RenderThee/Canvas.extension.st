@@ -7,7 +7,37 @@ Canvas >> cacheLayer: aLayer [
 ]
 
 { #category : #'*RenderThee-LayerTree' }
+Canvas >> drawDrawLayer: aLayer [
+
+	aLayer drawOn: self
+]
+
+{ #category : #'*RenderThee-LayerTree' }
+Canvas >> drawGroupLayer: aLayer [
+
+	aLayer drawOn: self
+]
+
+{ #category : #'*RenderThee-LayerTree' }
+Canvas >> drawLayer: aLayer [
+
+	aLayer drawLayerOn: self
+]
+
+{ #category : #'*RenderThee-LayerTree' }
 Canvas >> imageStoreClass [
+
+	self subclassResponsibility
+]
+
+{ #category : #'*RenderThee' }
+Canvas >> paintImageStore: anImageStore [
+
+	self paintImageStore: anImageStore sourceRect: (0@0 extent: anImageStore extent)
+]
+
+{ #category : #'*RenderThee' }
+Canvas >> paintImageStore: anImageStore sourceRect: aRectangle [
 
 	self subclassResponsibility
 ]
