@@ -7,9 +7,9 @@ Class {
 { #category : #accessing }
 GL class >> activate: aContext during: aBlock [
 	| oldContext |
-	oldContext := GLFW getCurrentContext.
+	oldContext := GLFW value getCurrentContext.
 	[ GLFW makeContextCurrent: aContext glfwWindow.
-	  aBlock value ] ensure: [ GLFW makeContextCurrent: oldContext ]
+	  aBlock value ] ensure: [ GLFW value makeContextCurrent: oldContext ]
 ]
 
 { #category : #accessing }

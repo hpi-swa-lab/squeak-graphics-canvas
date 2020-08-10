@@ -16,13 +16,13 @@ GLFWContext class >> newIn: bounds for: gl [
 { #category : #activation }
 GLFWContext >> activate [
 
-	GLFW makeContextCurrent: window
+	GLFW value makeContextCurrent: window
 ]
 
 { #category : #callbacks }
 GLFWContext >> cursorCallback: aBlock [
 
-	GLFW 
+	GLFW value
 		setCursorPosCallback: window
 		with: (callbacks
 			at: #cursorPos
@@ -33,17 +33,17 @@ GLFWContext >> cursorCallback: aBlock [
 
 { #category : #activation }
 GLFWContext >> deactivate [
-	GLFW makeContextCurrent: nil
+	GLFW value makeContextCurrent: nil
 ]
 
 { #category : #'initialize-release' }
 GLFWContext >> destroy [
-	GLFW destroyWindow: window
+	GLFW value destroyWindow: window
 ]
 
 { #category : #'initialize-release' }
 GLFWContext >> endFrame [
-	GLFW pollEvents
+	GLFW value pollEvents
 ]
 
 { #category : #'initialize-release' }
@@ -74,12 +74,12 @@ GLFWContext >> initializeCallbacks [
 { #category : #'initialize-release' }
 GLFWContext >> initializeIn: bounds for: gl [
 
-	GLFW windowHint: GLFW CONTEXT_VERSION_MAJOR value: gl majorVersion.
-	GLFW windowHint: GLFW CONTEXT_VERSION_MINOR value: gl minorVersion.
+	GLFW value windowHint: GLFW CONTEXT_VERSION_MAJOR value: gl majorVersion.
+	GLFW value windowHint: GLFW CONTEXT_VERSION_MINOR value: gl minorVersion.
 	
 	callbacks := Dictionary new.
 	
-	window := GLFW
+	window := GLFW value
 				createWindowWidth: bounds width
 				height: bounds height
 				title: 'GLFW Window'
@@ -88,7 +88,7 @@ GLFWContext >> initializeIn: bounds for: gl [
 	
 	gl context: self.
 	gl makeCurrentDuring: [
-		GLFW swapInterval: 1.
+		GLFW value swapInterval: 1.
 		self initializeCallbacks].
 	
 	^ window ifNotNil: [self]
@@ -97,15 +97,15 @@ GLFWContext >> initializeIn: bounds for: gl [
 { #category : #activation }
 GLFWContext >> makeCurrentDuring: aBlock [
 	| oldContext |
-	oldContext := GLFW getCurrentContext.
-	[ GLFW makeContextCurrent: window.
-		GL value: self during: aBlock ] ensure: [ GLFW makeContextCurrent: oldContext ]
+	oldContext := GLFW value getCurrentContext.
+	[ GLFW value makeContextCurrent: window.
+		GL value: self during: aBlock ] ensure: [ GLFW value makeContextCurrent: oldContext ]
 ]
 
 { #category : #callbacks }
 GLFWContext >> mouseButtonCallback: aBlock [
 
-	GLFW
+	GLFW value
 		setMouseButtonCallback: window
 		with: (callbacks
 			at: #mouseButton
@@ -117,12 +117,12 @@ GLFWContext >> mouseButtonCallback: aBlock [
 
 { #category : #testing }
 GLFWContext >> shouldClose [
-	^ (GLFW windowShouldClose: window) ~= 0
+	^ (GLFW value windowShouldClose: window) ~= 0
 ]
 
 { #category : #'initialize-release' }
 GLFWContext >> swapBuffers [
 
-	GLFW swapBuffers: window.
+	GLFW value swapBuffers: window.
 	^ true
 ]
