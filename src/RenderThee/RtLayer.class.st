@@ -57,6 +57,15 @@ RtLayer >> accept: aVisitor [
 	self subclassResponsibility
 ]
 
+{ #category : #converting }
+RtLayer >> asForm [
+
+	| fc |
+	fc := FormCanvas extent: extent.
+	self compositeOn: fc.
+	^ fc form
+]
+
 { #category : #accessing }
 RtLayer >> bounds [
 
