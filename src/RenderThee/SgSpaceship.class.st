@@ -31,7 +31,7 @@ SgSpaceship >> initializeRotation [
 { #category : #'repaint boundary' }
 SgSpaceship >> isRepaintBoundary [
 
-	^ true
+	^ false
 ]
 
 { #category : #'stepping and presenter' }

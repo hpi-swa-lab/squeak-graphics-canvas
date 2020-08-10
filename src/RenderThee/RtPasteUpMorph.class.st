@@ -1,13 +1,7 @@
 Class {
 	#name : #RtPasteUpMorph,
 	#superclass : #PasteUpMorph,
-	#instVars : [
-		'vao',
-		'vbo',
-		'ogl',
-		'program'
-	],
-	#category : 'RenderThee-Project'
+	#category : #'RenderThee-Project'
 }
 
 { #category : #'world state' }
@@ -21,22 +15,6 @@ RtPasteUpMorph >> beWorldForProject: aProject [
 	self startSteppingSubmorphsOf: self
 ]
 
-{ #category : #accessing }
-RtPasteUpMorph >> fragmentShader [
-
-	^ '#version 460 core
-out vec4 FragColor;
-
-in vec2 TexCoords;
-
-layout (location = 1) uniform sampler2D image;
-
-void main() {
-     FragColor = vec4(texture(image, TexCoords).rgb, 1.0);
-}
-' withUnixLineEndings
-]
-
 { #category : #'change reporting' }
 RtPasteUpMorph >> invalidRect: damageRect from: aMorph [
 
@@ -45,49 +23,15 @@ RtPasteUpMorph >> invalidRect: damageRect from: aMorph [
 	^super invalidRect: damageRect from: aMorph
 ]
 
-{ #category : #accessing }
-RtPasteUpMorph >> ogl [
+{ #category : #'world state' }
+RtPasteUpMorph >> privateOuterDisplayWorld [
 
-	^ ogl
+	(self valueOfProperty: #shouldDisplayWorld ifAbsent: [true])
+		ifTrue: [worldState renderWorld: self].
 ]
 
 { #category : #accessing }
-RtPasteUpMorph >> program [
+RtPasteUpMorph >> worldState [
 
-	^ program
-]
-
-{ #category : #'initialize-release' }
-RtPasteUpMorph >> releaseOpenGL [
-
-	ogl ifNotNil: [ogl destroy]
-]
-
-{ #category : #accessing }
-RtPasteUpMorph >> vao [
-
-	^ vao
-]
-
-{ #category : #accessing }
-RtPasteUpMorph >> vbo [
-
-	^ vbo
-]
-
-{ #category : #accessing }
-RtPasteUpMorph >> vertexShader [
-
-	^ '#version 460 core
-layout (location = 0) in vec3 aPos;
-layout (location = 1) in vec2 aTexCoords;
-
-out vec2 TexCoords;
-
-void main()
-{
-    TexCoords = aTexCoords;
-    gl_Position = vec4(aPos, 1.0);
-}
-' withUnixLineEndings
+	^ worldState
 ]

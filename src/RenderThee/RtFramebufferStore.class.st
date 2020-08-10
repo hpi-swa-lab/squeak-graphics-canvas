@@ -45,13 +45,6 @@ RtFramebufferStore class >> form: aForm [
 		yourself
 ]
 
-{ #category : #drawing }
-RtFramebufferStore >> canvasDo: aBlock [
-
-	self glLibrary makeCurrentDuring: [
-		super canvasDo: aBlock]
-]
-
 { #category : #'gl calls' }
 RtFramebufferStore >> clear [
 
@@ -77,7 +70,7 @@ RtFramebufferStore >> extent: aPoint [
 	extent := aPoint
 ]
 
-{ #category : #initialization }
+{ #category : #'initialize-release' }
 RtFramebufferStore >> extentChanged [
 
 	self notYetImplemented
@@ -104,7 +97,7 @@ RtFramebufferStore >> getCanvas [
 { #category : #accessing }
 RtFramebufferStore >> glLibrary [
 
-	^ framebuffer gl
+	^ framebuffer ifNotNil: [framebuffer gl] ifNil: [texture gl]
 ]
 
 { #category : #accessing }
@@ -113,13 +106,13 @@ RtFramebufferStore >> glTextureDo: aBlock [
 	aBlock value: texture
 ]
 
-{ #category : #initialization }
+{ #category : #'initialize-release' }
 RtFramebufferStore >> initializeGLSettings [
 
 	self glLibrary glClearColor: 1 with: 1 with: 1 with: 0
 ]
 
-{ #category : #initialization }
+{ #category : #'initialize-release' }
 RtFramebufferStore >> initializeWithExtent: aPoint [
 
 	| ogl |
@@ -133,7 +126,7 @@ RtFramebufferStore >> initializeWithExtent: aPoint [
 	framebuffer texture2D: texture
 ]
 
-{ #category : #initialization }
+{ #category : #'initialize-release' }
 RtFramebufferStore >> initializeWithForm: aForm [
 
 	extent := aForm extent.
@@ -146,13 +139,21 @@ RtFramebufferStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
 	aCanvas
 		transformBy: self displayTransform
-		"clippingTo: (0 @ 0 extent: extent)"
 		during: [:c |
 			framebuffer boundDuring: [
 				self glLibrary viewport: (0@0 extent: extent) during: [
 					self initializeGLSettings.
 					self clear.
 					aBlock cull: c]]]
+]
+
+{ #category : #'initialize-release' }
+RtFramebufferStore >> release [
+
+	super release.
+	texture ifNotNil: [texture delete].
+	framebuffer ifNotNil: [framebuffer delete]
+	
 ]
 
 { #category : #'gl calls' }

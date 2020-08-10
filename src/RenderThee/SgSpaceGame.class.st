@@ -1,6 +1,6 @@
 Class {
 	#name : #SgSpaceGame,
-	#superclass : #ThumbnailImageMorph,
+	#superclass : #Morph,
 	#category : #'RenderThee-Demo'
 }
 
@@ -18,31 +18,23 @@ SgSpaceGame >> isRepaintBoundary [
 
 { #category : #initialization }
 SgSpaceGame >> open [
-	|backgroud|
+	
+	| background solarSystem |
 	self openInWorld.
-	"form := SgImages space.
-	self newImage: (form magnifyBy: (self world extent / form extent))."
-	
-	backgroud := RectangleMorph new.
-	backgroud color: (Color black).
+	self color: (Color red).
 
-	self addMorph: backgroud.
 	self bounds: self owner bounds.
-	backgroud bounds: self bounds.
+	background := SgSpace new.
+	background bounds: self bounds.
+	background createStars: 1000.
+	self addMorph: background.
 	
-	1 to: 40000 do: [:i |
-		| star |
-		star := EllipseMorph new.
-		star borderColor: (Color random).
-		star color: (Color white).
-		star extent: ((1@1)+((i/40000)@(i/40000) truncated)).
-		star center: (self bounds insetBy: star extent // 2) randomPoint.
-		self addMorph: star].
-	1 to: 4 do: [:i |
-		| planet |
-		planet := SgPlanet planet: i.
-		planet center: (self bounds insetBy: planet extent // 2) randomPoint.
-		self addMorph: planet].
+	solarSystem := SgSolarSystem new.
+	solarSystem extent: (self extent x min: self extent y) asPoint.
+	solarSystem center: self center.
+	solarSystem createPlanets: 5.
+	self addMorph: solarSystem.
+	
 	1 to: 15 do: [:i |
 		| ship |
 		ship := SgSpaceship new.

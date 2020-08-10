@@ -57,6 +57,15 @@ RtLayer >> accept: aVisitor [
 	self subclassResponsibility
 ]
 
+{ #category : #converting }
+RtLayer >> asForm [
+
+	| fc |
+	fc := FormCanvas extent: extent.
+	self compositeOn: fc.
+	^ fc form
+]
+
 { #category : #accessing }
 RtLayer >> bounds [
 
@@ -108,6 +117,20 @@ RtLayer >> createCacheOfType: anImageStoreClass [
 	store canvasDo: [:canvas |
 		self compositeOn: canvas].
 	^ store
+]
+
+{ #category : #caching }
+RtLayer >> deleteCache [
+
+	cache ifNotNil: [cache release].
+	cache := nil.
+	isCached := false.
+]
+
+{ #category : #compositing }
+RtLayer >> drawLayerOn: canvas [
+
+	self subclassResponsibility
 ]
 
 { #category : #compositing }
@@ -175,7 +198,7 @@ RtLayer >> initialize [
 RtLayer >> invalidateCache [
 
 	parent ifNotNil: [:p | p invalidateCache].
-	isCached := false.
+	self deleteCache.
 	drawsSinceInvalidation := 0
 ]
 

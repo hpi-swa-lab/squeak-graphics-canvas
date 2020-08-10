@@ -36,7 +36,7 @@ RtMirrorControl >> initialize [
 	self extent: 200@200.
 	
 	store := RtDisplayFramebufferStore extent: ActiveWorld extent.
-	renderer := RtRenderer morph: ActiveWorld imageStore: store
+	renderer := RtLayerTreeRenderer morph: ActiveWorld imageStore: store
 ]
 
 { #category : #testing }
