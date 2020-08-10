@@ -68,7 +68,7 @@ GLFW class >> moduleName [
 
 { #category : #'as yet unclassified' }
 GLFW class >> startUp [
-	"[" instance := self new. instance init "] on: Error do: [" "do nothing" "]"
+	[ instance := self new. instance init ] on: Error do: [ "do nothing" ]
 ]
 
 { #category : #accessing }
