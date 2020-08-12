@@ -4,11 +4,11 @@ Class {
 	#instVars : [
 		'extent',
 		'framebuffer',
-		'programs',
 		'transform',
 		'baseTransform',
 		'clipRect',
-		'lastTransform'
+		'lastTransform',
+		'resources'
 	],
 	#pools : [
 		'GLConstants'
@@ -80,10 +80,17 @@ GLCanvas >> clipRect: aRectangle during: aBlock [
 	clipRect := previousClipRect
 ]
 
+{ #category : #'drawing-rectangles' }
+GLCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderColor: bc [
+	^ self frameAndFillRectangle: (Rectangle encompassing: vertices)  fillColor: aColor borderWidth: bw borderColor: bc.
+]
+
 { #category : #'drawing-text' }
 GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c [
 
-	self boundDuring: [
+	self frameRectangle: (boundsRect origin extent: 10@10) color: c.
+
+	"self boundDuring: [
 		programs fontProgram boundDuring: [ | bitmapFont x |
 			programs fontProgram
 				image: 0;
@@ -102,11 +109,11 @@ GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fo
 							programs fontProgram
 								extent: (bitmapFont extentFor: character);
 								offsetX: offset x asFloat;
-								mvp: transform * (Matrix4x4 withOffset: boundsRect origin + (x @ offset y)).
+								mvp: transform * (Matrix4x4 withOffset: boundsRect origin + (x @ 0)).
 							
 							self vbo draw: GL_TRIANGLE_STRIP].
 						
-						x := x + (bitmapFont advanceFor: character)]]]]
+						x := x + (bitmapFont advanceFor: character)]]]]"
 ]
 
 { #category : #accessing }
@@ -116,11 +123,16 @@ GLCanvas >> extent [
 ]
 
 { #category : #'drawing-rectangles' }
+GLCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderColor [
+	^ self frameAndFillRectangle: r fillColor: c borderWidth: borderWidth borderColor: borderColor.
+]
+
+{ #category : #'drawing-rectangles' }
 GLCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
 
 	self boundDuring: [
-		programs rectangleProgram boundDuring: [
-			programs rectangleProgram
+		resources rectangleProgram boundDuring: [
+			resources rectangleProgram
 				extent: r extent;
 				color: fillColor;
 				borderColor: borderColor;
@@ -153,15 +165,21 @@ GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 
 	extent := aPoint.
 	framebuffer := aFrameBuffer.
-	programs := GLCanvasPrograms create.
+	
+	resources := self glLibrary at: GLSharedCanvasResources ifAbsentPut: [ GLSharedCanvasResources create ].
 	clipRect := 0 @ 0 extent: extent.
 	baseTransform := transform := Matrix4x4 ortho: clipRect near: 0 far: 1
+]
+
+{ #category : #'drawing-rectangles' }
+GLCanvas >> line: pt1 to: pt2 width: w color: c [
+	^ self frameAndFillRectangle: (Rectangle encompassing: {pt1. pt2})  fillColor: (Color transparent) borderWidth: w borderColor: c.
 ]
 
 { #category : #accessing }
 GLCanvas >> outlineProgram [
 
-	^ programs outlineProgram
+	^ resources outlineProgram
 ]
 
 { #category : #'drawing-text' }
@@ -182,7 +200,7 @@ GLCanvas >> paragraph: paragraph bounds: bounds color: c [
 { #category : #accessing }
 GLCanvas >> textureProgram [
 
-	^ programs textureProgram
+	^ resources textureProgram
 ]
 
 { #category : #accessing }
@@ -220,11 +238,11 @@ GLCanvas >> translateBy: aPoint during: aBlock [
 { #category : #accessing }
 GLCanvas >> vao [
 
-	^ programs vao
+	^ resources vao
 ]
 
 { #category : #accessing }
 GLCanvas >> vbo [
 
-	^ programs vbo
+	^ resources vbo
 ]

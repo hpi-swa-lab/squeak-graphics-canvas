@@ -1,5 +1,5 @@
 Class {
-	#name : #GLCanvasPrograms,
+	#name : #GLSharedCanvasResources,
 	#superclass : #Object,
 	#instVars : [
 		'vao',
@@ -17,13 +17,13 @@ Class {
 }
 
 { #category : #'instance creation' }
-GLCanvasPrograms class >> create [
-
+GLSharedCanvasResources class >> create [
+	FileStream stdout nextPutAll: 'hi'; cr.
 	^ self new
 ]
 
 { #category : #accessing }
-GLCanvasPrograms >> font: aFont [
+GLSharedCanvasResources >> font: aFont [
 
 	| font |
 	font := aFont ifNil: [TextStyle defaultFont].
@@ -32,13 +32,13 @@ GLCanvasPrograms >> font: aFont [
 ]
 
 { #category : #accessing }
-GLCanvasPrograms >> fontProgram [
+GLSharedCanvasResources >> fontProgram [
 
 	^ fontProgram
 ]
 
 { #category : #initialization }
-GLCanvasPrograms >> initialize [
+GLSharedCanvasResources >> initialize [
 
 	super initialize.
 	
@@ -50,7 +50,7 @@ GLCanvasPrograms >> initialize [
 ]
 
 { #category : #initialization }
-GLCanvasPrograms >> initializeBuffers [
+GLSharedCanvasResources >> initializeBuffers [
 
 	vao := GL value createObject: GLVertexArrayObject.
 	vao bind.
@@ -68,7 +68,7 @@ GLCanvasPrograms >> initializeBuffers [
 ]
 
 { #category : #initialization }
-GLCanvasPrograms >> initializeProgramAttributes [
+GLSharedCanvasResources >> initializeProgramAttributes [
 
 	textureProgram boundDuring: [
 		textureProgram image: 0.
@@ -86,7 +86,7 @@ GLCanvasPrograms >> initializeProgramAttributes [
 ]
 
 { #category : #initialization }
-GLCanvasPrograms >> initializePrograms [
+GLSharedCanvasResources >> initializePrograms [
 
 	textureProgram := GL value getShaderProgram: GLCanvasTextureProgram.
 	outlineProgram := GL value getShaderProgram: GLCanvasOutlineProgram.
@@ -96,43 +96,43 @@ GLCanvasPrograms >> initializePrograms [
 ]
 
 { #category : #accessing }
-GLCanvasPrograms >> outlineProgram [
+GLSharedCanvasResources >> outlineProgram [
 
 	^ outlineProgram
 ]
 
 { #category : #accessing }
-GLCanvasPrograms >> rectangleProgram [
+GLSharedCanvasResources >> rectangleProgram [
 
 	^ rectangleProgram
 ]
 
 { #category : #accessing }
-GLCanvasPrograms >> textureProgram [
+GLSharedCanvasResources >> textureProgram [
 
 	^ textureProgram
 ]
 
 { #category : #accessing }
-GLCanvasPrograms >> vao [
+GLSharedCanvasResources >> vao [
 
 	^ vao
 ]
 
 { #category : #accessing }
-GLCanvasPrograms >> vao: anObject [
+GLSharedCanvasResources >> vao: anObject [
 
 	vao := anObject.
 ]
 
 { #category : #accessing }
-GLCanvasPrograms >> vbo [
+GLSharedCanvasResources >> vbo [
 
 	^ vbo
 ]
 
 { #category : #accessing }
-GLCanvasPrograms >> vbo: anObject [
+GLSharedCanvasResources >> vbo: anObject [
 
 	vbo := anObject.
 ]

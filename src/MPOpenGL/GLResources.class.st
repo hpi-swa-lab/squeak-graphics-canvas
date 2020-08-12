@@ -3,7 +3,8 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'objects',
-		'shaders'
+		'shaders',
+		'userData'
 	],
 	#category : #'MPOpenGL-Core'
 }
@@ -37,5 +38,11 @@ GLResources >> initialize [
 	super initialize.
 	
 	shaders := IdentityDictionary new.
-	objects := OrderedCollection new
+	objects := OrderedCollection new.
+	userData := Dictionary new.
+]
+
+{ #category : #accessing }
+GLResources >> userData [
+	^ userData
 ]
