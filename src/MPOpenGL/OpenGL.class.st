@@ -180,6 +180,21 @@ OpenGL class >> shutDown [
 
 ]
 
+{ #category : #accessing }
+OpenGL >> at: aKey [
+	^ resources userData at: aKey
+]
+
+{ #category : #accessing }
+OpenGL >> at: aKey ifAbsentPut: aBlock [
+	^ resources userData at: aKey ifAbsentPut: aBlock
+]
+
+{ #category : #accessing }
+OpenGL >> at: aKey put: aValue [
+	^ resources userData at: aKey put: aValue
+]
+
 { #category : #'initialize-release' }
 OpenGL >> beginFrame [
 	self glPixelStorei: GL_UNPACK_ALIGNMENT with: 4.

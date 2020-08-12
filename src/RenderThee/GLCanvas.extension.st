@@ -19,11 +19,3 @@ GLCanvas >> paintImageStore: aStore sourceRect: sourceRect [
 						mvp: transform * (Matrix4x4 withScale: aStore extent @ 1.0).
 					self vbo draw: GL_TRIANGLE_STRIP]]]]
 ]
-
-{ #category : #'*RenderThee-LayerTree' }
-GLCanvas >> updateDrawLayerCache: aLayer [
-
-	| form |
-	form := (aLayer createCacheOfType: RtFormStore) form.
-	aLayer validCache: (self imageStoreClass form: form).
-]

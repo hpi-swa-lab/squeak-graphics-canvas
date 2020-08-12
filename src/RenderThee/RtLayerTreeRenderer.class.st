@@ -41,7 +41,7 @@ RtLayerTreeRenderer >> renderFrame [
 		cacheMarker := RtCacheMarker new
 							"cachingStrategy: (RtAlwaysCaching new);"
 							"cachingStrategy: (RtNeverCaching new);"
-							cachingStrategy: (RtCacheAfterUnchangedDraws threshold: 50);
+							cachingStrategy: (RtCacheAfterUnchangedDraws threshold: 3);
 							yourself.
 		cacheMarker visit: rootLayer. 
 		rootLayer compositeOn: canvas]
