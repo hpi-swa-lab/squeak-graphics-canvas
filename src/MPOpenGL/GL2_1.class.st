@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GL2_1 class >> majorVersion [
+
+	^ 2
+]
+
+{ #category : #version }
+GL2_1 class >> minorVersion [
+
+	^ 1
+]
+
 { #category : #commands }
 GL2_1 >> glUniformMatrix2x3fv: location with: count with: transpose with: value [
 
@@ -44,16 +56,4 @@ GL2_1 >> glUniformMatrix4x3fv: location with: count with: transpose with: value 
 
 	<apicall: void 'glUniformMatrix4x3fv' (GLint GLsizei GLboolean GLfloat*)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GL2_1 >> majorVersion [
-
-	^ 2
-]
-
-{ #category : #version }
-GL2_1 >> minorVersion [
-
-	^ 1
 ]

@@ -11,7 +11,7 @@ Class {
 { #category : #deletion }
 RtMirrorControl >> delete [
 
-	self glLibrary ~= #glSuspended ifTrue: [self glLibrary destroy].
+	self glLibrary isSymbol ifFalse: [self glLibrary context destroy].
 	super delete
 ]
 

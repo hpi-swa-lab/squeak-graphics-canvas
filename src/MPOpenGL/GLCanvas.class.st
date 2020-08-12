@@ -25,7 +25,7 @@ GLCanvas class >> exampleWindow [
 	display canvasDo: [:c | c fullDraw: window].
 	
 	[Sensor anyButtonPressed] whileFalse: [2 milliSeconds wait].
-	display glLibrary destroy
+	display glLibrary context destroy
 ]
 
 { #category : #'instance creation' }

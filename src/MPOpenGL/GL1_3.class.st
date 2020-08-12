@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GL1_3 class >> majorVersion [
+
+	^ 1
+]
+
+{ #category : #version }
+GL1_3 class >> minorVersion [
+
+	^ 3
+]
+
 { #category : #commands }
 GL1_3 >> glActiveTexture: texture [
 
@@ -324,16 +336,4 @@ GL1_3 >> glSampleCoverage: value with: invert [
 
 	<apicall: void 'glSampleCoverage' (GLfloat GLboolean)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GL1_3 >> majorVersion [
-
-	^ 1
-]
-
-{ #category : #version }
-GL1_3 >> minorVersion [
-
-	^ 3
 ]

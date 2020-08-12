@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GL1_0 class >> majorVersion [
+
+	^ 1
+]
+
+{ #category : #version }
+GL1_0 class >> minorVersion [
+
+	^ 0
+]
+
 { #category : #commands }
 GL1_0 >> glAccum: op with: value [
 
@@ -2144,16 +2156,4 @@ GL1_0 >> glViewport: x with: y with: width with: height [
 
 	<apicall: void 'glViewport' (GLint GLint GLsizei GLsizei)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GL1_0 >> majorVersion [
-
-	^ 1
-]
-
-{ #category : #version }
-GL1_0 >> minorVersion [
-
-	^ 0
 ]

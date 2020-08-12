@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GL3_1 class >> majorVersion [
+
+	^ 3
+]
+
+{ #category : #version }
+GL3_1 class >> minorVersion [
+
+	^ 1
+]
+
 { #category : #commands }
 GL3_1 >> glCopyBufferSubData: readTarget with: writeTarget with: readOffset with: writeOffset with: size [
 
@@ -86,16 +98,4 @@ GL3_1 >> glUniformBlockBinding: program with: uniformBlockIndex with: uniformBlo
 
 	<apicall: void 'glUniformBlockBinding' (GLuint GLuint GLuint)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GL3_1 >> majorVersion [
-
-	^ 3
-]
-
-{ #category : #version }
-GL3_1 >> minorVersion [
-
-	^ 1
 ]

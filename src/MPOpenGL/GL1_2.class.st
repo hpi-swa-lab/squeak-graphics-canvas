@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GL1_2 class >> majorVersion [
+
+	^ 1
+]
+
+{ #category : #version }
+GL1_2 class >> minorVersion [
+
+	^ 2
+]
+
 { #category : #commands }
 GL1_2 >> glCopyTexSubImage3D: target with: level with: xoffset with: yoffset with: zoffset with: x with: y with: width with: height [
 
@@ -30,16 +42,4 @@ GL1_2 >> glTexSubImage3D: target with: level with: xoffset with: yoffset with: z
 
 	<apicall: void 'glTexSubImage3D' (GLenum GLint GLint GLint GLint GLsizei GLsizei GLsizei GLenum GLenum void*)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GL1_2 >> majorVersion [
-
-	^ 1
-]
-
-{ #category : #version }
-GL1_2 >> minorVersion [
-
-	^ 2
 ]

@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GL3_2 class >> majorVersion [
+
+	^ 3
+]
+
+{ #category : #version }
+GL3_2 class >> minorVersion [
+
+	^ 2
+]
+
 { #category : #'commands - deprecated' }
 GL3_2 >> glAccum: op with: value [
 
@@ -2235,16 +2247,4 @@ GL3_2 >> glWindowPos3s: x with: y with: z [
 GL3_2 >> glWindowPos3sv: v [
 
 	self shouldNotImplement
-]
-
-{ #category : #version }
-GL3_2 >> majorVersion [
-
-	^ 3
-]
-
-{ #category : #version }
-GL3_2 >> minorVersion [
-
-	^ 2
 ]

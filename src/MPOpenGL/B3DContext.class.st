@@ -62,6 +62,7 @@ B3DContext >> deactivate [
 
 { #category : #'initialize-release' }
 B3DContext >> destroy [
+	super destroy.
 	self primDestroyRenderer: handle.
 ]
 

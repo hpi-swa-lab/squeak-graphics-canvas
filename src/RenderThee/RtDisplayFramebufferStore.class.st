@@ -48,7 +48,7 @@ RtDisplayFramebufferStore >> initializeGLSettings [
 RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 
 	extent := aPoint.
-	glLibrary := GL4_5 newGLFWIn: (0@0 extent: extent).
+	glLibrary := (GLFWContext newIn: (0@0 extent: extent) forLibraryClass: GL3_3) library.
 	framebuffer := glLibrary createObject: GLDisplayFrameBuffer.
 	
 	framebuffer boundDuring: [

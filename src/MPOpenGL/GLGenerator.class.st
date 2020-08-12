@@ -100,10 +100,10 @@ GLGenerator >> compileVersionMethods: aVersion [
 
 	| majorMinor |
 	majorMinor := aVersion subStrings: '.'.
-	currentFeatureClass compile: 'majorVersion
+	currentFeatureClass theMetaClass compile: 'majorVersion
 
 	^ ', majorMinor first classified: 'version'.
-	currentFeatureClass compile: 'minorVersion
+	currentFeatureClass theMetaClass compile: 'minorVersion
 
 	^ ', majorMinor second classified: 'version'.
 

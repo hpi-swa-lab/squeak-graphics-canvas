@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GL4_4 class >> majorVersion [
+
+	^ 4
+]
+
+{ #category : #version }
+GL4_4 class >> minorVersion [
+
+	^ 4
+]
+
 { #category : #commands }
 GL4_4 >> glBindBuffersBase: target with: first with: count with: buffers [
 
@@ -65,16 +77,4 @@ GL4_4 >> glClearTexSubImage: texture with: level with: xoffset with: yoffset wit
 
 	<apicall: void 'glClearTexSubImage' (GLuint GLint GLint GLint GLint GLsizei GLsizei GLsizei GLenum GLenum void*)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GL4_4 >> majorVersion [
-
-	^ 4
-]
-
-{ #category : #version }
-GL4_4 >> minorVersion [
-
-	^ 4
 ]

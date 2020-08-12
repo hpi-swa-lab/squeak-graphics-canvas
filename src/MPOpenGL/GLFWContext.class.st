@@ -3,13 +3,14 @@ Class {
 	#superclass : #GLContext,
 	#instVars : [
 		'window',
-		'callbacks'
+		'callbacks',
+		'libraryClass'
 	],
 	#category : #'MPOpenGL-Core'
 }
 
 { #category : #'instance creation' }
-GLFWContext class >> newIn: bounds for: gl [
+GLFWContext class >> newIn: bounds forLibraryClass: gl [
 	^ GLFWContext new initializeIn: bounds for: gl
 ]
 
@@ -38,7 +39,9 @@ GLFWContext >> deactivate [
 
 { #category : #'initialize-release' }
 GLFWContext >> destroy [
-	GLFW value destroyWindow: window
+	super destroy.
+	window ifNotNil: [ GLFW value destroyWindow: window ].
+	window := nil
 ]
 
 { #category : #'initialize-release' }
@@ -72,10 +75,12 @@ GLFWContext >> initializeCallbacks [
 ]
 
 { #category : #'initialize-release' }
-GLFWContext >> initializeIn: bounds for: gl [
+GLFWContext >> initializeIn: bounds for: aLibraryClass [
 
-	GLFW value windowHint: GLFW CONTEXT_VERSION_MAJOR value: gl majorVersion.
-	GLFW value windowHint: GLFW CONTEXT_VERSION_MINOR value: gl minorVersion.
+	libraryClass := aLibraryClass.
+
+	GLFW value windowHint: GLFW CONTEXT_VERSION_MAJOR value: aLibraryClass majorVersion.
+	GLFW value windowHint: GLFW CONTEXT_VERSION_MINOR value: aLibraryClass minorVersion.
 	
 	callbacks := Dictionary new.
 	
@@ -86,20 +91,17 @@ GLFWContext >> initializeIn: bounds for: gl [
 				monitor: nil
 				share: nil.
 	
-	gl context: self.
-	gl makeCurrentDuring: [
-		GLFW value swapInterval: 1.
-		self initializeCallbacks].
+	self activate.
+	GLFW value swapInterval: 1.
+	self initializeCallbacks.
+	GL value ifNotNil: [:lib | lib context activate].
 	
 	^ window ifNotNil: [self]
 ]
 
 { #category : #activation }
-GLFWContext >> makeCurrentDuring: aBlock [
-	| oldContext |
-	oldContext := GLFW value getCurrentContext.
-	[ GLFW value makeContextCurrent: window.
-		GL value: self during: aBlock ] ensure: [ GLFW value makeContextCurrent: oldContext ]
+GLFWContext >> library [
+	^ libraryClass context: self
 ]
 
 { #category : #callbacks }

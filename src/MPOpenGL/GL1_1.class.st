@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GL1_1 class >> majorVersion [
+
+	^ 1
+]
+
+{ #category : #version }
+GL1_1 class >> minorVersion [
+
+	^ 1
+]
+
 { #category : #commands }
 GL1_1 >> glAreTexturesResident: n with: textures with: residences [
 
@@ -212,16 +224,4 @@ GL1_1 >> glVertexPointer: size with: type with: stride with: pointer [
 
 	<apicall: void 'glVertexPointer' (GLint GLenum GLsizei void*)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GL1_1 >> majorVersion [
-
-	^ 1
-]
-
-{ #category : #version }
-GL1_1 >> minorVersion [
-
-	^ 1
 ]

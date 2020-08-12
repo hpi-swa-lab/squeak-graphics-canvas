@@ -25,10 +25,10 @@ GLResources >> createObject: aClass context: aContext [
 ]
 
 { #category : #'as yet unclassified' }
-GLResources >> getShaderProgram: aClass context: aContext [
+GLResources >> getShaderProgram: aClass library: aLibrary [
 
 	^ shaders at: aClass ifAbsentPut: [ | shader |
-		shader := aContext createObject: aClass.
+		shader := aLibrary createObject: aClass.
 		shader]
 ]
 

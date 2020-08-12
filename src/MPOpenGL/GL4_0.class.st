@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GL4_0 class >> majorVersion [
+
+	^ 4
+]
+
+{ #category : #version }
+GL4_0 class >> minorVersion [
+
+	^ 0
+]
+
 { #category : #commands }
 GL4_0 >> glBeginQueryIndexed: target with: index with: id [
 
@@ -324,16 +336,4 @@ GL4_0 >> glUniformSubroutinesuiv: shadertype with: count with: indices [
 
 	<apicall: void 'glUniformSubroutinesuiv' (GLenum GLsizei GLuint*)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GL4_0 >> majorVersion [
-
-	^ 4
-]
-
-{ #category : #version }
-GL4_0 >> minorVersion [
-
-	^ 0
 ]

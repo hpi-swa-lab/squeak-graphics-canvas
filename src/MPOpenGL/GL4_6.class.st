@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GL4_6 class >> majorVersion [
+
+	^ 4
+]
+
+{ #category : #version }
+GL4_6 class >> minorVersion [
+
+	^ 6
+]
+
 { #category : #commands }
 GL4_6 >> glMultiDrawArraysIndirectCount: mode with: indirect with: drawcount with: maxdrawcount with: stride [
 
@@ -30,16 +42,4 @@ GL4_6 >> glSpecializeShader: shader with: pEntryPoint with: numSpecializationCon
 
 	<apicall: void 'glSpecializeShader' (GLuint GLchar* GLuint GLuint* GLuint*)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GL4_6 >> majorVersion [
-
-	^ 4
-]
-
-{ #category : #version }
-GL4_6 >> minorVersion [
-
-	^ 6
 ]

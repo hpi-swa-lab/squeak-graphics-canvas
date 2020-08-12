@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GLES23_2 class >> majorVersion [
+
+	^ 3
+]
+
+{ #category : #version }
+GLES23_2 class >> minorVersion [
+
+	^ 2
+]
+
 { #category : #commands }
 GLES23_2 >> glBlendBarrier [
 
@@ -310,16 +322,4 @@ GLES23_2 >> glTexStorage3DMultisample: target with: samples with: internalformat
 
 	<apicall: void 'glTexStorage3DMultisample' (GLenum GLsizei GLenum GLsizei GLsizei GLsizei GLboolean)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GLES23_2 >> majorVersion [
-
-	^ 3
-]
-
-{ #category : #version }
-GLES23_2 >> minorVersion [
-
-	^ 2
 ]

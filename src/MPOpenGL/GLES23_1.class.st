@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GLES23_1 class >> majorVersion [
+
+	^ 3
+]
+
+{ #category : #version }
+GLES23_1 class >> minorVersion [
+
+	^ 1
+]
+
 { #category : #commands }
 GLES23_1 >> glActiveShaderProgram: pipeline with: program [
 
@@ -478,16 +490,4 @@ GLES23_1 >> glVertexBindingDivisor: bindingindex with: divisor [
 
 	<apicall: void 'glVertexBindingDivisor' (GLuint GLuint)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GLES23_1 >> majorVersion [
-
-	^ 3
-]
-
-{ #category : #version }
-GLES23_1 >> minorVersion [
-
-	^ 1
 ]
