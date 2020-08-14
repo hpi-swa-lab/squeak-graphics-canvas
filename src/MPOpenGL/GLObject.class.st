@@ -86,6 +86,7 @@ GLObject >> boundDuring: aBlock [
 	self bind.
 	gl checkForError.
 	aBlock ensure: [
+		gl checkForError.
 		self bind: previousBinding.
 		gl checkForError]
 ]

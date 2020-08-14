@@ -106,12 +106,17 @@ GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fo
 						(bitmapFont hasGlyphOf: character) ifTrue: [ | offset |
 							offset := bitmapFont offsetFor: character.
 							
+							GL value checkForError.
+							
 							resources fontProgram
 								extent: (bitmapFont extentFor: character);
 								offsetX: offset x asFloat;
 								mvp: transform * (Matrix4x4 withOffset: boundsRect origin + (x @ 0)).
+
+							GL value checkForError.
 							
 							self vbo draw: GL_TRIANGLE_STRIP].
+							GL value checkForError.
 						
 						x := x + (bitmapFont advanceFor: character)]]]]
 ]
