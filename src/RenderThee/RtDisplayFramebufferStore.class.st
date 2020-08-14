@@ -52,10 +52,11 @@ RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 	"glLibrary := GL3_3 context: (B3DContext newIn: (0@0 extent: extent))."
 	framebuffer := glLibrary createObject: GLDisplayFrameBuffer.
 	
+	glLibrary makeCurrentDuring: [
 	framebuffer boundDuring: [
 		self initializeGLSettings.
 		self resetViewport.
-		self clear]
+		self clear]]
 ]
 
 { #category : #drawing }
