@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GL3_0 class >> majorVersion [
+
+	^ 3
+]
+
+{ #category : #version }
+GL3_0 class >> minorVersion [
+
+	^ 0
+]
+
 { #category : #commands }
 GL3_0 >> glBeginConditionalRender: id with: mode [
 
@@ -590,16 +602,4 @@ GL3_0 >> glVertexAttribIPointer: index with: size with: type with: stride with: 
 
 	<apicall: void 'glVertexAttribIPointer' (GLuint GLint GLenum GLsizei void*)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GL3_0 >> majorVersion [
-
-	^ 3
-]
-
-{ #category : #version }
-GL3_0 >> minorVersion [
-
-	^ 0
 ]

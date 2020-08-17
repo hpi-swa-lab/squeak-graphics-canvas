@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GL4_2 class >> majorVersion [
+
+	^ 4
+]
+
+{ #category : #version }
+GL4_2 class >> minorVersion [
+
+	^ 2
+]
+
 { #category : #commands }
 GL4_2 >> glBindImageTexture: unit with: texture with: level with: layered with: layer with: access with: format [
 
@@ -86,16 +98,4 @@ GL4_2 >> glTexStorage3D: target with: levels with: internalformat with: width wi
 
 	<apicall: void 'glTexStorage3D' (GLenum GLsizei GLenum GLsizei GLsizei GLsizei)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GL4_2 >> majorVersion [
-
-	^ 4
-]
-
-{ #category : #version }
-GL4_2 >> minorVersion [
-
-	^ 2
 ]

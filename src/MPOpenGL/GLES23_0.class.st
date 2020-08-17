@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GLES23_0 class >> majorVersion [
+
+	^ 3
+]
+
+{ #category : #version }
+GLES23_0 class >> minorVersion [
+
+	^ 0
+]
+
 { #category : #commands }
 GLES23_0 >> glBeginQuery: target with: id [
 
@@ -730,16 +742,4 @@ GLES23_0 >> glWaitSync: sync with: flags with: timeout [
 
 	<apicall: void 'glWaitSync' (GLsync GLbitfield GLuint64)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GLES23_0 >> majorVersion [
-
-	^ 3
-]
-
-{ #category : #version }
-GLES23_0 >> minorVersion [
-
-	^ 0
 ]

@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GL4_1 class >> majorVersion [
+
+	^ 4
+]
+
+{ #category : #version }
+GL4_1 class >> minorVersion [
+
+	^ 1
+]
+
 { #category : #commands }
 GL4_1 >> glActiveShaderProgram: pipeline with: program [
 
@@ -618,16 +630,4 @@ GL4_1 >> glViewportIndexedfv: index with: v [
 
 	<apicall: void 'glViewportIndexedfv' (GLuint GLfloat*)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GL4_1 >> majorVersion [
-
-	^ 4
-]
-
-{ #category : #version }
-GL4_1 >> minorVersion [
-
-	^ 1
 ]

@@ -158,6 +158,8 @@ GLProgram >> initializeShaders [
 { #category : #'initialize-release' }
 GLProgram >> initializeWithContext: glContext [
 
+	self assert: (GL value == glContext).
+
 	super initializeWithContext: glContext.
 	id := gl glCreateProgram.
 	self initializeShaders.

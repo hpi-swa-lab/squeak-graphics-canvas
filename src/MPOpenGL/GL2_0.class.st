@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GL2_0 class >> majorVersion [
+
+	^ 2
+]
+
+{ #category : #version }
+GL2_0 class >> minorVersion [
+
+	^ 0
+]
+
 { #category : #commands }
 GL2_0 >> glAttachShader: program with: shader [
 
@@ -653,16 +665,4 @@ GL2_0 >> glVertexAttribPointer: index with: size with: type with: normalized wit
 
 	<apicall: void 'glVertexAttribPointer' (GLuint GLint GLenum GLboolean GLsizei void*)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GL2_0 >> majorVersion [
-
-	^ 2
-]
-
-{ #category : #version }
-GL2_0 >> minorVersion [
-
-	^ 0
 ]

@@ -26,7 +26,7 @@ RtLayerTreeRenderer >> initializeWithMorph: aMorph imageStore: anImageStore [
 { #category : #'initialize-release' }
 RtLayerTreeRenderer >> release [
 
-	imageStore glLibrary destroy
+	imageStore glLibrary context destroy
 ]
 
 { #category : #rendering }

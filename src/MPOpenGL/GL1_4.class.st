@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GL1_4 class >> majorVersion [
+
+	^ 1
+]
+
+{ #category : #version }
+GL1_4 class >> minorVersion [
+
+	^ 4
+]
+
 { #category : #commands }
 GL1_4 >> glBlendColor: red with: green with: blue with: alpha [
 
@@ -331,16 +343,4 @@ GL1_4 >> glWindowPos3sv: v [
 
 	<apicall: void 'glWindowPos3sv' (GLshort*)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GL1_4 >> majorVersion [
-
-	^ 1
-]
-
-{ #category : #version }
-GL1_4 >> minorVersion [
-
-	^ 4
 ]

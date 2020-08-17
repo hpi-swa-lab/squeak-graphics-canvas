@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GL1_5 class >> majorVersion [
+
+	^ 1
+]
+
+{ #category : #version }
+GL1_5 class >> minorVersion [
+
+	^ 5
+]
+
 { #category : #commands }
 GL1_5 >> glBeginQuery: target with: id [
 
@@ -135,16 +147,4 @@ GL1_5 >> glUnmapBuffer: target [
 
 	<apicall: GLboolean 'glUnmapBuffer' (GLenum)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GL1_5 >> majorVersion [
-
-	^ 1
-]
-
-{ #category : #version }
-GL1_5 >> minorVersion [
-
-	^ 5
 ]

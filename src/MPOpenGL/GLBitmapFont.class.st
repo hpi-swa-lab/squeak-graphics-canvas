@@ -22,8 +22,9 @@ GLBitmapFont >> advanceFor: aCharacter [
 GLBitmapFont >> extentFor: aCharacter [
 
 	| index |
+	
 	index := self indexForCharacter: aCharacter.
-	^ (offsets at: index + 1) - (offsets at: index ifAbsent: [0 @ 0]) @ (font characterFormAt: aCharacter) height
+	^ (offsets at: index + 1) - (offsets at: index ifAbsent: [0]) @ (font characterFormAt: aCharacter) height
 ]
 
 { #category : #'as yet unclassified' }

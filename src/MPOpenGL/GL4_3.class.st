@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GL4_3 class >> majorVersion [
+
+	^ 4
+]
+
+{ #category : #version }
+GL4_3 class >> minorVersion [
+
+	^ 3
+]
+
 { #category : #commands }
 GL4_3 >> glBindVertexBuffer: bindingindex with: buffer with: offset with: stride [
 
@@ -310,16 +322,4 @@ GL4_3 >> glVertexBindingDivisor: bindingindex with: divisor [
 
 	<apicall: void 'glVertexBindingDivisor' (GLuint GLuint)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GL4_3 >> majorVersion [
-
-	^ 4
-]
-
-{ #category : #version }
-GL4_3 >> minorVersion [
-
-	^ 3
 ]

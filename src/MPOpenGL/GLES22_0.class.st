@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GLES22_0 class >> majorVersion [
+
+	^ 2
+]
+
+{ #category : #version }
+GLES22_0 class >> minorVersion [
+
+	^ 0
+]
+
 { #category : #commands }
 GLES22_0 >> glActiveTexture: texture [
 
@@ -996,16 +1008,4 @@ GLES22_0 >> glViewport: x with: y with: width with: height [
 
 	<apicall: void 'glViewport' (GLint GLint GLsizei GLsizei)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GLES22_0 >> majorVersion [
-
-	^ 2
-]
-
-{ #category : #version }
-GLES22_0 >> minorVersion [
-
-	^ 0
 ]

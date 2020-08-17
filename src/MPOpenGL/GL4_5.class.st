@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GL4_5 class >> majorVersion [
+
+	^ 4
+]
+
+{ #category : #version }
+GL4_5 class >> minorVersion [
+
+	^ 5
+]
+
 { #category : #commands }
 GL4_5 >> glBindTextureUnit: unit with: texture [
 
@@ -772,16 +784,4 @@ GL4_5 >> glVertexArrayVertexBuffers: vaobj with: first with: count with: buffers
 
 	<apicall: void 'glVertexArrayVertexBuffers' (GLuint GLuint GLsizei GLuint* GLintptr* GLsizei*)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GL4_5 >> majorVersion [
-
-	^ 4
-]
-
-{ #category : #version }
-GL4_5 >> minorVersion [
-
-	^ 5
 ]

@@ -78,11 +78,15 @@ GLObject >> bindingEnum [
 GLObject >> boundDuring: aBlock [
 
 	| previousBinding |
+	
+	self assert: (GL value == gl).
+	
 	previousBinding := self currentBinding.
 	previousBinding = id ifTrue: [^ aBlock value].
 	self bind.
 	gl checkForError.
 	aBlock ensure: [
+		gl checkForError.
 		self bind: previousBinding.
 		gl checkForError]
 ]

@@ -25,7 +25,7 @@ GLCanvas class >> exampleWindow [
 	display canvasDo: [:c | c fullDraw: window].
 	
 	[Sensor anyButtonPressed] whileFalse: [2 milliSeconds wait].
-	display glLibrary destroy
+	display glLibrary context destroy
 ]
 
 { #category : #'instance creation' }
@@ -88,16 +88,16 @@ GLCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderColor: bc 
 { #category : #'drawing-text' }
 GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c [
 
-	self frameRectangle: (boundsRect origin extent: 10@10) color: c.
+	"self frameRectangle: (boundsRect origin extent: 10@10) color: c."
 
-	"self boundDuring: [
-		programs fontProgram boundDuring: [ | bitmapFont x |
-			programs fontProgram
+	self boundDuring: [
+		resources fontProgram boundDuring: [ | bitmapFont x |
+			resources fontProgram
 				image: 0;
 				color: c.
 			
 			x := 0.
-			bitmapFont := programs font: fontOrNil.
+			bitmapFont := resources font: fontOrNil.
 			bitmapFont texture boundDuring: [
 				s
 					from: firstIndex
@@ -106,14 +106,19 @@ GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fo
 						(bitmapFont hasGlyphOf: character) ifTrue: [ | offset |
 							offset := bitmapFont offsetFor: character.
 							
-							programs fontProgram
+							GL value checkForError.
+							
+							resources fontProgram
 								extent: (bitmapFont extentFor: character);
 								offsetX: offset x asFloat;
 								mvp: transform * (Matrix4x4 withOffset: boundsRect origin + (x @ 0)).
+
+							GL value checkForError.
 							
 							self vbo draw: GL_TRIANGLE_STRIP].
+							GL value checkForError.
 						
-						x := x + (bitmapFont advanceFor: character)]]]]"
+						x := x + (bitmapFont advanceFor: character)]]]]
 ]
 
 { #category : #accessing }

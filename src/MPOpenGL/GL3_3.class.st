@@ -4,6 +4,18 @@ Class {
 	#category : #'MPOpenGL-Versions'
 }
 
+{ #category : #version }
+GL3_3 class >> majorVersion [
+
+	^ 3
+]
+
+{ #category : #version }
+GL3_3 class >> minorVersion [
+
+	^ 3
+]
+
 { #category : #commands }
 GL3_3 >> glBindFragDataLocationIndexed: program with: colorNumber with: index with: name [
 
@@ -198,16 +210,4 @@ GL3_3 >> glVertexAttribP4uiv: index with: type with: normalized with: value [
 
 	<apicall: void 'glVertexAttribP4uiv' (GLuint GLenum GLboolean GLuint*)>
 	^ self externalCallFailed
-]
-
-{ #category : #version }
-GL3_3 >> majorVersion [
-
-	^ 3
-]
-
-{ #category : #version }
-GL3_3 >> minorVersion [
-
-	^ 3
 ]
