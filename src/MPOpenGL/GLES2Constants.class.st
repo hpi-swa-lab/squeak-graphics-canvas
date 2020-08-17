@@ -7026,6 +7026,7 @@ GLES2Constants class >> initialize [
 	self initialize08.
 	self initialize09.
 	self initialize10.
+	self initialize11.
 ]
 
 { #category : #initialization }
@@ -8076,4 +8077,10 @@ GLES2Constants class >> initialize10 [
 	GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x8 := 16r93DA.
 	GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x10 := 16r93DB.
 	GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x10 := 16r93DC
+]
+
+{ #category : #initialization }
+GLES2Constants class >> initialize11 [
+
+	GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x12 := 16r93DD
 ]

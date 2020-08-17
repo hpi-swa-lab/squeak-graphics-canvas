@@ -327,8 +327,10 @@ GLGenerator >> generateConstantsPoolIntializeMethods [
 		mainStream
 			nextPutAll: 'initialize';
 			cr.
-		enums groupsOf: groupSize atATimeDo: [:group |
-			| source index |
+		1 to: enums size by: groupSize do: [:groupStart |
+			| group source index groupEnd |
+			groupEnd := (groupStart + groupSize - 1) min: enums size.
+			group := enums copyFrom: groupStart to: groupEnd.
 			groupIndex := groupIndex + 1.
 			index := groupIndex asString padded: #left to: padding with: $0.
 			mainStream
