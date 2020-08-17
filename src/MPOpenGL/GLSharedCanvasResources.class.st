@@ -56,12 +56,11 @@ GLSharedCanvasResources >> initializeBuffers [
 	vao bind.
 	vbo := GL value createObject: GLVertexBufferObject.
 	vbo
-		data: {
-			0. 0. 0. 0 .
-			1. 0. 1. 0.
-			0. 1. 0. 1.
-			1. 1. 1. 1.
-		} asFloat32Array
+		data: #(
+			0.0 0.0 0.0 0.0
+			1.0 0.0 1.0 0.0
+			0.0 1.0 0.0 1.0
+			1.0 1.0 1.0 1.0 ) asFloat32Array
 		usage: GL_STATIC_DRAW
 		componentsPerVertex: 4.
 	GL value checkForError

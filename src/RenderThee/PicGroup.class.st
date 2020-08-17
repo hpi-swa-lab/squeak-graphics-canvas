@@ -33,6 +33,13 @@ PicGroup >> children: anObject [
 	children := anObject
 ]
 
+{ #category : #enumerating }
+PicGroup >> do: aBlock [
+
+	super do: aBlock.
+	children do: [:child | child do: aBlock]
+]
+
 { #category : #drawing }
 PicGroup >> drawOn: aCanvas [
 

@@ -14,6 +14,12 @@ PicCommand >> asForm [
 	^ fc form
 ]
 
+{ #category : #enumerating }
+PicCommand >> do: aBlock [
+
+	aBlock value: self
+]
+
 { #category : #drawing }
 PicCommand >> drawOn: aCanvas [
 

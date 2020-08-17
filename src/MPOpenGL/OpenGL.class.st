@@ -29,7 +29,7 @@ OpenGL class >> example [	"OpenGL example"
 
 	| ogl bounds |
 	bounds := 0@0 extent: 400@400.
-	ogl := GL2_0 newB3DIn: bounds.
+	ogl := GL2_0 newGLFWIn: bounds.
 	ogl ifNil:[^self error: 'Unable to create renderer'].
 	[[Sensor anyButtonPressed or: [ogl shouldClose]] whileFalse: [ ogl newFrameDo: [
 	"--- this is the actual scene content ---"

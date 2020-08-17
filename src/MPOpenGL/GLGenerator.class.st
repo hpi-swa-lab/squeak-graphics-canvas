@@ -88,13 +88,6 @@ GLGenerator >> classNamePrefix [
 	^ api asUppercase
 ]
 
-{ #category : #'constants pool' }
-GLGenerator >> compileConstantsPoolAccessorMethods [
-
-	definedEnums do: [:name |
-		]
-]
-
 { #category : #'code generation' }
 GLGenerator >> compileVersionMethods: aVersion [
 
@@ -117,6 +110,16 @@ GLGenerator >> convertEnumValue: aString [
 					readFrom: (ReadStream on: aString from: 3 to: aString size)
 					base: 16) storeStringBase: 16]
 		ifFalse: [aString]
+]
+
+{ #category : #'constants pool' }
+GLGenerator >> definedEnumTags [
+
+	^ Array new: definedEnums size streamContents: [:stream |
+		registry tagsNamed: #enums do: [:enumsTag |
+			enumsTag tagsNamed: #enum do: [:enumTag |
+				(definedEnums includes: (enumTag attributeAt: #name)) ifTrue: [
+					stream nextPut: enumTag]]]]
 ]
 
 { #category : #features }
@@ -257,9 +260,10 @@ GLGenerator >> generateConstantsPool [
 
 	| pool |
 	pool := self generateConstantsPoolClass.
-	pool theMetaClass
-		compile: self generateConstantsPoolIntializeMethod
-		classified: 'initialization'.
+	self generateConstantsPoolIntializeMethods do: [:source |
+		pool theMetaClass
+			compile: source
+			classified: 'initialization'.].
 	pool initialize.
 	definedEnums do: [:name |
 		pool theMetaClass
@@ -311,20 +315,48 @@ GLGenerator >> generateConstantsPoolIntializeMethod [
 ]
 
 { #category : #'constants pool' }
-GLGenerator >> generateEnumMethod: enumTag [
+GLGenerator >> generateConstantsPoolIntializeMethods [
 
-	| name value |
-	name := enumTag attributeAt: #name.
-	
-	value := self convertEnumValue: (enumTag attributeAt: #value).
-	
-	^ String streamContents: [:stream |
-		stream
-			nextPutAll: name;
-			cr; cr; tab;
-			nextPut: $^;
-			space;
-			nextPutAll: value]
+	| methods enums mainSource padding groupSize groupIndex |
+	enums := self definedEnumTags.
+	methods := OrderedCollection new.
+	groupIndex := 0.
+	groupSize := 100.
+	padding := (enums size / groupSize) ceiling numberOfDigitsInBase: 10.
+	mainSource := String streamContents: [:mainStream |
+		mainStream
+			nextPutAll: 'initialize';
+			cr.
+		enums groupsOf: groupSize atATimeDo: [:group |
+			| source index |
+			groupIndex := groupIndex + 1.
+			index := groupIndex asString padded: #left to: padding with: $0.
+			mainStream
+				cr; tab;
+				nextPutAll: 'self initialize';
+				nextPutAll: index;
+				nextPut: $..
+			source := String streamContents: [:stream |
+				stream
+					nextPutAll: 'initialize';
+					nextPutAll: index;
+					cr; cr; tab.
+				group
+					do: [:enumTag |
+						| name value |
+						name := enumTag attributeAt: #name.
+						value := self convertEnumValue: (enumTag attributeAt: #value).
+						stream
+							nextPutAll: name;
+							nextPutAll: ' := ';
+							nextPutAll: value]
+					separatedBy: [
+						stream
+							nextPut: $.;
+							cr; tab]].
+			methods add: source]].
+	methods add: mainSource.
+	^ methods
 ]
 
 { #category : #'code generation' }
