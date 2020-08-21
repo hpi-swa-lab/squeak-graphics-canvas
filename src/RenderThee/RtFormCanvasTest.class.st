@@ -1,3 +1,6 @@
+"
+A test to assert behavior of the existing FormCanvas class.
+"
 Class {
 	#name : #RtFormCanvasTest,
 	#superclass : #RtCanvasTest,

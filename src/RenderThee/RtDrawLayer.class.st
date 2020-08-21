@@ -69,9 +69,3 @@ RtDrawLayer >> printOn: aStream [
 	extent printOn: aStream.
 	aStream space; nextPut: $).
 ]
-
-{ #category : #caching }
-RtDrawLayer >> updateCacheFor: aCanvas [
-
-	aCanvas updateDrawLayerCache: self
-]

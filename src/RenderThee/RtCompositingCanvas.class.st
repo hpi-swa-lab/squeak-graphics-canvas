@@ -9,6 +9,12 @@ Class {
 }
 
 { #category : #compositing }
+RtCompositingCanvas >> cacheLayer: aLayer [
+
+	wrappedCanvas cacheLayer: aLayer
+]
+
+{ #category : #compositing }
 RtCompositingCanvas >> compositeLayer: aLayer [
 
 	aLayer drawOn: self
@@ -18,7 +24,7 @@ RtCompositingCanvas >> compositeLayer: aLayer [
 RtCompositingCanvas >> drawLayer: aLayer [
 
 	(writesCaches and: [aLayer needsCaching and: [aLayer isCached not]])
-		ifTrue: [self updateLayerCache: aLayer].
+		ifTrue: [self cacheLayer: aLayer].
 
 	(readsCaches and: [aLayer isCached])
 		ifTrue: [
@@ -50,12 +56,6 @@ RtCompositingCanvas >> readsCaches [
 RtCompositingCanvas >> readsCaches: anObject [
 
 	readsCaches := anObject
-]
-
-{ #category : #compositing }
-RtCompositingCanvas >> updateLayerCache: aLayer [
-
-	wrappedCanvas updateLayerCache: aLayer
 ]
 
 { #category : #accessing }

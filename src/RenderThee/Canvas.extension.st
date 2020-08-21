@@ -67,21 +67,3 @@ Canvas >> translateBy: aPoint clippingTo: aRectangle during: aBlock [
 	self clipBy: aRectangle during: [:c |
 		c translateBy: aPoint during: aBlock]
 ]
-
-{ #category : #'*RenderThee-LayerTree' }
-Canvas >> updateDrawLayerCache: aLayer [
-
-	self cacheLayer: aLayer
-]
-
-{ #category : #'*RenderThee-LayerTree' }
-Canvas >> updateGroupLayerCache: aLayer [
-
-	self cacheLayer: aLayer
-]
-
-{ #category : #'*RenderThee-LayerTree' }
-Canvas >> updateLayerCache: aLayer [
-
-	aLayer updateCacheFor: self
-]

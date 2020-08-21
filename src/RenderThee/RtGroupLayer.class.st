@@ -110,9 +110,3 @@ RtGroupLayer >> update [
 	
 	drawsSinceUpdate := 0
 ]
-
-{ #category : #caching }
-RtGroupLayer >> updateCacheFor: aCanvas [
-
-	aCanvas updateGroupLayerCache: self
-]

@@ -1,6 +1,6 @@
 "
-A RtLayer is a generic vertex of the layer tree (scene graph).
-It knows how to draw itself in a cached or uncached way.
+I am a generic node of the layer tree.
+I know how to draw myself.
 
 Instance Variables
 	cache:		the cache used by this layer
@@ -103,7 +103,7 @@ RtLayer >> compositeOn: aCanvas [
 	(RtCompositingCanvas canvas: aCanvas) compositeLayer: self
 ]
 
-{ #category : #accessing }
+{ #category : #'accessing - metrics' }
 RtLayer >> compositeTime [
 
 	^ compositeTime
@@ -139,25 +139,25 @@ RtLayer >> drawOn: canvas [
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : #'accessing - metrics' }
 RtLayer >> drawTime [
 
 	^ drawTime
 ]
 
-{ #category : #accessing }
+{ #category : #'accessing - metrics' }
 RtLayer >> drawsCount [
 
 	^ drawsCount
 ]
 
-{ #category : #accessing }
+{ #category : #'accessing - metrics' }
 RtLayer >> drawsSinceInvalidation [
 
 	^ drawsSinceInvalidation
 ]
 
-{ #category : #accessing }
+{ #category : #'accessing - metrics' }
 RtLayer >> drawsSinceUpdate [
 
 	^ drawsSinceUpdate
@@ -266,12 +266,6 @@ RtLayer >> parent: aLayer [
 RtLayer >> transform [
 
 	^ outerTransform composedWithLocal: (Matrix2x3 withOffset: offset)
-]
-
-{ #category : #caching }
-RtLayer >> updateCacheFor: aCanvas [
-
-	self subclassResponsibility
 ]
 
 { #category : #caching }
