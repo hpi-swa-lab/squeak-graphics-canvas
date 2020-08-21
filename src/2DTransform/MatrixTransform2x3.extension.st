@@ -1,5 +1,7 @@
-*2DTransform
-asMatrix2x3
+Extension { #name : #MatrixTransform2x3 }
+
+{ #category : #'*2DTransform' }
+MatrixTransform2x3 >> asMatrix2x3 [
 
 	| result |
 	result := Matrix2x3 basicNew.
@@ -10,3 +12,4 @@ asMatrix2x3
 	result a22: self a22.
 	result a23: self a23.
 	^ result
+]

@@ -1,5 +1,7 @@
-*2DTransform
-asMatrix2x3
+Extension { #name : #Matrix4x4 }
+
+{ #category : #'*2DTransform' }
+Matrix4x4 >> asMatrix2x3 [
 
 	^ Matrix2x3 identity
 		a11: self a11;
@@ -9,3 +11,4 @@ asMatrix2x3
 		a13: self a14;
 		a23: self a24;
 		yourself
+]
