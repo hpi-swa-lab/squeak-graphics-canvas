@@ -1,14 +1,8 @@
 Class {
 	#name : #RtRecordingCanvasTest,
-	#superclass : #RyCanvasTest,
-	#category : 'Renderly-Tests'
+	#superclass : #RtCanvasTest,
+	#category : #'RenderThee-Tests'
 }
-
-{ #category : #accessing }
-RtRecordingCanvasTest >> canvasForm [
-
-	^ canvas layer assuredForm
-]
 
 { #category : #initialization }
 RtRecordingCanvasTest >> createCanvas [

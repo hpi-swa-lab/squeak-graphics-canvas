@@ -1,3 +1,20 @@
+"
+I am a plugin-free adaptation of `MatrixTransform2x3`.
+For much faster access to my components, I store them as separate instance variables instead of as fields in a FloatArray.
+
+Why 2x3, not 3x3?
+Bottom row is always the same when multiplying:
+```
+c := a * b
+				b11 b12 b13
+				b21 b22 b23
+				0      0     1
+
+a11 a12 a13	c11 c12 c13
+a21 a22 a23	c21 c22 c23
+0     0    1		0      0     1
+```
+"
 Class {
 	#name : #Matrix2x3,
 	#superclass : #DisplayTransform,
@@ -172,7 +189,14 @@ Matrix2x3 >> asMatrix2x3 [
 { #category : #converting }
 Matrix2x3 >> asMatrixTransform2x3 [
 
-	^ self
+	^ MatrixTransform2x3 new
+		a11: a11;
+		a12: a12;
+		a13: a13;
+		a21: a21;
+		a22: a22;
+		a23: a23;
+		yourself
 ]
 
 { #category : #composing }
@@ -262,7 +286,7 @@ Matrix2x3 >> hash [
 
 { #category : #transforming }
 Matrix2x3 >> inverseTransformation [
-	"Return the inverse transformation of the receiver."
+	"Answers the inverse transformation of the receiver."
 	^ self shallowCopy invert
 ]
 
@@ -372,7 +396,7 @@ Matrix2x3 >> printOn: aStream [
 		nextPut:$).
 ]
 
-{ #category : #private }
+{ #category : #initialization }
 Matrix2x3 >> setAngle: degrees [
 	"Set the raw rotation angle in the receiver"
 	| rad s c |
@@ -383,28 +407,28 @@ Matrix2x3 >> setAngle: degrees [
 	a21 := s. a22 := c
 ]
 
-{ #category : #private }
+{ #category : #initialization }
 Matrix2x3 >> setIdentity [
 
 	a11 := 1.0. a12 := 0.0. a13 := 0.0.
 	a21 := 0.0. a22 := 1.0. a23 := 0.0
 ]
 
-{ #category : #private }
+{ #category : #initialization }
 Matrix2x3 >> setOffset: aPoint [
 	"Set the raw offset in the receiver"
 	a13 := aPoint x asFloat.
 	a23 := aPoint y asFloat
 ]
 
-{ #category : #private }
+{ #category : #initialization }
 Matrix2x3 >> setScale: aPoint [
 	"Set the raw scale in the receiver"
 	a11 := aPoint x asFloat.
 	a22 := aPoint y asFloat
 ]
 
-{ #category : #private }
+{ #category : #initialization }
 Matrix2x3 >> setZero [
 
 	a11 := 0.0. a12 := 0.0. a13 := 0.0.

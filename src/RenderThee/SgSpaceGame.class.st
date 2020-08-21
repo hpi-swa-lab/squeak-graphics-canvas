@@ -1,7 +1,10 @@
+"
+Open me! `SgSpaceGame open`
+"
 Class {
 	#name : #SgSpaceGame,
 	#superclass : #Morph,
-	#category : #'RenderThee-Demo'
+	#category : #'RenderThee-Demo-SpaceGame'
 }
 
 { #category : #'instance creation' }

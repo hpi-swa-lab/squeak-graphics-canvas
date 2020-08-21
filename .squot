@@ -2,6 +2,5 @@ OrderedDictionary {
 	'src/3DTransform' : #SquotTonelSerializer,
 	'src/MPOpenGL' : #SquotTonelSerializer,
 	'src/RenderThee' : #SquotTonelSerializer,
-	'src/Renderly' : #SquotTonelSerializer,
 	'src/Vulkan-FFI-Support' : #SquotTonelSerializer
 }

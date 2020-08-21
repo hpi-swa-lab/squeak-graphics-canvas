@@ -1,3 +1,7 @@
+"
+Upon initialization I open a separate GLFW window that exists until I am deleted.
+I render the ActiveWorld into said window using a layer tree renderer.
+"
 Class {
 	#name : #RtMirrorControl,
 	#superclass : #Morph,
@@ -5,7 +9,7 @@ Class {
 		'renderer',
 		'store'
 	],
-	#category : #'RenderThee-Core'
+	#category : #'RenderThee-Demo'
 }
 
 { #category : #deletion }
@@ -13,14 +17,6 @@ RtMirrorControl >> delete [
 
 	self glLibrary isSymbol ifFalse: [self glLibrary context destroy].
 	super delete
-]
-
-{ #category : #accessing }
-RtMirrorControl >> frameTime: milliseconds [
-
-	"FileStream stdout
-		nextPutAll: milliseconds asString;
-		lf"
 ]
 
 { #category : #accessing }
@@ -42,7 +38,7 @@ RtMirrorControl >> initialize [
 { #category : #testing }
 RtMirrorControl >> shouldClose [
 
-	^ self glLibrary = #glSuspended or: [self glLibrary shouldClose]
+	^ self glLibrary isSymbol or: [self glLibrary shouldClose]
 ]
 
 { #category : #stepping }

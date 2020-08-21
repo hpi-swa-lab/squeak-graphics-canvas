@@ -1,3 +1,7 @@
+"
+I am a helper class to easily build wrappers for a Canvas.
+My subclasses can redefine my methods to intercept messages to the wrapped canvas.
+"
 Class {
 	#name : #RtWrapperCanvas,
 	#superclass : #Canvas,

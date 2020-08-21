@@ -232,10 +232,10 @@ RtLayer >> offset: anObject [
 	offset := anObject
 ]
 
-{ #category : #utilities }
+{ #category : #debugging }
 RtLayer >> open [
 
-	self assuredForm asMorph openInHand
+	^ self asForm asMorph openInHand
 ]
 
 { #category : #accessing }

@@ -1,12 +1,6 @@
 "
-A RtRecordingCanvas records incoming draw calls to build a layer tree.
-The built tree will consist of objects of RtLayer. RtRecordingCanvas is used for damaged morphs.
-
-Instance Variables
-	canvasStack:		<Object>
-	groupLayer:		<Object>
-	isReRecording:		<Object>
-	offsetToLastTransform:		<Object>
+I record incoming draw calls to build a layer tree.
+The built tree will consist of `RtLayer`s.
 "
 Class {
 	#name : #RtRecordingCanvas,
@@ -20,10 +14,8 @@ Class {
 }
 
 { #category : #examples }
-RtRecordingCanvas class >> example01 [
-	"
-	self example01
-	"
+RtRecordingCanvas class >> example1 [
+	"self example1"
 	| morph canvas |
 	morph := Morph new
 				addMorph: (TransformMorph new
@@ -34,6 +26,12 @@ RtRecordingCanvas class >> example01 [
 				yourself.
 	canvas := self record: morph.
 	canvas layer open
+]
+
+{ #category : #examples }
+RtRecordingCanvas class >> example2 [
+	"self example2"
+	(self record: ActiveWorld) layer open
 ]
 
 { #category : #'instance creation' }
@@ -105,7 +103,7 @@ RtRecordingCanvas >> fullDrawMorph: aMorph [
 	"can we reuse an existing layer and skip drawing aMorph completely?"
 	(self isReusingLayers and: aMorph isRepaintBoundary) ifTrue: [
 		aMorph groupLayer ifNotNil: [:reusableLayer |
-			reusableLayer bounds: aMorph bounds.
+			reusableLayer bounds: aMorph bounds. "outerBounds?"
 			reusableLayer outerTransform: wrappedCanvas transform.
 			^ self addLayer: reusableLayer]].
 	

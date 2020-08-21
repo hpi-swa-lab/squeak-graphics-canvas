@@ -1,7 +1,7 @@
 Class {
 	#name : #SgImages,
 	#superclass : #Object,
-	#category : #'RenderThee-Demo'
+	#category : #'RenderThee-Demo-SpaceGame'
 }
 
 { #category : #compiling }
