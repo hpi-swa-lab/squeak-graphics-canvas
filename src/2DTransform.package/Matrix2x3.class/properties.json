@@ -1,0 +1,20 @@
+{
+	"category" : "2DTransform",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"Identity",
+		"Zero" ],
+	"commentStamp" : "stlu 8/21/2020 16:02",
+	"instvars" : [
+		"a11",
+		"a12",
+		"a13",
+		"a21",
+		"a22",
+		"a23" ],
+	"name" : "Matrix2x3",
+	"pools" : [
+		 ],
+	"super" : "DisplayTransform",
+	"type" : "normal" }
