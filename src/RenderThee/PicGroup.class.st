@@ -1,3 +1,8 @@
+"
+I am a node in a tree.
+I hold a collection of children which I composite to draw myself.
+Subclasses of me modify properties of the subtree they represent.
+"
 Class {
 	#name : #PicGroup,
 	#superclass : #PicCommand,
@@ -23,14 +28,14 @@ PicGroup >> addChild: aCommand [
 
 { #category : #accessing }
 PicGroup >> children [
-
+	"A collection of PicCommand. Last child has front-most z-coordinate."
 	^ children
 ]
 
 { #category : #accessing }
-PicGroup >> children: anObject [
+PicGroup >> children: aCollection [
 
-	children := anObject
+	children := aCollection
 ]
 
 { #category : #enumerating }

@@ -1,3 +1,7 @@
+"
+I clip the drawing of my children to a given rectangle.
+My clipping rectangle is stored in local coordinates relative to the last transform of my parent chain.
+"
 Class {
 	#name : #PicClip,
 	#superclass : #PicGroup,

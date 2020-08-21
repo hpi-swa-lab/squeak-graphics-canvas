@@ -1,3 +1,8 @@
+"
+I am a null object created for graphical operations which currently can not be correctly represented.
+I can hold an object that closer specifies the operation in question.
+My class globally stores all such specifications in its class variable `Remembrall` in order to find out which features are unsupported but actually used.
+"
 Class {
 	#name : #PicUnsupported,
 	#superclass : #PicCommand,

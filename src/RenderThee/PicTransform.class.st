@@ -1,3 +1,7 @@
+"
+I apply a matrix transform to the drawing of all of my children.
+The stored transform is a `Matrix2x3`.
+"
 Class {
 	#name : #PicTransform,
 	#superclass : #PicGroup,

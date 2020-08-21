@@ -1,3 +1,8 @@
+"
+I am a canvas that builds incoming draw commands into an object representation.
+I ignore draw calls that do not have any effect (e.g. transparent fill color and no border).
+My root is a `PicGroup`.
+"
 Class {
 	#name : #PicPictureCanvas,
 	#superclass : #Canvas,
@@ -11,15 +16,14 @@ Class {
 
 { #category : #accessing }
 PicPictureCanvas >> addCommand: aCommand [
-
+	"Adds aCommand to the currently active group (at the front-most z-coordinate)."
 	self currentGroup addChild: aCommand
 ]
 
 { #category : #accessing }
 PicPictureCanvas >> clear [
 	"Forget all contents of the current picture except for the current group stack."
-	groupStack do: [:group |
-		group removeAllChildren]
+	groupStack do: [:group | group removeAllChildren]
 ]
 
 { #category : #'drawing-support' }
@@ -33,7 +37,9 @@ PicPictureCanvas >> clipBy: aRectangle during: aBlock [
 
 { #category : #accessing }
 PicPictureCanvas >> clipRect [
-	"local to current transform"
+	"Answers the rectangle by which all incoming draw commands are clipped.
+	Intersection of all clipping rectangles active in the current scope.
+	Not necessarily minimal. Local to the current transform."
 	^ clipRect
 ]
 
@@ -45,7 +51,7 @@ PicPictureCanvas >> clipRect: anObject [
 
 { #category : #'scoped state' }
 PicPictureCanvas >> clipRect: aRectangle during: aBlock [
-
+	"Scoped setter for `clipRect` variable."
 	| previousClipRect |
 	previousClipRect := clipRect.
 	clipRect := aRectangle.
@@ -55,7 +61,7 @@ PicPictureCanvas >> clipRect: aRectangle during: aBlock [
 
 { #category : #accessing }
 PicPictureCanvas >> currentGroup [
-
+	"Answers the PicGroup to which all draw commands are currently added."
 	^ groupStack last
 ]
 
@@ -202,7 +208,8 @@ PicPictureCanvas >> frameRectangle: aRectangle borderStyle: aBorderStyle [
 
 { #category : #accessing }
 PicPictureCanvas >> getPicture [
-
+	"Answers the picture as drawn up to this point. Returns an object of kind PicGroup.
+	Creates a copy of all groups still on the group stack before combining them into the picture, so that the canvas can continue to be used afterwards."
 	| child |
 	child := nil.
 	groupStack reverseDo: [:group |
@@ -217,7 +224,7 @@ PicPictureCanvas >> getPicture [
 
 { #category : #'scoped state' }
 PicPictureCanvas >> group: aGroup during: aBlock [
-
+	"Scoped setter for `group` variable."
 	| group |
 	groupStack addLast: aGroup.
 	aBlock cull: self.
@@ -267,7 +274,7 @@ PicPictureCanvas >> line: from to: to width: width color: color [
 
 { #category : #accessing }
 PicPictureCanvas >> origin [
-
+	"Answers the global coordinate of the currently active local origin."
 	^ (transform localPointToGlobal: 0@0) truncated
 ]
 
@@ -288,12 +295,6 @@ PicPictureCanvas >> preserveStateDuring: aBlock [
 	aBlock value: self
 ]
 
-{ #category : #accessing }
-PicPictureCanvas >> rootGroup [
-
-	^ groupStack first
-]
-
 { #category : #'drawing-images' }
 PicPictureCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor [
 
@@ -303,7 +304,8 @@ PicPictureCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color
 
 { #category : #accessing }
 PicPictureCanvas >> transform [
-
+	"Answers the Matrix2x3 by which all drawing commands are currently transformed.
+	Multiplication of all transforms active in the current scope."
 	^ transform
 ]
 
@@ -315,7 +317,7 @@ PicPictureCanvas >> transform: anObject [
 
 { #category : #'scoped state' }
 PicPictureCanvas >> transform: aTransform during: aBlock [
-
+	"Scoped setter for `transform` variable."
 	| previousTransform |
 	previousTransform := transform.
 	transform := aTransform.
@@ -346,7 +348,7 @@ PicPictureCanvas >> translateBy: aPoint during: aBlock [
 
 { #category : #private }
 PicPictureCanvas >> unsupported: selector [
-
+	"Called whenever a currently not supported message of the Canvas interface is sent."
 	self addCommand: (PicUnsupported type: selector)
 ]
 
