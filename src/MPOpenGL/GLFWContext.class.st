@@ -10,8 +10,8 @@ Class {
 }
 
 { #category : #'instance creation' }
-GLFWContext class >> newIn: bounds forLibraryClass: gl [
-	^ GLFWContext new initializeIn: bounds for: gl
+GLFWContext class >> newIn: bounds forLibraryClass: gl title: aString [
+	^ GLFWContext new initializeIn: bounds for: gl title: aString
 ]
 
 { #category : #activation }
@@ -75,7 +75,7 @@ GLFWContext >> initializeCallbacks [
 ]
 
 { #category : #'initialize-release' }
-GLFWContext >> initializeIn: bounds for: aLibraryClass [
+GLFWContext >> initializeIn: bounds for: aLibraryClass title: aString [
 
 	libraryClass := aLibraryClass.
 
@@ -87,7 +87,7 @@ GLFWContext >> initializeIn: bounds for: aLibraryClass [
 	window := GLFW value
 				createWindowWidth: bounds width
 				height: bounds height
-				title: 'GLFW Window'
+				title: aString
 				monitor: nil
 				share: nil.
 	
