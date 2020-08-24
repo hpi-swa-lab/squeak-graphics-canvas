@@ -145,10 +145,3 @@ GLFrameBuffer >> texture2D: aTexture attachment: anAttachment [
 			with: 0.
 		gl checkForError]
 ]
-
-{ #category : #binding }
-GLFrameBuffer >> unbind [
-	"bind no framebuffer to a framebuffer target"
-	gl glBindFramebuffer: target with: GL_NONE
-
-]

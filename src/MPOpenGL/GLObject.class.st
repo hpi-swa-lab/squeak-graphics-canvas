@@ -129,9 +129,3 @@ GLObject >> initializeWithContext: glContext [
 
 	gl := glContext ifNil: [GL value]
 ]
-
-{ #category : #binding }
-GLObject >> unbind [
-
-	self bind: GL_NONE
-]

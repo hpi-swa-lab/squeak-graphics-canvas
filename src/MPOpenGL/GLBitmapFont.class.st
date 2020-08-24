@@ -36,7 +36,7 @@ GLBitmapFont >> font: aFont [
 	
 	offsets := Array new: self printableCharacters size.
 	
-	texture := (gl createObject: GLTexture)
+	texture := (gl createObject: GLTextureRGBA)
 		extent: (self printableCharacters collect: [:char | (aFont characterFormAt: char asCharacter) width]) sum @ (aFont height).
 	
 	x := 0.

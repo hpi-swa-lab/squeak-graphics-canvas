@@ -144,12 +144,6 @@ GLRenderBuffer >> samples: anObject [
 	samples := anObject
 ]
 
-{ #category : #binding }
-GLRenderBuffer >> unbind [
-	"bind no renderbuffer to a renderbuffer target"
-	gl glBindRenderbuffer: GL_RENDERBUFFER with: GL_NONE
-]
-
 { #category : #accessing }
 GLRenderBuffer >> width [
 	^ width

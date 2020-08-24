@@ -1,11 +1,11 @@
 Class {
-	#name : #GLTexture,
+	#name : #GLTextureRGBA,
 	#superclass : #GLObject,
 	#category : #'MPOpenGL-Core'
 }
 
 { #category : #binding }
-GLTexture >> asForm [
+GLTextureRGBA >> asForm [
 
 	| bufSize data |
 	bufSize := self extent area * 4.
@@ -26,19 +26,19 @@ GLTexture >> asForm [
 ]
 
 { #category : #binding }
-GLTexture >> bind: anID [
+GLTextureRGBA >> bind: anID [
 
 	gl glBindTexture: GL_TEXTURE_2D with: anID
 ]
 
 { #category : #binding }
-GLTexture >> bindingEnum [
+GLTextureRGBA >> bindingEnum [
 
 	^ GL_TEXTURE_BINDING_2D
 ]
 
 { #category : #'initialize-release' }
-GLTexture >> delete [
+GLTextureRGBA >> delete [
 
 	| texIDs |
 	texIDs := IntegerArray with: id.
@@ -46,12 +46,12 @@ GLTexture >> delete [
 ]
 
 { #category : #accessing }
-GLTexture >> extent [
+GLTextureRGBA >> extent [
 	^ self width @ self height
 ]
 
 { #category : #accessing }
-GLTexture >> extent: aPoint [
+GLTextureRGBA >> extent: aPoint [
 
 	self boundDuring: [
 		gl
@@ -76,7 +76,7 @@ GLTexture >> extent: aPoint [
 ]
 
 { #category : #private }
-GLTexture >> getTextureParameterI: parameter [
+GLTextureRGBA >> getTextureParameterI: parameter [
 	
 	self boundDuring: [ | array |
 		array := IntegerArray new: 1.
@@ -85,18 +85,18 @@ GLTexture >> getTextureParameterI: parameter [
 ]
 
 { #category : #accessing }
-GLTexture >> height [
+GLTextureRGBA >> height [
 	^ self getTextureParameterI: GL_TEXTURE_HEIGHT
 ]
 
 { #category : #accessing }
-GLTexture >> image: aForm [
+GLTextureRGBA >> image: aForm [
 
 	self image: aForm minFilter: GL_LINEAR magFilter: GL_LINEAR
 ]
 
 { #category : #accessing }
-GLTexture >> image: aForm minFilter: anEnum magFilter: anEnum2 [
+GLTextureRGBA >> image: aForm minFilter: anEnum magFilter: anEnum2 [
 
 	self boundDuring: [
 			gl
@@ -121,7 +121,7 @@ GLTexture >> image: aForm minFilter: anEnum magFilter: anEnum2 [
 ]
 
 { #category : #'initialize-release' }
-GLTexture >> initializeWithContext: glContext [
+GLTextureRGBA >> initializeWithContext: glContext [
 
 	| texIDs |
 	super initializeWithContext: glContext.
@@ -131,7 +131,7 @@ GLTexture >> initializeWithContext: glContext [
 ]
 
 { #category : #accessing }
-GLTexture >> subImage: aForm at: aPoint [
+GLTextureRGBA >> subImage: aForm at: aPoint [
 
 	self boundDuring: [
 		gl checkForError.
@@ -148,13 +148,7 @@ GLTexture >> subImage: aForm at: aPoint [
 		gl checkForError]
 ]
 
-{ #category : #binding }
-GLTexture >> unbind [
-
-	gl glBindTexture: GL_TEXTURE_2D with: GL_NONE
-]
-
 { #category : #accessing }
-GLTexture >> width [
+GLTextureRGBA >> width [
 	^ self getTextureParameterI: GL_TEXTURE_WIDTH
 ]

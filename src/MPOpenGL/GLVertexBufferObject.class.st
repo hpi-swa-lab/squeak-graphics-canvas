@@ -121,9 +121,3 @@ GLVertexBufferObject >> numElements: anObject [
 
 	numElements := anObject
 ]
-
-{ #category : #binding }
-GLVertexBufferObject >> unbind [
-	"unbind a vbo"
-	gl glBindBuffer: GL_ARRAY_BUFFER with: GL_NONE 
-]

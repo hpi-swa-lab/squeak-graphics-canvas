@@ -62,9 +62,3 @@ GLVertexArrayObject >> numElements [
 
 	^ numElements
 ]
-
-{ #category : #binding }
-GLVertexArrayObject >> unbind [
-
-	gl glBindVertexArray: GL_NONE
-]
