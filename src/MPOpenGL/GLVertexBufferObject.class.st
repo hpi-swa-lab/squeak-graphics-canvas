@@ -46,22 +46,13 @@ GLVertexBufferObject >> componentsPerVertex: anObject [
 	componentsPerVertex := anObject
 ]
 
-{ #category : #'initialize-release' }
-GLVertexBufferObject >> create [
-
-	| ids |
-	ids := IntegerArray new: 1.
-	gl glGenBuffers: 1 with: ids.
-	id := ids first
-]
-
 { #category : #usage }
 GLVertexBufferObject >> data: anArray usage: aUsageEnum componentsPerVertex: aNumber [
 
 	bytesPerElement := anArray byteSize / anArray size.
 	gl glBindBuffer: GL_ARRAY_BUFFER with: id.
 	gl glBufferData: GL_ARRAY_BUFFER
-		with: anArray byteSize + bytesPerElement * 2
+		with: anArray byteSize
 		with: anArray
 		with: aUsageEnum.
 	numElements := anArray size.
@@ -71,7 +62,11 @@ GLVertexBufferObject >> data: anArray usage: aUsageEnum componentsPerVertex: aNu
 
 { #category : #'initialize-release' }
 GLVertexBufferObject >> delete [
-	self flag: #todo
+
+	gl makeCurrentDuring: [ | ids |
+		ids := IntegerArray new: 1.
+		ids first: id.
+		gl glDeleteBuffers: 1 with: ids ]
 ]
 
 { #category : #usage }
@@ -125,10 +120,4 @@ GLVertexBufferObject >> numElements [
 GLVertexBufferObject >> numElements: anObject [
 
 	numElements := anObject
-]
-
-{ #category : #binding }
-GLVertexBufferObject >> unbind [
-	"unbind a vbo"
-	gl glBindBuffer: GL_ARRAY_BUFFER with: GL_NONE 
 ]

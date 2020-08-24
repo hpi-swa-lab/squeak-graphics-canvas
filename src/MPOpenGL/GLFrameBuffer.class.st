@@ -46,34 +46,6 @@ GLFrameBuffer >> asFormOfExtent: aPoint [
 ]
 
 { #category : #binding }
-GLFrameBuffer >> attachRenderBuffer: aRenderBuffer [
-	self attachRenderBuffer: aRenderBuffer attachment: GL_COLOR_ATTACHMENT0
-]
-
-{ #category : #binding }
-GLFrameBuffer >> attachRenderBuffer: aRenderBuffer attachment: attachment [ 
-	"attach a renderbuffer as a logical buffer of a framebuffer object"
-	| renderBuffer |
-	renderBuffer := aRenderBuffer isNumber ifTrue: [aRenderBuffer] ifFalse: [aRenderBuffer id].
-	
-	self boundDuring: [
-		"Since GL 4.5, one can bind renderbuffers by referencing"
-		(gl isKindOf: GL4_5)
-			ifTrue: [
-				gl glNamedFramebufferRenderbuffer
-					with: id
-					with: attachment
-					with: GL_RENDERBUFFER
-					with: renderBuffer]
-			ifFalse: [
-				gl glFramebufferRenderbuffer: GL_FRAMEBUFFER
-					with: attachment
-					with: GL_RENDERBUFFER
-					with: renderBuffer].
-		self checkComplete]
-]
-
-{ #category : #binding }
 GLFrameBuffer >> bind: anID [
 	"bind a framebuffer to a framebuffer target"
 	gl glBindFramebuffer: target with: anID
@@ -97,24 +69,19 @@ GLFrameBuffer >> colorAttachment0 [
 
 { #category : #'initialize-release' }
 GLFrameBuffer >> delete [
-	"delete framebuffer object"
+	
 	gl glDeleteFramebuffers: 1 with: (IntegerArray with: id).
 ]
 
 { #category : #'initialize-release' }
 GLFrameBuffer >> initializeWithContext: glContext [
-	"generate framebuffer object name (id)"
+
 	| ids |
 	super initializeWithContext: glContext.
 	target := GL_FRAMEBUFFER.
 	ids := IntegerArray new: 1.
 	gl glGenFramebuffers: 1 with: ids.
 	id := ids first
-]
-
-{ #category : #reference }
-GLFrameBuffer >> renderBufferClass [ 
-	^GLRenderBuffer
 ]
 
 { #category : #accessing }
@@ -144,11 +111,4 @@ GLFrameBuffer >> texture2D: aTexture attachment: anAttachment [
 			with: aTexture id
 			with: 0.
 		gl checkForError]
-]
-
-{ #category : #binding }
-GLFrameBuffer >> unbind [
-	"bind no framebuffer to a framebuffer target"
-	gl glBindFramebuffer: target with: GL_NONE
-
 ]

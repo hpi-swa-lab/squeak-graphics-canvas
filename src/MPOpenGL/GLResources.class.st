@@ -27,7 +27,7 @@ GLResources >> createObject: aClass context: aContext [
 { #category : #'as yet unclassified' }
 GLResources >> getShaderProgram: aClass library: aLibrary [
 	
-	self assert: (GL value == aLibrary).
+	aLibrary assertIsCurrent.
 	
 	^ shaders at: aClass ifAbsentPut: [ | shader |
 		shader := aLibrary createObject: aClass.

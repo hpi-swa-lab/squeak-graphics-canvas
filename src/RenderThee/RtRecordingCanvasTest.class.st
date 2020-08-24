@@ -4,6 +4,12 @@ Class {
 	#category : #'RenderThee-Tests'
 }
 
+{ #category : #accessing }
+RtRecordingCanvasTest >> canvasForm [
+
+	^ canvas layer assuredForm
+]
+
 { #category : #initialization }
 RtRecordingCanvasTest >> createCanvas [
 

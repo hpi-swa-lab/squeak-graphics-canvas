@@ -79,7 +79,7 @@ GLObject >> boundDuring: aBlock [
 
 	| previousBinding |
 	
-	self assert: (GL value == gl).
+	gl assertIsCurrent.
 	
 	previousBinding := self currentBinding.
 	previousBinding = id ifTrue: [^ aBlock value].
@@ -128,10 +128,4 @@ GLObject >> id [
 GLObject >> initializeWithContext: glContext [
 
 	gl := glContext ifNil: [GL value]
-]
-
-{ #category : #binding }
-GLObject >> unbind [
-
-	self bind: GL_NONE
 ]

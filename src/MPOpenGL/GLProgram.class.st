@@ -158,7 +158,7 @@ GLProgram >> initializeShaders [
 { #category : #'initialize-release' }
 GLProgram >> initializeWithContext: glContext [
 
-	self assert: (GL value == glContext).
+	glContext assertIsCurrent.
 
 	super initializeWithContext: glContext.
 	id := gl glCreateProgram.
@@ -210,14 +210,14 @@ GLProgram >> use [
 ]
 
 { #category : #usage }
-GLProgram >> vertexAttrib: position value: value stride: stride offset: offset [
+GLProgram >> vertexAttrib: position value: value components: components stride: stride offset: offset [
 
  	| byteOffset |
 	byteOffset := ExternalAddress new fromInteger: offset * value bytesPerElement.
 	gl glEnableVertexAttribArray: position.
 	value isGLBuffer ifTrue: [
 		gl glVertexAttribPointer: position
-			with: value componentsPerVertex
+			with: components
 			with: value glType
 			with: GL_FALSE
 			with: stride * value bytesPerElement

@@ -20,32 +20,19 @@ GLVertexArrayObject >> bindingEnum [
 	^ GL_VERTEX_ARRAY_BUFFER_BINDING
 ]
 
-{ #category : #usage }
-GLVertexArrayObject >> data: anArray usage: aUsageEnum [
-
-	gl glBindBuffer: GL_ARRAY_BUFFER with: id.
-	gl glBufferData: GL_ARRAY_BUFFER with: anArray byteSize with: anArray with: aUsageEnum.
-	numElements := anArray size.
-	glType := anArray glType
-]
-
 { #category : #'initialize-release' }
 GLVertexArrayObject >> delete [
 
-	self notYetImplemented
+	gl makeCurrentDuring: [ | ids |
+		ids := IntegerArray new: 1.
+		ids first: id.
+		gl glDeleteVertexArrays: 1 with: ids ]
 ]
 
 { #category : #usage }
 GLVertexArrayObject >> draw: aModeEnum [
 
 	self draw: aModeEnum from: 0 count: numElements
-]
-
-{ #category : #usage }
-GLVertexArrayObject >> draw: aModeEnum from: startIndex count: count [
-
-	gl glBindBuffer: GL_ARRAY_BUFFER with: id.
-	gl glDrawArrays: aModeEnum with: startIndex with: count
 ]
 
 { #category : #accessing }
@@ -74,10 +61,4 @@ GLVertexArrayObject >> isGLBuffer [
 GLVertexArrayObject >> numElements [
 
 	^ numElements
-]
-
-{ #category : #binding }
-GLVertexArrayObject >> unbind [
-
-	gl glBindVertexArray: GL_NONE
 ]

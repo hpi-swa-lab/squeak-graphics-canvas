@@ -71,17 +71,17 @@ GLSharedCanvasResources >> initializeProgramAttributes [
 
 	textureProgram boundDuring: [
 		textureProgram image: 0.
-		textureProgram vertexAttrib: textureProgram aPosLocation value: vbo stride: 4 offset: 0.
-		textureProgram vertexAttrib: textureProgram aTexCoordsLocation value: vbo stride: 4 offset: 2.
+		textureProgram vertexAttrib: textureProgram aPosLocation value: vbo components: 2 stride: 4 offset: 0.
+		textureProgram vertexAttrib: textureProgram aTexCoordsLocation value: vbo components: 2 stride: 4 offset: 2.
 		GL value checkForError].
 	
-	outlineProgram vertexAttrib: outlineProgram aPosLocation value: vbo stride: 4 offset: 0.
+	outlineProgram vertexAttrib: outlineProgram aPosLocation value: vbo components: 2 stride: 4 offset: 0.
 	GL value checkForError.
-	outlineProgram vertexAttrib: outlineProgram aTexCoordsLocation value: vbo stride: 4 offset: 2.
+	outlineProgram vertexAttrib: outlineProgram aTexCoordsLocation value: vbo components: 2 stride: 4 offset: 2.
 	GL value checkForError.
 	
 	rectangleProgram boundDuring: [
-		rectangleProgram vertexAttrib: rectangleProgram aPosLocation value: vbo stride: 4 offset: 0]
+		rectangleProgram vertexAttrib: rectangleProgram aPosLocation value: vbo components: 2 stride: 4 offset: 0]
 ]
 
 { #category : #initialization }
