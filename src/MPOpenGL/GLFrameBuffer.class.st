@@ -69,13 +69,13 @@ GLFrameBuffer >> colorAttachment0 [
 
 { #category : #'initialize-release' }
 GLFrameBuffer >> delete [
-	"delete framebuffer object"
+	
 	gl glDeleteFramebuffers: 1 with: (IntegerArray with: id).
 ]
 
 { #category : #'initialize-release' }
 GLFrameBuffer >> initializeWithContext: glContext [
-	"generate framebuffer object name (id)"
+
 	| ids |
 	super initializeWithContext: glContext.
 	target := GL_FRAMEBUFFER.
