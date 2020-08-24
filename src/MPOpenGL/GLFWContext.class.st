@@ -6,6 +6,9 @@ Class {
 		'callbacks',
 		'libraryClass'
 	],
+	#pools : [
+		'GLFWConstants'
+	],
 	#category : #'MPOpenGL-Core'
 }
 
@@ -17,13 +20,13 @@ GLFWContext class >> newIn: bounds forLibraryClass: gl [
 { #category : #activation }
 GLFWContext >> activate [
 
-	GLFW value makeContextCurrent: window
+	GLFW makeContextCurrent: window
 ]
 
 { #category : #callbacks }
 GLFWContext >> cursorCallback: aBlock [
 
-	GLFW value
+	GLFW
 		setCursorPosCallback: window
 		with: (callbacks
 			at: #cursorPos
@@ -34,19 +37,22 @@ GLFWContext >> cursorCallback: aBlock [
 
 { #category : #activation }
 GLFWContext >> deactivate [
-	GLFW value makeContextCurrent: nil
+
+	GLFW makeContextCurrent: nil
 ]
 
 { #category : #'initialize-release' }
 GLFWContext >> destroy [
+
 	super destroy.
-	window ifNotNil: [ GLFW value destroyWindow: window ].
+	window ifNotNil: [ GLFW destroyWindow: window ].
 	window := nil
 ]
 
 { #category : #'initialize-release' }
 GLFWContext >> endFrame [
-	GLFW value pollEvents
+
+	GLFW pollEvents
 ]
 
 { #category : #'initialize-release' }
@@ -79,12 +85,12 @@ GLFWContext >> initializeIn: bounds for: aLibraryClass [
 
 	libraryClass := aLibraryClass.
 
-	GLFW value windowHint: GLFW CONTEXT_VERSION_MAJOR value: aLibraryClass majorVersion.
-	GLFW value windowHint: GLFW CONTEXT_VERSION_MINOR value: aLibraryClass minorVersion.
+	GLFW windowHint: CONTEXT_VERSION_MAJOR value: aLibraryClass majorVersion.
+	GLFW windowHint: CONTEXT_VERSION_MINOR value: aLibraryClass minorVersion.
 	
 	callbacks := Dictionary new.
 	
-	window := GLFW value
+	window := GLFW
 				createWindowWidth: bounds width
 				height: bounds height
 				title: 'GLFW Window'
@@ -92,7 +98,7 @@ GLFWContext >> initializeIn: bounds for: aLibraryClass [
 				share: nil.
 	
 	self activate.
-	GLFW value swapInterval: 1.
+	GLFW swapInterval: 1.
 	self initializeCallbacks.
 	GL value ifNotNil: [:lib | lib context activate].
 	
@@ -101,13 +107,14 @@ GLFWContext >> initializeIn: bounds for: aLibraryClass [
 
 { #category : #activation }
 GLFWContext >> library [
+
 	^ libraryClass context: self
 ]
 
 { #category : #callbacks }
 GLFWContext >> mouseButtonCallback: aBlock [
 
-	GLFW value
+	GLFW
 		setMouseButtonCallback: window
 		with: (callbacks
 			at: #mouseButton
@@ -119,12 +126,13 @@ GLFWContext >> mouseButtonCallback: aBlock [
 
 { #category : #testing }
 GLFWContext >> shouldClose [
-	^ (GLFW value windowShouldClose: window) ~= 0
+
+	^ (GLFW windowShouldClose: window) ~= 0
 ]
 
 { #category : #'initialize-release' }
 GLFWContext >> swapBuffers [
 
-	GLFW value swapBuffers: window.
+	GLFW swapBuffers: window.
 	^ true
 ]

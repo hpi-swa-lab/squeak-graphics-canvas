@@ -1,6 +1,6 @@
 "
-I record incoming draw calls to build a layer tree.
-The built tree will consist of `RtLayer`s.
+I record the drawing of a Morph to build a layer tree.
+A Morph can request to be recorded into its own group layer by overwriting `Morph >> #isRepaintBoundary`.
 "
 Class {
 	#name : #RtRecordingCanvas,
@@ -160,7 +160,7 @@ RtRecordingCanvas >> pictureCanvas: aCanvas during: aBlock [
 
 { #category : #recording }
 RtRecordingCanvas >> reRecord: aMorph [
-
+	"Records aMorph under the assumption that layers reflect the current state of their respective morphs."
 	self isReRecording: true.
 	self record: aMorph
 ]
