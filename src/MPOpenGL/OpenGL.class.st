@@ -166,6 +166,12 @@ OpenGL class >> shutDown [
 
 ]
 
+{ #category : #debugging }
+OpenGL >> assertIsCurrent [
+	
+	self assert: (GL value == self)
+]
+
 { #category : #accessing }
 OpenGL >> at: aKey [
 	^ context resources userData at: aKey

@@ -46,15 +46,6 @@ GLVertexBufferObject >> componentsPerVertex: anObject [
 	componentsPerVertex := anObject
 ]
 
-{ #category : #'initialize-release' }
-GLVertexBufferObject >> create [
-
-	| ids |
-	ids := IntegerArray new: 1.
-	gl glGenBuffers: 1 with: ids.
-	id := ids first
-]
-
 { #category : #usage }
 GLVertexBufferObject >> data: anArray usage: aUsageEnum componentsPerVertex: aNumber [
 
@@ -67,11 +58,6 @@ GLVertexBufferObject >> data: anArray usage: aUsageEnum componentsPerVertex: aNu
 	numElements := anArray size.
 	glType := anArray glType.
 	componentsPerVertex := aNumber
-]
-
-{ #category : #'initialize-release' }
-GLVertexBufferObject >> delete [
-	self flag: #todo
 ]
 
 { #category : #usage }

@@ -75,14 +75,13 @@ GLTexture >> extent: aPoint [
 			with: GL_LINEAR]
 ]
 
-{ #category : #accessing }
+{ #category : #private }
 GLTexture >> getTextureParameterI: parameter [
-	| array |
-	self bind.
-	array := IntegerArray new: 1.
-	gl glGetTexLevelParameteriv: GL_TEXTURE_2D with: 0 with: parameter with: array.
-	self unbind.
-	^ array first
+	
+	self boundDuring: [ | array |
+		array := IntegerArray new: 1.
+		gl glGetTexLevelParameteriv: GL_TEXTURE_2D with: 0 with: parameter with: array.
+		^ array first ]
 ]
 
 { #category : #accessing }
@@ -92,6 +91,12 @@ GLTexture >> height [
 
 { #category : #accessing }
 GLTexture >> image: aForm [
+
+	self image: aForm minFilter: GL_LINEAR magFilter: GL_LINEAR
+]
+
+{ #category : #accessing }
+GLTexture >> image: aForm minFilter: anEnum magFilter: anEnum2 [
 
 	self boundDuring: [
 			gl
@@ -108,11 +113,11 @@ GLTexture >> image: aForm [
 			gl
 				glTexParameteri: GL_TEXTURE_2D
 				with: GL_TEXTURE_MIN_FILTER
-				with: GL_LINEAR.
+				with: anEnum.
 			gl
 				glTexParameteri: GL_TEXTURE_2D
 				with: GL_TEXTURE_MAG_FILTER
-				with: GL_LINEAR]
+				with: anEnum]
 ]
 
 { #category : #'initialize-release' }
@@ -125,7 +130,7 @@ GLTexture >> initializeWithContext: glContext [
 	id := texIDs first
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 GLTexture >> subImage: aForm at: aPoint [
 
 	self boundDuring: [
