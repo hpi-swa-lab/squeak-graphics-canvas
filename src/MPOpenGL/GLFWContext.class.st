@@ -13,8 +13,9 @@ Class {
 }
 
 { #category : #'instance creation' }
-GLFWContext class >> newIn: bounds forLibraryClass: gl title: aString [
-	^ GLFWContext new initializeIn: bounds for: gl title: aString
+GLFWContext class >> newIn: bounds forLibraryClass: aLibraryClass title: aString [
+
+	^ GLFWContext new initializeIn: bounds for: aLibraryClass title: aString
 ]
 
 { #category : #activation }
@@ -85,24 +86,38 @@ GLFWContext >> initializeIn: bounds for: aLibraryClass title: aString [
 
 	libraryClass := aLibraryClass.
 
-	GLFW value windowHint: GLFW CONTEXT_VERSION_MAJOR value: aLibraryClass majorVersion.
-	GLFW value windowHint: GLFW CONTEXT_VERSION_MINOR value: aLibraryClass minorVersion.
+	GLFW windowHint: CONTEXT_VERSION_MAJOR value: aLibraryClass majorVersion.
+	GLFW windowHint: CONTEXT_VERSION_MINOR value: aLibraryClass minorVersion.
 	
 	callbacks := Dictionary new.
 	
-	window := GLFW value
+	window := GLFW
 				createWindowWidth: bounds width
 				height: bounds height
 				title: aString
 				monitor: nil
 				share: nil.
 	
-	self activate.
-	GLFW value swapInterval: 1.
-	self initializeCallbacks.
-	GL value ifNotNil: [:lib | lib context activate].
+	GLFW getError ~= NO_ERROR ifTrue: [
+		^ self error: 'GLFW Error'].
 	
-	^ window ifNotNil: [self]
+	self initializeWindowState
+]
+
+{ #category : #'initialize-release' }
+GLFWContext >> initializeWindowState [
+
+	| oldContext |
+	"we need to switch the active OpenGL context"
+	oldContext := GL value ifNotNil: [:lib | lib context].
+	oldContext ifNotNil: [oldContext deactivate].
+	self activate.
+	
+	GLFW swapInterval: 0. "disable vsync"
+	self initializeCallbacks.
+	
+	self deactivate.
+	oldContext ifNotNil: [oldContext activate]
 ]
 
 { #category : #activation }

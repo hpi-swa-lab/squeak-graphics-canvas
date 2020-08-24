@@ -268,19 +268,24 @@ OpenGL >> getShaderProgram: aClass [
 
 { #category : #activation }
 OpenGL >> makeCurrentDuring: aBlock [
-	| oldContext |
-	GL value ifNotNil: [ :lib |
-		oldContext := lib context.
-		oldContext == context ifTrue: [^ aBlock value].
-		oldContext deactivate.
-		context activate.
-		[GL value: self during: aBlock] ensure: [
-			context deactivate.
-			oldContext activate ]]
-	ifNil: [
-		context activate.
-		GL value: self during: aBlock.
-		context deactivate ]
+
+	GL value
+		ifNotNil: [ :lib |
+			| oldContext |
+			self == lib ifTrue: [
+				^ aBlock value].
+			oldContext := lib context.
+			oldContext == context ifTrue: [
+				^ aBlock value: self during: aBlock].
+			oldContext deactivate.
+			context activate.
+			[GL value: self during: aBlock] ensure: [
+				context deactivate.
+				oldContext activate]]
+		ifNil: [
+			context activate.
+			GL value: self during: aBlock.
+			context deactivate ]
 ]
 
 { #category : #activation }

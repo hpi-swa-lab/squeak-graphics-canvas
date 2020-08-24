@@ -1,9 +1,6 @@
 Class {
 	#name : #GLFWLibrary,
 	#superclass : #ExternalLibrary,
-	#instVars : [
-		'isInitialized'
-	],
 	#pools : [
 		'GLFWConstants'
 	],
@@ -85,6 +82,12 @@ GLFWLibrary >> getCurrentContext [
 
 	<apicall: void* 'glfwGetCurrentContext' ()>
 	^ self externalCallFailed
+]
+
+{ #category : #helpers }
+GLFWLibrary >> getError [
+
+	^ self getError: nil
 ]
 
 { #category : #'api - uninitialized' }
