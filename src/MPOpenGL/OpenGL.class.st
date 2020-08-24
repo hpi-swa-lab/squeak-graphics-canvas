@@ -26,11 +26,9 @@ OpenGL class >> context: aContext [
 { #category : #example }
 OpenGL class >> example [	"OpenGL example"
 	"A very simple OpenGL example"
-
 	| ogl bounds |
 	bounds := 0@0 extent: 400@400.
-	ogl := GL2_0 newGLFWIn: bounds.
-	ogl ifNil:[^self error: 'Unable to create renderer'].
+	ogl := GL2_0 context: (B3DContext newIn: bounds).
 	[[Sensor anyButtonPressed or: [ogl shouldClose]] whileFalse: [ ogl newFrameDo: [
 	"--- this is the actual scene content ---"
 
@@ -234,6 +232,12 @@ OpenGL >> context: anObject [
 OpenGL >> createObject: aClass [
 
 	^ context resources createObject: aClass context: self
+]
+
+{ #category : #'initialize-release' }
+OpenGL >> destroy [
+
+	context destroy
 ]
 
 { #category : #'initialize-release' }

@@ -24,19 +24,19 @@ GLContext class >> shutDown [
 
 { #category : #'initialize-release' }
 GLContext >> destroy [
-	resources cleanup.
 
-
+	resources cleanup
 ]
 
 { #category : #'initialize-release' }
 GLContext >> initialize [
-	super initialize.
-	resources := GLResources new.
 
+	super initialize.
+	resources := GLResources new
 ]
 
 { #category : #accessing }
 GLContext >> resources [
+
 	^ resources
 ]
