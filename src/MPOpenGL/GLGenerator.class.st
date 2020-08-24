@@ -9,12 +9,20 @@ Available XML:
 	- [egl.xml](https://github.com/KhronosGroup/OpenGL-Registry/blob/master/xml/egl.xml)
 Notice that only `gl.xml` is actually actively supported.
 
-To re-generate the interface do the following:
-
+To (re-)generate the interface, do the following:
 ```smalltalk
 ""Drop XML file into squeak window""
 ""Open inspector""
-(GLGenerator xml: self) generateApi: 'GL'
+(GLGenerator xml: self)
+	generateApi: 'GL';
+	generateApi: 'GLES2'.
+```
+
+Alternatively:
+```smalltalk
+(GLGenerator fromFile: '/path/to/gl.xml')
+	generateApi: 'GL';
+	generateApi: 'GLES2'.
 ```
 "
 Class {

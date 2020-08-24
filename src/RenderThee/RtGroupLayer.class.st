@@ -106,7 +106,7 @@ RtGroupLayer >> update [
 	self invalidateCache.
 	
 	self bounds: morph bounds.
-	(RtRecordingCanvas layer: self) reRecord: morph.
+	(RtRecordingCanvas rootLayer: self) reRecord: morph.
 	
 	drawsSinceUpdate := 0
 ]

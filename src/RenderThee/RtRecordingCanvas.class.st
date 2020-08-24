@@ -6,9 +6,8 @@ Class {
 	#name : #RtRecordingCanvas,
 	#superclass : #RtWrapperCanvas,
 	#instVars : [
-		'canvasStack',
 		'isReRecording',
-		'groupLayer'
+		'rootLayer'
 	],
 	#category : #'RenderThee-Core'
 }
@@ -25,27 +24,19 @@ RtRecordingCanvas class >> example1 [
 								yourself);
 				yourself.
 	canvas := self record: morph.
-	canvas layer open
+	canvas rootLayer open
 ]
 
 { #category : #examples }
 RtRecordingCanvas class >> example2 [
 	"self example2"
-	(self record: ActiveWorld) layer open
+	(self record: ActiveWorld) rootLayer open
 ]
 
 { #category : #'instance creation' }
 RtRecordingCanvas class >> extent: aPoint [
 
-	^ self layer: (RtGroupLayer bounds: (0@0 extent: aPoint))
-]
-
-{ #category : #'instance creation' }
-RtRecordingCanvas class >> layer: aLayer [
-
-	^ self new
-		layer: aLayer;
-		yourself
+	^ self rootLayer: (RtGroupLayer bounds: (0@0 extent: aPoint))
 ]
 
 { #category : #'instance creation' }
@@ -55,11 +46,19 @@ RtRecordingCanvas class >> record: aMorph [
 		record: aMorph
 ]
 
+{ #category : #'instance creation' }
+RtRecordingCanvas class >> rootLayer: aGroupLayer [
+
+	^ self new
+		rootLayer: aGroupLayer;
+		yourself
+]
+
 { #category : #accessing }
 RtRecordingCanvas >> addLayer: aLayer [
 
 	self endPicture.
-	groupLayer addChild: aLayer
+	rootLayer addChild: aLayer
 ]
 
 { #category : #'repaint boundaries' }
@@ -67,13 +66,13 @@ RtRecordingCanvas >> changeGroupLayerTo: aLayer during: aBlock [
 
 	self endPicture.
 	
-	self groupLayer: aLayer during: [
+	self rootLayer: aLayer during: [
 		self pictureCanvas: PicPictureCanvas new during: [
 			self translateBy: aLayer offset negated during: [:c |
 				aBlock cull: c.
 				self endPicture]]].
 	
-	groupLayer addChild: aLayer
+	rootLayer addChild: aLayer
 ]
 
 { #category : #'repaint boundaries' }
@@ -83,13 +82,13 @@ RtRecordingCanvas >> endPicture [
 	picture := wrappedCanvas getPicture.
 	wrappedCanvas clear.
 	picture isDrawing ifTrue: [
-		groupLayer addChild: (RtDrawLayer picture: picture)]
+		rootLayer addChild: (RtDrawLayer picture: picture)]
 ]
 
 { #category : #'repaint boundaries' }
 RtRecordingCanvas >> fullDraw: anObject [
 
-	anObject groupLayer: groupLayer.
+	anObject groupLayer: rootLayer.
 	super fullDraw: anObject
 ]
 
@@ -111,16 +110,6 @@ RtRecordingCanvas >> fullDrawMorph: aMorph [
 	self
 		changeGroupLayerTo: (self newGroupLayerFor: aMorph)
 		during: [self fullDraw: aMorph]
-]
-
-{ #category : #'scoped state' }
-RtRecordingCanvas >> groupLayer: aLayer during: aBlock [
-
-	| previousLayer |
-	previousLayer := groupLayer.
-	groupLayer := aLayer.
-	aBlock cull: self.
-	groupLayer := previousLayer
 ]
 
 { #category : #initialization }
@@ -146,18 +135,6 @@ RtRecordingCanvas >> isReRecording: anObject [
 RtRecordingCanvas >> isReusingLayers [
 
 	^ self isReRecording
-]
-
-{ #category : #accessing }
-RtRecordingCanvas >> layer [
-
-	^ groupLayer
-]
-
-{ #category : #accessing }
-RtRecordingCanvas >> layer: anObject [
-
-	groupLayer := anObject
 ]
 
 { #category : #'repaint boundaries' }
@@ -191,8 +168,30 @@ RtRecordingCanvas >> reRecord: aMorph [
 { #category : #recording }
 RtRecordingCanvas >> record: aMorph [
 
-	groupLayer morph: aMorph.
+	rootLayer morph: aMorph.
 	self translateBy: aMorph position negated during: [:c |
 		self fullDraw: aMorph.
 		self endPicture]
+]
+
+{ #category : #accessing }
+RtRecordingCanvas >> rootLayer [
+
+	^ rootLayer
+]
+
+{ #category : #accessing }
+RtRecordingCanvas >> rootLayer: aGroupLayer [
+
+	rootLayer := aGroupLayer
+]
+
+{ #category : #'scoped state' }
+RtRecordingCanvas >> rootLayer: aLayer during: aBlock [
+
+	| previousLayer |
+	previousLayer := rootLayer.
+	rootLayer := aLayer.
+	aBlock cull: self.
+	rootLayer := previousLayer
 ]
