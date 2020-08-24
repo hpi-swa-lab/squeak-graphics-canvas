@@ -46,34 +46,6 @@ GLFrameBuffer >> asFormOfExtent: aPoint [
 ]
 
 { #category : #binding }
-GLFrameBuffer >> attachRenderBuffer: aRenderBuffer [
-	self attachRenderBuffer: aRenderBuffer attachment: GL_COLOR_ATTACHMENT0
-]
-
-{ #category : #binding }
-GLFrameBuffer >> attachRenderBuffer: aRenderBuffer attachment: attachment [ 
-	"attach a renderbuffer as a logical buffer of a framebuffer object"
-	| renderBuffer |
-	renderBuffer := aRenderBuffer isNumber ifTrue: [aRenderBuffer] ifFalse: [aRenderBuffer id].
-	
-	self boundDuring: [
-		"Since GL 4.5, one can bind renderbuffers by referencing"
-		(gl isKindOf: GL4_5)
-			ifTrue: [
-				gl glNamedFramebufferRenderbuffer
-					with: id
-					with: attachment
-					with: GL_RENDERBUFFER
-					with: renderBuffer]
-			ifFalse: [
-				gl glFramebufferRenderbuffer: GL_FRAMEBUFFER
-					with: attachment
-					with: GL_RENDERBUFFER
-					with: renderBuffer].
-		self checkComplete]
-]
-
-{ #category : #binding }
 GLFrameBuffer >> bind: anID [
 	"bind a framebuffer to a framebuffer target"
 	gl glBindFramebuffer: target with: anID
@@ -110,11 +82,6 @@ GLFrameBuffer >> initializeWithContext: glContext [
 	ids := IntegerArray new: 1.
 	gl glGenFramebuffers: 1 with: ids.
 	id := ids first
-]
-
-{ #category : #reference }
-GLFrameBuffer >> renderBufferClass [ 
-	^GLRenderBuffer
 ]
 
 { #category : #accessing }
