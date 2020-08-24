@@ -79,7 +79,7 @@ GLObject >> boundDuring: aBlock [
 
 	| previousBinding |
 	
-	self assert: (GL value == gl).
+	gl assertIsCurrent.
 	
 	previousBinding := self currentBinding.
 	previousBinding = id ifTrue: [^ aBlock value].

@@ -187,7 +187,7 @@ OpenGL >> checkForError [
 	| error |
 
 	error := self glGetError.
-	(error ~= 0) ifTrue: [self error: (self gluErrorString: error) ]
+	(error ~= 0) ifTrue: [self error: (self errorString: error) ]
 
 ]
 
@@ -235,14 +235,8 @@ OpenGL >> endFrame [
 	context endFrame
 ]
 
-{ #category : #resources }
-OpenGL >> getShaderProgram: aClass [
-
-	^ context resources getShaderProgram: aClass library: self
-]
-
-{ #category : #'Keyword API' }
-OpenGL >> gluErrorString: error [
+{ #category : #debugging }
+OpenGL >> errorString: error [
 	"GLubyte* gluErrorString(GLenum error);"
 	| explainedError |
 	
@@ -258,6 +252,12 @@ OpenGL >> gluErrorString: error [
 	^ 'gl error: ', explainedError
 
 
+]
+
+{ #category : #resources }
+OpenGL >> getShaderProgram: aClass [
+
+	^ context resources getShaderProgram: aClass library: self
 ]
 
 { #category : #activation }

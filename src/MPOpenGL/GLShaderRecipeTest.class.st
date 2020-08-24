@@ -55,18 +55,6 @@ GLShaderRecipeTest >> testGeneratingTestShaderRecipe [
 ]
 
 { #category : #testing }
-GLShaderRecipeTest >> testShaderRecipe [
-	| program |
-	self flag: #todo. "naming shader recipe obsolete"
-	"given"
-	"when"
-	program := self workingShaderExample context: gl.
-	"then"
-	self assert: (program isKindOf: self glObject)
-	
-]
-
-{ #category : #testing }
 GLShaderRecipeTest >> testValidRecipeProducesValidProgram [
 	"given"
 	"when"
