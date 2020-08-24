@@ -60,6 +60,15 @@ GLVertexBufferObject >> data: anArray usage: aUsageEnum componentsPerVertex: aNu
 	componentsPerVertex := aNumber
 ]
 
+{ #category : #'initialize-release' }
+GLVertexBufferObject >> delete [
+
+	gl makeCurrentDuring: [ | ids |
+		ids := IntegerArray new: 1.
+		ids first: id.
+		gl glDeleteBuffers: 1 with: ids ]
+]
+
 { #category : #usage }
 GLVertexBufferObject >> draw: aModeEnum [
 

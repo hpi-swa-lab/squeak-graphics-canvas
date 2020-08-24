@@ -23,7 +23,10 @@ GLVertexArrayObject >> bindingEnum [
 { #category : #'initialize-release' }
 GLVertexArrayObject >> delete [
 
-	self notYetImplemented
+	gl makeCurrentDuring: [ | ids |
+		ids := IntegerArray new: 1.
+		ids first: id.
+		gl glDeleteVertexArrays: 1 with: ids ]
 ]
 
 { #category : #usage }
