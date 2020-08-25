@@ -18,7 +18,7 @@ Class {
 
 { #category : #'instance creation' }
 GLSharedCanvasResources class >> create [
-	FileStream stdout nextPutAll: 'hi'; cr.
+
 	^ self new
 ]
 
