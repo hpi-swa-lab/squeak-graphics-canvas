@@ -23,36 +23,52 @@ OpenGL class >> context: aContext [
 	^ self new context: aContext
 ]
 
-{ #category : #example }
-OpenGL class >> example [	"OpenGL example"
-	"A very simple OpenGL example"
-	| ogl bounds |
+{ #category : #examples }
+OpenGL class >> example1 [ "self example1"
+	"A minimal OpenGL example."
+	| lib bounds |
 	bounds := 0@0 extent: 400@400.
-	ogl := GL2_0 context: (B3DContext newIn: bounds).
-	[[Sensor anyButtonPressed or: [ogl shouldClose]] whileFalse: [ ogl newFrameDo: [
-	"--- this is the actual scene content ---"
-
-		ogl glDisable: GL_DEPTH_TEST.
-
-		ogl glClearColor: 1.0 with: 1.0 with: 1.0 with: 1.0.
-		ogl glClear: GL_COLOR_BUFFER_BIT.
-
-		ogl glRotatef: 5.0 with: 0.0 with: 0.0 with: 1.0.
-		ogl glColor3f: 1.0 with: 0.0 with: 0.0.
-
-		ogl glBegin: GL_POLYGON.
-			ogl glVertex2f: -0.7 with: -0.7.
-			ogl glVertex2f:  0.7 with: -0.7.
-			ogl glVertex2f:  0.7 with:  0.7.
-			ogl glVertex2f: -0.7 with:  0.7.
-		ogl glEnd.
-
-	"--- end the end frame operations"
-	]].
-	] ensure:[ogl destroy].
+	lib := GL2_0 context: (B3DContext newIn: bounds).
+	[
+		Transcript
+			cr; nextPutAll: lib versionString;
+			cr; nextPutAll: lib vendorString;
+			cr; nextPutAll: lib rendererString;
+			cr; nextPutAll: lib shadingLanguageVersionString;
+			cr.
+		lib extensionList do: [:ext |
+			Transcript nextPutAll: ext; space].
+		Transcript flush
+	] ensure: [lib destroy]
 ]
 
-{ #category : #example }
+{ #category : #examples }
+OpenGL class >> example2 [ "self example2"
+	"A very simple OpenGL 2.0 example showing a rotating red rectangle on white background.
+	Click anywhere to dismiss it."
+	| lib bounds |
+	bounds := 0@0 extent: 400@400.
+	[
+		lib := GL2_0 context: (B3DContext newIn: bounds).
+		lib glDisable: GL_DEPTH_TEST.
+		lib glClearColor: 1.0 with: 1.0 with: 1.0 with: 1.0.
+		[Sensor anyButtonPressed] whileFalse: [
+			lib newFrameDo: [
+				lib glClear: GL_COLOR_BUFFER_BIT.
+
+				lib glRotatef: 5.0 with: 0.0 with: 0.0 with: 1.0.
+				lib glColor3f: 1.0 with: 0.0 with: 0.0.
+
+				lib glBegin: GL_POLYGON.
+					lib glVertex2f: -0.7 with: -0.7.
+					lib glVertex2f:  0.7 with: -0.7.
+					lib glVertex2f:  0.7 with:  0.7.
+					lib glVertex2f: -0.7 with:  0.7.
+				lib glEnd]]
+	] ensure: [lib ifNotNil: [lib destroy]]
+]
+
+{ #category : #examples }
 OpenGL class >> exampleTex [	"OpenGL exampleTex"
 	"A simple OpenGL example with texture"
 
@@ -136,9 +152,8 @@ OpenGL class >> exampleTex [	"OpenGL exampleTex"
 
 { #category : #'class initialization' }
 OpenGL class >> initialize [
-	"OpenGL initialize"
-	Smalltalk addToShutDownList: self.
 
+	Smalltalk addToShutDownList: self
 ]
 
 { #category : #accessing }
@@ -160,8 +175,12 @@ OpenGL class >> moduleName [
 
 { #category : #'class initialization' }
 OpenGL class >> shutDown [ 
-	self allSubInstancesDo: [:each | each becomeForward: #SuspendedOpenGL].
 
+	| instances replacement |
+	"We want to make sure everybody interacting with an OpenGL library will immediately notice a no longer valid instance."
+	instances := Array streamContents: [:stream | self allSubInstancesDo: [:each | stream nextPut: each]].
+	replacement := Array new: instances size withAll: #SuspendedOpenGL.
+	instances elementsForwardIdentityTo: replacement
 ]
 
 { #category : #debugging }
@@ -200,7 +219,7 @@ OpenGL >> clearColor [
 
 	| color |
 	color := Float32Array new: 4.
-	self glGetIntegerv: GL_COLOR_CLEAR_VALUE with: color.
+	self glGetFloatv: GL_COLOR_CLEAR_VALUE with: color.
 	^ Color
 		r: color first
 		g: color second
@@ -264,10 +283,73 @@ OpenGL >> errorString: error [
 
 ]
 
+{ #category : #helpers }
+OpenGL >> extensionList [
+
+	self flag: #todo. "If generated classes remained the same, compatibility could be ensured by selection of the correct library class. Also, querying the major version does not work in GLES2"
+	^ self class majorVersion >= 3
+		ifTrue: [	
+			| extensions |
+			extensions := Array new: self numExtensions.
+			0 to: extensions size - 1 do: [:i |
+				extensions at: i put: (self getString: GL_EXTENSIONS index: i)]]
+		ifFalse: [(self getString: GL_EXTENSIONS) splitBy: ' ']
+]
+
+{ #category : #helpers }
+OpenGL >> getInteger: name [
+
+	| data |
+	data := IntegerArray new: 1.
+	self glGetIntegerv: name with: data.
+	^ data first
+]
+
+{ #category : #helpers }
+OpenGL >> getIntegers: name size: numIntegers [
+
+	| data |
+	data := IntegerArray new: numIntegers.
+	self glGetIntegerv: name with: data.
+	^ data
+]
+
 { #category : #resources }
 OpenGL >> getShaderProgram: aClass [
 
 	^ context resources getShaderProgram: aClass library: self
+]
+
+{ #category : #helpers }
+OpenGL >> getString: name [
+
+	| data |
+	data := self glGetString: name.
+	data isNull ifTrue: [^ self checkForError].
+	^ (data asType: ExternalType string) fromCString
+]
+
+{ #category : #helpers }
+OpenGL >> getString: name index: aninteger [
+
+	| data |
+	data := self glGetStringi: name with: aninteger.
+	data isNull ifTrue: [^ self checkForError].
+	^ (data asType: ExternalType string) fromCString
+]
+
+{ #category : #helpers }
+OpenGL >> isCompatibilityProfile [
+
+	^ (self getInteger: GL_CONTEXT_PROFILE_MASK)
+		bitAnd: GL_CONTEXT_COMPATIBILITY_PROFILE_BIT
+]
+
+{ #category : #helpers }
+OpenGL >> isCoreProfile [
+
+	^ (self getInteger: GL_CONTEXT_PROFILE_MASK)
+		bitAnd: GL_CONTEXT_CORE_PROFILE_BIT
 ]
 
 { #category : #activation }
@@ -280,7 +362,7 @@ OpenGL >> makeCurrentDuring: aBlock [
 				^ aBlock value].
 			oldContext := lib context.
 			oldContext == context ifTrue: [
-				^ aBlock value: self during: aBlock].
+				^ GL value: self during: aBlock].
 			oldContext deactivate.
 			context activate.
 			[GL value: self during: aBlock] ensure: [
@@ -294,18 +376,38 @@ OpenGL >> makeCurrentDuring: aBlock [
 
 { #category : #activation }
 OpenGL >> newFrameDo: aBlock. [
+
 	self makeCurrentDuring: [
 		self checkForError.
 		aBlock value.
 		self endFrame.
-		self flag: #todo. "endFrame may not be the best name since it does poll events"
+		self flag: #todo. "can we get rid of endFrame?"
 		self checkForError.
-		self swapBuffers ]
+		self swapBuffers]
+]
+
+{ #category : #helpers }
+OpenGL >> numExtensions [
+
+	^ self getInteger: GL_NUM_EXTENSIONS
+]
+
+{ #category : #helpers }
+OpenGL >> rendererString [
+
+	^ self getString: GL_RENDERER
+]
+
+{ #category : #helpers }
+OpenGL >> shadingLanguageVersionString [
+
+	^ self getString: GL_SHADING_LANGUAGE_VERSION
 ]
 
 { #category : #accessing }
 OpenGL >> shouldClose [
-	self flag: #todo. "is this really a good name"
+
+	self flag: #todo. "does this really belong here?"
 	^ context shouldClose
 ]
 
@@ -315,11 +417,22 @@ OpenGL >> swapBuffers [
 ]
 
 { #category : #helpers }
+OpenGL >> vendorString [
+
+	^ self getString: GL_VENDOR
+]
+
+{ #category : #helpers }
+OpenGL >> versionString [
+
+	^ self getString: GL_VERSION
+]
+
+{ #category : #helpers }
 OpenGL >> viewport [
 
 	| viewport |
-	viewport := IntegerArray new: 4.
-	self glGetIntegerv: GL_VIEWPORT with: viewport.
+	viewport := self getIntegers: GL_VIEWPORT size: 4.
 	^ Rectangle
 		origin: viewport first @ viewport second
 		extent: viewport third @ viewport fourth

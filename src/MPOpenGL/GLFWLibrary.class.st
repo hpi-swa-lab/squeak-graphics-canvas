@@ -7,6 +7,25 @@ Class {
 	#category : #'MPOpenGL-GLFW'
 }
 
+{ #category : #examples }
+GLFWLibrary class >> example1 [ "self example1"
+	"A minimal GLFW example window. Dismiss by clicking anywhere inside Squeak.
+	Do NOT force quit the window (unless you want your Squeak to force quit too)."
+	| window |
+	[
+		window := GLFW
+					createWindowWidth: 400
+					height: 400
+					title: 'GLFW example1'
+					monitor: nil
+					share: nil.
+		GLFW getError ~= NO_ERROR ifTrue: [
+			^ self error: 'GLFW Error'].
+		[Sensor anyButtonPressed] whileFalse
+	] ensure: [
+		window ifNotNil: [GLFW destroyWindow: window]]
+]
+
 { #category : #'class initialization' }
 GLFWLibrary class >> initialize [
 

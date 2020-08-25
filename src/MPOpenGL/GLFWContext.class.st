@@ -116,6 +116,7 @@ GLFWContext >> initializeWindowState [
 	GLFW swapInterval: 0. "disable vsync"
 	self initializeCallbacks.
 	
+	"switch back to the previously active OpenGL context"
 	self deactivate.
 	oldContext ifNotNil: [oldContext activate]
 ]

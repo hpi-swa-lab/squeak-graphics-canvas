@@ -100,10 +100,7 @@ GLObject >> cleanup [
 { #category : #binding }
 GLObject >> currentBinding [
 
-	| id |
-	id := IntegerArray new: 1.
-	gl glGetIntegerv: self bindingEnum with: id.
-	^ id first
+	^ gl getInteger: self bindingEnum
 ]
 
 { #category : #accessing }
