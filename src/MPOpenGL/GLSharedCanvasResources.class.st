@@ -16,12 +16,6 @@ Class {
 	#category : #'MPOpenGL-Canvas'
 }
 
-{ #category : #'instance creation' }
-GLSharedCanvasResources class >> create [
-
-	^ self new
-]
-
 { #category : #accessing }
 GLSharedCanvasResources >> font: aFont [
 
@@ -52,9 +46,9 @@ GLSharedCanvasResources >> initialize [
 { #category : #initialization }
 GLSharedCanvasResources >> initializeBuffers [
 
-	vao := GL value createObject: GLVertexArrayObject.
+	vao := GLVertexArrayObject create.
 	vao bind.
-	vbo := GL value createObject: GLVertexBufferObject.
+	vbo := GLVertexBufferObject create.
 	vbo
 		data: #(
 			0.0 0.0 0.0 0.0

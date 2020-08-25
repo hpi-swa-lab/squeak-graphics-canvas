@@ -171,7 +171,7 @@ GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 	extent := aPoint.
 	framebuffer := aFrameBuffer.
 	
-	resources := self glLibrary at: GLSharedCanvasResources ifAbsentPut: [ GLSharedCanvasResources create ].
+	resources := self glLibrary at: GLSharedCanvasResources ifAbsentPut: [ GLSharedCanvasResources new ].
 	clipRect := 0 @ 0 extent: extent.
 	baseTransform := transform := Matrix4x4 ortho: clipRect near: 0 far: 1
 ]
