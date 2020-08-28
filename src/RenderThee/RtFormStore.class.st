@@ -30,7 +30,7 @@ RtFormStore class >> form: aForm [
 { #category : #textures }
 RtFormStore >> createGLTexture [
 
-	^ (GL value createObject: GLTextureRGBA)
+	^ (GLTextureRGBA create)
 		image: form;
 		yourself
 ]

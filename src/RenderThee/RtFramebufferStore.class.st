@@ -115,12 +115,10 @@ RtFramebufferStore >> initializeGLSettings [
 { #category : #'initialize-release' }
 RtFramebufferStore >> initializeWithExtent: aPoint [
 
-	| ogl |
 	extent := aPoint.
-	ogl := GL value.
 	
-	framebuffer := ogl createObject: GLFrameBuffer.
-	texture := ogl createObject: GLTextureRGBA.
+	framebuffer := GLFrameBuffer create.
+	texture := GLTextureRGBA create.
 	
 	texture extent: extent.
 	framebuffer texture2D: texture
@@ -130,7 +128,7 @@ RtFramebufferStore >> initializeWithExtent: aPoint [
 RtFramebufferStore >> initializeWithForm: aForm [
 
 	extent := aForm extent.
-	texture := GL value createObject: GLTextureRGBA.
+	texture := GLTextureRGBA create.
 	texture image: aForm
 ]
 
