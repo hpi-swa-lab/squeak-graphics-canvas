@@ -25,8 +25,6 @@ Class {
 		'cache',
 		'needsCaching',
 		'isCached',
-		'drawTime',
-		'compositeTime',
 		'drawsSinceInvalidation',
 		'drawsSinceUpdate',
 		'drawsCount'
@@ -103,12 +101,6 @@ RtLayer >> compositeOn: aCanvas [
 	(RtCompositingCanvas canvas: aCanvas) compositeLayer: self
 ]
 
-{ #category : #'accessing - metrics' }
-RtLayer >> compositeTime [
-
-	^ compositeTime
-]
-
 { #category : #caching }
 RtLayer >> createCacheOfType: anImageStoreClass [
 
@@ -137,12 +129,6 @@ RtLayer >> drawLayerOn: canvas [
 RtLayer >> drawOn: canvas [
 
 	self subclassResponsibility
-]
-
-{ #category : #'accessing - metrics' }
-RtLayer >> drawTime [
-
-	^ drawTime
 ]
 
 { #category : #'accessing - metrics' }
