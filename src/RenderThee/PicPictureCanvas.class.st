@@ -14,6 +14,12 @@ Class {
 	#category : #'RenderThee-Pictures'
 }
 
+{ #category : #examples }
+PicPictureCanvas class >> example1 [
+
+	(PicPictureCanvas new fullDrawMorph: ActiveWorld) getPicture open
+]
+
 { #category : #accessing }
 PicPictureCanvas >> addCommand: aCommand [
 	"Adds aCommand to the currently active group (at the front-most z-coordinate)."
