@@ -1,6 +1,6 @@
 "
-I am a plugin-free adaptation of `MatrixTransform2x3`.
-For much faster access to my components, I store them as separate instance variables instead of as fields in a FloatArray.
+I am an adaptation of `MatrixTransform2x3` that does not use any VM plugins.
+For much faster access to my components, I store them as separate instance variables instead of as fields in a FloatArray, unlike `MatrixTransform2x3`.
 
 Why 2x3, not 3x3?
 Bottom row is always the same when multiplying:
@@ -30,7 +30,7 @@ Class {
 		'Identity',
 		'Zero'
 	],
-	#category : #'2DTransform'
+	#category : #'3DTransform'
 }
 
 { #category : #'instance creation' }
@@ -184,6 +184,22 @@ Matrix2x3 >> a23: anObject [
 Matrix2x3 >> asMatrix2x3 [
 
 	^ self
+]
+
+{ #category : #converting }
+Matrix2x3 >> asMatrix4x4 [
+
+	| m |
+	m := Matrix4x4 new.
+	m a11: a11.
+	m a12: a12.
+	m a21: a21.
+	m a22: a22.
+	m a14: a13.
+	m a24: a23.
+	m a33: 1.0.
+	m a44: 1.0.
+	^ m
 ]
 
 { #category : #converting }
