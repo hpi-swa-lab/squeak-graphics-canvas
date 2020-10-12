@@ -1,4 +1,0 @@
-accessing
-versionString
-
-	^ self getVersionString

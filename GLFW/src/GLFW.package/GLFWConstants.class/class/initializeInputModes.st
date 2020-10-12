@@ -1,8 +1,0 @@
-initialization
-initializeInputModes
-
-	CURSOR := 16r33001.
-	STICKY_KEYS := 16r33002.
-	STICKY_MOUSE_BUTTONS := 16r33003.
-	LOCK_KEY_MODS := 16r33004.
-	RAW_MOUSE_MOTION := 16r33005

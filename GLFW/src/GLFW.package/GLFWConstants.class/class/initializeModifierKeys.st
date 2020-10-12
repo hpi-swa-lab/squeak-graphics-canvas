@@ -1,9 +1,0 @@
-initialization
-initializeModifierKeys
-
-	MOD_SHIFT := 2r00000001.
-	MOD_CONTROL := 2r00000010.
-	MOD_ALT := 2r00000100.
-	MOD_SUPER := 2r00001000.
-	MOD_CAPS_LOCK := 2r00010000.
-	MOD_NUM_LOCK := 2r00100000
