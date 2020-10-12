@@ -1,0 +1,6 @@
+initialization
+initializeOpenGLProfiles
+
+	OPENGL_ANY_PROFILE := 0.
+	OPENGL_CORE_PROFILE := 16r32001.
+	OPENGL_COMPAT_PROFILE := 16r32002

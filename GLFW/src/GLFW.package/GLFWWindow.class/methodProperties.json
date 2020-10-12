@@ -1,0 +1,17 @@
+{
+	"class" : {
+		"current" : "stlu 10/9/2020 14:54",
+		"width:height:title:" : "stlu 10/9/2020 14:56",
+		"width:height:title:monitor:share:" : "stlu 10/9/2020 14:54",
+		"window:" : "stlu 10/9/2020 14:54" },
+	"instance" : {
+		"cursorPosCallback:" : "stlu 10/9/2020 14:39",
+		"destroy" : "stlu 10/9/2020 14:31",
+		"framebufferSizeCallback:" : "stlu 10/9/2020 14:35",
+		"getKey:" : "stlu 10/12/2020 14:11",
+		"makeCurrent" : "stlu 10/9/2020 14:32",
+		"mouseButtonCallback:" : "stlu 10/9/2020 14:39",
+		"shouldClose" : "stlu 10/9/2020 14:31",
+		"shouldClose:" : "stlu 10/9/2020 15:29",
+		"swapBuffers" : "stlu 10/9/2020 14:35",
+		"title:" : "stlu 10/9/2020 15:31" } }

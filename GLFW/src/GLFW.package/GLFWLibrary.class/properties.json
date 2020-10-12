@@ -1,0 +1,14 @@
+{
+	"category" : "GLFW-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "GLFWLibrary",
+	"pools" : [
+		"GLFWConstants" ],
+	"super" : "ExternalLibrary",
+	"type" : "normal" }

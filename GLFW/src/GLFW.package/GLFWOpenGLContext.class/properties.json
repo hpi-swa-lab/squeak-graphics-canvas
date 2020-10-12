@@ -1,0 +1,16 @@
+{
+	"category" : "GLFW-OpenGL",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"window",
+		"callbacks",
+		"libraryClass" ],
+	"name" : "GLFWOpenGLContext",
+	"pools" : [
+		"GLFWConstants" ],
+	"super" : "GLContext",
+	"type" : "normal" }

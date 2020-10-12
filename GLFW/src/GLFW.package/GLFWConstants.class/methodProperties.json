@@ -1,0 +1,19 @@
+{
+	"class" : {
+		"initialize" : "",
+		"initializeContextHints" : "",
+		"initializeCursorShapes" : "",
+		"initializeCursorStates" : "",
+		"initializeErrorCodes" : "",
+		"initializeInputMacros" : "",
+		"initializeInputModes" : "",
+		"initializeKeyboardKeys" : "",
+		"initializeMacros" : "",
+		"initializeModifierKeys" : "",
+		"initializeMouseMacros" : "",
+		"initializeOpenGLProfiles" : "",
+		"initializePlatformSpecificHints" : "",
+		"initializeRenderingHints" : "",
+		"initializeWindowHints" : "" },
+	"instance" : {
+		 } }
