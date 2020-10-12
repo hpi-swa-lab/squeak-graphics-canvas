@@ -13,12 +13,10 @@ GLFWLibrary class >> example1 [ "self example1"
 	Do NOT force quit the window (unless you want your Squeak to force quit too)."
 	| window |
 	[
-		window := GLFW
-					createWindowWidth: 400
+		window := GLFWWindow
+					width: 400
 					height: 400
-					title: 'GLFW example1'
-					monitor: nil
-					share: nil.
+					title: 'GLFW example1'.
 		GLFW getError ~= NO_ERROR ifTrue: [
 			^ self error: 'GLFW Error'].
 		[Sensor anyButtonPressed] whileFalse
@@ -70,36 +68,31 @@ GLFWLibrary class >> startUp [
 			[lib init] ifError: ["do nothing"]]
 ]
 
-{ #category : #constants }
-GLFWLibrary >> CONTEXT_VERSION_MAJOR [
+{ #category : #'api - windows' }
+GLFWLibrary >> createWindow: width with: height with: title with: monitor with: share [
 
-	^ CONTEXT_VERSION_MAJOR
-]
-
-{ #category : #constants }
-GLFWLibrary >> CONTEXT_VERSION_MINOR [
-
-	^ CONTEXT_VERSION_MINOR
-]
-
-{ #category : #'api - initialized' }
-GLFWLibrary >> createWindowWidth: width height: height title: title monitor: monitor share: share [
-
-	<apicall: void* 'glfwCreateWindow' (long long char* void* void*)>
+	<apicall: GLFWWindow* 'glfwCreateWindow' (int int string GLFWMonitor* GLFWWindow*)>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - initialized' }
+{ #category : #'api - windows' }
+GLFWLibrary >> defaultWindowHints [
+
+	<apicall: void 'glfwDefaultWindowHints' ()>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
 GLFWLibrary >> destroyWindow: handle [
 
-	<apicall: void* 'glfwDestroyWindow' (void*)>
+	<apicall: void 'glfwDestroyWindow' (GLFWWindow*)>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - initialized' }
+{ #category : #'api - windows' }
 GLFWLibrary >> getCurrentContext [
 
-	<apicall: void* 'glfwGetCurrentContext' ()>
+	<apicall: GLFWWindow* 'glfwGetCurrentContext' ()>
 	^ self externalCallFailed
 ]
 
@@ -109,113 +102,159 @@ GLFWLibrary >> getError [
 	^ self getError: nil
 ]
 
-{ #category : #'api - uninitialized' }
+{ #category : #'api - error handling' }
 GLFWLibrary >> getError: stringOrNil [
 
 	<apicall: int 'glfwGetError' (string)>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - uninitialized' }
-GLFWLibrary >> getVersionMajor: major minor: minor rev: rev [
+{ #category : #'api - input' }
+GLFWLibrary >> getKey: window with: key [
+
+	<apicall: int 'glfwGetKey' (GLFWWindow* int)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - accessing' }
+GLFWLibrary >> getVersion: major with: minor with: rev [
 
 	<apicall: void 'glfwGetVersion' (int* int* int*)>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - uninitialized' }
+{ #category : #'api - accessing' }
 GLFWLibrary >> getVersionString [
 
 	<apicall: char* 'glfwGetVersionString' ()>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - uninitialized' }
+{ #category : #'api - initialization' }
 GLFWLibrary >> init [
 
 	<apicall: int 'glfwInit' ()>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - uninitialized' }
-GLFWLibrary >> initHint: hint value: value [
+{ #category : #'api - initialization' }
+GLFWLibrary >> initHint: hint with: value [
 
 	<apicall: void 'glfwInitHint' (int int)>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - initialized' }
+{ #category : #'api - windows' }
 GLFWLibrary >> makeContextCurrent: window [
 
-	<apicall: void 'glfwMakeContextCurrent' (void*)>
+	<apicall: void 'glfwMakeContextCurrent' (GLFWWindow*)>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - initialized' }
+{ #category : #'api - events' }
 GLFWLibrary >> pollEvents [
 
 	<apicall: int 'glfwPollEvents' ()>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - initialized' }
-GLFWLibrary >> setCursorPosCallback: anExternalData with: aBlock [
+{ #category : #'api - input' }
+GLFWLibrary >> setCursorPosCallback: window with: aBlock [
 
-	<apicall: void* 'glfwSetCursorPosCallback' (void* void*)>
+	<apicall: void 'glfwSetCursorPosCallback' (GLFWWindow* void*)>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - uninitialized' }
+{ #category : #'api - error handling' }
 GLFWLibrary >> setErrorCallback: aBlock [
 
-	self notYetImplemented
-]
-
-{ #category : #'api - initialized' }
-GLFWLibrary >> setFramebufferSizeCallback: anExternalData with: aBlock [
-
-	<apicall: void* 'glfwSetFramebufferSizeCallback' (void* void*)>
+	<apicall: void 'glfwSetErrorCallback' (void*)>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - initialized' }
-GLFWLibrary >> setMouseButtonCallback: anExternalData with: aBlockClosure [
+{ #category : #'api - windows' }
+GLFWLibrary >> setFramebufferSizeCallback: window with: aBlock [
 
-	<apicall: void* 'glfwSetMouseButtonCallback' (void* void*)>
+	<apicall: void 'glfwSetFramebufferSizeCallback' (GLFWWindow* void*)>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - initialized' }
+{ #category : #'api - input' }
+GLFWLibrary >> setMouseButtonCallback: window with: aBlockClosure [
+
+	<apicall: void 'glfwSetMouseButtonCallback' (GLFWWindow* void*)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
+GLFWLibrary >> setWindowShouldClose: window with: value [
+
+	<apicall: void 'glfwSetWindowShouldClose' (GLFWWindow* int)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
+GLFWLibrary >> setWindowTitle: window with: title [
+
+	<apicall: void 'glfwSetWindowTitle' (GLFWWindow* string)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
 GLFWLibrary >> swapBuffers: window [
 
-	<apicall: void 'glfwSwapBuffers' (void*)>
+	<apicall: void 'glfwSwapBuffers' (GLFWWindow*)>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - initialized' }
+{ #category : #'api - initialization' }
 GLFWLibrary >> swapInterval: aNumber [
 
 	<apicall: void 'glfwSwapInterval' (int)>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - uninitialized' }
+{ #category : #'api - initialization' }
 GLFWLibrary >> terminate [
 
 	<apicall: void 'glfwTerminate' ()>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - initialized' }
-GLFWLibrary >> windowHint: hint value: value [
+{ #category : #accessing }
+GLFWLibrary >> version [
+
+	| major minor revision |
+	major := IntegerArray new: 1.
+	minor := IntegerArray new: 1.
+	revision := IntegerArray new: 1.
+	self getVersion: major with: minor with: revision.
+	^ { major first . minor first . revision first }
+]
+
+{ #category : #accessing }
+GLFWLibrary >> versionString [
+
+	^ self getVersionString
+]
+
+{ #category : #'api - windows' }
+GLFWLibrary >> windowHint: hint with: value [
 
 	<apicall: void 'glfwWindowHint' (int int)>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - initialized' }
+{ #category : #'api - windows' }
+GLFWLibrary >> windowHintString: hint with: value [
+
+	<apicall: void 'glfwWindowHintString' (int string)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
 GLFWLibrary >> windowShouldClose: window [
 
-	<apicall: long 'glfwWindowShouldClose' (void*)>
+	<apicall: bool 'glfwWindowShouldClose' (GLFWWindow*)>
 	^ self externalCallFailed
 ]
