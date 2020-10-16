@@ -9,12 +9,15 @@ Class {
 
 { #category : #'instance creation' }
 B3DContext class >> defaultFlags [
-	^ 1 "B3DSoftwareRenderer" + 2 "B3DHardwareRenderer" + 4 "B3DStencilBuffer" 
+	^ 2r0000001 "B3DSoftwareRenderer"
+		+ 2r00000010 "B3DHardwareRenderer"
+		+ 2r00000100 "B3DStencilBuffer" 
 ]
 
 { #category : #'instance creation' }
 B3DContext class >> isAvailable [
-	^self pluginVersion > 0
+
+	^ self pluginVersion > 0
 ]
 
 { #category : #'instance creation' }
@@ -62,8 +65,9 @@ B3DContext >> deactivate [
 
 { #category : #'initialize-release' }
 B3DContext >> destroy [
+
 	super destroy.
-	self primDestroyRenderer: handle.
+	self primDestroyRenderer: handle
 ]
 
 { #category : #'initialize-release' }
@@ -86,12 +90,14 @@ B3DContext >> initializeIn: bounds flags: flags [
 
 { #category : #primitives }
 B3DContext >> primCreateRenderer: flags x: x y: y w: w h: h [
+
 	<primitive: 'primitiveCreateRendererFlags' module:'B3DAcceleratorPlugin'>
 	^nil
 ]
 
 { #category : #primitives }
 B3DContext >> primDestroyRenderer: aHandle [
+
 	<primitive: 'primitiveDestroyRenderer' module:'B3DAcceleratorPlugin'>
 	^nil
 ]
@@ -105,6 +111,7 @@ B3DContext >> primRender: aHandle getProperty: propNumber [
 
 { #category : #primitives }
 B3DContext >> primRender: aHandle setBufferRectX: left y: top w: width h: height [
+
 	<primitive:'primitiveSetBufferRect' module:'B3DAcceleratorPlugin'>
 	^nil
 ]
@@ -126,6 +133,7 @@ B3DContext >> primSwapBuffers: aHandle [
 
 { #category : #testing }
 B3DContext >> shouldClose [
+
 	^ false
 ]
 

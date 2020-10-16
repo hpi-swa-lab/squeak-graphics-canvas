@@ -44,6 +44,13 @@ GLContext >> destroy [
 ]
 
 { #category : #'initialize-release' }
+GLContext >> endFrame [
+
+	self flag: #todo. "Not sure this belongs here"
+	self subclassResponsibility
+]
+
+{ #category : #'initialize-release' }
 GLContext >> initialize [
 
 	super initialize.
@@ -51,7 +58,26 @@ GLContext >> initialize [
 ]
 
 { #category : #accessing }
+GLContext >> library [
+
+	self notYetImplemented
+]
+
+{ #category : #accessing }
 GLContext >> resources [
 
 	^ resources
+]
+
+{ #category : #testing }
+GLContext >> shouldClose [
+
+	self flag: #todo. "This does not belong here"
+	self subclassResponsibility
+]
+
+{ #category : #'initialize-release' }
+GLContext >> swapBuffers [
+
+	self subclassResponsibility
 ]
