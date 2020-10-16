@@ -32,7 +32,7 @@ GLFWLibrary class >> initialize [
 
 	Smalltalk addToShutDownList: self.
 	Smalltalk addToStartUpList: self.
-	Smalltalk at: #GLFW put: self new.
+	self registerNewInstance.
 	self startUp
 ]
 
@@ -53,6 +53,12 @@ GLFWLibrary class >> moduleName [
 	self error: 'Cannot identify platform'
 ]
 
+{ #category : #'class initialization' }
+GLFWLibrary class >> registerNewInstance [
+
+	Environment current at: #GLFW put: self new
+]
+
 { #category : #'system startup' }
 GLFWLibrary class >> shutDown [
 
@@ -69,6 +75,14 @@ GLFWLibrary class >> startUp [
 		at: #GLFW
 		ifPresent: [:lib |
 			[lib init] ifError: ["do nothing"]]
+]
+
+{ #category : #'class initialization' }
+GLFWLibrary class >> updateInstance [
+
+	self shutDown.
+	self registerNewInstance.
+	self startUp
 ]
 
 { #category : #accessing }
