@@ -47,8 +47,14 @@ RtDisplayFramebufferStore >> initializeGLSettings [
 { #category : #initialization }
 RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 
+	| context |
+	context := GLFWOpenGLContext
+					newIn: (0@0 extent: extent)
+					forLibraryClass: GL3_3
+					title: 'Squeak (GLFW)'.
+	context useMorphicEventHandling.
 	extent := aPoint.
-	glLibrary := (GLFWOpenGLContext newIn: (0@0 extent: extent) forLibraryClass: GL3_3 title: 'Squeak (GLFW)') library.
+	glLibrary := context library.
 	"glLibrary := GL3_3 context: (B3DContext newIn: (0@0 extent: extent))."
 	framebuffer := glLibrary createObject: GLDisplayFrameBuffer.
 	

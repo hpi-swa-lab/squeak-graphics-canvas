@@ -3,7 +3,6 @@ Class {
 	#superclass : #GLContext,
 	#instVars : [
 		'window',
-		'callbacks',
 		'libraryClass'
 	],
 	#pools : [
@@ -22,16 +21,6 @@ GLFWOpenGLContext class >> newIn: bounds forLibraryClass: aLibraryClass title: a
 GLFWOpenGLContext >> activate [
 
 	window makeCurrent
-]
-
-{ #category : #callbacks }
-GLFWOpenGLContext >> cursorCallback: aBlock [
-
-	window cursorPosCallback: (callbacks
-			at: #cursorPos
-			put: (FFICallback
-				signature: '<callback: void (*)(void* double double)>'
-				block: [:win :x :y | aBlock value: x value: y])) thunk
 ]
 
 { #category : #activation }
@@ -54,39 +43,12 @@ GLFWOpenGLContext >> endFrame [
 ]
 
 { #category : #'initialize-release' }
-GLFWOpenGLContext >> initializeCallbacks [
-
-	self cursorCallback: [:x :y |
-		| evt |
-		evt := MouseMoveEvent new
-				setType: #mouseMove
-				startPoint: x @ y
-				endPoint: x @ y
-				trail: nil
-				buttons: 0
-				hand: ActiveHand
-				stamp: 0.
-		ActiveHand handleEvent: evt].
-	
-	self mouseButtonCallback: [:button :down :mods |
-		ActiveHand handleEvent: (MouseButtonEvent new
-			setType: (down ifTrue: [#mouseDown] ifFalse: [#mouseUp])
-			position: ActiveHand position
-			which: button
-			buttons: button
-			hand: ActiveHand
-			stamp: 0)].
-]
-
-{ #category : #'initialize-release' }
 GLFWOpenGLContext >> initializeIn: bounds for: aLibraryClass title: aString [
 
 	libraryClass := aLibraryClass.
 
 	GLFW windowHint: CONTEXT_VERSION_MAJOR with: aLibraryClass majorVersion.
 	GLFW windowHint: CONTEXT_VERSION_MINOR with: aLibraryClass minorVersion.
-	
-	callbacks := Dictionary new.
 	
 	window := GLFWWindow
 				width: bounds width
@@ -109,7 +71,6 @@ GLFWOpenGLContext >> initializeWindowState [
 	self activate.
 	
 	GLFW swapInterval: 0. "disable vsync"
-	self initializeCallbacks.
 	
 	"switch back to the previously active OpenGL context"
 	self deactivate.
@@ -122,19 +83,6 @@ GLFWOpenGLContext >> library [
 	^ libraryClass context: self
 ]
 
-{ #category : #callbacks }
-GLFWOpenGLContext >> mouseButtonCallback: aBlock [
-
-	GLFW
-		setMouseButtonCallback: window
-		with: (callbacks
-			at: #mouseButton
-			put: (FFICallback
-				signature: '<callback: void (*)(void* long long long)>'
-				block: [:win :button :action :mods |
-					aBlock value: (1 bitShift: button - 1) value: action = 1 value: mods])) thunk
-]
-
 { #category : #testing }
 GLFWOpenGLContext >> shouldClose [
 
@@ -145,6 +93,31 @@ GLFWOpenGLContext >> shouldClose [
 GLFWOpenGLContext >> swapBuffers [
 
 	window swapBuffers
+]
+
+{ #category : #'initialize-release' }
+GLFWOpenGLContext >> useMorphicEventHandling [
+
+	window cursorCallback: [:win :x :y |
+		| evt |
+		evt := MouseMoveEvent new
+				setType: #mouseMove
+				startPoint: x @ y
+				endPoint: x @ y
+				trail: nil
+				buttons: 0
+				hand: ActiveHand
+				stamp: 0.
+		ActiveHand handleEvent: evt].
+	
+	window mouseButtonCallback: [:win :button :down :mods |
+		ActiveHand handleEvent: (MouseButtonEvent new
+			setType: (down ifTrue: [#mouseDown] ifFalse: [#mouseUp])
+			position: ActiveHand position
+			which: button
+			buttons: button
+			hand: ActiveHand
+			stamp: 0)].
 ]
 
 { #category : #accessing }
