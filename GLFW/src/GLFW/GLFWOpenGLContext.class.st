@@ -21,15 +21,13 @@ GLFWOpenGLContext class >> newIn: bounds forLibraryClass: aLibraryClass title: a
 { #category : #activation }
 GLFWOpenGLContext >> activate [
 
-	GLFW makeContextCurrent: window
+	window makeCurrent
 ]
 
 { #category : #callbacks }
 GLFWOpenGLContext >> cursorCallback: aBlock [
 
-	GLFW
-		setCursorPosCallback: window
-		with: (callbacks
+	window cursorPosCallback: (callbacks
 			at: #cursorPos
 			put: (FFICallback
 				signature: '<callback: void (*)(void* double double)>'
@@ -46,8 +44,7 @@ GLFWOpenGLContext >> deactivate [
 GLFWOpenGLContext >> destroy [
 
 	super destroy.
-	window ifNotNil: [ GLFW destroyWindow: window ].
-	window := nil
+	window ifNotNil: [window destroy]
 ]
 
 { #category : #'initialize-release' }
@@ -141,12 +138,17 @@ GLFWOpenGLContext >> mouseButtonCallback: aBlock [
 { #category : #testing }
 GLFWOpenGLContext >> shouldClose [
 
-	^ (GLFW windowShouldClose: window) ~= 0
+	^ window shouldClose
 ]
 
 { #category : #'initialize-release' }
 GLFWOpenGLContext >> swapBuffers [
 
-	GLFW swapBuffers: window.
-	^ true
+	window swapBuffers
+]
+
+{ #category : #accessing }
+GLFWOpenGLContext >> window [
+
+	^ window
 ]

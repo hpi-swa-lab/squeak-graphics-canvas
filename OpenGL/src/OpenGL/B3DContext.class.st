@@ -131,5 +131,6 @@ B3DContext >> shouldClose [
 
 { #category : #'initialize-release' }
 B3DContext >> swapBuffers [
-	^ (self primSwapBuffers: handle) notNil
+
+	self primSwapBuffers: handle
 ]

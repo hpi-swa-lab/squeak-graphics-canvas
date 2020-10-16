@@ -38,6 +38,12 @@ GLFWWindow class >> window: aWindow [
 		ifFalse: [aWindow]
 ]
 
+{ #category : #comparing }
+GLFWWindow >> = otherWindow [
+
+	^ handle = otherWindow
+]
+
 { #category : #callbacks }
 GLFWWindow >> cursorPosCallback: aBlock [
 
@@ -60,6 +66,12 @@ GLFWWindow >> framebufferSizeCallback: aBlock [
 GLFWWindow >> getKey: key [
 
 	^ GLFW getKey: self with: key
+]
+
+{ #category : #comparing }
+GLFWWindow >> hash [
+
+	^ handle hash
 ]
 
 { #category : #'initialize-release' }

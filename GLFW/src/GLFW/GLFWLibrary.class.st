@@ -1,6 +1,9 @@
 Class {
 	#name : #GLFWLibrary,
 	#superclass : #ExternalLibrary,
+	#instVars : [
+		'callbacks'
+	],
 	#pools : [
 		'GLFWConstants'
 	],
@@ -66,6 +69,40 @@ GLFWLibrary class >> startUp [
 		at: #GLFW
 		ifPresent: [:lib |
 			[lib init] ifError: ["do nothing"]]
+]
+
+{ #category : #accessing }
+GLFWLibrary >> callbacksFor: aWindow [
+
+	^ callbacks at: aWindow
+]
+
+{ #category : #callbacks }
+GLFWLibrary >> callbacksForWindow: aWindow [
+
+	^ callbacks
+		at: aWindow
+		ifAbsentPut: [Dictionary new]
+]
+
+{ #category : #callbacks }
+GLFWLibrary >> createCallback: aBlock signature: aString named: aSymbol [
+
+	^ self
+		createCallback: aBlock
+		signature: aString
+		named: aSymbol
+		forWindow: self
+]
+
+{ #category : #callbacks }
+GLFWLibrary >> createCallback: aBlock signature: aString named: aSymbol forWindow: aWindow [
+
+	^ (self callbacksForWindow: aWindow)
+		at: aSymbol
+		put: (FFICallback
+				signature: aString
+				block: aBlock)
 ]
 
 { #category : #'api - windows' }
@@ -144,6 +181,13 @@ GLFWLibrary >> initHint: hint with: value [
 	^ self externalCallFailed
 ]
 
+{ #category : #initialization }
+GLFWLibrary >> initialize [
+
+	super initialize.
+	callbacks := Dictionary new
+]
+
 { #category : #'api - windows' }
 GLFWLibrary >> makeContextCurrent: window [
 
@@ -158,32 +202,85 @@ GLFWLibrary >> pollEvents [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - input' }
-GLFWLibrary >> setCursorPosCallback: window with: aBlock [
+{ #category : #private }
+GLFWLibrary >> privateSetCursorPosCallback: aWindow with: anFFICallback [
 
 	<apicall: void 'glfwSetCursorPosCallback' (GLFWWindow* void*)>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - error handling' }
-GLFWLibrary >> setErrorCallback: aBlock [
+{ #category : #private }
+GLFWLibrary >> privateSetErrorCallback: anFFICallback [
 
 	<apicall: void 'glfwSetErrorCallback' (void*)>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - windows' }
-GLFWLibrary >> setFramebufferSizeCallback: window with: aBlock [
+{ #category : #private }
+GLFWLibrary >> privateSetFramebufferSizeCallback: aWindow with: anFFICallback [
 
 	<apicall: void 'glfwSetFramebufferSizeCallback' (GLFWWindow* void*)>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - input' }
-GLFWLibrary >> setMouseButtonCallback: window with: aBlockClosure [
+{ #category : #private }
+GLFWLibrary >> privateSetMouseButtonCallback: aWindow with: anFFICallback [
 
 	<apicall: void 'glfwSetMouseButtonCallback' (GLFWWindow* void*)>
 	^ self externalCallFailed
+]
+
+{ #category : #'api - callbacks' }
+GLFWLibrary >> setCursorPosCallback: aWindow with: aBlock [
+
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(GLFWWindow* double double)>'
+					named: #cursorPos
+					forWindow: aWindow.
+	self
+		privateSetCursorPosCallback: aWindow
+		with: callback thunk
+]
+
+{ #category : #'api - callbacks' }
+GLFWLibrary >> setErrorCallback: aBlock [
+
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(int string)>'
+					named: #error.
+	self privateSetErrorCallback: callback thunk
+]
+
+{ #category : #'api - callbacks' }
+GLFWLibrary >> setFramebufferSizeCallback: aWindow with: aBlock [
+
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(GLFWWindow* int int)>'
+					named: #framebufferSize
+					forWindow: aWindow.
+	self
+		privateSetFramebufferSizeCallback: aWindow
+		with: callback thunk
+]
+
+{ #category : #'api - callbacks' }
+GLFWLibrary >> setMouseButtonCallback: aWindow with: aBlock [
+
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(GLFWWindow* int int int)>'
+					named: #mouseButton
+					forWindow: aWindow.
+	self
+		privateSetMouseButtonCallback: aWindow
+		with: callback thunk
 ]
 
 { #category : #'api - windows' }

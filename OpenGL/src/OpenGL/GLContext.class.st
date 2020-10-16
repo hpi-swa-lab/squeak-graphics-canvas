@@ -10,16 +10,31 @@ Class {
 	#category : #'OpenGL-Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'class initialization' }
 GLContext class >> initialize [
-	"OpenGL initialize"
-	Smalltalk addToShutDownList: self.
 
+	Smalltalk addToShutDownList: self
 ]
 
-{ #category : #'as yet unclassified' }
-GLContext class >> shutDown [ 
-	self allSubInstancesDo: [:each | each destroy; becomeForward: #SuspendedGLContext].
+{ #category : #'system startup' }
+GLContext class >> shutDown [
+
+	self allSubInstancesDo: [:each |
+		each
+			destroy;
+			becomeForward: #SuspendedGLContext]
+]
+
+{ #category : #activation }
+GLContext >> activate [
+
+	self subclassResponsibility
+]
+
+{ #category : #activation }
+GLContext >> deactivate [
+
+	self subclassResponsibility
 ]
 
 { #category : #'initialize-release' }

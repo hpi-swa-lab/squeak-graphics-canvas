@@ -413,6 +413,7 @@ OpenGL >> shouldClose [
 
 { #category : #'initialize-release' }
 OpenGL >> swapBuffers [
+
 	context swapBuffers
 ]
 
