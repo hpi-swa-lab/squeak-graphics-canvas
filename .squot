@@ -4,5 +4,6 @@ OrderedDictionary {
 	'OpenGLCanvas/src/OpenGLCanvas' : #SquotTonelSerializer,
 	'RenderThee/src/RenderThee' : #SquotTonelSerializer,
 	'3DTransform/src/3DTransform' : #SquotTonelSerializer,
-	'Vulkan/src/Vulkan' : #SquotTonelSerializer
+	'Vulkan/src/Vulkan' : #SquotTonelSerializer,
+	'LearnOpenGL/src/LearnOpenGL' : #SquotTonelSerializer
 }
