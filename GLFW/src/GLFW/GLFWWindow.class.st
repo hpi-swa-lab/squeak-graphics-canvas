@@ -44,6 +44,12 @@ GLFWWindow >> = otherWindow [
 	^ handle = otherWindow
 ]
 
+{ #category : #accessing }
+GLFWWindow >> context [
+
+	^ GLFW contextForWindow: self
+]
+
 { #category : #callbacks }
 GLFWWindow >> cursorPosCallback: aBlock [
 

@@ -20,7 +20,10 @@ Class {
 
 { #category : #'instance creation' }
 OpenGL class >> context: aContext [
-	^ self new context: aContext
+
+	^ self new
+		context: aContext;
+		yourself
 ]
 
 { #category : #examples }
@@ -189,19 +192,24 @@ OpenGL >> assertIsCurrent [
 	self assert: (GL value == self)
 ]
 
-{ #category : #accessing }
+{ #category : #resources }
 OpenGL >> at: aKey [
+
 	^ context resources userData at: aKey
 ]
 
-{ #category : #accessing }
+{ #category : #resources }
 OpenGL >> at: aKey ifAbsentPut: aBlock [
+
 	^ context resources userData at: aKey ifAbsentPut: aBlock
 ]
 
-{ #category : #accessing }
+{ #category : #resources }
 OpenGL >> at: aKey put: aValue [
-	^ context resources userData at: aKey put: aValue
+
+	^ context resources userData
+			at: aKey
+			put: aValue
 ]
 
 { #category : #debugging }
@@ -239,12 +247,14 @@ OpenGL >> clearColor: aColor [
 
 { #category : #accessing }
 OpenGL >> context [
+
 	^ context
 ]
 
 { #category : #accessing }
-OpenGL >> context: anObject [
-	context := anObject
+OpenGL >> context: aContext [
+
+	context := aContext
 ]
 
 { #category : #resources }
@@ -253,14 +263,15 @@ OpenGL >> createObject: aClass [
 	^ context resources createObject: aClass context: self
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #'context delegation' }
 OpenGL >> destroy [
 
 	context destroy
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #'context delegation' }
 OpenGL >> endFrame [
+
 	context endFrame
 ]
 
@@ -404,14 +415,14 @@ OpenGL >> shadingLanguageVersionString [
 	^ self getString: GL_SHADING_LANGUAGE_VERSION
 ]
 
-{ #category : #accessing }
+{ #category : #'context delegation' }
 OpenGL >> shouldClose [
 
 	self flag: #todo. "does this really belong here?"
 	^ context shouldClose
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #'context delegation' }
 OpenGL >> swapBuffers [
 
 	context swapBuffers
@@ -421,6 +432,14 @@ OpenGL >> swapBuffers [
 OpenGL >> vendorString [
 
 	^ self getString: GL_VENDOR
+]
+
+{ #category : #helpers }
+OpenGL >> version [
+
+	| versionString |
+	versionString := self versionString. "always begins with major.minor"
+	^ { versionString first asInteger . versionString third asInteger }
 ]
 
 { #category : #helpers }

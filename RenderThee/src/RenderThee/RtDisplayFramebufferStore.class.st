@@ -48,21 +48,23 @@ RtDisplayFramebufferStore >> initializeGLSettings [
 RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 
 	| context |
-	context := GLFWOpenGLContext
-					newIn: (0@0 extent: extent)
+	self flag: #todo. "This has become very GLFW-specific. New variation point?"
+	context := GLFWContext
+					newIn: (0@0 extent: aPoint)
 					forLibraryClass: GL3_3
 					title: 'Squeak (GLFW)'.
 	context useMorphicEventHandling.
 	extent := aPoint.
-	glLibrary := context library.
+	glLibrary := GL3_3 context: context.
 	"glLibrary := GL3_3 context: (B3DContext newIn: (0@0 extent: extent))."
 	framebuffer := glLibrary createObject: GLDisplayFrameBuffer.
 	
 	glLibrary makeCurrentDuring: [
-	framebuffer boundDuring: [
-		self initializeGLSettings.
-		self resetViewport.
-		self clear]]
+		GLFW swapInterval: 0. "disable vsync"
+		framebuffer boundDuring: [
+			self initializeGLSettings.
+			self resetViewport.
+			self clear]]
 ]
 
 { #category : #drawing }

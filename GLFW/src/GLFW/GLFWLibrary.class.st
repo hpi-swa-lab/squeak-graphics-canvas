@@ -2,7 +2,8 @@ Class {
 	#name : #GLFWLibrary,
 	#superclass : #ExternalLibrary,
 	#instVars : [
-		'callbacks'
+		'callbacks',
+		'contexts'
 	],
 	#pools : [
 		'GLFWConstants'
@@ -74,7 +75,7 @@ GLFWLibrary class >> startUp [
 	Smalltalk
 		at: #GLFW
 		ifPresent: [:lib |
-			[lib init] ifError: ["do nothing"]]
+			[lib reset; init] ifError: ["do nothing"]]
 ]
 
 { #category : #'class initialization' }
@@ -85,18 +86,20 @@ GLFWLibrary class >> updateInstance [
 	self startUp
 ]
 
-{ #category : #accessing }
-GLFWLibrary >> callbacksFor: aWindow [
-
-	^ callbacks at: aWindow
-]
-
 { #category : #callbacks }
 GLFWLibrary >> callbacksForWindow: aWindow [
 
 	^ callbacks
 		at: aWindow
 		ifAbsentPut: [Dictionary new]
+]
+
+{ #category : #contexts }
+GLFWLibrary >> contextForWindow: aWindow [
+
+	^ contexts
+		at: aWindow
+		ifAbsentPut: [GLFWContext window: aWindow]
 ]
 
 { #category : #callbacks }
@@ -184,7 +187,7 @@ GLFWLibrary >> getVersionString [
 { #category : #'api - initialization' }
 GLFWLibrary >> init [
 
-	<apicall: int 'glfwInit' ()>
+	<apicall: bool 'glfwInit' ()>
 	^ self externalCallFailed
 ]
 
@@ -199,7 +202,7 @@ GLFWLibrary >> initHint: hint with: value [
 GLFWLibrary >> initialize [
 
 	super initialize.
-	callbacks := Dictionary new
+	self reset
 ]
 
 { #category : #'api - windows' }
@@ -242,6 +245,13 @@ GLFWLibrary >> privateSetMouseButtonCallback: aWindow with: anFFICallback [
 
 	<apicall: void 'glfwSetMouseButtonCallback' (GLFWWindow* void*)>
 	^ self externalCallFailed
+]
+
+{ #category : #initialization }
+GLFWLibrary >> reset [
+
+	callbacks := Dictionary new.
+	contexts := Dictionary new
 ]
 
 { #category : #'api - callbacks' }
@@ -323,6 +333,23 @@ GLFWLibrary >> swapInterval: aNumber [
 
 	<apicall: void 'glfwSwapInterval' (int)>
 	^ self externalCallFailed
+]
+
+{ #category : #helpers }
+GLFWLibrary >> targetGLVersion: aGLVersionClass [
+
+	self targetGLVersion: aGLVersionClass compatibility: false
+]
+
+{ #category : #helpers }
+GLFWLibrary >> targetGLVersion: aGLVersionClass compatibility: aBoolean [
+
+	self windowHint: CONTEXT_VERSION_MAJOR with: aGLVersionClass majorVersion.
+	self windowHint: CONTEXT_VERSION_MINOR with: aGLVersionClass minorVersion.
+	
+	self
+		windowHint: OPENGL_PROFILE
+		with: (aBoolean ifTrue: [OPENGL_COMPAT_PROFILE] ifFalse: [OPENGL_CORE_PROFILE])
 ]
 
 { #category : #'api - initialization' }

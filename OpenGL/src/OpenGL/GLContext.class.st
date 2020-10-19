@@ -58,12 +58,6 @@ GLContext >> initialize [
 ]
 
 { #category : #accessing }
-GLContext >> library [
-
-	self notYetImplemented
-]
-
-{ #category : #accessing }
 GLContext >> resources [
 
 	^ resources
