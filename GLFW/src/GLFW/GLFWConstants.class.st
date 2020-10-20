@@ -7,6 +7,15 @@ Class {
 		'ACCUM_GREEN_BITS',
 		'ACCUM_RED_BITS',
 		'ALPHA_BITS',
+		'ANGLE_PLATFORM_TYPE',
+		'ANGLE_PLATFORM_TYPE_D3D11',
+		'ANGLE_PLATFORM_TYPE_D3D9',
+		'ANGLE_PLATFORM_TYPE_METAL',
+		'ANGLE_PLATFORM_TYPE_NONE',
+		'ANGLE_PLATFORM_TYPE_OPENGL',
+		'ANGLE_PLATFORM_TYPE_OPENGLES',
+		'ANGLE_PLATFORM_TYPE_VULKAN',
+		'ANY_RELEASE_BEHAVIOR',
 		'API_UNAVAILABLE',
 		'ARROW_CURSOR',
 		'AUTO_ICONIFY',
@@ -14,10 +23,14 @@ Class {
 		'BLUE_BITS',
 		'CENTER_CURSOR',
 		'CLIENT_API',
+		'COCOA_CHDIR_RESOURCES',
 		'COCOA_FRAME_NAME',
 		'COCOA_GRAPHICS_SWITCHING',
+		'COCOA_MENUBAR',
 		'COCOA_RETINA_FRAMEBUFFER',
+		'CONNECTED',
 		'CONTEXT_CREATION_API',
+		'CONTEXT_DEBUG',
 		'CONTEXT_NO_ERROR',
 		'CONTEXT_RELEASE_BEHAVIOR',
 		'CONTEXT_REVISION',
@@ -29,22 +42,82 @@ Class {
 		'CURSOR_DISABLED',
 		'CURSOR_HIDDEN',
 		'CURSOR_NORMAL',
+		'CURSOR_UNAVAILABLE',
 		'DECORATED',
 		'DEPTH_BITS',
+		'DISCONNECTED',
+		'DONT_CARE',
 		'DOUBLEBUFFER',
+		'EGL_CONTEXT_API',
 		'FALSE',
+		'FEATURE_UNAVAILABLE',
+		'FEATURE_UNIMPLEMENTED',
 		'FLOATING',
 		'FOCUSED',
 		'FOCUS_ON_SHOW',
 		'FORMAT_UNAVAILABLE',
+		'GAMEPAD_AXIS_LAST',
+		'GAMEPAD_AXIS_LEFT_TRIGGER',
+		'GAMEPAD_AXIS_LEFT_X',
+		'GAMEPAD_AXIS_LEFT_Y',
+		'GAMEPAD_AXIS_RIGHT_TRIGGER',
+		'GAMEPAD_AXIS_RIGHT_X',
+		'GAMEPAD_AXIS_RIGHT_Y',
+		'GAMEPAD_BUTTON_A',
+		'GAMEPAD_BUTTON_B',
+		'GAMEPAD_BUTTON_BACK',
+		'GAMEPAD_BUTTON_CIRCLE',
+		'GAMEPAD_BUTTON_CROSS',
+		'GAMEPAD_BUTTON_DPAD_DOWN',
+		'GAMEPAD_BUTTON_DPAD_LEFT',
+		'GAMEPAD_BUTTON_DPAD_RIGHT',
+		'GAMEPAD_BUTTON_DPAD_UP',
+		'GAMEPAD_BUTTON_GUIDE',
+		'GAMEPAD_BUTTON_LAST',
+		'GAMEPAD_BUTTON_LEFT_BUMPER',
+		'GAMEPAD_BUTTON_LEFT_THUMB',
+		'GAMEPAD_BUTTON_RIGHT_BUMPER',
+		'GAMEPAD_BUTTON_RIGHT_THUMB',
+		'GAMEPAD_BUTTON_SQUARE',
+		'GAMEPAD_BUTTON_START',
+		'GAMEPAD_BUTTON_TRIANGLE',
+		'GAMEPAD_BUTTON_X',
+		'GAMEPAD_BUTTON_Y',
 		'GREEN_BITS',
 		'HAND_CURSOR',
+		'HAT_CENTERED',
+		'HAT_DOWN',
+		'HAT_LEFT',
+		'HAT_LEFT_DOWN',
+		'HAT_LEFT_UP',
+		'HAT_RIGHT',
+		'HAT_RIGHT_DOWN',
+		'HAT_RIGHT_UP',
+		'HAT_UP',
 		'HOVERED',
 		'HRESIZE_CURSOR',
 		'IBEAM_CURSOR',
 		'ICONIFIED',
 		'INVALID_ENUM',
 		'INVALID_VALUE',
+		'JOYSTICK_1',
+		'JOYSTICK_10',
+		'JOYSTICK_11',
+		'JOYSTICK_12',
+		'JOYSTICK_13',
+		'JOYSTICK_14',
+		'JOYSTICK_15',
+		'JOYSTICK_16',
+		'JOYSTICK_2',
+		'JOYSTICK_3',
+		'JOYSTICK_4',
+		'JOYSTICK_5',
+		'JOYSTICK_6',
+		'JOYSTICK_7',
+		'JOYSTICK_8',
+		'JOYSTICK_9',
+		'JOYSTICK_HAT_BUTTONS',
+		'JOYSTICK_LAST',
 		'KEY_0',
 		'KEY_1',
 		'KEY_2',
@@ -168,6 +241,7 @@ Class {
 		'KEY_Y',
 		'KEY_Z',
 		'LOCK_KEY_MODS',
+		'LOSE_CONTEXT_ON_RESET',
 		'MAXIMIZED',
 		'MOD_ALT',
 		'MOD_CAPS_LOCK',
@@ -187,25 +261,42 @@ Class {
 		'MOUSE_BUTTON_LEFT',
 		'MOUSE_BUTTON_MIDDLE',
 		'MOUSE_BUTTON_RIGHT',
+		'MOUSE_PASSTHROUGH',
+		'NATIVE_CONTEXT_API',
+		'NOT_ALLOWED_CURSOR',
 		'NOT_INITIALIZED',
+		'NO_API',
 		'NO_CURRENT_CONTEXT',
 		'NO_ERROR',
+		'NO_RESET_NOTIFICATION',
+		'NO_ROBUSTNESS',
 		'NO_WINDOW_CONTEXT',
 		'OPENGL_ANY_PROFILE',
+		'OPENGL_API',
 		'OPENGL_COMPAT_PROFILE',
 		'OPENGL_CORE_PROFILE',
 		'OPENGL_DEBUG_CONTEXT',
+		'OPENGL_ES_API',
 		'OPENGL_FORWARD_COMPAT',
 		'OPENGL_PROFILE',
+		'OSMESA_CONTEXT_API',
 		'OUT_OF_MEMORY',
 		'PLATFORM_ERROR',
+		'POINTING_HAND_CURSOR',
 		'PRESS',
 		'RAW_MOUSE_MOTION',
 		'RED_BITS',
 		'REFRESH_RATE',
 		'RELEASE',
+		'RELEASE_BEHAVIOR_FLUSH',
+		'RELEASE_BEHAVIOR_NONE',
 		'REPEAT',
 		'RESIZABLE',
+		'RESIZE_ALL_CURSOR',
+		'RESIZE_EW_CURSOR',
+		'RESIZE_NESW_CURSOR',
+		'RESIZE_NS_CURSOR',
+		'RESIZE_NWSE_CURSOR',
 		'SAMPLES',
 		'SCALE_TO_MONITOR',
 		'SRGB_CAPABLE',
@@ -218,6 +309,7 @@ Class {
 		'VERSION_UNAVAILABLE',
 		'VISIBLE',
 		'VRESIZE_CURSOR',
+		'WIN32_KEYBOARD_MENU',
 		'X11_CLASS_NAME',
 		'X11_INSTANCE_NAME'
 	],
@@ -225,28 +317,31 @@ Class {
 }
 
 { #category : #initialization }
-GLFWConstants class >> initialize [
-	"self initialize"
-	self initializeErrorCodes.
-	self initializeMacros.
-	
-	self initializeWindowHints.
-	self initializeRenderingHints.
-	self initializeContextHints.
-	self initializePlatformSpecificHints.
-	self initializeOpenGLProfiles.
-	
+GLFWConstants class >> initialize [ "self initialize"
+
+	"input"
 	self initializeInputMacros.
-	self initializeInputModes.
-	self initializeMouseMacros.
+	self initializeJoystickHatStates.
 	self initializeKeyboardKeys.
-	self initializeModifierKeys.
-	self initializeCursorStates.
-	self initializeCursorShapes
+	self initializeModifierKeyFlags.
+	self initializeMouseButtons.
+	self initializeJoysticks.
+	self initializeGamepadButtons.
+	self initializeGamepadAxes.
+	
+	"init"
+	self initializeErrorCodes.
+	
+	"windows"
+	self initializeWindowAttributes.
+	self initializeFramebufferAttributes.
+	self initializeContextAttributes.
+	self initializePlatformSpecific.
+	self initializeMiscEnums
 ]
 
-{ #category : #initialization }
-GLFWConstants class >> initializeContextHints [
+{ #category : #'initialization - windows' }
+GLFWConstants class >> initializeContextAttributes [
 
 	CLIENT_API := 16r22001.
 	CONTEXT_VERSION_MAJOR := 16r22002.
@@ -254,31 +349,13 @@ GLFWConstants class >> initializeContextHints [
 	CONTEXT_REVISION := 16r22004.
 	CONTEXT_ROBUSTNESS := 16r22005.
 	OPENGL_FORWARD_COMPAT := 16r22006.
-	OPENGL_DEBUG_CONTEXT := 16r22007.
+	CONTEXT_DEBUG := 16r22007.
+	OPENGL_DEBUG_CONTEXT := CONTEXT_DEBUG.
 	OPENGL_PROFILE := 16r22008.
 	CONTEXT_RELEASE_BEHAVIOR := 16r22009.
 	CONTEXT_NO_ERROR := 16r2200A.
 	CONTEXT_CREATION_API := 16r2200B.
 	SCALE_TO_MONITOR := 16r2200C
-]
-
-{ #category : #initialization }
-GLFWConstants class >> initializeCursorShapes [
-
-	ARROW_CURSOR := 16r36001.
-	IBEAM_CURSOR := 16r36002.
-	CROSSHAIR_CURSOR := 16r36003.
-	HAND_CURSOR := 16r36004.
-	HRESIZE_CURSOR := 16r36005.
-	VRESIZE_CURSOR := 16r36006
-]
-
-{ #category : #initialization }
-GLFWConstants class >> initializeCursorStates [
-
-	CURSOR_NORMAL := 16r34001.
-	CURSOR_HIDDEN := 16r34002.
-	CURSOR_DISABLED := 16r34003
 ]
 
 { #category : #initialization }
@@ -294,10 +371,74 @@ GLFWConstants class >> initializeErrorCodes [
 	VERSION_UNAVAILABLE := 16r10007.
 	PLATFORM_ERROR := 16r10008.
 	FORMAT_UNAVAILABLE := 16r10009.
-	NO_WINDOW_CONTEXT := 16r1000A
+	NO_WINDOW_CONTEXT := 16r1000A.
+	CURSOR_UNAVAILABLE := 16r1000B.
+	FEATURE_UNAVAILABLE := 16r1000C.
+	FEATURE_UNIMPLEMENTED := 16r1000D
 ]
 
-{ #category : #initialization }
+{ #category : #'initialization - windows' }
+GLFWConstants class >> initializeFramebufferAttributes [
+
+	RED_BITS := 16r21001.
+	GREEN_BITS := 16r21002.
+	BLUE_BITS := 16r21003.
+	ALPHA_BITS := 16r21004.
+	DEPTH_BITS := 16r21005.
+	STENCIL_BITS := 16r21006.
+	ACCUM_RED_BITS := 16r21007.
+	ACCUM_GREEN_BITS := 16r21008.
+	ACCUM_BLUE_BITS := 16r21009.
+	ACCUM_ALPHA_BITS := 16r2100A.
+	AUX_BUFFERS := 16r2100B.
+	STEREO := 16r2100C.
+	SAMPLES := 16r2100D.
+	SRGB_CAPABLE := 16r2100E.
+	REFRESH_RATE := 16r2100F.
+	DOUBLEBUFFER := 16r21010
+]
+
+{ #category : #'initialization - input' }
+GLFWConstants class >> initializeGamepadAxes [
+
+	GAMEPAD_AXIS_LEFT_X := 0.
+	GAMEPAD_AXIS_LEFT_Y := 1.
+	GAMEPAD_AXIS_RIGHT_X := 2.
+	GAMEPAD_AXIS_RIGHT_Y := 3.
+	GAMEPAD_AXIS_LEFT_TRIGGER := 4.
+	GAMEPAD_AXIS_RIGHT_TRIGGER := 5.
+	
+	GAMEPAD_AXIS_LAST := GAMEPAD_AXIS_RIGHT_TRIGGER
+]
+
+{ #category : #'initialization - input' }
+GLFWConstants class >> initializeGamepadButtons [
+
+	GAMEPAD_BUTTON_A := 0.
+	GAMEPAD_BUTTON_B := 1.
+	GAMEPAD_BUTTON_X := 2.
+	GAMEPAD_BUTTON_Y := 3.
+	GAMEPAD_BUTTON_LEFT_BUMPER := 4.
+	GAMEPAD_BUTTON_RIGHT_BUMPER := 5.
+	GAMEPAD_BUTTON_BACK := 6.
+	GAMEPAD_BUTTON_START := 7.
+	GAMEPAD_BUTTON_GUIDE := 8.
+	GAMEPAD_BUTTON_LEFT_THUMB := 9.
+	GAMEPAD_BUTTON_RIGHT_THUMB := 10.
+	GAMEPAD_BUTTON_DPAD_UP := 11.
+	GAMEPAD_BUTTON_DPAD_RIGHT := 12.
+	GAMEPAD_BUTTON_DPAD_DOWN := 13.
+	GAMEPAD_BUTTON_DPAD_LEFT := 14.
+	
+	GAMEPAD_BUTTON_LAST := GAMEPAD_BUTTON_DPAD_LEFT.
+	
+	GAMEPAD_BUTTON_CROSS := GAMEPAD_BUTTON_A.
+	GAMEPAD_BUTTON_CIRCLE := GAMEPAD_BUTTON_B.
+	GAMEPAD_BUTTON_SQUARE := GAMEPAD_BUTTON_X.
+	GAMEPAD_BUTTON_TRIANGLE := GAMEPAD_BUTTON_Y
+]
+
+{ #category : #'initialization - input' }
 GLFWConstants class >> initializeInputMacros [
 
 	RELEASE := 0.
@@ -305,20 +446,50 @@ GLFWConstants class >> initializeInputMacros [
 	REPEAT := 2
 ]
 
-{ #category : #initialization }
-GLFWConstants class >> initializeInputModes [
+{ #category : #'initialization - input' }
+GLFWConstants class >> initializeJoystickHatStates [
 
-	CURSOR := 16r33001.
-	STICKY_KEYS := 16r33002.
-	STICKY_MOUSE_BUTTONS := 16r33003.
-	LOCK_KEY_MODS := 16r33004.
-	RAW_MOUSE_MOTION := 16r33005
+	HAT_CENTERED := 0.
+	HAT_UP := 1.
+	HAT_RIGHT := 2.
+	HAT_DOWN := 4.
+	HAT_LEFT := 8.
+	HAT_RIGHT_UP := HAT_RIGHT bitOr: HAT_UP.
+	HAT_RIGHT_DOWN := HAT_RIGHT bitOr: HAT_DOWN.
+	HAT_LEFT_UP := HAT_LEFT bitOr: HAT_UP.
+	HAT_LEFT_DOWN := HAT_LEFT bitOr: HAT_DOWN
 ]
 
-{ #category : #initialization }
+{ #category : #'initialization - input' }
+GLFWConstants class >> initializeJoysticks [
+
+	JOYSTICK_1 := 0.
+	JOYSTICK_2 := 1.
+	JOYSTICK_3 := 2.
+	JOYSTICK_4 := 3.
+	JOYSTICK_5 := 4.
+	JOYSTICK_6 := 5.
+	JOYSTICK_7 := 6.
+	JOYSTICK_8 := 7.
+	JOYSTICK_9 := 8.
+	JOYSTICK_10 := 9.
+	JOYSTICK_11 := 10.
+	JOYSTICK_12 := 11.
+	JOYSTICK_13 := 12.
+	JOYSTICK_14 := 13.
+	JOYSTICK_15 := 14.
+	JOYSTICK_16 := 15.
+	
+	JOYSTICK_LAST := JOYSTICK_16
+]
+
+{ #category : #'initialization - input' }
 GLFWConstants class >> initializeKeyboardKeys [
 
+	"The unknown key"
 	KEY_UNKNOWN := -1.
+	
+	"Printable keys"
 	KEY_SPACE := 32.
 	KEY_APOSTROPHE := 39. " ' "
 	KEY_COMMA := 44. " , "
@@ -369,6 +540,8 @@ GLFWConstants class >> initializeKeyboardKeys [
 	KEY_GRAVE_ACCENT := 96. " ` "
 	KEY_WORLD_1 := 161. " non-US #1 "
 	KEY_WORLD_2 := 162. " non-US #2 "
+	
+	"Function keys"
 	KEY_ESCAPE := 256.
 	KEY_ENTER := 257.
 	KEY_TAB := 258.
@@ -439,18 +612,80 @@ GLFWConstants class >> initializeKeyboardKeys [
 	KEY_RIGHT_ALT := 346.
 	KEY_RIGHT_SUPER := 347.
 	KEY_MENU := 348.
+	
 	KEY_LAST := KEY_MENU
 ]
 
-{ #category : #initialization }
-GLFWConstants class >> initializeMacros [
+{ #category : #'initialization - windows' }
+GLFWConstants class >> initializeMiscEnums [
 
-	FALSE := 0.
-	TRUE := 1
+	NO_API := 0.
+	OPENGL_API := 16r30001.
+	OPENGL_ES_API := 16r30002.
+	
+	NO_ROBUSTNESS := 0.
+	NO_RESET_NOTIFICATION := 16r31001.
+	LOSE_CONTEXT_ON_RESET := 16r31002.
+	
+	OPENGL_ANY_PROFILE := 0.
+	OPENGL_CORE_PROFILE := 16r32001.
+	OPENGL_COMPAT_PROFILE := 16r32002.
+	
+	CURSOR := 16r33001.
+	STICKY_KEYS := 16r33002.
+	STICKY_MOUSE_BUTTONS := 16r33003.
+	LOCK_KEY_MODS := 16r33004.
+	RAW_MOUSE_MOTION := 16r33005.
+	
+	CURSOR_NORMAL := 16r34001.
+	CURSOR_HIDDEN := 16r34002.
+	CURSOR_DISABLED := 16r34003.
+	
+	ANY_RELEASE_BEHAVIOR := 0.
+	RELEASE_BEHAVIOR_FLUSH := 16r35001.
+	RELEASE_BEHAVIOR_NONE := 16r35002.
+	
+	NATIVE_CONTEXT_API := 16r36001.
+	EGL_CONTEXT_API := 16r36002.
+	OSMESA_CONTEXT_API := 16r36003.
+	
+	ANGLE_PLATFORM_TYPE_NONE := 16r37001.
+	ANGLE_PLATFORM_TYPE_OPENGL := 16r37002.
+	ANGLE_PLATFORM_TYPE_OPENGLES := 16r37003.
+	ANGLE_PLATFORM_TYPE_D3D9 := 16r37004.
+	ANGLE_PLATFORM_TYPE_D3D11 := 16r37005.
+	ANGLE_PLATFORM_TYPE_VULKAN := 16r37007.
+	ANGLE_PLATFORM_TYPE_METAL := 16r37008.
+	
+	ARROW_CURSOR := 16r36001.
+	IBEAM_CURSOR := 16r36002.
+	CROSSHAIR_CURSOR := 16r36003.
+	POINTING_HAND_CURSOR := 16r36004.
+	RESIZE_EW_CURSOR := 16r36005.
+	RESIZE_NS_CURSOR := 16r36006.
+	RESIZE_NWSE_CURSOR := 16r36007.
+	RESIZE_NESW_CURSOR := 16r36008.
+	RESIZE_ALL_CURSOR := 16r36009.
+	NOT_ALLOWED_CURSOR := 16r3600A.
+	
+	HRESIZE_CURSOR := RESIZE_EW_CURSOR.
+	VRESIZE_CURSOR := RESIZE_NS_CURSOR.
+	HAND_CURSOR := POINTING_HAND_CURSOR.
+	
+	CONNECTED := 16r40001.
+	DISCONNECTED := 16r40002.
+	
+	JOYSTICK_HAT_BUTTONS := 16r50001.
+	ANGLE_PLATFORM_TYPE := 16r50002.
+	
+	COCOA_CHDIR_RESOURCES := 16r51001.
+	COCOA_MENUBAR := 16r51002.
+	
+	DONT_CARE := -1.
 ]
 
-{ #category : #initialization }
-GLFWConstants class >> initializeModifierKeys [
+{ #category : #'initialization - input' }
+GLFWConstants class >> initializeModifierKeyFlags [
 
 	MOD_SHIFT := 2r00000001.
 	MOD_CONTROL := 2r00000010.
@@ -460,8 +695,8 @@ GLFWConstants class >> initializeModifierKeys [
 	MOD_NUM_LOCK := 2r00100000
 ]
 
-{ #category : #initialization }
-GLFWConstants class >> initializeMouseMacros [
+{ #category : #'initialization - input' }
+GLFWConstants class >> initializeMouseButtons [
 
 	MOUSE_BUTTON_1 := 0.
 	MOUSE_BUTTON_2 := 1.
@@ -477,48 +712,21 @@ GLFWConstants class >> initializeMouseMacros [
 	MOUSE_BUTTON_MIDDLE := MOUSE_BUTTON_3
 ]
 
-{ #category : #initialization }
-GLFWConstants class >> initializeOpenGLProfiles [
-
-	OPENGL_ANY_PROFILE := 0.
-	OPENGL_CORE_PROFILE := 16r32001.
-	OPENGL_COMPAT_PROFILE := 16r32002
-]
-
-{ #category : #initialization }
-GLFWConstants class >> initializePlatformSpecificHints [
+{ #category : #'initialization - windows' }
+GLFWConstants class >> initializePlatformSpecific [
 
 	COCOA_RETINA_FRAMEBUFFER := 16r23001.
 	COCOA_FRAME_NAME := 16r23002.
 	COCOA_GRAPHICS_SWITCHING := 16r23003.
 	
 	X11_CLASS_NAME := 16r24001.
-	X11_INSTANCE_NAME := 16r24002
+	X11_INSTANCE_NAME := 16r24002.
+	
+	WIN32_KEYBOARD_MENU := 16r25001
 ]
 
-{ #category : #initialization }
-GLFWConstants class >> initializeRenderingHints [
-
-	RED_BITS := 16r21001.
-	GREEN_BITS := 16r21002.
-	BLUE_BITS := 16r21003.
-	ALPHA_BITS := 16r21004.
-	DEPTH_BITS := 16r21005.
-	STENCIL_BITS := 16r21006.
-	ACCUM_RED_BITS := 16r21007.
-	ACCUM_GREEN_BITS := 16r21008.
-	ACCUM_BLUE_BITS := 16r21009.
-	ACCUM_ALPHA_BITS := 16r2100A.
-	AUX_BUFFERS := 16r2100B.
-	STEREO := 16r2100C.
-	SAMPLES := 16r2100D.
-	SRGB_CAPABLE := 16r2100E.
-	REFRESH_RATE := 16r2100F.
-	DOUBLEBUFFER := 16r21010
-]
-
-{ #category : #initialization }
-GLFWConstants class >> initializeWindowHints [
+{ #category : #'initialization - windows' }
+GLFWConstants class >> initializeWindowAttributes [
 
 	FOCUSED := 16r20001.
 	ICONIFIED := 16r20002.
@@ -531,5 +739,74 @@ GLFWConstants class >> initializeWindowHints [
 	CENTER_CURSOR := 16r20009.
 	TRANSPARENT_FRAMEBUFFER := 16r2000A.
 	HOVERED := 16r2000B.
-	FOCUS_ON_SHOW := 16r2000C
+	FOCUS_ON_SHOW := 16r2000C.
+	MOUSE_PASSTHROUGH := 16r2000D
+]
+
+{ #category : #'initialization - windows' }
+GLFWConstants class >> initializeWindowHints [
+
+	NO_API := 0.
+	OPENGL_API := 16r30001.
+	OPENGL_ES_API := 16r30002.
+	
+	NO_ROBUSTNESS := 0.
+	NO_RESET_NOTIFICATION := 16r31001.
+	LOSE_CONTEXT_ON_RESET := 16r31002.
+	
+	OPENGL_ANY_PROFILE := 0.
+	OPENGL_CORE_PROFILE := 16r32001.
+	OPENGL_COMPAT_PROFILE := 16r32002.
+	
+	CURSOR := 16r33001.
+	STICKY_KEYS := 16r33002.
+	STICKY_MOUSE_BUTTONS := 16r33003.
+	LOCK_KEY_MODS := 16r33004.
+	RAW_MOUSE_MOTION := 16r33005.
+	
+	CURSOR_NORMAL := 16r34001.
+	CURSOR_HIDDEN := 16r34002.
+	CURSOR_DISABLED := 16r34003.
+	
+	ANY_RELEASE_BEHAVIOR := 0.
+	RELEASE_BEHAVIOR_FLUSH := 16r35001.
+	RELEASE_BEHAVIOR_NONE := 16r35002.
+	
+	NATIVE_CONTEXT_API := 16r36001.
+	EGL_CONTEXT_API := 16r36002.
+	OSMESA_CONTEXT_API := 16r36003.
+	
+	ANGLE_PLATFORM_TYPE_NONE := 16r37001.
+	ANGLE_PLATFORM_TYPE_OPENGL := 16r37002.
+	ANGLE_PLATFORM_TYPE_OPENGLES := 16r37003.
+	ANGLE_PLATFORM_TYPE_D3D9 := 16r37004.
+	ANGLE_PLATFORM_TYPE_D3D11 := 16r37005.
+	ANGLE_PLATFORM_TYPE_VULKAN := 16r37007.
+	ANGLE_PLATFORM_TYPE_METAL := 16r37008.
+	
+	ARROW_CURSOR := 16r36001.
+	IBEAM_CURSOR := 16r36002.
+	CROSSHAIR_CURSOR := 16r36003.
+	POINTING_HAND_CURSOR := 16r36004.
+	RESIZE_EW_CURSOR := 16r36005.
+	RESIZE_NS_CURSOR := 16r36006.
+	RESIZE_NWSE_CURSOR := 16r36007.
+	RESIZE_NESW_CURSOR := 16r36008.
+	RESIZE_ALL_CURSOR := 16r36009.
+	NOT_ALLOWED_CURSOR := 16r3600A.
+	
+	HRESIZE_CURSOR := RESIZE_EW_CURSOR.
+	VRESIZE_CURSOR := RESIZE_NS_CURSOR.
+	HAND_CURSOR := POINTING_HAND_CURSOR.
+	
+	CONNECTED := 16r40001.
+	DISCONNECTED := 16r40002.
+	
+	JOYSTICK_HAT_BUTTONS := 16r50001.
+	ANGLE_PLATFORM_TYPE := 16r50002.
+	
+	COCOA_CHDIR_RESOURCES := 16r51001.
+	COCOA_MENUBAR := 16r51002.
+	
+	DONT_CARE := -1.
 ]
