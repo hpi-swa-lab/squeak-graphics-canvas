@@ -1,5 +1,5 @@
 Class {
-	#name : #GLFWImage,
+	#name : #GLFWVidMode,
 	#superclass : #ExternalStructure,
 	#pools : [
 		'GLFWConstants'
@@ -8,11 +8,14 @@ Class {
 }
 
 { #category : #'field definition' }
-GLFWImage class >> fields [ "self defineFields"
+GLFWVidMode class >> fields [ "self defineFields"
 
 	^ #(
 		(width 'int')
 		(height 'int')
-		(pixels 'unsignedChar*')
+		(redBits 'int')
+		(greenBits 'int')
+		(blueBits 'int')
+		(refreshRate 'int')
 	)
 ]

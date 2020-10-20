@@ -1,5 +1,5 @@
 Class {
-	#name : #GLFWImage,
+	#name : #GLFWGamepadState,
 	#superclass : #ExternalStructure,
 	#pools : [
 		'GLFWConstants'
@@ -8,11 +8,10 @@ Class {
 }
 
 { #category : #'field definition' }
-GLFWImage class >> fields [ "self defineFields"
+GLFWGamepadState class >> fields [ "self defineFields"
 
 	^ #(
-		(width 'int')
-		(height 'int')
-		(pixels 'unsignedChar*')
+		(buttons 'unsignedChar[15]')
+		(axes 'float[6]')
 	)
 ]

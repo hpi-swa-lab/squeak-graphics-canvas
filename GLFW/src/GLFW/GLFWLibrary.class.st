@@ -428,13 +428,6 @@ GLFWLibrary >> EGL_CONTEXT_API [
 ]
 
 { #category : #constants }
-GLFWLibrary >> FALSE [
-
-	<generated>
-	^ FALSE
-]
-
-{ #category : #constants }
 GLFWLibrary >> FEATURE_UNAVAILABLE [
 
 	<generated>
@@ -2217,13 +2210,6 @@ GLFWLibrary >> TRANSPARENT_FRAMEBUFFER [
 
 	<generated>
 	^ TRANSPARENT_FRAMEBUFFER
-]
-
-{ #category : #constants }
-GLFWLibrary >> TRUE [
-
-	<generated>
-	^ TRUE
 ]
 
 { #category : #constants }
