@@ -1,11 +1,11 @@
 Class {
-	#name : #TessEvaluationShader,
+	#name : #GLTessEvaluationShader,
 	#superclass : #GLShaderSource,
 	#category : #'OpenGL-Shaders'
 }
 
 { #category : #accessing }
-TessEvaluationShader >> kind [
+GLTessEvaluationShader >> kind [
 
 	^ GL_TESS_EVALUATION_SHADER
 ]

@@ -1,11 +1,11 @@
 Class {
-	#name : #GeometryShader,
+	#name : #GLGeometryShader,
 	#superclass : #GLShaderSource,
 	#category : #'OpenGL-Shaders'
 }
 
 { #category : #accessing }
-GeometryShader >> kind [
+GLGeometryShader >> kind [
 
 	^ GL_GEOMETRY_SHADER
 ]

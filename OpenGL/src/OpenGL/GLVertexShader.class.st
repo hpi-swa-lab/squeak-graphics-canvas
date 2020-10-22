@@ -1,11 +1,11 @@
 Class {
-	#name : #TessControlShader,
+	#name : #GLVertexShader,
 	#superclass : #GLShaderSource,
 	#category : #'OpenGL-Shaders'
 }
 
 { #category : #accessing }
-TessControlShader >> kind [
+GLVertexShader >> kind [
 
-	^ GL_TESS_CONTROL_SHADER
+	^ GL_VERTEX_SHADER
 ]

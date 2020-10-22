@@ -1,11 +1,11 @@
 Class {
-	#name : #ComputeShader,
+	#name : #GLTessControlShader,
 	#superclass : #GLShaderSource,
 	#category : #'OpenGL-Shaders'
 }
 
 { #category : #accessing }
-ComputeShader >> kind [
+GLTessControlShader >> kind [
 
-	^ GL_COMPUTE_SHADER
+	^ GL_TESS_CONTROL_SHADER
 ]

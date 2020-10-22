@@ -66,8 +66,8 @@ GLProgram class >> context: glContext [
 	^ self
 		context: glContext
 		shaders: {
-			VertexShader context: glContext code: self vertexShader withUnixLineEndings.
-			FragmentShader context: glContext code: self fragmentShader withUnixLineEndings.
+			GLVertexShader context: glContext code: self vertexShader withUnixLineEndings.
+			GLFragmentShader context: glContext code: self fragmentShader withUnixLineEndings.
 		}
 ]
 
@@ -132,8 +132,8 @@ GLProgram >> initializeShaders [
 
 	| shaders status |
 	shaders := {
-		VertexShader context: gl code: self class vertexShader withUnixLineEndings.
-		FragmentShader context: gl code: self class fragmentShader withUnixLineEndings.
+		GLVertexShader context: gl code: self class vertexShader withUnixLineEndings.
+		GLFragmentShader context: gl code: self class fragmentShader withUnixLineEndings.
 	}.
 	
 	"attaching shaders"

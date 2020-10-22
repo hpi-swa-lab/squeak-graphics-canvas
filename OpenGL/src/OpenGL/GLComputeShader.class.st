@@ -1,11 +1,11 @@
 Class {
-	#name : #FragmentShader,
+	#name : #GLComputeShader,
 	#superclass : #GLShaderSource,
 	#category : #'OpenGL-Shaders'
 }
 
 { #category : #accessing }
-FragmentShader >> kind [
+GLComputeShader >> kind [
 
-	^ GL_FRAGMENT_SHADER
+	^ GL_COMPUTE_SHADER
 ]

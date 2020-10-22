@@ -1,11 +1,11 @@
 Class {
-	#name : #VertexShader,
+	#name : #GLFragmentShader,
 	#superclass : #GLShaderSource,
 	#category : #'OpenGL-Shaders'
 }
 
 { #category : #accessing }
-VertexShader >> kind [
+GLFragmentShader >> kind [
 
-	^ GL_VERTEX_SHADER
+	^ GL_FRAGMENT_SHADER
 ]
