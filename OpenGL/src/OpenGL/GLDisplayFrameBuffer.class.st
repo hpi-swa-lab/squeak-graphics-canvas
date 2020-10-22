@@ -1,7 +1,7 @@
 Class {
 	#name : #GLDisplayFrameBuffer,
 	#superclass : #GLBuffer,
-	#category : #'OpenGL-Core'
+	#category : #'OpenGL-Buffers'
 }
 
 { #category : #binding }

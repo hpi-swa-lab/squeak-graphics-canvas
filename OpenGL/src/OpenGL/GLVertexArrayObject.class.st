@@ -5,7 +5,7 @@ Class {
 		'numElements',
 		'glType'
 	],
-	#category : #'OpenGL-Core'
+	#category : #'OpenGL-Buffers'
 }
 
 { #category : #binding }

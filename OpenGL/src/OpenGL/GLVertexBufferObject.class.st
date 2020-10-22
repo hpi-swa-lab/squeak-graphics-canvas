@@ -7,7 +7,7 @@ Class {
 		'componentsPerVertex',
 		'bytesPerElement'
 	],
-	#category : #'OpenGL-Core'
+	#category : #'OpenGL-Buffers'
 }
 
 { #category : #binding }

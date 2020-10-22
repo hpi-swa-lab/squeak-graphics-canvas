@@ -1,7 +1,7 @@
 Class {
 	#name : #GLBuffer,
 	#superclass : #GLObject,
-	#category : #'OpenGL-Core'
+	#category : #'OpenGL-Buffers'
 }
 
 { #category : #destruction }

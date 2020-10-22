@@ -18,7 +18,7 @@ Class {
 		'target',
 		'colorAttachment0'
 	],
-	#category : #'OpenGL-Core'
+	#category : #'OpenGL-Buffers'
 }
 
 { #category : #binding }
