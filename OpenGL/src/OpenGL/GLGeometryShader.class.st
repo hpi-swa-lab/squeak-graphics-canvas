@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #accessing }
-GLGeometryShader >> kind [
+GLGeometryShader >> type [
 
 	^ GL_GEOMETRY_SHADER
 ]

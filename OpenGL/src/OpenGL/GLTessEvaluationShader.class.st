@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #accessing }
-GLTessEvaluationShader >> kind [
+GLTessEvaluationShader >> type [
 
 	^ GL_TESS_EVALUATION_SHADER
 ]

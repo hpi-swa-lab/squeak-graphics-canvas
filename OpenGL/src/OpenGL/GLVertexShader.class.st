@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #accessing }
-GLVertexShader >> kind [
+GLVertexShader >> type [
 
 	^ GL_VERTEX_SHADER
 ]

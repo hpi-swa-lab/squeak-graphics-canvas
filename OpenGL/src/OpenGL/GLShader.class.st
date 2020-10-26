@@ -2,78 +2,128 @@ Class {
 	#name : #GLShader,
 	#superclass : #GLObject,
 	#instVars : [
-		'code'
+		'source'
 	],
 	#category : #'OpenGL-Shaders'
 }
 
-{ #category : #'instance creation' }
-GLShader class >> context: glContext [
+{ #category : #compilation }
+GLShader >> compile [
 
-	self shouldNotImplement
+	GL glCompileShader: id.
+	self lastCompilationSucceeded ifFalse: [
+		self errorCompilationFailed]
 ]
 
-{ #category : #'instance creation' }
-GLShader class >> context: glContext code: aString [
+{ #category : #'initialize-release' }
+GLShader >> delete [
 
-	^ self basicNew
-		initializeWithContext: glContext code: aString;
-		yourself
+	GL glDeleteShader: id
 ]
 
-{ #category : #accessing }
-GLShader >> code [
+{ #category : #compilation }
+GLShader >> errorCompilationFailed [
 
-	^ code
+	^ (GLShaderCompilationError shader: self infoLog: self getInfoLog) signal
 ]
 
-{ #category : #accessing }
-GLShader >> code: anObject [
+{ #category : #testing }
+GLShader >> exists [
 
-	code := anObject
+	^ GL glIsShader: id
 ]
 
-{ #category : #'code from file' }
-GLShader >> getShaderInfoLog: vertexShader [
+{ #category : #'accessing uncached' }
+GLShader >> getAttribute: attributeName [
 
-	| infoLogLength infoLog |
-	infoLogLength := 4096.
-	infoLog := ExternalData
-				fromHandle: (ExternalAddress gcallocate: infoLogLength)
-				type: ExternalType string.
-	GL glGetShaderInfoLog: vertexShader with: infoLogLength with: nil with: infoLog.
-	^ infoLog fromCString
+	| result |
+	result := IntegerArray new: 1.
+	GL glGetShaderiv: id with: attributeName with: result.
+	^ result first
 ]
 
-{ #category : #'shader lifecycle' }
-GLShader >> initializeWithContext: glContext code: aString [
+{ #category : #compilation }
+GLShader >> getInfoLog [
 
-	| utf8 |
+	| length resultLength result |
+	length := self getAttribute: GL_INFO_LOG_LENGTH.
+	result := ByteArray new: length.
+	resultLength := IntegerArray new: 1.
+	GL glGetShaderInfoLog: id with: length with: resultLength with: result.
+	^ (result first: resultLength) utf8Decoded
+]
+
+{ #category : #'accessing uncached' }
+GLShader >> getSource [
+
+	| length resultLength result |
+	length := self getAttribute: GL_SHADER_SOURCE_LENGTH.
+	result := ByteArray new: length.
+	resultLength := IntegerArray new: 1.
+	GL glGetShaderSource: id with: length with: resultLength with: result.
+	^ (result first: resultLength) utf8Decoded
+]
+
+{ #category : #'accessing uncached' }
+GLShader >> getType [
+
+	^ self getAttribute: GL_SHADER_TYPE
+]
+
+{ #category : #'initialize-release' }
+GLShader >> initialize [
+
 	super initialize.
-	self code: aString.
-	utf8 := code utf8Encoded.
+	source := ''.
+	id := GL glCreateShader: self type
+]
+
+{ #category : #testing }
+GLShader >> isFlaggedForDeletion [
+
+	^ (self getAttribute: GL_DELETE_STATUS) = GL_TRUE
+]
+
+{ #category : #testing }
+GLShader >> lastCompilationSucceeded [
+
+	^ (self getAttribute: GL_COMPILE_STATUS) = GL_TRUE
+]
+
+{ #category : #'accessing uncached' }
+GLShader >> setSource: aString [
+
+	| utf8Bytes |
+	utf8Bytes := aString utf8Encoded.
 	
-	ExternalData allocate: utf8 size + 1 type: ExternalType string do: [:data | | shaderCode status |
-		id := GL glCreateShader: self kind.
+	ExternalData allocate: utf8Bytes size + 1 type: ExternalType string do: [:data |
+		| arrayOfStrings |
+		1 to: utf8Bytes size do: [:index |
+			data getHandle byteAt: index put: (utf8Bytes at: index)].
+		data getHandle byteAt: utf8Bytes size + 1 put: 0.
 		
-		1 to: utf8 size do: [:index |
-			data getHandle byteAt: index put: (utf8 at: index)].
-		data getHandle byteAt: utf8 size + 1 put: 0.
-		
-		shaderCode := (ByteArray new: ExternalType void asPointerType byteSize)
+		arrayOfStrings := (ByteArray new: ExternalType void asPointerType byteSize)
 						 	pointerAt: 1 put: data getHandle;
 							yourself.
 	
-		GL glShaderSource: id with: 1 with: shaderCode with: nil.
-		GL glCompileShader: id.
-		
-		status := IntegerArray new: 1.
-		GL glGetShaderiv: id with: GL_COMPILE_STATUS with: status.
-		status first = 0 ifTrue: [
-			self error: self asString , ' shader failed to compile: ', (self getShaderInfoLog: id)]]
+		GL glShaderSource: id with: 1 with: arrayOfStrings with: nil]
 ]
 
 { #category : #accessing }
-GLShader >> kind [
-	^ self subclassResponsibility
+GLShader >> source [
+
+	^ source
+]
+
+{ #category : #accessing }
+GLShader >> source: aString [
+
+	self setSource: aString.
+	source := aString
+]
+
+{ #category : #accessing }
+GLShader >> type [
+
+	self subclassResponsibility
 ]

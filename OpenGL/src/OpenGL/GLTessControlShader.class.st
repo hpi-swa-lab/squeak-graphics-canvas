@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #accessing }
-GLTessControlShader >> kind [
+GLTessControlShader >> type [
 
 	^ GL_TESS_CONTROL_SHADER
 ]

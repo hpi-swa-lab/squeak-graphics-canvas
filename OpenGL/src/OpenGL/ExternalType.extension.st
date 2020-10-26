@@ -45,7 +45,7 @@ ExternalType class >> GLbitfield [
 { #category : #'*OpenGL' }
 ExternalType class >> GLboolean [
 
-	^ self uint32_t
+	^ self bool
 ]
 
 { #category : #'*OpenGL' }

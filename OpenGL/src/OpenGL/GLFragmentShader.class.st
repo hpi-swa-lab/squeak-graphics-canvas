@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #accessing }
-GLFragmentShader >> kind [
+GLFragmentShader >> type [
 
 	^ GL_FRAGMENT_SHADER
 ]

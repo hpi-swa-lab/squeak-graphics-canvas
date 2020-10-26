@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #accessing }
-GLComputeShader >> kind [
+GLComputeShader >> type [
 
 	^ GL_COMPUTE_SHADER
 ]
