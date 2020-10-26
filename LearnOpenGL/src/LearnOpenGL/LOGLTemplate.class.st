@@ -9,7 +9,7 @@ Class {
 		'GLConstants',
 		'GLFWConstants'
 	],
-	#category : #LearnOpenGL
+	#category : #'LearnOpenGL-Core'
 }
 
 { #category : #'instance creation' }
@@ -28,9 +28,15 @@ LOGLTemplate >> extentChanged: newExtent [
 ]
 
 { #category : #accessing }
-LOGLTemplate >> height [
+LOGLTemplate >> initialHeight [
 
 	^ 600
+]
+
+{ #category : #accessing }
+LOGLTemplate >> initialWidth [
+
+	^ 800
 ]
 
 { #category : #rendering }
@@ -43,9 +49,7 @@ LOGLTemplate >> processInput [
 { #category : #rendering }
 LOGLTemplate >> render [
 
-	gl makeCurrentDuring: [
-		gl clearColor: Color white.
-		gl glClear: GL_COLOR_BUFFER_BIT]
+	
 ]
 
 { #category : #rendering }
@@ -65,19 +69,27 @@ LOGLTemplate >> run [
 	GLFW targetGLVersion: GL3_3 compatibility: false.
 
 	window := GLFWWindow
-				width: self width
-				height: self height
+				width: self initialWidth
+				height: self initialHeight
 				title: self title.
 	
 	window ifNil: [^ self error: 'Failed to create GLFW window'].
 	
-	gl := GL3_3 context: window context.
+	(GL3_3 context: window context) makeCurrentDuring: [
+		window framebufferSizeCallback: [:w :width :height |
+			self extentChanged: width @ height].
 	
-	window framebufferSizeCallback: [:w :width :height |
-		self extentChanged: width @ height].
+		self setUp.
+		[self renderLoop]
+			ensure: [
+				self tearDown.
+				window destroy]]
+]
+
+{ #category : #running }
+LOGLTemplate >> setUp [
+
 	
-	[self renderLoop]
-		ensure: [window destroy]
 ]
 
 { #category : #testing }
@@ -86,16 +98,16 @@ LOGLTemplate >> shouldClose [
 	^ window shouldClose
 ]
 
-{ #category : #accessing }
-LOGLTemplate >> title [
+{ #category : #running }
+LOGLTemplate >> tearDown [
 
-	^ 'LearnOpenGL'
+	
 ]
 
 { #category : #accessing }
-LOGLTemplate >> width [
+LOGLTemplate >> title [
 
-	^ 800
+	^ self class name asString
 ]
 
 { #category : #accessing }
