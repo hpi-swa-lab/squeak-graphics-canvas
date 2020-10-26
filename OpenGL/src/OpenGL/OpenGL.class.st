@@ -156,7 +156,8 @@ OpenGL class >> exampleTex [	"OpenGL exampleTex"
 { #category : #'class initialization' }
 OpenGL class >> initialize [
 
-	Smalltalk addToShutDownList: self
+	Smalltalk addToStartUpList: self.
+	Environment current at: #GL put: nil
 ]
 
 { #category : #accessing }
@@ -177,13 +178,16 @@ OpenGL class >> moduleName [
 ]
 
 { #category : #'class initialization' }
-OpenGL class >> shutDown [ 
+OpenGL class >> startUp: resuming [
 
-	| instances replacement |
-	"We want to make sure everybody interacting with an OpenGL library will immediately notice a no longer valid instance."
-	instances := Array streamContents: [:stream | self allSubInstancesDo: [:each | stream nextPut: each]].
-	replacement := Array new: instances size withAll: #SuspendedOpenGL.
-	instances elementsForwardIdentityTo: replacement
+	resuming ifTrue: [
+		| instances replacements |
+		"Make sure everybody interacting with an OpenGL library will notice a no longer valid instance."
+		instances := Array streamContents: [:stream |
+						self allSubInstancesDo: [:each |
+							stream nextPut: each]].
+		replacements := Array new: instances size withAll: #SuspendedOpenGL.
+		instances elementsForwardIdentityTo: replacements]
 ]
 
 { #category : #debugging }

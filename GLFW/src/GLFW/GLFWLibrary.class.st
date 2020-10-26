@@ -43,7 +43,10 @@ GLFWLibrary class >> example1 [ "self example1"
 { #category : #'class initialization' }
 GLFWLibrary class >> initialize [
 
-	Smalltalk addToShutDownList: self.
+	Smalltalk
+		at: #GLContext
+		ifPresent: [:cls | Smalltalk addToShutDownList: self after: GLContext]
+		ifAbsent: [Smalltalk addToShutDownList: self].
 	Smalltalk addToStartUpList: self.
 	self registerNewInstance.
 	self startUp
@@ -73,21 +76,23 @@ GLFWLibrary class >> registerNewInstance [
 ]
 
 { #category : #'system startup' }
-GLFWLibrary class >> shutDown [
+GLFWLibrary class >> shutDown: quitting [
 
-	Smalltalk
-		at: #GLFW
-		ifPresent: [:lib |
-			[lib terminate] ifError: ["do nothing"]]
+	quitting ifTrue: [
+		Environment current
+			at: #GLFW
+			ifPresent: [:lib |
+				[lib terminate] ifError: [self notify: 'Termination of GLFW failed']]]
 ]
 
 { #category : #'system startup' }
-GLFWLibrary class >> startUp [
+GLFWLibrary class >> startUp: resuming [
 
-	Smalltalk
-		at: #GLFW
-		ifPresent: [:lib |
-			[lib reset; init] ifError: ["do nothing"]]
+	resuming ifTrue: [
+		Environment current
+			at: #GLFW
+			ifPresent: [:lib |
+				[lib reset; init] ifError: [self notify: 'Initialization of GLFW failed']]]
 ]
 
 { #category : #'class initialization' }

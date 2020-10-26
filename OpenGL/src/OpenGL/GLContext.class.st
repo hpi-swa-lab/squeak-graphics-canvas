@@ -13,16 +13,24 @@ Class {
 { #category : #'class initialization' }
 GLContext class >> initialize [
 
-	Smalltalk addToShutDownList: self
+	Smalltalk addToShutDownList: self.
+	Smalltalk addToStartUpList: self
 ]
 
 { #category : #'system startup' }
-GLContext class >> shutDown [
+GLContext class >> shutDown: quitting [
 
-	self allSubInstancesDo: [:each |
-		each
-			destroy;
-			becomeForward: #SuspendedGLContext]
+	quitting ifTrue: [
+		self allSubInstancesDo: [:each |
+			each destroy]]
+]
+
+{ #category : #'system startup' }
+GLContext class >> startUp: resuming [
+
+	resuming ifTrue: [
+		self allSubInstancesDo: [:each |
+			each becomeForward: #SuspendedGLContext]]
 ]
 
 { #category : #activation }
