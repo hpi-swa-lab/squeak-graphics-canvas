@@ -261,12 +261,6 @@ OpenGL >> context: aContext [
 	context := aContext
 ]
 
-{ #category : #resources }
-OpenGL >> createObject: aClass [
-
-	^ context resources createObject: aClass context: self
-]
-
 { #category : #'context delegation' }
 OpenGL >> destroy [
 
@@ -408,6 +402,12 @@ OpenGL >> newFrameDo: aBlock. [
 OpenGL >> numExtensions [
 
 	^ self getInteger: GL_NUM_EXTENSIONS
+]
+
+{ #category : #resources }
+OpenGL >> registerObject: glObject [
+
+	context registerObject: glObject
 ]
 
 { #category : #helpers }

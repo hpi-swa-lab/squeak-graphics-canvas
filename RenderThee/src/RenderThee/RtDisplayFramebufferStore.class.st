@@ -35,13 +35,13 @@ RtDisplayFramebufferStore >> glLibrary [
 { #category : #initialization }
 RtDisplayFramebufferStore >> initializeGLSettings [
 
-	glLibrary glDisable: GL_CULL_FACE.
-	glLibrary glDisable: GL_DEPTH_TEST.
-	glLibrary glActiveTexture: GL_TEXTURE0.
-	glLibrary glEnable: GL_BLEND.
-	glLibrary glEnable: GL_SCISSOR_TEST.
-	glLibrary glBlendFuncSeparate: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA with: GL_ONE with: GL_ONE.
-	glLibrary glClearColor: 1 with: 1 with: 1 with: 0.
+	GL glDisable: GL_CULL_FACE.
+	GL glDisable: GL_DEPTH_TEST.
+	GL glActiveTexture: GL_TEXTURE0.
+	GL glEnable: GL_BLEND.
+	GL glEnable: GL_SCISSOR_TEST.
+	GL glBlendFuncSeparate: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA with: GL_ONE with: GL_ONE.
+	GL glClearColor: 1 with: 1 with: 1 with: 0.
 ]
 
 { #category : #initialization }
@@ -55,11 +55,9 @@ RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 					title: 'Squeak (GLFW)'.
 	context useMorphicEventHandling.
 	extent := aPoint.
-	glLibrary := GL3_3 context: context.
 	"glLibrary := GL3_3 context: (B3DContext newIn: (0@0 extent: extent))."
-	framebuffer := glLibrary createObject: GLDisplayFrameBuffer.
-	
-	glLibrary makeCurrentDuring: [
+	(glLibrary := GL3_3 context: context) makeCurrentDuring: [
+		framebuffer := GLDisplayFrameBuffer create.
 		GLFW swapInterval: 0. "disable vsync"
 		framebuffer boundDuring: [
 			self initializeGLSettings.

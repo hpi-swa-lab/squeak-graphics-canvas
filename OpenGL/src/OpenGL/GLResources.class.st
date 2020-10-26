@@ -9,32 +9,22 @@ Class {
 	#category : #'OpenGL-Core'
 }
 
-{ #category : #'as yet unclassified' }
-GLResources >> cleanup [
+{ #category : #'initialize-release' }
+GLResources >> cleanUp [
 
-	objects do: [:object | object cleanup]
+	objects do: [:object | object cleanUp]
 ]
 
-{ #category : #'as yet unclassified' }
-GLResources >> createObject: aClass context: aContext [
-
-	| object |
-	object := aClass privateCreateFor: aContext.
-	objects add: object.
-	^ object
-]
-
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 GLResources >> getShaderProgram: aClass library: aLibrary [
 	
 	aLibrary assertIsCurrent.
-	
-	^ shaders at: aClass ifAbsentPut: [ | shader |
-		shader := aLibrary createObject: aClass.
-		shader]
+	^ shaders
+		at: aClass
+		ifAbsentPut: [aClass create]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialize-release' }
 GLResources >> initialize [
 
 	super initialize.
@@ -42,6 +32,18 @@ GLResources >> initialize [
 	shaders := IdentityDictionary new.
 	objects := OrderedCollection new.
 	userData := Dictionary new.
+]
+
+{ #category : #accessing }
+GLResources >> objects [
+
+	^ objects
+]
+
+{ #category : #accessing }
+GLResources >> shaders [
+
+	^ shaders
 ]
 
 { #category : #accessing }

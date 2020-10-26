@@ -22,7 +22,7 @@ RtMirrorControl >> delete [
 { #category : #accessing }
 RtMirrorControl >> glLibrary [
 
-	^ store framebuffer gl
+	^ store framebuffer library
 ]
 
 { #category : #initialization }

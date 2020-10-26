@@ -10,7 +10,7 @@ GLTextureRGBA >> asForm [
 	| bufSize data |
 	bufSize := self extent area * 4.
 	data := ByteArray new: bufSize.
-	gl
+	GL
 		glGetTextureImage: id
 		with: 0
 		with: GL_BGRA
@@ -28,7 +28,7 @@ GLTextureRGBA >> asForm [
 { #category : #binding }
 GLTextureRGBA >> bind: anID [
 
-	gl glBindTexture: GL_TEXTURE_2D with: anID
+	GL glBindTexture: GL_TEXTURE_2D with: anID
 ]
 
 { #category : #binding }
@@ -42,11 +42,12 @@ GLTextureRGBA >> delete [
 
 	| texIDs |
 	texIDs := IntegerArray with: id.
-	gl glDeleteTextures: 1 with: texIDs
+	GL glDeleteTextures: 1 with: texIDs
 ]
 
 { #category : #accessing }
 GLTextureRGBA >> extent [
+
 	^ self width @ self height
 ]
 
@@ -54,7 +55,7 @@ GLTextureRGBA >> extent [
 GLTextureRGBA >> extent: aPoint [
 
 	self boundDuring: [
-		gl
+		GL
 			glTexImage2D: GL_TEXTURE_2D
 			with: 0
 			with: GL_RGBA
@@ -64,12 +65,12 @@ GLTextureRGBA >> extent: aPoint [
 			with: GL_BGRA
 			with: GL_UNSIGNED_BYTE
 			with: nil.
-		gl checkForError.
-		gl
+		GL checkForError.
+		GL
 			glTexParameteri: GL_TEXTURE_2D
 			with: GL_TEXTURE_MIN_FILTER
 			with: GL_LINEAR.
-		gl
+		GL
 			glTexParameteri: GL_TEXTURE_2D
 			with: GL_TEXTURE_MAG_FILTER
 			with: GL_LINEAR]
@@ -80,12 +81,13 @@ GLTextureRGBA >> getTextureParameterI: parameter [
 	
 	self boundDuring: [ | array |
 		array := IntegerArray new: 1.
-		gl glGetTexLevelParameteriv: GL_TEXTURE_2D with: 0 with: parameter with: array.
+		GL glGetTexLevelParameteriv: GL_TEXTURE_2D with: 0 with: parameter with: array.
 		^ array first ]
 ]
 
 { #category : #accessing }
 GLTextureRGBA >> height [
+
 	^ self getTextureParameterI: GL_TEXTURE_HEIGHT
 ]
 
@@ -99,7 +101,7 @@ GLTextureRGBA >> image: aForm [
 GLTextureRGBA >> image: aForm minFilter: anEnum magFilter: anEnum2 [
 
 	self boundDuring: [
-			gl
+			GL
 				glTexImage2D: GL_TEXTURE_2D
 				with: 0
 				with: GL_RGBA
@@ -109,24 +111,24 @@ GLTextureRGBA >> image: aForm minFilter: anEnum magFilter: anEnum2 [
 				with: GL_BGRA
 				with: GL_UNSIGNED_BYTE
 				with: (aForm asFormOfDepth: 32) bits.
-			gl checkForError.
-			gl
+			GL checkForError.
+			GL
 				glTexParameteri: GL_TEXTURE_2D
 				with: GL_TEXTURE_MIN_FILTER
 				with: anEnum.
-			gl
+			GL
 				glTexParameteri: GL_TEXTURE_2D
 				with: GL_TEXTURE_MAG_FILTER
 				with: anEnum]
 ]
 
 { #category : #'initialize-release' }
-GLTextureRGBA >> initializeWithContext: glContext [
+GLTextureRGBA >> initialize [
 
 	| texIDs |
-	super initializeWithContext: glContext.
+	super initialize.
 	texIDs := IntegerArray new: 1.
-	gl glGenTextures: 1 with: texIDs.
+	GL glGenTextures: 1 with: texIDs.
 	id := texIDs first
 ]
 
@@ -134,8 +136,8 @@ GLTextureRGBA >> initializeWithContext: glContext [
 GLTextureRGBA >> subImage: aForm at: aPoint [
 
 	self boundDuring: [
-		gl checkForError.
-		gl
+		GL checkForError.
+		GL
 			glTexSubImage2D: GL_TEXTURE_2D
 			with: 0
 			with: aPoint x
@@ -145,10 +147,11 @@ GLTextureRGBA >> subImage: aForm at: aPoint [
 			with: GL_BGRA
 			with: GL_UNSIGNED_BYTE
 			with: (aForm asFormOfDepth: 32) bits.
-		gl checkForError]
+		GL checkForError]
 ]
 
 { #category : #accessing }
 GLTextureRGBA >> width [
+
 	^ self getTextureParameterI: GL_TEXTURE_WIDTH
 ]

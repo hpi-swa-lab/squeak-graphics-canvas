@@ -155,7 +155,7 @@ GLCanvas >> framebuffer [
 { #category : #accessing }
 GLCanvas >> glLibrary [
 
-	^ framebuffer gl
+	^ framebuffer library
 ]
 
 { #category : #'drawing-images' }

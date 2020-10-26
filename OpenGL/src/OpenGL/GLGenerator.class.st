@@ -133,13 +133,23 @@ GLGenerator >> definedEnumTags [
 { #category : #features }
 GLGenerator >> feature: featureTag [
 
-	currentFeatureClass := self generateFeatureClass: featureTag.
+	currentFeatureClass := self findFeatureClass: featureTag.
+	self removeGeneratedMethods.
 	self compileVersionMethods: (featureTag attributeAt: #number).
 	
 	featureTag elementsDo: [:elem |
 		(self isActiveProfile: (elem attributeAt: #profile)) ifTrue: [
 			elem tag = #require ifTrue: [self require: elem].
 			elem tag = #remove ifTrue: [self remove: elem]]]
+]
+
+{ #category : #'code generation' }
+GLGenerator >> findFeatureClass: featureTag [
+
+	| className version |
+	version := featureTag attributeAt: #number.
+	className := (self classNamePrefix "GL" , (version "3.3" copyReplaceAll: '.' with: '_')) asSymbol.
+	^ Environment current classNamed: className
 ]
 
 { #category : #initialization }
@@ -180,8 +190,6 @@ GLGenerator >> gatherAllFeatures [
 GLGenerator >> generateApi: aString [
 
 	api := aString asUppercase.
-	self removeOldFeatureClasses.
-	currentFeatureClass := self rootFeatureClass.
 	definedEnums := Set new.
 	definedCommands := Set new.
 
@@ -369,24 +377,6 @@ GLGenerator >> generateConstantsPoolIntializeMethods [
 	^ methods
 ]
 
-{ #category : #'code generation' }
-GLGenerator >> generateFeatureClass: featureTag [
-
-	| className version |
-	version := featureTag attributeAt: #number.
-	className := (self classNamePrefix , (version copyReplaceAll: '.' with: '_')) asSymbol.
-	^ (self environment classNamed: className)
-		ifNil: [
-			currentFeatureClass
-				subclass: className
-				instanceVariableNames: ''
-				classVariableNames: ''
-				poolDictionaries: ''
-				category: 'MPOpenGL-Versions']
-		ifNotNil: [
-			self error: 'Class with this name already exists']
-]
-
 { #category : #initialization }
 GLGenerator >> initializeWithXML: xml [
 
@@ -484,5 +474,5 @@ GLGenerator >> requireEnum: name [
 { #category : #accessing }
 GLGenerator >> rootFeatureClass [
 
-	^ self environment classNamed: api , 'Version'
+	^ Environment current classNamed: api , 'Version'
 ]

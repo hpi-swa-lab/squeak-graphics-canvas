@@ -48,7 +48,7 @@ GLContext >> deactivate [
 { #category : #'initialize-release' }
 GLContext >> destroy [
 
-	resources cleanup
+	resources cleanUp
 ]
 
 { #category : #'initialize-release' }
@@ -63,6 +63,19 @@ GLContext >> initialize [
 
 	super initialize.
 	resources := GLResources new
+]
+
+{ #category : #accessing }
+GLContext >> library [
+
+	self flag: #todo. "Stub for now until context refactoring."
+	^ GL3_3 context: self
+]
+
+{ #category : #resources }
+GLContext >> registerObject: glObject [
+
+	resources objects add: glObject
 ]
 
 { #category : #accessing }

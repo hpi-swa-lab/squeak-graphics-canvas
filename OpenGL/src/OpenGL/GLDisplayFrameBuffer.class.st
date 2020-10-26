@@ -7,7 +7,7 @@ Class {
 { #category : #binding }
 GLDisplayFrameBuffer >> bind: anID [
 	"bind a framebuffer to a framebuffer target"
-	gl glBindFramebuffer: GL_FRAMEBUFFER with: anID
+	GL glBindFramebuffer: GL_FRAMEBUFFER with: anID
 ]
 
 { #category : #binding }
@@ -17,8 +17,8 @@ GLDisplayFrameBuffer >> bindingEnum [
 ]
 
 { #category : #initialization }
-GLDisplayFrameBuffer >> initializeWithContext: glContext [
+GLDisplayFrameBuffer >> initialize [
 
-	super initializeWithContext: glContext.
+	super initialize.
 	id := GL_NONE
 ]

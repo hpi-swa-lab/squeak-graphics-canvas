@@ -49,7 +49,7 @@ RtFramebufferStore class >> form: aForm [
 RtFramebufferStore >> clear [
 
 	framebuffer boundDuring: [
-		framebuffer gl glClear: GL_COLOR_BUFFER_BIT]
+		framebuffer library glClear: GL_COLOR_BUFFER_BIT]
 ]
 
 { #category : #accessing }
@@ -97,7 +97,7 @@ RtFramebufferStore >> getCanvas [
 { #category : #accessing }
 RtFramebufferStore >> glLibrary [
 
-	^ framebuffer ifNotNil: [framebuffer gl] ifNil: [texture gl]
+	^ framebuffer ifNotNil: [framebuffer library] ifNil: [texture library]
 ]
 
 { #category : #accessing }

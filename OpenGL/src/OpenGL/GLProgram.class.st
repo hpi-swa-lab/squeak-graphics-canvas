@@ -102,7 +102,7 @@ GLProgram class >> vertexShader [
 { #category : #binding }
 GLProgram >> bind: anID [
 
-	gl glUseProgram: anID
+	GL glUseProgram: anID
 ]
 
 { #category : #binding }
@@ -117,8 +117,17 @@ GLProgram >> getProgramInfoLog: program [
 	| infoLogLength infoLog |
 	infoLogLength := 4096.
 	infoLog := ExternalData fromHandle: (ExternalAddress gcallocate: infoLogLength) type: ExternalType string.
-	gl glGetProgramInfoLog: program with: infoLogLength with: nil with: infoLog.
+	GL glGetProgramInfoLog: program with: infoLogLength with: nil with: infoLog.
 	^ infoLog fromCString
+]
+
+{ #category : #'initialize-release' }
+GLProgram >> initialize [
+
+	super initialize.
+	id := GL glCreateProgram.
+	self initializeShaders.
+	self initializeLocations
 ]
 
 { #category : #'initialize-release' }
@@ -132,45 +141,34 @@ GLProgram >> initializeShaders [
 
 	| shaders status |
 	shaders := {
-		GLVertexShader context: gl code: self class vertexShader withUnixLineEndings.
-		GLFragmentShader context: gl code: self class fragmentShader withUnixLineEndings.
+		GLVertexShader context: GL code: self class vertexShader withUnixLineEndings.
+		GLFragmentShader context: GL code: self class fragmentShader withUnixLineEndings.
 	}.
 	
 	"attaching shaders"
 	shaders do: [:shader |
-		gl glAttachShader: id with: shader id.
-		gl checkForError].
+		GL glAttachShader: id with: shader id.
+		GL checkForError].
 	
 	"linking program"
-	gl glLinkProgram: id.
-	gl checkForError.
+	GL glLinkProgram: id.
+	GL checkForError.
 	status := IntegerArray new: 1.
-	gl glGetProgramiv: id with: GL_LINK_STATUS with: status.
-	gl checkForError.
+	GL glGetProgramiv: id with: GL_LINK_STATUS with: status.
+	GL checkForError.
 	status first = 0 ifTrue: [self error: 'failed to link shader: ', (self getProgramInfoLog: id)].
 	
 	"deleting shaders"
 	shaders do: [:shader |
-		gl glDeleteShader: shader id.
-		gl checkForError]
-]
-
-{ #category : #'initialize-release' }
-GLProgram >> initializeWithContext: glContext [
-
-	glContext assertIsCurrent.
-
-	super initializeWithContext: glContext.
-	id := gl glCreateProgram.
-	self initializeShaders.
-	self initializeLocations
+		GL glDeleteShader: shader id.
+		GL checkForError]
 ]
 
 { #category : #'initialize-release' }
 GLProgram >> registerAttribute: aString [
 
 	| location |
-	location := gl glGetAttribLocation: id with: aString.
+	location := GL glGetAttribLocation: id with: aString.
 	self assert: location >= 0.
 	^ location
 ]
@@ -179,7 +177,7 @@ GLProgram >> registerAttribute: aString [
 GLProgram >> registerUniform: aString [
 
 	| location |
-	location := gl glGetUniformLocation: id with: aString.
+	location := GL glGetUniformLocation: id with: aString.
 	self assert: location >= 0.
 	^ location
 ]
@@ -200,7 +198,7 @@ GLProgram >> shaders: anObject [
 GLProgram >> uniform: location value: anObject [
 
 	self assert: location >= 0.
-	anObject putAtGL: gl Uniform: location
+	anObject putAtGL: GL Uniform: location
 ]
 
 { #category : #usage }
@@ -214,9 +212,9 @@ GLProgram >> vertexAttrib: position value: value components: components stride: 
 
  	| byteOffset |
 	byteOffset := ExternalAddress new fromInteger: offset * value bytesPerElement.
-	gl glEnableVertexAttribArray: position.
+	GL glEnableVertexAttribArray: position.
 	value isGLBuffer ifTrue: [
-		gl glVertexAttribPointer: position
+		GL glVertexAttribPointer: position
 			with: components
 			with: value glType
 			with: GL_FALSE

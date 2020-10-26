@@ -13,7 +13,7 @@ Class {
 { #category : #binding }
 GLVertexBufferObject >> bind: anID [
 	"bind a vbo"
-	gl glBindBuffer: GL_ARRAY_BUFFER with: anID
+	GL glBindBuffer: GL_ARRAY_BUFFER with: anID
 ]
 
 { #category : #binding }
@@ -50,8 +50,8 @@ GLVertexBufferObject >> componentsPerVertex: anObject [
 GLVertexBufferObject >> data: anArray usage: aUsageEnum componentsPerVertex: aNumber [
 
 	bytesPerElement := anArray byteSize / anArray size.
-	gl glBindBuffer: GL_ARRAY_BUFFER with: id.
-	gl glBufferData: GL_ARRAY_BUFFER
+	GL glBindBuffer: GL_ARRAY_BUFFER with: id.
+	GL glBufferData: GL_ARRAY_BUFFER
 		with: anArray byteSize
 		with: anArray
 		with: aUsageEnum.
@@ -63,10 +63,10 @@ GLVertexBufferObject >> data: anArray usage: aUsageEnum componentsPerVertex: aNu
 { #category : #'initialize-release' }
 GLVertexBufferObject >> delete [
 
-	gl makeCurrentDuring: [ | ids |
+	self library makeCurrentDuring: [ | ids |
 		ids := IntegerArray new: 1.
 		ids first: id.
-		gl glDeleteBuffers: 1 with: ids ]
+		GL glDeleteBuffers: 1 with: ids ]
 ]
 
 { #category : #usage }
@@ -78,8 +78,8 @@ GLVertexBufferObject >> draw: aModeEnum [
 { #category : #usage }
 GLVertexBufferObject >> draw: aModeEnum from: startIndex count: count [
 
-	gl glBindBuffer: GL_ARRAY_BUFFER with: id.
-	gl glDrawArrays: aModeEnum with: startIndex with: count
+	GL glBindBuffer: GL_ARRAY_BUFFER with: id.
+	GL glDrawArrays: aModeEnum with: startIndex with: count
 ]
 
 { #category : #accessing }
@@ -95,12 +95,12 @@ GLVertexBufferObject >> glType: anObject [
 ]
 
 { #category : #'initialize-release' }
-GLVertexBufferObject >> initializeWithContext: glContext [
+GLVertexBufferObject >> initialize [
 
 	| ids |
-	super initializeWithContext: glContext.
+	super initialize.
 	ids := IntegerArray new: 1.
-	gl glGenBuffers: 1 with: ids.
+	GL glGenBuffers: 1 with: ids.
 	id := ids first
 ]
 

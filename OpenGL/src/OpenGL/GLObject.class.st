@@ -16,7 +16,7 @@ Class {
 	#name : #GLObject,
 	#superclass : #Object,
 	#instVars : [
-		'gl',
+		'context',
 		'id'
 	],
 	#pools : [
@@ -26,34 +26,18 @@ Class {
 }
 
 { #category : #'instance creation' }
-GLObject class >> context: glContext [
-
-	self deprecated: 'use GL value createObject: ', self name.
-	
-	^ self basicNew
-		initializeWithContext: glContext;
-		yourself
-]
-
-{ #category : #'instance creation' }
 GLObject class >> create [
 
-	^ GL createObject: self
+	^ self basicNew
+		initialize;
+		register;
+		yourself
 ]
 
 { #category : #'instance creation' }
 GLObject class >> new [
 
 	self shouldNotImplement
-]
-
-{ #category : #'instance creation' }
-GLObject class >> privateCreateFor: glContext [
-	" method used by GLResources to create this object. Don't call directly but use OpenGL>>#createObject: "
-
-	^ self basicNew
-		initializeWithContext: glContext;
-		yourself
 ]
 
 { #category : #binding }
@@ -65,6 +49,7 @@ GLObject >> bind [
 { #category : #binding }
 GLObject >> bind: anID [
 
+	self flag: #todo. "Move this to class-side?"
 	self subclassResponsibility
 ]
 
@@ -78,41 +63,26 @@ GLObject >> bindingEnum [
 GLObject >> boundDuring: aBlock [
 
 	| previousBinding |
-	
-	gl assertIsCurrent.
-	
-	previousBinding := self currentBinding.
-	previousBinding = id ifTrue: [^ aBlock value].
+	GL assertIsCurrent.
+	(previousBinding := self currentBinding) = id ifTrue: [^ aBlock value].
 	self bind.
-	gl checkForError.
+	GL checkForError.
 	aBlock ensure: [
-		gl checkForError.
+		GL checkForError.
 		self bind: previousBinding.
-		gl checkForError]
+		GL checkForError]
 ]
 
-{ #category : #'gl version' }
-GLObject >> cleanup [
+{ #category : #'initialize-release' }
+GLObject >> cleanUp [
 
-	id := 0
+	id := -1 "Obviously invalid"
 ]
 
 { #category : #binding }
 GLObject >> currentBinding [
 
-	^ gl getInteger: self bindingEnum
-]
-
-{ #category : #accessing }
-GLObject >> gl [
-
-	^ gl
-]
-
-{ #category : #accessing }
-GLObject >> gl: anObject [ 
-
-	gl := anObject
+	^ GL getInteger: self bindingEnum
 ]
 
 { #category : #accessing }
@@ -121,8 +91,20 @@ GLObject >> id [
 	^ id
 ]
 
-{ #category : #initialization }
-GLObject >> initializeWithContext: glContext [
+{ #category : #'initialize-release' }
+GLObject >> initialize [
 
-	gl := glContext ifNil: [GL]
+	context := GL context
+]
+
+{ #category : #accessing }
+GLObject >> library [
+
+	^ context library
+]
+
+{ #category : #'initialize-release' }
+GLObject >> register [
+
+	GL registerObject: self
 ]

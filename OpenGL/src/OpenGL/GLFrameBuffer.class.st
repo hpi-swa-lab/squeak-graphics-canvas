@@ -25,10 +25,10 @@ Class {
 GLFrameBuffer >> asFormOfExtent: aPoint [
 
 	| data |
-	data := ByteArray new: aPoint x * aPoint y * 4.
+	data := ByteArray new: aPoint area * 4.
 	
 	self boundDuring: [
-		gl
+		GL
 			glReadPixels: 0
 			with: 0
 			with: aPoint x
@@ -40,62 +40,68 @@ GLFrameBuffer >> asFormOfExtent: aPoint [
 	^ Form
 		extent: aPoint
 		depth: 32
-		bits: ((Bitmap new: aPoint x * aPoint y * 4)
+		bits: ((Bitmap new: aPoint area * 4)
 				copyFromByteArray: data;
 				yourself)
 ]
 
 { #category : #binding }
 GLFrameBuffer >> bind: anID [
-	"bind a framebuffer to a framebuffer target"
-	gl glBindFramebuffer: target with: anID
+
+	GL glBindFramebuffer: target with: anID
 ]
 
 { #category : #binding }
 GLFrameBuffer >> bindingEnum [
-	"note: there is also GL_READ_FRAMEBUFFER_BINDING which we ignore completely"
+	
+	self flag: #todo. "There is also GL_READ_FRAMEBUFFER_BINDING which we ignore completely"
 	^ GL_DRAW_FRAMEBUFFER_BINDING
 ]
 
 { #category : #usage }
 GLFrameBuffer >> checkComplete [
-	self assert: ((gl glCheckFramebufferStatus: GL_FRAMEBUFFER) = GL_FRAMEBUFFER_COMPLETE)
+
+	self assert: ((GL glCheckFramebufferStatus: GL_FRAMEBUFFER) = GL_FRAMEBUFFER_COMPLETE)
 ]
 
 { #category : #accessing }
 GLFrameBuffer >> colorAttachment0 [
+
 	^ colorAttachment0
 ]
 
 { #category : #'initialize-release' }
 GLFrameBuffer >> delete [
 	
-	gl glDeleteFramebuffers: 1 with: (IntegerArray with: id).
+	GL glDeleteFramebuffers: 1 with: (IntegerArray with: id).
 ]
 
 { #category : #'initialize-release' }
-GLFrameBuffer >> initializeWithContext: glContext [
+GLFrameBuffer >> initialize [
 
 	| ids |
-	super initializeWithContext: glContext.
+	super initialize.
 	target := GL_FRAMEBUFFER.
 	ids := IntegerArray new: 1.
-	gl glGenFramebuffers: 1 with: ids.
+	GL glGenFramebuffers: 1 with: ids.
 	id := ids first
 ]
 
 { #category : #accessing }
 GLFrameBuffer >> target [
+
 	^ target
 ]
 
 { #category : #accessing }
 GLFrameBuffer >> target: anObject [
+
 	target := anObject
 ]
 
 { #category : #usage }
 GLFrameBuffer >> texture2D: aTexture [
+
 	self texture2D: aTexture attachment: GL_COLOR_ATTACHMENT0
 ]
 
@@ -105,10 +111,10 @@ GLFrameBuffer >> texture2D: aTexture attachment: anAttachment [
 	self boundDuring: [
 		anAttachment = GL_COLOR_ATTACHMENT0 ifTrue: [
 			colorAttachment0 := aTexture ].
-		gl glFramebufferTexture2D: GL_FRAMEBUFFER
+		GL glFramebufferTexture2D: GL_FRAMEBUFFER
 			with: anAttachment
 			with: GL_TEXTURE_2D
 			with: aTexture id
 			with: 0.
-		gl checkForError]
+		GL checkForError]
 ]

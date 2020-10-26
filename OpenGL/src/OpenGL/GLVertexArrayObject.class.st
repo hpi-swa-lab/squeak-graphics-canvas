@@ -11,7 +11,7 @@ Class {
 { #category : #binding }
 GLVertexArrayObject >> bind: anID [
 
-	gl glBindVertexArray: anID
+	GL glBindVertexArray: anID
 ]
 
 { #category : #binding }
@@ -23,10 +23,10 @@ GLVertexArrayObject >> bindingEnum [
 { #category : #'initialize-release' }
 GLVertexArrayObject >> delete [
 
-	gl makeCurrentDuring: [ | ids |
+	GL makeCurrentDuring: [ | ids |
 		ids := IntegerArray new: 1.
 		ids first: id.
-		gl glDeleteVertexArrays: 1 with: ids ]
+		GL glDeleteVertexArrays: 1 with: ids ]
 ]
 
 { #category : #usage }
@@ -42,12 +42,12 @@ GLVertexArrayObject >> glType [
 ]
 
 { #category : #'initialize-release' }
-GLVertexArrayObject >> initializeWithContext: glContext [
+GLVertexArrayObject >> initialize [
 
 	| ids |
-	super initializeWithContext: glContext.
+	super initialize.
 	ids := IntegerArray new: 1.
-	gl glGenVertexArrays: 1 with: ids.
+	GL glGenVertexArrays: 1 with: ids.
 	id := ids first
 ]
 
