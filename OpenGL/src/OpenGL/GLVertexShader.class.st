@@ -1,6 +1,6 @@
 Class {
 	#name : #GLVertexShader,
-	#superclass : #GLShaderSource,
+	#superclass : #GLShader,
 	#category : #'OpenGL-Shaders'
 }
 

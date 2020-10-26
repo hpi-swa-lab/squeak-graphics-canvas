@@ -1,6 +1,6 @@
 Class {
 	#name : #GLComputeShader,
-	#superclass : #GLShaderSource,
+	#superclass : #GLShader,
 	#category : #'OpenGL-Shaders'
 }
 

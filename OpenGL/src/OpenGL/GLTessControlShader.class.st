@@ -1,6 +1,6 @@
 Class {
 	#name : #GLTessControlShader,
-	#superclass : #GLShaderSource,
+	#superclass : #GLShader,
 	#category : #'OpenGL-Shaders'
 }
 

@@ -1,6 +1,6 @@
 Class {
 	#name : #GLFragmentShader,
-	#superclass : #GLShaderSource,
+	#superclass : #GLShader,
 	#category : #'OpenGL-Shaders'
 }
 
