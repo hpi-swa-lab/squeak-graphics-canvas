@@ -38,7 +38,7 @@ GLObject class >> context: glContext [
 { #category : #'instance creation' }
 GLObject class >> create [
 
-	^ GL value createObject: self
+	^ GL createObject: self
 ]
 
 { #category : #'instance creation' }
@@ -124,5 +124,5 @@ GLObject >> id [
 { #category : #initialization }
 GLObject >> initializeWithContext: glContext [
 
-	gl := glContext ifNil: [GL value]
+	gl := glContext ifNil: [GL]
 ]

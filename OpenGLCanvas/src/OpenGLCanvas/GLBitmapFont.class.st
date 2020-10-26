@@ -30,8 +30,7 @@ GLBitmapFont >> extentFor: aCharacter [
 { #category : #'as yet unclassified' }
 GLBitmapFont >> font: aFont [
 
-	| gl x |
-	gl := GL value.
+	| x |
 	font := aFont.
 	
 	offsets := Array new: self printableCharacters size.

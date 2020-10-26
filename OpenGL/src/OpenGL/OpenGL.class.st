@@ -193,7 +193,7 @@ OpenGL class >> startUp: resuming [
 { #category : #debugging }
 OpenGL >> assertIsCurrent [
 	
-	self assert: (GL value == self)
+	self assert: GL == self
 ]
 
 { #category : #resources }
@@ -370,23 +370,26 @@ OpenGL >> isCoreProfile [
 { #category : #activation }
 OpenGL >> makeCurrentDuring: aBlock [
 
-	GL value
-		ifNotNil: [ :lib |
-			| oldContext |
-			self == lib ifTrue: [
-				^ aBlock value].
-			oldContext := lib context.
-			oldContext == context ifTrue: [
-				^ GL value: self during: aBlock].
-			oldContext deactivate.
-			context activate.
-			[GL value: self during: aBlock] ensure: [
-				context deactivate.
-				oldContext activate]]
+	GL
+		ifNotNil: [:previousLib |
+			| previousContext |
+			self == previousLib ifTrue: [^ aBlock value].
+			(previousContext := previousLib context) == context
+				ifTrue: [[GL := self. aBlock value] ensure: [GL := previousLib]]
+				ifFalse: [
+					[previousContext deactivate.
+					context activate.
+					GL := self.
+					aBlock value] ensure: [
+						context deactivate.
+						previousContext activate.
+						GL := previousLib]]]
 		ifNil: [
-			context activate.
-			GL value: self during: aBlock.
-			context deactivate ]
+			[context activate.
+			GL := self.
+			aBlock value] ensure: [
+				GL := nil.
+				context deactivate]]
 ]
 
 { #category : #activation }

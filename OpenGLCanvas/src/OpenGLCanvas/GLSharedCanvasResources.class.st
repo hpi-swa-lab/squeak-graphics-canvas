@@ -57,7 +57,7 @@ GLSharedCanvasResources >> initializeBuffers [
 			1.0 1.0 1.0 1.0 ) asFloat32Array
 		usage: GL_STATIC_DRAW
 		componentsPerVertex: 4.
-	GL value checkForError
+	GL checkForError
 ]
 
 { #category : #initialization }
@@ -67,12 +67,12 @@ GLSharedCanvasResources >> initializeProgramAttributes [
 		textureProgram image: 0.
 		textureProgram vertexAttrib: textureProgram aPosLocation value: vbo components: 2 stride: 4 offset: 0.
 		textureProgram vertexAttrib: textureProgram aTexCoordsLocation value: vbo components: 2 stride: 4 offset: 2.
-		GL value checkForError].
+		GL checkForError].
 	
 	outlineProgram vertexAttrib: outlineProgram aPosLocation value: vbo components: 2 stride: 4 offset: 0.
-	GL value checkForError.
+	GL checkForError.
 	outlineProgram vertexAttrib: outlineProgram aTexCoordsLocation value: vbo components: 2 stride: 4 offset: 2.
-	GL value checkForError.
+	GL checkForError.
 	
 	rectangleProgram boundDuring: [
 		rectangleProgram vertexAttrib: rectangleProgram aPosLocation value: vbo components: 2 stride: 4 offset: 0]
@@ -81,11 +81,11 @@ GLSharedCanvasResources >> initializeProgramAttributes [
 { #category : #initialization }
 GLSharedCanvasResources >> initializePrograms [
 
-	textureProgram := GL value getShaderProgram: GLCanvasTextureProgram.
-	outlineProgram := GL value getShaderProgram: GLCanvasOutlineProgram.
-	rectangleProgram := GL value getShaderProgram: GLCanvasRectangleProgram.
-	fontProgram := GL value getShaderProgram: GLCanvasFontProgram.
-	GL value checkForError
+	textureProgram := GL getShaderProgram: GLCanvasTextureProgram.
+	outlineProgram := GL getShaderProgram: GLCanvasOutlineProgram.
+	rectangleProgram := GL getShaderProgram: GLCanvasRectangleProgram.
+	fontProgram := GL getShaderProgram: GLCanvasFontProgram.
+	GL checkForError
 ]
 
 { #category : #accessing }
