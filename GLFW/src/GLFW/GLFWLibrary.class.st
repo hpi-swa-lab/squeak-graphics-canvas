@@ -52,6 +52,15 @@ GLFWLibrary class >> initialize [
 	self startUp
 ]
 
+{ #category : #'instance management' }
+GLFWLibrary class >> initializeInstance [
+
+	Environment current
+		at: #GLFW
+		ifPresent: [:lib |
+			[lib reset; init] ifError: [self notify: 'Initialization of GLFW failed']]
+]
+
 { #category : #accessing }
 GLFWLibrary class >> moduleName [
 
@@ -69,7 +78,7 @@ GLFWLibrary class >> moduleName [
 	self error: 'Cannot identify platform'
 ]
 
-{ #category : #'class initialization' }
+{ #category : #'instance management' }
 GLFWLibrary class >> registerNewInstance [
 
 	Environment current at: #GLFW put: self new
@@ -78,29 +87,30 @@ GLFWLibrary class >> registerNewInstance [
 { #category : #'system startup' }
 GLFWLibrary class >> shutDown: quitting [
 
-	quitting ifTrue: [
-		Environment current
-			at: #GLFW
-			ifPresent: [:lib |
-				[lib terminate] ifError: [self notify: 'Termination of GLFW failed']]]
+	quitting ifTrue: [self terminateInstance]
 ]
 
 { #category : #'system startup' }
 GLFWLibrary class >> startUp: resuming [
 
-	resuming ifTrue: [
-		Environment current
-			at: #GLFW
-			ifPresent: [:lib |
-				[lib reset; init] ifError: [self notify: 'Initialization of GLFW failed']]]
+	resuming ifTrue: [self initializeInstance]
 ]
 
-{ #category : #'class initialization' }
+{ #category : #'instance management' }
+GLFWLibrary class >> terminateInstance [
+
+	Environment current
+		at: #GLFW
+		ifPresent: [:lib |
+			[lib terminate] ifError: [self notify: 'Termination of GLFW failed']]
+]
+
+{ #category : #'instance management' }
 GLFWLibrary class >> updateInstance [
 
-	self shutDown.
+	self terminateInstance.
 	self registerNewInstance.
-	self startUp
+	self initializeInstance
 ]
 
 { #category : #constants }
@@ -2317,6 +2327,13 @@ GLFWLibrary >> destroyWindow: handle [
 ]
 
 { #category : #'api - windows' }
+GLFWLibrary >> focusWindow: window [
+
+	<apicall: void 'glfwFocusWindow' (GLFWWindow*)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
 GLFWLibrary >> getCurrentContext [
 
 	<apicall: GLFWWindow* 'glfwGetCurrentContext' ()>
@@ -2329,10 +2346,17 @@ GLFWLibrary >> getError [
 	^ self getError: nil
 ]
 
-{ #category : #'api - error handling' }
+{ #category : #'api - init' }
 GLFWLibrary >> getError: stringOrNil [
 
 	<apicall: int 'glfwGetError' (string)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
+GLFWLibrary >> getFramebufferSize: window with: width with: height [
+
+	<apicall: void 'glfwGetFramebufferSize' (GLFWWindow* int* int*)>
 	^ self externalCallFailed
 ]
 
@@ -2343,28 +2367,84 @@ GLFWLibrary >> getKey: window with: key [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - accessing' }
+{ #category : #'api - init' }
 GLFWLibrary >> getVersion: major with: minor with: rev [
 
 	<apicall: void 'glfwGetVersion' (int* int* int*)>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - accessing' }
+{ #category : #'api - init' }
 GLFWLibrary >> getVersionString [
 
 	<apicall: char* 'glfwGetVersionString' ()>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - initialization' }
+{ #category : #'api - windows' }
+GLFWLibrary >> getWindowContentScale: window with: xscale with: yscale [
+
+	<apicall: void 'glfwGetWindowContentScale' (GLFWWindow* float* float*)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
+GLFWLibrary >> getWindowFrameSize: window with: left with: top with: right with: bottom [
+
+	<apicall: void 'glfwGetWindowFrameSize' (GLFWWindow* int* int* int* int*)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
+GLFWLibrary >> getWindowMonitor: window [
+
+	<apicall: GLFWMonitor* 'glfwGetWindowMonitor' (GLFWWindow*)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
+GLFWLibrary >> getWindowOpacity: window [
+
+	<apicall: float 'glfwGetWindowOpacity' (GLFWWindow*)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
+GLFWLibrary >> getWindowPos: window with: xpos with: ypos [
+
+	<apicall: void 'glfwGetWindowPos' (GLFWWindow* int* int*)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
+GLFWLibrary >> getWindowSize: window with: width with: height [
+
+	<apicall: void 'glfwGetWindowSize' (GLFWWindow* int* int*)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
+GLFWLibrary >> hideWindow: window [
+
+	<apicall: void 'glfwHideWindow' (GLFWWindow*)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
+GLFWLibrary >> iconifyWindow: window [
+
+	<apicall: void 'glfwIconifyWindow' (GLFWWindow*)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - init' }
 GLFWLibrary >> init [
 
 	<apicall: bool 'glfwInit' ()>
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - initialization' }
+{ #category : #'api - init' }
 GLFWLibrary >> initHint: hint with: value [
 
 	<apicall: void 'glfwInitHint' (int int)>
@@ -2382,6 +2462,13 @@ GLFWLibrary >> initialize [
 GLFWLibrary >> makeContextCurrent: window [
 
 	<apicall: void 'glfwMakeContextCurrent' (GLFWWindow*)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
+GLFWLibrary >> maximizeWindow: window [
+
+	<apicall: void 'glfwMaximizeWindow' (GLFWWindow*)>
 	^ self externalCallFailed
 ]
 
@@ -2420,11 +2507,25 @@ GLFWLibrary >> privateSetMouseButtonCallback: aWindow with: anFFICallback [
 	^ self externalCallFailed
 ]
 
+{ #category : #'api - windows' }
+GLFWLibrary >> requestWindowAttention: window [
+
+	<apicall: void 'glfwRequestWindowAttention' (GLFWWindow*)>
+	^ self externalCallFailed
+]
+
 { #category : #initialization }
 GLFWLibrary >> reset [
 
 	callbacks := Dictionary new.
 	contexts := Dictionary new
+]
+
+{ #category : #'api - windows' }
+GLFWLibrary >> restoreWindow: window [
+
+	<apicall: void 'glfwRestoreWindow' (GLFWWindow*)>
+	^ self externalCallFailed
 ]
 
 { #category : #'api - callbacks' }
@@ -2441,7 +2542,7 @@ GLFWLibrary >> setCursorPosCallback: aWindow with: aBlock [
 		with: callback thunk
 ]
 
-{ #category : #'api - callbacks' }
+{ #category : #'api - init' }
 GLFWLibrary >> setErrorCallback: aBlock [
 
 	| callback |
@@ -2481,6 +2582,42 @@ GLFWLibrary >> setMouseButtonCallback: aWindow with: aBlock [
 ]
 
 { #category : #'api - windows' }
+GLFWLibrary >> setWindowAspectRatio: window with: numer with: denom [
+
+	<apicall: void 'glfwSetWindowAspectRatio' (GLFWWindow* int int)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
+GLFWLibrary >> setWindowIcon: window with: image [
+
+	self notYetImplemented "Creation of GLFWimages not there yet"
+	"<apicall: void 'glfwSetWindowIcon' (GLFWWindow* int GLFWImage*)>
+	^ self externalCallFailed"
+]
+
+{ #category : #'api - windows' }
+GLFWLibrary >> setWindowMonitor: window with: monitor with: xpos with: ypos with: width with: height with: refreshRate [
+
+	<apicall: void 'glfwSetWindowMonitor' (GLFWWindow* GLFWMonitor* int int int int int)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
+GLFWLibrary >> setWindowOpacity: window with: opacity [
+
+	<apicall: void 'glfwSetWindowOpacity' (GLFWWindow* float)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
+GLFWLibrary >> setWindowPos: window with: xpos with: ypos [
+
+	<apicall: void 'glfwSetWindowPos' (GLFWWindow* int int)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
 GLFWLibrary >> setWindowShouldClose: window with: value [
 
 	<apicall: void 'glfwSetWindowShouldClose' (GLFWWindow* int)>
@@ -2488,9 +2625,30 @@ GLFWLibrary >> setWindowShouldClose: window with: value [
 ]
 
 { #category : #'api - windows' }
+GLFWLibrary >> setWindowSize: window with: width with: height [
+
+	<apicall: void 'glfwSetWindowSize' (GLFWWindow* int int)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
+GLFWLibrary >> setWindowSizeLimits: window with: minWidth with: minHeight with: maxWidth with: maxHeight [
+
+	<apicall: void 'glfwSetWindowSizeLimits' (GLFWWindow* int int int int)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
 GLFWLibrary >> setWindowTitle: window with: title [
 
 	<apicall: void 'glfwSetWindowTitle' (GLFWWindow* string)>
+	^ self externalCallFailed
+]
+
+{ #category : #'api - windows' }
+GLFWLibrary >> showWindow: window [
+
+	<apicall: void 'glfwShowWindow' (GLFWWindow*)>
 	^ self externalCallFailed
 ]
 
@@ -2525,7 +2683,7 @@ GLFWLibrary >> targetGLVersion: aGLVersionClass compatibility: aBoolean [
 		with: (aBoolean ifTrue: [OPENGL_COMPAT_PROFILE] ifFalse: [OPENGL_CORE_PROFILE])
 ]
 
-{ #category : #'api - initialization' }
+{ #category : #'api - init' }
 GLFWLibrary >> terminate [
 
 	<apicall: void 'glfwTerminate' ()>
