@@ -1,11 +1,11 @@
 Class {
 	#name : #GLVertexShader,
 	#superclass : #GLShader,
-	#category : #'OpenGL-Shaders'
+	#category : #'OpenGL-Wrappers-Shaders'
 }
 
 { #category : #accessing }
-GLVertexShader >> type [
+GLVertexShader class >> type [
 
 	^ GL_VERTEX_SHADER
 ]

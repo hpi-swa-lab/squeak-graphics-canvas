@@ -1,11 +1,11 @@
 Class {
 	#name : #GLComputeShader,
 	#superclass : #GLShader,
-	#category : #'OpenGL-Shaders'
+	#category : #'OpenGL-Wrappers-Shaders'
 }
 
 { #category : #accessing }
-GLComputeShader >> type [
+GLComputeShader class >> type [
 
 	^ GL_COMPUTE_SHADER
 ]

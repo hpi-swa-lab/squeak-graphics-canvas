@@ -91,7 +91,7 @@ GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fo
 	"self frameRectangle: (boundsRect origin extent: 10@10) color: c."
 
 	self boundDuring: [
-		resources fontProgram boundDuring: [ | bitmapFont x |
+		resources fontProgram useDuring: [ | bitmapFont x |
 			resources fontProgram
 				image: 0;
 				color: c.
@@ -136,7 +136,7 @@ GLCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderCol
 GLCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
 
 	self boundDuring: [
-		resources rectangleProgram boundDuring: [
+		resources rectangleProgram useDuring: [
 			resources rectangleProgram
 				extent: r extent;
 				color: fillColor;

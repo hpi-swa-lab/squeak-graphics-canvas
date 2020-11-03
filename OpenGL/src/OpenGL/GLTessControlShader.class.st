@@ -1,11 +1,11 @@
 Class {
 	#name : #GLTessControlShader,
 	#superclass : #GLShader,
-	#category : #'OpenGL-Shaders'
+	#category : #'OpenGL-Wrappers-Shaders'
 }
 
 { #category : #accessing }
-GLTessControlShader >> type [
+GLTessControlShader class >> type [
 
 	^ GL_TESS_CONTROL_SHADER
 ]

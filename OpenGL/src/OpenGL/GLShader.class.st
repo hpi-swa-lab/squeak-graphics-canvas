@@ -7,6 +7,18 @@ Class {
 	#category : #'OpenGL-Wrappers-Shaders'
 }
 
+{ #category : #allocation }
+GLShader class >> allocate [
+
+	^ GL createShader: self type
+]
+
+{ #category : #accessing }
+GLShader class >> type [
+
+	self subclassResponsibility
+]
+
 { #category : #compilation }
 GLShader >> compile [
 
@@ -79,14 +91,19 @@ GLShader >> getType [
 GLShader >> initialize [
 
 	super initialize.
-	source := ''.
-	id := GL glCreateShader: self type
+	source := ''
 ]
 
 { #category : #testing }
 GLShader >> isFlaggedForDeletion [
 
 	^ (self getAttribute: GL_DELETE_STATUS) = GL_TRUE
+]
+
+{ #category : #testing }
+GLShader >> isShader [
+
+	^ true
 ]
 
 { #category : #testing }
@@ -130,5 +147,5 @@ GLShader >> source: aString [
 { #category : #accessing }
 GLShader >> type [
 
-	self subclassResponsibility
+	^ self class type
 ]

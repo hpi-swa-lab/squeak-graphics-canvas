@@ -4,8 +4,14 @@ Class {
 	#instVars : [
 		'shaders'
 	],
-	#category : #'OpenGL-Shaders'
+	#category : #'OpenGL-Wrappers-Shaders'
 }
+
+{ #category : #private }
+GLProgram class >> allocate [
+
+	^ GL createProgram
+]
 
 { #category : #generation }
 GLProgram class >> attributes [
@@ -86,11 +92,40 @@ GLProgram class >> fragmentShader [
 	self subclassResponsibility
 ]
 
+{ #category : #activation }
+GLProgram class >> getCurrentProgramId [
+
+	^ GL getIntegerParameter: GL_CURRENT_PROGRAM
+]
+
 { #category : #generation }
 GLProgram class >> uniforms [
 	" return the names of all uniforms your shader possesses here "
 
 	^ #()
+]
+
+{ #category : #activation }
+GLProgram class >> use: glProgram [
+
+	self flag: #todo. "Remember actual objects"
+	self useId: glProgram id
+]
+
+{ #category : #activation }
+GLProgram class >> use: glProgram during: aBlock [
+
+	| previousProgram |
+	self flag: #todo. "Remember actual objects"
+	(previousProgram := self getCurrentProgramId) = glProgram id ifTrue: [^ aBlock value].
+	self useId: glProgram id.
+	aBlock ensure: [self useId: previousProgram]
+]
+
+{ #category : #activation }
+GLProgram class >> useId: anInteger [
+
+	GL useProgram: anInteger
 ]
 
 { #category : #'shader code' }
@@ -99,33 +134,82 @@ GLProgram class >> vertexShader [
 	self subclassResponsibility
 ]
 
-{ #category : #binding }
-GLProgram >> bind: anID [
+{ #category : #linking }
+GLProgram >> attachShader: glShader [
 
-	GL glUseProgram: anID
+	GL attachShader: id with: glShader id.
+	shaders add: glShader
 ]
 
-{ #category : #binding }
-GLProgram >> bindingEnum [
+{ #category : #linking }
+GLProgram >> errorLinkingFailed [
 
-	^ GL_CURRENT_PROGRAM
+	^ (GLProgramLinkingFailed program: self infoLog: self getInfoLog) signal
 ]
 
-{ #category : #usage }
-GLProgram >> getProgramInfoLog: program [
+{ #category : #accessing }
+GLProgram >> getAttribute: attributeName [
 
-	| infoLogLength infoLog |
-	infoLogLength := 4096.
-	infoLog := ExternalData fromHandle: (ExternalAddress gcallocate: infoLogLength) type: ExternalType string.
-	GL glGetProgramInfoLog: program with: infoLogLength with: nil with: infoLog.
-	^ infoLog fromCString
+	IntegerArray new: 1 during: [:result |
+		GL getShaderiv: id with: attributeName with: result.
+		^ result first]
+]
+
+{ #category : #accessing }
+GLProgram >> getBinary [
+
+	| binaryLength |
+	binaryLength := self getAttribute: GL_PROGRAM_BINARY_LENGTH.
+	binaryLength <= 0 ifTrue: [^ #[]].
+	IntegerArray new: 1 during: [:pFormat |
+		ByteArray new: binaryLength during: [:result |
+			GL getProgramBinary: id with: binaryLength with: nil with: pFormat with: result.
+			^  pFormat first -> result]]
+]
+
+{ #category : #linking }
+GLProgram >> getInfoLog [
+
+	ByteArray new: self getInfoLogLength during: [:result |
+		GL getProgramInfoLog: id with: result size with: nil with: result.
+		^ result allButLast "remove null-terminator" utf8Decoded]
+]
+
+{ #category : #linking }
+GLProgram >> getInfoLogLength [
+
+	^ self getAttribute: GL_INFO_LOG_LENGTH
+]
+
+{ #category : #accessing }
+GLProgram >> getNumAttributes [
+
+	^ self getAttribute: GL_ACTIVE_ATTRIBUTES
+]
+
+{ #category : #accessing }
+GLProgram >> getNumUniforms [
+
+	^ self getAttribute: GL_ACTIVE_UNIFORMS
+]
+
+{ #category : #uniforms }
+GLProgram >> getUniform: index [
+
+	self notYetImplemented
+]
+
+{ #category : #uniforms }
+GLProgram >> getUniformNamed: aSymbol [
+
+	self notYetImplemented
 ]
 
 { #category : #'initialize-release' }
 GLProgram >> initialize [
 
 	super initialize.
-	id := GL glCreateProgram.
+	shaders := OrderedCollection new.
 	self initializeShaders.
 	self initializeLocations
 ]
@@ -164,6 +248,39 @@ GLProgram >> initializeShaders [
 		GL checkForError]
 ]
 
+{ #category : #testing }
+GLProgram >> isFlaggedForDeletion [
+
+	^ (self getAttribute: GL_DELETE_STATUS) = GL_TRUE
+]
+
+{ #category : #testing }
+GLProgram >> isProgram [
+
+	^ true
+]
+
+{ #category : #testing }
+GLProgram >> isValid [
+
+	GL validateProgram: id.
+	^ (self getAttribute: GL_VALIDATE_STATUS) = GL_TRUE
+]
+
+{ #category : #testing }
+GLProgram >> lastLinkingSucceeded [
+
+	^ (self getAttribute: GL_LINK_STATUS) = GL_TRUE
+]
+
+{ #category : #linking }
+GLProgram >> link [
+
+	GL linkProgram: id.
+	self lastLinkingSucceeded ifFalse: [
+		self errorLinkingFailed]
+]
+
 { #category : #'initialize-release' }
 GLProgram >> registerAttribute: aString [
 
@@ -180,6 +297,18 @@ GLProgram >> registerUniform: aString [
 	location := GL getUniformLocation: id with: aString.
 	self assert: location >= 0.
 	^ location
+]
+
+{ #category : #uniforms }
+GLProgram >> setUniform: index to: anObject [
+
+	self notYetImplemented
+]
+
+{ #category : #uniforms }
+GLProgram >> setUniformNamed: aSymbol to: anObject [
+
+	self notYetImplemented
 ]
 
 { #category : #accessing }
@@ -201,10 +330,23 @@ GLProgram >> uniform: location value: anObject [
 	anObject putAtUniform: location
 ]
 
-{ #category : #usage }
+{ #category : #activation }
 GLProgram >> use [
 
-	self bind
+	self class use: self
+]
+
+{ #category : #activation }
+GLProgram >> useDuring: aBlock [
+
+	self class use: self during: aBlock
+]
+
+{ #category : #usage }
+GLProgram >> validate [
+
+	self isValid ifFalse: [
+		self notify: self infoLog]
 ]
 
 { #category : #usage }

@@ -1,11 +1,11 @@
 Class {
 	#name : #GLGeometryShader,
 	#superclass : #GLShader,
-	#category : #'OpenGL-Shaders'
+	#category : #'OpenGL-Wrappers-Shaders'
 }
 
 { #category : #accessing }
-GLGeometryShader >> type [
+GLGeometryShader class >> type [
 
 	^ GL_GEOMETRY_SHADER
 ]

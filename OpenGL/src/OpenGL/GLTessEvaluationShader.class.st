@@ -1,11 +1,11 @@
 Class {
 	#name : #GLTessEvaluationShader,
 	#superclass : #GLShader,
-	#category : #'OpenGL-Shaders'
+	#category : #'OpenGL-Wrappers-Shaders'
 }
 
 { #category : #accessing }
-GLTessEvaluationShader >> type [
+GLTessEvaluationShader class >> type [
 
 	^ GL_TESS_EVALUATION_SHADER
 ]
