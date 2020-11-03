@@ -118,7 +118,7 @@ RtFramebufferStore >> initializeWithExtent: aPoint [
 	extent := aPoint.
 	
 	framebuffer := GLFrameBuffer create.
-	texture := GLTextureRGBA create.
+	texture := GL2DTexture create.
 	
 	texture extent: extent.
 	framebuffer texture2D: texture
@@ -128,7 +128,7 @@ RtFramebufferStore >> initializeWithExtent: aPoint [
 RtFramebufferStore >> initializeWithForm: aForm [
 
 	extent := aForm extent.
-	texture := GLTextureRGBA create.
+	texture := GL2DTexture create.
 	texture image: aForm
 ]
 

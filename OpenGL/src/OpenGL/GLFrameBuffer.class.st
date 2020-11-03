@@ -13,13 +13,21 @@ Instance Variables
 "
 Class {
 	#name : #GLFrameBuffer,
-	#superclass : #GLBuffer,
+	#superclass : #GLObject,
 	#instVars : [
 		'target',
 		'colorAttachment0'
 	],
-	#category : #'OpenGL-Buffers'
+	#category : #'OpenGL-Wrappers-Framebuffers'
 }
+
+{ #category : #allocation }
+GLFrameBuffer class >> allocate [
+
+	IntegerArray new: 1 during: [:ids |
+		GL genFramebuffers: 1 with: ids.
+		^ ids first]
+]
 
 { #category : #binding }
 GLFrameBuffer >> asFormOfExtent: aPoint [
@@ -76,15 +84,10 @@ GLFrameBuffer >> delete [
 	GL deleteFramebuffers: 1 with: (IntegerArray with: id).
 ]
 
-{ #category : #'initialize-release' }
-GLFrameBuffer >> initialize [
+{ #category : #testing }
+GLFrameBuffer >> isFrameBuffer [
 
-	| ids |
-	super initialize.
-	target := GL_FRAMEBUFFER.
-	ids := IntegerArray new: 1.
-	GL glGenFramebuffers: 1 with: ids.
-	id := ids first
+	^ true
 ]
 
 { #category : #accessing }

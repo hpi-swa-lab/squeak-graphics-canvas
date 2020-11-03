@@ -46,9 +46,9 @@ GLSharedCanvasResources >> initialize [
 { #category : #initialization }
 GLSharedCanvasResources >> initializeBuffers [
 
-	vao := GLVertexArrayObject create.
+	vao := GLVertexArray create.
 	vao bind.
-	vbo := GLVertexBufferObject create.
+	vbo := GLBuffer create.
 	vbo
 		data: #(
 			0.0 0.0 0.0 0.0

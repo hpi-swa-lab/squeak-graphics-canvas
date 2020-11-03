@@ -10,7 +10,7 @@ GLCanvas >> imageStoreClass [
 GLCanvas >> paintImageStore: aStore sourceRect: sourceRect [
 
 	self boundDuring: [
-		self textureProgram boundDuring: [
+		self textureProgram useDuring: [
 			aStore glTextureDo: [:texture |
 				texture boundDuring: [
 					self textureProgram

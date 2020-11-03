@@ -22,16 +22,27 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'OpenGL-Core'
+	#category : #'OpenGL-Wrappers'
 }
+
+{ #category : #allocation }
+GLObject class >> allocate [
+	"Allocates an object with OpenGL. Returns the id to reference it."
+	self subclassResponsibility
+]
 
 { #category : #'instance creation' }
 GLObject class >> create [
 
+	^ (self id: self allocate) register
+]
+
+{ #category : #'instance creation' }
+GLObject class >> id: anInteger [
+
 	^ self basicNew
-		initialize;
-		register;
-		yourself
+		id: anInteger;
+		initialize
 ]
 
 { #category : #'instance creation' }
@@ -40,37 +51,19 @@ GLObject class >> new [
 	self shouldNotImplement
 ]
 
-{ #category : #binding }
-GLObject >> bind [
+{ #category : #converting }
+GLObject class >> newFrom: glObject [
 
-	self bind: id
+	^ self id: glObject id
 ]
 
-{ #category : #binding }
-GLObject >> bind: anID [
+{ #category : #comparing }
+GLObject >> = otherObject [
 
-	self flag: #todo. "Move this to class-side?"
-	self subclassResponsibility
-]
-
-{ #category : #accessing }
-GLObject >> bindingEnum [
-
-	self subclassResponsibility
-]
-
-{ #category : #binding }
-GLObject >> boundDuring: aBlock [
-
-	| previousBinding |
-	GL assertIsCurrent.
-	(previousBinding := self currentBinding) = id ifTrue: [^ aBlock value].
-	self bind.
-	GL checkForError.
-	aBlock ensure: [
-		GL checkForError.
-		self bind: previousBinding.
-		GL checkForError]
+	self == otherObject ifTrue: [^ true].
+	context = otherObject context ifFalse: [^ false].
+	id = otherObject id ifFalse: [^ false].
+	^ true
 ]
 
 { #category : #'initialize-release' }
@@ -79,10 +72,22 @@ GLObject >> cleanUp [
 	id := -1 "Obviously invalid"
 ]
 
-{ #category : #binding }
-GLObject >> currentBinding [
+{ #category : #accessing }
+GLObject >> context [
 
-	^ GL getInteger: self bindingEnum
+	^ context
+]
+
+{ #category : #'initialize-release' }
+GLObject >> delete [
+
+	id := -1 "Obviously invalid"
+]
+
+{ #category : #comparing }
+GLObject >> hash [
+
+	^ id hash bitXor: context hash
 ]
 
 { #category : #accessing }
@@ -95,6 +100,42 @@ GLObject >> id [
 GLObject >> initialize [
 
 	context := GL context
+]
+
+{ #category : #testing }
+GLObject >> isBuffer [
+
+	^ false
+]
+
+{ #category : #testing }
+GLObject >> isFrameBuffer [
+
+	^ false
+]
+
+{ #category : #testing }
+GLObject >> isProgram [
+
+	^ false
+]
+
+{ #category : #testing }
+GLObject >> isShader [
+
+	^ false
+]
+
+{ #category : #testing }
+GLObject >> isTexture [
+
+	^ false
+]
+
+{ #category : #testing }
+GLObject >> isVertexArray [
+
+	^ false
 ]
 
 { #category : #accessing }

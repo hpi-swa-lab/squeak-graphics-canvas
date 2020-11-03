@@ -1,17 +1,29 @@
 Class {
-	#name : #GLTextureRGBA,
-	#superclass : #GLObject,
-	#category : #'OpenGL-Core'
+	#name : #GL2DTexture,
+	#superclass : #GLTexture,
+	#category : #'OpenGL-Wrappers-Textures'
 }
 
 { #category : #binding }
-GLTextureRGBA >> asForm [
+GL2DTexture class >> bindingEnum [
+
+	^ GL_TEXTURE_BINDING_2D
+]
+
+{ #category : #binding }
+GL2DTexture class >> target [
+
+	^ GL_TEXTURE_2D
+]
+
+{ #category : #binding }
+GL2DTexture >> asForm [
 
 	| bufSize data |
 	bufSize := self extent area * 4.
 	data := ByteArray new: bufSize.
 	GL
-		glGetTextureImage: id
+		getTextureImage: id
 		with: 0
 		with: GL_BGRA
 		with: GL_UNSIGNED_INT_8_8_8_8
@@ -26,37 +38,35 @@ GLTextureRGBA >> asForm [
 ]
 
 { #category : #binding }
-GLTextureRGBA >> bind: anID [
+GL2DTexture >> bind: anID [
 
-	GL glBindTexture: GL_TEXTURE_2D with: anID
+	GL bindTexture: GL_TEXTURE_2D with: anID
 ]
 
 { #category : #binding }
-GLTextureRGBA >> bindingEnum [
+GL2DTexture >> bindingEnum [
 
 	^ GL_TEXTURE_BINDING_2D
 ]
 
 { #category : #'initialize-release' }
-GLTextureRGBA >> delete [
+GL2DTexture >> delete [
 
-	| texIDs |
-	texIDs := IntegerArray with: id.
-	GL glDeleteTextures: 1 with: texIDs
+	GL deleteTextures: 1 with: (IntegerArray with: id)
 ]
 
 { #category : #accessing }
-GLTextureRGBA >> extent [
+GL2DTexture >> extent [
 
 	^ self width @ self height
 ]
 
 { #category : #accessing }
-GLTextureRGBA >> extent: aPoint [
+GL2DTexture >> extent: aPoint [
 
 	self boundDuring: [
 		GL
-			glTexImage2D: GL_TEXTURE_2D
+			texImage2D: GL_TEXTURE_2D
 			with: 0
 			with: GL_RGBA
 			with: aPoint x truncated
@@ -67,42 +77,42 @@ GLTextureRGBA >> extent: aPoint [
 			with: nil.
 		GL checkForError.
 		GL
-			glTexParameteri: GL_TEXTURE_2D
+			texParameteri: GL_TEXTURE_2D
 			with: GL_TEXTURE_MIN_FILTER
 			with: GL_LINEAR.
 		GL
-			glTexParameteri: GL_TEXTURE_2D
+			texParameteri: GL_TEXTURE_2D
 			with: GL_TEXTURE_MAG_FILTER
 			with: GL_LINEAR]
 ]
 
 { #category : #private }
-GLTextureRGBA >> getTextureParameterI: parameter [
-	
-	self boundDuring: [ | array |
-		array := IntegerArray new: 1.
-		GL glGetTexLevelParameteriv: GL_TEXTURE_2D with: 0 with: parameter with: array.
-		^ array first ]
+GL2DTexture >> getTextureParameterI: parameter [
+
+	self boundDuring: [
+		IntegerArray new: 1 during: [:result |
+			GL getTexLevelParameteriv: GL_TEXTURE_2D with: 0 with: parameter with: result.
+			^ result first]]
 ]
 
 { #category : #accessing }
-GLTextureRGBA >> height [
+GL2DTexture >> height [
 
 	^ self getTextureParameterI: GL_TEXTURE_HEIGHT
 ]
 
 { #category : #accessing }
-GLTextureRGBA >> image: aForm [
+GL2DTexture >> image: aForm [
 
 	self image: aForm minFilter: GL_LINEAR magFilter: GL_LINEAR
 ]
 
 { #category : #accessing }
-GLTextureRGBA >> image: aForm minFilter: anEnum magFilter: anEnum2 [
+GL2DTexture >> image: aForm minFilter: anEnum magFilter: anEnum2 [
 
 	self boundDuring: [
 			GL
-				glTexImage2D: GL_TEXTURE_2D
+				texImage2D: GL_TEXTURE_2D
 				with: 0
 				with: GL_RGBA
 				with: aForm width
@@ -113,32 +123,22 @@ GLTextureRGBA >> image: aForm minFilter: anEnum magFilter: anEnum2 [
 				with: (aForm asFormOfDepth: 32) bits.
 			GL checkForError.
 			GL
-				glTexParameteri: GL_TEXTURE_2D
+				texParameteri: GL_TEXTURE_2D
 				with: GL_TEXTURE_MIN_FILTER
 				with: anEnum.
 			GL
-				glTexParameteri: GL_TEXTURE_2D
+				texParameteri: GL_TEXTURE_2D
 				with: GL_TEXTURE_MAG_FILTER
 				with: anEnum]
 ]
 
-{ #category : #'initialize-release' }
-GLTextureRGBA >> initialize [
-
-	| texIDs |
-	super initialize.
-	texIDs := IntegerArray new: 1.
-	GL glGenTextures: 1 with: texIDs.
-	id := texIDs first
-]
-
 { #category : #accessing }
-GLTextureRGBA >> subImage: aForm at: aPoint [
+GL2DTexture >> subImage: aForm at: aPoint [
 
 	self boundDuring: [
 		GL checkForError.
 		GL
-			glTexSubImage2D: GL_TEXTURE_2D
+			texSubImage2D: GL_TEXTURE_2D
 			with: 0
 			with: aPoint x
 			with: aPoint y
@@ -151,7 +151,7 @@ GLTextureRGBA >> subImage: aForm at: aPoint [
 ]
 
 { #category : #accessing }
-GLTextureRGBA >> width [
+GL2DTexture >> width [
 
 	^ self getTextureParameterI: GL_TEXTURE_WIDTH
 ]
