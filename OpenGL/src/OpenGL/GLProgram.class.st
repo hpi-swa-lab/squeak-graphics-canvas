@@ -151,7 +151,7 @@ GLProgram >> errorLinkingFailed [
 GLProgram >> getAttribute: attributeName [
 
 	IntegerArray new: 1 during: [:result |
-		GL getShaderiv: id with: attributeName with: result.
+		GL getProgramiv: id with: attributeName with: result.
 		^ result first]
 ]
 
@@ -209,7 +209,7 @@ GLProgram >> getUniformNamed: aSymbol [
 GLProgram >> initialize [
 
 	super initialize.
-	shaders := OrderedCollection new.
+	shaders := Set new.
 	self initializeShaders.
 	self initializeLocations
 ]
@@ -223,29 +223,20 @@ GLProgram >> initializeLocations [
 { #category : #'initialize-release' }
 GLProgram >> initializeShaders [
 
-	| shaders status |
-	shaders := {
-		GLVertexShader context: GL code: self class vertexShader withUnixLineEndings.
-		GLFragmentShader context: GL code: self class fragmentShader withUnixLineEndings.
-	}.
+	{
+		GLVertexShader create
+			source: self class vertexShader withUnixLineEndings;
+			compile;
+			yourself.
+		GLFragmentShader create
+			source: self class fragmentShader withUnixLineEndings;
+			compile;
+			yourself
+	} do: [:shader | self attachShader: shader].
 	
-	"attaching shaders"
-	shaders do: [:shader |
-		GL attachShader: id with: shader id.
-		GL checkForError].
+	self link.
 	
-	"linking program"
-	GL linkProgram: id.
-	GL checkForError.
-	status := IntegerArray new: 1.
-	GL getProgramiv: id with: GL_LINK_STATUS with: status.
-	GL checkForError.
-	status first = 0 ifTrue: [self error: 'failed to link shader: ', (self getProgramInfoLog: id)].
-	
-	"deleting shaders"
-	shaders do: [:shader |
-		GL deleteShader: shader id.
-		GL checkForError]
+	shaders do: [:shader | shader delete]
 ]
 
 { #category : #testing }
@@ -356,12 +347,10 @@ GLProgram >> vertexAttrib: position value: value components: components stride: 
 	self flag: #todo. "Broken #isGLBuffer #glType #bytesPerElement"
 	byteOffset := ExternalAddress new fromInteger: offset * value bytesPerElement.
 	GL enableVertexAttribArray: position.
-	value isGLBuffer ifTrue: [
-		GL vertexAttribPointer: position
-			with: components
-			with: value glType
-			with: GL_FALSE
-			with: stride * value bytesPerElement
-			with: byteOffset ]
-			
+	GL vertexAttribPointer: position
+		with: components
+		with: value glType
+		with: GL_FALSE
+		with: stride * value bytesPerElement
+		with: byteOffset
 ]

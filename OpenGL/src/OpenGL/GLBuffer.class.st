@@ -56,7 +56,7 @@ GLBuffer class >> bindingEnum [
 { #category : #binding }
 GLBuffer class >> getBoundId [
 
-	^ self getIntegerParameter: self bindingEnum
+	^ GL getIntegerParameter: self bindingEnum
 ]
 
 { #category : #binding }

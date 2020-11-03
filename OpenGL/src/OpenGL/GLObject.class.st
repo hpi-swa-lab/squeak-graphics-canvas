@@ -96,6 +96,12 @@ GLObject >> id [
 	^ id
 ]
 
+{ #category : #accessing }
+GLObject >> id: anInteger [
+
+	id := anInteger
+]
+
 { #category : #'initialize-release' }
 GLObject >> initialize [
 

@@ -30,6 +30,12 @@ GLFrameBuffer class >> allocate [
 ]
 
 { #category : #binding }
+GLFrameBuffer class >> bindId: anInteger to: target [
+
+	GL bindFramebuffer: target with: anInteger
+]
+
+{ #category : #binding }
 GLFrameBuffer >> asFormOfExtent: aPoint [
 
 	| data |
@@ -54,16 +60,14 @@ GLFrameBuffer >> asFormOfExtent: aPoint [
 ]
 
 { #category : #binding }
-GLFrameBuffer >> bind: anID [
+GLFrameBuffer >> boundDuring: aBlock [
 
-	GL bindFramebuffer: target with: anID
-]
-
-{ #category : #binding }
-GLFrameBuffer >> bindingEnum [
-	
-	self flag: #todo. "There is also GL_READ_FRAMEBUFFER_BINDING which we ignore completely"
-	^ GL_DRAW_FRAMEBUFFER_BINDING
+	| previousBuffer |
+	self flag: #todo. "multiple targets possible"
+	(previousBuffer := GL getIntegerParameter: GL_DRAW_FRAMEBUFFER_BINDING) = id ifTrue: [^ aBlock value].
+	self class bindId: id to: GL_DRAW_FRAMEBUFFER.
+	aBlock ensure: [
+		self class bindId: previousBuffer to: GL_DRAW_FRAMEBUFFER]
 ]
 
 { #category : #usage }

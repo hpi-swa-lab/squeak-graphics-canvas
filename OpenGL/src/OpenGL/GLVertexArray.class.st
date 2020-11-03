@@ -17,15 +17,26 @@ GLVertexArray class >> allocate [
 ]
 
 { #category : #binding }
-GLVertexArray >> bind: anID [
+GLVertexArray class >> bindId: anInteger [
 
-	GL bindVertexArray: anID
+	GL bindVertexArray: anInteger
 ]
 
 { #category : #binding }
-GLVertexArray >> bindingEnum [
+GLVertexArray >> bind [
 
-	^ GL_VERTEX_ARRAY_BUFFER_BINDING
+	self class bindId: id
+]
+
+{ #category : #binding }
+GLVertexArray >> boundDuring: aBlock [
+
+	| previousID |
+	previousID := GL getIntegerParameter: GL_VERTEX_ARRAY_BINDING.
+	previousID = id ifTrue: [^ aBlock value].
+	self class bindId: id.
+	aBlock ensure: [
+		self class bindId: previousID]
 ]
 
 { #category : #'initialize-release' }
