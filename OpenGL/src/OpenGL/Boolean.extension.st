@@ -1,7 +1,7 @@
 Extension { #name : #Boolean }
 
 { #category : #'*OpenGL' }
-Boolean >> putAtGL: gl Uniform: location [
+Boolean >> putAtUniform: location [
 
-	gl glUniform1ui: location with: self asNumber
+	GL uniform1ui: location with: self asNumber
 ]

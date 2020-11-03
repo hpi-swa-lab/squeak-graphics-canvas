@@ -35,13 +35,13 @@ RtDisplayFramebufferStore >> glLibrary [
 { #category : #initialization }
 RtDisplayFramebufferStore >> initializeGLSettings [
 
-	GL glDisable: GL_CULL_FACE.
-	GL glDisable: GL_DEPTH_TEST.
-	GL glActiveTexture: GL_TEXTURE0.
-	GL glEnable: GL_BLEND.
-	GL glEnable: GL_SCISSOR_TEST.
-	GL glBlendFuncSeparate: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA with: GL_ONE with: GL_ONE.
-	GL glClearColor: 1 with: 1 with: 1 with: 0.
+	GL disable: GL_CULL_FACE.
+	GL disable: GL_DEPTH_TEST.
+	GL activeTexture: GL_TEXTURE0.
+	GL enable: GL_BLEND.
+	GL enable: GL_SCISSOR_TEST.
+	GL blendFuncSeparate: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA with: GL_ONE with: GL_ONE.
+	GL clearColor: 1 with: 1 with: 1 with: 0.
 ]
 
 { #category : #initialization }

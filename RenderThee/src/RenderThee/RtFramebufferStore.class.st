@@ -49,7 +49,7 @@ RtFramebufferStore class >> form: aForm [
 RtFramebufferStore >> clear [
 
 	framebuffer boundDuring: [
-		framebuffer library glClear: GL_COLOR_BUFFER_BIT]
+		framebuffer library clear: GL_COLOR_BUFFER_BIT]
 ]
 
 { #category : #accessing }
@@ -109,7 +109,7 @@ RtFramebufferStore >> glTextureDo: aBlock [
 { #category : #'initialize-release' }
 RtFramebufferStore >> initializeGLSettings [
 
-	self glLibrary glClearColor: 1 with: 1 with: 1 with: 0
+	self glLibrary clearColor: 1 with: 1 with: 1 with: 0
 ]
 
 { #category : #'initialize-release' }
@@ -157,7 +157,7 @@ RtFramebufferStore >> release [
 { #category : #'gl calls' }
 RtFramebufferStore >> resetViewport [
 
-	self glLibrary glViewport: 0 with: 0 with: extent x with: extent y
+	self glLibrary setViewport: (0 @ 0 extent: extent)
 ]
 
 { #category : #accessing }

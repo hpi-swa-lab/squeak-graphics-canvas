@@ -81,19 +81,19 @@ GLCanvasTextureProgram >> imageLocation [
 GLCanvasTextureProgram >> initializeLocations [
 
 	super initializeLocations.
-	mvpLocation := GL glGetUniformLocation: id with: 'mvp'.
+	mvpLocation := GL getUniformLocation: id with: 'mvp'.
 	self assert: mvpLocation >= 0.
-	sourceExtentLocation := GL glGetUniformLocation: id with: 'sourceExtent'.
+	sourceExtentLocation := GL getUniformLocation: id with: 'sourceExtent'.
 	self assert: sourceExtentLocation >= 0.
-	sourcePositionLocation := GL glGetUniformLocation: id with: 'sourcePosition'.
+	sourcePositionLocation := GL getUniformLocation: id with: 'sourcePosition'.
 	self assert: sourcePositionLocation >= 0.
 	colorLocation := self registerUniform: 'color'.
 	
-	imageLocation := GL glGetUniformLocation: id with: 'image'.
+	imageLocation := GL getUniformLocation: id with: 'image'.
 	self assert: imageLocation >= 0.
-	aPosLocation := GL glGetAttribLocation: id with: 'aPos'.
+	aPosLocation := GL getAttribLocation: id with: 'aPos'.
 	self assert: aPosLocation >= 0.
-	aTexCoordsLocation := GL glGetAttribLocation: id with: 'aTexCoords'.
+	aTexCoordsLocation := GL getAttribLocation: id with: 'aTexCoords'.
 	self assert: aTexCoordsLocation >= 0
 ]
 

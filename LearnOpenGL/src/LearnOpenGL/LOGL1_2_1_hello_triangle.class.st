@@ -24,18 +24,22 @@ void main() {
 { #category : #running }
 LOGL1_2_1_hello_triangle >> render [
 
-	GL clearColor: (Color gray: (Time millisecondClock \\ 5000 / 5000)).
-	GL glClear: GL_COLOR_BUFFER_BIT
+	GL setClearColor: (Color gray: (Time millisecondClock \\ 5000 / 5000)).
+	GL clear: GL_COLOR_BUFFER_BIT
 ]
 
 { #category : #running }
 LOGL1_2_1_hello_triangle >> setUp [
 
-	| vertexShader |
+	| vertexShader fragmentShader |
 	vertexShader := GLVertexShader create
-						source: self vertexShaderSource
-						"compile;
-						yourself"
+						source: self vertexShaderSource;
+						compile;
+						yourself.
+	fragmentShader := GLFragmentShader create
+						source: self fragmentShaderSource;
+						compile;
+						yourself
 ]
 
 { #category : #shaders }

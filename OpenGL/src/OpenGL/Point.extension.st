@@ -1,7 +1,7 @@
 Extension { #name : #Point }
 
 { #category : #'*OpenGL' }
-Point >> putAtGL: gl Uniform: location [
+Point >> putAtUniform: location [
 
-	gl glUniform2f: location with: x asFloat with: y asFloat
+	GL uniform2f: location with: x asFloat with: y asFloat
 ]

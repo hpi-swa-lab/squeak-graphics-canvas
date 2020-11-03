@@ -147,20 +147,20 @@ GLProgram >> initializeShaders [
 	
 	"attaching shaders"
 	shaders do: [:shader |
-		GL glAttachShader: id with: shader id.
+		GL attachShader: id with: shader id.
 		GL checkForError].
 	
 	"linking program"
-	GL glLinkProgram: id.
+	GL linkProgram: id.
 	GL checkForError.
 	status := IntegerArray new: 1.
-	GL glGetProgramiv: id with: GL_LINK_STATUS with: status.
+	GL getProgramiv: id with: GL_LINK_STATUS with: status.
 	GL checkForError.
 	status first = 0 ifTrue: [self error: 'failed to link shader: ', (self getProgramInfoLog: id)].
 	
 	"deleting shaders"
 	shaders do: [:shader |
-		GL glDeleteShader: shader id.
+		GL deleteShader: shader id.
 		GL checkForError]
 ]
 
@@ -168,7 +168,7 @@ GLProgram >> initializeShaders [
 GLProgram >> registerAttribute: aString [
 
 	| location |
-	location := GL glGetAttribLocation: id with: aString.
+	location := GL getAttribLocation: id with: aString.
 	self assert: location >= 0.
 	^ location
 ]
@@ -177,7 +177,7 @@ GLProgram >> registerAttribute: aString [
 GLProgram >> registerUniform: aString [
 
 	| location |
-	location := GL glGetUniformLocation: id with: aString.
+	location := GL getUniformLocation: id with: aString.
 	self assert: location >= 0.
 	^ location
 ]
@@ -198,7 +198,7 @@ GLProgram >> shaders: anObject [
 GLProgram >> uniform: location value: anObject [
 
 	self assert: location >= 0.
-	anObject putAtGL: GL Uniform: location
+	anObject putAtUniform: location
 ]
 
 { #category : #usage }
@@ -211,10 +211,11 @@ GLProgram >> use [
 GLProgram >> vertexAttrib: position value: value components: components stride: stride offset: offset [
 
  	| byteOffset |
+	self flag: #todo. "Broken #isGLBuffer #glType #bytesPerElement"
 	byteOffset := ExternalAddress new fromInteger: offset * value bytesPerElement.
-	GL glEnableVertexAttribArray: position.
+	GL enableVertexAttribArray: position.
 	value isGLBuffer ifTrue: [
-		GL glVertexAttribPointer: position
+		GL vertexAttribPointer: position
 			with: components
 			with: value glType
 			with: GL_FALSE

@@ -1,7 +1,7 @@
 Extension { #name : #Float }
 
 { #category : #'*OpenGL' }
-Float >> putAtGL: gl Uniform: location [
+Float >> putAtUniform: location [
 
-	gl glUniform1f: location with: self
+	GL uniform1f: location with: self
 ]

@@ -1,7 +1,7 @@
 Extension { #name : #Integer }
 
 { #category : #'*OpenGL' }
-Integer >> putAtGL: gl Uniform: location [
+Integer >> putAtUniform: location [
 
-	gl glUniform1i: location with: self
+	GL uniform1i: location with: self
 ]

@@ -7,7 +7,7 @@ Class {
 { #category : #binding }
 GLDisplayFrameBuffer >> bind: anID [
 	"bind a framebuffer to a framebuffer target"
-	GL glBindFramebuffer: GL_FRAMEBUFFER with: anID
+	GL bindFramebuffer: GL_FRAMEBUFFER with: anID
 ]
 
 { #category : #binding }

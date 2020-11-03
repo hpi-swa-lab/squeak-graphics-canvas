@@ -4,13 +4,13 @@ Class {
 	#instVars : [
 		'source'
 	],
-	#category : #'OpenGL-Shaders'
+	#category : #'OpenGL-Wrappers-Shaders'
 }
 
 { #category : #compilation }
 GLShader >> compile [
 
-	GL glCompileShader: id.
+	GL compileShader: id.
 	self lastCompilationSucceeded ifFalse: [
 		self errorCompilationFailed]
 ]
@@ -18,50 +18,55 @@ GLShader >> compile [
 { #category : #'initialize-release' }
 GLShader >> delete [
 
-	GL glDeleteShader: id
+	GL deleteShader: id
 ]
 
 { #category : #compilation }
 GLShader >> errorCompilationFailed [
 
-	^ (GLShaderCompilationError shader: self infoLog: self getInfoLog) signal
+	^ (GLShaderCompilationFailed shader: self infoLog: self getInfoLog) signal
 ]
 
 { #category : #testing }
 GLShader >> exists [
 
-	^ GL glIsShader: id
+	^ GL isShader: id
 ]
 
 { #category : #'accessing uncached' }
 GLShader >> getAttribute: attributeName [
 
-	| result |
-	result := IntegerArray new: 1.
-	GL glGetShaderiv: id with: attributeName with: result.
-	^ result first
+	IntegerArray new: 1 during: [:result |
+		GL getShaderiv: id with: attributeName with: result.
+		^ result first]
 ]
 
 { #category : #compilation }
 GLShader >> getInfoLog [
 
-	| length resultLength result |
-	length := self getAttribute: GL_INFO_LOG_LENGTH.
-	result := ByteArray new: length.
-	resultLength := IntegerArray new: 1.
-	GL glGetShaderInfoLog: id with: length with: resultLength with: result.
-	^ (result first: resultLength) utf8Decoded
+	ByteArray new: self getInfoLogLength during: [:result |
+		GL getShaderInfoLog: id with: result size with: nil with: result.
+		^ result allButLast "remove null-terminator" utf8Decoded]
+]
+
+{ #category : #compilation }
+GLShader >> getInfoLogLength [
+
+	^ self getAttribute: GL_INFO_LOG_LENGTH
 ]
 
 { #category : #'accessing uncached' }
 GLShader >> getSource [
 
-	| length resultLength result |
-	length := self getAttribute: GL_SHADER_SOURCE_LENGTH.
-	result := ByteArray new: length.
-	resultLength := IntegerArray new: 1.
-	GL glGetShaderSource: id with: length with: resultLength with: result.
-	^ (result first: resultLength) utf8Decoded
+	ByteArray new: self getSourceLength during: [:result |
+		GL getShaderSource: id with: result size with: nil with: result.
+		^ result allButLast "remove null-terminator" utf8Decoded]
+]
+
+{ #category : #'accessing uncached' }
+GLShader >> getSourceLength [
+
+	^ self getAttribute: GL_SHADER_SOURCE_LENGTH
 ]
 
 { #category : #'accessing uncached' }
@@ -106,7 +111,7 @@ GLShader >> setSource: aString [
 						 	pointerAt: 1 put: data getHandle;
 							yourself.
 	
-		GL glShaderSource: id with: 1 with: arrayOfStrings with: nil]
+		GL shaderSource: id with: 1 with: arrayOfStrings with: nil]
 ]
 
 { #category : #accessing }

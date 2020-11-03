@@ -24,7 +24,7 @@ LOGLTemplate class >> run [
 LOGLTemplate >> extentChanged: newExtent [
 	"glfw: whenever the window size changed (by OS or user resize) this callback function executes"
 	gl makeCurrentDuring: [
-		gl viewport: (0@0 extent: newExtent)]
+		GL setViewport: (0@0 extent: newExtent)]
 ]
 
 { #category : #accessing }

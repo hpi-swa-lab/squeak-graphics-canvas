@@ -29,7 +29,7 @@ GLFrameBuffer >> asFormOfExtent: aPoint [
 	
 	self boundDuring: [
 		GL
-			glReadPixels: 0
+			readPixels: 0
 			with: 0
 			with: aPoint x
 			with: aPoint y
@@ -48,7 +48,7 @@ GLFrameBuffer >> asFormOfExtent: aPoint [
 { #category : #binding }
 GLFrameBuffer >> bind: anID [
 
-	GL glBindFramebuffer: target with: anID
+	GL bindFramebuffer: target with: anID
 ]
 
 { #category : #binding }
@@ -61,7 +61,7 @@ GLFrameBuffer >> bindingEnum [
 { #category : #usage }
 GLFrameBuffer >> checkComplete [
 
-	self assert: ((GL glCheckFramebufferStatus: GL_FRAMEBUFFER) = GL_FRAMEBUFFER_COMPLETE)
+	self assert: ((GL checkFramebufferStatus: GL_FRAMEBUFFER) = GL_FRAMEBUFFER_COMPLETE)
 ]
 
 { #category : #accessing }
@@ -73,7 +73,7 @@ GLFrameBuffer >> colorAttachment0 [
 { #category : #'initialize-release' }
 GLFrameBuffer >> delete [
 	
-	GL glDeleteFramebuffers: 1 with: (IntegerArray with: id).
+	GL deleteFramebuffers: 1 with: (IntegerArray with: id).
 ]
 
 { #category : #'initialize-release' }
@@ -111,7 +111,7 @@ GLFrameBuffer >> texture2D: aTexture attachment: anAttachment [
 	self boundDuring: [
 		anAttachment = GL_COLOR_ATTACHMENT0 ifTrue: [
 			colorAttachment0 := aTexture ].
-		GL glFramebufferTexture2D: GL_FRAMEBUFFER
+		GL framebufferTexture2D: GL_FRAMEBUFFER
 			with: anAttachment
 			with: GL_TEXTURE_2D
 			with: aTexture id

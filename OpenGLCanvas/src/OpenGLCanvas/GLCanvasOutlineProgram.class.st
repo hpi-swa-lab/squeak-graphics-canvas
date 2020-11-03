@@ -75,16 +75,16 @@ GLCanvasOutlineProgram >> colorLocation [
 GLCanvasOutlineProgram >> initializeLocations [
 
 	super initializeLocations.
-	mvpLocation := GL glGetUniformLocation: id with: 'mvp'.
+	mvpLocation := GL getUniformLocation: id with: 'mvp'.
 	self assert: mvpLocation >= 0.
-	colorLocation := GL glGetUniformLocation: id with: 'color'.
+	colorLocation := GL getUniformLocation: id with: 'color'.
 	self assert: colorLocation >= 0.
-	aTextureSize := GL glGetUniformLocation: id with: 'aTextureSize'.
+	aTextureSize := GL getUniformLocation: id with: 'aTextureSize'.
 	self assert: aTextureSize >= 0.
 	
-	aPosLocation := GL glGetAttribLocation: id with: 'aPos'.
+	aPosLocation := GL getAttribLocation: id with: 'aPos'.
 	self assert: aPosLocation >= 0.
-	aTexCoordsLocation := GL glGetAttribLocation: id with: 'aTexCoords'.
+	aTexCoordsLocation := GL getAttribLocation: id with: 'aTexCoords'.
 	self assert: aTexCoordsLocation >= 0
 ]
 
