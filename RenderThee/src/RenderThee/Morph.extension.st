@@ -66,7 +66,7 @@ Morph >> morph: aMorph changedIndexFrom: oldIndex to: newIndex [
 Morph >> morphsToRedraw [
 
 	^ (self valueOfProperty: #morphsToRedraw) ifNil: [
-		self morphsToRedraw: IdentitySet new]
+		self morphsToRedraw: WeakSet new]
 ]
 
 { #category : #'*RenderThee' }
