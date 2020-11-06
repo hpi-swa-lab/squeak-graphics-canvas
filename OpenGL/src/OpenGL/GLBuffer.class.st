@@ -3,9 +3,7 @@ Class {
 	#superclass : #GLObject,
 	#instVars : [
 		'size',
-		'numElements',
-		'componentsPerVertex',
-		'bytesPerElement'
+		'usage'
 	],
 	#category : #'OpenGL-Wrappers-Buffers'
 }
@@ -72,6 +70,12 @@ GLBuffer >> bind [
 ]
 
 { #category : #binding }
+GLBuffer >> bindingEnum [
+
+	^ self class bindingEnum
+]
+
+{ #category : #binding }
 GLBuffer >> boundDuring: aBlock [
 
 	self class bind: self during: aBlock
@@ -101,18 +105,37 @@ GLBuffer >> componentsPerVertex: anObject [
 	componentsPerVertex := anObject
 ]
 
-{ #category : #usage }
-GLBuffer >> data: anArray usage: aUsageEnum componentsPerVertex: aNumber [
+{ #category : #data }
+GLBuffer >> data: aRawBitsArray [
 
-	bytesPerElement := anArray byteSize / anArray size.
-	GL bindBuffer: GL_ARRAY_BUFFER with: id.
-	GL bufferData: GL_ARRAY_BUFFER
-		with: anArray byteSize
-		with: anArray
-		with: aUsageEnum.
-	numElements := anArray size.
-	"glType := anArray glType."
-	componentsPerVertex := aNumber
+	self data: aRawBitsArray size: aRawBitsArray byteSize offset: 0
+]
+
+{ #category : #data }
+GLBuffer >> data: aRawBitsArray offset: byteOffset [
+
+	self data: aRawBitsArray size: aRawBitsArray byteSize offset: byteOffset
+]
+
+{ #category : #data }
+GLBuffer >> data: aRawBitsArray size: byteSize [
+
+	self data: aRawBitsArray size: byteSize offset: 0
+]
+
+{ #category : #data }
+GLBuffer >> data: aRawBitsArray size: byteSize offset: byteOffset [
+
+	byteSize + byteOffset > size ifTrue: [
+		usage ifNil: [^ self error: 'Buffer store needs to be initialized. See #usage:size:data:'].
+		byteOffset ~= 0 ifTrue: [^ self error: 'Allocated buffer store too small. Auto-reinitialization would leave undefined gap.'].
+		^ self usage: usage size: byteSize data: aRawBitsArray].
+	self boundDuring: [
+		GL
+			bufferSubData: self bindingEnum
+			with: byteOffset
+			with: byteSize
+			with: aRawBitsArray]
 ]
 
 { #category : #'initialize-release' }
@@ -121,17 +144,24 @@ GLBuffer >> delete [
 	GL deleteBuffers: 1 with: (IntegerArray with: id)
 ]
 
-{ #category : #usage }
+{ #category : #drawing }
 GLBuffer >> draw: aModeEnum [
 
 	self draw: aModeEnum from: 0 count: numElements / componentsPerVertex
 ]
 
-{ #category : #usage }
+{ #category : #drawing }
 GLBuffer >> draw: aModeEnum from: startIndex count: count [
 
 	self boundDuring: [
 		GL drawArrays: aModeEnum with: startIndex with: count]
+]
+
+{ #category : #'initialize-release' }
+GLBuffer >> initialize [
+
+	super initialize.
+	size := 0
 ]
 
 { #category : #testing }
@@ -156,4 +186,29 @@ GLBuffer >> numElements: anObject [
 GLBuffer >> target [
 
 	^ self class target
+]
+
+{ #category : #data }
+GLBuffer >> usage: usageEnum data: aRawBitsArray [ 
+
+	self usage: usageEnum size: aRawBitsArray byteSize data: aRawBitsArray
+]
+
+{ #category : #data }
+GLBuffer >> usage: usageEnum size: byteSize [
+
+	self usage: usageEnum size: byteSize data: nil
+]
+
+{ #category : #data }
+GLBuffer >> usage: usageEnum size: byteSize data: aRawBitsArray [
+
+	self boundDuring: [
+		GL
+			bufferData: self bindingEnum
+			with: byteSize
+			with: aRawBitsArray
+			with: usageEnum].
+	size := byteSize.
+	usage := usageEnum.
 ]

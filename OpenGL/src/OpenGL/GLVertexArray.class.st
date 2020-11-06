@@ -1,10 +1,6 @@
 Class {
 	#name : #GLVertexArray,
 	#superclass : #GLObject,
-	#instVars : [
-		'numElements',
-		'glType'
-	],
 	#category : #'OpenGL-Wrappers-Buffers'
 }
 
@@ -51,20 +47,8 @@ GLVertexArray >> draw: aModeEnum [
 	self draw: aModeEnum from: 0 count: numElements
 ]
 
-{ #category : #accessing }
-GLVertexArray >> glType [
-
-	^ glType
-]
-
 { #category : #testing }
 GLVertexArray >> isVertexArray [
 
 	^ true
-]
-
-{ #category : #accessing }
-GLVertexArray >> numElements [
-
-	^ numElements
 ]

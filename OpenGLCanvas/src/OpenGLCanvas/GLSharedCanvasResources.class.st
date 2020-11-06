@@ -48,15 +48,14 @@ GLSharedCanvasResources >> initializeBuffers [
 
 	vao := GLVertexArray create.
 	vao bind.
-	vbo := GLBuffer create.
+	vbo := GLArrayBuffer create.
 	vbo
+		usage: GL_STATIC_DRAW
 		data: #(
 			0.0 0.0 0.0 0.0
 			1.0 0.0 1.0 0.0
 			0.0 1.0 0.0 1.0
-			1.0 1.0 1.0 1.0 ) asFloat32Array
-		usage: GL_STATIC_DRAW
-		componentsPerVertex: 4.
+			1.0 1.0 1.0 1.0 ) asFloat32Array.
 	GL checkForError
 ]
 
