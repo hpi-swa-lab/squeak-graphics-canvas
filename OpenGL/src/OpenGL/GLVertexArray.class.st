@@ -13,26 +13,33 @@ GLVertexArray class >> allocate [
 ]
 
 { #category : #binding }
-GLVertexArray class >> bindId: anInteger [
+GLVertexArray class >> bind: anInteger [
 
 	GL bindVertexArray: anInteger
 ]
 
 { #category : #binding }
+GLVertexArray class >> currentBinding [
+
+	^ GL getIntegerParameter: GL_VERTEX_ARRAY_BINDING
+]
+
+{ #category : #binding }
 GLVertexArray >> bind [
 
-	self class bindId: id
+	self class bind: id
 ]
 
 { #category : #binding }
 GLVertexArray >> boundDuring: aBlock [
 
 	| previousID |
-	previousID := GL getIntegerParameter: GL_VERTEX_ARRAY_BINDING.
+	self flag: #todo. "Remember actual objects"
+	previousID := self class currentBinding.
 	previousID = id ifTrue: [^ aBlock value].
-	self class bindId: id.
+	self class bind: id.
 	aBlock ensure: [
-		self class bindId: previousID]
+		self class bind: previousID]
 ]
 
 { #category : #'initialize-release' }
@@ -41,7 +48,7 @@ GLVertexArray >> delete [
 	GL deleteVertexArrays: 1 with: (IntegerArray with: id)
 ]
 
-{ #category : #usage }
+{ #category : #drawing }
 GLVertexArray >> draw: aModeEnum [
 
 	self draw: aModeEnum from: 0 count: numElements

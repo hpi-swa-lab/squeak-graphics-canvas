@@ -15,7 +15,6 @@ Class {
 	#name : #GLFrameBuffer,
 	#superclass : #GLObject,
 	#instVars : [
-		'target',
 		'colorAttachment0'
 	],
 	#category : #'OpenGL-Wrappers-Framebuffers'
@@ -30,12 +29,24 @@ GLFrameBuffer class >> allocate [
 ]
 
 { #category : #binding }
-GLFrameBuffer class >> bindId: anInteger to: target [
+GLFrameBuffer class >> bind: id to: target [
 
-	GL bindFramebuffer: target with: anInteger
+	GL bindFramebuffer: target with: id
 ]
 
 { #category : #binding }
+GLFrameBuffer class >> currentDrawBinding [
+
+	^ GL getIntegerParameter: GL_DRAW_FRAMEBUFFER_BINDING
+]
+
+{ #category : #binding }
+GLFrameBuffer class >> currentReadBinding [
+
+	^ GL getIntegerParameter: GL_READ_FRAMEBUFFER_BINDING
+]
+
+{ #category : #converting }
 GLFrameBuffer >> asFormOfExtent: aPoint [
 
 	| data |
@@ -60,20 +71,63 @@ GLFrameBuffer >> asFormOfExtent: aPoint [
 ]
 
 { #category : #binding }
-GLFrameBuffer >> boundDuring: aBlock [
-
-	| previousBuffer |
-	self flag: #todo. "multiple targets possible"
-	(previousBuffer := GL getIntegerParameter: GL_DRAW_FRAMEBUFFER_BINDING) = id ifTrue: [^ aBlock value].
-	self class bindId: id to: GL_DRAW_FRAMEBUFFER.
-	aBlock ensure: [
-		self class bindId: previousBuffer to: GL_DRAW_FRAMEBUFFER]
+GLFrameBuffer >> bind [
+	"binds to both read and draw"
+	self class bind: id to: GL_FRAMEBUFFER
 ]
 
-{ #category : #usage }
-GLFrameBuffer >> checkComplete [
+{ #category : #binding }
+GLFrameBuffer >> bindToDraw [
 
-	self assert: ((GL checkFramebufferStatus: GL_FRAMEBUFFER) = GL_FRAMEBUFFER_COMPLETE)
+	self class bind: id to: GL_DRAW_FRAMEBUFFER
+]
+
+{ #category : #binding }
+GLFrameBuffer >> bindToRead [
+
+	self class bind: id to: GL_READ_FRAMEBUFFER
+]
+
+{ #category : #binding }
+GLFrameBuffer >> boundDuring: aBlock [
+
+	| previousRead previousDraw |
+	self flag: #todo. "Remember actual objects"
+	previousRead := self class currentReadBinding.
+	previousDraw := self class currentDrawBinding.
+	previousRead = previousDraw = id ifTrue: [^ aBlock value].
+	self class bind: id to: GL_FRAMEBUFFER.
+	aBlock ensure: [
+		previousRead = previousDraw
+			ifTrue: [
+				self class bind: previousDraw to: GL_FRAMEBUFFER]
+			ifFalse: [
+				self class bind: previousDraw to: GL_DRAW_FRAMEBUFFER.
+				self class bind: previousRead to: GL_READ_FRAMEBUFFER]]
+]
+
+{ #category : #binding }
+GLFrameBuffer >> boundToDrawDuring: aBlock [
+
+	| previousID |
+	self flag: #todo. "Remember actual objects"
+	previousID := self class currentDrawBinding.
+	previousID = id ifTrue: [^ aBlock value].
+	self class bind: id to: GL_DRAW_BUFFER.
+	aBlock ensure: [
+		self class bind: previousID to: GL_DRAW_BUFFER]
+]
+
+{ #category : #binding }
+GLFrameBuffer >> boundToReadDuring: aBlock [
+
+	| previousID |
+	self flag: #todo. "Remember actual objects"
+	previousID := self class currentReadBinding.
+	previousID = id ifTrue: [^ aBlock value].
+	self class bind: id to: GL_READ_BUFFER.
+	aBlock ensure: [
+		self class bind: previousID to: GL_READ_BUFFER]
 ]
 
 { #category : #accessing }
@@ -94,25 +148,13 @@ GLFrameBuffer >> isFrameBuffer [
 	^ true
 ]
 
-{ #category : #accessing }
-GLFrameBuffer >> target [
-
-	^ target
-]
-
-{ #category : #accessing }
-GLFrameBuffer >> target: anObject [
-
-	target := anObject
-]
-
-{ #category : #usage }
+{ #category : #attachments }
 GLFrameBuffer >> texture2D: aTexture [
 
 	self texture2D: aTexture attachment: GL_COLOR_ATTACHMENT0
 ]
 
-{ #category : #usage }
+{ #category : #attachments }
 GLFrameBuffer >> texture2D: aTexture attachment: anAttachment [
 	
 	self boundDuring: [

@@ -17,32 +17,15 @@ GLBuffer class >> allocate [
 ]
 
 { #category : #binding }
-GLBuffer class >> bind: glBuffer [
+GLBuffer class >> bind: id [
 
-	self bindId: glBuffer id
+	self bind: id to: self target
 ]
 
 { #category : #binding }
-GLBuffer class >> bind: glBuffer during: aBlock [
+GLBuffer class >> bind: id to: target [
 
-	| previousBuffer |
-	self flag: #todo. "Remember actual objects"
-	(previousBuffer := self getBoundId) = glBuffer id ifTrue: [^ aBlock value].
-	self bindId: glBuffer id.
-	aBlock ensure: [
-		self bindId: previousBuffer]
-]
-
-{ #category : #binding }
-GLBuffer class >> bindId: anInteger [
-
-	self bindId: anInteger to: self target
-]
-
-{ #category : #binding }
-GLBuffer class >> bindId: anInteger to: target [
-
-	GL bindBuffer: target with: anInteger
+	GL bindBuffer: target with: id
 ]
 
 { #category : #binding }
@@ -52,7 +35,7 @@ GLBuffer class >> bindingEnum [
 ]
 
 { #category : #binding }
-GLBuffer class >> getBoundId [
+GLBuffer class >> currentBinding [
 
 	^ GL getIntegerParameter: self bindingEnum
 ]
@@ -66,43 +49,19 @@ GLBuffer class >> target [
 { #category : #binding }
 GLBuffer >> bind [
 
-	self class bind: self
-]
-
-{ #category : #binding }
-GLBuffer >> bindingEnum [
-
-	^ self class bindingEnum
+	self class bind: id
 ]
 
 { #category : #binding }
 GLBuffer >> boundDuring: aBlock [
 
-	self class bind: self during: aBlock
-]
-
-{ #category : #accessing }
-GLBuffer >> bytesPerElement [
-
-	^ bytesPerElement
-]
-
-{ #category : #accessing }
-GLBuffer >> bytesPerElement: anObject [
-
-	bytesPerElement := anObject
-]
-
-{ #category : #accessing }
-GLBuffer >> componentsPerVertex [
-
-	^ componentsPerVertex
-]
-
-{ #category : #accessing }
-GLBuffer >> componentsPerVertex: anObject [
-
-	componentsPerVertex := anObject
+	| previousID |
+	self flag: #todo. "Remember actual objects"
+	previousID := self class currentBinding.
+	previousID = id ifTrue: [^ aBlock value].
+	self class bind: id.
+	aBlock ensure: [
+		self class bind: previousID]
 ]
 
 { #category : #data }
@@ -132,7 +91,7 @@ GLBuffer >> data: aRawBitsArray size: byteSize offset: byteOffset [
 		^ self usage: usage size: byteSize data: aRawBitsArray].
 	self boundDuring: [
 		GL
-			bufferSubData: self bindingEnum
+			bufferSubData: self target
 			with: byteOffset
 			with: byteSize
 			with: aRawBitsArray]
@@ -171,21 +130,21 @@ GLBuffer >> isBuffer [
 ]
 
 { #category : #accessing }
-GLBuffer >> numElements [
+GLBuffer >> size [
 
-	^ numElements
-]
-
-{ #category : #accessing }
-GLBuffer >> numElements: anObject [
-
-	numElements := anObject
+	^ size
 ]
 
 { #category : #binding }
 GLBuffer >> target [
 
 	^ self class target
+]
+
+{ #category : #accessing }
+GLBuffer >> usage [
+
+	^ usage
 ]
 
 { #category : #data }
@@ -205,7 +164,7 @@ GLBuffer >> usage: usageEnum size: byteSize data: aRawBitsArray [
 
 	self boundDuring: [
 		GL
-			bufferData: self bindingEnum
+			bufferData: self target
 			with: byteSize
 			with: aRawBitsArray
 			with: usageEnum].

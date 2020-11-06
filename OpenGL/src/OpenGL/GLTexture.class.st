@@ -13,32 +13,15 @@ GLTexture class >> allocate [
 ]
 
 { #category : #binding }
-GLTexture class >> bind: glTexture [
+GLTexture class >> bind: id [
 
-	self bindId: glTexture id
+	self bind: id to: self target
 ]
 
 { #category : #binding }
-GLTexture class >> bind: glTexture during: aBlock [
+GLTexture class >> bind: id to: target [
 
-	| previousTexture |
-	self flag: #todo. "Remember actual objects"
-	(previousTexture := self getBoundId) = glTexture id ifTrue: [^ aBlock value].
-	self bindId: glTexture id.
-	aBlock ensure: [
-		self bindId: previousTexture]
-]
-
-{ #category : #binding }
-GLTexture class >> bindId: anInteger [
-
-	self bindId: anInteger to: self target
-]
-
-{ #category : #binding }
-GLTexture class >> bindId: anInteger to: target [
-
-	GL bindTexture: target with: anInteger
+	GL bindTexture: target with: id
 ]
 
 { #category : #binding }
@@ -48,7 +31,7 @@ GLTexture class >> bindingEnum [
 ]
 
 { #category : #binding }
-GLTexture class >> getBoundId [
+GLTexture class >> currentBinding [
 
 	^ self getIntegerParameter: self bindingEnum
 ]
@@ -62,13 +45,19 @@ GLTexture class >> target [
 { #category : #binding }
 GLTexture >> bind [
 
-	self class bind: self
+	self class bind: id
 ]
 
 { #category : #binding }
 GLTexture >> boundDuring: aBlock [
 
-	self class bind: self during: aBlock
+	| previousID |
+	self flag: #todo. "Remember actual objects"
+	previousID := self class currentBinding.
+	previousID = id ifTrue: [^ aBlock value].
+	self class bind: id.
+	aBlock ensure: [
+		self class bind: previousID]
 ]
 
 { #category : #testing }

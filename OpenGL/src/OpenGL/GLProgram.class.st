@@ -86,16 +86,16 @@ GLProgram class >> context: glContext shaders: aCollection [
 		yourself
 ]
 
+{ #category : #activation }
+GLProgram class >> current [
+
+	^ GL getIntegerParameter: GL_CURRENT_PROGRAM
+]
+
 { #category : #'shader code' }
 GLProgram class >> fragmentShader [
 
 	self subclassResponsibility
-]
-
-{ #category : #activation }
-GLProgram class >> getCurrentProgramId [
-
-	^ GL getIntegerParameter: GL_CURRENT_PROGRAM
 ]
 
 { #category : #generation }
@@ -106,26 +106,9 @@ GLProgram class >> uniforms [
 ]
 
 { #category : #activation }
-GLProgram class >> use: glProgram [
+GLProgram class >> use: id [
 
-	self flag: #todo. "Remember actual objects"
-	self useId: glProgram id
-]
-
-{ #category : #activation }
-GLProgram class >> use: glProgram during: aBlock [
-
-	| previousProgram |
-	self flag: #todo. "Remember actual objects"
-	(previousProgram := self getCurrentProgramId) = glProgram id ifTrue: [^ aBlock value].
-	self useId: glProgram id.
-	aBlock ensure: [self useId: previousProgram]
-]
-
-{ #category : #activation }
-GLProgram class >> useId: anInteger [
-
-	GL useProgram: anInteger
+	GL useProgram: id
 ]
 
 { #category : #'shader code' }
@@ -324,13 +307,19 @@ GLProgram >> uniform: location value: anObject [
 { #category : #activation }
 GLProgram >> use [
 
-	self class use: self
+	self class use: id
 ]
 
 { #category : #activation }
 GLProgram >> useDuring: aBlock [
 
-	self class use: self during: aBlock
+	| previousID |
+	self flag: #todo. "Remember actual objects"
+	previousID := self class current.
+	previousID = id ifTrue: [^ aBlock value].
+	self class use: previousID id.
+	aBlock ensure: [
+		self use: previousID]
 ]
 
 { #category : #usage }

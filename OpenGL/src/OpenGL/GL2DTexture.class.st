@@ -37,18 +37,6 @@ GL2DTexture >> asForm [
 			yourself)
 ]
 
-{ #category : #binding }
-GL2DTexture >> bind: anID [
-
-	GL bindTexture: GL_TEXTURE_2D with: anID
-]
-
-{ #category : #binding }
-GL2DTexture >> bindingEnum [
-
-	^ GL_TEXTURE_BINDING_2D
-]
-
 { #category : #'initialize-release' }
 GL2DTexture >> delete [
 
