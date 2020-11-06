@@ -1,3 +1,15 @@
+"
+I generate the FFI language bindings for OpenGL.
+To do so, I require the API sepecification in the Khronos XML API Registry schema.
+It can be found [here](https://github.com/KhronosGroup/OpenGL-Registry/blob/master/xml/gl.xml).
+
+To (re-)generate the interface, do the following:
+```smalltalk
+GLRegistry fromWeb generate.
+```
+
+The registry object is not modified to generate code and can hence be used multiple times to do so.
+"
 Class {
 	#name : #GLGenRegistry,
 	#superclass : #GLGenObject,
@@ -22,6 +34,21 @@ GLGenRegistry class >> fromTag: registryTag [
 	^ self new
 		tag: registryTag;
 		yourself
+]
+
+{ #category : #'instance creation' }
+GLGenRegistry class >> fromUrl: urlString [
+
+	| response |
+	response := WebClient httpGet: urlString.
+	response isSuccess ifFalse: [^ self error: 'Failed to fetch XML'].
+	^ self fromXML: (XMLDOMParser parseDocumentFrom: response content readStream)
+]
+
+{ #category : #'instance creation' }
+GLGenRegistry class >> fromWeb [
+
+	^ self fromUrl: 'https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml'
 ]
 
 { #category : #'instance creation' }
