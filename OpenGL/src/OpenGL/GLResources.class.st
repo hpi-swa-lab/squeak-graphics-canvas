@@ -6,7 +6,7 @@ Class {
 		'shaders',
 		'userData'
 	],
-	#category : #'OpenGL-Core'
+	#category : #'OpenGL-Context'
 }
 
 { #category : #'initialize-release' }

@@ -24,8 +24,9 @@ GLFWContext class >> newIn: bounds forLibraryClass: aLibraryClass title: aString
 { #category : #'instance creation' }
 GLFWContext class >> window: aWindow [
 
-	^ self new
+	^ self basicNew
 		window: aWindow;
+		initialize;
 		yourself
 ]
 

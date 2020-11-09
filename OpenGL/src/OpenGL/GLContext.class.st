@@ -2,12 +2,17 @@ Class {
 	#name : #GLContext,
 	#superclass : #Object,
 	#instVars : [
+		'api',
+		'version',
+		'profile',
+		'extensions',
+		'library',
 		'resources'
 	],
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'OpenGL-Core'
+	#category : #'OpenGL-Context'
 }
 
 { #category : #'class initialization' }
@@ -39,6 +44,18 @@ GLContext >> activate [
 	self subclassResponsibility
 ]
 
+{ #category : #accessing }
+GLContext >> api [
+
+	^ api
+]
+
+{ #category : #accessing }
+GLContext >> api: anObject [
+
+	api := anObject
+]
+
 { #category : #activation }
 GLContext >> deactivate [
 
@@ -58,6 +75,12 @@ GLContext >> endFrame [
 	self subclassResponsibility
 ]
 
+{ #category : #accessing }
+GLContext >> extensions [
+
+	^ extensions
+]
+
 { #category : #'initialize-release' }
 GLContext >> initialize [
 
@@ -72,6 +95,12 @@ GLContext >> library [
 	^ GL3_3 context: self
 ]
 
+{ #category : #accessing }
+GLContext >> profile [
+
+	^ profile
+]
+
 { #category : #resources }
 GLContext >> registerObject: glObject [
 
@@ -82,6 +111,12 @@ GLContext >> registerObject: glObject [
 GLContext >> resources [
 
 	^ resources
+]
+
+{ #category : #accessing }
+GLContext >> resources: anObject [
+
+	resources := anObject
 ]
 
 { #category : #testing }
@@ -95,4 +130,10 @@ GLContext >> shouldClose [
 GLContext >> swapBuffers [
 
 	self subclassResponsibility
+]
+
+{ #category : #accessing }
+GLContext >> version [
+
+	^ version
 ]

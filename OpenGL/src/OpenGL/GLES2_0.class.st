@@ -29,6 +29,18 @@ GLES2_0 class >> minorVersion [
 ]
 
 { #category : #accessing }
+GLES2_0 class >> moduleName [
+
+	| platform version |
+	platform := Smalltalk platformName.
+	version := Smalltalk osVersion.
+	platform = 'unix' ifTrue: [
+		version = 'linux-gnu' ifTrue: [^ 'libGLESv2.so'].
+		^ self notYetImplemented].
+	self notYetImplemented
+]
+
+{ #category : #accessing }
 GLES2_0 class >> versionNumber [
 
 	^ 20

@@ -45,7 +45,7 @@ GLLibrary class >> example1 [ "self example1"
 	"A minimal OpenGL example."
 	| lib bounds |
 	bounds := 0@0 extent: 400@400.
-	lib := GL2_0 context: (B3DContext newIn: bounds).
+	lib := GL2_0 context: (B3DContext bounds: bounds).
 	[
 		Transcript
 			cr; nextPutAll: lib versionString;
@@ -54,19 +54,19 @@ GLLibrary class >> example1 [ "self example1"
 			cr; nextPutAll: lib shadingLanguageVersionString;
 			cr.
 		lib extensionList do: [:ext |
-			Transcript nextPutAll: ext; space].
+			Transcript nextPutAll: ext; cr].
 		Transcript flush
 	] ensure: [lib destroy]
 ]
 
 { #category : #examples }
 GLLibrary class >> example2 [ "self example2"
-	"A very simple OpenGL 2.0 example showing a rotating red rectangle on white background.
+	"A very simple OpenGL 1.0 example showing a rotating red rectangle on white background.
 	Click anywhere to dismiss it."
 	| context |
-	context := B3DContext newIn: (0@0 extent: 400@400).
+	context := B3DContext bounds: (0@0 extent: 400@400).
 	[
-		(GL2_0 context: context) makeCurrentDuring: [
+		(GL1_0 context: context) makeCurrentDuring: [
 			GL disable: GL_DEPTH_TEST.
 			GL clearColor: 1.0 with: 1.0 with: 1.0 with: 1.0.
 			[Sensor anyButtonPressed] whileFalse: [
