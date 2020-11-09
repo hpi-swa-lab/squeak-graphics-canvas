@@ -1,6 +1,6 @@
 Class {
 	#name : #'GLES1_0',
-	#superclass : #OpenGL,
+	#superclass : #GLLibrary,
 	#category : #'OpenGL-API-GLES1'
 }
 

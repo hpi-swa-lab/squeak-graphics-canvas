@@ -31,7 +31,7 @@ GLGenAPI >> features [
 GLGenAPI >> generate [
 
 	| rootClass |
-	rootClass := OpenGL subclasses detect: [:cls | cls api = name].
+	rootClass := GLLibrary subclasses detect: [:cls | cls api = name].
 	features do: [:feature |
 		| major minor featureClass |
 		major := feature name first digitValue.

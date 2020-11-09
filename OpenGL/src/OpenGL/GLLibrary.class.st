@@ -7,7 +7,7 @@ displayListAlpha
 David A. Smith
 "
 Class {
-	#name : #OpenGL,
+	#name : #GLLibrary,
 	#superclass : #ExternalLibrary,
 	#instVars : [
 		'context',
@@ -20,19 +20,19 @@ Class {
 }
 
 { #category : #accessing }
-OpenGL class >> api [
+GLLibrary class >> api [
 
 	self subclassResponsibility
 ]
 
 { #category : #'instance creation' }
-OpenGL class >> context: aContext [
+GLLibrary class >> context: aContext [
 
 	^ self context: aContext profile: self defaultProfile
 ]
 
 { #category : #'instance creation' }
-OpenGL class >> context: aContext profile: aSymbol [
+GLLibrary class >> context: aContext profile: aSymbol [
 
 	^ self new
 		context: aContext;
@@ -41,7 +41,7 @@ OpenGL class >> context: aContext profile: aSymbol [
 ]
 
 { #category : #examples }
-OpenGL class >> example1 [ "self example1"
+GLLibrary class >> example1 [ "self example1"
 	"A minimal OpenGL example."
 	| lib bounds |
 	bounds := 0@0 extent: 400@400.
@@ -60,7 +60,7 @@ OpenGL class >> example1 [ "self example1"
 ]
 
 { #category : #examples }
-OpenGL class >> example2 [ "self example2"
+GLLibrary class >> example2 [ "self example2"
 	"A very simple OpenGL 2.0 example showing a rotating red rectangle on white background.
 	Click anywhere to dismiss it."
 	| context |
@@ -86,43 +86,26 @@ OpenGL class >> example2 [ "self example2"
 ]
 
 { #category : #'class initialization' }
-OpenGL class >> initialize [
+GLLibrary class >> initialize [
 
 	Smalltalk addToStartUpList: self.
 	Environment current at: #GL put: nil
 ]
 
 { #category : #accessing }
-OpenGL class >> majorVersion [
+GLLibrary class >> majorVersion [
 
 	self subclassResponsibility
 ]
 
 { #category : #accessing }
-OpenGL class >> minorVersion [
+GLLibrary class >> minorVersion [
 
 	self subclassResponsibility
-]
-
-{ #category : #accessing }
-OpenGL class >> moduleName [
-
-	Smalltalk platformName = 'Win32' ifTrue: [
-		^ 'opengl32.dll'].
-	Smalltalk platformName = 'Mac OS' ifTrue:[
-		^ Smalltalk osVersion asNumber < 1000 
-			ifTrue: [self notYetImplemented]
-			ifFalse:['OpenGL.framework']].
-	Smalltalk platformName = 'unix' ifTrue: [
-		"default to X11 window system"
-		^ Smalltalk osVersion = 'linux-gnu'
-			ifTrue: ['libGL.so']
-			ifFalse: ['GL']].
-	self error: 'Cannot identify platform'
 ]
 
 { #category : #'class initialization' }
-OpenGL class >> startUp: resuming [
+GLLibrary class >> startUp: resuming [
 
 	resuming ifTrue: [
 		| instances replacements |
@@ -135,37 +118,37 @@ OpenGL class >> startUp: resuming [
 ]
 
 { #category : #accessing }
-OpenGL class >> versionNumber [
+GLLibrary class >> versionNumber [
 
 	self subclassResponsibility
 ]
 
 { #category : #accessing }
-OpenGL >> api [
+GLLibrary >> api [
 
 	^ self class api
 ]
 
 { #category : #'error handling' }
-OpenGL >> assertIsCurrent [
+GLLibrary >> assertIsCurrent [
 	
 	self assert: GL == self
 ]
 
 { #category : #resources }
-OpenGL >> at: aKey [
+GLLibrary >> at: aKey [
 
 	^ context resources userData at: aKey
 ]
 
 { #category : #resources }
-OpenGL >> at: aKey ifAbsentPut: aBlock [
+GLLibrary >> at: aKey ifAbsentPut: aBlock [
 
 	^ context resources userData at: aKey ifAbsentPut: aBlock
 ]
 
 { #category : #resources }
-OpenGL >> at: aKey put: aValue [
+GLLibrary >> at: aKey put: aValue [
 
 	^ context resources userData
 			at: aKey
@@ -173,7 +156,7 @@ OpenGL >> at: aKey put: aValue [
 ]
 
 { #category : #'error handling' }
-OpenGL >> checkForError [
+GLLibrary >> checkForError [
 	"Check for any OpenGL errors, and raise an Error if any exist."
 	| error |
 
@@ -183,31 +166,31 @@ OpenGL >> checkForError [
 ]
 
 { #category : #accessing }
-OpenGL >> context [
+GLLibrary >> context [
 
 	^ context
 ]
 
 { #category : #accessing }
-OpenGL >> context: aContext [
+GLLibrary >> context: aContext [
 
 	context := aContext
 ]
 
 { #category : #'context delegation' }
-OpenGL >> destroy [
+GLLibrary >> destroy [
 
 	context destroy
 ]
 
 { #category : #'context delegation' }
-OpenGL >> endFrame [
+GLLibrary >> endFrame [
 
 	context endFrame
 ]
 
 { #category : #'error handling' }
-OpenGL >> errorString: error [
+GLLibrary >> errorString: error [
 	"GLubyte* gluErrorString(GLenum error);"
 	| explainedError |
 	
@@ -226,7 +209,7 @@ OpenGL >> errorString: error [
 ]
 
 { #category : #parameters }
-OpenGL >> extensionList [
+GLLibrary >> extensionList [
 
 	self flag: #todo. "If generated classes remained the same, compatibility could be ensured by selection of the correct library class. Also, querying the major version does not work in GLES2"
 	^ self class majorVersion >= 3
@@ -239,7 +222,7 @@ OpenGL >> extensionList [
 ]
 
 { #category : #parameters }
-OpenGL >> getClearColor [
+GLLibrary >> getClearColor [
 
 	| color |
 	color := Float32Array new: 4.
@@ -252,7 +235,7 @@ OpenGL >> getClearColor [
 ]
 
 { #category : #'parameters - helpers' }
-OpenGL >> getIntegerParameter: name [
+GLLibrary >> getIntegerParameter: name [
 
 	IntegerArray new: 1 during: [:result |
 		self getIntegerv: name with: result.
@@ -260,7 +243,7 @@ OpenGL >> getIntegerParameter: name [
 ]
 
 { #category : #'parameters - helpers' }
-OpenGL >> getIntegerParameters: name size: numParameters [
+GLLibrary >> getIntegerParameters: name size: numParameters [
 
 	| data |
 	data := IntegerArray new: numParameters.
@@ -269,13 +252,13 @@ OpenGL >> getIntegerParameters: name size: numParameters [
 ]
 
 { #category : #resources }
-OpenGL >> getShaderProgram: aClass [
+GLLibrary >> getShaderProgram: aClass [
 
 	^ context resources getShaderProgram: aClass library: self
 ]
 
 { #category : #'parameters - helpers' }
-OpenGL >> getStringParameter: name [
+GLLibrary >> getStringParameter: name [
 
 	| data |
 	data := self getString: name.
@@ -284,7 +267,7 @@ OpenGL >> getStringParameter: name [
 ]
 
 { #category : #'parameters - helpers' }
-OpenGL >> getStringParameter: name at: index [
+GLLibrary >> getStringParameter: name at: index [
 
 	| data |
 	data := self getStringi: name with: index.
@@ -293,7 +276,7 @@ OpenGL >> getStringParameter: name at: index [
 ]
 
 { #category : #parameters }
-OpenGL >> getVersion [
+GLLibrary >> getVersion [
 
 	| versionString |
 	versionString := self versionString. "always begins with major.minor"
@@ -301,7 +284,7 @@ OpenGL >> getVersion [
 ]
 
 { #category : #parameters }
-OpenGL >> getViewport [
+GLLibrary >> getViewport [
 
 	| viewport |
 	viewport := self getIntegerParameters: GL_VIEWPORT size: 4.
@@ -311,27 +294,27 @@ OpenGL >> getViewport [
 ]
 
 { #category : #testing }
-OpenGL >> isCompatibilityProfile [
+GLLibrary >> isCompatibilityProfile [
 
 	^ (self getIntegerParameter: GL_CONTEXT_PROFILE_MASK)
 		bitAnd: GL_CONTEXT_COMPATIBILITY_PROFILE_BIT
 ]
 
 { #category : #testing }
-OpenGL >> isCoreProfile [
+GLLibrary >> isCoreProfile [
 
 	^ (self getIntegerParameter: GL_CONTEXT_PROFILE_MASK)
 		bitAnd: GL_CONTEXT_CORE_PROFILE_BIT
 ]
 
 { #category : #accessing }
-OpenGL >> majorVersion [
+GLLibrary >> majorVersion [
 
 	^ self class majorVersion
 ]
 
 { #category : #activation }
-OpenGL >> makeCurrentDuring: aBlock [
+GLLibrary >> makeCurrentDuring: aBlock [
 
 	GL
 		ifNotNil: [:previousLib |
@@ -356,13 +339,13 @@ OpenGL >> makeCurrentDuring: aBlock [
 ]
 
 { #category : #accessing }
-OpenGL >> minorVersion [
+GLLibrary >> minorVersion [
 
 	^ self class minorVersion
 ]
 
 { #category : #activation }
-OpenGL >> newFrameDo: aBlock. [
+GLLibrary >> newFrameDo: aBlock. [
 
 	self makeCurrentDuring: [
 		self checkForError.
@@ -374,43 +357,43 @@ OpenGL >> newFrameDo: aBlock. [
 ]
 
 { #category : #parameters }
-OpenGL >> numExtensions [
+GLLibrary >> numExtensions [
 
 	^ self getIntegerParameter: GL_NUM_EXTENSIONS
 ]
 
 { #category : #accessing }
-OpenGL >> profile [
+GLLibrary >> profile [
 
 	^ profile
 ]
 
 { #category : #accessing }
-OpenGL >> profile: anObject [
+GLLibrary >> profile: anObject [
 
 	profile := anObject
 ]
 
 { #category : #'error handling' }
-OpenGL >> profileError [
+GLLibrary >> profileError [
 
 	self error: 'Not supported in currently active OpenGL library profile'
 ]
 
 { #category : #resources }
-OpenGL >> registerObject: glObject [
+GLLibrary >> registerObject: glObject [
 
 	context registerObject: glObject
 ]
 
 { #category : #parameters }
-OpenGL >> rendererString [
+GLLibrary >> rendererString [
 
 	^ self getStringParameter: GL_RENDERER
 ]
 
 { #category : #helpers }
-OpenGL >> setClearColor: aColor [
+GLLibrary >> setClearColor: aColor [
 
 	self
 		clearColor: aColor red
@@ -420,7 +403,7 @@ OpenGL >> setClearColor: aColor [
 ]
 
 { #category : #helpers }
-OpenGL >> setViewport: aRectangle [
+GLLibrary >> setViewport: aRectangle [
 
 	self
 		viewport: aRectangle left
@@ -430,50 +413,50 @@ OpenGL >> setViewport: aRectangle [
 ]
 
 { #category : #parameters }
-OpenGL >> shadingLanguageVersionString [
+GLLibrary >> shadingLanguageVersionString [
 
 	^ self getStringParameter: GL_SHADING_LANGUAGE_VERSION
 ]
 
 { #category : #'context delegation' }
-OpenGL >> shouldClose [
+GLLibrary >> shouldClose [
 
 	self flag: #todo. "does this really belong here?"
 	^ context shouldClose
 ]
 
 { #category : #'context delegation' }
-OpenGL >> swapBuffers [
+GLLibrary >> swapBuffers [
 
 	context swapBuffers
 ]
 
 { #category : #parameters }
-OpenGL >> vendorString [
+GLLibrary >> vendorString [
 
 	^ self getStringParameter: GL_VENDOR
 ]
 
 { #category : #accessing }
-OpenGL >> version [
+GLLibrary >> version [
 
 	^ self class versionNumber
 ]
 
 { #category : #'error handling' }
-OpenGL >> versionError [
+GLLibrary >> versionError [
 
 	self error: 'Not supported in currently active OpenGL library version'
 ]
 
 { #category : #parameters }
-OpenGL >> versionString [
+GLLibrary >> versionString [
 
 	^ self getStringParameter: GL_VERSION
 ]
 
 { #category : #helpers }
-OpenGL >> viewport: aRectangle during: aBlock [
+GLLibrary >> viewport: aRectangle during: aBlock [
 
 	| previousViewport |
 	previousViewport := self getViewport.

@@ -1,6 +1,6 @@
 Class {
 	#name : #'GL1_0',
-	#superclass : #OpenGL,
+	#superclass : #GLLibrary,
 	#instVars : [
 		'isCore'
 	],
@@ -29,6 +29,24 @@ GL1_0 class >> majorVersion [
 GL1_0 class >> minorVersion [
 
 	^ 0
+]
+
+{ #category : #accessing }
+GL1_0 class >> moduleName [
+
+	| platform version |
+	platform := Smalltalk platformName.
+	version := Smalltalk osVersion.
+	platform = 'Win32' ifTrue: [^ 'opengl32.dll'].
+	platform = 'Mac OS' ifTrue:[
+		version asNumber >= 1000 ifTrue: [^ 'OpenGL.framework'].
+		^ self notYetImplemented].
+	platform = 'unix' ifTrue: [
+		"default to X11 window system"
+		^ version = 'linux-gnu'
+			ifTrue: ['libGL.so']
+			ifFalse: ['GL']].
+	self error: 'Cannot identify platform'
 ]
 
 { #category : #accessing }
