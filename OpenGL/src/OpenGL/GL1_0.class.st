@@ -10,7 +10,7 @@ Class {
 { #category : #accessing }
 GL1_0 class >> api [
 
-	^ 'gl'
+	^ #gl
 ]
 
 { #category : #accessing }

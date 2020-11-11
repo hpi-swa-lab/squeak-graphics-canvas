@@ -3,7 +3,8 @@ Class {
 	#superclass : #ExternalLibrary,
 	#instVars : [
 		'callbacks',
-		'contexts'
+		'contexts',
+		'api'
 	],
 	#pools : [
 		'GLFWConstants'
@@ -28,16 +29,13 @@ GLFWLibrary class >> example1 [ "self example1"
 	"A minimal GLFW example window. Dismiss by clicking anywhere inside Squeak.
 	Do NOT force quit the window (unless you want your Squeak to force quit too)."
 	| window |
-	[
-		window := GLFWWindow
+	window := GLFWWindow
 					width: 400
 					height: 400
 					title: 'GLFW example1'.
-		GLFW getError ~= NO_ERROR ifTrue: [
-			^ self error: 'GLFW Error'].
-		[Sensor anyButtonPressed] whileFalse
-	] ensure: [
-		window ifNotNil: [GLFW destroyWindow: window]]
+	window ifNil: [^ self error: 'GLFW Error'].
+	[[Sensor anyButtonPressed] whileFalse]
+		ensure: [window destroy]
 ]
 
 { #category : #'class initialization' }
@@ -2269,6 +2267,12 @@ GLFWLibrary >> X11_INSTANCE_NAME [
 	^ X11_INSTANCE_NAME
 ]
 
+{ #category : #accessing }
+GLFWLibrary >> api [
+
+	^ api
+]
+
 { #category : #callbacks }
 GLFWLibrary >> callbacksForWindow: aWindow [
 
@@ -2280,9 +2284,13 @@ GLFWLibrary >> callbacksForWindow: aWindow [
 { #category : #contexts }
 GLFWLibrary >> contextForWindow: aWindow [
 
+	^ GLFWContext window: aWindow
+]
+
+{ #category : #accessing }
+GLFWLibrary >> contexts [
+
 	^ contexts
-		at: aWindow
-		ifAbsentPut: [GLFWContext window: aWindow]
 ]
 
 { #category : #callbacks }
@@ -2428,6 +2436,64 @@ GLFWLibrary >> hideWindow: window [
 
 	<apicall: void 'glfwHideWindow' (GLFWWindow*)>
 	^ self externalCallFailed
+]
+
+{ #category : #helpers }
+GLFWLibrary >> hintAnyProfile [
+
+	self windowHint: OPENGL_PROFILE with: OPENGL_ANY_PROFILE
+]
+
+{ #category : #helpers }
+GLFWLibrary >> hintCompatibilityProfile [
+
+	self windowHint: OPENGL_PROFILE with: OPENGL_COMPAT_PROFILE
+]
+
+{ #category : #helpers }
+GLFWLibrary >> hintCoreProfile [
+
+	self windowHint: OPENGL_PROFILE with: OPENGL_CORE_PROFILE
+]
+
+{ #category : #helpers }
+GLFWLibrary >> hintGLAPI [
+
+	self windowHint: CLIENT_API with: OPENGL_API.
+	api := #gl
+]
+
+{ #category : #helpers }
+GLFWLibrary >> hintGLES1API [
+
+	self windowHint: CLIENT_API with: OPENGL_ES_API.
+	api := #gles1
+]
+
+{ #category : #helpers }
+GLFWLibrary >> hintGLES2API [
+
+	self windowHint: CLIENT_API with: OPENGL_ES_API.
+	api := #gles2
+]
+
+{ #category : #helpers }
+GLFWLibrary >> hintMajorVersion: anInteger [
+
+	self windowHint: CONTEXT_VERSION_MAJOR with: anInteger
+]
+
+{ #category : #helpers }
+GLFWLibrary >> hintMinorVersion: anInteger [
+
+	self windowHint: CONTEXT_VERSION_MINOR with: anInteger
+]
+
+{ #category : #helpers }
+GLFWLibrary >> hintNoAPI [
+
+	self windowHint: CLIENT_API with: NO_API.
+	api := #none
 ]
 
 { #category : #'api - windows' }
@@ -2667,20 +2733,31 @@ GLFWLibrary >> swapInterval: aNumber [
 ]
 
 { #category : #helpers }
-GLFWLibrary >> targetGLVersion: aGLVersionClass [
+GLFWLibrary >> targetLibrary: aGLLibraryClass [
 
-	self targetGLVersion: aGLVersionClass compatibility: false
+	self targetLibrary: aGLLibraryClass profile: aGLLibraryClass defaultProfile
 ]
 
 { #category : #helpers }
-GLFWLibrary >> targetGLVersion: aGLVersionClass compatibility: aBoolean [
+GLFWLibrary >> targetLibrary: aGLLibraryClass profile: aSymbol [
 
-	self windowHint: CONTEXT_VERSION_MAJOR with: aGLVersionClass majorVersion.
-	self windowHint: CONTEXT_VERSION_MINOR with: aGLVersionClass minorVersion.
+	self hintMajorVersion: aGLLibraryClass majorVersion.
+	self hintMinorVersion: aGLLibraryClass minorVersion.
 	
-	self
-		windowHint: OPENGL_PROFILE
-		with: (aBoolean ifTrue: [OPENGL_COMPAT_PROFILE] ifFalse: [OPENGL_CORE_PROFILE])
+	aGLLibraryClass api caseOf: {
+		[#gl] -> [self hintGLAPI].
+		[#gles1] -> [self hintGLES1API].
+		[#gles2] -> [self hintGLES2API]
+	} otherwise: [^ self error: 'API not supported by GLFW'].
+	
+	"If requesting an OpenGL version below 3.2, 'any profile' must be used."
+	(aGLLibraryClass api = #gl and: [aGLLibraryClass versionNumber < 32]) ifTrue: [
+		^ self hintAnyProfile].
+	
+	aSymbol caseOf: {
+		[#core] -> [self hintCoreProfile].
+		[#compatibility] -> [self hintCompatibilityProfile]
+	} otherwise: [self hintAnyProfile].
 ]
 
 { #category : #'api - init' }

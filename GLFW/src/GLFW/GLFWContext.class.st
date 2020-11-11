@@ -14,20 +14,24 @@ Class {
 GLFWContext class >> newIn: bounds forLibraryClass: aLibraryClass title: aString [
 
 	self flag: #todo. "Deprecated"
-	GLFW targetGLVersion: GL3_3.
-	^ (GLFWWindow
-		width: bounds width
-		height: bounds height
-		title: aString) context
+	GLFW targetLibrary: GL3_3.
+	^ self window: (GLFWWindow
+						width: bounds width
+						height: bounds height
+						title: aString)
 ]
 
 { #category : #'instance creation' }
 GLFWContext class >> window: aWindow [
 
-	^ self basicNew
-		window: aWindow;
-		initialize;
-		yourself
+	^ GLFW contexts
+		at: aWindow
+		ifAbsentPut: [
+			self basicNew
+				window: aWindow;
+				api: GLFW api; "assumes context is created before hinted api changes again"
+				initialize;
+				yourself]
 ]
 
 { #category : #activation }

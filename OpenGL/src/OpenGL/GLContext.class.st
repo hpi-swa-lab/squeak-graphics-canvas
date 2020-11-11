@@ -84,8 +84,9 @@ GLContext >> extensions [
 { #category : #'initialize-release' }
 GLContext >> initialize [
 
-	super initialize.
-	resources := GLResources new
+	resources := GLResources new.
+	
+	self assert: api isSymbol
 ]
 
 { #category : #accessing }

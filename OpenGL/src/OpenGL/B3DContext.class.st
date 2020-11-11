@@ -46,6 +46,13 @@ B3DContext >> endFrame [
 	"do nothing"
 ]
 
+{ #category : #'initialize-release' }
+B3DContext >> initialize [
+
+	api := #gl.
+	super initialize
+]
+
 { #category : #accessing }
 B3DContext >> renderer [
 

@@ -7,7 +7,7 @@ Class {
 { #category : #accessing }
 GLSC2_0 class >> api [
 
-	^ 'glsc2'
+	^ #glsc2
 ]
 
 { #category : #accessing }

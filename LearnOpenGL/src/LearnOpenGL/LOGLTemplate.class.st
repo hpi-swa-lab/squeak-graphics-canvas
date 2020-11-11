@@ -66,7 +66,7 @@ LOGLTemplate >> renderLoop [
 LOGLTemplate >> run [
 
 	"GLFW init."
-	GLFW targetGLVersion: GL3_3 compatibility: false.
+	GLFW targetLibrary: GL3_3 profile: #core.
 
 	window := GLFWWindow
 				width: self initialWidth

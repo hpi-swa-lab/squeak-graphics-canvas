@@ -7,7 +7,7 @@ Class {
 { #category : #accessing }
 GLES2_0 class >> api [
 
-	^ 'gles2'
+	^ #gles2
 ]
 
 { #category : #accessing }
