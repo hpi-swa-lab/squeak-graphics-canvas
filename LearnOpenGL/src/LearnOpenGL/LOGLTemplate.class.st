@@ -2,8 +2,7 @@ Class {
 	#name : #LOGLTemplate,
 	#superclass : #Object,
 	#instVars : [
-		'window',
-		'gl'
+		'window'
 	],
 	#pools : [
 		'GLConstants',
@@ -23,7 +22,7 @@ LOGLTemplate class >> run [
 { #category : #callbacks }
 LOGLTemplate >> extentChanged: newExtent [
 	"glfw: whenever the window size changed (by OS or user resize) this callback function executes"
-	gl makeCurrentDuring: [
+	window context library makeCurrentDuring: [
 		GL setViewport: (0@0 extent: newExtent)]
 ]
 

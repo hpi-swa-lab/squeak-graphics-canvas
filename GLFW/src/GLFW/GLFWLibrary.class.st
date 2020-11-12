@@ -24,6 +24,20 @@ GLFWLibrary class >> compileConstantAccessors [
 		self compile: source classified: 'constants']
 ]
 
+{ #category : #'instance management' }
+GLFWLibrary class >> example [
+	" self example "
+
+	| window |
+	window := GLFWWindow extent: 100 asPoint title: 'My pretty window'.
+	window ifNil: [^ self error: 'GLFW Error'].
+	
+	[window context library makeCurrentDuring: [
+		[window shouldClose] whileFalse: [GL newFrameDo: [
+			" your GL code here "
+			]]]] ensure: [window destroy]
+]
+
 { #category : #examples }
 GLFWLibrary class >> example1 [ "self example1"
 	"A minimal GLFW example window. Dismiss by clicking anywhere inside Squeak.
@@ -56,7 +70,13 @@ GLFWLibrary class >> initializeInstance [
 	Environment current
 		at: #GLFW
 		ifPresent: [:lib |
-			[lib reset; init] ifError: [self notify: 'Initialization of GLFW failed']]
+			[
+				lib
+					reset;
+					init;
+					hintGLAPI;
+					hintAnyProfile
+			] ifError: [self notify: 'Initialization of GLFW failed']]
 ]
 
 { #category : #accessing }
