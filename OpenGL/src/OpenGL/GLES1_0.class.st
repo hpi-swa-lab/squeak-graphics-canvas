@@ -2922,6 +2922,16 @@ GLES1_0 >> getTexParameterxv: target with: pname with: params [
 	^ self externalCallFailed
 ]
 
+{ #category : #parameters }
+GLES1_0 >> getVersion [
+
+	| versionString tokens |
+	versionString := self getVersionString.
+	"OpenGL ES-XX N.M" "XX={CM,CL}"
+	tokens := versionString findTokens: '. '.
+	^ { tokens third asInteger . tokens fourth asInteger }
+]
+
 { #category : #'api - required' }
 GLES1_0 >> hint: target with: mode [
 

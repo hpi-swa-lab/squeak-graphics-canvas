@@ -3919,6 +3919,16 @@ GL1_0 >> getTexParameteriv: target with: pname with: params [
 	^ self externalCallFailed
 ]
 
+{ #category : #parameters }
+GL1_0 >> getVersion [
+
+	| versionString tokens |
+	versionString := self getVersionString.
+	"<major>.<minor>[.<release>] <vendor-specific information>"
+	tokens := versionString findTokens: '. '.
+	^ { tokens first asInteger . tokens second asInteger }
+]
+
 { #category : #'api - required' }
 GL1_0 >> hint: target with: mode [
 

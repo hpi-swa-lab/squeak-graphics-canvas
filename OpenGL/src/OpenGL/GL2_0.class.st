@@ -778,6 +778,16 @@ GL2_0 >> getShaderiv: shader with: pname with: params [
 	^ self externalCallFailed
 ]
 
+{ #category : #parameters }
+GL2_0 >> getShadingLanguageVersion [
+
+	| versionString tokens |
+	versionString := self getShadingLanguageVersionString.
+	"<major>.<minor>[.<release>] <vendor-specific information>"
+	tokens := versionString findTokens: '. '.
+	^ { tokens first asInteger . tokens second asInteger }
+]
+
 { #category : #'api - required' }
 GL2_0 >> getUniformLocation: program with: name [
 

@@ -31,14 +31,12 @@ GLGenAPI >> features [
 GLGenAPI >> generate [
 
 	| rootClass |
-	rootClass := GLLibrary subclasses detect: [:cls | cls api = name].
+	rootClass := GLLibrary api: name.
 	features do: [:feature |
 		| major minor featureClass |
 		major := feature name first digitValue.
 		minor := feature name third digitValue.
-		featureClass := rootClass withAllSubclasses detect: [:cls |
-							cls majorVersion = major 
-								and: [cls minorVersion = minor]].
+		featureClass := rootClass majorVersion: major minorVersion: minor.
 		feature generateIn: featureClass]
 ]
 

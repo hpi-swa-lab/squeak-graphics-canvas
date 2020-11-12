@@ -2721,6 +2721,16 @@ GLES2_0 >> getShaderiv: shader with: pname with: params [
 	^ self externalCallFailed
 ]
 
+{ #category : #parameters }
+GLES2_0 >> getShadingLanguageVersion [
+
+	| versionString tokens |
+	versionString := self getShadingLanguageVersionString.
+	"OpenGL ES GLSL ES <major>.<minor> <vendor-specific information>"
+	tokens := versionString findTokens: '. '.
+	^ { tokens fifth asInteger . tokens sixth asInteger }
+]
+
 { #category : #'api - required' }
 GLES2_0 >> getString: name [
 
@@ -2767,6 +2777,16 @@ GLES2_0 >> getUniformiv: program with: location with: params [
 	<generated>
 	<apicall: void 'glGetUniformiv' (GLuint GLint GLint*)>
 	^ self externalCallFailed
+]
+
+{ #category : #parameters }
+GLES2_0 >> getVersion [
+
+	| versionString tokens |
+	versionString := self getVersionString.
+	"OpenGL ES <major>.<minor> <vendor-specific information>"
+	tokens := versionString findTokens: '. '.
+	^ { tokens third asInteger . tokens fourth asInteger }
 ]
 
 { #category : #'api - required' }

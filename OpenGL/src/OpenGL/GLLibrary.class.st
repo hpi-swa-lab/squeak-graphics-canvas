@@ -25,6 +25,12 @@ GLLibrary class >> api [
 	self subclassResponsibility
 ]
 
+{ #category : #querying }
+GLLibrary class >> api: aSymbol [
+
+	^ GLLibrary subclasses detect: [:cls | cls api = aSymbol]
+]
+
 { #category : #'instance creation' }
 GLLibrary class >> context: aContext [
 
@@ -45,15 +51,15 @@ GLLibrary class >> example1 [ "self example1"
 	"A minimal OpenGL example."
 	| lib bounds |
 	bounds := 0@0 extent: 400@400.
-	lib := GL2_0 context: (B3DContext bounds: bounds).
+	lib := (B3DContext bounds: bounds) library.
 	[
 		Transcript
-			cr; nextPutAll: lib versionString;
-			cr; nextPutAll: lib vendorString;
-			cr; nextPutAll: lib rendererString;
-			cr; nextPutAll: lib shadingLanguageVersionString;
+			cr; nextPutAll: lib getVersionString;
+			cr; nextPutAll: lib getVendorString;
+			cr; nextPutAll: lib getRendererString;
+			cr; nextPutAll: lib getShadingLanguageVersionString;
 			cr.
-		lib extensionList do: [:ext |
+		lib getExtensions do: [:ext |
 			Transcript nextPutAll: ext; cr].
 		Transcript flush
 	] ensure: [lib destroy]
@@ -96,6 +102,13 @@ GLLibrary class >> initialize [
 GLLibrary class >> majorVersion [
 
 	self subclassResponsibility
+]
+
+{ #category : #querying }
+GLLibrary class >> majorVersion: major minorVersion: minor [
+
+	^ self withAllSubclasses detect: [:cls |
+		cls majorVersion = major and: [cls minorVersion = minor]]
 ]
 
 { #category : #accessing }
@@ -234,6 +247,20 @@ GLLibrary >> getClearColor [
 		alpha: color fourth
 ]
 
+{ #category : #parameters }
+GLLibrary >> getExtensions [
+
+	| extensionsString |
+	extensionsString := self getExtensionsString.
+	^ extensionsString splitBy: ' '
+]
+
+{ #category : #parameters }
+GLLibrary >> getExtensionsString [
+
+	^ self getStringParameter: GL_EXTENSIONS
+]
+
 { #category : #'parameters - helpers' }
 GLLibrary >> getIntegerParameter: name [
 
@@ -251,10 +278,40 @@ GLLibrary >> getIntegerParameters: name size: numParameters [
 	^ data
 ]
 
+{ #category : #parameters }
+GLLibrary >> getNumExtensions [
+
+	^ self getIntegerParameter: GL_NUM_EXTENSIONS
+]
+
+{ #category : #parameters }
+GLLibrary >> getProfile [
+
+	^ #'' "by default none"
+]
+
+{ #category : #parameters }
+GLLibrary >> getRendererString [
+
+	^ self getStringParameter: GL_RENDERER
+]
+
 { #category : #resources }
 GLLibrary >> getShaderProgram: aClass [
 
 	^ context resources getShaderProgram: aClass library: self
+]
+
+{ #category : #parameters }
+GLLibrary >> getShadingLanguageVersion [
+
+	^ #(0 0) "by default unsupported"
+]
+
+{ #category : #parameters }
+GLLibrary >> getShadingLanguageVersionString [
+
+	^ self getStringParameter: GL_SHADING_LANGUAGE_VERSION
 ]
 
 { #category : #'parameters - helpers' }
@@ -276,11 +333,29 @@ GLLibrary >> getStringParameter: name at: index [
 ]
 
 { #category : #parameters }
-GLLibrary >> getVersion [
+GLLibrary >> getVendorString [
 
-	| versionString |
-	versionString := self versionString. "always begins with major.minor"
-	^ { versionString first asInteger . versionString third asInteger }
+	^ self getStringParameter: GL_VENDOR
+]
+
+{ #category : #parameters }
+GLLibrary >> getVersion [
+	"Returns an array of two elements, the major version and the minor version."
+	self subclassResponsibility
+]
+
+{ #category : #parameters }
+GLLibrary >> getVersionNumber [
+
+	| version |
+	version := self getVersion.
+	^ version first * 10 + version second
+]
+
+{ #category : #parameters }
+GLLibrary >> getVersionString [
+
+	^ self getStringParameter: GL_VERSION
 ]
 
 { #category : #parameters }
@@ -296,15 +371,13 @@ GLLibrary >> getViewport [
 { #category : #testing }
 GLLibrary >> isCompatibilityProfile [
 
-	^ (self getIntegerParameter: GL_CONTEXT_PROFILE_MASK)
-		bitAnd: GL_CONTEXT_COMPATIBILITY_PROFILE_BIT
+	^ profile = #compatibility
 ]
 
 { #category : #testing }
 GLLibrary >> isCoreProfile [
 
-	^ (self getIntegerParameter: GL_CONTEXT_PROFILE_MASK)
-		bitAnd: GL_CONTEXT_CORE_PROFILE_BIT
+	^ profile = #core
 ]
 
 { #category : #accessing }

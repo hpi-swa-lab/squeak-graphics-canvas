@@ -1953,6 +1953,16 @@ GL3_0 >> getBooleani_v: target with: index with: data [
 	^ self externalCallFailed
 ]
 
+{ #category : #parameters }
+GL3_0 >> getExtensions [
+
+	| extensions |
+	extensions := Array new: self getNumExtensions.
+	1 to: extensions size do: [:i |
+		extensions at: i put: (self getStringParameter: GL_EXTENSIONS at: i - 1)].
+	^ extensions
+]
+
 { #category : #'api - required' }
 GL3_0 >> getFragDataLocation: program with: name [
 

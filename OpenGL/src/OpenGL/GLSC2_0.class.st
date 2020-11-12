@@ -2345,6 +2345,16 @@ GLSC2_0 >> getRenderbufferParameteriv: target with: pname with: params [
 	^ self externalCallFailed
 ]
 
+{ #category : #parameters }
+GLSC2_0 >> getShadingLanguageVersion [
+
+	| versionString tokens |
+	versionString := self getShadingLanguageVersionString.
+	"OpenGL SC GLSL ES <major>.<minor> <vendor-specific information>"
+	tokens := versionString findTokens: '. '.
+	^ { tokens fifth asInteger . tokens sixth asInteger }
+]
+
 { #category : #'api - required' }
 GLSC2_0 >> getString: name [
 
@@ -2375,6 +2385,16 @@ GLSC2_0 >> getUniformLocation: program with: name [
 	<generated>
 	<apicall: GLint 'glGetUniformLocation' (GLuint GLchar*)>
 	^ self externalCallFailed
+]
+
+{ #category : #parameters }
+GLSC2_0 >> getVersion [
+
+	| versionString tokens |
+	versionString := self getVersionString.
+	"OpenGL SC <major>.<minor> <vendor-specific information>"
+	tokens := versionString findTokens: '. '.
+	^ { tokens third asInteger . tokens fourth asInteger }
 ]
 
 { #category : #'api - required' }

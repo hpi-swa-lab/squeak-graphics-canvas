@@ -4758,6 +4758,22 @@ GL3_2 >> getPolygonStipple: mask [
 	^ super getPolygonStipple: mask
 ]
 
+{ #category : #parameters }
+GL3_2 >> getProfile [
+
+	| profileMask |
+	profileMask := self getProfileMask.
+	(profileMask bitAnd: GL_CONTEXT_COMPATIBILITY_PROFILE_BIT) ~= 0 ifTrue: [^ #compatibility].
+	(profileMask bitAnd: GL_CONTEXT_CORE_PROFILE_BIT) ~= 0 ifTrue: [^ #core].
+	self error: 'No such profile'
+]
+
+{ #category : #parameters }
+GL3_2 >> getProfileMask [
+
+	^ self getIntegerParameter: GL_CONTEXT_PROFILE_MASK
+]
+
 { #category : #'api - required' }
 GL3_2 >> getSynciv: sync with: pname with: count with: length with: values [
 

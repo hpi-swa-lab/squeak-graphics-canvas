@@ -85,8 +85,29 @@ GLContext >> extensions [
 GLContext >> initialize [
 
 	resources := GLResources new.
+	self initializeLibrary.
+	self initializeContextState
+]
+
+{ #category : #'initialize-release' }
+GLContext >> initializeContextState [
+
+	self assert: api isSymbol.
 	
-	self assert: api isSymbol
+	extensions := library getExtensions
+]
+
+{ #category : #'initialize-release' }
+GLContext >> initializeLibrary [
+
+	| libraryClass |
+	libraryClass := GLLibrary api: api.
+	self activate.
+	version := (libraryClass context: self) getVersion.
+	libraryClass := libraryClass majorVersion: version first minorVersion: version second.
+	profile := (libraryClass context: self) getProfile.
+	self deactivate.
+	library := libraryClass context: self profile: profile
 ]
 
 { #category : #accessing }
