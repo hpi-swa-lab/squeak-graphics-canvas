@@ -14,6 +14,12 @@ GLFWWindow class >> current [
 ]
 
 { #category : #'instance creation' }
+GLFWWindow class >> extent: aPoint title: aString [
+
+	^ self width: aPoint x height: aPoint y title: aString monitor: nil share: nil
+]
+
+{ #category : #'instance creation' }
 GLFWWindow class >> width: width height: height title: aString [
 
 	^ self width: width height: height title: aString monitor: nil share: nil

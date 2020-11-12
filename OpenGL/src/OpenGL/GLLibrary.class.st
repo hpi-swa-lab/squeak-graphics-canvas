@@ -137,6 +137,12 @@ GLLibrary class >> versionNumber [
 ]
 
 { #category : #accessing }
+GLLibrary class >> wglGetProcAddress: aString [
+	<apicall: void* 'wglGetProcAddress' (char*) module: 'Opengl32.dll'>
+	^ self externalCallFailed
+]
+
+{ #category : #accessing }
 GLLibrary >> api [
 
 	^ self class api
@@ -232,6 +238,24 @@ GLLibrary >> extensionList [
 			0 to: extensions size - 1 do: [:i |
 				extensions at: i put: (self getStringParameter: GL_EXTENSIONS at: i)]]
 		ifFalse: [(self getStringParameter: GL_EXTENSIONS) splitBy: ' ']
+]
+
+{ #category : #'error handling' }
+GLLibrary >> externalCallFailed [
+
+	| code |
+	code := ExternalFunction getLastError.
+	code = 13 " unable to get function address "
+		ifTrue: [ | function pointer |
+			function := thisContext sender method literalAt: 1.
+			" if we already saved a new address in the function, do not try it again "
+			function isNull ifTrue: [
+				pointer := self class wglGetProcAddress: function name asString.
+				pointer isNull ifFalse: [
+					function setHandle: pointer getHandle.
+					^ thisContext sender receiver perform: thisContext sender selector withArguments: thisContext sender arguments]]].
+	
+	^ self error: (ExternalFunction errorMessageFor: code)
 ]
 
 { #category : #parameters }
@@ -406,7 +430,7 @@ GLLibrary >> makeCurrentDuring: aBlock [
 		ifNil: [
 			[context activate.
 			GL := self.
-			aBlock value] ensure: [
+			^ aBlock value] ensure: [
 				GL := nil.
 				context deactivate]]
 ]
