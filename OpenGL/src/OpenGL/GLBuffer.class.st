@@ -145,11 +145,12 @@ GLBuffer >> delete [
 
 {
 	#category : #drawing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 16:24'
 }
 GLBuffer >> draw: aModeEnum [
 
-	self draw: aModeEnum from: 0 count: numElements / componentsPerVertex
+	self flag: #todo. "HACKIDY HACK HACK Oh god no..."
+	self draw: aModeEnum from: 0 count: 4
 ]
 
 {

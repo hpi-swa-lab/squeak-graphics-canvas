@@ -1,6 +1,6 @@
 Class {
 	#name : #GLCanvasFontProgram,
-	#superclass : #GLProgram,
+	#superclass : #GLStaticProgram,
 	#instVars : [
 		'extentLocation',
 		'colorLocation',

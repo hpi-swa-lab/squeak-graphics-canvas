@@ -1,9 +1,6 @@
 Class {
 	#name : #GLUniform,
 	#superclass : #GLProgramResource,
-	#instVars : [
-		'type'
-	],
 	#category : #'OpenGL-Wrappers-Shaders',
 	#commentStamp : ''
 }

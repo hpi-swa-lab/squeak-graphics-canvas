@@ -45,11 +45,11 @@ GLTexture class >> bindingEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 14:58'
+	#timestamp : 'stlu 11/13/2020 16:26'
 }
 GLTexture class >> currentBinding [
 
-	^ self getIntegerParameter: self bindingEnum
+	^ GL getIntegerParameter: self bindingEnum
 ]
 
 {

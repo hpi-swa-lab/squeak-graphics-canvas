@@ -2,7 +2,8 @@ Class {
 	#name : #GLProgram,
 	#superclass : #GLObject,
 	#instVars : [
-		'shaders'
+		'shaders',
+		'resources'
 	],
 	#category : #'OpenGL-Wrappers-Shaders',
 	#commentStamp : ''
@@ -149,7 +150,7 @@ GLProgram class >> vertexShader [
 ]
 
 {
-	#category : #linking,
+	#category : #actions,
 	#timestamp : 'stlu 11/3/2020 15:36'
 }
 GLProgram >> attachShader: glShader [
@@ -159,7 +160,7 @@ GLProgram >> attachShader: glShader [
 ]
 
 {
-	#category : #linking,
+	#category : #'error handling',
 	#timestamp : 'stlu 10/28/2020 13:27'
 }
 GLProgram >> errorLinkingFailed [
@@ -194,7 +195,7 @@ GLProgram >> getBinary [
 ]
 
 {
-	#category : #linking,
+	#category : #'error handling',
 	#timestamp : 'stlu 11/3/2020 15:36'
 }
 GLProgram >> getInfoLog [
@@ -205,7 +206,7 @@ GLProgram >> getInfoLog [
 ]
 
 {
-	#category : #linking,
+	#category : #'error handling',
 	#timestamp : 'stlu 10/28/2020 14:37'
 }
 GLProgram >> getInfoLogLength [
@@ -232,64 +233,13 @@ GLProgram >> getNumUniforms [
 ]
 
 {
-	#category : #uniforms,
-	#timestamp : 'stlu 10/28/2020 12:44'
-}
-GLProgram >> getUniform: index [
-
-	self notYetImplemented
-]
-
-{
-	#category : #uniforms,
-	#timestamp : 'stlu 10/28/2020 12:07'
-}
-GLProgram >> getUniformNamed: aSymbol [
-
-	self notYetImplemented
-]
-
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/3/2020 16:51'
+	#category : #initialization,
+	#timestamp : 'stlu 11/13/2020 15:50'
 }
 GLProgram >> initialize [
 
 	super initialize.
-	shaders := Set new.
-	self initializeShaders.
-	self initializeLocations
-]
-
-{
-	#category : #'initialize-release',
-	#timestamp : ''
-}
-GLProgram >> initializeLocations [
-
-	
-]
-
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/3/2020 16:50'
-}
-GLProgram >> initializeShaders [
-
-	{
-		GLVertexShader create
-			source: self class vertexShader withUnixLineEndings;
-			compile;
-			yourself.
-		GLFragmentShader create
-			source: self class fragmentShader withUnixLineEndings;
-			compile;
-			yourself
-	} do: [:shader | self attachShader: shader].
-	
-	self link.
-	
-	shaders do: [:shader | shader delete]
+	shaders := Set new
 ]
 
 {
@@ -330,7 +280,7 @@ GLProgram >> lastLinkingSucceeded [
 ]
 
 {
-	#category : #linking,
+	#category : #actions,
 	#timestamp : 'stlu 11/3/2020 15:37'
 }
 GLProgram >> link [
@@ -338,48 +288,6 @@ GLProgram >> link [
 	GL linkProgram: id.
 	self lastLinkingSucceeded ifFalse: [
 		self errorLinkingFailed]
-]
-
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/3/2020 15:38'
-}
-GLProgram >> registerAttribute: aString [
-
-	| location |
-	location := GL getAttribLocation: id with: aString.
-	self assert: location >= 0.
-	^ location
-]
-
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/3/2020 15:38'
-}
-GLProgram >> registerUniform: aString [
-
-	| location |
-	location := GL getUniformLocation: id with: aString.
-	self assert: location >= 0.
-	^ location
-]
-
-{
-	#category : #uniforms,
-	#timestamp : 'stlu 10/28/2020 12:44'
-}
-GLProgram >> setUniform: index to: anObject [
-
-	self notYetImplemented
-]
-
-{
-	#category : #uniforms,
-	#timestamp : 'stlu 10/28/2020 12:07'
-}
-GLProgram >> setUniformNamed: aSymbol to: anObject [
-
-	self notYetImplemented
 ]
 
 {
@@ -401,16 +309,6 @@ GLProgram >> shaders: anObject [
 ]
 
 {
-	#category : #usage,
-	#timestamp : 'stlu 10/27/2020 11:41'
-}
-GLProgram >> uniform: location value: anObject [
-
-	self assert: location >= 0.
-	anObject putAtUniform: location
-]
-
-{
 	#category : #activation,
 	#timestamp : 'stlu 11/6/2020 15:04'
 }
@@ -421,7 +319,7 @@ GLProgram >> use [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/6/2020 15:04'
+	#timestamp : 'stlu 11/13/2020 16:20'
 }
 GLProgram >> useDuring: aBlock [
 
@@ -429,35 +327,17 @@ GLProgram >> useDuring: aBlock [
 	self flag: #todo. "Remember actual objects"
 	previousID := self class current.
 	previousID = id ifTrue: [^ aBlock value].
-	self class use: previousID id.
+	self class use: id.
 	aBlock ensure: [
-		self use: previousID]
+		self class use: previousID]
 ]
 
 {
-	#category : #usage,
+	#category : #actions,
 	#timestamp : 'stlu 10/27/2020 12:25'
 }
 GLProgram >> validate [
 
 	self isValid ifFalse: [
 		self notify: self infoLog]
-]
-
-{
-	#category : #usage,
-	#timestamp : 'stlu 11/3/2020 17:04'
-}
-GLProgram >> vertexAttrib: position value: value components: components stride: stride offset: offset [
-
- 	| byteOffset |
-	self flag: #todo. "Broken #isGLBuffer #glType #bytesPerElement"
-	byteOffset := ExternalAddress new fromInteger: offset * value bytesPerElement.
-	GL enableVertexAttribArray: position.
-	GL vertexAttribPointer: position
-		with: components
-		with: value glType
-		with: GL_FALSE
-		with: stride * value bytesPerElement
-		with: byteOffset
 ]

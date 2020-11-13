@@ -74,23 +74,28 @@ GLSharedCanvasResources >> initializeBuffers [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/3/2020 17:04'
+	#timestamp : 'stlu 11/13/2020 16:20'
 }
 GLSharedCanvasResources >> initializeProgramAttributes [
 
-	textureProgram useDuring: [
-		textureProgram image: 0.
-		textureProgram vertexAttrib: textureProgram aPosLocation value: vbo components: 2 stride: 4 offset: 0.
-		textureProgram vertexAttrib: textureProgram aTexCoordsLocation value: vbo components: 2 stride: 4 offset: 2.
-		GL checkForError].
+	vbo boundDuring: [
+		textureProgram useDuring: [
+			textureProgram image: 0.
+			GL checkForError.
+			textureProgram vertexAttrib: textureProgram aPosLocation components: 2 stride: 16 offset: 0.
+			GL checkForError.
+			textureProgram vertexAttrib: textureProgram aTexCoordsLocation components: 2 stride: 16 offset: 8.
+			GL checkForError].
 	
-	outlineProgram vertexAttrib: outlineProgram aPosLocation value: vbo components: 2 stride: 4 offset: 0.
-	GL checkForError.
-	outlineProgram vertexAttrib: outlineProgram aTexCoordsLocation value: vbo components: 2 stride: 4 offset: 2.
-	GL checkForError.
+		outlineProgram useDuring: [
+			outlineProgram vertexAttrib: outlineProgram aPosLocation components: 2 stride: 16 offset: 0.
+			GL checkForError.
+			outlineProgram vertexAttrib: outlineProgram aTexCoordsLocation components: 2 stride: 16 offset: 8.
+			GL checkForError].
 	
-	rectangleProgram useDuring: [
-		rectangleProgram vertexAttrib: rectangleProgram aPosLocation value: vbo components: 2 stride: 4 offset: 0]
+		rectangleProgram useDuring: [
+			rectangleProgram vertexAttrib: rectangleProgram aPosLocation components: 2 stride: 16 offset: 0.
+			GL checkForError]]
 ]
 
 {

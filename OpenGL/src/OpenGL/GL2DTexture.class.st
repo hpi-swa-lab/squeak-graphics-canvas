@@ -125,11 +125,12 @@ GL2DTexture >> image: aForm [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/3/2020 15:32'
+	#timestamp : 'stlu 11/13/2020 16:30'
 }
 GL2DTexture >> image: aForm minFilter: anEnum magFilter: anEnum2 [
 
 	self boundDuring: [
+			GL checkForError.
 			GL
 				texImage2D: GL_TEXTURE_2D
 				with: 0

@@ -1,6 +1,6 @@
 Class {
 	#name : #GLCanvasTextureProgram,
-	#superclass : #GLProgram,
+	#superclass : #GLStaticProgram,
 	#instVars : [
 		'mvpLocation',
 		'sourcePositionLocation',

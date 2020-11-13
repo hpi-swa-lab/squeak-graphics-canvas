@@ -1,6 +1,6 @@
 Class {
 	#name : #GLCanvasRectangleProgram,
-	#superclass : #GLProgram,
+	#superclass : #GLStaticProgram,
 	#instVars : [
 		'mvpLocation',
 		'extentLocation',

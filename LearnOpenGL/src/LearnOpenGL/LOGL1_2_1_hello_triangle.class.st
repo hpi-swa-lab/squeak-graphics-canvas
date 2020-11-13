@@ -37,11 +37,11 @@ LOGL1_2_1_hello_triangle >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 10/27/2020 12:12'
+	#timestamp : 'stlu 11/13/2020 15:47'
 }
 LOGL1_2_1_hello_triangle >> setUp [
 
-	| vertexShader fragmentShader |
+	| vertexShader fragmentShader program |
 	vertexShader := GLVertexShader create
 						source: self vertexShaderSource;
 						compile;
@@ -49,7 +49,14 @@ LOGL1_2_1_hello_triangle >> setUp [
 	fragmentShader := GLFragmentShader create
 						source: self fragmentShaderSource;
 						compile;
-						yourself
+						yourself.
+	program := GLProgram create
+					attachShader: vertexShader;
+					attachShader: fragmentShader;
+					link;
+					yourself.
+	vertexShader delete.
+	fragmentShader delete
 ]
 
 {

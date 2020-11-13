@@ -1,6 +1,6 @@
 Class {
 	#name : #GLCanvasOutlineProgram,
-	#superclass : #GLProgram,
+	#superclass : #GLStaticProgram,
 	#instVars : [
 		'colorLocation',
 		'mvpLocation',
