@@ -232,14 +232,14 @@ GLLibrary >> at: aKey put: aValue [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 11/3/2020 15:07'
+	#timestamp : 'stlu 11/13/2020 21:59'
 }
 GLLibrary >> checkForError [
 	"Check for any OpenGL errors, and raise an Error if any exist."
 	| error |
-
 	error := self getError.
-	(error ~= 0) ifTrue: [self error: (self errorString: error) ]
+	error ~= 0 ifTrue: [
+		self error: (self errorString: error)]
 
 ]
 
@@ -281,24 +281,20 @@ GLLibrary >> endFrame [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 11/13/2020 22:14'
 }
 GLLibrary >> errorString: error [
-	"GLubyte* gluErrorString(GLenum error);"
-	| explainedError |
-	
-	explainedError := error.
 
-	(error = 1280) ifTrue: [ explainedError := 'invalid enum' ].
-	(error = 1281) ifTrue: [ explainedError := 'invalid value' ].
-	(error = 1282) ifTrue: [ explainedError := 'invalid operation' ].
-	(error = 1283) ifTrue: [ explainedError := 'stack overflow' ].
-	(error = 1284) ifTrue: [ explainedError := 'stack underflow' ].
-	(error = 1285) ifTrue: [ explainedError := 'out of memory' ].
-
-	^ 'gl error: ', explainedError
-
-
+	error caseOf: {
+		[GL_INVALID_ENUM] -> [^ 'Invalid enum. An unacceptable value is specified for an enumerated argument.'].
+		[GL_INVALID_VALUE] -> [^ 'Invalid value. A numeric argument is out of range.'].
+		[GL_INVALID_OPERATION] -> [^ 'Invalid operation. The specified operation is not allowed in the current state.'].
+		[GL_STACK_OVERFLOW] -> [^ 'Stack overflow. An attempt has been made to perform an operation that would cause an internal stack overflow.'].
+		[GL_STACK_UNDERFLOW] -> [^ 'Stack underflow. An attempt has been made to perform an operation that would cause an internal stack to underflow.'].
+		[GL_OUT_OF_MEMORY] -> [^ 'Out of memory. There is not enought memory left to execute the command.'].
+		[GL_INVALID_FRAMEBUFFER_OPERATION] -> [^ 'Invalid framebuffer operation. The framebuffer object is not complete.'].
+		[GL_NO_ERROR] -> [^ 'No error. No error has been recorded.']
+	} otherwise: [^ 'Unknown error ' , error asString]
 ]
 
 {
