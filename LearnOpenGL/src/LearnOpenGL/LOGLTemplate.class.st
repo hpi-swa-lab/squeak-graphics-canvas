@@ -25,7 +25,7 @@ LOGLTemplate class >> run [
 
 {
 	#category : #callbacks,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 LOGLTemplate >> extentChanged: newExtent [
 	"glfw: whenever the window size changed (by OS or user resize) this callback function executes"

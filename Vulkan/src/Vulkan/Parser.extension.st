@@ -1,6 +1,9 @@
 Extension { #name : #Parser }
 
-{ #category : #'*Vulkan-FFI-Support' }
+{
+	#category : #'*Vulkan-FFI-Support',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Parser >> callback [
 	<pragmaParser>
 	
@@ -31,7 +34,10 @@ Parser >> callback [
 	^true
 ]
 
-{ #category : #'*Vulkan-FFI-Support' }
+{
+	#category : #'*Vulkan-FFI-Support',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Parser >> externalType: descriptorClass [
 	"Parse and return an external type"
 	| xType typeName |

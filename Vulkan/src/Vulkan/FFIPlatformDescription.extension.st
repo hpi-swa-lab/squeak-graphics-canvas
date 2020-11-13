@@ -1,6 +1,9 @@
 Extension { #name : #FFIPlatformDescription }
 
-{ #category : #'*Vulkan-FFI-Support' }
+{
+	#category : #'*Vulkan-FFI-Support',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFIPlatformDescription >> abi [
 
 	| processor |

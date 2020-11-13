@@ -11,17 +11,24 @@ Class {
 	#classVars : [
 		'ThunkToCallbackMap'
 	],
-	#category : #'Vulkan-FFI-Support'
+	#category : #'Vulkan-FFI-Support',
+	#commentStamp : ''
 }
 
-{ #category : #examples }
+{
+	#category : #examples,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback class >> cdeclQsort: values with: number with: width with: callback [
 
 	<cdecl: void 'qsort' (void* size_t size_t void*) module: 'msvcrt.dll'>
 	^ self externalCallFailed
 ]
 
-{ #category : #'instance lookup' }
+{
+	#category : #'instance lookup',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback class >> evaluateCallbackForContext: callbackContext [ "<FFIallbackContext> ^<Integer> typeCode"
 
 	(ThunkToCallbackMap
@@ -33,7 +40,10 @@ FFICallback class >> evaluateCallbackForContext: callbackContext [ "<FFIallbackC
 			^callback valueInContext: callbackContext]
 ]
 
-{ #category : #examples }
+{
+	#category : #examples,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback class >> exampleCqsort [
 	"Call the libc qsort function (which requires a callback)."
 	"FFICallback exampleCqsort"
@@ -86,7 +96,10 @@ FFICallback class >> exampleCqsort [
 	^orig -> sort
 ]
 
-{ #category : #examples }
+{
+	#category : #examples,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback class >> exampleCqsortThree [
 	"Call the libc qsort function (which requires a callback)."
 	"
@@ -132,7 +145,10 @@ FFICallback class >> exampleCqsortThree [
 	^orig -> sort
 ]
 
-{ #category : #examples }
+{
+	#category : #examples,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback class >> exampleCqsortTwo [
 	"Call the libc qsort function (which requires a callback)."
 	"
@@ -171,7 +187,10 @@ FFICallback class >> exampleCqsortTwo [
 	^orig -> sort
 ]
 
-{ #category : #examples }
+{
+	#category : #examples,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback class >> exampleTest [
 	"self exampleTest"
 	| cb fn |
@@ -190,7 +209,10 @@ FFICallback class >> exampleTest [
 	^ fn invokeWith: cb thunk
 ]
 
-{ #category : #'examples - signatures' }
+{
+	#category : #'examples - signatures',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback class >> getIntWithData: anExternalData1 withData: anExternalData2 [
 	"
 	(FFICallback class >> #getIntWithData:withData:) pragmaAt: #callback:
@@ -200,7 +222,10 @@ FFICallback class >> getIntWithData: anExternalData1 withData: anExternalData2 [
 	self shouldNotImplement.
 ]
 
-{ #category : #'examples - signatures' }
+{
+	#category : #'examples - signatures',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback class >> getIntWithData: anExternalData1 withData: anExternalData2 withInt: anInteger1 withInt: anInteger2 [
 	"
 	(FFICallback class >> #getIntWithData:withData:withInt:withInt:) pragmaAt: #callback:
@@ -215,7 +240,10 @@ FFICallback class >> getIntWithData: anExternalData1 withData: anExternalData2 w
 
 ]
 
-{ #category : #'examples - signatures' }
+{
+	#category : #'examples - signatures',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback class >> getIntWithInt: anInteger withString: aString [
 	"
 	(FFICallback class >> #getIntWithInt:withString:) pragmaAt: #callback:
@@ -225,7 +253,10 @@ FFICallback class >> getIntWithInt: anInteger withString: aString [
 	self shouldNotImplement.
 ]
 
-{ #category : #'examples - signatures' }
+{
+	#category : #'examples - signatures',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback class >> getVoidWithData: anExternalData withDouble: aFloat withDouble: anotherFloat [
 	"
 	(FFICallback class >> #getVoidWithData:withDouble:withDouble:) pragmaAt: #callback:
@@ -235,26 +266,38 @@ FFICallback class >> getVoidWithData: anExternalData withDouble: aFloat withDoub
 	self shouldNotImplement.
 ]
 
-{ #category : #'class initialization' }
+{
+	#category : #'class initialization',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback class >> initialize [
 
 	ThunkToCallbackMap := WeakValueDictionary new.
 ]
 
-{ #category : #constants }
+{
+	#category : #constants,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback class >> maxThunkSize [
 	"see FFICallbackThunk initialize & initializeStdcall:; must be big enough for the largest thunk created"
 	^ 40
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback class >> message: message [ "<MessageSend> ^<FFICallback>"
 	^ self new
 		setMessage: message
 
 ]
 
-{ #category : #examples }
+{
+	#category : #examples,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback class >> qsort: values with: number with: width with: block [
 	"Indirection to define the signature for the provided block."
 	"<callback: int (*)(double* double*)>"
@@ -267,21 +310,30 @@ FFICallback class >> qsort: values with: number with: width with: block [
 	^ self cdeclQsort: values with: number with: width with: callback thunk
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback class >> signature: signature "<String>" block: aBlock [ "<BlockClosure> ^<FFICallback>"
 	^ self new
 		setBlock: aBlock
 		signature: signature
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback class >> signature: signature "<String>" message: message [ "<MessageSend> ^<FFICallback>"
 	^ self new
 		setMessage: message
 		signature: signature
 ]
 
-{ #category : #'callback - evaluators' }
+{
+	#category : #'callback - evaluators',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> evaluateDynamic: callbackContext [
 	"Read all arguments and make the call(back). Assume that 'handle' and 'type' are set correctly. Only watch out for the sign. See field definition in FFICallbackContext to explore alternative ways to read the arguments."
 		
@@ -338,7 +390,10 @@ FFICallback >> evaluateDynamic: callbackContext [
 		inContext: callbackContext.
 ]
 
-{ #category : #'callback - evaluators' }
+{
+	#category : #'callback - evaluators',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> evaluateDynamic_ARM32: callbackContext [
 	"Set handle to access arguments as most appropriate for the ABI. For ''RISCs'' it is the pointer to the integer register."
 	<abi: 'ARM32'> <evaluator>
@@ -347,7 +402,10 @@ FFICallback >> evaluateDynamic_ARM32: callbackContext [
 	^ self evaluateDynamic: callbackContext
 ]
 
-{ #category : #'callback - evaluators' }
+{
+	#category : #'callback - evaluators',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> evaluateDynamic_IA32: callbackContext [
 	"Set handle to access arguments as most appropriate for the ABI. For x86 (i.e. IA32) it is the stack pointer."
 	<abi: 'IA32'> <evaluator>
@@ -356,7 +414,10 @@ FFICallback >> evaluateDynamic_IA32: callbackContext [
 	^ self evaluateDynamic: callbackContext
 ]
 
-{ #category : #'callback - evaluators' }
+{
+	#category : #'callback - evaluators',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> evaluateDynamic_X64: callbackContext [
 	"Set handle to access arguments as most appropriate for the ABI. For ''RISCs'' it is the pointer to the integer register."
 	<abi: 'X64'> <evaluator>
@@ -364,7 +425,10 @@ FFICallback >> evaluateDynamic_X64: callbackContext [
 	^ self evaluateDynamic: callbackContext
 ]
 
-{ #category : #'callback - evaluators' }
+{
+	#category : #'callback - evaluators',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> evaluateDynamic_X64Win64: callbackContext [
 	"Set handle to access arguments as most appropriate for the ABI. For ''RISCs'' it is the pointer to the integer register."
 	<abi: 'X64Win64'> <evaluator>
@@ -373,7 +437,10 @@ FFICallback >> evaluateDynamic_X64Win64: callbackContext [
 	^ self evaluateDynamic: callbackContext
 ]
 
-{ #category : #'initialization - thunk prepare' }
+{
+	#category : #'initialization - thunk prepare',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> init__ccall [
 	"Initialize the receiver with a __ccall thunk."
 
@@ -387,7 +454,10 @@ FFICallback >> init__ccall [
 	self error: 'Could not initialize thunk for current ABI: ', abi.
 ]
 
-{ #category : #'initialization - thunk prepare' }
+{
+	#category : #'initialization - thunk prepare',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> init__ccall_ARM32 [
 	<abi: 'ARM32'> <init>
 	"Initialize the receiver with a __ccall thunk.  The thunk calls thunkEntry in the IA32ABI plugin,
@@ -428,7 +498,10 @@ FFICallback >> init__ccall_ARM32 [
 		shortPointerAt: 37 put: self thunkEntryAddress.
 ]
 
-{ #category : #'initialization - thunk prepare' }
+{
+	#category : #'initialization - thunk prepare',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> init__ccall_IA32 [
 	<abi: 'IA32'> <init>
 	"Initialize the receiver with a __ccall thunk.  The thunk calls thunkEntry in the IA32ABI plugin,
@@ -464,7 +537,10 @@ FFICallback >> init__ccall_IA32 [
 		unsignedLongAt: 21 put: 16r9090C30C
 ]
 
-{ #category : #'initialization - thunk prepare' }
+{
+	#category : #'initialization - thunk prepare',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> init__ccall_X64 [
 	<abi: 'X64'> <init>
 	"Initialize the receiver with a __ccall thunk.  The thunk calls thunkEntry in the IA32ABI plugin,
@@ -501,7 +577,10 @@ FFICallback >> init__ccall_X64 [
 		unsignedLongAt:		29 put: 16r9090c318.
 ]
 
-{ #category : #'initialization - thunk prepare' }
+{
+	#category : #'initialization - thunk prepare',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> init__ccall_X64Win64 [
 	<abi: 'X64Win64'> <init>
 	"Initialize the receiver with a __ccall thunk.  The thunk calls thunkEntry in the IA32ABI plugin,
@@ -539,7 +618,10 @@ FFICallback >> init__ccall_X64Win64 [
 		unsignedLongAt:		33 put: 16r9090c338.
 ]
 
-{ #category : #'initialization - thunk prepare' }
+{
+	#category : #'initialization - thunk prepare',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> init__stdcall: numBytes [
 	"Initialize the receiver with a __stdcall thunk with numBytes argument bytes."
 
@@ -553,7 +635,10 @@ FFICallback >> init__stdcall: numBytes [
 	self error: 'Could not initialize thunk for current ABI: ', abi.
 ]
 
-{ #category : #'initialization - thunk prepare' }
+{
+	#category : #'initialization - thunk prepare',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> init__stdcall_IA32: numBytes [
 	<abi: 'IA32'> <init>
 	"Initialize the receiver with a __stdcall thunk with numBytes argument bytes. (See #init__ccall_IA32 for more info)"
@@ -579,7 +664,10 @@ FFICallback >> init__stdcall_IA32: numBytes [
 		unsignedShortAt: 23 put: numBytes.
 ]
 
-{ #category : #'initialization - thunk prepare' }
+{
+	#category : #'initialization - thunk prepare',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> primThunkEntryAddress [ "^<Integer>"
 	"Answer the address of the entry-point for thunk callbacks:
 		x86: long thunkEntry(void *thunkp, long *stackp);
@@ -597,14 +685,20 @@ FFICallback >> primThunkEntryAddress [ "^<Integer>"
 	^self primitiveFailed
 ]
 
-{ #category : #callback }
+{
+	#category : #callback,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> setArgData: externalData [
 	
 	handle := externalData getHandle.
 	type := externalData externalType.	
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> setArgTypes: externalTypes evaluableObject: blockOrMessage [
 
 	
@@ -632,14 +726,20 @@ FFICallback >> setArgTypes: externalTypes evaluableObject: blockOrMessage [
 	ThunkToCallbackMap at: thunk getHandle put: self
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> setBlock: aBlock [
 	"We cannot know the signature for an arbitrary block."
 	
 	self shouldNotImplement.
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> setBlock: aBlock "<BlockClosure>" signature: signature [ "<String>"
 
 	self
@@ -647,7 +747,10 @@ FFICallback >> setBlock: aBlock "<BlockClosure>" signature: signature [ "<String
 		evaluableObject: aBlock.
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> setMessage: aMessageSend [
 	"Fetch the argTypes from <callback: ...> pragma in method."
 	
@@ -661,7 +764,10 @@ FFICallback >> setMessage: aMessageSend [
 		evaluableObject: aMessageSend.
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> setMessage: aMessageSend signature: signature [
 	"Override the argTypes from <callback: ...> pragma in method."
 	
@@ -672,7 +778,10 @@ FFICallback >> setMessage: aMessageSend signature: signature [
 		evaluableObject: aMessageSend.
 ]
 
-{ #category : #callback }
+{
+	#category : #callback,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> setResult: anObject inContext: aCallbackContext [
 	"Set the result in the callback context. Add some fast checks to detect errors."
 	
@@ -700,7 +809,10 @@ FFICallback >> setResult: anObject inContext: aCallbackContext [
 	^ aCallbackContext externalObjectResult: anObject
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> thunk [
 
 "	self flag: #debugging.
@@ -710,13 +822,19 @@ FFICallback >> thunk [
 	^ thunk
 ]
 
-{ #category : #'initialization - thunk prepare' }
+{
+	#category : #'initialization - thunk prepare',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> thunkEntryAddress [
 
 	^ ExternalAddress fromInteger: self primThunkEntryAddress
 ]
 
-{ #category : #callback }
+{
+	#category : #callback,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallback >> valueInContext: callbackContext [ "<FFICallbackContext> ^<Integer>"
 	
 	FFICallback methodsDo: [:method |

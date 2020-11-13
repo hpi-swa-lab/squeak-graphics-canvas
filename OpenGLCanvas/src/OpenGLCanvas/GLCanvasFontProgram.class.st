@@ -15,7 +15,7 @@ Class {
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasFontProgram class >> attributes [
 
@@ -24,7 +24,7 @@ GLCanvasFontProgram class >> attributes [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasFontProgram class >> fragmentShader [
 
@@ -43,7 +43,7 @@ void main() {
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasFontProgram class >> uniforms [
 	"self compileAccessors"
@@ -53,7 +53,7 @@ GLCanvasFontProgram class >> uniforms [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasFontProgram class >> vertexShader [
 
@@ -76,7 +76,7 @@ void main()
 
 {
 	#category : #generated,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasFontProgram >> aPosLocation [
 
@@ -85,7 +85,7 @@ GLCanvasFontProgram >> aPosLocation [
 
 {
 	#category : #generated,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasFontProgram >> color: anObject [
 
@@ -94,7 +94,7 @@ GLCanvasFontProgram >> color: anObject [
 
 {
 	#category : #generated,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasFontProgram >> extent: anObject [
 
@@ -103,7 +103,7 @@ GLCanvasFontProgram >> extent: anObject [
 
 {
 	#category : #generated,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasFontProgram >> image: anObject [
 
@@ -112,7 +112,7 @@ GLCanvasFontProgram >> image: anObject [
 
 {
 	#category : #generated,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasFontProgram >> initializeLocations [
 
@@ -129,7 +129,7 @@ GLCanvasFontProgram >> initializeLocations [
 
 {
 	#category : #generated,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasFontProgram >> mvp: anObject [
 
@@ -138,7 +138,7 @@ GLCanvasFontProgram >> mvp: anObject [
 
 {
 	#category : #generated,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasFontProgram >> offsetX: anObject [
 

@@ -10,10 +10,14 @@ Class {
 		'p3',
 		'p4'
 	],
-	#category : #'3DTransform-Vectors'
+	#category : #'3DTransform-Vectors',
+	#commentStamp : ''
 }
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 CatmullRom class >> test [
 	
 	| points pen cr |
@@ -32,19 +36,28 @@ CatmullRom class >> test [
 	].
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 CatmullRom class >> v1: v1 v2: v2 v3: v3 v4:v4 [
 
 	^ self new v1:v1 v2:v2 v3: v3 v4:v4.
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 CatmullRom class >> varray: varray [
 
 	^ self new v1:(varray at:1) v2:(varray at:2) v3: (varray at:3) v4:(varray at:4).
 ]
 
-{ #category : #compute }
+{
+	#category : #compute,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 CatmullRom >> at: t [
 
 	| t2 t3 |
@@ -53,7 +66,10 @@ CatmullRom >> at: t [
 	^ p1 + (p2 * t) + (p3 *t2) + (p4 * t3).
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 CatmullRom >> v1: v1 v2:v2 v3:v3 v4:v4 [
 
 	p1 := v2.

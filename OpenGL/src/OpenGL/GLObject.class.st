@@ -57,7 +57,7 @@ GLObject class >> id: anInteger [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLObject class >> new [
 
@@ -123,7 +123,7 @@ GLObject >> hash [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLObject >> id [
 

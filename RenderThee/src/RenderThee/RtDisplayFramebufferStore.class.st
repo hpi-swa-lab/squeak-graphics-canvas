@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #drawing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtDisplayFramebufferStore >> canvasDo: aBlock [
 
@@ -20,7 +20,7 @@ RtDisplayFramebufferStore >> canvasDo: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtDisplayFramebufferStore >> displayTransform [
 	" a transform that translates this store's coordinate system to have 0,0 in the top left "
@@ -29,7 +29,7 @@ RtDisplayFramebufferStore >> displayTransform [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtDisplayFramebufferStore >> extentChanged [
 
@@ -86,7 +86,7 @@ RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 
 {
 	#category : #drawing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtDisplayFramebufferStore >> prepareForDrawingOn: aCanvas during: aBlock [
 

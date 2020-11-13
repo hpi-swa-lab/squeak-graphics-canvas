@@ -43,7 +43,7 @@ GLFWContext class >> window: aWindow [
 
 {
 	#category : #activation,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWContext >> activate [
 
@@ -52,7 +52,7 @@ GLFWContext >> activate [
 
 {
 	#category : #activation,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWContext >> deactivate [
 
@@ -61,7 +61,7 @@ GLFWContext >> deactivate [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWContext >> destroy [
 
@@ -71,7 +71,7 @@ GLFWContext >> destroy [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWContext >> endFrame [
 
@@ -80,7 +80,7 @@ GLFWContext >> endFrame [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWContext >> shouldClose [
 
@@ -89,7 +89,7 @@ GLFWContext >> shouldClose [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWContext >> swapBuffers [
 
@@ -127,7 +127,7 @@ GLFWContext >> useMorphicEventHandling [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWContext >> window [
 

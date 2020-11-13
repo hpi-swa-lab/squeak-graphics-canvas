@@ -52,7 +52,7 @@ GLContext class >> startUp: resuming [
 
 {
 	#category : #activation,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLContext >> activate [
 
@@ -79,7 +79,7 @@ GLContext >> api: anObject [
 
 {
 	#category : #activation,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLContext >> deactivate [
 
@@ -182,7 +182,7 @@ GLContext >> registerObject: glObject [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLContext >> resources [
 

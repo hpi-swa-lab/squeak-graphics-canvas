@@ -176,7 +176,7 @@ GLLibrary class >> versionNumber [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLLibrary class >> wglGetProcAddress: aString [
 	<apicall: void* 'wglGetProcAddress' (char*) module: 'Opengl32.dll'>
@@ -263,7 +263,7 @@ GLLibrary >> context: aContext [
 
 {
 	#category : #'context delegation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLLibrary >> destroy [
 
@@ -281,7 +281,7 @@ GLLibrary >> endFrame [
 
 {
 	#category : #'error handling',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLLibrary >> errorString: error [
 	"GLubyte* gluErrorString(GLenum error);"
@@ -303,7 +303,7 @@ GLLibrary >> errorString: error [
 
 {
 	#category : #'error handling',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLLibrary >> externalCallFailed [
 
@@ -410,7 +410,7 @@ GLLibrary >> getRendererString [
 
 {
 	#category : #resources,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLLibrary >> getShaderProgram: aClass [
 
@@ -539,7 +539,7 @@ GLLibrary >> majorVersion [
 
 {
 	#category : #activation,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLLibrary >> makeCurrentDuring: aBlock [
 
@@ -576,7 +576,7 @@ GLLibrary >> minorVersion [
 
 {
 	#category : #activation,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLLibrary >> newFrameDo: aBlock. [
 
@@ -653,7 +653,7 @@ GLLibrary >> setViewport: aRectangle [
 
 {
 	#category : #'context delegation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLLibrary >> shouldClose [
 
@@ -663,7 +663,7 @@ GLLibrary >> shouldClose [
 
 {
 	#category : #'context delegation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLLibrary >> swapBuffers [
 

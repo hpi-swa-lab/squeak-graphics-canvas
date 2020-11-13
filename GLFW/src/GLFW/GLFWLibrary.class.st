@@ -30,7 +30,7 @@ GLFWLibrary class >> compileConstantAccessors [
 
 {
 	#category : #'instance management',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary class >> example [
 	" self example "
@@ -76,7 +76,7 @@ GLFWLibrary class >> initialize [
 
 {
 	#category : #'instance management',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary class >> initializeInstance [
 
@@ -94,7 +94,7 @@ GLFWLibrary class >> initializeInstance [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary class >> moduleName [
 
@@ -3253,7 +3253,7 @@ GLFWLibrary >> api [
 
 {
 	#category : #callbacks,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> callbacksForWindow: aWindow [
 
@@ -3282,7 +3282,7 @@ GLFWLibrary >> contexts [
 
 {
 	#category : #callbacks,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> createCallback: aBlock signature: aString named: aSymbol [
 
@@ -3295,7 +3295,7 @@ GLFWLibrary >> createCallback: aBlock signature: aString named: aSymbol [
 
 {
 	#category : #callbacks,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> createCallback: aBlock signature: aString named: aSymbol forWindow: aWindow [
 
@@ -3308,7 +3308,7 @@ GLFWLibrary >> createCallback: aBlock signature: aString named: aSymbol forWindo
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> createWindow: width with: height with: title with: monitor with: share [
 
@@ -3318,7 +3318,7 @@ GLFWLibrary >> createWindow: width with: height with: title with: monitor with: 
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> defaultWindowHints [
 
@@ -3328,7 +3328,7 @@ GLFWLibrary >> defaultWindowHints [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> destroyWindow: handle [
 
@@ -3348,7 +3348,7 @@ GLFWLibrary >> focusWindow: window [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> getCurrentContext [
 
@@ -3358,7 +3358,7 @@ GLFWLibrary >> getCurrentContext [
 
 {
 	#category : #helpers,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> getError [
 
@@ -3367,7 +3367,7 @@ GLFWLibrary >> getError [
 
 {
 	#category : #'api - init',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> getError: stringOrNil [
 
@@ -3387,7 +3387,7 @@ GLFWLibrary >> getFramebufferSize: window with: width with: height [
 
 {
 	#category : #'api - input',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> getKey: window with: key [
 
@@ -3397,7 +3397,7 @@ GLFWLibrary >> getKey: window with: key [
 
 {
 	#category : #'api - init',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> getVersion: major with: minor with: rev [
 
@@ -3407,7 +3407,7 @@ GLFWLibrary >> getVersion: major with: minor with: rev [
 
 {
 	#category : #'api - init',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> getVersionString [
 
@@ -3592,7 +3592,7 @@ GLFWLibrary >> init [
 
 {
 	#category : #'api - init',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> initHint: hint with: value [
 
@@ -3632,7 +3632,7 @@ GLFWLibrary >> maximizeWindow: window [
 
 {
 	#category : #'api - events',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> pollEvents [
 
@@ -3642,7 +3642,7 @@ GLFWLibrary >> pollEvents [
 
 {
 	#category : #private,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> privateSetCursorPosCallback: aWindow with: anFFICallback [
 
@@ -3652,7 +3652,7 @@ GLFWLibrary >> privateSetCursorPosCallback: aWindow with: anFFICallback [
 
 {
 	#category : #private,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> privateSetErrorCallback: anFFICallback [
 
@@ -3662,7 +3662,7 @@ GLFWLibrary >> privateSetErrorCallback: anFFICallback [
 
 {
 	#category : #private,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> privateSetFramebufferSizeCallback: aWindow with: anFFICallback [
 
@@ -3672,7 +3672,7 @@ GLFWLibrary >> privateSetFramebufferSizeCallback: aWindow with: anFFICallback [
 
 {
 	#category : #private,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> privateSetMouseButtonCallback: aWindow with: anFFICallback [
 
@@ -3712,7 +3712,7 @@ GLFWLibrary >> restoreWindow: window [
 
 {
 	#category : #'api - callbacks',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> setCursorPosCallback: aWindow with: aBlock [
 
@@ -3729,7 +3729,7 @@ GLFWLibrary >> setCursorPosCallback: aWindow with: aBlock [
 
 {
 	#category : #'api - init',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> setErrorCallback: aBlock [
 
@@ -3743,7 +3743,7 @@ GLFWLibrary >> setErrorCallback: aBlock [
 
 {
 	#category : #'api - callbacks',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> setFramebufferSizeCallback: aWindow with: aBlock [
 
@@ -3760,7 +3760,7 @@ GLFWLibrary >> setFramebufferSizeCallback: aWindow with: aBlock [
 
 {
 	#category : #'api - callbacks',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> setMouseButtonCallback: aWindow with: aBlock [
 
@@ -3828,7 +3828,7 @@ GLFWLibrary >> setWindowPos: window with: xpos with: ypos [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> setWindowShouldClose: window with: value [
 
@@ -3858,7 +3858,7 @@ GLFWLibrary >> setWindowSizeLimits: window with: minWidth with: minHeight with: 
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> setWindowTitle: window with: title [
 
@@ -3878,7 +3878,7 @@ GLFWLibrary >> showWindow: window [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> swapBuffers: window [
 
@@ -3888,7 +3888,7 @@ GLFWLibrary >> swapBuffers: window [
 
 {
 	#category : #'api - initialization',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> swapInterval: aNumber [
 
@@ -3932,7 +3932,7 @@ GLFWLibrary >> targetLibrary: aGLLibraryClass profile: aSymbol [
 
 {
 	#category : #'api - init',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> terminate [
 
@@ -3942,7 +3942,7 @@ GLFWLibrary >> terminate [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> version [
 
@@ -3956,7 +3956,7 @@ GLFWLibrary >> version [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> versionString [
 
@@ -3965,7 +3965,7 @@ GLFWLibrary >> versionString [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> windowHint: hint with: value [
 
@@ -3975,7 +3975,7 @@ GLFWLibrary >> windowHint: hint with: value [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> windowHintString: hint with: value [
 
@@ -3985,7 +3985,7 @@ GLFWLibrary >> windowHintString: hint with: value [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> windowShouldClose: window [
 

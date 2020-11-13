@@ -238,7 +238,7 @@ B3DRenderer >> primSwapBuffers: aHandle [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 B3DRenderer >> swapBuffers [
 

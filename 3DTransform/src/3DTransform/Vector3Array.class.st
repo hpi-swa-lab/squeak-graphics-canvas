@@ -8,26 +8,39 @@ Class {
 	#classVars : [
 		'ZeroVertex'
 	],
-	#category : #'3DTransform-Arrays'
+	#category : #'3DTransform-Arrays',
+	#commentStamp : ''
 }
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector3Array class >> contentsClass [
 	^Vector3
 ]
 
-{ #category : #'class initialization' }
+{
+	#category : #'class initialization',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector3Array class >> initialize [
 	"Vector3Array initialize"
 	ZeroVertex := Vector3 new.
 ]
 
-{ #category : #'math functions' }
+{
+	#category : #'math functions',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector3Array >> addVector: vec [
 	1 to: self size do:[:i | self at: i put: (self at: i)+vec.].
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector3Array >> at: index [
 	"Return the primitive vertex at the given index"
 	| vtx |
@@ -36,7 +49,10 @@ Vector3Array >> at: index [
 	^vtx
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector3Array >> at: index put: anObject [
 	"Store the object at the given index in the receiver"
 	| idx |
@@ -45,47 +61,71 @@ Vector3Array >> at: index put: anObject [
 	^anObject
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector3Array >> contentsClass [
 	^Vector3
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector3Array >> contentsSize [
 	^3
 ]
 
-{ #category : #'math functions' }
+{
+	#category : #'math functions',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector3Array >> divideByArray: array [
 
 	1 to: self size do:[:i | self at: i put: (self at: i)/(array at: i).].
 ]
 
-{ #category : #'math functions' }
+{
+	#category : #'math functions',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector3Array >> lengthInto: target [
 
 	1 to: self size do:[:i | target at: i put: (self at: i) length.].
 ]
 
-{ #category : #'math functions' }
+{
+	#category : #'math functions',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector3Array >> normalize [
 
 	1 to: self size do:[:i | self at: i put: (self at: i) / (self at: i)length.].
 ]
 
-{ #category : #'math functions' }
+{
+	#category : #'math functions',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector3Array >> scaleByArray: array [
 
 	1 to: self size do:[:i | self at: i put: (self at: i)*(array at: i).].
 ]
 
-{ #category : #'math functions' }
+{
+	#category : #'math functions',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector3Array >> squaredLengthInto: target [
 
 	1 to: self size do:[:i | target at: i put: (self at: i) squaredLength.].
 ]
 
-{ #category : #'math functions' }
+{
+	#category : #'math functions',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector3Array >> subtractVector: vec [
 	1 to: self size do:[:i | self at: i put: (self at: i)-vec.].
 ]

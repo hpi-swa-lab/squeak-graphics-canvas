@@ -16,7 +16,7 @@ Class {
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasTextureProgram class >> fragmentShader [
 	^'#version 330 core
@@ -35,7 +35,7 @@ void main() {
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasTextureProgram class >> vertexShader [
     ^'#version 330 core
@@ -56,7 +56,7 @@ void main()
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasTextureProgram >> aPosLocation [
 
@@ -65,7 +65,7 @@ GLCanvasTextureProgram >> aPosLocation [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasTextureProgram >> aTexCoordsLocation [
 
@@ -74,7 +74,7 @@ GLCanvasTextureProgram >> aTexCoordsLocation [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasTextureProgram >> color: aColor [
 
@@ -83,7 +83,7 @@ GLCanvasTextureProgram >> color: aColor [
 
 {
 	#category : #'uniform accessing',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasTextureProgram >> image: anObject [
 
@@ -92,7 +92,7 @@ GLCanvasTextureProgram >> image: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasTextureProgram >> imageLocation [
 
@@ -124,7 +124,7 @@ GLCanvasTextureProgram >> initializeLocations [
 
 {
 	#category : #'uniform accessing',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasTextureProgram >> mvp: anObject [
 
@@ -133,7 +133,7 @@ GLCanvasTextureProgram >> mvp: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasTextureProgram >> mvpLocation [
 
@@ -142,7 +142,7 @@ GLCanvasTextureProgram >> mvpLocation [
 
 {
 	#category : #'uniform accessing',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasTextureProgram >> sourceExtent: aPoint [
 
@@ -151,7 +151,7 @@ GLCanvasTextureProgram >> sourceExtent: aPoint [
 
 {
 	#category : #'uniform accessing',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvasTextureProgram >> sourcePosition: aPoint [
 

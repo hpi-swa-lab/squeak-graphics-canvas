@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #rendering,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtIncrementalRenderer >> drawWorld: aWorld submorphs: submorphs invalidAreas: rectList on: aCanvas [ 
 	"Redraw the damaged areas of the given canvas and clear the damage list. Return a collection of the areas that
@@ -57,7 +57,7 @@ were redrawn."
 
 {
 	#category : #rendering,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtIncrementalRenderer >> renderFrame [
 
@@ -67,7 +67,7 @@ RtIncrementalRenderer >> renderFrame [
 
 {
 	#category : #rendering,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtIncrementalRenderer >> renderOn: aCanvas [
 

@@ -11,7 +11,7 @@ Class {
 
 {
 	#category : #converting,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicCommand >> asForm [
 	"Answer a Form containing the drawn representation of myself."
@@ -24,7 +24,7 @@ PicCommand >> asForm [
 
 {
 	#category : #enumerating,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicCommand >> do: aBlock [
 
@@ -33,7 +33,7 @@ PicCommand >> do: aBlock [
 
 {
 	#category : #drawing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicCommand >> drawOn: aCanvas [
 	"Replays represented graphical command(s) onto the given canvas."
@@ -42,7 +42,7 @@ PicCommand >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicCommand >> estimatedBounds [
 	"Returns a rectangle representing the maximum bounds I draw myself into."
@@ -51,7 +51,7 @@ PicCommand >> estimatedBounds [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicCommand >> isDrawing [
 	"Returns true if drawing me onto a canvas results in a change of the underlying pixel store."
@@ -60,7 +60,7 @@ PicCommand >> isDrawing [
 
 {
 	#category : #debugging,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicCommand >> open [
 

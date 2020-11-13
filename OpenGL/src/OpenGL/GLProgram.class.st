@@ -179,7 +179,7 @@ GLProgram >> link [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLProgram >> shaders [
 
@@ -188,7 +188,7 @@ GLProgram >> shaders [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLProgram >> shaders: anObject [
 

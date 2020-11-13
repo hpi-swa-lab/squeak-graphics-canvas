@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLES3_1 class >> majorVersion [
 
@@ -16,7 +16,7 @@ GLES3_1 class >> majorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLES3_1 class >> minorVersion [
 

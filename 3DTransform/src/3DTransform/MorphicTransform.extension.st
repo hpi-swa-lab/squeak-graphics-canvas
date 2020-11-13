@@ -1,6 +1,9 @@
 Extension { #name : #MorphicTransform }
 
-{ #category : #'*3DTransform' }
+{
+	#category : #'*3DTransform',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 MorphicTransform >> asMatrix2x3 [
 
 	^ ((Matrix2x3 withRotation: angle radiansToDegrees negated)
@@ -8,7 +11,10 @@ MorphicTransform >> asMatrix2x3 [
 				offset: offset negated
 ]
 
-{ #category : #'*3DTransform' }
+{
+	#category : #'*3DTransform',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 MorphicTransform >> asMatrix4x4 [
 
 	^((Matrix4x4 withRotation: angle radiansToDegrees negated around: 0 @ 0 @ 1) composedWithLocal:

@@ -2,7 +2,7 @@ Extension { #name : #FormCanvas }
 
 {
 	#category : #'*RenderThee-LayerTree',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 FormCanvas >> imageStoreClass [
 
@@ -11,7 +11,7 @@ FormCanvas >> imageStoreClass [
 
 {
 	#category : #'*RenderThee-LayerTree',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 FormCanvas >> paintImageStore: anImageStore sourceRect: aRectangle [
 
@@ -23,7 +23,7 @@ FormCanvas >> paintImageStore: anImageStore sourceRect: aRectangle [
 
 {
 	#category : #'*RenderThee',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 FormCanvas >> transformBy: aDisplayTransform during: aBlock [
 
@@ -35,7 +35,7 @@ FormCanvas >> transformBy: aDisplayTransform during: aBlock [
 
 {
 	#category : #'*RenderThee-override',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 FormCanvas >> translateBy: aPoint clippingTo: aRectangle during: aBlock [
 

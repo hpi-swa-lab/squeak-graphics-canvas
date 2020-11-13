@@ -28,7 +28,7 @@ GL1_0 class >> defaultProfile [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GL1_0 class >> majorVersion [
 
@@ -37,7 +37,7 @@ GL1_0 class >> majorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GL1_0 class >> minorVersion [
 

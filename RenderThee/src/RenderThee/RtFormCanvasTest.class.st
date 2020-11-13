@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtFormCanvasTest >> createCanvas [
 

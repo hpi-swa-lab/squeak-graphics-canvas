@@ -1,6 +1,9 @@
 Extension { #name : #ExternalType }
 
-{ #category : #'*Vulkan-FFI-Support' }
+{
+	#category : #'*Vulkan-FFI-Support',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 ExternalType >> asArrayType: aNumber [
 
 	self isPointerType ifFalse: [^ self asPointerType asArrayType: aNumber].
@@ -11,13 +14,19 @@ ExternalType >> asArrayType: aNumber [
 		yourself
 ]
 
-{ #category : #'*Vulkan-FFI-Support' }
+{
+	#category : #'*Vulkan-FFI-Support',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 ExternalType >> isTypeAlias [
 
 	^ false
 ]
 
-{ #category : #'*Vulkan-FFI-Support-override' }
+{
+	#category : #'*Vulkan-FFI-Support-override',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 ExternalType class >> lookupTypes: signature [
 	"
 	Supported arguments:
@@ -39,7 +48,10 @@ ExternalType class >> lookupTypes: signature [
 	self error: 'Could not lookup external types from signature'.
 ]
 
-{ #category : #'*Vulkan-FFI-Support-override' }
+{
+	#category : #'*Vulkan-FFI-Support-override',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 ExternalType class >> typeNamed: typeName [
 	"Supports pointer-type lookup for both atomic and structure types.
 	Examples: 'long', 'long*', 'long *' or 'MyStruct', 'MyStruct*', 'MyStruct *'"

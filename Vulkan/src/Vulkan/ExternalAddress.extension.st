@@ -1,6 +1,9 @@
 Extension { #name : #ExternalAddress }
 
-{ #category : #'*Vulkan-FFI-Support' }
+{
+	#category : #'*Vulkan-FFI-Support',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 ExternalAddress class >> allocateExecutablePage [
 	"The IA32ABI plugin answers a byte array where the first half encodes the allocated byte size and the second half the external address to that executable memory. Unpack that byte array and return external data we can read and write conveniently."
 	
@@ -11,7 +14,10 @@ ExternalAddress class >> allocateExecutablePage [
 		byteSize: alien byteSize
 ]
 
-{ #category : #'*Vulkan-FFI-Support' }
+{
+	#category : #'*Vulkan-FFI-Support',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 ExternalAddress class >> fromInteger: anInteger [
 	"Read the given interger as an address pointing to an external memory area."
 	
@@ -22,7 +28,10 @@ ExternalAddress class >> fromInteger: anInteger [
 	^ buffer asExternalPointer
 ]
 
-{ #category : #'*Vulkan-FFI-Support' }
+{
+	#category : #'*Vulkan-FFI-Support',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 ExternalAddress class >> primAllocateExecutablePage [ "^<Alien>"
 	"Answer an Alien around a piece of (probably malloced) memory, of some multiple
 	 of the pagesize, that has execute permissions set.  This memory can be parcelled

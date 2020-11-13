@@ -18,7 +18,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtDrawLayer class >> picture: aPicture [
 
@@ -35,7 +35,7 @@ RtDrawLayer class >> picture: aPicture [
 
 {
 	#category : #visiting,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtDrawLayer >> accept: aVisitor [
 
@@ -44,7 +44,7 @@ RtDrawLayer >> accept: aVisitor [
 
 {
 	#category : #compositing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtDrawLayer >> drawLayerOn: aCanvas [
 
@@ -53,7 +53,7 @@ RtDrawLayer >> drawLayerOn: aCanvas [
 
 {
 	#category : #compositing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtDrawLayer >> drawOn: aCanvas [
 
@@ -62,7 +62,7 @@ RtDrawLayer >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtDrawLayer >> picture [
 
@@ -71,7 +71,7 @@ RtDrawLayer >> picture [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtDrawLayer >> picture: anObject [
 
@@ -80,7 +80,7 @@ RtDrawLayer >> picture: anObject [
 
 {
 	#category : #printing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtDrawLayer >> printOn: aStream [
 

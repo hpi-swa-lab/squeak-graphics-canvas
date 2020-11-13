@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GL4_5 class >> majorVersion [
 
@@ -16,7 +16,7 @@ GL4_5 class >> majorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GL4_5 class >> minorVersion [
 

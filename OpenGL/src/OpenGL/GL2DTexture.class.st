@@ -116,7 +116,7 @@ GL2DTexture >> height [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GL2DTexture >> image: aForm [
 

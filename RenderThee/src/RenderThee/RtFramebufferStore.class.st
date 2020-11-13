@@ -26,7 +26,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore class >> defaultCanvasClass [
 
@@ -35,7 +35,7 @@ RtFramebufferStore class >> defaultCanvasClass [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore class >> extent: aPoint [
 
@@ -46,7 +46,7 @@ RtFramebufferStore class >> extent: aPoint [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore class >> form: aForm [
 
@@ -67,7 +67,7 @@ RtFramebufferStore >> clear [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> displayTransform [
 
@@ -76,7 +76,7 @@ RtFramebufferStore >> displayTransform [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> extent [
 
@@ -85,7 +85,7 @@ RtFramebufferStore >> extent [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> extent: aPoint [
 
@@ -94,7 +94,7 @@ RtFramebufferStore >> extent: aPoint [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> extentChanged [
 
@@ -103,7 +103,7 @@ RtFramebufferStore >> extentChanged [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> form [
 
@@ -112,7 +112,7 @@ RtFramebufferStore >> form [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> framebuffer [
 
@@ -121,7 +121,7 @@ RtFramebufferStore >> framebuffer [
 
 {
 	#category : #private,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> getCanvas [
 
@@ -139,7 +139,7 @@ RtFramebufferStore >> glLibrary [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> glTextureDo: aBlock [
 
@@ -183,7 +183,7 @@ RtFramebufferStore >> initializeWithForm: aForm [
 
 {
 	#category : #drawing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
@@ -199,7 +199,7 @@ RtFramebufferStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> release [
 
@@ -220,7 +220,7 @@ RtFramebufferStore >> resetViewport [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> texture [
 

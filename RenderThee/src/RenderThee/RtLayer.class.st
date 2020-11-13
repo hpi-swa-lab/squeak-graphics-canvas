@@ -35,7 +35,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer class >> bounds: aRectangle [
 
@@ -46,7 +46,7 @@ RtLayer class >> bounds: aRectangle [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer class >> outerTransform: aMatrix bounds: aRectangle [
 
@@ -58,7 +58,7 @@ RtLayer class >> outerTransform: aMatrix bounds: aRectangle [
 
 {
 	#category : #visiting,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> accept: aVisitor [
 
@@ -67,7 +67,7 @@ RtLayer >> accept: aVisitor [
 
 {
 	#category : #converting,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> asForm [
 
@@ -79,7 +79,7 @@ RtLayer >> asForm [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> bounds [
 
@@ -88,7 +88,7 @@ RtLayer >> bounds [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> bounds: aRectangle [
 
@@ -98,7 +98,7 @@ RtLayer >> bounds: aRectangle [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> cache [
 
@@ -107,7 +107,7 @@ RtLayer >> cache [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> cache: anObject [
 
@@ -116,7 +116,7 @@ RtLayer >> cache: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> clipRect [
 
@@ -125,7 +125,7 @@ RtLayer >> clipRect [
 
 {
 	#category : #compositing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> compositeOn: aCanvas [
 
@@ -134,7 +134,7 @@ RtLayer >> compositeOn: aCanvas [
 
 {
 	#category : #caching,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> createCacheOfType: anImageStoreClass [
 
@@ -147,7 +147,7 @@ RtLayer >> createCacheOfType: anImageStoreClass [
 
 {
 	#category : #caching,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> deleteCache [
 
@@ -158,7 +158,7 @@ RtLayer >> deleteCache [
 
 {
 	#category : #compositing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> drawLayerOn: canvas [
 
@@ -167,7 +167,7 @@ RtLayer >> drawLayerOn: canvas [
 
 {
 	#category : #compositing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> drawOn: canvas [
 
@@ -176,7 +176,7 @@ RtLayer >> drawOn: canvas [
 
 {
 	#category : #'accessing - metrics',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> drawsCount [
 
@@ -185,7 +185,7 @@ RtLayer >> drawsCount [
 
 {
 	#category : #'accessing - metrics',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> drawsSinceInvalidation [
 
@@ -194,7 +194,7 @@ RtLayer >> drawsSinceInvalidation [
 
 {
 	#category : #'accessing - metrics',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> drawsSinceUpdate [
 
@@ -203,7 +203,7 @@ RtLayer >> drawsSinceUpdate [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> extent [
 
@@ -212,7 +212,7 @@ RtLayer >> extent [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> extent: anObject [
 
@@ -221,7 +221,7 @@ RtLayer >> extent: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> incrementDrawCounter [
 
@@ -232,7 +232,7 @@ RtLayer >> incrementDrawCounter [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> initialize [
 
@@ -246,7 +246,7 @@ RtLayer >> initialize [
 
 {
 	#category : #caching,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> invalidateCache [
 
@@ -257,7 +257,7 @@ RtLayer >> invalidateCache [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> isCached [
 
@@ -266,7 +266,7 @@ RtLayer >> isCached [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> needsCaching [
 
@@ -275,7 +275,7 @@ RtLayer >> needsCaching [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> needsCaching: anObject [
 
@@ -284,7 +284,7 @@ RtLayer >> needsCaching: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> offset [
 
@@ -293,7 +293,7 @@ RtLayer >> offset [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> offset: anObject [
 
@@ -302,7 +302,7 @@ RtLayer >> offset: anObject [
 
 {
 	#category : #debugging,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> open [
 
@@ -311,7 +311,7 @@ RtLayer >> open [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> outerTransform [
 
@@ -320,7 +320,7 @@ RtLayer >> outerTransform [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> outerTransform: anObject [
 
@@ -329,7 +329,7 @@ RtLayer >> outerTransform: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> parent [
 
@@ -338,7 +338,7 @@ RtLayer >> parent [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> parent: aLayer [
 
@@ -347,7 +347,7 @@ RtLayer >> parent: aLayer [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> transform [
 
@@ -356,7 +356,7 @@ RtLayer >> transform [
 
 {
 	#category : #caching,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtLayer >> validCache: anImageStore [
 

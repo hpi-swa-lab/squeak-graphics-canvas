@@ -1,10 +1,14 @@
 Class {
 	#name : #FFICallbackResult,
 	#superclass : #ExternalUnion,
-	#category : #'Vulkan-FFI-Support'
+	#category : #'Vulkan-FFI-Support',
+	#commentStamp : ''
 }
 
-{ #category : #'field definition' }
+{
+	#category : #'field definition',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallbackResult class >> fields [
 	"
 	self defineFields.

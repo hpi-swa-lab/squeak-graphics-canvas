@@ -9,22 +9,32 @@ Class {
 		'IdentityMatrix',
 		'ZeroMatrix'
 	],
-	#category : #'3DTransform-Vectors'
+	#category : #'3DTransform-Vectors',
+	#commentStamp : ''
 }
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 class >> at: at up: up [
 
 " construct and orthonormal matrix from the up and at vectors."
 	^ self new at: at up: up.
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 class >> identity [
 	^self new setIdentity
 ]
 
-{ #category : #'class initialization' }
+{
+	#category : #'class initialization',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 class >> initialize [
 	"Matrix4x4 initialize"
 	ZeroMatrix := self new.
@@ -32,12 +42,18 @@ Matrix4x4 class >> initialize [
 	IdentityMatrix a11: 1.0; a22: 1.0; a33: 1.0; a44: 1.0.
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 class >> numElements [
 	^16
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 class >> ortho: aRectangle near: aNumber far: anotherNumber [
 
 	" https://www.scratchapixel.com/lessons/3d-basic-rendering/perspective-and-orthographic-projection-matrix/orthographic-projection-matrix "
@@ -55,7 +71,10 @@ Matrix4x4 class >> ortho: aRectangle near: aNumber far: anotherNumber [
     M[3][3] = 1; "
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 class >> rotatedBy: angle around: axis centeredAt: origin [
 	"Create a matrix rotating points around the given origin using the angle/axis pair"
 	| xform |
@@ -65,46 +84,70 @@ Matrix4x4 class >> rotatedBy: angle around: axis centeredAt: origin [
 	^xform
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 class >> skew: vector [
 
 	^ self new skew: vector.
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 class >> up: up at: at [
 
 " construct and orthonormal matrix from the up and at vectors."
 	^ self new up: up at: at.
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 class >> withOffset: aVector [
 
 	^ self identity setTranslation: aVector asVector3
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 class >> withRotation: angle [
 	^ self withRotation: angle around: (0@0@1)
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 class >> withRotation: angle around: axis [
 	^self new rotation: angle around: axis
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 class >> withScale: amount [
 	^self identity setScale: amount
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 class >> zero [
 	^self new
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> * m2 [
 	"Perform a 4x4 matrix multiplication."
 	| result |
@@ -113,7 +156,10 @@ Matrix4x4 >> * m2 [
 	^result
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> *= m2 [
 	"Perform a 4x4 matrix multiplication with result into self."
 	| result |
@@ -122,7 +168,10 @@ Matrix4x4 >> *= m2 [
 
 ]
 
-{ #category : #arithmetic }
+{
+	#category : #arithmetic,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> + aMatrix [
 
 	| res |
@@ -131,14 +180,20 @@ Matrix4x4 >> + aMatrix [
 	^ res.
 ]
 
-{ #category : #arithmetic }
+{
+	#category : #arithmetic,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> += aMatrix [
 	"Optimized for Matrix/Matrix operations"
 	<primitive: 'primitiveAddFloatArray' module: 'FloatArrayPlugin'>
 	^super + aMatrix
 ]
 
-{ #category : #arithmetic }
+{
+	#category : #arithmetic,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> - aMatrix [
 
 	| res |
@@ -147,206 +202,308 @@ Matrix4x4 >> - aMatrix [
 	^ res.
 ]
 
-{ #category : #arithmetic }
+{
+	#category : #arithmetic,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> -= aMatrix [
 	"Optimized for Matrix/Matrix operations"
 	<primitive: 'primitiveSubFloatArray' module: 'FloatArrayPlugin'>
 	^super - aMatrix
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a11 [
 	"Return the element a11"
 	^self at: 1
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a11: aNumber [
 	"Store the element a11"
 	self at: 1 put: aNumber
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a12 [
 	"Return the element a12"
 	^self at: 2
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a12: aNumber [
 	"Store the element a12"
 	self at: 2 put: aNumber
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a13 [
 	"Return the element a13"
 	^self at: 3
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a13: aNumber [
 	"Store the element a13"
 	self at: 3 put: aNumber
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a14 [
 	"Return the element a14"
 	^self at: 4
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a14: aNumber [
 	"Store the element a14"
 	self at: 4 put: aNumber
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a21 [
 	"Return the element a21"
 	^self at: 5
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a21: aNumber [
 	"Store the element a21"
 	self at: 5 put: aNumber
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a22 [
 	"Return the element a22"
 	^self at: 6
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a22: aNumber [
 	"Store the element a22"
 	self at: 6 put: aNumber
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a23 [
 	"Return the element a23"
 	^self at: 7
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a23: aNumber [
 	"Store the element a23"
 	self at: 7 put: aNumber
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a24 [
 	"Return the element a24"
 	^self at: 8
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a24: aNumber [
 	"Store the element a24"
 	self at: 8 put: aNumber
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a31 [
 	"Return the element a31"
 	^self at: 9
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a31: aNumber [
 	"Store the element a31"
 	self at: 9 put: aNumber
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a32 [
 	"Return the element a32"
 	^self at: 10
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a32: aNumber [
 	"Store the element a32"
 	self at: 10 put: aNumber
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a33 [
 	"Return the element a33"
 	^self at: 11
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a33: aNumber [
 	"Store the element a33"
 	self at: 11 put: aNumber
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a34 [
 	"Return the element a34"
 	^self at: 12
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a34: aNumber [
 	"Store the element a34"
 	self at: 12 put: aNumber
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a41 [
 	"Return the element a41"
 	^self at: 13
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a41: aNumber [
 	"Store the element a41"
 	self at: 13 put: aNumber
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a42 [
 	"Return the element a42"
 	^self at: 14
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a42: aNumber [
 	"Store the element a42"
 	self at: 14 put: aNumber
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a43 [
 	"Return the element a43"
 	^self at: 15
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a43: aNumber [
 	"Store the element a43"
 	self at: 15 put: aNumber
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a44 [
 	"Return the element a44"
 	^self at: 16
 ]
 
-{ #category : #'element-access' }
+{
+	#category : #'element-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> a44: aNumber [
 	"Store the element a44"
 	self at: 16 put: aNumber
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> addRotationAroundX: anAngle [
 
 	| rtrans res |
@@ -358,7 +515,10 @@ Matrix4x4 >> addRotationAroundX: anAngle [
 
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> addRotationAroundY: anAngle [
 
 	| rtrans res |
@@ -370,7 +530,10 @@ Matrix4x4 >> addRotationAroundY: anAngle [
 
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> addRotationAroundZ: anAngle [
 
 	| rtrans res |
@@ -382,7 +545,10 @@ Matrix4x4 >> addRotationAroundZ: anAngle [
 
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> alternateRotation [
 	"Return the angular rotation around each axis of the matrix"
 
@@ -421,7 +587,10 @@ Matrix4x4 >> alternateRotation [
 
 ]
 
-{ #category : #converting }
+{
+	#category : #converting,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> asMatrix2x3 [
 
 	^ Matrix2x3 identity
@@ -434,12 +603,18 @@ Matrix4x4 >> asMatrix2x3 [
 		yourself
 ]
 
-{ #category : #converting }
+{
+	#category : #converting,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> asMatrix4x4 [
 	^self
 ]
 
-{ #category : #converting }
+{
+	#category : #converting,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> asQuaternion [
 	"Convert the matrix to a quaternion"
 
@@ -482,19 +657,28 @@ Matrix4x4 >> asQuaternion [
 
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> at: i at: j [
 	^ self at: ((i - 1) * 4 + j).
 
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> at: i at: j put: aValue [
 	^ self at: ((i - 1) * 4 + j) put: aValue.
 
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> at: a up: u [
 " dominant at vector - up can change. See #up:at:."
 
@@ -515,7 +699,10 @@ Matrix4x4 >> at: a up: u [
 
 ]
 
-{ #category : #'row-access' }
+{
+	#category : #'row-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> column1 [
 	"Return column 1"
 
@@ -523,7 +710,10 @@ Matrix4x4 >> column1 [
 
 ]
 
-{ #category : #'row-access' }
+{
+	#category : #'row-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> column1: col [
 	"Set column 1"
 	self a11: col x.
@@ -532,7 +722,10 @@ Matrix4x4 >> column1: col [
 
 ]
 
-{ #category : #'row-access' }
+{
+	#category : #'row-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> column2 [
 	"Return column 2"
 
@@ -540,7 +733,10 @@ Matrix4x4 >> column2 [
 
 ]
 
-{ #category : #'row-access' }
+{
+	#category : #'row-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> column2: col [
 	"Set column 2"
 
@@ -550,7 +746,10 @@ Matrix4x4 >> column2: col [
 
 ]
 
-{ #category : #'row-access' }
+{
+	#category : #'row-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> column3 [
 	"Return column 3"
 
@@ -558,7 +757,10 @@ Matrix4x4 >> column3 [
 
 ]
 
-{ #category : #'row-access' }
+{
+	#category : #'row-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> column3: col [
 	"Set column 3"
 
@@ -568,13 +770,19 @@ Matrix4x4 >> column3: col [
 
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> composeWith: m2 [
 	"Perform a 4x4 matrix multiplication."
 	^self composedWithLocal: m2.
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> composeWith: m2 times: nTimes [
 
 	"Perform a 4x4 matrix exponentiation and multiplication."
@@ -590,7 +798,10 @@ Matrix4x4 >> composeWith: m2 times: nTimes [
 
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> composedWithGlobal: aMatrix4x4 [
 	| result |
 	result := self class new.
@@ -598,7 +809,10 @@ Matrix4x4 >> composedWithGlobal: aMatrix4x4 [
 	^result
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> composedWithLocal: aMatrix4x4 [
 	| result |
 	result := self class new.
@@ -606,7 +820,10 @@ Matrix4x4 >> composedWithLocal: aMatrix4x4 [
 	^result
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> counterTransposed [
 	"flip across the other diagonal from normal transpose. Just the 3x3 part. Do not use this unless you really know what you are doing."
 
@@ -621,37 +838,55 @@ Matrix4x4 >> counterTransposed [
 	^matrix
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> getFrom: m2 [
 
 	1 to: 16 do:[:i | self at: i put: (m2 at: i)].
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> globalBoundsToLocal: aRectangle [
 
 	^ Rectangle encompassing: (self globalPointsToLocal: aRectangle corners)
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> globalDirToLocal: aPoint [
 
 	^ self inverseTransformation localDirToGlobal: aPoint
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> globalPointToLocal: aPoint [
 	"Convenience method for inverse of localPointToGlobal."
 	^ self inverseTransformation localPointToGlobal: aPoint
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> globalPointsToLocal: inArray [
 	"Transform all the points of inArray from global into local coordinates"
 	^ self inverseTransformation localPointsToGlobal: inArray
 ]
 
-{ #category : #solving }
+{
+	#category : #solving,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> inplaceDecomposeLU [
 	"Decompose the receiver in place by using gaussian elimination w/o pivot search"
 	| x |
@@ -665,7 +900,10 @@ Matrix4x4 >> inplaceDecomposeLU [
 
 ]
 
-{ #category : #solving }
+{
+	#category : #solving,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> inplaceHouseHolderInvert [
 	"Solve the linear equation self * aVector = x by using HouseHolder's transformation.
 	Note: This scheme is numerically better than using gaussian elimination even though it takes
@@ -714,7 +952,10 @@ Matrix4x4 >> inplaceHouseHolderInvert [
 	"Return receiver"
 ]
 
-{ #category : #solving }
+{
+	#category : #solving,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> inplaceHouseHolderTransform: aVector [
 	"Solve the linear equation self * aVector = x by using HouseHolder's transformation.
 	Note: This scheme is numerically better than using gaussian elimination even though it takes
@@ -757,18 +998,27 @@ Matrix4x4 >> inplaceHouseHolderTransform: aVector [
 
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> inverseTransformation [
 	"Return the inverse matrix of the receiver."
 	^self copy inplaceHouseHolderInvert.
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> isIdentity [
 	^self = IdentityMatrix
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> isPureTranslation [
 
 	"
@@ -778,18 +1028,27 @@ Matrix4x4 >> isPureTranslation [
 	^ self a11 = 1 and: [self a12 = 0 and: [self a13 = 0 and: [self a21 = 0 and: [self a22 = 1 and: [self a23 = 0 and: [self a31 = 0 and: [self a32 = 0 and: [self a33 = 1]]]]]]]]
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> isZero [
 	^self = ZeroMatrix
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> localBoundsToGlobal: aRectangle [
 
 	^ Rectangle encompassing: (self localPointsToGlobal: aRectangle corners)
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> localDirToGlobal: aVector [
 	"Multiply direction vector with the receiver"
 	| x y z rx ry rz |
@@ -805,7 +1064,10 @@ Matrix4x4 >> localDirToGlobal: aVector [
 	^Vector3 x: rx y: ry z: rz
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> localPointToGlobal: aVector [
 	"Multiply aVector (temporarily converted to 4D) with the receiver"
 	| x y z rx ry rz rw |
@@ -823,13 +1085,19 @@ Matrix4x4 >> localPointToGlobal: aVector [
 	^Vector3 x:(rx/rw) y: (ry/rw) z: (rz/rw)
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> localPointsToGlobal: inArray [
 	"Transform all the points of inArray from local into global coordinates"
 	^ inArray collect: [:pt | (self localPointToGlobal: pt asVector3) asPoint]
 ]
 
-{ #category : #'row-access' }
+{
+	#category : #'row-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> lookAt [
 	"Return column 3"
 
@@ -837,7 +1105,10 @@ Matrix4x4 >> lookAt [
 
 ]
 
-{ #category : #'row-access' }
+{
+	#category : #'row-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> lookSide [
 	"Return column 1"
 
@@ -845,7 +1116,10 @@ Matrix4x4 >> lookSide [
 
 ]
 
-{ #category : #'row-access' }
+{
+	#category : #'row-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> lookUp [
 	"Return column 2"
 
@@ -853,7 +1127,10 @@ Matrix4x4 >> lookUp [
 
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> normalize [
 
 	self column1: (self column2 cross: self column3) normalized.
@@ -861,13 +1138,19 @@ Matrix4x4 >> normalize [
 	self column3: (self column1 cross: self column2) normalized.
 ]
 
-{ #category : #'compat-display transform' }
+{
+	#category : #'compat-display transform',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> offset [
 
 	^ self translation asPoint
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> orientation [
 "This is used to return just the orientation part of the matrix.The translation part is 0.0."
 	| mat |
@@ -877,7 +1160,10 @@ Matrix4x4 >> orientation [
 	^ mat.
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> orthoNormInverse [
 	| m x y z rx ry rz |
 	<primitive: 'primitiveOrthoNormInverseMatrix' module: 'CroquetPlugin'>
@@ -907,7 +1193,10 @@ Matrix4x4 >> orthoNormInverse [
 "
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> pitchYawRoll [
 	"Assume the receiver describes an orthonormal 3x3 matrix"
 	| pitch yaw roll |
@@ -917,7 +1206,10 @@ Matrix4x4 >> pitchYawRoll [
 	^pitch radiansToDegrees@yaw radiansToDegrees@roll radiansToDegrees
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> pitchYawRoll: ypr [
 	"Assume the receiver describes an orthonormal 3x3 matrix"
 	| offset mx my mz |
@@ -930,7 +1222,10 @@ Matrix4x4 >> pitchYawRoll: ypr [
 
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> preservesAxisAlignment [
 	"
 	x 0 0
@@ -944,7 +1239,10 @@ Matrix4x4 >> preservesAxisAlignment [
 	^ self a32 = 0.0
 ]
 
-{ #category : #'double dispatching' }
+{
+	#category : #'double dispatching',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> printOn: aStream [
 	"Print the receiver on aStream"
 	1 to: 4 do:[:r|
@@ -954,7 +1252,10 @@ Matrix4x4 >> printOn: aStream [
 		(r < 4) ifTrue:[aStream nextPut: Character cr]].
 ]
 
-{ #category : #private }
+{
+	#category : #private,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> privateTransformMatrix: m1 with: m2 into: m3 [
 	"Perform a 4x4 matrix multiplication
 		m2 * m1 = m3
@@ -1009,7 +1310,10 @@ Matrix4x4 >> privateTransformMatrix: m1 with: m2 into: m3 [
 	m3 a41: c1; a42: c2; a43: c3; a44: c4.
 ]
 
-{ #category : #'double dispatching' }
+{
+	#category : #'double dispatching',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> productFromMatrix4x4: matrix [
 	"Multiply a 4x4 matrix with the receiver."
 	| result |
@@ -1053,7 +1357,10 @@ Matrix4x4 >> productFromMatrix4x4: matrix [
 	^result
 ]
 
-{ #category : #'double dispatching' }
+{
+	#category : #'double dispatching',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> productFromVector3: aVector3 [
 	"Multiply aVector (temporarily converted to 4D) with the receiver"
 	| x y z rx ry rz rw |
@@ -1069,7 +1376,10 @@ Matrix4x4 >> productFromVector3: aVector3 [
 	^Vector3 x:(rx/rw) y: (ry/rw) z: (rz/rw)
 ]
 
-{ #category : #'double dispatching' }
+{
+	#category : #'double dispatching',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> productFromVector4: aVector4 [
 	"Multiply aVector with the receiver"
 	| x y z w rx ry rz rw |
@@ -1086,7 +1396,10 @@ Matrix4x4 >> productFromVector4: aVector4 [
 	^Vector4 x:rx y: ry z: rz w: rw
 ]
 
-{ #category : #private }
+{
+	#category : #private,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> ptm: m1 with: m2 into: m3 [
 	"Perform a 4x4 matrix multiplication
 		m2 * m1 = m3
@@ -1141,7 +1454,10 @@ Matrix4x4 >> ptm: m1 with: m2 into: m3 [
 	m3 a41: c1; a42: c2; a43: c3; a44: c4.
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> quickTransformV3ArrayFrom: srcArray to: dstArray [
 	"Transform the 3 element vertices from srcArray to dstArray.
 	ASSUMPTION: a41 = a42 = a43 = 0.0 and a44 = 1.0"
@@ -1162,7 +1478,10 @@ Matrix4x4 >> quickTransformV3ArrayFrom: srcArray to: dstArray [
 	^dstArray
 ]
 
-{ #category : #private }
+{
+	#category : #private,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> replaceFrom: start to: stop with: replacement startingAt: repStart [ 
 	"Primitive. This destructively replaces elements from start to stop in the receiver starting at index, repStart, in the collection, replacement. Answer the receiver. Range checks are performed in the primitive only. Optional. See Object documentation whatIsAPrimitive."
 	| index repOff |
@@ -1173,7 +1492,10 @@ Matrix4x4 >> replaceFrom: start to: stop with: replacement startingAt: repStart 
 		whileTrue: [self basicAt: index put: (replacement basicAt: repOff + index)]
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> rotation [
 	"Return the angular rotation around each axis of the matrix"
 
@@ -1236,7 +1558,10 @@ Matrix4x4 >> rotation [
 
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> rotation: aVector [
 	| xRot yRot zRot cosPitch sinPitch cosYaw sinYaw cosRoll sinRoll |
 
@@ -1266,20 +1591,29 @@ Matrix4x4 >> rotation: aVector [
 
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> rotation: anAngle around: aVector3 [
 	"set up a rotation matrix around the direction aVector3"
 
 	self loadFrom: (Quaternion angle: anAngle axis: aVector3) asMatrix4x4
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> rotation: anAngle aroundX: xValue y: yValue z: zValue [
 	"set up a rotation matrix around the direction x/y/z"
 	^self rotation: anAngle around:(Vector3 with: xValue with: yValue with: zValue)
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> rotationAroundX: anAngle [
 	| rad s c |
 	rad := anAngle degreesToRadians.
@@ -1292,7 +1626,10 @@ Matrix4x4 >> rotationAroundX: anAngle [
 	^self
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> rotationAroundY: anAngle [
 	| rad s c |
 	rad := anAngle degreesToRadians.
@@ -1305,7 +1642,10 @@ Matrix4x4 >> rotationAroundY: anAngle [
 	^self
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> rotationAroundZ: anAngle [
 	| rad s c |
 	rad := anAngle degreesToRadians.
@@ -1318,7 +1658,10 @@ Matrix4x4 >> rotationAroundZ: anAngle [
 	^self
 ]
 
-{ #category : #'row-access' }
+{
+	#category : #'row-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> row1 [
 	"Return row 1"
 
@@ -1326,7 +1669,10 @@ Matrix4x4 >> row1 [
 
 ]
 
-{ #category : #'row-access' }
+{
+	#category : #'row-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> row1: row [
 	"Set row 1"
 	self a11: row x.
@@ -1335,7 +1681,10 @@ Matrix4x4 >> row1: row [
 
 ]
 
-{ #category : #'row-access' }
+{
+	#category : #'row-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> row2 [
 	"Return row 2"
 
@@ -1343,7 +1692,10 @@ Matrix4x4 >> row2 [
 
 ]
 
-{ #category : #'row-access' }
+{
+	#category : #'row-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> row2: row [
 	"Set row 2"
 
@@ -1353,7 +1705,10 @@ Matrix4x4 >> row2: row [
 
 ]
 
-{ #category : #'row-access' }
+{
+	#category : #'row-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> row3 [
 	"Return row 3"
 
@@ -1361,7 +1716,10 @@ Matrix4x4 >> row3 [
 
 ]
 
-{ #category : #'row-access' }
+{
+	#category : #'row-access',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> row3: row [
 	"Set row 3"
 
@@ -1371,13 +1729,19 @@ Matrix4x4 >> row3: row [
 
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> scaling: aVector [
 
 	^self scalingX: aVector x y: aVector y z: aVector z
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> scalingX: xValue y: yValue z: zValue [
 
 	self a11: self a11 * xValue.
@@ -1386,7 +1750,10 @@ Matrix4x4 >> scalingX: xValue y: yValue z: zValue [
 	^self
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> setBSplineBase [
 	"Set the receiver to the BSpline base matrix"
 	"for further information see:
@@ -1402,7 +1769,10 @@ Matrix4x4 >> setBSplineBase [
 
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> setBetaSplineBaseBias: beta1 tension: beta2 [
 	"Set the receiver to the betaSpline base matrix 
 	if beta1=1 and beta2=0 then the bSpline base matrix will be returned"
@@ -1436,7 +1806,10 @@ Matrix4x4 >> setBetaSplineBaseBias: beta1 tension: beta2 [
 
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> setBezierBase [
 	"Set the receiver to the bezier base matrix"
 	"for further information see:
@@ -1451,7 +1824,10 @@ Matrix4x4 >> setBezierBase [
 		a41: 1.0;		a42: 0.0;	a43: 0.0;	a44: 0.0
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> setCardinalBase [
 	"Set the receiver to the cardinal spline base matrix - just catmull * 2"
 	"for further information see:
@@ -1467,7 +1843,10 @@ Matrix4x4 >> setCardinalBase [
 
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> setCatmullBase [
 	"Set the receiver to the Catmull-Rom base matrix"
 	"for further information see:
@@ -1483,13 +1862,19 @@ Matrix4x4 >> setCatmullBase [
 
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> setIdentity [
 	"Set the receiver to the identity matrix"
 	self loadFrom: IdentityMatrix
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> setPolylineBase [
 	"Set the receiver to the polyline base matrix :)"
 	self
@@ -1500,7 +1885,10 @@ Matrix4x4 >> setPolylineBase [
 
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> setScale: aVector [
 	self 
 		a11: aVector x;
@@ -1508,7 +1896,10 @@ Matrix4x4 >> setScale: aVector [
 		a33: aVector z
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> setTranslation: aVector [
 	self 
 		a14: aVector x;
@@ -1516,13 +1907,19 @@ Matrix4x4 >> setTranslation: aVector [
 		a34: aVector z
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> setZero [
 	"Set the receiver to the zero matrix"
 	self loadFrom: ZeroMatrix
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> skew: vector [
 	"Set the skew-symetric matrix up"
 	self a21: vector z.
@@ -1534,7 +1931,10 @@ Matrix4x4 >> skew: vector [
 
 ]
 
-{ #category : #solving }
+{
+	#category : #solving,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> solve3x3: aVector [
 	"Solve a 3x3 system of linear equations. Assume that all the a[4,x] and a[x,4] are zero.
 	NOTE: This is a hack, but it's the fastest way for now."
@@ -1546,7 +1946,10 @@ Matrix4x4 >> solve3x3: aVector [
 	^m localDirToGlobal: aVector.
 ]
 
-{ #category : #solving }
+{
+	#category : #solving,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> solve: aVector [
 
 	^self shallowCopy inplaceHouseHolderTransform: aVector
@@ -1555,7 +1958,10 @@ Matrix4x4 >> solve: aVector [
 	"
 ]
 
-{ #category : #solving }
+{
+	#category : #solving,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> solveLU: aVector [
 	"Given a decomposed matrix using gaussian elimination solve the linear equations."
 	| x v |
@@ -1580,13 +1986,19 @@ Matrix4x4 >> solveLU: aVector [
 
 ]
 
-{ #category : #converting }
+{
+	#category : #converting,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> sourceQuadFor: aRectangle [
 	^ aRectangle innerCorners collect: 
 		[:p | self globalPointToLocal: p]
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> squaredDistanceFrom: aMatrix [
 	| sum |
 	sum := 0.0.
@@ -1596,7 +2008,10 @@ Matrix4x4 >> squaredDistanceFrom: aMatrix [
 	^sum
 ]
 
-{ #category : #comparing }
+{
+	#category : #comparing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> squaredErrorDistanceTo: anotherMatrix [
 	| result temp |
 	result := self - anotherMatrix.
@@ -1605,25 +2020,37 @@ Matrix4x4 >> squaredErrorDistanceTo: anotherMatrix [
 	^temp sqrt.
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> translation [
 
 	^(Vector3 x: self a14 y: self a24 z: self a34)
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> translation: aVector [
 
 	^self translationX: aVector x y: aVector y z: aVector z
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> translationMatrix [
 
 	^ Matrix4x4 identity translation: self translation.
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> translationX: xValue y: yValue z: zValue [
 
 	self a14: xValue.
@@ -1632,7 +2059,10 @@ Matrix4x4 >> translationX: xValue y: yValue z: zValue [
 	^self
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> transposed [
 	"Return a transposed copy of the receiver"
 	| matrix |
@@ -1646,7 +2076,10 @@ Matrix4x4 >> transposed [
 	^matrix
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> trotation [
 	"Return the angular rotation around each axis of the matrix"
 
@@ -1685,7 +2118,10 @@ Matrix4x4 >> trotation [
 
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Matrix4x4 >> up: u at: a [
 
 " dominant up vector - at can change. See #at:up."

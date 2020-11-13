@@ -1,10 +1,14 @@
 Class {
 	#name : #FFICallbackContext,
 	#superclass : #ExternalStructure,
-	#category : #'Vulkan-FFI-Support'
+	#category : #'Vulkan-FFI-Support',
+	#commentStamp : ''
 }
 
-{ #category : #'field definition' }
+{
+	#category : #'field definition',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallbackContext class >> fields [
 	"
 	self defineFields.
@@ -41,7 +45,10 @@ typedef struct {
 "
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallbackContext class >> fromHandle: aHandleOrInteger [
 
 	^ super fromHandle: (aHandleOrInteger isInteger
@@ -49,40 +56,58 @@ FFICallbackContext class >> fromHandle: aHandleOrInteger [
 		ifFalse: [aHandleOrInteger])
 ]
 
-{ #category : #'callback result' }
+{
+	#category : #'callback result',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallbackContext >> errorResult [
 
 	^ self wordResult: -1
 ]
 
-{ #category : #'callback result' }
+{
+	#category : #'callback result',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallbackContext >> externalObjectResult: anExternalObject [
 	"ExternalStructure, ExternalUnion, ExternalData ... handle MUST BE an ExternalAddress"
 	
 	^ self pointerResult: anExternalObject getHandle
 ]
 
-{ #category : #'callback result' }
+{
+	#category : #'callback result',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallbackContext >> floatResult: aFloat [
 
 	self rvs floatResult: aFloat.
 	^ 3
 ]
 
-{ #category : #'callback result' }
+{
+	#category : #'callback result',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallbackContext >> pointerResult: anExternalAddress [
 
 	^ self wordResult: anExternalAddress asInteger
 ]
 
-{ #category : #'callback result' }
+{
+	#category : #'callback result',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallbackContext >> voidResult [
 
 	self flag: #discuss. "mt: Is this the expected answer in the IA32ABI plugin?"
 	^ self wordResult: 0
 ]
 
-{ #category : #'callback result' }
+{
+	#category : #'callback result',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 FFICallbackContext >> wordResult: aValue [
 	"Accept any value in the -2^31 to 2^32-1 range or booleans."
 

@@ -5,32 +5,48 @@ Class {
 	#name : #Vector,
 	#superclass : #Float32Array,
 	#type : #words,
-	#category : #'3DTransform-Vectors'
+	#category : #'3DTransform-Vectors',
+	#commentStamp : ''
 }
 
-{ #category : #island }
+{
+	#category : #island,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector class >> howToPassAsArgument [
 	"We clone all vectors, even the array ones to point out that manipulation of those vectors outside of some context is not a goof idea. We may reassess this later."
 	^#passByClone:
 ]
 
-{ #category : #'class initialization' }
+{
+	#category : #'class initialization',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector class >> initialize [
 	"Vector initialize"
 	DataStream initialize. "register with DataStream"
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector class >> new [
 	^super new: self numElements
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector class >> numElements [
 	^0
 ]
 
-{ #category : #'as yet unclassified' }
+{
+	#category : #'as yet unclassified',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector >> copyFrom: array [
 
 	| sz |
@@ -38,14 +54,20 @@ Vector >> copyFrom: array [
 	1 to: sz do:[:index | self at:index put: (array at: index)].
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector >> floatAt: index [
 	"For subclasses that override #at:"
 	<primitive: 'primitiveAt' module: 'FloatArrayPlugin'>
 	^Float fromIEEE32Bit: (self basicAt: index)
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector >> floatAt: index put: value [
 	"For subclasses that override #at:put:"
 	<primitive: 'primitiveAtPut' module: 'FloatArrayPlugin'>
@@ -53,7 +75,10 @@ Vector >> floatAt: index put: value [
 	^value
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector >> loadFrom: srcObject [
 	self == srcObject ifTrue:[^self].
 	self class == srcObject class
@@ -61,18 +86,27 @@ Vector >> loadFrom: srcObject [
 		ifFalse:[self privateLoadFrom: srcObject]
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector >> numElements [
 	^self class numElements
 ]
 
-{ #category : #private }
+{
+	#category : #private,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector >> privateLoadFrom: srcObject [
 	"Load the receiver from the given source object."
 	self error:'Cannot load a ', srcObject class name,' into a ', self class name.
 ]
 
-{ #category : #private }
+{
+	#category : #private,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector >> replaceFrom: start to: stop with: replacement startingAt: repStart [ 
 	"Primitive. This destructively replaces elements from start to stop in the receiver starting at index, repStart, in the collection, replacement. Answer the receiver. Range checks are performed in the primitive only. Optional. See Object documentation whatIsAPrimitive."
 	| index repOff |
@@ -83,13 +117,19 @@ Vector >> replaceFrom: start to: stop with: replacement startingAt: repStart [
 		whileTrue: [self basicAt: index put: (replacement basicAt: repOff + index)]
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector >> wordAt: index [
 	<primitive: 60>
 	^self primitiveFailed
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector >> wordAt: index put: value [
 	<primitive: 61>
 	^self primitiveFailed

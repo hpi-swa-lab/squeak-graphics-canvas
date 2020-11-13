@@ -25,7 +25,7 @@ GLES2_0 class >> defaultProfile [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLES2_0 class >> majorVersion [
 
@@ -34,7 +34,7 @@ GLES2_0 class >> majorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLES2_0 class >> minorVersion [
 

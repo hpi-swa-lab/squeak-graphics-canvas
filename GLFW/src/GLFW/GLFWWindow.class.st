@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow class >> current [
 
@@ -19,7 +19,7 @@ GLFWWindow class >> current [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow class >> extent: aPoint title: aString [
 
@@ -28,7 +28,7 @@ GLFWWindow class >> extent: aPoint title: aString [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow class >> width: width height: height title: aString [
 
@@ -37,7 +37,7 @@ GLFWWindow class >> width: width height: height title: aString [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow class >> width: width height: height title: aString monitor: monitor share: window [
 
@@ -51,7 +51,7 @@ GLFWWindow class >> width: width height: height title: aString monitor: monitor 
 
 {
 	#category : #private,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow class >> window: aWindow [
 
@@ -209,7 +209,7 @@ GLFWWindow >> framebufferSizeCallback: aBlock [
 
 {
 	#category : #input,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow >> getKey: key [
 
@@ -218,7 +218,7 @@ GLFWWindow >> getKey: key [
 
 {
 	#category : #comparing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow >> hash [
 
@@ -395,7 +395,7 @@ GLFWWindow >> restore [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow >> shouldClose [
 

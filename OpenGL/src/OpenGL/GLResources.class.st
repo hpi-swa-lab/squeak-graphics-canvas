@@ -33,7 +33,7 @@ GLResources >> getShaderProgram: aClass library: aLibrary [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLResources >> initialize [
 
@@ -64,7 +64,7 @@ GLResources >> shaders [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLResources >> userData [
 	^ userData

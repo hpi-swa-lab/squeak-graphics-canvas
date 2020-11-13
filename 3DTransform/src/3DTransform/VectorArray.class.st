@@ -5,31 +5,47 @@ Class {
 	#name : #VectorArray,
 	#superclass : #Vector,
 	#type : #words,
-	#category : #'3DTransform-Arrays'
+	#category : #'3DTransform-Arrays',
+	#commentStamp : ''
 }
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 VectorArray class >> contentsClass [
 	^self subclassResponsibility
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 VectorArray class >> contentsSize [
 	^self contentsClass numElements
 ]
 
-{ #category : #island }
+{
+	#category : #island,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 VectorArray class >> howToPassAsArgument [
 	"This method is only here to document the fact that (for the time being) we decided to copy vector arrays as well as 'small' vectors. See the superclass' comment"
 	^#passByClone:
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 VectorArray class >> new: n [
 	^super new: self contentsSize*n
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 VectorArray >> at: index [
 	"Return the primitive vertex at the given index"
 	| vtx |
@@ -38,7 +54,10 @@ VectorArray >> at: index [
 	^vtx
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 VectorArray >> at: index put: anObject [
 	"Store the object at the given index in the receiver"
 	| idx |
@@ -47,17 +66,26 @@ VectorArray >> at: index put: anObject [
 	^anObject
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 VectorArray >> contentsClass [
 	^self class contentsClass
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 VectorArray >> contentsSize [
 	^self contentsClass numElements
 ]
 
-{ #category : #copying }
+{
+	#category : #copying,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 VectorArray >> copyFrom: start to: stop [ 
 	"Answer a copy of a subset of the receiver, starting from element at 
 	index start until element at index stop."
@@ -71,7 +99,10 @@ VectorArray >> copyFrom: start to: stop [
 		startingAt: start
 ]
 
-{ #category : #enumerating }
+{
+	#category : #enumerating,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 VectorArray >> do: aBlock [
 	"Overridden to store the (possibly) modified argument back"
 	| obj |
@@ -81,7 +112,10 @@ VectorArray >> do: aBlock [
 		self at: index put: obj].
 ]
 
-{ #category : #private }
+{
+	#category : #private,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 VectorArray >> privateReplaceFrom: start to: stop with: replacement startingAt: repStart [ 
 	<primitive: 105>
 	start to: stop do:[:i|
@@ -89,12 +123,18 @@ VectorArray >> privateReplaceFrom: start to: stop with: replacement startingAt: 
 	].
 ]
 
-{ #category : #enumerating }
+{
+	#category : #enumerating,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 VectorArray >> readOnlyDo: aBlock [
 	^super do: aBlock
 ]
 
-{ #category : #private }
+{
+	#category : #private,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 VectorArray >> replaceFrom: start to: stop with: replacement startingAt: repStart [
 	| max |
 	max := (replacement size - repStart) min: stop-start.
@@ -103,7 +143,10 @@ VectorArray >> replaceFrom: start to: stop with: replacement startingAt: repStar
 	].
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 VectorArray >> size [
 	"Return the number of primitive vertices that can be stored in the receiver"
 	^self basicSize // self contentsSize

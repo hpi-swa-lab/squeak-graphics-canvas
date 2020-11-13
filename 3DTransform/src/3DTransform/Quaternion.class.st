@@ -16,57 +16,88 @@ Class {
 	#classVars : [
 		'QuaternionIdentity'
 	],
-	#category : #'3DTransform-Vectors'
+	#category : #'3DTransform-Vectors',
+	#commentStamp : ''
 }
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion class >> a: aValue b: bValue c: cValue d: dValue [
 	^self new a: aValue b: bValue c: cValue d: dValue
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion class >> angle: anAngle axis: aVector3 [
 	^self new angle: anAngle axis: aVector3
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion class >> axis: aVector3 angle: anAngle [
 	^self angle: anAngle axis: aVector3
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion class >> from: startVector to: endVector [
 	^self new from: startVector to: endVector
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion class >> identity [
 	^self new setIdentity
 ]
 
-{ #category : #'class initialization' }
+{
+	#category : #'class initialization',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion class >> initialize [
 	"Quaternion initialize"
 	QuaternionIdentity := self new.
 	QuaternionIdentity floatAt: 1 put: 1.0.
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion class >> numElements [
 	^4
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion class >> radiansAngle: anAngle axis: aVector3 [
 	^self new radiansAngle: anAngle axis: aVector3
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion class >> x: xValue y: yValue z: zValue a: anAngle [
 	^self new x: xValue y: yValue z: zValue a: anAngle
 ]
 
-{ #category : #arithmetic }
+{
+	#category : #arithmetic,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> * aRotation [
 	"Multiplying two rotations is the same as concatenating the two rotations."
 	| v1 v2 v3 vv |
@@ -81,17 +112,26 @@ Quaternion >> * aRotation [
 		d: vv z
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> a [
 	^self at: 1
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> a: aFloat [
 	self at: 1 put: aFloat
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> a: aValue b: bValue c: cValue d: dValue [
 
 	self a: aValue.
@@ -102,24 +142,36 @@ Quaternion >> a: aValue b: bValue c: cValue d: dValue [
 	self normalize.
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> angle [
 	^(self a arcCos * 2.0 radiansToDegrees)
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> angle: newAngle [
 	self angle: newAngle axis: self axis
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> angle: anAngle axis: aVector3 [
 
 	self radiansAngle: anAngle degreesToRadians axis: aVector3
 
 ]
 
-{ #category : #converting }
+{
+	#category : #converting,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> asMatrix4x4 [
 	"Given a quaternion q = (a, [ b, c , d]) the rotation matrix can be calculated as
 			|	1 -	2(cc+dd),		2(bc-da),		2(db+ca)	|
@@ -140,7 +192,10 @@ Quaternion >> asMatrix4x4 [
 
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> axis [
 	| sinAngle |
 	sinAngle := self a arcCos sin.
@@ -151,47 +206,74 @@ Quaternion >> axis [
 		z: (self d / sinAngle)
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> axis: newAxis [
 	self angle: self angle axis: newAxis
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> b [
 	^self at: 2
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> b: aFloat [
 	self at: 2 put: aFloat
 ]
 
-{ #category : #private }
+{
+	#category : #private,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> bcd [
 	^Vector3 x: self b y: self c z: self d
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> c [
 	^self at: 3
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> c: aFloat [
 	self at: 3 put: aFloat
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> d [
 	^self at: 4
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> d: aFloat [
 	self at: 4 put: aFloat
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> from: startVector to: endVector [
 	"Create a rotation from startVector to endVector.  Vectors should be normalized first.  Note: doesn't work when vectors are 180 degrees to each other."
 	| axis cos sin |
@@ -208,18 +290,27 @@ Quaternion >> from: startVector to: endVector [
 	self a: cos b: axis x * sin c: axis y * sin d: axis z * sin. 
 ]
 
-{ #category : #interpolating }
+{
+	#category : #interpolating,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> interpolateTo: aRotation at: t [
 	"Spherical linear interpolation (slerp) from the receiver to aQuaternion"
 	^self slerpTo: aRotation at: t extraSpins: 0
 ]
 
-{ #category : #private }
+{
+	#category : #private,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> matrixClass [
 	^Matrix4x4
 ]
 
-{ #category : #arithmetic }
+{
+	#category : #arithmetic,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> normalize [
 	"Normalize the receiver. Note that the actual angle (a) determining the amount of 
 	rotation is fixed, since we do not want to modify angles. This leads to:
@@ -239,12 +330,18 @@ Quaternion >> normalize [
 
 ]
 
-{ #category : #converting }
+{
+	#category : #converting,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> normalized [
 	^self copy normalize
 ]
 
-{ #category : #printing }
+{
+	#category : #printing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> printOn: aStream [
 
 	aStream 
@@ -256,7 +353,10 @@ Quaternion >> printOn: aStream [
 		nextPut:$).
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> radiansAngle: anAngle axis: aVector3 [
 
 	| angle sin cos |
@@ -266,7 +366,10 @@ Quaternion >> radiansAngle: anAngle axis: aVector3 [
 	self a: cos b: aVector3 x * sin c: aVector3 y * sin d: aVector3 z * sin.
 ]
 
-{ #category : #arithmetic }
+{
+	#category : #arithmetic,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> reversed [
 	"Negating a quaternion is the same as reversing the angle of rotation"
 	^Quaternion
@@ -276,18 +379,27 @@ Quaternion >> reversed [
 		d: self d
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> setIdentity [
 	^self loadFrom: QuaternionIdentity
 ]
 
-{ #category : #interpolating }
+{
+	#category : #interpolating,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> slerpTo: aRotation at: t [
 	"Spherical linear interpolation (slerp) from the receiver to aQuaternion"
 	^self slerpTo: aRotation at: t extraSpins: 0
 ]
 
-{ #category : #interpolating }
+{
+	#category : #interpolating,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> slerpTo: aRotation at: t extraSpins: spin [
 	"Sperical Linear Interpolation (slerp).
 	Calculate the new quaternion when applying slerp from the receiver (t = 0.0)
@@ -323,13 +435,19 @@ Quaternion >> slerpTo: aRotation at: t extraSpins: spin [
 		d: (alpha * aRotation d) + (beta * self d)
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> turns [
 	"Answer the number of turns"
 	^self angle / 360.0
 ]
 
-{ #category : #initialize }
+{
+	#category : #initialize,
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Quaternion >> x: xValue y: yValue z: zValue a: anAngle [
 
 	| angle sin cos |

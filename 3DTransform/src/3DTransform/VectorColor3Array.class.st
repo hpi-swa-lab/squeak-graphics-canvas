@@ -2,15 +2,22 @@ Class {
 	#name : #VectorColor3Array,
 	#superclass : #VectorArray,
 	#type : #words,
-	#category : #'3DTransform-Arrays'
+	#category : #'3DTransform-Arrays',
+	#commentStamp : ''
 }
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 VectorColor3Array class >> contentsClass [
 	^VectorColor3
 ]
 
-{ #category : #'special ops' }
+{
+	#category : #'special ops',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 VectorColor3Array >> += aColor [
 	"Add the given color to all the elements in the receiver"
 	| r g b |
@@ -24,7 +31,10 @@ VectorColor3Array >> += aColor [
 	].
 ]
 
-{ #category : #'special ops' }
+{
+	#category : #'special ops',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 VectorColor3Array >> add: aColor4 at: index [
 	| baseIdx |
 	baseIdx := index-1*4.
@@ -34,7 +44,10 @@ VectorColor3Array >> add: aColor4 at: index [
 
 ]
 
-{ #category : #'special ops' }
+{
+	#category : #'special ops',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 VectorColor3Array >> clampAllFrom: minValue to: maxValue [
 	"Clamp all elements in the receiver to be in the range (minValue, maxValue)"
 	| value |
@@ -46,7 +59,10 @@ VectorColor3Array >> clampAllFrom: minValue to: maxValue [
 	].
 ]
 
-{ #category : #'special ops' }
+{
+	#category : #'special ops',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 VectorColor3Array >> fillWith: anInteger [
 	<primitive: 145>
 	self primitiveFailed

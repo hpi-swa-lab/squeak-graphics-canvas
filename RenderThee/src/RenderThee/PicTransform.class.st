@@ -14,7 +14,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicTransform class >> matrix: aMatrix2x3 [
 
@@ -25,7 +25,7 @@ PicTransform class >> matrix: aMatrix2x3 [
 
 {
 	#category : #drawing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicTransform >> drawOn: aCanvas [
 
@@ -36,7 +36,7 @@ PicTransform >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicTransform >> estimatedBounds [
 
@@ -45,7 +45,7 @@ PicTransform >> estimatedBounds [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicTransform >> matrix [
 	^ matrix
@@ -53,7 +53,7 @@ PicTransform >> matrix [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicTransform >> matrix: anObject [
 	matrix := anObject

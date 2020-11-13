@@ -5,10 +5,14 @@ Class {
 	#name : #Vector2Array,
 	#superclass : #VectorArray,
 	#type : #words,
-	#category : #'3DTransform-Arrays'
+	#category : #'3DTransform-Arrays',
+	#commentStamp : ''
 }
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/13/2020 18:20'
+}
 Vector2Array class >> contentsClass [
 	^Vector2
 ]
