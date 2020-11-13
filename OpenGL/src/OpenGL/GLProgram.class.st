@@ -10,97 +10,12 @@ Class {
 }
 
 {
-	#category : #private,
+	#category : #allocation,
 	#timestamp : 'stlu 11/3/2020 15:38'
 }
 GLProgram class >> allocate [
 
 	^ GL createProgram
-]
-
-{
-	#category : #generation,
-	#timestamp : ''
-}
-GLProgram class >> attributes [
-	" return the names of all attributes your shader possesses here "
-
-	^ #()
-]
-
-{
-	#category : #generation,
-	#timestamp : ''
-}
-GLProgram class >> compileAccessors [
-	" call this method to automatically generate accessors for your attributes and uniforms "
-
-	| source |
-	self addInstVarNames: ((self uniforms, self attributes) collect: [:name | name, 'Location']).
-	
-	source := String streamContents: [:stream |
-		stream
-			nextPutAll: 'initializeLocations';
-			cr;
-			crtab;
-			nextPutAll: 'super initializeLocations.'.
-		
-		stream crtab.
-		self uniforms do: [:uniform |
-			stream crtab;
-				nextPutAll: uniform;
-				nextPutAll: 'Location := self registerUniform: '; store: uniform; nextPut: $.].
-		
-		stream crtab.
-		self attributes do: [:attribute |
-			stream crtab;
-				nextPutAll: attribute;
-				nextPutAll: 'Location := self registerAttribute: '; store: attribute; nextPut: $.]].
-		
-	self compile: source classified: 'generated'.
-	
-	self uniforms do: [:uniform |
-		source := String streamContents: [:stream |
-			stream
-				nextPutAll: uniform; nextPut: $:; nextPutAll: ' anObject';
-				cr; crtab;
-				nextPutAll: 'self uniform: '; nextPutAll: uniform; nextPutAll: 'Location value: anObject'].
-		self compile: source classified: 'generated'].
-	
-	self attributes do: [:attribute |
-		source := String streamContents: [:stream |
-			stream
-				nextPutAll: attribute;
-				nextPutAll: 'Location';
-				cr; crtab;
-				nextPutAll: '^ '; nextPutAll: attribute; nextPutAll: 'Location'].
-		self compile: source classified: 'generated']
-]
-
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 10/22/2020 16:59'
-}
-GLProgram class >> context: glContext [
-
-	^ self
-		context: glContext
-		shaders: {
-			GLVertexShader context: glContext code: self vertexShader withUnixLineEndings.
-			GLFragmentShader context: glContext code: self fragmentShader withUnixLineEndings.
-		}
-]
-
-{
-	#category : #'instance creation',
-	#timestamp : ''
-}
-GLProgram class >> context: glContext shaders: aCollection [
-
-	^ (super context: glContext)
-		shaders: aCollection;
-		setUpProgram;
-		yourself
 ]
 
 {
@@ -113,40 +28,12 @@ GLProgram class >> current [
 ]
 
 {
-	#category : #'shader code',
-	#timestamp : ''
-}
-GLProgram class >> fragmentShader [
-
-	self subclassResponsibility
-]
-
-{
-	#category : #generation,
-	#timestamp : ''
-}
-GLProgram class >> uniforms [
-	" return the names of all uniforms your shader possesses here "
-
-	^ #()
-]
-
-{
 	#category : #activation,
 	#timestamp : 'stlu 11/6/2020 15:05'
 }
 GLProgram class >> use: id [
 
 	GL useProgram: id
-]
-
-{
-	#category : #'shader code',
-	#timestamp : ''
-}
-GLProgram class >> vertexShader [
-
-	self subclassResponsibility
 ]
 
 {
