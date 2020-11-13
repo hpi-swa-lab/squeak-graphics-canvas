@@ -1,6 +1,9 @@
 Extension { #name : #FrameRateMorph }
 
-{ #category : #'*RenderThee' }
+{
+	#category : #'*RenderThee',
+	#timestamp : ''
+}
 FrameRateMorph >> isRepaintBoundary [
 
 	^ true

@@ -5,35 +5,51 @@ Class {
 		'canvas',
 		'colors'
 	],
-	#category : #'RenderThee-Tests'
+	#category : #'RenderThee-Tests',
+	#commentStamp : ''
 }
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : ''
+}
 RtCanvasTest class >> isAbstract [
 
 	^ self name = #RtCanvasTest
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtCanvasTest >> canvasExtent [
 
 	^ 10@10
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 RtCanvasTest >> createCanvas [
 
 	self subclassResponsibility
 ]
 
-{ #category : #running }
+{
+	#category : #running,
+	#timestamp : ''
+}
 RtCanvasTest >> setUp [
 
 	canvas := self createCanvas.
 	
 ]
 
-{ #category : #tests }
+{
+	#category : #tests,
+	#timestamp : ''
+}
 RtCanvasTest >> testClipBy [
 
 	canvas
@@ -48,7 +64,10 @@ RtCanvasTest >> testClipBy [
 					self assert: (c2 clipRect containsRect: (4 @ 4 corner: 9 @ 9))]]
 ]
 
-{ #category : #tests }
+{
+	#category : #tests,
+	#timestamp : ''
+}
 RtCanvasTest >> testTransformBy [
 
 	canvas
@@ -63,7 +82,10 @@ RtCanvasTest >> testTransformBy [
 					self assert: (c2 clipRect extent >= (4 @ 5))]]
 ]
 
-{ #category : #tests }
+{
+	#category : #tests,
+	#timestamp : ''
+}
 RtCanvasTest >> testTransformByPureTranslation [
 
 	canvas
@@ -80,7 +102,10 @@ RtCanvasTest >> testTransformByPureTranslation [
 					self assert: (c2 clipRect containsRect: (-2 @ 1 corner: 3 @ 6))]]
 ]
 
-{ #category : #tests }
+{
+	#category : #tests,
+	#timestamp : ''
+}
 RtCanvasTest >> testTranslateBy [
 
 	canvas
@@ -95,7 +120,10 @@ RtCanvasTest >> testTranslateBy [
 					self assert: (c2 clipRect containsRect: (-6 @ -3 corner: 4 @ 7))]]
 ]
 
-{ #category : #tests }
+{
+	#category : #tests,
+	#timestamp : ''
+}
 RtCanvasTest >> testTranslateByClippingTo [
 
 	canvas
@@ -112,7 +140,10 @@ RtCanvasTest >> testTranslateByClippingTo [
 					self assert: (c2 clipRect containsRect:  (-2 @ 1 corner: 3 @ 6))]]
 ]
 
-{ #category : #tests }
+{
+	#category : #tests,
+	#timestamp : ''
+}
 RtCanvasTest >> testTranslateToClippingTo [
 
 	canvas

@@ -1,28 +1,41 @@
 Class {
 	#name : #'GL3_2',
 	#superclass : #'GL3_1',
-	#category : #'OpenGL-API-GL'
+	#category : #'OpenGL-API-GL',
+	#commentStamp : ''
 }
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GL3_2 class >> majorVersion [
 
 	^ 3
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GL3_2 class >> minorVersion [
 
 	^ 2
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/2/2020 14:52'
+}
 GL3_2 class >> versionNumber [
 
 	^ 32
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ACCUM [
 
 	<generated>
@@ -30,7 +43,10 @@ GL3_2 >> ACCUM [
 	^ super ACCUM
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ACCUM_ALPHA_BITS [
 
 	<generated>
@@ -38,7 +54,10 @@ GL3_2 >> ACCUM_ALPHA_BITS [
 	^ super ACCUM_ALPHA_BITS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ACCUM_BLUE_BITS [
 
 	<generated>
@@ -46,7 +65,10 @@ GL3_2 >> ACCUM_BLUE_BITS [
 	^ super ACCUM_BLUE_BITS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ACCUM_BUFFER_BIT [
 
 	<generated>
@@ -54,7 +76,10 @@ GL3_2 >> ACCUM_BUFFER_BIT [
 	^ super ACCUM_BUFFER_BIT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ACCUM_CLEAR_VALUE [
 
 	<generated>
@@ -62,7 +87,10 @@ GL3_2 >> ACCUM_CLEAR_VALUE [
 	^ super ACCUM_CLEAR_VALUE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ACCUM_GREEN_BITS [
 
 	<generated>
@@ -70,7 +98,10 @@ GL3_2 >> ACCUM_GREEN_BITS [
 	^ super ACCUM_GREEN_BITS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ACCUM_RED_BITS [
 
 	<generated>
@@ -78,7 +109,10 @@ GL3_2 >> ACCUM_RED_BITS [
 	^ super ACCUM_RED_BITS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ADD [
 
 	<generated>
@@ -86,7 +120,10 @@ GL3_2 >> ADD [
 	^ super ADD
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ADD_SIGNED [
 
 	<generated>
@@ -94,7 +131,10 @@ GL3_2 >> ADD_SIGNED [
 	^ super ADD_SIGNED
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ALIASED_POINT_SIZE_RANGE [
 
 	<generated>
@@ -102,7 +142,10 @@ GL3_2 >> ALIASED_POINT_SIZE_RANGE [
 	^ super ALIASED_POINT_SIZE_RANGE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ALL_ATTRIB_BITS [
 
 	<generated>
@@ -110,7 +153,10 @@ GL3_2 >> ALL_ATTRIB_BITS [
 	^ super ALL_ATTRIB_BITS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ALPHA12 [
 
 	<generated>
@@ -118,7 +164,10 @@ GL3_2 >> ALPHA12 [
 	^ super ALPHA12
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ALPHA16 [
 
 	<generated>
@@ -126,7 +175,10 @@ GL3_2 >> ALPHA16 [
 	^ super ALPHA16
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ALPHA4 [
 
 	<generated>
@@ -134,7 +186,10 @@ GL3_2 >> ALPHA4 [
 	^ super ALPHA4
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ALPHA8 [
 
 	<generated>
@@ -142,7 +197,10 @@ GL3_2 >> ALPHA8 [
 	^ super ALPHA8
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ALPHA_BIAS [
 
 	<generated>
@@ -150,7 +208,10 @@ GL3_2 >> ALPHA_BIAS [
 	^ super ALPHA_BIAS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ALPHA_BITS [
 
 	<generated>
@@ -158,7 +219,10 @@ GL3_2 >> ALPHA_BITS [
 	^ super ALPHA_BITS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ALPHA_INTEGER [
 
 	<generated>
@@ -166,7 +230,10 @@ GL3_2 >> ALPHA_INTEGER [
 	^ super ALPHA_INTEGER
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ALPHA_SCALE [
 
 	<generated>
@@ -174,7 +241,10 @@ GL3_2 >> ALPHA_SCALE [
 	^ super ALPHA_SCALE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ALPHA_TEST [
 
 	<generated>
@@ -182,7 +252,10 @@ GL3_2 >> ALPHA_TEST [
 	^ super ALPHA_TEST
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ALPHA_TEST_FUNC [
 
 	<generated>
@@ -190,7 +263,10 @@ GL3_2 >> ALPHA_TEST_FUNC [
 	^ super ALPHA_TEST_FUNC
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ALPHA_TEST_REF [
 
 	<generated>
@@ -198,14 +274,20 @@ GL3_2 >> ALPHA_TEST_REF [
 	^ super ALPHA_TEST_REF
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> ALREADY_SIGNALED [
 
 	<generated>
 	^ GL_ALREADY_SIGNALED
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> AMBIENT [
 
 	<generated>
@@ -213,7 +295,10 @@ GL3_2 >> AMBIENT [
 	^ super AMBIENT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> AMBIENT_AND_DIFFUSE [
 
 	<generated>
@@ -221,7 +306,10 @@ GL3_2 >> AMBIENT_AND_DIFFUSE [
 	^ super AMBIENT_AND_DIFFUSE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ATTRIB_STACK_DEPTH [
 
 	<generated>
@@ -229,7 +317,10 @@ GL3_2 >> ATTRIB_STACK_DEPTH [
 	^ super ATTRIB_STACK_DEPTH
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> AUTO_NORMAL [
 
 	<generated>
@@ -237,7 +328,10 @@ GL3_2 >> AUTO_NORMAL [
 	^ super AUTO_NORMAL
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> AUX0 [
 
 	<generated>
@@ -245,7 +339,10 @@ GL3_2 >> AUX0 [
 	^ super AUX0
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> AUX1 [
 
 	<generated>
@@ -253,7 +350,10 @@ GL3_2 >> AUX1 [
 	^ super AUX1
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> AUX2 [
 
 	<generated>
@@ -261,7 +361,10 @@ GL3_2 >> AUX2 [
 	^ super AUX2
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> AUX3 [
 
 	<generated>
@@ -269,7 +372,10 @@ GL3_2 >> AUX3 [
 	^ super AUX3
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> AUX_BUFFERS [
 
 	<generated>
@@ -277,7 +383,10 @@ GL3_2 >> AUX_BUFFERS [
 	^ super AUX_BUFFERS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> BITMAP [
 
 	<generated>
@@ -285,7 +394,10 @@ GL3_2 >> BITMAP [
 	^ super BITMAP
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> BITMAP_TOKEN [
 
 	<generated>
@@ -293,7 +405,10 @@ GL3_2 >> BITMAP_TOKEN [
 	^ super BITMAP_TOKEN
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> BLUE_BIAS [
 
 	<generated>
@@ -301,7 +416,10 @@ GL3_2 >> BLUE_BIAS [
 	^ super BLUE_BIAS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> BLUE_BITS [
 
 	<generated>
@@ -309,7 +427,10 @@ GL3_2 >> BLUE_BITS [
 	^ super BLUE_BITS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> BLUE_SCALE [
 
 	<generated>
@@ -317,7 +438,10 @@ GL3_2 >> BLUE_SCALE [
 	^ super BLUE_SCALE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> C3F_V3F [
 
 	<generated>
@@ -325,7 +449,10 @@ GL3_2 >> C3F_V3F [
 	^ super C3F_V3F
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> C4F_N3F_V3F [
 
 	<generated>
@@ -333,7 +460,10 @@ GL3_2 >> C4F_N3F_V3F [
 	^ super C4F_N3F_V3F
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> C4UB_V2F [
 
 	<generated>
@@ -341,7 +471,10 @@ GL3_2 >> C4UB_V2F [
 	^ super C4UB_V2F
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> C4UB_V3F [
 
 	<generated>
@@ -349,7 +482,10 @@ GL3_2 >> C4UB_V3F [
 	^ super C4UB_V3F
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CLAMP [
 
 	<generated>
@@ -357,7 +493,10 @@ GL3_2 >> CLAMP [
 	^ super CLAMP
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CLAMP_FRAGMENT_COLOR [
 
 	<generated>
@@ -365,7 +504,10 @@ GL3_2 >> CLAMP_FRAGMENT_COLOR [
 	^ super CLAMP_FRAGMENT_COLOR
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CLAMP_VERTEX_COLOR [
 
 	<generated>
@@ -373,7 +515,10 @@ GL3_2 >> CLAMP_VERTEX_COLOR [
 	^ super CLAMP_VERTEX_COLOR
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CLIENT_ACTIVE_TEXTURE [
 
 	<generated>
@@ -381,7 +526,10 @@ GL3_2 >> CLIENT_ACTIVE_TEXTURE [
 	^ super CLIENT_ACTIVE_TEXTURE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CLIENT_ALL_ATTRIB_BITS [
 
 	<generated>
@@ -389,7 +537,10 @@ GL3_2 >> CLIENT_ALL_ATTRIB_BITS [
 	^ super CLIENT_ALL_ATTRIB_BITS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CLIENT_ATTRIB_STACK_DEPTH [
 
 	<generated>
@@ -397,7 +548,10 @@ GL3_2 >> CLIENT_ATTRIB_STACK_DEPTH [
 	^ super CLIENT_ATTRIB_STACK_DEPTH
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CLIENT_PIXEL_STORE_BIT [
 
 	<generated>
@@ -405,7 +559,10 @@ GL3_2 >> CLIENT_PIXEL_STORE_BIT [
 	^ super CLIENT_PIXEL_STORE_BIT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CLIENT_VERTEX_ARRAY_BIT [
 
 	<generated>
@@ -413,7 +570,10 @@ GL3_2 >> CLIENT_VERTEX_ARRAY_BIT [
 	^ super CLIENT_VERTEX_ARRAY_BIT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CLIP_PLANE0 [
 
 	<generated>
@@ -421,7 +581,10 @@ GL3_2 >> CLIP_PLANE0 [
 	^ super CLIP_PLANE0
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CLIP_PLANE1 [
 
 	<generated>
@@ -429,7 +592,10 @@ GL3_2 >> CLIP_PLANE1 [
 	^ super CLIP_PLANE1
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CLIP_PLANE2 [
 
 	<generated>
@@ -437,7 +603,10 @@ GL3_2 >> CLIP_PLANE2 [
 	^ super CLIP_PLANE2
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CLIP_PLANE3 [
 
 	<generated>
@@ -445,7 +614,10 @@ GL3_2 >> CLIP_PLANE3 [
 	^ super CLIP_PLANE3
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CLIP_PLANE4 [
 
 	<generated>
@@ -453,7 +625,10 @@ GL3_2 >> CLIP_PLANE4 [
 	^ super CLIP_PLANE4
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CLIP_PLANE5 [
 
 	<generated>
@@ -461,7 +636,10 @@ GL3_2 >> CLIP_PLANE5 [
 	^ super CLIP_PLANE5
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COEFF [
 
 	<generated>
@@ -469,7 +647,10 @@ GL3_2 >> COEFF [
 	^ super COEFF
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COLOR_ARRAY [
 
 	<generated>
@@ -477,7 +658,10 @@ GL3_2 >> COLOR_ARRAY [
 	^ super COLOR_ARRAY
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COLOR_ARRAY_BUFFER_BINDING [
 
 	<generated>
@@ -485,7 +669,10 @@ GL3_2 >> COLOR_ARRAY_BUFFER_BINDING [
 	^ super COLOR_ARRAY_BUFFER_BINDING
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COLOR_ARRAY_POINTER [
 
 	<generated>
@@ -493,7 +680,10 @@ GL3_2 >> COLOR_ARRAY_POINTER [
 	^ super COLOR_ARRAY_POINTER
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COLOR_ARRAY_SIZE [
 
 	<generated>
@@ -501,7 +691,10 @@ GL3_2 >> COLOR_ARRAY_SIZE [
 	^ super COLOR_ARRAY_SIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COLOR_ARRAY_STRIDE [
 
 	<generated>
@@ -509,7 +702,10 @@ GL3_2 >> COLOR_ARRAY_STRIDE [
 	^ super COLOR_ARRAY_STRIDE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COLOR_ARRAY_TYPE [
 
 	<generated>
@@ -517,7 +713,10 @@ GL3_2 >> COLOR_ARRAY_TYPE [
 	^ super COLOR_ARRAY_TYPE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COLOR_INDEX [
 
 	<generated>
@@ -525,7 +724,10 @@ GL3_2 >> COLOR_INDEX [
 	^ super COLOR_INDEX
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COLOR_INDEXES [
 
 	<generated>
@@ -533,7 +735,10 @@ GL3_2 >> COLOR_INDEXES [
 	^ super COLOR_INDEXES
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COLOR_MATERIAL [
 
 	<generated>
@@ -541,7 +746,10 @@ GL3_2 >> COLOR_MATERIAL [
 	^ super COLOR_MATERIAL
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COLOR_MATERIAL_FACE [
 
 	<generated>
@@ -549,7 +757,10 @@ GL3_2 >> COLOR_MATERIAL_FACE [
 	^ super COLOR_MATERIAL_FACE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COLOR_MATERIAL_PARAMETER [
 
 	<generated>
@@ -557,7 +768,10 @@ GL3_2 >> COLOR_MATERIAL_PARAMETER [
 	^ super COLOR_MATERIAL_PARAMETER
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COLOR_SUM [
 
 	<generated>
@@ -565,7 +779,10 @@ GL3_2 >> COLOR_SUM [
 	^ super COLOR_SUM
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COMBINE [
 
 	<generated>
@@ -573,7 +790,10 @@ GL3_2 >> COMBINE [
 	^ super COMBINE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COMBINE_ALPHA [
 
 	<generated>
@@ -581,7 +801,10 @@ GL3_2 >> COMBINE_ALPHA [
 	^ super COMBINE_ALPHA
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COMBINE_RGB [
 
 	<generated>
@@ -589,7 +812,10 @@ GL3_2 >> COMBINE_RGB [
 	^ super COMBINE_RGB
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COMPARE_R_TO_TEXTURE [
 
 	<generated>
@@ -597,7 +823,10 @@ GL3_2 >> COMPARE_R_TO_TEXTURE [
 	^ super COMPARE_R_TO_TEXTURE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COMPILE [
 
 	<generated>
@@ -605,7 +834,10 @@ GL3_2 >> COMPILE [
 	^ super COMPILE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COMPILE_AND_EXECUTE [
 
 	<generated>
@@ -613,7 +845,10 @@ GL3_2 >> COMPILE_AND_EXECUTE [
 	^ super COMPILE_AND_EXECUTE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COMPRESSED_ALPHA [
 
 	<generated>
@@ -621,7 +856,10 @@ GL3_2 >> COMPRESSED_ALPHA [
 	^ super COMPRESSED_ALPHA
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COMPRESSED_INTENSITY [
 
 	<generated>
@@ -629,7 +867,10 @@ GL3_2 >> COMPRESSED_INTENSITY [
 	^ super COMPRESSED_INTENSITY
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COMPRESSED_LUMINANCE [
 
 	<generated>
@@ -637,7 +878,10 @@ GL3_2 >> COMPRESSED_LUMINANCE [
 	^ super COMPRESSED_LUMINANCE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COMPRESSED_LUMINANCE_ALPHA [
 
 	<generated>
@@ -645,7 +889,10 @@ GL3_2 >> COMPRESSED_LUMINANCE_ALPHA [
 	^ super COMPRESSED_LUMINANCE_ALPHA
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COMPRESSED_SLUMINANCE [
 
 	<generated>
@@ -653,7 +900,10 @@ GL3_2 >> COMPRESSED_SLUMINANCE [
 	^ super COMPRESSED_SLUMINANCE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COMPRESSED_SLUMINANCE_ALPHA [
 
 	<generated>
@@ -661,14 +911,20 @@ GL3_2 >> COMPRESSED_SLUMINANCE_ALPHA [
 	^ super COMPRESSED_SLUMINANCE_ALPHA
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> CONDITION_SATISFIED [
 
 	<generated>
 	^ GL_CONDITION_SATISFIED
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CONSTANT [
 
 	<generated>
@@ -676,7 +932,10 @@ GL3_2 >> CONSTANT [
 	^ super CONSTANT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CONSTANT_ATTENUATION [
 
 	<generated>
@@ -684,28 +943,40 @@ GL3_2 >> CONSTANT_ATTENUATION [
 	^ super CONSTANT_ATTENUATION
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> CONTEXT_COMPATIBILITY_PROFILE_BIT [
 
 	<generated>
 	^ GL_CONTEXT_COMPATIBILITY_PROFILE_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> CONTEXT_CORE_PROFILE_BIT [
 
 	<generated>
 	^ GL_CONTEXT_CORE_PROFILE_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> CONTEXT_PROFILE_MASK [
 
 	<generated>
 	^ GL_CONTEXT_PROFILE_MASK
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COORD_REPLACE [
 
 	<generated>
@@ -713,7 +984,10 @@ GL3_2 >> COORD_REPLACE [
 	^ super COORD_REPLACE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> COPY_PIXEL_TOKEN [
 
 	<generated>
@@ -721,7 +995,10 @@ GL3_2 >> COPY_PIXEL_TOKEN [
 	^ super COPY_PIXEL_TOKEN
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CURRENT_BIT [
 
 	<generated>
@@ -729,7 +1006,10 @@ GL3_2 >> CURRENT_BIT [
 	^ super CURRENT_BIT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CURRENT_COLOR [
 
 	<generated>
@@ -737,7 +1017,10 @@ GL3_2 >> CURRENT_COLOR [
 	^ super CURRENT_COLOR
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CURRENT_FOG_COORD [
 
 	<generated>
@@ -745,7 +1028,10 @@ GL3_2 >> CURRENT_FOG_COORD [
 	^ super CURRENT_FOG_COORD
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CURRENT_FOG_COORDINATE [
 
 	<generated>
@@ -753,7 +1039,10 @@ GL3_2 >> CURRENT_FOG_COORDINATE [
 	^ super CURRENT_FOG_COORDINATE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CURRENT_INDEX [
 
 	<generated>
@@ -761,7 +1050,10 @@ GL3_2 >> CURRENT_INDEX [
 	^ super CURRENT_INDEX
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CURRENT_NORMAL [
 
 	<generated>
@@ -769,7 +1061,10 @@ GL3_2 >> CURRENT_NORMAL [
 	^ super CURRENT_NORMAL
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CURRENT_RASTER_COLOR [
 
 	<generated>
@@ -777,7 +1072,10 @@ GL3_2 >> CURRENT_RASTER_COLOR [
 	^ super CURRENT_RASTER_COLOR
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CURRENT_RASTER_DISTANCE [
 
 	<generated>
@@ -785,7 +1083,10 @@ GL3_2 >> CURRENT_RASTER_DISTANCE [
 	^ super CURRENT_RASTER_DISTANCE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CURRENT_RASTER_INDEX [
 
 	<generated>
@@ -793,7 +1094,10 @@ GL3_2 >> CURRENT_RASTER_INDEX [
 	^ super CURRENT_RASTER_INDEX
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CURRENT_RASTER_POSITION [
 
 	<generated>
@@ -801,7 +1105,10 @@ GL3_2 >> CURRENT_RASTER_POSITION [
 	^ super CURRENT_RASTER_POSITION
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CURRENT_RASTER_POSITION_VALID [
 
 	<generated>
@@ -809,7 +1116,10 @@ GL3_2 >> CURRENT_RASTER_POSITION_VALID [
 	^ super CURRENT_RASTER_POSITION_VALID
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CURRENT_RASTER_SECONDARY_COLOR [
 
 	<generated>
@@ -817,7 +1127,10 @@ GL3_2 >> CURRENT_RASTER_SECONDARY_COLOR [
 	^ super CURRENT_RASTER_SECONDARY_COLOR
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CURRENT_RASTER_TEXTURE_COORDS [
 
 	<generated>
@@ -825,7 +1138,10 @@ GL3_2 >> CURRENT_RASTER_TEXTURE_COORDS [
 	^ super CURRENT_RASTER_TEXTURE_COORDS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CURRENT_SECONDARY_COLOR [
 
 	<generated>
@@ -833,7 +1149,10 @@ GL3_2 >> CURRENT_SECONDARY_COLOR [
 	^ super CURRENT_SECONDARY_COLOR
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> CURRENT_TEXTURE_COORDS [
 
 	<generated>
@@ -841,7 +1160,10 @@ GL3_2 >> CURRENT_TEXTURE_COORDS [
 	^ super CURRENT_TEXTURE_COORDS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> DECAL [
 
 	<generated>
@@ -849,7 +1171,10 @@ GL3_2 >> DECAL [
 	^ super DECAL
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> DEPTH_BIAS [
 
 	<generated>
@@ -857,7 +1182,10 @@ GL3_2 >> DEPTH_BIAS [
 	^ super DEPTH_BIAS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> DEPTH_BITS [
 
 	<generated>
@@ -865,14 +1193,20 @@ GL3_2 >> DEPTH_BITS [
 	^ super DEPTH_BITS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> DEPTH_CLAMP [
 
 	<generated>
 	^ GL_DEPTH_CLAMP
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> DEPTH_SCALE [
 
 	<generated>
@@ -880,7 +1214,10 @@ GL3_2 >> DEPTH_SCALE [
 	^ super DEPTH_SCALE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> DEPTH_TEXTURE_MODE [
 
 	<generated>
@@ -888,7 +1225,10 @@ GL3_2 >> DEPTH_TEXTURE_MODE [
 	^ super DEPTH_TEXTURE_MODE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> DIFFUSE [
 
 	<generated>
@@ -896,7 +1236,10 @@ GL3_2 >> DIFFUSE [
 	^ super DIFFUSE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> DOMAIN [
 
 	<generated>
@@ -904,7 +1247,10 @@ GL3_2 >> DOMAIN [
 	^ super DOMAIN
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> DOT3_RGB [
 
 	<generated>
@@ -912,7 +1258,10 @@ GL3_2 >> DOT3_RGB [
 	^ super DOT3_RGB
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> DOT3_RGBA [
 
 	<generated>
@@ -920,7 +1269,10 @@ GL3_2 >> DOT3_RGBA [
 	^ super DOT3_RGBA
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> DRAW_PIXEL_TOKEN [
 
 	<generated>
@@ -928,7 +1280,10 @@ GL3_2 >> DRAW_PIXEL_TOKEN [
 	^ super DRAW_PIXEL_TOKEN
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> EDGE_FLAG [
 
 	<generated>
@@ -936,7 +1291,10 @@ GL3_2 >> EDGE_FLAG [
 	^ super EDGE_FLAG
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> EDGE_FLAG_ARRAY [
 
 	<generated>
@@ -944,7 +1302,10 @@ GL3_2 >> EDGE_FLAG_ARRAY [
 	^ super EDGE_FLAG_ARRAY
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> EDGE_FLAG_ARRAY_BUFFER_BINDING [
 
 	<generated>
@@ -952,7 +1313,10 @@ GL3_2 >> EDGE_FLAG_ARRAY_BUFFER_BINDING [
 	^ super EDGE_FLAG_ARRAY_BUFFER_BINDING
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> EDGE_FLAG_ARRAY_POINTER [
 
 	<generated>
@@ -960,7 +1324,10 @@ GL3_2 >> EDGE_FLAG_ARRAY_POINTER [
 	^ super EDGE_FLAG_ARRAY_POINTER
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> EDGE_FLAG_ARRAY_STRIDE [
 
 	<generated>
@@ -968,7 +1335,10 @@ GL3_2 >> EDGE_FLAG_ARRAY_STRIDE [
 	^ super EDGE_FLAG_ARRAY_STRIDE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> EMISSION [
 
 	<generated>
@@ -976,7 +1346,10 @@ GL3_2 >> EMISSION [
 	^ super EMISSION
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ENABLE_BIT [
 
 	<generated>
@@ -984,7 +1357,10 @@ GL3_2 >> ENABLE_BIT [
 	^ super ENABLE_BIT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> EVAL_BIT [
 
 	<generated>
@@ -992,7 +1368,10 @@ GL3_2 >> EVAL_BIT [
 	^ super EVAL_BIT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> EXP [
 
 	<generated>
@@ -1000,7 +1379,10 @@ GL3_2 >> EXP [
 	^ super EXP
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> EXP2 [
 
 	<generated>
@@ -1008,7 +1390,10 @@ GL3_2 >> EXP2 [
 	^ super EXP2
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> EYE_LINEAR [
 
 	<generated>
@@ -1016,7 +1401,10 @@ GL3_2 >> EYE_LINEAR [
 	^ super EYE_LINEAR
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> EYE_PLANE [
 
 	<generated>
@@ -1024,7 +1412,10 @@ GL3_2 >> EYE_PLANE [
 	^ super EYE_PLANE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FEEDBACK [
 
 	<generated>
@@ -1032,7 +1423,10 @@ GL3_2 >> FEEDBACK [
 	^ super FEEDBACK
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FEEDBACK_BUFFER_POINTER [
 
 	<generated>
@@ -1040,7 +1434,10 @@ GL3_2 >> FEEDBACK_BUFFER_POINTER [
 	^ super FEEDBACK_BUFFER_POINTER
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FEEDBACK_BUFFER_SIZE [
 
 	<generated>
@@ -1048,7 +1445,10 @@ GL3_2 >> FEEDBACK_BUFFER_SIZE [
 	^ super FEEDBACK_BUFFER_SIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FEEDBACK_BUFFER_TYPE [
 
 	<generated>
@@ -1056,14 +1456,20 @@ GL3_2 >> FEEDBACK_BUFFER_TYPE [
 	^ super FEEDBACK_BUFFER_TYPE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> FIRST_VERTEX_CONVENTION [
 
 	<generated>
 	^ GL_FIRST_VERTEX_CONVENTION
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FLAT [
 
 	<generated>
@@ -1071,7 +1477,10 @@ GL3_2 >> FLAT [
 	^ super FLAT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG [
 
 	<generated>
@@ -1079,7 +1488,10 @@ GL3_2 >> FOG [
 	^ super FOG
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_BIT [
 
 	<generated>
@@ -1087,7 +1499,10 @@ GL3_2 >> FOG_BIT [
 	^ super FOG_BIT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_COLOR [
 
 	<generated>
@@ -1095,7 +1510,10 @@ GL3_2 >> FOG_COLOR [
 	^ super FOG_COLOR
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_COORD [
 
 	<generated>
@@ -1103,7 +1521,10 @@ GL3_2 >> FOG_COORD [
 	^ super FOG_COORD
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_COORDINATE [
 
 	<generated>
@@ -1111,7 +1532,10 @@ GL3_2 >> FOG_COORDINATE [
 	^ super FOG_COORDINATE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_COORDINATE_ARRAY [
 
 	<generated>
@@ -1119,7 +1543,10 @@ GL3_2 >> FOG_COORDINATE_ARRAY [
 	^ super FOG_COORDINATE_ARRAY
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_COORDINATE_ARRAY_BUFFER_BINDING [
 
 	<generated>
@@ -1127,7 +1554,10 @@ GL3_2 >> FOG_COORDINATE_ARRAY_BUFFER_BINDING [
 	^ super FOG_COORDINATE_ARRAY_BUFFER_BINDING
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_COORDINATE_ARRAY_POINTER [
 
 	<generated>
@@ -1135,7 +1565,10 @@ GL3_2 >> FOG_COORDINATE_ARRAY_POINTER [
 	^ super FOG_COORDINATE_ARRAY_POINTER
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_COORDINATE_ARRAY_STRIDE [
 
 	<generated>
@@ -1143,7 +1576,10 @@ GL3_2 >> FOG_COORDINATE_ARRAY_STRIDE [
 	^ super FOG_COORDINATE_ARRAY_STRIDE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_COORDINATE_ARRAY_TYPE [
 
 	<generated>
@@ -1151,7 +1587,10 @@ GL3_2 >> FOG_COORDINATE_ARRAY_TYPE [
 	^ super FOG_COORDINATE_ARRAY_TYPE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_COORDINATE_SOURCE [
 
 	<generated>
@@ -1159,7 +1598,10 @@ GL3_2 >> FOG_COORDINATE_SOURCE [
 	^ super FOG_COORDINATE_SOURCE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_COORD_ARRAY [
 
 	<generated>
@@ -1167,7 +1609,10 @@ GL3_2 >> FOG_COORD_ARRAY [
 	^ super FOG_COORD_ARRAY
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_COORD_ARRAY_BUFFER_BINDING [
 
 	<generated>
@@ -1175,7 +1620,10 @@ GL3_2 >> FOG_COORD_ARRAY_BUFFER_BINDING [
 	^ super FOG_COORD_ARRAY_BUFFER_BINDING
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_COORD_ARRAY_POINTER [
 
 	<generated>
@@ -1183,7 +1631,10 @@ GL3_2 >> FOG_COORD_ARRAY_POINTER [
 	^ super FOG_COORD_ARRAY_POINTER
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_COORD_ARRAY_STRIDE [
 
 	<generated>
@@ -1191,7 +1642,10 @@ GL3_2 >> FOG_COORD_ARRAY_STRIDE [
 	^ super FOG_COORD_ARRAY_STRIDE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_COORD_ARRAY_TYPE [
 
 	<generated>
@@ -1199,7 +1653,10 @@ GL3_2 >> FOG_COORD_ARRAY_TYPE [
 	^ super FOG_COORD_ARRAY_TYPE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_COORD_SRC [
 
 	<generated>
@@ -1207,7 +1664,10 @@ GL3_2 >> FOG_COORD_SRC [
 	^ super FOG_COORD_SRC
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_DENSITY [
 
 	<generated>
@@ -1215,7 +1675,10 @@ GL3_2 >> FOG_DENSITY [
 	^ super FOG_DENSITY
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_END [
 
 	<generated>
@@ -1223,7 +1686,10 @@ GL3_2 >> FOG_END [
 	^ super FOG_END
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_HINT [
 
 	<generated>
@@ -1231,7 +1697,10 @@ GL3_2 >> FOG_HINT [
 	^ super FOG_HINT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_INDEX [
 
 	<generated>
@@ -1239,7 +1708,10 @@ GL3_2 >> FOG_INDEX [
 	^ super FOG_INDEX
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_MODE [
 
 	<generated>
@@ -1247,7 +1719,10 @@ GL3_2 >> FOG_MODE [
 	^ super FOG_MODE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FOG_START [
 
 	<generated>
@@ -1255,7 +1730,10 @@ GL3_2 >> FOG_START [
 	^ super FOG_START
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> FRAGMENT_DEPTH [
 
 	<generated>
@@ -1263,21 +1741,30 @@ GL3_2 >> FRAGMENT_DEPTH [
 	^ super FRAGMENT_DEPTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> FRAMEBUFFER_ATTACHMENT_LAYERED [
 
 	<generated>
 	^ GL_FRAMEBUFFER_ATTACHMENT_LAYERED
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS [
 
 	<generated>
 	^ GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> GENERATE_MIPMAP [
 
 	<generated>
@@ -1285,7 +1772,10 @@ GL3_2 >> GENERATE_MIPMAP [
 	^ super GENERATE_MIPMAP
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> GENERATE_MIPMAP_HINT [
 
 	<generated>
@@ -1293,35 +1783,50 @@ GL3_2 >> GENERATE_MIPMAP_HINT [
 	^ super GENERATE_MIPMAP_HINT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> GEOMETRY_INPUT_TYPE [
 
 	<generated>
 	^ GL_GEOMETRY_INPUT_TYPE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> GEOMETRY_OUTPUT_TYPE [
 
 	<generated>
 	^ GL_GEOMETRY_OUTPUT_TYPE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> GEOMETRY_SHADER [
 
 	<generated>
 	^ GL_GEOMETRY_SHADER
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> GEOMETRY_VERTICES_OUT [
 
 	<generated>
 	^ GL_GEOMETRY_VERTICES_OUT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> GL_2D [
 
 	<generated>
@@ -1329,7 +1834,10 @@ GL3_2 >> GL_2D [
 	^ super GL_2D
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> GL_2_BYTES [
 
 	<generated>
@@ -1337,7 +1845,10 @@ GL3_2 >> GL_2_BYTES [
 	^ super GL_2_BYTES
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> GL_3D [
 
 	<generated>
@@ -1345,7 +1856,10 @@ GL3_2 >> GL_3D [
 	^ super GL_3D
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> GL_3D_COLOR [
 
 	<generated>
@@ -1353,7 +1867,10 @@ GL3_2 >> GL_3D_COLOR [
 	^ super GL_3D_COLOR
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> GL_3D_COLOR_TEXTURE [
 
 	<generated>
@@ -1361,7 +1878,10 @@ GL3_2 >> GL_3D_COLOR_TEXTURE [
 	^ super GL_3D_COLOR_TEXTURE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> GL_3_BYTES [
 
 	<generated>
@@ -1369,7 +1889,10 @@ GL3_2 >> GL_3_BYTES [
 	^ super GL_3_BYTES
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> GL_4D_COLOR_TEXTURE [
 
 	<generated>
@@ -1377,7 +1900,10 @@ GL3_2 >> GL_4D_COLOR_TEXTURE [
 	^ super GL_4D_COLOR_TEXTURE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> GL_4_BYTES [
 
 	<generated>
@@ -1385,7 +1911,10 @@ GL3_2 >> GL_4_BYTES [
 	^ super GL_4_BYTES
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> GREEN_BIAS [
 
 	<generated>
@@ -1393,7 +1922,10 @@ GL3_2 >> GREEN_BIAS [
 	^ super GREEN_BIAS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> GREEN_BITS [
 
 	<generated>
@@ -1401,7 +1933,10 @@ GL3_2 >> GREEN_BITS [
 	^ super GREEN_BITS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> GREEN_SCALE [
 
 	<generated>
@@ -1409,7 +1944,10 @@ GL3_2 >> GREEN_SCALE [
 	^ super GREEN_SCALE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> HINT_BIT [
 
 	<generated>
@@ -1417,7 +1955,10 @@ GL3_2 >> HINT_BIT [
 	^ super HINT_BIT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> INDEX [
 
 	<generated>
@@ -1425,7 +1966,10 @@ GL3_2 >> INDEX [
 	^ super INDEX
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> INDEX_ARRAY [
 
 	<generated>
@@ -1433,7 +1977,10 @@ GL3_2 >> INDEX_ARRAY [
 	^ super INDEX_ARRAY
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> INDEX_ARRAY_BUFFER_BINDING [
 
 	<generated>
@@ -1441,7 +1988,10 @@ GL3_2 >> INDEX_ARRAY_BUFFER_BINDING [
 	^ super INDEX_ARRAY_BUFFER_BINDING
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> INDEX_ARRAY_POINTER [
 
 	<generated>
@@ -1449,7 +1999,10 @@ GL3_2 >> INDEX_ARRAY_POINTER [
 	^ super INDEX_ARRAY_POINTER
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> INDEX_ARRAY_STRIDE [
 
 	<generated>
@@ -1457,7 +2010,10 @@ GL3_2 >> INDEX_ARRAY_STRIDE [
 	^ super INDEX_ARRAY_STRIDE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> INDEX_ARRAY_TYPE [
 
 	<generated>
@@ -1465,7 +2021,10 @@ GL3_2 >> INDEX_ARRAY_TYPE [
 	^ super INDEX_ARRAY_TYPE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> INDEX_BITS [
 
 	<generated>
@@ -1473,7 +2032,10 @@ GL3_2 >> INDEX_BITS [
 	^ super INDEX_BITS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> INDEX_CLEAR_VALUE [
 
 	<generated>
@@ -1481,7 +2043,10 @@ GL3_2 >> INDEX_CLEAR_VALUE [
 	^ super INDEX_CLEAR_VALUE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> INDEX_LOGIC_OP [
 
 	<generated>
@@ -1489,7 +2054,10 @@ GL3_2 >> INDEX_LOGIC_OP [
 	^ super INDEX_LOGIC_OP
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> INDEX_MODE [
 
 	<generated>
@@ -1497,7 +2065,10 @@ GL3_2 >> INDEX_MODE [
 	^ super INDEX_MODE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> INDEX_OFFSET [
 
 	<generated>
@@ -1505,7 +2076,10 @@ GL3_2 >> INDEX_OFFSET [
 	^ super INDEX_OFFSET
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> INDEX_SHIFT [
 
 	<generated>
@@ -1513,7 +2087,10 @@ GL3_2 >> INDEX_SHIFT [
 	^ super INDEX_SHIFT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> INDEX_WRITEMASK [
 
 	<generated>
@@ -1521,7 +2098,10 @@ GL3_2 >> INDEX_WRITEMASK [
 	^ super INDEX_WRITEMASK
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> INTENSITY [
 
 	<generated>
@@ -1529,7 +2109,10 @@ GL3_2 >> INTENSITY [
 	^ super INTENSITY
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> INTENSITY12 [
 
 	<generated>
@@ -1537,7 +2120,10 @@ GL3_2 >> INTENSITY12 [
 	^ super INTENSITY12
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> INTENSITY16 [
 
 	<generated>
@@ -1545,7 +2131,10 @@ GL3_2 >> INTENSITY16 [
 	^ super INTENSITY16
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> INTENSITY4 [
 
 	<generated>
@@ -1553,7 +2142,10 @@ GL3_2 >> INTENSITY4 [
 	^ super INTENSITY4
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> INTENSITY8 [
 
 	<generated>
@@ -1561,7 +2153,10 @@ GL3_2 >> INTENSITY8 [
 	^ super INTENSITY8
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> INTERPOLATE [
 
 	<generated>
@@ -1569,28 +2164,40 @@ GL3_2 >> INTERPOLATE [
 	^ super INTERPOLATE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> INT_SAMPLER_2D_MULTISAMPLE [
 
 	<generated>
 	^ GL_INT_SAMPLER_2D_MULTISAMPLE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> INT_SAMPLER_2D_MULTISAMPLE_ARRAY [
 
 	<generated>
 	^ GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> LAST_VERTEX_CONVENTION [
 
 	<generated>
 	^ GL_LAST_VERTEX_CONVENTION
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LIGHT0 [
 
 	<generated>
@@ -1598,7 +2205,10 @@ GL3_2 >> LIGHT0 [
 	^ super LIGHT0
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LIGHT1 [
 
 	<generated>
@@ -1606,7 +2216,10 @@ GL3_2 >> LIGHT1 [
 	^ super LIGHT1
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LIGHT2 [
 
 	<generated>
@@ -1614,7 +2227,10 @@ GL3_2 >> LIGHT2 [
 	^ super LIGHT2
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LIGHT3 [
 
 	<generated>
@@ -1622,7 +2238,10 @@ GL3_2 >> LIGHT3 [
 	^ super LIGHT3
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LIGHT4 [
 
 	<generated>
@@ -1630,7 +2249,10 @@ GL3_2 >> LIGHT4 [
 	^ super LIGHT4
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LIGHT5 [
 
 	<generated>
@@ -1638,7 +2260,10 @@ GL3_2 >> LIGHT5 [
 	^ super LIGHT5
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LIGHT6 [
 
 	<generated>
@@ -1646,7 +2271,10 @@ GL3_2 >> LIGHT6 [
 	^ super LIGHT6
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LIGHT7 [
 
 	<generated>
@@ -1654,7 +2282,10 @@ GL3_2 >> LIGHT7 [
 	^ super LIGHT7
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LIGHTING [
 
 	<generated>
@@ -1662,7 +2293,10 @@ GL3_2 >> LIGHTING [
 	^ super LIGHTING
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LIGHTING_BIT [
 
 	<generated>
@@ -1670,7 +2304,10 @@ GL3_2 >> LIGHTING_BIT [
 	^ super LIGHTING_BIT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LIGHT_MODEL_AMBIENT [
 
 	<generated>
@@ -1678,7 +2315,10 @@ GL3_2 >> LIGHT_MODEL_AMBIENT [
 	^ super LIGHT_MODEL_AMBIENT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LIGHT_MODEL_COLOR_CONTROL [
 
 	<generated>
@@ -1686,7 +2326,10 @@ GL3_2 >> LIGHT_MODEL_COLOR_CONTROL [
 	^ super LIGHT_MODEL_COLOR_CONTROL
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LIGHT_MODEL_LOCAL_VIEWER [
 
 	<generated>
@@ -1694,7 +2337,10 @@ GL3_2 >> LIGHT_MODEL_LOCAL_VIEWER [
 	^ super LIGHT_MODEL_LOCAL_VIEWER
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LIGHT_MODEL_TWO_SIDE [
 
 	<generated>
@@ -1702,7 +2348,10 @@ GL3_2 >> LIGHT_MODEL_TWO_SIDE [
 	^ super LIGHT_MODEL_TWO_SIDE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LINEAR_ATTENUATION [
 
 	<generated>
@@ -1710,14 +2359,20 @@ GL3_2 >> LINEAR_ATTENUATION [
 	^ super LINEAR_ATTENUATION
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> LINES_ADJACENCY [
 
 	<generated>
 	^ GL_LINES_ADJACENCY
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LINE_BIT [
 
 	<generated>
@@ -1725,7 +2380,10 @@ GL3_2 >> LINE_BIT [
 	^ super LINE_BIT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LINE_RESET_TOKEN [
 
 	<generated>
@@ -1733,7 +2391,10 @@ GL3_2 >> LINE_RESET_TOKEN [
 	^ super LINE_RESET_TOKEN
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LINE_STIPPLE [
 
 	<generated>
@@ -1741,7 +2402,10 @@ GL3_2 >> LINE_STIPPLE [
 	^ super LINE_STIPPLE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LINE_STIPPLE_PATTERN [
 
 	<generated>
@@ -1749,7 +2413,10 @@ GL3_2 >> LINE_STIPPLE_PATTERN [
 	^ super LINE_STIPPLE_PATTERN
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LINE_STIPPLE_REPEAT [
 
 	<generated>
@@ -1757,14 +2424,20 @@ GL3_2 >> LINE_STIPPLE_REPEAT [
 	^ super LINE_STIPPLE_REPEAT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> LINE_STRIP_ADJACENCY [
 
 	<generated>
 	^ GL_LINE_STRIP_ADJACENCY
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LINE_TOKEN [
 
 	<generated>
@@ -1772,7 +2445,10 @@ GL3_2 >> LINE_TOKEN [
 	^ super LINE_TOKEN
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LIST_BASE [
 
 	<generated>
@@ -1780,7 +2456,10 @@ GL3_2 >> LIST_BASE [
 	^ super LIST_BASE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LIST_BIT [
 
 	<generated>
@@ -1788,7 +2467,10 @@ GL3_2 >> LIST_BIT [
 	^ super LIST_BIT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LIST_INDEX [
 
 	<generated>
@@ -1796,7 +2478,10 @@ GL3_2 >> LIST_INDEX [
 	^ super LIST_INDEX
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LIST_MODE [
 
 	<generated>
@@ -1804,7 +2489,10 @@ GL3_2 >> LIST_MODE [
 	^ super LIST_MODE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LOAD [
 
 	<generated>
@@ -1812,7 +2500,10 @@ GL3_2 >> LOAD [
 	^ super LOAD
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LOGIC_OP [
 
 	<generated>
@@ -1820,7 +2511,10 @@ GL3_2 >> LOGIC_OP [
 	^ super LOGIC_OP
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LUMINANCE [
 
 	<generated>
@@ -1828,7 +2522,10 @@ GL3_2 >> LUMINANCE [
 	^ super LUMINANCE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LUMINANCE12 [
 
 	<generated>
@@ -1836,7 +2533,10 @@ GL3_2 >> LUMINANCE12 [
 	^ super LUMINANCE12
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LUMINANCE12_ALPHA12 [
 
 	<generated>
@@ -1844,7 +2544,10 @@ GL3_2 >> LUMINANCE12_ALPHA12 [
 	^ super LUMINANCE12_ALPHA12
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LUMINANCE12_ALPHA4 [
 
 	<generated>
@@ -1852,7 +2555,10 @@ GL3_2 >> LUMINANCE12_ALPHA4 [
 	^ super LUMINANCE12_ALPHA4
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LUMINANCE16 [
 
 	<generated>
@@ -1860,7 +2566,10 @@ GL3_2 >> LUMINANCE16 [
 	^ super LUMINANCE16
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LUMINANCE16_ALPHA16 [
 
 	<generated>
@@ -1868,7 +2577,10 @@ GL3_2 >> LUMINANCE16_ALPHA16 [
 	^ super LUMINANCE16_ALPHA16
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LUMINANCE4 [
 
 	<generated>
@@ -1876,7 +2588,10 @@ GL3_2 >> LUMINANCE4 [
 	^ super LUMINANCE4
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LUMINANCE4_ALPHA4 [
 
 	<generated>
@@ -1884,7 +2599,10 @@ GL3_2 >> LUMINANCE4_ALPHA4 [
 	^ super LUMINANCE4_ALPHA4
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LUMINANCE6_ALPHA2 [
 
 	<generated>
@@ -1892,7 +2610,10 @@ GL3_2 >> LUMINANCE6_ALPHA2 [
 	^ super LUMINANCE6_ALPHA2
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LUMINANCE8 [
 
 	<generated>
@@ -1900,7 +2621,10 @@ GL3_2 >> LUMINANCE8 [
 	^ super LUMINANCE8
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LUMINANCE8_ALPHA8 [
 
 	<generated>
@@ -1908,7 +2632,10 @@ GL3_2 >> LUMINANCE8_ALPHA8 [
 	^ super LUMINANCE8_ALPHA8
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> LUMINANCE_ALPHA [
 
 	<generated>
@@ -1916,7 +2643,10 @@ GL3_2 >> LUMINANCE_ALPHA [
 	^ super LUMINANCE_ALPHA
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP1_COLOR_4 [
 
 	<generated>
@@ -1924,7 +2654,10 @@ GL3_2 >> MAP1_COLOR_4 [
 	^ super MAP1_COLOR_4
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP1_GRID_DOMAIN [
 
 	<generated>
@@ -1932,7 +2665,10 @@ GL3_2 >> MAP1_GRID_DOMAIN [
 	^ super MAP1_GRID_DOMAIN
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP1_GRID_SEGMENTS [
 
 	<generated>
@@ -1940,7 +2676,10 @@ GL3_2 >> MAP1_GRID_SEGMENTS [
 	^ super MAP1_GRID_SEGMENTS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP1_INDEX [
 
 	<generated>
@@ -1948,7 +2687,10 @@ GL3_2 >> MAP1_INDEX [
 	^ super MAP1_INDEX
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP1_NORMAL [
 
 	<generated>
@@ -1956,7 +2698,10 @@ GL3_2 >> MAP1_NORMAL [
 	^ super MAP1_NORMAL
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP1_TEXTURE_COORD_1 [
 
 	<generated>
@@ -1964,7 +2709,10 @@ GL3_2 >> MAP1_TEXTURE_COORD_1 [
 	^ super MAP1_TEXTURE_COORD_1
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP1_TEXTURE_COORD_2 [
 
 	<generated>
@@ -1972,7 +2720,10 @@ GL3_2 >> MAP1_TEXTURE_COORD_2 [
 	^ super MAP1_TEXTURE_COORD_2
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP1_TEXTURE_COORD_3 [
 
 	<generated>
@@ -1980,7 +2731,10 @@ GL3_2 >> MAP1_TEXTURE_COORD_3 [
 	^ super MAP1_TEXTURE_COORD_3
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP1_TEXTURE_COORD_4 [
 
 	<generated>
@@ -1988,7 +2742,10 @@ GL3_2 >> MAP1_TEXTURE_COORD_4 [
 	^ super MAP1_TEXTURE_COORD_4
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP1_VERTEX_3 [
 
 	<generated>
@@ -1996,7 +2753,10 @@ GL3_2 >> MAP1_VERTEX_3 [
 	^ super MAP1_VERTEX_3
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP1_VERTEX_4 [
 
 	<generated>
@@ -2004,7 +2764,10 @@ GL3_2 >> MAP1_VERTEX_4 [
 	^ super MAP1_VERTEX_4
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP2_COLOR_4 [
 
 	<generated>
@@ -2012,7 +2775,10 @@ GL3_2 >> MAP2_COLOR_4 [
 	^ super MAP2_COLOR_4
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP2_GRID_DOMAIN [
 
 	<generated>
@@ -2020,7 +2786,10 @@ GL3_2 >> MAP2_GRID_DOMAIN [
 	^ super MAP2_GRID_DOMAIN
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP2_GRID_SEGMENTS [
 
 	<generated>
@@ -2028,7 +2797,10 @@ GL3_2 >> MAP2_GRID_SEGMENTS [
 	^ super MAP2_GRID_SEGMENTS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP2_INDEX [
 
 	<generated>
@@ -2036,7 +2808,10 @@ GL3_2 >> MAP2_INDEX [
 	^ super MAP2_INDEX
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP2_NORMAL [
 
 	<generated>
@@ -2044,7 +2819,10 @@ GL3_2 >> MAP2_NORMAL [
 	^ super MAP2_NORMAL
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP2_TEXTURE_COORD_1 [
 
 	<generated>
@@ -2052,7 +2830,10 @@ GL3_2 >> MAP2_TEXTURE_COORD_1 [
 	^ super MAP2_TEXTURE_COORD_1
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP2_TEXTURE_COORD_2 [
 
 	<generated>
@@ -2060,7 +2841,10 @@ GL3_2 >> MAP2_TEXTURE_COORD_2 [
 	^ super MAP2_TEXTURE_COORD_2
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP2_TEXTURE_COORD_3 [
 
 	<generated>
@@ -2068,7 +2852,10 @@ GL3_2 >> MAP2_TEXTURE_COORD_3 [
 	^ super MAP2_TEXTURE_COORD_3
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP2_TEXTURE_COORD_4 [
 
 	<generated>
@@ -2076,7 +2863,10 @@ GL3_2 >> MAP2_TEXTURE_COORD_4 [
 	^ super MAP2_TEXTURE_COORD_4
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP2_VERTEX_3 [
 
 	<generated>
@@ -2084,7 +2874,10 @@ GL3_2 >> MAP2_VERTEX_3 [
 	^ super MAP2_VERTEX_3
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP2_VERTEX_4 [
 
 	<generated>
@@ -2092,7 +2885,10 @@ GL3_2 >> MAP2_VERTEX_4 [
 	^ super MAP2_VERTEX_4
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP_COLOR [
 
 	<generated>
@@ -2100,7 +2896,10 @@ GL3_2 >> MAP_COLOR [
 	^ super MAP_COLOR
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAP_STENCIL [
 
 	<generated>
@@ -2108,7 +2907,10 @@ GL3_2 >> MAP_STENCIL [
 	^ super MAP_STENCIL
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MATRIX_MODE [
 
 	<generated>
@@ -2116,7 +2918,10 @@ GL3_2 >> MATRIX_MODE [
 	^ super MATRIX_MODE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAX_ATTRIB_STACK_DEPTH [
 
 	<generated>
@@ -2124,7 +2929,10 @@ GL3_2 >> MAX_ATTRIB_STACK_DEPTH [
 	^ super MAX_ATTRIB_STACK_DEPTH
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAX_CLIENT_ATTRIB_STACK_DEPTH [
 
 	<generated>
@@ -2132,7 +2940,10 @@ GL3_2 >> MAX_CLIENT_ATTRIB_STACK_DEPTH [
 	^ super MAX_CLIENT_ATTRIB_STACK_DEPTH
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAX_CLIP_PLANES [
 
 	<generated>
@@ -2140,21 +2951,30 @@ GL3_2 >> MAX_CLIP_PLANES [
 	^ super MAX_CLIP_PLANES
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> MAX_COLOR_TEXTURE_SAMPLES [
 
 	<generated>
 	^ GL_MAX_COLOR_TEXTURE_SAMPLES
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> MAX_DEPTH_TEXTURE_SAMPLES [
 
 	<generated>
 	^ GL_MAX_DEPTH_TEXTURE_SAMPLES
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAX_EVAL_ORDER [
 
 	<generated>
@@ -2162,63 +2982,90 @@ GL3_2 >> MAX_EVAL_ORDER [
 	^ super MAX_EVAL_ORDER
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> MAX_FRAGMENT_INPUT_COMPONENTS [
 
 	<generated>
 	^ GL_MAX_FRAGMENT_INPUT_COMPONENTS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> MAX_GEOMETRY_INPUT_COMPONENTS [
 
 	<generated>
 	^ GL_MAX_GEOMETRY_INPUT_COMPONENTS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> MAX_GEOMETRY_OUTPUT_COMPONENTS [
 
 	<generated>
 	^ GL_MAX_GEOMETRY_OUTPUT_COMPONENTS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> MAX_GEOMETRY_OUTPUT_VERTICES [
 
 	<generated>
 	^ GL_MAX_GEOMETRY_OUTPUT_VERTICES
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> MAX_GEOMETRY_TEXTURE_IMAGE_UNITS [
 
 	<generated>
 	^ GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS [
 
 	<generated>
 	^ GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> MAX_GEOMETRY_UNIFORM_COMPONENTS [
 
 	<generated>
 	^ GL_MAX_GEOMETRY_UNIFORM_COMPONENTS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> MAX_INTEGER_SAMPLES [
 
 	<generated>
 	^ GL_MAX_INTEGER_SAMPLES
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAX_LIGHTS [
 
 	<generated>
@@ -2226,7 +3073,10 @@ GL3_2 >> MAX_LIGHTS [
 	^ super MAX_LIGHTS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAX_LIST_NESTING [
 
 	<generated>
@@ -2234,7 +3084,10 @@ GL3_2 >> MAX_LIST_NESTING [
 	^ super MAX_LIST_NESTING
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAX_MODELVIEW_STACK_DEPTH [
 
 	<generated>
@@ -2242,7 +3095,10 @@ GL3_2 >> MAX_MODELVIEW_STACK_DEPTH [
 	^ super MAX_MODELVIEW_STACK_DEPTH
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAX_NAME_STACK_DEPTH [
 
 	<generated>
@@ -2250,7 +3106,10 @@ GL3_2 >> MAX_NAME_STACK_DEPTH [
 	^ super MAX_NAME_STACK_DEPTH
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAX_PIXEL_MAP_TABLE [
 
 	<generated>
@@ -2258,7 +3117,10 @@ GL3_2 >> MAX_PIXEL_MAP_TABLE [
 	^ super MAX_PIXEL_MAP_TABLE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAX_PROJECTION_STACK_DEPTH [
 
 	<generated>
@@ -2266,21 +3128,30 @@ GL3_2 >> MAX_PROJECTION_STACK_DEPTH [
 	^ super MAX_PROJECTION_STACK_DEPTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> MAX_SAMPLE_MASK_WORDS [
 
 	<generated>
 	^ GL_MAX_SAMPLE_MASK_WORDS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> MAX_SERVER_WAIT_TIMEOUT [
 
 	<generated>
 	^ GL_MAX_SERVER_WAIT_TIMEOUT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAX_TEXTURE_COORDS [
 
 	<generated>
@@ -2288,7 +3159,10 @@ GL3_2 >> MAX_TEXTURE_COORDS [
 	^ super MAX_TEXTURE_COORDS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAX_TEXTURE_STACK_DEPTH [
 
 	<generated>
@@ -2296,7 +3170,10 @@ GL3_2 >> MAX_TEXTURE_STACK_DEPTH [
 	^ super MAX_TEXTURE_STACK_DEPTH
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MAX_TEXTURE_UNITS [
 
 	<generated>
@@ -2304,14 +3181,20 @@ GL3_2 >> MAX_TEXTURE_UNITS [
 	^ super MAX_TEXTURE_UNITS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> MAX_VERTEX_OUTPUT_COMPONENTS [
 
 	<generated>
 	^ GL_MAX_VERTEX_OUTPUT_COMPONENTS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MODELVIEW [
 
 	<generated>
@@ -2319,7 +3202,10 @@ GL3_2 >> MODELVIEW [
 	^ super MODELVIEW
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MODELVIEW_MATRIX [
 
 	<generated>
@@ -2327,7 +3213,10 @@ GL3_2 >> MODELVIEW_MATRIX [
 	^ super MODELVIEW_MATRIX
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MODELVIEW_STACK_DEPTH [
 
 	<generated>
@@ -2335,7 +3224,10 @@ GL3_2 >> MODELVIEW_STACK_DEPTH [
 	^ super MODELVIEW_STACK_DEPTH
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MODULATE [
 
 	<generated>
@@ -2343,7 +3235,10 @@ GL3_2 >> MODULATE [
 	^ super MODULATE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MULT [
 
 	<generated>
@@ -2351,7 +3246,10 @@ GL3_2 >> MULT [
 	^ super MULT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> MULTISAMPLE_BIT [
 
 	<generated>
@@ -2359,7 +3257,10 @@ GL3_2 >> MULTISAMPLE_BIT [
 	^ super MULTISAMPLE_BIT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> N3F_V3F [
 
 	<generated>
@@ -2367,7 +3268,10 @@ GL3_2 >> N3F_V3F [
 	^ super N3F_V3F
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> NAME_STACK_DEPTH [
 
 	<generated>
@@ -2375,7 +3279,10 @@ GL3_2 >> NAME_STACK_DEPTH [
 	^ super NAME_STACK_DEPTH
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> NORMALIZE [
 
 	<generated>
@@ -2383,7 +3290,10 @@ GL3_2 >> NORMALIZE [
 	^ super NORMALIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> NORMAL_ARRAY [
 
 	<generated>
@@ -2391,7 +3301,10 @@ GL3_2 >> NORMAL_ARRAY [
 	^ super NORMAL_ARRAY
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> NORMAL_ARRAY_BUFFER_BINDING [
 
 	<generated>
@@ -2399,7 +3312,10 @@ GL3_2 >> NORMAL_ARRAY_BUFFER_BINDING [
 	^ super NORMAL_ARRAY_BUFFER_BINDING
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> NORMAL_ARRAY_POINTER [
 
 	<generated>
@@ -2407,7 +3323,10 @@ GL3_2 >> NORMAL_ARRAY_POINTER [
 	^ super NORMAL_ARRAY_POINTER
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> NORMAL_ARRAY_STRIDE [
 
 	<generated>
@@ -2415,7 +3334,10 @@ GL3_2 >> NORMAL_ARRAY_STRIDE [
 	^ super NORMAL_ARRAY_STRIDE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> NORMAL_ARRAY_TYPE [
 
 	<generated>
@@ -2423,7 +3345,10 @@ GL3_2 >> NORMAL_ARRAY_TYPE [
 	^ super NORMAL_ARRAY_TYPE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> NORMAL_MAP [
 
 	<generated>
@@ -2431,7 +3356,10 @@ GL3_2 >> NORMAL_MAP [
 	^ super NORMAL_MAP
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> OBJECT_LINEAR [
 
 	<generated>
@@ -2439,7 +3367,10 @@ GL3_2 >> OBJECT_LINEAR [
 	^ super OBJECT_LINEAR
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> OBJECT_PLANE [
 
 	<generated>
@@ -2447,14 +3378,20 @@ GL3_2 >> OBJECT_PLANE [
 	^ super OBJECT_PLANE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> OBJECT_TYPE [
 
 	<generated>
 	^ GL_OBJECT_TYPE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> OPERAND0_ALPHA [
 
 	<generated>
@@ -2462,7 +3399,10 @@ GL3_2 >> OPERAND0_ALPHA [
 	^ super OPERAND0_ALPHA
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> OPERAND0_RGB [
 
 	<generated>
@@ -2470,7 +3410,10 @@ GL3_2 >> OPERAND0_RGB [
 	^ super OPERAND0_RGB
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> OPERAND1_ALPHA [
 
 	<generated>
@@ -2478,7 +3421,10 @@ GL3_2 >> OPERAND1_ALPHA [
 	^ super OPERAND1_ALPHA
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> OPERAND1_RGB [
 
 	<generated>
@@ -2486,7 +3432,10 @@ GL3_2 >> OPERAND1_RGB [
 	^ super OPERAND1_RGB
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> OPERAND2_ALPHA [
 
 	<generated>
@@ -2494,7 +3443,10 @@ GL3_2 >> OPERAND2_ALPHA [
 	^ super OPERAND2_ALPHA
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> OPERAND2_RGB [
 
 	<generated>
@@ -2502,7 +3454,10 @@ GL3_2 >> OPERAND2_RGB [
 	^ super OPERAND2_RGB
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ORDER [
 
 	<generated>
@@ -2510,7 +3465,10 @@ GL3_2 >> ORDER [
 	^ super ORDER
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PASS_THROUGH_TOKEN [
 
 	<generated>
@@ -2518,7 +3476,10 @@ GL3_2 >> PASS_THROUGH_TOKEN [
 	^ super PASS_THROUGH_TOKEN
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PERSPECTIVE_CORRECTION_HINT [
 
 	<generated>
@@ -2526,7 +3487,10 @@ GL3_2 >> PERSPECTIVE_CORRECTION_HINT [
 	^ super PERSPECTIVE_CORRECTION_HINT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_A_TO_A [
 
 	<generated>
@@ -2534,7 +3498,10 @@ GL3_2 >> PIXEL_MAP_A_TO_A [
 	^ super PIXEL_MAP_A_TO_A
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_A_TO_A_SIZE [
 
 	<generated>
@@ -2542,7 +3509,10 @@ GL3_2 >> PIXEL_MAP_A_TO_A_SIZE [
 	^ super PIXEL_MAP_A_TO_A_SIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_B_TO_B [
 
 	<generated>
@@ -2550,7 +3520,10 @@ GL3_2 >> PIXEL_MAP_B_TO_B [
 	^ super PIXEL_MAP_B_TO_B
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_B_TO_B_SIZE [
 
 	<generated>
@@ -2558,7 +3531,10 @@ GL3_2 >> PIXEL_MAP_B_TO_B_SIZE [
 	^ super PIXEL_MAP_B_TO_B_SIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_G_TO_G [
 
 	<generated>
@@ -2566,7 +3542,10 @@ GL3_2 >> PIXEL_MAP_G_TO_G [
 	^ super PIXEL_MAP_G_TO_G
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_G_TO_G_SIZE [
 
 	<generated>
@@ -2574,7 +3553,10 @@ GL3_2 >> PIXEL_MAP_G_TO_G_SIZE [
 	^ super PIXEL_MAP_G_TO_G_SIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_I_TO_A [
 
 	<generated>
@@ -2582,7 +3564,10 @@ GL3_2 >> PIXEL_MAP_I_TO_A [
 	^ super PIXEL_MAP_I_TO_A
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_I_TO_A_SIZE [
 
 	<generated>
@@ -2590,7 +3575,10 @@ GL3_2 >> PIXEL_MAP_I_TO_A_SIZE [
 	^ super PIXEL_MAP_I_TO_A_SIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_I_TO_B [
 
 	<generated>
@@ -2598,7 +3586,10 @@ GL3_2 >> PIXEL_MAP_I_TO_B [
 	^ super PIXEL_MAP_I_TO_B
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_I_TO_B_SIZE [
 
 	<generated>
@@ -2606,7 +3597,10 @@ GL3_2 >> PIXEL_MAP_I_TO_B_SIZE [
 	^ super PIXEL_MAP_I_TO_B_SIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_I_TO_G [
 
 	<generated>
@@ -2614,7 +3608,10 @@ GL3_2 >> PIXEL_MAP_I_TO_G [
 	^ super PIXEL_MAP_I_TO_G
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_I_TO_G_SIZE [
 
 	<generated>
@@ -2622,7 +3619,10 @@ GL3_2 >> PIXEL_MAP_I_TO_G_SIZE [
 	^ super PIXEL_MAP_I_TO_G_SIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_I_TO_I [
 
 	<generated>
@@ -2630,7 +3630,10 @@ GL3_2 >> PIXEL_MAP_I_TO_I [
 	^ super PIXEL_MAP_I_TO_I
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_I_TO_I_SIZE [
 
 	<generated>
@@ -2638,7 +3641,10 @@ GL3_2 >> PIXEL_MAP_I_TO_I_SIZE [
 	^ super PIXEL_MAP_I_TO_I_SIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_I_TO_R [
 
 	<generated>
@@ -2646,7 +3652,10 @@ GL3_2 >> PIXEL_MAP_I_TO_R [
 	^ super PIXEL_MAP_I_TO_R
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_I_TO_R_SIZE [
 
 	<generated>
@@ -2654,7 +3663,10 @@ GL3_2 >> PIXEL_MAP_I_TO_R_SIZE [
 	^ super PIXEL_MAP_I_TO_R_SIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_R_TO_R [
 
 	<generated>
@@ -2662,7 +3674,10 @@ GL3_2 >> PIXEL_MAP_R_TO_R [
 	^ super PIXEL_MAP_R_TO_R
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_R_TO_R_SIZE [
 
 	<generated>
@@ -2670,7 +3685,10 @@ GL3_2 >> PIXEL_MAP_R_TO_R_SIZE [
 	^ super PIXEL_MAP_R_TO_R_SIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_S_TO_S [
 
 	<generated>
@@ -2678,7 +3696,10 @@ GL3_2 >> PIXEL_MAP_S_TO_S [
 	^ super PIXEL_MAP_S_TO_S
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MAP_S_TO_S_SIZE [
 
 	<generated>
@@ -2686,7 +3707,10 @@ GL3_2 >> PIXEL_MAP_S_TO_S_SIZE [
 	^ super PIXEL_MAP_S_TO_S_SIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PIXEL_MODE_BIT [
 
 	<generated>
@@ -2694,7 +3718,10 @@ GL3_2 >> PIXEL_MODE_BIT [
 	^ super PIXEL_MODE_BIT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> POINT_BIT [
 
 	<generated>
@@ -2702,7 +3729,10 @@ GL3_2 >> POINT_BIT [
 	^ super POINT_BIT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> POINT_DISTANCE_ATTENUATION [
 
 	<generated>
@@ -2710,7 +3740,10 @@ GL3_2 >> POINT_DISTANCE_ATTENUATION [
 	^ super POINT_DISTANCE_ATTENUATION
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> POINT_SIZE_MAX [
 
 	<generated>
@@ -2718,7 +3751,10 @@ GL3_2 >> POINT_SIZE_MAX [
 	^ super POINT_SIZE_MAX
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> POINT_SIZE_MIN [
 
 	<generated>
@@ -2726,7 +3762,10 @@ GL3_2 >> POINT_SIZE_MIN [
 	^ super POINT_SIZE_MIN
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> POINT_SMOOTH [
 
 	<generated>
@@ -2734,7 +3773,10 @@ GL3_2 >> POINT_SMOOTH [
 	^ super POINT_SMOOTH
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> POINT_SMOOTH_HINT [
 
 	<generated>
@@ -2742,7 +3784,10 @@ GL3_2 >> POINT_SMOOTH_HINT [
 	^ super POINT_SMOOTH_HINT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> POINT_SPRITE [
 
 	<generated>
@@ -2750,7 +3795,10 @@ GL3_2 >> POINT_SPRITE [
 	^ super POINT_SPRITE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> POINT_TOKEN [
 
 	<generated>
@@ -2758,7 +3806,10 @@ GL3_2 >> POINT_TOKEN [
 	^ super POINT_TOKEN
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> POLYGON [
 
 	<generated>
@@ -2766,7 +3817,10 @@ GL3_2 >> POLYGON [
 	^ super POLYGON
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> POLYGON_BIT [
 
 	<generated>
@@ -2774,7 +3828,10 @@ GL3_2 >> POLYGON_BIT [
 	^ super POLYGON_BIT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> POLYGON_STIPPLE [
 
 	<generated>
@@ -2782,7 +3839,10 @@ GL3_2 >> POLYGON_STIPPLE [
 	^ super POLYGON_STIPPLE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> POLYGON_STIPPLE_BIT [
 
 	<generated>
@@ -2790,7 +3850,10 @@ GL3_2 >> POLYGON_STIPPLE_BIT [
 	^ super POLYGON_STIPPLE_BIT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> POLYGON_TOKEN [
 
 	<generated>
@@ -2798,7 +3861,10 @@ GL3_2 >> POLYGON_TOKEN [
 	^ super POLYGON_TOKEN
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> POSITION [
 
 	<generated>
@@ -2806,7 +3872,10 @@ GL3_2 >> POSITION [
 	^ super POSITION
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PREVIOUS [
 
 	<generated>
@@ -2814,7 +3883,10 @@ GL3_2 >> PREVIOUS [
 	^ super PREVIOUS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PRIMARY_COLOR [
 
 	<generated>
@@ -2822,14 +3894,20 @@ GL3_2 >> PRIMARY_COLOR [
 	^ super PRIMARY_COLOR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> PROGRAM_POINT_SIZE [
 
 	<generated>
 	^ GL_PROGRAM_POINT_SIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PROJECTION [
 
 	<generated>
@@ -2837,7 +3915,10 @@ GL3_2 >> PROJECTION [
 	^ super PROJECTION
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PROJECTION_MATRIX [
 
 	<generated>
@@ -2845,7 +3926,10 @@ GL3_2 >> PROJECTION_MATRIX [
 	^ super PROJECTION_MATRIX
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> PROJECTION_STACK_DEPTH [
 
 	<generated>
@@ -2853,28 +3937,40 @@ GL3_2 >> PROJECTION_STACK_DEPTH [
 	^ super PROJECTION_STACK_DEPTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> PROVOKING_VERTEX [
 
 	<generated>
 	^ GL_PROVOKING_VERTEX
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> PROXY_TEXTURE_2D_MULTISAMPLE [
 
 	<generated>
 	^ GL_PROXY_TEXTURE_2D_MULTISAMPLE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY [
 
 	<generated>
 	^ GL_PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> Q [
 
 	<generated>
@@ -2882,7 +3978,10 @@ GL3_2 >> Q [
 	^ super Q
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> QUADRATIC_ATTENUATION [
 
 	<generated>
@@ -2890,7 +3989,10 @@ GL3_2 >> QUADRATIC_ATTENUATION [
 	^ super QUADRATIC_ATTENUATION
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> QUADS [
 
 	<generated>
@@ -2898,14 +4000,20 @@ GL3_2 >> QUADS [
 	^ super QUADS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION [
 
 	<generated>
 	^ GL_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> QUAD_STRIP [
 
 	<generated>
@@ -2913,7 +4021,10 @@ GL3_2 >> QUAD_STRIP [
 	^ super QUAD_STRIP
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> R [
 
 	<generated>
@@ -2921,7 +4032,10 @@ GL3_2 >> R [
 	^ super R
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> RED_BIAS [
 
 	<generated>
@@ -2929,7 +4043,10 @@ GL3_2 >> RED_BIAS [
 	^ super RED_BIAS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> RED_BITS [
 
 	<generated>
@@ -2937,7 +4054,10 @@ GL3_2 >> RED_BITS [
 	^ super RED_BITS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> RED_SCALE [
 
 	<generated>
@@ -2945,7 +4065,10 @@ GL3_2 >> RED_SCALE [
 	^ super RED_SCALE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> REFLECTION_MAP [
 
 	<generated>
@@ -2953,7 +4076,10 @@ GL3_2 >> REFLECTION_MAP [
 	^ super REFLECTION_MAP
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> RENDER [
 
 	<generated>
@@ -2961,7 +4087,10 @@ GL3_2 >> RENDER [
 	^ super RENDER
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> RENDER_MODE [
 
 	<generated>
@@ -2969,7 +4098,10 @@ GL3_2 >> RENDER_MODE [
 	^ super RENDER_MODE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> RESCALE_NORMAL [
 
 	<generated>
@@ -2977,7 +4109,10 @@ GL3_2 >> RESCALE_NORMAL [
 	^ super RESCALE_NORMAL
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> RETURN [
 
 	<generated>
@@ -2985,7 +4120,10 @@ GL3_2 >> RETURN [
 	^ super RETURN
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> RGBA_MODE [
 
 	<generated>
@@ -2993,7 +4131,10 @@ GL3_2 >> RGBA_MODE [
 	^ super RGBA_MODE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> RGB_SCALE [
 
 	<generated>
@@ -3001,7 +4142,10 @@ GL3_2 >> RGB_SCALE [
 	^ super RGB_SCALE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> S [
 
 	<generated>
@@ -3009,42 +4153,60 @@ GL3_2 >> S [
 	^ super S
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> SAMPLER_2D_MULTISAMPLE [
 
 	<generated>
 	^ GL_SAMPLER_2D_MULTISAMPLE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> SAMPLER_2D_MULTISAMPLE_ARRAY [
 
 	<generated>
 	^ GL_SAMPLER_2D_MULTISAMPLE_ARRAY
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> SAMPLE_MASK [
 
 	<generated>
 	^ GL_SAMPLE_MASK
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> SAMPLE_MASK_VALUE [
 
 	<generated>
 	^ GL_SAMPLE_MASK_VALUE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> SAMPLE_POSITION [
 
 	<generated>
 	^ GL_SAMPLE_POSITION
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SCISSOR_BIT [
 
 	<generated>
@@ -3052,7 +4214,10 @@ GL3_2 >> SCISSOR_BIT [
 	^ super SCISSOR_BIT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SECONDARY_COLOR_ARRAY [
 
 	<generated>
@@ -3060,7 +4225,10 @@ GL3_2 >> SECONDARY_COLOR_ARRAY [
 	^ super SECONDARY_COLOR_ARRAY
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SECONDARY_COLOR_ARRAY_BUFFER_BINDING [
 
 	<generated>
@@ -3068,7 +4236,10 @@ GL3_2 >> SECONDARY_COLOR_ARRAY_BUFFER_BINDING [
 	^ super SECONDARY_COLOR_ARRAY_BUFFER_BINDING
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SECONDARY_COLOR_ARRAY_POINTER [
 
 	<generated>
@@ -3076,7 +4247,10 @@ GL3_2 >> SECONDARY_COLOR_ARRAY_POINTER [
 	^ super SECONDARY_COLOR_ARRAY_POINTER
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SECONDARY_COLOR_ARRAY_SIZE [
 
 	<generated>
@@ -3084,7 +4258,10 @@ GL3_2 >> SECONDARY_COLOR_ARRAY_SIZE [
 	^ super SECONDARY_COLOR_ARRAY_SIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SECONDARY_COLOR_ARRAY_STRIDE [
 
 	<generated>
@@ -3092,7 +4269,10 @@ GL3_2 >> SECONDARY_COLOR_ARRAY_STRIDE [
 	^ super SECONDARY_COLOR_ARRAY_STRIDE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SECONDARY_COLOR_ARRAY_TYPE [
 
 	<generated>
@@ -3100,7 +4280,10 @@ GL3_2 >> SECONDARY_COLOR_ARRAY_TYPE [
 	^ super SECONDARY_COLOR_ARRAY_TYPE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SELECT [
 
 	<generated>
@@ -3108,7 +4291,10 @@ GL3_2 >> SELECT [
 	^ super SELECT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SELECTION_BUFFER_POINTER [
 
 	<generated>
@@ -3116,7 +4302,10 @@ GL3_2 >> SELECTION_BUFFER_POINTER [
 	^ super SELECTION_BUFFER_POINTER
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SELECTION_BUFFER_SIZE [
 
 	<generated>
@@ -3124,7 +4313,10 @@ GL3_2 >> SELECTION_BUFFER_SIZE [
 	^ super SELECTION_BUFFER_SIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SEPARATE_SPECULAR_COLOR [
 
 	<generated>
@@ -3132,7 +4324,10 @@ GL3_2 >> SEPARATE_SPECULAR_COLOR [
 	^ super SEPARATE_SPECULAR_COLOR
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SHADE_MODEL [
 
 	<generated>
@@ -3140,7 +4335,10 @@ GL3_2 >> SHADE_MODEL [
 	^ super SHADE_MODEL
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SHININESS [
 
 	<generated>
@@ -3148,14 +4346,20 @@ GL3_2 >> SHININESS [
 	^ super SHININESS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> SIGNALED [
 
 	<generated>
 	^ GL_SIGNALED
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SINGLE_COLOR [
 
 	<generated>
@@ -3163,7 +4367,10 @@ GL3_2 >> SINGLE_COLOR [
 	^ super SINGLE_COLOR
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SLUMINANCE [
 
 	<generated>
@@ -3171,7 +4378,10 @@ GL3_2 >> SLUMINANCE [
 	^ super SLUMINANCE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SLUMINANCE8 [
 
 	<generated>
@@ -3179,7 +4389,10 @@ GL3_2 >> SLUMINANCE8 [
 	^ super SLUMINANCE8
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SLUMINANCE8_ALPHA8 [
 
 	<generated>
@@ -3187,7 +4400,10 @@ GL3_2 >> SLUMINANCE8_ALPHA8 [
 	^ super SLUMINANCE8_ALPHA8
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SLUMINANCE_ALPHA [
 
 	<generated>
@@ -3195,7 +4411,10 @@ GL3_2 >> SLUMINANCE_ALPHA [
 	^ super SLUMINANCE_ALPHA
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SMOOTH [
 
 	<generated>
@@ -3203,7 +4422,10 @@ GL3_2 >> SMOOTH [
 	^ super SMOOTH
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SOURCE0_ALPHA [
 
 	<generated>
@@ -3211,7 +4433,10 @@ GL3_2 >> SOURCE0_ALPHA [
 	^ super SOURCE0_ALPHA
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SOURCE0_RGB [
 
 	<generated>
@@ -3219,7 +4444,10 @@ GL3_2 >> SOURCE0_RGB [
 	^ super SOURCE0_RGB
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SOURCE1_ALPHA [
 
 	<generated>
@@ -3227,7 +4455,10 @@ GL3_2 >> SOURCE1_ALPHA [
 	^ super SOURCE1_ALPHA
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SOURCE1_RGB [
 
 	<generated>
@@ -3235,7 +4466,10 @@ GL3_2 >> SOURCE1_RGB [
 	^ super SOURCE1_RGB
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SOURCE2_ALPHA [
 
 	<generated>
@@ -3243,7 +4477,10 @@ GL3_2 >> SOURCE2_ALPHA [
 	^ super SOURCE2_ALPHA
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SOURCE2_RGB [
 
 	<generated>
@@ -3251,7 +4488,10 @@ GL3_2 >> SOURCE2_RGB [
 	^ super SOURCE2_RGB
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SPECULAR [
 
 	<generated>
@@ -3259,7 +4499,10 @@ GL3_2 >> SPECULAR [
 	^ super SPECULAR
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SPHERE_MAP [
 
 	<generated>
@@ -3267,7 +4510,10 @@ GL3_2 >> SPHERE_MAP [
 	^ super SPHERE_MAP
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SPOT_CUTOFF [
 
 	<generated>
@@ -3275,7 +4521,10 @@ GL3_2 >> SPOT_CUTOFF [
 	^ super SPOT_CUTOFF
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SPOT_DIRECTION [
 
 	<generated>
@@ -3283,7 +4532,10 @@ GL3_2 >> SPOT_DIRECTION [
 	^ super SPOT_DIRECTION
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SPOT_EXPONENT [
 
 	<generated>
@@ -3291,7 +4543,10 @@ GL3_2 >> SPOT_EXPONENT [
 	^ super SPOT_EXPONENT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SRC0_ALPHA [
 
 	<generated>
@@ -3299,7 +4554,10 @@ GL3_2 >> SRC0_ALPHA [
 	^ super SRC0_ALPHA
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SRC0_RGB [
 
 	<generated>
@@ -3307,7 +4565,10 @@ GL3_2 >> SRC0_RGB [
 	^ super SRC0_RGB
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SRC1_RGB [
 
 	<generated>
@@ -3315,7 +4576,10 @@ GL3_2 >> SRC1_RGB [
 	^ super SRC1_RGB
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SRC2_ALPHA [
 
 	<generated>
@@ -3323,7 +4587,10 @@ GL3_2 >> SRC2_ALPHA [
 	^ super SRC2_ALPHA
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SRC2_RGB [
 
 	<generated>
@@ -3331,7 +4598,10 @@ GL3_2 >> SRC2_RGB [
 	^ super SRC2_RGB
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> STACK_OVERFLOW [
 
 	<generated>
@@ -3339,7 +4609,10 @@ GL3_2 >> STACK_OVERFLOW [
 	^ super STACK_OVERFLOW
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> STACK_UNDERFLOW [
 
 	<generated>
@@ -3347,7 +4620,10 @@ GL3_2 >> STACK_UNDERFLOW [
 	^ super STACK_UNDERFLOW
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> STENCIL_BITS [
 
 	<generated>
@@ -3355,7 +4631,10 @@ GL3_2 >> STENCIL_BITS [
 	^ super STENCIL_BITS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> SUBTRACT [
 
 	<generated>
@@ -3363,49 +4642,70 @@ GL3_2 >> SUBTRACT [
 	^ super SUBTRACT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> SYNC_CONDITION [
 
 	<generated>
 	^ GL_SYNC_CONDITION
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> SYNC_FENCE [
 
 	<generated>
 	^ GL_SYNC_FENCE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> SYNC_FLAGS [
 
 	<generated>
 	^ GL_SYNC_FLAGS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> SYNC_FLUSH_COMMANDS_BIT [
 
 	<generated>
 	^ GL_SYNC_FLUSH_COMMANDS_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> SYNC_GPU_COMMANDS_COMPLETE [
 
 	<generated>
 	^ GL_SYNC_GPU_COMMANDS_COMPLETE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> SYNC_STATUS [
 
 	<generated>
 	^ GL_SYNC_STATUS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> T [
 
 	<generated>
@@ -3413,7 +4713,10 @@ GL3_2 >> T [
 	^ super T
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> T2F_C3F_V3F [
 
 	<generated>
@@ -3421,7 +4724,10 @@ GL3_2 >> T2F_C3F_V3F [
 	^ super T2F_C3F_V3F
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> T2F_C4F_N3F_V3F [
 
 	<generated>
@@ -3429,7 +4735,10 @@ GL3_2 >> T2F_C4F_N3F_V3F [
 	^ super T2F_C4F_N3F_V3F
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> T2F_C4UB_V3F [
 
 	<generated>
@@ -3437,7 +4746,10 @@ GL3_2 >> T2F_C4UB_V3F [
 	^ super T2F_C4UB_V3F
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> T2F_N3F_V3F [
 
 	<generated>
@@ -3445,7 +4757,10 @@ GL3_2 >> T2F_N3F_V3F [
 	^ super T2F_N3F_V3F
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> T2F_V3F [
 
 	<generated>
@@ -3453,7 +4768,10 @@ GL3_2 >> T2F_V3F [
 	^ super T2F_V3F
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> T4F_C4F_N3F_V4F [
 
 	<generated>
@@ -3461,7 +4779,10 @@ GL3_2 >> T4F_C4F_N3F_V4F [
 	^ super T4F_C4F_N3F_V4F
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> T4F_V4F [
 
 	<generated>
@@ -3469,35 +4790,50 @@ GL3_2 >> T4F_V4F [
 	^ super T4F_V4F
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> TEXTURE_2D_MULTISAMPLE [
 
 	<generated>
 	^ GL_TEXTURE_2D_MULTISAMPLE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> TEXTURE_2D_MULTISAMPLE_ARRAY [
 
 	<generated>
 	^ GL_TEXTURE_2D_MULTISAMPLE_ARRAY
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> TEXTURE_BINDING_2D_MULTISAMPLE [
 
 	<generated>
 	^ GL_TEXTURE_BINDING_2D_MULTISAMPLE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY [
 
 	<generated>
 	^ GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_BIT [
 
 	<generated>
@@ -3505,7 +4841,10 @@ GL3_2 >> TEXTURE_BIT [
 	^ super TEXTURE_BIT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_BORDER [
 
 	<generated>
@@ -3513,7 +4852,10 @@ GL3_2 >> TEXTURE_BORDER [
 	^ super TEXTURE_BORDER
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_COMPONENTS [
 
 	<generated>
@@ -3521,7 +4863,10 @@ GL3_2 >> TEXTURE_COMPONENTS [
 	^ super TEXTURE_COMPONENTS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_COORD_ARRAY [
 
 	<generated>
@@ -3529,7 +4874,10 @@ GL3_2 >> TEXTURE_COORD_ARRAY [
 	^ super TEXTURE_COORD_ARRAY
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_COORD_ARRAY_BUFFER_BINDING [
 
 	<generated>
@@ -3537,7 +4885,10 @@ GL3_2 >> TEXTURE_COORD_ARRAY_BUFFER_BINDING [
 	^ super TEXTURE_COORD_ARRAY_BUFFER_BINDING
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_COORD_ARRAY_POINTER [
 
 	<generated>
@@ -3545,7 +4896,10 @@ GL3_2 >> TEXTURE_COORD_ARRAY_POINTER [
 	^ super TEXTURE_COORD_ARRAY_POINTER
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_COORD_ARRAY_SIZE [
 
 	<generated>
@@ -3553,7 +4907,10 @@ GL3_2 >> TEXTURE_COORD_ARRAY_SIZE [
 	^ super TEXTURE_COORD_ARRAY_SIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_COORD_ARRAY_STRIDE [
 
 	<generated>
@@ -3561,7 +4918,10 @@ GL3_2 >> TEXTURE_COORD_ARRAY_STRIDE [
 	^ super TEXTURE_COORD_ARRAY_STRIDE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_COORD_ARRAY_TYPE [
 
 	<generated>
@@ -3569,14 +4929,20 @@ GL3_2 >> TEXTURE_COORD_ARRAY_TYPE [
 	^ super TEXTURE_COORD_ARRAY_TYPE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> TEXTURE_CUBE_MAP_SEAMLESS [
 
 	<generated>
 	^ GL_TEXTURE_CUBE_MAP_SEAMLESS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_ENV [
 
 	<generated>
@@ -3584,7 +4950,10 @@ GL3_2 >> TEXTURE_ENV [
 	^ super TEXTURE_ENV
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_ENV_COLOR [
 
 	<generated>
@@ -3592,7 +4961,10 @@ GL3_2 >> TEXTURE_ENV_COLOR [
 	^ super TEXTURE_ENV_COLOR
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_ENV_MODE [
 
 	<generated>
@@ -3600,7 +4972,10 @@ GL3_2 >> TEXTURE_ENV_MODE [
 	^ super TEXTURE_ENV_MODE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_FILTER_CONTROL [
 
 	<generated>
@@ -3608,14 +4983,20 @@ GL3_2 >> TEXTURE_FILTER_CONTROL [
 	^ super TEXTURE_FILTER_CONTROL
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> TEXTURE_FIXED_SAMPLE_LOCATIONS [
 
 	<generated>
 	^ GL_TEXTURE_FIXED_SAMPLE_LOCATIONS
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_GEN_MODE [
 
 	<generated>
@@ -3623,7 +5004,10 @@ GL3_2 >> TEXTURE_GEN_MODE [
 	^ super TEXTURE_GEN_MODE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_GEN_Q [
 
 	<generated>
@@ -3631,7 +5015,10 @@ GL3_2 >> TEXTURE_GEN_Q [
 	^ super TEXTURE_GEN_Q
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_GEN_R [
 
 	<generated>
@@ -3639,7 +5026,10 @@ GL3_2 >> TEXTURE_GEN_R [
 	^ super TEXTURE_GEN_R
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_GEN_S [
 
 	<generated>
@@ -3647,7 +5037,10 @@ GL3_2 >> TEXTURE_GEN_S [
 	^ super TEXTURE_GEN_S
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_GEN_T [
 
 	<generated>
@@ -3655,7 +5048,10 @@ GL3_2 >> TEXTURE_GEN_T [
 	^ super TEXTURE_GEN_T
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_INTENSITY_SIZE [
 
 	<generated>
@@ -3663,7 +5059,10 @@ GL3_2 >> TEXTURE_INTENSITY_SIZE [
 	^ super TEXTURE_INTENSITY_SIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_INTENSITY_TYPE [
 
 	<generated>
@@ -3671,7 +5070,10 @@ GL3_2 >> TEXTURE_INTENSITY_TYPE [
 	^ super TEXTURE_INTENSITY_TYPE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_LUMINANCE_SIZE [
 
 	<generated>
@@ -3679,7 +5081,10 @@ GL3_2 >> TEXTURE_LUMINANCE_SIZE [
 	^ super TEXTURE_LUMINANCE_SIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_LUMINANCE_TYPE [
 
 	<generated>
@@ -3687,7 +5092,10 @@ GL3_2 >> TEXTURE_LUMINANCE_TYPE [
 	^ super TEXTURE_LUMINANCE_TYPE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_MATRIX [
 
 	<generated>
@@ -3695,7 +5103,10 @@ GL3_2 >> TEXTURE_MATRIX [
 	^ super TEXTURE_MATRIX
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_PRIORITY [
 
 	<generated>
@@ -3703,7 +5114,10 @@ GL3_2 >> TEXTURE_PRIORITY [
 	^ super TEXTURE_PRIORITY
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_RESIDENT [
 
 	<generated>
@@ -3711,14 +5125,20 @@ GL3_2 >> TEXTURE_RESIDENT [
 	^ super TEXTURE_RESIDENT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> TEXTURE_SAMPLES [
 
 	<generated>
 	^ GL_TEXTURE_SAMPLES
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TEXTURE_STACK_DEPTH [
 
 	<generated>
@@ -3726,21 +5146,30 @@ GL3_2 >> TEXTURE_STACK_DEPTH [
 	^ super TEXTURE_STACK_DEPTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> TIMEOUT_EXPIRED [
 
 	<generated>
 	^ GL_TIMEOUT_EXPIRED
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> TIMEOUT_IGNORED [
 
 	<generated>
 	^ GL_TIMEOUT_IGNORED
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TRANSFORM_BIT [
 
 	<generated>
@@ -3748,7 +5177,10 @@ GL3_2 >> TRANSFORM_BIT [
 	^ super TRANSFORM_BIT
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TRANSPOSE_COLOR_MATRIX [
 
 	<generated>
@@ -3756,7 +5188,10 @@ GL3_2 >> TRANSPOSE_COLOR_MATRIX [
 	^ super TRANSPOSE_COLOR_MATRIX
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TRANSPOSE_MODELVIEW_MATRIX [
 
 	<generated>
@@ -3764,7 +5199,10 @@ GL3_2 >> TRANSPOSE_MODELVIEW_MATRIX [
 	^ super TRANSPOSE_MODELVIEW_MATRIX
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TRANSPOSE_PROJECTION_MATRIX [
 
 	<generated>
@@ -3772,7 +5210,10 @@ GL3_2 >> TRANSPOSE_PROJECTION_MATRIX [
 	^ super TRANSPOSE_PROJECTION_MATRIX
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> TRANSPOSE_TEXTURE_MATRIX [
 
 	<generated>
@@ -3780,42 +5221,60 @@ GL3_2 >> TRANSPOSE_TEXTURE_MATRIX [
 	^ super TRANSPOSE_TEXTURE_MATRIX
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> TRIANGLES_ADJACENCY [
 
 	<generated>
 	^ GL_TRIANGLES_ADJACENCY
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> TRIANGLE_STRIP_ADJACENCY [
 
 	<generated>
 	^ GL_TRIANGLE_STRIP_ADJACENCY
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> UNSIGNALED [
 
 	<generated>
 	^ GL_UNSIGNALED
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE [
 
 	<generated>
 	^ GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY [
 
 	<generated>
 	^ GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> V2F [
 
 	<generated>
@@ -3823,7 +5282,10 @@ GL3_2 >> V2F [
 	^ super V2F
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> V3F [
 
 	<generated>
@@ -3831,7 +5293,10 @@ GL3_2 >> V3F [
 	^ super V3F
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> VERTEX_ARRAY [
 
 	<generated>
@@ -3839,7 +5304,10 @@ GL3_2 >> VERTEX_ARRAY [
 	^ super VERTEX_ARRAY
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> VERTEX_ARRAY_BUFFER_BINDING [
 
 	<generated>
@@ -3847,7 +5315,10 @@ GL3_2 >> VERTEX_ARRAY_BUFFER_BINDING [
 	^ super VERTEX_ARRAY_BUFFER_BINDING
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> VERTEX_ARRAY_POINTER [
 
 	<generated>
@@ -3855,7 +5326,10 @@ GL3_2 >> VERTEX_ARRAY_POINTER [
 	^ super VERTEX_ARRAY_POINTER
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> VERTEX_ARRAY_SIZE [
 
 	<generated>
@@ -3863,7 +5337,10 @@ GL3_2 >> VERTEX_ARRAY_SIZE [
 	^ super VERTEX_ARRAY_SIZE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> VERTEX_ARRAY_STRIDE [
 
 	<generated>
@@ -3871,7 +5348,10 @@ GL3_2 >> VERTEX_ARRAY_STRIDE [
 	^ super VERTEX_ARRAY_STRIDE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> VERTEX_ARRAY_TYPE [
 
 	<generated>
@@ -3879,7 +5359,10 @@ GL3_2 >> VERTEX_ARRAY_TYPE [
 	^ super VERTEX_ARRAY_TYPE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> VERTEX_PROGRAM_TWO_SIDE [
 
 	<generated>
@@ -3887,7 +5370,10 @@ GL3_2 >> VERTEX_PROGRAM_TWO_SIDE [
 	^ super VERTEX_PROGRAM_TWO_SIDE
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> VIEWPORT_BIT [
 
 	<generated>
@@ -3895,14 +5381,20 @@ GL3_2 >> VIEWPORT_BIT [
 	^ super VIEWPORT_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> WAIT_FAILED [
 
 	<generated>
 	^ GL_WAIT_FAILED
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> WEIGHT_ARRAY_BUFFER_BINDING [
 
 	<generated>
@@ -3910,7 +5402,10 @@ GL3_2 >> WEIGHT_ARRAY_BUFFER_BINDING [
 	^ super WEIGHT_ARRAY_BUFFER_BINDING
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ZOOM_X [
 
 	<generated>
@@ -3918,7 +5413,10 @@ GL3_2 >> ZOOM_X [
 	^ super ZOOM_X
 ]
 
-{ #category : #'constants - removed' }
+{
+	#category : #'constants - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ZOOM_Y [
 
 	<generated>
@@ -3926,7 +5424,10 @@ GL3_2 >> ZOOM_Y [
 	^ super ZOOM_Y
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> accum: op with: value [
 
 	<generated>
@@ -3934,7 +5435,10 @@ GL3_2 >> accum: op with: value [
 	^ super accum: op with: value
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> alphaFunc: func with: ref [
 
 	<generated>
@@ -3942,7 +5446,10 @@ GL3_2 >> alphaFunc: func with: ref [
 	^ super alphaFunc: func with: ref
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> areTexturesResident: n with: textures with: residences [
 
 	<generated>
@@ -3950,7 +5457,10 @@ GL3_2 >> areTexturesResident: n with: textures with: residences [
 	^ super areTexturesResident: n with: textures with: residences
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> arrayElement: i [
 
 	<generated>
@@ -3958,7 +5468,10 @@ GL3_2 >> arrayElement: i [
 	^ super arrayElement: i
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> begin: mode [
 
 	<generated>
@@ -3966,7 +5479,10 @@ GL3_2 >> begin: mode [
 	^ super begin: mode
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> bitmap: width with: height with: xorig with: yorig with: xmove with: ymove with: bitmap [
 
 	<generated>
@@ -3974,7 +5490,10 @@ GL3_2 >> bitmap: width with: height with: xorig with: yorig with: xmove with: ym
 	^ super bitmap: width with: height with: xorig with: yorig with: xmove with: ymove with: bitmap
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> callList: list [
 
 	<generated>
@@ -3982,7 +5501,10 @@ GL3_2 >> callList: list [
 	^ super callList: list
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> callLists: n with: type with: lists [
 
 	<generated>
@@ -3990,7 +5512,10 @@ GL3_2 >> callLists: n with: type with: lists [
 	^ super callLists: n with: type with: lists
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> clearAccum: red with: green with: blue with: alpha [
 
 	<generated>
@@ -3998,7 +5523,10 @@ GL3_2 >> clearAccum: red with: green with: blue with: alpha [
 	^ super clearAccum: red with: green with: blue with: alpha
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> clearIndex: c [
 
 	<generated>
@@ -4006,7 +5534,10 @@ GL3_2 >> clearIndex: c [
 	^ super clearIndex: c
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> clientActiveTexture: texture [
 
 	<generated>
@@ -4014,7 +5545,10 @@ GL3_2 >> clientActiveTexture: texture [
 	^ super clientActiveTexture: texture
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> clientWaitSync: sync with: flags with: timeout [
 
 	<generated>
@@ -4022,7 +5556,10 @@ GL3_2 >> clientWaitSync: sync with: flags with: timeout [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> clipPlane: plane with: equation [
 
 	<generated>
@@ -4030,7 +5567,10 @@ GL3_2 >> clipPlane: plane with: equation [
 	^ super clipPlane: plane with: equation
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color3b: red with: green with: blue [
 
 	<generated>
@@ -4038,7 +5578,10 @@ GL3_2 >> color3b: red with: green with: blue [
 	^ super color3b: red with: green with: blue
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color3bv: v [
 
 	<generated>
@@ -4046,7 +5589,10 @@ GL3_2 >> color3bv: v [
 	^ super color3bv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color3d: red with: green with: blue [
 
 	<generated>
@@ -4054,7 +5600,10 @@ GL3_2 >> color3d: red with: green with: blue [
 	^ super color3d: red with: green with: blue
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color3dv: v [
 
 	<generated>
@@ -4062,7 +5611,10 @@ GL3_2 >> color3dv: v [
 	^ super color3dv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color3f: red with: green with: blue [
 
 	<generated>
@@ -4070,7 +5622,10 @@ GL3_2 >> color3f: red with: green with: blue [
 	^ super color3f: red with: green with: blue
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color3fv: v [
 
 	<generated>
@@ -4078,7 +5633,10 @@ GL3_2 >> color3fv: v [
 	^ super color3fv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color3i: red with: green with: blue [
 
 	<generated>
@@ -4086,7 +5644,10 @@ GL3_2 >> color3i: red with: green with: blue [
 	^ super color3i: red with: green with: blue
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color3iv: v [
 
 	<generated>
@@ -4094,7 +5655,10 @@ GL3_2 >> color3iv: v [
 	^ super color3iv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color3s: red with: green with: blue [
 
 	<generated>
@@ -4102,7 +5666,10 @@ GL3_2 >> color3s: red with: green with: blue [
 	^ super color3s: red with: green with: blue
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color3sv: v [
 
 	<generated>
@@ -4110,7 +5677,10 @@ GL3_2 >> color3sv: v [
 	^ super color3sv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color3ub: red with: green with: blue [
 
 	<generated>
@@ -4118,7 +5688,10 @@ GL3_2 >> color3ub: red with: green with: blue [
 	^ super color3ub: red with: green with: blue
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color3ubv: v [
 
 	<generated>
@@ -4126,7 +5699,10 @@ GL3_2 >> color3ubv: v [
 	^ super color3ubv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color3ui: red with: green with: blue [
 
 	<generated>
@@ -4134,7 +5710,10 @@ GL3_2 >> color3ui: red with: green with: blue [
 	^ super color3ui: red with: green with: blue
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color3uiv: v [
 
 	<generated>
@@ -4142,7 +5721,10 @@ GL3_2 >> color3uiv: v [
 	^ super color3uiv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color3us: red with: green with: blue [
 
 	<generated>
@@ -4150,7 +5732,10 @@ GL3_2 >> color3us: red with: green with: blue [
 	^ super color3us: red with: green with: blue
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color3usv: v [
 
 	<generated>
@@ -4158,7 +5743,10 @@ GL3_2 >> color3usv: v [
 	^ super color3usv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color4b: red with: green with: blue with: alpha [
 
 	<generated>
@@ -4166,7 +5754,10 @@ GL3_2 >> color4b: red with: green with: blue with: alpha [
 	^ super color4b: red with: green with: blue with: alpha
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color4bv: v [
 
 	<generated>
@@ -4174,7 +5765,10 @@ GL3_2 >> color4bv: v [
 	^ super color4bv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color4d: red with: green with: blue with: alpha [
 
 	<generated>
@@ -4182,7 +5776,10 @@ GL3_2 >> color4d: red with: green with: blue with: alpha [
 	^ super color4d: red with: green with: blue with: alpha
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color4dv: v [
 
 	<generated>
@@ -4190,7 +5787,10 @@ GL3_2 >> color4dv: v [
 	^ super color4dv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color4f: red with: green with: blue with: alpha [
 
 	<generated>
@@ -4198,7 +5798,10 @@ GL3_2 >> color4f: red with: green with: blue with: alpha [
 	^ super color4f: red with: green with: blue with: alpha
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color4fv: v [
 
 	<generated>
@@ -4206,7 +5809,10 @@ GL3_2 >> color4fv: v [
 	^ super color4fv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color4i: red with: green with: blue with: alpha [
 
 	<generated>
@@ -4214,7 +5820,10 @@ GL3_2 >> color4i: red with: green with: blue with: alpha [
 	^ super color4i: red with: green with: blue with: alpha
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color4iv: v [
 
 	<generated>
@@ -4222,7 +5831,10 @@ GL3_2 >> color4iv: v [
 	^ super color4iv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color4s: red with: green with: blue with: alpha [
 
 	<generated>
@@ -4230,7 +5842,10 @@ GL3_2 >> color4s: red with: green with: blue with: alpha [
 	^ super color4s: red with: green with: blue with: alpha
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color4sv: v [
 
 	<generated>
@@ -4238,7 +5853,10 @@ GL3_2 >> color4sv: v [
 	^ super color4sv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color4ub: red with: green with: blue with: alpha [
 
 	<generated>
@@ -4246,7 +5864,10 @@ GL3_2 >> color4ub: red with: green with: blue with: alpha [
 	^ super color4ub: red with: green with: blue with: alpha
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color4ubv: v [
 
 	<generated>
@@ -4254,7 +5875,10 @@ GL3_2 >> color4ubv: v [
 	^ super color4ubv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color4ui: red with: green with: blue with: alpha [
 
 	<generated>
@@ -4262,7 +5886,10 @@ GL3_2 >> color4ui: red with: green with: blue with: alpha [
 	^ super color4ui: red with: green with: blue with: alpha
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color4uiv: v [
 
 	<generated>
@@ -4270,7 +5897,10 @@ GL3_2 >> color4uiv: v [
 	^ super color4uiv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color4us: red with: green with: blue with: alpha [
 
 	<generated>
@@ -4278,7 +5908,10 @@ GL3_2 >> color4us: red with: green with: blue with: alpha [
 	^ super color4us: red with: green with: blue with: alpha
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> color4usv: v [
 
 	<generated>
@@ -4286,7 +5919,10 @@ GL3_2 >> color4usv: v [
 	^ super color4usv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> colorMaterial: face with: mode [
 
 	<generated>
@@ -4294,7 +5930,10 @@ GL3_2 >> colorMaterial: face with: mode [
 	^ super colorMaterial: face with: mode
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> colorPointer: size with: type with: stride with: pointer [
 
 	<generated>
@@ -4302,7 +5941,10 @@ GL3_2 >> colorPointer: size with: type with: stride with: pointer [
 	^ super colorPointer: size with: type with: stride with: pointer
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> copyPixels: x with: y with: width with: height with: type [
 
 	<generated>
@@ -4310,7 +5952,10 @@ GL3_2 >> copyPixels: x with: y with: width with: height with: type [
 	^ super copyPixels: x with: y with: width with: height with: type
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> deleteLists: list with: range [
 
 	<generated>
@@ -4318,7 +5963,10 @@ GL3_2 >> deleteLists: list with: range [
 	^ super deleteLists: list with: range
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> deleteSync: sync [
 
 	<generated>
@@ -4326,7 +5974,10 @@ GL3_2 >> deleteSync: sync [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> disableClientState: array [
 
 	<generated>
@@ -4334,7 +5985,10 @@ GL3_2 >> disableClientState: array [
 	^ super disableClientState: array
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> drawElementsBaseVertex: mode with: count with: type with: indices with: basevertex [
 
 	<generated>
@@ -4342,7 +5996,10 @@ GL3_2 >> drawElementsBaseVertex: mode with: count with: type with: indices with:
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> drawElementsInstancedBaseVertex: mode with: count with: type with: indices with: instancecount with: basevertex [
 
 	<generated>
@@ -4350,7 +6007,10 @@ GL3_2 >> drawElementsInstancedBaseVertex: mode with: count with: type with: indi
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> drawPixels: width with: height with: format with: type with: pixels [
 
 	<generated>
@@ -4358,7 +6018,10 @@ GL3_2 >> drawPixels: width with: height with: format with: type with: pixels [
 	^ super drawPixels: width with: height with: format with: type with: pixels
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> drawRangeElementsBaseVertex: mode with: start with: end with: count with: type with: indices with: basevertex [
 
 	<generated>
@@ -4366,7 +6029,10 @@ GL3_2 >> drawRangeElementsBaseVertex: mode with: start with: end with: count wit
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> edgeFlag: flag [
 
 	<generated>
@@ -4374,7 +6040,10 @@ GL3_2 >> edgeFlag: flag [
 	^ super edgeFlag: flag
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> edgeFlagPointer: stride with: pointer [
 
 	<generated>
@@ -4382,7 +6051,10 @@ GL3_2 >> edgeFlagPointer: stride with: pointer [
 	^ super edgeFlagPointer: stride with: pointer
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> edgeFlagv: flag [
 
 	<generated>
@@ -4390,7 +6062,10 @@ GL3_2 >> edgeFlagv: flag [
 	^ super edgeFlagv: flag
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> enableClientState: array [
 
 	<generated>
@@ -4398,7 +6073,10 @@ GL3_2 >> enableClientState: array [
 	^ super enableClientState: array
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> end [
 
 	<generated>
@@ -4406,7 +6084,10 @@ GL3_2 >> end [
 	^ super end
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> endList [
 
 	<generated>
@@ -4414,7 +6095,10 @@ GL3_2 >> endList [
 	^ super endList
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> evalCoord1d: u [
 
 	<generated>
@@ -4422,7 +6106,10 @@ GL3_2 >> evalCoord1d: u [
 	^ super evalCoord1d: u
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> evalCoord1dv: u [
 
 	<generated>
@@ -4430,7 +6117,10 @@ GL3_2 >> evalCoord1dv: u [
 	^ super evalCoord1dv: u
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> evalCoord1f: u [
 
 	<generated>
@@ -4438,7 +6128,10 @@ GL3_2 >> evalCoord1f: u [
 	^ super evalCoord1f: u
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> evalCoord1fv: u [
 
 	<generated>
@@ -4446,7 +6139,10 @@ GL3_2 >> evalCoord1fv: u [
 	^ super evalCoord1fv: u
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> evalCoord2d: u with: v [
 
 	<generated>
@@ -4454,7 +6150,10 @@ GL3_2 >> evalCoord2d: u with: v [
 	^ super evalCoord2d: u with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> evalCoord2dv: u [
 
 	<generated>
@@ -4462,7 +6161,10 @@ GL3_2 >> evalCoord2dv: u [
 	^ super evalCoord2dv: u
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> evalCoord2f: u with: v [
 
 	<generated>
@@ -4470,7 +6172,10 @@ GL3_2 >> evalCoord2f: u with: v [
 	^ super evalCoord2f: u with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> evalCoord2fv: u [
 
 	<generated>
@@ -4478,7 +6183,10 @@ GL3_2 >> evalCoord2fv: u [
 	^ super evalCoord2fv: u
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> evalMesh1: mode with: i1 with: i2 [
 
 	<generated>
@@ -4486,7 +6194,10 @@ GL3_2 >> evalMesh1: mode with: i1 with: i2 [
 	^ super evalMesh1: mode with: i1 with: i2
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> evalMesh2: mode with: i1 with: i2 with: j1 with: j2 [
 
 	<generated>
@@ -4494,7 +6205,10 @@ GL3_2 >> evalMesh2: mode with: i1 with: i2 with: j1 with: j2 [
 	^ super evalMesh2: mode with: i1 with: i2 with: j1 with: j2
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> evalPoint1: i [
 
 	<generated>
@@ -4502,7 +6216,10 @@ GL3_2 >> evalPoint1: i [
 	^ super evalPoint1: i
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> evalPoint2: i with: j [
 
 	<generated>
@@ -4510,7 +6227,10 @@ GL3_2 >> evalPoint2: i with: j [
 	^ super evalPoint2: i with: j
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> feedbackBuffer: size with: type with: buffer [
 
 	<generated>
@@ -4518,7 +6238,10 @@ GL3_2 >> feedbackBuffer: size with: type with: buffer [
 	^ super feedbackBuffer: size with: type with: buffer
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> fenceSync: condition with: flags [
 
 	<generated>
@@ -4526,7 +6249,10 @@ GL3_2 >> fenceSync: condition with: flags [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> fogCoordPointer: type with: stride with: pointer [
 
 	<generated>
@@ -4534,7 +6260,10 @@ GL3_2 >> fogCoordPointer: type with: stride with: pointer [
 	^ super fogCoordPointer: type with: stride with: pointer
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> fogCoordd: coord [
 
 	<generated>
@@ -4542,7 +6271,10 @@ GL3_2 >> fogCoordd: coord [
 	^ super fogCoordd: coord
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> fogCoorddv: coord [
 
 	<generated>
@@ -4550,7 +6282,10 @@ GL3_2 >> fogCoorddv: coord [
 	^ super fogCoorddv: coord
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> fogCoordf: coord [
 
 	<generated>
@@ -4558,7 +6293,10 @@ GL3_2 >> fogCoordf: coord [
 	^ super fogCoordf: coord
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> fogCoordfv: coord [
 
 	<generated>
@@ -4566,7 +6304,10 @@ GL3_2 >> fogCoordfv: coord [
 	^ super fogCoordfv: coord
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> fogf: pname with: param [
 
 	<generated>
@@ -4574,7 +6315,10 @@ GL3_2 >> fogf: pname with: param [
 	^ super fogf: pname with: param
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> fogfv: pname with: params [
 
 	<generated>
@@ -4582,7 +6326,10 @@ GL3_2 >> fogfv: pname with: params [
 	^ super fogfv: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> fogi: pname with: param [
 
 	<generated>
@@ -4590,7 +6337,10 @@ GL3_2 >> fogi: pname with: param [
 	^ super fogi: pname with: param
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> fogiv: pname with: params [
 
 	<generated>
@@ -4598,7 +6348,10 @@ GL3_2 >> fogiv: pname with: params [
 	^ super fogiv: pname with: params
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> framebufferTexture: target with: attachment with: texture with: level [
 
 	<generated>
@@ -4606,7 +6359,10 @@ GL3_2 >> framebufferTexture: target with: attachment with: texture with: level [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> frustum: left with: right with: bottom with: top with: zNear with: zFar [
 
 	<generated>
@@ -4614,7 +6370,10 @@ GL3_2 >> frustum: left with: right with: bottom with: top with: zNear with: zFar
 	^ super frustum: left with: right with: bottom with: top with: zNear with: zFar
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> genLists: range [
 
 	<generated>
@@ -4622,7 +6381,10 @@ GL3_2 >> genLists: range [
 	^ super genLists: range
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> getBufferParameteri64v: target with: pname with: params [
 
 	<generated>
@@ -4630,7 +6392,10 @@ GL3_2 >> getBufferParameteri64v: target with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> getClipPlane: plane with: equation [
 
 	<generated>
@@ -4638,7 +6403,10 @@ GL3_2 >> getClipPlane: plane with: equation [
 	^ super getClipPlane: plane with: equation
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> getInteger64i_v: target with: index with: data [
 
 	<generated>
@@ -4646,7 +6414,10 @@ GL3_2 >> getInteger64i_v: target with: index with: data [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> getInteger64v: pname with: data [
 
 	<generated>
@@ -4654,7 +6425,10 @@ GL3_2 >> getInteger64v: pname with: data [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> getLightfv: light with: pname with: params [
 
 	<generated>
@@ -4662,7 +6436,10 @@ GL3_2 >> getLightfv: light with: pname with: params [
 	^ super getLightfv: light with: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> getLightiv: light with: pname with: params [
 
 	<generated>
@@ -4670,7 +6447,10 @@ GL3_2 >> getLightiv: light with: pname with: params [
 	^ super getLightiv: light with: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> getMapdv: target with: query with: v [
 
 	<generated>
@@ -4678,7 +6458,10 @@ GL3_2 >> getMapdv: target with: query with: v [
 	^ super getMapdv: target with: query with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> getMapfv: target with: query with: v [
 
 	<generated>
@@ -4686,7 +6469,10 @@ GL3_2 >> getMapfv: target with: query with: v [
 	^ super getMapfv: target with: query with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> getMapiv: target with: query with: v [
 
 	<generated>
@@ -4694,7 +6480,10 @@ GL3_2 >> getMapiv: target with: query with: v [
 	^ super getMapiv: target with: query with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> getMaterialfv: face with: pname with: params [
 
 	<generated>
@@ -4702,7 +6491,10 @@ GL3_2 >> getMaterialfv: face with: pname with: params [
 	^ super getMaterialfv: face with: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> getMaterialiv: face with: pname with: params [
 
 	<generated>
@@ -4710,7 +6502,10 @@ GL3_2 >> getMaterialiv: face with: pname with: params [
 	^ super getMaterialiv: face with: pname with: params
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> getMultisamplefv: pname with: index with: val [
 
 	<generated>
@@ -4718,7 +6513,10 @@ GL3_2 >> getMultisamplefv: pname with: index with: val [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> getPixelMapfv: map with: values [
 
 	<generated>
@@ -4726,7 +6524,10 @@ GL3_2 >> getPixelMapfv: map with: values [
 	^ super getPixelMapfv: map with: values
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> getPixelMapuiv: map with: values [
 
 	<generated>
@@ -4734,7 +6535,10 @@ GL3_2 >> getPixelMapuiv: map with: values [
 	^ super getPixelMapuiv: map with: values
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> getPixelMapusv: map with: values [
 
 	<generated>
@@ -4742,7 +6546,10 @@ GL3_2 >> getPixelMapusv: map with: values [
 	^ super getPixelMapusv: map with: values
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> getPointerv: pname with: params [
 
 	<generated>
@@ -4750,7 +6557,10 @@ GL3_2 >> getPointerv: pname with: params [
 	^ super getPointerv: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> getPolygonStipple: mask [
 
 	<generated>
@@ -4758,7 +6568,10 @@ GL3_2 >> getPolygonStipple: mask [
 	^ super getPolygonStipple: mask
 ]
 
-{ #category : #parameters }
+{
+	#category : #parameters,
+	#timestamp : 'stlu 11/12/2020 15:44'
+}
 GL3_2 >> getProfile [
 
 	| profileMask |
@@ -4768,13 +6581,19 @@ GL3_2 >> getProfile [
 	self error: 'No such profile'
 ]
 
-{ #category : #parameters }
+{
+	#category : #parameters,
+	#timestamp : 'stlu 11/12/2020 15:22'
+}
 GL3_2 >> getProfileMask [
 
 	^ self getIntegerParameter: GL_CONTEXT_PROFILE_MASK
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> getSynciv: sync with: pname with: count with: length with: values [
 
 	<generated>
@@ -4782,7 +6601,10 @@ GL3_2 >> getSynciv: sync with: pname with: count with: length with: values [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> getTexEnvfv: target with: pname with: params [
 
 	<generated>
@@ -4790,7 +6612,10 @@ GL3_2 >> getTexEnvfv: target with: pname with: params [
 	^ super getTexEnvfv: target with: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> getTexEnviv: target with: pname with: params [
 
 	<generated>
@@ -4798,7 +6623,10 @@ GL3_2 >> getTexEnviv: target with: pname with: params [
 	^ super getTexEnviv: target with: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> getTexGendv: coord with: pname with: params [
 
 	<generated>
@@ -4806,7 +6634,10 @@ GL3_2 >> getTexGendv: coord with: pname with: params [
 	^ super getTexGendv: coord with: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> getTexGenfv: coord with: pname with: params [
 
 	<generated>
@@ -4814,7 +6645,10 @@ GL3_2 >> getTexGenfv: coord with: pname with: params [
 	^ super getTexGenfv: coord with: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> getTexGeniv: coord with: pname with: params [
 
 	<generated>
@@ -4822,7 +6656,10 @@ GL3_2 >> getTexGeniv: coord with: pname with: params [
 	^ super getTexGeniv: coord with: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> indexMask: mask [
 
 	<generated>
@@ -4830,7 +6667,10 @@ GL3_2 >> indexMask: mask [
 	^ super indexMask: mask
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> indexPointer: type with: stride with: pointer [
 
 	<generated>
@@ -4838,7 +6678,10 @@ GL3_2 >> indexPointer: type with: stride with: pointer [
 	^ super indexPointer: type with: stride with: pointer
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> indexd: c [
 
 	<generated>
@@ -4846,7 +6689,10 @@ GL3_2 >> indexd: c [
 	^ super indexd: c
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> indexdv: c [
 
 	<generated>
@@ -4854,7 +6700,10 @@ GL3_2 >> indexdv: c [
 	^ super indexdv: c
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> indexf: c [
 
 	<generated>
@@ -4862,7 +6711,10 @@ GL3_2 >> indexf: c [
 	^ super indexf: c
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> indexfv: c [
 
 	<generated>
@@ -4870,7 +6722,10 @@ GL3_2 >> indexfv: c [
 	^ super indexfv: c
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> indexi: c [
 
 	<generated>
@@ -4878,7 +6733,10 @@ GL3_2 >> indexi: c [
 	^ super indexi: c
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> indexiv: c [
 
 	<generated>
@@ -4886,7 +6744,10 @@ GL3_2 >> indexiv: c [
 	^ super indexiv: c
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> indexs: c [
 
 	<generated>
@@ -4894,7 +6755,10 @@ GL3_2 >> indexs: c [
 	^ super indexs: c
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> indexsv: c [
 
 	<generated>
@@ -4902,7 +6766,10 @@ GL3_2 >> indexsv: c [
 	^ super indexsv: c
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> indexub: c [
 
 	<generated>
@@ -4910,7 +6777,10 @@ GL3_2 >> indexub: c [
 	^ super indexub: c
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> indexubv: c [
 
 	<generated>
@@ -4918,7 +6788,10 @@ GL3_2 >> indexubv: c [
 	^ super indexubv: c
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> initNames [
 
 	<generated>
@@ -4926,7 +6799,10 @@ GL3_2 >> initNames [
 	^ super initNames
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> interleavedArrays: format with: stride with: pointer [
 
 	<generated>
@@ -4934,7 +6810,10 @@ GL3_2 >> interleavedArrays: format with: stride with: pointer [
 	^ super interleavedArrays: format with: stride with: pointer
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> isList: list [
 
 	<generated>
@@ -4942,7 +6821,10 @@ GL3_2 >> isList: list [
 	^ super isList: list
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> isSync: sync [
 
 	<generated>
@@ -4950,7 +6832,10 @@ GL3_2 >> isSync: sync [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> lightModelf: pname with: param [
 
 	<generated>
@@ -4958,7 +6843,10 @@ GL3_2 >> lightModelf: pname with: param [
 	^ super lightModelf: pname with: param
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> lightModelfv: pname with: params [
 
 	<generated>
@@ -4966,7 +6854,10 @@ GL3_2 >> lightModelfv: pname with: params [
 	^ super lightModelfv: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> lightModeli: pname with: param [
 
 	<generated>
@@ -4974,7 +6865,10 @@ GL3_2 >> lightModeli: pname with: param [
 	^ super lightModeli: pname with: param
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> lightModeliv: pname with: params [
 
 	<generated>
@@ -4982,7 +6876,10 @@ GL3_2 >> lightModeliv: pname with: params [
 	^ super lightModeliv: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> lightf: light with: pname with: param [
 
 	<generated>
@@ -4990,7 +6887,10 @@ GL3_2 >> lightf: light with: pname with: param [
 	^ super lightf: light with: pname with: param
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> lightfv: light with: pname with: params [
 
 	<generated>
@@ -4998,7 +6898,10 @@ GL3_2 >> lightfv: light with: pname with: params [
 	^ super lightfv: light with: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> lighti: light with: pname with: param [
 
 	<generated>
@@ -5006,7 +6909,10 @@ GL3_2 >> lighti: light with: pname with: param [
 	^ super lighti: light with: pname with: param
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> lightiv: light with: pname with: params [
 
 	<generated>
@@ -5014,7 +6920,10 @@ GL3_2 >> lightiv: light with: pname with: params [
 	^ super lightiv: light with: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> lineStipple: factor with: pattern [
 
 	<generated>
@@ -5022,7 +6931,10 @@ GL3_2 >> lineStipple: factor with: pattern [
 	^ super lineStipple: factor with: pattern
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> listBase: base [
 
 	<generated>
@@ -5030,7 +6942,10 @@ GL3_2 >> listBase: base [
 	^ super listBase: base
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> loadIdentity [
 
 	<generated>
@@ -5038,7 +6953,10 @@ GL3_2 >> loadIdentity [
 	^ super loadIdentity
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> loadMatrixd: m [
 
 	<generated>
@@ -5046,7 +6964,10 @@ GL3_2 >> loadMatrixd: m [
 	^ super loadMatrixd: m
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> loadMatrixf: m [
 
 	<generated>
@@ -5054,7 +6975,10 @@ GL3_2 >> loadMatrixf: m [
 	^ super loadMatrixf: m
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> loadName: name [
 
 	<generated>
@@ -5062,7 +6986,10 @@ GL3_2 >> loadName: name [
 	^ super loadName: name
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> loadTransposeMatrixd: m [
 
 	<generated>
@@ -5070,7 +6997,10 @@ GL3_2 >> loadTransposeMatrixd: m [
 	^ super loadTransposeMatrixd: m
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> loadTransposeMatrixf: m [
 
 	<generated>
@@ -5078,7 +7008,10 @@ GL3_2 >> loadTransposeMatrixf: m [
 	^ super loadTransposeMatrixf: m
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> map1d: target with: u1 with: u2 with: stride with: order with: points [
 
 	<generated>
@@ -5086,7 +7019,10 @@ GL3_2 >> map1d: target with: u1 with: u2 with: stride with: order with: points [
 	^ super map1d: target with: u1 with: u2 with: stride with: order with: points
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> map1f: target with: u1 with: u2 with: stride with: order with: points [
 
 	<generated>
@@ -5094,7 +7030,10 @@ GL3_2 >> map1f: target with: u1 with: u2 with: stride with: order with: points [
 	^ super map1f: target with: u1 with: u2 with: stride with: order with: points
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> map2d: target with: u1 with: u2 with: ustride with: uorder with: v1 with: v2 with: vstride with: vorder with: points [
 
 	<generated>
@@ -5102,7 +7041,10 @@ GL3_2 >> map2d: target with: u1 with: u2 with: ustride with: uorder with: v1 wit
 	^ super map2d: target with: u1 with: u2 with: ustride with: uorder with: v1 with: v2 with: vstride with: vorder with: points
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> map2f: target with: u1 with: u2 with: ustride with: uorder with: v1 with: v2 with: vstride with: vorder with: points [
 
 	<generated>
@@ -5110,7 +7052,10 @@ GL3_2 >> map2f: target with: u1 with: u2 with: ustride with: uorder with: v1 wit
 	^ super map2f: target with: u1 with: u2 with: ustride with: uorder with: v1 with: v2 with: vstride with: vorder with: points
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> mapGrid1d: un with: u1 with: u2 [
 
 	<generated>
@@ -5118,7 +7063,10 @@ GL3_2 >> mapGrid1d: un with: u1 with: u2 [
 	^ super mapGrid1d: un with: u1 with: u2
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> mapGrid1f: un with: u1 with: u2 [
 
 	<generated>
@@ -5126,7 +7074,10 @@ GL3_2 >> mapGrid1f: un with: u1 with: u2 [
 	^ super mapGrid1f: un with: u1 with: u2
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> mapGrid2d: un with: u1 with: u2 with: vn with: v1 with: v2 [
 
 	<generated>
@@ -5134,7 +7085,10 @@ GL3_2 >> mapGrid2d: un with: u1 with: u2 with: vn with: v1 with: v2 [
 	^ super mapGrid2d: un with: u1 with: u2 with: vn with: v1 with: v2
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> mapGrid2f: un with: u1 with: u2 with: vn with: v1 with: v2 [
 
 	<generated>
@@ -5142,7 +7096,10 @@ GL3_2 >> mapGrid2f: un with: u1 with: u2 with: vn with: v1 with: v2 [
 	^ super mapGrid2f: un with: u1 with: u2 with: vn with: v1 with: v2
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> materialf: face with: pname with: param [
 
 	<generated>
@@ -5150,7 +7107,10 @@ GL3_2 >> materialf: face with: pname with: param [
 	^ super materialf: face with: pname with: param
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> materialfv: face with: pname with: params [
 
 	<generated>
@@ -5158,7 +7118,10 @@ GL3_2 >> materialfv: face with: pname with: params [
 	^ super materialfv: face with: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> materiali: face with: pname with: param [
 
 	<generated>
@@ -5166,7 +7129,10 @@ GL3_2 >> materiali: face with: pname with: param [
 	^ super materiali: face with: pname with: param
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> materialiv: face with: pname with: params [
 
 	<generated>
@@ -5174,7 +7140,10 @@ GL3_2 >> materialiv: face with: pname with: params [
 	^ super materialiv: face with: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> matrixMode: mode [
 
 	<generated>
@@ -5182,7 +7151,10 @@ GL3_2 >> matrixMode: mode [
 	^ super matrixMode: mode
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multMatrixd: m [
 
 	<generated>
@@ -5190,7 +7162,10 @@ GL3_2 >> multMatrixd: m [
 	^ super multMatrixd: m
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multMatrixf: m [
 
 	<generated>
@@ -5198,7 +7173,10 @@ GL3_2 >> multMatrixf: m [
 	^ super multMatrixf: m
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multTransposeMatrixd: m [
 
 	<generated>
@@ -5206,7 +7184,10 @@ GL3_2 >> multTransposeMatrixd: m [
 	^ super multTransposeMatrixd: m
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multTransposeMatrixf: m [
 
 	<generated>
@@ -5214,7 +7195,10 @@ GL3_2 >> multTransposeMatrixf: m [
 	^ super multTransposeMatrixf: m
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> multiDrawElementsBaseVertex: mode with: count with: type with: indices with: drawcount with: basevertex [
 
 	<generated>
@@ -5222,7 +7206,10 @@ GL3_2 >> multiDrawElementsBaseVertex: mode with: count with: type with: indices 
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord1d: target with: s [
 
 	<generated>
@@ -5230,7 +7217,10 @@ GL3_2 >> multiTexCoord1d: target with: s [
 	^ super multiTexCoord1d: target with: s
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord1dv: target with: v [
 
 	<generated>
@@ -5238,7 +7228,10 @@ GL3_2 >> multiTexCoord1dv: target with: v [
 	^ super multiTexCoord1dv: target with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord1f: target with: s [
 
 	<generated>
@@ -5246,7 +7239,10 @@ GL3_2 >> multiTexCoord1f: target with: s [
 	^ super multiTexCoord1f: target with: s
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord1fv: target with: v [
 
 	<generated>
@@ -5254,7 +7250,10 @@ GL3_2 >> multiTexCoord1fv: target with: v [
 	^ super multiTexCoord1fv: target with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord1i: target with: s [
 
 	<generated>
@@ -5262,7 +7261,10 @@ GL3_2 >> multiTexCoord1i: target with: s [
 	^ super multiTexCoord1i: target with: s
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord1iv: target with: v [
 
 	<generated>
@@ -5270,7 +7272,10 @@ GL3_2 >> multiTexCoord1iv: target with: v [
 	^ super multiTexCoord1iv: target with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord1s: target with: s [
 
 	<generated>
@@ -5278,7 +7283,10 @@ GL3_2 >> multiTexCoord1s: target with: s [
 	^ super multiTexCoord1s: target with: s
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord1sv: target with: v [
 
 	<generated>
@@ -5286,7 +7294,10 @@ GL3_2 >> multiTexCoord1sv: target with: v [
 	^ super multiTexCoord1sv: target with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord2d: target with: s with: t [
 
 	<generated>
@@ -5294,7 +7305,10 @@ GL3_2 >> multiTexCoord2d: target with: s with: t [
 	^ super multiTexCoord2d: target with: s with: t
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord2dv: target with: v [
 
 	<generated>
@@ -5302,7 +7316,10 @@ GL3_2 >> multiTexCoord2dv: target with: v [
 	^ super multiTexCoord2dv: target with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord2f: target with: s with: t [
 
 	<generated>
@@ -5310,7 +7327,10 @@ GL3_2 >> multiTexCoord2f: target with: s with: t [
 	^ super multiTexCoord2f: target with: s with: t
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord2fv: target with: v [
 
 	<generated>
@@ -5318,7 +7338,10 @@ GL3_2 >> multiTexCoord2fv: target with: v [
 	^ super multiTexCoord2fv: target with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord2i: target with: s with: t [
 
 	<generated>
@@ -5326,7 +7349,10 @@ GL3_2 >> multiTexCoord2i: target with: s with: t [
 	^ super multiTexCoord2i: target with: s with: t
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord2iv: target with: v [
 
 	<generated>
@@ -5334,7 +7360,10 @@ GL3_2 >> multiTexCoord2iv: target with: v [
 	^ super multiTexCoord2iv: target with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord2s: target with: s with: t [
 
 	<generated>
@@ -5342,7 +7371,10 @@ GL3_2 >> multiTexCoord2s: target with: s with: t [
 	^ super multiTexCoord2s: target with: s with: t
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord2sv: target with: v [
 
 	<generated>
@@ -5350,7 +7382,10 @@ GL3_2 >> multiTexCoord2sv: target with: v [
 	^ super multiTexCoord2sv: target with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord3d: target with: s with: t with: r [
 
 	<generated>
@@ -5358,7 +7393,10 @@ GL3_2 >> multiTexCoord3d: target with: s with: t with: r [
 	^ super multiTexCoord3d: target with: s with: t with: r
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord3dv: target with: v [
 
 	<generated>
@@ -5366,7 +7404,10 @@ GL3_2 >> multiTexCoord3dv: target with: v [
 	^ super multiTexCoord3dv: target with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord3f: target with: s with: t with: r [
 
 	<generated>
@@ -5374,7 +7415,10 @@ GL3_2 >> multiTexCoord3f: target with: s with: t with: r [
 	^ super multiTexCoord3f: target with: s with: t with: r
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord3fv: target with: v [
 
 	<generated>
@@ -5382,7 +7426,10 @@ GL3_2 >> multiTexCoord3fv: target with: v [
 	^ super multiTexCoord3fv: target with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord3i: target with: s with: t with: r [
 
 	<generated>
@@ -5390,7 +7437,10 @@ GL3_2 >> multiTexCoord3i: target with: s with: t with: r [
 	^ super multiTexCoord3i: target with: s with: t with: r
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord3iv: target with: v [
 
 	<generated>
@@ -5398,7 +7448,10 @@ GL3_2 >> multiTexCoord3iv: target with: v [
 	^ super multiTexCoord3iv: target with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord3s: target with: s with: t with: r [
 
 	<generated>
@@ -5406,7 +7459,10 @@ GL3_2 >> multiTexCoord3s: target with: s with: t with: r [
 	^ super multiTexCoord3s: target with: s with: t with: r
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord3sv: target with: v [
 
 	<generated>
@@ -5414,7 +7470,10 @@ GL3_2 >> multiTexCoord3sv: target with: v [
 	^ super multiTexCoord3sv: target with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord4d: target with: s with: t with: r with: q [
 
 	<generated>
@@ -5422,7 +7481,10 @@ GL3_2 >> multiTexCoord4d: target with: s with: t with: r with: q [
 	^ super multiTexCoord4d: target with: s with: t with: r with: q
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord4dv: target with: v [
 
 	<generated>
@@ -5430,7 +7492,10 @@ GL3_2 >> multiTexCoord4dv: target with: v [
 	^ super multiTexCoord4dv: target with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord4f: target with: s with: t with: r with: q [
 
 	<generated>
@@ -5438,7 +7503,10 @@ GL3_2 >> multiTexCoord4f: target with: s with: t with: r with: q [
 	^ super multiTexCoord4f: target with: s with: t with: r with: q
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord4fv: target with: v [
 
 	<generated>
@@ -5446,7 +7514,10 @@ GL3_2 >> multiTexCoord4fv: target with: v [
 	^ super multiTexCoord4fv: target with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord4i: target with: s with: t with: r with: q [
 
 	<generated>
@@ -5454,7 +7525,10 @@ GL3_2 >> multiTexCoord4i: target with: s with: t with: r with: q [
 	^ super multiTexCoord4i: target with: s with: t with: r with: q
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord4iv: target with: v [
 
 	<generated>
@@ -5462,7 +7536,10 @@ GL3_2 >> multiTexCoord4iv: target with: v [
 	^ super multiTexCoord4iv: target with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord4s: target with: s with: t with: r with: q [
 
 	<generated>
@@ -5470,7 +7547,10 @@ GL3_2 >> multiTexCoord4s: target with: s with: t with: r with: q [
 	^ super multiTexCoord4s: target with: s with: t with: r with: q
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> multiTexCoord4sv: target with: v [
 
 	<generated>
@@ -5478,7 +7558,10 @@ GL3_2 >> multiTexCoord4sv: target with: v [
 	^ super multiTexCoord4sv: target with: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> newList: list with: mode [
 
 	<generated>
@@ -5486,7 +7569,10 @@ GL3_2 >> newList: list with: mode [
 	^ super newList: list with: mode
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> normal3b: nx with: ny with: nz [
 
 	<generated>
@@ -5494,7 +7580,10 @@ GL3_2 >> normal3b: nx with: ny with: nz [
 	^ super normal3b: nx with: ny with: nz
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> normal3bv: v [
 
 	<generated>
@@ -5502,7 +7591,10 @@ GL3_2 >> normal3bv: v [
 	^ super normal3bv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> normal3d: nx with: ny with: nz [
 
 	<generated>
@@ -5510,7 +7602,10 @@ GL3_2 >> normal3d: nx with: ny with: nz [
 	^ super normal3d: nx with: ny with: nz
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> normal3dv: v [
 
 	<generated>
@@ -5518,7 +7613,10 @@ GL3_2 >> normal3dv: v [
 	^ super normal3dv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> normal3f: nx with: ny with: nz [
 
 	<generated>
@@ -5526,7 +7624,10 @@ GL3_2 >> normal3f: nx with: ny with: nz [
 	^ super normal3f: nx with: ny with: nz
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> normal3fv: v [
 
 	<generated>
@@ -5534,7 +7635,10 @@ GL3_2 >> normal3fv: v [
 	^ super normal3fv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> normal3i: nx with: ny with: nz [
 
 	<generated>
@@ -5542,7 +7646,10 @@ GL3_2 >> normal3i: nx with: ny with: nz [
 	^ super normal3i: nx with: ny with: nz
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> normal3iv: v [
 
 	<generated>
@@ -5550,7 +7657,10 @@ GL3_2 >> normal3iv: v [
 	^ super normal3iv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> normal3s: nx with: ny with: nz [
 
 	<generated>
@@ -5558,7 +7668,10 @@ GL3_2 >> normal3s: nx with: ny with: nz [
 	^ super normal3s: nx with: ny with: nz
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> normal3sv: v [
 
 	<generated>
@@ -5566,7 +7679,10 @@ GL3_2 >> normal3sv: v [
 	^ super normal3sv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> normalPointer: type with: stride with: pointer [
 
 	<generated>
@@ -5574,7 +7690,10 @@ GL3_2 >> normalPointer: type with: stride with: pointer [
 	^ super normalPointer: type with: stride with: pointer
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> ortho: left with: right with: bottom with: top with: zNear with: zFar [
 
 	<generated>
@@ -5582,7 +7701,10 @@ GL3_2 >> ortho: left with: right with: bottom with: top with: zNear with: zFar [
 	^ super ortho: left with: right with: bottom with: top with: zNear with: zFar
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> passThrough: token [
 
 	<generated>
@@ -5590,7 +7712,10 @@ GL3_2 >> passThrough: token [
 	^ super passThrough: token
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> pixelMapfv: map with: mapsize with: values [
 
 	<generated>
@@ -5598,7 +7723,10 @@ GL3_2 >> pixelMapfv: map with: mapsize with: values [
 	^ super pixelMapfv: map with: mapsize with: values
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> pixelMapuiv: map with: mapsize with: values [
 
 	<generated>
@@ -5606,7 +7734,10 @@ GL3_2 >> pixelMapuiv: map with: mapsize with: values [
 	^ super pixelMapuiv: map with: mapsize with: values
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> pixelMapusv: map with: mapsize with: values [
 
 	<generated>
@@ -5614,7 +7745,10 @@ GL3_2 >> pixelMapusv: map with: mapsize with: values [
 	^ super pixelMapusv: map with: mapsize with: values
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> pixelTransferf: pname with: param [
 
 	<generated>
@@ -5622,7 +7756,10 @@ GL3_2 >> pixelTransferf: pname with: param [
 	^ super pixelTransferf: pname with: param
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> pixelTransferi: pname with: param [
 
 	<generated>
@@ -5630,7 +7767,10 @@ GL3_2 >> pixelTransferi: pname with: param [
 	^ super pixelTransferi: pname with: param
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> pixelZoom: xfactor with: yfactor [
 
 	<generated>
@@ -5638,7 +7778,10 @@ GL3_2 >> pixelZoom: xfactor with: yfactor [
 	^ super pixelZoom: xfactor with: yfactor
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> polygonStipple: mask [
 
 	<generated>
@@ -5646,7 +7789,10 @@ GL3_2 >> polygonStipple: mask [
 	^ super polygonStipple: mask
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> popAttrib [
 
 	<generated>
@@ -5654,7 +7800,10 @@ GL3_2 >> popAttrib [
 	^ super popAttrib
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> popClientAttrib [
 
 	<generated>
@@ -5662,7 +7811,10 @@ GL3_2 >> popClientAttrib [
 	^ super popClientAttrib
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> popMatrix [
 
 	<generated>
@@ -5670,7 +7822,10 @@ GL3_2 >> popMatrix [
 	^ super popMatrix
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> popName [
 
 	<generated>
@@ -5678,7 +7833,10 @@ GL3_2 >> popName [
 	^ super popName
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> prioritizeTextures: n with: textures with: priorities [
 
 	<generated>
@@ -5686,7 +7844,10 @@ GL3_2 >> prioritizeTextures: n with: textures with: priorities [
 	^ super prioritizeTextures: n with: textures with: priorities
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> provokingVertex: mode [
 
 	<generated>
@@ -5694,7 +7855,10 @@ GL3_2 >> provokingVertex: mode [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> pushAttrib: mask [
 
 	<generated>
@@ -5702,7 +7866,10 @@ GL3_2 >> pushAttrib: mask [
 	^ super pushAttrib: mask
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> pushClientAttrib: mask [
 
 	<generated>
@@ -5710,7 +7877,10 @@ GL3_2 >> pushClientAttrib: mask [
 	^ super pushClientAttrib: mask
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> pushMatrix [
 
 	<generated>
@@ -5718,7 +7888,10 @@ GL3_2 >> pushMatrix [
 	^ super pushMatrix
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> pushName: name [
 
 	<generated>
@@ -5726,7 +7899,10 @@ GL3_2 >> pushName: name [
 	^ super pushName: name
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos2d: x with: y [
 
 	<generated>
@@ -5734,7 +7910,10 @@ GL3_2 >> rasterPos2d: x with: y [
 	^ super rasterPos2d: x with: y
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos2dv: v [
 
 	<generated>
@@ -5742,7 +7921,10 @@ GL3_2 >> rasterPos2dv: v [
 	^ super rasterPos2dv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos2f: x with: y [
 
 	<generated>
@@ -5750,7 +7932,10 @@ GL3_2 >> rasterPos2f: x with: y [
 	^ super rasterPos2f: x with: y
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos2fv: v [
 
 	<generated>
@@ -5758,7 +7943,10 @@ GL3_2 >> rasterPos2fv: v [
 	^ super rasterPos2fv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos2i: x with: y [
 
 	<generated>
@@ -5766,7 +7954,10 @@ GL3_2 >> rasterPos2i: x with: y [
 	^ super rasterPos2i: x with: y
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos2iv: v [
 
 	<generated>
@@ -5774,7 +7965,10 @@ GL3_2 >> rasterPos2iv: v [
 	^ super rasterPos2iv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos2s: x with: y [
 
 	<generated>
@@ -5782,7 +7976,10 @@ GL3_2 >> rasterPos2s: x with: y [
 	^ super rasterPos2s: x with: y
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos2sv: v [
 
 	<generated>
@@ -5790,7 +7987,10 @@ GL3_2 >> rasterPos2sv: v [
 	^ super rasterPos2sv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos3d: x with: y with: z [
 
 	<generated>
@@ -5798,7 +7998,10 @@ GL3_2 >> rasterPos3d: x with: y with: z [
 	^ super rasterPos3d: x with: y with: z
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos3dv: v [
 
 	<generated>
@@ -5806,7 +8009,10 @@ GL3_2 >> rasterPos3dv: v [
 	^ super rasterPos3dv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos3f: x with: y with: z [
 
 	<generated>
@@ -5814,7 +8020,10 @@ GL3_2 >> rasterPos3f: x with: y with: z [
 	^ super rasterPos3f: x with: y with: z
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos3fv: v [
 
 	<generated>
@@ -5822,7 +8031,10 @@ GL3_2 >> rasterPos3fv: v [
 	^ super rasterPos3fv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos3i: x with: y with: z [
 
 	<generated>
@@ -5830,7 +8042,10 @@ GL3_2 >> rasterPos3i: x with: y with: z [
 	^ super rasterPos3i: x with: y with: z
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos3iv: v [
 
 	<generated>
@@ -5838,7 +8053,10 @@ GL3_2 >> rasterPos3iv: v [
 	^ super rasterPos3iv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos3s: x with: y with: z [
 
 	<generated>
@@ -5846,7 +8064,10 @@ GL3_2 >> rasterPos3s: x with: y with: z [
 	^ super rasterPos3s: x with: y with: z
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos3sv: v [
 
 	<generated>
@@ -5854,7 +8075,10 @@ GL3_2 >> rasterPos3sv: v [
 	^ super rasterPos3sv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos4d: x with: y with: z with: w [
 
 	<generated>
@@ -5862,7 +8086,10 @@ GL3_2 >> rasterPos4d: x with: y with: z with: w [
 	^ super rasterPos4d: x with: y with: z with: w
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos4dv: v [
 
 	<generated>
@@ -5870,7 +8097,10 @@ GL3_2 >> rasterPos4dv: v [
 	^ super rasterPos4dv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos4f: x with: y with: z with: w [
 
 	<generated>
@@ -5878,7 +8108,10 @@ GL3_2 >> rasterPos4f: x with: y with: z with: w [
 	^ super rasterPos4f: x with: y with: z with: w
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos4fv: v [
 
 	<generated>
@@ -5886,7 +8119,10 @@ GL3_2 >> rasterPos4fv: v [
 	^ super rasterPos4fv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos4i: x with: y with: z with: w [
 
 	<generated>
@@ -5894,7 +8130,10 @@ GL3_2 >> rasterPos4i: x with: y with: z with: w [
 	^ super rasterPos4i: x with: y with: z with: w
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos4iv: v [
 
 	<generated>
@@ -5902,7 +8141,10 @@ GL3_2 >> rasterPos4iv: v [
 	^ super rasterPos4iv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos4s: x with: y with: z with: w [
 
 	<generated>
@@ -5910,7 +8152,10 @@ GL3_2 >> rasterPos4s: x with: y with: z with: w [
 	^ super rasterPos4s: x with: y with: z with: w
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rasterPos4sv: v [
 
 	<generated>
@@ -5918,7 +8163,10 @@ GL3_2 >> rasterPos4sv: v [
 	^ super rasterPos4sv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rectd: x1 with: y1 with: x2 with: y2 [
 
 	<generated>
@@ -5926,7 +8174,10 @@ GL3_2 >> rectd: x1 with: y1 with: x2 with: y2 [
 	^ super rectd: x1 with: y1 with: x2 with: y2
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rectdv: v1 with: v2 [
 
 	<generated>
@@ -5934,7 +8185,10 @@ GL3_2 >> rectdv: v1 with: v2 [
 	^ super rectdv: v1 with: v2
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rectf: x1 with: y1 with: x2 with: y2 [
 
 	<generated>
@@ -5942,7 +8196,10 @@ GL3_2 >> rectf: x1 with: y1 with: x2 with: y2 [
 	^ super rectf: x1 with: y1 with: x2 with: y2
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rectfv: v1 with: v2 [
 
 	<generated>
@@ -5950,7 +8207,10 @@ GL3_2 >> rectfv: v1 with: v2 [
 	^ super rectfv: v1 with: v2
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> recti: x1 with: y1 with: x2 with: y2 [
 
 	<generated>
@@ -5958,7 +8218,10 @@ GL3_2 >> recti: x1 with: y1 with: x2 with: y2 [
 	^ super recti: x1 with: y1 with: x2 with: y2
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rectiv: v1 with: v2 [
 
 	<generated>
@@ -5966,7 +8229,10 @@ GL3_2 >> rectiv: v1 with: v2 [
 	^ super rectiv: v1 with: v2
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rects: x1 with: y1 with: x2 with: y2 [
 
 	<generated>
@@ -5974,7 +8240,10 @@ GL3_2 >> rects: x1 with: y1 with: x2 with: y2 [
 	^ super rects: x1 with: y1 with: x2 with: y2
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> rectsv: v1 with: v2 [
 
 	<generated>
@@ -5982,7 +8251,10 @@ GL3_2 >> rectsv: v1 with: v2 [
 	^ super rectsv: v1 with: v2
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> renderMode: mode [
 
 	<generated>
@@ -5990,7 +8262,10 @@ GL3_2 >> renderMode: mode [
 	^ super renderMode: mode
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> rotated: angle with: x with: y with: z [
 
 	<generated>
@@ -5998,7 +8273,10 @@ GL3_2 >> rotated: angle with: x with: y with: z [
 	^ super rotated: angle with: x with: y with: z
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> rotatef: angle with: x with: y with: z [
 
 	<generated>
@@ -6006,7 +8284,10 @@ GL3_2 >> rotatef: angle with: x with: y with: z [
 	^ super rotatef: angle with: x with: y with: z
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> sampleMaski: maskNumber with: mask [
 
 	<generated>
@@ -6014,7 +8295,10 @@ GL3_2 >> sampleMaski: maskNumber with: mask [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> scaled: x with: y with: z [
 
 	<generated>
@@ -6022,7 +8306,10 @@ GL3_2 >> scaled: x with: y with: z [
 	^ super scaled: x with: y with: z
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> scalef: x with: y with: z [
 
 	<generated>
@@ -6030,7 +8317,10 @@ GL3_2 >> scalef: x with: y with: z [
 	^ super scalef: x with: y with: z
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> secondaryColor3b: red with: green with: blue [
 
 	<generated>
@@ -6038,7 +8328,10 @@ GL3_2 >> secondaryColor3b: red with: green with: blue [
 	^ super secondaryColor3b: red with: green with: blue
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> secondaryColor3bv: v [
 
 	<generated>
@@ -6046,7 +8339,10 @@ GL3_2 >> secondaryColor3bv: v [
 	^ super secondaryColor3bv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> secondaryColor3d: red with: green with: blue [
 
 	<generated>
@@ -6054,7 +8350,10 @@ GL3_2 >> secondaryColor3d: red with: green with: blue [
 	^ super secondaryColor3d: red with: green with: blue
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> secondaryColor3dv: v [
 
 	<generated>
@@ -6062,7 +8361,10 @@ GL3_2 >> secondaryColor3dv: v [
 	^ super secondaryColor3dv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> secondaryColor3f: red with: green with: blue [
 
 	<generated>
@@ -6070,7 +8372,10 @@ GL3_2 >> secondaryColor3f: red with: green with: blue [
 	^ super secondaryColor3f: red with: green with: blue
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> secondaryColor3fv: v [
 
 	<generated>
@@ -6078,7 +8383,10 @@ GL3_2 >> secondaryColor3fv: v [
 	^ super secondaryColor3fv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> secondaryColor3i: red with: green with: blue [
 
 	<generated>
@@ -6086,7 +8394,10 @@ GL3_2 >> secondaryColor3i: red with: green with: blue [
 	^ super secondaryColor3i: red with: green with: blue
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> secondaryColor3iv: v [
 
 	<generated>
@@ -6094,7 +8405,10 @@ GL3_2 >> secondaryColor3iv: v [
 	^ super secondaryColor3iv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> secondaryColor3s: red with: green with: blue [
 
 	<generated>
@@ -6102,7 +8416,10 @@ GL3_2 >> secondaryColor3s: red with: green with: blue [
 	^ super secondaryColor3s: red with: green with: blue
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> secondaryColor3sv: v [
 
 	<generated>
@@ -6110,7 +8427,10 @@ GL3_2 >> secondaryColor3sv: v [
 	^ super secondaryColor3sv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> secondaryColor3ub: red with: green with: blue [
 
 	<generated>
@@ -6118,7 +8438,10 @@ GL3_2 >> secondaryColor3ub: red with: green with: blue [
 	^ super secondaryColor3ub: red with: green with: blue
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> secondaryColor3ubv: v [
 
 	<generated>
@@ -6126,7 +8449,10 @@ GL3_2 >> secondaryColor3ubv: v [
 	^ super secondaryColor3ubv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> secondaryColor3ui: red with: green with: blue [
 
 	<generated>
@@ -6134,7 +8460,10 @@ GL3_2 >> secondaryColor3ui: red with: green with: blue [
 	^ super secondaryColor3ui: red with: green with: blue
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> secondaryColor3uiv: v [
 
 	<generated>
@@ -6142,7 +8471,10 @@ GL3_2 >> secondaryColor3uiv: v [
 	^ super secondaryColor3uiv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> secondaryColor3us: red with: green with: blue [
 
 	<generated>
@@ -6150,7 +8482,10 @@ GL3_2 >> secondaryColor3us: red with: green with: blue [
 	^ super secondaryColor3us: red with: green with: blue
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> secondaryColor3usv: v [
 
 	<generated>
@@ -6158,7 +8493,10 @@ GL3_2 >> secondaryColor3usv: v [
 	^ super secondaryColor3usv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> secondaryColorPointer: size with: type with: stride with: pointer [
 
 	<generated>
@@ -6166,7 +8504,10 @@ GL3_2 >> secondaryColorPointer: size with: type with: stride with: pointer [
 	^ super secondaryColorPointer: size with: type with: stride with: pointer
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> selectBuffer: size with: buffer [
 
 	<generated>
@@ -6174,7 +8515,10 @@ GL3_2 >> selectBuffer: size with: buffer [
 	^ super selectBuffer: size with: buffer
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> shadeModel: mode [
 
 	<generated>
@@ -6182,7 +8526,10 @@ GL3_2 >> shadeModel: mode [
 	^ super shadeModel: mode
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord1d: s [
 
 	<generated>
@@ -6190,7 +8537,10 @@ GL3_2 >> texCoord1d: s [
 	^ super texCoord1d: s
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord1dv: v [
 
 	<generated>
@@ -6198,7 +8548,10 @@ GL3_2 >> texCoord1dv: v [
 	^ super texCoord1dv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord1f: s [
 
 	<generated>
@@ -6206,7 +8559,10 @@ GL3_2 >> texCoord1f: s [
 	^ super texCoord1f: s
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord1fv: v [
 
 	<generated>
@@ -6214,7 +8570,10 @@ GL3_2 >> texCoord1fv: v [
 	^ super texCoord1fv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord1i: s [
 
 	<generated>
@@ -6222,7 +8581,10 @@ GL3_2 >> texCoord1i: s [
 	^ super texCoord1i: s
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord1iv: v [
 
 	<generated>
@@ -6230,7 +8592,10 @@ GL3_2 >> texCoord1iv: v [
 	^ super texCoord1iv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord1s: s [
 
 	<generated>
@@ -6238,7 +8603,10 @@ GL3_2 >> texCoord1s: s [
 	^ super texCoord1s: s
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord1sv: v [
 
 	<generated>
@@ -6246,7 +8614,10 @@ GL3_2 >> texCoord1sv: v [
 	^ super texCoord1sv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord2d: s with: t [
 
 	<generated>
@@ -6254,7 +8625,10 @@ GL3_2 >> texCoord2d: s with: t [
 	^ super texCoord2d: s with: t
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord2dv: v [
 
 	<generated>
@@ -6262,7 +8636,10 @@ GL3_2 >> texCoord2dv: v [
 	^ super texCoord2dv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord2f: s with: t [
 
 	<generated>
@@ -6270,7 +8647,10 @@ GL3_2 >> texCoord2f: s with: t [
 	^ super texCoord2f: s with: t
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord2fv: v [
 
 	<generated>
@@ -6278,7 +8658,10 @@ GL3_2 >> texCoord2fv: v [
 	^ super texCoord2fv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord2i: s with: t [
 
 	<generated>
@@ -6286,7 +8669,10 @@ GL3_2 >> texCoord2i: s with: t [
 	^ super texCoord2i: s with: t
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord2iv: v [
 
 	<generated>
@@ -6294,7 +8680,10 @@ GL3_2 >> texCoord2iv: v [
 	^ super texCoord2iv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord2s: s with: t [
 
 	<generated>
@@ -6302,7 +8691,10 @@ GL3_2 >> texCoord2s: s with: t [
 	^ super texCoord2s: s with: t
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord2sv: v [
 
 	<generated>
@@ -6310,7 +8702,10 @@ GL3_2 >> texCoord2sv: v [
 	^ super texCoord2sv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord3d: s with: t with: r [
 
 	<generated>
@@ -6318,7 +8713,10 @@ GL3_2 >> texCoord3d: s with: t with: r [
 	^ super texCoord3d: s with: t with: r
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord3dv: v [
 
 	<generated>
@@ -6326,7 +8724,10 @@ GL3_2 >> texCoord3dv: v [
 	^ super texCoord3dv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord3f: s with: t with: r [
 
 	<generated>
@@ -6334,7 +8735,10 @@ GL3_2 >> texCoord3f: s with: t with: r [
 	^ super texCoord3f: s with: t with: r
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord3fv: v [
 
 	<generated>
@@ -6342,7 +8746,10 @@ GL3_2 >> texCoord3fv: v [
 	^ super texCoord3fv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord3i: s with: t with: r [
 
 	<generated>
@@ -6350,7 +8757,10 @@ GL3_2 >> texCoord3i: s with: t with: r [
 	^ super texCoord3i: s with: t with: r
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord3iv: v [
 
 	<generated>
@@ -6358,7 +8768,10 @@ GL3_2 >> texCoord3iv: v [
 	^ super texCoord3iv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord3s: s with: t with: r [
 
 	<generated>
@@ -6366,7 +8779,10 @@ GL3_2 >> texCoord3s: s with: t with: r [
 	^ super texCoord3s: s with: t with: r
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord3sv: v [
 
 	<generated>
@@ -6374,7 +8790,10 @@ GL3_2 >> texCoord3sv: v [
 	^ super texCoord3sv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord4d: s with: t with: r with: q [
 
 	<generated>
@@ -6382,7 +8801,10 @@ GL3_2 >> texCoord4d: s with: t with: r with: q [
 	^ super texCoord4d: s with: t with: r with: q
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord4dv: v [
 
 	<generated>
@@ -6390,7 +8812,10 @@ GL3_2 >> texCoord4dv: v [
 	^ super texCoord4dv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord4f: s with: t with: r with: q [
 
 	<generated>
@@ -6398,7 +8823,10 @@ GL3_2 >> texCoord4f: s with: t with: r with: q [
 	^ super texCoord4f: s with: t with: r with: q
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord4fv: v [
 
 	<generated>
@@ -6406,7 +8834,10 @@ GL3_2 >> texCoord4fv: v [
 	^ super texCoord4fv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord4i: s with: t with: r with: q [
 
 	<generated>
@@ -6414,7 +8845,10 @@ GL3_2 >> texCoord4i: s with: t with: r with: q [
 	^ super texCoord4i: s with: t with: r with: q
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord4iv: v [
 
 	<generated>
@@ -6422,7 +8856,10 @@ GL3_2 >> texCoord4iv: v [
 	^ super texCoord4iv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord4s: s with: t with: r with: q [
 
 	<generated>
@@ -6430,7 +8867,10 @@ GL3_2 >> texCoord4s: s with: t with: r with: q [
 	^ super texCoord4s: s with: t with: r with: q
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texCoord4sv: v [
 
 	<generated>
@@ -6438,7 +8878,10 @@ GL3_2 >> texCoord4sv: v [
 	^ super texCoord4sv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> texCoordPointer: size with: type with: stride with: pointer [
 
 	<generated>
@@ -6446,7 +8889,10 @@ GL3_2 >> texCoordPointer: size with: type with: stride with: pointer [
 	^ super texCoordPointer: size with: type with: stride with: pointer
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> texEnvf: target with: pname with: param [
 
 	<generated>
@@ -6454,7 +8900,10 @@ GL3_2 >> texEnvf: target with: pname with: param [
 	^ super texEnvf: target with: pname with: param
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> texEnvfv: target with: pname with: params [
 
 	<generated>
@@ -6462,7 +8911,10 @@ GL3_2 >> texEnvfv: target with: pname with: params [
 	^ super texEnvfv: target with: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> texEnvi: target with: pname with: param [
 
 	<generated>
@@ -6470,7 +8922,10 @@ GL3_2 >> texEnvi: target with: pname with: param [
 	^ super texEnvi: target with: pname with: param
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> texEnviv: target with: pname with: params [
 
 	<generated>
@@ -6478,7 +8933,10 @@ GL3_2 >> texEnviv: target with: pname with: params [
 	^ super texEnviv: target with: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> texGend: coord with: pname with: param [
 
 	<generated>
@@ -6486,7 +8944,10 @@ GL3_2 >> texGend: coord with: pname with: param [
 	^ super texGend: coord with: pname with: param
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> texGendv: coord with: pname with: params [
 
 	<generated>
@@ -6494,7 +8955,10 @@ GL3_2 >> texGendv: coord with: pname with: params [
 	^ super texGendv: coord with: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> texGenf: coord with: pname with: param [
 
 	<generated>
@@ -6502,7 +8966,10 @@ GL3_2 >> texGenf: coord with: pname with: param [
 	^ super texGenf: coord with: pname with: param
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> texGenfv: coord with: pname with: params [
 
 	<generated>
@@ -6510,7 +8977,10 @@ GL3_2 >> texGenfv: coord with: pname with: params [
 	^ super texGenfv: coord with: pname with: params
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> texGeni: coord with: pname with: param [
 
 	<generated>
@@ -6518,7 +8988,10 @@ GL3_2 >> texGeni: coord with: pname with: param [
 	^ super texGeni: coord with: pname with: param
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> texGeniv: coord with: pname with: params [
 
 	<generated>
@@ -6526,7 +8999,10 @@ GL3_2 >> texGeniv: coord with: pname with: params [
 	^ super texGeniv: coord with: pname with: params
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texImage2DMultisample: target with: samples with: internalformat with: width with: height with: fixedsamplelocations [
 
 	<generated>
@@ -6534,7 +9010,10 @@ GL3_2 >> texImage2DMultisample: target with: samples with: internalformat with: 
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> texImage3DMultisample: target with: samples with: internalformat with: width with: height with: depth with: fixedsamplelocations [
 
 	<generated>
@@ -6542,7 +9021,10 @@ GL3_2 >> texImage3DMultisample: target with: samples with: internalformat with: 
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> translated: x with: y with: z [
 
 	<generated>
@@ -6550,7 +9032,10 @@ GL3_2 >> translated: x with: y with: z [
 	^ super translated: x with: y with: z
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> translatef: x with: y with: z [
 
 	<generated>
@@ -6558,7 +9043,10 @@ GL3_2 >> translatef: x with: y with: z [
 	^ super translatef: x with: y with: z
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex2d: x with: y [
 
 	<generated>
@@ -6566,7 +9054,10 @@ GL3_2 >> vertex2d: x with: y [
 	^ super vertex2d: x with: y
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex2dv: v [
 
 	<generated>
@@ -6574,7 +9065,10 @@ GL3_2 >> vertex2dv: v [
 	^ super vertex2dv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex2f: x with: y [
 
 	<generated>
@@ -6582,7 +9076,10 @@ GL3_2 >> vertex2f: x with: y [
 	^ super vertex2f: x with: y
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex2fv: v [
 
 	<generated>
@@ -6590,7 +9087,10 @@ GL3_2 >> vertex2fv: v [
 	^ super vertex2fv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex2i: x with: y [
 
 	<generated>
@@ -6598,7 +9098,10 @@ GL3_2 >> vertex2i: x with: y [
 	^ super vertex2i: x with: y
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex2iv: v [
 
 	<generated>
@@ -6606,7 +9109,10 @@ GL3_2 >> vertex2iv: v [
 	^ super vertex2iv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex2s: x with: y [
 
 	<generated>
@@ -6614,7 +9120,10 @@ GL3_2 >> vertex2s: x with: y [
 	^ super vertex2s: x with: y
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex2sv: v [
 
 	<generated>
@@ -6622,7 +9131,10 @@ GL3_2 >> vertex2sv: v [
 	^ super vertex2sv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex3d: x with: y with: z [
 
 	<generated>
@@ -6630,7 +9142,10 @@ GL3_2 >> vertex3d: x with: y with: z [
 	^ super vertex3d: x with: y with: z
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex3dv: v [
 
 	<generated>
@@ -6638,7 +9153,10 @@ GL3_2 >> vertex3dv: v [
 	^ super vertex3dv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex3f: x with: y with: z [
 
 	<generated>
@@ -6646,7 +9164,10 @@ GL3_2 >> vertex3f: x with: y with: z [
 	^ super vertex3f: x with: y with: z
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex3fv: v [
 
 	<generated>
@@ -6654,7 +9175,10 @@ GL3_2 >> vertex3fv: v [
 	^ super vertex3fv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex3i: x with: y with: z [
 
 	<generated>
@@ -6662,7 +9186,10 @@ GL3_2 >> vertex3i: x with: y with: z [
 	^ super vertex3i: x with: y with: z
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex3iv: v [
 
 	<generated>
@@ -6670,7 +9197,10 @@ GL3_2 >> vertex3iv: v [
 	^ super vertex3iv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex3s: x with: y with: z [
 
 	<generated>
@@ -6678,7 +9208,10 @@ GL3_2 >> vertex3s: x with: y with: z [
 	^ super vertex3s: x with: y with: z
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex3sv: v [
 
 	<generated>
@@ -6686,7 +9219,10 @@ GL3_2 >> vertex3sv: v [
 	^ super vertex3sv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex4d: x with: y with: z with: w [
 
 	<generated>
@@ -6694,7 +9230,10 @@ GL3_2 >> vertex4d: x with: y with: z with: w [
 	^ super vertex4d: x with: y with: z with: w
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex4dv: v [
 
 	<generated>
@@ -6702,7 +9241,10 @@ GL3_2 >> vertex4dv: v [
 	^ super vertex4dv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex4f: x with: y with: z with: w [
 
 	<generated>
@@ -6710,7 +9252,10 @@ GL3_2 >> vertex4f: x with: y with: z with: w [
 	^ super vertex4f: x with: y with: z with: w
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex4fv: v [
 
 	<generated>
@@ -6718,7 +9263,10 @@ GL3_2 >> vertex4fv: v [
 	^ super vertex4fv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> vertex4i: x with: y with: z with: w [
 
 	<generated>
@@ -6726,7 +9274,10 @@ GL3_2 >> vertex4i: x with: y with: z with: w [
 	^ super vertex4i: x with: y with: z with: w
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> vertex4iv: v [
 
 	<generated>
@@ -6734,7 +9285,10 @@ GL3_2 >> vertex4iv: v [
 	^ super vertex4iv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> vertex4s: x with: y with: z with: w [
 
 	<generated>
@@ -6742,7 +9296,10 @@ GL3_2 >> vertex4s: x with: y with: z with: w [
 	^ super vertex4s: x with: y with: z with: w
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> vertex4sv: v [
 
 	<generated>
@@ -6750,7 +9307,10 @@ GL3_2 >> vertex4sv: v [
 	^ super vertex4sv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> vertexPointer: size with: type with: stride with: pointer [
 
 	<generated>
@@ -6758,7 +9318,10 @@ GL3_2 >> vertexPointer: size with: type with: stride with: pointer [
 	^ super vertexPointer: size with: type with: stride with: pointer
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL3_2 >> waitSync: sync with: flags with: timeout [
 
 	<generated>
@@ -6766,7 +9329,10 @@ GL3_2 >> waitSync: sync with: flags with: timeout [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> windowPos2d: x with: y [
 
 	<generated>
@@ -6774,7 +9340,10 @@ GL3_2 >> windowPos2d: x with: y [
 	^ super windowPos2d: x with: y
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> windowPos2dv: v [
 
 	<generated>
@@ -6782,7 +9351,10 @@ GL3_2 >> windowPos2dv: v [
 	^ super windowPos2dv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> windowPos2f: x with: y [
 
 	<generated>
@@ -6790,7 +9362,10 @@ GL3_2 >> windowPos2f: x with: y [
 	^ super windowPos2f: x with: y
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> windowPos2fv: v [
 
 	<generated>
@@ -6798,7 +9373,10 @@ GL3_2 >> windowPos2fv: v [
 	^ super windowPos2fv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> windowPos2i: x with: y [
 
 	<generated>
@@ -6806,7 +9384,10 @@ GL3_2 >> windowPos2i: x with: y [
 	^ super windowPos2i: x with: y
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> windowPos2iv: v [
 
 	<generated>
@@ -6814,7 +9395,10 @@ GL3_2 >> windowPos2iv: v [
 	^ super windowPos2iv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> windowPos2s: x with: y [
 
 	<generated>
@@ -6822,7 +9406,10 @@ GL3_2 >> windowPos2s: x with: y [
 	^ super windowPos2s: x with: y
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> windowPos2sv: v [
 
 	<generated>
@@ -6830,7 +9417,10 @@ GL3_2 >> windowPos2sv: v [
 	^ super windowPos2sv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> windowPos3d: x with: y with: z [
 
 	<generated>
@@ -6838,7 +9428,10 @@ GL3_2 >> windowPos3d: x with: y with: z [
 	^ super windowPos3d: x with: y with: z
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> windowPos3dv: v [
 
 	<generated>
@@ -6846,7 +9439,10 @@ GL3_2 >> windowPos3dv: v [
 	^ super windowPos3dv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> windowPos3f: x with: y with: z [
 
 	<generated>
@@ -6854,7 +9450,10 @@ GL3_2 >> windowPos3f: x with: y with: z [
 	^ super windowPos3f: x with: y with: z
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> windowPos3fv: v [
 
 	<generated>
@@ -6862,7 +9461,10 @@ GL3_2 >> windowPos3fv: v [
 	^ super windowPos3fv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> windowPos3i: x with: y with: z [
 
 	<generated>
@@ -6870,7 +9472,10 @@ GL3_2 >> windowPos3i: x with: y with: z [
 	^ super windowPos3i: x with: y with: z
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> windowPos3iv: v [
 
 	<generated>
@@ -6878,7 +9483,10 @@ GL3_2 >> windowPos3iv: v [
 	^ super windowPos3iv: v
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> windowPos3s: x with: y with: z [
 
 	<generated>
@@ -6886,7 +9494,10 @@ GL3_2 >> windowPos3s: x with: y with: z [
 	^ super windowPos3s: x with: y with: z
 ]
 
-{ #category : #'api - removed' }
+{
+	#category : #'api - removed',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL3_2 >> windowPos3sv: v [
 
 	<generated>

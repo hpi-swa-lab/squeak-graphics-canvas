@@ -1,22 +1,32 @@
 Class {
 	#name : #RtLayerVisitor,
 	#superclass : #Object,
-	#category : #'RenderThee-LayerTree'
+	#category : #'RenderThee-LayerTree',
+	#commentStamp : ''
 }
 
-{ #category : #visiting }
+{
+	#category : #visiting,
+	#timestamp : ''
+}
 RtLayerVisitor >> visit: anObject [
 
 	^ anObject accept: self
 ]
 
-{ #category : #visiting }
+{
+	#category : #visiting,
+	#timestamp : ''
+}
 RtLayerVisitor >> visitDrawLayer: aLayer [
 
 	
 ]
 
-{ #category : #visiting }
+{
+	#category : #visiting,
+	#timestamp : ''
+}
 RtLayerVisitor >> visitGroupLayer: aLayer [
 
 	aLayer children do: [:child |

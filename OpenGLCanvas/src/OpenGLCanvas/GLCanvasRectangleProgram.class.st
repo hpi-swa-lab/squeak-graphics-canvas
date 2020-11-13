@@ -10,16 +10,23 @@ Class {
 		'aPosLocation',
 		'aTexCoordsLocation'
 	],
-	#category : #'OpenGLCanvas-Core'
+	#category : #'OpenGLCanvas-Core',
+	#commentStamp : ''
 }
 
-{ #category : #'as yet unclassified' }
+{
+	#category : #'as yet unclassified',
+	#timestamp : ''
+}
 GLCanvasRectangleProgram class >> attributes [
 
 	^ #('aPos')
 ]
 
-{ #category : #'as yet unclassified' }
+{
+	#category : #'as yet unclassified',
+	#timestamp : ''
+}
 GLCanvasRectangleProgram class >> fragmentShader [
 
 	^ '#version 330 core
@@ -42,13 +49,19 @@ void main() {
 }'
 ]
 
-{ #category : #'as yet unclassified' }
+{
+	#category : #'as yet unclassified',
+	#timestamp : ''
+}
 GLCanvasRectangleProgram class >> uniforms [
 
 	^ #('mvp' 'extent' 'color' 'borderColor' 'borderWidth')
 ]
 
-{ #category : #'as yet unclassified' }
+{
+	#category : #'as yet unclassified',
+	#timestamp : ''
+}
 GLCanvasRectangleProgram class >> vertexShader [
     ^'#version 330 core
 in vec2 aPos;
@@ -65,37 +78,55 @@ void main()
 }' withUnixLineEndings
 ]
 
-{ #category : #generated }
+{
+	#category : #generated,
+	#timestamp : ''
+}
 GLCanvasRectangleProgram >> aPosLocation [
 
 	^ aPosLocation
 ]
 
-{ #category : #generated }
+{
+	#category : #generated,
+	#timestamp : ''
+}
 GLCanvasRectangleProgram >> borderColor: anObject [
 
 	self uniform: borderColorLocation value: anObject
 ]
 
-{ #category : #generated }
+{
+	#category : #generated,
+	#timestamp : ''
+}
 GLCanvasRectangleProgram >> borderWidth: anObject [
 
 	self uniform: borderWidthLocation value: anObject
 ]
 
-{ #category : #generated }
+{
+	#category : #generated,
+	#timestamp : ''
+}
 GLCanvasRectangleProgram >> color: anObject [
 
 	self uniform: colorLocation value: anObject
 ]
 
-{ #category : #generated }
+{
+	#category : #generated,
+	#timestamp : ''
+}
 GLCanvasRectangleProgram >> extent: anObject [
 
 	self uniform: extentLocation value: anObject
 ]
 
-{ #category : #generated }
+{
+	#category : #generated,
+	#timestamp : ''
+}
 GLCanvasRectangleProgram >> initializeLocations [
 
 	super initializeLocations.
@@ -109,7 +140,10 @@ GLCanvasRectangleProgram >> initializeLocations [
 	aPosLocation := self registerAttribute: 'aPos'.
 ]
 
-{ #category : #generated }
+{
+	#category : #generated,
+	#timestamp : ''
+}
 GLCanvasRectangleProgram >> mvp: anObject [
 
 	self uniform: mvpLocation value: anObject

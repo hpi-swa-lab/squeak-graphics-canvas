@@ -6,10 +6,14 @@ Class {
 		'fillStyle',
 		'borderStyle'
 	],
-	#category : #'RenderThee-Pictures'
+	#category : #'RenderThee-Pictures',
+	#commentStamp : ''
 }
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : ''
+}
 PicDrawShape class >> bounds: aRectangle borderStyle: aBorderStyle [
 
 	^ self
@@ -18,7 +22,10 @@ PicDrawShape class >> bounds: aRectangle borderStyle: aBorderStyle [
 		borderStyle: aBorderStyle
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : ''
+}
 PicDrawShape class >> bounds: aRectangle fillStyle: aFillStyle [
 
 	^ self
@@ -27,7 +34,10 @@ PicDrawShape class >> bounds: aRectangle fillStyle: aFillStyle [
 		borderStyle: (SimpleBorder width: 0)
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : ''
+}
 PicDrawShape class >> bounds: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	^ self new
@@ -37,43 +47,64 @@ PicDrawShape class >> bounds: aRectangle fillStyle: aFillStyle borderStyle: aBor
 		yourself
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawShape >> borderStyle [
 
 	^ borderStyle
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawShape >> borderStyle: anObject [
 
 	borderStyle := anObject.
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawShape >> bounds [
 
 	^ bounds
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawShape >> bounds: anObject [
 
 	bounds := anObject.
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawShape >> estimatedBounds [
 
 	^ bounds
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawShape >> fillStyle [
 
 	^ fillStyle
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawShape >> fillStyle: anObject [
 
 	fillStyle := anObject.

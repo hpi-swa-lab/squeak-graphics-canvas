@@ -1,10 +1,14 @@
 Class {
 	#name : #GLTexture,
 	#superclass : #GLObject,
-	#category : #'OpenGL-Wrappers-Textures'
+	#category : #'OpenGL-Wrappers-Textures',
+	#commentStamp : ''
 }
 
-{ #category : #allocation }
+{
+	#category : #allocation,
+	#timestamp : 'stlu 11/3/2020 15:40'
+}
 GLTexture class >> allocate [
 
 	IntegerArray new: 1 during: [:ids |
@@ -12,43 +16,64 @@ GLTexture class >> allocate [
 		^ ids first]
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 11/6/2020 14:57'
+}
 GLTexture class >> bind: id [
 
 	self bind: id to: self target
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 11/6/2020 14:57'
+}
 GLTexture class >> bind: id to: target [
 
 	GL bindTexture: target with: id
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 10/29/2020 00:36'
+}
 GLTexture class >> bindingEnum [
 
 	self subclassResponsibility
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 11/6/2020 14:58'
+}
 GLTexture class >> currentBinding [
 
 	^ self getIntegerParameter: self bindingEnum
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 10/29/2020 00:42'
+}
 GLTexture class >> target [
 
 	self subclassResponsibility
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 11/6/2020 14:57'
+}
 GLTexture >> bind [
 
 	self class bind: id
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 11/6/2020 14:57'
+}
 GLTexture >> boundDuring: aBlock [
 
 	| previousID |
@@ -60,13 +85,19 @@ GLTexture >> boundDuring: aBlock [
 		self class bind: previousID]
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : 'stlu 10/29/2020 12:16'
+}
 GLTexture >> isTexture [
 
 	^ true
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 10/29/2020 00:25'
+}
 GLTexture >> target [
 
 	^ self class target

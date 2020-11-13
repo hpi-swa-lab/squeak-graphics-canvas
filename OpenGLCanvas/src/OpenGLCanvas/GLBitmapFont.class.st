@@ -9,16 +9,23 @@ Class {
 		'texture',
 		'font'
 	],
-	#category : #'OpenGLCanvas-Fonts'
+	#category : #'OpenGLCanvas-Fonts',
+	#commentStamp : ''
 }
 
-{ #category : #'as yet unclassified' }
+{
+	#category : #'as yet unclassified',
+	#timestamp : ''
+}
 GLBitmapFont >> advanceFor: aCharacter [
 
 	^ font advanceOf: aCharacter
 ]
 
-{ #category : #'as yet unclassified' }
+{
+	#category : #'as yet unclassified',
+	#timestamp : ''
+}
 GLBitmapFont >> extentFor: aCharacter [
 
 	| index |
@@ -27,7 +34,10 @@ GLBitmapFont >> extentFor: aCharacter [
 	^ (offsets at: index + 1) - (offsets at: index ifAbsent: [0]) @ (font characterFormAt: aCharacter) height
 ]
 
-{ #category : #'as yet unclassified' }
+{
+	#category : #'as yet unclassified',
+	#timestamp : 'stlu 10/28/2020 23:48'
+}
 GLBitmapFont >> font: aFont [
 
 	| x |
@@ -45,32 +55,47 @@ GLBitmapFont >> font: aFont [
 		offsets at: index put: x]
 ]
 
-{ #category : #'as yet unclassified' }
+{
+	#category : #'as yet unclassified',
+	#timestamp : ''
+}
 GLBitmapFont >> hasGlyphOf: aCharacter [
 
 	^ self printableCharacters includes: aCharacter asInteger
 ]
 
-{ #category : #'as yet unclassified' }
+{
+	#category : #'as yet unclassified',
+	#timestamp : ''
+}
 GLBitmapFont >> indexForCharacter: aCharacter [
 
 	^ aCharacter asInteger - self printableCharacters start
 ]
 
-{ #category : #'as yet unclassified' }
+{
+	#category : #'as yet unclassified',
+	#timestamp : ''
+}
 GLBitmapFont >> offsetFor: aCharacter [
 
 	^ ((offsets at: (self indexForCharacter: aCharacter) ifAbsent: [0]) @ font ascent)
 		 - (font characterFormAt: aCharacter) offset
 ]
 
-{ #category : #'as yet unclassified' }
+{
+	#category : #'as yet unclassified',
+	#timestamp : ''
+}
 GLBitmapFont >> printableCharacters [
 
 	^ 33 to: 126.
 ]
 
-{ #category : #'as yet unclassified' }
+{
+	#category : #'as yet unclassified',
+	#timestamp : ''
+}
 GLBitmapFont >> texture [
 
 	^ texture

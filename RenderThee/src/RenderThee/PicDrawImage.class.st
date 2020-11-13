@@ -7,10 +7,14 @@ Class {
 		'sourceRect',
 		'combinationRule'
 	],
-	#category : #'RenderThee-Pictures'
+	#category : #'RenderThee-Pictures',
+	#commentStamp : ''
 }
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : ''
+}
 PicDrawImage class >> form: aForm origin: aPoint sourceRect: aRectangle rule: anInteger [
 
 	^ self new
@@ -21,19 +25,28 @@ PicDrawImage class >> form: aForm origin: aPoint sourceRect: aRectangle rule: an
 		yourself
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawImage >> combinationRule [
 
 	^ combinationRule
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawImage >> combinationRule: anObject [
 
 	combinationRule := anObject
 ]
 
-{ #category : #drawing }
+{
+	#category : #drawing,
+	#timestamp : ''
+}
 PicDrawImage >> drawOn: aCanvas [
 
 	aCanvas
@@ -43,43 +56,64 @@ PicDrawImage >> drawOn: aCanvas [
 		rule: combinationRule
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawImage >> estimatedBounds [
 
 	^ origin extent: sourceRect extent
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawImage >> form [
 
 	^ form
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawImage >> form: anObject [
 
 	form := anObject.
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawImage >> origin [
 
 	^ origin
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawImage >> origin: anObject [
 
 	origin := anObject.
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawImage >> sourceRect [
 
 	^ sourceRect
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawImage >> sourceRect: anObject [
 
 	sourceRect := anObject.

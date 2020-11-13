@@ -1,6 +1,9 @@
 Extension { #name : #HandMorph }
 
-{ #category : #'*RenderThee' }
+{
+	#category : #'*RenderThee',
+	#timestamp : ''
+}
 HandMorph >> isRepaintBoundary [
 
 	^ true

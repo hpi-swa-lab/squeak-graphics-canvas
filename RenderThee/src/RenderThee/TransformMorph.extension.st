@@ -1,6 +1,9 @@
 Extension { #name : #TransformMorph }
 
-{ #category : #'*RenderThee' }
+{
+	#category : #'*RenderThee',
+	#timestamp : ''
+}
 TransformMorph >> isRepaintBoundary [
 
 	^ true

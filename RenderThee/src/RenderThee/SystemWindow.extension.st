@@ -1,6 +1,9 @@
 Extension { #name : #SystemWindow }
 
-{ #category : #'*RenderThee' }
+{
+	#category : #'*RenderThee',
+	#timestamp : ''
+}
 SystemWindow >> isRepaintBoundary [
 
 	^ true

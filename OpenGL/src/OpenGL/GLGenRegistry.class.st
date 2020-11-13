@@ -19,16 +19,23 @@ Class {
 		'enumGroups',
 		'apis'
 	],
-	#category : #'OpenGL-Generation'
+	#category : #'OpenGL-Generation',
+	#commentStamp : 'stlu 11/6/2020 17:57'
 }
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 10/31/2020 23:18'
+}
 GLGenRegistry class >> fromFile: filePath [
 
 	^ self fromXML: (XMLDOMParser parseDocumentFrom: filePath asURI contentStream)
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/1/2020 19:47'
+}
 GLGenRegistry class >> fromTag: registryTag [
 
 	^ self new
@@ -36,7 +43,10 @@ GLGenRegistry class >> fromTag: registryTag [
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/6/2020 17:49'
+}
 GLGenRegistry class >> fromUrl: urlString [
 
 	| response |
@@ -45,19 +55,28 @@ GLGenRegistry class >> fromUrl: urlString [
 	^ self fromXML: (XMLDOMParser parseDocumentFrom: response content readStream)
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/6/2020 17:52'
+}
 GLGenRegistry class >> fromWeb [
 
 	^ self fromUrl: 'https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml'
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/1/2020 19:20'
+}
 GLGenRegistry class >> fromXML: xml [
 
 	^ self fromTag: (xml firstTagNamed: #registry)
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/2/2020 13:20'
+}
 GLGenRegistry >> addCommand: command [
 
 	^ commands
@@ -66,7 +85,10 @@ GLGenRegistry >> addCommand: command [
 		ifAbsentPut: [command]
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/2/2020 13:20'
+}
 GLGenRegistry >> addEnum: enum [
 
 	^ enums
@@ -75,38 +97,56 @@ GLGenRegistry >> addEnum: enum [
 		ifAbsentPut: [enum]
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/31/2020 22:19'
+}
 GLGenRegistry >> apis [
 
 	^ apis
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/31/2020 22:19'
+}
 GLGenRegistry >> commands [
 
 	^ commands
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/31/2020 22:19'
+}
 GLGenRegistry >> enumGroups [
 
 	^ enumGroups
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/31/2020 22:19'
+}
 GLGenRegistry >> enums [
 
 	^ enums
 ]
 
-{ #category : #generation }
+{
+	#category : #generation,
+	#timestamp : 'stlu 11/2/2020 20:56'
+}
 GLGenRegistry >> generate [
 
 	self generateConstantsPool.
 	apis do: [:api | api generate].
 ]
 
-{ #category : #generation }
+{
+	#category : #generation,
+	#timestamp : 'stlu 11/2/2020 20:54'
+}
 GLGenRegistry >> generateConstantsPool [
 
 	| classVars |
@@ -116,7 +156,10 @@ GLGenRegistry >> generateConstantsPool [
 			GLConstants addClassVarName: enum name]]
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : 'stlu 10/31/2020 23:59'
+}
 GLGenRegistry >> initialize [
 
 	super initialize.
@@ -126,7 +169,10 @@ GLGenRegistry >> initialize [
 	apis := Dictionary new
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : 'stlu 11/2/2020 20:28'
+}
 GLGenRegistry >> tag: registryTag [
 
 	name := 'gl.xml'.

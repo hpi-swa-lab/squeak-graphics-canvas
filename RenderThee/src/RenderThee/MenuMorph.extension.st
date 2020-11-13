@@ -1,6 +1,9 @@
 Extension { #name : #MenuMorph }
 
-{ #category : #'*RenderThee' }
+{
+	#category : #'*RenderThee',
+	#timestamp : ''
+}
 MenuMorph >> isRepaintBoundary [
 
 	^ true

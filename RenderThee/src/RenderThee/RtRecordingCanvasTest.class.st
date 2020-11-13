@@ -1,16 +1,23 @@
 Class {
 	#name : #RtRecordingCanvasTest,
 	#superclass : #RtCanvasTest,
-	#category : #'RenderThee-Tests'
+	#category : #'RenderThee-Tests',
+	#commentStamp : ''
 }
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtRecordingCanvasTest >> canvasForm [
 
 	^ canvas layer assuredForm
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 RtRecordingCanvasTest >> createCanvas [
 
 	^ RtRecordingCanvas extent: self canvasExtent

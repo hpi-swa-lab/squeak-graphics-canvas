@@ -1,12 +1,18 @@
 Extension { #name : #GLCanvas }
 
-{ #category : #'*RenderThee-LayerTree' }
+{
+	#category : #'*RenderThee-LayerTree',
+	#timestamp : ''
+}
 GLCanvas >> imageStoreClass [
 
 	^ RtFramebufferStore
 ]
 
-{ #category : #'*RenderThee-LayerTree' }
+{
+	#category : #'*RenderThee-LayerTree',
+	#timestamp : 'stlu 10/29/2020 01:37'
+}
 GLCanvas >> paintImageStore: aStore sourceRect: sourceRect [
 
 	self boundDuring: [

@@ -4,21 +4,31 @@ Class {
 	#instVars : [
 		'renderer'
 	],
-	#category : #'RenderThee-Project'
+	#category : #'RenderThee-Project',
+	#commentStamp : ''
 }
 
-{ #category : #canvas }
+{
+	#category : #canvas,
+	#timestamp : ''
+}
 RtWorldState >> canvas: aCanvas [
 
 	canvas := aCanvas
 ]
 
-{ #category : #canvas }
+{
+	#category : #canvas,
+	#timestamp : ''
+}
 RtWorldState >> doFullRepaint [
 
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 RtWorldState >> initialize [
 
 	hands := Array new.
@@ -27,19 +37,28 @@ RtWorldState >> initialize [
 	lastAlarmTime := 0
 ]
 
-{ #category : #canvas }
+{
+	#category : #canvas,
+	#timestamp : ''
+}
 RtWorldState >> recordDamagedRect: damageRect [
 
 	"should not be called"
 ]
 
-{ #category : #canvas }
+{
+	#category : #canvas,
+	#timestamp : ''
+}
 RtWorldState >> recordDamagedRect: damageRect from: aMorph [
 
 	
 ]
 
-{ #category : #'update cycle' }
+{
+	#category : #'update cycle',
+	#timestamp : ''
+}
 RtWorldState >> renderWorld: aWorld [
 	"Update this world's display."
 	aWorld fullBounds. "send #ownerChanged to submorphs."
@@ -47,19 +66,28 @@ RtWorldState >> renderWorld: aWorld [
 	renderer renderFrame
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtWorldState >> renderer [
 
 	^ renderer
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtWorldState >> renderer: anObject [
 
 	renderer := anObject
 ]
 
-{ #category : #canvas }
+{
+	#category : #canvas,
+	#timestamp : ''
+}
 RtWorldState >> resetDamageRecorder [
 
 	

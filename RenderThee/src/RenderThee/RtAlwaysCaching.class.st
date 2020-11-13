@@ -4,16 +4,23 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'RenderThee-LayerTree'
+	#category : #'RenderThee-LayerTree',
+	#commentStamp : ''
 }
 
-{ #category : #'as yet unclassified' }
+{
+	#category : #'as yet unclassified',
+	#timestamp : ''
+}
 RtAlwaysCaching >> shouldCacheDrawLayer: aLayer [
 
 	^ true
 ]
 
-{ #category : #'as yet unclassified' }
+{
+	#category : #'as yet unclassified',
+	#timestamp : ''
+}
 RtAlwaysCaching >> shouldCacheGroupLayer: aLayer [
 
 	^ true

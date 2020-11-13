@@ -1,273 +1,391 @@
 Class {
 	#name : #'GL4_1',
 	#superclass : #'GL4_0',
-	#category : #'OpenGL-API-GL'
+	#category : #'OpenGL-API-GL',
+	#commentStamp : ''
 }
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GL4_1 class >> majorVersion [
 
 	^ 4
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GL4_1 class >> minorVersion [
 
 	^ 1
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/2/2020 14:52'
+}
 GL4_1 class >> versionNumber [
 
 	^ 41
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> ACTIVE_PROGRAM [
 
 	<generated>
 	^ GL_ACTIVE_PROGRAM
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> ALL_SHADER_BITS [
 
 	<generated>
 	^ GL_ALL_SHADER_BITS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> FIXED [
 
 	<generated>
 	^ GL_FIXED
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> FRAGMENT_SHADER_BIT [
 
 	<generated>
 	^ GL_FRAGMENT_SHADER_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> GEOMETRY_SHADER_BIT [
 
 	<generated>
 	^ GL_GEOMETRY_SHADER_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> HIGH_FLOAT [
 
 	<generated>
 	^ GL_HIGH_FLOAT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> HIGH_INT [
 
 	<generated>
 	^ GL_HIGH_INT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> IMPLEMENTATION_COLOR_READ_FORMAT [
 
 	<generated>
 	^ GL_IMPLEMENTATION_COLOR_READ_FORMAT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> IMPLEMENTATION_COLOR_READ_TYPE [
 
 	<generated>
 	^ GL_IMPLEMENTATION_COLOR_READ_TYPE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> LAYER_PROVOKING_VERTEX [
 
 	<generated>
 	^ GL_LAYER_PROVOKING_VERTEX
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> LOW_FLOAT [
 
 	<generated>
 	^ GL_LOW_FLOAT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> LOW_INT [
 
 	<generated>
 	^ GL_LOW_INT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> MAX_FRAGMENT_UNIFORM_VECTORS [
 
 	<generated>
 	^ GL_MAX_FRAGMENT_UNIFORM_VECTORS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> MAX_VARYING_VECTORS [
 
 	<generated>
 	^ GL_MAX_VARYING_VECTORS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> MAX_VERTEX_UNIFORM_VECTORS [
 
 	<generated>
 	^ GL_MAX_VERTEX_UNIFORM_VECTORS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> MAX_VIEWPORTS [
 
 	<generated>
 	^ GL_MAX_VIEWPORTS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> MEDIUM_FLOAT [
 
 	<generated>
 	^ GL_MEDIUM_FLOAT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> MEDIUM_INT [
 
 	<generated>
 	^ GL_MEDIUM_INT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> NUM_PROGRAM_BINARY_FORMATS [
 
 	<generated>
 	^ GL_NUM_PROGRAM_BINARY_FORMATS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> NUM_SHADER_BINARY_FORMATS [
 
 	<generated>
 	^ GL_NUM_SHADER_BINARY_FORMATS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> PROGRAM_BINARY_FORMATS [
 
 	<generated>
 	^ GL_PROGRAM_BINARY_FORMATS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> PROGRAM_BINARY_LENGTH [
 
 	<generated>
 	^ GL_PROGRAM_BINARY_LENGTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> PROGRAM_BINARY_RETRIEVABLE_HINT [
 
 	<generated>
 	^ GL_PROGRAM_BINARY_RETRIEVABLE_HINT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> PROGRAM_PIPELINE_BINDING [
 
 	<generated>
 	^ GL_PROGRAM_PIPELINE_BINDING
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> PROGRAM_SEPARABLE [
 
 	<generated>
 	^ GL_PROGRAM_SEPARABLE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> RGB565 [
 
 	<generated>
 	^ GL_RGB565
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> SHADER_BINARY_FORMATS [
 
 	<generated>
 	^ GL_SHADER_BINARY_FORMATS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> SHADER_COMPILER [
 
 	<generated>
 	^ GL_SHADER_COMPILER
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> TESS_CONTROL_SHADER_BIT [
 
 	<generated>
 	^ GL_TESS_CONTROL_SHADER_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> TESS_EVALUATION_SHADER_BIT [
 
 	<generated>
 	^ GL_TESS_EVALUATION_SHADER_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> UNDEFINED_VERTEX [
 
 	<generated>
 	^ GL_UNDEFINED_VERTEX
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> VERTEX_SHADER_BIT [
 
 	<generated>
 	^ GL_VERTEX_SHADER_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> VIEWPORT_BOUNDS_RANGE [
 
 	<generated>
 	^ GL_VIEWPORT_BOUNDS_RANGE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> VIEWPORT_INDEX_PROVOKING_VERTEX [
 
 	<generated>
 	^ GL_VIEWPORT_INDEX_PROVOKING_VERTEX
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> VIEWPORT_SUBPIXEL_BITS [
 
 	<generated>
 	^ GL_VIEWPORT_SUBPIXEL_BITS
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> activeShaderProgram: pipeline with: program [
 
 	<generated>
@@ -275,7 +393,10 @@ GL4_1 >> activeShaderProgram: pipeline with: program [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> bindProgramPipeline: pipeline [
 
 	<generated>
@@ -283,7 +404,10 @@ GL4_1 >> bindProgramPipeline: pipeline [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> clearDepthf: d [
 
 	<generated>
@@ -291,7 +415,10 @@ GL4_1 >> clearDepthf: d [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> createShaderProgramv: type with: count with: strings [
 
 	<generated>
@@ -299,7 +426,10 @@ GL4_1 >> createShaderProgramv: type with: count with: strings [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> deleteProgramPipelines: n with: pipelines [
 
 	<generated>
@@ -307,7 +437,10 @@ GL4_1 >> deleteProgramPipelines: n with: pipelines [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> depthRangeArrayv: first with: count with: v [
 
 	<generated>
@@ -315,7 +448,10 @@ GL4_1 >> depthRangeArrayv: first with: count with: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> depthRangeIndexed: index with: n with: f [
 
 	<generated>
@@ -323,7 +459,10 @@ GL4_1 >> depthRangeIndexed: index with: n with: f [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> depthRangef: n with: f [
 
 	<generated>
@@ -331,7 +470,10 @@ GL4_1 >> depthRangef: n with: f [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> genProgramPipelines: n with: pipelines [
 
 	<generated>
@@ -339,7 +481,10 @@ GL4_1 >> genProgramPipelines: n with: pipelines [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> getDoublei_v: target with: index with: data [
 
 	<generated>
@@ -347,7 +492,10 @@ GL4_1 >> getDoublei_v: target with: index with: data [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> getFloati_v: target with: index with: data [
 
 	<generated>
@@ -355,7 +503,10 @@ GL4_1 >> getFloati_v: target with: index with: data [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> getProgramBinary: program with: bufSize with: length with: binaryFormat with: binary [
 
 	<generated>
@@ -363,7 +514,10 @@ GL4_1 >> getProgramBinary: program with: bufSize with: length with: binaryFormat
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> getProgramPipelineInfoLog: pipeline with: bufSize with: length with: infoLog [
 
 	<generated>
@@ -371,7 +525,10 @@ GL4_1 >> getProgramPipelineInfoLog: pipeline with: bufSize with: length with: in
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> getProgramPipelineiv: pipeline with: pname with: params [
 
 	<generated>
@@ -379,7 +536,10 @@ GL4_1 >> getProgramPipelineiv: pipeline with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> getShaderPrecisionFormat: shadertype with: precisiontype with: range with: precision [
 
 	<generated>
@@ -387,7 +547,10 @@ GL4_1 >> getShaderPrecisionFormat: shadertype with: precisiontype with: range wi
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> getVertexAttribLdv: index with: pname with: params [
 
 	<generated>
@@ -395,7 +558,10 @@ GL4_1 >> getVertexAttribLdv: index with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> isProgramPipeline: pipeline [
 
 	<generated>
@@ -403,7 +569,10 @@ GL4_1 >> isProgramPipeline: pipeline [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programBinary: program with: binaryFormat with: binary with: length [
 
 	<generated>
@@ -411,7 +580,10 @@ GL4_1 >> programBinary: program with: binaryFormat with: binary with: length [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programParameteri: program with: pname with: value [
 
 	<generated>
@@ -419,7 +591,10 @@ GL4_1 >> programParameteri: program with: pname with: value [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform1d: program with: location with: v0 [
 
 	<generated>
@@ -427,7 +602,10 @@ GL4_1 >> programUniform1d: program with: location with: v0 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform1dv: program with: location with: count with: value [
 
 	<generated>
@@ -435,7 +613,10 @@ GL4_1 >> programUniform1dv: program with: location with: count with: value [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform1f: program with: location with: v0 [
 
 	<generated>
@@ -443,7 +624,10 @@ GL4_1 >> programUniform1f: program with: location with: v0 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform1fv: program with: location with: count with: value [
 
 	<generated>
@@ -451,7 +635,10 @@ GL4_1 >> programUniform1fv: program with: location with: count with: value [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform1i: program with: location with: v0 [
 
 	<generated>
@@ -459,7 +646,10 @@ GL4_1 >> programUniform1i: program with: location with: v0 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform1iv: program with: location with: count with: value [
 
 	<generated>
@@ -467,7 +657,10 @@ GL4_1 >> programUniform1iv: program with: location with: count with: value [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform1ui: program with: location with: v0 [
 
 	<generated>
@@ -475,7 +668,10 @@ GL4_1 >> programUniform1ui: program with: location with: v0 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform1uiv: program with: location with: count with: value [
 
 	<generated>
@@ -483,7 +679,10 @@ GL4_1 >> programUniform1uiv: program with: location with: count with: value [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform2d: program with: location with: v0 with: v1 [
 
 	<generated>
@@ -491,7 +690,10 @@ GL4_1 >> programUniform2d: program with: location with: v0 with: v1 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform2dv: program with: location with: count with: value [
 
 	<generated>
@@ -499,7 +701,10 @@ GL4_1 >> programUniform2dv: program with: location with: count with: value [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform2f: program with: location with: v0 with: v1 [
 
 	<generated>
@@ -507,7 +712,10 @@ GL4_1 >> programUniform2f: program with: location with: v0 with: v1 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform2fv: program with: location with: count with: value [
 
 	<generated>
@@ -515,7 +723,10 @@ GL4_1 >> programUniform2fv: program with: location with: count with: value [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform2i: program with: location with: v0 with: v1 [
 
 	<generated>
@@ -523,7 +734,10 @@ GL4_1 >> programUniform2i: program with: location with: v0 with: v1 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform2iv: program with: location with: count with: value [
 
 	<generated>
@@ -531,7 +745,10 @@ GL4_1 >> programUniform2iv: program with: location with: count with: value [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform2ui: program with: location with: v0 with: v1 [
 
 	<generated>
@@ -539,7 +756,10 @@ GL4_1 >> programUniform2ui: program with: location with: v0 with: v1 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform2uiv: program with: location with: count with: value [
 
 	<generated>
@@ -547,7 +767,10 @@ GL4_1 >> programUniform2uiv: program with: location with: count with: value [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform3d: program with: location with: v0 with: v1 with: v2 [
 
 	<generated>
@@ -555,7 +778,10 @@ GL4_1 >> programUniform3d: program with: location with: v0 with: v1 with: v2 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform3dv: program with: location with: count with: value [
 
 	<generated>
@@ -563,7 +789,10 @@ GL4_1 >> programUniform3dv: program with: location with: count with: value [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform3f: program with: location with: v0 with: v1 with: v2 [
 
 	<generated>
@@ -571,7 +800,10 @@ GL4_1 >> programUniform3f: program with: location with: v0 with: v1 with: v2 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform3fv: program with: location with: count with: value [
 
 	<generated>
@@ -579,7 +811,10 @@ GL4_1 >> programUniform3fv: program with: location with: count with: value [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform3i: program with: location with: v0 with: v1 with: v2 [
 
 	<generated>
@@ -587,7 +822,10 @@ GL4_1 >> programUniform3i: program with: location with: v0 with: v1 with: v2 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform3iv: program with: location with: count with: value [
 
 	<generated>
@@ -595,7 +833,10 @@ GL4_1 >> programUniform3iv: program with: location with: count with: value [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform3ui: program with: location with: v0 with: v1 with: v2 [
 
 	<generated>
@@ -603,7 +844,10 @@ GL4_1 >> programUniform3ui: program with: location with: v0 with: v1 with: v2 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform3uiv: program with: location with: count with: value [
 
 	<generated>
@@ -611,7 +855,10 @@ GL4_1 >> programUniform3uiv: program with: location with: count with: value [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform4d: program with: location with: v0 with: v1 with: v2 with: v3 [
 
 	<generated>
@@ -619,7 +866,10 @@ GL4_1 >> programUniform4d: program with: location with: v0 with: v1 with: v2 wit
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform4dv: program with: location with: count with: value [
 
 	<generated>
@@ -627,7 +877,10 @@ GL4_1 >> programUniform4dv: program with: location with: count with: value [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform4f: program with: location with: v0 with: v1 with: v2 with: v3 [
 
 	<generated>
@@ -635,7 +888,10 @@ GL4_1 >> programUniform4f: program with: location with: v0 with: v1 with: v2 wit
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform4fv: program with: location with: count with: value [
 
 	<generated>
@@ -643,7 +899,10 @@ GL4_1 >> programUniform4fv: program with: location with: count with: value [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform4i: program with: location with: v0 with: v1 with: v2 with: v3 [
 
 	<generated>
@@ -651,7 +910,10 @@ GL4_1 >> programUniform4i: program with: location with: v0 with: v1 with: v2 wit
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform4iv: program with: location with: count with: value [
 
 	<generated>
@@ -659,7 +921,10 @@ GL4_1 >> programUniform4iv: program with: location with: count with: value [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform4ui: program with: location with: v0 with: v1 with: v2 with: v3 [
 
 	<generated>
@@ -667,7 +932,10 @@ GL4_1 >> programUniform4ui: program with: location with: v0 with: v1 with: v2 wi
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniform4uiv: program with: location with: count with: value [
 
 	<generated>
@@ -675,7 +943,10 @@ GL4_1 >> programUniform4uiv: program with: location with: count with: value [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniformMatrix2dv: program with: location with: count with: transpose with: value [
 
 	<generated>
@@ -683,7 +954,10 @@ GL4_1 >> programUniformMatrix2dv: program with: location with: count with: trans
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniformMatrix2fv: program with: location with: count with: transpose with: value [
 
 	<generated>
@@ -691,7 +965,10 @@ GL4_1 >> programUniformMatrix2fv: program with: location with: count with: trans
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniformMatrix2x3dv: program with: location with: count with: transpose with: value [
 
 	<generated>
@@ -699,7 +976,10 @@ GL4_1 >> programUniformMatrix2x3dv: program with: location with: count with: tra
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniformMatrix2x3fv: program with: location with: count with: transpose with: value [
 
 	<generated>
@@ -707,7 +987,10 @@ GL4_1 >> programUniformMatrix2x3fv: program with: location with: count with: tra
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniformMatrix2x4dv: program with: location with: count with: transpose with: value [
 
 	<generated>
@@ -715,7 +998,10 @@ GL4_1 >> programUniformMatrix2x4dv: program with: location with: count with: tra
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniformMatrix2x4fv: program with: location with: count with: transpose with: value [
 
 	<generated>
@@ -723,7 +1009,10 @@ GL4_1 >> programUniformMatrix2x4fv: program with: location with: count with: tra
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniformMatrix3dv: program with: location with: count with: transpose with: value [
 
 	<generated>
@@ -731,7 +1020,10 @@ GL4_1 >> programUniformMatrix3dv: program with: location with: count with: trans
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniformMatrix3fv: program with: location with: count with: transpose with: value [
 
 	<generated>
@@ -739,7 +1031,10 @@ GL4_1 >> programUniformMatrix3fv: program with: location with: count with: trans
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniformMatrix3x2dv: program with: location with: count with: transpose with: value [
 
 	<generated>
@@ -747,7 +1042,10 @@ GL4_1 >> programUniformMatrix3x2dv: program with: location with: count with: tra
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniformMatrix3x2fv: program with: location with: count with: transpose with: value [
 
 	<generated>
@@ -755,7 +1053,10 @@ GL4_1 >> programUniformMatrix3x2fv: program with: location with: count with: tra
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniformMatrix3x4dv: program with: location with: count with: transpose with: value [
 
 	<generated>
@@ -763,7 +1064,10 @@ GL4_1 >> programUniformMatrix3x4dv: program with: location with: count with: tra
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniformMatrix3x4fv: program with: location with: count with: transpose with: value [
 
 	<generated>
@@ -771,7 +1075,10 @@ GL4_1 >> programUniformMatrix3x4fv: program with: location with: count with: tra
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniformMatrix4dv: program with: location with: count with: transpose with: value [
 
 	<generated>
@@ -779,7 +1086,10 @@ GL4_1 >> programUniformMatrix4dv: program with: location with: count with: trans
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniformMatrix4fv: program with: location with: count with: transpose with: value [
 
 	<generated>
@@ -787,7 +1097,10 @@ GL4_1 >> programUniformMatrix4fv: program with: location with: count with: trans
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniformMatrix4x2dv: program with: location with: count with: transpose with: value [
 
 	<generated>
@@ -795,7 +1108,10 @@ GL4_1 >> programUniformMatrix4x2dv: program with: location with: count with: tra
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniformMatrix4x2fv: program with: location with: count with: transpose with: value [
 
 	<generated>
@@ -803,7 +1119,10 @@ GL4_1 >> programUniformMatrix4x2fv: program with: location with: count with: tra
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniformMatrix4x3dv: program with: location with: count with: transpose with: value [
 
 	<generated>
@@ -811,7 +1130,10 @@ GL4_1 >> programUniformMatrix4x3dv: program with: location with: count with: tra
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> programUniformMatrix4x3fv: program with: location with: count with: transpose with: value [
 
 	<generated>
@@ -819,7 +1141,10 @@ GL4_1 >> programUniformMatrix4x3fv: program with: location with: count with: tra
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> releaseShaderCompiler [
 
 	<generated>
@@ -827,7 +1152,10 @@ GL4_1 >> releaseShaderCompiler [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> scissorArrayv: first with: count with: v [
 
 	<generated>
@@ -835,7 +1163,10 @@ GL4_1 >> scissorArrayv: first with: count with: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> scissorIndexed: index with: left with: bottom with: width with: height [
 
 	<generated>
@@ -843,7 +1174,10 @@ GL4_1 >> scissorIndexed: index with: left with: bottom with: width with: height 
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> scissorIndexedv: index with: v [
 
 	<generated>
@@ -851,7 +1185,10 @@ GL4_1 >> scissorIndexedv: index with: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> shaderBinary: count with: shaders with: binaryformat with: binary with: length [
 
 	<generated>
@@ -859,7 +1196,10 @@ GL4_1 >> shaderBinary: count with: shaders with: binaryformat with: binary with:
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> useProgramStages: pipeline with: stages with: program [
 
 	<generated>
@@ -867,7 +1207,10 @@ GL4_1 >> useProgramStages: pipeline with: stages with: program [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> validateProgramPipeline: pipeline [
 
 	<generated>
@@ -875,7 +1218,10 @@ GL4_1 >> validateProgramPipeline: pipeline [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> vertexAttribL1d: index with: x [
 
 	<generated>
@@ -883,7 +1229,10 @@ GL4_1 >> vertexAttribL1d: index with: x [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> vertexAttribL1dv: index with: v [
 
 	<generated>
@@ -891,7 +1240,10 @@ GL4_1 >> vertexAttribL1dv: index with: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> vertexAttribL2d: index with: x with: y [
 
 	<generated>
@@ -899,7 +1251,10 @@ GL4_1 >> vertexAttribL2d: index with: x with: y [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> vertexAttribL2dv: index with: v [
 
 	<generated>
@@ -907,7 +1262,10 @@ GL4_1 >> vertexAttribL2dv: index with: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> vertexAttribL3d: index with: x with: y with: z [
 
 	<generated>
@@ -915,7 +1273,10 @@ GL4_1 >> vertexAttribL3d: index with: x with: y with: z [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> vertexAttribL3dv: index with: v [
 
 	<generated>
@@ -923,7 +1284,10 @@ GL4_1 >> vertexAttribL3dv: index with: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> vertexAttribL4d: index with: x with: y with: z with: w [
 
 	<generated>
@@ -931,7 +1295,10 @@ GL4_1 >> vertexAttribL4d: index with: x with: y with: z with: w [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> vertexAttribL4dv: index with: v [
 
 	<generated>
@@ -939,7 +1306,10 @@ GL4_1 >> vertexAttribL4dv: index with: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> vertexAttribLPointer: index with: size with: type with: stride with: pointer [
 
 	<generated>
@@ -947,7 +1317,10 @@ GL4_1 >> vertexAttribLPointer: index with: size with: type with: stride with: po
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> viewportArrayv: first with: count with: v [
 
 	<generated>
@@ -955,7 +1328,10 @@ GL4_1 >> viewportArrayv: first with: count with: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> viewportIndexedf: index with: x with: y with: w with: h [
 
 	<generated>
@@ -963,7 +1339,10 @@ GL4_1 >> viewportIndexedf: index with: x with: y with: w with: h [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:57'
+}
 GL4_1 >> viewportIndexedfv: index with: v [
 
 	<generated>

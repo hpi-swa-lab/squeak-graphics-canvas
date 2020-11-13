@@ -29,10 +29,14 @@ Class {
 		'drawsSinceUpdate',
 		'drawsCount'
 	],
-	#category : #'RenderThee-LayerTree'
+	#category : #'RenderThee-LayerTree',
+	#commentStamp : ''
 }
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : ''
+}
 RtLayer class >> bounds: aRectangle [
 
 	^ self
@@ -40,7 +44,10 @@ RtLayer class >> bounds: aRectangle [
 		bounds: aRectangle
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : ''
+}
 RtLayer class >> outerTransform: aMatrix bounds: aRectangle [
 
 	^ self new
@@ -49,13 +56,19 @@ RtLayer class >> outerTransform: aMatrix bounds: aRectangle [
 		yourself
 ]
 
-{ #category : #visiting }
+{
+	#category : #visiting,
+	#timestamp : ''
+}
 RtLayer >> accept: aVisitor [
 
 	self subclassResponsibility
 ]
 
-{ #category : #converting }
+{
+	#category : #converting,
+	#timestamp : ''
+}
 RtLayer >> asForm [
 
 	| fc |
@@ -64,44 +77,65 @@ RtLayer >> asForm [
 	^ fc form
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtLayer >> bounds [
 
 	^ offset extent: extent
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtLayer >> bounds: aRectangle [
 
 	offset := aRectangle origin floor.
 	extent := aRectangle extent ceiling
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtLayer >> cache [
 
 	^ cache
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtLayer >> cache: anObject [
 
 	cache := anObject
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtLayer >> clipRect [
 
 	^ outerTransform localBoundsToGlobal: self bounds
 ]
 
-{ #category : #compositing }
+{
+	#category : #compositing,
+	#timestamp : ''
+}
 RtLayer >> compositeOn: aCanvas [
 
 	(RtCompositingCanvas canvas: aCanvas) compositeLayer: self
 ]
 
-{ #category : #caching }
+{
+	#category : #caching,
+	#timestamp : ''
+}
 RtLayer >> createCacheOfType: anImageStoreClass [
 
 	| store |
@@ -111,7 +145,10 @@ RtLayer >> createCacheOfType: anImageStoreClass [
 	^ store
 ]
 
-{ #category : #caching }
+{
+	#category : #caching,
+	#timestamp : ''
+}
 RtLayer >> deleteCache [
 
 	cache ifNotNil: [cache release].
@@ -119,49 +156,73 @@ RtLayer >> deleteCache [
 	isCached := false.
 ]
 
-{ #category : #compositing }
+{
+	#category : #compositing,
+	#timestamp : ''
+}
 RtLayer >> drawLayerOn: canvas [
 
 	self subclassResponsibility
 ]
 
-{ #category : #compositing }
+{
+	#category : #compositing,
+	#timestamp : ''
+}
 RtLayer >> drawOn: canvas [
 
 	self subclassResponsibility
 ]
 
-{ #category : #'accessing - metrics' }
+{
+	#category : #'accessing - metrics',
+	#timestamp : ''
+}
 RtLayer >> drawsCount [
 
 	^ drawsCount
 ]
 
-{ #category : #'accessing - metrics' }
+{
+	#category : #'accessing - metrics',
+	#timestamp : ''
+}
 RtLayer >> drawsSinceInvalidation [
 
 	^ drawsSinceInvalidation
 ]
 
-{ #category : #'accessing - metrics' }
+{
+	#category : #'accessing - metrics',
+	#timestamp : ''
+}
 RtLayer >> drawsSinceUpdate [
 
 	^ drawsSinceUpdate
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtLayer >> extent [
 
 	^ extent
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtLayer >> extent: anObject [
 
 	extent := anObject
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtLayer >> incrementDrawCounter [
 
 	drawsSinceUpdate := drawsSinceUpdate + 1.
@@ -169,7 +230,10 @@ RtLayer >> incrementDrawCounter [
 	drawsCount := drawsCount + 1
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 RtLayer >> initialize [
 
 	super initialize.
@@ -180,7 +244,10 @@ RtLayer >> initialize [
 	needsCaching := false
 ]
 
-{ #category : #caching }
+{
+	#category : #caching,
+	#timestamp : ''
+}
 RtLayer >> invalidateCache [
 
 	parent ifNotNil: [:p | p invalidateCache].
@@ -188,73 +255,109 @@ RtLayer >> invalidateCache [
 	drawsSinceInvalidation := 0
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtLayer >> isCached [
 
 	^ isCached
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtLayer >> needsCaching [
 
 	^ needsCaching
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtLayer >> needsCaching: anObject [
 
 	needsCaching := anObject
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtLayer >> offset [
 
 	^ offset
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtLayer >> offset: anObject [
 
 	offset := anObject
 ]
 
-{ #category : #debugging }
+{
+	#category : #debugging,
+	#timestamp : ''
+}
 RtLayer >> open [
 
 	^ self asForm asMorph openInHand
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtLayer >> outerTransform [
 
 	^ outerTransform
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtLayer >> outerTransform: anObject [
 
 	outerTransform := anObject
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtLayer >> parent [
 
 	^ parent
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtLayer >> parent: aLayer [
 
 	parent := aLayer
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtLayer >> transform [
 
 	^ outerTransform composedWithLocal: (Matrix2x3 withOffset: offset)
 ]
 
-{ #category : #caching }
+{
+	#category : #caching,
+	#timestamp : ''
+}
 RtLayer >> validCache: anImageStore [
 
 	cache := anImageStore.

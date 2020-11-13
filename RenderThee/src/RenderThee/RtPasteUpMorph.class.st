@@ -1,10 +1,14 @@
 Class {
 	#name : #RtPasteUpMorph,
 	#superclass : #PasteUpMorph,
-	#category : #'RenderThee-Project'
+	#category : #'RenderThee-Project',
+	#commentStamp : ''
 }
 
-{ #category : #'world state' }
+{
+	#category : #'world state',
+	#timestamp : ''
+}
 RtPasteUpMorph >> beWorldForProject: aProject [
 
 	self privateOwner: nil.
@@ -15,7 +19,10 @@ RtPasteUpMorph >> beWorldForProject: aProject [
 	self startSteppingSubmorphsOf: self
 ]
 
-{ #category : #'change reporting' }
+{
+	#category : #'change reporting',
+	#timestamp : ''
+}
 RtPasteUpMorph >> invalidRect: damageRect from: aMorph [
 
 	self isWorldMorph ifTrue: [
@@ -23,14 +30,20 @@ RtPasteUpMorph >> invalidRect: damageRect from: aMorph [
 	^super invalidRect: damageRect from: aMorph
 ]
 
-{ #category : #'world state' }
+{
+	#category : #'world state',
+	#timestamp : ''
+}
 RtPasteUpMorph >> privateOuterDisplayWorld [
 
 	(self valueOfProperty: #shouldDisplayWorld ifAbsent: [true])
 		ifTrue: [worldState renderWorld: self].
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtPasteUpMorph >> worldState [
 
 	^ worldState

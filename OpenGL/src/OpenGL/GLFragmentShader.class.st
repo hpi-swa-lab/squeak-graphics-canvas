@@ -1,10 +1,14 @@
 Class {
 	#name : #GLFragmentShader,
 	#superclass : #GLShader,
-	#category : #'OpenGL-Wrappers-Shaders'
+	#category : #'OpenGL-Wrappers-Shaders',
+	#commentStamp : ''
 }
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/28/2020 17:51'
+}
 GLFragmentShader class >> type [
 
 	^ GL_FRAGMENT_SHADER

@@ -5,35 +5,51 @@ Class {
 		'children',
 		'morph'
 	],
-	#category : #'RenderThee-LayerTree'
+	#category : #'RenderThee-LayerTree',
+	#commentStamp : ''
 }
 
-{ #category : #visiting }
+{
+	#category : #visiting,
+	#timestamp : ''
+}
 RtGroupLayer >> accept: aVisitor [
 
 	^ aVisitor visitGroupLayer: self
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtGroupLayer >> addChild: aLayer [
 
 	children add: aLayer.
 	aLayer parent: self
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtGroupLayer >> children [
 
 	^ children
 ]
 
-{ #category : #compositing }
+{
+	#category : #compositing,
+	#timestamp : ''
+}
 RtGroupLayer >> drawLayerOn: aCanvas [
 
 	aCanvas drawGroupLayer: self
 ]
 
-{ #category : #compositing }
+{
+	#category : #compositing,
+	#timestamp : ''
+}
 RtGroupLayer >> drawOn: aCanvas [
 
 	children do: [:childLayer |
@@ -43,32 +59,47 @@ RtGroupLayer >> drawOn: aCanvas [
 			during: [:c | c drawLayer: childLayer]]
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 RtGroupLayer >> initialize [
 
 	super initialize.
 	children := OrderedCollection new
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtGroupLayer >> layers [
 
 	^ children
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtGroupLayer >> morph [
 
 	^ morph
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtGroupLayer >> morph: anObject [
 
 	morph := anObject
 ]
 
-{ #category : #printing }
+{
+	#category : #printing,
+	#timestamp : ''
+}
 RtGroupLayer >> printOn: aStream [
 
 	super printOn: aStream.
@@ -83,14 +114,20 @@ RtGroupLayer >> printOn: aStream [
 		m printOn: aStream]
 ]
 
-{ #category : #caching }
+{
+	#category : #caching,
+	#timestamp : ''
+}
 RtGroupLayer >> removeAllCaches [
 
 	cache := nil.
 	children do: [:child | child removeAllCaches]
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtGroupLayer >> removeAllChildren [
 
 	children do: [ :child |
@@ -99,7 +136,10 @@ RtGroupLayer >> removeAllChildren [
 	children reset
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 RtGroupLayer >> update [
 
 	self removeAllChildren.

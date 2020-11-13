@@ -9,10 +9,14 @@ Class {
 		'font',
 		'color'
 	],
-	#category : #'RenderThee-Pictures'
+	#category : #'RenderThee-Pictures',
+	#commentStamp : ''
 }
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : ''
+}
 PicDrawString class >> contents: aString from: startIndex to: stopIndex in: boundsRect font: fontOrNil color: aColor [
 
 	^ self new
@@ -25,43 +29,64 @@ PicDrawString class >> contents: aString from: startIndex to: stopIndex in: boun
 		yourself
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawString >> bounds [
 
 	^ bounds
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawString >> bounds: anObject [
 
 	bounds := anObject.
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawString >> color [
 
 	^ color
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawString >> color: anObject [
 
 	color := anObject.
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawString >> contents [
 
 	^ contents
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawString >> contents: anObject [
 
 	contents := anObject.
 ]
 
-{ #category : #drawing }
+{
+	#category : #drawing,
+	#timestamp : ''
+}
 PicDrawString >> drawOn: aCanvas [
 
 	aCanvas
@@ -73,43 +98,64 @@ PicDrawString >> drawOn: aCanvas [
 		color: color
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawString >> estimatedBounds [
 
 	^ bounds
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawString >> font [
 
 	^ font
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawString >> font: anObject [
 
 	font := anObject.
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawString >> from [
 
 	^ from
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawString >> from: anObject [
 
 	from := anObject.
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawString >> to [
 
 	^ to
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawString >> to: anObject [
 
 	to := anObject.

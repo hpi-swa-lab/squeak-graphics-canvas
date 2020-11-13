@@ -5,10 +5,14 @@ Class {
 		'size',
 		'usage'
 	],
-	#category : #'OpenGL-Wrappers-Buffers'
+	#category : #'OpenGL-Wrappers-Buffers',
+	#commentStamp : ''
 }
 
-{ #category : #allocation }
+{
+	#category : #allocation,
+	#timestamp : 'stlu 11/3/2020 15:32'
+}
 GLBuffer class >> allocate [
 
 	IntegerArray new: 1 during: [:ids |
@@ -16,43 +20,64 @@ GLBuffer class >> allocate [
 		^ ids first]
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 11/6/2020 14:53'
+}
 GLBuffer class >> bind: id [
 
 	self bind: id to: self target
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 11/6/2020 14:53'
+}
 GLBuffer class >> bind: id to: target [
 
 	GL bindBuffer: target with: id
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 10/29/2020 11:42'
+}
 GLBuffer class >> bindingEnum [
 
 	self subclassResponsibility
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 11/6/2020 14:54'
+}
 GLBuffer class >> currentBinding [
 
 	^ GL getIntegerParameter: self bindingEnum
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 10/29/2020 11:51'
+}
 GLBuffer class >> target [
 
 	self subclassResponsibility
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 11/6/2020 14:51'
+}
 GLBuffer >> bind [
 
 	self class bind: id
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 11/6/2020 14:51'
+}
 GLBuffer >> boundDuring: aBlock [
 
 	| previousID |
@@ -64,25 +89,37 @@ GLBuffer >> boundDuring: aBlock [
 		self class bind: previousID]
 ]
 
-{ #category : #data }
+{
+	#category : #data,
+	#timestamp : 'stlu 11/6/2020 13:59'
+}
 GLBuffer >> data: aRawBitsArray [
 
 	self data: aRawBitsArray size: aRawBitsArray byteSize offset: 0
 ]
 
-{ #category : #data }
+{
+	#category : #data,
+	#timestamp : 'stlu 11/6/2020 13:58'
+}
 GLBuffer >> data: aRawBitsArray offset: byteOffset [
 
 	self data: aRawBitsArray size: aRawBitsArray byteSize offset: byteOffset
 ]
 
-{ #category : #data }
+{
+	#category : #data,
+	#timestamp : 'stlu 11/6/2020 13:57'
+}
 GLBuffer >> data: aRawBitsArray size: byteSize [
 
 	self data: aRawBitsArray size: byteSize offset: 0
 ]
 
-{ #category : #data }
+{
+	#category : #data,
+	#timestamp : 'stlu 11/6/2020 14:52'
+}
 GLBuffer >> data: aRawBitsArray size: byteSize offset: byteOffset [
 
 	byteSize + byteOffset > size ifTrue: [
@@ -97,69 +134,102 @@ GLBuffer >> data: aRawBitsArray size: byteSize offset: byteOffset [
 			with: aRawBitsArray]
 ]
 
-{ #category : #'initialize-release' }
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 11/3/2020 15:32'
+}
 GLBuffer >> delete [
 
 	GL deleteBuffers: 1 with: (IntegerArray with: id)
 ]
 
-{ #category : #drawing }
+{
+	#category : #drawing,
+	#timestamp : ''
+}
 GLBuffer >> draw: aModeEnum [
 
 	self draw: aModeEnum from: 0 count: numElements / componentsPerVertex
 ]
 
-{ #category : #drawing }
+{
+	#category : #drawing,
+	#timestamp : 'stlu 11/3/2020 15:32'
+}
 GLBuffer >> draw: aModeEnum from: startIndex count: count [
 
 	self boundDuring: [
 		GL drawArrays: aModeEnum with: startIndex with: count]
 ]
 
-{ #category : #'initialize-release' }
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 11/6/2020 13:33'
+}
 GLBuffer >> initialize [
 
 	super initialize.
 	size := 0
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : 'stlu 10/29/2020 12:14'
+}
 GLBuffer >> isBuffer [
 
 	^ true
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/6/2020 14:33'
+}
 GLBuffer >> size [
 
 	^ size
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 10/29/2020 11:53'
+}
 GLBuffer >> target [
 
 	^ self class target
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/6/2020 14:33'
+}
 GLBuffer >> usage [
 
 	^ usage
 ]
 
-{ #category : #data }
+{
+	#category : #data,
+	#timestamp : 'stlu 11/6/2020 13:53'
+}
 GLBuffer >> usage: usageEnum data: aRawBitsArray [ 
 
 	self usage: usageEnum size: aRawBitsArray byteSize data: aRawBitsArray
 ]
 
-{ #category : #data }
+{
+	#category : #data,
+	#timestamp : 'stlu 11/6/2020 13:53'
+}
 GLBuffer >> usage: usageEnum size: byteSize [
 
 	self usage: usageEnum size: byteSize data: nil
 ]
 
-{ #category : #data }
+{
+	#category : #data,
+	#timestamp : 'stlu 11/6/2020 14:52'
+}
 GLBuffer >> usage: usageEnum size: byteSize data: aRawBitsArray [
 
 	self boundDuring: [

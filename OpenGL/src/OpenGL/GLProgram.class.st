@@ -4,23 +4,33 @@ Class {
 	#instVars : [
 		'shaders'
 	],
-	#category : #'OpenGL-Wrappers-Shaders'
+	#category : #'OpenGL-Wrappers-Shaders',
+	#commentStamp : ''
 }
 
-{ #category : #private }
+{
+	#category : #private,
+	#timestamp : 'stlu 11/3/2020 15:38'
+}
 GLProgram class >> allocate [
 
 	^ GL createProgram
 ]
 
-{ #category : #generation }
+{
+	#category : #generation,
+	#timestamp : ''
+}
 GLProgram class >> attributes [
 	" return the names of all attributes your shader possesses here "
 
 	^ #()
 ]
 
-{ #category : #generation }
+{
+	#category : #generation,
+	#timestamp : ''
+}
 GLProgram class >> compileAccessors [
 	" call this method to automatically generate accessors for your attributes and uniforms "
 
@@ -66,7 +76,10 @@ GLProgram class >> compileAccessors [
 		self compile: source classified: 'generated']
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 10/22/2020 16:59'
+}
 GLProgram class >> context: glContext [
 
 	^ self
@@ -77,7 +90,10 @@ GLProgram class >> context: glContext [
 		}
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : ''
+}
 GLProgram class >> context: glContext shaders: aCollection [
 
 	^ (super context: glContext)
@@ -86,51 +102,75 @@ GLProgram class >> context: glContext shaders: aCollection [
 		yourself
 ]
 
-{ #category : #activation }
+{
+	#category : #activation,
+	#timestamp : 'stlu 11/6/2020 15:05'
+}
 GLProgram class >> current [
 
 	^ GL getIntegerParameter: GL_CURRENT_PROGRAM
 ]
 
-{ #category : #'shader code' }
+{
+	#category : #'shader code',
+	#timestamp : ''
+}
 GLProgram class >> fragmentShader [
 
 	self subclassResponsibility
 ]
 
-{ #category : #generation }
+{
+	#category : #generation,
+	#timestamp : ''
+}
 GLProgram class >> uniforms [
 	" return the names of all uniforms your shader possesses here "
 
 	^ #()
 ]
 
-{ #category : #activation }
+{
+	#category : #activation,
+	#timestamp : 'stlu 11/6/2020 15:05'
+}
 GLProgram class >> use: id [
 
 	GL useProgram: id
 ]
 
-{ #category : #'shader code' }
+{
+	#category : #'shader code',
+	#timestamp : ''
+}
 GLProgram class >> vertexShader [
 
 	self subclassResponsibility
 ]
 
-{ #category : #linking }
+{
+	#category : #linking,
+	#timestamp : 'stlu 11/3/2020 15:36'
+}
 GLProgram >> attachShader: glShader [
 
 	GL attachShader: id with: glShader id.
 	shaders add: glShader
 ]
 
-{ #category : #linking }
+{
+	#category : #linking,
+	#timestamp : 'stlu 10/28/2020 13:27'
+}
 GLProgram >> errorLinkingFailed [
 
 	^ (GLProgramLinkingFailed program: self infoLog: self getInfoLog) signal
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/3/2020 16:55'
+}
 GLProgram >> getAttribute: attributeName [
 
 	IntegerArray new: 1 during: [:result |
@@ -138,7 +178,10 @@ GLProgram >> getAttribute: attributeName [
 		^ result first]
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/3/2020 15:36'
+}
 GLProgram >> getBinary [
 
 	| binaryLength |
@@ -150,7 +193,10 @@ GLProgram >> getBinary [
 			^  pFormat first -> result]]
 ]
 
-{ #category : #linking }
+{
+	#category : #linking,
+	#timestamp : 'stlu 11/3/2020 15:36'
+}
 GLProgram >> getInfoLog [
 
 	ByteArray new: self getInfoLogLength during: [:result |
@@ -158,37 +204,55 @@ GLProgram >> getInfoLog [
 		^ result allButLast "remove null-terminator" utf8Decoded]
 ]
 
-{ #category : #linking }
+{
+	#category : #linking,
+	#timestamp : 'stlu 10/28/2020 14:37'
+}
 GLProgram >> getInfoLogLength [
 
 	^ self getAttribute: GL_INFO_LOG_LENGTH
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/27/2020 12:27'
+}
 GLProgram >> getNumAttributes [
 
 	^ self getAttribute: GL_ACTIVE_ATTRIBUTES
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/27/2020 12:28'
+}
 GLProgram >> getNumUniforms [
 
 	^ self getAttribute: GL_ACTIVE_UNIFORMS
 ]
 
-{ #category : #uniforms }
+{
+	#category : #uniforms,
+	#timestamp : 'stlu 10/28/2020 12:44'
+}
 GLProgram >> getUniform: index [
 
 	self notYetImplemented
 ]
 
-{ #category : #uniforms }
+{
+	#category : #uniforms,
+	#timestamp : 'stlu 10/28/2020 12:07'
+}
 GLProgram >> getUniformNamed: aSymbol [
 
 	self notYetImplemented
 ]
 
-{ #category : #'initialize-release' }
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 11/3/2020 16:51'
+}
 GLProgram >> initialize [
 
 	super initialize.
@@ -197,13 +261,19 @@ GLProgram >> initialize [
 	self initializeLocations
 ]
 
-{ #category : #'initialize-release' }
+{
+	#category : #'initialize-release',
+	#timestamp : ''
+}
 GLProgram >> initializeLocations [
 
 	
 ]
 
-{ #category : #'initialize-release' }
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 11/3/2020 16:50'
+}
 GLProgram >> initializeShaders [
 
 	{
@@ -222,32 +292,47 @@ GLProgram >> initializeShaders [
 	shaders do: [:shader | shader delete]
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : 'stlu 10/27/2020 12:17'
+}
 GLProgram >> isFlaggedForDeletion [
 
 	^ (self getAttribute: GL_DELETE_STATUS) = GL_TRUE
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : 'stlu 10/29/2020 12:16'
+}
 GLProgram >> isProgram [
 
 	^ true
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : 'stlu 11/3/2020 15:37'
+}
 GLProgram >> isValid [
 
 	GL validateProgram: id.
 	^ (self getAttribute: GL_VALIDATE_STATUS) = GL_TRUE
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : 'stlu 10/27/2020 12:17'
+}
 GLProgram >> lastLinkingSucceeded [
 
 	^ (self getAttribute: GL_LINK_STATUS) = GL_TRUE
 ]
 
-{ #category : #linking }
+{
+	#category : #linking,
+	#timestamp : 'stlu 11/3/2020 15:37'
+}
 GLProgram >> link [
 
 	GL linkProgram: id.
@@ -255,7 +340,10 @@ GLProgram >> link [
 		self errorLinkingFailed]
 ]
 
-{ #category : #'initialize-release' }
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 11/3/2020 15:38'
+}
 GLProgram >> registerAttribute: aString [
 
 	| location |
@@ -264,7 +352,10 @@ GLProgram >> registerAttribute: aString [
 	^ location
 ]
 
-{ #category : #'initialize-release' }
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 11/3/2020 15:38'
+}
 GLProgram >> registerUniform: aString [
 
 	| location |
@@ -273,44 +364,65 @@ GLProgram >> registerUniform: aString [
 	^ location
 ]
 
-{ #category : #uniforms }
+{
+	#category : #uniforms,
+	#timestamp : 'stlu 10/28/2020 12:44'
+}
 GLProgram >> setUniform: index to: anObject [
 
 	self notYetImplemented
 ]
 
-{ #category : #uniforms }
+{
+	#category : #uniforms,
+	#timestamp : 'stlu 10/28/2020 12:07'
+}
 GLProgram >> setUniformNamed: aSymbol to: anObject [
 
 	self notYetImplemented
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLProgram >> shaders [
 
 	^ shaders
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLProgram >> shaders: anObject [
 
 	shaders := anObject
 ]
 
-{ #category : #usage }
+{
+	#category : #usage,
+	#timestamp : 'stlu 10/27/2020 11:41'
+}
 GLProgram >> uniform: location value: anObject [
 
 	self assert: location >= 0.
 	anObject putAtUniform: location
 ]
 
-{ #category : #activation }
+{
+	#category : #activation,
+	#timestamp : 'stlu 11/6/2020 15:04'
+}
 GLProgram >> use [
 
 	self class use: id
 ]
 
-{ #category : #activation }
+{
+	#category : #activation,
+	#timestamp : 'stlu 11/6/2020 15:04'
+}
 GLProgram >> useDuring: aBlock [
 
 	| previousID |
@@ -322,14 +434,20 @@ GLProgram >> useDuring: aBlock [
 		self use: previousID]
 ]
 
-{ #category : #usage }
+{
+	#category : #usage,
+	#timestamp : 'stlu 10/27/2020 12:25'
+}
 GLProgram >> validate [
 
 	self isValid ifFalse: [
 		self notify: self infoLog]
 ]
 
-{ #category : #usage }
+{
+	#category : #usage,
+	#timestamp : 'stlu 11/3/2020 17:04'
+}
 GLProgram >> vertexAttrib: position value: value components: components stride: stride offset: offset [
 
  	| byteOffset |

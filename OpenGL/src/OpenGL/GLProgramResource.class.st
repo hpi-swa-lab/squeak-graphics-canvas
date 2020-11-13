@@ -6,5 +6,6 @@ Class {
 		'index',
 		'name'
 	],
-	#category : #'OpenGL-Wrappers-Shaders'
+	#category : #'OpenGL-Wrappers-Shaders',
+	#commentStamp : ''
 }

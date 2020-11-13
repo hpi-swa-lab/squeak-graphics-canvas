@@ -7,10 +7,14 @@ Class {
 		'length',
 		'command'
 	],
-	#category : #'OpenGL-Generation'
+	#category : #'OpenGL-Generation',
+	#commentStamp : ''
 }
 
-{ #category : #helpers }
+{
+	#category : #helpers,
+	#timestamp : 'stlu 10/31/2020 23:49'
+}
 GLGenParameter class >> getType: xmlTag [
 
 	| result |
@@ -24,7 +28,10 @@ GLGenParameter class >> getType: xmlTag [
 	^ (result copyReplaceAll: 'const' with: '') copyReplaceAll: ' ' with: ''
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/1/2020 21:31'
+}
 GLGenParameter class >> registry: registry command: command tag: paramTag [
 
 	^ self new
@@ -32,7 +39,10 @@ GLGenParameter class >> registry: registry command: command tag: paramTag [
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/1/2020 20:13'
+}
 GLGenParameter class >> registry: registry tag: paramTag [
 
 	^ self new
@@ -40,25 +50,37 @@ GLGenParameter class >> registry: registry tag: paramTag [
 		yourself
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/31/2020 22:19'
+}
 GLGenParameter >> command [
 
 	^ command
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/31/2020 22:19'
+}
 GLGenParameter >> group [
 
 	^ group
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/31/2020 22:19'
+}
 GLGenParameter >> length [
 
 	^ length
 ]
 
-{ #category : #printing }
+{
+	#category : #printing,
+	#timestamp : 'stlu 11/1/2020 20:50'
+}
 GLGenParameter >> printOn: aStream [
 
 	aStream
@@ -67,7 +89,10 @@ GLGenParameter >> printOn: aStream [
 		nextPutAll: name
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : 'stlu 11/1/2020 21:29'
+}
 GLGenParameter >> registry: registry command: aCommand tag: paramTag [
 
 	name := (paramTag firstTagNamed: #name) contentString.
@@ -83,7 +108,10 @@ GLGenParameter >> registry: registry command: aCommand tag: paramTag [
 	command addParameter: self
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/31/2020 22:19'
+}
 GLGenParameter >> type [
 
 	^ type

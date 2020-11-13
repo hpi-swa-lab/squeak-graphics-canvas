@@ -1,10 +1,14 @@
 Class {
 	#name : #SgSpace,
 	#superclass : #Morph,
-	#category : #'RenderThee-Demo-SpaceGame'
+	#category : #'RenderThee-Demo-SpaceGame',
+	#commentStamp : ''
 }
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 SgSpace >> createStars: numStars [
 
 	1 to: numStars do: [:i |
@@ -17,14 +21,20 @@ SgSpace >> createStars: numStars [
 		self addMorph: star]
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 SgSpace >> initialize [
 
 	super initialize.
 	self color: Color black
 ]
 
-{ #category : #'repaint boundary' }
+{
+	#category : #'repaint boundary',
+	#timestamp : ''
+}
 SgSpace >> isRepaintBoundary [
 
 	^ true

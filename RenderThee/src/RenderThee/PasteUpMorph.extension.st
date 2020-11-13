@@ -1,6 +1,9 @@
 Extension { #name : #PasteUpMorph }
 
-{ #category : #'*RenderThee' }
+{
+	#category : #'*RenderThee',
+	#timestamp : ''
+}
 PasteUpMorph >> isRepaintBoundary [
 
 	^ true

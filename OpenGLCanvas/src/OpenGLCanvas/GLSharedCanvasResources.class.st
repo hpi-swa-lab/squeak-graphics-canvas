@@ -13,10 +13,14 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'OpenGLCanvas-Core'
+	#category : #'OpenGLCanvas-Core',
+	#commentStamp : ''
 }
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLSharedCanvasResources >> font: aFont [
 
 	| font |
@@ -25,13 +29,19 @@ GLSharedCanvasResources >> font: aFont [
 	^ fonts at: font ifAbsentPut: [GLBitmapFont new font: font]
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLSharedCanvasResources >> fontProgram [
 
 	^ fontProgram
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLSharedCanvasResources >> initialize [
 
 	super initialize.
@@ -43,7 +53,10 @@ GLSharedCanvasResources >> initialize [
 	self initializeProgramAttributes
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : 'stlu 11/6/2020 14:24'
+}
 GLSharedCanvasResources >> initializeBuffers [
 
 	vao := GLVertexArray create.
@@ -59,7 +72,10 @@ GLSharedCanvasResources >> initializeBuffers [
 	GL checkForError
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : 'stlu 11/3/2020 17:04'
+}
 GLSharedCanvasResources >> initializeProgramAttributes [
 
 	textureProgram useDuring: [
@@ -77,7 +93,10 @@ GLSharedCanvasResources >> initializeProgramAttributes [
 		rectangleProgram vertexAttrib: rectangleProgram aPosLocation value: vbo components: 2 stride: 4 offset: 0]
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : 'stlu 10/26/2020 11:04'
+}
 GLSharedCanvasResources >> initializePrograms [
 
 	textureProgram := GL getShaderProgram: GLCanvasTextureProgram.
@@ -87,43 +106,64 @@ GLSharedCanvasResources >> initializePrograms [
 	GL checkForError
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLSharedCanvasResources >> outlineProgram [
 
 	^ outlineProgram
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLSharedCanvasResources >> rectangleProgram [
 
 	^ rectangleProgram
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLSharedCanvasResources >> textureProgram [
 
 	^ textureProgram
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLSharedCanvasResources >> vao [
 
 	^ vao
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLSharedCanvasResources >> vao: anObject [
 
 	vao := anObject.
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLSharedCanvasResources >> vbo [
 
 	^ vbo
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLSharedCanvasResources >> vbo: anObject [
 
 	vbo := anObject.

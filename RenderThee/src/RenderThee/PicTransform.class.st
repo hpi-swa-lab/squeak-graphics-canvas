@@ -8,10 +8,14 @@ Class {
 	#instVars : [
 		'matrix'
 	],
-	#category : #'RenderThee-Pictures'
+	#category : #'RenderThee-Pictures',
+	#commentStamp : 'stlu 8/21/2020 13:12'
 }
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : ''
+}
 PicTransform class >> matrix: aMatrix2x3 [
 
 	^ self new
@@ -19,7 +23,10 @@ PicTransform class >> matrix: aMatrix2x3 [
 		yourself
 ]
 
-{ #category : #drawing }
+{
+	#category : #drawing,
+	#timestamp : ''
+}
 PicTransform >> drawOn: aCanvas [
 
 	aCanvas
@@ -27,18 +34,27 @@ PicTransform >> drawOn: aCanvas [
 		during: [:c | super drawOn: c]
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicTransform >> estimatedBounds [
 
 	^ matrix localBoundsToGlobal: self estimatedChildrenBounds
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicTransform >> matrix [
 	^ matrix
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicTransform >> matrix: anObject [
 	matrix := anObject
 ]

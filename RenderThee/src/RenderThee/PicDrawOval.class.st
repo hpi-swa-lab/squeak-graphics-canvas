@@ -1,10 +1,14 @@
 Class {
 	#name : #PicDrawOval,
 	#superclass : #PicDrawShape,
-	#category : #'RenderThee-Pictures'
+	#category : #'RenderThee-Pictures',
+	#commentStamp : ''
 }
 
-{ #category : #drawing }
+{
+	#category : #drawing,
+	#timestamp : ''
+}
 PicDrawOval >> drawOn: aCanvas [
 
 	self flag: #todo.

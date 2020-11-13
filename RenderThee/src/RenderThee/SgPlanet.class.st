@@ -4,10 +4,14 @@ Class {
 	#instVars : [
 		'rotationSpeed'
 	],
-	#category : #'RenderThee-Demo-SpaceGame'
+	#category : #'RenderThee-Demo-SpaceGame',
+	#commentStamp : ''
 }
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : ''
+}
 SgPlanet class >> planet: aNumber [
 
 	^ self new
@@ -15,7 +19,10 @@ SgPlanet class >> planet: aNumber [
 		yourself
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 SgPlanet >> id: anInteger [
 
 	| id form |

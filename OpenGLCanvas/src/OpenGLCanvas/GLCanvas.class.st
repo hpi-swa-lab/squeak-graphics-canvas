@@ -13,10 +13,14 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'OpenGLCanvas-Core'
+	#category : #'OpenGLCanvas-Core',
+	#commentStamp : ''
 }
 
-{ #category : #example }
+{
+	#category : #example,
+	#timestamp : ''
+}
 GLCanvas class >> exampleWindow [
 	"self exampleWindow"
 	| display window |
@@ -28,7 +32,10 @@ GLCanvas class >> exampleWindow [
 	display glLibrary context destroy
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : ''
+}
 GLCanvas class >> extent: aPoint framebuffer: glFrameBuffer [
 
 	^ self new
@@ -36,13 +43,19 @@ GLCanvas class >> extent: aPoint framebuffer: glFrameBuffer [
 		yourself
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : ''
+}
 GLCanvas >> boundDuring: aBlock [
 
 	framebuffer boundDuring: aBlock
 ]
 
-{ #category : #'drawing-support' }
+{
+	#category : #'drawing-support',
+	#timestamp : ''
+}
 GLCanvas >> clipBy: aRectangle [
 
 	"| rect viewTransform |
@@ -57,20 +70,29 @@ GLCanvas >> clipBy: aRectangle [
 				with: rect height]"
 ]
 
-{ #category : #'drawing-support' }
+{
+	#category : #'drawing-support',
+	#timestamp : ''
+}
 GLCanvas >> clipBy: aRectangle during: aBlock [
 
 	self clipRect: aRectangle during: aBlock.
 	self clipBy: aRectangle
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLCanvas >> clipRect [
 
 	^ clipRect
 ]
 
-{ #category : #'scoped state' }
+{
+	#category : #'scoped state',
+	#timestamp : ''
+}
 GLCanvas >> clipRect: aRectangle during: aBlock [
 
 	| previousClipRect |
@@ -80,12 +102,18 @@ GLCanvas >> clipRect: aRectangle during: aBlock [
 	clipRect := previousClipRect
 ]
 
-{ #category : #'drawing-rectangles' }
+{
+	#category : #'drawing-rectangles',
+	#timestamp : ''
+}
 GLCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderColor: bc [
 	^ self frameAndFillRectangle: (Rectangle encompassing: vertices)  fillColor: aColor borderWidth: bw borderColor: bc.
 ]
 
-{ #category : #'drawing-text' }
+{
+	#category : #'drawing-text',
+	#timestamp : 'stlu 10/29/2020 01:37'
+}
 GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c [
 
 	"self frameRectangle: (boundsRect origin extent: 10@10) color: c."
@@ -121,18 +149,27 @@ GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fo
 						x := x + (bitmapFont advanceFor: character)]]]]
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLCanvas >> extent [
 
 	^ extent
 ]
 
-{ #category : #'drawing-rectangles' }
+{
+	#category : #'drawing-rectangles',
+	#timestamp : ''
+}
 GLCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderColor [
 	^ self frameAndFillRectangle: r fillColor: c borderWidth: borderWidth borderColor: borderColor.
 ]
 
-{ #category : #'drawing-rectangles' }
+{
+	#category : #'drawing-rectangles',
+	#timestamp : 'stlu 10/29/2020 01:37'
+}
 GLCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
 
 	self boundDuring: [
@@ -146,26 +183,38 @@ GLCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWid
 			self vbo draw: GL_TRIANGLE_STRIP]]
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLCanvas >> framebuffer [
 
 	^ framebuffer
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/26/2020 12:05'
+}
 GLCanvas >> glLibrary [
 
 	^ framebuffer library
 ]
 
-{ #category : #'drawing-images' }
+{
+	#category : #'drawing-images',
+	#timestamp : ''
+}
 GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
 	self translateBy: aPoint during: [:c |
 		c paintImageStore: (RtFormStore form: aForm) sourceRect: sourceRect]
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 
 	extent := aPoint.
@@ -176,18 +225,27 @@ GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 	baseTransform := transform := Matrix4x4 ortho: clipRect near: 0 far: 1
 ]
 
-{ #category : #'drawing-rectangles' }
+{
+	#category : #'drawing-rectangles',
+	#timestamp : ''
+}
 GLCanvas >> line: pt1 to: pt2 width: w color: c [
 	^ self frameAndFillRectangle: (Rectangle encompassing: {pt1. pt2})  fillColor: (Color transparent) borderWidth: w borderColor: c.
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLCanvas >> outlineProgram [
 
 	^ resources outlineProgram
 ]
 
-{ #category : #'drawing-text' }
+{
+	#category : #'drawing-text',
+	#timestamp : ''
+}
 GLCanvas >> paragraph: paragraph bounds: bounds color: c [
 
 	| scanner |
@@ -202,18 +260,27 @@ GLCanvas >> paragraph: paragraph bounds: bounds color: c [
 	paragraph displayOn: self using: scanner at: bounds topLeft
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLCanvas >> textureProgram [
 
 	^ resources textureProgram
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLCanvas >> transform [
 	^ transform
 ]
 
-{ #category : #'scoped state' }
+{
+	#category : #'scoped state',
+	#timestamp : ''
+}
 GLCanvas >> transform: aMatrix during: aBlock [
 
 	| previousTransform |
@@ -223,7 +290,10 @@ GLCanvas >> transform: aMatrix during: aBlock [
 	transform := previousTransform
 ]
 
-{ #category : #'drawing-support' }
+{
+	#category : #'drawing-support',
+	#timestamp : ''
+}
 GLCanvas >> transformBy: aTransform during: aBlock [
 
 	| transformedClip |
@@ -232,7 +302,10 @@ GLCanvas >> transformBy: aTransform during: aBlock [
 		self transform: transform * aTransform asMatrix4x4 during: aBlock]
 ]
 
-{ #category : #'drawing-support' }
+{
+	#category : #'drawing-support',
+	#timestamp : ''
+}
 GLCanvas >> translateBy: aPoint during: aBlock [
 
 	self
@@ -240,13 +313,19 @@ GLCanvas >> translateBy: aPoint during: aBlock [
 		during: aBlock
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLCanvas >> vao [
 
 	^ resources vao
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLCanvas >> vbo [
 
 	^ resources vbo

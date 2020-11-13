@@ -1,16 +1,23 @@
 Class {
 	#name : #SgSpaceship,
 	#superclass : #ThumbnailImageMorph,
-	#category : #'RenderThee-Demo-SpaceGame'
+	#category : #'RenderThee-Demo-SpaceGame',
+	#commentStamp : ''
 }
 
-{ #category : #'event handling' }
+{
+	#category : #'event handling',
+	#timestamp : ''
+}
 SgSpaceship >> handlesKeyboard: evt [
 
 	^ true
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 SgSpaceship >> initialize [
 
 	super initialize.
@@ -19,7 +26,10 @@ SgSpaceship >> initialize [
 
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 SgSpaceship >> initializeRotation [
 
 	|degrees|
@@ -28,19 +38,28 @@ SgSpaceship >> initializeRotation [
 	
 ]
 
-{ #category : #'repaint boundary' }
+{
+	#category : #'repaint boundary',
+	#timestamp : ''
+}
 SgSpaceship >> isRepaintBoundary [
 
 	^ false
 ]
 
-{ #category : #'stepping and presenter' }
+{
+	#category : #'stepping and presenter',
+	#timestamp : ''
+}
 SgSpaceship >> step [
 
 	self y: ((self y) - 1)
 ]
 
-{ #category : #'stepping and presenter' }
+{
+	#category : #'stepping and presenter',
+	#timestamp : ''
+}
 SgSpaceship >> stepTime [
 
 	^ 0

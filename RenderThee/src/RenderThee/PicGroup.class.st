@@ -9,10 +9,14 @@ Class {
 	#instVars : [
 		'children'
 	],
-	#category : #'RenderThee-Pictures'
+	#category : #'RenderThee-Pictures',
+	#commentStamp : 'stlu 8/21/2020 13:52'
 }
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : ''
+}
 PicGroup class >> children: aCollection [
 
 	^ self new
@@ -20,95 +24,140 @@ PicGroup class >> children: aCollection [
 		yourself
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicGroup >> addChild: aCommand [
 
 	^ children add: aCommand
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicGroup >> children [
 	"A collection of PicCommand. Last child has front-most z-coordinate."
 	^ children
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicGroup >> children: aCollection [
 
 	children := aCollection
 ]
 
-{ #category : #enumerating }
+{
+	#category : #enumerating,
+	#timestamp : ''
+}
 PicGroup >> do: aBlock [
 
 	super do: aBlock.
 	children do: [:child | child do: aBlock]
 ]
 
-{ #category : #drawing }
+{
+	#category : #drawing,
+	#timestamp : ''
+}
 PicGroup >> drawOn: aCanvas [
 
 	children do: [:child |
 		child drawOn: aCanvas]
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicGroup >> estimatedBounds [
 
 	^ self estimatedChildrenBounds
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicGroup >> estimatedChildrenBounds [
 
 	^ Rectangle merging: (children collect: [:child | child estimatedBounds])
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : ''
+}
 PicGroup >> hasChildren [
 
 	^ children notEmpty
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 PicGroup >> initialize [
 
 	super initialize.
 	children := OrderedCollection new
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : ''
+}
 PicGroup >> isDrawing [
 
 	^ children anySatisfy: [:child | child isDrawing]
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : ''
+}
 PicGroup >> isEmpty [
 
 	^ children isEmpty
 ]
 
-{ #category : #copying }
+{
+	#category : #copying,
+	#timestamp : ''
+}
 PicGroup >> postCopy [
 
 	super postCopy.
 	children := children copy
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicGroup >> removeAllChildren [
 
 	^ children reset
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicGroup >> removeLastChild [
 
 	^ children removeLast
 ]
 
-{ #category : #transforming }
+{
+	#category : #transforming,
+	#timestamp : ''
+}
 PicGroup >> transformBy: aTransform [
 
 	children := { (PicTransform matrix: aTransform) children: children }

@@ -1,6 +1,9 @@
 Extension { #name : #Object }
 
-{ #category : #'*RenderThee' }
+{
+	#category : #'*RenderThee',
+	#timestamp : ''
+}
 Object >> sandblockColor [
 	" get a color that may represent this object somewhat uniquely and consistently "
     

@@ -4,10 +4,14 @@ Class {
 	#instVars : [
 		'rotationSpeed'
 	],
-	#category : #'RenderThee-Demo-SpaceGame'
+	#category : #'RenderThee-Demo-SpaceGame',
+	#commentStamp : ''
 }
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 SgSolarSystem >> createPlanet: planetID [
 
 	| morph id form |
@@ -19,7 +23,10 @@ SgSolarSystem >> createPlanet: planetID [
 	^ morph
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 SgSolarSystem >> createPlanets: numPlanets [
 
 	| planets radius maxPlanetExtent |
@@ -36,7 +43,10 @@ SgSolarSystem >> createPlanets: numPlanets [
 		self addMorph: planet]
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 SgSolarSystem >> initialize [
 
 	super initialize.
@@ -44,19 +54,28 @@ SgSolarSystem >> initialize [
 	self color: Color transparent
 ]
 
-{ #category : #'repaint boundary' }
+{
+	#category : #'repaint boundary',
+	#timestamp : ''
+}
 SgSolarSystem >> isRepaintBoundary [
 
 	^ true
 ]
 
-{ #category : #'stepping and presenter' }
+{
+	#category : #'stepping and presenter',
+	#timestamp : ''
+}
 SgSolarSystem >> step [
 
 	self rotationDegrees: self rotationDegrees + rotationSpeed
 ]
 
-{ #category : #'stepping and presenter' }
+{
+	#category : #'stepping and presenter',
+	#timestamp : ''
+}
 SgSolarSystem >> stepTime [
 
 	^ 0

@@ -8,10 +8,14 @@ Class {
 		'aTexCoordsLocation',
 		'aTextureSize'
 	],
-	#category : #'OpenGLCanvas-Core'
+	#category : #'OpenGLCanvas-Core',
+	#commentStamp : ''
 }
 
-{ #category : #'shader code' }
+{
+	#category : #'shader code',
+	#timestamp : ''
+}
 GLCanvasOutlineProgram class >> fragmentShader [
 	^'#version 330 core
 out vec4 FragColor;
@@ -31,7 +35,10 @@ void main() {
 }' withUnixLineEndings
 ]
 
-{ #category : #'shader code' }
+{
+	#category : #'shader code',
+	#timestamp : ''
+}
 GLCanvasOutlineProgram class >> vertexShader [
 	^'#version 330 core
 in vec2 aPos;
@@ -47,31 +54,46 @@ void main()
 }' withUnixLineEndings
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLCanvasOutlineProgram >> aPosLocation [
 
 	^ aPosLocation
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLCanvasOutlineProgram >> aTexCoordsLocation [
 
 	^ aTexCoordsLocation
 ]
 
-{ #category : #'uniform accessing' }
+{
+	#category : #'uniform accessing',
+	#timestamp : ''
+}
 GLCanvasOutlineProgram >> color: anObject [
 
 	self uniform: colorLocation value: anObject
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLCanvasOutlineProgram >> colorLocation [
 
 	^ colorLocation
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : 'stlu 11/3/2020 15:34'
+}
 GLCanvasOutlineProgram >> initializeLocations [
 
 	super initializeLocations.
@@ -88,19 +110,28 @@ GLCanvasOutlineProgram >> initializeLocations [
 	self assert: aTexCoordsLocation >= 0
 ]
 
-{ #category : #'uniform accessing' }
+{
+	#category : #'uniform accessing',
+	#timestamp : ''
+}
 GLCanvasOutlineProgram >> mvp: anObject [
 
 	self uniform: mvpLocation value: anObject
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLCanvasOutlineProgram >> mvpLocation [
 
 	^ mvpLocation
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLCanvasOutlineProgram >> textureSize: aPoint [
 
 	self uniform: aTextureSize value: aPoint

@@ -22,22 +22,32 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'OpenGL-Wrappers'
+	#category : #'OpenGL-Wrappers',
+	#commentStamp : ''
 }
 
-{ #category : #allocation }
+{
+	#category : #allocation,
+	#timestamp : 'stlu 10/28/2020 14:12'
+}
 GLObject class >> allocate [
 	"Allocates an object with OpenGL. Returns the id to reference it."
 	self subclassResponsibility
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 10/29/2020 01:25'
+}
 GLObject class >> create [
 
 	^ (self id: self allocate) register
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 10/29/2020 01:25'
+}
 GLObject class >> id: anInteger [
 
 	^ self basicNew
@@ -45,19 +55,28 @@ GLObject class >> id: anInteger [
 		initialize
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : ''
+}
 GLObject class >> new [
 
 	self shouldNotImplement
 ]
 
-{ #category : #converting }
+{
+	#category : #converting,
+	#timestamp : 'stlu 10/29/2020 12:10'
+}
 GLObject class >> newFrom: glObject [
 
 	^ self id: glObject id
 ]
 
-{ #category : #comparing }
+{
+	#category : #comparing,
+	#timestamp : 'stlu 10/29/2020 01:22'
+}
 GLObject >> = otherObject [
 
 	self == otherObject ifTrue: [^ true].
@@ -66,91 +85,136 @@ GLObject >> = otherObject [
 	^ true
 ]
 
-{ #category : #'initialize-release' }
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 10/26/2020 12:11'
+}
 GLObject >> cleanUp [
 
 	id := -1 "Obviously invalid"
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/29/2020 01:33'
+}
 GLObject >> context [
 
 	^ context
 ]
 
-{ #category : #'initialize-release' }
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 10/29/2020 01:29'
+}
 GLObject >> delete [
 
 	id := -1 "Obviously invalid"
 ]
 
-{ #category : #comparing }
+{
+	#category : #comparing,
+	#timestamp : 'stlu 10/29/2020 01:22'
+}
 GLObject >> hash [
 
 	^ id hash bitXor: context hash
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLObject >> id [
 
 	^ id
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/3/2020 16:36'
+}
 GLObject >> id: anInteger [
 
 	id := anInteger
 ]
 
-{ #category : #'initialize-release' }
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 10/26/2020 12:08'
+}
 GLObject >> initialize [
 
 	context := GL context
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : 'stlu 10/29/2020 12:12'
+}
 GLObject >> isBuffer [
 
 	^ false
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : 'stlu 10/29/2020 12:14'
+}
 GLObject >> isFrameBuffer [
 
 	^ false
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : 'stlu 10/29/2020 12:12'
+}
 GLObject >> isProgram [
 
 	^ false
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : 'stlu 10/29/2020 12:12'
+}
 GLObject >> isShader [
 
 	^ false
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : 'stlu 10/29/2020 12:12'
+}
 GLObject >> isTexture [
 
 	^ false
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : 'stlu 10/29/2020 12:14'
+}
 GLObject >> isVertexArray [
 
 	^ false
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/26/2020 12:08'
+}
 GLObject >> library [
 
 	^ context library
 ]
 
-{ #category : #'initialize-release' }
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 10/26/2020 12:14'
+}
 GLObject >> register [
 
 	GL registerObject: self

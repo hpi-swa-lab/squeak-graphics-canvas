@@ -1,6 +1,9 @@
 Extension { #name : #ClockMorph }
 
-{ #category : #'*RenderThee' }
+{
+	#category : #'*RenderThee',
+	#timestamp : ''
+}
 ClockMorph >> isRepaintBoundary [
 
 	^ true

@@ -8,10 +8,14 @@ Class {
 		'vao',
 		'vbo'
 	],
-	#category : #'LearnOpenGL-1GettingStarted'
+	#category : #'LearnOpenGL-1GettingStarted',
+	#commentStamp : ''
 }
 
-{ #category : #shaders }
+{
+	#category : #shaders,
+	#timestamp : 'stlu 10/22/2020 16:53'
+}
 LOGL1_2_1_hello_triangle >> fragmentShaderSource [
 
 	^ '#version 330 core
@@ -21,14 +25,20 @@ void main() {
 }'
 ]
 
-{ #category : #running }
+{
+	#category : #running,
+	#timestamp : 'stlu 11/3/2020 15:01'
+}
 LOGL1_2_1_hello_triangle >> render [
 
 	GL setClearColor: (Color gray: (Time millisecondClock \\ 5000 / 5000)).
 	GL clear: GL_COLOR_BUFFER_BIT
 ]
 
-{ #category : #running }
+{
+	#category : #running,
+	#timestamp : 'stlu 10/27/2020 12:12'
+}
 LOGL1_2_1_hello_triangle >> setUp [
 
 	| vertexShader fragmentShader |
@@ -42,7 +52,10 @@ LOGL1_2_1_hello_triangle >> setUp [
 						yourself
 ]
 
-{ #category : #shaders }
+{
+	#category : #shaders,
+	#timestamp : 'stlu 10/27/2020 12:11'
+}
 LOGL1_2_1_hello_triangle >> vertexShaderSource [
 
 	^ '#version 330 core

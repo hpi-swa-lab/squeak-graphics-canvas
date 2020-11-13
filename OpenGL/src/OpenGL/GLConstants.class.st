@@ -5924,10 +5924,14 @@ Class {
 		'GL_ZOOM_Y',
 		'GL_Z_EXT'
 	],
-	#category : #'OpenGL-API'
+	#category : #'OpenGL-API',
+	#commentStamp : ''
 }
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLConstants class >> initialize [
 
 	self initialize01.
@@ -5950,7 +5954,10 @@ GLConstants class >> initialize [
 	self initialize18.
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLConstants class >> initialize01 [
 
 	GL_CURRENT_BIT := 16r1.
@@ -6055,7 +6062,10 @@ GLConstants class >> initialize01 [
 	GL_GEQUAL := 16r206
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLConstants class >> initialize02 [
 
 	GL_ALWAYS := 16r207.
@@ -6160,7 +6170,10 @@ GLConstants class >> initialize02 [
 	GL_FOG_END := 16rB64
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLConstants class >> initialize03 [
 
 	GL_FOG_MODE := 16rB65.
@@ -6265,7 +6278,10 @@ GLConstants class >> initialize03 [
 	GL_RED_BIAS := 16rD15
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLConstants class >> initialize04 [
 
 	GL_ZOOM_X := 16rD16.
@@ -6370,7 +6386,10 @@ GLConstants class >> initialize04 [
 	GL_HALF_FLOAT := 16r140B
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLConstants class >> initialize05 [
 
 	GL_FIXED := 16r140C.
@@ -6475,7 +6494,10 @@ GLConstants class >> initialize05 [
 	GL_T4F_C4F_N3F_V4F := 16r2A2D
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLConstants class >> initialize06 [
 
 	GL_CLIP_PLANE0 := 16r3000.
@@ -6580,7 +6602,10 @@ GLConstants class >> initialize06 [
 	GL_INDEX_ARRAY := 16r8077
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLConstants class >> initialize07 [
 
 	GL_TEXTURE_COORD_ARRAY := 16r8078.
@@ -6685,7 +6710,10 @@ GLConstants class >> initialize07 [
 	GL_RG32I := 16r823B
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLConstants class >> initialize08 [
 
 	GL_RG32UI := 16r823C.
@@ -6790,7 +6818,10 @@ GLConstants class >> initialize08 [
 	GL_SHADER_IMAGE_STORE := 16r82A5
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLConstants class >> initialize09 [
 
 	GL_SHADER_IMAGE_ATOMIC := 16r82A6.
@@ -6895,7 +6926,10 @@ GLConstants class >> initialize09 [
 	GL_FOG_COORDINATE_ARRAY_STRIDE := 16r8455
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLConstants class >> initialize10 [
 
 	GL_FOG_COORD_ARRAY_STRIDE := 16r8455.
@@ -7000,7 +7034,10 @@ GLConstants class >> initialize10 [
 	GL_SOURCE0_RGB := 16r8580
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLConstants class >> initialize11 [
 
 	GL_SRC0_RGB := 16r8580.
@@ -7105,7 +7142,10 @@ GLConstants class >> initialize11 [
 	GL_FOG_COORD_ARRAY_BUFFER_BINDING := 16r889D
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLConstants class >> initialize12 [
 
 	GL_WEIGHT_ARRAY_BUFFER_BINDING := 16r889E.
@@ -7210,7 +7250,10 @@ GLConstants class >> initialize12 [
 	GL_SAMPLER_CUBE := 16r8B60
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLConstants class >> initialize13 [
 
 	GL_SAMPLER_1D_SHADOW := 16r8B61.
@@ -7315,7 +7358,10 @@ GLConstants class >> initialize13 [
 	GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE := 16r8CD3
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLConstants class >> initialize14 [
 
 	GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER := 16r8CD4.
@@ -7420,7 +7466,10 @@ GLConstants class >> initialize14 [
 	GL_UNSIGNED_INT_VEC3 := 16r8DC7
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLConstants class >> initialize15 [
 
 	GL_UNSIGNED_INT_VEC4 := 16r8DC8.
@@ -7525,7 +7574,10 @@ GLConstants class >> initialize15 [
 	GL_MAX_TESS_PATCH_COMPONENTS := 16r8E84
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLConstants class >> initialize16 [
 
 	GL_MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS := 16r8E85.
@@ -7630,7 +7682,10 @@ GLConstants class >> initialize16 [
 	GL_MAX_FRAGMENT_IMAGE_UNIFORMS := 16r90CE
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLConstants class >> initialize17 [
 
 	GL_MAX_COMBINED_IMAGE_UNIFORMS := 16r90CF.
@@ -7735,7 +7790,10 @@ GLConstants class >> initialize17 [
 	GL_ATOMIC_COUNTER_BUFFER_SIZE := 16r92C3
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 GLConstants class >> initialize18 [
 
 	GL_ATOMIC_COUNTER_BUFFER_DATA_SIZE := 16r92C4.

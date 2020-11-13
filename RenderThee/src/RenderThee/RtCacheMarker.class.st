@@ -4,39 +4,58 @@ Class {
 	#instVars : [
 		'cachingStrategy'
 	],
-	#category : #'RenderThee-LayerTree'
+	#category : #'RenderThee-LayerTree',
+	#commentStamp : ''
 }
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtCacheMarker >> cachingStrategy [
 	^ cachingStrategy
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtCacheMarker >> cachingStrategy: anObject [
 	cachingStrategy := anObject
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : ''
+}
 RtCacheMarker >> shouldCacheDrawLayer: aLayer [
 
 	^ cachingStrategy shouldCacheDrawLayer: aLayer
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : ''
+}
 RtCacheMarker >> shouldCacheGroupLayer: aLayer [
 
 	^ cachingStrategy shouldCacheGroupLayer: aLayer
 ]
 
-{ #category : #visiting }
+{
+	#category : #visiting,
+	#timestamp : ''
+}
 RtCacheMarker >> visitDrawLayer: aLayer [
 
 	aLayer needsCaching: (self shouldCacheDrawLayer: aLayer).
 	super visitDrawLayer: aLayer
 ]
 
-{ #category : #visiting }
+{
+	#category : #visiting,
+	#timestamp : ''
+}
 RtCacheMarker >> visitGroupLayer: aLayer [
 
 	aLayer needsCaching: (self shouldCacheGroupLayer: aLayer).

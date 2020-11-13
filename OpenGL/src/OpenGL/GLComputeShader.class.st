@@ -1,10 +1,14 @@
 Class {
 	#name : #GLComputeShader,
 	#superclass : #GLShader,
-	#category : #'OpenGL-Wrappers-Shaders'
+	#category : #'OpenGL-Wrappers-Shaders',
+	#commentStamp : ''
 }
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/28/2020 17:50'
+}
 GLComputeShader class >> type [
 
 	^ GL_COMPUTE_SHADER

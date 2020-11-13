@@ -4,10 +4,14 @@ Class {
 	#pools : [
 		'GLFWConstants'
 	],
-	#category : #'GLFW-Core'
+	#category : #'GLFW-Core',
+	#commentStamp : ''
 }
 
-{ #category : #'field definition' }
+{
+	#category : #'field definition',
+	#timestamp : 'stlu 10/20/2020 22:04'
+}
 GLFWImage class >> fields [ "self defineFields"
 
 	^ #(

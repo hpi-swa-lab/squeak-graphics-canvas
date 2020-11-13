@@ -1,10 +1,14 @@
 Class {
 	#name : #GLVertexArray,
 	#superclass : #GLObject,
-	#category : #'OpenGL-Wrappers-Buffers'
+	#category : #'OpenGL-Wrappers-Buffers',
+	#commentStamp : ''
 }
 
-{ #category : #allocation }
+{
+	#category : #allocation,
+	#timestamp : 'stlu 11/3/2020 15:41'
+}
 GLVertexArray class >> allocate [
 
 	IntegerArray new: 1 during: [:ids |
@@ -12,25 +16,37 @@ GLVertexArray class >> allocate [
 		^ ids first]
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 11/6/2020 14:43'
+}
 GLVertexArray class >> bind: anInteger [
 
 	GL bindVertexArray: anInteger
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 11/6/2020 14:45'
+}
 GLVertexArray class >> currentBinding [
 
 	^ GL getIntegerParameter: GL_VERTEX_ARRAY_BINDING
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 11/6/2020 14:43'
+}
 GLVertexArray >> bind [
 
 	self class bind: id
 ]
 
-{ #category : #binding }
+{
+	#category : #binding,
+	#timestamp : 'stlu 11/6/2020 14:51'
+}
 GLVertexArray >> boundDuring: aBlock [
 
 	| previousID |
@@ -42,19 +58,28 @@ GLVertexArray >> boundDuring: aBlock [
 		self class bind: previousID]
 ]
 
-{ #category : #'initialize-release' }
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 11/3/2020 15:41'
+}
 GLVertexArray >> delete [
 
 	GL deleteVertexArrays: 1 with: (IntegerArray with: id)
 ]
 
-{ #category : #drawing }
+{
+	#category : #drawing,
+	#timestamp : ''
+}
 GLVertexArray >> draw: aModeEnum [
 
 	self draw: aModeEnum from: 0 count: numElements
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : 'stlu 10/29/2020 12:15'
+}
 GLVertexArray >> isVertexArray [
 
 	^ true

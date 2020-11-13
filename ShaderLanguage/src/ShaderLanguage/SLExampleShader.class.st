@@ -25,10 +25,14 @@ void main() {
 Class {
 	#name : #SLExampleShader,
 	#superclass : #Object,
-	#category : #ShaderLanguage
+	#category : #ShaderLanguage,
+	#commentStamp : 'stlu 11/11/2020 18:17'
 }
 
-{ #category : #code }
+{
+	#category : #code,
+	#timestamp : 'stlu 11/11/2020 18:16'
+}
 SLExampleShader class >> main [
 
 	"<out: 'FragColor' type: #Vector4>
@@ -60,7 +64,10 @@ SLExampleShader class >> main [
 	FragColor := Vector4 value: result value: 1.0
 ]
 
-{ #category : #'variable declaration' }
+{
+	#category : #'variable declaration',
+	#timestamp : 'stlu 11/11/2020 16:27'
+}
 SLExampleShader class >> resources [
 
 	^ {

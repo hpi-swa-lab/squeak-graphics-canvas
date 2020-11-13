@@ -5,10 +5,14 @@ Class {
 		'parameters',
 		'returnType'
 	],
-	#category : #'OpenGL-Generation'
+	#category : #'OpenGL-Generation',
+	#commentStamp : ''
 }
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/1/2020 20:13'
+}
 GLGenCommand class >> registry: registry tag: commandTag [
 
 	^ self new
@@ -16,26 +20,38 @@ GLGenCommand class >> registry: registry tag: commandTag [
 		yourself
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/1/2020 00:23'
+}
 GLGenCommand >> addParameter: param [
 
 	parameters add: param
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : 'stlu 11/1/2020 20:27'
+}
 GLGenCommand >> initialize [
 
 	super initialize.
 	parameters := OrderedCollection new
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/31/2020 22:20'
+}
 GLGenCommand >> parameters [
 
 	^ parameters
 ]
 
-{ #category : #generation }
+{
+	#category : #generation,
+	#timestamp : 'stlu 11/2/2020 19:53'
+}
 GLGenCommand >> printFFIPragmaOn: aStream [
 
 	aStream
@@ -52,7 +68,10 @@ GLGenCommand >> printFFIPragmaOn: aStream [
 	aStream nextPutAll: ')>'
 ]
 
-{ #category : #printing }
+{
+	#category : #printing,
+	#timestamp : 'stlu 11/1/2020 20:56'
+}
 GLGenCommand >> printOn: aStream [
 
 	aStream
@@ -66,7 +85,10 @@ GLGenCommand >> printOn: aStream [
 	aStream nextPut:$)
 ]
 
-{ #category : #generation }
+{
+	#category : #generation,
+	#timestamp : 'stlu 11/3/2020 13:04'
+}
 GLGenCommand >> printRemoveSourceInProfile: aSymbol [
 
 	^ String streamContents: [:stream |
@@ -85,7 +107,10 @@ GLGenCommand >> printRemoveSourceInProfile: aSymbol [
 		self printSignatureOn: stream]
 ]
 
-{ #category : #generation }
+{
+	#category : #generation,
+	#timestamp : 'stlu 11/3/2020 13:10'
+}
 GLGenCommand >> printRequireSourceInProfile: aSymbol [
 
 	^ String streamContents: [:stream |
@@ -106,7 +131,10 @@ GLGenCommand >> printRequireSourceInProfile: aSymbol [
 			nextPutAll: '^ self externalCallFailed']
 ]
 
-{ #category : #generation }
+{
+	#category : #generation,
+	#timestamp : 'stlu 11/3/2020 12:58'
+}
 GLGenCommand >> printSharedRemoveSource [
 
 	^ String streamContents: [:stream |
@@ -119,7 +147,10 @@ GLGenCommand >> printSharedRemoveSource [
 			nextPutAll: '^ self versionError']
 ]
 
-{ #category : #generation }
+{
+	#category : #generation,
+	#timestamp : 'stlu 11/3/2020 12:58'
+}
 GLGenCommand >> printSharedRequireSource [
 
 	^ String streamContents: [:stream |
@@ -137,7 +168,10 @@ GLGenCommand >> printSharedRequireSource [
 			nextPutAll: '^ self externalCallFailed']
 ]
 
-{ #category : #generation }
+{
+	#category : #generation,
+	#timestamp : 'stlu 11/2/2020 19:39'
+}
 GLGenCommand >> printSignatureOn: aStream [
 
 	aStream nextPutAll: self selector.
@@ -147,7 +181,10 @@ GLGenCommand >> printSignatureOn: aStream [
 		separatedBy: [aStream nextPutAll: ' with: ']
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : 'stlu 11/1/2020 21:30'
+}
 GLGenCommand >> registry: registry tag: commandTag [
 
 	| protoTag |
@@ -160,13 +197,19 @@ GLGenCommand >> registry: registry tag: commandTag [
 	registry addCommand: self
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/31/2020 22:20'
+}
 GLGenCommand >> returnType [
 
 	^ returnType
 ]
 
-{ #category : #generation }
+{
+	#category : #generation,
+	#timestamp : 'stlu 11/3/2020 13:59'
+}
 GLGenCommand >> selector [
 	"remove gl* prefix"
 	| selector |

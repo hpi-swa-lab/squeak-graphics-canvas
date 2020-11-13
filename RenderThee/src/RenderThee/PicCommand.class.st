@@ -5,10 +5,14 @@ A `PicPictureCanvas` is typically used to create me.
 Class {
 	#name : #PicCommand,
 	#superclass : #Object,
-	#category : #'RenderThee-Pictures'
+	#category : #'RenderThee-Pictures',
+	#commentStamp : 'stlu 8/21/2020 13:54'
 }
 
-{ #category : #converting }
+{
+	#category : #converting,
+	#timestamp : ''
+}
 PicCommand >> asForm [
 	"Answer a Form containing the drawn representation of myself."
 	| fc bounds |
@@ -18,31 +22,46 @@ PicCommand >> asForm [
 	^ fc form
 ]
 
-{ #category : #enumerating }
+{
+	#category : #enumerating,
+	#timestamp : ''
+}
 PicCommand >> do: aBlock [
 
 	aBlock value: self
 ]
 
-{ #category : #drawing }
+{
+	#category : #drawing,
+	#timestamp : ''
+}
 PicCommand >> drawOn: aCanvas [
 	"Replays represented graphical command(s) onto the given canvas."
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicCommand >> estimatedBounds [
 	"Returns a rectangle representing the maximum bounds I draw myself into."
 	self subclassResponsibility
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : ''
+}
 PicCommand >> isDrawing [
 	"Returns true if drawing me onto a canvas results in a change of the underlying pixel store."
 	^ false
 ]
 
-{ #category : #debugging }
+{
+	#category : #debugging,
+	#timestamp : ''
+}
 PicCommand >> open [
 
 	 ^ self asForm asMorph openInHand

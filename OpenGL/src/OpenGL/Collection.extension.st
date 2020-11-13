@@ -1,6 +1,9 @@
 Extension { #name : #Collection }
 
-{ #category : #'*OpenGL' }
+{
+	#category : #'*OpenGL',
+	#timestamp : 'stlu 10/28/2020 14:16'
+}
 Collection class >> new: sizeRequested during: aBlock [
 
 	^ aBlock value: (self new: sizeRequested)

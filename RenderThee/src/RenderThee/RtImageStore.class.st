@@ -7,34 +7,50 @@ Instance Variables
 Class {
 	#name : #RtImageStore,
 	#superclass : #Object,
-	#category : #'RenderThee-LayerTree'
+	#category : #'RenderThee-LayerTree',
+	#commentStamp : ''
 }
 
-{ #category : #'as yet unclassified' }
+{
+	#category : #'as yet unclassified',
+	#timestamp : ''
+}
 RtImageStore class >> defaultCanvasClass [
 
 	^ self subclassResponsibility
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : ''
+}
 RtImageStore class >> extent: aPoint [
 
 	self subclassResponsibility
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : ''
+}
 RtImageStore class >> form: aForm [
 
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtImageStore >> boundingBox [
 
 	^ 0 @ 0 extent: self extent
 ]
 
-{ #category : #drawing }
+{
+	#category : #drawing,
+	#timestamp : ''
+}
 RtImageStore >> canvasDo: aBlock [
 
 	self
@@ -42,31 +58,46 @@ RtImageStore >> canvasDo: aBlock [
 		during: [:c | aBlock value: c]
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtImageStore >> extent [
 
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtImageStore >> extent: aPoint [
 
 	self subclassResponsibility
 ]
 
-{ #category : #private }
+{
+	#category : #private,
+	#timestamp : ''
+}
 RtImageStore >> getCanvas [
 
 	self subclassResponsibility
 ]
 
-{ #category : #textures }
+{
+	#category : #textures,
+	#timestamp : ''
+}
 RtImageStore >> glTextureDo: aBlock [
 
 	self subclassResponsibility
 ]
 
-{ #category : #drawing }
+{
+	#category : #drawing,
+	#timestamp : ''
+}
 RtImageStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
 	aBlock cull: aCanvas

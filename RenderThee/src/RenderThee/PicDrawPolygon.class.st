@@ -4,10 +4,14 @@ Class {
 	#instVars : [
 		'vertices'
 	],
-	#category : #'RenderThee-Pictures'
+	#category : #'RenderThee-Pictures',
+	#commentStamp : ''
 }
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : ''
+}
 PicDrawPolygon class >> vertices: collectionOfPoints fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	^ self new
@@ -17,7 +21,10 @@ PicDrawPolygon class >> vertices: collectionOfPoints fillStyle: aFillStyle borde
 		yourself
 ]
 
-{ #category : #drawing }
+{
+	#category : #drawing,
+	#timestamp : ''
+}
 PicDrawPolygon >> drawOn: aCanvas [
 
 	aCanvas
@@ -27,19 +34,28 @@ PicDrawPolygon >> drawOn: aCanvas [
 		borderColor: borderStyle color
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawPolygon >> estimatedBounds [
 
 	^ Rectangle encompassing: vertices
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawPolygon >> vertices [
 
 	^ vertices
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 PicDrawPolygon >> vertices: anObject [
 
 	vertices := anObject.

@@ -5,41 +5,60 @@ Class {
 		'morph',
 		'imageStore'
 	],
-	#category : #'RenderThee-LayerTree'
+	#category : #'RenderThee-LayerTree',
+	#commentStamp : ''
 }
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtMorphicRenderer >> imageStore [
 
 	^ imageStore
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtMorphicRenderer >> imageStore: anObject [
 
 	imageStore := anObject
 ]
 
-{ #category : #'initialize-release' }
+{
+	#category : #'initialize-release',
+	#timestamp : ''
+}
 RtMorphicRenderer >> initializeWithMorph: aMorph imageStore: anImageStore [
 
 	morph := aMorph.
 	imageStore := anImageStore
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtMorphicRenderer >> morph [
 
 	^ morph
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtMorphicRenderer >> morph: anObject [
 
 	morph := anObject
 ]
 
-{ #category : #rendering }
+{
+	#category : #rendering,
+	#timestamp : ''
+}
 RtMorphicRenderer >> renderFrame [
 
 	self subclassResponsibility

@@ -16,28 +16,41 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'OpenGL-API'
+	#category : #'OpenGL-API',
+	#commentStamp : ''
 }
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/2/2020 15:13'
+}
 GLLibrary class >> api [
 
 	self subclassResponsibility
 ]
 
-{ #category : #querying }
+{
+	#category : #querying,
+	#timestamp : 'stlu 11/12/2020 14:56'
+}
 GLLibrary class >> api: aSymbol [
 
 	^ GLLibrary subclasses detect: [:cls | cls api = aSymbol]
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/3/2020 12:53'
+}
 GLLibrary class >> context: aContext [
 
 	^ self context: aContext profile: self defaultProfile
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/3/2020 12:53'
+}
 GLLibrary class >> context: aContext profile: aSymbol [
 
 	^ self new
@@ -46,9 +59,13 @@ GLLibrary class >> context: aContext profile: aSymbol [
 		yourself
 ]
 
-{ #category : #examples }
+{
+	#category : #examples,
+	#timestamp : 'stlu 11/13/2020 13:04'
+}
 GLLibrary class >> example1 [ "self example1"
-	"A minimal OpenGL example."
+	"A minimal OpenGL example.
+	Prints information about the created OpenGL context to the Transcript."
 	| lib bounds |
 	bounds := 0@0 extent: 400@400.
 	lib := (B3DContext bounds: bounds) library.
@@ -65,7 +82,10 @@ GLLibrary class >> example1 [ "self example1"
 	] ensure: [lib destroy]
 ]
 
-{ #category : #examples }
+{
+	#category : #examples,
+	#timestamp : 'stlu 11/9/2020 18:29'
+}
 GLLibrary class >> example2 [ "self example2"
 	"A very simple OpenGL 1.0 example showing a rotating red rectangle on white background.
 	Click anywhere to dismiss it."
@@ -91,33 +111,48 @@ GLLibrary class >> example2 [ "self example2"
 	] ensure: [context destroy]
 ]
 
-{ #category : #'class initialization' }
+{
+	#category : #'class initialization',
+	#timestamp : 'stlu 10/26/2020 10:42'
+}
 GLLibrary class >> initialize [
 
 	Smalltalk addToStartUpList: self.
 	Environment current at: #GL put: nil
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/2/2020 15:02'
+}
 GLLibrary class >> majorVersion [
 
 	self subclassResponsibility
 ]
 
-{ #category : #querying }
+{
+	#category : #querying,
+	#timestamp : 'stlu 11/12/2020 14:58'
+}
 GLLibrary class >> majorVersion: major minorVersion: minor [
 
 	^ self withAllSubclasses detect: [:cls |
 		cls majorVersion = major and: [cls minorVersion = minor]]
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/2/2020 15:03'
+}
 GLLibrary class >> minorVersion [
 
 	self subclassResponsibility
 ]
 
-{ #category : #'class initialization' }
+{
+	#category : #'class initialization',
+	#timestamp : 'stlu 10/26/2020 10:31'
+}
 GLLibrary class >> startUp: resuming [
 
 	resuming ifTrue: [
@@ -130,43 +165,64 @@ GLLibrary class >> startUp: resuming [
 		instances elementsForwardIdentityTo: replacements]
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/2/2020 14:49'
+}
 GLLibrary class >> versionNumber [
 
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLLibrary class >> wglGetProcAddress: aString [
 	<apicall: void* 'wglGetProcAddress' (char*) module: 'Opengl32.dll'>
 	^ self externalCallFailed
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/2/2020 15:11'
+}
 GLLibrary >> api [
 
 	^ self class api
 ]
 
-{ #category : #'error handling' }
+{
+	#category : #'error handling',
+	#timestamp : 'stlu 10/26/2020 11:05'
+}
 GLLibrary >> assertIsCurrent [
 	
 	self assert: GL == self
 ]
 
-{ #category : #resources }
+{
+	#category : #resources,
+	#timestamp : 'stlu 10/16/2020 12:43'
+}
 GLLibrary >> at: aKey [
 
 	^ context resources userData at: aKey
 ]
 
-{ #category : #resources }
+{
+	#category : #resources,
+	#timestamp : 'stlu 10/16/2020 12:43'
+}
 GLLibrary >> at: aKey ifAbsentPut: aBlock [
 
 	^ context resources userData at: aKey ifAbsentPut: aBlock
 ]
 
-{ #category : #resources }
+{
+	#category : #resources,
+	#timestamp : 'stlu 10/16/2020 12:43'
+}
 GLLibrary >> at: aKey put: aValue [
 
 	^ context resources userData
@@ -174,7 +230,10 @@ GLLibrary >> at: aKey put: aValue [
 			put: aValue
 ]
 
-{ #category : #'error handling' }
+{
+	#category : #'error handling',
+	#timestamp : 'stlu 11/3/2020 15:07'
+}
 GLLibrary >> checkForError [
 	"Check for any OpenGL errors, and raise an Error if any exist."
 	| error |
@@ -184,31 +243,46 @@ GLLibrary >> checkForError [
 
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/16/2020 12:43'
+}
 GLLibrary >> context [
 
 	^ context
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/19/2020 16:20'
+}
 GLLibrary >> context: aContext [
 
 	context := aContext
 ]
 
-{ #category : #'context delegation' }
+{
+	#category : #'context delegation',
+	#timestamp : ''
+}
 GLLibrary >> destroy [
 
 	context destroy
 ]
 
-{ #category : #'context delegation' }
+{
+	#category : #'context delegation',
+	#timestamp : 'stlu 10/16/2020 12:47'
+}
 GLLibrary >> endFrame [
 
 	context endFrame
 ]
 
-{ #category : #'error handling' }
+{
+	#category : #'error handling',
+	#timestamp : ''
+}
 GLLibrary >> errorString: error [
 	"GLubyte* gluErrorString(GLenum error);"
 	| explainedError |
@@ -227,20 +301,10 @@ GLLibrary >> errorString: error [
 
 ]
 
-{ #category : #parameters }
-GLLibrary >> extensionList [
-
-	self flag: #todo. "If generated classes remained the same, compatibility could be ensured by selection of the correct library class. Also, querying the major version does not work in GLES2"
-	^ self class majorVersion >= 3
-		ifTrue: [	
-			| extensions |
-			extensions := Array new: self numExtensions.
-			0 to: extensions size - 1 do: [:i |
-				extensions at: i put: (self getStringParameter: GL_EXTENSIONS at: i)]]
-		ifFalse: [(self getStringParameter: GL_EXTENSIONS) splitBy: ' ']
-]
-
-{ #category : #'error handling' }
+{
+	#category : #'error handling',
+	#timestamp : ''
+}
 GLLibrary >> externalCallFailed [
 
 	| code |
@@ -258,7 +322,10 @@ GLLibrary >> externalCallFailed [
 	^ self error: (ExternalFunction errorMessageFor: code)
 ]
 
-{ #category : #parameters }
+{
+	#category : #parameters,
+	#timestamp : 'stlu 11/3/2020 15:01'
+}
 GLLibrary >> getClearColor [
 
 	| color |
@@ -271,7 +338,10 @@ GLLibrary >> getClearColor [
 		alpha: color fourth
 ]
 
-{ #category : #parameters }
+{
+	#category : #parameters,
+	#timestamp : 'stlu 11/12/2020 14:17'
+}
 GLLibrary >> getExtensions [
 
 	| extensionsString |
@@ -279,13 +349,19 @@ GLLibrary >> getExtensions [
 	^ extensionsString splitBy: ' '
 ]
 
-{ #category : #parameters }
+{
+	#category : #parameters,
+	#timestamp : 'stlu 11/12/2020 14:06'
+}
 GLLibrary >> getExtensionsString [
 
 	^ self getStringParameter: GL_EXTENSIONS
 ]
 
-{ #category : #'parameters - helpers' }
+{
+	#category : #'parameters - helpers',
+	#timestamp : 'stlu 11/3/2020 15:15'
+}
 GLLibrary >> getIntegerParameter: name [
 
 	IntegerArray new: 1 during: [:result |
@@ -293,7 +369,10 @@ GLLibrary >> getIntegerParameter: name [
 		^ result first]
 ]
 
-{ #category : #'parameters - helpers' }
+{
+	#category : #'parameters - helpers',
+	#timestamp : 'stlu 11/3/2020 15:17'
+}
 GLLibrary >> getIntegerParameters: name size: numParameters [
 
 	| data |
@@ -302,43 +381,64 @@ GLLibrary >> getIntegerParameters: name size: numParameters [
 	^ data
 ]
 
-{ #category : #parameters }
+{
+	#category : #parameters,
+	#timestamp : 'stlu 11/12/2020 13:26'
+}
 GLLibrary >> getNumExtensions [
 
 	^ self getIntegerParameter: GL_NUM_EXTENSIONS
 ]
 
-{ #category : #parameters }
+{
+	#category : #parameters,
+	#timestamp : 'stlu 11/12/2020 15:10'
+}
 GLLibrary >> getProfile [
 
 	^ #'' "by default none"
 ]
 
-{ #category : #parameters }
+{
+	#category : #parameters,
+	#timestamp : 'stlu 11/11/2020 15:13'
+}
 GLLibrary >> getRendererString [
 
 	^ self getStringParameter: GL_RENDERER
 ]
 
-{ #category : #resources }
+{
+	#category : #resources,
+	#timestamp : ''
+}
 GLLibrary >> getShaderProgram: aClass [
 
 	^ context resources getShaderProgram: aClass library: self
 ]
 
-{ #category : #parameters }
+{
+	#category : #parameters,
+	#timestamp : 'stlu 11/12/2020 14:34'
+}
 GLLibrary >> getShadingLanguageVersion [
 
 	^ #(0 0) "by default unsupported"
 ]
 
-{ #category : #parameters }
+{
+	#category : #parameters,
+	#timestamp : 'stlu 11/12/2020 14:04'
+}
 GLLibrary >> getShadingLanguageVersionString [
 
 	^ self getStringParameter: GL_SHADING_LANGUAGE_VERSION
 ]
 
-{ #category : #'parameters - helpers' }
+{
+	#category : #'parameters - helpers',
+	#timestamp : 'stlu 11/3/2020 15:13'
+}
 GLLibrary >> getStringParameter: name [
 
 	| data |
@@ -347,7 +447,10 @@ GLLibrary >> getStringParameter: name [
 	^ (data asType: ExternalType string) fromCString
 ]
 
-{ #category : #'parameters - helpers' }
+{
+	#category : #'parameters - helpers',
+	#timestamp : 'stlu 11/3/2020 15:13'
+}
 GLLibrary >> getStringParameter: name at: index [
 
 	| data |
@@ -356,19 +459,28 @@ GLLibrary >> getStringParameter: name at: index [
 	^ (data asType: ExternalType string) fromCString
 ]
 
-{ #category : #parameters }
+{
+	#category : #parameters,
+	#timestamp : 'stlu 11/11/2020 15:13'
+}
 GLLibrary >> getVendorString [
 
 	^ self getStringParameter: GL_VENDOR
 ]
 
-{ #category : #parameters }
+{
+	#category : #parameters,
+	#timestamp : 'stlu 11/12/2020 15:06'
+}
 GLLibrary >> getVersion [
 	"Returns an array of two elements, the major version and the minor version."
 	self subclassResponsibility
 ]
 
-{ #category : #parameters }
+{
+	#category : #parameters,
+	#timestamp : 'stlu 11/12/2020 13:26'
+}
 GLLibrary >> getVersionNumber [
 
 	| version |
@@ -376,13 +488,19 @@ GLLibrary >> getVersionNumber [
 	^ version first * 10 + version second
 ]
 
-{ #category : #parameters }
+{
+	#category : #parameters,
+	#timestamp : 'stlu 11/11/2020 15:13'
+}
 GLLibrary >> getVersionString [
 
 	^ self getStringParameter: GL_VERSION
 ]
 
-{ #category : #parameters }
+{
+	#category : #parameters,
+	#timestamp : 'stlu 11/3/2020 15:17'
+}
 GLLibrary >> getViewport [
 
 	| viewport |
@@ -392,25 +510,37 @@ GLLibrary >> getViewport [
 		extent: viewport third @ viewport fourth
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : 'stlu 11/12/2020 15:52'
+}
 GLLibrary >> isCompatibilityProfile [
 
 	^ profile = #compatibility
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : 'stlu 11/12/2020 15:52'
+}
 GLLibrary >> isCoreProfile [
 
 	^ profile = #core
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/2/2020 15:03'
+}
 GLLibrary >> majorVersion [
 
 	^ self class majorVersion
 ]
 
-{ #category : #activation }
+{
+	#category : #activation,
+	#timestamp : ''
+}
 GLLibrary >> makeCurrentDuring: aBlock [
 
 	GL
@@ -435,13 +565,19 @@ GLLibrary >> makeCurrentDuring: aBlock [
 				context deactivate]]
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/2/2020 15:03'
+}
 GLLibrary >> minorVersion [
 
 	^ self class minorVersion
 ]
 
-{ #category : #activation }
+{
+	#category : #activation,
+	#timestamp : ''
+}
 GLLibrary >> newFrameDo: aBlock. [
 
 	self makeCurrentDuring: [
@@ -453,43 +589,46 @@ GLLibrary >> newFrameDo: aBlock. [
 		self swapBuffers]
 ]
 
-{ #category : #parameters }
-GLLibrary >> numExtensions [
-
-	^ self getIntegerParameter: GL_NUM_EXTENSIONS
-]
-
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/3/2020 12:53'
+}
 GLLibrary >> profile [
 
 	^ profile
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/3/2020 12:53'
+}
 GLLibrary >> profile: anObject [
 
 	profile := anObject
 ]
 
-{ #category : #'error handling' }
+{
+	#category : #'error handling',
+	#timestamp : 'stlu 11/3/2020 12:50'
+}
 GLLibrary >> profileError [
 
 	self error: 'Not supported in currently active OpenGL library profile'
 ]
 
-{ #category : #resources }
+{
+	#category : #resources,
+	#timestamp : 'stlu 10/26/2020 12:15'
+}
 GLLibrary >> registerObject: glObject [
 
 	context registerObject: glObject
 ]
 
-{ #category : #parameters }
-GLLibrary >> rendererString [
-
-	^ self getStringParameter: GL_RENDERER
-]
-
-{ #category : #helpers }
+{
+	#category : #helpers,
+	#timestamp : 'stlu 11/3/2020 15:01'
+}
 GLLibrary >> setClearColor: aColor [
 
 	self
@@ -499,7 +638,10 @@ GLLibrary >> setClearColor: aColor [
 		with: aColor alpha
 ]
 
-{ #category : #helpers }
+{
+	#category : #helpers,
+	#timestamp : 'stlu 11/3/2020 15:03'
+}
 GLLibrary >> setViewport: aRectangle [
 
 	self
@@ -509,50 +651,47 @@ GLLibrary >> setViewport: aRectangle [
 		with: aRectangle height
 ]
 
-{ #category : #parameters }
-GLLibrary >> shadingLanguageVersionString [
-
-	^ self getStringParameter: GL_SHADING_LANGUAGE_VERSION
-]
-
-{ #category : #'context delegation' }
+{
+	#category : #'context delegation',
+	#timestamp : ''
+}
 GLLibrary >> shouldClose [
 
 	self flag: #todo. "does this really belong here?"
 	^ context shouldClose
 ]
 
-{ #category : #'context delegation' }
+{
+	#category : #'context delegation',
+	#timestamp : ''
+}
 GLLibrary >> swapBuffers [
 
 	context swapBuffers
 ]
 
-{ #category : #parameters }
-GLLibrary >> vendorString [
-
-	^ self getStringParameter: GL_VENDOR
-]
-
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/2/2020 15:01'
+}
 GLLibrary >> version [
 
 	^ self class versionNumber
 ]
 
-{ #category : #'error handling' }
+{
+	#category : #'error handling',
+	#timestamp : 'stlu 11/3/2020 12:51'
+}
 GLLibrary >> versionError [
 
 	self error: 'Not supported in currently active OpenGL library version'
 ]
 
-{ #category : #parameters }
-GLLibrary >> versionString [
-
-	^ self getStringParameter: GL_VERSION
-]
-
-{ #category : #helpers }
+{
+	#category : #helpers,
+	#timestamp : 'stlu 11/3/2020 15:04'
+}
 GLLibrary >> viewport: aRectangle during: aBlock [
 
 	| previousViewport |

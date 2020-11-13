@@ -1,6 +1,9 @@
 Extension { #name : #ExternalData }
 
-{ #category : #'*OpenGL' }
+{
+	#category : #'*OpenGL',
+	#timestamp : ''
+}
 ExternalData class >> allocate: aNumber type: aType do: aBlock [
 
 	| addr |

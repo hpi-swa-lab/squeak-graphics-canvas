@@ -1,6 +1,9 @@
 Extension { #name : #DockingBarMorph }
 
-{ #category : #'*RenderThee' }
+{
+	#category : #'*RenderThee',
+	#timestamp : ''
+}
 DockingBarMorph >> isRepaintBoundary [
 
 	^ true

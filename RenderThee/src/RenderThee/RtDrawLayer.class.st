@@ -12,10 +12,14 @@ Class {
 	#instVars : [
 		'picture'
 	],
-	#category : #'RenderThee-LayerTree'
+	#category : #'RenderThee-LayerTree',
+	#commentStamp : ''
 }
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : ''
+}
 RtDrawLayer class >> picture: aPicture [
 
 	| bounds pic |
@@ -29,37 +33,55 @@ RtDrawLayer class >> picture: aPicture [
 		yourself
 ]
 
-{ #category : #visiting }
+{
+	#category : #visiting,
+	#timestamp : ''
+}
 RtDrawLayer >> accept: aVisitor [
 
 	^ aVisitor visitDrawLayer: self
 ]
 
-{ #category : #compositing }
+{
+	#category : #compositing,
+	#timestamp : ''
+}
 RtDrawLayer >> drawLayerOn: aCanvas [
 
 	aCanvas drawDrawLayer: self
 ]
 
-{ #category : #compositing }
+{
+	#category : #compositing,
+	#timestamp : ''
+}
 RtDrawLayer >> drawOn: aCanvas [
 
 	aCanvas draw: picture
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtDrawLayer >> picture [
 
 	^ picture
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtDrawLayer >> picture: anObject [
 
 	picture := anObject
 ]
 
-{ #category : #printing }
+{
+	#category : #printing,
+	#timestamp : ''
+}
 RtDrawLayer >> printOn: aStream [
 
 	super printOn: aStream.

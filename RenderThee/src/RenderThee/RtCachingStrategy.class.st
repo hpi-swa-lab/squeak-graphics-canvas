@@ -4,16 +4,23 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'RenderThee-LayerTree'
+	#category : #'RenderThee-LayerTree',
+	#commentStamp : ''
 }
 
-{ #category : #rules }
+{
+	#category : #rules,
+	#timestamp : ''
+}
 RtCachingStrategy >> shouldCacheDrawLayer: aLayer [
 
 	^ self subclassResponsibility
 ]
 
-{ #category : #rules }
+{
+	#category : #rules,
+	#timestamp : ''
+}
 RtCachingStrategy >> shouldCacheGroupLayer: aLayer [
 
 	^ self subclassResponsibility

@@ -4,5 +4,6 @@ Class {
 	#instVars : [
 		'type'
 	],
-	#category : #'OpenGL-Wrappers-Shaders'
+	#category : #'OpenGL-Wrappers-Shaders',
+	#commentStamp : ''
 }

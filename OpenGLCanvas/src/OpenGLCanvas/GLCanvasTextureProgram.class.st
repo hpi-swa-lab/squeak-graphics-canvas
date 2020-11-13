@@ -10,10 +10,14 @@ Class {
 		'aTexCoordsLocation',
 		'colorLocation'
 	],
-	#category : #'OpenGLCanvas-Core'
+	#category : #'OpenGLCanvas-Core',
+	#commentStamp : ''
 }
 
-{ #category : #'shader code' }
+{
+	#category : #'shader code',
+	#timestamp : ''
+}
 GLCanvasTextureProgram class >> fragmentShader [
 	^'#version 330 core
 out vec4 FragColor;
@@ -29,7 +33,10 @@ void main() {
 }' withUnixLineEndings
 ]
 
-{ #category : #'shader code' }
+{
+	#category : #'shader code',
+	#timestamp : ''
+}
 GLCanvasTextureProgram class >> vertexShader [
     ^'#version 330 core
 in vec2 aPos;
@@ -47,37 +54,55 @@ void main()
 }' withUnixLineEndings
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLCanvasTextureProgram >> aPosLocation [
 
 	^ aPosLocation
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLCanvasTextureProgram >> aTexCoordsLocation [
 
 	^ aTexCoordsLocation
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLCanvasTextureProgram >> color: aColor [
 
 	self uniform: colorLocation value: aColor
 ]
 
-{ #category : #'uniform accessing' }
+{
+	#category : #'uniform accessing',
+	#timestamp : ''
+}
 GLCanvasTextureProgram >> image: anObject [
 
 	self uniform: imageLocation value: anObject
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLCanvasTextureProgram >> imageLocation [
 
 	^ imageLocation
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : 'stlu 11/3/2020 15:35'
+}
 GLCanvasTextureProgram >> initializeLocations [
 
 	super initializeLocations.
@@ -97,25 +122,37 @@ GLCanvasTextureProgram >> initializeLocations [
 	self assert: aTexCoordsLocation >= 0
 ]
 
-{ #category : #'uniform accessing' }
+{
+	#category : #'uniform accessing',
+	#timestamp : ''
+}
 GLCanvasTextureProgram >> mvp: anObject [
 
 	self uniform: mvpLocation value: anObject
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLCanvasTextureProgram >> mvpLocation [
 
 	^ mvpLocation
 ]
 
-{ #category : #'uniform accessing' }
+{
+	#category : #'uniform accessing',
+	#timestamp : ''
+}
 GLCanvasTextureProgram >> sourceExtent: aPoint [
 
 	self uniform: sourceExtentLocation value: aPoint
 ]
 
-{ #category : #'uniform accessing' }
+{
+	#category : #'uniform accessing',
+	#timestamp : ''
+}
 GLCanvasTextureProgram >> sourcePosition: aPoint [
 
 	self uniform: sourcePositionLocation value: aPoint

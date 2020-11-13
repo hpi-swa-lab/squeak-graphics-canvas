@@ -4,34 +4,50 @@ Class {
 	#instVars : [
 		'isCore'
 	],
-	#category : #'OpenGL-API-GL'
+	#category : #'OpenGL-API-GL',
+	#commentStamp : ''
 }
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/11/2020 14:18'
+}
 GL1_0 class >> api [
 
 	^ #gl
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/3/2020 12:49'
+}
 GL1_0 class >> defaultProfile [
 
 	^ #core
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GL1_0 class >> majorVersion [
 
 	^ 1
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GL1_0 class >> minorVersion [
 
 	^ 0
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/9/2020 14:00'
+}
 GL1_0 class >> moduleName [
 
 	| platform version |
@@ -49,2981 +65,4259 @@ GL1_0 class >> moduleName [
 	self error: 'Cannot identify platform'
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/2/2020 14:50'
+}
 GL1_0 class >> versionNumber [
 
 	^ 10
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ACCUM [
 
 	<generated>
 	^ GL_ACCUM
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ACCUM_ALPHA_BITS [
 
 	<generated>
 	^ GL_ACCUM_ALPHA_BITS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ACCUM_BLUE_BITS [
 
 	<generated>
 	^ GL_ACCUM_BLUE_BITS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ACCUM_BUFFER_BIT [
 
 	<generated>
 	^ GL_ACCUM_BUFFER_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ACCUM_CLEAR_VALUE [
 
 	<generated>
 	^ GL_ACCUM_CLEAR_VALUE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ACCUM_GREEN_BITS [
 
 	<generated>
 	^ GL_ACCUM_GREEN_BITS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ACCUM_RED_BITS [
 
 	<generated>
 	^ GL_ACCUM_RED_BITS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ADD [
 
 	<generated>
 	^ GL_ADD
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ALL_ATTRIB_BITS [
 
 	<generated>
 	^ GL_ALL_ATTRIB_BITS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ALPHA [
 
 	<generated>
 	^ GL_ALPHA
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ALPHA_BIAS [
 
 	<generated>
 	^ GL_ALPHA_BIAS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ALPHA_BITS [
 
 	<generated>
 	^ GL_ALPHA_BITS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ALPHA_SCALE [
 
 	<generated>
 	^ GL_ALPHA_SCALE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ALPHA_TEST [
 
 	<generated>
 	^ GL_ALPHA_TEST
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ALPHA_TEST_FUNC [
 
 	<generated>
 	^ GL_ALPHA_TEST_FUNC
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ALPHA_TEST_REF [
 
 	<generated>
 	^ GL_ALPHA_TEST_REF
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ALWAYS [
 
 	<generated>
 	^ GL_ALWAYS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> AMBIENT [
 
 	<generated>
 	^ GL_AMBIENT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> AMBIENT_AND_DIFFUSE [
 
 	<generated>
 	^ GL_AMBIENT_AND_DIFFUSE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> AND [
 
 	<generated>
 	^ GL_AND
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> AND_INVERTED [
 
 	<generated>
 	^ GL_AND_INVERTED
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> AND_REVERSE [
 
 	<generated>
 	^ GL_AND_REVERSE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ATTRIB_STACK_DEPTH [
 
 	<generated>
 	^ GL_ATTRIB_STACK_DEPTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> AUTO_NORMAL [
 
 	<generated>
 	^ GL_AUTO_NORMAL
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> AUX0 [
 
 	<generated>
 	^ GL_AUX0
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> AUX1 [
 
 	<generated>
 	^ GL_AUX1
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> AUX2 [
 
 	<generated>
 	^ GL_AUX2
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> AUX3 [
 
 	<generated>
 	^ GL_AUX3
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> AUX_BUFFERS [
 
 	<generated>
 	^ GL_AUX_BUFFERS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> BACK [
 
 	<generated>
 	^ GL_BACK
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> BACK_LEFT [
 
 	<generated>
 	^ GL_BACK_LEFT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> BACK_RIGHT [
 
 	<generated>
 	^ GL_BACK_RIGHT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> BITMAP [
 
 	<generated>
 	^ GL_BITMAP
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> BITMAP_TOKEN [
 
 	<generated>
 	^ GL_BITMAP_TOKEN
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> BLEND [
 
 	<generated>
 	^ GL_BLEND
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> BLEND_DST [
 
 	<generated>
 	^ GL_BLEND_DST
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> BLEND_SRC [
 
 	<generated>
 	^ GL_BLEND_SRC
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> BLUE [
 
 	<generated>
 	^ GL_BLUE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> BLUE_BIAS [
 
 	<generated>
 	^ GL_BLUE_BIAS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> BLUE_BITS [
 
 	<generated>
 	^ GL_BLUE_BITS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> BLUE_SCALE [
 
 	<generated>
 	^ GL_BLUE_SCALE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> BYTE [
 
 	<generated>
 	^ GL_BYTE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CCW [
 
 	<generated>
 	^ GL_CCW
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CLAMP [
 
 	<generated>
 	^ GL_CLAMP
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CLEAR [
 
 	<generated>
 	^ GL_CLEAR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CLIP_PLANE0 [
 
 	<generated>
 	^ GL_CLIP_PLANE0
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CLIP_PLANE1 [
 
 	<generated>
 	^ GL_CLIP_PLANE1
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CLIP_PLANE2 [
 
 	<generated>
 	^ GL_CLIP_PLANE2
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CLIP_PLANE3 [
 
 	<generated>
 	^ GL_CLIP_PLANE3
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CLIP_PLANE4 [
 
 	<generated>
 	^ GL_CLIP_PLANE4
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CLIP_PLANE5 [
 
 	<generated>
 	^ GL_CLIP_PLANE5
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> COEFF [
 
 	<generated>
 	^ GL_COEFF
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> COLOR [
 
 	<generated>
 	^ GL_COLOR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> COLOR_BUFFER_BIT [
 
 	<generated>
 	^ GL_COLOR_BUFFER_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> COLOR_CLEAR_VALUE [
 
 	<generated>
 	^ GL_COLOR_CLEAR_VALUE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> COLOR_INDEX [
 
 	<generated>
 	^ GL_COLOR_INDEX
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> COLOR_INDEXES [
 
 	<generated>
 	^ GL_COLOR_INDEXES
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> COLOR_MATERIAL [
 
 	<generated>
 	^ GL_COLOR_MATERIAL
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> COLOR_MATERIAL_FACE [
 
 	<generated>
 	^ GL_COLOR_MATERIAL_FACE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> COLOR_MATERIAL_PARAMETER [
 
 	<generated>
 	^ GL_COLOR_MATERIAL_PARAMETER
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> COLOR_WRITEMASK [
 
 	<generated>
 	^ GL_COLOR_WRITEMASK
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> COMPILE [
 
 	<generated>
 	^ GL_COMPILE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> COMPILE_AND_EXECUTE [
 
 	<generated>
 	^ GL_COMPILE_AND_EXECUTE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CONSTANT_ATTENUATION [
 
 	<generated>
 	^ GL_CONSTANT_ATTENUATION
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> COPY [
 
 	<generated>
 	^ GL_COPY
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> COPY_INVERTED [
 
 	<generated>
 	^ GL_COPY_INVERTED
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> COPY_PIXEL_TOKEN [
 
 	<generated>
 	^ GL_COPY_PIXEL_TOKEN
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CULL_FACE [
 
 	<generated>
 	^ GL_CULL_FACE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CULL_FACE_MODE [
 
 	<generated>
 	^ GL_CULL_FACE_MODE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CURRENT_BIT [
 
 	<generated>
 	^ GL_CURRENT_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CURRENT_COLOR [
 
 	<generated>
 	^ GL_CURRENT_COLOR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CURRENT_INDEX [
 
 	<generated>
 	^ GL_CURRENT_INDEX
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CURRENT_NORMAL [
 
 	<generated>
 	^ GL_CURRENT_NORMAL
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CURRENT_RASTER_COLOR [
 
 	<generated>
 	^ GL_CURRENT_RASTER_COLOR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CURRENT_RASTER_DISTANCE [
 
 	<generated>
 	^ GL_CURRENT_RASTER_DISTANCE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CURRENT_RASTER_INDEX [
 
 	<generated>
 	^ GL_CURRENT_RASTER_INDEX
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CURRENT_RASTER_POSITION [
 
 	<generated>
 	^ GL_CURRENT_RASTER_POSITION
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CURRENT_RASTER_POSITION_VALID [
 
 	<generated>
 	^ GL_CURRENT_RASTER_POSITION_VALID
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CURRENT_RASTER_TEXTURE_COORDS [
 
 	<generated>
 	^ GL_CURRENT_RASTER_TEXTURE_COORDS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CURRENT_TEXTURE_COORDS [
 
 	<generated>
 	^ GL_CURRENT_TEXTURE_COORDS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> CW [
 
 	<generated>
 	^ GL_CW
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DECAL [
 
 	<generated>
 	^ GL_DECAL
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DECR [
 
 	<generated>
 	^ GL_DECR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DEPTH [
 
 	<generated>
 	^ GL_DEPTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DEPTH_BIAS [
 
 	<generated>
 	^ GL_DEPTH_BIAS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DEPTH_BITS [
 
 	<generated>
 	^ GL_DEPTH_BITS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DEPTH_BUFFER_BIT [
 
 	<generated>
 	^ GL_DEPTH_BUFFER_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DEPTH_CLEAR_VALUE [
 
 	<generated>
 	^ GL_DEPTH_CLEAR_VALUE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DEPTH_COMPONENT [
 
 	<generated>
 	^ GL_DEPTH_COMPONENT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DEPTH_FUNC [
 
 	<generated>
 	^ GL_DEPTH_FUNC
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DEPTH_RANGE [
 
 	<generated>
 	^ GL_DEPTH_RANGE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DEPTH_SCALE [
 
 	<generated>
 	^ GL_DEPTH_SCALE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DEPTH_TEST [
 
 	<generated>
 	^ GL_DEPTH_TEST
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DEPTH_WRITEMASK [
 
 	<generated>
 	^ GL_DEPTH_WRITEMASK
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DIFFUSE [
 
 	<generated>
 	^ GL_DIFFUSE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DITHER [
 
 	<generated>
 	^ GL_DITHER
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DOMAIN [
 
 	<generated>
 	^ GL_DOMAIN
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DONT_CARE [
 
 	<generated>
 	^ GL_DONT_CARE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DOUBLEBUFFER [
 
 	<generated>
 	^ GL_DOUBLEBUFFER
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DRAW_BUFFER [
 
 	<generated>
 	^ GL_DRAW_BUFFER
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DRAW_PIXEL_TOKEN [
 
 	<generated>
 	^ GL_DRAW_PIXEL_TOKEN
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DST_ALPHA [
 
 	<generated>
 	^ GL_DST_ALPHA
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> DST_COLOR [
 
 	<generated>
 	^ GL_DST_COLOR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> EDGE_FLAG [
 
 	<generated>
 	^ GL_EDGE_FLAG
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> EMISSION [
 
 	<generated>
 	^ GL_EMISSION
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ENABLE_BIT [
 
 	<generated>
 	^ GL_ENABLE_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> EQUAL [
 
 	<generated>
 	^ GL_EQUAL
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> EQUIV [
 
 	<generated>
 	^ GL_EQUIV
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> EVAL_BIT [
 
 	<generated>
 	^ GL_EVAL_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> EXP [
 
 	<generated>
 	^ GL_EXP
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> EXP2 [
 
 	<generated>
 	^ GL_EXP2
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> EXTENSIONS [
 
 	<generated>
 	^ GL_EXTENSIONS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> EYE_LINEAR [
 
 	<generated>
 	^ GL_EYE_LINEAR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> EYE_PLANE [
 
 	<generated>
 	^ GL_EYE_PLANE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FALSE [
 
 	<generated>
 	^ GL_FALSE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FASTEST [
 
 	<generated>
 	^ GL_FASTEST
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FEEDBACK [
 
 	<generated>
 	^ GL_FEEDBACK
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FILL [
 
 	<generated>
 	^ GL_FILL
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FLAT [
 
 	<generated>
 	^ GL_FLAT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FLOAT [
 
 	<generated>
 	^ GL_FLOAT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FOG [
 
 	<generated>
 	^ GL_FOG
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FOG_BIT [
 
 	<generated>
 	^ GL_FOG_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FOG_COLOR [
 
 	<generated>
 	^ GL_FOG_COLOR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FOG_DENSITY [
 
 	<generated>
 	^ GL_FOG_DENSITY
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FOG_END [
 
 	<generated>
 	^ GL_FOG_END
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FOG_HINT [
 
 	<generated>
 	^ GL_FOG_HINT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FOG_INDEX [
 
 	<generated>
 	^ GL_FOG_INDEX
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FOG_MODE [
 
 	<generated>
 	^ GL_FOG_MODE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FOG_START [
 
 	<generated>
 	^ GL_FOG_START
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FRONT [
 
 	<generated>
 	^ GL_FRONT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FRONT_AND_BACK [
 
 	<generated>
 	^ GL_FRONT_AND_BACK
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FRONT_FACE [
 
 	<generated>
 	^ GL_FRONT_FACE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FRONT_LEFT [
 
 	<generated>
 	^ GL_FRONT_LEFT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> FRONT_RIGHT [
 
 	<generated>
 	^ GL_FRONT_RIGHT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> GEQUAL [
 
 	<generated>
 	^ GL_GEQUAL
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> GL_2D [
 
 	<generated>
 	^ GL_2D
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> GL_2_BYTES [
 
 	<generated>
 	^ GL_2_BYTES
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> GL_3D [
 
 	<generated>
 	^ GL_3D
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> GL_3D_COLOR [
 
 	<generated>
 	^ GL_3D_COLOR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> GL_3D_COLOR_TEXTURE [
 
 	<generated>
 	^ GL_3D_COLOR_TEXTURE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> GL_3_BYTES [
 
 	<generated>
 	^ GL_3_BYTES
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> GL_4D_COLOR_TEXTURE [
 
 	<generated>
 	^ GL_4D_COLOR_TEXTURE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> GL_4_BYTES [
 
 	<generated>
 	^ GL_4_BYTES
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> GREATER [
 
 	<generated>
 	^ GL_GREATER
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> GREEN [
 
 	<generated>
 	^ GL_GREEN
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> GREEN_BIAS [
 
 	<generated>
 	^ GL_GREEN_BIAS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> GREEN_BITS [
 
 	<generated>
 	^ GL_GREEN_BITS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> GREEN_SCALE [
 
 	<generated>
 	^ GL_GREEN_SCALE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> HINT_BIT [
 
 	<generated>
 	^ GL_HINT_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> INCR [
 
 	<generated>
 	^ GL_INCR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> INDEX_BITS [
 
 	<generated>
 	^ GL_INDEX_BITS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> INDEX_CLEAR_VALUE [
 
 	<generated>
 	^ GL_INDEX_CLEAR_VALUE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> INDEX_MODE [
 
 	<generated>
 	^ GL_INDEX_MODE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> INDEX_OFFSET [
 
 	<generated>
 	^ GL_INDEX_OFFSET
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> INDEX_SHIFT [
 
 	<generated>
 	^ GL_INDEX_SHIFT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> INDEX_WRITEMASK [
 
 	<generated>
 	^ GL_INDEX_WRITEMASK
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> INT [
 
 	<generated>
 	^ GL_INT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> INVALID_ENUM [
 
 	<generated>
 	^ GL_INVALID_ENUM
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> INVALID_OPERATION [
 
 	<generated>
 	^ GL_INVALID_OPERATION
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> INVALID_VALUE [
 
 	<generated>
 	^ GL_INVALID_VALUE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> INVERT [
 
 	<generated>
 	^ GL_INVERT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> KEEP [
 
 	<generated>
 	^ GL_KEEP
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LEFT [
 
 	<generated>
 	^ GL_LEFT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LEQUAL [
 
 	<generated>
 	^ GL_LEQUAL
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LESS [
 
 	<generated>
 	^ GL_LESS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LIGHT0 [
 
 	<generated>
 	^ GL_LIGHT0
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LIGHT1 [
 
 	<generated>
 	^ GL_LIGHT1
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LIGHT2 [
 
 	<generated>
 	^ GL_LIGHT2
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LIGHT3 [
 
 	<generated>
 	^ GL_LIGHT3
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LIGHT4 [
 
 	<generated>
 	^ GL_LIGHT4
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LIGHT5 [
 
 	<generated>
 	^ GL_LIGHT5
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LIGHT6 [
 
 	<generated>
 	^ GL_LIGHT6
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LIGHT7 [
 
 	<generated>
 	^ GL_LIGHT7
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LIGHTING [
 
 	<generated>
 	^ GL_LIGHTING
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LIGHTING_BIT [
 
 	<generated>
 	^ GL_LIGHTING_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LIGHT_MODEL_AMBIENT [
 
 	<generated>
 	^ GL_LIGHT_MODEL_AMBIENT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LIGHT_MODEL_LOCAL_VIEWER [
 
 	<generated>
 	^ GL_LIGHT_MODEL_LOCAL_VIEWER
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LIGHT_MODEL_TWO_SIDE [
 
 	<generated>
 	^ GL_LIGHT_MODEL_TWO_SIDE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LINE [
 
 	<generated>
 	^ GL_LINE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LINEAR [
 
 	<generated>
 	^ GL_LINEAR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LINEAR_ATTENUATION [
 
 	<generated>
 	^ GL_LINEAR_ATTENUATION
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LINEAR_MIPMAP_LINEAR [
 
 	<generated>
 	^ GL_LINEAR_MIPMAP_LINEAR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LINEAR_MIPMAP_NEAREST [
 
 	<generated>
 	^ GL_LINEAR_MIPMAP_NEAREST
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LINES [
 
 	<generated>
 	^ GL_LINES
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LINE_BIT [
 
 	<generated>
 	^ GL_LINE_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LINE_LOOP [
 
 	<generated>
 	^ GL_LINE_LOOP
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LINE_RESET_TOKEN [
 
 	<generated>
 	^ GL_LINE_RESET_TOKEN
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LINE_SMOOTH [
 
 	<generated>
 	^ GL_LINE_SMOOTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LINE_SMOOTH_HINT [
 
 	<generated>
 	^ GL_LINE_SMOOTH_HINT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LINE_STIPPLE [
 
 	<generated>
 	^ GL_LINE_STIPPLE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LINE_STIPPLE_PATTERN [
 
 	<generated>
 	^ GL_LINE_STIPPLE_PATTERN
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LINE_STIPPLE_REPEAT [
 
 	<generated>
 	^ GL_LINE_STIPPLE_REPEAT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LINE_STRIP [
 
 	<generated>
 	^ GL_LINE_STRIP
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LINE_TOKEN [
 
 	<generated>
 	^ GL_LINE_TOKEN
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LINE_WIDTH [
 
 	<generated>
 	^ GL_LINE_WIDTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LINE_WIDTH_GRANULARITY [
 
 	<generated>
 	^ GL_LINE_WIDTH_GRANULARITY
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LINE_WIDTH_RANGE [
 
 	<generated>
 	^ GL_LINE_WIDTH_RANGE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LIST_BASE [
 
 	<generated>
 	^ GL_LIST_BASE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LIST_BIT [
 
 	<generated>
 	^ GL_LIST_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LIST_INDEX [
 
 	<generated>
 	^ GL_LIST_INDEX
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LIST_MODE [
 
 	<generated>
 	^ GL_LIST_MODE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LOAD [
 
 	<generated>
 	^ GL_LOAD
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LOGIC_OP [
 
 	<generated>
 	^ GL_LOGIC_OP
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LOGIC_OP_MODE [
 
 	<generated>
 	^ GL_LOGIC_OP_MODE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LUMINANCE [
 
 	<generated>
 	^ GL_LUMINANCE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> LUMINANCE_ALPHA [
 
 	<generated>
 	^ GL_LUMINANCE_ALPHA
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP1_COLOR_4 [
 
 	<generated>
 	^ GL_MAP1_COLOR_4
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP1_GRID_DOMAIN [
 
 	<generated>
 	^ GL_MAP1_GRID_DOMAIN
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP1_GRID_SEGMENTS [
 
 	<generated>
 	^ GL_MAP1_GRID_SEGMENTS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP1_INDEX [
 
 	<generated>
 	^ GL_MAP1_INDEX
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP1_NORMAL [
 
 	<generated>
 	^ GL_MAP1_NORMAL
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP1_TEXTURE_COORD_1 [
 
 	<generated>
 	^ GL_MAP1_TEXTURE_COORD_1
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP1_TEXTURE_COORD_2 [
 
 	<generated>
 	^ GL_MAP1_TEXTURE_COORD_2
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP1_TEXTURE_COORD_3 [
 
 	<generated>
 	^ GL_MAP1_TEXTURE_COORD_3
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP1_TEXTURE_COORD_4 [
 
 	<generated>
 	^ GL_MAP1_TEXTURE_COORD_4
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP1_VERTEX_3 [
 
 	<generated>
 	^ GL_MAP1_VERTEX_3
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP1_VERTEX_4 [
 
 	<generated>
 	^ GL_MAP1_VERTEX_4
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP2_COLOR_4 [
 
 	<generated>
 	^ GL_MAP2_COLOR_4
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP2_GRID_DOMAIN [
 
 	<generated>
 	^ GL_MAP2_GRID_DOMAIN
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP2_GRID_SEGMENTS [
 
 	<generated>
 	^ GL_MAP2_GRID_SEGMENTS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP2_INDEX [
 
 	<generated>
 	^ GL_MAP2_INDEX
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP2_NORMAL [
 
 	<generated>
 	^ GL_MAP2_NORMAL
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP2_TEXTURE_COORD_1 [
 
 	<generated>
 	^ GL_MAP2_TEXTURE_COORD_1
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP2_TEXTURE_COORD_2 [
 
 	<generated>
 	^ GL_MAP2_TEXTURE_COORD_2
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP2_TEXTURE_COORD_3 [
 
 	<generated>
 	^ GL_MAP2_TEXTURE_COORD_3
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP2_TEXTURE_COORD_4 [
 
 	<generated>
 	^ GL_MAP2_TEXTURE_COORD_4
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP2_VERTEX_3 [
 
 	<generated>
 	^ GL_MAP2_VERTEX_3
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP2_VERTEX_4 [
 
 	<generated>
 	^ GL_MAP2_VERTEX_4
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP_COLOR [
 
 	<generated>
 	^ GL_MAP_COLOR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAP_STENCIL [
 
 	<generated>
 	^ GL_MAP_STENCIL
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MATRIX_MODE [
 
 	<generated>
 	^ GL_MATRIX_MODE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAX_ATTRIB_STACK_DEPTH [
 
 	<generated>
 	^ GL_MAX_ATTRIB_STACK_DEPTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAX_CLIP_PLANES [
 
 	<generated>
 	^ GL_MAX_CLIP_PLANES
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAX_EVAL_ORDER [
 
 	<generated>
 	^ GL_MAX_EVAL_ORDER
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAX_LIGHTS [
 
 	<generated>
 	^ GL_MAX_LIGHTS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAX_LIST_NESTING [
 
 	<generated>
 	^ GL_MAX_LIST_NESTING
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAX_MODELVIEW_STACK_DEPTH [
 
 	<generated>
 	^ GL_MAX_MODELVIEW_STACK_DEPTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAX_NAME_STACK_DEPTH [
 
 	<generated>
 	^ GL_MAX_NAME_STACK_DEPTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAX_PIXEL_MAP_TABLE [
 
 	<generated>
 	^ GL_MAX_PIXEL_MAP_TABLE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAX_PROJECTION_STACK_DEPTH [
 
 	<generated>
 	^ GL_MAX_PROJECTION_STACK_DEPTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAX_TEXTURE_SIZE [
 
 	<generated>
 	^ GL_MAX_TEXTURE_SIZE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAX_TEXTURE_STACK_DEPTH [
 
 	<generated>
 	^ GL_MAX_TEXTURE_STACK_DEPTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MAX_VIEWPORT_DIMS [
 
 	<generated>
 	^ GL_MAX_VIEWPORT_DIMS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MODELVIEW [
 
 	<generated>
 	^ GL_MODELVIEW
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MODELVIEW_MATRIX [
 
 	<generated>
 	^ GL_MODELVIEW_MATRIX
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MODELVIEW_STACK_DEPTH [
 
 	<generated>
 	^ GL_MODELVIEW_STACK_DEPTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MODULATE [
 
 	<generated>
 	^ GL_MODULATE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> MULT [
 
 	<generated>
 	^ GL_MULT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> NAME_STACK_DEPTH [
 
 	<generated>
 	^ GL_NAME_STACK_DEPTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> NAND [
 
 	<generated>
 	^ GL_NAND
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> NEAREST [
 
 	<generated>
 	^ GL_NEAREST
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> NEAREST_MIPMAP_LINEAR [
 
 	<generated>
 	^ GL_NEAREST_MIPMAP_LINEAR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> NEAREST_MIPMAP_NEAREST [
 
 	<generated>
 	^ GL_NEAREST_MIPMAP_NEAREST
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> NEVER [
 
 	<generated>
 	^ GL_NEVER
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> NICEST [
 
 	<generated>
 	^ GL_NICEST
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> NONE [
 
 	<generated>
 	^ GL_NONE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> NOOP [
 
 	<generated>
 	^ GL_NOOP
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> NOR [
 
 	<generated>
 	^ GL_NOR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> NORMALIZE [
 
 	<generated>
 	^ GL_NORMALIZE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> NOTEQUAL [
 
 	<generated>
 	^ GL_NOTEQUAL
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> NO_ERROR [
 
 	<generated>
 	^ GL_NO_ERROR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> OBJECT_LINEAR [
 
 	<generated>
 	^ GL_OBJECT_LINEAR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> OBJECT_PLANE [
 
 	<generated>
 	^ GL_OBJECT_PLANE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ONE [
 
 	<generated>
 	^ GL_ONE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ONE_MINUS_DST_ALPHA [
 
 	<generated>
 	^ GL_ONE_MINUS_DST_ALPHA
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ONE_MINUS_DST_COLOR [
 
 	<generated>
 	^ GL_ONE_MINUS_DST_COLOR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ONE_MINUS_SRC_ALPHA [
 
 	<generated>
 	^ GL_ONE_MINUS_SRC_ALPHA
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ONE_MINUS_SRC_COLOR [
 
 	<generated>
 	^ GL_ONE_MINUS_SRC_COLOR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> OR [
 
 	<generated>
 	^ GL_OR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ORDER [
 
 	<generated>
 	^ GL_ORDER
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> OR_INVERTED [
 
 	<generated>
 	^ GL_OR_INVERTED
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> OR_REVERSE [
 
 	<generated>
 	^ GL_OR_REVERSE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> OUT_OF_MEMORY [
 
 	<generated>
 	^ GL_OUT_OF_MEMORY
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PACK_ALIGNMENT [
 
 	<generated>
 	^ GL_PACK_ALIGNMENT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PACK_LSB_FIRST [
 
 	<generated>
 	^ GL_PACK_LSB_FIRST
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PACK_ROW_LENGTH [
 
 	<generated>
 	^ GL_PACK_ROW_LENGTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PACK_SKIP_PIXELS [
 
 	<generated>
 	^ GL_PACK_SKIP_PIXELS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PACK_SKIP_ROWS [
 
 	<generated>
 	^ GL_PACK_SKIP_ROWS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PACK_SWAP_BYTES [
 
 	<generated>
 	^ GL_PACK_SWAP_BYTES
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PASS_THROUGH_TOKEN [
 
 	<generated>
 	^ GL_PASS_THROUGH_TOKEN
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PERSPECTIVE_CORRECTION_HINT [
 
 	<generated>
 	^ GL_PERSPECTIVE_CORRECTION_HINT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_A_TO_A [
 
 	<generated>
 	^ GL_PIXEL_MAP_A_TO_A
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_A_TO_A_SIZE [
 
 	<generated>
 	^ GL_PIXEL_MAP_A_TO_A_SIZE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_B_TO_B [
 
 	<generated>
 	^ GL_PIXEL_MAP_B_TO_B
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_B_TO_B_SIZE [
 
 	<generated>
 	^ GL_PIXEL_MAP_B_TO_B_SIZE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_G_TO_G [
 
 	<generated>
 	^ GL_PIXEL_MAP_G_TO_G
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_G_TO_G_SIZE [
 
 	<generated>
 	^ GL_PIXEL_MAP_G_TO_G_SIZE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_I_TO_A [
 
 	<generated>
 	^ GL_PIXEL_MAP_I_TO_A
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_I_TO_A_SIZE [
 
 	<generated>
 	^ GL_PIXEL_MAP_I_TO_A_SIZE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_I_TO_B [
 
 	<generated>
 	^ GL_PIXEL_MAP_I_TO_B
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_I_TO_B_SIZE [
 
 	<generated>
 	^ GL_PIXEL_MAP_I_TO_B_SIZE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_I_TO_G [
 
 	<generated>
 	^ GL_PIXEL_MAP_I_TO_G
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_I_TO_G_SIZE [
 
 	<generated>
 	^ GL_PIXEL_MAP_I_TO_G_SIZE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_I_TO_I [
 
 	<generated>
 	^ GL_PIXEL_MAP_I_TO_I
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_I_TO_I_SIZE [
 
 	<generated>
 	^ GL_PIXEL_MAP_I_TO_I_SIZE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_I_TO_R [
 
 	<generated>
 	^ GL_PIXEL_MAP_I_TO_R
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_I_TO_R_SIZE [
 
 	<generated>
 	^ GL_PIXEL_MAP_I_TO_R_SIZE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_R_TO_R [
 
 	<generated>
 	^ GL_PIXEL_MAP_R_TO_R
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_R_TO_R_SIZE [
 
 	<generated>
 	^ GL_PIXEL_MAP_R_TO_R_SIZE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_S_TO_S [
 
 	<generated>
 	^ GL_PIXEL_MAP_S_TO_S
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MAP_S_TO_S_SIZE [
 
 	<generated>
 	^ GL_PIXEL_MAP_S_TO_S_SIZE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PIXEL_MODE_BIT [
 
 	<generated>
 	^ GL_PIXEL_MODE_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> POINT [
 
 	<generated>
 	^ GL_POINT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> POINTS [
 
 	<generated>
 	^ GL_POINTS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> POINT_BIT [
 
 	<generated>
 	^ GL_POINT_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> POINT_SIZE [
 
 	<generated>
 	^ GL_POINT_SIZE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> POINT_SIZE_GRANULARITY [
 
 	<generated>
 	^ GL_POINT_SIZE_GRANULARITY
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> POINT_SIZE_RANGE [
 
 	<generated>
 	^ GL_POINT_SIZE_RANGE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> POINT_SMOOTH [
 
 	<generated>
 	^ GL_POINT_SMOOTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> POINT_SMOOTH_HINT [
 
 	<generated>
 	^ GL_POINT_SMOOTH_HINT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> POINT_TOKEN [
 
 	<generated>
 	^ GL_POINT_TOKEN
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> POLYGON [
 
 	<generated>
 	^ GL_POLYGON
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> POLYGON_BIT [
 
 	<generated>
 	^ GL_POLYGON_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> POLYGON_MODE [
 
 	<generated>
 	^ GL_POLYGON_MODE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> POLYGON_SMOOTH [
 
 	<generated>
 	^ GL_POLYGON_SMOOTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> POLYGON_SMOOTH_HINT [
 
 	<generated>
 	^ GL_POLYGON_SMOOTH_HINT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> POLYGON_STIPPLE [
 
 	<generated>
 	^ GL_POLYGON_STIPPLE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> POLYGON_STIPPLE_BIT [
 
 	<generated>
 	^ GL_POLYGON_STIPPLE_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> POLYGON_TOKEN [
 
 	<generated>
 	^ GL_POLYGON_TOKEN
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> POSITION [
 
 	<generated>
 	^ GL_POSITION
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PROJECTION [
 
 	<generated>
 	^ GL_PROJECTION
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PROJECTION_MATRIX [
 
 	<generated>
 	^ GL_PROJECTION_MATRIX
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> PROJECTION_STACK_DEPTH [
 
 	<generated>
 	^ GL_PROJECTION_STACK_DEPTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> Q [
 
 	<generated>
 	^ GL_Q
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> QUADRATIC_ATTENUATION [
 
 	<generated>
 	^ GL_QUADRATIC_ATTENUATION
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> QUADS [
 
 	<generated>
 	^ GL_QUADS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> QUAD_STRIP [
 
 	<generated>
 	^ GL_QUAD_STRIP
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> R [
 
 	<generated>
 	^ GL_R
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> READ_BUFFER [
 
 	<generated>
 	^ GL_READ_BUFFER
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> RED [
 
 	<generated>
 	^ GL_RED
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> RED_BIAS [
 
 	<generated>
 	^ GL_RED_BIAS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> RED_BITS [
 
 	<generated>
 	^ GL_RED_BITS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> RED_SCALE [
 
 	<generated>
 	^ GL_RED_SCALE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> RENDER [
 
 	<generated>
 	^ GL_RENDER
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> RENDERER [
 
 	<generated>
 	^ GL_RENDERER
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> RENDER_MODE [
 
 	<generated>
 	^ GL_RENDER_MODE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> REPEAT [
 
 	<generated>
 	^ GL_REPEAT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> REPLACE [
 
 	<generated>
 	^ GL_REPLACE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> RETURN [
 
 	<generated>
 	^ GL_RETURN
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> RGB [
 
 	<generated>
 	^ GL_RGB
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> RGBA [
 
 	<generated>
 	^ GL_RGBA
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> RGBA_MODE [
 
 	<generated>
 	^ GL_RGBA_MODE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> RIGHT [
 
 	<generated>
 	^ GL_RIGHT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> S [
 
 	<generated>
 	^ GL_S
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> SCISSOR_BIT [
 
 	<generated>
 	^ GL_SCISSOR_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> SCISSOR_BOX [
 
 	<generated>
 	^ GL_SCISSOR_BOX
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> SCISSOR_TEST [
 
 	<generated>
 	^ GL_SCISSOR_TEST
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> SELECT [
 
 	<generated>
 	^ GL_SELECT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> SET [
 
 	<generated>
 	^ GL_SET
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> SHADE_MODEL [
 
 	<generated>
 	^ GL_SHADE_MODEL
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> SHININESS [
 
 	<generated>
 	^ GL_SHININESS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> SHORT [
 
 	<generated>
 	^ GL_SHORT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> SMOOTH [
 
 	<generated>
 	^ GL_SMOOTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> SPECULAR [
 
 	<generated>
 	^ GL_SPECULAR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> SPHERE_MAP [
 
 	<generated>
 	^ GL_SPHERE_MAP
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> SPOT_CUTOFF [
 
 	<generated>
 	^ GL_SPOT_CUTOFF
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> SPOT_DIRECTION [
 
 	<generated>
 	^ GL_SPOT_DIRECTION
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> SPOT_EXPONENT [
 
 	<generated>
 	^ GL_SPOT_EXPONENT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> SRC_ALPHA [
 
 	<generated>
 	^ GL_SRC_ALPHA
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> SRC_ALPHA_SATURATE [
 
 	<generated>
 	^ GL_SRC_ALPHA_SATURATE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> SRC_COLOR [
 
 	<generated>
 	^ GL_SRC_COLOR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> STACK_OVERFLOW [
 
 	<generated>
 	^ GL_STACK_OVERFLOW
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> STACK_UNDERFLOW [
 
 	<generated>
 	^ GL_STACK_UNDERFLOW
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> STENCIL [
 
 	<generated>
 	^ GL_STENCIL
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> STENCIL_BITS [
 
 	<generated>
 	^ GL_STENCIL_BITS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> STENCIL_BUFFER_BIT [
 
 	<generated>
 	^ GL_STENCIL_BUFFER_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> STENCIL_CLEAR_VALUE [
 
 	<generated>
 	^ GL_STENCIL_CLEAR_VALUE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> STENCIL_FAIL [
 
 	<generated>
 	^ GL_STENCIL_FAIL
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> STENCIL_FUNC [
 
 	<generated>
 	^ GL_STENCIL_FUNC
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> STENCIL_INDEX [
 
 	<generated>
 	^ GL_STENCIL_INDEX
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> STENCIL_PASS_DEPTH_FAIL [
 
 	<generated>
 	^ GL_STENCIL_PASS_DEPTH_FAIL
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> STENCIL_PASS_DEPTH_PASS [
 
 	<generated>
 	^ GL_STENCIL_PASS_DEPTH_PASS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> STENCIL_REF [
 
 	<generated>
 	^ GL_STENCIL_REF
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> STENCIL_TEST [
 
 	<generated>
 	^ GL_STENCIL_TEST
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> STENCIL_VALUE_MASK [
 
 	<generated>
 	^ GL_STENCIL_VALUE_MASK
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> STENCIL_WRITEMASK [
 
 	<generated>
 	^ GL_STENCIL_WRITEMASK
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> STEREO [
 
 	<generated>
 	^ GL_STEREO
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> SUBPIXEL_BITS [
 
 	<generated>
 	^ GL_SUBPIXEL_BITS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> T [
 
 	<generated>
 	^ GL_T
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE [
 
 	<generated>
 	^ GL_TEXTURE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_1D [
 
 	<generated>
 	^ GL_TEXTURE_1D
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_2D [
 
 	<generated>
 	^ GL_TEXTURE_2D
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_BIT [
 
 	<generated>
 	^ GL_TEXTURE_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_BORDER [
 
 	<generated>
 	^ GL_TEXTURE_BORDER
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_BORDER_COLOR [
 
 	<generated>
 	^ GL_TEXTURE_BORDER_COLOR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_COMPONENTS [
 
 	<generated>
 	^ GL_TEXTURE_COMPONENTS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_ENV [
 
 	<generated>
 	^ GL_TEXTURE_ENV
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_ENV_COLOR [
 
 	<generated>
 	^ GL_TEXTURE_ENV_COLOR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_ENV_MODE [
 
 	<generated>
 	^ GL_TEXTURE_ENV_MODE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_GEN_MODE [
 
 	<generated>
 	^ GL_TEXTURE_GEN_MODE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_GEN_Q [
 
 	<generated>
 	^ GL_TEXTURE_GEN_Q
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_GEN_R [
 
 	<generated>
 	^ GL_TEXTURE_GEN_R
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_GEN_S [
 
 	<generated>
 	^ GL_TEXTURE_GEN_S
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_GEN_T [
 
 	<generated>
 	^ GL_TEXTURE_GEN_T
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_HEIGHT [
 
 	<generated>
 	^ GL_TEXTURE_HEIGHT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_MAG_FILTER [
 
 	<generated>
 	^ GL_TEXTURE_MAG_FILTER
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_MATRIX [
 
 	<generated>
 	^ GL_TEXTURE_MATRIX
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_MIN_FILTER [
 
 	<generated>
 	^ GL_TEXTURE_MIN_FILTER
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_STACK_DEPTH [
 
 	<generated>
 	^ GL_TEXTURE_STACK_DEPTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_WIDTH [
 
 	<generated>
 	^ GL_TEXTURE_WIDTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_WRAP_S [
 
 	<generated>
 	^ GL_TEXTURE_WRAP_S
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TEXTURE_WRAP_T [
 
 	<generated>
 	^ GL_TEXTURE_WRAP_T
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TRANSFORM_BIT [
 
 	<generated>
 	^ GL_TRANSFORM_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TRIANGLES [
 
 	<generated>
 	^ GL_TRIANGLES
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TRIANGLE_FAN [
 
 	<generated>
 	^ GL_TRIANGLE_FAN
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TRIANGLE_STRIP [
 
 	<generated>
 	^ GL_TRIANGLE_STRIP
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> TRUE [
 
 	<generated>
 	^ GL_TRUE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> UNPACK_ALIGNMENT [
 
 	<generated>
 	^ GL_UNPACK_ALIGNMENT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> UNPACK_LSB_FIRST [
 
 	<generated>
 	^ GL_UNPACK_LSB_FIRST
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> UNPACK_ROW_LENGTH [
 
 	<generated>
 	^ GL_UNPACK_ROW_LENGTH
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> UNPACK_SKIP_PIXELS [
 
 	<generated>
 	^ GL_UNPACK_SKIP_PIXELS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> UNPACK_SKIP_ROWS [
 
 	<generated>
 	^ GL_UNPACK_SKIP_ROWS
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> UNPACK_SWAP_BYTES [
 
 	<generated>
 	^ GL_UNPACK_SWAP_BYTES
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> UNSIGNED_BYTE [
 
 	<generated>
 	^ GL_UNSIGNED_BYTE
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> UNSIGNED_INT [
 
 	<generated>
 	^ GL_UNSIGNED_INT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> UNSIGNED_SHORT [
 
 	<generated>
 	^ GL_UNSIGNED_SHORT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> VENDOR [
 
 	<generated>
 	^ GL_VENDOR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> VERSION [
 
 	<generated>
 	^ GL_VERSION
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> VIEWPORT [
 
 	<generated>
 	^ GL_VIEWPORT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> VIEWPORT_BIT [
 
 	<generated>
 	^ GL_VIEWPORT_BIT
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> XOR [
 
 	<generated>
 	^ GL_XOR
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ZERO [
 
 	<generated>
 	^ GL_ZERO
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ZOOM_X [
 
 	<generated>
 	^ GL_ZOOM_X
 ]
 
-{ #category : #'constants - required' }
+{
+	#category : #'constants - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ZOOM_Y [
 
 	<generated>
 	^ GL_ZOOM_Y
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> accum: op with: value [
 
 	<generated>
@@ -3031,7 +4325,10 @@ GL1_0 >> accum: op with: value [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> alphaFunc: func with: ref [
 
 	<generated>
@@ -3039,7 +4336,10 @@ GL1_0 >> alphaFunc: func with: ref [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> begin: mode [
 
 	<generated>
@@ -3047,7 +4347,10 @@ GL1_0 >> begin: mode [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> bitmap: width with: height with: xorig with: yorig with: xmove with: ymove with: bitmap [
 
 	<generated>
@@ -3055,7 +4358,10 @@ GL1_0 >> bitmap: width with: height with: xorig with: yorig with: xmove with: ym
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> blendFunc: sfactor with: dfactor [
 
 	<generated>
@@ -3063,7 +4369,10 @@ GL1_0 >> blendFunc: sfactor with: dfactor [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> callList: list [
 
 	<generated>
@@ -3071,7 +4380,10 @@ GL1_0 >> callList: list [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> callLists: n with: type with: lists [
 
 	<generated>
@@ -3079,7 +4391,10 @@ GL1_0 >> callLists: n with: type with: lists [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> clear: mask [
 
 	<generated>
@@ -3087,7 +4402,10 @@ GL1_0 >> clear: mask [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> clearAccum: red with: green with: blue with: alpha [
 
 	<generated>
@@ -3095,7 +4413,10 @@ GL1_0 >> clearAccum: red with: green with: blue with: alpha [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> clearColor: red with: green with: blue with: alpha [
 
 	<generated>
@@ -3103,7 +4424,10 @@ GL1_0 >> clearColor: red with: green with: blue with: alpha [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> clearDepth: depth [
 
 	<generated>
@@ -3111,7 +4435,10 @@ GL1_0 >> clearDepth: depth [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> clearIndex: c [
 
 	<generated>
@@ -3119,7 +4446,10 @@ GL1_0 >> clearIndex: c [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> clearStencil: s [
 
 	<generated>
@@ -3127,7 +4457,10 @@ GL1_0 >> clearStencil: s [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> clipPlane: plane with: equation [
 
 	<generated>
@@ -3135,7 +4468,10 @@ GL1_0 >> clipPlane: plane with: equation [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color3b: red with: green with: blue [
 
 	<generated>
@@ -3143,7 +4479,10 @@ GL1_0 >> color3b: red with: green with: blue [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color3bv: v [
 
 	<generated>
@@ -3151,7 +4490,10 @@ GL1_0 >> color3bv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color3d: red with: green with: blue [
 
 	<generated>
@@ -3159,7 +4501,10 @@ GL1_0 >> color3d: red with: green with: blue [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color3dv: v [
 
 	<generated>
@@ -3167,7 +4512,10 @@ GL1_0 >> color3dv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color3f: red with: green with: blue [
 
 	<generated>
@@ -3175,7 +4523,10 @@ GL1_0 >> color3f: red with: green with: blue [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color3fv: v [
 
 	<generated>
@@ -3183,7 +4534,10 @@ GL1_0 >> color3fv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color3i: red with: green with: blue [
 
 	<generated>
@@ -3191,7 +4545,10 @@ GL1_0 >> color3i: red with: green with: blue [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color3iv: v [
 
 	<generated>
@@ -3199,7 +4556,10 @@ GL1_0 >> color3iv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color3s: red with: green with: blue [
 
 	<generated>
@@ -3207,7 +4567,10 @@ GL1_0 >> color3s: red with: green with: blue [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color3sv: v [
 
 	<generated>
@@ -3215,7 +4578,10 @@ GL1_0 >> color3sv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color3ub: red with: green with: blue [
 
 	<generated>
@@ -3223,7 +4589,10 @@ GL1_0 >> color3ub: red with: green with: blue [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color3ubv: v [
 
 	<generated>
@@ -3231,7 +4600,10 @@ GL1_0 >> color3ubv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color3ui: red with: green with: blue [
 
 	<generated>
@@ -3239,7 +4611,10 @@ GL1_0 >> color3ui: red with: green with: blue [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color3uiv: v [
 
 	<generated>
@@ -3247,7 +4622,10 @@ GL1_0 >> color3uiv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color3us: red with: green with: blue [
 
 	<generated>
@@ -3255,7 +4633,10 @@ GL1_0 >> color3us: red with: green with: blue [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color3usv: v [
 
 	<generated>
@@ -3263,7 +4644,10 @@ GL1_0 >> color3usv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color4b: red with: green with: blue with: alpha [
 
 	<generated>
@@ -3271,7 +4655,10 @@ GL1_0 >> color4b: red with: green with: blue with: alpha [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color4bv: v [
 
 	<generated>
@@ -3279,7 +4666,10 @@ GL1_0 >> color4bv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color4d: red with: green with: blue with: alpha [
 
 	<generated>
@@ -3287,7 +4677,10 @@ GL1_0 >> color4d: red with: green with: blue with: alpha [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color4dv: v [
 
 	<generated>
@@ -3295,7 +4688,10 @@ GL1_0 >> color4dv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color4f: red with: green with: blue with: alpha [
 
 	<generated>
@@ -3303,7 +4699,10 @@ GL1_0 >> color4f: red with: green with: blue with: alpha [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color4fv: v [
 
 	<generated>
@@ -3311,7 +4710,10 @@ GL1_0 >> color4fv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color4i: red with: green with: blue with: alpha [
 
 	<generated>
@@ -3319,7 +4721,10 @@ GL1_0 >> color4i: red with: green with: blue with: alpha [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color4iv: v [
 
 	<generated>
@@ -3327,7 +4732,10 @@ GL1_0 >> color4iv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color4s: red with: green with: blue with: alpha [
 
 	<generated>
@@ -3335,7 +4743,10 @@ GL1_0 >> color4s: red with: green with: blue with: alpha [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color4sv: v [
 
 	<generated>
@@ -3343,7 +4754,10 @@ GL1_0 >> color4sv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color4ub: red with: green with: blue with: alpha [
 
 	<generated>
@@ -3351,7 +4765,10 @@ GL1_0 >> color4ub: red with: green with: blue with: alpha [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color4ubv: v [
 
 	<generated>
@@ -3359,7 +4776,10 @@ GL1_0 >> color4ubv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color4ui: red with: green with: blue with: alpha [
 
 	<generated>
@@ -3367,7 +4787,10 @@ GL1_0 >> color4ui: red with: green with: blue with: alpha [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color4uiv: v [
 
 	<generated>
@@ -3375,7 +4798,10 @@ GL1_0 >> color4uiv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color4us: red with: green with: blue with: alpha [
 
 	<generated>
@@ -3383,7 +4809,10 @@ GL1_0 >> color4us: red with: green with: blue with: alpha [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> color4usv: v [
 
 	<generated>
@@ -3391,7 +4820,10 @@ GL1_0 >> color4usv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> colorMask: red with: green with: blue with: alpha [
 
 	<generated>
@@ -3399,7 +4831,10 @@ GL1_0 >> colorMask: red with: green with: blue with: alpha [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> colorMaterial: face with: mode [
 
 	<generated>
@@ -3407,7 +4842,10 @@ GL1_0 >> colorMaterial: face with: mode [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> copyPixels: x with: y with: width with: height with: type [
 
 	<generated>
@@ -3415,7 +4853,10 @@ GL1_0 >> copyPixels: x with: y with: width with: height with: type [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> cullFace: mode [
 
 	<generated>
@@ -3423,7 +4864,10 @@ GL1_0 >> cullFace: mode [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> deleteLists: list with: range [
 
 	<generated>
@@ -3431,7 +4875,10 @@ GL1_0 >> deleteLists: list with: range [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> depthFunc: func [
 
 	<generated>
@@ -3439,7 +4886,10 @@ GL1_0 >> depthFunc: func [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> depthMask: flag [
 
 	<generated>
@@ -3447,7 +4897,10 @@ GL1_0 >> depthMask: flag [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> depthRange: n with: f [
 
 	<generated>
@@ -3455,7 +4908,10 @@ GL1_0 >> depthRange: n with: f [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> disable: cap [
 
 	<generated>
@@ -3463,7 +4919,10 @@ GL1_0 >> disable: cap [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> drawBuffer: buf [
 
 	<generated>
@@ -3471,7 +4930,10 @@ GL1_0 >> drawBuffer: buf [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> drawPixels: width with: height with: format with: type with: pixels [
 
 	<generated>
@@ -3479,7 +4941,10 @@ GL1_0 >> drawPixels: width with: height with: format with: type with: pixels [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> edgeFlag: flag [
 
 	<generated>
@@ -3487,7 +4952,10 @@ GL1_0 >> edgeFlag: flag [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> edgeFlagv: flag [
 
 	<generated>
@@ -3495,7 +4963,10 @@ GL1_0 >> edgeFlagv: flag [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> enable: cap [
 
 	<generated>
@@ -3503,7 +4974,10 @@ GL1_0 >> enable: cap [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> end [
 
 	<generated>
@@ -3511,7 +4985,10 @@ GL1_0 >> end [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> endList [
 
 	<generated>
@@ -3519,7 +4996,10 @@ GL1_0 >> endList [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> evalCoord1d: u [
 
 	<generated>
@@ -3527,7 +5007,10 @@ GL1_0 >> evalCoord1d: u [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> evalCoord1dv: u [
 
 	<generated>
@@ -3535,7 +5018,10 @@ GL1_0 >> evalCoord1dv: u [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> evalCoord1f: u [
 
 	<generated>
@@ -3543,7 +5029,10 @@ GL1_0 >> evalCoord1f: u [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> evalCoord1fv: u [
 
 	<generated>
@@ -3551,7 +5040,10 @@ GL1_0 >> evalCoord1fv: u [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> evalCoord2d: u with: v [
 
 	<generated>
@@ -3559,7 +5051,10 @@ GL1_0 >> evalCoord2d: u with: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> evalCoord2dv: u [
 
 	<generated>
@@ -3567,7 +5062,10 @@ GL1_0 >> evalCoord2dv: u [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> evalCoord2f: u with: v [
 
 	<generated>
@@ -3575,7 +5073,10 @@ GL1_0 >> evalCoord2f: u with: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> evalCoord2fv: u [
 
 	<generated>
@@ -3583,7 +5084,10 @@ GL1_0 >> evalCoord2fv: u [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> evalMesh1: mode with: i1 with: i2 [
 
 	<generated>
@@ -3591,7 +5095,10 @@ GL1_0 >> evalMesh1: mode with: i1 with: i2 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> evalMesh2: mode with: i1 with: i2 with: j1 with: j2 [
 
 	<generated>
@@ -3599,7 +5106,10 @@ GL1_0 >> evalMesh2: mode with: i1 with: i2 with: j1 with: j2 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> evalPoint1: i [
 
 	<generated>
@@ -3607,7 +5117,10 @@ GL1_0 >> evalPoint1: i [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> evalPoint2: i with: j [
 
 	<generated>
@@ -3615,7 +5128,10 @@ GL1_0 >> evalPoint2: i with: j [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> feedbackBuffer: size with: type with: buffer [
 
 	<generated>
@@ -3623,7 +5139,10 @@ GL1_0 >> feedbackBuffer: size with: type with: buffer [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> finish [
 
 	<generated>
@@ -3631,7 +5150,10 @@ GL1_0 >> finish [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> flush [
 
 	<generated>
@@ -3639,7 +5161,10 @@ GL1_0 >> flush [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> fogf: pname with: param [
 
 	<generated>
@@ -3647,7 +5172,10 @@ GL1_0 >> fogf: pname with: param [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> fogfv: pname with: params [
 
 	<generated>
@@ -3655,7 +5183,10 @@ GL1_0 >> fogfv: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> fogi: pname with: param [
 
 	<generated>
@@ -3663,7 +5194,10 @@ GL1_0 >> fogi: pname with: param [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> fogiv: pname with: params [
 
 	<generated>
@@ -3671,7 +5205,10 @@ GL1_0 >> fogiv: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> frontFace: mode [
 
 	<generated>
@@ -3679,7 +5216,10 @@ GL1_0 >> frontFace: mode [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> frustum: left with: right with: bottom with: top with: zNear with: zFar [
 
 	<generated>
@@ -3687,7 +5227,10 @@ GL1_0 >> frustum: left with: right with: bottom with: top with: zNear with: zFar
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> genLists: range [
 
 	<generated>
@@ -3695,7 +5238,10 @@ GL1_0 >> genLists: range [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getBooleanv: pname with: data [
 
 	<generated>
@@ -3703,7 +5249,10 @@ GL1_0 >> getBooleanv: pname with: data [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getClipPlane: plane with: equation [
 
 	<generated>
@@ -3711,7 +5260,10 @@ GL1_0 >> getClipPlane: plane with: equation [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getDoublev: pname with: data [
 
 	<generated>
@@ -3719,7 +5271,10 @@ GL1_0 >> getDoublev: pname with: data [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getError [
 
 	<generated>
@@ -3727,7 +5282,10 @@ GL1_0 >> getError [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getFloatv: pname with: data [
 
 	<generated>
@@ -3735,7 +5293,10 @@ GL1_0 >> getFloatv: pname with: data [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getIntegerv: pname with: data [
 
 	<generated>
@@ -3743,7 +5304,10 @@ GL1_0 >> getIntegerv: pname with: data [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getLightfv: light with: pname with: params [
 
 	<generated>
@@ -3751,7 +5315,10 @@ GL1_0 >> getLightfv: light with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getLightiv: light with: pname with: params [
 
 	<generated>
@@ -3759,7 +5326,10 @@ GL1_0 >> getLightiv: light with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getMapdv: target with: query with: v [
 
 	<generated>
@@ -3767,7 +5337,10 @@ GL1_0 >> getMapdv: target with: query with: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getMapfv: target with: query with: v [
 
 	<generated>
@@ -3775,7 +5348,10 @@ GL1_0 >> getMapfv: target with: query with: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getMapiv: target with: query with: v [
 
 	<generated>
@@ -3783,7 +5359,10 @@ GL1_0 >> getMapiv: target with: query with: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getMaterialfv: face with: pname with: params [
 
 	<generated>
@@ -3791,7 +5370,10 @@ GL1_0 >> getMaterialfv: face with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getMaterialiv: face with: pname with: params [
 
 	<generated>
@@ -3799,7 +5381,10 @@ GL1_0 >> getMaterialiv: face with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getPixelMapfv: map with: values [
 
 	<generated>
@@ -3807,7 +5392,10 @@ GL1_0 >> getPixelMapfv: map with: values [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getPixelMapuiv: map with: values [
 
 	<generated>
@@ -3815,7 +5403,10 @@ GL1_0 >> getPixelMapuiv: map with: values [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getPixelMapusv: map with: values [
 
 	<generated>
@@ -3823,7 +5414,10 @@ GL1_0 >> getPixelMapusv: map with: values [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getPolygonStipple: mask [
 
 	<generated>
@@ -3831,7 +5425,10 @@ GL1_0 >> getPolygonStipple: mask [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getString: name [
 
 	<generated>
@@ -3839,7 +5436,10 @@ GL1_0 >> getString: name [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getTexEnvfv: target with: pname with: params [
 
 	<generated>
@@ -3847,7 +5447,10 @@ GL1_0 >> getTexEnvfv: target with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getTexEnviv: target with: pname with: params [
 
 	<generated>
@@ -3855,7 +5458,10 @@ GL1_0 >> getTexEnviv: target with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getTexGendv: coord with: pname with: params [
 
 	<generated>
@@ -3863,7 +5469,10 @@ GL1_0 >> getTexGendv: coord with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getTexGenfv: coord with: pname with: params [
 
 	<generated>
@@ -3871,7 +5480,10 @@ GL1_0 >> getTexGenfv: coord with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getTexGeniv: coord with: pname with: params [
 
 	<generated>
@@ -3879,7 +5491,10 @@ GL1_0 >> getTexGeniv: coord with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getTexImage: target with: level with: format with: type with: pixels [
 
 	<generated>
@@ -3887,7 +5502,10 @@ GL1_0 >> getTexImage: target with: level with: format with: type with: pixels [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getTexLevelParameterfv: target with: level with: pname with: params [
 
 	<generated>
@@ -3895,7 +5513,10 @@ GL1_0 >> getTexLevelParameterfv: target with: level with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getTexLevelParameteriv: target with: level with: pname with: params [
 
 	<generated>
@@ -3903,7 +5524,10 @@ GL1_0 >> getTexLevelParameteriv: target with: level with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getTexParameterfv: target with: pname with: params [
 
 	<generated>
@@ -3911,7 +5535,10 @@ GL1_0 >> getTexParameterfv: target with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> getTexParameteriv: target with: pname with: params [
 
 	<generated>
@@ -3919,7 +5546,10 @@ GL1_0 >> getTexParameteriv: target with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #parameters }
+{
+	#category : #parameters,
+	#timestamp : 'stlu 11/12/2020 15:43'
+}
 GL1_0 >> getVersion [
 
 	| versionString tokens |
@@ -3929,7 +5559,10 @@ GL1_0 >> getVersion [
 	^ { tokens first asInteger . tokens second asInteger }
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> hint: target with: mode [
 
 	<generated>
@@ -3937,7 +5570,10 @@ GL1_0 >> hint: target with: mode [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> indexMask: mask [
 
 	<generated>
@@ -3945,7 +5581,10 @@ GL1_0 >> indexMask: mask [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> indexd: c [
 
 	<generated>
@@ -3953,7 +5592,10 @@ GL1_0 >> indexd: c [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> indexdv: c [
 
 	<generated>
@@ -3961,7 +5603,10 @@ GL1_0 >> indexdv: c [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> indexf: c [
 
 	<generated>
@@ -3969,7 +5614,10 @@ GL1_0 >> indexf: c [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> indexfv: c [
 
 	<generated>
@@ -3977,7 +5625,10 @@ GL1_0 >> indexfv: c [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> indexi: c [
 
 	<generated>
@@ -3985,7 +5636,10 @@ GL1_0 >> indexi: c [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> indexiv: c [
 
 	<generated>
@@ -3993,7 +5647,10 @@ GL1_0 >> indexiv: c [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> indexs: c [
 
 	<generated>
@@ -4001,7 +5658,10 @@ GL1_0 >> indexs: c [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> indexsv: c [
 
 	<generated>
@@ -4009,7 +5669,10 @@ GL1_0 >> indexsv: c [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> initNames [
 
 	<generated>
@@ -4017,7 +5680,10 @@ GL1_0 >> initNames [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> isEnabled: cap [
 
 	<generated>
@@ -4025,7 +5691,10 @@ GL1_0 >> isEnabled: cap [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> isList: list [
 
 	<generated>
@@ -4033,7 +5702,10 @@ GL1_0 >> isList: list [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> lightModelf: pname with: param [
 
 	<generated>
@@ -4041,7 +5713,10 @@ GL1_0 >> lightModelf: pname with: param [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> lightModelfv: pname with: params [
 
 	<generated>
@@ -4049,7 +5724,10 @@ GL1_0 >> lightModelfv: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> lightModeli: pname with: param [
 
 	<generated>
@@ -4057,7 +5735,10 @@ GL1_0 >> lightModeli: pname with: param [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> lightModeliv: pname with: params [
 
 	<generated>
@@ -4065,7 +5746,10 @@ GL1_0 >> lightModeliv: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> lightf: light with: pname with: param [
 
 	<generated>
@@ -4073,7 +5757,10 @@ GL1_0 >> lightf: light with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> lightfv: light with: pname with: params [
 
 	<generated>
@@ -4081,7 +5768,10 @@ GL1_0 >> lightfv: light with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> lighti: light with: pname with: param [
 
 	<generated>
@@ -4089,7 +5779,10 @@ GL1_0 >> lighti: light with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> lightiv: light with: pname with: params [
 
 	<generated>
@@ -4097,7 +5790,10 @@ GL1_0 >> lightiv: light with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> lineStipple: factor with: pattern [
 
 	<generated>
@@ -4105,7 +5801,10 @@ GL1_0 >> lineStipple: factor with: pattern [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> lineWidth: width [
 
 	<generated>
@@ -4113,7 +5812,10 @@ GL1_0 >> lineWidth: width [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> listBase: base [
 
 	<generated>
@@ -4121,7 +5823,10 @@ GL1_0 >> listBase: base [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> loadIdentity [
 
 	<generated>
@@ -4129,7 +5834,10 @@ GL1_0 >> loadIdentity [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> loadMatrixd: m [
 
 	<generated>
@@ -4137,7 +5845,10 @@ GL1_0 >> loadMatrixd: m [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> loadMatrixf: m [
 
 	<generated>
@@ -4145,7 +5856,10 @@ GL1_0 >> loadMatrixf: m [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> loadName: name [
 
 	<generated>
@@ -4153,7 +5867,10 @@ GL1_0 >> loadName: name [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> logicOp: opcode [
 
 	<generated>
@@ -4161,7 +5878,10 @@ GL1_0 >> logicOp: opcode [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> map1d: target with: u1 with: u2 with: stride with: order with: points [
 
 	<generated>
@@ -4169,7 +5889,10 @@ GL1_0 >> map1d: target with: u1 with: u2 with: stride with: order with: points [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> map1f: target with: u1 with: u2 with: stride with: order with: points [
 
 	<generated>
@@ -4177,7 +5900,10 @@ GL1_0 >> map1f: target with: u1 with: u2 with: stride with: order with: points [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> map2d: target with: u1 with: u2 with: ustride with: uorder with: v1 with: v2 with: vstride with: vorder with: points [
 
 	<generated>
@@ -4185,7 +5911,10 @@ GL1_0 >> map2d: target with: u1 with: u2 with: ustride with: uorder with: v1 wit
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> map2f: target with: u1 with: u2 with: ustride with: uorder with: v1 with: v2 with: vstride with: vorder with: points [
 
 	<generated>
@@ -4193,7 +5922,10 @@ GL1_0 >> map2f: target with: u1 with: u2 with: ustride with: uorder with: v1 wit
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> mapGrid1d: un with: u1 with: u2 [
 
 	<generated>
@@ -4201,7 +5933,10 @@ GL1_0 >> mapGrid1d: un with: u1 with: u2 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> mapGrid1f: un with: u1 with: u2 [
 
 	<generated>
@@ -4209,7 +5944,10 @@ GL1_0 >> mapGrid1f: un with: u1 with: u2 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> mapGrid2d: un with: u1 with: u2 with: vn with: v1 with: v2 [
 
 	<generated>
@@ -4217,7 +5955,10 @@ GL1_0 >> mapGrid2d: un with: u1 with: u2 with: vn with: v1 with: v2 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> mapGrid2f: un with: u1 with: u2 with: vn with: v1 with: v2 [
 
 	<generated>
@@ -4225,7 +5966,10 @@ GL1_0 >> mapGrid2f: un with: u1 with: u2 with: vn with: v1 with: v2 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> materialf: face with: pname with: param [
 
 	<generated>
@@ -4233,7 +5977,10 @@ GL1_0 >> materialf: face with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> materialfv: face with: pname with: params [
 
 	<generated>
@@ -4241,7 +5988,10 @@ GL1_0 >> materialfv: face with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> materiali: face with: pname with: param [
 
 	<generated>
@@ -4249,7 +5999,10 @@ GL1_0 >> materiali: face with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> materialiv: face with: pname with: params [
 
 	<generated>
@@ -4257,7 +6010,10 @@ GL1_0 >> materialiv: face with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> matrixMode: mode [
 
 	<generated>
@@ -4265,7 +6021,10 @@ GL1_0 >> matrixMode: mode [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> multMatrixd: m [
 
 	<generated>
@@ -4273,7 +6032,10 @@ GL1_0 >> multMatrixd: m [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> multMatrixf: m [
 
 	<generated>
@@ -4281,7 +6043,10 @@ GL1_0 >> multMatrixf: m [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> newList: list with: mode [
 
 	<generated>
@@ -4289,7 +6054,10 @@ GL1_0 >> newList: list with: mode [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> normal3b: nx with: ny with: nz [
 
 	<generated>
@@ -4297,7 +6065,10 @@ GL1_0 >> normal3b: nx with: ny with: nz [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> normal3bv: v [
 
 	<generated>
@@ -4305,7 +6076,10 @@ GL1_0 >> normal3bv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> normal3d: nx with: ny with: nz [
 
 	<generated>
@@ -4313,7 +6087,10 @@ GL1_0 >> normal3d: nx with: ny with: nz [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> normal3dv: v [
 
 	<generated>
@@ -4321,7 +6098,10 @@ GL1_0 >> normal3dv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> normal3f: nx with: ny with: nz [
 
 	<generated>
@@ -4329,7 +6109,10 @@ GL1_0 >> normal3f: nx with: ny with: nz [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> normal3fv: v [
 
 	<generated>
@@ -4337,7 +6120,10 @@ GL1_0 >> normal3fv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> normal3i: nx with: ny with: nz [
 
 	<generated>
@@ -4345,7 +6131,10 @@ GL1_0 >> normal3i: nx with: ny with: nz [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> normal3iv: v [
 
 	<generated>
@@ -4353,7 +6142,10 @@ GL1_0 >> normal3iv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> normal3s: nx with: ny with: nz [
 
 	<generated>
@@ -4361,7 +6153,10 @@ GL1_0 >> normal3s: nx with: ny with: nz [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> normal3sv: v [
 
 	<generated>
@@ -4369,7 +6164,10 @@ GL1_0 >> normal3sv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> ortho: left with: right with: bottom with: top with: zNear with: zFar [
 
 	<generated>
@@ -4377,7 +6175,10 @@ GL1_0 >> ortho: left with: right with: bottom with: top with: zNear with: zFar [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> passThrough: token [
 
 	<generated>
@@ -4385,7 +6186,10 @@ GL1_0 >> passThrough: token [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> pixelMapfv: map with: mapsize with: values [
 
 	<generated>
@@ -4393,7 +6197,10 @@ GL1_0 >> pixelMapfv: map with: mapsize with: values [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> pixelMapuiv: map with: mapsize with: values [
 
 	<generated>
@@ -4401,7 +6208,10 @@ GL1_0 >> pixelMapuiv: map with: mapsize with: values [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> pixelMapusv: map with: mapsize with: values [
 
 	<generated>
@@ -4409,7 +6219,10 @@ GL1_0 >> pixelMapusv: map with: mapsize with: values [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> pixelStoref: pname with: param [
 
 	<generated>
@@ -4417,7 +6230,10 @@ GL1_0 >> pixelStoref: pname with: param [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> pixelStorei: pname with: param [
 
 	<generated>
@@ -4425,7 +6241,10 @@ GL1_0 >> pixelStorei: pname with: param [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> pixelTransferf: pname with: param [
 
 	<generated>
@@ -4433,7 +6252,10 @@ GL1_0 >> pixelTransferf: pname with: param [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> pixelTransferi: pname with: param [
 
 	<generated>
@@ -4441,7 +6263,10 @@ GL1_0 >> pixelTransferi: pname with: param [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> pixelZoom: xfactor with: yfactor [
 
 	<generated>
@@ -4449,7 +6274,10 @@ GL1_0 >> pixelZoom: xfactor with: yfactor [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> pointSize: size [
 
 	<generated>
@@ -4457,7 +6285,10 @@ GL1_0 >> pointSize: size [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> polygonMode: face with: mode [
 
 	<generated>
@@ -4465,7 +6296,10 @@ GL1_0 >> polygonMode: face with: mode [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> polygonStipple: mask [
 
 	<generated>
@@ -4473,7 +6307,10 @@ GL1_0 >> polygonStipple: mask [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> popAttrib [
 
 	<generated>
@@ -4481,7 +6318,10 @@ GL1_0 >> popAttrib [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> popMatrix [
 
 	<generated>
@@ -4489,7 +6329,10 @@ GL1_0 >> popMatrix [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> popName [
 
 	<generated>
@@ -4497,7 +6340,10 @@ GL1_0 >> popName [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> pushAttrib: mask [
 
 	<generated>
@@ -4505,7 +6351,10 @@ GL1_0 >> pushAttrib: mask [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> pushMatrix [
 
 	<generated>
@@ -4513,7 +6362,10 @@ GL1_0 >> pushMatrix [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> pushName: name [
 
 	<generated>
@@ -4521,7 +6373,10 @@ GL1_0 >> pushName: name [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos2d: x with: y [
 
 	<generated>
@@ -4529,7 +6384,10 @@ GL1_0 >> rasterPos2d: x with: y [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos2dv: v [
 
 	<generated>
@@ -4537,7 +6395,10 @@ GL1_0 >> rasterPos2dv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos2f: x with: y [
 
 	<generated>
@@ -4545,7 +6406,10 @@ GL1_0 >> rasterPos2f: x with: y [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos2fv: v [
 
 	<generated>
@@ -4553,7 +6417,10 @@ GL1_0 >> rasterPos2fv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos2i: x with: y [
 
 	<generated>
@@ -4561,7 +6428,10 @@ GL1_0 >> rasterPos2i: x with: y [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos2iv: v [
 
 	<generated>
@@ -4569,7 +6439,10 @@ GL1_0 >> rasterPos2iv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos2s: x with: y [
 
 	<generated>
@@ -4577,7 +6450,10 @@ GL1_0 >> rasterPos2s: x with: y [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos2sv: v [
 
 	<generated>
@@ -4585,7 +6461,10 @@ GL1_0 >> rasterPos2sv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos3d: x with: y with: z [
 
 	<generated>
@@ -4593,7 +6472,10 @@ GL1_0 >> rasterPos3d: x with: y with: z [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos3dv: v [
 
 	<generated>
@@ -4601,7 +6483,10 @@ GL1_0 >> rasterPos3dv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos3f: x with: y with: z [
 
 	<generated>
@@ -4609,7 +6494,10 @@ GL1_0 >> rasterPos3f: x with: y with: z [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos3fv: v [
 
 	<generated>
@@ -4617,7 +6505,10 @@ GL1_0 >> rasterPos3fv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos3i: x with: y with: z [
 
 	<generated>
@@ -4625,7 +6516,10 @@ GL1_0 >> rasterPos3i: x with: y with: z [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos3iv: v [
 
 	<generated>
@@ -4633,7 +6527,10 @@ GL1_0 >> rasterPos3iv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos3s: x with: y with: z [
 
 	<generated>
@@ -4641,7 +6538,10 @@ GL1_0 >> rasterPos3s: x with: y with: z [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos3sv: v [
 
 	<generated>
@@ -4649,7 +6549,10 @@ GL1_0 >> rasterPos3sv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos4d: x with: y with: z with: w [
 
 	<generated>
@@ -4657,7 +6560,10 @@ GL1_0 >> rasterPos4d: x with: y with: z with: w [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos4dv: v [
 
 	<generated>
@@ -4665,7 +6571,10 @@ GL1_0 >> rasterPos4dv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos4f: x with: y with: z with: w [
 
 	<generated>
@@ -4673,7 +6582,10 @@ GL1_0 >> rasterPos4f: x with: y with: z with: w [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos4fv: v [
 
 	<generated>
@@ -4681,7 +6593,10 @@ GL1_0 >> rasterPos4fv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos4i: x with: y with: z with: w [
 
 	<generated>
@@ -4689,7 +6604,10 @@ GL1_0 >> rasterPos4i: x with: y with: z with: w [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos4iv: v [
 
 	<generated>
@@ -4697,7 +6615,10 @@ GL1_0 >> rasterPos4iv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos4s: x with: y with: z with: w [
 
 	<generated>
@@ -4705,7 +6626,10 @@ GL1_0 >> rasterPos4s: x with: y with: z with: w [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rasterPos4sv: v [
 
 	<generated>
@@ -4713,7 +6637,10 @@ GL1_0 >> rasterPos4sv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> readBuffer: src [
 
 	<generated>
@@ -4721,7 +6648,10 @@ GL1_0 >> readBuffer: src [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> readPixels: x with: y with: width with: height with: format with: type with: pixels [
 
 	<generated>
@@ -4729,7 +6659,10 @@ GL1_0 >> readPixels: x with: y with: width with: height with: format with: type 
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rectd: x1 with: y1 with: x2 with: y2 [
 
 	<generated>
@@ -4737,7 +6670,10 @@ GL1_0 >> rectd: x1 with: y1 with: x2 with: y2 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rectdv: v1 with: v2 [
 
 	<generated>
@@ -4745,7 +6681,10 @@ GL1_0 >> rectdv: v1 with: v2 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rectf: x1 with: y1 with: x2 with: y2 [
 
 	<generated>
@@ -4753,7 +6692,10 @@ GL1_0 >> rectf: x1 with: y1 with: x2 with: y2 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rectfv: v1 with: v2 [
 
 	<generated>
@@ -4761,7 +6703,10 @@ GL1_0 >> rectfv: v1 with: v2 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> recti: x1 with: y1 with: x2 with: y2 [
 
 	<generated>
@@ -4769,7 +6714,10 @@ GL1_0 >> recti: x1 with: y1 with: x2 with: y2 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rectiv: v1 with: v2 [
 
 	<generated>
@@ -4777,7 +6725,10 @@ GL1_0 >> rectiv: v1 with: v2 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rects: x1 with: y1 with: x2 with: y2 [
 
 	<generated>
@@ -4785,7 +6736,10 @@ GL1_0 >> rects: x1 with: y1 with: x2 with: y2 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rectsv: v1 with: v2 [
 
 	<generated>
@@ -4793,7 +6747,10 @@ GL1_0 >> rectsv: v1 with: v2 [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> renderMode: mode [
 
 	<generated>
@@ -4801,7 +6758,10 @@ GL1_0 >> renderMode: mode [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rotated: angle with: x with: y with: z [
 
 	<generated>
@@ -4809,7 +6769,10 @@ GL1_0 >> rotated: angle with: x with: y with: z [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> rotatef: angle with: x with: y with: z [
 
 	<generated>
@@ -4817,7 +6780,10 @@ GL1_0 >> rotatef: angle with: x with: y with: z [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> scaled: x with: y with: z [
 
 	<generated>
@@ -4825,7 +6791,10 @@ GL1_0 >> scaled: x with: y with: z [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> scalef: x with: y with: z [
 
 	<generated>
@@ -4833,7 +6802,10 @@ GL1_0 >> scalef: x with: y with: z [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> scissor: x with: y with: width with: height [
 
 	<generated>
@@ -4841,7 +6813,10 @@ GL1_0 >> scissor: x with: y with: width with: height [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> selectBuffer: size with: buffer [
 
 	<generated>
@@ -4849,7 +6824,10 @@ GL1_0 >> selectBuffer: size with: buffer [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> shadeModel: mode [
 
 	<generated>
@@ -4857,7 +6835,10 @@ GL1_0 >> shadeModel: mode [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> stencilFunc: func with: ref with: mask [
 
 	<generated>
@@ -4865,7 +6846,10 @@ GL1_0 >> stencilFunc: func with: ref with: mask [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> stencilMask: mask [
 
 	<generated>
@@ -4873,7 +6857,10 @@ GL1_0 >> stencilMask: mask [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> stencilOp: fail with: zfail with: zpass [
 
 	<generated>
@@ -4881,7 +6868,10 @@ GL1_0 >> stencilOp: fail with: zfail with: zpass [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord1d: s [
 
 	<generated>
@@ -4889,7 +6879,10 @@ GL1_0 >> texCoord1d: s [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord1dv: v [
 
 	<generated>
@@ -4897,7 +6890,10 @@ GL1_0 >> texCoord1dv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord1f: s [
 
 	<generated>
@@ -4905,7 +6901,10 @@ GL1_0 >> texCoord1f: s [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord1fv: v [
 
 	<generated>
@@ -4913,7 +6912,10 @@ GL1_0 >> texCoord1fv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord1i: s [
 
 	<generated>
@@ -4921,7 +6923,10 @@ GL1_0 >> texCoord1i: s [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord1iv: v [
 
 	<generated>
@@ -4929,7 +6934,10 @@ GL1_0 >> texCoord1iv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord1s: s [
 
 	<generated>
@@ -4937,7 +6945,10 @@ GL1_0 >> texCoord1s: s [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord1sv: v [
 
 	<generated>
@@ -4945,7 +6956,10 @@ GL1_0 >> texCoord1sv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord2d: s with: t [
 
 	<generated>
@@ -4953,7 +6967,10 @@ GL1_0 >> texCoord2d: s with: t [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord2dv: v [
 
 	<generated>
@@ -4961,7 +6978,10 @@ GL1_0 >> texCoord2dv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord2f: s with: t [
 
 	<generated>
@@ -4969,7 +6989,10 @@ GL1_0 >> texCoord2f: s with: t [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord2fv: v [
 
 	<generated>
@@ -4977,7 +7000,10 @@ GL1_0 >> texCoord2fv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord2i: s with: t [
 
 	<generated>
@@ -4985,7 +7011,10 @@ GL1_0 >> texCoord2i: s with: t [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord2iv: v [
 
 	<generated>
@@ -4993,7 +7022,10 @@ GL1_0 >> texCoord2iv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord2s: s with: t [
 
 	<generated>
@@ -5001,7 +7033,10 @@ GL1_0 >> texCoord2s: s with: t [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord2sv: v [
 
 	<generated>
@@ -5009,7 +7044,10 @@ GL1_0 >> texCoord2sv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord3d: s with: t with: r [
 
 	<generated>
@@ -5017,7 +7055,10 @@ GL1_0 >> texCoord3d: s with: t with: r [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord3dv: v [
 
 	<generated>
@@ -5025,7 +7066,10 @@ GL1_0 >> texCoord3dv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord3f: s with: t with: r [
 
 	<generated>
@@ -5033,7 +7077,10 @@ GL1_0 >> texCoord3f: s with: t with: r [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord3fv: v [
 
 	<generated>
@@ -5041,7 +7088,10 @@ GL1_0 >> texCoord3fv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord3i: s with: t with: r [
 
 	<generated>
@@ -5049,7 +7099,10 @@ GL1_0 >> texCoord3i: s with: t with: r [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord3iv: v [
 
 	<generated>
@@ -5057,7 +7110,10 @@ GL1_0 >> texCoord3iv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord3s: s with: t with: r [
 
 	<generated>
@@ -5065,7 +7121,10 @@ GL1_0 >> texCoord3s: s with: t with: r [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord3sv: v [
 
 	<generated>
@@ -5073,7 +7132,10 @@ GL1_0 >> texCoord3sv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord4d: s with: t with: r with: q [
 
 	<generated>
@@ -5081,7 +7143,10 @@ GL1_0 >> texCoord4d: s with: t with: r with: q [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord4dv: v [
 
 	<generated>
@@ -5089,7 +7154,10 @@ GL1_0 >> texCoord4dv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord4f: s with: t with: r with: q [
 
 	<generated>
@@ -5097,7 +7165,10 @@ GL1_0 >> texCoord4f: s with: t with: r with: q [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord4fv: v [
 
 	<generated>
@@ -5105,7 +7176,10 @@ GL1_0 >> texCoord4fv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord4i: s with: t with: r with: q [
 
 	<generated>
@@ -5113,7 +7187,10 @@ GL1_0 >> texCoord4i: s with: t with: r with: q [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord4iv: v [
 
 	<generated>
@@ -5121,7 +7198,10 @@ GL1_0 >> texCoord4iv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord4s: s with: t with: r with: q [
 
 	<generated>
@@ -5129,7 +7209,10 @@ GL1_0 >> texCoord4s: s with: t with: r with: q [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texCoord4sv: v [
 
 	<generated>
@@ -5137,7 +7220,10 @@ GL1_0 >> texCoord4sv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texEnvf: target with: pname with: param [
 
 	<generated>
@@ -5145,7 +7231,10 @@ GL1_0 >> texEnvf: target with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texEnvfv: target with: pname with: params [
 
 	<generated>
@@ -5153,7 +7242,10 @@ GL1_0 >> texEnvfv: target with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texEnvi: target with: pname with: param [
 
 	<generated>
@@ -5161,7 +7253,10 @@ GL1_0 >> texEnvi: target with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texEnviv: target with: pname with: params [
 
 	<generated>
@@ -5169,7 +7264,10 @@ GL1_0 >> texEnviv: target with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texGend: coord with: pname with: param [
 
 	<generated>
@@ -5177,7 +7275,10 @@ GL1_0 >> texGend: coord with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texGendv: coord with: pname with: params [
 
 	<generated>
@@ -5185,7 +7286,10 @@ GL1_0 >> texGendv: coord with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texGenf: coord with: pname with: param [
 
 	<generated>
@@ -5193,7 +7297,10 @@ GL1_0 >> texGenf: coord with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texGenfv: coord with: pname with: params [
 
 	<generated>
@@ -5201,7 +7308,10 @@ GL1_0 >> texGenfv: coord with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texGeni: coord with: pname with: param [
 
 	<generated>
@@ -5209,7 +7319,10 @@ GL1_0 >> texGeni: coord with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texGeniv: coord with: pname with: params [
 
 	<generated>
@@ -5217,7 +7330,10 @@ GL1_0 >> texGeniv: coord with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texImage1D: target with: level with: internalformat with: width with: border with: format with: type with: pixels [
 
 	<generated>
@@ -5225,7 +7341,10 @@ GL1_0 >> texImage1D: target with: level with: internalformat with: width with: b
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texImage2D: target with: level with: internalformat with: width with: height with: border with: format with: type with: pixels [
 
 	<generated>
@@ -5233,7 +7352,10 @@ GL1_0 >> texImage2D: target with: level with: internalformat with: width with: h
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texParameterf: target with: pname with: param [
 
 	<generated>
@@ -5241,7 +7363,10 @@ GL1_0 >> texParameterf: target with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texParameterfv: target with: pname with: params [
 
 	<generated>
@@ -5249,7 +7374,10 @@ GL1_0 >> texParameterfv: target with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texParameteri: target with: pname with: param [
 
 	<generated>
@@ -5257,7 +7385,10 @@ GL1_0 >> texParameteri: target with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> texParameteriv: target with: pname with: params [
 
 	<generated>
@@ -5265,7 +7396,10 @@ GL1_0 >> texParameteriv: target with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> translated: x with: y with: z [
 
 	<generated>
@@ -5273,7 +7407,10 @@ GL1_0 >> translated: x with: y with: z [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> translatef: x with: y with: z [
 
 	<generated>
@@ -5281,7 +7418,10 @@ GL1_0 >> translatef: x with: y with: z [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex2d: x with: y [
 
 	<generated>
@@ -5289,7 +7429,10 @@ GL1_0 >> vertex2d: x with: y [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex2dv: v [
 
 	<generated>
@@ -5297,7 +7440,10 @@ GL1_0 >> vertex2dv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex2f: x with: y [
 
 	<generated>
@@ -5305,7 +7451,10 @@ GL1_0 >> vertex2f: x with: y [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex2fv: v [
 
 	<generated>
@@ -5313,7 +7462,10 @@ GL1_0 >> vertex2fv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex2i: x with: y [
 
 	<generated>
@@ -5321,7 +7473,10 @@ GL1_0 >> vertex2i: x with: y [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex2iv: v [
 
 	<generated>
@@ -5329,7 +7484,10 @@ GL1_0 >> vertex2iv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex2s: x with: y [
 
 	<generated>
@@ -5337,7 +7495,10 @@ GL1_0 >> vertex2s: x with: y [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex2sv: v [
 
 	<generated>
@@ -5345,7 +7506,10 @@ GL1_0 >> vertex2sv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex3d: x with: y with: z [
 
 	<generated>
@@ -5353,7 +7517,10 @@ GL1_0 >> vertex3d: x with: y with: z [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex3dv: v [
 
 	<generated>
@@ -5361,7 +7528,10 @@ GL1_0 >> vertex3dv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex3f: x with: y with: z [
 
 	<generated>
@@ -5369,7 +7539,10 @@ GL1_0 >> vertex3f: x with: y with: z [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex3fv: v [
 
 	<generated>
@@ -5377,7 +7550,10 @@ GL1_0 >> vertex3fv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex3i: x with: y with: z [
 
 	<generated>
@@ -5385,7 +7561,10 @@ GL1_0 >> vertex3i: x with: y with: z [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex3iv: v [
 
 	<generated>
@@ -5393,7 +7572,10 @@ GL1_0 >> vertex3iv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex3s: x with: y with: z [
 
 	<generated>
@@ -5401,7 +7583,10 @@ GL1_0 >> vertex3s: x with: y with: z [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex3sv: v [
 
 	<generated>
@@ -5409,7 +7594,10 @@ GL1_0 >> vertex3sv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex4d: x with: y with: z with: w [
 
 	<generated>
@@ -5417,7 +7605,10 @@ GL1_0 >> vertex4d: x with: y with: z with: w [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex4dv: v [
 
 	<generated>
@@ -5425,7 +7616,10 @@ GL1_0 >> vertex4dv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex4f: x with: y with: z with: w [
 
 	<generated>
@@ -5433,7 +7627,10 @@ GL1_0 >> vertex4f: x with: y with: z with: w [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex4fv: v [
 
 	<generated>
@@ -5441,7 +7638,10 @@ GL1_0 >> vertex4fv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex4i: x with: y with: z with: w [
 
 	<generated>
@@ -5449,7 +7649,10 @@ GL1_0 >> vertex4i: x with: y with: z with: w [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex4iv: v [
 
 	<generated>
@@ -5457,7 +7660,10 @@ GL1_0 >> vertex4iv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex4s: x with: y with: z with: w [
 
 	<generated>
@@ -5465,7 +7671,10 @@ GL1_0 >> vertex4s: x with: y with: z with: w [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> vertex4sv: v [
 
 	<generated>
@@ -5473,7 +7682,10 @@ GL1_0 >> vertex4sv: v [
 	^ self externalCallFailed
 ]
 
-{ #category : #'api - required' }
+{
+	#category : #'api - required',
+	#timestamp : 'stlu 11/3/2020 14:56'
+}
 GL1_0 >> viewport: x with: y with: width with: height [
 
 	<generated>

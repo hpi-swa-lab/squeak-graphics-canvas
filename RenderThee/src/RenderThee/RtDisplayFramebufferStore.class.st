@@ -4,35 +4,51 @@ Class {
 	#instVars : [
 		'glLibrary'
 	],
-	#category : #'RenderThee-LayerTree'
+	#category : #'RenderThee-LayerTree',
+	#commentStamp : ''
 }
 
-{ #category : #drawing }
+{
+	#category : #drawing,
+	#timestamp : ''
+}
 RtDisplayFramebufferStore >> canvasDo: aBlock [
 
 	self glLibrary makeCurrentDuring: [
 		super canvasDo: aBlock]
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 RtDisplayFramebufferStore >> displayTransform [
 	" a transform that translates this store's coordinate system to have 0,0 in the top left "
 	^ (Matrix2x3 withScale: 1.0 @ -1.0) * (Matrix2x3 withOffset: 0 @ extent y negated)
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : ''
+}
 RtDisplayFramebufferStore >> extentChanged [
 
 	framebuffer boundDuring: [self resetViewport]
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : 'stlu 10/26/2020 12:18'
+}
 RtDisplayFramebufferStore >> glLibrary [
 
 	^ glLibrary
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : 'stlu 11/3/2020 15:42'
+}
 RtDisplayFramebufferStore >> initializeGLSettings [
 
 	GL disable: GL_CULL_FACE.
@@ -44,7 +60,10 @@ RtDisplayFramebufferStore >> initializeGLSettings [
 	GL clearColor: 1 with: 1 with: 1 with: 0.
 ]
 
-{ #category : #initialization }
+{
+	#category : #initialization,
+	#timestamp : 'stlu 10/26/2020 12:18'
+}
 RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 
 	| context |
@@ -65,7 +84,10 @@ RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 			self clear]]
 ]
 
-{ #category : #drawing }
+{
+	#category : #drawing,
+	#timestamp : ''
+}
 RtDisplayFramebufferStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
 	self glLibrary newFrameDo: [

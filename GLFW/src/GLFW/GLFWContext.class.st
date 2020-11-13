@@ -7,10 +7,14 @@ Class {
 	#pools : [
 		'GLFWConstants'
 	],
-	#category : #'GLFW-OpenGL'
+	#category : #'GLFW-OpenGL',
+	#commentStamp : ''
 }
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/11/2020 14:15'
+}
 GLFWContext class >> newIn: bounds forLibraryClass: aLibraryClass title: aString [
 
 	self flag: #todo. "Deprecated"
@@ -21,7 +25,10 @@ GLFWContext class >> newIn: bounds forLibraryClass: aLibraryClass title: aString
 						title: aString)
 ]
 
-{ #category : #'instance creation' }
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 11/11/2020 14:22'
+}
 GLFWContext class >> window: aWindow [
 
 	^ GLFW contexts
@@ -34,44 +41,65 @@ GLFWContext class >> window: aWindow [
 				yourself]
 ]
 
-{ #category : #activation }
+{
+	#category : #activation,
+	#timestamp : ''
+}
 GLFWContext >> activate [
 
 	window makeCurrent
 ]
 
-{ #category : #activation }
+{
+	#category : #activation,
+	#timestamp : ''
+}
 GLFWContext >> deactivate [
 
 	GLFW makeContextCurrent: nil
 ]
 
-{ #category : #'initialize-release' }
+{
+	#category : #'initialize-release',
+	#timestamp : ''
+}
 GLFWContext >> destroy [
 
 	super destroy.
 	window ifNotNil: [window destroy]
 ]
 
-{ #category : #'initialize-release' }
+{
+	#category : #'initialize-release',
+	#timestamp : ''
+}
 GLFWContext >> endFrame [
 
 	GLFW pollEvents
 ]
 
-{ #category : #testing }
+{
+	#category : #testing,
+	#timestamp : ''
+}
 GLFWContext >> shouldClose [
 
 	^ window shouldClose
 ]
 
-{ #category : #'initialize-release' }
+{
+	#category : #'initialize-release',
+	#timestamp : ''
+}
 GLFWContext >> swapBuffers [
 
 	window swapBuffers
 ]
 
-{ #category : #'initialize-release' }
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 10/19/2020 16:50'
+}
 GLFWContext >> useMorphicEventHandling [
 
 	self flag: #todo. "This is not the right place for this."
@@ -97,13 +125,19 @@ GLFWContext >> useMorphicEventHandling [
 			stamp: 0)].
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#timestamp : ''
+}
 GLFWContext >> window [
 
 	^ window
 ]
 
-{ #category : #'initialize-release' }
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 10/19/2020 15:54'
+}
 GLFWContext >> window: aWindow [
 
 	window := aWindow
