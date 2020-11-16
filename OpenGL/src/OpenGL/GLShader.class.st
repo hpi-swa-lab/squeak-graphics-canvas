@@ -77,13 +77,13 @@ GLShader >> getAttribute: attributeName [
 
 {
 	#category : #compilation,
-	#timestamp : 'stlu 11/3/2020 15:39'
+	#timestamp : 'stlu 11/16/2020 13:51'
 }
 GLShader >> getInfoLog [
 
 	ByteArray new: self getInfoLogLength during: [:result |
 		GL getShaderInfoLog: id with: result size with: nil with: result.
-		^ result allButLast "remove null-terminator" utf8Decoded]
+		^ result allButLast "remove null-terminator" utf8Decoded withSqueakLineEndings]
 ]
 
 {
@@ -97,13 +97,13 @@ GLShader >> getInfoLogLength [
 
 {
 	#category : #'accessing uncached',
-	#timestamp : 'stlu 11/3/2020 15:40'
+	#timestamp : 'stlu 11/16/2020 13:50'
 }
 GLShader >> getSource [
 
 	ByteArray new: self getSourceLength during: [:result |
 		GL getShaderSource: id with: result size with: nil with: result.
-		^ result allButLast "remove null-terminator" utf8Decoded]
+		^ result allButLast "remove null-terminator" utf8Decoded withSqueakLineEndings]
 ]
 
 {
@@ -163,12 +163,12 @@ GLShader >> lastCompilationSucceeded [
 
 {
 	#category : #'accessing uncached',
-	#timestamp : 'stlu 11/3/2020 15:40'
+	#timestamp : 'stlu 11/16/2020 13:50'
 }
 GLShader >> setSource: aString [
 
 	| utf8Bytes |
-	utf8Bytes := aString utf8Encoded.
+	utf8Bytes := aString withUnixLineEndings utf8Encoded.
 	
 	ExternalData allocate: utf8Bytes size + 1 type: ExternalType string do: [:data |
 		| arrayOfStrings |

@@ -83,13 +83,13 @@ GLProgram >> getBinary [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 11/3/2020 15:36'
+	#timestamp : 'stlu 11/16/2020 13:52'
 }
 GLProgram >> getInfoLog [
 
 	ByteArray new: self getInfoLogLength during: [:result |
 		GL getProgramInfoLog: id with: result size with: nil with: result.
-		^ result allButLast "remove null-terminator" utf8Decoded]
+		^ result allButLast "remove null-terminator" utf8Decoded withSqueakLineEndings]
 ]
 
 {
