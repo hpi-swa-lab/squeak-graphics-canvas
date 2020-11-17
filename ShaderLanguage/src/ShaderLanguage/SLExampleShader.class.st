@@ -31,51 +31,31 @@ Class {
 
 {
 	#category : #code,
-	#timestamp : 'stlu 11/11/2020 18:16'
+	#timestamp : 'stlu 11/17/2020 18:25'
 }
-SLExampleShader class >> main [
+SLExampleShader class >> bloom: out inputs: in uniforms: u [
 
-	"<out: 'FragColor' type: #Vector4>
-	<in: 'TexCoords' type: #Vector2>
-	<uniform: 'scene' type: #Sampler2D>
-	<uniform: 'bloomBlur' type: #Sampler2D>
-	<uniform: 'bloom' type: #Boolean>
-	<uniform: 'exposure' type: #Float>"
-	| FragColor TexCoords bloom gamma hdrColor bloomColor result arr1 arr2 myArray |
-	FragColor := Vector4 out: 'FragColor'.
-	TexCoords := Vector2 in: 'TexCoords'.
-	bloom := Boolean uniform: 'bloom'.
-	Vector4 from: { 1.0 . TexCoords . 1.3 }.
-	Array from: { 1 . 0 . 1 . 4 . 5 }.
-	arr1 := Array new: 5.
-	arr2 := Array new: 6.
-	myArray := true ifTrue: [arr1] ifFalse: [arr2].
-	
-	
+	| gamma hdrColor bloomColor result |
 	gamma := 2.2.
-	hdrColor := ((Sampler2D uniform: 'scene') at: TexCoords) rgb.
-	bloomColor := ((Sampler2D uniform: 'bloomBlur') at: TexCoords) rgb.
-	bloom ifTrue: [
-		hdrColor := hdrColor + bloomColor].
+	hdrColor := (u scene asSampler2D at: in texCoords asVector2) rgb.
+	bloomColor := (u bloomBlur asSampler2D at: in texCoords) rgb.
+	u bloom asBoolean ifTrue: [hdrColor := hdrColor + bloomColor].
 	"tone mapping"
-	result := (Vector3 from: 1.0) - (hdrColor negated * (Float uniform: 'exposure')) exp.
+	result := 1.0 asVector3 - (hdrColor negated * u exposure asFloat) exp.
 	"also gamma correct while we're at it"
-	result := result ** (Vector3 value: 1.0 / gamma).
-	FragColor := Vector4 value: result value: 1.0
+	result := result ** (1.0 / gamma) asVector3.
+	out FragColor: result @ 1.0
 ]
 
 {
-	#category : #'variable declaration',
-	#timestamp : 'stlu 11/11/2020 16:27'
+	#category : #code,
+	#timestamp : 'stlu 11/17/2020 17:34'
 }
-SLExampleShader class >> resources [
+SLExampleShader class >> gaussianKernel3 [
 
-	^ {
-		{ #out . 'FragmentColor' . Vector4 }.
-		{ #in . 'TexCoords' . Vector2 }.
-		{ #uniform . 'scene' . Sampler2D }.
-		{ #uniform . 'bloomBlur' . Sampler2D }.
-		{ #uniform . 'bloom' . Boolean }.
-		{ #uniform . 'exposure' . Float }
-	}
+	^ #(
+		1 2 1
+		2 4 2
+		1 2 1
+	) asMatrix3x3
 ]
