@@ -1,9 +1,6 @@
 Extension { #name : #Matrix }
 
-{
-	#category : #'*OpenGL',
-	#timestamp : 'stlu 11/13/2020 16:21'
-}
+{ #category : #'*OpenGL' }
 Matrix >> putAtUniform: location [
 
 	(ncols = 4 and: [nrows = 4]) ifTrue: [

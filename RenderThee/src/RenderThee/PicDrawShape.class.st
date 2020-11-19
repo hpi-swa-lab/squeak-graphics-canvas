@@ -6,14 +6,10 @@ Class {
 		'fillStyle',
 		'borderStyle'
 	],
-	#category : #'RenderThee-Pictures',
-	#commentStamp : ''
+	#category : #'RenderThee-Pictures'
 }
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 PicDrawShape class >> bounds: aRectangle borderStyle: aBorderStyle [
 
 	^ self
@@ -22,10 +18,7 @@ PicDrawShape class >> bounds: aRectangle borderStyle: aBorderStyle [
 		borderStyle: aBorderStyle
 ]
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 PicDrawShape class >> bounds: aRectangle fillStyle: aFillStyle [
 
 	^ self
@@ -34,10 +27,7 @@ PicDrawShape class >> bounds: aRectangle fillStyle: aFillStyle [
 		borderStyle: (SimpleBorder width: 0)
 ]
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 PicDrawShape class >> bounds: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	^ self new
@@ -47,64 +37,43 @@ PicDrawShape class >> bounds: aRectangle fillStyle: aFillStyle borderStyle: aBor
 		yourself
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawShape >> borderStyle [
 
 	^ borderStyle
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawShape >> borderStyle: anObject [
 
 	borderStyle := anObject.
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawShape >> bounds [
 
 	^ bounds
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawShape >> bounds: anObject [
 
 	bounds := anObject.
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawShape >> estimatedBounds [
 
 	^ bounds
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawShape >> fillStyle [
 
 	^ fillStyle
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawShape >> fillStyle: anObject [
 
 	fillStyle := anObject.

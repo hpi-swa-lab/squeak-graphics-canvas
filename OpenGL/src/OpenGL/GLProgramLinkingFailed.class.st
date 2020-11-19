@@ -5,14 +5,10 @@ Class {
 		'program',
 		'infoLog'
 	],
-	#category : #'OpenGL-Wrappers-Errors',
-	#commentStamp : ''
+	#category : #'OpenGL-Wrappers-Errors'
 }
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 10/27/2020 12:51'
-}
+{ #category : #'instance creation' }
 GLProgramLinkingFailed class >> program: glProgram infoLog: aString [
 
 	^ self new
@@ -21,46 +17,31 @@ GLProgramLinkingFailed class >> program: glProgram infoLog: aString [
 		yourself
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/27/2020 12:51'
-}
+{ #category : #accessing }
 GLProgramLinkingFailed >> infoLog [
 
 	^ infoLog
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/27/2020 12:51'
-}
+{ #category : #accessing }
 GLProgramLinkingFailed >> infoLog: anObject [
 
 	infoLog := anObject
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/27/2020 12:51'
-}
+{ #category : #accessing }
 GLProgramLinkingFailed >> messageText [
 
 	^ messageText ifNil: [infoLog]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/27/2020 12:51'
-}
+{ #category : #accessing }
 GLProgramLinkingFailed >> program [
 
 	^ program
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/27/2020 12:51'
-}
+{ #category : #accessing }
 GLProgramLinkingFailed >> program: anObject [
 
 	program := anObject

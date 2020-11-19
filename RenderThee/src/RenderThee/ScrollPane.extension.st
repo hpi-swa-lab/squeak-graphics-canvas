@@ -1,9 +1,6 @@
 Extension { #name : #ScrollPane }
 
-{
-	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'*RenderThee' }
 ScrollPane >> isRepaintBoundary [
 
 	^ true

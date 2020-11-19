@@ -5,14 +5,10 @@ A `PicPictureCanvas` is typically used to create me.
 Class {
 	#name : #PicCommand,
 	#superclass : #Object,
-	#category : #'RenderThee-Pictures',
-	#commentStamp : 'stlu 8/21/2020 13:54'
+	#category : #'RenderThee-Pictures'
 }
 
-{
-	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #converting }
 PicCommand >> asForm [
 	"Answer a Form containing the drawn representation of myself."
 	| fc bounds |
@@ -22,46 +18,31 @@ PicCommand >> asForm [
 	^ fc form
 ]
 
-{
-	#category : #enumerating,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #enumerating }
 PicCommand >> do: aBlock [
 
 	aBlock value: self
 ]
 
-{
-	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #drawing }
 PicCommand >> drawOn: aCanvas [
 	"Replays represented graphical command(s) onto the given canvas."
 	self subclassResponsibility
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicCommand >> estimatedBounds [
 	"Returns a rectangle representing the maximum bounds I draw myself into."
 	self subclassResponsibility
 ]
 
-{
-	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #testing }
 PicCommand >> isDrawing [
 	"Returns true if drawing me onto a canvas results in a change of the underlying pixel store."
 	^ false
 ]
 
-{
-	#category : #debugging,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #debugging }
 PicCommand >> open [
 
 	 ^ self asForm asMorph openInHand

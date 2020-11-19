@@ -5,32 +5,22 @@ Class {
 		'readsCaches',
 		'writesCaches'
 	],
-	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#category : #'RenderThee-LayerTree'
 }
 
-{
-	#category : #compositing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #compositing }
 RtCompositingCanvas >> cacheLayer: aLayer [
 
 	wrappedCanvas cacheLayer: aLayer
 ]
 
-{
-	#category : #compositing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #compositing }
 RtCompositingCanvas >> compositeLayer: aLayer [
 
 	aLayer drawOn: self
 ]
 
-{
-	#category : #compositing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #compositing }
 RtCompositingCanvas >> drawLayer: aLayer [
 
 	(writesCaches and: [aLayer needsCaching and: [aLayer isCached not]])
@@ -48,10 +38,7 @@ RtCompositingCanvas >> drawLayer: aLayer [
 				self frameRectangle: (0@0 extent: aLayer extent) color: Color red]]
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #initialization }
 RtCompositingCanvas >> initialize [
 
 	super initialize.
@@ -59,37 +46,25 @@ RtCompositingCanvas >> initialize [
 	writesCaches := true
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtCompositingCanvas >> readsCaches [
 
 	^ readsCaches
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtCompositingCanvas >> readsCaches: anObject [
 
 	readsCaches := anObject
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtCompositingCanvas >> writesCaches [
 
 	^ writesCaches
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtCompositingCanvas >> writesCaches: anObject [
 
 	writesCaches := anObject

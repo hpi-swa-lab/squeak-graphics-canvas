@@ -1,9 +1,6 @@
 Extension { #name : #Float32Array }
 
-{
-	#category : #'*OpenGL',
-	#timestamp : 'stlu 11/3/2020 15:30'
-}
+{ #category : #'*OpenGL' }
 Float32Array >> putAtUniform: location [
 
 	self size caseOf: {

@@ -7,14 +7,10 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#category : #'RenderThee-LayerTree'
 }
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 RtCacheAfterUnchangedDraws class >> threshold: numUnchangedDraws [
 
 	^ self new
@@ -22,36 +18,24 @@ RtCacheAfterUnchangedDraws class >> threshold: numUnchangedDraws [
 		yourself
 ]
 
-{
-	#category : #rules,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #rules }
 RtCacheAfterUnchangedDraws >> shouldCacheDrawLayer: aLayer [
 
 	^ aLayer drawsSinceInvalidation >= threshold
 ]
 
-{
-	#category : #rules,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #rules }
 RtCacheAfterUnchangedDraws >> shouldCacheGroupLayer: aLayer [
 
 	^ aLayer drawsSinceInvalidation >= threshold
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtCacheAfterUnchangedDraws >> threshold [
 	^ threshold
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtCacheAfterUnchangedDraws >> threshold: anObject [
 	threshold := anObject
 ]

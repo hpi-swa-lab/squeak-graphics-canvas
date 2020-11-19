@@ -5,6 +5,5 @@ Class {
 		'program',
 		'name'
 	],
-	#category : #'OpenGL-Wrappers-Shaders',
-	#commentStamp : ''
+	#category : #'OpenGL-Wrappers-Shaders'
 }

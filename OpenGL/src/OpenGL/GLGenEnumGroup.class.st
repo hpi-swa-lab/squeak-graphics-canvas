@@ -5,14 +5,10 @@ Class {
 		'enums',
 		'parameters'
 	],
-	#category : #'OpenGL-Generation',
-	#commentStamp : ''
+	#category : #'OpenGL-Generation'
 }
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/1/2020 20:14'
-}
+{ #category : #'instance creation' }
 GLGenEnumGroup class >> registry: registry name: aSymbol [
 
 	^ registry enumGroups
@@ -20,37 +16,25 @@ GLGenEnumGroup class >> registry: registry name: aSymbol [
 		ifAbsentPut: [self new name: aSymbol]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 23:16'
-}
+{ #category : #accessing }
 GLGenEnumGroup >> addEnum: enum [
 
 	^ enums add: enum
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 23:16'
-}
+{ #category : #accessing }
 GLGenEnumGroup >> addParameter: param [
 
 	^ parameters add: param
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:19'
-}
+{ #category : #accessing }
 GLGenEnumGroup >> enums [
 
 	^ enums
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 10/31/2020 22:58'
-}
+{ #category : #initialization }
 GLGenEnumGroup >> initialize [
 
 	super initialize.
@@ -58,19 +42,13 @@ GLGenEnumGroup >> initialize [
 	parameters := OrderedCollection new
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:19'
-}
+{ #category : #accessing }
 GLGenEnumGroup >> parameters [
 
 	^ parameters
 ]
 
-{
-	#category : #printing,
-	#timestamp : 'stlu 10/31/2020 23:35'
-}
+{ #category : #printing }
 GLGenEnumGroup >> printOn: aStream [
 
 	aStream nextPutAll: 'Group '.

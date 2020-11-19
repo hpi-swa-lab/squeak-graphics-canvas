@@ -7,14 +7,10 @@ Class {
 		'width',
 		'color'
 	],
-	#category : #'RenderThee-Pictures',
-	#commentStamp : ''
+	#category : #'RenderThee-Pictures'
 }
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 PicDrawLine class >> from: from to: to width: width color: color [
 
 	^ self new
@@ -25,28 +21,19 @@ PicDrawLine class >> from: from to: to width: width color: color [
 		yourself
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawLine >> color [
 
 	^ color
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawLine >> color: anObject [
 
 	color := anObject.
 ]
 
-{
-	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #drawing }
 PicDrawLine >> drawOn: aCanvas [
 
 	aCanvas
@@ -56,64 +43,43 @@ PicDrawLine >> drawOn: aCanvas [
 		color: color
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawLine >> estimatedBounds [
 
 	^ from rect: to
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawLine >> from [
 
 	^ from
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawLine >> from: anObject [
 
 	from := anObject.
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawLine >> to [
 
 	^ to
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawLine >> to: anObject [
 
 	to := anObject.
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawLine >> width [
 
 	^ width
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawLine >> width: anObject [
 
 	width := anObject.

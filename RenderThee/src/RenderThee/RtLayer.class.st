@@ -29,14 +29,10 @@ Class {
 		'drawsSinceUpdate',
 		'drawsCount'
 	],
-	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#category : #'RenderThee-LayerTree'
 }
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 RtLayer class >> bounds: aRectangle [
 
 	^ self
@@ -44,10 +40,7 @@ RtLayer class >> bounds: aRectangle [
 		bounds: aRectangle
 ]
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 RtLayer class >> outerTransform: aMatrix bounds: aRectangle [
 
 	^ self new
@@ -56,19 +49,13 @@ RtLayer class >> outerTransform: aMatrix bounds: aRectangle [
 		yourself
 ]
 
-{
-	#category : #visiting,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #visiting }
 RtLayer >> accept: aVisitor [
 
 	self subclassResponsibility
 ]
 
-{
-	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #converting }
 RtLayer >> asForm [
 
 	| fc |
@@ -77,65 +64,44 @@ RtLayer >> asForm [
 	^ fc form
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtLayer >> bounds [
 
 	^ offset extent: extent
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtLayer >> bounds: aRectangle [
 
 	offset := aRectangle origin floor.
 	extent := aRectangle extent ceiling
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtLayer >> cache [
 
 	^ cache
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtLayer >> cache: anObject [
 
 	cache := anObject
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtLayer >> clipRect [
 
 	^ outerTransform localBoundsToGlobal: self bounds
 ]
 
-{
-	#category : #compositing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #compositing }
 RtLayer >> compositeOn: aCanvas [
 
 	(RtCompositingCanvas canvas: aCanvas) compositeLayer: self
 ]
 
-{
-	#category : #caching,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #caching }
 RtLayer >> createCacheOfType: anImageStoreClass [
 
 	| store |
@@ -145,10 +111,7 @@ RtLayer >> createCacheOfType: anImageStoreClass [
 	^ store
 ]
 
-{
-	#category : #caching,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #caching }
 RtLayer >> deleteCache [
 
 	cache ifNotNil: [cache release].
@@ -156,73 +119,49 @@ RtLayer >> deleteCache [
 	isCached := false.
 ]
 
-{
-	#category : #compositing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #compositing }
 RtLayer >> drawLayerOn: canvas [
 
 	self subclassResponsibility
 ]
 
-{
-	#category : #compositing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #compositing }
 RtLayer >> drawOn: canvas [
 
 	self subclassResponsibility
 ]
 
-{
-	#category : #'accessing - metrics',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'accessing - metrics' }
 RtLayer >> drawsCount [
 
 	^ drawsCount
 ]
 
-{
-	#category : #'accessing - metrics',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'accessing - metrics' }
 RtLayer >> drawsSinceInvalidation [
 
 	^ drawsSinceInvalidation
 ]
 
-{
-	#category : #'accessing - metrics',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'accessing - metrics' }
 RtLayer >> drawsSinceUpdate [
 
 	^ drawsSinceUpdate
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtLayer >> extent [
 
 	^ extent
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtLayer >> extent: anObject [
 
 	extent := anObject
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtLayer >> incrementDrawCounter [
 
 	drawsSinceUpdate := drawsSinceUpdate + 1.
@@ -230,10 +169,7 @@ RtLayer >> incrementDrawCounter [
 	drawsCount := drawsCount + 1
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #initialization }
 RtLayer >> initialize [
 
 	super initialize.
@@ -244,10 +180,7 @@ RtLayer >> initialize [
 	needsCaching := false
 ]
 
-{
-	#category : #caching,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #caching }
 RtLayer >> invalidateCache [
 
 	parent ifNotNil: [:p | p invalidateCache].
@@ -255,109 +188,73 @@ RtLayer >> invalidateCache [
 	drawsSinceInvalidation := 0
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtLayer >> isCached [
 
 	^ isCached
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtLayer >> needsCaching [
 
 	^ needsCaching
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtLayer >> needsCaching: anObject [
 
 	needsCaching := anObject
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtLayer >> offset [
 
 	^ offset
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtLayer >> offset: anObject [
 
 	offset := anObject
 ]
 
-{
-	#category : #debugging,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #debugging }
 RtLayer >> open [
 
 	^ self asForm asMorph openInHand
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtLayer >> outerTransform [
 
 	^ outerTransform
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtLayer >> outerTransform: anObject [
 
 	outerTransform := anObject
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtLayer >> parent [
 
 	^ parent
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtLayer >> parent: aLayer [
 
 	parent := aLayer
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtLayer >> transform [
 
 	^ outerTransform composedWithLocal: (Matrix2x3 withOffset: offset)
 ]
 
-{
-	#category : #caching,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #caching }
 RtLayer >> validCache: anImageStore [
 
 	cache := anImageStore.

@@ -5,14 +5,10 @@ Class {
 		'shader',
 		'infoLog'
 	],
-	#category : #'OpenGL-Wrappers-Errors',
-	#commentStamp : ''
+	#category : #'OpenGL-Wrappers-Errors'
 }
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 10/26/2020 17:38'
-}
+{ #category : #'instance creation' }
 GLShaderCompilationFailed class >> shader: glShader infoLog: aString [
 
 	^ self new
@@ -21,46 +17,31 @@ GLShaderCompilationFailed class >> shader: glShader infoLog: aString [
 		yourself
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 17:35'
-}
+{ #category : #accessing }
 GLShaderCompilationFailed >> infoLog [
 
 	^ infoLog
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 17:35'
-}
+{ #category : #accessing }
 GLShaderCompilationFailed >> infoLog: anObject [
 
 	infoLog := anObject
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/27/2020 12:09'
-}
+{ #category : #accessing }
 GLShaderCompilationFailed >> messageText [
 
 	^ messageText ifNil: [infoLog]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 17:34'
-}
+{ #category : #accessing }
 GLShaderCompilationFailed >> shader [
 
 	^ shader
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 17:35'
-}
+{ #category : #accessing }
 GLShaderCompilationFailed >> shader: aGLShader [
 
 	shader := aGLShader

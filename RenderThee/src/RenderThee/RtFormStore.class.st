@@ -4,32 +4,22 @@ Class {
 	#instVars : [
 		'form'
 	],
-	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#category : #'RenderThee-LayerTree'
 }
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtFormStore class >> defaultCanvasClass [
 
 	^ FormCanvas
 ]
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 RtFormStore class >> extent: aPoint [
 
 	^ self form: (Form extent: aPoint depth: Display depth)
 ]
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 RtFormStore class >> form: aForm [
 
 	^ self new
@@ -37,10 +27,7 @@ RtFormStore class >> form: aForm [
 		yourself
 ]
 
-{
-	#category : #textures,
-	#timestamp : 'stlu 11/3/2020 16:00'
-}
+{ #category : #textures }
 RtFormStore >> createGLTexture [
 
 	^ GL2DTexture create
@@ -48,46 +35,31 @@ RtFormStore >> createGLTexture [
 		yourself
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtFormStore >> extent [
 
 	^ form extent
 ]
 
-{
-	#category : #textures,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #textures }
 RtFormStore >> form [
 
 	^ form
 ]
 
-{
-	#category : #textures,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #textures }
 RtFormStore >> form: aForm [
 
 	form := aForm
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtFormStore >> getCanvas [
 
 	^ form getCanvas
 ]
 
-{
-	#category : #textures,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #textures }
 RtFormStore >> glTextureDo: aBlock [
 
 	| tex |

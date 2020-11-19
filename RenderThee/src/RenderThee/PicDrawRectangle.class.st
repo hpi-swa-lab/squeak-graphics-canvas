@@ -1,14 +1,10 @@
 Class {
 	#name : #PicDrawRectangle,
 	#superclass : #PicDrawShape,
-	#category : #'RenderThee-Pictures',
-	#commentStamp : ''
+	#category : #'RenderThee-Pictures'
 }
 
-{
-	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #drawing }
 PicDrawRectangle >> drawOn: aCanvas [
 
 	aCanvas

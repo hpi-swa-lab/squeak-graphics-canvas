@@ -1,23 +1,16 @@
 Class {
 	#name : #GLDispatchIndirectBuffer,
 	#superclass : #GLBuffer,
-	#category : #'OpenGL-Wrappers-Buffers',
-	#commentStamp : ''
+	#category : #'OpenGL-Wrappers-Buffers'
 }
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 11:59'
-}
+{ #category : #binding }
 GLDispatchIndirectBuffer class >> bindingEnum [
 
 	^ GL_DISPATCH_INDIRECT_BUFFER_BINDING
 ]
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:02'
-}
+{ #category : #binding }
 GLDispatchIndirectBuffer class >> target [
 
 	^ GL_DISPATCH_INDIRECT_BUFFER

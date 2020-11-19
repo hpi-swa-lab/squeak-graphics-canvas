@@ -1,5 +1,5 @@
 Class {
-	#name : #GLCanvasRectangleProgram,
+	#name : #GLCanvasOvalProgram,
 	#superclass : #GLStaticProgram,
 	#instVars : [
 		'mvpLocation',
@@ -14,13 +14,13 @@ Class {
 }
 
 { #category : #'shader code' }
-GLCanvasRectangleProgram class >> attributes [
+GLCanvasOvalProgram class >> attributes [
 
 	^ #('aPos')
 ]
 
 { #category : #'shader code' }
-GLCanvasRectangleProgram class >> fragmentShader [
+GLCanvasOvalProgram class >> fragmentShader [
 
 	^ '#version 330 core
 out vec4 FragColor;
@@ -33,23 +33,29 @@ uniform vec4 borderColor;
 uniform float borderWidth;
 
 void main() {
-	vec2 b = vec2(borderWidth, borderWidth);
+	vec2 relativePos = (point - extent / 2.0) / extent * 2.0;
+	if (dot(relativePos, relativePos) > 1.0)
+	{
+		discard;
+	}
+	
+	vec2 relativeInnerPos = (point - extent / 2.0) / (extent / 2.0 - vec2(borderWidth, borderWidth));
 	FragColor = mix(
 		color,
 		borderColor,
-		float(any(lessThan(point, b)) || any(greaterThan(point, extent - b)))
+		float(dot(relativeInnerPos, relativeInnerPos) > 1.0)
 	);
 }' withUnixLineEndings
 ]
 
 { #category : #'shader code' }
-GLCanvasRectangleProgram class >> uniforms [
+GLCanvasOvalProgram class >> uniforms [
 
 	^ #('mvp' 'extent' 'color' 'borderColor' 'borderWidth')
 ]
 
 { #category : #'shader code' }
-GLCanvasRectangleProgram class >> vertexShader [
+GLCanvasOvalProgram class >> vertexShader [
     ^'#version 330 core
 in vec2 aPos;
 
@@ -66,37 +72,37 @@ void main()
 ]
 
 { #category : #generated }
-GLCanvasRectangleProgram >> aPosLocation [
+GLCanvasOvalProgram >> aPosLocation [
 
 	^ aPosLocation
 ]
 
 { #category : #generated }
-GLCanvasRectangleProgram >> borderColor: anObject [
+GLCanvasOvalProgram >> borderColor: anObject [
 
 	self uniform: borderColorLocation value: anObject
 ]
 
 { #category : #generated }
-GLCanvasRectangleProgram >> borderWidth: anObject [
+GLCanvasOvalProgram >> borderWidth: anObject [
 
 	self uniform: borderWidthLocation value: anObject
 ]
 
 { #category : #generated }
-GLCanvasRectangleProgram >> color: anObject [
+GLCanvasOvalProgram >> color: anObject [
 
 	self uniform: colorLocation value: anObject
 ]
 
 { #category : #generated }
-GLCanvasRectangleProgram >> extent: anObject [
+GLCanvasOvalProgram >> extent: anObject [
 
 	self uniform: extentLocation value: anObject
 ]
 
 { #category : #generated }
-GLCanvasRectangleProgram >> initializeLocations [
+GLCanvasOvalProgram >> initializeLocations [
 
 	super initializeLocations.
 	
@@ -110,7 +116,7 @@ GLCanvasRectangleProgram >> initializeLocations [
 ]
 
 { #category : #generated }
-GLCanvasRectangleProgram >> mvp: anObject [
+GLCanvasOvalProgram >> mvp: anObject [
 
 	self uniform: mvpLocation value: anObject
 ]

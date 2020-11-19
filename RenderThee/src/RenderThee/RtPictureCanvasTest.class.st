@@ -1,14 +1,10 @@
 Class {
 	#name : #RtPictureCanvasTest,
 	#superclass : #RtCanvasTest,
-	#category : #'RenderThee-Tests',
-	#commentStamp : ''
+	#category : #'RenderThee-Tests'
 }
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #initialization }
 RtPictureCanvasTest >> createCanvas [
 
 	^ PicPictureCanvas new

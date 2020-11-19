@@ -6,14 +6,10 @@ Class {
 		'color',
 		'paragraph'
 	],
-	#category : #'RenderThee-Pictures',
-	#commentStamp : ''
+	#category : #'RenderThee-Pictures'
 }
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 PicDrawParagraph class >> paragraph: aParagraph bounds: aRectangle color: aColor [
 
 	^ self new
@@ -23,46 +19,31 @@ PicDrawParagraph class >> paragraph: aParagraph bounds: aRectangle color: aColor
 		yourself
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawParagraph >> bounds [
 
 	^ bounds
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawParagraph >> bounds: anObject [
 
 	bounds := anObject.
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawParagraph >> color [
 
 	^ color
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawParagraph >> color: anObject [
 
 	color := anObject.
 ]
 
-{
-	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #drawing }
 PicDrawParagraph >> drawOn: aCanvas [
 
 	aCanvas
@@ -71,28 +52,19 @@ PicDrawParagraph >> drawOn: aCanvas [
 		color: color
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawParagraph >> estimatedBounds [
 
 	^ bounds
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawParagraph >> paragraph [
 
 	^ paragraph
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawParagraph >> paragraph: anObject [
 
 	paragraph := anObject.

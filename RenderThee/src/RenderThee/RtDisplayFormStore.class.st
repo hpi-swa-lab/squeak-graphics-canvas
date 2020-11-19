@@ -1,33 +1,23 @@
 Class {
 	#name : #RtDisplayFormStore,
 	#superclass : #RtFormStore,
-	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#category : #'RenderThee-LayerTree'
 }
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtDisplayFormStore >> form: aForm [
 
 	"do nothing"
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #initialization }
 RtDisplayFormStore >> initialize [
 
 	super initialize.
 	form := Display
 ]
 
-{
-	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #drawing }
 RtDisplayFormStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
 	| isDeferred canvas |
@@ -39,10 +29,7 @@ RtDisplayFormStore >> prepareForDrawingOn: aCanvas during: aBlock [
 		forceDisplayUpdate
 ]
 
-{
-	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #drawing }
 RtDisplayFormStore >> tryDeferringUpdates [
 
 	PasteUpMorph disableDeferredUpdates ifTrue: [^ false].

@@ -9,33 +9,23 @@ Class {
 		'renderer',
 		'store'
 	],
-	#category : #'RenderThee-Demo',
-	#commentStamp : 'stlu 8/21/2020 14:39'
+	#category : #'RenderThee-Demo'
 }
 
-{
-	#category : #deletion,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #deletion }
 RtMirrorControl >> delete [
 
 	self glLibrary isSymbol ifFalse: [self glLibrary context destroy].
 	super delete
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 12:21'
-}
+{ #category : #accessing }
 RtMirrorControl >> glLibrary [
 
 	^ store framebuffer library
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #initialization }
 RtMirrorControl >> initialize [
 
 	super initialize.
@@ -45,29 +35,20 @@ RtMirrorControl >> initialize [
 	renderer := RtLayerTreeRenderer morph: ActiveWorld imageStore: store
 ]
 
-{
-	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #testing }
 RtMirrorControl >> shouldClose [
 
 	^ self glLibrary isSymbol or: [self glLibrary shouldClose]
 ]
 
-{
-	#category : #stepping,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #stepping }
 RtMirrorControl >> step [
 
 	self shouldClose ifTrue: [^ self delete].
 	renderer renderFrame
 ]
 
-{
-	#category : #stepping,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #stepping }
 RtMirrorControl >> stepTime [
 
    ^ 16

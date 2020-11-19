@@ -4,32 +4,22 @@ Class {
 	#instVars : [
 		'source'
 	],
-	#category : #'OpenGL-Wrappers-Shaders',
-	#commentStamp : ''
+	#category : #'OpenGL-Wrappers-Shaders'
 }
 
-{
-	#category : #allocation,
-	#timestamp : 'stlu 11/3/2020 15:40'
-}
+{ #category : #allocation }
 GLShader class >> allocate [
 
 	^ GL createShader: self type
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/28/2020 17:51'
-}
+{ #category : #accessing }
 GLShader class >> type [
 
 	self subclassResponsibility
 ]
 
-{
-	#category : #compilation,
-	#timestamp : 'stlu 11/3/2020 15:39'
-}
+{ #category : #compilation }
 GLShader >> compile [
 
 	GL compileShader: id.
@@ -37,37 +27,25 @@ GLShader >> compile [
 		self errorCompilationFailed]
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/3/2020 15:39'
-}
+{ #category : #'initialize-release' }
 GLShader >> delete [
 
 	GL deleteShader: id
 ]
 
-{
-	#category : #compilation,
-	#timestamp : 'stlu 10/28/2020 13:27'
-}
+{ #category : #compilation }
 GLShader >> errorCompilationFailed [
 
 	^ (GLShaderCompilationFailed shader: self infoLog: self getInfoLog) signal
 ]
 
-{
-	#category : #testing,
-	#timestamp : 'stlu 11/3/2020 15:39'
-}
+{ #category : #testing }
 GLShader >> exists [
 
 	^ GL isShader: id
 ]
 
-{
-	#category : #'accessing uncached',
-	#timestamp : 'stlu 11/3/2020 15:39'
-}
+{ #category : #'accessing uncached' }
 GLShader >> getAttribute: attributeName [
 
 	IntegerArray new: 1 during: [:result |
@@ -75,10 +53,7 @@ GLShader >> getAttribute: attributeName [
 		^ result first]
 ]
 
-{
-	#category : #compilation,
-	#timestamp : 'stlu 11/16/2020 13:51'
-}
+{ #category : #compilation }
 GLShader >> getInfoLog [
 
 	ByteArray new: self getInfoLogLength during: [:result |
@@ -86,19 +61,13 @@ GLShader >> getInfoLog [
 		^ result allButLast "remove null-terminator" utf8Decoded withSqueakLineEndings]
 ]
 
-{
-	#category : #compilation,
-	#timestamp : 'stlu 10/28/2020 14:40'
-}
+{ #category : #compilation }
 GLShader >> getInfoLogLength [
 
 	^ self getAttribute: GL_INFO_LOG_LENGTH
 ]
 
-{
-	#category : #'accessing uncached',
-	#timestamp : 'stlu 11/16/2020 13:50'
-}
+{ #category : #'accessing uncached' }
 GLShader >> getSource [
 
 	ByteArray new: self getSourceLength during: [:result |
@@ -106,65 +75,44 @@ GLShader >> getSource [
 		^ result allButLast "remove null-terminator" utf8Decoded withSqueakLineEndings]
 ]
 
-{
-	#category : #'accessing uncached',
-	#timestamp : 'stlu 10/28/2020 14:42'
-}
+{ #category : #'accessing uncached' }
 GLShader >> getSourceLength [
 
 	^ self getAttribute: GL_SHADER_SOURCE_LENGTH
 ]
 
-{
-	#category : #'accessing uncached',
-	#timestamp : 'stlu 10/26/2020 13:07'
-}
+{ #category : #'accessing uncached' }
 GLShader >> getType [
 
 	^ self getAttribute: GL_SHADER_TYPE
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 10/28/2020 17:58'
-}
+{ #category : #'initialize-release' }
 GLShader >> initialize [
 
 	super initialize.
 	source := ''
 ]
 
-{
-	#category : #testing,
-	#timestamp : 'stlu 10/26/2020 13:53'
-}
+{ #category : #testing }
 GLShader >> isFlaggedForDeletion [
 
 	^ (self getAttribute: GL_DELETE_STATUS) = GL_TRUE
 ]
 
-{
-	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:16'
-}
+{ #category : #testing }
 GLShader >> isShader [
 
 	^ true
 ]
 
-{
-	#category : #testing,
-	#timestamp : 'stlu 10/26/2020 13:55'
-}
+{ #category : #testing }
 GLShader >> lastCompilationSucceeded [
 
 	^ (self getAttribute: GL_COMPILE_STATUS) = GL_TRUE
 ]
 
-{
-	#category : #'accessing uncached',
-	#timestamp : 'stlu 11/16/2020 13:50'
-}
+{ #category : #'accessing uncached' }
 GLShader >> setSource: aString [
 
 	| utf8Bytes |
@@ -183,29 +131,20 @@ GLShader >> setSource: aString [
 		GL shaderSource: id with: 1 with: arrayOfStrings with: nil]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 13:00'
-}
+{ #category : #accessing }
 GLShader >> source [
 
 	^ source
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 13:51'
-}
+{ #category : #accessing }
 GLShader >> source: aString [
 
 	self setSource: aString.
 	source := aString
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/28/2020 17:51'
-}
+{ #category : #accessing }
 GLShader >> type [
 
 	^ self class type

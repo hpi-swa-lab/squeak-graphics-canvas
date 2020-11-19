@@ -1,23 +1,16 @@
 Class {
 	#name : #GL2DMultisampleTexture,
 	#superclass : #GLTexture,
-	#category : #'OpenGL-Wrappers-Textures',
-	#commentStamp : ''
+	#category : #'OpenGL-Wrappers-Textures'
 }
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 00:38'
-}
+{ #category : #binding }
 GL2DMultisampleTexture class >> bindingEnum [
 
 	^ GL_TEXTURE_BINDING_2D_MULTISAMPLE
 ]
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 00:43'
-}
+{ #category : #binding }
 GL2DMultisampleTexture class >> target [
 
 	^ GL_TEXTURE_2D_MULTISAMPLE

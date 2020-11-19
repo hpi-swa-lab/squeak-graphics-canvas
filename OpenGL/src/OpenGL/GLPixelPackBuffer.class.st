@@ -1,23 +1,16 @@
 Class {
 	#name : #GLPixelPackBuffer,
 	#superclass : #GLBuffer,
-	#category : #'OpenGL-Wrappers-Buffers',
-	#commentStamp : ''
+	#category : #'OpenGL-Wrappers-Buffers'
 }
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:00'
-}
+{ #category : #binding }
 GLPixelPackBuffer class >> bindingEnum [
 
 	^ GL_PIXEL_PACK_BUFFER_BINDING
 ]
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:03'
-}
+{ #category : #binding }
 GLPixelPackBuffer class >> target [
 
 	^ GL_PIXEL_PACK_BUFFER

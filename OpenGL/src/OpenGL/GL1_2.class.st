@@ -1,451 +1,315 @@
 Class {
 	#name : #'GL1_2',
 	#superclass : #'GL1_1',
-	#category : #'OpenGL-API-GL',
-	#commentStamp : ''
+	#category : #'OpenGL-API-GL'
 }
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GL1_2 class >> majorVersion [
 
 	^ 1
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GL1_2 class >> minorVersion [
 
 	^ 2
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 14:50'
-}
+{ #category : #accessing }
 GL1_2 class >> versionNumber [
 
 	^ 12
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> ALIASED_LINE_WIDTH_RANGE [
 
 	<generated>
 	^ GL_ALIASED_LINE_WIDTH_RANGE
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> ALIASED_POINT_SIZE_RANGE [
 
 	<generated>
 	^ GL_ALIASED_POINT_SIZE_RANGE
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> BGR [
 
 	<generated>
 	^ GL_BGR
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> BGRA [
 
 	<generated>
 	^ GL_BGRA
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> CLAMP_TO_EDGE [
 
 	<generated>
 	^ GL_CLAMP_TO_EDGE
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> LIGHT_MODEL_COLOR_CONTROL [
 
 	<generated>
 	^ GL_LIGHT_MODEL_COLOR_CONTROL
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> MAX_3D_TEXTURE_SIZE [
 
 	<generated>
 	^ GL_MAX_3D_TEXTURE_SIZE
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> MAX_ELEMENTS_INDICES [
 
 	<generated>
 	^ GL_MAX_ELEMENTS_INDICES
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> MAX_ELEMENTS_VERTICES [
 
 	<generated>
 	^ GL_MAX_ELEMENTS_VERTICES
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> PACK_IMAGE_HEIGHT [
 
 	<generated>
 	^ GL_PACK_IMAGE_HEIGHT
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> PACK_SKIP_IMAGES [
 
 	<generated>
 	^ GL_PACK_SKIP_IMAGES
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> PROXY_TEXTURE_3D [
 
 	<generated>
 	^ GL_PROXY_TEXTURE_3D
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> RESCALE_NORMAL [
 
 	<generated>
 	^ GL_RESCALE_NORMAL
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> SEPARATE_SPECULAR_COLOR [
 
 	<generated>
 	^ GL_SEPARATE_SPECULAR_COLOR
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> SINGLE_COLOR [
 
 	<generated>
 	^ GL_SINGLE_COLOR
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> SMOOTH_LINE_WIDTH_GRANULARITY [
 
 	<generated>
 	^ GL_SMOOTH_LINE_WIDTH_GRANULARITY
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> SMOOTH_LINE_WIDTH_RANGE [
 
 	<generated>
 	^ GL_SMOOTH_LINE_WIDTH_RANGE
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> SMOOTH_POINT_SIZE_GRANULARITY [
 
 	<generated>
 	^ GL_SMOOTH_POINT_SIZE_GRANULARITY
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> SMOOTH_POINT_SIZE_RANGE [
 
 	<generated>
 	^ GL_SMOOTH_POINT_SIZE_RANGE
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> TEXTURE_3D [
 
 	<generated>
 	^ GL_TEXTURE_3D
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> TEXTURE_BASE_LEVEL [
 
 	<generated>
 	^ GL_TEXTURE_BASE_LEVEL
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> TEXTURE_BINDING_3D [
 
 	<generated>
 	^ GL_TEXTURE_BINDING_3D
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> TEXTURE_DEPTH [
 
 	<generated>
 	^ GL_TEXTURE_DEPTH
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> TEXTURE_MAX_LEVEL [
 
 	<generated>
 	^ GL_TEXTURE_MAX_LEVEL
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> TEXTURE_MAX_LOD [
 
 	<generated>
 	^ GL_TEXTURE_MAX_LOD
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> TEXTURE_MIN_LOD [
 
 	<generated>
 	^ GL_TEXTURE_MIN_LOD
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> TEXTURE_WRAP_R [
 
 	<generated>
 	^ GL_TEXTURE_WRAP_R
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> UNPACK_IMAGE_HEIGHT [
 
 	<generated>
 	^ GL_UNPACK_IMAGE_HEIGHT
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> UNPACK_SKIP_IMAGES [
 
 	<generated>
 	^ GL_UNPACK_SKIP_IMAGES
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> UNSIGNED_BYTE_2_3_3_REV [
 
 	<generated>
 	^ GL_UNSIGNED_BYTE_2_3_3_REV
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> UNSIGNED_BYTE_3_3_2 [
 
 	<generated>
 	^ GL_UNSIGNED_BYTE_3_3_2
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> UNSIGNED_INT_10_10_10_2 [
 
 	<generated>
 	^ GL_UNSIGNED_INT_10_10_10_2
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> UNSIGNED_INT_2_10_10_10_REV [
 
 	<generated>
 	^ GL_UNSIGNED_INT_2_10_10_10_REV
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> UNSIGNED_INT_8_8_8_8 [
 
 	<generated>
 	^ GL_UNSIGNED_INT_8_8_8_8
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> UNSIGNED_INT_8_8_8_8_REV [
 
 	<generated>
 	^ GL_UNSIGNED_INT_8_8_8_8_REV
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> UNSIGNED_SHORT_1_5_5_5_REV [
 
 	<generated>
 	^ GL_UNSIGNED_SHORT_1_5_5_5_REV
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> UNSIGNED_SHORT_4_4_4_4 [
 
 	<generated>
 	^ GL_UNSIGNED_SHORT_4_4_4_4
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> UNSIGNED_SHORT_4_4_4_4_REV [
 
 	<generated>
 	^ GL_UNSIGNED_SHORT_4_4_4_4_REV
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> UNSIGNED_SHORT_5_5_5_1 [
 
 	<generated>
 	^ GL_UNSIGNED_SHORT_5_5_5_1
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> UNSIGNED_SHORT_5_6_5 [
 
 	<generated>
 	^ GL_UNSIGNED_SHORT_5_6_5
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'constants - required' }
 GL1_2 >> UNSIGNED_SHORT_5_6_5_REV [
 
 	<generated>
 	^ GL_UNSIGNED_SHORT_5_6_5_REV
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'api - required' }
 GL1_2 >> copyTexSubImage3D: target with: level with: xoffset with: yoffset with: zoffset with: x with: y with: width with: height [
 
 	<generated>
@@ -453,10 +317,7 @@ GL1_2 >> copyTexSubImage3D: target with: level with: xoffset with: yoffset with:
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'api - required' }
 GL1_2 >> drawRangeElements: mode with: start with: end with: count with: type with: indices [
 
 	<generated>
@@ -464,10 +325,7 @@ GL1_2 >> drawRangeElements: mode with: start with: end with: count with: type wi
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'api - required' }
 GL1_2 >> texImage3D: target with: level with: internalformat with: width with: height with: depth with: border with: format with: type with: pixels [
 
 	<generated>
@@ -475,10 +333,7 @@ GL1_2 >> texImage3D: target with: level with: internalformat with: width with: h
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
-}
+{ #category : #'api - required' }
 GL1_2 >> texSubImage3D: target with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth with: format with: type with: pixels [
 
 	<generated>

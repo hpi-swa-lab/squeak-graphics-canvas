@@ -11,41 +11,28 @@ Class {
 		'clipRect',
 		'groupStack'
 	],
-	#category : #'RenderThee-Pictures',
-	#commentStamp : 'stlu 8/21/2020 14:19'
+	#category : #'RenderThee-Pictures'
 }
 
-{
-	#category : #examples,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #examples }
 PicPictureCanvas class >> example1 [
 
 	(PicPictureCanvas new fullDrawMorph: ActiveWorld) getPicture open
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicPictureCanvas >> addCommand: aCommand [
 	"Adds aCommand to the currently active group (at the front-most z-coordinate)."
 	self currentGroup addChild: aCommand
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicPictureCanvas >> clear [
 	"Forget all contents of the current picture except for the current group stack."
 	groupStack do: [:group | group removeAllChildren]
 ]
 
-{
-	#category : #'drawing-support',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-support' }
 PicPictureCanvas >> clipBy: aRectangle during: aBlock [
 
 	(aRectangle containsRect: clipRect) ifTrue: [^ aBlock value: self].
@@ -54,10 +41,7 @@ PicPictureCanvas >> clipBy: aRectangle during: aBlock [
 		self group: (PicClip rect: aRectangle) during: aBlock]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicPictureCanvas >> clipRect [
 	"Answers the rectangle by which all incoming draw commands are clipped.
 	Intersection of all clipping rectangles active in the current scope.
@@ -65,19 +49,13 @@ PicPictureCanvas >> clipRect [
 	^ clipRect
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicPictureCanvas >> clipRect: anObject [
 
 	clipRect := anObject
 ]
 
-{
-	#category : #'scoped state',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'scoped state' }
 PicPictureCanvas >> clipRect: aRectangle during: aBlock [
 	"Scoped setter for `clipRect` variable."
 	| previousClipRect |
@@ -87,19 +65,13 @@ PicPictureCanvas >> clipRect: aRectangle during: aBlock [
 	clipRect := previousClipRect
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicPictureCanvas >> currentGroup [
 	"Answers the PicGroup to which all draw commands are currently added."
 	^ groupStack last
 ]
 
-{
-	#category : #'drawing-polygons',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-polygons' }
 PicPictureCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderColor: bc [
 
 	self
@@ -108,10 +80,7 @@ PicPictureCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderCo
 		borderWidth: bw borderColor: bc
 ]
 
-{
-	#category : #'drawing-polygons',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-polygons' }
 PicPictureCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	(self isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle) ifTrue: [^ self].
@@ -124,10 +93,7 @@ PicPictureCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBo
 							yourself)
 ]
 
-{
-	#category : #'drawing-polygons',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-polygons' }
 PicPictureCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: bw borderColor: bc [
 
 	vertices ifEmpty: [^ self].
@@ -137,10 +103,7 @@ PicPictureCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: bw 
 		borderStyle: (SimpleBorder width: bw color: bc)
 ]
 
-{
-	#category : #'drawing-text',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-text' }
 PicPictureCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c [
 
 	self addCommand: (PicDrawString new
@@ -153,10 +116,7 @@ PicPictureCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect 
 							yourself)
 ]
 
-{
-	#category : #'drawing-ovals',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-ovals' }
 PicPictureCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderColor [
 
 	self
@@ -166,10 +126,7 @@ PicPictureCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: b
 		borderColor: borderColor
 ]
 
-{
-	#category : #'drawing-ovals',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-ovals' }
 PicPictureCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	(self isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle) ifTrue: [^ self].
@@ -182,10 +139,7 @@ PicPictureCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderStyle: aBor
 							yourself)
 ]
 
-{
-	#category : #'drawing-ovals',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-ovals' }
 PicPictureCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderWidth: bw borderColor: bc [
 
 	self
@@ -194,10 +148,7 @@ PicPictureCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderWidth: bw b
 		borderStyle: (SimpleBorder width: bw color: bc)
 ]
 
-{
-	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-rectangles' }
 PicPictureCanvas >> fillRectangle: aRectangle fillStyle: aFillStyle [
 
 	self
@@ -206,10 +157,7 @@ PicPictureCanvas >> fillRectangle: aRectangle fillStyle: aFillStyle [
 		borderStyle: (SimpleBorder width: 0)
 ]
 
-{
-	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-rectangles' }
 PicPictureCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
 
 	self
@@ -218,10 +166,7 @@ PicPictureCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: b
 		borderStyle: (SimpleBorder width: borderWidth color: borderColor)
 ]
 
-{
-	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-rectangles' }
 PicPictureCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	(self isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle) ifTrue: [^ self].
@@ -234,10 +179,7 @@ PicPictureCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle bord
 							yourself)
 ]
 
-{
-	#category : #'drawing-rounded rectangles',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-rounded rectangles' }
 PicPictureCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	(self isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle) ifTrue: [^ self].
@@ -251,10 +193,7 @@ PicPictureCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillS
 							yourself)
 ]
 
-{
-	#category : #'drawing-rounded rectangles',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-rounded rectangles' }
 PicPictureCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: fillStyle borderWidth: bw borderColor: bc [
 
 	self
@@ -264,10 +203,7 @@ PicPictureCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillS
 		borderStyle: (SimpleBorder width: bw color: bc)
 ]
 
-{
-	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-rectangles' }
 PicPictureCanvas >> frameRectangle: aRectangle borderStyle: aBorderStyle [
 
 	self
@@ -276,10 +212,7 @@ PicPictureCanvas >> frameRectangle: aRectangle borderStyle: aBorderStyle [
 		borderStyle: aBorderStyle
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicPictureCanvas >> getPicture [
 	"Answers the picture as drawn up to this point. Returns an object of kind PicGroup.
 	Creates a copy of all groups still on the group stack before combining them into the picture, so that the canvas can continue to be used afterwards."
@@ -295,10 +228,7 @@ PicPictureCanvas >> getPicture [
 	^ child
 ]
 
-{
-	#category : #'scoped state',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'scoped state' }
 PicPictureCanvas >> group: aGroup during: aBlock [
 	"Scoped setter for `group` variable."
 	| group |
@@ -309,10 +239,7 @@ PicPictureCanvas >> group: aGroup during: aBlock [
 		self addCommand: group]
 ]
 
-{
-	#category : #'drawing-images',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-images' }
 PicPictureCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
 	self addCommand: (PicDrawImage new
@@ -323,10 +250,7 @@ PicPictureCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 							yourself)
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #initialization }
 PicPictureCanvas >> initialize [
 
 	super initialize.
@@ -335,10 +259,7 @@ PicPictureCanvas >> initialize [
 	clipRect := Rectangle infinite
 ]
 
-{
-	#category : #helpers,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #helpers }
 PicPictureCanvas >> isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	aBorderStyle isTransparent ifFalse: [^ false].
@@ -346,10 +267,7 @@ PicPictureCanvas >> isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle
 	^ true
 ]
 
-{
-	#category : #'drawing-lines',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-lines' }
 PicPictureCanvas >> line: from to: to width: width color: color [
 
 	self addCommand: (PicDrawLine new
@@ -360,19 +278,13 @@ PicPictureCanvas >> line: from to: to width: width color: color [
 							yourself)
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicPictureCanvas >> origin [
 	"Answers the global coordinate of the currently active local origin."
 	^ (transform localPointToGlobal: 0@0) truncated
 ]
 
-{
-	#category : #'drawing-text',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-text' }
 PicPictureCanvas >> paragraph: aParagraph bounds: aRectangle color: aColor [
 
 	self addCommand: (PicDrawParagraph new
@@ -382,49 +294,34 @@ PicPictureCanvas >> paragraph: aParagraph bounds: aRectangle color: aColor [
 							yourself)
 ]
 
-{
-	#category : #'drawing-support',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-support' }
 PicPictureCanvas >> preserveStateDuring: aBlock [
 
 	self unsupported: #preserveStateDuring.
 	aBlock value: self
 ]
 
-{
-	#category : #'drawing-images',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-images' }
 PicPictureCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor [
 
 	self flag: #todo.
 	self unsupported: #'stencil:at:sourceRect:color:'
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicPictureCanvas >> transform [
 	"Answers the Matrix2x3 by which all drawing commands are currently transformed.
 	Multiplication of all transforms active in the current scope."
 	^ transform
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicPictureCanvas >> transform: anObject [
 
 	transform := anObject
 ]
 
-{
-	#category : #'scoped state',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'scoped state' }
 PicPictureCanvas >> transform: aTransform during: aBlock [
 	"Scoped setter for `transform` variable."
 	| previousTransform |
@@ -434,10 +331,7 @@ PicPictureCanvas >> transform: aTransform during: aBlock [
 	transform := previousTransform
 ]
 
-{
-	#category : #'drawing-support',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-support' }
 PicPictureCanvas >> transformBy: aTransform during: aBlock [
 
 	| transformedClip matrix2x3 |
@@ -450,10 +344,7 @@ PicPictureCanvas >> transformBy: aTransform during: aBlock [
 			self group: (PicTransform matrix: matrix2x3) during: aBlock]]
 ]
 
-{
-	#category : #'drawing-support',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-support' }
 PicPictureCanvas >> translateBy: aPoint during: aBlock [
 
 	self
@@ -461,19 +352,13 @@ PicPictureCanvas >> translateBy: aPoint during: aBlock [
 		during: aBlock
 ]
 
-{
-	#category : #private,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #private }
 PicPictureCanvas >> unsupported: selector [
 	"Called whenever a currently not supported message of the Canvas interface is sent."
 	self addCommand: (PicUnsupported type: selector)
 ]
 
-{
-	#category : #'drawing-images',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-images' }
 PicPictureCanvas >> warpImage: aForm transform: aTransform at: extraOffset sourceRect: sourceRect cellSize: cellSize [
 
 	self flag: #todo.

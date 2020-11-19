@@ -20,23 +20,16 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#category : #'RenderThee-LayerTree'
 }
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtFramebufferStore class >> defaultCanvasClass [
 
 	^ GLCanvas
 ]
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 RtFramebufferStore class >> extent: aPoint [
 
 	^ self new
@@ -44,10 +37,7 @@ RtFramebufferStore class >> extent: aPoint [
 		yourself
 ]
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 RtFramebufferStore class >> form: aForm [
 
 	^ self new
@@ -55,110 +45,74 @@ RtFramebufferStore class >> form: aForm [
 		yourself
 ]
 
-{
-	#category : #'gl calls',
-	#timestamp : 'stlu 11/3/2020 15:43'
-}
+{ #category : #'gl calls' }
 RtFramebufferStore >> clear [
 
 	framebuffer boundDuring: [
 		framebuffer library clear: GL_COLOR_BUFFER_BIT]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtFramebufferStore >> displayTransform [
 
 	^ Matrix4x4 identity
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtFramebufferStore >> extent [
 
 	^ extent
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtFramebufferStore >> extent: aPoint [
 
 	extent := aPoint
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'initialize-release' }
 RtFramebufferStore >> extentChanged [
 
 	self notYetImplemented
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtFramebufferStore >> form [
 
 	^ texture asForm
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtFramebufferStore >> framebuffer [
 
 	^ framebuffer
 ]
 
-{
-	#category : #private,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #private }
 RtFramebufferStore >> getCanvas [
 
 	^ self class defaultCanvasClass extent: extent framebuffer: framebuffer
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 12:21'
-}
+{ #category : #accessing }
 RtFramebufferStore >> glLibrary [
 
 	^ framebuffer ifNotNil: [framebuffer library] ifNil: [texture library]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtFramebufferStore >> glTextureDo: aBlock [
 
 	aBlock value: texture
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/3/2020 15:43'
-}
+{ #category : #'initialize-release' }
 RtFramebufferStore >> initializeGLSettings [
 
 	self glLibrary clearColor: 1 with: 1 with: 1 with: 0
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 10/28/2020 23:48'
-}
+{ #category : #'initialize-release' }
 RtFramebufferStore >> initializeWithExtent: aPoint [
 
 	extent := aPoint.
@@ -170,10 +124,7 @@ RtFramebufferStore >> initializeWithExtent: aPoint [
 	framebuffer texture2D: texture
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 10/28/2020 23:48'
-}
+{ #category : #'initialize-release' }
 RtFramebufferStore >> initializeWithForm: aForm [
 
 	extent := aForm extent.
@@ -181,10 +132,7 @@ RtFramebufferStore >> initializeWithForm: aForm [
 	texture image: aForm
 ]
 
-{
-	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #drawing }
 RtFramebufferStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
 	aCanvas
@@ -197,10 +145,7 @@ RtFramebufferStore >> prepareForDrawingOn: aCanvas during: aBlock [
 					aBlock cull: c]]]
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'initialize-release' }
 RtFramebufferStore >> release [
 
 	super release.
@@ -209,19 +154,13 @@ RtFramebufferStore >> release [
 	
 ]
 
-{
-	#category : #'gl calls',
-	#timestamp : 'stlu 11/3/2020 15:44'
-}
+{ #category : #'gl calls' }
 RtFramebufferStore >> resetViewport [
 
 	self glLibrary setViewport: (0 @ 0 extent: extent)
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtFramebufferStore >> texture [
 
 	^ texture

@@ -4,14 +4,10 @@ Class {
 	#instVars : [
 		'rotationSpeed'
 	],
-	#category : #'RenderThee-Demo-SpaceGame',
-	#commentStamp : ''
+	#category : #'RenderThee-Demo-SpaceGame'
 }
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #initialization }
 SgSolarSystem >> createPlanet: planetID [
 
 	| morph id form |
@@ -23,10 +19,7 @@ SgSolarSystem >> createPlanet: planetID [
 	^ morph
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #initialization }
 SgSolarSystem >> createPlanets: numPlanets [
 
 	| planets radius maxPlanetExtent |
@@ -43,10 +36,7 @@ SgSolarSystem >> createPlanets: numPlanets [
 		self addMorph: planet]
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #initialization }
 SgSolarSystem >> initialize [
 
 	super initialize.
@@ -54,28 +44,19 @@ SgSolarSystem >> initialize [
 	self color: Color transparent
 ]
 
-{
-	#category : #'repaint boundary',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'repaint boundary' }
 SgSolarSystem >> isRepaintBoundary [
 
 	^ true
 ]
 
-{
-	#category : #'stepping and presenter',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'stepping and presenter' }
 SgSolarSystem >> step [
 
 	self rotationDegrees: self rotationDegrees + rotationSpeed
 ]
 
-{
-	#category : #'stepping and presenter',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'stepping and presenter' }
 SgSolarSystem >> stepTime [
 
 	^ 0

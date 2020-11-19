@@ -4,32 +4,22 @@ Open me! `SgSpaceGame open`
 Class {
 	#name : #SgSpaceGame,
 	#superclass : #Morph,
-	#category : #'RenderThee-Demo-SpaceGame',
-	#commentStamp : 'stlu 8/21/2020 14:43'
+	#category : #'RenderThee-Demo-SpaceGame'
 }
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 SgSpaceGame class >> open [
 
 	self new open
 ]
 
-{
-	#category : #'repaint boundary',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'repaint boundary' }
 SgSpaceGame >> isRepaintBoundary [
 
 	^ true
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #initialization }
 SgSpaceGame >> open [
 	
 	| background solarSystem |

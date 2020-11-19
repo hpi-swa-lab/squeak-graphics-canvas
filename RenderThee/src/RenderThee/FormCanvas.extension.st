@@ -1,18 +1,12 @@
 Extension { #name : #FormCanvas }
 
-{
-	#category : #'*RenderThee-LayerTree',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'*RenderThee-LayerTree' }
 FormCanvas >> imageStoreClass [
 
 	^ RtFormStore
 ]
 
-{
-	#category : #'*RenderThee-LayerTree',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'*RenderThee-LayerTree' }
 FormCanvas >> paintImageStore: anImageStore sourceRect: aRectangle [
 
 	self
@@ -21,10 +15,7 @@ FormCanvas >> paintImageStore: anImageStore sourceRect: aRectangle [
 		sourceRect: aRectangle
 ]
 
-{
-	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'*RenderThee' }
 FormCanvas >> transformBy: aDisplayTransform during: aBlock [
 
 	self
@@ -33,10 +24,7 @@ FormCanvas >> transformBy: aDisplayTransform during: aBlock [
 		during: aBlock smoothing: 1
 ]
 
-{
-	#category : #'*RenderThee-override',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'*RenderThee-override' }
 FormCanvas >> translateBy: aPoint clippingTo: aRectangle during: aBlock [
 
 	aBlock value: (self copyOffset:aPoint clipRect: aRectangle)

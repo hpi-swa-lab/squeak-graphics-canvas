@@ -5,51 +5,35 @@ Class {
 		'children',
 		'morph'
 	],
-	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#category : #'RenderThee-LayerTree'
 }
 
-{
-	#category : #visiting,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #visiting }
 RtGroupLayer >> accept: aVisitor [
 
 	^ aVisitor visitGroupLayer: self
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtGroupLayer >> addChild: aLayer [
 
 	children add: aLayer.
 	aLayer parent: self
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtGroupLayer >> children [
 
 	^ children
 ]
 
-{
-	#category : #compositing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #compositing }
 RtGroupLayer >> drawLayerOn: aCanvas [
 
 	aCanvas drawGroupLayer: self
 ]
 
-{
-	#category : #compositing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #compositing }
 RtGroupLayer >> drawOn: aCanvas [
 
 	children do: [:childLayer |
@@ -59,47 +43,32 @@ RtGroupLayer >> drawOn: aCanvas [
 			during: [:c | c drawLayer: childLayer]]
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #initialization }
 RtGroupLayer >> initialize [
 
 	super initialize.
 	children := OrderedCollection new
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtGroupLayer >> layers [
 
 	^ children
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtGroupLayer >> morph [
 
 	^ morph
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtGroupLayer >> morph: anObject [
 
 	morph := anObject
 ]
 
-{
-	#category : #printing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #printing }
 RtGroupLayer >> printOn: aStream [
 
 	super printOn: aStream.
@@ -114,20 +83,14 @@ RtGroupLayer >> printOn: aStream [
 		m printOn: aStream]
 ]
 
-{
-	#category : #caching,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #caching }
 RtGroupLayer >> removeAllCaches [
 
 	cache := nil.
 	children do: [:child | child removeAllCaches]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtGroupLayer >> removeAllChildren [
 
 	children do: [ :child |
@@ -136,10 +99,7 @@ RtGroupLayer >> removeAllChildren [
 	children reset
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #initialization }
 RtGroupLayer >> update [
 
 	self removeAllChildren.

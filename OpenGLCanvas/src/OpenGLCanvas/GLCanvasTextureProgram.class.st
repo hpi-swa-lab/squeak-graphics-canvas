@@ -10,14 +10,10 @@ Class {
 		'aTexCoordsLocation',
 		'colorLocation'
 	],
-	#category : #'OpenGLCanvas-Core',
-	#commentStamp : ''
+	#category : #'OpenGLCanvas-Core'
 }
 
-{
-	#category : #'shader code',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'shader code' }
 GLCanvasTextureProgram class >> fragmentShader [
 	^'#version 330 core
 out vec4 FragColor;
@@ -33,10 +29,7 @@ void main() {
 }' withUnixLineEndings
 ]
 
-{
-	#category : #'shader code',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'shader code' }
 GLCanvasTextureProgram class >> vertexShader [
     ^'#version 330 core
 in vec2 aPos;
@@ -54,55 +47,37 @@ void main()
 }' withUnixLineEndings
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLCanvasTextureProgram >> aPosLocation [
 
 	^ aPosLocation
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLCanvasTextureProgram >> aTexCoordsLocation [
 
 	^ aTexCoordsLocation
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLCanvasTextureProgram >> color: aColor [
 
 	self uniform: colorLocation value: aColor
 ]
 
-{
-	#category : #'uniform accessing',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'uniform accessing' }
 GLCanvasTextureProgram >> image: anObject [
 
 	self uniform: imageLocation value: anObject
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLCanvasTextureProgram >> imageLocation [
 
 	^ imageLocation
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/3/2020 15:35'
-}
+{ #category : #initialization }
 GLCanvasTextureProgram >> initializeLocations [
 
 	super initializeLocations.
@@ -122,37 +97,25 @@ GLCanvasTextureProgram >> initializeLocations [
 	self assert: aTexCoordsLocation >= 0
 ]
 
-{
-	#category : #'uniform accessing',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'uniform accessing' }
 GLCanvasTextureProgram >> mvp: anObject [
 
 	self uniform: mvpLocation value: anObject
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLCanvasTextureProgram >> mvpLocation [
 
 	^ mvpLocation
 ]
 
-{
-	#category : #'uniform accessing',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'uniform accessing' }
 GLCanvasTextureProgram >> sourceExtent: aPoint [
 
 	self uniform: sourceExtentLocation value: aPoint
 ]
 
-{
-	#category : #'uniform accessing',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'uniform accessing' }
 GLCanvasTextureProgram >> sourcePosition: aPoint [
 
 	self uniform: sourcePositionLocation value: aPoint

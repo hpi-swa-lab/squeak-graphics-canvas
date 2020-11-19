@@ -12,24 +12,17 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'OpenGL-Context',
-	#commentStamp : ''
+	#category : #'OpenGL-Context'
 }
 
-{
-	#category : #'class initialization',
-	#timestamp : 'stlu 10/26/2020 10:19'
-}
+{ #category : #'class initialization' }
 GLContext class >> initialize [
 
 	Smalltalk addToShutDownList: self.
 	Smalltalk addToStartUpList: self
 ]
 
-{
-	#category : #'system startup',
-	#timestamp : 'stlu 11/13/2020 14:17'
-}
+{ #category : #'system startup' }
 GLContext class >> shutDown: quitting [
 
 	self flag: #todo. "Disabled for now. Not 100% necessary, mostly best practice."
@@ -38,10 +31,7 @@ GLContext class >> shutDown: quitting [
 			each destroy]]"
 ]
 
-{
-	#category : #'system startup',
-	#timestamp : 'stlu 11/13/2020 14:22'
-}
+{ #category : #'system startup' }
 GLContext class >> startUp: resuming [
 
 	resuming ifTrue: [
@@ -50,74 +40,50 @@ GLContext class >> startUp: resuming [
 			each becomeForward: #DestroyedGLContext]]
 ]
 
-{
-	#category : #activation,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #activation }
 GLContext >> activate [
 
 	self subclassResponsibility
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:51'
-}
+{ #category : #accessing }
 GLContext >> api [
 
 	^ api
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:51'
-}
+{ #category : #accessing }
 GLContext >> api: anObject [
 
 	api := anObject
 ]
 
-{
-	#category : #activation,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #activation }
 GLContext >> deactivate [
 
 	self subclassResponsibility
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 10/26/2020 12:06'
-}
+{ #category : #'initialize-release' }
 GLContext >> destroy [
 
 	resources cleanUp
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 10/16/2020 12:25'
-}
+{ #category : #'initialize-release' }
 GLContext >> endFrame [
 
 	self flag: #todo. "Not sure this belongs here"
 	self subclassResponsibility
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:51'
-}
+{ #category : #accessing }
 GLContext >> extensions [
 
 	^ extensions
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/12/2020 15:30'
-}
+{ #category : #'initialize-release' }
 GLContext >> initialize [
 
 	resources := GLResources new.
@@ -125,10 +91,7 @@ GLContext >> initialize [
 	self initializeContextState
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/12/2020 15:30'
-}
+{ #category : #'initialize-release' }
 GLContext >> initializeContextState [
 
 	self assert: api isSymbol.
@@ -136,10 +99,7 @@ GLContext >> initializeContextState [
 	extensions := library getExtensions
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/16/2020 01:23'
-}
+{ #category : #'initialize-release' }
 GLContext >> initializeLibrary [
 
 	| libraryClass |
@@ -161,75 +121,51 @@ GLContext >> initializeLibrary [
 	self deactivate
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 12:29'
-}
+{ #category : #accessing }
 GLContext >> library [
 
 	self flag: #todo. "Stub for now until context refactoring."
 	^ GL3_3 context: self
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:51'
-}
+{ #category : #accessing }
 GLContext >> profile [
 
 	^ profile
 ]
 
-{
-	#category : #resources,
-	#timestamp : 'stlu 10/26/2020 12:30'
-}
+{ #category : #resources }
 GLContext >> registerObject: glObject [
 
 	resources objects add: glObject
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLContext >> resources [
 
 	^ resources
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:51'
-}
+{ #category : #accessing }
 GLContext >> resources: anObject [
 
 	resources := anObject
 ]
 
-{
-	#category : #testing,
-	#timestamp : 'stlu 10/16/2020 12:23'
-}
+{ #category : #testing }
 GLContext >> shouldClose [
 
 	self flag: #todo. "This does not belong here"
 	self subclassResponsibility
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 10/16/2020 12:24'
-}
+{ #category : #'initialize-release' }
 GLContext >> swapBuffers [
 
 	self subclassResponsibility
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:51'
-}
+{ #category : #accessing }
 GLContext >> version [
 
 	^ version

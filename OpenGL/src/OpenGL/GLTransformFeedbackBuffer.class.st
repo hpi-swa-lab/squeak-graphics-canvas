@@ -1,23 +1,16 @@
 Class {
 	#name : #GLTransformFeedbackBuffer,
 	#superclass : #GLBuffer,
-	#category : #'OpenGL-Wrappers-Buffers',
-	#commentStamp : ''
+	#category : #'OpenGL-Wrappers-Buffers'
 }
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:01'
-}
+{ #category : #binding }
 GLTransformFeedbackBuffer class >> bindingEnum [
 
 	^ GL_TRANSFORM_FEEDBACK_BUFFER_BINDING
 ]
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:04'
-}
+{ #category : #binding }
 GLTransformFeedbackBuffer class >> target [
 
 	^ GL_TRANSFORM_FEEDBACK_BUFFER

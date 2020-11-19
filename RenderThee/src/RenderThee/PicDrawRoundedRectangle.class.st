@@ -4,14 +4,10 @@ Class {
 	#instVars : [
 		'radius'
 	],
-	#category : #'RenderThee-Pictures',
-	#commentStamp : ''
+	#category : #'RenderThee-Pictures'
 }
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 PicDrawRoundedRectangle class >> bounds: aRectangle radius: cornerRadius fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	^ self new
@@ -22,10 +18,7 @@ PicDrawRoundedRectangle class >> bounds: aRectangle radius: cornerRadius fillSty
 		yourself
 ]
 
-{
-	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #drawing }
 PicDrawRoundedRectangle >> drawOn: aCanvas [
 
 	aCanvas
@@ -35,19 +28,13 @@ PicDrawRoundedRectangle >> drawOn: aCanvas [
 		borderStyle: borderStyle
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawRoundedRectangle >> radius [
 
 	^ radius
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawRoundedRectangle >> radius: anObject [
 
 	radius := anObject.

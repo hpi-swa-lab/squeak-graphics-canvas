@@ -1,14 +1,10 @@
 Class {
 	#name : #RtLayerTreeRenderer,
 	#superclass : #RtMorphicRenderer,
-	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#category : #'RenderThee-LayerTree'
 }
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 RtLayerTreeRenderer class >> morph: aMorph imageStore: anImageStore [
 
 	^ self basicNew
@@ -16,10 +12,7 @@ RtLayerTreeRenderer class >> morph: aMorph imageStore: anImageStore [
 		yourself
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'initialize-release' }
 RtLayerTreeRenderer >> initializeWithMorph: aMorph imageStore: anImageStore [
 
 	super initializeWithMorph: aMorph imageStore: anImageStore.
@@ -30,19 +23,13 @@ RtLayerTreeRenderer >> initializeWithMorph: aMorph imageStore: anImageStore [
 	RtRecordingCanvas record: morph
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'initialize-release' }
 RtLayerTreeRenderer >> release [
 
 	imageStore glLibrary context destroy
 ]
 
-{
-	#category : #rendering,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #rendering }
 RtLayerTreeRenderer >> renderFrame [
 
 	imageStore canvasDo: [:canvas |

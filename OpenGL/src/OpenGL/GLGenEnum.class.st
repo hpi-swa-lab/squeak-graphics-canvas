@@ -5,14 +5,10 @@ Class {
 		'value',
 		'groups'
 	],
-	#category : #'OpenGL-Generation',
-	#commentStamp : ''
+	#category : #'OpenGL-Generation'
 }
 
-{
-	#category : #helpers,
-	#timestamp : 'stlu 10/31/2020 23:06'
-}
+{ #category : #helpers }
 GLGenEnum class >> convertEnumValueString: aString [
 
 	^ (aString beginsWith: '0x')
@@ -22,10 +18,7 @@ GLGenEnum class >> convertEnumValueString: aString [
 		ifFalse: [aString asNumber]
 ]
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/1/2020 20:12'
-}
+{ #category : #'instance creation' }
 GLGenEnum class >> registry: registry tag: enumTag [
 
 	^ self new
@@ -33,29 +26,20 @@ GLGenEnum class >> registry: registry tag: enumTag [
 		yourself
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:19'
-}
+{ #category : #accessing }
 GLGenEnum >> groups [
 
 	^ groups
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 10/31/2020 22:59'
-}
+{ #category : #initialization }
 GLGenEnum >> initialize [
 
 	super initialize.
 	groups := OrderedCollection new
 ]
 
-{
-	#category : #printing,
-	#timestamp : 'stlu 11/1/2020 20:58'
-}
+{ #category : #printing }
 GLGenEnum >> printOn: aStream [
 
 	aStream
@@ -64,10 +48,7 @@ GLGenEnum >> printOn: aStream [
 	value printOn: aStream
 ]
 
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:12'
-}
+{ #category : #generation }
 GLGenEnum >> printRemoveSourceInProfile: aSymbol [
 
 	^ String streamContents: [:stream |
@@ -85,10 +66,7 @@ GLGenEnum >> printRemoveSourceInProfile: aSymbol [
 			nextPutAll: self selector]
 ]
 
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:15'
-}
+{ #category : #generation }
 GLGenEnum >> printRequireSourceInProfile: aSymbol [
 
 	^ String streamContents: [:stream |
@@ -106,10 +84,7 @@ GLGenEnum >> printRequireSourceInProfile: aSymbol [
 			nextPutAll: name]
 ]
 
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:09'
-}
+{ #category : #generation }
 GLGenEnum >> printSharedRemoveSource [
 
 	^ String streamContents: [:stream |
@@ -121,10 +96,7 @@ GLGenEnum >> printSharedRemoveSource [
 			nextPutAll: '^ self versionError']
 ]
 
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:08'
-}
+{ #category : #generation }
 GLGenEnum >> printSharedRequireSource [
 
 	^ String streamContents: [:stream |
@@ -137,10 +109,7 @@ GLGenEnum >> printSharedRequireSource [
 			nextPutAll: name]
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/1/2020 21:30'
-}
+{ #category : #initialization }
 GLGenEnum >> registry: registry tag: enumTag [
 
 	name := enumTag attributeAt: #name.
@@ -156,10 +125,7 @@ GLGenEnum >> registry: registry tag: enumTag [
 	registry addEnum: self
 ]
 
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:43'
-}
+{ #category : #generation }
 GLGenEnum >> selector [
 
 	^ name fourth canBeIdentifierInitial
@@ -167,10 +133,7 @@ GLGenEnum >> selector [
 		ifFalse: [name]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 23:00'
-}
+{ #category : #accessing }
 GLGenEnum >> value [
 
 	^ value

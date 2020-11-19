@@ -1,23 +1,16 @@
 Class {
 	#name : #GLParameterBuffer,
 	#superclass : #GLBuffer,
-	#category : #'OpenGL-Wrappers-Buffers',
-	#commentStamp : ''
+	#category : #'OpenGL-Wrappers-Buffers'
 }
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:59'
-}
+{ #category : #binding }
 GLParameterBuffer class >> bindingEnum [
 
 	^ GL_PARAMETER_BUFFER_BINDING
 ]
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:58'
-}
+{ #category : #binding }
 GLParameterBuffer class >> target [
 
 	^ GL_PARAMETER_BUFFER

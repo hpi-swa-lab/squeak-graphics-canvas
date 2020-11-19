@@ -6,23 +6,20 @@ Class {
 		'shaders',
 		'userData'
 	],
-	#category : #'OpenGL-Context',
-	#commentStamp : ''
+	#category : #'OpenGL-Context'
 }
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 10/26/2020 12:06'
-}
+{ #category : #'initialize-release' }
 GLResources >> cleanUp [
 
-	objects do: [:object | object cleanUp]
+	objects do: [:object | object cleanUp].
+	
+	shaders removeAll.
+	objects removeAll.
+	userData removeAll.
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 12:20'
-}
+{ #category : #accessing }
 GLResources >> getShaderProgram: aClass library: aLibrary [
 	
 	aLibrary assertIsCurrent.
@@ -31,10 +28,7 @@ GLResources >> getShaderProgram: aClass library: aLibrary [
 		ifAbsentPut: [aClass create]
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'initialize-release' }
 GLResources >> initialize [
 
 	super initialize.
@@ -44,28 +38,19 @@ GLResources >> initialize [
 	userData := Dictionary new.
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 11:39'
-}
+{ #category : #accessing }
 GLResources >> objects [
 
 	^ objects
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 11:39'
-}
+{ #category : #accessing }
 GLResources >> shaders [
 
 	^ shaders
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLResources >> userData [
 	^ userData
 ]

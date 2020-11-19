@@ -4,23 +4,16 @@ Class {
 	#instVars : [
 		'renderer'
 	],
-	#category : #'OpenGL-Context',
-	#commentStamp : ''
+	#category : #'OpenGL-Context'
 }
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/9/2020 18:26'
-}
+{ #category : #'instance creation' }
 B3DContext class >> bounds: aRectangle [
 
 	^ self renderer: (B3DRenderer bounds: aRectangle)
 ]
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/9/2020 18:24'
-}
+{ #category : #'instance creation' }
 B3DContext class >> renderer: aRenderer [
 
 	^ self basicNew
@@ -29,83 +22,56 @@ B3DContext class >> renderer: aRenderer [
 		yourself
 ]
 
-{
-	#category : #activation,
-	#timestamp : 'stlu 11/9/2020 15:43'
-}
+{ #category : #activation }
 B3DContext >> activate [
 
 	renderer activate
 ]
 
-{
-	#category : #activation,
-	#timestamp : 'stlu 11/9/2020 15:44'
-}
+{ #category : #activation }
 B3DContext >> deactivate [
 
 	renderer deactivate
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/9/2020 15:43'
-}
+{ #category : #'initialize-release' }
 B3DContext >> destroy [
 
 	super destroy.
 	renderer destroy
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/9/2020 15:42'
-}
+{ #category : #'initialize-release' }
 B3DContext >> endFrame [
 	"do nothing"
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/11/2020 13:12'
-}
+{ #category : #'initialize-release' }
 B3DContext >> initialize [
 
 	api := #gl.
 	super initialize
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 15:41'
-}
+{ #category : #accessing }
 B3DContext >> renderer [
 
 	^ renderer
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 15:41'
-}
+{ #category : #accessing }
 B3DContext >> renderer: anObject [
 
 	renderer := anObject
 ]
 
-{
-	#category : #testing,
-	#timestamp : 'stlu 11/9/2020 15:42'
-}
+{ #category : #testing }
 B3DContext >> shouldClose [
 
 	^ false
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/9/2020 15:41'
-}
+{ #category : #'initialize-release' }
 B3DContext >> swapBuffers [
 
 	renderer swapBuffers

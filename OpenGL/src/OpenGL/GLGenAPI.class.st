@@ -4,14 +4,10 @@ Class {
 	#instVars : [
 		'features'
 	],
-	#category : #'OpenGL-Generation',
-	#commentStamp : ''
+	#category : #'OpenGL-Generation'
 }
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/2/2020 14:08'
-}
+{ #category : #'instance creation' }
 GLGenAPI class >> registry: registry name: aString [
 
 	^ registry apis
@@ -19,28 +15,19 @@ GLGenAPI class >> registry: registry name: aString [
 		ifAbsentPut: [self new name: aString]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 14:03'
-}
+{ #category : #accessing }
 GLGenAPI >> addFeature: feature [
 
 	features add: feature
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:20'
-}
+{ #category : #accessing }
 GLGenAPI >> features [
 
 	^ features
 ]
 
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/12/2020 14:58'
-}
+{ #category : #generation }
 GLGenAPI >> generate [
 
 	| rootClass |
@@ -53,20 +40,14 @@ GLGenAPI >> generate [
 		feature generateIn: featureClass]
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/2/2020 14:02'
-}
+{ #category : #initialization }
 GLGenAPI >> initialize [
 
 	super initialize.
 	features := OrderedCollection new
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:34'
-}
+{ #category : #accessing }
 GLGenAPI >> lastFeature [
 
 	^ features
@@ -74,10 +55,7 @@ GLGenAPI >> lastFeature [
 		ifEmpty: [nil]
 ]
 
-{
-	#category : #printing,
-	#timestamp : 'stlu 11/2/2020 14:26'
-}
+{ #category : #printing }
 GLGenAPI >> printOn: aStream [
 
 	aStream

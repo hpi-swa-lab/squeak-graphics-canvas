@@ -1,27 +1,18 @@
 Extension { #name : #Morph }
 
-{
-	#category : #'*RenderThee-override',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'*RenderThee-override' }
 Morph >> addedMorph: aMorph [
 	"Notify the receiver that the given morph was just added."
 
 ]
 
-{
-	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'*RenderThee' }
 Morph >> groupLayer [
 
 	^ self valueOfProperty: #groupLayer
 ]
 
-{
-	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'*RenderThee' }
 Morph >> groupLayer: aGroupLayer [
 
 	^ self
@@ -29,19 +20,13 @@ Morph >> groupLayer: aGroupLayer [
 		toValue: aGroupLayer
 ]
 
-{
-	#category : #'*RenderThee-override',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'*RenderThee-override' }
 Morph >> invalidRect: damageRect [
 
 	^ self invalidRect: damageRect from: self
 ]
 
-{
-	#category : #'*RenderThee-override',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'*RenderThee-override' }
 Morph >> invalidRect: aRectangle from: aMorph [
 	| damageRect |
 	self visible ifFalse: [ ^self ].
@@ -56,19 +41,13 @@ Morph >> invalidRect: aRectangle from: aMorph [
 	owner ifNotNil: [owner invalidRect: damageRect from: self].
 ]
 
-{
-	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'*RenderThee' }
 Morph >> isRepaintBoundary [
 
 	^ false
 ]
 
-{
-	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'*RenderThee' }
 Morph >> markNeedsRedraw [
 
 	"assumption (for now): own repaint boundary == own texture"
@@ -77,29 +56,20 @@ Morph >> markNeedsRedraw [
 		ifFalse: [self owner ifNotNil: [:o | o markNeedsRedraw]]
 ]
 
-{
-	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'*RenderThee' }
 Morph >> morph: aMorph changedIndexFrom: oldIndex to: newIndex [
 	"Notify the receiver that aMorph was just moved from oldIndex to newIndex"
 	self markNeedsRedraw
 ]
 
-{
-	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/2/2020 13:13'
-}
+{ #category : #'*RenderThee' }
 Morph >> morphsToRedraw [
 
 	^ (self valueOfProperty: #morphsToRedraw) ifNil: [
 		self morphsToRedraw: WeakSet new]
 ]
 
-{
-	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'*RenderThee' }
 Morph >> morphsToRedraw: aSet [
 
 	self
@@ -108,10 +78,7 @@ Morph >> morphsToRedraw: aSet [
 	^ aSet
 ]
 
-{
-	#category : #'*RenderThee-override',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'*RenderThee-override' }
 Morph >> privateAddMorph: aMorph atIndex: index [
 
 	| oldIndex myWorld itsWorld oldOwner |
@@ -153,18 +120,12 @@ Morph >> privateAddMorph: aMorph atIndex: index [
 
 ]
 
-{
-	#category : #'*RenderThee-override',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'*RenderThee-override' }
 Morph >> removedMorph: aMorph [
 	"Notify the receiver that aMorph was just removed from its children"
 ]
 
-{
-	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'*RenderThee' }
 Morph >> updateLayer [
 
 	self assert: self isRepaintBoundary.
@@ -172,10 +133,7 @@ Morph >> updateLayer [
 	self groupLayer ifNotNil: [:layer | layer update]
 ]
 
-{
-	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'*RenderThee' }
 Morph >> updateLayerTree [
 
 	self morphsToRedraw do: [:morph | morph updateLayer].

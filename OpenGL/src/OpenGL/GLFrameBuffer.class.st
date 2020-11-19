@@ -17,14 +17,10 @@ Class {
 	#instVars : [
 		'colorAttachment0'
 	],
-	#category : #'OpenGL-Wrappers-Framebuffers',
-	#commentStamp : ''
+	#category : #'OpenGL-Wrappers-Framebuffers'
 }
 
-{
-	#category : #allocation,
-	#timestamp : 'stlu 11/3/2020 15:36'
-}
+{ #category : #allocation }
 GLFrameBuffer class >> allocate [
 
 	IntegerArray new: 1 during: [:ids |
@@ -32,37 +28,25 @@ GLFrameBuffer class >> allocate [
 		^ ids first]
 ]
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 15:15'
-}
+{ #category : #binding }
 GLFrameBuffer class >> bind: id to: target [
 
 	GL bindFramebuffer: target with: id
 ]
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 16:50'
-}
+{ #category : #binding }
 GLFrameBuffer class >> currentDrawBinding [
 
 	^ GL getIntegerParameter: GL_DRAW_FRAMEBUFFER_BINDING
 ]
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 16:50'
-}
+{ #category : #binding }
 GLFrameBuffer class >> currentReadBinding [
 
 	^ GL getIntegerParameter: GL_READ_FRAMEBUFFER_BINDING
 ]
 
-{
-	#category : #converting,
-	#timestamp : 'stlu 11/3/2020 15:35'
-}
+{ #category : #converting }
 GLFrameBuffer >> asFormOfExtent: aPoint [
 
 	| data |
@@ -86,37 +70,25 @@ GLFrameBuffer >> asFormOfExtent: aPoint [
 				yourself)
 ]
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 17:04'
-}
+{ #category : #binding }
 GLFrameBuffer >> bind [
 	"binds to both read and draw"
 	self class bind: id to: GL_FRAMEBUFFER
 ]
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 17:04'
-}
+{ #category : #binding }
 GLFrameBuffer >> bindToDraw [
 
 	self class bind: id to: GL_DRAW_FRAMEBUFFER
 ]
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 17:04'
-}
+{ #category : #binding }
 GLFrameBuffer >> bindToRead [
 
 	self class bind: id to: GL_READ_FRAMEBUFFER
 ]
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 17:31'
-}
+{ #category : #binding }
 GLFrameBuffer >> boundDuring: aBlock [
 
 	| previousRead previousDraw |
@@ -134,10 +106,7 @@ GLFrameBuffer >> boundDuring: aBlock [
 				self class bind: previousRead to: GL_READ_FRAMEBUFFER]]
 ]
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 17:28'
-}
+{ #category : #binding }
 GLFrameBuffer >> boundToDrawDuring: aBlock [
 
 	| previousID |
@@ -149,10 +118,7 @@ GLFrameBuffer >> boundToDrawDuring: aBlock [
 		self class bind: previousID to: GL_DRAW_BUFFER]
 ]
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 17:28'
-}
+{ #category : #binding }
 GLFrameBuffer >> boundToReadDuring: aBlock [
 
 	| previousID |
@@ -164,46 +130,31 @@ GLFrameBuffer >> boundToReadDuring: aBlock [
 		self class bind: previousID to: GL_READ_BUFFER]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 12:27'
-}
+{ #category : #accessing }
 GLFrameBuffer >> colorAttachment0 [
 
 	^ colorAttachment0
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/3/2020 15:35'
-}
+{ #category : #'initialize-release' }
 GLFrameBuffer >> delete [
 	
 	GL deleteFramebuffers: 1 with: (IntegerArray with: id).
 ]
 
-{
-	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:16'
-}
+{ #category : #testing }
 GLFrameBuffer >> isFrameBuffer [
 
 	^ true
 ]
 
-{
-	#category : #attachments,
-	#timestamp : 'stlu 10/26/2020 12:26'
-}
+{ #category : #attachments }
 GLFrameBuffer >> texture2D: aTexture [
 
 	self texture2D: aTexture attachment: GL_COLOR_ATTACHMENT0
 ]
 
-{
-	#category : #attachments,
-	#timestamp : 'stlu 11/3/2020 15:36'
-}
+{ #category : #attachments }
 GLFrameBuffer >> texture2D: aTexture attachment: anAttachment [
 	
 	self boundDuring: [

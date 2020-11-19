@@ -7,14 +7,10 @@ Class {
 		'sourceRect',
 		'combinationRule'
 	],
-	#category : #'RenderThee-Pictures',
-	#commentStamp : ''
+	#category : #'RenderThee-Pictures'
 }
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 PicDrawImage class >> form: aForm origin: aPoint sourceRect: aRectangle rule: anInteger [
 
 	^ self new
@@ -25,28 +21,19 @@ PicDrawImage class >> form: aForm origin: aPoint sourceRect: aRectangle rule: an
 		yourself
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawImage >> combinationRule [
 
 	^ combinationRule
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawImage >> combinationRule: anObject [
 
 	combinationRule := anObject
 ]
 
-{
-	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #drawing }
 PicDrawImage >> drawOn: aCanvas [
 
 	aCanvas
@@ -56,64 +43,43 @@ PicDrawImage >> drawOn: aCanvas [
 		rule: combinationRule
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawImage >> estimatedBounds [
 
 	^ origin extent: sourceRect extent
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawImage >> form [
 
 	^ form
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawImage >> form: anObject [
 
 	form := anObject.
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawImage >> origin [
 
 	^ origin
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawImage >> origin: anObject [
 
 	origin := anObject.
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawImage >> sourceRect [
 
 	^ sourceRect
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicDrawImage >> sourceRect: anObject [
 
 	sourceRect := anObject.

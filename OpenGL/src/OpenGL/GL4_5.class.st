@@ -1,421 +1,294 @@
 Class {
 	#name : #'GL4_5',
 	#superclass : #'GL4_4',
-	#category : #'OpenGL-API-GL',
-	#commentStamp : ''
+	#category : #'OpenGL-API-GL'
 }
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GL4_5 class >> majorVersion [
 
 	^ 4
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GL4_5 class >> minorVersion [
 
 	^ 5
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 14:53'
-}
+{ #category : #accessing }
 GL4_5 class >> versionNumber [
 
 	^ 45
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> BACK [
 
 	<generated>
 	^ GL_BACK
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> CLIP_DEPTH_MODE [
 
 	<generated>
 	^ GL_CLIP_DEPTH_MODE
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> CLIP_ORIGIN [
 
 	<generated>
 	^ GL_CLIP_ORIGIN
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> CONTEXT_FLAG_ROBUST_ACCESS_BIT [
 
 	<generated>
 	^ GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> CONTEXT_LOST [
 
 	<generated>
 	^ GL_CONTEXT_LOST
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> CONTEXT_RELEASE_BEHAVIOR [
 
 	<generated>
 	^ GL_CONTEXT_RELEASE_BEHAVIOR
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> CONTEXT_RELEASE_BEHAVIOR_FLUSH [
 
 	<generated>
 	^ GL_CONTEXT_RELEASE_BEHAVIOR_FLUSH
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> GUILTY_CONTEXT_RESET [
 
 	<generated>
 	^ GL_GUILTY_CONTEXT_RESET
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> INNOCENT_CONTEXT_RESET [
 
 	<generated>
 	^ GL_INNOCENT_CONTEXT_RESET
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> LOSE_CONTEXT_ON_RESET [
 
 	<generated>
 	^ GL_LOSE_CONTEXT_ON_RESET
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> LOWER_LEFT [
 
 	<generated>
 	^ GL_LOWER_LEFT
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> MAX_COMBINED_CLIP_AND_CULL_DISTANCES [
 
 	<generated>
 	^ GL_MAX_COMBINED_CLIP_AND_CULL_DISTANCES
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> MAX_CULL_DISTANCES [
 
 	<generated>
 	^ GL_MAX_CULL_DISTANCES
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> NEGATIVE_ONE_TO_ONE [
 
 	<generated>
 	^ GL_NEGATIVE_ONE_TO_ONE
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> NONE [
 
 	<generated>
 	^ GL_NONE
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> NO_ERROR [
 
 	<generated>
 	^ GL_NO_ERROR
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> NO_RESET_NOTIFICATION [
 
 	<generated>
 	^ GL_NO_RESET_NOTIFICATION
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> QUERY_BY_REGION_NO_WAIT_INVERTED [
 
 	<generated>
 	^ GL_QUERY_BY_REGION_NO_WAIT_INVERTED
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> QUERY_BY_REGION_WAIT_INVERTED [
 
 	<generated>
 	^ GL_QUERY_BY_REGION_WAIT_INVERTED
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> QUERY_NO_WAIT_INVERTED [
 
 	<generated>
 	^ GL_QUERY_NO_WAIT_INVERTED
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> QUERY_TARGET [
 
 	<generated>
 	^ GL_QUERY_TARGET
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> QUERY_WAIT_INVERTED [
 
 	<generated>
 	^ GL_QUERY_WAIT_INVERTED
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> RESET_NOTIFICATION_STRATEGY [
 
 	<generated>
 	^ GL_RESET_NOTIFICATION_STRATEGY
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> TEXTURE_BINDING_1D [
 
 	<generated>
 	^ GL_TEXTURE_BINDING_1D
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> TEXTURE_BINDING_1D_ARRAY [
 
 	<generated>
 	^ GL_TEXTURE_BINDING_1D_ARRAY
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> TEXTURE_BINDING_2D [
 
 	<generated>
 	^ GL_TEXTURE_BINDING_2D
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> TEXTURE_BINDING_2D_ARRAY [
 
 	<generated>
 	^ GL_TEXTURE_BINDING_2D_ARRAY
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> TEXTURE_BINDING_2D_MULTISAMPLE [
 
 	<generated>
 	^ GL_TEXTURE_BINDING_2D_MULTISAMPLE
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY [
 
 	<generated>
 	^ GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> TEXTURE_BINDING_3D [
 
 	<generated>
 	^ GL_TEXTURE_BINDING_3D
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> TEXTURE_BINDING_BUFFER [
 
 	<generated>
 	^ GL_TEXTURE_BINDING_BUFFER
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> TEXTURE_BINDING_CUBE_MAP [
 
 	<generated>
 	^ GL_TEXTURE_BINDING_CUBE_MAP
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> TEXTURE_BINDING_CUBE_MAP_ARRAY [
 
 	<generated>
 	^ GL_TEXTURE_BINDING_CUBE_MAP_ARRAY
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> TEXTURE_BINDING_RECTANGLE [
 
 	<generated>
 	^ GL_TEXTURE_BINDING_RECTANGLE
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> TEXTURE_TARGET [
 
 	<generated>
 	^ GL_TEXTURE_TARGET
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> UNKNOWN_CONTEXT_RESET [
 
 	<generated>
 	^ GL_UNKNOWN_CONTEXT_RESET
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> UPPER_LEFT [
 
 	<generated>
 	^ GL_UPPER_LEFT
 ]
 
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'constants - required' }
 GL4_5 >> ZERO_TO_ONE [
 
 	<generated>
 	^ GL_ZERO_TO_ONE
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> bindTextureUnit: unit with: texture [
 
 	<generated>
@@ -423,10 +296,7 @@ GL4_5 >> bindTextureUnit: unit with: texture [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> blitNamedFramebuffer: readFramebuffer with: drawFramebuffer with: srcX0 with: srcY0 with: srcX1 with: srcY1 with: dstX0 with: dstY0 with: dstX1 with: dstY1 with: mask with: filter [
 
 	<generated>
@@ -434,10 +304,7 @@ GL4_5 >> blitNamedFramebuffer: readFramebuffer with: drawFramebuffer with: srcX0
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> checkNamedFramebufferStatus: framebuffer with: target [
 
 	<generated>
@@ -445,10 +312,7 @@ GL4_5 >> checkNamedFramebufferStatus: framebuffer with: target [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> clearNamedBufferData: buffer with: internalformat with: format with: type with: data [
 
 	<generated>
@@ -456,10 +320,7 @@ GL4_5 >> clearNamedBufferData: buffer with: internalformat with: format with: ty
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> clearNamedBufferSubData: buffer with: internalformat with: offset with: size with: format with: type with: data [
 
 	<generated>
@@ -467,10 +328,7 @@ GL4_5 >> clearNamedBufferSubData: buffer with: internalformat with: offset with:
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> clearNamedFramebufferfi: framebuffer with: buffer with: drawbuffer with: depth with: stencil [
 
 	<generated>
@@ -478,10 +336,7 @@ GL4_5 >> clearNamedFramebufferfi: framebuffer with: buffer with: drawbuffer with
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> clearNamedFramebufferfv: framebuffer with: buffer with: drawbuffer with: value [
 
 	<generated>
@@ -489,10 +344,7 @@ GL4_5 >> clearNamedFramebufferfv: framebuffer with: buffer with: drawbuffer with
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> clearNamedFramebufferiv: framebuffer with: buffer with: drawbuffer with: value [
 
 	<generated>
@@ -500,10 +352,7 @@ GL4_5 >> clearNamedFramebufferiv: framebuffer with: buffer with: drawbuffer with
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> clearNamedFramebufferuiv: framebuffer with: buffer with: drawbuffer with: value [
 
 	<generated>
@@ -511,10 +360,7 @@ GL4_5 >> clearNamedFramebufferuiv: framebuffer with: buffer with: drawbuffer wit
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> clipControl: origin with: depth [
 
 	<generated>
@@ -522,10 +368,7 @@ GL4_5 >> clipControl: origin with: depth [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> compressedTextureSubImage1D: texture with: level with: xoffset with: width with: format with: imageSize with: data [
 
 	<generated>
@@ -533,10 +376,7 @@ GL4_5 >> compressedTextureSubImage1D: texture with: level with: xoffset with: wi
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> compressedTextureSubImage2D: texture with: level with: xoffset with: yoffset with: width with: height with: format with: imageSize with: data [
 
 	<generated>
@@ -544,10 +384,7 @@ GL4_5 >> compressedTextureSubImage2D: texture with: level with: xoffset with: yo
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> compressedTextureSubImage3D: texture with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth with: format with: imageSize with: data [
 
 	<generated>
@@ -555,10 +392,7 @@ GL4_5 >> compressedTextureSubImage3D: texture with: level with: xoffset with: yo
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> copyNamedBufferSubData: readBuffer with: writeBuffer with: readOffset with: writeOffset with: size [
 
 	<generated>
@@ -566,10 +400,7 @@ GL4_5 >> copyNamedBufferSubData: readBuffer with: writeBuffer with: readOffset w
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> copyTextureSubImage1D: texture with: level with: xoffset with: x with: y with: width [
 
 	<generated>
@@ -577,10 +408,7 @@ GL4_5 >> copyTextureSubImage1D: texture with: level with: xoffset with: x with: 
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> copyTextureSubImage2D: texture with: level with: xoffset with: yoffset with: x with: y with: width with: height [
 
 	<generated>
@@ -588,10 +416,7 @@ GL4_5 >> copyTextureSubImage2D: texture with: level with: xoffset with: yoffset 
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> copyTextureSubImage3D: texture with: level with: xoffset with: yoffset with: zoffset with: x with: y with: width with: height [
 
 	<generated>
@@ -599,10 +424,7 @@ GL4_5 >> copyTextureSubImage3D: texture with: level with: xoffset with: yoffset 
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> createBuffers: n with: buffers [
 
 	<generated>
@@ -610,10 +432,7 @@ GL4_5 >> createBuffers: n with: buffers [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> createFramebuffers: n with: framebuffers [
 
 	<generated>
@@ -621,10 +440,7 @@ GL4_5 >> createFramebuffers: n with: framebuffers [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> createProgramPipelines: n with: pipelines [
 
 	<generated>
@@ -632,10 +448,7 @@ GL4_5 >> createProgramPipelines: n with: pipelines [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> createQueries: target with: n with: ids [
 
 	<generated>
@@ -643,10 +456,7 @@ GL4_5 >> createQueries: target with: n with: ids [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> createRenderbuffers: n with: renderbuffers [
 
 	<generated>
@@ -654,10 +464,7 @@ GL4_5 >> createRenderbuffers: n with: renderbuffers [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> createSamplers: n with: samplers [
 
 	<generated>
@@ -665,10 +472,7 @@ GL4_5 >> createSamplers: n with: samplers [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> createTextures: target with: n with: textures [
 
 	<generated>
@@ -676,10 +480,7 @@ GL4_5 >> createTextures: target with: n with: textures [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> createTransformFeedbacks: n with: ids [
 
 	<generated>
@@ -687,10 +488,7 @@ GL4_5 >> createTransformFeedbacks: n with: ids [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> createVertexArrays: n with: arrays [
 
 	<generated>
@@ -698,10 +496,7 @@ GL4_5 >> createVertexArrays: n with: arrays [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> disableVertexArrayAttrib: vaobj with: index [
 
 	<generated>
@@ -709,10 +504,7 @@ GL4_5 >> disableVertexArrayAttrib: vaobj with: index [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> enableVertexArrayAttrib: vaobj with: index [
 
 	<generated>
@@ -720,10 +512,7 @@ GL4_5 >> enableVertexArrayAttrib: vaobj with: index [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> flushMappedNamedBufferRange: buffer with: offset with: length [
 
 	<generated>
@@ -731,10 +520,7 @@ GL4_5 >> flushMappedNamedBufferRange: buffer with: offset with: length [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> generateTextureMipmap: texture [
 
 	<generated>
@@ -742,10 +528,7 @@ GL4_5 >> generateTextureMipmap: texture [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getCompressedTextureImage: texture with: level with: bufSize with: pixels [
 
 	<generated>
@@ -753,10 +536,7 @@ GL4_5 >> getCompressedTextureImage: texture with: level with: bufSize with: pixe
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getCompressedTextureSubImage: texture with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth with: bufSize with: pixels [
 
 	<generated>
@@ -764,10 +544,7 @@ GL4_5 >> getCompressedTextureSubImage: texture with: level with: xoffset with: y
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getGraphicsResetStatus [
 
 	<generated>
@@ -775,10 +552,7 @@ GL4_5 >> getGraphicsResetStatus [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getNamedBufferParameteri64v: buffer with: pname with: params [
 
 	<generated>
@@ -786,10 +560,7 @@ GL4_5 >> getNamedBufferParameteri64v: buffer with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getNamedBufferParameteriv: buffer with: pname with: params [
 
 	<generated>
@@ -797,10 +568,7 @@ GL4_5 >> getNamedBufferParameteriv: buffer with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getNamedBufferPointerv: buffer with: pname with: params [
 
 	<generated>
@@ -808,10 +576,7 @@ GL4_5 >> getNamedBufferPointerv: buffer with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getNamedBufferSubData: buffer with: offset with: size with: data [
 
 	<generated>
@@ -819,10 +584,7 @@ GL4_5 >> getNamedBufferSubData: buffer with: offset with: size with: data [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getNamedFramebufferAttachmentParameteriv: framebuffer with: attachment with: pname with: params [
 
 	<generated>
@@ -830,10 +592,7 @@ GL4_5 >> getNamedFramebufferAttachmentParameteriv: framebuffer with: attachment 
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getNamedFramebufferParameteriv: framebuffer with: pname with: param [
 
 	<generated>
@@ -841,10 +600,7 @@ GL4_5 >> getNamedFramebufferParameteriv: framebuffer with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getNamedRenderbufferParameteriv: renderbuffer with: pname with: params [
 
 	<generated>
@@ -852,10 +608,7 @@ GL4_5 >> getNamedRenderbufferParameteriv: renderbuffer with: pname with: params 
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getQueryBufferObjecti64v: id with: buffer with: pname with: offset [
 
 	<generated>
@@ -863,10 +616,7 @@ GL4_5 >> getQueryBufferObjecti64v: id with: buffer with: pname with: offset [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getQueryBufferObjectiv: id with: buffer with: pname with: offset [
 
 	<generated>
@@ -874,10 +624,7 @@ GL4_5 >> getQueryBufferObjectiv: id with: buffer with: pname with: offset [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getQueryBufferObjectui64v: id with: buffer with: pname with: offset [
 
 	<generated>
@@ -885,10 +632,7 @@ GL4_5 >> getQueryBufferObjectui64v: id with: buffer with: pname with: offset [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getQueryBufferObjectuiv: id with: buffer with: pname with: offset [
 
 	<generated>
@@ -896,10 +640,7 @@ GL4_5 >> getQueryBufferObjectuiv: id with: buffer with: pname with: offset [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getTextureImage: texture with: level with: format with: type with: bufSize with: pixels [
 
 	<generated>
@@ -907,10 +648,7 @@ GL4_5 >> getTextureImage: texture with: level with: format with: type with: bufS
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getTextureLevelParameterfv: texture with: level with: pname with: params [
 
 	<generated>
@@ -918,10 +656,7 @@ GL4_5 >> getTextureLevelParameterfv: texture with: level with: pname with: param
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getTextureLevelParameteriv: texture with: level with: pname with: params [
 
 	<generated>
@@ -929,10 +664,7 @@ GL4_5 >> getTextureLevelParameteriv: texture with: level with: pname with: param
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getTextureParameterIiv: texture with: pname with: params [
 
 	<generated>
@@ -940,10 +672,7 @@ GL4_5 >> getTextureParameterIiv: texture with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getTextureParameterIuiv: texture with: pname with: params [
 
 	<generated>
@@ -951,10 +680,7 @@ GL4_5 >> getTextureParameterIuiv: texture with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getTextureParameterfv: texture with: pname with: params [
 
 	<generated>
@@ -962,10 +688,7 @@ GL4_5 >> getTextureParameterfv: texture with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getTextureParameteriv: texture with: pname with: params [
 
 	<generated>
@@ -973,10 +696,7 @@ GL4_5 >> getTextureParameteriv: texture with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getTextureSubImage: texture with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth with: format with: type with: bufSize with: pixels [
 
 	<generated>
@@ -984,10 +704,7 @@ GL4_5 >> getTextureSubImage: texture with: level with: xoffset with: yoffset wit
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getTransformFeedbacki64_v: xfb with: pname with: index with: param [
 
 	<generated>
@@ -995,10 +712,7 @@ GL4_5 >> getTransformFeedbacki64_v: xfb with: pname with: index with: param [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getTransformFeedbacki_v: xfb with: pname with: index with: param [
 
 	<generated>
@@ -1006,10 +720,7 @@ GL4_5 >> getTransformFeedbacki_v: xfb with: pname with: index with: param [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getTransformFeedbackiv: xfb with: pname with: param [
 
 	<generated>
@@ -1017,10 +728,7 @@ GL4_5 >> getTransformFeedbackiv: xfb with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getVertexArrayIndexed64iv: vaobj with: index with: pname with: param [
 
 	<generated>
@@ -1028,10 +736,7 @@ GL4_5 >> getVertexArrayIndexed64iv: vaobj with: index with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getVertexArrayIndexediv: vaobj with: index with: pname with: param [
 
 	<generated>
@@ -1039,10 +744,7 @@ GL4_5 >> getVertexArrayIndexediv: vaobj with: index with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getVertexArrayiv: vaobj with: pname with: param [
 
 	<generated>
@@ -1050,20 +752,14 @@ GL4_5 >> getVertexArrayiv: vaobj with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getnColorTable: target with: format with: type with: bufSize with: table [
 	"Note: Only available in #compatibility profile"
 	<apicall: void 'glGetnColorTable' (GLenum GLenum GLenum GLsizei void*)>
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getnCompressedTexImage: target with: lod with: bufSize with: pixels [
 
 	<generated>
@@ -1071,120 +767,84 @@ GL4_5 >> getnCompressedTexImage: target with: lod with: bufSize with: pixels [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getnConvolutionFilter: target with: format with: type with: bufSize with: image [
 	"Note: Only available in #compatibility profile"
 	<apicall: void 'glGetnConvolutionFilter' (GLenum GLenum GLenum GLsizei void*)>
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getnHistogram: target with: reset with: format with: type with: bufSize with: values [
 	"Note: Only available in #compatibility profile"
 	<apicall: void 'glGetnHistogram' (GLenum GLboolean GLenum GLenum GLsizei void*)>
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getnMapdv: target with: query with: bufSize with: v [
 	"Note: Only available in #compatibility profile"
 	<apicall: void 'glGetnMapdv' (GLenum GLenum GLsizei GLdouble*)>
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getnMapfv: target with: query with: bufSize with: v [
 	"Note: Only available in #compatibility profile"
 	<apicall: void 'glGetnMapfv' (GLenum GLenum GLsizei GLfloat*)>
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getnMapiv: target with: query with: bufSize with: v [
 	"Note: Only available in #compatibility profile"
 	<apicall: void 'glGetnMapiv' (GLenum GLenum GLsizei GLint*)>
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getnMinmax: target with: reset with: format with: type with: bufSize with: values [
 	"Note: Only available in #compatibility profile"
 	<apicall: void 'glGetnMinmax' (GLenum GLboolean GLenum GLenum GLsizei void*)>
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getnPixelMapfv: map with: bufSize with: values [
 	"Note: Only available in #compatibility profile"
 	<apicall: void 'glGetnPixelMapfv' (GLenum GLsizei GLfloat*)>
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getnPixelMapuiv: map with: bufSize with: values [
 	"Note: Only available in #compatibility profile"
 	<apicall: void 'glGetnPixelMapuiv' (GLenum GLsizei GLuint*)>
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getnPixelMapusv: map with: bufSize with: values [
 	"Note: Only available in #compatibility profile"
 	<apicall: void 'glGetnPixelMapusv' (GLenum GLsizei GLushort*)>
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getnPolygonStipple: bufSize with: pattern [
 	"Note: Only available in #compatibility profile"
 	<apicall: void 'glGetnPolygonStipple' (GLsizei GLubyte*)>
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getnSeparableFilter: target with: format with: type with: rowBufSize with: row with: columnBufSize with: column with: span [
 	"Note: Only available in #compatibility profile"
 	<apicall: void 'glGetnSeparableFilter' (GLenum GLenum GLenum GLsizei void* GLsizei void* void*)>
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getnTexImage: target with: level with: format with: type with: bufSize with: pixels [
 
 	<generated>
@@ -1192,10 +852,7 @@ GL4_5 >> getnTexImage: target with: level with: format with: type with: bufSize 
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getnUniformdv: program with: location with: bufSize with: params [
 
 	<generated>
@@ -1203,10 +860,7 @@ GL4_5 >> getnUniformdv: program with: location with: bufSize with: params [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getnUniformfv: program with: location with: bufSize with: params [
 
 	<generated>
@@ -1214,10 +868,7 @@ GL4_5 >> getnUniformfv: program with: location with: bufSize with: params [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getnUniformiv: program with: location with: bufSize with: params [
 
 	<generated>
@@ -1225,10 +876,7 @@ GL4_5 >> getnUniformiv: program with: location with: bufSize with: params [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> getnUniformuiv: program with: location with: bufSize with: params [
 
 	<generated>
@@ -1236,10 +884,7 @@ GL4_5 >> getnUniformuiv: program with: location with: bufSize with: params [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> invalidateNamedFramebufferData: framebuffer with: numAttachments with: attachments [
 
 	<generated>
@@ -1247,10 +892,7 @@ GL4_5 >> invalidateNamedFramebufferData: framebuffer with: numAttachments with: 
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> invalidateNamedFramebufferSubData: framebuffer with: numAttachments with: attachments with: x with: y with: width with: height [
 
 	<generated>
@@ -1258,10 +900,7 @@ GL4_5 >> invalidateNamedFramebufferSubData: framebuffer with: numAttachments wit
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> mapNamedBuffer: buffer with: access [
 
 	<generated>
@@ -1269,10 +908,7 @@ GL4_5 >> mapNamedBuffer: buffer with: access [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> mapNamedBufferRange: buffer with: offset with: length with: access [
 
 	<generated>
@@ -1280,10 +916,7 @@ GL4_5 >> mapNamedBufferRange: buffer with: offset with: length with: access [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> memoryBarrierByRegion: barriers [
 
 	<generated>
@@ -1291,10 +924,7 @@ GL4_5 >> memoryBarrierByRegion: barriers [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> namedBufferData: buffer with: size with: data with: usage [
 
 	<generated>
@@ -1302,10 +932,7 @@ GL4_5 >> namedBufferData: buffer with: size with: data with: usage [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> namedBufferStorage: buffer with: size with: data with: flags [
 
 	<generated>
@@ -1313,10 +940,7 @@ GL4_5 >> namedBufferStorage: buffer with: size with: data with: flags [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> namedBufferSubData: buffer with: offset with: size with: data [
 
 	<generated>
@@ -1324,10 +948,7 @@ GL4_5 >> namedBufferSubData: buffer with: offset with: size with: data [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> namedFramebufferDrawBuffer: framebuffer with: buf [
 
 	<generated>
@@ -1335,10 +956,7 @@ GL4_5 >> namedFramebufferDrawBuffer: framebuffer with: buf [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> namedFramebufferDrawBuffers: framebuffer with: n with: bufs [
 
 	<generated>
@@ -1346,10 +964,7 @@ GL4_5 >> namedFramebufferDrawBuffers: framebuffer with: n with: bufs [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> namedFramebufferParameteri: framebuffer with: pname with: param [
 
 	<generated>
@@ -1357,10 +972,7 @@ GL4_5 >> namedFramebufferParameteri: framebuffer with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> namedFramebufferReadBuffer: framebuffer with: src [
 
 	<generated>
@@ -1368,10 +980,7 @@ GL4_5 >> namedFramebufferReadBuffer: framebuffer with: src [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> namedFramebufferRenderbuffer: framebuffer with: attachment with: renderbuffertarget with: renderbuffer [
 
 	<generated>
@@ -1379,10 +988,7 @@ GL4_5 >> namedFramebufferRenderbuffer: framebuffer with: attachment with: render
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> namedFramebufferTexture: framebuffer with: attachment with: texture with: level [
 
 	<generated>
@@ -1390,10 +996,7 @@ GL4_5 >> namedFramebufferTexture: framebuffer with: attachment with: texture wit
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> namedFramebufferTextureLayer: framebuffer with: attachment with: texture with: level with: layer [
 
 	<generated>
@@ -1401,10 +1004,7 @@ GL4_5 >> namedFramebufferTextureLayer: framebuffer with: attachment with: textur
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> namedRenderbufferStorage: renderbuffer with: internalformat with: width with: height [
 
 	<generated>
@@ -1412,10 +1012,7 @@ GL4_5 >> namedRenderbufferStorage: renderbuffer with: internalformat with: width
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> namedRenderbufferStorageMultisample: renderbuffer with: samples with: internalformat with: width with: height [
 
 	<generated>
@@ -1423,10 +1020,7 @@ GL4_5 >> namedRenderbufferStorageMultisample: renderbuffer with: samples with: i
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> readnPixels: x with: y with: width with: height with: format with: type with: bufSize with: data [
 
 	<generated>
@@ -1434,10 +1028,7 @@ GL4_5 >> readnPixels: x with: y with: width with: height with: format with: type
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> textureBarrier [
 
 	<generated>
@@ -1445,10 +1036,7 @@ GL4_5 >> textureBarrier [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> textureBuffer: texture with: internalformat with: buffer [
 
 	<generated>
@@ -1456,10 +1044,7 @@ GL4_5 >> textureBuffer: texture with: internalformat with: buffer [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> textureBufferRange: texture with: internalformat with: buffer with: offset with: size [
 
 	<generated>
@@ -1467,10 +1052,7 @@ GL4_5 >> textureBufferRange: texture with: internalformat with: buffer with: off
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> textureParameterIiv: texture with: pname with: params [
 
 	<generated>
@@ -1478,10 +1060,7 @@ GL4_5 >> textureParameterIiv: texture with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> textureParameterIuiv: texture with: pname with: params [
 
 	<generated>
@@ -1489,10 +1068,7 @@ GL4_5 >> textureParameterIuiv: texture with: pname with: params [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> textureParameterf: texture with: pname with: param [
 
 	<generated>
@@ -1500,10 +1076,7 @@ GL4_5 >> textureParameterf: texture with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> textureParameterfv: texture with: pname with: param [
 
 	<generated>
@@ -1511,10 +1084,7 @@ GL4_5 >> textureParameterfv: texture with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> textureParameteri: texture with: pname with: param [
 
 	<generated>
@@ -1522,10 +1092,7 @@ GL4_5 >> textureParameteri: texture with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> textureParameteriv: texture with: pname with: param [
 
 	<generated>
@@ -1533,10 +1100,7 @@ GL4_5 >> textureParameteriv: texture with: pname with: param [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> textureStorage1D: texture with: levels with: internalformat with: width [
 
 	<generated>
@@ -1544,10 +1108,7 @@ GL4_5 >> textureStorage1D: texture with: levels with: internalformat with: width
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> textureStorage2D: texture with: levels with: internalformat with: width with: height [
 
 	<generated>
@@ -1555,10 +1116,7 @@ GL4_5 >> textureStorage2D: texture with: levels with: internalformat with: width
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> textureStorage2DMultisample: texture with: samples with: internalformat with: width with: height with: fixedsamplelocations [
 
 	<generated>
@@ -1566,10 +1124,7 @@ GL4_5 >> textureStorage2DMultisample: texture with: samples with: internalformat
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> textureStorage3D: texture with: levels with: internalformat with: width with: height with: depth [
 
 	<generated>
@@ -1577,10 +1132,7 @@ GL4_5 >> textureStorage3D: texture with: levels with: internalformat with: width
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> textureStorage3DMultisample: texture with: samples with: internalformat with: width with: height with: depth with: fixedsamplelocations [
 
 	<generated>
@@ -1588,10 +1140,7 @@ GL4_5 >> textureStorage3DMultisample: texture with: samples with: internalformat
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> textureSubImage1D: texture with: level with: xoffset with: width with: format with: type with: pixels [
 
 	<generated>
@@ -1599,10 +1148,7 @@ GL4_5 >> textureSubImage1D: texture with: level with: xoffset with: width with: 
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> textureSubImage2D: texture with: level with: xoffset with: yoffset with: width with: height with: format with: type with: pixels [
 
 	<generated>
@@ -1610,10 +1156,7 @@ GL4_5 >> textureSubImage2D: texture with: level with: xoffset with: yoffset with
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> textureSubImage3D: texture with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth with: format with: type with: pixels [
 
 	<generated>
@@ -1621,10 +1164,7 @@ GL4_5 >> textureSubImage3D: texture with: level with: xoffset with: yoffset with
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> transformFeedbackBufferBase: xfb with: index with: buffer [
 
 	<generated>
@@ -1632,10 +1172,7 @@ GL4_5 >> transformFeedbackBufferBase: xfb with: index with: buffer [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> transformFeedbackBufferRange: xfb with: index with: buffer with: offset with: size [
 
 	<generated>
@@ -1643,10 +1180,7 @@ GL4_5 >> transformFeedbackBufferRange: xfb with: index with: buffer with: offset
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> unmapNamedBuffer: buffer [
 
 	<generated>
@@ -1654,10 +1188,7 @@ GL4_5 >> unmapNamedBuffer: buffer [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> vertexArrayAttribBinding: vaobj with: attribindex with: bindingindex [
 
 	<generated>
@@ -1665,10 +1196,7 @@ GL4_5 >> vertexArrayAttribBinding: vaobj with: attribindex with: bindingindex [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> vertexArrayAttribFormat: vaobj with: attribindex with: size with: type with: normalized with: relativeoffset [
 
 	<generated>
@@ -1676,10 +1204,7 @@ GL4_5 >> vertexArrayAttribFormat: vaobj with: attribindex with: size with: type 
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> vertexArrayAttribIFormat: vaobj with: attribindex with: size with: type with: relativeoffset [
 
 	<generated>
@@ -1687,10 +1212,7 @@ GL4_5 >> vertexArrayAttribIFormat: vaobj with: attribindex with: size with: type
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> vertexArrayAttribLFormat: vaobj with: attribindex with: size with: type with: relativeoffset [
 
 	<generated>
@@ -1698,10 +1220,7 @@ GL4_5 >> vertexArrayAttribLFormat: vaobj with: attribindex with: size with: type
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> vertexArrayBindingDivisor: vaobj with: bindingindex with: divisor [
 
 	<generated>
@@ -1709,10 +1228,7 @@ GL4_5 >> vertexArrayBindingDivisor: vaobj with: bindingindex with: divisor [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> vertexArrayElementBuffer: vaobj with: buffer [
 
 	<generated>
@@ -1720,10 +1236,7 @@ GL4_5 >> vertexArrayElementBuffer: vaobj with: buffer [
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> vertexArrayVertexBuffer: vaobj with: bindingindex with: buffer with: offset with: stride [
 
 	<generated>
@@ -1731,10 +1244,7 @@ GL4_5 >> vertexArrayVertexBuffer: vaobj with: bindingindex with: buffer with: of
 	^ self externalCallFailed
 ]
 
-{
-	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
-}
+{ #category : #'api - required' }
 GL4_5 >> vertexArrayVertexBuffers: vaobj with: first with: count with: buffers with: offsets with: strides [
 
 	<generated>

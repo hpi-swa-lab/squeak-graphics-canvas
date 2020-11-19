@@ -1,24 +1,17 @@
 Class {
 	#name : #GLStaticProgram,
 	#superclass : #GLProgram,
-	#category : #'OpenGL-Wrappers-Shaders',
-	#commentStamp : ''
+	#category : #'OpenGL-Wrappers-Shaders'
 }
 
-{
-	#category : #'shader code',
-	#timestamp : 'stlu 11/13/2020 16:40'
-}
+{ #category : #'shader code' }
 GLStaticProgram class >> attributes [
 	" return the names of all attributes your shader possesses here "
 
 	^ #()
 ]
 
-{
-	#category : #'code generation',
-	#timestamp : 'stlu 11/13/2020 16:39'
-}
+{ #category : #'code generation' }
 GLStaticProgram class >> compileAccessors [
 	" call this method to automatically generate accessors for your attributes and uniforms "
 
@@ -64,38 +57,26 @@ GLStaticProgram class >> compileAccessors [
 		self compile: source classified: 'generated']
 ]
 
-{
-	#category : #'shader code',
-	#timestamp : 'stlu 11/13/2020 16:39'
-}
+{ #category : #'shader code' }
 GLStaticProgram class >> fragmentShader [
 
 	self subclassResponsibility
 ]
 
-{
-	#category : #'shader code',
-	#timestamp : 'stlu 11/13/2020 16:40'
-}
+{ #category : #'shader code' }
 GLStaticProgram class >> uniforms [
 	" return the names of all uniforms your shader possesses here "
 
 	^ #()
 ]
 
-{
-	#category : #'shader code',
-	#timestamp : 'stlu 11/13/2020 16:39'
-}
+{ #category : #'shader code' }
 GLStaticProgram class >> vertexShader [
 
 	self subclassResponsibility
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 15:50'
-}
+{ #category : #initialization }
 GLStaticProgram >> initialize [
 
 	super initialize.
@@ -103,19 +84,13 @@ GLStaticProgram >> initialize [
 	self initializeLocations
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 15:50'
-}
+{ #category : #initialization }
 GLStaticProgram >> initializeLocations [
 
 	
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 15:50'
-}
+{ #category : #initialization }
 GLStaticProgram >> initializeShaders [
 
 	{
@@ -134,10 +109,7 @@ GLStaticProgram >> initializeShaders [
 	shaders do: [:shader | shader delete]
 ]
 
-{
-	#category : #resources,
-	#timestamp : 'stlu 11/13/2020 15:52'
-}
+{ #category : #resources }
 GLStaticProgram >> registerAttribute: aString [
 
 	| location |
@@ -146,10 +118,7 @@ GLStaticProgram >> registerAttribute: aString [
 	^ location
 ]
 
-{
-	#category : #resources,
-	#timestamp : 'stlu 11/13/2020 15:52'
-}
+{ #category : #resources }
 GLStaticProgram >> registerUniform: aString [
 
 	| location |
@@ -158,20 +127,14 @@ GLStaticProgram >> registerUniform: aString [
 	^ location
 ]
 
-{
-	#category : #resources,
-	#timestamp : 'stlu 11/13/2020 15:51'
-}
+{ #category : #resources }
 GLStaticProgram >> uniform: location value: anObject [
 
 	self assert: location >= 0.
 	anObject putAtUniform: location
 ]
 
-{
-	#category : #resources,
-	#timestamp : 'stlu 11/13/2020 16:10'
-}
+{ #category : #resources }
 GLStaticProgram >> vertexAttrib: index components: numComponents stride: byteStride offset: byteOffset [
 
 	self flag: #todo. "Hacky and broken. Wild assumptions."

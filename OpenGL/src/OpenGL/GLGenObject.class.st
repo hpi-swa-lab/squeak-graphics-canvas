@@ -4,23 +4,16 @@ Class {
 	#instVars : [
 		'name'
 	],
-	#category : #'OpenGL-Generation',
-	#commentStamp : ''
+	#category : #'OpenGL-Generation'
 }
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/1/2020 19:34'
-}
+{ #category : #accessing }
 GLGenObject >> name [
 
 	^ name
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/1/2020 21:29'
-}
+{ #category : #accessing }
 GLGenObject >> name: stringOrSymbol [
 
 	name := stringOrSymbol

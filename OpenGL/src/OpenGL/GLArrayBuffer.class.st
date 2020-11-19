@@ -1,23 +1,16 @@
 Class {
 	#name : #GLArrayBuffer,
 	#superclass : #GLBuffer,
-	#category : #'OpenGL-Wrappers-Buffers',
-	#commentStamp : ''
+	#category : #'OpenGL-Wrappers-Buffers'
 }
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 11:55'
-}
+{ #category : #binding }
 GLArrayBuffer class >> bindingEnum [
 
 	^ GL_ARRAY_BUFFER_BINDING
 ]
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:02'
-}
+{ #category : #binding }
 GLArrayBuffer class >> target [
 
 	^ GL_ARRAY_BUFFER

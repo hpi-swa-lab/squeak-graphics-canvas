@@ -12,23 +12,16 @@ Class {
 	#classVars : [
 		'Remembrall'
 	],
-	#category : #'RenderThee-Pictures',
-	#commentStamp : 'stlu 8/21/2020 13:51'
+	#category : #'RenderThee-Pictures'
 }
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicUnsupported class >> Remembrall [
 
 	^ Remembrall ifNil: [Remembrall := Set new]
 ]
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 PicUnsupported class >> type: aSymbol [
 
 	self Remembrall add: aSymbol.
@@ -37,37 +30,25 @@ PicUnsupported class >> type: aSymbol [
 		yourself
 ]
 
-{
-	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #drawing }
 PicUnsupported >> drawOn: aCanvas [
 
 	"do nothing"
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicUnsupported >> estimatedBounds [
 
 	^ 0@0 extent: 1@1
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicUnsupported >> type [
 
 	^ type
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicUnsupported >> type: anObject [
 
 	type := anObject.

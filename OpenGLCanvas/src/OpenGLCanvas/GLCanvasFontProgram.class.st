@@ -9,23 +9,16 @@ Class {
 		'offsetXLocation',
 		'imageLocation'
 	],
-	#category : #'OpenGLCanvas-Fonts',
-	#commentStamp : ''
+	#category : #'OpenGLCanvas-Fonts'
 }
 
-{
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'as yet unclassified' }
 GLCanvasFontProgram class >> attributes [
 
 	^ #('aPos')
 ]
 
-{
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'as yet unclassified' }
 GLCanvasFontProgram class >> fragmentShader [
 
 	^ '#version 330 core
@@ -41,20 +34,14 @@ void main() {
 }' withUnixLineEndings
 ]
 
-{
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'as yet unclassified' }
 GLCanvasFontProgram class >> uniforms [
 	"self compileAccessors"
 
 	^ #('extent' 'offsetX' 'color' 'mvp' 'image')
 ]
 
-{
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'as yet unclassified' }
 GLCanvasFontProgram class >> vertexShader [
 
 	^ '#version 330 core
@@ -74,46 +61,31 @@ void main()
 }' withUnixLineEndings
 ]
 
-{
-	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #generated }
 GLCanvasFontProgram >> aPosLocation [
 
 	^ aPosLocation
 ]
 
-{
-	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #generated }
 GLCanvasFontProgram >> color: anObject [
 
 	self uniform: colorLocation value: anObject
 ]
 
-{
-	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #generated }
 GLCanvasFontProgram >> extent: anObject [
 
 	self uniform: extentLocation value: anObject
 ]
 
-{
-	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #generated }
 GLCanvasFontProgram >> image: anObject [
 
 	self uniform: imageLocation value: anObject
 ]
 
-{
-	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #generated }
 GLCanvasFontProgram >> initializeLocations [
 
 	super initializeLocations.
@@ -127,19 +99,13 @@ GLCanvasFontProgram >> initializeLocations [
 	aPosLocation := self registerAttribute: 'aPos'.
 ]
 
-{
-	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #generated }
 GLCanvasFontProgram >> mvp: anObject [
 
 	self uniform: mvpLocation value: anObject
 ]
 
-{
-	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #generated }
 GLCanvasFontProgram >> offsetX: anObject [
 
 	self uniform: offsetXLocation value: anObject

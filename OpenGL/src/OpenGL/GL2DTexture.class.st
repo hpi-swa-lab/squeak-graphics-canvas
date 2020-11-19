@@ -1,32 +1,22 @@
 Class {
 	#name : #GL2DTexture,
 	#superclass : #GLTexture,
-	#category : #'OpenGL-Wrappers-Textures',
-	#commentStamp : ''
+	#category : #'OpenGL-Wrappers-Textures'
 }
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 00:38'
-}
+{ #category : #binding }
 GL2DTexture class >> bindingEnum [
 
 	^ GL_TEXTURE_BINDING_2D
 ]
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 00:43'
-}
+{ #category : #binding }
 GL2DTexture class >> target [
 
 	^ GL_TEXTURE_2D
 ]
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 11/3/2020 15:31'
-}
+{ #category : #binding }
 GL2DTexture >> asForm [
 
 	| bufSize data |
@@ -47,28 +37,19 @@ GL2DTexture >> asForm [
 			yourself)
 ]
 
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/3/2020 15:31'
-}
+{ #category : #'initialize-release' }
 GL2DTexture >> delete [
 
 	GL deleteTextures: 1 with: (IntegerArray with: id)
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 12:43'
-}
+{ #category : #accessing }
 GL2DTexture >> extent [
 
 	^ self width @ self height
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/3/2020 15:32'
-}
+{ #category : #accessing }
 GL2DTexture >> extent: aPoint [
 
 	self boundDuring: [
@@ -93,10 +74,7 @@ GL2DTexture >> extent: aPoint [
 			with: GL_LINEAR]
 ]
 
-{
-	#category : #private,
-	#timestamp : 'stlu 11/3/2020 15:32'
-}
+{ #category : #private }
 GL2DTexture >> getTextureParameterI: parameter [
 
 	self boundDuring: [
@@ -105,28 +83,19 @@ GL2DTexture >> getTextureParameterI: parameter [
 			^ result first]]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 12:43'
-}
+{ #category : #accessing }
 GL2DTexture >> height [
 
 	^ self getTextureParameterI: GL_TEXTURE_HEIGHT
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GL2DTexture >> image: aForm [
 
 	self image: aForm minFilter: GL_LINEAR magFilter: GL_LINEAR
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 16:30'
-}
+{ #category : #accessing }
 GL2DTexture >> image: aForm minFilter: anEnum magFilter: anEnum2 [
 
 	self boundDuring: [
@@ -152,10 +121,7 @@ GL2DTexture >> image: aForm minFilter: anEnum magFilter: anEnum2 [
 				with: anEnum]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/3/2020 15:32'
-}
+{ #category : #accessing }
 GL2DTexture >> subImage: aForm at: aPoint [
 
 	self boundDuring: [
@@ -173,10 +139,7 @@ GL2DTexture >> subImage: aForm at: aPoint [
 		GL checkForError]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 12:44'
-}
+{ #category : #accessing }
 GL2DTexture >> width [
 
 	^ self getTextureParameterI: GL_TEXTURE_WIDTH

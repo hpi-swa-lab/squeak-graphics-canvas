@@ -1,14 +1,10 @@
 Class {
 	#name : #RtIncrementalRenderer,
 	#superclass : #RtMorphicRenderer,
-	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#category : #'RenderThee-LayerTree'
 }
 
-{
-	#category : #rendering,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #rendering }
 RtIncrementalRenderer >> drawWorld: aWorld submorphs: submorphs invalidAreas: rectList on: aCanvas [ 
 	"Redraw the damaged areas of the given canvas and clear the damage list. Return a collection of the areas that
 were redrawn."
@@ -55,20 +51,14 @@ were redrawn."
 	^ validList
 ]
 
-{
-	#category : #rendering,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #rendering }
 RtIncrementalRenderer >> renderFrame [
 
 	imageStore canvasDo: [:canvas |
 		self renderOn: canvas]
 ]
 
-{
-	#category : #rendering,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #rendering }
 RtIncrementalRenderer >> renderOn: aCanvas [
 
 	| allDamage deferredUpdateMode handDamageRects handsToDraw worldDamageRects |

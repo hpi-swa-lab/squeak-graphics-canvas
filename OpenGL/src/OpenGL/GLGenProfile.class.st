@@ -8,14 +8,10 @@ Class {
 		'removedCommands',
 		'removedEnums'
 	],
-	#category : #'OpenGL-Generation',
-	#commentStamp : ''
+	#category : #'OpenGL-Generation'
 }
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/3/2020 14:24'
-}
+{ #category : #'instance creation' }
 GLGenProfile class >> feature: feature name: aSymbol [
 
 	^ feature profiles
@@ -27,28 +23,19 @@ GLGenProfile class >> feature: feature name: aSymbol [
 				yourself]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:56'
-}
+{ #category : #accessing }
 GLGenProfile >> feature [
 
 	^ feature
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:56'
-}
+{ #category : #accessing }
 GLGenProfile >> feature: anObject [
 
 	feature := anObject
 ]
 
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:27'
-}
+{ #category : #generation }
 GLGenProfile >> generateIn: aClass [
 
 	requiredCommands do: [:each |
@@ -61,10 +48,7 @@ GLGenProfile >> generateIn: aClass [
 		aClass compile: (each printRemoveSourceInProfile: name) classified: 'constants - removed']
 ]
 
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:21'
-}
+{ #category : #generation }
 GLGenProfile >> generateSharedIn: aClass [
 
 	requiredCommands do: [:each |
@@ -77,10 +61,7 @@ GLGenProfile >> generateSharedIn: aClass [
 		aClass compile: each printSharedRemoveSource classified: 'constants - removed']
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/2/2020 13:39'
-}
+{ #category : #initialization }
 GLGenProfile >> initialize [
 
 	super initialize.
@@ -90,19 +71,13 @@ GLGenProfile >> initialize [
 	removedCommands := OrderedCollection new
 ]
 
-{
-	#category : #printing,
-	#timestamp : 'stlu 11/2/2020 14:29'
-}
+{ #category : #printing }
 GLGenProfile >> printOn: aStream [
 
 	aStream nextPutAll: (name ifEmpty: 'SHARED')
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/2/2020 13:59'
-}
+{ #category : #initialization }
 GLGenProfile >> registry: registry removeTag: removeTag [
 
 	removeTag tagsNamed: #enum do: [:removeEnumTag |
@@ -118,10 +93,7 @@ GLGenProfile >> registry: registry removeTag: removeTag [
 		removedCommands add: command]
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/2/2020 13:55'
-}
+{ #category : #initialization }
 GLGenProfile >> registry: registry requireTag: requireTag [
 
 	requireTag tagsNamed: #enum do: [:requiredEnumTag |
@@ -137,37 +109,25 @@ GLGenProfile >> registry: registry requireTag: requireTag [
 		requiredCommands add: command]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:38'
-}
+{ #category : #accessing }
 GLGenProfile >> removedCommands [
 
 	^ removedCommands
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:38'
-}
+{ #category : #accessing }
 GLGenProfile >> removedEnums [
 
 	^ removedEnums
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:38'
-}
+{ #category : #accessing }
 GLGenProfile >> requiredCommands [
 
 	^ requiredCommands
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:38'
-}
+{ #category : #accessing }
 GLGenProfile >> requiredEnums [
 
 	^ requiredEnums

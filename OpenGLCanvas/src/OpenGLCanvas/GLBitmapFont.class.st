@@ -9,23 +9,16 @@ Class {
 		'texture',
 		'font'
 	],
-	#category : #'OpenGLCanvas-Fonts',
-	#commentStamp : ''
+	#category : #'OpenGLCanvas-Fonts'
 }
 
-{
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'as yet unclassified' }
 GLBitmapFont >> advanceFor: aCharacter [
 
 	^ font advanceOf: aCharacter
 ]
 
-{
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'as yet unclassified' }
 GLBitmapFont >> extentFor: aCharacter [
 
 	| index |
@@ -34,10 +27,7 @@ GLBitmapFont >> extentFor: aCharacter [
 	^ (offsets at: index + 1) - (offsets at: index ifAbsent: [0]) @ (font characterFormAt: aCharacter) height
 ]
 
-{
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 10/28/2020 23:48'
-}
+{ #category : #'as yet unclassified' }
 GLBitmapFont >> font: aFont [
 
 	| x |
@@ -55,47 +45,32 @@ GLBitmapFont >> font: aFont [
 		offsets at: index put: x]
 ]
 
-{
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'as yet unclassified' }
 GLBitmapFont >> hasGlyphOf: aCharacter [
 
 	^ self printableCharacters includes: aCharacter asInteger
 ]
 
-{
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'as yet unclassified' }
 GLBitmapFont >> indexForCharacter: aCharacter [
 
 	^ aCharacter asInteger - self printableCharacters start
 ]
 
-{
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'as yet unclassified' }
 GLBitmapFont >> offsetFor: aCharacter [
 
 	^ ((offsets at: (self indexForCharacter: aCharacter) ifAbsent: [0]) @ font ascent)
 		 - (font characterFormAt: aCharacter) offset
 ]
 
-{
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'as yet unclassified' }
 GLBitmapFont >> printableCharacters [
 
 	^ 33 to: 126.
 ]
 
-{
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'as yet unclassified' }
 GLBitmapFont >> texture [
 
 	^ texture

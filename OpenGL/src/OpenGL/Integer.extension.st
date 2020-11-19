@@ -1,9 +1,6 @@
 Extension { #name : #Integer }
 
-{
-	#category : #'*OpenGL',
-	#timestamp : 'stlu 11/3/2020 15:41'
-}
+{ #category : #'*OpenGL' }
 Integer >> putAtUniform: location [
 
 	GL uniform1i: location with: self

@@ -6,6 +6,7 @@ Class {
 		'vbo',
 		'textureProgram',
 		'outlineProgram',
+		'ovalProgram',
 		'rectangleProgram',
 		'fonts',
 		'fontProgram'
@@ -13,14 +14,10 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'OpenGLCanvas-Core',
-	#commentStamp : ''
+	#category : #'OpenGLCanvas-Core'
 }
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLSharedCanvasResources >> font: aFont [
 
 	| font |
@@ -29,19 +26,13 @@ GLSharedCanvasResources >> font: aFont [
 	^ fonts at: font ifAbsentPut: [GLBitmapFont new font: font]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLSharedCanvasResources >> fontProgram [
 
 	^ fontProgram
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #initialization }
 GLSharedCanvasResources >> initialize [
 
 	super initialize.
@@ -53,10 +44,7 @@ GLSharedCanvasResources >> initialize [
 	self initializeProgramAttributes
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/6/2020 14:24'
-}
+{ #category : #initialization }
 GLSharedCanvasResources >> initializeBuffers [
 
 	vao := GLVertexArray create.
@@ -72,10 +60,7 @@ GLSharedCanvasResources >> initializeBuffers [
 	GL checkForError
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 16:20'
-}
+{ #category : #initialization }
 GLSharedCanvasResources >> initializeProgramAttributes [
 
 	vbo boundDuring: [
@@ -98,77 +83,60 @@ GLSharedCanvasResources >> initializeProgramAttributes [
 			GL checkForError]]
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 10/26/2020 11:04'
-}
+{ #category : #initialization }
 GLSharedCanvasResources >> initializePrograms [
-
+	
 	textureProgram := GL getShaderProgram: GLCanvasTextureProgram.
 	outlineProgram := GL getShaderProgram: GLCanvasOutlineProgram.
+	ovalProgram := GL getShaderProgram: GLCanvasOvalProgram.
 	rectangleProgram := GL getShaderProgram: GLCanvasRectangleProgram.
 	fontProgram := GL getShaderProgram: GLCanvasFontProgram.
 	GL checkForError
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLSharedCanvasResources >> outlineProgram [
 
 	^ outlineProgram
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
+GLSharedCanvasResources >> ovalProgram [
+
+	^ ovalProgram
+]
+
+{ #category : #accessing }
 GLSharedCanvasResources >> rectangleProgram [
 
 	^ rectangleProgram
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLSharedCanvasResources >> textureProgram [
 
 	^ textureProgram
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLSharedCanvasResources >> vao [
 
 	^ vao
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLSharedCanvasResources >> vao: anObject [
 
 	vao := anObject.
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLSharedCanvasResources >> vbo [
 
 	^ vbo
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLSharedCanvasResources >> vbo: anObject [
 
 	vbo := anObject.

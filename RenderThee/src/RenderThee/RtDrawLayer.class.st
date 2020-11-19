@@ -12,14 +12,10 @@ Class {
 	#instVars : [
 		'picture'
 	],
-	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#category : #'RenderThee-LayerTree'
 }
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 RtDrawLayer class >> picture: aPicture [
 
 	| bounds pic |
@@ -33,55 +29,37 @@ RtDrawLayer class >> picture: aPicture [
 		yourself
 ]
 
-{
-	#category : #visiting,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #visiting }
 RtDrawLayer >> accept: aVisitor [
 
 	^ aVisitor visitDrawLayer: self
 ]
 
-{
-	#category : #compositing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #compositing }
 RtDrawLayer >> drawLayerOn: aCanvas [
 
 	aCanvas drawDrawLayer: self
 ]
 
-{
-	#category : #compositing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #compositing }
 RtDrawLayer >> drawOn: aCanvas [
 
 	aCanvas draw: picture
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtDrawLayer >> picture [
 
 	^ picture
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtDrawLayer >> picture: anObject [
 
 	picture := anObject
 ]
 
-{
-	#category : #printing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #printing }
 RtDrawLayer >> printOn: aStream [
 
 	super printOn: aStream.

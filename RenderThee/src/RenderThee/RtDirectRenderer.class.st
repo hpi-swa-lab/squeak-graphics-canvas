@@ -1,14 +1,10 @@
 Class {
 	#name : #RtDirectRenderer,
 	#superclass : #RtMorphicRenderer,
-	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#category : #'RenderThee-LayerTree'
 }
 
-{
-	#category : #rendering,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #rendering }
 RtDirectRenderer >> renderFrame [
 
 	imageStore canvasDo: [:canvas |

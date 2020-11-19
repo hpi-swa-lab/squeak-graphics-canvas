@@ -1,14 +1,10 @@
 Class {
 	#name : #GLDisplayFrameBuffer,
 	#superclass : #GLFrameBuffer,
-	#category : #'OpenGL-Wrappers-Framebuffers',
-	#commentStamp : ''
+	#category : #'OpenGL-Wrappers-Framebuffers'
 }
 
-{
-	#category : #allocation,
-	#timestamp : 'stlu 10/28/2020 18:02'
-}
+{ #category : #allocation }
 GLDisplayFrameBuffer class >> allocate [
 
 	^ GL_NONE

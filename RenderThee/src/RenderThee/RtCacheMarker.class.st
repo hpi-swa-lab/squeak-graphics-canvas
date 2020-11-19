@@ -4,58 +4,39 @@ Class {
 	#instVars : [
 		'cachingStrategy'
 	],
-	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#category : #'RenderThee-LayerTree'
 }
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtCacheMarker >> cachingStrategy [
 	^ cachingStrategy
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtCacheMarker >> cachingStrategy: anObject [
 	cachingStrategy := anObject
 ]
 
-{
-	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #testing }
 RtCacheMarker >> shouldCacheDrawLayer: aLayer [
 
 	^ cachingStrategy shouldCacheDrawLayer: aLayer
 ]
 
-{
-	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #testing }
 RtCacheMarker >> shouldCacheGroupLayer: aLayer [
 
 	^ cachingStrategy shouldCacheGroupLayer: aLayer
 ]
 
-{
-	#category : #visiting,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #visiting }
 RtCacheMarker >> visitDrawLayer: aLayer [
 
 	aLayer needsCaching: (self shouldCacheDrawLayer: aLayer).
 	super visitDrawLayer: aLayer
 ]
 
-{
-	#category : #visiting,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #visiting }
 RtCacheMarker >> visitGroupLayer: aLayer [
 
 	aLayer needsCaching: (self shouldCacheGroupLayer: aLayer).

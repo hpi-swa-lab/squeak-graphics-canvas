@@ -5,51 +5,35 @@ Class {
 		'canvas',
 		'colors'
 	],
-	#category : #'RenderThee-Tests',
-	#commentStamp : ''
+	#category : #'RenderThee-Tests'
 }
 
-{
-	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #testing }
 RtCanvasTest class >> isAbstract [
 
 	^ self name = #RtCanvasTest
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 RtCanvasTest >> canvasExtent [
 
 	^ 10@10
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #initialization }
 RtCanvasTest >> createCanvas [
 
 	self subclassResponsibility
 ]
 
-{
-	#category : #running,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #running }
 RtCanvasTest >> setUp [
 
 	canvas := self createCanvas.
 	
 ]
 
-{
-	#category : #tests,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #tests }
 RtCanvasTest >> testClipBy [
 
 	canvas
@@ -64,10 +48,7 @@ RtCanvasTest >> testClipBy [
 					self assert: (c2 clipRect containsRect: (4 @ 4 corner: 9 @ 9))]]
 ]
 
-{
-	#category : #tests,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #tests }
 RtCanvasTest >> testTransformBy [
 
 	canvas
@@ -82,10 +63,7 @@ RtCanvasTest >> testTransformBy [
 					self assert: (c2 clipRect extent >= (4 @ 5))]]
 ]
 
-{
-	#category : #tests,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #tests }
 RtCanvasTest >> testTransformByPureTranslation [
 
 	canvas
@@ -102,10 +80,7 @@ RtCanvasTest >> testTransformByPureTranslation [
 					self assert: (c2 clipRect containsRect: (-2 @ 1 corner: 3 @ 6))]]
 ]
 
-{
-	#category : #tests,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #tests }
 RtCanvasTest >> testTranslateBy [
 
 	canvas
@@ -120,10 +95,7 @@ RtCanvasTest >> testTranslateBy [
 					self assert: (c2 clipRect containsRect: (-6 @ -3 corner: 4 @ 7))]]
 ]
 
-{
-	#category : #tests,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #tests }
 RtCanvasTest >> testTranslateByClippingTo [
 
 	canvas
@@ -140,10 +112,7 @@ RtCanvasTest >> testTranslateByClippingTo [
 					self assert: (c2 clipRect containsRect:  (-2 @ 1 corner: 3 @ 6))]]
 ]
 
-{
-	#category : #tests,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #tests }
 RtCanvasTest >> testTranslateToClippingTo [
 
 	canvas

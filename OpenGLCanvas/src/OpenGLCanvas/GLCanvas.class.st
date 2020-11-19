@@ -13,29 +13,18 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'OpenGLCanvas-Core',
-	#commentStamp : ''
+	#category : #'OpenGLCanvas-Core'
 }
 
-{
-	#category : #example,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #example }
 GLCanvas class >> exampleWindow [
 	"self exampleWindow"
-	| display window |
+	| window |
 	window := (ToolBuilder build: (Browser new setClass: Morph selector: #submorphs)) position: 0 @ 0.
-	display := RtDisplayFramebufferStore extent: window extent.
-	display canvasDo: [:c | c fullDraw: window].
-	
-	[Sensor anyButtonPressed] whileFalse: [2 milliSeconds wait].
-	display glLibrary context destroy
+	self openAndDraw: window
 ]
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 GLCanvas class >> extent: aPoint framebuffer: glFrameBuffer [
 
 	^ self new
@@ -43,19 +32,33 @@ GLCanvas class >> extent: aPoint framebuffer: glFrameBuffer [
 		yourself
 ]
 
-{
-	#category : #binding,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
+GLCanvas class >> openAndDraw: anObject [
+
+	| display |
+	display := RtDisplayFramebufferStore extent: anObject extent.
+	display canvasDo: [:c | c fullDraw: anObject].
+	
+	[Sensor anyButtonPressed] whileFalse: [2 milliSeconds wait].
+	display glLibrary destroy
+	
+]
+
+{ #category : #'drawing-rectangles' }
+GLCanvas >> bindAndUseProgram: aProgram during: aBlock [
+	
+	self boundDuring: [
+		aProgram useDuring: [
+			aBlock cull: self.]]
+]
+
+{ #category : #binding }
 GLCanvas >> boundDuring: aBlock [
 
 	framebuffer boundDuring: aBlock
 ]
 
-{
-	#category : #'drawing-support',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-support' }
 GLCanvas >> clipBy: aRectangle [
 
 	"| rect viewTransform |
@@ -70,29 +73,20 @@ GLCanvas >> clipBy: aRectangle [
 				with: rect height]"
 ]
 
-{
-	#category : #'drawing-support',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-support' }
 GLCanvas >> clipBy: aRectangle during: aBlock [
 
 	self clipRect: aRectangle during: aBlock.
 	self clipBy: aRectangle
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLCanvas >> clipRect [
 
 	^ clipRect
 ]
 
-{
-	#category : #'scoped state',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'scoped state' }
 GLCanvas >> clipRect: aRectangle during: aBlock [
 
 	| previousClipRect |
@@ -102,18 +96,12 @@ GLCanvas >> clipRect: aRectangle during: aBlock [
 	clipRect := previousClipRect
 ]
 
-{
-	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-rectangles' }
 GLCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderColor: bc [
 	^ self frameAndFillRectangle: (Rectangle encompassing: vertices)  fillColor: aColor borderWidth: bw borderColor: bc.
 ]
 
-{
-	#category : #'drawing-text',
-	#timestamp : 'stlu 10/29/2020 01:37'
-}
+{ #category : #'drawing-text' }
 GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c [
 
 	"self frameRectangle: (boundsRect origin extent: 10@10) color: c."
@@ -149,72 +137,58 @@ GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fo
 						x := x + (bitmapFont advanceFor: character)]]]]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLCanvas >> extent [
 
 	^ extent
 ]
 
-{
-	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-rectangles' }
 GLCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderColor [
-	^ self frameAndFillRectangle: r fillColor: c borderWidth: borderWidth borderColor: borderColor.
+
+	self bindAndUseProgram: self ovalProgram during: [
+			self ovalProgram
+				extent: r extent;
+				color: c;
+				borderColor: borderColor;
+				borderWidth: borderWidth asFloat;
+				mvp: transform * (Matrix4x4 withOffset: r origin).
+			self vbo draw: GL_TRIANGLE_STRIP]
 ]
 
-{
-	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 10/29/2020 01:37'
-}
+{ #category : #'drawing-rectangles' }
 GLCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
-
-	self boundDuring: [
-		resources rectangleProgram useDuring: [
-			resources rectangleProgram
+	
+	self bindAndUseProgram: self rectangleProgram during: [
+			self rectangleProgram
 				extent: r extent;
 				color: fillColor;
 				borderColor: borderColor;
 				borderWidth: borderWidth asFloat;
 				mvp: transform * (Matrix4x4 withOffset: r origin).
-			self vbo draw: GL_TRIANGLE_STRIP]]
+			self vbo draw: GL_TRIANGLE_STRIP]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLCanvas >> framebuffer [
 
 	^ framebuffer
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 12:05'
-}
+{ #category : #accessing }
 GLCanvas >> glLibrary [
 
 	^ framebuffer library
 ]
 
-{
-	#category : #'drawing-images',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-images' }
 GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
 	self translateBy: aPoint during: [:c |
 		c paintImageStore: (RtFormStore form: aForm) sourceRect: sourceRect]
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #initialization }
 GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 
 	extent := aPoint.
@@ -225,27 +199,24 @@ GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 	baseTransform := transform := Matrix4x4 ortho: clipRect near: 0 far: 1
 ]
 
-{
-	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-rectangles' }
 GLCanvas >> line: pt1 to: pt2 width: w color: c [
 	^ self frameAndFillRectangle: (Rectangle encompassing: {pt1. pt2})  fillColor: (Color transparent) borderWidth: w borderColor: c.
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLCanvas >> outlineProgram [
 
 	^ resources outlineProgram
 ]
 
-{
-	#category : #'drawing-text',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
+GLCanvas >> ovalProgram [
+
+	^ resources ovalProgram
+]
+
+{ #category : #'drawing-text' }
 GLCanvas >> paragraph: paragraph bounds: bounds color: c [
 
 	| scanner |
@@ -260,27 +231,24 @@ GLCanvas >> paragraph: paragraph bounds: bounds color: c [
 	paragraph displayOn: self using: scanner at: bounds topLeft
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
+GLCanvas >> rectangleProgram [
+
+	^ resources rectangleProgram
+]
+
+{ #category : #accessing }
 GLCanvas >> textureProgram [
 
 	^ resources textureProgram
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLCanvas >> transform [
 	^ transform
 ]
 
-{
-	#category : #'scoped state',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'scoped state' }
 GLCanvas >> transform: aMatrix during: aBlock [
 
 	| previousTransform |
@@ -290,10 +258,7 @@ GLCanvas >> transform: aMatrix during: aBlock [
 	transform := previousTransform
 ]
 
-{
-	#category : #'drawing-support',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-support' }
 GLCanvas >> transformBy: aTransform during: aBlock [
 
 	| transformedClip |
@@ -302,10 +267,7 @@ GLCanvas >> transformBy: aTransform during: aBlock [
 		self transform: transform * aTransform asMatrix4x4 during: aBlock]
 ]
 
-{
-	#category : #'drawing-support',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'drawing-support' }
 GLCanvas >> translateBy: aPoint during: aBlock [
 
 	self
@@ -313,19 +275,13 @@ GLCanvas >> translateBy: aPoint during: aBlock [
 		during: aBlock
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLCanvas >> vao [
 
 	^ resources vao
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLCanvas >> vbo [
 
 	^ resources vbo

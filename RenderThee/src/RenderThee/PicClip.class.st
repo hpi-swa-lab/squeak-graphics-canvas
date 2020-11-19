@@ -8,14 +8,10 @@ Class {
 	#instVars : [
 		'clipRect'
 	],
-	#category : #'RenderThee-Pictures',
-	#commentStamp : 'stlu 8/21/2020 12:59'
+	#category : #'RenderThee-Pictures'
 }
 
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'instance creation' }
 PicClip class >> rect: aRectangle [
 
 	^ self new
@@ -23,28 +19,19 @@ PicClip class >> rect: aRectangle [
 		yourself
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicClip >> clipRect [
 
 	^ clipRect
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicClip >> clipRect: anObject [
 
 	clipRect := anObject
 ]
 
-{
-	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #drawing }
 PicClip >> drawOn: aCanvas [
 
 	aCanvas
@@ -52,10 +39,7 @@ PicClip >> drawOn: aCanvas [
 		during: [:c | super drawOn: c]
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 PicClip >> estimatedBounds [
 
 	^ self estimatedChildrenBounds intersect: clipRect

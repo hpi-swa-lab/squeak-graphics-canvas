@@ -8,14 +8,10 @@ Class {
 		'aTexCoordsLocation',
 		'aTextureSize'
 	],
-	#category : #'OpenGLCanvas-Core',
-	#commentStamp : ''
+	#category : #'OpenGLCanvas-Core'
 }
 
-{
-	#category : #'shader code',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'shader code' }
 GLCanvasOutlineProgram class >> fragmentShader [
 	^'#version 330 core
 out vec4 FragColor;
@@ -35,10 +31,7 @@ void main() {
 }' withUnixLineEndings
 ]
 
-{
-	#category : #'shader code',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'shader code' }
 GLCanvasOutlineProgram class >> vertexShader [
 	^'#version 330 core
 in vec2 aPos;
@@ -54,46 +47,31 @@ void main()
 }' withUnixLineEndings
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLCanvasOutlineProgram >> aPosLocation [
 
 	^ aPosLocation
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLCanvasOutlineProgram >> aTexCoordsLocation [
 
 	^ aTexCoordsLocation
 ]
 
-{
-	#category : #'uniform accessing',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'uniform accessing' }
 GLCanvasOutlineProgram >> color: anObject [
 
 	self uniform: colorLocation value: anObject
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLCanvasOutlineProgram >> colorLocation [
 
 	^ colorLocation
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/3/2020 15:34'
-}
+{ #category : #initialization }
 GLCanvasOutlineProgram >> initializeLocations [
 
 	super initializeLocations.
@@ -110,28 +88,19 @@ GLCanvasOutlineProgram >> initializeLocations [
 	self assert: aTexCoordsLocation >= 0
 ]
 
-{
-	#category : #'uniform accessing',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'uniform accessing' }
 GLCanvasOutlineProgram >> mvp: anObject [
 
 	self uniform: mvpLocation value: anObject
 ]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #accessing }
 GLCanvasOutlineProgram >> mvpLocation [
 
 	^ mvpLocation
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #initialization }
 GLCanvasOutlineProgram >> textureSize: aPoint [
 
 	self uniform: aTextureSize value: aPoint
