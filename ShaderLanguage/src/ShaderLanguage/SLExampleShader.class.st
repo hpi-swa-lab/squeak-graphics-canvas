@@ -31,7 +31,7 @@ Class {
 
 {
 	#category : #code,
-	#timestamp : 'stlu 11/17/2020 18:25'
+	#timestamp : 'stlu 11/18/2020 15:30'
 }
 SLExampleShader class >> bloom: out inputs: in uniforms: u [
 
