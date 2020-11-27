@@ -37,14 +37,16 @@ GLCanvas class >> openAndDraw: anObject [
 
 	| display |
 	display := RtDisplayFramebufferStore extent: anObject extent.
-	display canvasDo: [:c | c fullDraw: anObject].
 	
-	[Sensor anyButtonPressed] whileFalse: [2 milliSeconds wait].
+	[Sensor anyButtonPressed] whileFalse: [
+		display canvasDo: [:c | c fullDraw: anObject].
+		anObject step.
+		100 milliSeconds wait].
 	display glLibrary destroy
 	
 ]
 
-{ #category : #'drawing-rectangles' }
+{ #category : #binding }
 GLCanvas >> bindAndUseProgram: aProgram during: aBlock [
 	
 	self boundDuring: [
@@ -96,9 +98,29 @@ GLCanvas >> clipRect: aRectangle during: aBlock [
 	clipRect := previousClipRect
 ]
 
-{ #category : #'drawing-rectangles' }
-GLCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderColor: bc [
-	^ self frameAndFillRectangle: (Rectangle encompassing: vertices)  fillColor: aColor borderWidth: bw borderColor: bc.
+{ #category : #'drawing-polygons' }
+GLCanvas >> drawPolygon: vertices color: fillColor borderWidth: borderWidth borderColor: borderColor [
+
+	| vbo collection |
+	self bindAndUseProgram: self polygonProgram during: [
+			self polygonProgram
+				color: fillColor;
+				mvp: transform.
+			
+			collection := OrderedCollection new.
+			vertices do: [:position | collection add: position x.  collection add: position y.].
+			vbo := GLArrayBuffer create.
+			vbo
+				usage: GL_STATIC_DRAW
+				data: collection asFloat32Array.
+			
+			vbo boundDuring: [
+				self polygonProgram vertexAttrib: self polygonProgram aPosLocation components: 2 stride: 8 offset: 0.
+				GL checkForError].
+			
+			vbo draw: GL_TRIANGLE_FAN from: 0 count: vertices size.
+			self polygonProgram color: borderColor.
+			vbo draw: GL_LINE_LOOP from: 0 count: vertices size]
 ]
 
 { #category : #'drawing-text' }
@@ -143,7 +165,7 @@ GLCanvas >> extent [
 	^ extent
 ]
 
-{ #category : #'drawing-rectangles' }
+{ #category : #'drawing-ovals' }
 GLCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderColor [
 
 	self bindAndUseProgram: self ovalProgram during: [
@@ -199,9 +221,32 @@ GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 	baseTransform := transform := Matrix4x4 ortho: clipRect near: 0 far: 1
 ]
 
-{ #category : #'drawing-rectangles' }
+{ #category : #drawing }
 GLCanvas >> line: pt1 to: pt2 width: w color: c [
-	^ self frameAndFillRectangle: (Rectangle encompassing: {pt1. pt2})  fillColor: (Color transparent) borderWidth: w borderColor: c.
+
+	| vbo collection |
+	self bindAndUseProgram: self polygonProgram during: [
+			self polygonProgram
+				color: c;
+				mvp: transform.
+			
+			collection := Array with: pt1 x with: pt1 y with: pt2 x with: pt2 y.
+			vbo := GLArrayBuffer create.
+			vbo
+				usage: GL_STATIC_DRAW
+				data: collection asFloat32Array.
+			
+			vbo boundDuring: [
+				self polygonProgram vertexAttrib: self polygonProgram aPosLocation components: 2 stride: 8 offset: 0.
+				GL checkForError].
+			
+			GL checkForError.
+			self glLibrary lineWidth: w asFloat.
+			GL checkForError.
+			vbo draw: GL_LINE_STRIP from: 0 count: 2.
+			GL checkForError.
+			
+			resources initializeProgramAttributes]
 ]
 
 { #category : #accessing }
@@ -229,6 +274,12 @@ GLCanvas >> paragraph: paragraph bounds: bounds color: c [
 		ignoreColorChanges: false.
 	
 	paragraph displayOn: self using: scanner at: bounds topLeft
+]
+
+{ #category : #accessing }
+GLCanvas >> polygonProgram [
+
+	^ resources polygonProgram
 ]
 
 { #category : #accessing }

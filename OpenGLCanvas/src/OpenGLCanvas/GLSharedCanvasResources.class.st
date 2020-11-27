@@ -89,6 +89,7 @@ GLSharedCanvasResources >> initializePrograms [
 	textureProgram := GL getShaderProgram: GLCanvasTextureProgram.
 	outlineProgram := GL getShaderProgram: GLCanvasOutlineProgram.
 	ovalProgram := GL getShaderProgram: GLCanvasOvalProgram.
+	polygonProgram := GL getShaderProgram: GLCanvasPolygonProgram.
 	rectangleProgram := GL getShaderProgram: GLCanvasRectangleProgram.
 	fontProgram := GL getShaderProgram: GLCanvasFontProgram.
 	GL checkForError
@@ -104,6 +105,12 @@ GLSharedCanvasResources >> outlineProgram [
 GLSharedCanvasResources >> ovalProgram [
 
 	^ ovalProgram
+]
+
+{ #category : #accessing }
+GLSharedCanvasResources >> polygonProgram [
+
+	^ polygonProgram
 ]
 
 { #category : #accessing }
