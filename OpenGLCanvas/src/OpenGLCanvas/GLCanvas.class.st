@@ -75,6 +75,19 @@ GLCanvas class >> openAndDrawSavingImages: anObject [
 	
 ]
 
+{ #category : #example }
+GLCanvas class >> profileUsing: anObject times: aNumber [
+
+	| display testCanvas |
+	display := RtDisplayFramebufferStore extent: anObject extent.
+	display canvasDo: [:c | TimeProfileBrowser spyOn: [aNumber timesRepeat: [c fullDraw: anObject]]].
+	display glLibrary destroy.
+	
+	testCanvas := FormCanvas extent: anObject extent.
+	TimeProfileBrowser spyOn: [aNumber timesRepeat: [testCanvas fullDraw: anObject]]
+	
+]
+
 { #category : #binding }
 GLCanvas >> bindAndUseProgram: aProgram during: aBlock [
 	
