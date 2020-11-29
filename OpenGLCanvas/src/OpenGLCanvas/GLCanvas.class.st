@@ -35,14 +35,43 @@ GLCanvas class >> extent: aPoint framebuffer: glFrameBuffer [
 { #category : #'instance creation' }
 GLCanvas class >> openAndDraw: anObject [
 
+	self openAndDraw: anObject doing: []
+	
+]
+
+{ #category : #'instance creation' }
+GLCanvas class >> openAndDraw: anObject doing: aBlock [
+
 	| display |
 	display := RtDisplayFramebufferStore extent: anObject extent.
 	
 	[Sensor anyButtonPressed] whileFalse: [
-		display canvasDo: [:c | c fullDraw: anObject].
+		display canvasDo: [:c |
+			c fullDraw: anObject.
+			aBlock cull: c].
 		anObject step.
 		100 milliSeconds wait].
+	
 	display glLibrary destroy
+	
+]
+
+{ #category : #'instance creation' }
+GLCanvas class >> openAndDrawCreatingMorphs: anObject [
+
+	
+	self openAndDraw: anObject doing: [:c | c getPixelData asMorph openInWorld]
+	
+]
+
+{ #category : #'instance creation' }
+GLCanvas class >> openAndDrawSavingImages: anObject [
+
+	| frame |
+	frame := 0.
+	self openAndDraw: anObject doing: [:c |
+		c getPixelData writePNGfileNamed: frame asString , '.png'.
+		frame := frame + 1]
 	
 ]
 
@@ -118,7 +147,24 @@ GLCanvas >> drawPolygon: vertices color: fillColor borderWidth: borderWidth bord
 				self polygonProgram vertexAttrib: self polygonProgram aPosLocation components: 2 stride: 8 offset: 0.
 				GL checkForError].
 			
+			self glLibrary enable: GL_STENCIL_TEST.
+			self glLibrary clear: GL_STENCIL_BUFFER_BIT.
+			
+			
+			self glLibrary stencilFunc: GL_ALWAYS with: 0 with: 1.
+			self glLibrary stencilOp: GL_INVERT with: GL_INVERT with: GL_INVERT.
+			self glLibrary colorMask: GL_FALSE with: GL_FALSE with: GL_FALSE  with: GL_FALSE.
+			
 			vbo draw: GL_TRIANGLE_FAN from: 0 count: vertices size.
+			
+			self glLibrary stencilFunc: GL_EQUAL with: 1 with: 1.
+			self glLibrary stencilOp: GL_KEEP with: GL_KEEP with: GL_KEEP.
+			self glLibrary colorMask: GL_TRUE with: GL_TRUE with: GL_TRUE  with: GL_TRUE.
+			
+			vbo draw: GL_TRIANGLE_FAN from: 0 count: vertices size.
+			
+			self glLibrary disable: GL_STENCIL_TEST.
+			
 			self polygonProgram color: borderColor.
 			vbo draw: GL_LINE_LOOP from: 0 count: vertices size]
 ]
@@ -195,6 +241,23 @@ GLCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWid
 GLCanvas >> framebuffer [
 
 	^ framebuffer
+]
+
+{ #category : #accessing }
+GLCanvas >> getPixelData [
+	
+	| data |
+	self glLibrary readBuffer: GL_BACK.
+	data := (ByteArray new:  self extent area * 4).
+	self glLibrary checkForError.
+	self glLibrary readPixels: 0 with: 0 with: self extent x with: self extent y with: GL_BGRA with: GL_UNSIGNED_INT_8_8_8_8 with: data.
+	self glLibrary checkForError.
+	^ Form
+		extent: self extent
+		depth: 32
+		bits: ((Bitmap new: self extent area * 4)
+			copyFromByteArray: data;
+			yourself)
 ]
 
 { #category : #accessing }
