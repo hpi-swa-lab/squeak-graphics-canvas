@@ -103,25 +103,24 @@ GLCanvas >> boundDuring: aBlock [
 ]
 
 { #category : #'drawing-support' }
-GLCanvas >> clipBy: aRectangle [
+GLCanvas >> clip [
 
-	"| rect viewTransform |
+	| rect viewTransform |
 	viewTransform := baseTransform inverseTransformation * transform.
 	
 	viewTransform preservesAxisAlignment ifTrue: [
-		rect := viewTransform localBoundsToGlobal: aRectangle.
+		rect := (viewTransform localBoundsToGlobal: clipRect) expanded.
 		self glLibrary
-				glScissor: rect left
+				scissor: rect left
 				with: rect top
 				with: rect width
-				with: rect height]"
+				with: rect height]
 ]
 
 { #category : #'drawing-support' }
 GLCanvas >> clipBy: aRectangle during: aBlock [
 
-	self clipRect: aRectangle during: aBlock.
-	self clipBy: aRectangle
+	self clipRect: aRectangle during: aBlock
 ]
 
 { #category : #accessing }
@@ -136,8 +135,10 @@ GLCanvas >> clipRect: aRectangle during: aBlock [
 	| previousClipRect |
 	previousClipRect := clipRect.
 	clipRect := aRectangle.
+	self clip.
 	aBlock cull: self.
-	clipRect := previousClipRect
+	clipRect := previousClipRect.
+	self clip.
 ]
 
 { #category : #'drawing-polygons' }
@@ -389,13 +390,14 @@ GLCanvas >> transformBy: aTransform during: aBlock [
 
 	| transformedClip |
 	transformedClip := (aTransform globalBoundsToLocal: clipRect) expanded.
-	self clipRect: transformedClip during: [
-		self transform: transform * aTransform asMatrix4x4 during: aBlock]
+	self transform: transform * aTransform asMatrix4x4 during: [
+		self clipRect: transformedClip during: aBlock].
+	self clip.
 ]
 
 { #category : #'drawing-support' }
 GLCanvas >> translateBy: aPoint during: aBlock [
-
+	
 	self
 		transformBy: (Matrix4x4 withOffset: aPoint)
 		during: aBlock
