@@ -163,7 +163,6 @@ GLCanvas >> drawPolygon: vertices color: fillColor borderWidth: borderWidth bord
 			self glLibrary enable: GL_STENCIL_TEST.
 			self glLibrary clear: GL_STENCIL_BUFFER_BIT.
 			
-			
 			self glLibrary stencilFunc: GL_ALWAYS with: 0 with: 1.
 			self glLibrary stencilOp: GL_INVERT with: GL_INVERT with: GL_INVERT.
 			self glLibrary colorMask: GL_FALSE with: GL_FALSE with: GL_FALSE  with: GL_FALSE.

@@ -14,6 +14,12 @@ Class {
 }
 
 { #category : #'shader code' }
+GLCanvasTextureProgram class >> attributes [
+
+	^ #('aPos' 'aTexCoords')
+]
+
+{ #category : #'shader code' }
 GLCanvasTextureProgram class >> fragmentShader [
 	^'#version 330 core
 out vec4 FragColor;
@@ -21,12 +27,16 @@ out vec4 FragColor;
 in vec2 TexCoords;
 
 uniform sampler2D image;
-uniform vec4 color;
 
 void main() {
-  vec4 tmp = texture(image, TexCoords);
-  FragColor = (tmp * vec4(1.0)) + (color * vec4(0.01));
+  FragColor = texture(image, TexCoords);
 }' withUnixLineEndings
+]
+
+{ #category : #'shader code' }
+GLCanvasTextureProgram class >> uniforms [
+
+	^ #('mvp' 'sourcePosition' 'sourceExtent' 'image')
 ]
 
 { #category : #'shader code' }
@@ -38,6 +48,7 @@ in vec2 aTexCoords;
 uniform mat4 mvp;
 uniform vec2 sourcePosition;
 uniform vec2 sourceExtent;
+
 out vec2 TexCoords;
 
 void main()
@@ -47,25 +58,19 @@ void main()
 }' withUnixLineEndings
 ]
 
-{ #category : #accessing }
+{ #category : #generated }
 GLCanvasTextureProgram >> aPosLocation [
 
 	^ aPosLocation
 ]
 
-{ #category : #accessing }
+{ #category : #generated }
 GLCanvasTextureProgram >> aTexCoordsLocation [
 
 	^ aTexCoordsLocation
 ]
 
-{ #category : #accessing }
-GLCanvasTextureProgram >> color: aColor [
-
-	self uniform: colorLocation value: aColor
-]
-
-{ #category : #'uniform accessing' }
+{ #category : #generated }
 GLCanvasTextureProgram >> image: anObject [
 
 	self uniform: imageLocation value: anObject
@@ -77,27 +82,21 @@ GLCanvasTextureProgram >> imageLocation [
 	^ imageLocation
 ]
 
-{ #category : #initialization }
+{ #category : #generated }
 GLCanvasTextureProgram >> initializeLocations [
 
 	super initializeLocations.
-	mvpLocation := GL getUniformLocation: id with: 'mvp'.
-	self assert: mvpLocation >= 0.
-	sourceExtentLocation := GL getUniformLocation: id with: 'sourceExtent'.
-	self assert: sourceExtentLocation >= 0.
-	sourcePositionLocation := GL getUniformLocation: id with: 'sourcePosition'.
-	self assert: sourcePositionLocation >= 0.
-	colorLocation := self registerUniform: 'color'.
 	
-	imageLocation := GL getUniformLocation: id with: 'image'.
-	self assert: imageLocation >= 0.
-	aPosLocation := GL getAttribLocation: id with: 'aPos'.
-	self assert: aPosLocation >= 0.
-	aTexCoordsLocation := GL getAttribLocation: id with: 'aTexCoords'.
-	self assert: aTexCoordsLocation >= 0
+	mvpLocation := self registerUniform: 'mvp'.
+	sourcePositionLocation := self registerUniform: 'sourcePosition'.
+	sourceExtentLocation := self registerUniform: 'sourceExtent'.
+	imageLocation := self registerUniform: 'image'.
+	
+	aPosLocation := self registerAttribute: 'aPos'.
+	aTexCoordsLocation := self registerAttribute: 'aTexCoords'.
 ]
 
-{ #category : #'uniform accessing' }
+{ #category : #generated }
 GLCanvasTextureProgram >> mvp: anObject [
 
 	self uniform: mvpLocation value: anObject
@@ -109,14 +108,14 @@ GLCanvasTextureProgram >> mvpLocation [
 	^ mvpLocation
 ]
 
-{ #category : #'uniform accessing' }
-GLCanvasTextureProgram >> sourceExtent: aPoint [
+{ #category : #generated }
+GLCanvasTextureProgram >> sourceExtent: anObject [
 
-	self uniform: sourceExtentLocation value: aPoint
+	self uniform: sourceExtentLocation value: anObject
 ]
 
-{ #category : #'uniform accessing' }
-GLCanvasTextureProgram >> sourcePosition: aPoint [
+{ #category : #generated }
+GLCanvasTextureProgram >> sourcePosition: anObject [
 
-	self uniform: sourcePositionLocation value: aPoint
+	self uniform: sourcePositionLocation value: anObject
 ]

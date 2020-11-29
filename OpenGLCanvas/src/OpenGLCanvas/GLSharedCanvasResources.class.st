@@ -7,6 +7,7 @@ Class {
 		'textureProgram',
 		'outlineProgram',
 		'ovalProgram',
+		'polygonProgram',
 		'rectangleProgram',
 		'fonts',
 		'fontProgram'
@@ -72,12 +73,6 @@ GLSharedCanvasResources >> initializeProgramAttributes [
 			textureProgram vertexAttrib: textureProgram aTexCoordsLocation components: 2 stride: 16 offset: 8.
 			GL checkForError].
 	
-		outlineProgram useDuring: [
-			outlineProgram vertexAttrib: outlineProgram aPosLocation components: 2 stride: 16 offset: 0.
-			GL checkForError.
-			outlineProgram vertexAttrib: outlineProgram aTexCoordsLocation components: 2 stride: 16 offset: 8.
-			GL checkForError].
-	
 		rectangleProgram useDuring: [
 			rectangleProgram vertexAttrib: rectangleProgram aPosLocation components: 2 stride: 16 offset: 0.
 			GL checkForError]]
@@ -87,18 +82,11 @@ GLSharedCanvasResources >> initializeProgramAttributes [
 GLSharedCanvasResources >> initializePrograms [
 	
 	textureProgram := GL getShaderProgram: GLCanvasTextureProgram.
-	outlineProgram := GL getShaderProgram: GLCanvasOutlineProgram.
 	ovalProgram := GL getShaderProgram: GLCanvasOvalProgram.
 	polygonProgram := GL getShaderProgram: GLCanvasPolygonProgram.
 	rectangleProgram := GL getShaderProgram: GLCanvasRectangleProgram.
 	fontProgram := GL getShaderProgram: GLCanvasFontProgram.
 	GL checkForError
-]
-
-{ #category : #accessing }
-GLSharedCanvasResources >> outlineProgram [
-
-	^ outlineProgram
 ]
 
 { #category : #accessing }
