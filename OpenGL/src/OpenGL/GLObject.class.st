@@ -28,16 +28,37 @@ Class {
 
 {
 	#category : #allocation,
-	#timestamp : ''
+	#timestamp : 'stlu 12/1/2020 02:57'
 }
 GLObject class >> allocate [
-	"Allocates an object with OpenGL. Returns the id to reference it."
+	"Allocates an object with OpenGL. Returns the allocated object's id."
+	^ (self allocate: 1) first
+]
+
+{
+	#category : #allocation,
+	#timestamp : 'stlu 11/30/2020 19:45'
+}
+GLObject class >> allocate: n [
+	"Allocates n objects with OpenGL. Returns an array of the ids of the allocated objects."
+	| array |
+	array := IntegerArray new: n.
+	self allocate: n in: array.
+	^ array
+]
+
+{
+	#category : #allocation,
+	#timestamp : 'stlu 11/30/2020 19:44'
+}
+GLObject class >> allocate: n in: anIntegerArray [
+	"Allocates n objects with OpenGL. Stores the allocated objects' ids in anIntegerArray."
 	self subclassResponsibility
 ]
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 01:25'
 }
 GLObject class >> create [
 
@@ -46,7 +67,7 @@ GLObject class >> create [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 01:25'
 }
 GLObject class >> id: anInteger [
 
@@ -57,7 +78,7 @@ GLObject class >> id: anInteger [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLObject class >> new [
 
@@ -66,7 +87,7 @@ GLObject class >> new [
 
 {
 	#category : #converting,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 12:10'
 }
 GLObject class >> newFrom: glObject [
 
@@ -75,7 +96,7 @@ GLObject class >> newFrom: glObject [
 
 {
 	#category : #comparing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 01:22'
 }
 GLObject >> = otherObject [
 
@@ -87,7 +108,7 @@ GLObject >> = otherObject [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 12:11'
 }
 GLObject >> cleanUp [
 
@@ -96,7 +117,7 @@ GLObject >> cleanUp [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 01:33'
 }
 GLObject >> context [
 
@@ -105,7 +126,7 @@ GLObject >> context [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 01:29'
 }
 GLObject >> delete [
 
@@ -114,7 +135,7 @@ GLObject >> delete [
 
 {
 	#category : #comparing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 01:22'
 }
 GLObject >> hash [
 
@@ -123,7 +144,7 @@ GLObject >> hash [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLObject >> id [
 
@@ -132,7 +153,7 @@ GLObject >> id [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 16:36'
 }
 GLObject >> id: anInteger [
 
@@ -141,7 +162,7 @@ GLObject >> id: anInteger [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 12:08'
 }
 GLObject >> initialize [
 
@@ -150,7 +171,7 @@ GLObject >> initialize [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 12:12'
 }
 GLObject >> isBuffer [
 
@@ -159,7 +180,7 @@ GLObject >> isBuffer [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 12:14'
 }
 GLObject >> isFrameBuffer [
 
@@ -168,7 +189,7 @@ GLObject >> isFrameBuffer [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 12:12'
 }
 GLObject >> isProgram [
 
@@ -177,7 +198,7 @@ GLObject >> isProgram [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 12:12'
 }
 GLObject >> isShader [
 
@@ -186,7 +207,7 @@ GLObject >> isShader [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 12:12'
 }
 GLObject >> isTexture [
 
@@ -195,7 +216,7 @@ GLObject >> isTexture [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 12:14'
 }
 GLObject >> isVertexArray [
 
@@ -204,7 +225,7 @@ GLObject >> isVertexArray [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 12:08'
 }
 GLObject >> library [
 
@@ -212,8 +233,20 @@ GLObject >> library [
 ]
 
 {
+	#category : #printing,
+	#timestamp : 'stlu 12/1/2020 03:08'
+}
+GLObject >> printOn: aStream [
+
+	super printOn: aStream.
+	aStream nextPut: $(.
+	id printOn: aStream.
+	aStream nextPut: $)
+]
+
+{
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 12:14'
 }
 GLObject >> register [
 

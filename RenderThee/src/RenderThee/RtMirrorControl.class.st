@@ -10,12 +10,12 @@ Class {
 		'store'
 	],
 	#category : #'RenderThee-Demo',
-	#commentStamp : ''
+	#commentStamp : 'stlu 8/21/2020 14:39'
 }
 
 {
 	#category : #deletion,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtMirrorControl >> delete [
 
@@ -25,7 +25,7 @@ RtMirrorControl >> delete [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 12:21'
 }
 RtMirrorControl >> glLibrary [
 
@@ -34,7 +34,7 @@ RtMirrorControl >> glLibrary [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtMirrorControl >> initialize [
 
@@ -47,7 +47,7 @@ RtMirrorControl >> initialize [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtMirrorControl >> shouldClose [
 
@@ -56,7 +56,7 @@ RtMirrorControl >> shouldClose [
 
 {
 	#category : #stepping,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtMirrorControl >> step [
 
@@ -66,7 +66,7 @@ RtMirrorControl >> step [
 
 {
 	#category : #stepping,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtMirrorControl >> stepTime [
 

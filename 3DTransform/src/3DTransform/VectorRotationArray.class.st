@@ -11,7 +11,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 VectorRotationArray class >> contentsClass [
 	^Quaternion

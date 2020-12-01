@@ -21,7 +21,7 @@ GLTVector class >> componentType: type numComponents: size [
 
 {
 	#category : #'code generation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 17:57'
 }
 GLTVector class >> generateClasses [
 
@@ -43,7 +43,7 @@ GLTVector class >> generateClasses [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 13:21'
 }
 GLTVector class >> numComponents [
 
@@ -52,7 +52,7 @@ GLTVector class >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 13:23'
 }
 GLTVector >> numComponents [
 

@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 17:57'
 }
 GLTBooleanVector3 class >> componentType [
 
@@ -16,7 +16,7 @@ GLTBooleanVector3 class >> componentType [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 17:57'
 }
 GLTBooleanVector3 class >> declarators [
 
@@ -25,7 +25,7 @@ GLTBooleanVector3 class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 17:57'
 }
 GLTBooleanVector3 class >> enum [
 
@@ -34,7 +34,7 @@ GLTBooleanVector3 class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 17:57'
 }
 GLTBooleanVector3 class >> enumName [
 
@@ -43,7 +43,7 @@ GLTBooleanVector3 class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 17:57'
 }
 GLTBooleanVector3 class >> numComponents [
 
@@ -52,7 +52,7 @@ GLTBooleanVector3 class >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 17:57'
 }
 GLTBooleanVector3 class >> squeakName [
 
@@ -61,7 +61,7 @@ GLTBooleanVector3 class >> squeakName [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/19/2020 07:37'
 }
 GLTBooleanVector3 >> numComponents [
 

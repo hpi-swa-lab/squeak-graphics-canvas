@@ -2,7 +2,7 @@ Extension { #name : #Float }
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 15:29'
 }
 Float >> putAtUniform: location [
 

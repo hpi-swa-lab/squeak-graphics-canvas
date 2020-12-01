@@ -11,7 +11,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 10/27/2020 12:51'
 }
 GLProgramLinkingFailed class >> program: glProgram infoLog: aString [
 
@@ -23,7 +23,7 @@ GLProgramLinkingFailed class >> program: glProgram infoLog: aString [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/27/2020 12:51'
 }
 GLProgramLinkingFailed >> infoLog [
 
@@ -32,7 +32,7 @@ GLProgramLinkingFailed >> infoLog [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/27/2020 12:51'
 }
 GLProgramLinkingFailed >> infoLog: anObject [
 
@@ -41,7 +41,7 @@ GLProgramLinkingFailed >> infoLog: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/27/2020 12:51'
 }
 GLProgramLinkingFailed >> messageText [
 
@@ -50,7 +50,7 @@ GLProgramLinkingFailed >> messageText [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/27/2020 12:51'
 }
 GLProgramLinkingFailed >> program [
 
@@ -59,7 +59,7 @@ GLProgramLinkingFailed >> program [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/27/2020 12:51'
 }
 GLProgramLinkingFailed >> program: anObject [
 

@@ -16,7 +16,7 @@ GLTUnsignedInteger2DMultisampleSampler class >> componentType [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 15:18'
+	#timestamp : 'stlu 11/23/2020 13:49'
 }
 GLTUnsignedInteger2DMultisampleSampler class >> declarators [
 
@@ -25,7 +25,7 @@ GLTUnsignedInteger2DMultisampleSampler class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 15:18'
+	#timestamp : 'stlu 11/23/2020 13:49'
 }
 GLTUnsignedInteger2DMultisampleSampler class >> enum [
 
@@ -34,7 +34,7 @@ GLTUnsignedInteger2DMultisampleSampler class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 15:18'
+	#timestamp : 'stlu 11/23/2020 13:49'
 }
 GLTUnsignedInteger2DMultisampleSampler class >> enumName [
 
@@ -43,7 +43,7 @@ GLTUnsignedInteger2DMultisampleSampler class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 15:18'
+	#timestamp : 'stlu 11/23/2020 13:49'
 }
 GLTUnsignedInteger2DMultisampleSampler class >> squeakName [
 

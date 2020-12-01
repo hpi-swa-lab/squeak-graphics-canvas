@@ -20,12 +20,12 @@ Class {
 		'apis'
 	],
 	#category : #'OpenGL-Generation',
-	#commentStamp : ''
+	#commentStamp : 'stlu 11/6/2020 17:57'
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 10/31/2020 23:18'
 }
 GLGenRegistry class >> fromFile: filePath [
 
@@ -34,7 +34,7 @@ GLGenRegistry class >> fromFile: filePath [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/1/2020 19:47'
 }
 GLGenRegistry class >> fromTag: registryTag [
 
@@ -45,7 +45,7 @@ GLGenRegistry class >> fromTag: registryTag [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/6/2020 17:49'
 }
 GLGenRegistry class >> fromUrl: urlString [
 
@@ -57,7 +57,7 @@ GLGenRegistry class >> fromUrl: urlString [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/6/2020 17:52'
 }
 GLGenRegistry class >> fromWeb [
 
@@ -66,7 +66,7 @@ GLGenRegistry class >> fromWeb [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/1/2020 19:20'
 }
 GLGenRegistry class >> fromXML: xml [
 
@@ -75,7 +75,7 @@ GLGenRegistry class >> fromXML: xml [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/2/2020 13:20'
 }
 GLGenRegistry >> addCommand: command [
 
@@ -87,7 +87,7 @@ GLGenRegistry >> addCommand: command [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/2/2020 13:20'
 }
 GLGenRegistry >> addEnum: enum [
 
@@ -99,7 +99,7 @@ GLGenRegistry >> addEnum: enum [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/31/2020 22:19'
 }
 GLGenRegistry >> apis [
 
@@ -108,7 +108,7 @@ GLGenRegistry >> apis [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/31/2020 22:19'
 }
 GLGenRegistry >> commands [
 
@@ -117,7 +117,7 @@ GLGenRegistry >> commands [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/31/2020 22:19'
 }
 GLGenRegistry >> enumGroups [
 
@@ -126,7 +126,7 @@ GLGenRegistry >> enumGroups [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/31/2020 22:19'
 }
 GLGenRegistry >> enums [
 
@@ -135,7 +135,7 @@ GLGenRegistry >> enums [
 
 {
 	#category : #generation,
-	#timestamp : ''
+	#timestamp : 'stlu 11/2/2020 20:56'
 }
 GLGenRegistry >> generate [
 
@@ -145,7 +145,7 @@ GLGenRegistry >> generate [
 
 {
 	#category : #generation,
-	#timestamp : ''
+	#timestamp : 'stlu 11/2/2020 20:54'
 }
 GLGenRegistry >> generateConstantsPool [
 
@@ -158,7 +158,7 @@ GLGenRegistry >> generateConstantsPool [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 10/31/2020 23:59'
 }
 GLGenRegistry >> initialize [
 
@@ -171,7 +171,7 @@ GLGenRegistry >> initialize [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/2/2020 20:28'
 }
 GLGenRegistry >> tag: registryTag [
 

@@ -16,7 +16,7 @@ GLTIntegerBufferSampler class >> componentType [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 15:18'
+	#timestamp : 'stlu 11/23/2020 13:49'
 }
 GLTIntegerBufferSampler class >> declarators [
 
@@ -25,7 +25,7 @@ GLTIntegerBufferSampler class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 15:18'
+	#timestamp : 'stlu 11/23/2020 13:49'
 }
 GLTIntegerBufferSampler class >> enum [
 
@@ -34,7 +34,7 @@ GLTIntegerBufferSampler class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 15:18'
+	#timestamp : 'stlu 11/23/2020 13:49'
 }
 GLTIntegerBufferSampler class >> enumName [
 
@@ -43,7 +43,7 @@ GLTIntegerBufferSampler class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 15:18'
+	#timestamp : 'stlu 11/23/2020 13:49'
 }
 GLTIntegerBufferSampler class >> squeakName [
 

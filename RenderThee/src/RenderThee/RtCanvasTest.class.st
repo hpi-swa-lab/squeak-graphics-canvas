@@ -11,7 +11,7 @@ Class {
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtCanvasTest class >> isAbstract [
 
@@ -20,7 +20,7 @@ RtCanvasTest class >> isAbstract [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtCanvasTest >> canvasExtent [
 
@@ -29,7 +29,7 @@ RtCanvasTest >> canvasExtent [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtCanvasTest >> createCanvas [
 
@@ -38,7 +38,7 @@ RtCanvasTest >> createCanvas [
 
 {
 	#category : #running,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtCanvasTest >> setUp [
 
@@ -48,7 +48,7 @@ RtCanvasTest >> setUp [
 
 {
 	#category : #tests,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtCanvasTest >> testClipBy [
 
@@ -66,7 +66,7 @@ RtCanvasTest >> testClipBy [
 
 {
 	#category : #tests,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtCanvasTest >> testTransformBy [
 
@@ -84,7 +84,7 @@ RtCanvasTest >> testTransformBy [
 
 {
 	#category : #tests,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtCanvasTest >> testTransformByPureTranslation [
 
@@ -104,7 +104,7 @@ RtCanvasTest >> testTransformByPureTranslation [
 
 {
 	#category : #tests,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtCanvasTest >> testTranslateBy [
 
@@ -122,7 +122,7 @@ RtCanvasTest >> testTranslateBy [
 
 {
 	#category : #tests,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtCanvasTest >> testTranslateByClippingTo [
 
@@ -142,7 +142,7 @@ RtCanvasTest >> testTranslateByClippingTo [
 
 {
 	#category : #tests,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtCanvasTest >> testTranslateToClippingTo [
 

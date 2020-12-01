@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 18:36'
+	#timestamp : 'stlu 11/23/2020 14:04'
 }
 GLTDouble class >> commandInitials [
 
@@ -25,7 +25,7 @@ GLTDouble class >> componentType [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 18:36'
+	#timestamp : 'stlu 11/23/2020 14:04'
 }
 GLTDouble class >> declarators [
 
@@ -34,7 +34,7 @@ GLTDouble class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 18:36'
+	#timestamp : 'stlu 11/23/2020 14:04'
 }
 GLTDouble class >> enum [
 
@@ -43,7 +43,7 @@ GLTDouble class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 18:36'
+	#timestamp : 'stlu 11/23/2020 14:04'
 }
 GLTDouble class >> enumName [
 
@@ -52,7 +52,7 @@ GLTDouble class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 18:36'
+	#timestamp : 'stlu 11/23/2020 14:04'
 }
 GLTDouble class >> glslInitials [
 
@@ -61,7 +61,7 @@ GLTDouble class >> glslInitials [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 18:36'
+	#timestamp : 'stlu 11/23/2020 14:04'
 }
 GLTDouble class >> squeakArrayClass [
 
@@ -70,7 +70,7 @@ GLTDouble class >> squeakArrayClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 18:36'
+	#timestamp : 'stlu 11/23/2020 14:04'
 }
 GLTDouble class >> squeakName [
 
@@ -79,7 +79,7 @@ GLTDouble class >> squeakName [
 
 {
 	#category : #'program resources',
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 17:10'
 }
 GLTDouble >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 

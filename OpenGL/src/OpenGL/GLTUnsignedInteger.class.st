@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 18:36'
+	#timestamp : 'stlu 11/23/2020 14:04'
 }
 GLTUnsignedInteger class >> commandInitials [
 
@@ -25,7 +25,7 @@ GLTUnsignedInteger class >> componentType [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 18:36'
+	#timestamp : 'stlu 11/23/2020 14:04'
 }
 GLTUnsignedInteger class >> declarators [
 
@@ -34,7 +34,7 @@ GLTUnsignedInteger class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 18:36'
+	#timestamp : 'stlu 11/23/2020 14:04'
 }
 GLTUnsignedInteger class >> enum [
 
@@ -43,7 +43,7 @@ GLTUnsignedInteger class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 18:36'
+	#timestamp : 'stlu 11/23/2020 14:04'
 }
 GLTUnsignedInteger class >> enumName [
 
@@ -52,7 +52,7 @@ GLTUnsignedInteger class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 18:36'
+	#timestamp : 'stlu 11/23/2020 14:04'
 }
 GLTUnsignedInteger class >> glslInitials [
 
@@ -61,7 +61,7 @@ GLTUnsignedInteger class >> glslInitials [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 18:36'
+	#timestamp : 'stlu 11/23/2020 14:04'
 }
 GLTUnsignedInteger class >> squeakArrayClass [
 
@@ -70,7 +70,7 @@ GLTUnsignedInteger class >> squeakArrayClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 18:36'
+	#timestamp : 'stlu 11/23/2020 14:04'
 }
 GLTUnsignedInteger class >> squeakName [
 
@@ -79,7 +79,7 @@ GLTUnsignedInteger class >> squeakName [
 
 {
 	#category : #'program resources',
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 17:11'
 }
 GLTUnsignedInteger >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 

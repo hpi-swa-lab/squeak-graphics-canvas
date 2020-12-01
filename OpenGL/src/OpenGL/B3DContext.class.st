@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/9/2020 18:26'
 }
 B3DContext class >> bounds: aRectangle [
 
@@ -19,7 +19,7 @@ B3DContext class >> bounds: aRectangle [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/9/2020 18:24'
 }
 B3DContext class >> renderer: aRenderer [
 
@@ -31,7 +31,7 @@ B3DContext class >> renderer: aRenderer [
 
 {
 	#category : #activation,
-	#timestamp : ''
+	#timestamp : 'stlu 11/9/2020 15:43'
 }
 B3DContext >> activate [
 
@@ -40,7 +40,7 @@ B3DContext >> activate [
 
 {
 	#category : #activation,
-	#timestamp : ''
+	#timestamp : 'stlu 11/9/2020 15:44'
 }
 B3DContext >> deactivate [
 
@@ -49,7 +49,7 @@ B3DContext >> deactivate [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 11/9/2020 15:43'
 }
 B3DContext >> destroy [
 
@@ -59,7 +59,7 @@ B3DContext >> destroy [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 11/9/2020 15:42'
 }
 B3DContext >> endFrame [
 	"do nothing"
@@ -67,7 +67,7 @@ B3DContext >> endFrame [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 11/11/2020 13:12'
 }
 B3DContext >> initialize [
 
@@ -77,7 +77,7 @@ B3DContext >> initialize [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/9/2020 15:41'
 }
 B3DContext >> renderer [
 
@@ -86,7 +86,7 @@ B3DContext >> renderer [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/9/2020 15:41'
 }
 B3DContext >> renderer: anObject [
 
@@ -95,7 +95,7 @@ B3DContext >> renderer: anObject [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/9/2020 15:42'
 }
 B3DContext >> shouldClose [
 
@@ -104,7 +104,7 @@ B3DContext >> shouldClose [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 11/9/2020 15:41'
 }
 B3DContext >> swapBuffers [
 

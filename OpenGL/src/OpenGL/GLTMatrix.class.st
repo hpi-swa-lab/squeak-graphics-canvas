@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 15:15'
 }
 GLTMatrix class >> componentType [
 
@@ -16,7 +16,7 @@ GLTMatrix class >> componentType [
 
 {
 	#category : #'code generation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 15:14'
 }
 GLTMatrix class >> generateClasses [
 
@@ -42,7 +42,7 @@ GLTMatrix class >> generateClasses [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 13:12'
 }
 GLTMatrix class >> numColumns [
 
@@ -51,7 +51,7 @@ GLTMatrix class >> numColumns [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 13:11'
 }
 GLTMatrix class >> numComponents [
 
@@ -60,7 +60,7 @@ GLTMatrix class >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 13:12'
 }
 GLTMatrix class >> numRows [
 
@@ -69,7 +69,7 @@ GLTMatrix class >> numRows [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 15:15'
 }
 GLTMatrix >> componentType [
 
@@ -78,7 +78,7 @@ GLTMatrix >> componentType [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 13:11'
 }
 GLTMatrix >> numColumns [
 
@@ -87,7 +87,7 @@ GLTMatrix >> numColumns [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 13:23'
 }
 GLTMatrix >> numComponents [
 
@@ -96,7 +96,7 @@ GLTMatrix >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 13:11'
 }
 GLTMatrix >> numRows [
 

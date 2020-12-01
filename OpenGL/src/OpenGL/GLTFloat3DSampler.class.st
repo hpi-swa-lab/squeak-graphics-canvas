@@ -16,7 +16,7 @@ GLTFloat3DSampler class >> componentType [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 15:18'
+	#timestamp : 'stlu 11/23/2020 13:49'
 }
 GLTFloat3DSampler class >> declarators [
 
@@ -25,7 +25,7 @@ GLTFloat3DSampler class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 15:18'
+	#timestamp : 'stlu 11/23/2020 13:49'
 }
 GLTFloat3DSampler class >> enum [
 
@@ -34,7 +34,7 @@ GLTFloat3DSampler class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 15:18'
+	#timestamp : 'stlu 11/23/2020 13:49'
 }
 GLTFloat3DSampler class >> enumName [
 
@@ -43,7 +43,7 @@ GLTFloat3DSampler class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 15:18'
+	#timestamp : 'stlu 11/23/2020 13:49'
 }
 GLTFloat3DSampler class >> squeakName [
 

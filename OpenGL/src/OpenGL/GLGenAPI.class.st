@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/2/2020 14:08'
 }
 GLGenAPI class >> registry: registry name: aString [
 
@@ -21,7 +21,7 @@ GLGenAPI class >> registry: registry name: aString [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/2/2020 14:03'
 }
 GLGenAPI >> addFeature: feature [
 
@@ -30,7 +30,7 @@ GLGenAPI >> addFeature: feature [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/31/2020 22:20'
 }
 GLGenAPI >> features [
 
@@ -39,7 +39,7 @@ GLGenAPI >> features [
 
 {
 	#category : #generation,
-	#timestamp : ''
+	#timestamp : 'stlu 11/12/2020 14:58'
 }
 GLGenAPI >> generate [
 
@@ -55,7 +55,7 @@ GLGenAPI >> generate [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/2/2020 14:02'
 }
 GLGenAPI >> initialize [
 
@@ -65,7 +65,7 @@ GLGenAPI >> initialize [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/2/2020 13:34'
 }
 GLGenAPI >> lastFeature [
 
@@ -76,7 +76,7 @@ GLGenAPI >> lastFeature [
 
 {
 	#category : #printing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/2/2020 14:26'
 }
 GLGenAPI >> printOn: aStream [
 

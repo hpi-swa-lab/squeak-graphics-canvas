@@ -5,12 +5,12 @@ Class {
 	#name : #SgSpaceGame,
 	#superclass : #Morph,
 	#category : #'RenderThee-Demo-SpaceGame',
-	#commentStamp : ''
+	#commentStamp : 'stlu 8/21/2020 14:43'
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 SgSpaceGame class >> open [
 
@@ -19,7 +19,7 @@ SgSpaceGame class >> open [
 
 {
 	#category : #'repaint boundary',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 SgSpaceGame >> isRepaintBoundary [
 
@@ -28,7 +28,7 @@ SgSpaceGame >> isRepaintBoundary [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 SgSpaceGame >> open [
 	

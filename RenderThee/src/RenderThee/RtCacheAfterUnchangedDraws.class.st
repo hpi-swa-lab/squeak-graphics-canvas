@@ -13,7 +13,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtCacheAfterUnchangedDraws class >> threshold: numUnchangedDraws [
 
@@ -24,7 +24,7 @@ RtCacheAfterUnchangedDraws class >> threshold: numUnchangedDraws [
 
 {
 	#category : #rules,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtCacheAfterUnchangedDraws >> shouldCacheDrawLayer: aLayer [
 
@@ -33,7 +33,7 @@ RtCacheAfterUnchangedDraws >> shouldCacheDrawLayer: aLayer [
 
 {
 	#category : #rules,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtCacheAfterUnchangedDraws >> shouldCacheGroupLayer: aLayer [
 
@@ -42,7 +42,7 @@ RtCacheAfterUnchangedDraws >> shouldCacheGroupLayer: aLayer [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtCacheAfterUnchangedDraws >> threshold [
 	^ threshold
@@ -50,7 +50,7 @@ RtCacheAfterUnchangedDraws >> threshold [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtCacheAfterUnchangedDraws >> threshold: anObject [
 	threshold := anObject

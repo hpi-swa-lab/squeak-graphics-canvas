@@ -11,7 +11,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 17:38'
 }
 GLShaderCompilationFailed class >> shader: glShader infoLog: aString [
 
@@ -23,7 +23,7 @@ GLShaderCompilationFailed class >> shader: glShader infoLog: aString [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 17:35'
 }
 GLShaderCompilationFailed >> infoLog [
 
@@ -32,7 +32,7 @@ GLShaderCompilationFailed >> infoLog [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 17:35'
 }
 GLShaderCompilationFailed >> infoLog: anObject [
 
@@ -41,7 +41,7 @@ GLShaderCompilationFailed >> infoLog: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/27/2020 12:09'
 }
 GLShaderCompilationFailed >> messageText [
 
@@ -50,7 +50,7 @@ GLShaderCompilationFailed >> messageText [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 17:34'
 }
 GLShaderCompilationFailed >> shader [
 
@@ -59,7 +59,7 @@ GLShaderCompilationFailed >> shader [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 17:35'
 }
 GLShaderCompilationFailed >> shader: aGLShader [
 

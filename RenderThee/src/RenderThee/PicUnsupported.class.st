@@ -13,12 +13,12 @@ Class {
 		'Remembrall'
 	],
 	#category : #'RenderThee-Pictures',
-	#commentStamp : ''
+	#commentStamp : 'stlu 8/21/2020 13:51'
 }
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicUnsupported class >> Remembrall [
 
@@ -27,7 +27,7 @@ PicUnsupported class >> Remembrall [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicUnsupported class >> type: aSymbol [
 
@@ -39,7 +39,7 @@ PicUnsupported class >> type: aSymbol [
 
 {
 	#category : #drawing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicUnsupported >> drawOn: aCanvas [
 
@@ -48,7 +48,7 @@ PicUnsupported >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicUnsupported >> estimatedBounds [
 
@@ -57,7 +57,7 @@ PicUnsupported >> estimatedBounds [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicUnsupported >> type [
 
@@ -66,7 +66,7 @@ PicUnsupported >> type [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicUnsupported >> type: anObject [
 

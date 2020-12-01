@@ -11,7 +11,7 @@ Class {
 
 {
 	#category : #island,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Vector class >> howToPassAsArgument [
 	"We clone all vectors, even the array ones to point out that manipulation of those vectors outside of some context is not a goof idea. We may reassess this later."
@@ -20,7 +20,7 @@ Vector class >> howToPassAsArgument [
 
 {
 	#category : #'class initialization',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Vector class >> initialize [
 	"Vector initialize"
@@ -29,7 +29,7 @@ Vector class >> initialize [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Vector class >> new [
 	^super new: self numElements
@@ -37,7 +37,7 @@ Vector class >> new [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Vector class >> numElements [
 	^0
@@ -45,7 +45,7 @@ Vector class >> numElements [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Vector >> copyFrom: array [
 
@@ -56,7 +56,7 @@ Vector >> copyFrom: array [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Vector >> floatAt: index [
 	"For subclasses that override #at:"
@@ -66,7 +66,7 @@ Vector >> floatAt: index [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Vector >> floatAt: index put: value [
 	"For subclasses that override #at:put:"
@@ -77,7 +77,7 @@ Vector >> floatAt: index put: value [
 
 {
 	#category : #initialize,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Vector >> loadFrom: srcObject [
 	self == srcObject ifTrue:[^self].
@@ -88,7 +88,7 @@ Vector >> loadFrom: srcObject [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Vector >> numElements [
 	^self class numElements
@@ -96,7 +96,7 @@ Vector >> numElements [
 
 {
 	#category : #private,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Vector >> privateLoadFrom: srcObject [
 	"Load the receiver from the given source object."
@@ -105,7 +105,7 @@ Vector >> privateLoadFrom: srcObject [
 
 {
 	#category : #private,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Vector >> replaceFrom: start to: stop with: replacement startingAt: repStart [ 
 	"Primitive. This destructively replaces elements from start to stop in the receiver starting at index, repStart, in the collection, replacement. Answer the receiver. Range checks are performed in the primitive only. Optional. See Object documentation whatIsAPrimitive."
@@ -119,7 +119,7 @@ Vector >> replaceFrom: start to: stop with: replacement startingAt: repStart [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Vector >> wordAt: index [
 	<primitive: 60>
@@ -128,7 +128,7 @@ Vector >> wordAt: index [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Vector >> wordAt: index put: value [
 	<primitive: 61>

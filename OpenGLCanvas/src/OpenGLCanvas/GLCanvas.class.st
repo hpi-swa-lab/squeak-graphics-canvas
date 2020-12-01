@@ -19,7 +19,7 @@ Class {
 
 {
 	#category : #example,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas class >> exampleWindow [
 	"self exampleWindow"
@@ -34,7 +34,7 @@ GLCanvas class >> exampleWindow [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas class >> extent: aPoint framebuffer: glFrameBuffer [
 
@@ -45,7 +45,7 @@ GLCanvas class >> extent: aPoint framebuffer: glFrameBuffer [
 
 {
 	#category : #binding,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> boundDuring: aBlock [
 
@@ -54,7 +54,7 @@ GLCanvas >> boundDuring: aBlock [
 
 {
 	#category : #'drawing-support',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> clipBy: aRectangle [
 
@@ -72,7 +72,7 @@ GLCanvas >> clipBy: aRectangle [
 
 {
 	#category : #'drawing-support',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> clipBy: aRectangle during: aBlock [
 
@@ -82,7 +82,7 @@ GLCanvas >> clipBy: aRectangle during: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> clipRect [
 
@@ -91,7 +91,7 @@ GLCanvas >> clipRect [
 
 {
 	#category : #'scoped state',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> clipRect: aRectangle during: aBlock [
 
@@ -104,7 +104,7 @@ GLCanvas >> clipRect: aRectangle during: aBlock [
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderColor: bc [
 	^ self frameAndFillRectangle: (Rectangle encompassing: vertices)  fillColor: aColor borderWidth: bw borderColor: bc.
@@ -112,7 +112,7 @@ GLCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderColor: bc 
 
 {
 	#category : #'drawing-text',
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 01:37'
 }
 GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c [
 
@@ -151,7 +151,7 @@ GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fo
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> extent [
 
@@ -160,7 +160,7 @@ GLCanvas >> extent [
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderColor [
 	^ self frameAndFillRectangle: r fillColor: c borderWidth: borderWidth borderColor: borderColor.
@@ -168,7 +168,7 @@ GLCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderCol
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 01:37'
 }
 GLCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
 
@@ -185,7 +185,7 @@ GLCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWid
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> framebuffer [
 
@@ -194,7 +194,7 @@ GLCanvas >> framebuffer [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 12:05'
 }
 GLCanvas >> glLibrary [
 
@@ -203,7 +203,7 @@ GLCanvas >> glLibrary [
 
 {
 	#category : #'drawing-images',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
@@ -213,7 +213,7 @@ GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 
@@ -227,7 +227,7 @@ GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> line: pt1 to: pt2 width: w color: c [
 	^ self frameAndFillRectangle: (Rectangle encompassing: {pt1. pt2})  fillColor: (Color transparent) borderWidth: w borderColor: c.
@@ -235,7 +235,7 @@ GLCanvas >> line: pt1 to: pt2 width: w color: c [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> outlineProgram [
 
@@ -244,7 +244,7 @@ GLCanvas >> outlineProgram [
 
 {
 	#category : #'drawing-text',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> paragraph: paragraph bounds: bounds color: c [
 
@@ -262,7 +262,7 @@ GLCanvas >> paragraph: paragraph bounds: bounds color: c [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> textureProgram [
 
@@ -271,7 +271,7 @@ GLCanvas >> textureProgram [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> transform [
 	^ transform
@@ -279,7 +279,7 @@ GLCanvas >> transform [
 
 {
 	#category : #'scoped state',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> transform: aMatrix during: aBlock [
 
@@ -292,7 +292,7 @@ GLCanvas >> transform: aMatrix during: aBlock [
 
 {
 	#category : #'drawing-support',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> transformBy: aTransform during: aBlock [
 
@@ -304,7 +304,7 @@ GLCanvas >> transformBy: aTransform during: aBlock [
 
 {
 	#category : #'drawing-support',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> translateBy: aPoint during: aBlock [
 
@@ -315,7 +315,7 @@ GLCanvas >> translateBy: aPoint during: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> vao [
 
@@ -324,7 +324,7 @@ GLCanvas >> vao [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLCanvas >> vbo [
 

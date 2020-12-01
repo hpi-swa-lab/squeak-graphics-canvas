@@ -16,7 +16,7 @@ Class {
 
 {
 	#category : #'code generation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 11:45'
 }
 GLType class >> compileAccessor: name value: return [
 
@@ -25,7 +25,7 @@ GLType class >> compileAccessor: name value: return [
 
 {
 	#category : #'code generation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 11:44'
 }
 GLType class >> compileAccessor: name value: return classified: category [
 
@@ -36,7 +36,7 @@ GLType class >> compileAccessor: name value: return classified: category [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/19/2020 18:00'
 }
 GLType class >> declarator [
 
@@ -47,7 +47,7 @@ GLType class >> declarator [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/19/2020 17:58'
 }
 GLType class >> declarators [
 
@@ -56,7 +56,7 @@ GLType class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 12:46'
 }
 GLType class >> enum [
 	"Returns the type's corresponding OpenGL enum value or nil if there is none."
@@ -65,7 +65,7 @@ GLType class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 12:46'
 }
 GLType class >> enumName [
 	"Returns the type's corresponding OpenGL enum name without the 'GL_' prefix"
@@ -74,7 +74,7 @@ GLType class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/19/2020 06:44'
 }
 GLType class >> forEnum: anInteger [
 
@@ -83,7 +83,7 @@ GLType class >> forEnum: anInteger [
 
 {
 	#category : #'class initialization',
-	#timestamp : ''
+	#timestamp : 'stlu 11/19/2020 06:19'
 }
 GLType class >> initialize [
 
@@ -92,7 +92,7 @@ GLType class >> initialize [
 
 {
 	#category : #'class initialization',
-	#timestamp : ''
+	#timestamp : 'stlu 11/19/2020 06:16'
 }
 GLType class >> initializeEnumTable [
 
@@ -104,7 +104,7 @@ GLType class >> initializeEnumTable [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/19/2020 06:30'
 }
 GLType class >> instance [
 
@@ -113,7 +113,7 @@ GLType class >> instance [
 
 {
 	#category : #'code generation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 11:14'
 }
 GLType class >> removeAllSubclasses [
 
@@ -122,7 +122,7 @@ GLType class >> removeAllSubclasses [
 
 {
 	#category : #'code generation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/19/2020 17:47'
 }
 GLType class >> subclass: symbolOrString [
 
@@ -135,7 +135,7 @@ GLType class >> subclass: symbolOrString [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 18:09'
 }
 GLType >> actualComponentType [
 
@@ -144,7 +144,7 @@ GLType >> actualComponentType [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 16:33'
 }
 GLType >> componentType [
 
@@ -153,7 +153,7 @@ GLType >> componentType [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/19/2020 17:58'
 }
 GLType >> declarator [
 
@@ -162,7 +162,7 @@ GLType >> declarator [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 13:23'
 }
 GLType >> numComponents [
 
@@ -171,7 +171,7 @@ GLType >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 16:15'
 }
 GLType >> numElements [
 
@@ -180,7 +180,7 @@ GLType >> numElements [
 
 {
 	#category : #printing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/19/2020 17:58'
 }
 GLType >> printOn: aStream [
 
@@ -191,7 +191,7 @@ GLType >> printOn: aStream [
 
 {
 	#category : #'program resources',
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 16:15'
 }
 GLType >> setUniform: aUniform toArray: aRawBitsArray [
 
@@ -200,7 +200,7 @@ GLType >> setUniform: aUniform toArray: aRawBitsArray [
 
 {
 	#category : #'program resources',
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 16:08'
 }
 GLType >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
@@ -209,7 +209,7 @@ GLType >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
 {
 	#category : #'program resources',
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 16:08'
 }
 GLType >> setUniform: aUniform toObject: anObject [
 

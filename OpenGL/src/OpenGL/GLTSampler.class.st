@@ -58,7 +58,7 @@ GLTSampler >> at: aVector2Type [
 
 {
 	#category : #'program resources',
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 17:05'
 }
 GLTSampler >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 

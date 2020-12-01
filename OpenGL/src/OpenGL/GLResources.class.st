@@ -12,7 +12,7 @@ Class {
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 12:06'
 }
 GLResources >> cleanUp [
 
@@ -21,7 +21,7 @@ GLResources >> cleanUp [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 12:20'
 }
 GLResources >> getShaderProgram: aClass library: aLibrary [
 	
@@ -33,7 +33,7 @@ GLResources >> getShaderProgram: aClass library: aLibrary [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLResources >> initialize [
 
@@ -46,7 +46,7 @@ GLResources >> initialize [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 11:39'
 }
 GLResources >> objects [
 
@@ -55,7 +55,7 @@ GLResources >> objects [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 11:39'
 }
 GLResources >> shaders [
 
@@ -64,7 +64,7 @@ GLResources >> shaders [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLResources >> userData [
 	^ userData

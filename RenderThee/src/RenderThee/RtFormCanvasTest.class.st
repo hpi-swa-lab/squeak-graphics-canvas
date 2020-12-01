@@ -5,12 +5,12 @@ Class {
 	#name : #RtFormCanvasTest,
 	#superclass : #RtCanvasTest,
 	#category : #'RenderThee-Tests',
-	#commentStamp : ''
+	#commentStamp : 'stlu 8/21/2020 17:22'
 }
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtFormCanvasTest >> createCanvas [
 

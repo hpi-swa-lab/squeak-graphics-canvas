@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 11:51'
 }
 GLTScalar class >> commandInitials [
 
@@ -16,7 +16,7 @@ GLTScalar class >> commandInitials [
 
 {
 	#category : #'code generation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 11:41'
 }
 GLTScalar class >> compileGLSLInitialsAccessor: stringOrSymbol [
 
@@ -27,7 +27,7 @@ GLTScalar class >> compileGLSLInitialsAccessor: stringOrSymbol [
 
 {
 	#category : #'code generation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/19/2020 18:46'
 }
 GLTScalar class >> compileInitialsAccessor: stringOrSymbol [
 
@@ -67,7 +67,7 @@ GLTScalar class >> generateClasses [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 11:51'
 }
 GLTScalar class >> glslInitials [
 

@@ -9,12 +9,12 @@ Class {
 		'clipRect'
 	],
 	#category : #'RenderThee-Pictures',
-	#commentStamp : ''
+	#commentStamp : 'stlu 8/21/2020 12:59'
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicClip class >> rect: aRectangle [
 
@@ -25,7 +25,7 @@ PicClip class >> rect: aRectangle [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicClip >> clipRect [
 
@@ -34,7 +34,7 @@ PicClip >> clipRect [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicClip >> clipRect: anObject [
 
@@ -43,7 +43,7 @@ PicClip >> clipRect: anObject [
 
 {
 	#category : #drawing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicClip >> drawOn: aCanvas [
 
@@ -54,7 +54,7 @@ PicClip >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicClip >> estimatedBounds [
 

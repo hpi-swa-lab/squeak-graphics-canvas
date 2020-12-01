@@ -16,7 +16,7 @@ GLTUnsignedInteger1DArraySampler class >> componentType [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 15:18'
+	#timestamp : 'stlu 11/23/2020 13:49'
 }
 GLTUnsignedInteger1DArraySampler class >> declarators [
 
@@ -25,7 +25,7 @@ GLTUnsignedInteger1DArraySampler class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 15:18'
+	#timestamp : 'stlu 11/23/2020 13:49'
 }
 GLTUnsignedInteger1DArraySampler class >> enum [
 
@@ -34,7 +34,7 @@ GLTUnsignedInteger1DArraySampler class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 15:18'
+	#timestamp : 'stlu 11/23/2020 13:49'
 }
 GLTUnsignedInteger1DArraySampler class >> enumName [
 
@@ -43,7 +43,7 @@ GLTUnsignedInteger1DArraySampler class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 15:18'
+	#timestamp : 'stlu 11/23/2020 13:49'
 }
 GLTUnsignedInteger1DArraySampler class >> squeakName [
 

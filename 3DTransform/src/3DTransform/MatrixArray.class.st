@@ -11,7 +11,7 @@ Class {
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 MatrixArray >> size [
 	"Return the number of primitive vertices that can be stored in the receiver"

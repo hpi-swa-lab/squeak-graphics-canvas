@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 13:48'
 }
 GLTInteger2DArrayImage class >> declarators [
 
@@ -16,7 +16,7 @@ GLTInteger2DArrayImage class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 13:48'
 }
 GLTInteger2DArrayImage class >> enum [
 
@@ -25,7 +25,7 @@ GLTInteger2DArrayImage class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 13:48'
 }
 GLTInteger2DArrayImage class >> enumName [
 
@@ -34,7 +34,7 @@ GLTInteger2DArrayImage class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/23/2020 13:48'
 }
 GLTInteger2DArrayImage class >> squeakName [
 

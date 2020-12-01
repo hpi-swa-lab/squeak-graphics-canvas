@@ -2,7 +2,7 @@ Extension { #name : #Integer }
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 15:41'
 }
 Integer >> putAtUniform: location [
 

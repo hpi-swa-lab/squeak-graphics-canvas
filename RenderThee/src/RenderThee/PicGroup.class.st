@@ -10,12 +10,12 @@ Class {
 		'children'
 	],
 	#category : #'RenderThee-Pictures',
-	#commentStamp : ''
+	#commentStamp : 'stlu 8/21/2020 13:52'
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicGroup class >> children: aCollection [
 
@@ -26,7 +26,7 @@ PicGroup class >> children: aCollection [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> addChild: aCommand [
 
@@ -35,7 +35,7 @@ PicGroup >> addChild: aCommand [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> children [
 	"A collection of PicCommand. Last child has front-most z-coordinate."
@@ -44,7 +44,7 @@ PicGroup >> children [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> children: aCollection [
 
@@ -53,7 +53,7 @@ PicGroup >> children: aCollection [
 
 {
 	#category : #enumerating,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> do: aBlock [
 
@@ -63,7 +63,7 @@ PicGroup >> do: aBlock [
 
 {
 	#category : #drawing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> drawOn: aCanvas [
 
@@ -73,7 +73,7 @@ PicGroup >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> estimatedBounds [
 
@@ -82,7 +82,7 @@ PicGroup >> estimatedBounds [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> estimatedChildrenBounds [
 
@@ -91,7 +91,7 @@ PicGroup >> estimatedChildrenBounds [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> hasChildren [
 
@@ -100,7 +100,7 @@ PicGroup >> hasChildren [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> initialize [
 
@@ -110,7 +110,7 @@ PicGroup >> initialize [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> isDrawing [
 
@@ -119,7 +119,7 @@ PicGroup >> isDrawing [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> isEmpty [
 
@@ -128,7 +128,7 @@ PicGroup >> isEmpty [
 
 {
 	#category : #copying,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> postCopy [
 
@@ -138,7 +138,7 @@ PicGroup >> postCopy [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> removeAllChildren [
 
@@ -147,7 +147,7 @@ PicGroup >> removeAllChildren [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> removeLastChild [
 
@@ -156,7 +156,7 @@ PicGroup >> removeLastChild [
 
 {
 	#category : #transforming,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> transformBy: aTransform [
 

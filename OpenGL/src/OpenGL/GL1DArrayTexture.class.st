@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #binding,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 00:36'
 }
 GL1DArrayTexture class >> bindingEnum [
 
@@ -16,7 +16,7 @@ GL1DArrayTexture class >> bindingEnum [
 
 {
 	#category : #binding,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 00:42'
 }
 GL1DArrayTexture class >> target [
 

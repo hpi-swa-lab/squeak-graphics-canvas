@@ -5,12 +5,12 @@ Class {
 	#name : #PicDraw,
 	#superclass : #PicCommand,
 	#category : #'RenderThee-Pictures',
-	#commentStamp : ''
+	#commentStamp : 'stlu 8/21/2020 12:37'
 }
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicDraw >> isDrawing [
 

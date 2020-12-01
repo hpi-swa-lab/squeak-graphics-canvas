@@ -7,18 +7,16 @@ Class {
 
 {
 	#category : #allocation,
-	#timestamp : ''
+	#timestamp : 'stlu 11/30/2020 19:49'
 }
-GLVertexArray class >> allocate [
+GLVertexArray class >> allocate: n in: anIntegerArray [
 
-	IntegerArray new: 1 during: [:ids |
-		GL genVertexArrays: 1 with: ids.
-		^ ids first]
+	GL genVertexArrays: n with: anIntegerArray
 ]
 
 {
 	#category : #binding,
-	#timestamp : ''
+	#timestamp : 'stlu 11/6/2020 14:43'
 }
 GLVertexArray class >> bind: anInteger [
 
@@ -27,40 +25,33 @@ GLVertexArray class >> bind: anInteger [
 
 {
 	#category : #binding,
-	#timestamp : ''
-}
-GLVertexArray class >> currentBinding [
-
-	^ GL getIntegerParameter: GL_VERTEX_ARRAY_BINDING
-]
-
-{
-	#category : #binding,
-	#timestamp : ''
+	#timestamp : 'stlu 12/1/2020 03:29'
 }
 GLVertexArray >> bind [
 
-	self class bind: id
+	self class bind: id.
+	GL context bind: self to: GL_VERTEX_ARRAY
 ]
 
 {
 	#category : #binding,
-	#timestamp : ''
+	#timestamp : 'stlu 12/1/2020 03:30'
 }
 GLVertexArray >> boundDuring: aBlock [
 
-	| previousID |
-	self flag: #todo. "Remember actual objects"
-	previousID := self class currentBinding.
-	previousID = id ifTrue: [^ aBlock value].
-	self class bind: id.
-	aBlock ensure: [
-		self class bind: previousID]
+	| previous |
+	previous := GL context bindingOf: GL_VERTEX_ARRAY.
+	previous = self ifTrue: [^ aBlock value].
+	self bind.
+	^ aBlock ensure: [
+		previous
+			ifNil: [self unbind]
+			ifNotNil: [previous bind]]
 ]
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 15:41'
 }
 GLVertexArray >> delete [
 
@@ -69,7 +60,7 @@ GLVertexArray >> delete [
 
 {
 	#category : #drawing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLVertexArray >> draw: aModeEnum [
 
@@ -78,9 +69,19 @@ GLVertexArray >> draw: aModeEnum [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 12:15'
 }
 GLVertexArray >> isVertexArray [
 
 	^ true
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/1/2020 03:31'
+}
+GLVertexArray >> unbind [
+
+	self class bind: GL_NONE.
+	GL context bind: nil to: GL_VERTEX_ARRAY
 ]

@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #binding,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 00:38'
 }
 GL2DTexture class >> bindingEnum [
 
@@ -16,7 +16,7 @@ GL2DTexture class >> bindingEnum [
 
 {
 	#category : #binding,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 00:43'
 }
 GL2DTexture class >> target [
 
@@ -25,7 +25,7 @@ GL2DTexture class >> target [
 
 {
 	#category : #binding,
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 15:31'
 }
 GL2DTexture >> asForm [
 
@@ -49,7 +49,7 @@ GL2DTexture >> asForm [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 15:31'
 }
 GL2DTexture >> delete [
 
@@ -58,7 +58,7 @@ GL2DTexture >> delete [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 12:43'
 }
 GL2DTexture >> extent [
 
@@ -67,7 +67,7 @@ GL2DTexture >> extent [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 15:32'
 }
 GL2DTexture >> extent: aPoint [
 
@@ -95,7 +95,7 @@ GL2DTexture >> extent: aPoint [
 
 {
 	#category : #private,
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 15:32'
 }
 GL2DTexture >> getTextureParameterI: parameter [
 
@@ -107,7 +107,7 @@ GL2DTexture >> getTextureParameterI: parameter [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 12:43'
 }
 GL2DTexture >> height [
 
@@ -116,7 +116,7 @@ GL2DTexture >> height [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GL2DTexture >> image: aForm [
 
@@ -125,7 +125,7 @@ GL2DTexture >> image: aForm [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 16:30'
 }
 GL2DTexture >> image: aForm minFilter: anEnum magFilter: anEnum2 [
 
@@ -154,7 +154,7 @@ GL2DTexture >> image: aForm minFilter: anEnum magFilter: anEnum2 [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 15:32'
 }
 GL2DTexture >> subImage: aForm at: aPoint [
 
@@ -175,7 +175,7 @@ GL2DTexture >> subImage: aForm at: aPoint [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 12:44'
 }
 GL2DTexture >> width [
 

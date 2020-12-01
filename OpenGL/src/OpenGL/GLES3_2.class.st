@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLES3_2 class >> majorVersion [
 
@@ -16,7 +16,7 @@ GLES3_2 class >> majorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLES3_2 class >> minorVersion [
 
@@ -25,7 +25,7 @@ GLES3_2 class >> minorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/2/2020 16:11'
 }
 GLES3_2 class >> versionNumber [
 
@@ -34,7 +34,7 @@ GLES3_2 class >> versionNumber [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> BUFFER [
 
@@ -44,7 +44,7 @@ GLES3_2 >> BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> CCW [
 
@@ -54,7 +54,7 @@ GLES3_2 >> CCW [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> CLAMP_TO_BORDER [
 
@@ -64,7 +64,7 @@ GLES3_2 >> CLAMP_TO_BORDER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COLORBURN [
 
@@ -74,7 +74,7 @@ GLES3_2 >> COLORBURN [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COLORDODGE [
 
@@ -84,7 +84,7 @@ GLES3_2 >> COLORDODGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_RGBA_ASTC_10x10 [
 
@@ -94,7 +94,7 @@ GLES3_2 >> COMPRESSED_RGBA_ASTC_10x10 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_RGBA_ASTC_10x5 [
 
@@ -104,7 +104,7 @@ GLES3_2 >> COMPRESSED_RGBA_ASTC_10x5 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_RGBA_ASTC_10x6 [
 
@@ -114,7 +114,7 @@ GLES3_2 >> COMPRESSED_RGBA_ASTC_10x6 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_RGBA_ASTC_10x8 [
 
@@ -124,7 +124,7 @@ GLES3_2 >> COMPRESSED_RGBA_ASTC_10x8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_RGBA_ASTC_12x10 [
 
@@ -134,7 +134,7 @@ GLES3_2 >> COMPRESSED_RGBA_ASTC_12x10 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_RGBA_ASTC_12x12 [
 
@@ -144,7 +144,7 @@ GLES3_2 >> COMPRESSED_RGBA_ASTC_12x12 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_RGBA_ASTC_4x4 [
 
@@ -154,7 +154,7 @@ GLES3_2 >> COMPRESSED_RGBA_ASTC_4x4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_RGBA_ASTC_5x4 [
 
@@ -164,7 +164,7 @@ GLES3_2 >> COMPRESSED_RGBA_ASTC_5x4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_RGBA_ASTC_5x5 [
 
@@ -174,7 +174,7 @@ GLES3_2 >> COMPRESSED_RGBA_ASTC_5x5 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_RGBA_ASTC_6x5 [
 
@@ -184,7 +184,7 @@ GLES3_2 >> COMPRESSED_RGBA_ASTC_6x5 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_RGBA_ASTC_6x6 [
 
@@ -194,7 +194,7 @@ GLES3_2 >> COMPRESSED_RGBA_ASTC_6x6 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_RGBA_ASTC_8x5 [
 
@@ -204,7 +204,7 @@ GLES3_2 >> COMPRESSED_RGBA_ASTC_8x5 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_RGBA_ASTC_8x6 [
 
@@ -214,7 +214,7 @@ GLES3_2 >> COMPRESSED_RGBA_ASTC_8x6 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_RGBA_ASTC_8x8 [
 
@@ -224,7 +224,7 @@ GLES3_2 >> COMPRESSED_RGBA_ASTC_8x8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_10x10 [
 
@@ -234,7 +234,7 @@ GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_10x10 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_10x5 [
 
@@ -244,7 +244,7 @@ GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_10x5 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_10x6 [
 
@@ -254,7 +254,7 @@ GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_10x6 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_10x8 [
 
@@ -264,7 +264,7 @@ GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_10x8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_12x10 [
 
@@ -274,7 +274,7 @@ GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_12x10 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_12x12 [
 
@@ -284,7 +284,7 @@ GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_12x12 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_4x4 [
 
@@ -294,7 +294,7 @@ GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_4x4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_5x4 [
 
@@ -304,7 +304,7 @@ GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_5x4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_5x5 [
 
@@ -314,7 +314,7 @@ GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_5x5 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_6x5 [
 
@@ -324,7 +324,7 @@ GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_6x5 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_6x6 [
 
@@ -334,7 +334,7 @@ GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_6x6 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_8x5 [
 
@@ -344,7 +344,7 @@ GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_8x5 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_8x6 [
 
@@ -354,7 +354,7 @@ GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_8x6 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_8x8 [
 
@@ -364,7 +364,7 @@ GLES3_2 >> COMPRESSED_SRGB8_ALPHA8_ASTC_8x8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> CONTEXT_FLAGS [
 
@@ -374,7 +374,7 @@ GLES3_2 >> CONTEXT_FLAGS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> CONTEXT_FLAG_DEBUG_BIT [
 
@@ -384,7 +384,7 @@ GLES3_2 >> CONTEXT_FLAG_DEBUG_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> CONTEXT_FLAG_ROBUST_ACCESS_BIT [
 
@@ -394,7 +394,7 @@ GLES3_2 >> CONTEXT_FLAG_ROBUST_ACCESS_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> CONTEXT_LOST [
 
@@ -404,7 +404,7 @@ GLES3_2 >> CONTEXT_LOST [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> CW [
 
@@ -414,7 +414,7 @@ GLES3_2 >> CW [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DARKEN [
 
@@ -424,7 +424,7 @@ GLES3_2 >> DARKEN [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_CALLBACK_FUNCTION [
 
@@ -434,7 +434,7 @@ GLES3_2 >> DEBUG_CALLBACK_FUNCTION [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_CALLBACK_USER_PARAM [
 
@@ -444,7 +444,7 @@ GLES3_2 >> DEBUG_CALLBACK_USER_PARAM [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_GROUP_STACK_DEPTH [
 
@@ -454,7 +454,7 @@ GLES3_2 >> DEBUG_GROUP_STACK_DEPTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_LOGGED_MESSAGES [
 
@@ -464,7 +464,7 @@ GLES3_2 >> DEBUG_LOGGED_MESSAGES [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_NEXT_LOGGED_MESSAGE_LENGTH [
 
@@ -474,7 +474,7 @@ GLES3_2 >> DEBUG_NEXT_LOGGED_MESSAGE_LENGTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_OUTPUT [
 
@@ -484,7 +484,7 @@ GLES3_2 >> DEBUG_OUTPUT [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_OUTPUT_SYNCHRONOUS [
 
@@ -494,7 +494,7 @@ GLES3_2 >> DEBUG_OUTPUT_SYNCHRONOUS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_SEVERITY_HIGH [
 
@@ -504,7 +504,7 @@ GLES3_2 >> DEBUG_SEVERITY_HIGH [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_SEVERITY_LOW [
 
@@ -514,7 +514,7 @@ GLES3_2 >> DEBUG_SEVERITY_LOW [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_SEVERITY_MEDIUM [
 
@@ -524,7 +524,7 @@ GLES3_2 >> DEBUG_SEVERITY_MEDIUM [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_SEVERITY_NOTIFICATION [
 
@@ -534,7 +534,7 @@ GLES3_2 >> DEBUG_SEVERITY_NOTIFICATION [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_SOURCE_API [
 
@@ -544,7 +544,7 @@ GLES3_2 >> DEBUG_SOURCE_API [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_SOURCE_APPLICATION [
 
@@ -554,7 +554,7 @@ GLES3_2 >> DEBUG_SOURCE_APPLICATION [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_SOURCE_OTHER [
 
@@ -564,7 +564,7 @@ GLES3_2 >> DEBUG_SOURCE_OTHER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_SOURCE_SHADER_COMPILER [
 
@@ -574,7 +574,7 @@ GLES3_2 >> DEBUG_SOURCE_SHADER_COMPILER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_SOURCE_THIRD_PARTY [
 
@@ -584,7 +584,7 @@ GLES3_2 >> DEBUG_SOURCE_THIRD_PARTY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_SOURCE_WINDOW_SYSTEM [
 
@@ -594,7 +594,7 @@ GLES3_2 >> DEBUG_SOURCE_WINDOW_SYSTEM [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_TYPE_DEPRECATED_BEHAVIOR [
 
@@ -604,7 +604,7 @@ GLES3_2 >> DEBUG_TYPE_DEPRECATED_BEHAVIOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_TYPE_ERROR [
 
@@ -614,7 +614,7 @@ GLES3_2 >> DEBUG_TYPE_ERROR [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_TYPE_MARKER [
 
@@ -624,7 +624,7 @@ GLES3_2 >> DEBUG_TYPE_MARKER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_TYPE_OTHER [
 
@@ -634,7 +634,7 @@ GLES3_2 >> DEBUG_TYPE_OTHER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_TYPE_PERFORMANCE [
 
@@ -644,7 +644,7 @@ GLES3_2 >> DEBUG_TYPE_PERFORMANCE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_TYPE_POP_GROUP [
 
@@ -654,7 +654,7 @@ GLES3_2 >> DEBUG_TYPE_POP_GROUP [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_TYPE_PORTABILITY [
 
@@ -664,7 +664,7 @@ GLES3_2 >> DEBUG_TYPE_PORTABILITY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_TYPE_PUSH_GROUP [
 
@@ -674,7 +674,7 @@ GLES3_2 >> DEBUG_TYPE_PUSH_GROUP [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DEBUG_TYPE_UNDEFINED_BEHAVIOR [
 
@@ -684,7 +684,7 @@ GLES3_2 >> DEBUG_TYPE_UNDEFINED_BEHAVIOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> DIFFERENCE [
 
@@ -694,7 +694,7 @@ GLES3_2 >> DIFFERENCE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> EQUAL [
 
@@ -704,7 +704,7 @@ GLES3_2 >> EQUAL [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> EXCLUSION [
 
@@ -714,7 +714,7 @@ GLES3_2 >> EXCLUSION [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> FIRST_VERTEX_CONVENTION [
 
@@ -724,7 +724,7 @@ GLES3_2 >> FIRST_VERTEX_CONVENTION [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> FRACTIONAL_EVEN [
 
@@ -734,7 +734,7 @@ GLES3_2 >> FRACTIONAL_EVEN [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> FRACTIONAL_ODD [
 
@@ -744,7 +744,7 @@ GLES3_2 >> FRACTIONAL_ODD [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> FRAGMENT_INTERPOLATION_OFFSET_BITS [
 
@@ -754,7 +754,7 @@ GLES3_2 >> FRAGMENT_INTERPOLATION_OFFSET_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> FRAMEBUFFER_ATTACHMENT_LAYERED [
 
@@ -764,7 +764,7 @@ GLES3_2 >> FRAMEBUFFER_ATTACHMENT_LAYERED [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> FRAMEBUFFER_DEFAULT_LAYERS [
 
@@ -774,7 +774,7 @@ GLES3_2 >> FRAMEBUFFER_DEFAULT_LAYERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS [
 
@@ -784,7 +784,7 @@ GLES3_2 >> FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> GEOMETRY_INPUT_TYPE [
 
@@ -794,7 +794,7 @@ GLES3_2 >> GEOMETRY_INPUT_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> GEOMETRY_OUTPUT_TYPE [
 
@@ -804,7 +804,7 @@ GLES3_2 >> GEOMETRY_OUTPUT_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> GEOMETRY_SHADER [
 
@@ -814,7 +814,7 @@ GLES3_2 >> GEOMETRY_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> GEOMETRY_SHADER_BIT [
 
@@ -824,7 +824,7 @@ GLES3_2 >> GEOMETRY_SHADER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> GEOMETRY_SHADER_INVOCATIONS [
 
@@ -834,7 +834,7 @@ GLES3_2 >> GEOMETRY_SHADER_INVOCATIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> GEOMETRY_VERTICES_OUT [
 
@@ -844,7 +844,7 @@ GLES3_2 >> GEOMETRY_VERTICES_OUT [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> GUILTY_CONTEXT_RESET [
 
@@ -854,7 +854,7 @@ GLES3_2 >> GUILTY_CONTEXT_RESET [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> HARDLIGHT [
 
@@ -864,7 +864,7 @@ GLES3_2 >> HARDLIGHT [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> HSL_COLOR [
 
@@ -874,7 +874,7 @@ GLES3_2 >> HSL_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> HSL_HUE [
 
@@ -884,7 +884,7 @@ GLES3_2 >> HSL_HUE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> HSL_LUMINOSITY [
 
@@ -894,7 +894,7 @@ GLES3_2 >> HSL_LUMINOSITY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> HSL_SATURATION [
 
@@ -904,7 +904,7 @@ GLES3_2 >> HSL_SATURATION [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> IMAGE_BUFFER [
 
@@ -914,7 +914,7 @@ GLES3_2 >> IMAGE_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> IMAGE_CUBE_MAP_ARRAY [
 
@@ -924,7 +924,7 @@ GLES3_2 >> IMAGE_CUBE_MAP_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> INNOCENT_CONTEXT_RESET [
 
@@ -934,7 +934,7 @@ GLES3_2 >> INNOCENT_CONTEXT_RESET [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> INT_IMAGE_BUFFER [
 
@@ -944,7 +944,7 @@ GLES3_2 >> INT_IMAGE_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> INT_IMAGE_CUBE_MAP_ARRAY [
 
@@ -954,7 +954,7 @@ GLES3_2 >> INT_IMAGE_CUBE_MAP_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> INT_SAMPLER_2D_MULTISAMPLE_ARRAY [
 
@@ -964,7 +964,7 @@ GLES3_2 >> INT_SAMPLER_2D_MULTISAMPLE_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> INT_SAMPLER_BUFFER [
 
@@ -974,7 +974,7 @@ GLES3_2 >> INT_SAMPLER_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> INT_SAMPLER_CUBE_MAP_ARRAY [
 
@@ -984,7 +984,7 @@ GLES3_2 >> INT_SAMPLER_CUBE_MAP_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> ISOLINES [
 
@@ -994,7 +994,7 @@ GLES3_2 >> ISOLINES [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> IS_PER_PATCH [
 
@@ -1004,7 +1004,7 @@ GLES3_2 >> IS_PER_PATCH [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> LAST_VERTEX_CONVENTION [
 
@@ -1014,7 +1014,7 @@ GLES3_2 >> LAST_VERTEX_CONVENTION [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> LAYER_PROVOKING_VERTEX [
 
@@ -1024,7 +1024,7 @@ GLES3_2 >> LAYER_PROVOKING_VERTEX [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> LIGHTEN [
 
@@ -1034,7 +1034,7 @@ GLES3_2 >> LIGHTEN [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> LINES_ADJACENCY [
 
@@ -1044,7 +1044,7 @@ GLES3_2 >> LINES_ADJACENCY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> LINE_STRIP_ADJACENCY [
 
@@ -1054,7 +1054,7 @@ GLES3_2 >> LINE_STRIP_ADJACENCY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> LOSE_CONTEXT_ON_RESET [
 
@@ -1064,7 +1064,7 @@ GLES3_2 >> LOSE_CONTEXT_ON_RESET [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS [
 
@@ -1074,7 +1074,7 @@ GLES3_2 >> MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS [
 
@@ -1084,7 +1084,7 @@ GLES3_2 >> MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS [
 
@@ -1094,7 +1094,7 @@ GLES3_2 >> MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_DEBUG_GROUP_STACK_DEPTH [
 
@@ -1104,7 +1104,7 @@ GLES3_2 >> MAX_DEBUG_GROUP_STACK_DEPTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_DEBUG_LOGGED_MESSAGES [
 
@@ -1114,7 +1114,7 @@ GLES3_2 >> MAX_DEBUG_LOGGED_MESSAGES [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_DEBUG_MESSAGE_LENGTH [
 
@@ -1124,7 +1124,7 @@ GLES3_2 >> MAX_DEBUG_MESSAGE_LENGTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_FRAGMENT_INTERPOLATION_OFFSET [
 
@@ -1134,7 +1134,7 @@ GLES3_2 >> MAX_FRAGMENT_INTERPOLATION_OFFSET [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_FRAMEBUFFER_LAYERS [
 
@@ -1144,7 +1144,7 @@ GLES3_2 >> MAX_FRAMEBUFFER_LAYERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_GEOMETRY_ATOMIC_COUNTERS [
 
@@ -1154,7 +1154,7 @@ GLES3_2 >> MAX_GEOMETRY_ATOMIC_COUNTERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS [
 
@@ -1164,7 +1164,7 @@ GLES3_2 >> MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_GEOMETRY_IMAGE_UNIFORMS [
 
@@ -1174,7 +1174,7 @@ GLES3_2 >> MAX_GEOMETRY_IMAGE_UNIFORMS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_GEOMETRY_INPUT_COMPONENTS [
 
@@ -1184,7 +1184,7 @@ GLES3_2 >> MAX_GEOMETRY_INPUT_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_GEOMETRY_OUTPUT_COMPONENTS [
 
@@ -1194,7 +1194,7 @@ GLES3_2 >> MAX_GEOMETRY_OUTPUT_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_GEOMETRY_OUTPUT_VERTICES [
 
@@ -1204,7 +1204,7 @@ GLES3_2 >> MAX_GEOMETRY_OUTPUT_VERTICES [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_GEOMETRY_SHADER_INVOCATIONS [
 
@@ -1214,7 +1214,7 @@ GLES3_2 >> MAX_GEOMETRY_SHADER_INVOCATIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_GEOMETRY_SHADER_STORAGE_BLOCKS [
 
@@ -1224,7 +1224,7 @@ GLES3_2 >> MAX_GEOMETRY_SHADER_STORAGE_BLOCKS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_GEOMETRY_TEXTURE_IMAGE_UNITS [
 
@@ -1234,7 +1234,7 @@ GLES3_2 >> MAX_GEOMETRY_TEXTURE_IMAGE_UNITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS [
 
@@ -1244,7 +1244,7 @@ GLES3_2 >> MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_GEOMETRY_UNIFORM_BLOCKS [
 
@@ -1254,7 +1254,7 @@ GLES3_2 >> MAX_GEOMETRY_UNIFORM_BLOCKS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_GEOMETRY_UNIFORM_COMPONENTS [
 
@@ -1264,7 +1264,7 @@ GLES3_2 >> MAX_GEOMETRY_UNIFORM_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_LABEL_LENGTH [
 
@@ -1274,7 +1274,7 @@ GLES3_2 >> MAX_LABEL_LENGTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_PATCH_VERTICES [
 
@@ -1284,7 +1284,7 @@ GLES3_2 >> MAX_PATCH_VERTICES [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_CONTROL_ATOMIC_COUNTERS [
 
@@ -1294,7 +1294,7 @@ GLES3_2 >> MAX_TESS_CONTROL_ATOMIC_COUNTERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS [
 
@@ -1304,7 +1304,7 @@ GLES3_2 >> MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_CONTROL_IMAGE_UNIFORMS [
 
@@ -1314,7 +1314,7 @@ GLES3_2 >> MAX_TESS_CONTROL_IMAGE_UNIFORMS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_CONTROL_INPUT_COMPONENTS [
 
@@ -1324,7 +1324,7 @@ GLES3_2 >> MAX_TESS_CONTROL_INPUT_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_CONTROL_OUTPUT_COMPONENTS [
 
@@ -1334,7 +1334,7 @@ GLES3_2 >> MAX_TESS_CONTROL_OUTPUT_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS [
 
@@ -1344,7 +1344,7 @@ GLES3_2 >> MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS [
 
@@ -1354,7 +1354,7 @@ GLES3_2 >> MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS [
 
@@ -1364,7 +1364,7 @@ GLES3_2 >> MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_CONTROL_UNIFORM_BLOCKS [
 
@@ -1374,7 +1374,7 @@ GLES3_2 >> MAX_TESS_CONTROL_UNIFORM_BLOCKS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_CONTROL_UNIFORM_COMPONENTS [
 
@@ -1384,7 +1384,7 @@ GLES3_2 >> MAX_TESS_CONTROL_UNIFORM_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_EVALUATION_ATOMIC_COUNTERS [
 
@@ -1394,7 +1394,7 @@ GLES3_2 >> MAX_TESS_EVALUATION_ATOMIC_COUNTERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS [
 
@@ -1404,7 +1404,7 @@ GLES3_2 >> MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_EVALUATION_IMAGE_UNIFORMS [
 
@@ -1414,7 +1414,7 @@ GLES3_2 >> MAX_TESS_EVALUATION_IMAGE_UNIFORMS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_EVALUATION_INPUT_COMPONENTS [
 
@@ -1424,7 +1424,7 @@ GLES3_2 >> MAX_TESS_EVALUATION_INPUT_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_EVALUATION_OUTPUT_COMPONENTS [
 
@@ -1434,7 +1434,7 @@ GLES3_2 >> MAX_TESS_EVALUATION_OUTPUT_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS [
 
@@ -1444,7 +1444,7 @@ GLES3_2 >> MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS [
 
@@ -1454,7 +1454,7 @@ GLES3_2 >> MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_EVALUATION_UNIFORM_BLOCKS [
 
@@ -1464,7 +1464,7 @@ GLES3_2 >> MAX_TESS_EVALUATION_UNIFORM_BLOCKS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_EVALUATION_UNIFORM_COMPONENTS [
 
@@ -1474,7 +1474,7 @@ GLES3_2 >> MAX_TESS_EVALUATION_UNIFORM_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_GEN_LEVEL [
 
@@ -1484,7 +1484,7 @@ GLES3_2 >> MAX_TESS_GEN_LEVEL [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TESS_PATCH_COMPONENTS [
 
@@ -1494,7 +1494,7 @@ GLES3_2 >> MAX_TESS_PATCH_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MAX_TEXTURE_BUFFER_SIZE [
 
@@ -1504,7 +1504,7 @@ GLES3_2 >> MAX_TEXTURE_BUFFER_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MIN_FRAGMENT_INTERPOLATION_OFFSET [
 
@@ -1514,7 +1514,7 @@ GLES3_2 >> MIN_FRAGMENT_INTERPOLATION_OFFSET [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MIN_SAMPLE_SHADING_VALUE [
 
@@ -1524,7 +1524,7 @@ GLES3_2 >> MIN_SAMPLE_SHADING_VALUE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MULTIPLY [
 
@@ -1534,7 +1534,7 @@ GLES3_2 >> MULTIPLY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MULTISAMPLE_LINE_WIDTH_GRANULARITY [
 
@@ -1544,7 +1544,7 @@ GLES3_2 >> MULTISAMPLE_LINE_WIDTH_GRANULARITY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> MULTISAMPLE_LINE_WIDTH_RANGE [
 
@@ -1554,7 +1554,7 @@ GLES3_2 >> MULTISAMPLE_LINE_WIDTH_RANGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> NO_ERROR [
 
@@ -1564,7 +1564,7 @@ GLES3_2 >> NO_ERROR [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> NO_RESET_NOTIFICATION [
 
@@ -1574,7 +1574,7 @@ GLES3_2 >> NO_RESET_NOTIFICATION [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> OVERLAY [
 
@@ -1584,7 +1584,7 @@ GLES3_2 >> OVERLAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> PATCHES [
 
@@ -1594,7 +1594,7 @@ GLES3_2 >> PATCHES [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> PATCH_VERTICES [
 
@@ -1604,7 +1604,7 @@ GLES3_2 >> PATCH_VERTICES [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> PRIMITIVES_GENERATED [
 
@@ -1614,7 +1614,7 @@ GLES3_2 >> PRIMITIVES_GENERATED [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> PRIMITIVE_BOUNDING_BOX [
 
@@ -1624,7 +1624,7 @@ GLES3_2 >> PRIMITIVE_BOUNDING_BOX [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED [
 
@@ -1634,7 +1634,7 @@ GLES3_2 >> PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> PROGRAM [
 
@@ -1644,7 +1644,7 @@ GLES3_2 >> PROGRAM [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> PROGRAM_PIPELINE [
 
@@ -1654,7 +1654,7 @@ GLES3_2 >> PROGRAM_PIPELINE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> QUADS [
 
@@ -1664,7 +1664,7 @@ GLES3_2 >> QUADS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> QUERY [
 
@@ -1674,7 +1674,7 @@ GLES3_2 >> QUERY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> REFERENCED_BY_GEOMETRY_SHADER [
 
@@ -1684,7 +1684,7 @@ GLES3_2 >> REFERENCED_BY_GEOMETRY_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> REFERENCED_BY_TESS_CONTROL_SHADER [
 
@@ -1694,7 +1694,7 @@ GLES3_2 >> REFERENCED_BY_TESS_CONTROL_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> REFERENCED_BY_TESS_EVALUATION_SHADER [
 
@@ -1704,7 +1704,7 @@ GLES3_2 >> REFERENCED_BY_TESS_EVALUATION_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> RESET_NOTIFICATION_STRATEGY [
 
@@ -1714,7 +1714,7 @@ GLES3_2 >> RESET_NOTIFICATION_STRATEGY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> SAMPLER [
 
@@ -1724,7 +1724,7 @@ GLES3_2 >> SAMPLER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> SAMPLER_2D_MULTISAMPLE_ARRAY [
 
@@ -1734,7 +1734,7 @@ GLES3_2 >> SAMPLER_2D_MULTISAMPLE_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> SAMPLER_BUFFER [
 
@@ -1744,7 +1744,7 @@ GLES3_2 >> SAMPLER_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> SAMPLER_CUBE_MAP_ARRAY [
 
@@ -1754,7 +1754,7 @@ GLES3_2 >> SAMPLER_CUBE_MAP_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> SAMPLER_CUBE_MAP_ARRAY_SHADOW [
 
@@ -1764,7 +1764,7 @@ GLES3_2 >> SAMPLER_CUBE_MAP_ARRAY_SHADOW [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> SAMPLE_SHADING [
 
@@ -1774,7 +1774,7 @@ GLES3_2 >> SAMPLE_SHADING [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> SCREEN [
 
@@ -1784,7 +1784,7 @@ GLES3_2 >> SCREEN [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> SHADER [
 
@@ -1794,7 +1794,7 @@ GLES3_2 >> SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> SOFTLIGHT [
 
@@ -1804,7 +1804,7 @@ GLES3_2 >> SOFTLIGHT [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> STACK_OVERFLOW [
 
@@ -1814,7 +1814,7 @@ GLES3_2 >> STACK_OVERFLOW [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> STACK_UNDERFLOW [
 
@@ -1824,7 +1824,7 @@ GLES3_2 >> STACK_UNDERFLOW [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> STENCIL_INDEX [
 
@@ -1834,7 +1834,7 @@ GLES3_2 >> STENCIL_INDEX [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> STENCIL_INDEX8 [
 
@@ -1844,7 +1844,7 @@ GLES3_2 >> STENCIL_INDEX8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TESS_CONTROL_OUTPUT_VERTICES [
 
@@ -1854,7 +1854,7 @@ GLES3_2 >> TESS_CONTROL_OUTPUT_VERTICES [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TESS_CONTROL_SHADER [
 
@@ -1864,7 +1864,7 @@ GLES3_2 >> TESS_CONTROL_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TESS_CONTROL_SHADER_BIT [
 
@@ -1874,7 +1874,7 @@ GLES3_2 >> TESS_CONTROL_SHADER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TESS_EVALUATION_SHADER [
 
@@ -1884,7 +1884,7 @@ GLES3_2 >> TESS_EVALUATION_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TESS_EVALUATION_SHADER_BIT [
 
@@ -1894,7 +1894,7 @@ GLES3_2 >> TESS_EVALUATION_SHADER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TESS_GEN_MODE [
 
@@ -1904,7 +1904,7 @@ GLES3_2 >> TESS_GEN_MODE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TESS_GEN_POINT_MODE [
 
@@ -1914,7 +1914,7 @@ GLES3_2 >> TESS_GEN_POINT_MODE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TESS_GEN_SPACING [
 
@@ -1924,7 +1924,7 @@ GLES3_2 >> TESS_GEN_SPACING [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TESS_GEN_VERTEX_ORDER [
 
@@ -1934,7 +1934,7 @@ GLES3_2 >> TESS_GEN_VERTEX_ORDER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TEXTURE_2D_MULTISAMPLE_ARRAY [
 
@@ -1944,7 +1944,7 @@ GLES3_2 >> TEXTURE_2D_MULTISAMPLE_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY [
 
@@ -1954,7 +1954,7 @@ GLES3_2 >> TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TEXTURE_BINDING_BUFFER [
 
@@ -1964,7 +1964,7 @@ GLES3_2 >> TEXTURE_BINDING_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TEXTURE_BINDING_CUBE_MAP_ARRAY [
 
@@ -1974,7 +1974,7 @@ GLES3_2 >> TEXTURE_BINDING_CUBE_MAP_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TEXTURE_BORDER_COLOR [
 
@@ -1984,7 +1984,7 @@ GLES3_2 >> TEXTURE_BORDER_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TEXTURE_BUFFER [
 
@@ -1994,7 +1994,7 @@ GLES3_2 >> TEXTURE_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TEXTURE_BUFFER_BINDING [
 
@@ -2004,7 +2004,7 @@ GLES3_2 >> TEXTURE_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TEXTURE_BUFFER_DATA_STORE_BINDING [
 
@@ -2014,7 +2014,7 @@ GLES3_2 >> TEXTURE_BUFFER_DATA_STORE_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TEXTURE_BUFFER_OFFSET [
 
@@ -2024,7 +2024,7 @@ GLES3_2 >> TEXTURE_BUFFER_OFFSET [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TEXTURE_BUFFER_OFFSET_ALIGNMENT [
 
@@ -2034,7 +2034,7 @@ GLES3_2 >> TEXTURE_BUFFER_OFFSET_ALIGNMENT [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TEXTURE_BUFFER_SIZE [
 
@@ -2044,7 +2044,7 @@ GLES3_2 >> TEXTURE_BUFFER_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TEXTURE_CUBE_MAP_ARRAY [
 
@@ -2054,7 +2054,7 @@ GLES3_2 >> TEXTURE_CUBE_MAP_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TRIANGLES [
 
@@ -2064,7 +2064,7 @@ GLES3_2 >> TRIANGLES [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TRIANGLES_ADJACENCY [
 
@@ -2074,7 +2074,7 @@ GLES3_2 >> TRIANGLES_ADJACENCY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> TRIANGLE_STRIP_ADJACENCY [
 
@@ -2084,7 +2084,7 @@ GLES3_2 >> TRIANGLE_STRIP_ADJACENCY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> UNDEFINED_VERTEX [
 
@@ -2094,7 +2094,7 @@ GLES3_2 >> UNDEFINED_VERTEX [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> UNKNOWN_CONTEXT_RESET [
 
@@ -2104,7 +2104,7 @@ GLES3_2 >> UNKNOWN_CONTEXT_RESET [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> UNSIGNED_INT_IMAGE_BUFFER [
 
@@ -2114,7 +2114,7 @@ GLES3_2 >> UNSIGNED_INT_IMAGE_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY [
 
@@ -2124,7 +2124,7 @@ GLES3_2 >> UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY [
 
@@ -2134,7 +2134,7 @@ GLES3_2 >> UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> UNSIGNED_INT_SAMPLER_BUFFER [
 
@@ -2144,7 +2144,7 @@ GLES3_2 >> UNSIGNED_INT_SAMPLER_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY [
 
@@ -2154,7 +2154,7 @@ GLES3_2 >> UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> VERTEX_ARRAY [
 
@@ -2164,7 +2164,7 @@ GLES3_2 >> VERTEX_ARRAY [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> blendBarrier [
 
@@ -2175,7 +2175,7 @@ GLES3_2 >> blendBarrier [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> blendEquationSeparatei: buf with: modeRGB with: modeAlpha [
 
@@ -2186,7 +2186,7 @@ GLES3_2 >> blendEquationSeparatei: buf with: modeRGB with: modeAlpha [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> blendEquationi: buf with: mode [
 
@@ -2197,7 +2197,7 @@ GLES3_2 >> blendEquationi: buf with: mode [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> blendFuncSeparatei: buf with: srcRGB with: dstRGB with: srcAlpha with: dstAlpha [
 
@@ -2208,7 +2208,7 @@ GLES3_2 >> blendFuncSeparatei: buf with: srcRGB with: dstRGB with: srcAlpha with
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> blendFunci: buf with: src with: dst [
 
@@ -2219,7 +2219,7 @@ GLES3_2 >> blendFunci: buf with: src with: dst [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> colorMaski: index with: r with: g with: b with: a [
 
@@ -2230,7 +2230,7 @@ GLES3_2 >> colorMaski: index with: r with: g with: b with: a [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> copyImageSubData: srcName with: srcTarget with: srcLevel with: srcX with: srcY with: srcZ with: dstName with: dstTarget with: dstLevel with: dstX with: dstY with: dstZ with: srcWidth with: srcHeight with: srcDepth [
 
@@ -2241,7 +2241,7 @@ GLES3_2 >> copyImageSubData: srcName with: srcTarget with: srcLevel with: srcX w
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> debugMessageCallback: callback with: userParam [
 
@@ -2252,7 +2252,7 @@ GLES3_2 >> debugMessageCallback: callback with: userParam [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> debugMessageControl: source with: type with: severity with: count with: ids with: enabled [
 
@@ -2263,7 +2263,7 @@ GLES3_2 >> debugMessageControl: source with: type with: severity with: count wit
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> debugMessageInsert: source with: type with: id with: severity with: length with: buf [
 
@@ -2274,7 +2274,7 @@ GLES3_2 >> debugMessageInsert: source with: type with: id with: severity with: l
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> disablei: target with: index [
 
@@ -2285,7 +2285,7 @@ GLES3_2 >> disablei: target with: index [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> drawElementsBaseVertex: mode with: count with: type with: indices with: basevertex [
 
@@ -2296,7 +2296,7 @@ GLES3_2 >> drawElementsBaseVertex: mode with: count with: type with: indices wit
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> drawElementsInstancedBaseVertex: mode with: count with: type with: indices with: instancecount with: basevertex [
 
@@ -2307,7 +2307,7 @@ GLES3_2 >> drawElementsInstancedBaseVertex: mode with: count with: type with: in
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> drawRangeElementsBaseVertex: mode with: start with: end with: count with: type with: indices with: basevertex [
 
@@ -2318,7 +2318,7 @@ GLES3_2 >> drawRangeElementsBaseVertex: mode with: start with: end with: count w
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> enablei: target with: index [
 
@@ -2329,7 +2329,7 @@ GLES3_2 >> enablei: target with: index [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> framebufferTexture: target with: attachment with: texture with: level [
 
@@ -2340,7 +2340,7 @@ GLES3_2 >> framebufferTexture: target with: attachment with: texture with: level
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> getDebugMessageLog: count with: bufSize with: sources with: types with: ids with: severities with: lengths with: messageLog [
 
@@ -2351,7 +2351,7 @@ GLES3_2 >> getDebugMessageLog: count with: bufSize with: sources with: types wit
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> getGraphicsResetStatus [
 
@@ -2362,7 +2362,7 @@ GLES3_2 >> getGraphicsResetStatus [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> getObjectLabel: identifier with: name with: bufSize with: length with: label [
 
@@ -2373,7 +2373,7 @@ GLES3_2 >> getObjectLabel: identifier with: name with: bufSize with: length with
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> getObjectPtrLabel: ptr with: bufSize with: length with: label [
 
@@ -2384,7 +2384,7 @@ GLES3_2 >> getObjectPtrLabel: ptr with: bufSize with: length with: label [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> getPointerv: pname with: params [
 
@@ -2395,7 +2395,7 @@ GLES3_2 >> getPointerv: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> getSamplerParameterIiv: sampler with: pname with: params [
 
@@ -2406,7 +2406,7 @@ GLES3_2 >> getSamplerParameterIiv: sampler with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> getSamplerParameterIuiv: sampler with: pname with: params [
 
@@ -2417,7 +2417,7 @@ GLES3_2 >> getSamplerParameterIuiv: sampler with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> getTexParameterIiv: target with: pname with: params [
 
@@ -2428,7 +2428,7 @@ GLES3_2 >> getTexParameterIiv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> getTexParameterIuiv: target with: pname with: params [
 
@@ -2439,7 +2439,7 @@ GLES3_2 >> getTexParameterIuiv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> getnUniformfv: program with: location with: bufSize with: params [
 
@@ -2450,7 +2450,7 @@ GLES3_2 >> getnUniformfv: program with: location with: bufSize with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> getnUniformiv: program with: location with: bufSize with: params [
 
@@ -2461,7 +2461,7 @@ GLES3_2 >> getnUniformiv: program with: location with: bufSize with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> getnUniformuiv: program with: location with: bufSize with: params [
 
@@ -2472,7 +2472,7 @@ GLES3_2 >> getnUniformuiv: program with: location with: bufSize with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> isEnabledi: target with: index [
 
@@ -2483,7 +2483,7 @@ GLES3_2 >> isEnabledi: target with: index [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> minSampleShading: value [
 
@@ -2494,7 +2494,7 @@ GLES3_2 >> minSampleShading: value [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> objectLabel: identifier with: name with: length with: label [
 
@@ -2505,7 +2505,7 @@ GLES3_2 >> objectLabel: identifier with: name with: length with: label [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> objectPtrLabel: ptr with: length with: label [
 
@@ -2516,7 +2516,7 @@ GLES3_2 >> objectPtrLabel: ptr with: length with: label [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> patchParameteri: pname with: value [
 
@@ -2527,7 +2527,7 @@ GLES3_2 >> patchParameteri: pname with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> popDebugGroup [
 
@@ -2538,7 +2538,7 @@ GLES3_2 >> popDebugGroup [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> primitiveBoundingBox: minX with: minY with: minZ with: minW with: maxX with: maxY with: maxZ with: maxW [
 
@@ -2549,7 +2549,7 @@ GLES3_2 >> primitiveBoundingBox: minX with: minY with: minZ with: minW with: max
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> pushDebugGroup: source with: id with: length with: message [
 
@@ -2560,7 +2560,7 @@ GLES3_2 >> pushDebugGroup: source with: id with: length with: message [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> readnPixels: x with: y with: width with: height with: format with: type with: bufSize with: data [
 
@@ -2571,7 +2571,7 @@ GLES3_2 >> readnPixels: x with: y with: width with: height with: format with: ty
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> samplerParameterIiv: sampler with: pname with: param [
 
@@ -2582,7 +2582,7 @@ GLES3_2 >> samplerParameterIiv: sampler with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> samplerParameterIuiv: sampler with: pname with: param [
 
@@ -2593,7 +2593,7 @@ GLES3_2 >> samplerParameterIuiv: sampler with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> texBuffer: target with: internalformat with: buffer [
 
@@ -2604,7 +2604,7 @@ GLES3_2 >> texBuffer: target with: internalformat with: buffer [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> texBufferRange: target with: internalformat with: buffer with: offset with: size [
 
@@ -2615,7 +2615,7 @@ GLES3_2 >> texBufferRange: target with: internalformat with: buffer with: offset
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> texParameterIiv: target with: pname with: params [
 
@@ -2626,7 +2626,7 @@ GLES3_2 >> texParameterIiv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> texParameterIuiv: target with: pname with: params [
 
@@ -2637,7 +2637,7 @@ GLES3_2 >> texParameterIuiv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:57'
 }
 GLES3_2 >> texStorage3DMultisample: target with: samples with: internalformat with: width with: height with: depth with: fixedsamplelocations [
 

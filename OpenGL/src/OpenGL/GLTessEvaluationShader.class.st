@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/28/2020 17:52'
 }
 GLTessEvaluationShader class >> type [
 
