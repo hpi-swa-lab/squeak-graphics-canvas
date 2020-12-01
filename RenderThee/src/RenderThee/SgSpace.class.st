@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 SgSpace >> createStars: numStars [
 
@@ -23,7 +23,7 @@ SgSpace >> createStars: numStars [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 SgSpace >> initialize [
 
@@ -33,7 +33,7 @@ SgSpace >> initialize [
 
 {
 	#category : #'repaint boundary',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 SgSpace >> isRepaintBoundary [
 

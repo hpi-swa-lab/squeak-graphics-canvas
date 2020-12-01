@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtLayerTreeRenderer class >> morph: aMorph imageStore: anImageStore [
 
@@ -18,7 +18,7 @@ RtLayerTreeRenderer class >> morph: aMorph imageStore: anImageStore [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtLayerTreeRenderer >> initializeWithMorph: aMorph imageStore: anImageStore [
 
@@ -32,7 +32,7 @@ RtLayerTreeRenderer >> initializeWithMorph: aMorph imageStore: anImageStore [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtLayerTreeRenderer >> release [
 
@@ -41,7 +41,7 @@ RtLayerTreeRenderer >> release [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtLayerTreeRenderer >> renderFrame [
 

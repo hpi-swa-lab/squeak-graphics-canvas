@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 14:04'
+	#timestamp : 'zagto 12/1/2020 18:36'
 }
 GLTFloat class >> commandInitials [
 
@@ -16,7 +16,16 @@ GLTFloat class >> commandInitials [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 14:04'
+	#timestamp : 'zagto 12/1/2020 18:36'
+}
+GLTFloat class >> componentType [
+
+	^ GLTFloat
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'zagto 12/1/2020 18:36'
 }
 GLTFloat class >> declarators [
 
@@ -25,7 +34,7 @@ GLTFloat class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 14:04'
+	#timestamp : 'zagto 12/1/2020 18:36'
 }
 GLTFloat class >> enum [
 
@@ -34,7 +43,7 @@ GLTFloat class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 14:04'
+	#timestamp : 'zagto 12/1/2020 18:36'
 }
 GLTFloat class >> enumName [
 
@@ -43,7 +52,7 @@ GLTFloat class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 14:04'
+	#timestamp : 'zagto 12/1/2020 18:36'
 }
 GLTFloat class >> glslInitials [
 
@@ -52,7 +61,7 @@ GLTFloat class >> glslInitials [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 14:04'
+	#timestamp : 'zagto 12/1/2020 18:36'
 }
 GLTFloat class >> squeakArrayClass [
 
@@ -61,7 +70,7 @@ GLTFloat class >> squeakArrayClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 14:04'
+	#timestamp : 'zagto 12/1/2020 18:36'
 }
 GLTFloat class >> squeakName [
 
@@ -70,7 +79,7 @@ GLTFloat class >> squeakName [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 11/23/2020 17:10'
+	#timestamp : ''
 }
 GLTFloat >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 

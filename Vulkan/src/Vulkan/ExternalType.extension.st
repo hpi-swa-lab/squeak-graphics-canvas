@@ -2,7 +2,7 @@ Extension { #name : #ExternalType }
 
 {
 	#category : #'*Vulkan-FFI-Support',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 ExternalType >> asArrayType: aNumber [
 
@@ -16,7 +16,7 @@ ExternalType >> asArrayType: aNumber [
 
 {
 	#category : #'*Vulkan-FFI-Support',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 ExternalType >> isTypeAlias [
 
@@ -25,7 +25,7 @@ ExternalType >> isTypeAlias [
 
 {
 	#category : #'*Vulkan-FFI-Support-override',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 ExternalType class >> lookupTypes: signature [
 	"
@@ -50,7 +50,7 @@ ExternalType class >> lookupTypes: signature [
 
 {
 	#category : #'*Vulkan-FFI-Support-override',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 ExternalType class >> typeNamed: typeName [
 	"Supports pointer-type lookup for both atomic and structure types.

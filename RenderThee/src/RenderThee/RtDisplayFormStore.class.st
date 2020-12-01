@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtDisplayFormStore >> form: aForm [
 
@@ -16,7 +16,7 @@ RtDisplayFormStore >> form: aForm [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtDisplayFormStore >> initialize [
 
@@ -26,7 +26,7 @@ RtDisplayFormStore >> initialize [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtDisplayFormStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
@@ -41,7 +41,7 @@ RtDisplayFormStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtDisplayFormStore >> tryDeferringUpdates [
 

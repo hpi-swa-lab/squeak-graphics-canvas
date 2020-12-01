@@ -15,7 +15,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawString class >> contents: aString from: startIndex to: stopIndex in: boundsRect font: fontOrNil color: aColor [
 
@@ -31,7 +31,7 @@ PicDrawString class >> contents: aString from: startIndex to: stopIndex in: boun
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawString >> bounds [
 
@@ -40,7 +40,7 @@ PicDrawString >> bounds [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawString >> bounds: anObject [
 
@@ -49,7 +49,7 @@ PicDrawString >> bounds: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawString >> color [
 
@@ -58,7 +58,7 @@ PicDrawString >> color [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawString >> color: anObject [
 
@@ -67,7 +67,7 @@ PicDrawString >> color: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawString >> contents [
 
@@ -76,7 +76,7 @@ PicDrawString >> contents [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawString >> contents: anObject [
 
@@ -85,7 +85,7 @@ PicDrawString >> contents: anObject [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawString >> drawOn: aCanvas [
 
@@ -100,7 +100,7 @@ PicDrawString >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawString >> estimatedBounds [
 
@@ -109,7 +109,7 @@ PicDrawString >> estimatedBounds [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawString >> font [
 
@@ -118,7 +118,7 @@ PicDrawString >> font [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawString >> font: anObject [
 
@@ -127,7 +127,7 @@ PicDrawString >> font: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawString >> from [
 
@@ -136,7 +136,7 @@ PicDrawString >> from [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawString >> from: anObject [
 
@@ -145,7 +145,7 @@ PicDrawString >> from: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawString >> to [
 
@@ -154,7 +154,7 @@ PicDrawString >> to [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawString >> to: anObject [
 

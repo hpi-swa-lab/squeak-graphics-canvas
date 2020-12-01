@@ -13,7 +13,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawImage class >> form: aForm origin: aPoint sourceRect: aRectangle rule: anInteger [
 
@@ -27,7 +27,7 @@ PicDrawImage class >> form: aForm origin: aPoint sourceRect: aRectangle rule: an
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawImage >> combinationRule [
 
@@ -36,7 +36,7 @@ PicDrawImage >> combinationRule [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawImage >> combinationRule: anObject [
 
@@ -45,7 +45,7 @@ PicDrawImage >> combinationRule: anObject [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawImage >> drawOn: aCanvas [
 
@@ -58,7 +58,7 @@ PicDrawImage >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawImage >> estimatedBounds [
 
@@ -67,7 +67,7 @@ PicDrawImage >> estimatedBounds [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawImage >> form [
 
@@ -76,7 +76,7 @@ PicDrawImage >> form [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawImage >> form: anObject [
 
@@ -85,7 +85,7 @@ PicDrawImage >> form: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawImage >> origin [
 
@@ -94,7 +94,7 @@ PicDrawImage >> origin [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawImage >> origin: anObject [
 
@@ -103,7 +103,7 @@ PicDrawImage >> origin: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawImage >> sourceRect [
 
@@ -112,7 +112,7 @@ PicDrawImage >> sourceRect [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawImage >> sourceRect: anObject [
 

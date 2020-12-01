@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:00'
+	#timestamp : ''
 }
 GLDrawIndirectBuffer class >> bindingEnum [
 
@@ -16,7 +16,7 @@ GLDrawIndirectBuffer class >> bindingEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:02'
+	#timestamp : ''
 }
 GLDrawIndirectBuffer class >> target [
 

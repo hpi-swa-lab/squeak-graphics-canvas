@@ -16,7 +16,7 @@ Class {
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasRectangleProgram class >> attributes [
 
@@ -25,7 +25,7 @@ GLCanvasRectangleProgram class >> attributes [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasRectangleProgram class >> fragmentShader [
 
@@ -51,7 +51,7 @@ void main() {
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasRectangleProgram class >> uniforms [
 
@@ -60,7 +60,7 @@ GLCanvasRectangleProgram class >> uniforms [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasRectangleProgram class >> vertexShader [
     ^'#version 330 core
@@ -80,7 +80,7 @@ void main()
 
 {
 	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasRectangleProgram >> aPosLocation [
 
@@ -89,7 +89,7 @@ GLCanvasRectangleProgram >> aPosLocation [
 
 {
 	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasRectangleProgram >> borderColor: anObject [
 
@@ -98,7 +98,7 @@ GLCanvasRectangleProgram >> borderColor: anObject [
 
 {
 	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasRectangleProgram >> borderWidth: anObject [
 
@@ -107,7 +107,7 @@ GLCanvasRectangleProgram >> borderWidth: anObject [
 
 {
 	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasRectangleProgram >> color: anObject [
 
@@ -116,7 +116,7 @@ GLCanvasRectangleProgram >> color: anObject [
 
 {
 	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasRectangleProgram >> extent: anObject [
 
@@ -125,7 +125,7 @@ GLCanvasRectangleProgram >> extent: anObject [
 
 {
 	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasRectangleProgram >> initializeLocations [
 
@@ -142,7 +142,7 @@ GLCanvasRectangleProgram >> initializeLocations [
 
 {
 	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasRectangleProgram >> mvp: anObject [
 

@@ -11,7 +11,7 @@ Class {
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 11/3/2020 15:32'
+	#timestamp : ''
 }
 GLBuffer class >> allocate [
 
@@ -22,7 +22,7 @@ GLBuffer class >> allocate [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 14:53'
+	#timestamp : ''
 }
 GLBuffer class >> bind: id [
 
@@ -31,7 +31,7 @@ GLBuffer class >> bind: id [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 14:53'
+	#timestamp : ''
 }
 GLBuffer class >> bind: id to: target [
 
@@ -40,7 +40,7 @@ GLBuffer class >> bind: id to: target [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 11:42'
+	#timestamp : ''
 }
 GLBuffer class >> bindingEnum [
 
@@ -49,7 +49,7 @@ GLBuffer class >> bindingEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 14:54'
+	#timestamp : ''
 }
 GLBuffer class >> currentBinding [
 
@@ -58,7 +58,7 @@ GLBuffer class >> currentBinding [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 11:51'
+	#timestamp : ''
 }
 GLBuffer class >> target [
 
@@ -67,7 +67,7 @@ GLBuffer class >> target [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 14:51'
+	#timestamp : ''
 }
 GLBuffer >> bind [
 
@@ -76,7 +76,7 @@ GLBuffer >> bind [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 14:51'
+	#timestamp : ''
 }
 GLBuffer >> boundDuring: aBlock [
 
@@ -91,7 +91,7 @@ GLBuffer >> boundDuring: aBlock [
 
 {
 	#category : #data,
-	#timestamp : 'stlu 11/6/2020 13:59'
+	#timestamp : ''
 }
 GLBuffer >> data: aRawBitsArray [
 
@@ -100,7 +100,7 @@ GLBuffer >> data: aRawBitsArray [
 
 {
 	#category : #data,
-	#timestamp : 'stlu 11/6/2020 13:58'
+	#timestamp : ''
 }
 GLBuffer >> data: aRawBitsArray offset: byteOffset [
 
@@ -109,7 +109,7 @@ GLBuffer >> data: aRawBitsArray offset: byteOffset [
 
 {
 	#category : #data,
-	#timestamp : 'stlu 11/6/2020 13:57'
+	#timestamp : ''
 }
 GLBuffer >> data: aRawBitsArray size: byteSize [
 
@@ -118,7 +118,7 @@ GLBuffer >> data: aRawBitsArray size: byteSize [
 
 {
 	#category : #data,
-	#timestamp : 'stlu 11/6/2020 14:52'
+	#timestamp : ''
 }
 GLBuffer >> data: aRawBitsArray size: byteSize offset: byteOffset [
 
@@ -136,7 +136,7 @@ GLBuffer >> data: aRawBitsArray size: byteSize offset: byteOffset [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/3/2020 15:32'
+	#timestamp : ''
 }
 GLBuffer >> delete [
 
@@ -145,7 +145,7 @@ GLBuffer >> delete [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 16:24'
+	#timestamp : ''
 }
 GLBuffer >> draw: aModeEnum [
 
@@ -155,7 +155,7 @@ GLBuffer >> draw: aModeEnum [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/3/2020 15:32'
+	#timestamp : ''
 }
 GLBuffer >> draw: aModeEnum from: startIndex count: count [
 
@@ -165,7 +165,7 @@ GLBuffer >> draw: aModeEnum from: startIndex count: count [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/6/2020 13:33'
+	#timestamp : ''
 }
 GLBuffer >> initialize [
 
@@ -175,7 +175,7 @@ GLBuffer >> initialize [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:14'
+	#timestamp : ''
 }
 GLBuffer >> isBuffer [
 
@@ -184,7 +184,7 @@ GLBuffer >> isBuffer [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/6/2020 14:33'
+	#timestamp : ''
 }
 GLBuffer >> size [
 
@@ -193,7 +193,7 @@ GLBuffer >> size [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 11:53'
+	#timestamp : ''
 }
 GLBuffer >> target [
 
@@ -202,7 +202,7 @@ GLBuffer >> target [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/6/2020 14:33'
+	#timestamp : ''
 }
 GLBuffer >> usage [
 
@@ -211,7 +211,7 @@ GLBuffer >> usage [
 
 {
 	#category : #data,
-	#timestamp : 'stlu 11/6/2020 13:53'
+	#timestamp : ''
 }
 GLBuffer >> usage: usageEnum data: aRawBitsArray [ 
 
@@ -220,7 +220,7 @@ GLBuffer >> usage: usageEnum data: aRawBitsArray [
 
 {
 	#category : #data,
-	#timestamp : 'stlu 11/6/2020 13:53'
+	#timestamp : ''
 }
 GLBuffer >> usage: usageEnum size: byteSize [
 
@@ -229,7 +229,7 @@ GLBuffer >> usage: usageEnum size: byteSize [
 
 {
 	#category : #data,
-	#timestamp : 'stlu 11/6/2020 14:52'
+	#timestamp : ''
 }
 GLBuffer >> usage: usageEnum size: byteSize data: aRawBitsArray [
 

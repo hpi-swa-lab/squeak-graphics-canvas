@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtDirectRenderer >> renderFrame [
 

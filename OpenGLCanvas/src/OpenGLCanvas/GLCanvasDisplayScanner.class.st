@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasDisplayScanner >> displayString: string from: startIndex to: stopIndex at: aPoint [
 
@@ -19,7 +19,7 @@ GLCanvasDisplayScanner >> displayString: string from: startIndex to: stopIndex a
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasDisplayScanner >> fillTextBackground [
 
@@ -29,7 +29,7 @@ GLCanvasDisplayScanner >> fillTextBackground [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasDisplayScanner >> text: t textStyle: ts foreground: foreColor background: backColor fillBlt: blt ignoreColorChanges: shadowMode [
 	super text: t textStyle: ts foreground: foreColor background: backColor fillBlt: blt ignoreColorChanges: shadowMode.

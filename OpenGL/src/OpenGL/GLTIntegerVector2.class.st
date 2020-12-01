@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 17:57'
+	#timestamp : ''
 }
 GLTIntegerVector2 class >> componentType [
 
@@ -16,7 +16,7 @@ GLTIntegerVector2 class >> componentType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 17:57'
+	#timestamp : ''
 }
 GLTIntegerVector2 class >> declarators [
 
@@ -25,7 +25,7 @@ GLTIntegerVector2 class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 17:57'
+	#timestamp : ''
 }
 GLTIntegerVector2 class >> enum [
 
@@ -34,7 +34,7 @@ GLTIntegerVector2 class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 17:57'
+	#timestamp : ''
 }
 GLTIntegerVector2 class >> enumName [
 
@@ -43,7 +43,7 @@ GLTIntegerVector2 class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 17:57'
+	#timestamp : ''
 }
 GLTIntegerVector2 class >> numComponents [
 
@@ -52,7 +52,7 @@ GLTIntegerVector2 class >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 17:57'
+	#timestamp : ''
 }
 GLTIntegerVector2 class >> squeakName [
 
@@ -61,7 +61,7 @@ GLTIntegerVector2 class >> squeakName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/19/2020 07:37'
+	#timestamp : ''
 }
 GLTIntegerVector2 >> numComponents [
 
@@ -70,7 +70,7 @@ GLTIntegerVector2 >> numComponents [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 11/23/2020 17:34'
+	#timestamp : ''
 }
 GLTIntegerVector2 >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 

@@ -7,7 +7,16 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:49'
+	#timestamp : 'zagto 12/1/2020 15:18'
+}
+GLTFloat2DRectSampler class >> componentType [
+
+	^ GLTFloat
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'zagto 12/1/2020 15:18'
 }
 GLTFloat2DRectSampler class >> declarators [
 
@@ -16,7 +25,7 @@ GLTFloat2DRectSampler class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:49'
+	#timestamp : 'zagto 12/1/2020 15:18'
 }
 GLTFloat2DRectSampler class >> enum [
 
@@ -25,7 +34,7 @@ GLTFloat2DRectSampler class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:49'
+	#timestamp : 'zagto 12/1/2020 15:18'
 }
 GLTFloat2DRectSampler class >> enumName [
 
@@ -34,7 +43,7 @@ GLTFloat2DRectSampler class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:49'
+	#timestamp : 'zagto 12/1/2020 15:18'
 }
 GLTFloat2DRectSampler class >> squeakName [
 

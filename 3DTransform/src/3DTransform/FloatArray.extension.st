@@ -2,7 +2,7 @@ Extension { #name : #FloatArray }
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 FloatArray >> floatAt: index [
 	<primitive: 'primitiveAt' module: 'FloatArrayPlugin'>
@@ -11,7 +11,7 @@ FloatArray >> floatAt: index [
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 FloatArray >> floatAt: index put: value [
 	<primitive: 'primitiveAtPut' module: 'FloatArrayPlugin'>

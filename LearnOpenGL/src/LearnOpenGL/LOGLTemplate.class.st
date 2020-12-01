@@ -14,7 +14,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 10/12/2020 14:02'
+	#timestamp : ''
 }
 LOGLTemplate class >> run [
 
@@ -25,7 +25,7 @@ LOGLTemplate class >> run [
 
 {
 	#category : #callbacks,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 LOGLTemplate >> extentChanged: newExtent [
 	"glfw: whenever the window size changed (by OS or user resize) this callback function executes"
@@ -35,7 +35,7 @@ LOGLTemplate >> extentChanged: newExtent [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/22/2020 16:55'
+	#timestamp : ''
 }
 LOGLTemplate >> initialHeight [
 
@@ -44,7 +44,7 @@ LOGLTemplate >> initialHeight [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/22/2020 16:54'
+	#timestamp : ''
 }
 LOGLTemplate >> initialWidth [
 
@@ -53,7 +53,7 @@ LOGLTemplate >> initialWidth [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 10/12/2020 14:12'
+	#timestamp : ''
 }
 LOGLTemplate >> processInput [
 
@@ -63,7 +63,7 @@ LOGLTemplate >> processInput [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 10/26/2020 17:44'
+	#timestamp : ''
 }
 LOGLTemplate >> render [
 
@@ -72,7 +72,7 @@ LOGLTemplate >> render [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 10/19/2020 16:44'
+	#timestamp : ''
 }
 LOGLTemplate >> renderLoop [
 
@@ -85,7 +85,7 @@ LOGLTemplate >> renderLoop [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/11/2020 13:46'
+	#timestamp : ''
 }
 LOGLTemplate >> run [
 
@@ -112,7 +112,7 @@ LOGLTemplate >> run [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 10/22/2020 16:43'
+	#timestamp : ''
 }
 LOGLTemplate >> setUp [
 
@@ -121,7 +121,7 @@ LOGLTemplate >> setUp [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/12/2020 14:06'
+	#timestamp : ''
 }
 LOGLTemplate >> shouldClose [
 
@@ -130,7 +130,7 @@ LOGLTemplate >> shouldClose [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 10/22/2020 16:45'
+	#timestamp : ''
 }
 LOGLTemplate >> tearDown [
 
@@ -139,7 +139,7 @@ LOGLTemplate >> tearDown [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/19/2020 17:18'
+	#timestamp : ''
 }
 LOGLTemplate >> title [
 
@@ -148,7 +148,7 @@ LOGLTemplate >> title [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/9/2020 13:27'
+	#timestamp : ''
 }
 LOGLTemplate >> window [
 

@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #'world state',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtPasteUpMorph >> beWorldForProject: aProject [
 
@@ -21,7 +21,7 @@ RtPasteUpMorph >> beWorldForProject: aProject [
 
 {
 	#category : #'change reporting',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtPasteUpMorph >> invalidRect: damageRect from: aMorph [
 
@@ -32,7 +32,7 @@ RtPasteUpMorph >> invalidRect: damageRect from: aMorph [
 
 {
 	#category : #'world state',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtPasteUpMorph >> privateOuterDisplayWorld [
 
@@ -42,7 +42,7 @@ RtPasteUpMorph >> privateOuterDisplayWorld [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtPasteUpMorph >> worldState [
 

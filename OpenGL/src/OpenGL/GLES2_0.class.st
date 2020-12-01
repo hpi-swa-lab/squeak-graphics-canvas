@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/11/2020 14:19'
+	#timestamp : ''
 }
 GLES2_0 class >> api [
 
@@ -16,7 +16,7 @@ GLES2_0 class >> api [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/3/2020 12:50'
+	#timestamp : ''
 }
 GLES2_0 class >> defaultProfile [
 
@@ -25,7 +25,7 @@ GLES2_0 class >> defaultProfile [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLES2_0 class >> majorVersion [
 
@@ -34,7 +34,7 @@ GLES2_0 class >> majorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLES2_0 class >> minorVersion [
 
@@ -43,7 +43,7 @@ GLES2_0 class >> minorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:31'
+	#timestamp : ''
 }
 GLES2_0 class >> moduleName [
 
@@ -58,7 +58,7 @@ GLES2_0 class >> moduleName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 16:11'
+	#timestamp : ''
 }
 GLES2_0 class >> versionNumber [
 
@@ -67,7 +67,7 @@ GLES2_0 class >> versionNumber [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ACTIVE_ATTRIBUTES [
 
@@ -77,7 +77,7 @@ GLES2_0 >> ACTIVE_ATTRIBUTES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ACTIVE_ATTRIBUTE_MAX_LENGTH [
 
@@ -87,7 +87,7 @@ GLES2_0 >> ACTIVE_ATTRIBUTE_MAX_LENGTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ACTIVE_TEXTURE [
 
@@ -97,7 +97,7 @@ GLES2_0 >> ACTIVE_TEXTURE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ACTIVE_UNIFORMS [
 
@@ -107,7 +107,7 @@ GLES2_0 >> ACTIVE_UNIFORMS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ACTIVE_UNIFORM_MAX_LENGTH [
 
@@ -117,7 +117,7 @@ GLES2_0 >> ACTIVE_UNIFORM_MAX_LENGTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ALIASED_LINE_WIDTH_RANGE [
 
@@ -127,7 +127,7 @@ GLES2_0 >> ALIASED_LINE_WIDTH_RANGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ALIASED_POINT_SIZE_RANGE [
 
@@ -137,7 +137,7 @@ GLES2_0 >> ALIASED_POINT_SIZE_RANGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ALPHA [
 
@@ -147,7 +147,7 @@ GLES2_0 >> ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ALPHA_BITS [
 
@@ -157,7 +157,7 @@ GLES2_0 >> ALPHA_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ALWAYS [
 
@@ -167,7 +167,7 @@ GLES2_0 >> ALWAYS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ARRAY_BUFFER [
 
@@ -177,7 +177,7 @@ GLES2_0 >> ARRAY_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ARRAY_BUFFER_BINDING [
 
@@ -187,7 +187,7 @@ GLES2_0 >> ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ATTACHED_SHADERS [
 
@@ -197,7 +197,7 @@ GLES2_0 >> ATTACHED_SHADERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> BACK [
 
@@ -207,7 +207,7 @@ GLES2_0 >> BACK [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> BLEND [
 
@@ -217,7 +217,7 @@ GLES2_0 >> BLEND [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> BLEND_COLOR [
 
@@ -227,7 +227,7 @@ GLES2_0 >> BLEND_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> BLEND_DST_ALPHA [
 
@@ -237,7 +237,7 @@ GLES2_0 >> BLEND_DST_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> BLEND_DST_RGB [
 
@@ -247,7 +247,7 @@ GLES2_0 >> BLEND_DST_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> BLEND_EQUATION [
 
@@ -257,7 +257,7 @@ GLES2_0 >> BLEND_EQUATION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> BLEND_EQUATION_ALPHA [
 
@@ -267,7 +267,7 @@ GLES2_0 >> BLEND_EQUATION_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> BLEND_EQUATION_RGB [
 
@@ -277,7 +277,7 @@ GLES2_0 >> BLEND_EQUATION_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> BLEND_SRC_ALPHA [
 
@@ -287,7 +287,7 @@ GLES2_0 >> BLEND_SRC_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> BLEND_SRC_RGB [
 
@@ -297,7 +297,7 @@ GLES2_0 >> BLEND_SRC_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> BLUE_BITS [
 
@@ -307,7 +307,7 @@ GLES2_0 >> BLUE_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> BOOL [
 
@@ -317,7 +317,7 @@ GLES2_0 >> BOOL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> BOOL_VEC2 [
 
@@ -327,7 +327,7 @@ GLES2_0 >> BOOL_VEC2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> BOOL_VEC3 [
 
@@ -337,7 +337,7 @@ GLES2_0 >> BOOL_VEC3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> BOOL_VEC4 [
 
@@ -347,7 +347,7 @@ GLES2_0 >> BOOL_VEC4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> BUFFER_SIZE [
 
@@ -357,7 +357,7 @@ GLES2_0 >> BUFFER_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> BUFFER_USAGE [
 
@@ -367,7 +367,7 @@ GLES2_0 >> BUFFER_USAGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> BYTE [
 
@@ -377,7 +377,7 @@ GLES2_0 >> BYTE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> CCW [
 
@@ -387,7 +387,7 @@ GLES2_0 >> CCW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> CLAMP_TO_EDGE [
 
@@ -397,7 +397,7 @@ GLES2_0 >> CLAMP_TO_EDGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> COLOR_ATTACHMENT0 [
 
@@ -407,7 +407,7 @@ GLES2_0 >> COLOR_ATTACHMENT0 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> COLOR_BUFFER_BIT [
 
@@ -417,7 +417,7 @@ GLES2_0 >> COLOR_BUFFER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> COLOR_CLEAR_VALUE [
 
@@ -427,7 +427,7 @@ GLES2_0 >> COLOR_CLEAR_VALUE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> COLOR_WRITEMASK [
 
@@ -437,7 +437,7 @@ GLES2_0 >> COLOR_WRITEMASK [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> COMPILE_STATUS [
 
@@ -447,7 +447,7 @@ GLES2_0 >> COMPILE_STATUS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> COMPRESSED_TEXTURE_FORMATS [
 
@@ -457,7 +457,7 @@ GLES2_0 >> COMPRESSED_TEXTURE_FORMATS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> CONSTANT_ALPHA [
 
@@ -467,7 +467,7 @@ GLES2_0 >> CONSTANT_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> CONSTANT_COLOR [
 
@@ -477,7 +477,7 @@ GLES2_0 >> CONSTANT_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> CULL_FACE [
 
@@ -487,7 +487,7 @@ GLES2_0 >> CULL_FACE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> CULL_FACE_MODE [
 
@@ -497,7 +497,7 @@ GLES2_0 >> CULL_FACE_MODE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> CURRENT_PROGRAM [
 
@@ -507,7 +507,7 @@ GLES2_0 >> CURRENT_PROGRAM [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> CURRENT_VERTEX_ATTRIB [
 
@@ -517,7 +517,7 @@ GLES2_0 >> CURRENT_VERTEX_ATTRIB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> CW [
 
@@ -527,7 +527,7 @@ GLES2_0 >> CW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> DECR [
 
@@ -537,7 +537,7 @@ GLES2_0 >> DECR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> DECR_WRAP [
 
@@ -547,7 +547,7 @@ GLES2_0 >> DECR_WRAP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> DELETE_STATUS [
 
@@ -557,7 +557,7 @@ GLES2_0 >> DELETE_STATUS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> DEPTH_ATTACHMENT [
 
@@ -567,7 +567,7 @@ GLES2_0 >> DEPTH_ATTACHMENT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> DEPTH_BITS [
 
@@ -577,7 +577,7 @@ GLES2_0 >> DEPTH_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> DEPTH_BUFFER_BIT [
 
@@ -587,7 +587,7 @@ GLES2_0 >> DEPTH_BUFFER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> DEPTH_CLEAR_VALUE [
 
@@ -597,7 +597,7 @@ GLES2_0 >> DEPTH_CLEAR_VALUE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> DEPTH_COMPONENT [
 
@@ -607,7 +607,7 @@ GLES2_0 >> DEPTH_COMPONENT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> DEPTH_COMPONENT16 [
 
@@ -617,7 +617,7 @@ GLES2_0 >> DEPTH_COMPONENT16 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> DEPTH_FUNC [
 
@@ -627,7 +627,7 @@ GLES2_0 >> DEPTH_FUNC [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> DEPTH_RANGE [
 
@@ -637,7 +637,7 @@ GLES2_0 >> DEPTH_RANGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> DEPTH_TEST [
 
@@ -647,7 +647,7 @@ GLES2_0 >> DEPTH_TEST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> DEPTH_WRITEMASK [
 
@@ -657,7 +657,7 @@ GLES2_0 >> DEPTH_WRITEMASK [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> DITHER [
 
@@ -667,7 +667,7 @@ GLES2_0 >> DITHER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> DONT_CARE [
 
@@ -677,7 +677,7 @@ GLES2_0 >> DONT_CARE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> DST_ALPHA [
 
@@ -687,7 +687,7 @@ GLES2_0 >> DST_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> DST_COLOR [
 
@@ -697,7 +697,7 @@ GLES2_0 >> DST_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> DYNAMIC_DRAW [
 
@@ -707,7 +707,7 @@ GLES2_0 >> DYNAMIC_DRAW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ELEMENT_ARRAY_BUFFER [
 
@@ -717,7 +717,7 @@ GLES2_0 >> ELEMENT_ARRAY_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ELEMENT_ARRAY_BUFFER_BINDING [
 
@@ -727,7 +727,7 @@ GLES2_0 >> ELEMENT_ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> EQUAL [
 
@@ -737,7 +737,7 @@ GLES2_0 >> EQUAL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> EXTENSIONS [
 
@@ -747,7 +747,7 @@ GLES2_0 >> EXTENSIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FALSE [
 
@@ -757,7 +757,7 @@ GLES2_0 >> FALSE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FASTEST [
 
@@ -767,7 +767,7 @@ GLES2_0 >> FASTEST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FIXED [
 
@@ -777,7 +777,7 @@ GLES2_0 >> FIXED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FLOAT [
 
@@ -787,7 +787,7 @@ GLES2_0 >> FLOAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FLOAT_MAT2 [
 
@@ -797,7 +797,7 @@ GLES2_0 >> FLOAT_MAT2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FLOAT_MAT3 [
 
@@ -807,7 +807,7 @@ GLES2_0 >> FLOAT_MAT3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FLOAT_MAT4 [
 
@@ -817,7 +817,7 @@ GLES2_0 >> FLOAT_MAT4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FLOAT_VEC2 [
 
@@ -827,7 +827,7 @@ GLES2_0 >> FLOAT_VEC2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FLOAT_VEC3 [
 
@@ -837,7 +837,7 @@ GLES2_0 >> FLOAT_VEC3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FLOAT_VEC4 [
 
@@ -847,7 +847,7 @@ GLES2_0 >> FLOAT_VEC4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FRAGMENT_SHADER [
 
@@ -857,7 +857,7 @@ GLES2_0 >> FRAGMENT_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FRAMEBUFFER [
 
@@ -867,7 +867,7 @@ GLES2_0 >> FRAMEBUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FRAMEBUFFER_ATTACHMENT_OBJECT_NAME [
 
@@ -877,7 +877,7 @@ GLES2_0 >> FRAMEBUFFER_ATTACHMENT_OBJECT_NAME [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE [
 
@@ -887,7 +887,7 @@ GLES2_0 >> FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE [
 
@@ -897,7 +897,7 @@ GLES2_0 >> FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL [
 
@@ -907,7 +907,7 @@ GLES2_0 >> FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FRAMEBUFFER_BINDING [
 
@@ -917,7 +917,7 @@ GLES2_0 >> FRAMEBUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FRAMEBUFFER_COMPLETE [
 
@@ -927,7 +927,7 @@ GLES2_0 >> FRAMEBUFFER_COMPLETE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FRAMEBUFFER_INCOMPLETE_ATTACHMENT [
 
@@ -937,7 +937,7 @@ GLES2_0 >> FRAMEBUFFER_INCOMPLETE_ATTACHMENT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FRAMEBUFFER_INCOMPLETE_DIMENSIONS [
 
@@ -947,7 +947,7 @@ GLES2_0 >> FRAMEBUFFER_INCOMPLETE_DIMENSIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT [
 
@@ -957,7 +957,7 @@ GLES2_0 >> FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FRAMEBUFFER_UNSUPPORTED [
 
@@ -967,7 +967,7 @@ GLES2_0 >> FRAMEBUFFER_UNSUPPORTED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FRONT [
 
@@ -977,7 +977,7 @@ GLES2_0 >> FRONT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FRONT_AND_BACK [
 
@@ -987,7 +987,7 @@ GLES2_0 >> FRONT_AND_BACK [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FRONT_FACE [
 
@@ -997,7 +997,7 @@ GLES2_0 >> FRONT_FACE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FUNC_ADD [
 
@@ -1007,7 +1007,7 @@ GLES2_0 >> FUNC_ADD [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FUNC_REVERSE_SUBTRACT [
 
@@ -1017,7 +1017,7 @@ GLES2_0 >> FUNC_REVERSE_SUBTRACT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> FUNC_SUBTRACT [
 
@@ -1027,7 +1027,7 @@ GLES2_0 >> FUNC_SUBTRACT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> GENERATE_MIPMAP_HINT [
 
@@ -1037,7 +1037,7 @@ GLES2_0 >> GENERATE_MIPMAP_HINT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> GEQUAL [
 
@@ -1047,7 +1047,7 @@ GLES2_0 >> GEQUAL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> GREATER [
 
@@ -1057,7 +1057,7 @@ GLES2_0 >> GREATER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> GREEN_BITS [
 
@@ -1067,7 +1067,7 @@ GLES2_0 >> GREEN_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> HIGH_FLOAT [
 
@@ -1077,7 +1077,7 @@ GLES2_0 >> HIGH_FLOAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> HIGH_INT [
 
@@ -1087,7 +1087,7 @@ GLES2_0 >> HIGH_INT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> IMPLEMENTATION_COLOR_READ_FORMAT [
 
@@ -1097,7 +1097,7 @@ GLES2_0 >> IMPLEMENTATION_COLOR_READ_FORMAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> IMPLEMENTATION_COLOR_READ_TYPE [
 
@@ -1107,7 +1107,7 @@ GLES2_0 >> IMPLEMENTATION_COLOR_READ_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> INCR [
 
@@ -1117,7 +1117,7 @@ GLES2_0 >> INCR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> INCR_WRAP [
 
@@ -1127,7 +1127,7 @@ GLES2_0 >> INCR_WRAP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> INFO_LOG_LENGTH [
 
@@ -1137,7 +1137,7 @@ GLES2_0 >> INFO_LOG_LENGTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> INT [
 
@@ -1147,7 +1147,7 @@ GLES2_0 >> INT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> INT_VEC2 [
 
@@ -1157,7 +1157,7 @@ GLES2_0 >> INT_VEC2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> INT_VEC3 [
 
@@ -1167,7 +1167,7 @@ GLES2_0 >> INT_VEC3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> INT_VEC4 [
 
@@ -1177,7 +1177,7 @@ GLES2_0 >> INT_VEC4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> INVALID_ENUM [
 
@@ -1187,7 +1187,7 @@ GLES2_0 >> INVALID_ENUM [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> INVALID_FRAMEBUFFER_OPERATION [
 
@@ -1197,7 +1197,7 @@ GLES2_0 >> INVALID_FRAMEBUFFER_OPERATION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> INVALID_OPERATION [
 
@@ -1207,7 +1207,7 @@ GLES2_0 >> INVALID_OPERATION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> INVALID_VALUE [
 
@@ -1217,7 +1217,7 @@ GLES2_0 >> INVALID_VALUE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> INVERT [
 
@@ -1227,7 +1227,7 @@ GLES2_0 >> INVERT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> KEEP [
 
@@ -1237,7 +1237,7 @@ GLES2_0 >> KEEP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> LEQUAL [
 
@@ -1247,7 +1247,7 @@ GLES2_0 >> LEQUAL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> LESS [
 
@@ -1257,7 +1257,7 @@ GLES2_0 >> LESS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> LINEAR [
 
@@ -1267,7 +1267,7 @@ GLES2_0 >> LINEAR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> LINEAR_MIPMAP_LINEAR [
 
@@ -1277,7 +1277,7 @@ GLES2_0 >> LINEAR_MIPMAP_LINEAR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> LINEAR_MIPMAP_NEAREST [
 
@@ -1287,7 +1287,7 @@ GLES2_0 >> LINEAR_MIPMAP_NEAREST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> LINES [
 
@@ -1297,7 +1297,7 @@ GLES2_0 >> LINES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> LINE_LOOP [
 
@@ -1307,7 +1307,7 @@ GLES2_0 >> LINE_LOOP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> LINE_STRIP [
 
@@ -1317,7 +1317,7 @@ GLES2_0 >> LINE_STRIP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> LINE_WIDTH [
 
@@ -1327,7 +1327,7 @@ GLES2_0 >> LINE_WIDTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> LINK_STATUS [
 
@@ -1337,7 +1337,7 @@ GLES2_0 >> LINK_STATUS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> LOW_FLOAT [
 
@@ -1347,7 +1347,7 @@ GLES2_0 >> LOW_FLOAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> LOW_INT [
 
@@ -1357,7 +1357,7 @@ GLES2_0 >> LOW_INT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> LUMINANCE [
 
@@ -1367,7 +1367,7 @@ GLES2_0 >> LUMINANCE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> LUMINANCE_ALPHA [
 
@@ -1377,7 +1377,7 @@ GLES2_0 >> LUMINANCE_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> MAX_COMBINED_TEXTURE_IMAGE_UNITS [
 
@@ -1387,7 +1387,7 @@ GLES2_0 >> MAX_COMBINED_TEXTURE_IMAGE_UNITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> MAX_CUBE_MAP_TEXTURE_SIZE [
 
@@ -1397,7 +1397,7 @@ GLES2_0 >> MAX_CUBE_MAP_TEXTURE_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> MAX_FRAGMENT_UNIFORM_VECTORS [
 
@@ -1407,7 +1407,7 @@ GLES2_0 >> MAX_FRAGMENT_UNIFORM_VECTORS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> MAX_RENDERBUFFER_SIZE [
 
@@ -1417,7 +1417,7 @@ GLES2_0 >> MAX_RENDERBUFFER_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> MAX_TEXTURE_IMAGE_UNITS [
 
@@ -1427,7 +1427,7 @@ GLES2_0 >> MAX_TEXTURE_IMAGE_UNITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> MAX_TEXTURE_SIZE [
 
@@ -1437,7 +1437,7 @@ GLES2_0 >> MAX_TEXTURE_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> MAX_VARYING_VECTORS [
 
@@ -1447,7 +1447,7 @@ GLES2_0 >> MAX_VARYING_VECTORS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> MAX_VERTEX_ATTRIBS [
 
@@ -1457,7 +1457,7 @@ GLES2_0 >> MAX_VERTEX_ATTRIBS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> MAX_VERTEX_TEXTURE_IMAGE_UNITS [
 
@@ -1467,7 +1467,7 @@ GLES2_0 >> MAX_VERTEX_TEXTURE_IMAGE_UNITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> MAX_VERTEX_UNIFORM_VECTORS [
 
@@ -1477,7 +1477,7 @@ GLES2_0 >> MAX_VERTEX_UNIFORM_VECTORS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> MAX_VIEWPORT_DIMS [
 
@@ -1487,7 +1487,7 @@ GLES2_0 >> MAX_VIEWPORT_DIMS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> MEDIUM_FLOAT [
 
@@ -1497,7 +1497,7 @@ GLES2_0 >> MEDIUM_FLOAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> MEDIUM_INT [
 
@@ -1507,7 +1507,7 @@ GLES2_0 >> MEDIUM_INT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> MIRRORED_REPEAT [
 
@@ -1517,7 +1517,7 @@ GLES2_0 >> MIRRORED_REPEAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> NEAREST [
 
@@ -1527,7 +1527,7 @@ GLES2_0 >> NEAREST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> NEAREST_MIPMAP_LINEAR [
 
@@ -1537,7 +1537,7 @@ GLES2_0 >> NEAREST_MIPMAP_LINEAR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> NEAREST_MIPMAP_NEAREST [
 
@@ -1547,7 +1547,7 @@ GLES2_0 >> NEAREST_MIPMAP_NEAREST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> NEVER [
 
@@ -1557,7 +1557,7 @@ GLES2_0 >> NEVER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> NICEST [
 
@@ -1567,7 +1567,7 @@ GLES2_0 >> NICEST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> NONE [
 
@@ -1577,7 +1577,7 @@ GLES2_0 >> NONE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> NOTEQUAL [
 
@@ -1587,7 +1587,7 @@ GLES2_0 >> NOTEQUAL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> NO_ERROR [
 
@@ -1597,7 +1597,7 @@ GLES2_0 >> NO_ERROR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> NUM_COMPRESSED_TEXTURE_FORMATS [
 
@@ -1607,7 +1607,7 @@ GLES2_0 >> NUM_COMPRESSED_TEXTURE_FORMATS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> NUM_SHADER_BINARY_FORMATS [
 
@@ -1617,7 +1617,7 @@ GLES2_0 >> NUM_SHADER_BINARY_FORMATS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ONE [
 
@@ -1627,7 +1627,7 @@ GLES2_0 >> ONE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ONE_MINUS_CONSTANT_ALPHA [
 
@@ -1637,7 +1637,7 @@ GLES2_0 >> ONE_MINUS_CONSTANT_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ONE_MINUS_CONSTANT_COLOR [
 
@@ -1647,7 +1647,7 @@ GLES2_0 >> ONE_MINUS_CONSTANT_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ONE_MINUS_DST_ALPHA [
 
@@ -1657,7 +1657,7 @@ GLES2_0 >> ONE_MINUS_DST_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ONE_MINUS_DST_COLOR [
 
@@ -1667,7 +1667,7 @@ GLES2_0 >> ONE_MINUS_DST_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ONE_MINUS_SRC_ALPHA [
 
@@ -1677,7 +1677,7 @@ GLES2_0 >> ONE_MINUS_SRC_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ONE_MINUS_SRC_COLOR [
 
@@ -1687,7 +1687,7 @@ GLES2_0 >> ONE_MINUS_SRC_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> OUT_OF_MEMORY [
 
@@ -1697,7 +1697,7 @@ GLES2_0 >> OUT_OF_MEMORY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> PACK_ALIGNMENT [
 
@@ -1707,7 +1707,7 @@ GLES2_0 >> PACK_ALIGNMENT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> POINTS [
 
@@ -1717,7 +1717,7 @@ GLES2_0 >> POINTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> POLYGON_OFFSET_FACTOR [
 
@@ -1727,7 +1727,7 @@ GLES2_0 >> POLYGON_OFFSET_FACTOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> POLYGON_OFFSET_FILL [
 
@@ -1737,7 +1737,7 @@ GLES2_0 >> POLYGON_OFFSET_FILL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> POLYGON_OFFSET_UNITS [
 
@@ -1747,7 +1747,7 @@ GLES2_0 >> POLYGON_OFFSET_UNITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> RED_BITS [
 
@@ -1757,7 +1757,7 @@ GLES2_0 >> RED_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> RENDERBUFFER [
 
@@ -1767,7 +1767,7 @@ GLES2_0 >> RENDERBUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> RENDERBUFFER_ALPHA_SIZE [
 
@@ -1777,7 +1777,7 @@ GLES2_0 >> RENDERBUFFER_ALPHA_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> RENDERBUFFER_BINDING [
 
@@ -1787,7 +1787,7 @@ GLES2_0 >> RENDERBUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> RENDERBUFFER_BLUE_SIZE [
 
@@ -1797,7 +1797,7 @@ GLES2_0 >> RENDERBUFFER_BLUE_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> RENDERBUFFER_DEPTH_SIZE [
 
@@ -1807,7 +1807,7 @@ GLES2_0 >> RENDERBUFFER_DEPTH_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> RENDERBUFFER_GREEN_SIZE [
 
@@ -1817,7 +1817,7 @@ GLES2_0 >> RENDERBUFFER_GREEN_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> RENDERBUFFER_HEIGHT [
 
@@ -1827,7 +1827,7 @@ GLES2_0 >> RENDERBUFFER_HEIGHT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> RENDERBUFFER_INTERNAL_FORMAT [
 
@@ -1837,7 +1837,7 @@ GLES2_0 >> RENDERBUFFER_INTERNAL_FORMAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> RENDERBUFFER_RED_SIZE [
 
@@ -1847,7 +1847,7 @@ GLES2_0 >> RENDERBUFFER_RED_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> RENDERBUFFER_STENCIL_SIZE [
 
@@ -1857,7 +1857,7 @@ GLES2_0 >> RENDERBUFFER_STENCIL_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> RENDERBUFFER_WIDTH [
 
@@ -1867,7 +1867,7 @@ GLES2_0 >> RENDERBUFFER_WIDTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> RENDERER [
 
@@ -1877,7 +1877,7 @@ GLES2_0 >> RENDERER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> REPEAT [
 
@@ -1887,7 +1887,7 @@ GLES2_0 >> REPEAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> REPLACE [
 
@@ -1897,7 +1897,7 @@ GLES2_0 >> REPLACE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> RGB [
 
@@ -1907,7 +1907,7 @@ GLES2_0 >> RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> RGB565 [
 
@@ -1917,7 +1917,7 @@ GLES2_0 >> RGB565 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> RGB5_A1 [
 
@@ -1927,7 +1927,7 @@ GLES2_0 >> RGB5_A1 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> RGBA [
 
@@ -1937,7 +1937,7 @@ GLES2_0 >> RGBA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> RGBA4 [
 
@@ -1947,7 +1947,7 @@ GLES2_0 >> RGBA4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SAMPLER_2D [
 
@@ -1957,7 +1957,7 @@ GLES2_0 >> SAMPLER_2D [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SAMPLER_CUBE [
 
@@ -1967,7 +1967,7 @@ GLES2_0 >> SAMPLER_CUBE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SAMPLES [
 
@@ -1977,7 +1977,7 @@ GLES2_0 >> SAMPLES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SAMPLE_ALPHA_TO_COVERAGE [
 
@@ -1987,7 +1987,7 @@ GLES2_0 >> SAMPLE_ALPHA_TO_COVERAGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SAMPLE_BUFFERS [
 
@@ -1997,7 +1997,7 @@ GLES2_0 >> SAMPLE_BUFFERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SAMPLE_COVERAGE [
 
@@ -2007,7 +2007,7 @@ GLES2_0 >> SAMPLE_COVERAGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SAMPLE_COVERAGE_INVERT [
 
@@ -2017,7 +2017,7 @@ GLES2_0 >> SAMPLE_COVERAGE_INVERT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SAMPLE_COVERAGE_VALUE [
 
@@ -2027,7 +2027,7 @@ GLES2_0 >> SAMPLE_COVERAGE_VALUE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SCISSOR_BOX [
 
@@ -2037,7 +2037,7 @@ GLES2_0 >> SCISSOR_BOX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SCISSOR_TEST [
 
@@ -2047,7 +2047,7 @@ GLES2_0 >> SCISSOR_TEST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SHADER_BINARY_FORMATS [
 
@@ -2057,7 +2057,7 @@ GLES2_0 >> SHADER_BINARY_FORMATS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SHADER_COMPILER [
 
@@ -2067,7 +2067,7 @@ GLES2_0 >> SHADER_COMPILER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SHADER_SOURCE_LENGTH [
 
@@ -2077,7 +2077,7 @@ GLES2_0 >> SHADER_SOURCE_LENGTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SHADER_TYPE [
 
@@ -2087,7 +2087,7 @@ GLES2_0 >> SHADER_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SHADING_LANGUAGE_VERSION [
 
@@ -2097,7 +2097,7 @@ GLES2_0 >> SHADING_LANGUAGE_VERSION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SHORT [
 
@@ -2107,7 +2107,7 @@ GLES2_0 >> SHORT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SRC_ALPHA [
 
@@ -2117,7 +2117,7 @@ GLES2_0 >> SRC_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SRC_ALPHA_SATURATE [
 
@@ -2127,7 +2127,7 @@ GLES2_0 >> SRC_ALPHA_SATURATE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SRC_COLOR [
 
@@ -2137,7 +2137,7 @@ GLES2_0 >> SRC_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STATIC_DRAW [
 
@@ -2147,7 +2147,7 @@ GLES2_0 >> STATIC_DRAW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_ATTACHMENT [
 
@@ -2157,7 +2157,7 @@ GLES2_0 >> STENCIL_ATTACHMENT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_BACK_FAIL [
 
@@ -2167,7 +2167,7 @@ GLES2_0 >> STENCIL_BACK_FAIL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_BACK_FUNC [
 
@@ -2177,7 +2177,7 @@ GLES2_0 >> STENCIL_BACK_FUNC [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_BACK_PASS_DEPTH_FAIL [
 
@@ -2187,7 +2187,7 @@ GLES2_0 >> STENCIL_BACK_PASS_DEPTH_FAIL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_BACK_PASS_DEPTH_PASS [
 
@@ -2197,7 +2197,7 @@ GLES2_0 >> STENCIL_BACK_PASS_DEPTH_PASS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_BACK_REF [
 
@@ -2207,7 +2207,7 @@ GLES2_0 >> STENCIL_BACK_REF [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_BACK_VALUE_MASK [
 
@@ -2217,7 +2217,7 @@ GLES2_0 >> STENCIL_BACK_VALUE_MASK [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_BACK_WRITEMASK [
 
@@ -2227,7 +2227,7 @@ GLES2_0 >> STENCIL_BACK_WRITEMASK [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_BITS [
 
@@ -2237,7 +2237,7 @@ GLES2_0 >> STENCIL_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_BUFFER_BIT [
 
@@ -2247,7 +2247,7 @@ GLES2_0 >> STENCIL_BUFFER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_CLEAR_VALUE [
 
@@ -2257,7 +2257,7 @@ GLES2_0 >> STENCIL_CLEAR_VALUE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_FAIL [
 
@@ -2267,7 +2267,7 @@ GLES2_0 >> STENCIL_FAIL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_FUNC [
 
@@ -2277,7 +2277,7 @@ GLES2_0 >> STENCIL_FUNC [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_INDEX8 [
 
@@ -2287,7 +2287,7 @@ GLES2_0 >> STENCIL_INDEX8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_PASS_DEPTH_FAIL [
 
@@ -2297,7 +2297,7 @@ GLES2_0 >> STENCIL_PASS_DEPTH_FAIL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_PASS_DEPTH_PASS [
 
@@ -2307,7 +2307,7 @@ GLES2_0 >> STENCIL_PASS_DEPTH_PASS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_REF [
 
@@ -2317,7 +2317,7 @@ GLES2_0 >> STENCIL_REF [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_TEST [
 
@@ -2327,7 +2327,7 @@ GLES2_0 >> STENCIL_TEST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_VALUE_MASK [
 
@@ -2337,7 +2337,7 @@ GLES2_0 >> STENCIL_VALUE_MASK [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STENCIL_WRITEMASK [
 
@@ -2347,7 +2347,7 @@ GLES2_0 >> STENCIL_WRITEMASK [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> STREAM_DRAW [
 
@@ -2357,7 +2357,7 @@ GLES2_0 >> STREAM_DRAW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> SUBPIXEL_BITS [
 
@@ -2367,7 +2367,7 @@ GLES2_0 >> SUBPIXEL_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE [
 
@@ -2377,7 +2377,7 @@ GLES2_0 >> TEXTURE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE0 [
 
@@ -2387,7 +2387,7 @@ GLES2_0 >> TEXTURE0 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE1 [
 
@@ -2397,7 +2397,7 @@ GLES2_0 >> TEXTURE1 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE10 [
 
@@ -2407,7 +2407,7 @@ GLES2_0 >> TEXTURE10 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE11 [
 
@@ -2417,7 +2417,7 @@ GLES2_0 >> TEXTURE11 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE12 [
 
@@ -2427,7 +2427,7 @@ GLES2_0 >> TEXTURE12 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE13 [
 
@@ -2437,7 +2437,7 @@ GLES2_0 >> TEXTURE13 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE14 [
 
@@ -2447,7 +2447,7 @@ GLES2_0 >> TEXTURE14 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE15 [
 
@@ -2457,7 +2457,7 @@ GLES2_0 >> TEXTURE15 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE16 [
 
@@ -2467,7 +2467,7 @@ GLES2_0 >> TEXTURE16 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE17 [
 
@@ -2477,7 +2477,7 @@ GLES2_0 >> TEXTURE17 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE18 [
 
@@ -2487,7 +2487,7 @@ GLES2_0 >> TEXTURE18 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE19 [
 
@@ -2497,7 +2497,7 @@ GLES2_0 >> TEXTURE19 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE2 [
 
@@ -2507,7 +2507,7 @@ GLES2_0 >> TEXTURE2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE20 [
 
@@ -2517,7 +2517,7 @@ GLES2_0 >> TEXTURE20 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE21 [
 
@@ -2527,7 +2527,7 @@ GLES2_0 >> TEXTURE21 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE22 [
 
@@ -2537,7 +2537,7 @@ GLES2_0 >> TEXTURE22 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE23 [
 
@@ -2547,7 +2547,7 @@ GLES2_0 >> TEXTURE23 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE24 [
 
@@ -2557,7 +2557,7 @@ GLES2_0 >> TEXTURE24 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE25 [
 
@@ -2567,7 +2567,7 @@ GLES2_0 >> TEXTURE25 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE26 [
 
@@ -2577,7 +2577,7 @@ GLES2_0 >> TEXTURE26 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE27 [
 
@@ -2587,7 +2587,7 @@ GLES2_0 >> TEXTURE27 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE28 [
 
@@ -2597,7 +2597,7 @@ GLES2_0 >> TEXTURE28 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE29 [
 
@@ -2607,7 +2607,7 @@ GLES2_0 >> TEXTURE29 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE3 [
 
@@ -2617,7 +2617,7 @@ GLES2_0 >> TEXTURE3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE30 [
 
@@ -2627,7 +2627,7 @@ GLES2_0 >> TEXTURE30 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE31 [
 
@@ -2637,7 +2637,7 @@ GLES2_0 >> TEXTURE31 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE4 [
 
@@ -2647,7 +2647,7 @@ GLES2_0 >> TEXTURE4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE5 [
 
@@ -2657,7 +2657,7 @@ GLES2_0 >> TEXTURE5 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE6 [
 
@@ -2667,7 +2667,7 @@ GLES2_0 >> TEXTURE6 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE7 [
 
@@ -2677,7 +2677,7 @@ GLES2_0 >> TEXTURE7 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE8 [
 
@@ -2687,7 +2687,7 @@ GLES2_0 >> TEXTURE8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE9 [
 
@@ -2697,7 +2697,7 @@ GLES2_0 >> TEXTURE9 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE_2D [
 
@@ -2707,7 +2707,7 @@ GLES2_0 >> TEXTURE_2D [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE_BINDING_2D [
 
@@ -2717,7 +2717,7 @@ GLES2_0 >> TEXTURE_BINDING_2D [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE_BINDING_CUBE_MAP [
 
@@ -2727,7 +2727,7 @@ GLES2_0 >> TEXTURE_BINDING_CUBE_MAP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE_CUBE_MAP [
 
@@ -2737,7 +2737,7 @@ GLES2_0 >> TEXTURE_CUBE_MAP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE_CUBE_MAP_NEGATIVE_X [
 
@@ -2747,7 +2747,7 @@ GLES2_0 >> TEXTURE_CUBE_MAP_NEGATIVE_X [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE_CUBE_MAP_NEGATIVE_Y [
 
@@ -2757,7 +2757,7 @@ GLES2_0 >> TEXTURE_CUBE_MAP_NEGATIVE_Y [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE_CUBE_MAP_NEGATIVE_Z [
 
@@ -2767,7 +2767,7 @@ GLES2_0 >> TEXTURE_CUBE_MAP_NEGATIVE_Z [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE_CUBE_MAP_POSITIVE_X [
 
@@ -2777,7 +2777,7 @@ GLES2_0 >> TEXTURE_CUBE_MAP_POSITIVE_X [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE_CUBE_MAP_POSITIVE_Y [
 
@@ -2787,7 +2787,7 @@ GLES2_0 >> TEXTURE_CUBE_MAP_POSITIVE_Y [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE_CUBE_MAP_POSITIVE_Z [
 
@@ -2797,7 +2797,7 @@ GLES2_0 >> TEXTURE_CUBE_MAP_POSITIVE_Z [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE_MAG_FILTER [
 
@@ -2807,7 +2807,7 @@ GLES2_0 >> TEXTURE_MAG_FILTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE_MIN_FILTER [
 
@@ -2817,7 +2817,7 @@ GLES2_0 >> TEXTURE_MIN_FILTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE_WRAP_S [
 
@@ -2827,7 +2827,7 @@ GLES2_0 >> TEXTURE_WRAP_S [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TEXTURE_WRAP_T [
 
@@ -2837,7 +2837,7 @@ GLES2_0 >> TEXTURE_WRAP_T [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TRIANGLES [
 
@@ -2847,7 +2847,7 @@ GLES2_0 >> TRIANGLES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TRIANGLE_FAN [
 
@@ -2857,7 +2857,7 @@ GLES2_0 >> TRIANGLE_FAN [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TRIANGLE_STRIP [
 
@@ -2867,7 +2867,7 @@ GLES2_0 >> TRIANGLE_STRIP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> TRUE [
 
@@ -2877,7 +2877,7 @@ GLES2_0 >> TRUE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> UNPACK_ALIGNMENT [
 
@@ -2887,7 +2887,7 @@ GLES2_0 >> UNPACK_ALIGNMENT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> UNSIGNED_BYTE [
 
@@ -2897,7 +2897,7 @@ GLES2_0 >> UNSIGNED_BYTE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> UNSIGNED_INT [
 
@@ -2907,7 +2907,7 @@ GLES2_0 >> UNSIGNED_INT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> UNSIGNED_SHORT [
 
@@ -2917,7 +2917,7 @@ GLES2_0 >> UNSIGNED_SHORT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> UNSIGNED_SHORT_4_4_4_4 [
 
@@ -2927,7 +2927,7 @@ GLES2_0 >> UNSIGNED_SHORT_4_4_4_4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> UNSIGNED_SHORT_5_5_5_1 [
 
@@ -2937,7 +2937,7 @@ GLES2_0 >> UNSIGNED_SHORT_5_5_5_1 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> UNSIGNED_SHORT_5_6_5 [
 
@@ -2947,7 +2947,7 @@ GLES2_0 >> UNSIGNED_SHORT_5_6_5 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> VALIDATE_STATUS [
 
@@ -2957,7 +2957,7 @@ GLES2_0 >> VALIDATE_STATUS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> VENDOR [
 
@@ -2967,7 +2967,7 @@ GLES2_0 >> VENDOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> VERSION [
 
@@ -2977,7 +2977,7 @@ GLES2_0 >> VERSION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> VERTEX_ATTRIB_ARRAY_BUFFER_BINDING [
 
@@ -2987,7 +2987,7 @@ GLES2_0 >> VERTEX_ATTRIB_ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> VERTEX_ATTRIB_ARRAY_ENABLED [
 
@@ -2997,7 +2997,7 @@ GLES2_0 >> VERTEX_ATTRIB_ARRAY_ENABLED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> VERTEX_ATTRIB_ARRAY_NORMALIZED [
 
@@ -3007,7 +3007,7 @@ GLES2_0 >> VERTEX_ATTRIB_ARRAY_NORMALIZED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> VERTEX_ATTRIB_ARRAY_POINTER [
 
@@ -3017,7 +3017,7 @@ GLES2_0 >> VERTEX_ATTRIB_ARRAY_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> VERTEX_ATTRIB_ARRAY_SIZE [
 
@@ -3027,7 +3027,7 @@ GLES2_0 >> VERTEX_ATTRIB_ARRAY_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> VERTEX_ATTRIB_ARRAY_STRIDE [
 
@@ -3037,7 +3037,7 @@ GLES2_0 >> VERTEX_ATTRIB_ARRAY_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> VERTEX_ATTRIB_ARRAY_TYPE [
 
@@ -3047,7 +3047,7 @@ GLES2_0 >> VERTEX_ATTRIB_ARRAY_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> VERTEX_SHADER [
 
@@ -3057,7 +3057,7 @@ GLES2_0 >> VERTEX_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> VIEWPORT [
 
@@ -3067,7 +3067,7 @@ GLES2_0 >> VIEWPORT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> ZERO [
 
@@ -3077,7 +3077,7 @@ GLES2_0 >> ZERO [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> activeTexture: texture [
 
@@ -3088,7 +3088,7 @@ GLES2_0 >> activeTexture: texture [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> attachShader: program with: shader [
 
@@ -3099,7 +3099,7 @@ GLES2_0 >> attachShader: program with: shader [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> bindAttribLocation: program with: index with: name [
 
@@ -3110,7 +3110,7 @@ GLES2_0 >> bindAttribLocation: program with: index with: name [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> bindBuffer: target with: buffer [
 
@@ -3121,7 +3121,7 @@ GLES2_0 >> bindBuffer: target with: buffer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> bindFramebuffer: target with: framebuffer [
 
@@ -3132,7 +3132,7 @@ GLES2_0 >> bindFramebuffer: target with: framebuffer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> bindRenderbuffer: target with: renderbuffer [
 
@@ -3143,7 +3143,7 @@ GLES2_0 >> bindRenderbuffer: target with: renderbuffer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> bindTexture: target with: texture [
 
@@ -3154,7 +3154,7 @@ GLES2_0 >> bindTexture: target with: texture [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> blendColor: red with: green with: blue with: alpha [
 
@@ -3165,7 +3165,7 @@ GLES2_0 >> blendColor: red with: green with: blue with: alpha [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> blendEquation: mode [
 
@@ -3176,7 +3176,7 @@ GLES2_0 >> blendEquation: mode [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> blendEquationSeparate: modeRGB with: modeAlpha [
 
@@ -3187,7 +3187,7 @@ GLES2_0 >> blendEquationSeparate: modeRGB with: modeAlpha [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> blendFunc: sfactor with: dfactor [
 
@@ -3198,7 +3198,7 @@ GLES2_0 >> blendFunc: sfactor with: dfactor [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> blendFuncSeparate: sfactorRGB with: dfactorRGB with: sfactorAlpha with: dfactorAlpha [
 
@@ -3209,7 +3209,7 @@ GLES2_0 >> blendFuncSeparate: sfactorRGB with: dfactorRGB with: sfactorAlpha wit
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> bufferData: target with: size with: data with: usage [
 
@@ -3220,7 +3220,7 @@ GLES2_0 >> bufferData: target with: size with: data with: usage [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> bufferSubData: target with: offset with: size with: data [
 
@@ -3231,7 +3231,7 @@ GLES2_0 >> bufferSubData: target with: offset with: size with: data [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> checkFramebufferStatus: target [
 
@@ -3242,7 +3242,7 @@ GLES2_0 >> checkFramebufferStatus: target [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> clear: mask [
 
@@ -3253,7 +3253,7 @@ GLES2_0 >> clear: mask [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> clearColor: red with: green with: blue with: alpha [
 
@@ -3264,7 +3264,7 @@ GLES2_0 >> clearColor: red with: green with: blue with: alpha [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> clearDepthf: d [
 
@@ -3275,7 +3275,7 @@ GLES2_0 >> clearDepthf: d [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> clearStencil: s [
 
@@ -3286,7 +3286,7 @@ GLES2_0 >> clearStencil: s [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> colorMask: red with: green with: blue with: alpha [
 
@@ -3297,7 +3297,7 @@ GLES2_0 >> colorMask: red with: green with: blue with: alpha [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> compileShader: shader [
 
@@ -3308,7 +3308,7 @@ GLES2_0 >> compileShader: shader [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> compressedTexImage2D: target with: level with: internalformat with: width with: height with: border with: imageSize with: data [
 
@@ -3319,7 +3319,7 @@ GLES2_0 >> compressedTexImage2D: target with: level with: internalformat with: w
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> compressedTexSubImage2D: target with: level with: xoffset with: yoffset with: width with: height with: format with: imageSize with: data [
 
@@ -3330,7 +3330,7 @@ GLES2_0 >> compressedTexSubImage2D: target with: level with: xoffset with: yoffs
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> copyTexImage2D: target with: level with: internalformat with: x with: y with: width with: height with: border [
 
@@ -3341,7 +3341,7 @@ GLES2_0 >> copyTexImage2D: target with: level with: internalformat with: x with:
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> copyTexSubImage2D: target with: level with: xoffset with: yoffset with: x with: y with: width with: height [
 
@@ -3352,7 +3352,7 @@ GLES2_0 >> copyTexSubImage2D: target with: level with: xoffset with: yoffset wit
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> createProgram [
 
@@ -3363,7 +3363,7 @@ GLES2_0 >> createProgram [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> createShader: type [
 
@@ -3374,7 +3374,7 @@ GLES2_0 >> createShader: type [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> cullFace: mode [
 
@@ -3385,7 +3385,7 @@ GLES2_0 >> cullFace: mode [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> deleteBuffers: n with: buffers [
 
@@ -3396,7 +3396,7 @@ GLES2_0 >> deleteBuffers: n with: buffers [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> deleteFramebuffers: n with: framebuffers [
 
@@ -3407,7 +3407,7 @@ GLES2_0 >> deleteFramebuffers: n with: framebuffers [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> deleteProgram: program [
 
@@ -3418,7 +3418,7 @@ GLES2_0 >> deleteProgram: program [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> deleteRenderbuffers: n with: renderbuffers [
 
@@ -3429,7 +3429,7 @@ GLES2_0 >> deleteRenderbuffers: n with: renderbuffers [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> deleteShader: shader [
 
@@ -3440,7 +3440,7 @@ GLES2_0 >> deleteShader: shader [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> deleteTextures: n with: textures [
 
@@ -3451,7 +3451,7 @@ GLES2_0 >> deleteTextures: n with: textures [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> depthFunc: func [
 
@@ -3462,7 +3462,7 @@ GLES2_0 >> depthFunc: func [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> depthMask: flag [
 
@@ -3473,7 +3473,7 @@ GLES2_0 >> depthMask: flag [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> depthRangef: n with: f [
 
@@ -3484,7 +3484,7 @@ GLES2_0 >> depthRangef: n with: f [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> detachShader: program with: shader [
 
@@ -3495,7 +3495,7 @@ GLES2_0 >> detachShader: program with: shader [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> disable: cap [
 
@@ -3506,7 +3506,7 @@ GLES2_0 >> disable: cap [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> disableVertexAttribArray: index [
 
@@ -3517,7 +3517,7 @@ GLES2_0 >> disableVertexAttribArray: index [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> drawArrays: mode with: first with: count [
 
@@ -3528,7 +3528,7 @@ GLES2_0 >> drawArrays: mode with: first with: count [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> drawElements: mode with: count with: type with: indices [
 
@@ -3539,7 +3539,7 @@ GLES2_0 >> drawElements: mode with: count with: type with: indices [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> enable: cap [
 
@@ -3550,7 +3550,7 @@ GLES2_0 >> enable: cap [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> enableVertexAttribArray: index [
 
@@ -3561,7 +3561,7 @@ GLES2_0 >> enableVertexAttribArray: index [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> finish [
 
@@ -3572,7 +3572,7 @@ GLES2_0 >> finish [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> flush [
 
@@ -3583,7 +3583,7 @@ GLES2_0 >> flush [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> framebufferRenderbuffer: target with: attachment with: renderbuffertarget with: renderbuffer [
 
@@ -3594,7 +3594,7 @@ GLES2_0 >> framebufferRenderbuffer: target with: attachment with: renderbufferta
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> framebufferTexture2D: target with: attachment with: textarget with: texture with: level [
 
@@ -3605,7 +3605,7 @@ GLES2_0 >> framebufferTexture2D: target with: attachment with: textarget with: t
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> frontFace: mode [
 
@@ -3616,7 +3616,7 @@ GLES2_0 >> frontFace: mode [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> genBuffers: n with: buffers [
 
@@ -3627,7 +3627,7 @@ GLES2_0 >> genBuffers: n with: buffers [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> genFramebuffers: n with: framebuffers [
 
@@ -3638,7 +3638,7 @@ GLES2_0 >> genFramebuffers: n with: framebuffers [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> genRenderbuffers: n with: renderbuffers [
 
@@ -3649,7 +3649,7 @@ GLES2_0 >> genRenderbuffers: n with: renderbuffers [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> genTextures: n with: textures [
 
@@ -3660,7 +3660,7 @@ GLES2_0 >> genTextures: n with: textures [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> generateMipmap: target [
 
@@ -3671,7 +3671,7 @@ GLES2_0 >> generateMipmap: target [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getActiveAttrib: program with: index with: bufSize with: length with: size with: type with: name [
 
@@ -3682,7 +3682,7 @@ GLES2_0 >> getActiveAttrib: program with: index with: bufSize with: length with:
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getActiveUniform: program with: index with: bufSize with: length with: size with: type with: name [
 
@@ -3693,7 +3693,7 @@ GLES2_0 >> getActiveUniform: program with: index with: bufSize with: length with
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getAttachedShaders: program with: maxCount with: count with: shaders [
 
@@ -3704,7 +3704,7 @@ GLES2_0 >> getAttachedShaders: program with: maxCount with: count with: shaders 
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getAttribLocation: program with: name [
 
@@ -3715,7 +3715,7 @@ GLES2_0 >> getAttribLocation: program with: name [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getBooleanv: pname with: data [
 
@@ -3726,7 +3726,7 @@ GLES2_0 >> getBooleanv: pname with: data [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getBufferParameteriv: target with: pname with: params [
 
@@ -3737,7 +3737,7 @@ GLES2_0 >> getBufferParameteriv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getError [
 
@@ -3748,7 +3748,7 @@ GLES2_0 >> getError [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getFloatv: pname with: data [
 
@@ -3759,7 +3759,7 @@ GLES2_0 >> getFloatv: pname with: data [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getFramebufferAttachmentParameteriv: target with: attachment with: pname with: params [
 
@@ -3770,7 +3770,7 @@ GLES2_0 >> getFramebufferAttachmentParameteriv: target with: attachment with: pn
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getIntegerv: pname with: data [
 
@@ -3781,7 +3781,7 @@ GLES2_0 >> getIntegerv: pname with: data [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getProgramInfoLog: program with: bufSize with: length with: infoLog [
 
@@ -3792,7 +3792,7 @@ GLES2_0 >> getProgramInfoLog: program with: bufSize with: length with: infoLog [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getProgramiv: program with: pname with: params [
 
@@ -3803,7 +3803,7 @@ GLES2_0 >> getProgramiv: program with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getRenderbufferParameteriv: target with: pname with: params [
 
@@ -3814,7 +3814,7 @@ GLES2_0 >> getRenderbufferParameteriv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getShaderInfoLog: shader with: bufSize with: length with: infoLog [
 
@@ -3825,7 +3825,7 @@ GLES2_0 >> getShaderInfoLog: shader with: bufSize with: length with: infoLog [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getShaderPrecisionFormat: shadertype with: precisiontype with: range with: precision [
 
@@ -3836,7 +3836,7 @@ GLES2_0 >> getShaderPrecisionFormat: shadertype with: precisiontype with: range 
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getShaderSource: shader with: bufSize with: length with: source [
 
@@ -3847,7 +3847,7 @@ GLES2_0 >> getShaderSource: shader with: bufSize with: length with: source [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getShaderiv: shader with: pname with: params [
 
@@ -3858,7 +3858,7 @@ GLES2_0 >> getShaderiv: shader with: pname with: params [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 14:48'
+	#timestamp : ''
 }
 GLES2_0 >> getShadingLanguageVersion [
 
@@ -3871,7 +3871,7 @@ GLES2_0 >> getShadingLanguageVersion [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getString: name [
 
@@ -3882,7 +3882,7 @@ GLES2_0 >> getString: name [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getTexParameterfv: target with: pname with: params [
 
@@ -3893,7 +3893,7 @@ GLES2_0 >> getTexParameterfv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getTexParameteriv: target with: pname with: params [
 
@@ -3904,7 +3904,7 @@ GLES2_0 >> getTexParameteriv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getUniformLocation: program with: name [
 
@@ -3915,7 +3915,7 @@ GLES2_0 >> getUniformLocation: program with: name [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getUniformfv: program with: location with: params [
 
@@ -3926,7 +3926,7 @@ GLES2_0 >> getUniformfv: program with: location with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getUniformiv: program with: location with: params [
 
@@ -3937,7 +3937,7 @@ GLES2_0 >> getUniformiv: program with: location with: params [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 15:42'
+	#timestamp : ''
 }
 GLES2_0 >> getVersion [
 
@@ -3950,7 +3950,7 @@ GLES2_0 >> getVersion [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getVertexAttribPointerv: index with: pname with: pointer [
 
@@ -3961,7 +3961,7 @@ GLES2_0 >> getVertexAttribPointerv: index with: pname with: pointer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getVertexAttribfv: index with: pname with: params [
 
@@ -3972,7 +3972,7 @@ GLES2_0 >> getVertexAttribfv: index with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> getVertexAttribiv: index with: pname with: params [
 
@@ -3983,7 +3983,7 @@ GLES2_0 >> getVertexAttribiv: index with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> hint: target with: mode [
 
@@ -3994,7 +3994,7 @@ GLES2_0 >> hint: target with: mode [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> isBuffer: buffer [
 
@@ -4005,7 +4005,7 @@ GLES2_0 >> isBuffer: buffer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> isEnabled: cap [
 
@@ -4016,7 +4016,7 @@ GLES2_0 >> isEnabled: cap [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> isFramebuffer: framebuffer [
 
@@ -4027,7 +4027,7 @@ GLES2_0 >> isFramebuffer: framebuffer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> isProgram: program [
 
@@ -4038,7 +4038,7 @@ GLES2_0 >> isProgram: program [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> isRenderbuffer: renderbuffer [
 
@@ -4049,7 +4049,7 @@ GLES2_0 >> isRenderbuffer: renderbuffer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> isShader: shader [
 
@@ -4060,7 +4060,7 @@ GLES2_0 >> isShader: shader [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> isTexture: texture [
 
@@ -4071,7 +4071,7 @@ GLES2_0 >> isTexture: texture [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> lineWidth: width [
 
@@ -4082,7 +4082,7 @@ GLES2_0 >> lineWidth: width [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> linkProgram: program [
 
@@ -4093,7 +4093,7 @@ GLES2_0 >> linkProgram: program [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> pixelStorei: pname with: param [
 
@@ -4104,7 +4104,7 @@ GLES2_0 >> pixelStorei: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> polygonOffset: factor with: units [
 
@@ -4115,7 +4115,7 @@ GLES2_0 >> polygonOffset: factor with: units [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> readPixels: x with: y with: width with: height with: format with: type with: pixels [
 
@@ -4126,7 +4126,7 @@ GLES2_0 >> readPixels: x with: y with: width with: height with: format with: typ
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> releaseShaderCompiler [
 
@@ -4137,7 +4137,7 @@ GLES2_0 >> releaseShaderCompiler [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> renderbufferStorage: target with: internalformat with: width with: height [
 
@@ -4148,7 +4148,7 @@ GLES2_0 >> renderbufferStorage: target with: internalformat with: width with: he
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> sampleCoverage: value with: invert [
 
@@ -4159,7 +4159,7 @@ GLES2_0 >> sampleCoverage: value with: invert [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> scissor: x with: y with: width with: height [
 
@@ -4170,7 +4170,7 @@ GLES2_0 >> scissor: x with: y with: width with: height [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> shaderBinary: count with: shaders with: binaryformat with: binary with: length [
 
@@ -4181,7 +4181,7 @@ GLES2_0 >> shaderBinary: count with: shaders with: binaryformat with: binary wit
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> shaderSource: shader with: count with: string with: length [
 
@@ -4192,7 +4192,7 @@ GLES2_0 >> shaderSource: shader with: count with: string with: length [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> stencilFunc: func with: ref with: mask [
 
@@ -4203,7 +4203,7 @@ GLES2_0 >> stencilFunc: func with: ref with: mask [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> stencilFuncSeparate: face with: func with: ref with: mask [
 
@@ -4214,7 +4214,7 @@ GLES2_0 >> stencilFuncSeparate: face with: func with: ref with: mask [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> stencilMask: mask [
 
@@ -4225,7 +4225,7 @@ GLES2_0 >> stencilMask: mask [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> stencilMaskSeparate: face with: mask [
 
@@ -4236,7 +4236,7 @@ GLES2_0 >> stencilMaskSeparate: face with: mask [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> stencilOp: fail with: zfail with: zpass [
 
@@ -4247,7 +4247,7 @@ GLES2_0 >> stencilOp: fail with: zfail with: zpass [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> stencilOpSeparate: face with: sfail with: dpfail with: dppass [
 
@@ -4258,7 +4258,7 @@ GLES2_0 >> stencilOpSeparate: face with: sfail with: dpfail with: dppass [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> texImage2D: target with: level with: internalformat with: width with: height with: border with: format with: type with: pixels [
 
@@ -4269,7 +4269,7 @@ GLES2_0 >> texImage2D: target with: level with: internalformat with: width with:
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> texParameterf: target with: pname with: param [
 
@@ -4280,7 +4280,7 @@ GLES2_0 >> texParameterf: target with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> texParameterfv: target with: pname with: params [
 
@@ -4291,7 +4291,7 @@ GLES2_0 >> texParameterfv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> texParameteri: target with: pname with: param [
 
@@ -4302,7 +4302,7 @@ GLES2_0 >> texParameteri: target with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> texParameteriv: target with: pname with: params [
 
@@ -4313,7 +4313,7 @@ GLES2_0 >> texParameteriv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> texSubImage2D: target with: level with: xoffset with: yoffset with: width with: height with: format with: type with: pixels [
 
@@ -4324,7 +4324,7 @@ GLES2_0 >> texSubImage2D: target with: level with: xoffset with: yoffset with: w
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> uniform1f: location with: v0 [
 
@@ -4335,7 +4335,7 @@ GLES2_0 >> uniform1f: location with: v0 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> uniform1fv: location with: count with: value [
 
@@ -4346,7 +4346,7 @@ GLES2_0 >> uniform1fv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> uniform1i: location with: v0 [
 
@@ -4357,7 +4357,7 @@ GLES2_0 >> uniform1i: location with: v0 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> uniform1iv: location with: count with: value [
 
@@ -4368,7 +4368,7 @@ GLES2_0 >> uniform1iv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> uniform2f: location with: v0 with: v1 [
 
@@ -4379,7 +4379,7 @@ GLES2_0 >> uniform2f: location with: v0 with: v1 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> uniform2fv: location with: count with: value [
 
@@ -4390,7 +4390,7 @@ GLES2_0 >> uniform2fv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> uniform2i: location with: v0 with: v1 [
 
@@ -4401,7 +4401,7 @@ GLES2_0 >> uniform2i: location with: v0 with: v1 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> uniform2iv: location with: count with: value [
 
@@ -4412,7 +4412,7 @@ GLES2_0 >> uniform2iv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> uniform3f: location with: v0 with: v1 with: v2 [
 
@@ -4423,7 +4423,7 @@ GLES2_0 >> uniform3f: location with: v0 with: v1 with: v2 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> uniform3fv: location with: count with: value [
 
@@ -4434,7 +4434,7 @@ GLES2_0 >> uniform3fv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> uniform3i: location with: v0 with: v1 with: v2 [
 
@@ -4445,7 +4445,7 @@ GLES2_0 >> uniform3i: location with: v0 with: v1 with: v2 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> uniform3iv: location with: count with: value [
 
@@ -4456,7 +4456,7 @@ GLES2_0 >> uniform3iv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> uniform4f: location with: v0 with: v1 with: v2 with: v3 [
 
@@ -4467,7 +4467,7 @@ GLES2_0 >> uniform4f: location with: v0 with: v1 with: v2 with: v3 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> uniform4fv: location with: count with: value [
 
@@ -4478,7 +4478,7 @@ GLES2_0 >> uniform4fv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> uniform4i: location with: v0 with: v1 with: v2 with: v3 [
 
@@ -4489,7 +4489,7 @@ GLES2_0 >> uniform4i: location with: v0 with: v1 with: v2 with: v3 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> uniform4iv: location with: count with: value [
 
@@ -4500,7 +4500,7 @@ GLES2_0 >> uniform4iv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> uniformMatrix2fv: location with: count with: transpose with: value [
 
@@ -4511,7 +4511,7 @@ GLES2_0 >> uniformMatrix2fv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> uniformMatrix3fv: location with: count with: transpose with: value [
 
@@ -4522,7 +4522,7 @@ GLES2_0 >> uniformMatrix3fv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> uniformMatrix4fv: location with: count with: transpose with: value [
 
@@ -4533,7 +4533,7 @@ GLES2_0 >> uniformMatrix4fv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> useProgram: program [
 
@@ -4544,7 +4544,7 @@ GLES2_0 >> useProgram: program [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> validateProgram: program [
 
@@ -4555,7 +4555,7 @@ GLES2_0 >> validateProgram: program [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> vertexAttrib1f: index with: x [
 
@@ -4566,7 +4566,7 @@ GLES2_0 >> vertexAttrib1f: index with: x [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> vertexAttrib1fv: index with: v [
 
@@ -4577,7 +4577,7 @@ GLES2_0 >> vertexAttrib1fv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> vertexAttrib2f: index with: x with: y [
 
@@ -4588,7 +4588,7 @@ GLES2_0 >> vertexAttrib2f: index with: x with: y [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> vertexAttrib2fv: index with: v [
 
@@ -4599,7 +4599,7 @@ GLES2_0 >> vertexAttrib2fv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> vertexAttrib3f: index with: x with: y with: z [
 
@@ -4610,7 +4610,7 @@ GLES2_0 >> vertexAttrib3f: index with: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> vertexAttrib3fv: index with: v [
 
@@ -4621,7 +4621,7 @@ GLES2_0 >> vertexAttrib3fv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> vertexAttrib4f: index with: x with: y with: z with: w [
 
@@ -4632,7 +4632,7 @@ GLES2_0 >> vertexAttrib4f: index with: x with: y with: z with: w [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> vertexAttrib4fv: index with: v [
 
@@ -4643,7 +4643,7 @@ GLES2_0 >> vertexAttrib4fv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> vertexAttribPointer: index with: size with: type with: normalized with: stride with: pointer [
 
@@ -4654,7 +4654,7 @@ GLES2_0 >> vertexAttribPointer: index with: size with: type with: normalized wit
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GLES2_0 >> viewport: x with: y with: width with: height [
 

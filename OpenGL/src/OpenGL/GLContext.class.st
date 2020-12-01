@@ -18,7 +18,7 @@ Class {
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 10/26/2020 10:19'
+	#timestamp : ''
 }
 GLContext class >> initialize [
 
@@ -28,7 +28,7 @@ GLContext class >> initialize [
 
 {
 	#category : #'system startup',
-	#timestamp : 'stlu 11/13/2020 14:17'
+	#timestamp : ''
 }
 GLContext class >> shutDown: quitting [
 
@@ -40,7 +40,7 @@ GLContext class >> shutDown: quitting [
 
 {
 	#category : #'system startup',
-	#timestamp : 'stlu 11/13/2020 14:22'
+	#timestamp : ''
 }
 GLContext class >> startUp: resuming [
 
@@ -52,7 +52,7 @@ GLContext class >> startUp: resuming [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLContext >> activate [
 
@@ -61,7 +61,7 @@ GLContext >> activate [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:51'
+	#timestamp : ''
 }
 GLContext >> api [
 
@@ -70,7 +70,7 @@ GLContext >> api [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:51'
+	#timestamp : ''
 }
 GLContext >> api: anObject [
 
@@ -79,7 +79,7 @@ GLContext >> api: anObject [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLContext >> deactivate [
 
@@ -88,7 +88,7 @@ GLContext >> deactivate [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 10/26/2020 12:06'
+	#timestamp : ''
 }
 GLContext >> destroy [
 
@@ -97,7 +97,7 @@ GLContext >> destroy [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 10/16/2020 12:25'
+	#timestamp : ''
 }
 GLContext >> endFrame [
 
@@ -107,7 +107,7 @@ GLContext >> endFrame [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:51'
+	#timestamp : ''
 }
 GLContext >> extensions [
 
@@ -116,7 +116,7 @@ GLContext >> extensions [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/12/2020 15:30'
+	#timestamp : ''
 }
 GLContext >> initialize [
 
@@ -127,7 +127,7 @@ GLContext >> initialize [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/12/2020 15:30'
+	#timestamp : ''
 }
 GLContext >> initializeContextState [
 
@@ -138,7 +138,7 @@ GLContext >> initializeContextState [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/16/2020 01:23'
+	#timestamp : ''
 }
 GLContext >> initializeLibrary [
 
@@ -163,7 +163,7 @@ GLContext >> initializeLibrary [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 12:29'
+	#timestamp : ''
 }
 GLContext >> library [
 
@@ -173,7 +173,7 @@ GLContext >> library [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:51'
+	#timestamp : ''
 }
 GLContext >> profile [
 
@@ -182,7 +182,7 @@ GLContext >> profile [
 
 {
 	#category : #resources,
-	#timestamp : 'stlu 10/26/2020 12:30'
+	#timestamp : ''
 }
 GLContext >> registerObject: glObject [
 
@@ -191,7 +191,7 @@ GLContext >> registerObject: glObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLContext >> resources [
 
@@ -200,7 +200,7 @@ GLContext >> resources [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:51'
+	#timestamp : ''
 }
 GLContext >> resources: anObject [
 
@@ -209,7 +209,7 @@ GLContext >> resources: anObject [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/16/2020 12:23'
+	#timestamp : ''
 }
 GLContext >> shouldClose [
 
@@ -219,7 +219,7 @@ GLContext >> shouldClose [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 10/16/2020 12:24'
+	#timestamp : ''
 }
 GLContext >> swapBuffers [
 
@@ -228,7 +228,7 @@ GLContext >> swapBuffers [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:51'
+	#timestamp : ''
 }
 GLContext >> version [
 

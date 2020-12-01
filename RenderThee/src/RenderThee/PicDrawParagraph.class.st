@@ -12,7 +12,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawParagraph class >> paragraph: aParagraph bounds: aRectangle color: aColor [
 
@@ -25,7 +25,7 @@ PicDrawParagraph class >> paragraph: aParagraph bounds: aRectangle color: aColor
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawParagraph >> bounds [
 
@@ -34,7 +34,7 @@ PicDrawParagraph >> bounds [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawParagraph >> bounds: anObject [
 
@@ -43,7 +43,7 @@ PicDrawParagraph >> bounds: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawParagraph >> color [
 
@@ -52,7 +52,7 @@ PicDrawParagraph >> color [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawParagraph >> color: anObject [
 
@@ -61,7 +61,7 @@ PicDrawParagraph >> color: anObject [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawParagraph >> drawOn: aCanvas [
 
@@ -73,7 +73,7 @@ PicDrawParagraph >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawParagraph >> estimatedBounds [
 
@@ -82,7 +82,7 @@ PicDrawParagraph >> estimatedBounds [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawParagraph >> paragraph [
 
@@ -91,7 +91,7 @@ PicDrawParagraph >> paragraph [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawParagraph >> paragraph: anObject [
 

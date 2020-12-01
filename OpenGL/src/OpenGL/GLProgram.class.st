@@ -11,7 +11,7 @@ Class {
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 11/3/2020 15:38'
+	#timestamp : ''
 }
 GLProgram class >> allocate [
 
@@ -20,7 +20,7 @@ GLProgram class >> allocate [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/6/2020 15:05'
+	#timestamp : ''
 }
 GLProgram class >> current [
 
@@ -29,7 +29,7 @@ GLProgram class >> current [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/6/2020 15:05'
+	#timestamp : ''
 }
 GLProgram class >> use: id [
 
@@ -38,7 +38,7 @@ GLProgram class >> use: id [
 
 {
 	#category : #actions,
-	#timestamp : 'stlu 11/3/2020 15:36'
+	#timestamp : ''
 }
 GLProgram >> attachShader: glShader [
 
@@ -48,7 +48,7 @@ GLProgram >> attachShader: glShader [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 10/28/2020 13:27'
+	#timestamp : ''
 }
 GLProgram >> errorLinkingFailed [
 
@@ -57,7 +57,7 @@ GLProgram >> errorLinkingFailed [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/3/2020 16:55'
+	#timestamp : ''
 }
 GLProgram >> getAttribute: attributeName [
 
@@ -68,7 +68,7 @@ GLProgram >> getAttribute: attributeName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/3/2020 15:36'
+	#timestamp : ''
 }
 GLProgram >> getBinary [
 
@@ -83,7 +83,7 @@ GLProgram >> getBinary [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 11/16/2020 13:52'
+	#timestamp : ''
 }
 GLProgram >> getInfoLog [
 
@@ -94,7 +94,7 @@ GLProgram >> getInfoLog [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 10/28/2020 14:37'
+	#timestamp : ''
 }
 GLProgram >> getInfoLogLength [
 
@@ -103,7 +103,7 @@ GLProgram >> getInfoLogLength [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/27/2020 12:27'
+	#timestamp : ''
 }
 GLProgram >> getNumAttributes [
 
@@ -112,7 +112,7 @@ GLProgram >> getNumAttributes [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/27/2020 12:28'
+	#timestamp : ''
 }
 GLProgram >> getNumUniforms [
 
@@ -121,7 +121,7 @@ GLProgram >> getNumUniforms [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 15:50'
+	#timestamp : ''
 }
 GLProgram >> initialize [
 
@@ -131,7 +131,7 @@ GLProgram >> initialize [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/27/2020 12:17'
+	#timestamp : ''
 }
 GLProgram >> isFlaggedForDeletion [
 
@@ -140,7 +140,7 @@ GLProgram >> isFlaggedForDeletion [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:16'
+	#timestamp : ''
 }
 GLProgram >> isProgram [
 
@@ -149,7 +149,7 @@ GLProgram >> isProgram [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/3/2020 15:37'
+	#timestamp : ''
 }
 GLProgram >> isValid [
 
@@ -159,7 +159,7 @@ GLProgram >> isValid [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/27/2020 12:17'
+	#timestamp : ''
 }
 GLProgram >> lastLinkingSucceeded [
 
@@ -168,7 +168,7 @@ GLProgram >> lastLinkingSucceeded [
 
 {
 	#category : #actions,
-	#timestamp : 'stlu 11/3/2020 15:37'
+	#timestamp : ''
 }
 GLProgram >> link [
 
@@ -179,7 +179,7 @@ GLProgram >> link [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLProgram >> shaders [
 
@@ -188,7 +188,7 @@ GLProgram >> shaders [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLProgram >> shaders: anObject [
 
@@ -197,7 +197,7 @@ GLProgram >> shaders: anObject [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/6/2020 15:04'
+	#timestamp : ''
 }
 GLProgram >> use [
 
@@ -206,7 +206,7 @@ GLProgram >> use [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/13/2020 16:20'
+	#timestamp : ''
 }
 GLProgram >> useDuring: aBlock [
 
@@ -221,7 +221,7 @@ GLProgram >> useDuring: aBlock [
 
 {
 	#category : #actions,
-	#timestamp : 'stlu 10/27/2020 12:25'
+	#timestamp : ''
 }
 GLProgram >> validate [
 

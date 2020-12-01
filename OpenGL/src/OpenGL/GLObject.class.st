@@ -28,7 +28,7 @@ Class {
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 10/28/2020 14:12'
+	#timestamp : ''
 }
 GLObject class >> allocate [
 	"Allocates an object with OpenGL. Returns the id to reference it."
@@ -37,7 +37,7 @@ GLObject class >> allocate [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 10/29/2020 01:25'
+	#timestamp : ''
 }
 GLObject class >> create [
 
@@ -46,7 +46,7 @@ GLObject class >> create [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 10/29/2020 01:25'
+	#timestamp : ''
 }
 GLObject class >> id: anInteger [
 
@@ -57,7 +57,7 @@ GLObject class >> id: anInteger [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLObject class >> new [
 
@@ -66,7 +66,7 @@ GLObject class >> new [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 10/29/2020 12:10'
+	#timestamp : ''
 }
 GLObject class >> newFrom: glObject [
 
@@ -75,7 +75,7 @@ GLObject class >> newFrom: glObject [
 
 {
 	#category : #comparing,
-	#timestamp : 'stlu 10/29/2020 01:22'
+	#timestamp : ''
 }
 GLObject >> = otherObject [
 
@@ -87,7 +87,7 @@ GLObject >> = otherObject [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 10/26/2020 12:11'
+	#timestamp : ''
 }
 GLObject >> cleanUp [
 
@@ -96,7 +96,7 @@ GLObject >> cleanUp [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/29/2020 01:33'
+	#timestamp : ''
 }
 GLObject >> context [
 
@@ -105,7 +105,7 @@ GLObject >> context [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 10/29/2020 01:29'
+	#timestamp : ''
 }
 GLObject >> delete [
 
@@ -114,7 +114,7 @@ GLObject >> delete [
 
 {
 	#category : #comparing,
-	#timestamp : 'stlu 10/29/2020 01:22'
+	#timestamp : ''
 }
 GLObject >> hash [
 
@@ -123,7 +123,7 @@ GLObject >> hash [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLObject >> id [
 
@@ -132,7 +132,7 @@ GLObject >> id [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/3/2020 16:36'
+	#timestamp : ''
 }
 GLObject >> id: anInteger [
 
@@ -141,7 +141,7 @@ GLObject >> id: anInteger [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 10/26/2020 12:08'
+	#timestamp : ''
 }
 GLObject >> initialize [
 
@@ -150,7 +150,7 @@ GLObject >> initialize [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:12'
+	#timestamp : ''
 }
 GLObject >> isBuffer [
 
@@ -159,7 +159,7 @@ GLObject >> isBuffer [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:14'
+	#timestamp : ''
 }
 GLObject >> isFrameBuffer [
 
@@ -168,7 +168,7 @@ GLObject >> isFrameBuffer [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:12'
+	#timestamp : ''
 }
 GLObject >> isProgram [
 
@@ -177,7 +177,7 @@ GLObject >> isProgram [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:12'
+	#timestamp : ''
 }
 GLObject >> isShader [
 
@@ -186,7 +186,7 @@ GLObject >> isShader [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:12'
+	#timestamp : ''
 }
 GLObject >> isTexture [
 
@@ -195,7 +195,7 @@ GLObject >> isTexture [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:14'
+	#timestamp : ''
 }
 GLObject >> isVertexArray [
 
@@ -204,7 +204,7 @@ GLObject >> isVertexArray [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 12:08'
+	#timestamp : ''
 }
 GLObject >> library [
 
@@ -213,7 +213,7 @@ GLObject >> library [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 10/26/2020 12:14'
+	#timestamp : ''
 }
 GLObject >> register [
 

@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #compiling,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 SgImages class >> compile: selector fromFileNamed: fileName [
 
@@ -26,7 +26,7 @@ SgImages class >> compile: selector fromFileNamed: fileName [
 
 {
 	#category : #images,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 SgImages class >> planet1 [
 
@@ -35,7 +35,7 @@ SgImages class >> planet1 [
 
 {
 	#category : #images,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 SgImages class >> planet2 [
 
@@ -44,7 +44,7 @@ SgImages class >> planet2 [
 
 {
 	#category : #images,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 SgImages class >> planet3 [
 
@@ -53,7 +53,7 @@ SgImages class >> planet3 [
 
 {
 	#category : #images,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 SgImages class >> planet4 [
 
@@ -62,7 +62,7 @@ SgImages class >> planet4 [
 
 {
 	#category : #images,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 SgImages class >> spaceship [
 

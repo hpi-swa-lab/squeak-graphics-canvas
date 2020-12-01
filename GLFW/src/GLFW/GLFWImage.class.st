@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #'field definition',
-	#timestamp : 'stlu 10/20/2020 22:04'
+	#timestamp : ''
 }
 GLFWImage class >> fields [ "self defineFields"
 

@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 11/3/2020 15:40'
+	#timestamp : ''
 }
 GLShader class >> allocate [
 
@@ -19,7 +19,7 @@ GLShader class >> allocate [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/28/2020 17:51'
+	#timestamp : ''
 }
 GLShader class >> type [
 
@@ -28,7 +28,7 @@ GLShader class >> type [
 
 {
 	#category : #compilation,
-	#timestamp : 'stlu 11/3/2020 15:39'
+	#timestamp : ''
 }
 GLShader >> compile [
 
@@ -39,7 +39,7 @@ GLShader >> compile [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/3/2020 15:39'
+	#timestamp : ''
 }
 GLShader >> delete [
 
@@ -48,7 +48,7 @@ GLShader >> delete [
 
 {
 	#category : #compilation,
-	#timestamp : 'stlu 10/28/2020 13:27'
+	#timestamp : ''
 }
 GLShader >> errorCompilationFailed [
 
@@ -57,7 +57,7 @@ GLShader >> errorCompilationFailed [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/3/2020 15:39'
+	#timestamp : ''
 }
 GLShader >> exists [
 
@@ -66,7 +66,7 @@ GLShader >> exists [
 
 {
 	#category : #'accessing uncached',
-	#timestamp : 'stlu 11/3/2020 15:39'
+	#timestamp : ''
 }
 GLShader >> getAttribute: attributeName [
 
@@ -77,7 +77,7 @@ GLShader >> getAttribute: attributeName [
 
 {
 	#category : #compilation,
-	#timestamp : 'stlu 11/16/2020 13:51'
+	#timestamp : ''
 }
 GLShader >> getInfoLog [
 
@@ -88,7 +88,7 @@ GLShader >> getInfoLog [
 
 {
 	#category : #compilation,
-	#timestamp : 'stlu 10/28/2020 14:40'
+	#timestamp : ''
 }
 GLShader >> getInfoLogLength [
 
@@ -97,7 +97,7 @@ GLShader >> getInfoLogLength [
 
 {
 	#category : #'accessing uncached',
-	#timestamp : 'stlu 11/16/2020 13:50'
+	#timestamp : ''
 }
 GLShader >> getSource [
 
@@ -108,7 +108,7 @@ GLShader >> getSource [
 
 {
 	#category : #'accessing uncached',
-	#timestamp : 'stlu 10/28/2020 14:42'
+	#timestamp : ''
 }
 GLShader >> getSourceLength [
 
@@ -117,7 +117,7 @@ GLShader >> getSourceLength [
 
 {
 	#category : #'accessing uncached',
-	#timestamp : 'stlu 10/26/2020 13:07'
+	#timestamp : ''
 }
 GLShader >> getType [
 
@@ -126,7 +126,7 @@ GLShader >> getType [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 10/28/2020 17:58'
+	#timestamp : ''
 }
 GLShader >> initialize [
 
@@ -136,7 +136,7 @@ GLShader >> initialize [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/26/2020 13:53'
+	#timestamp : ''
 }
 GLShader >> isFlaggedForDeletion [
 
@@ -145,7 +145,7 @@ GLShader >> isFlaggedForDeletion [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:16'
+	#timestamp : ''
 }
 GLShader >> isShader [
 
@@ -154,7 +154,7 @@ GLShader >> isShader [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/26/2020 13:55'
+	#timestamp : ''
 }
 GLShader >> lastCompilationSucceeded [
 
@@ -163,7 +163,7 @@ GLShader >> lastCompilationSucceeded [
 
 {
 	#category : #'accessing uncached',
-	#timestamp : 'stlu 11/16/2020 13:50'
+	#timestamp : ''
 }
 GLShader >> setSource: aString [
 
@@ -185,7 +185,7 @@ GLShader >> setSource: aString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 13:00'
+	#timestamp : ''
 }
 GLShader >> source [
 
@@ -194,7 +194,7 @@ GLShader >> source [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 13:51'
+	#timestamp : ''
 }
 GLShader >> source: aString [
 
@@ -204,7 +204,7 @@ GLShader >> source: aString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/28/2020 17:51'
+	#timestamp : ''
 }
 GLShader >> type [
 

@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GL1_2 class >> majorVersion [
 
@@ -16,7 +16,7 @@ GL1_2 class >> majorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GL1_2 class >> minorVersion [
 
@@ -25,7 +25,7 @@ GL1_2 class >> minorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 14:50'
+	#timestamp : ''
 }
 GL1_2 class >> versionNumber [
 
@@ -34,7 +34,7 @@ GL1_2 class >> versionNumber [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> ALIASED_LINE_WIDTH_RANGE [
 
@@ -44,7 +44,7 @@ GL1_2 >> ALIASED_LINE_WIDTH_RANGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> ALIASED_POINT_SIZE_RANGE [
 
@@ -54,7 +54,7 @@ GL1_2 >> ALIASED_POINT_SIZE_RANGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> BGR [
 
@@ -64,7 +64,7 @@ GL1_2 >> BGR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> BGRA [
 
@@ -74,7 +74,7 @@ GL1_2 >> BGRA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> CLAMP_TO_EDGE [
 
@@ -84,7 +84,7 @@ GL1_2 >> CLAMP_TO_EDGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> LIGHT_MODEL_COLOR_CONTROL [
 
@@ -94,7 +94,7 @@ GL1_2 >> LIGHT_MODEL_COLOR_CONTROL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> MAX_3D_TEXTURE_SIZE [
 
@@ -104,7 +104,7 @@ GL1_2 >> MAX_3D_TEXTURE_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> MAX_ELEMENTS_INDICES [
 
@@ -114,7 +114,7 @@ GL1_2 >> MAX_ELEMENTS_INDICES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> MAX_ELEMENTS_VERTICES [
 
@@ -124,7 +124,7 @@ GL1_2 >> MAX_ELEMENTS_VERTICES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> PACK_IMAGE_HEIGHT [
 
@@ -134,7 +134,7 @@ GL1_2 >> PACK_IMAGE_HEIGHT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> PACK_SKIP_IMAGES [
 
@@ -144,7 +144,7 @@ GL1_2 >> PACK_SKIP_IMAGES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> PROXY_TEXTURE_3D [
 
@@ -154,7 +154,7 @@ GL1_2 >> PROXY_TEXTURE_3D [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> RESCALE_NORMAL [
 
@@ -164,7 +164,7 @@ GL1_2 >> RESCALE_NORMAL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> SEPARATE_SPECULAR_COLOR [
 
@@ -174,7 +174,7 @@ GL1_2 >> SEPARATE_SPECULAR_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> SINGLE_COLOR [
 
@@ -184,7 +184,7 @@ GL1_2 >> SINGLE_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> SMOOTH_LINE_WIDTH_GRANULARITY [
 
@@ -194,7 +194,7 @@ GL1_2 >> SMOOTH_LINE_WIDTH_GRANULARITY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> SMOOTH_LINE_WIDTH_RANGE [
 
@@ -204,7 +204,7 @@ GL1_2 >> SMOOTH_LINE_WIDTH_RANGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> SMOOTH_POINT_SIZE_GRANULARITY [
 
@@ -214,7 +214,7 @@ GL1_2 >> SMOOTH_POINT_SIZE_GRANULARITY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> SMOOTH_POINT_SIZE_RANGE [
 
@@ -224,7 +224,7 @@ GL1_2 >> SMOOTH_POINT_SIZE_RANGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> TEXTURE_3D [
 
@@ -234,7 +234,7 @@ GL1_2 >> TEXTURE_3D [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> TEXTURE_BASE_LEVEL [
 
@@ -244,7 +244,7 @@ GL1_2 >> TEXTURE_BASE_LEVEL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> TEXTURE_BINDING_3D [
 
@@ -254,7 +254,7 @@ GL1_2 >> TEXTURE_BINDING_3D [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> TEXTURE_DEPTH [
 
@@ -264,7 +264,7 @@ GL1_2 >> TEXTURE_DEPTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> TEXTURE_MAX_LEVEL [
 
@@ -274,7 +274,7 @@ GL1_2 >> TEXTURE_MAX_LEVEL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> TEXTURE_MAX_LOD [
 
@@ -284,7 +284,7 @@ GL1_2 >> TEXTURE_MAX_LOD [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> TEXTURE_MIN_LOD [
 
@@ -294,7 +294,7 @@ GL1_2 >> TEXTURE_MIN_LOD [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> TEXTURE_WRAP_R [
 
@@ -304,7 +304,7 @@ GL1_2 >> TEXTURE_WRAP_R [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> UNPACK_IMAGE_HEIGHT [
 
@@ -314,7 +314,7 @@ GL1_2 >> UNPACK_IMAGE_HEIGHT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> UNPACK_SKIP_IMAGES [
 
@@ -324,7 +324,7 @@ GL1_2 >> UNPACK_SKIP_IMAGES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> UNSIGNED_BYTE_2_3_3_REV [
 
@@ -334,7 +334,7 @@ GL1_2 >> UNSIGNED_BYTE_2_3_3_REV [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> UNSIGNED_BYTE_3_3_2 [
 
@@ -344,7 +344,7 @@ GL1_2 >> UNSIGNED_BYTE_3_3_2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> UNSIGNED_INT_10_10_10_2 [
 
@@ -354,7 +354,7 @@ GL1_2 >> UNSIGNED_INT_10_10_10_2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> UNSIGNED_INT_2_10_10_10_REV [
 
@@ -364,7 +364,7 @@ GL1_2 >> UNSIGNED_INT_2_10_10_10_REV [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> UNSIGNED_INT_8_8_8_8 [
 
@@ -374,7 +374,7 @@ GL1_2 >> UNSIGNED_INT_8_8_8_8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> UNSIGNED_INT_8_8_8_8_REV [
 
@@ -384,7 +384,7 @@ GL1_2 >> UNSIGNED_INT_8_8_8_8_REV [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> UNSIGNED_SHORT_1_5_5_5_REV [
 
@@ -394,7 +394,7 @@ GL1_2 >> UNSIGNED_SHORT_1_5_5_5_REV [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> UNSIGNED_SHORT_4_4_4_4 [
 
@@ -404,7 +404,7 @@ GL1_2 >> UNSIGNED_SHORT_4_4_4_4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> UNSIGNED_SHORT_4_4_4_4_REV [
 
@@ -414,7 +414,7 @@ GL1_2 >> UNSIGNED_SHORT_4_4_4_4_REV [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> UNSIGNED_SHORT_5_5_5_1 [
 
@@ -424,7 +424,7 @@ GL1_2 >> UNSIGNED_SHORT_5_5_5_1 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> UNSIGNED_SHORT_5_6_5 [
 
@@ -434,7 +434,7 @@ GL1_2 >> UNSIGNED_SHORT_5_6_5 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> UNSIGNED_SHORT_5_6_5_REV [
 
@@ -444,7 +444,7 @@ GL1_2 >> UNSIGNED_SHORT_5_6_5_REV [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> copyTexSubImage3D: target with: level with: xoffset with: yoffset with: zoffset with: x with: y with: width with: height [
 
@@ -455,7 +455,7 @@ GL1_2 >> copyTexSubImage3D: target with: level with: xoffset with: yoffset with:
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> drawRangeElements: mode with: start with: end with: count with: type with: indices [
 
@@ -466,7 +466,7 @@ GL1_2 >> drawRangeElements: mode with: start with: end with: count with: type wi
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> texImage3D: target with: level with: internalformat with: width with: height with: depth with: border with: format with: type with: pixels [
 
@@ -477,7 +477,7 @@ GL1_2 >> texImage3D: target with: level with: internalformat with: width with: h
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_2 >> texSubImage3D: target with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth with: format with: type with: pixels [
 

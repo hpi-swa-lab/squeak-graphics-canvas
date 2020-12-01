@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 11/3/2020 15:01'
+	#timestamp : ''
 }
 LOGL1_1_2_hello_window_clear >> render [
 

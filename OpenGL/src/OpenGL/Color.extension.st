@@ -2,7 +2,7 @@ Extension { #name : #Color }
 
 {
 	#category : #'*OpenGL',
-	#timestamp : 'stlu 10/27/2020 11:50'
+	#timestamp : ''
 }
 Color >> putAtUniform: location [
 

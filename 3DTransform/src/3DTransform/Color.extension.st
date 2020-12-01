@@ -2,7 +2,7 @@ Extension { #name : #Color }
 
 {
 	#category : #'*3DTransform',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 Color >> asVectorColor [
 	"Convert the receiver into a color"

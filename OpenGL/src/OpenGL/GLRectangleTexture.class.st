@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 00:40'
+	#timestamp : ''
 }
 GLRectangleTexture class >> bindingEnum [
 
@@ -16,7 +16,7 @@ GLRectangleTexture class >> bindingEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 00:43'
+	#timestamp : ''
 }
 GLRectangleTexture class >> target [
 

@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawRoundedRectangle class >> bounds: aRectangle radius: cornerRadius fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -24,7 +24,7 @@ PicDrawRoundedRectangle class >> bounds: aRectangle radius: cornerRadius fillSty
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawRoundedRectangle >> drawOn: aCanvas [
 
@@ -37,7 +37,7 @@ PicDrawRoundedRectangle >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawRoundedRectangle >> radius [
 
@@ -46,7 +46,7 @@ PicDrawRoundedRectangle >> radius [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawRoundedRectangle >> radius: anObject [
 

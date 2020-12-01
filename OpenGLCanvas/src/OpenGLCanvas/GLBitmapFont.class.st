@@ -15,7 +15,7 @@ Class {
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLBitmapFont >> advanceFor: aCharacter [
 
@@ -24,7 +24,7 @@ GLBitmapFont >> advanceFor: aCharacter [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLBitmapFont >> extentFor: aCharacter [
 
@@ -36,7 +36,7 @@ GLBitmapFont >> extentFor: aCharacter [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 10/28/2020 23:48'
+	#timestamp : ''
 }
 GLBitmapFont >> font: aFont [
 
@@ -57,7 +57,7 @@ GLBitmapFont >> font: aFont [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLBitmapFont >> hasGlyphOf: aCharacter [
 
@@ -66,7 +66,7 @@ GLBitmapFont >> hasGlyphOf: aCharacter [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLBitmapFont >> indexForCharacter: aCharacter [
 
@@ -75,7 +75,7 @@ GLBitmapFont >> indexForCharacter: aCharacter [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLBitmapFont >> offsetFor: aCharacter [
 
@@ -85,7 +85,7 @@ GLBitmapFont >> offsetFor: aCharacter [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLBitmapFont >> printableCharacters [
 
@@ -94,7 +94,7 @@ GLBitmapFont >> printableCharacters [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLBitmapFont >> texture [
 

@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtDisplayFramebufferStore >> canvasDo: aBlock [
 
@@ -20,7 +20,7 @@ RtDisplayFramebufferStore >> canvasDo: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtDisplayFramebufferStore >> displayTransform [
 	" a transform that translates this store's coordinate system to have 0,0 in the top left "
@@ -29,7 +29,7 @@ RtDisplayFramebufferStore >> displayTransform [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtDisplayFramebufferStore >> extentChanged [
 
@@ -38,7 +38,7 @@ RtDisplayFramebufferStore >> extentChanged [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 12:18'
+	#timestamp : ''
 }
 RtDisplayFramebufferStore >> glLibrary [
 
@@ -47,7 +47,7 @@ RtDisplayFramebufferStore >> glLibrary [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/3/2020 15:42'
+	#timestamp : ''
 }
 RtDisplayFramebufferStore >> initializeGLSettings [
 
@@ -62,7 +62,7 @@ RtDisplayFramebufferStore >> initializeGLSettings [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 10/26/2020 12:18'
+	#timestamp : ''
 }
 RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 
@@ -86,7 +86,7 @@ RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtDisplayFramebufferStore >> prepareForDrawingOn: aCanvas during: aBlock [
 

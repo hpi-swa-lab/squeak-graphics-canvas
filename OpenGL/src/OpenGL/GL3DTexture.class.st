@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 00:39'
+	#timestamp : ''
 }
 GL3DTexture class >> bindingEnum [
 
@@ -16,7 +16,7 @@ GL3DTexture class >> bindingEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 00:43'
+	#timestamp : ''
 }
 GL3DTexture class >> target [
 

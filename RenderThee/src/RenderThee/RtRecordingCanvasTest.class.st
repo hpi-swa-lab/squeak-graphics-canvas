@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvasTest >> canvasForm [
 
@@ -16,7 +16,7 @@ RtRecordingCanvasTest >> canvasForm [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvasTest >> createCanvas [
 

@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:59'
+	#timestamp : ''
 }
 GLParameterBuffer class >> bindingEnum [
 
@@ -16,7 +16,7 @@ GLParameterBuffer class >> bindingEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:58'
+	#timestamp : ''
 }
 GLParameterBuffer class >> target [
 

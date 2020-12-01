@@ -2,7 +2,7 @@ Extension { #name : #Matrix }
 
 {
 	#category : #'*OpenGL',
-	#timestamp : 'stlu 11/13/2020 16:21'
+	#timestamp : ''
 }
 Matrix >> putAtUniform: location [
 

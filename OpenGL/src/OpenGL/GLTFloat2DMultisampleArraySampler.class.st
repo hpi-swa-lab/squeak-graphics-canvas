@@ -7,7 +7,16 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:49'
+	#timestamp : 'zagto 12/1/2020 15:18'
+}
+GLTFloat2DMultisampleArraySampler class >> componentType [
+
+	^ GLTFloat
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'zagto 12/1/2020 15:18'
 }
 GLTFloat2DMultisampleArraySampler class >> declarators [
 
@@ -16,7 +25,7 @@ GLTFloat2DMultisampleArraySampler class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:49'
+	#timestamp : 'zagto 12/1/2020 15:18'
 }
 GLTFloat2DMultisampleArraySampler class >> enum [
 
@@ -25,7 +34,7 @@ GLTFloat2DMultisampleArraySampler class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:49'
+	#timestamp : 'zagto 12/1/2020 15:18'
 }
 GLTFloat2DMultisampleArraySampler class >> enumName [
 
@@ -34,7 +43,7 @@ GLTFloat2DMultisampleArraySampler class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:49'
+	#timestamp : 'zagto 12/1/2020 15:18'
 }
 GLTFloat2DMultisampleArraySampler class >> squeakName [
 

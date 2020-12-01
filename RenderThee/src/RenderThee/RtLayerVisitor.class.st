@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtLayerVisitor >> visit: anObject [
 
@@ -16,7 +16,7 @@ RtLayerVisitor >> visit: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtLayerVisitor >> visitDrawLayer: aLayer [
 
@@ -25,7 +25,7 @@ RtLayerVisitor >> visitDrawLayer: aLayer [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtLayerVisitor >> visitGroupLayer: aLayer [
 

@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 00:40'
+	#timestamp : ''
 }
 GLBufferTexture class >> bindingEnum [
 
@@ -16,7 +16,7 @@ GLBufferTexture class >> bindingEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 00:43'
+	#timestamp : ''
 }
 GLBufferTexture class >> target [
 

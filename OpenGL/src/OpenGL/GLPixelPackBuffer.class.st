@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:00'
+	#timestamp : ''
 }
 GLPixelPackBuffer class >> bindingEnum [
 
@@ -16,7 +16,7 @@ GLPixelPackBuffer class >> bindingEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:03'
+	#timestamp : ''
 }
 GLPixelPackBuffer class >> target [
 

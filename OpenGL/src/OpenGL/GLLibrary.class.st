@@ -22,7 +22,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 15:13'
+	#timestamp : ''
 }
 GLLibrary class >> api [
 
@@ -31,7 +31,7 @@ GLLibrary class >> api [
 
 {
 	#category : #querying,
-	#timestamp : 'stlu 11/12/2020 14:56'
+	#timestamp : ''
 }
 GLLibrary class >> api: aSymbol [
 
@@ -40,7 +40,7 @@ GLLibrary class >> api: aSymbol [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/3/2020 12:53'
+	#timestamp : ''
 }
 GLLibrary class >> context: aContext [
 
@@ -49,7 +49,7 @@ GLLibrary class >> context: aContext [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/3/2020 12:53'
+	#timestamp : ''
 }
 GLLibrary class >> context: aContext profile: aSymbol [
 
@@ -61,7 +61,7 @@ GLLibrary class >> context: aContext profile: aSymbol [
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 11/13/2020 13:04'
+	#timestamp : ''
 }
 GLLibrary class >> example1 [ "self example1"
 	"A minimal OpenGL example.
@@ -84,7 +84,7 @@ GLLibrary class >> example1 [ "self example1"
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 11/9/2020 18:29'
+	#timestamp : ''
 }
 GLLibrary class >> example2 [ "self example2"
 	"A very simple OpenGL 1.0 example showing a rotating red rectangle on white background.
@@ -113,7 +113,7 @@ GLLibrary class >> example2 [ "self example2"
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 10/26/2020 10:42'
+	#timestamp : ''
 }
 GLLibrary class >> initialize [
 
@@ -123,7 +123,7 @@ GLLibrary class >> initialize [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 15:02'
+	#timestamp : ''
 }
 GLLibrary class >> majorVersion [
 
@@ -132,7 +132,7 @@ GLLibrary class >> majorVersion [
 
 {
 	#category : #querying,
-	#timestamp : 'stlu 11/12/2020 14:58'
+	#timestamp : ''
 }
 GLLibrary class >> majorVersion: major minorVersion: minor [
 
@@ -142,7 +142,7 @@ GLLibrary class >> majorVersion: major minorVersion: minor [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 15:03'
+	#timestamp : ''
 }
 GLLibrary class >> minorVersion [
 
@@ -151,7 +151,7 @@ GLLibrary class >> minorVersion [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 10/26/2020 10:31'
+	#timestamp : ''
 }
 GLLibrary class >> startUp: resuming [
 
@@ -167,7 +167,7 @@ GLLibrary class >> startUp: resuming [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 14:49'
+	#timestamp : ''
 }
 GLLibrary class >> versionNumber [
 
@@ -176,7 +176,7 @@ GLLibrary class >> versionNumber [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLLibrary class >> wglGetProcAddress: aString [
 	<apicall: void* 'wglGetProcAddress' (char*) module: 'Opengl32.dll'>
@@ -185,7 +185,7 @@ GLLibrary class >> wglGetProcAddress: aString [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 15:11'
+	#timestamp : ''
 }
 GLLibrary >> api [
 
@@ -194,7 +194,7 @@ GLLibrary >> api [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 10/26/2020 11:05'
+	#timestamp : ''
 }
 GLLibrary >> assertIsCurrent [
 	
@@ -203,7 +203,7 @@ GLLibrary >> assertIsCurrent [
 
 {
 	#category : #resources,
-	#timestamp : 'stlu 10/16/2020 12:43'
+	#timestamp : ''
 }
 GLLibrary >> at: aKey [
 
@@ -212,7 +212,7 @@ GLLibrary >> at: aKey [
 
 {
 	#category : #resources,
-	#timestamp : 'stlu 10/16/2020 12:43'
+	#timestamp : ''
 }
 GLLibrary >> at: aKey ifAbsentPut: aBlock [
 
@@ -221,7 +221,7 @@ GLLibrary >> at: aKey ifAbsentPut: aBlock [
 
 {
 	#category : #resources,
-	#timestamp : 'stlu 10/16/2020 12:43'
+	#timestamp : ''
 }
 GLLibrary >> at: aKey put: aValue [
 
@@ -232,7 +232,7 @@ GLLibrary >> at: aKey put: aValue [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 11/13/2020 21:59'
+	#timestamp : ''
 }
 GLLibrary >> checkForError [
 	"Check for any OpenGL errors, and raise an Error if any exist."
@@ -245,7 +245,7 @@ GLLibrary >> checkForError [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/16/2020 12:43'
+	#timestamp : ''
 }
 GLLibrary >> context [
 
@@ -254,7 +254,7 @@ GLLibrary >> context [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/19/2020 16:20'
+	#timestamp : ''
 }
 GLLibrary >> context: aContext [
 
@@ -263,7 +263,7 @@ GLLibrary >> context: aContext [
 
 {
 	#category : #'context delegation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLLibrary >> destroy [
 
@@ -272,7 +272,7 @@ GLLibrary >> destroy [
 
 {
 	#category : #'context delegation',
-	#timestamp : 'stlu 10/16/2020 12:47'
+	#timestamp : ''
 }
 GLLibrary >> endFrame [
 
@@ -281,7 +281,7 @@ GLLibrary >> endFrame [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 11/13/2020 22:14'
+	#timestamp : ''
 }
 GLLibrary >> errorString: error [
 
@@ -299,7 +299,7 @@ GLLibrary >> errorString: error [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLLibrary >> externalCallFailed [
 
@@ -320,7 +320,7 @@ GLLibrary >> externalCallFailed [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 11/3/2020 15:01'
+	#timestamp : ''
 }
 GLLibrary >> getClearColor [
 
@@ -336,7 +336,7 @@ GLLibrary >> getClearColor [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 14:17'
+	#timestamp : ''
 }
 GLLibrary >> getExtensions [
 
@@ -347,7 +347,7 @@ GLLibrary >> getExtensions [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 14:06'
+	#timestamp : ''
 }
 GLLibrary >> getExtensionsString [
 
@@ -356,7 +356,7 @@ GLLibrary >> getExtensionsString [
 
 {
 	#category : #'parameters - helpers',
-	#timestamp : 'stlu 11/3/2020 15:15'
+	#timestamp : ''
 }
 GLLibrary >> getIntegerParameter: name [
 
@@ -367,7 +367,7 @@ GLLibrary >> getIntegerParameter: name [
 
 {
 	#category : #'parameters - helpers',
-	#timestamp : 'stlu 11/3/2020 15:17'
+	#timestamp : ''
 }
 GLLibrary >> getIntegerParameters: name size: numParameters [
 
@@ -379,7 +379,7 @@ GLLibrary >> getIntegerParameters: name size: numParameters [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 13:26'
+	#timestamp : ''
 }
 GLLibrary >> getNumExtensions [
 
@@ -388,7 +388,7 @@ GLLibrary >> getNumExtensions [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 15:10'
+	#timestamp : ''
 }
 GLLibrary >> getProfile [
 
@@ -397,7 +397,7 @@ GLLibrary >> getProfile [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 11/11/2020 15:13'
+	#timestamp : ''
 }
 GLLibrary >> getRendererString [
 
@@ -406,7 +406,7 @@ GLLibrary >> getRendererString [
 
 {
 	#category : #resources,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLLibrary >> getShaderProgram: aClass [
 
@@ -415,7 +415,7 @@ GLLibrary >> getShaderProgram: aClass [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 14:34'
+	#timestamp : ''
 }
 GLLibrary >> getShadingLanguageVersion [
 
@@ -424,7 +424,7 @@ GLLibrary >> getShadingLanguageVersion [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 14:04'
+	#timestamp : ''
 }
 GLLibrary >> getShadingLanguageVersionString [
 
@@ -433,7 +433,7 @@ GLLibrary >> getShadingLanguageVersionString [
 
 {
 	#category : #'parameters - helpers',
-	#timestamp : 'stlu 11/3/2020 15:13'
+	#timestamp : ''
 }
 GLLibrary >> getStringParameter: name [
 
@@ -445,7 +445,7 @@ GLLibrary >> getStringParameter: name [
 
 {
 	#category : #'parameters - helpers',
-	#timestamp : 'stlu 11/3/2020 15:13'
+	#timestamp : ''
 }
 GLLibrary >> getStringParameter: name at: index [
 
@@ -457,7 +457,7 @@ GLLibrary >> getStringParameter: name at: index [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 11/11/2020 15:13'
+	#timestamp : ''
 }
 GLLibrary >> getVendorString [
 
@@ -466,7 +466,7 @@ GLLibrary >> getVendorString [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 15:06'
+	#timestamp : ''
 }
 GLLibrary >> getVersion [
 	"Returns an array of two elements, the major version and the minor version."
@@ -475,7 +475,7 @@ GLLibrary >> getVersion [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 13:26'
+	#timestamp : ''
 }
 GLLibrary >> getVersionNumber [
 
@@ -486,7 +486,7 @@ GLLibrary >> getVersionNumber [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 11/11/2020 15:13'
+	#timestamp : ''
 }
 GLLibrary >> getVersionString [
 
@@ -495,7 +495,7 @@ GLLibrary >> getVersionString [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 11/3/2020 15:17'
+	#timestamp : ''
 }
 GLLibrary >> getViewport [
 
@@ -508,7 +508,7 @@ GLLibrary >> getViewport [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/12/2020 15:52'
+	#timestamp : ''
 }
 GLLibrary >> isCompatibilityProfile [
 
@@ -517,7 +517,7 @@ GLLibrary >> isCompatibilityProfile [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/12/2020 15:52'
+	#timestamp : ''
 }
 GLLibrary >> isCoreProfile [
 
@@ -526,7 +526,7 @@ GLLibrary >> isCoreProfile [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 15:03'
+	#timestamp : ''
 }
 GLLibrary >> majorVersion [
 
@@ -535,7 +535,7 @@ GLLibrary >> majorVersion [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLLibrary >> makeCurrentDuring: aBlock [
 
@@ -563,7 +563,7 @@ GLLibrary >> makeCurrentDuring: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 15:03'
+	#timestamp : ''
 }
 GLLibrary >> minorVersion [
 
@@ -572,7 +572,7 @@ GLLibrary >> minorVersion [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLLibrary >> newFrameDo: aBlock. [
 
@@ -587,7 +587,7 @@ GLLibrary >> newFrameDo: aBlock. [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/3/2020 12:53'
+	#timestamp : ''
 }
 GLLibrary >> profile [
 
@@ -596,7 +596,7 @@ GLLibrary >> profile [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/3/2020 12:53'
+	#timestamp : ''
 }
 GLLibrary >> profile: anObject [
 
@@ -605,7 +605,7 @@ GLLibrary >> profile: anObject [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 11/3/2020 12:50'
+	#timestamp : ''
 }
 GLLibrary >> profileError [
 
@@ -614,7 +614,7 @@ GLLibrary >> profileError [
 
 {
 	#category : #resources,
-	#timestamp : 'stlu 10/26/2020 12:15'
+	#timestamp : ''
 }
 GLLibrary >> registerObject: glObject [
 
@@ -623,7 +623,7 @@ GLLibrary >> registerObject: glObject [
 
 {
 	#category : #helpers,
-	#timestamp : 'stlu 11/3/2020 15:01'
+	#timestamp : ''
 }
 GLLibrary >> setClearColor: aColor [
 
@@ -636,7 +636,7 @@ GLLibrary >> setClearColor: aColor [
 
 {
 	#category : #helpers,
-	#timestamp : 'stlu 11/3/2020 15:03'
+	#timestamp : ''
 }
 GLLibrary >> setViewport: aRectangle [
 
@@ -649,7 +649,7 @@ GLLibrary >> setViewport: aRectangle [
 
 {
 	#category : #'context delegation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLLibrary >> shouldClose [
 
@@ -659,7 +659,7 @@ GLLibrary >> shouldClose [
 
 {
 	#category : #'context delegation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLLibrary >> swapBuffers [
 
@@ -668,7 +668,7 @@ GLLibrary >> swapBuffers [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 15:01'
+	#timestamp : ''
 }
 GLLibrary >> version [
 
@@ -677,7 +677,7 @@ GLLibrary >> version [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 11/3/2020 12:51'
+	#timestamp : ''
 }
 GLLibrary >> versionError [
 
@@ -686,7 +686,7 @@ GLLibrary >> versionError [
 
 {
 	#category : #helpers,
-	#timestamp : 'stlu 11/3/2020 15:04'
+	#timestamp : ''
 }
 GLLibrary >> viewport: aRectangle during: aBlock [
 

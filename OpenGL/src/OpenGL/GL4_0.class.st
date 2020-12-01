@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GL4_0 class >> majorVersion [
 
@@ -16,7 +16,7 @@ GL4_0 class >> majorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GL4_0 class >> minorVersion [
 
@@ -25,7 +25,7 @@ GL4_0 class >> minorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 14:52'
+	#timestamp : ''
 }
 GL4_0 class >> versionNumber [
 
@@ -34,7 +34,7 @@ GL4_0 class >> versionNumber [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> ACTIVE_SUBROUTINES [
 
@@ -44,7 +44,7 @@ GL4_0 >> ACTIVE_SUBROUTINES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> ACTIVE_SUBROUTINE_MAX_LENGTH [
 
@@ -54,7 +54,7 @@ GL4_0 >> ACTIVE_SUBROUTINE_MAX_LENGTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> ACTIVE_SUBROUTINE_UNIFORMS [
 
@@ -64,7 +64,7 @@ GL4_0 >> ACTIVE_SUBROUTINE_UNIFORMS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS [
 
@@ -74,7 +74,7 @@ GL4_0 >> ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> ACTIVE_SUBROUTINE_UNIFORM_MAX_LENGTH [
 
@@ -84,7 +84,7 @@ GL4_0 >> ACTIVE_SUBROUTINE_UNIFORM_MAX_LENGTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> COMPATIBLE_SUBROUTINES [
 
@@ -94,7 +94,7 @@ GL4_0 >> COMPATIBLE_SUBROUTINES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> DOUBLE_MAT2 [
 
@@ -104,7 +104,7 @@ GL4_0 >> DOUBLE_MAT2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> DOUBLE_MAT2x3 [
 
@@ -114,7 +114,7 @@ GL4_0 >> DOUBLE_MAT2x3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> DOUBLE_MAT2x4 [
 
@@ -124,7 +124,7 @@ GL4_0 >> DOUBLE_MAT2x4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> DOUBLE_MAT3 [
 
@@ -134,7 +134,7 @@ GL4_0 >> DOUBLE_MAT3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> DOUBLE_MAT3x2 [
 
@@ -144,7 +144,7 @@ GL4_0 >> DOUBLE_MAT3x2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> DOUBLE_MAT3x4 [
 
@@ -154,7 +154,7 @@ GL4_0 >> DOUBLE_MAT3x4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> DOUBLE_MAT4 [
 
@@ -164,7 +164,7 @@ GL4_0 >> DOUBLE_MAT4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> DOUBLE_MAT4x2 [
 
@@ -174,7 +174,7 @@ GL4_0 >> DOUBLE_MAT4x2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> DOUBLE_MAT4x3 [
 
@@ -184,7 +184,7 @@ GL4_0 >> DOUBLE_MAT4x3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> DOUBLE_VEC2 [
 
@@ -194,7 +194,7 @@ GL4_0 >> DOUBLE_VEC2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> DOUBLE_VEC3 [
 
@@ -204,7 +204,7 @@ GL4_0 >> DOUBLE_VEC3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> DOUBLE_VEC4 [
 
@@ -214,7 +214,7 @@ GL4_0 >> DOUBLE_VEC4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> DRAW_INDIRECT_BUFFER [
 
@@ -224,7 +224,7 @@ GL4_0 >> DRAW_INDIRECT_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> DRAW_INDIRECT_BUFFER_BINDING [
 
@@ -234,7 +234,7 @@ GL4_0 >> DRAW_INDIRECT_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> FRACTIONAL_EVEN [
 
@@ -244,7 +244,7 @@ GL4_0 >> FRACTIONAL_EVEN [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> FRACTIONAL_ODD [
 
@@ -254,7 +254,7 @@ GL4_0 >> FRACTIONAL_ODD [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> FRAGMENT_INTERPOLATION_OFFSET_BITS [
 
@@ -264,7 +264,7 @@ GL4_0 >> FRAGMENT_INTERPOLATION_OFFSET_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> GEOMETRY_SHADER_INVOCATIONS [
 
@@ -274,7 +274,7 @@ GL4_0 >> GEOMETRY_SHADER_INVOCATIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> INT_SAMPLER_CUBE_MAP_ARRAY [
 
@@ -284,7 +284,7 @@ GL4_0 >> INT_SAMPLER_CUBE_MAP_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> ISOLINES [
 
@@ -294,7 +294,7 @@ GL4_0 >> ISOLINES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS [
 
@@ -304,7 +304,7 @@ GL4_0 >> MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS [
 
@@ -314,7 +314,7 @@ GL4_0 >> MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_FRAGMENT_INTERPOLATION_OFFSET [
 
@@ -324,7 +324,7 @@ GL4_0 >> MAX_FRAGMENT_INTERPOLATION_OFFSET [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_GEOMETRY_SHADER_INVOCATIONS [
 
@@ -334,7 +334,7 @@ GL4_0 >> MAX_GEOMETRY_SHADER_INVOCATIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_PATCH_VERTICES [
 
@@ -344,7 +344,7 @@ GL4_0 >> MAX_PATCH_VERTICES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_PROGRAM_TEXTURE_GATHER_OFFSET [
 
@@ -354,7 +354,7 @@ GL4_0 >> MAX_PROGRAM_TEXTURE_GATHER_OFFSET [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_SUBROUTINES [
 
@@ -364,7 +364,7 @@ GL4_0 >> MAX_SUBROUTINES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_SUBROUTINE_UNIFORM_LOCATIONS [
 
@@ -374,7 +374,7 @@ GL4_0 >> MAX_SUBROUTINE_UNIFORM_LOCATIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_TESS_CONTROL_INPUT_COMPONENTS [
 
@@ -384,7 +384,7 @@ GL4_0 >> MAX_TESS_CONTROL_INPUT_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_TESS_CONTROL_OUTPUT_COMPONENTS [
 
@@ -394,7 +394,7 @@ GL4_0 >> MAX_TESS_CONTROL_OUTPUT_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS [
 
@@ -404,7 +404,7 @@ GL4_0 >> MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS [
 
@@ -414,7 +414,7 @@ GL4_0 >> MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_TESS_CONTROL_UNIFORM_BLOCKS [
 
@@ -424,7 +424,7 @@ GL4_0 >> MAX_TESS_CONTROL_UNIFORM_BLOCKS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_TESS_CONTROL_UNIFORM_COMPONENTS [
 
@@ -434,7 +434,7 @@ GL4_0 >> MAX_TESS_CONTROL_UNIFORM_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_TESS_EVALUATION_INPUT_COMPONENTS [
 
@@ -444,7 +444,7 @@ GL4_0 >> MAX_TESS_EVALUATION_INPUT_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_TESS_EVALUATION_OUTPUT_COMPONENTS [
 
@@ -454,7 +454,7 @@ GL4_0 >> MAX_TESS_EVALUATION_OUTPUT_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS [
 
@@ -464,7 +464,7 @@ GL4_0 >> MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_TESS_EVALUATION_UNIFORM_BLOCKS [
 
@@ -474,7 +474,7 @@ GL4_0 >> MAX_TESS_EVALUATION_UNIFORM_BLOCKS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_TESS_EVALUATION_UNIFORM_COMPONENTS [
 
@@ -484,7 +484,7 @@ GL4_0 >> MAX_TESS_EVALUATION_UNIFORM_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_TESS_GEN_LEVEL [
 
@@ -494,7 +494,7 @@ GL4_0 >> MAX_TESS_GEN_LEVEL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_TESS_PATCH_COMPONENTS [
 
@@ -504,7 +504,7 @@ GL4_0 >> MAX_TESS_PATCH_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_TRANSFORM_FEEDBACK_BUFFERS [
 
@@ -514,7 +514,7 @@ GL4_0 >> MAX_TRANSFORM_FEEDBACK_BUFFERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MAX_VERTEX_STREAMS [
 
@@ -524,7 +524,7 @@ GL4_0 >> MAX_VERTEX_STREAMS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MIN_FRAGMENT_INTERPOLATION_OFFSET [
 
@@ -534,7 +534,7 @@ GL4_0 >> MIN_FRAGMENT_INTERPOLATION_OFFSET [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MIN_PROGRAM_TEXTURE_GATHER_OFFSET [
 
@@ -544,7 +544,7 @@ GL4_0 >> MIN_PROGRAM_TEXTURE_GATHER_OFFSET [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> MIN_SAMPLE_SHADING_VALUE [
 
@@ -554,7 +554,7 @@ GL4_0 >> MIN_SAMPLE_SHADING_VALUE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> NUM_COMPATIBLE_SUBROUTINES [
 
@@ -564,7 +564,7 @@ GL4_0 >> NUM_COMPATIBLE_SUBROUTINES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> PATCHES [
 
@@ -574,7 +574,7 @@ GL4_0 >> PATCHES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> PATCH_DEFAULT_INNER_LEVEL [
 
@@ -584,7 +584,7 @@ GL4_0 >> PATCH_DEFAULT_INNER_LEVEL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> PATCH_DEFAULT_OUTER_LEVEL [
 
@@ -594,7 +594,7 @@ GL4_0 >> PATCH_DEFAULT_OUTER_LEVEL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> PATCH_VERTICES [
 
@@ -604,7 +604,7 @@ GL4_0 >> PATCH_VERTICES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> PROXY_TEXTURE_CUBE_MAP_ARRAY [
 
@@ -614,7 +614,7 @@ GL4_0 >> PROXY_TEXTURE_CUBE_MAP_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> QUADS [
 
@@ -624,7 +624,7 @@ GL4_0 >> QUADS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> SAMPLER_CUBE_MAP_ARRAY [
 
@@ -634,7 +634,7 @@ GL4_0 >> SAMPLER_CUBE_MAP_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> SAMPLER_CUBE_MAP_ARRAY_SHADOW [
 
@@ -644,7 +644,7 @@ GL4_0 >> SAMPLER_CUBE_MAP_ARRAY_SHADOW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> SAMPLE_SHADING [
 
@@ -654,7 +654,7 @@ GL4_0 >> SAMPLE_SHADING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> TESS_CONTROL_OUTPUT_VERTICES [
 
@@ -664,7 +664,7 @@ GL4_0 >> TESS_CONTROL_OUTPUT_VERTICES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> TESS_CONTROL_SHADER [
 
@@ -674,7 +674,7 @@ GL4_0 >> TESS_CONTROL_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> TESS_EVALUATION_SHADER [
 
@@ -684,7 +684,7 @@ GL4_0 >> TESS_EVALUATION_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> TESS_GEN_MODE [
 
@@ -694,7 +694,7 @@ GL4_0 >> TESS_GEN_MODE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> TESS_GEN_POINT_MODE [
 
@@ -704,7 +704,7 @@ GL4_0 >> TESS_GEN_POINT_MODE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> TESS_GEN_SPACING [
 
@@ -714,7 +714,7 @@ GL4_0 >> TESS_GEN_SPACING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> TESS_GEN_VERTEX_ORDER [
 
@@ -724,7 +724,7 @@ GL4_0 >> TESS_GEN_VERTEX_ORDER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> TEXTURE_BINDING_CUBE_MAP_ARRAY [
 
@@ -734,7 +734,7 @@ GL4_0 >> TEXTURE_BINDING_CUBE_MAP_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> TEXTURE_CUBE_MAP_ARRAY [
 
@@ -744,7 +744,7 @@ GL4_0 >> TEXTURE_CUBE_MAP_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> TRANSFORM_FEEDBACK [
 
@@ -754,7 +754,7 @@ GL4_0 >> TRANSFORM_FEEDBACK [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> TRANSFORM_FEEDBACK_BINDING [
 
@@ -764,7 +764,7 @@ GL4_0 >> TRANSFORM_FEEDBACK_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> TRANSFORM_FEEDBACK_BUFFER_ACTIVE [
 
@@ -774,7 +774,7 @@ GL4_0 >> TRANSFORM_FEEDBACK_BUFFER_ACTIVE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> TRANSFORM_FEEDBACK_BUFFER_PAUSED [
 
@@ -784,7 +784,7 @@ GL4_0 >> TRANSFORM_FEEDBACK_BUFFER_PAUSED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> UNIFORM_BLOCK_REFERENCED_BY_TESS_CONTROL_SHADER [
 
@@ -794,7 +794,7 @@ GL4_0 >> UNIFORM_BLOCK_REFERENCED_BY_TESS_CONTROL_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> UNIFORM_BLOCK_REFERENCED_BY_TESS_EVALUATION_SHADER [
 
@@ -804,7 +804,7 @@ GL4_0 >> UNIFORM_BLOCK_REFERENCED_BY_TESS_EVALUATION_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY [
 
@@ -814,7 +814,7 @@ GL4_0 >> UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> beginQueryIndexed: target with: index with: id [
 
@@ -825,7 +825,7 @@ GL4_0 >> beginQueryIndexed: target with: index with: id [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> bindTransformFeedback: target with: id [
 
@@ -836,7 +836,7 @@ GL4_0 >> bindTransformFeedback: target with: id [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> blendEquationSeparatei: buf with: modeRGB with: modeAlpha [
 
@@ -847,7 +847,7 @@ GL4_0 >> blendEquationSeparatei: buf with: modeRGB with: modeAlpha [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> blendEquationi: buf with: mode [
 
@@ -858,7 +858,7 @@ GL4_0 >> blendEquationi: buf with: mode [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> blendFuncSeparatei: buf with: srcRGB with: dstRGB with: srcAlpha with: dstAlpha [
 
@@ -869,7 +869,7 @@ GL4_0 >> blendFuncSeparatei: buf with: srcRGB with: dstRGB with: srcAlpha with: 
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> blendFunci: buf with: src with: dst [
 
@@ -880,7 +880,7 @@ GL4_0 >> blendFunci: buf with: src with: dst [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> deleteTransformFeedbacks: n with: ids [
 
@@ -891,7 +891,7 @@ GL4_0 >> deleteTransformFeedbacks: n with: ids [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> drawArraysIndirect: mode with: indirect [
 
@@ -902,7 +902,7 @@ GL4_0 >> drawArraysIndirect: mode with: indirect [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> drawElementsIndirect: mode with: type with: indirect [
 
@@ -913,7 +913,7 @@ GL4_0 >> drawElementsIndirect: mode with: type with: indirect [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> drawTransformFeedback: mode with: id [
 
@@ -924,7 +924,7 @@ GL4_0 >> drawTransformFeedback: mode with: id [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> drawTransformFeedbackStream: mode with: id with: stream [
 
@@ -935,7 +935,7 @@ GL4_0 >> drawTransformFeedbackStream: mode with: id with: stream [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> endQueryIndexed: target with: index [
 
@@ -946,7 +946,7 @@ GL4_0 >> endQueryIndexed: target with: index [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> genTransformFeedbacks: n with: ids [
 
@@ -957,7 +957,7 @@ GL4_0 >> genTransformFeedbacks: n with: ids [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> getActiveSubroutineName: program with: shadertype with: index with: bufSize with: length with: name [
 
@@ -968,7 +968,7 @@ GL4_0 >> getActiveSubroutineName: program with: shadertype with: index with: buf
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> getActiveSubroutineUniformName: program with: shadertype with: index with: bufSize with: length with: name [
 
@@ -979,7 +979,7 @@ GL4_0 >> getActiveSubroutineUniformName: program with: shadertype with: index wi
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> getActiveSubroutineUniformiv: program with: shadertype with: index with: pname with: values [
 
@@ -990,7 +990,7 @@ GL4_0 >> getActiveSubroutineUniformiv: program with: shadertype with: index with
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> getProgramStageiv: program with: shadertype with: pname with: values [
 
@@ -1001,7 +1001,7 @@ GL4_0 >> getProgramStageiv: program with: shadertype with: pname with: values [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> getQueryIndexediv: target with: index with: pname with: params [
 
@@ -1012,7 +1012,7 @@ GL4_0 >> getQueryIndexediv: target with: index with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> getSubroutineIndex: program with: shadertype with: name [
 
@@ -1023,7 +1023,7 @@ GL4_0 >> getSubroutineIndex: program with: shadertype with: name [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> getSubroutineUniformLocation: program with: shadertype with: name [
 
@@ -1034,7 +1034,7 @@ GL4_0 >> getSubroutineUniformLocation: program with: shadertype with: name [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> getUniformSubroutineuiv: shadertype with: location with: params [
 
@@ -1045,7 +1045,7 @@ GL4_0 >> getUniformSubroutineuiv: shadertype with: location with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> getUniformdv: program with: location with: params [
 
@@ -1056,7 +1056,7 @@ GL4_0 >> getUniformdv: program with: location with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> isTransformFeedback: id [
 
@@ -1067,7 +1067,7 @@ GL4_0 >> isTransformFeedback: id [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> minSampleShading: value [
 
@@ -1078,7 +1078,7 @@ GL4_0 >> minSampleShading: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> patchParameterfv: pname with: values [
 
@@ -1089,7 +1089,7 @@ GL4_0 >> patchParameterfv: pname with: values [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> patchParameteri: pname with: value [
 
@@ -1100,7 +1100,7 @@ GL4_0 >> patchParameteri: pname with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> pauseTransformFeedback [
 
@@ -1111,7 +1111,7 @@ GL4_0 >> pauseTransformFeedback [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> resumeTransformFeedback [
 
@@ -1122,7 +1122,7 @@ GL4_0 >> resumeTransformFeedback [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> uniform1d: location with: x [
 
@@ -1133,7 +1133,7 @@ GL4_0 >> uniform1d: location with: x [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> uniform1dv: location with: count with: value [
 
@@ -1144,7 +1144,7 @@ GL4_0 >> uniform1dv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> uniform2d: location with: x with: y [
 
@@ -1155,7 +1155,7 @@ GL4_0 >> uniform2d: location with: x with: y [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> uniform2dv: location with: count with: value [
 
@@ -1166,7 +1166,7 @@ GL4_0 >> uniform2dv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> uniform3d: location with: x with: y with: z [
 
@@ -1177,7 +1177,7 @@ GL4_0 >> uniform3d: location with: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> uniform3dv: location with: count with: value [
 
@@ -1188,7 +1188,7 @@ GL4_0 >> uniform3dv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> uniform4d: location with: x with: y with: z with: w [
 
@@ -1199,7 +1199,7 @@ GL4_0 >> uniform4d: location with: x with: y with: z with: w [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> uniform4dv: location with: count with: value [
 
@@ -1210,7 +1210,7 @@ GL4_0 >> uniform4dv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> uniformMatrix2dv: location with: count with: transpose with: value [
 
@@ -1221,7 +1221,7 @@ GL4_0 >> uniformMatrix2dv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> uniformMatrix2x3dv: location with: count with: transpose with: value [
 
@@ -1232,7 +1232,7 @@ GL4_0 >> uniformMatrix2x3dv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> uniformMatrix2x4dv: location with: count with: transpose with: value [
 
@@ -1243,7 +1243,7 @@ GL4_0 >> uniformMatrix2x4dv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> uniformMatrix3dv: location with: count with: transpose with: value [
 
@@ -1254,7 +1254,7 @@ GL4_0 >> uniformMatrix3dv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> uniformMatrix3x2dv: location with: count with: transpose with: value [
 
@@ -1265,7 +1265,7 @@ GL4_0 >> uniformMatrix3x2dv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> uniformMatrix3x4dv: location with: count with: transpose with: value [
 
@@ -1276,7 +1276,7 @@ GL4_0 >> uniformMatrix3x4dv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> uniformMatrix4dv: location with: count with: transpose with: value [
 
@@ -1287,7 +1287,7 @@ GL4_0 >> uniformMatrix4dv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> uniformMatrix4x2dv: location with: count with: transpose with: value [
 
@@ -1298,7 +1298,7 @@ GL4_0 >> uniformMatrix4x2dv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> uniformMatrix4x3dv: location with: count with: transpose with: value [
 
@@ -1309,7 +1309,7 @@ GL4_0 >> uniformMatrix4x3dv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_0 >> uniformSubroutinesuiv: shadertype with: count with: indices [
 

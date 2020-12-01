@@ -25,31 +25,31 @@ void main() {
 Class {
 	#name : #SLExampleShader,
 	#superclass : #Object,
-	#category : #ShaderLanguage,
-	#commentStamp : 'stlu 11/11/2020 18:17'
+	#category : #ShadingLanguage,
+	#commentStamp : ''
 }
 
 {
 	#category : #code,
-	#timestamp : 'stlu 11/18/2020 15:30'
+	#timestamp : 'zagto 12/1/2020 18:39'
 }
 SLExampleShader class >> bloom: out inputs: in uniforms: u [
 
 	| gamma hdrColor bloomColor result |
 	gamma := 2.2.
-	hdrColor := (u scene asSampler2D at: in texCoords asVector2) rgb.
-	bloomColor := (u bloomBlur asSampler2D at: in texCoords) rgb.
-	u bloom asBoolean ifTrue: [hdrColor := hdrColor + bloomColor].
+	hdrColor := (u scene beFloat2DSampler at: in texCoords beFloatVector2) rgb.
+	bloomColor := (u bloomBlur beFloat2DSampler at: in texCoords beFloatVector2 "todo") rgb.
+	u bloom beBoolean ifTrue: [hdrColor := hdrColor + bloomColor].
 	"tone mapping"
-	result := 1.0 asVector3 - (hdrColor negated * u exposure asFloat) exp.
+	result := 1.0 asVector3 - (hdrColor negated * u exposure beFloat) exp.
 	"also gamma correct while we're at it"
 	result := result ** (1.0 / gamma) asVector3.
-	out FragColor: result @ 1.0
+	out FragColor: 1.0 @ result "hack"
 ]
 
 {
 	#category : #code,
-	#timestamp : 'stlu 11/17/2020 17:34'
+	#timestamp : ''
 }
 SLExampleShader class >> gaussianKernel3 [
 

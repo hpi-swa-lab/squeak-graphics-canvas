@@ -23,7 +23,7 @@ Class {
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 11/3/2020 15:36'
+	#timestamp : ''
 }
 GLFrameBuffer class >> allocate [
 
@@ -34,7 +34,7 @@ GLFrameBuffer class >> allocate [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 15:15'
+	#timestamp : ''
 }
 GLFrameBuffer class >> bind: id to: target [
 
@@ -43,7 +43,7 @@ GLFrameBuffer class >> bind: id to: target [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 16:50'
+	#timestamp : ''
 }
 GLFrameBuffer class >> currentDrawBinding [
 
@@ -52,7 +52,7 @@ GLFrameBuffer class >> currentDrawBinding [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 16:50'
+	#timestamp : ''
 }
 GLFrameBuffer class >> currentReadBinding [
 
@@ -61,7 +61,7 @@ GLFrameBuffer class >> currentReadBinding [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/3/2020 15:35'
+	#timestamp : ''
 }
 GLFrameBuffer >> asFormOfExtent: aPoint [
 
@@ -88,7 +88,7 @@ GLFrameBuffer >> asFormOfExtent: aPoint [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 17:04'
+	#timestamp : ''
 }
 GLFrameBuffer >> bind [
 	"binds to both read and draw"
@@ -97,7 +97,7 @@ GLFrameBuffer >> bind [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 17:04'
+	#timestamp : ''
 }
 GLFrameBuffer >> bindToDraw [
 
@@ -106,7 +106,7 @@ GLFrameBuffer >> bindToDraw [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 17:04'
+	#timestamp : ''
 }
 GLFrameBuffer >> bindToRead [
 
@@ -115,7 +115,7 @@ GLFrameBuffer >> bindToRead [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 17:31'
+	#timestamp : ''
 }
 GLFrameBuffer >> boundDuring: aBlock [
 
@@ -136,7 +136,7 @@ GLFrameBuffer >> boundDuring: aBlock [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 17:28'
+	#timestamp : ''
 }
 GLFrameBuffer >> boundToDrawDuring: aBlock [
 
@@ -151,7 +151,7 @@ GLFrameBuffer >> boundToDrawDuring: aBlock [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 17:28'
+	#timestamp : ''
 }
 GLFrameBuffer >> boundToReadDuring: aBlock [
 
@@ -166,7 +166,7 @@ GLFrameBuffer >> boundToReadDuring: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 12:27'
+	#timestamp : ''
 }
 GLFrameBuffer >> colorAttachment0 [
 
@@ -175,7 +175,7 @@ GLFrameBuffer >> colorAttachment0 [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/3/2020 15:35'
+	#timestamp : ''
 }
 GLFrameBuffer >> delete [
 	
@@ -184,7 +184,7 @@ GLFrameBuffer >> delete [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:16'
+	#timestamp : ''
 }
 GLFrameBuffer >> isFrameBuffer [
 
@@ -193,7 +193,7 @@ GLFrameBuffer >> isFrameBuffer [
 
 {
 	#category : #attachments,
-	#timestamp : 'stlu 10/26/2020 12:26'
+	#timestamp : ''
 }
 GLFrameBuffer >> texture2D: aTexture [
 
@@ -202,7 +202,7 @@ GLFrameBuffer >> texture2D: aTexture [
 
 {
 	#category : #attachments,
-	#timestamp : 'stlu 11/3/2020 15:36'
+	#timestamp : ''
 }
 GLFrameBuffer >> texture2D: aTexture attachment: anAttachment [
 	

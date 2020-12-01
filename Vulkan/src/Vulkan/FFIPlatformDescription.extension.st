@@ -2,7 +2,7 @@ Extension { #name : #FFIPlatformDescription }
 
 {
 	#category : #'*Vulkan-FFI-Support',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 FFIPlatformDescription >> abi [
 

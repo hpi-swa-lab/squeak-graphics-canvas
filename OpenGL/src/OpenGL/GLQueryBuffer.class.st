@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:00'
+	#timestamp : ''
 }
 GLQueryBuffer class >> bindingEnum [
 
@@ -16,7 +16,7 @@ GLQueryBuffer class >> bindingEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:03'
+	#timestamp : ''
 }
 GLQueryBuffer class >> target [
 

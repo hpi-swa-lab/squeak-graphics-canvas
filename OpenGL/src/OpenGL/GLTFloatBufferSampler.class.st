@@ -7,7 +7,16 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:49'
+	#timestamp : 'zagto 12/1/2020 15:18'
+}
+GLTFloatBufferSampler class >> componentType [
+
+	^ GLTFloat
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'zagto 12/1/2020 15:18'
 }
 GLTFloatBufferSampler class >> declarators [
 
@@ -16,7 +25,7 @@ GLTFloatBufferSampler class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:49'
+	#timestamp : 'zagto 12/1/2020 15:18'
 }
 GLTFloatBufferSampler class >> enum [
 
@@ -25,7 +34,7 @@ GLTFloatBufferSampler class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:49'
+	#timestamp : 'zagto 12/1/2020 15:18'
 }
 GLTFloatBufferSampler class >> enumName [
 
@@ -34,7 +43,7 @@ GLTFloatBufferSampler class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:49'
+	#timestamp : 'zagto 12/1/2020 15:18'
 }
 GLTFloatBufferSampler class >> squeakName [
 

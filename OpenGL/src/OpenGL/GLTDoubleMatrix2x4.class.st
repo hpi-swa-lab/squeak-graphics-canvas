@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 15:14'
+	#timestamp : ''
 }
 GLTDoubleMatrix2x4 class >> componentType [
 
@@ -16,7 +16,7 @@ GLTDoubleMatrix2x4 class >> componentType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 15:14'
+	#timestamp : ''
 }
 GLTDoubleMatrix2x4 class >> declarators [
 
@@ -25,7 +25,7 @@ GLTDoubleMatrix2x4 class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 15:14'
+	#timestamp : ''
 }
 GLTDoubleMatrix2x4 class >> enum [
 
@@ -34,7 +34,7 @@ GLTDoubleMatrix2x4 class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 15:14'
+	#timestamp : ''
 }
 GLTDoubleMatrix2x4 class >> enumName [
 
@@ -43,7 +43,7 @@ GLTDoubleMatrix2x4 class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 15:14'
+	#timestamp : ''
 }
 GLTDoubleMatrix2x4 class >> numColumns [
 
@@ -52,7 +52,7 @@ GLTDoubleMatrix2x4 class >> numColumns [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 15:14'
+	#timestamp : ''
 }
 GLTDoubleMatrix2x4 class >> numRows [
 
@@ -61,7 +61,7 @@ GLTDoubleMatrix2x4 class >> numRows [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 15:14'
+	#timestamp : ''
 }
 GLTDoubleMatrix2x4 class >> squeakName [
 

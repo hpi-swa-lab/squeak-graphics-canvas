@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 11/13/2020 16:40'
+	#timestamp : ''
 }
 GLStaticProgram class >> attributes [
 	" return the names of all attributes your shader possesses here "
@@ -17,7 +17,7 @@ GLStaticProgram class >> attributes [
 
 {
 	#category : #'code generation',
-	#timestamp : 'stlu 11/13/2020 16:39'
+	#timestamp : ''
 }
 GLStaticProgram class >> compileAccessors [
 	" call this method to automatically generate accessors for your attributes and uniforms "
@@ -66,7 +66,7 @@ GLStaticProgram class >> compileAccessors [
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 11/13/2020 16:39'
+	#timestamp : ''
 }
 GLStaticProgram class >> fragmentShader [
 
@@ -75,7 +75,7 @@ GLStaticProgram class >> fragmentShader [
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 11/13/2020 16:40'
+	#timestamp : ''
 }
 GLStaticProgram class >> uniforms [
 	" return the names of all uniforms your shader possesses here "
@@ -85,7 +85,7 @@ GLStaticProgram class >> uniforms [
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 11/13/2020 16:39'
+	#timestamp : ''
 }
 GLStaticProgram class >> vertexShader [
 
@@ -94,7 +94,7 @@ GLStaticProgram class >> vertexShader [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 15:50'
+	#timestamp : ''
 }
 GLStaticProgram >> initialize [
 
@@ -105,7 +105,7 @@ GLStaticProgram >> initialize [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 15:50'
+	#timestamp : ''
 }
 GLStaticProgram >> initializeLocations [
 
@@ -114,7 +114,7 @@ GLStaticProgram >> initializeLocations [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 15:50'
+	#timestamp : ''
 }
 GLStaticProgram >> initializeShaders [
 
@@ -136,7 +136,7 @@ GLStaticProgram >> initializeShaders [
 
 {
 	#category : #resources,
-	#timestamp : 'stlu 11/13/2020 15:52'
+	#timestamp : ''
 }
 GLStaticProgram >> registerAttribute: aString [
 
@@ -148,7 +148,7 @@ GLStaticProgram >> registerAttribute: aString [
 
 {
 	#category : #resources,
-	#timestamp : 'stlu 11/13/2020 15:52'
+	#timestamp : ''
 }
 GLStaticProgram >> registerUniform: aString [
 
@@ -160,7 +160,7 @@ GLStaticProgram >> registerUniform: aString [
 
 {
 	#category : #resources,
-	#timestamp : 'stlu 11/13/2020 15:51'
+	#timestamp : ''
 }
 GLStaticProgram >> uniform: location value: anObject [
 
@@ -170,7 +170,7 @@ GLStaticProgram >> uniform: location value: anObject [
 
 {
 	#category : #resources,
-	#timestamp : 'stlu 11/13/2020 16:10'
+	#timestamp : ''
 }
 GLStaticProgram >> vertexAttrib: index components: numComponents stride: byteStride offset: byteOffset [
 

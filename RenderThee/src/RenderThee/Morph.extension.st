@@ -2,7 +2,7 @@ Extension { #name : #Morph }
 
 {
 	#category : #'*RenderThee-override',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 Morph >> addedMorph: aMorph [
 	"Notify the receiver that the given morph was just added."
@@ -11,7 +11,7 @@ Morph >> addedMorph: aMorph [
 
 {
 	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 Morph >> groupLayer [
 
@@ -20,7 +20,7 @@ Morph >> groupLayer [
 
 {
 	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 Morph >> groupLayer: aGroupLayer [
 
@@ -31,7 +31,7 @@ Morph >> groupLayer: aGroupLayer [
 
 {
 	#category : #'*RenderThee-override',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 Morph >> invalidRect: damageRect [
 
@@ -40,7 +40,7 @@ Morph >> invalidRect: damageRect [
 
 {
 	#category : #'*RenderThee-override',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 Morph >> invalidRect: aRectangle from: aMorph [
 	| damageRect |
@@ -58,7 +58,7 @@ Morph >> invalidRect: aRectangle from: aMorph [
 
 {
 	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 Morph >> isRepaintBoundary [
 
@@ -67,7 +67,7 @@ Morph >> isRepaintBoundary [
 
 {
 	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 Morph >> markNeedsRedraw [
 
@@ -79,7 +79,7 @@ Morph >> markNeedsRedraw [
 
 {
 	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 Morph >> morph: aMorph changedIndexFrom: oldIndex to: newIndex [
 	"Notify the receiver that aMorph was just moved from oldIndex to newIndex"
@@ -88,7 +88,7 @@ Morph >> morph: aMorph changedIndexFrom: oldIndex to: newIndex [
 
 {
 	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/2/2020 13:13'
+	#timestamp : ''
 }
 Morph >> morphsToRedraw [
 
@@ -98,7 +98,7 @@ Morph >> morphsToRedraw [
 
 {
 	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 Morph >> morphsToRedraw: aSet [
 
@@ -110,7 +110,7 @@ Morph >> morphsToRedraw: aSet [
 
 {
 	#category : #'*RenderThee-override',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 Morph >> privateAddMorph: aMorph atIndex: index [
 
@@ -155,7 +155,7 @@ Morph >> privateAddMorph: aMorph atIndex: index [
 
 {
 	#category : #'*RenderThee-override',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 Morph >> removedMorph: aMorph [
 	"Notify the receiver that aMorph was just removed from its children"
@@ -163,7 +163,7 @@ Morph >> removedMorph: aMorph [
 
 {
 	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 Morph >> updateLayer [
 
@@ -174,7 +174,7 @@ Morph >> updateLayer [
 
 {
 	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 Morph >> updateLayerTree [
 

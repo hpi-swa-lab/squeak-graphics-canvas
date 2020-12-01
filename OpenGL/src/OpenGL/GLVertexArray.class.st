@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 11/3/2020 15:41'
+	#timestamp : ''
 }
 GLVertexArray class >> allocate [
 
@@ -18,7 +18,7 @@ GLVertexArray class >> allocate [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 14:43'
+	#timestamp : ''
 }
 GLVertexArray class >> bind: anInteger [
 
@@ -27,7 +27,7 @@ GLVertexArray class >> bind: anInteger [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 14:45'
+	#timestamp : ''
 }
 GLVertexArray class >> currentBinding [
 
@@ -36,7 +36,7 @@ GLVertexArray class >> currentBinding [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 14:43'
+	#timestamp : ''
 }
 GLVertexArray >> bind [
 
@@ -45,7 +45,7 @@ GLVertexArray >> bind [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 14:51'
+	#timestamp : ''
 }
 GLVertexArray >> boundDuring: aBlock [
 
@@ -60,7 +60,7 @@ GLVertexArray >> boundDuring: aBlock [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/3/2020 15:41'
+	#timestamp : ''
 }
 GLVertexArray >> delete [
 
@@ -69,7 +69,7 @@ GLVertexArray >> delete [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLVertexArray >> draw: aModeEnum [
 
@@ -78,7 +78,7 @@ GLVertexArray >> draw: aModeEnum [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:15'
+	#timestamp : ''
 }
 GLVertexArray >> isVertexArray [
 

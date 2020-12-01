@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtFormStore class >> defaultCanvasClass [
 
@@ -19,7 +19,7 @@ RtFormStore class >> defaultCanvasClass [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtFormStore class >> extent: aPoint [
 
@@ -28,7 +28,7 @@ RtFormStore class >> extent: aPoint [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtFormStore class >> form: aForm [
 
@@ -39,7 +39,7 @@ RtFormStore class >> form: aForm [
 
 {
 	#category : #textures,
-	#timestamp : 'stlu 11/3/2020 16:00'
+	#timestamp : ''
 }
 RtFormStore >> createGLTexture [
 
@@ -50,7 +50,7 @@ RtFormStore >> createGLTexture [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtFormStore >> extent [
 
@@ -59,7 +59,7 @@ RtFormStore >> extent [
 
 {
 	#category : #textures,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtFormStore >> form [
 
@@ -68,7 +68,7 @@ RtFormStore >> form [
 
 {
 	#category : #textures,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtFormStore >> form: aForm [
 
@@ -77,7 +77,7 @@ RtFormStore >> form: aForm [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtFormStore >> getCanvas [
 
@@ -86,7 +86,7 @@ RtFormStore >> getCanvas [
 
 {
 	#category : #textures,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtFormStore >> glTextureDo: aBlock [
 

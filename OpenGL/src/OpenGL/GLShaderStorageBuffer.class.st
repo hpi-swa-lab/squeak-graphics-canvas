@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:01'
+	#timestamp : ''
 }
 GLShaderStorageBuffer class >> bindingEnum [
 
@@ -16,7 +16,7 @@ GLShaderStorageBuffer class >> bindingEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:03'
+	#timestamp : ''
 }
 GLShaderStorageBuffer class >> target [
 

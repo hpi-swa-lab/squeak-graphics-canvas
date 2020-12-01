@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 14:04'
+	#timestamp : 'zagto 12/1/2020 18:36'
 }
 GLTBoolean class >> commandInitials [
 
@@ -16,7 +16,16 @@ GLTBoolean class >> commandInitials [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 14:04'
+	#timestamp : 'zagto 12/1/2020 18:36'
+}
+GLTBoolean class >> componentType [
+
+	^ GLTBoolean
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'zagto 12/1/2020 18:36'
 }
 GLTBoolean class >> declarators [
 
@@ -25,7 +34,7 @@ GLTBoolean class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 14:04'
+	#timestamp : 'zagto 12/1/2020 18:36'
 }
 GLTBoolean class >> enum [
 
@@ -34,7 +43,7 @@ GLTBoolean class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 14:04'
+	#timestamp : 'zagto 12/1/2020 18:36'
 }
 GLTBoolean class >> enumName [
 
@@ -43,7 +52,7 @@ GLTBoolean class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 14:04'
+	#timestamp : 'zagto 12/1/2020 18:36'
 }
 GLTBoolean class >> glslInitials [
 
@@ -52,7 +61,7 @@ GLTBoolean class >> glslInitials [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 14:04'
+	#timestamp : 'zagto 12/1/2020 18:36'
 }
 GLTBoolean class >> squeakArrayClass [
 
@@ -61,7 +70,7 @@ GLTBoolean class >> squeakArrayClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 14:04'
+	#timestamp : 'zagto 12/1/2020 18:36'
 }
 GLTBoolean class >> squeakName [
 
@@ -70,7 +79,7 @@ GLTBoolean class >> squeakName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 18:10'
+	#timestamp : ''
 }
 GLTBoolean >> actualComponentType [
 
@@ -79,7 +88,7 @@ GLTBoolean >> actualComponentType [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 11/23/2020 17:09'
+	#timestamp : ''
 }
 GLTBoolean >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 

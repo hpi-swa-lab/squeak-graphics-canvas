@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 11:59'
+	#timestamp : ''
 }
 GLCopyWriteBuffer class >> bindingEnum [
 
@@ -16,7 +16,7 @@ GLCopyWriteBuffer class >> bindingEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:02'
+	#timestamp : ''
 }
 GLCopyWriteBuffer class >> target [
 

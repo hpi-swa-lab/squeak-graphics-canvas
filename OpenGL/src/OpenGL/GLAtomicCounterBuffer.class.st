@@ -5,12 +5,12 @@ Class {
 	#name : #GLAtomicCounterBuffer,
 	#superclass : #GLBuffer,
 	#category : #'OpenGL-Wrappers-Buffers',
-	#commentStamp : 'stlu 10/29/2020 12:54'
+	#commentStamp : ''
 }
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 11:59'
+	#timestamp : ''
 }
 GLAtomicCounterBuffer class >> bindingEnum [
 
@@ -19,7 +19,7 @@ GLAtomicCounterBuffer class >> bindingEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:02'
+	#timestamp : ''
 }
 GLAtomicCounterBuffer class >> target [
 

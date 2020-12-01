@@ -5930,7 +5930,7 @@ Class {
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLConstants class >> initialize [
 
@@ -5956,7 +5956,7 @@ GLConstants class >> initialize [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLConstants class >> initialize01 [
 
@@ -6064,7 +6064,7 @@ GLConstants class >> initialize01 [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLConstants class >> initialize02 [
 
@@ -6172,7 +6172,7 @@ GLConstants class >> initialize02 [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLConstants class >> initialize03 [
 
@@ -6280,7 +6280,7 @@ GLConstants class >> initialize03 [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLConstants class >> initialize04 [
 
@@ -6388,7 +6388,7 @@ GLConstants class >> initialize04 [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLConstants class >> initialize05 [
 
@@ -6496,7 +6496,7 @@ GLConstants class >> initialize05 [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLConstants class >> initialize06 [
 
@@ -6604,7 +6604,7 @@ GLConstants class >> initialize06 [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLConstants class >> initialize07 [
 
@@ -6712,7 +6712,7 @@ GLConstants class >> initialize07 [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLConstants class >> initialize08 [
 
@@ -6820,7 +6820,7 @@ GLConstants class >> initialize08 [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLConstants class >> initialize09 [
 
@@ -6928,7 +6928,7 @@ GLConstants class >> initialize09 [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLConstants class >> initialize10 [
 
@@ -7036,7 +7036,7 @@ GLConstants class >> initialize10 [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLConstants class >> initialize11 [
 
@@ -7144,7 +7144,7 @@ GLConstants class >> initialize11 [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLConstants class >> initialize12 [
 
@@ -7252,7 +7252,7 @@ GLConstants class >> initialize12 [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLConstants class >> initialize13 [
 
@@ -7360,7 +7360,7 @@ GLConstants class >> initialize13 [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLConstants class >> initialize14 [
 
@@ -7468,7 +7468,7 @@ GLConstants class >> initialize14 [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLConstants class >> initialize15 [
 
@@ -7576,7 +7576,7 @@ GLConstants class >> initialize15 [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLConstants class >> initialize16 [
 
@@ -7684,7 +7684,7 @@ GLConstants class >> initialize16 [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLConstants class >> initialize17 [
 
@@ -7792,7 +7792,7 @@ GLConstants class >> initialize17 [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLConstants class >> initialize18 [
 

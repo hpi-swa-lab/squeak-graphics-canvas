@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:48'
+	#timestamp : ''
 }
 GLTInteger3DImage class >> declarators [
 
@@ -16,7 +16,7 @@ GLTInteger3DImage class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:48'
+	#timestamp : ''
 }
 GLTInteger3DImage class >> enum [
 
@@ -25,7 +25,7 @@ GLTInteger3DImage class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:48'
+	#timestamp : ''
 }
 GLTInteger3DImage class >> enumName [
 
@@ -34,7 +34,7 @@ GLTInteger3DImage class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:48'
+	#timestamp : ''
 }
 GLTInteger3DImage class >> squeakName [
 

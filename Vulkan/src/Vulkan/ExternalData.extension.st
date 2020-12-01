@@ -2,7 +2,7 @@ Extension { #name : #ExternalData }
 
 {
 	#category : #'*Vulkan-FFI-Support-override',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 ExternalData >> at: index [
 
@@ -20,7 +20,7 @@ ExternalData >> at: index [
 
 {
 	#category : #'*Vulkan-FFI-Support',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 ExternalData >> blockAt: byteIndex byteSize: numBytes [
 	"Given that the receiver manages a page of memory, answer a block of that memory to use."
@@ -31,7 +31,7 @@ ExternalData >> blockAt: byteIndex byteSize: numBytes [
 
 {
 	#category : #'*Vulkan-FFI-Support',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 ExternalData class >> fromHandle: aHandle byteSize: byteSize [
 	^ (self fromHandle: aHandle type: ExternalType unsignedByte asPointerType)
@@ -41,7 +41,7 @@ ExternalData class >> fromHandle: aHandle byteSize: byteSize [
 
 {
 	#category : #'*Vulkan-FFI-Support',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 ExternalData >> pointerAt: byteOffset [
 
@@ -50,7 +50,7 @@ ExternalData >> pointerAt: byteOffset [
 
 {
 	#category : #'*Vulkan-FFI-Support',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 ExternalData >> pointerAt: byteOffset length: numBytes [
 

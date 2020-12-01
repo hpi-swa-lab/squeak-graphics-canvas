@@ -12,7 +12,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawShape class >> bounds: aRectangle borderStyle: aBorderStyle [
 
@@ -24,7 +24,7 @@ PicDrawShape class >> bounds: aRectangle borderStyle: aBorderStyle [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawShape class >> bounds: aRectangle fillStyle: aFillStyle [
 
@@ -36,7 +36,7 @@ PicDrawShape class >> bounds: aRectangle fillStyle: aFillStyle [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawShape class >> bounds: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -49,7 +49,7 @@ PicDrawShape class >> bounds: aRectangle fillStyle: aFillStyle borderStyle: aBor
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawShape >> borderStyle [
 
@@ -58,7 +58,7 @@ PicDrawShape >> borderStyle [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawShape >> borderStyle: anObject [
 
@@ -67,7 +67,7 @@ PicDrawShape >> borderStyle: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawShape >> bounds [
 
@@ -76,7 +76,7 @@ PicDrawShape >> bounds [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawShape >> bounds: anObject [
 
@@ -85,7 +85,7 @@ PicDrawShape >> bounds: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawShape >> estimatedBounds [
 
@@ -94,7 +94,7 @@ PicDrawShape >> estimatedBounds [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawShape >> fillStyle [
 
@@ -103,7 +103,7 @@ PicDrawShape >> fillStyle [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawShape >> fillStyle: anObject [
 

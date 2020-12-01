@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtNeverCaching >> shouldCacheDrawLayer: aLayer [
 
@@ -19,7 +19,7 @@ RtNeverCaching >> shouldCacheDrawLayer: aLayer [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtNeverCaching >> shouldCacheGroupLayer: aLayer [
 

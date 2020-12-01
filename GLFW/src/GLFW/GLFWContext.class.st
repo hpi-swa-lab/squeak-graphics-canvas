@@ -13,7 +13,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/11/2020 14:15'
+	#timestamp : ''
 }
 GLFWContext class >> newIn: bounds forLibraryClass: aLibraryClass title: aString [
 
@@ -27,7 +27,7 @@ GLFWContext class >> newIn: bounds forLibraryClass: aLibraryClass title: aString
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/11/2020 14:22'
+	#timestamp : ''
 }
 GLFWContext class >> window: aWindow [
 
@@ -43,7 +43,7 @@ GLFWContext class >> window: aWindow [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLFWContext >> activate [
 
@@ -52,7 +52,7 @@ GLFWContext >> activate [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLFWContext >> deactivate [
 
@@ -61,7 +61,7 @@ GLFWContext >> deactivate [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLFWContext >> destroy [
 
@@ -71,7 +71,7 @@ GLFWContext >> destroy [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLFWContext >> endFrame [
 
@@ -80,7 +80,7 @@ GLFWContext >> endFrame [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLFWContext >> shouldClose [
 
@@ -89,7 +89,7 @@ GLFWContext >> shouldClose [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLFWContext >> swapBuffers [
 
@@ -98,7 +98,7 @@ GLFWContext >> swapBuffers [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 10/19/2020 16:50'
+	#timestamp : ''
 }
 GLFWContext >> useMorphicEventHandling [
 
@@ -127,7 +127,7 @@ GLFWContext >> useMorphicEventHandling [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLFWContext >> window [
 
@@ -136,7 +136,7 @@ GLFWContext >> window [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 10/19/2020 15:54'
+	#timestamp : ''
 }
 GLFWContext >> window: aWindow [
 

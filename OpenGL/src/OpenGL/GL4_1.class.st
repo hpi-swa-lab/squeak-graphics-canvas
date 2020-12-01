@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GL4_1 class >> majorVersion [
 
@@ -16,7 +16,7 @@ GL4_1 class >> majorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GL4_1 class >> minorVersion [
 
@@ -25,7 +25,7 @@ GL4_1 class >> minorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 14:52'
+	#timestamp : ''
 }
 GL4_1 class >> versionNumber [
 
@@ -34,7 +34,7 @@ GL4_1 class >> versionNumber [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> ACTIVE_PROGRAM [
 
@@ -44,7 +44,7 @@ GL4_1 >> ACTIVE_PROGRAM [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> ALL_SHADER_BITS [
 
@@ -54,7 +54,7 @@ GL4_1 >> ALL_SHADER_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> FIXED [
 
@@ -64,7 +64,7 @@ GL4_1 >> FIXED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> FRAGMENT_SHADER_BIT [
 
@@ -74,7 +74,7 @@ GL4_1 >> FRAGMENT_SHADER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> GEOMETRY_SHADER_BIT [
 
@@ -84,7 +84,7 @@ GL4_1 >> GEOMETRY_SHADER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> HIGH_FLOAT [
 
@@ -94,7 +94,7 @@ GL4_1 >> HIGH_FLOAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> HIGH_INT [
 
@@ -104,7 +104,7 @@ GL4_1 >> HIGH_INT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> IMPLEMENTATION_COLOR_READ_FORMAT [
 
@@ -114,7 +114,7 @@ GL4_1 >> IMPLEMENTATION_COLOR_READ_FORMAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> IMPLEMENTATION_COLOR_READ_TYPE [
 
@@ -124,7 +124,7 @@ GL4_1 >> IMPLEMENTATION_COLOR_READ_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> LAYER_PROVOKING_VERTEX [
 
@@ -134,7 +134,7 @@ GL4_1 >> LAYER_PROVOKING_VERTEX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> LOW_FLOAT [
 
@@ -144,7 +144,7 @@ GL4_1 >> LOW_FLOAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> LOW_INT [
 
@@ -154,7 +154,7 @@ GL4_1 >> LOW_INT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> MAX_FRAGMENT_UNIFORM_VECTORS [
 
@@ -164,7 +164,7 @@ GL4_1 >> MAX_FRAGMENT_UNIFORM_VECTORS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> MAX_VARYING_VECTORS [
 
@@ -174,7 +174,7 @@ GL4_1 >> MAX_VARYING_VECTORS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> MAX_VERTEX_UNIFORM_VECTORS [
 
@@ -184,7 +184,7 @@ GL4_1 >> MAX_VERTEX_UNIFORM_VECTORS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> MAX_VIEWPORTS [
 
@@ -194,7 +194,7 @@ GL4_1 >> MAX_VIEWPORTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> MEDIUM_FLOAT [
 
@@ -204,7 +204,7 @@ GL4_1 >> MEDIUM_FLOAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> MEDIUM_INT [
 
@@ -214,7 +214,7 @@ GL4_1 >> MEDIUM_INT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> NUM_PROGRAM_BINARY_FORMATS [
 
@@ -224,7 +224,7 @@ GL4_1 >> NUM_PROGRAM_BINARY_FORMATS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> NUM_SHADER_BINARY_FORMATS [
 
@@ -234,7 +234,7 @@ GL4_1 >> NUM_SHADER_BINARY_FORMATS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> PROGRAM_BINARY_FORMATS [
 
@@ -244,7 +244,7 @@ GL4_1 >> PROGRAM_BINARY_FORMATS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> PROGRAM_BINARY_LENGTH [
 
@@ -254,7 +254,7 @@ GL4_1 >> PROGRAM_BINARY_LENGTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> PROGRAM_BINARY_RETRIEVABLE_HINT [
 
@@ -264,7 +264,7 @@ GL4_1 >> PROGRAM_BINARY_RETRIEVABLE_HINT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> PROGRAM_PIPELINE_BINDING [
 
@@ -274,7 +274,7 @@ GL4_1 >> PROGRAM_PIPELINE_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> PROGRAM_SEPARABLE [
 
@@ -284,7 +284,7 @@ GL4_1 >> PROGRAM_SEPARABLE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> RGB565 [
 
@@ -294,7 +294,7 @@ GL4_1 >> RGB565 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> SHADER_BINARY_FORMATS [
 
@@ -304,7 +304,7 @@ GL4_1 >> SHADER_BINARY_FORMATS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> SHADER_COMPILER [
 
@@ -314,7 +314,7 @@ GL4_1 >> SHADER_COMPILER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> TESS_CONTROL_SHADER_BIT [
 
@@ -324,7 +324,7 @@ GL4_1 >> TESS_CONTROL_SHADER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> TESS_EVALUATION_SHADER_BIT [
 
@@ -334,7 +334,7 @@ GL4_1 >> TESS_EVALUATION_SHADER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> UNDEFINED_VERTEX [
 
@@ -344,7 +344,7 @@ GL4_1 >> UNDEFINED_VERTEX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> VERTEX_SHADER_BIT [
 
@@ -354,7 +354,7 @@ GL4_1 >> VERTEX_SHADER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> VIEWPORT_BOUNDS_RANGE [
 
@@ -364,7 +364,7 @@ GL4_1 >> VIEWPORT_BOUNDS_RANGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> VIEWPORT_INDEX_PROVOKING_VERTEX [
 
@@ -374,7 +374,7 @@ GL4_1 >> VIEWPORT_INDEX_PROVOKING_VERTEX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> VIEWPORT_SUBPIXEL_BITS [
 
@@ -384,7 +384,7 @@ GL4_1 >> VIEWPORT_SUBPIXEL_BITS [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> activeShaderProgram: pipeline with: program [
 
@@ -395,7 +395,7 @@ GL4_1 >> activeShaderProgram: pipeline with: program [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> bindProgramPipeline: pipeline [
 
@@ -406,7 +406,7 @@ GL4_1 >> bindProgramPipeline: pipeline [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> clearDepthf: d [
 
@@ -417,7 +417,7 @@ GL4_1 >> clearDepthf: d [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> createShaderProgramv: type with: count with: strings [
 
@@ -428,7 +428,7 @@ GL4_1 >> createShaderProgramv: type with: count with: strings [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> deleteProgramPipelines: n with: pipelines [
 
@@ -439,7 +439,7 @@ GL4_1 >> deleteProgramPipelines: n with: pipelines [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> depthRangeArrayv: first with: count with: v [
 
@@ -450,7 +450,7 @@ GL4_1 >> depthRangeArrayv: first with: count with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> depthRangeIndexed: index with: n with: f [
 
@@ -461,7 +461,7 @@ GL4_1 >> depthRangeIndexed: index with: n with: f [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> depthRangef: n with: f [
 
@@ -472,7 +472,7 @@ GL4_1 >> depthRangef: n with: f [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> genProgramPipelines: n with: pipelines [
 
@@ -483,7 +483,7 @@ GL4_1 >> genProgramPipelines: n with: pipelines [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> getDoublei_v: target with: index with: data [
 
@@ -494,7 +494,7 @@ GL4_1 >> getDoublei_v: target with: index with: data [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> getFloati_v: target with: index with: data [
 
@@ -505,7 +505,7 @@ GL4_1 >> getFloati_v: target with: index with: data [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> getProgramBinary: program with: bufSize with: length with: binaryFormat with: binary [
 
@@ -516,7 +516,7 @@ GL4_1 >> getProgramBinary: program with: bufSize with: length with: binaryFormat
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> getProgramPipelineInfoLog: pipeline with: bufSize with: length with: infoLog [
 
@@ -527,7 +527,7 @@ GL4_1 >> getProgramPipelineInfoLog: pipeline with: bufSize with: length with: in
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> getProgramPipelineiv: pipeline with: pname with: params [
 
@@ -538,7 +538,7 @@ GL4_1 >> getProgramPipelineiv: pipeline with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> getShaderPrecisionFormat: shadertype with: precisiontype with: range with: precision [
 
@@ -549,7 +549,7 @@ GL4_1 >> getShaderPrecisionFormat: shadertype with: precisiontype with: range wi
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> getVertexAttribLdv: index with: pname with: params [
 
@@ -560,7 +560,7 @@ GL4_1 >> getVertexAttribLdv: index with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> isProgramPipeline: pipeline [
 
@@ -571,7 +571,7 @@ GL4_1 >> isProgramPipeline: pipeline [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programBinary: program with: binaryFormat with: binary with: length [
 
@@ -582,7 +582,7 @@ GL4_1 >> programBinary: program with: binaryFormat with: binary with: length [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programParameteri: program with: pname with: value [
 
@@ -593,7 +593,7 @@ GL4_1 >> programParameteri: program with: pname with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform1d: program with: location with: v0 [
 
@@ -604,7 +604,7 @@ GL4_1 >> programUniform1d: program with: location with: v0 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform1dv: program with: location with: count with: value [
 
@@ -615,7 +615,7 @@ GL4_1 >> programUniform1dv: program with: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform1f: program with: location with: v0 [
 
@@ -626,7 +626,7 @@ GL4_1 >> programUniform1f: program with: location with: v0 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform1fv: program with: location with: count with: value [
 
@@ -637,7 +637,7 @@ GL4_1 >> programUniform1fv: program with: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform1i: program with: location with: v0 [
 
@@ -648,7 +648,7 @@ GL4_1 >> programUniform1i: program with: location with: v0 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform1iv: program with: location with: count with: value [
 
@@ -659,7 +659,7 @@ GL4_1 >> programUniform1iv: program with: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform1ui: program with: location with: v0 [
 
@@ -670,7 +670,7 @@ GL4_1 >> programUniform1ui: program with: location with: v0 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform1uiv: program with: location with: count with: value [
 
@@ -681,7 +681,7 @@ GL4_1 >> programUniform1uiv: program with: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform2d: program with: location with: v0 with: v1 [
 
@@ -692,7 +692,7 @@ GL4_1 >> programUniform2d: program with: location with: v0 with: v1 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform2dv: program with: location with: count with: value [
 
@@ -703,7 +703,7 @@ GL4_1 >> programUniform2dv: program with: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform2f: program with: location with: v0 with: v1 [
 
@@ -714,7 +714,7 @@ GL4_1 >> programUniform2f: program with: location with: v0 with: v1 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform2fv: program with: location with: count with: value [
 
@@ -725,7 +725,7 @@ GL4_1 >> programUniform2fv: program with: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform2i: program with: location with: v0 with: v1 [
 
@@ -736,7 +736,7 @@ GL4_1 >> programUniform2i: program with: location with: v0 with: v1 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform2iv: program with: location with: count with: value [
 
@@ -747,7 +747,7 @@ GL4_1 >> programUniform2iv: program with: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform2ui: program with: location with: v0 with: v1 [
 
@@ -758,7 +758,7 @@ GL4_1 >> programUniform2ui: program with: location with: v0 with: v1 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform2uiv: program with: location with: count with: value [
 
@@ -769,7 +769,7 @@ GL4_1 >> programUniform2uiv: program with: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform3d: program with: location with: v0 with: v1 with: v2 [
 
@@ -780,7 +780,7 @@ GL4_1 >> programUniform3d: program with: location with: v0 with: v1 with: v2 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform3dv: program with: location with: count with: value [
 
@@ -791,7 +791,7 @@ GL4_1 >> programUniform3dv: program with: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform3f: program with: location with: v0 with: v1 with: v2 [
 
@@ -802,7 +802,7 @@ GL4_1 >> programUniform3f: program with: location with: v0 with: v1 with: v2 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform3fv: program with: location with: count with: value [
 
@@ -813,7 +813,7 @@ GL4_1 >> programUniform3fv: program with: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform3i: program with: location with: v0 with: v1 with: v2 [
 
@@ -824,7 +824,7 @@ GL4_1 >> programUniform3i: program with: location with: v0 with: v1 with: v2 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform3iv: program with: location with: count with: value [
 
@@ -835,7 +835,7 @@ GL4_1 >> programUniform3iv: program with: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform3ui: program with: location with: v0 with: v1 with: v2 [
 
@@ -846,7 +846,7 @@ GL4_1 >> programUniform3ui: program with: location with: v0 with: v1 with: v2 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform3uiv: program with: location with: count with: value [
 
@@ -857,7 +857,7 @@ GL4_1 >> programUniform3uiv: program with: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform4d: program with: location with: v0 with: v1 with: v2 with: v3 [
 
@@ -868,7 +868,7 @@ GL4_1 >> programUniform4d: program with: location with: v0 with: v1 with: v2 wit
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform4dv: program with: location with: count with: value [
 
@@ -879,7 +879,7 @@ GL4_1 >> programUniform4dv: program with: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform4f: program with: location with: v0 with: v1 with: v2 with: v3 [
 
@@ -890,7 +890,7 @@ GL4_1 >> programUniform4f: program with: location with: v0 with: v1 with: v2 wit
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform4fv: program with: location with: count with: value [
 
@@ -901,7 +901,7 @@ GL4_1 >> programUniform4fv: program with: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform4i: program with: location with: v0 with: v1 with: v2 with: v3 [
 
@@ -912,7 +912,7 @@ GL4_1 >> programUniform4i: program with: location with: v0 with: v1 with: v2 wit
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform4iv: program with: location with: count with: value [
 
@@ -923,7 +923,7 @@ GL4_1 >> programUniform4iv: program with: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform4ui: program with: location with: v0 with: v1 with: v2 with: v3 [
 
@@ -934,7 +934,7 @@ GL4_1 >> programUniform4ui: program with: location with: v0 with: v1 with: v2 wi
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniform4uiv: program with: location with: count with: value [
 
@@ -945,7 +945,7 @@ GL4_1 >> programUniform4uiv: program with: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniformMatrix2dv: program with: location with: count with: transpose with: value [
 
@@ -956,7 +956,7 @@ GL4_1 >> programUniformMatrix2dv: program with: location with: count with: trans
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniformMatrix2fv: program with: location with: count with: transpose with: value [
 
@@ -967,7 +967,7 @@ GL4_1 >> programUniformMatrix2fv: program with: location with: count with: trans
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniformMatrix2x3dv: program with: location with: count with: transpose with: value [
 
@@ -978,7 +978,7 @@ GL4_1 >> programUniformMatrix2x3dv: program with: location with: count with: tra
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniformMatrix2x3fv: program with: location with: count with: transpose with: value [
 
@@ -989,7 +989,7 @@ GL4_1 >> programUniformMatrix2x3fv: program with: location with: count with: tra
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniformMatrix2x4dv: program with: location with: count with: transpose with: value [
 
@@ -1000,7 +1000,7 @@ GL4_1 >> programUniformMatrix2x4dv: program with: location with: count with: tra
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniformMatrix2x4fv: program with: location with: count with: transpose with: value [
 
@@ -1011,7 +1011,7 @@ GL4_1 >> programUniformMatrix2x4fv: program with: location with: count with: tra
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniformMatrix3dv: program with: location with: count with: transpose with: value [
 
@@ -1022,7 +1022,7 @@ GL4_1 >> programUniformMatrix3dv: program with: location with: count with: trans
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniformMatrix3fv: program with: location with: count with: transpose with: value [
 
@@ -1033,7 +1033,7 @@ GL4_1 >> programUniformMatrix3fv: program with: location with: count with: trans
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniformMatrix3x2dv: program with: location with: count with: transpose with: value [
 
@@ -1044,7 +1044,7 @@ GL4_1 >> programUniformMatrix3x2dv: program with: location with: count with: tra
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniformMatrix3x2fv: program with: location with: count with: transpose with: value [
 
@@ -1055,7 +1055,7 @@ GL4_1 >> programUniformMatrix3x2fv: program with: location with: count with: tra
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniformMatrix3x4dv: program with: location with: count with: transpose with: value [
 
@@ -1066,7 +1066,7 @@ GL4_1 >> programUniformMatrix3x4dv: program with: location with: count with: tra
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniformMatrix3x4fv: program with: location with: count with: transpose with: value [
 
@@ -1077,7 +1077,7 @@ GL4_1 >> programUniformMatrix3x4fv: program with: location with: count with: tra
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniformMatrix4dv: program with: location with: count with: transpose with: value [
 
@@ -1088,7 +1088,7 @@ GL4_1 >> programUniformMatrix4dv: program with: location with: count with: trans
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniformMatrix4fv: program with: location with: count with: transpose with: value [
 
@@ -1099,7 +1099,7 @@ GL4_1 >> programUniformMatrix4fv: program with: location with: count with: trans
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniformMatrix4x2dv: program with: location with: count with: transpose with: value [
 
@@ -1110,7 +1110,7 @@ GL4_1 >> programUniformMatrix4x2dv: program with: location with: count with: tra
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniformMatrix4x2fv: program with: location with: count with: transpose with: value [
 
@@ -1121,7 +1121,7 @@ GL4_1 >> programUniformMatrix4x2fv: program with: location with: count with: tra
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniformMatrix4x3dv: program with: location with: count with: transpose with: value [
 
@@ -1132,7 +1132,7 @@ GL4_1 >> programUniformMatrix4x3dv: program with: location with: count with: tra
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> programUniformMatrix4x3fv: program with: location with: count with: transpose with: value [
 
@@ -1143,7 +1143,7 @@ GL4_1 >> programUniformMatrix4x3fv: program with: location with: count with: tra
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> releaseShaderCompiler [
 
@@ -1154,7 +1154,7 @@ GL4_1 >> releaseShaderCompiler [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> scissorArrayv: first with: count with: v [
 
@@ -1165,7 +1165,7 @@ GL4_1 >> scissorArrayv: first with: count with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> scissorIndexed: index with: left with: bottom with: width with: height [
 
@@ -1176,7 +1176,7 @@ GL4_1 >> scissorIndexed: index with: left with: bottom with: width with: height 
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> scissorIndexedv: index with: v [
 
@@ -1187,7 +1187,7 @@ GL4_1 >> scissorIndexedv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> shaderBinary: count with: shaders with: binaryformat with: binary with: length [
 
@@ -1198,7 +1198,7 @@ GL4_1 >> shaderBinary: count with: shaders with: binaryformat with: binary with:
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> useProgramStages: pipeline with: stages with: program [
 
@@ -1209,7 +1209,7 @@ GL4_1 >> useProgramStages: pipeline with: stages with: program [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> validateProgramPipeline: pipeline [
 
@@ -1220,7 +1220,7 @@ GL4_1 >> validateProgramPipeline: pipeline [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> vertexAttribL1d: index with: x [
 
@@ -1231,7 +1231,7 @@ GL4_1 >> vertexAttribL1d: index with: x [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> vertexAttribL1dv: index with: v [
 
@@ -1242,7 +1242,7 @@ GL4_1 >> vertexAttribL1dv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> vertexAttribL2d: index with: x with: y [
 
@@ -1253,7 +1253,7 @@ GL4_1 >> vertexAttribL2d: index with: x with: y [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> vertexAttribL2dv: index with: v [
 
@@ -1264,7 +1264,7 @@ GL4_1 >> vertexAttribL2dv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> vertexAttribL3d: index with: x with: y with: z [
 
@@ -1275,7 +1275,7 @@ GL4_1 >> vertexAttribL3d: index with: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> vertexAttribL3dv: index with: v [
 
@@ -1286,7 +1286,7 @@ GL4_1 >> vertexAttribL3dv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> vertexAttribL4d: index with: x with: y with: z with: w [
 
@@ -1297,7 +1297,7 @@ GL4_1 >> vertexAttribL4d: index with: x with: y with: z with: w [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> vertexAttribL4dv: index with: v [
 
@@ -1308,7 +1308,7 @@ GL4_1 >> vertexAttribL4dv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> vertexAttribLPointer: index with: size with: type with: stride with: pointer [
 
@@ -1319,7 +1319,7 @@ GL4_1 >> vertexAttribLPointer: index with: size with: type with: stride with: po
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> viewportArrayv: first with: count with: v [
 
@@ -1330,7 +1330,7 @@ GL4_1 >> viewportArrayv: first with: count with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> viewportIndexedf: index with: x with: y with: w with: h [
 
@@ -1341,7 +1341,7 @@ GL4_1 >> viewportIndexedf: index with: x with: y with: w with: h [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : ''
 }
 GL4_1 >> viewportIndexedfv: index with: v [
 

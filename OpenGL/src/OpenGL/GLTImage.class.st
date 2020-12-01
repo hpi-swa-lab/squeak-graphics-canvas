@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #'code generation',
-	#timestamp : 'stlu 11/23/2020 13:48'
+	#timestamp : ''
 }
 GLTImage class >> generateClasses [
 
@@ -44,7 +44,7 @@ GLTImage class >> generateClasses [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 11/23/2020 16:47'
+	#timestamp : ''
 }
 GLTImage >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 

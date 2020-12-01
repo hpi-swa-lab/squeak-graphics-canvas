@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 10/20/2020 22:06'
+	#timestamp : ''
 }
 GLFWGammaRamp class >> fields [ "self defineFields"
 

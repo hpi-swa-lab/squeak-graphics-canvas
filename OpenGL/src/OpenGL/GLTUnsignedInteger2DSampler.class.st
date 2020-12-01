@@ -7,7 +7,16 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:49'
+	#timestamp : 'zagto 12/1/2020 15:18'
+}
+GLTUnsignedInteger2DSampler class >> componentType [
+
+	^ GLTUnsignedInteger
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'zagto 12/1/2020 15:18'
 }
 GLTUnsignedInteger2DSampler class >> declarators [
 
@@ -16,7 +25,7 @@ GLTUnsignedInteger2DSampler class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:49'
+	#timestamp : 'zagto 12/1/2020 15:18'
 }
 GLTUnsignedInteger2DSampler class >> enum [
 
@@ -25,7 +34,7 @@ GLTUnsignedInteger2DSampler class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:49'
+	#timestamp : 'zagto 12/1/2020 15:18'
 }
 GLTUnsignedInteger2DSampler class >> enumName [
 
@@ -34,7 +43,7 @@ GLTUnsignedInteger2DSampler class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:49'
+	#timestamp : 'zagto 12/1/2020 15:18'
 }
 GLTUnsignedInteger2DSampler class >> squeakName [
 

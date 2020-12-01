@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #'code generation',
-	#timestamp : 'stlu 11/23/2020 13:49'
+	#timestamp : 'zagto 12/1/2020 15:18'
 }
 GLTSampler class >> generateClasses [
 
@@ -39,12 +39,26 @@ GLTSampler class >> generateClasses [
 							, 'SAMPLER_'
 							, (type joinSeparatedBy: '_') asUppercase.
 			cls compileAccessor: 'enumName' value: enumName storeString.
-			cls compileAccessor: 'enum' value: 'GL_' , enumName]]
+			cls compileAccessor: 'enum' value: 'GL_' , enumName.
+			cls compileAccessor: 'componentType' value: pixelType]]
 ]
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 11/23/2020 17:05'
+	#timestamp : 'zagto 12/1/2020 15:25'
+}
+GLTSampler >> at: aVector2Type [
+	self flag: #todo. "dynamic input / output dimenstions"
+	
+	self assert: (aVector2Type isKindOf: GLTFloatVector2).
+	^ SLMappingToCall new
+		targetSelector: 'texture';
+		type: GLTFloatVector4 instance.
+]
+
+{
+	#category : #'program resources',
+	#timestamp : ''
 }
 GLTSampler >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 

@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 10/28/2020 18:02'
+	#timestamp : ''
 }
 GLDisplayFrameBuffer class >> allocate [
 

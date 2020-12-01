@@ -13,7 +13,7 @@ Class {
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtImageStore class >> defaultCanvasClass [
 
@@ -22,7 +22,7 @@ RtImageStore class >> defaultCanvasClass [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtImageStore class >> extent: aPoint [
 
@@ -31,7 +31,7 @@ RtImageStore class >> extent: aPoint [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtImageStore class >> form: aForm [
 
@@ -40,7 +40,7 @@ RtImageStore class >> form: aForm [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtImageStore >> boundingBox [
 
@@ -49,7 +49,7 @@ RtImageStore >> boundingBox [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtImageStore >> canvasDo: aBlock [
 
@@ -60,7 +60,7 @@ RtImageStore >> canvasDo: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtImageStore >> extent [
 
@@ -69,7 +69,7 @@ RtImageStore >> extent [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtImageStore >> extent: aPoint [
 
@@ -78,7 +78,7 @@ RtImageStore >> extent: aPoint [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtImageStore >> getCanvas [
 
@@ -87,7 +87,7 @@ RtImageStore >> getCanvas [
 
 {
 	#category : #textures,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtImageStore >> glTextureDo: aBlock [
 
@@ -96,7 +96,7 @@ RtImageStore >> glTextureDo: aBlock [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtImageStore >> prepareForDrawingOn: aCanvas during: aBlock [
 

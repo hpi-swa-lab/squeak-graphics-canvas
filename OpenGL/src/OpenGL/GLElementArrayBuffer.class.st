@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 11:56'
+	#timestamp : ''
 }
 GLElementArrayBuffer class >> bindingEnum [
 
@@ -16,7 +16,7 @@ GLElementArrayBuffer class >> bindingEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:03'
+	#timestamp : ''
 }
 GLElementArrayBuffer class >> target [
 

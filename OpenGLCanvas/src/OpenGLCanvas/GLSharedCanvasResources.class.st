@@ -19,7 +19,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLSharedCanvasResources >> font: aFont [
 
@@ -31,7 +31,7 @@ GLSharedCanvasResources >> font: aFont [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLSharedCanvasResources >> fontProgram [
 
@@ -40,7 +40,7 @@ GLSharedCanvasResources >> fontProgram [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLSharedCanvasResources >> initialize [
 
@@ -55,7 +55,7 @@ GLSharedCanvasResources >> initialize [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/6/2020 14:24'
+	#timestamp : ''
 }
 GLSharedCanvasResources >> initializeBuffers [
 
@@ -74,7 +74,7 @@ GLSharedCanvasResources >> initializeBuffers [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 16:20'
+	#timestamp : ''
 }
 GLSharedCanvasResources >> initializeProgramAttributes [
 
@@ -100,7 +100,7 @@ GLSharedCanvasResources >> initializeProgramAttributes [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 10/26/2020 11:04'
+	#timestamp : ''
 }
 GLSharedCanvasResources >> initializePrograms [
 
@@ -113,7 +113,7 @@ GLSharedCanvasResources >> initializePrograms [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLSharedCanvasResources >> outlineProgram [
 
@@ -122,7 +122,7 @@ GLSharedCanvasResources >> outlineProgram [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLSharedCanvasResources >> rectangleProgram [
 
@@ -131,7 +131,7 @@ GLSharedCanvasResources >> rectangleProgram [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLSharedCanvasResources >> textureProgram [
 
@@ -140,7 +140,7 @@ GLSharedCanvasResources >> textureProgram [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLSharedCanvasResources >> vao [
 
@@ -149,7 +149,7 @@ GLSharedCanvasResources >> vao [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLSharedCanvasResources >> vao: anObject [
 
@@ -158,7 +158,7 @@ GLSharedCanvasResources >> vao: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLSharedCanvasResources >> vbo [
 
@@ -167,7 +167,7 @@ GLSharedCanvasResources >> vbo [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLSharedCanvasResources >> vbo: anObject [
 

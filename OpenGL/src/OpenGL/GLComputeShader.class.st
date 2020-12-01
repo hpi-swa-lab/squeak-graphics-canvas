@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/28/2020 17:50'
+	#timestamp : ''
 }
 GLComputeShader class >> type [
 

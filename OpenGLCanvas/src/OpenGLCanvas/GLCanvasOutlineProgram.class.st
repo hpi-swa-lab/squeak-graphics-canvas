@@ -14,7 +14,7 @@ Class {
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasOutlineProgram class >> fragmentShader [
 	^'#version 330 core
@@ -37,7 +37,7 @@ void main() {
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasOutlineProgram class >> vertexShader [
 	^'#version 330 core
@@ -56,7 +56,7 @@ void main()
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasOutlineProgram >> aPosLocation [
 
@@ -65,7 +65,7 @@ GLCanvasOutlineProgram >> aPosLocation [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasOutlineProgram >> aTexCoordsLocation [
 
@@ -74,7 +74,7 @@ GLCanvasOutlineProgram >> aTexCoordsLocation [
 
 {
 	#category : #'uniform accessing',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasOutlineProgram >> color: anObject [
 
@@ -83,7 +83,7 @@ GLCanvasOutlineProgram >> color: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasOutlineProgram >> colorLocation [
 
@@ -92,7 +92,7 @@ GLCanvasOutlineProgram >> colorLocation [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/3/2020 15:34'
+	#timestamp : ''
 }
 GLCanvasOutlineProgram >> initializeLocations [
 
@@ -112,7 +112,7 @@ GLCanvasOutlineProgram >> initializeLocations [
 
 {
 	#category : #'uniform accessing',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasOutlineProgram >> mvp: anObject [
 
@@ -121,7 +121,7 @@ GLCanvasOutlineProgram >> mvp: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasOutlineProgram >> mvpLocation [
 
@@ -130,7 +130,7 @@ GLCanvasOutlineProgram >> mvpLocation [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasOutlineProgram >> textureSize: aPoint [
 

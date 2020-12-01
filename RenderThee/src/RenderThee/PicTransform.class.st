@@ -9,12 +9,12 @@ Class {
 		'matrix'
 	],
 	#category : #'RenderThee-Pictures',
-	#commentStamp : 'stlu 8/21/2020 13:12'
+	#commentStamp : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicTransform class >> matrix: aMatrix2x3 [
 
@@ -25,7 +25,7 @@ PicTransform class >> matrix: aMatrix2x3 [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicTransform >> drawOn: aCanvas [
 
@@ -36,7 +36,7 @@ PicTransform >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicTransform >> estimatedBounds [
 
@@ -45,7 +45,7 @@ PicTransform >> estimatedBounds [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicTransform >> matrix [
 	^ matrix
@@ -53,7 +53,7 @@ PicTransform >> matrix [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicTransform >> matrix: anObject [
 	matrix := anObject

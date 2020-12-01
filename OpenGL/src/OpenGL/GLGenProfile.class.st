@@ -14,7 +14,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/3/2020 14:24'
+	#timestamp : ''
 }
 GLGenProfile class >> feature: feature name: aSymbol [
 
@@ -29,7 +29,7 @@ GLGenProfile class >> feature: feature name: aSymbol [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:56'
+	#timestamp : ''
 }
 GLGenProfile >> feature [
 
@@ -38,7 +38,7 @@ GLGenProfile >> feature [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:56'
+	#timestamp : ''
 }
 GLGenProfile >> feature: anObject [
 
@@ -47,7 +47,7 @@ GLGenProfile >> feature: anObject [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:27'
+	#timestamp : ''
 }
 GLGenProfile >> generateIn: aClass [
 
@@ -63,7 +63,7 @@ GLGenProfile >> generateIn: aClass [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:21'
+	#timestamp : ''
 }
 GLGenProfile >> generateSharedIn: aClass [
 
@@ -79,7 +79,7 @@ GLGenProfile >> generateSharedIn: aClass [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/2/2020 13:39'
+	#timestamp : ''
 }
 GLGenProfile >> initialize [
 
@@ -92,7 +92,7 @@ GLGenProfile >> initialize [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 11/2/2020 14:29'
+	#timestamp : ''
 }
 GLGenProfile >> printOn: aStream [
 
@@ -101,7 +101,7 @@ GLGenProfile >> printOn: aStream [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/2/2020 13:59'
+	#timestamp : ''
 }
 GLGenProfile >> registry: registry removeTag: removeTag [
 
@@ -120,7 +120,7 @@ GLGenProfile >> registry: registry removeTag: removeTag [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/2/2020 13:55'
+	#timestamp : ''
 }
 GLGenProfile >> registry: registry requireTag: requireTag [
 
@@ -139,7 +139,7 @@ GLGenProfile >> registry: registry requireTag: requireTag [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:38'
+	#timestamp : ''
 }
 GLGenProfile >> removedCommands [
 
@@ -148,7 +148,7 @@ GLGenProfile >> removedCommands [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:38'
+	#timestamp : ''
 }
 GLGenProfile >> removedEnums [
 
@@ -157,7 +157,7 @@ GLGenProfile >> removedEnums [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:38'
+	#timestamp : ''
 }
 GLGenProfile >> requiredCommands [
 
@@ -166,7 +166,7 @@ GLGenProfile >> requiredCommands [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:38'
+	#timestamp : ''
 }
 GLGenProfile >> requiredEnums [
 

@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:01'
+	#timestamp : ''
 }
 GLTransformFeedbackBuffer class >> bindingEnum [
 
@@ -16,7 +16,7 @@ GLTransformFeedbackBuffer class >> bindingEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:04'
+	#timestamp : ''
 }
 GLTransformFeedbackBuffer class >> target [
 

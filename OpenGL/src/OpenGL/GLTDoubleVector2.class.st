@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 17:57'
+	#timestamp : ''
 }
 GLTDoubleVector2 class >> componentType [
 
@@ -16,7 +16,7 @@ GLTDoubleVector2 class >> componentType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 17:57'
+	#timestamp : ''
 }
 GLTDoubleVector2 class >> declarators [
 
@@ -25,7 +25,7 @@ GLTDoubleVector2 class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 17:57'
+	#timestamp : ''
 }
 GLTDoubleVector2 class >> enum [
 
@@ -34,7 +34,7 @@ GLTDoubleVector2 class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 17:57'
+	#timestamp : ''
 }
 GLTDoubleVector2 class >> enumName [
 
@@ -43,7 +43,7 @@ GLTDoubleVector2 class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 17:57'
+	#timestamp : ''
 }
 GLTDoubleVector2 class >> numComponents [
 
@@ -52,7 +52,7 @@ GLTDoubleVector2 class >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 17:57'
+	#timestamp : ''
 }
 GLTDoubleVector2 class >> squeakName [
 
@@ -61,7 +61,7 @@ GLTDoubleVector2 class >> squeakName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/19/2020 07:37'
+	#timestamp : ''
 }
 GLTDoubleVector2 >> numComponents [
 

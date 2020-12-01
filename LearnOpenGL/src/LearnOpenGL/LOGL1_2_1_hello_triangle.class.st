@@ -14,7 +14,7 @@ Class {
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 10/22/2020 16:53'
+	#timestamp : ''
 }
 LOGL1_2_1_hello_triangle >> fragmentShaderSource [
 
@@ -27,7 +27,7 @@ void main() {
 
 {
 	#category : #running,
-	#timestamp : 'stlu 11/3/2020 15:01'
+	#timestamp : ''
 }
 LOGL1_2_1_hello_triangle >> render [
 
@@ -37,7 +37,7 @@ LOGL1_2_1_hello_triangle >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 11/13/2020 15:47'
+	#timestamp : ''
 }
 LOGL1_2_1_hello_triangle >> setUp [
 
@@ -61,7 +61,7 @@ LOGL1_2_1_hello_triangle >> setUp [
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 10/27/2020 12:11'
+	#timestamp : ''
 }
 LOGL1_2_1_hello_triangle >> vertexShaderSource [
 

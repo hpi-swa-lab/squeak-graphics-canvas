@@ -11,7 +11,7 @@ Class {
 
 {
 	#category : #helpers,
-	#timestamp : 'stlu 10/31/2020 23:06'
+	#timestamp : ''
 }
 GLGenEnum class >> convertEnumValueString: aString [
 
@@ -24,7 +24,7 @@ GLGenEnum class >> convertEnumValueString: aString [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/1/2020 20:12'
+	#timestamp : ''
 }
 GLGenEnum class >> registry: registry tag: enumTag [
 
@@ -35,7 +35,7 @@ GLGenEnum class >> registry: registry tag: enumTag [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:19'
+	#timestamp : ''
 }
 GLGenEnum >> groups [
 
@@ -44,7 +44,7 @@ GLGenEnum >> groups [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 10/31/2020 22:59'
+	#timestamp : ''
 }
 GLGenEnum >> initialize [
 
@@ -54,7 +54,7 @@ GLGenEnum >> initialize [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 11/1/2020 20:58'
+	#timestamp : ''
 }
 GLGenEnum >> printOn: aStream [
 
@@ -66,7 +66,7 @@ GLGenEnum >> printOn: aStream [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:12'
+	#timestamp : ''
 }
 GLGenEnum >> printRemoveSourceInProfile: aSymbol [
 
@@ -87,7 +87,7 @@ GLGenEnum >> printRemoveSourceInProfile: aSymbol [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:15'
+	#timestamp : ''
 }
 GLGenEnum >> printRequireSourceInProfile: aSymbol [
 
@@ -108,7 +108,7 @@ GLGenEnum >> printRequireSourceInProfile: aSymbol [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:09'
+	#timestamp : ''
 }
 GLGenEnum >> printSharedRemoveSource [
 
@@ -123,7 +123,7 @@ GLGenEnum >> printSharedRemoveSource [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:08'
+	#timestamp : ''
 }
 GLGenEnum >> printSharedRequireSource [
 
@@ -139,7 +139,7 @@ GLGenEnum >> printSharedRequireSource [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/1/2020 21:30'
+	#timestamp : ''
 }
 GLGenEnum >> registry: registry tag: enumTag [
 
@@ -158,7 +158,7 @@ GLGenEnum >> registry: registry tag: enumTag [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:43'
+	#timestamp : ''
 }
 GLGenEnum >> selector [
 
@@ -169,7 +169,7 @@ GLGenEnum >> selector [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 23:00'
+	#timestamp : ''
 }
 GLGenEnum >> value [
 

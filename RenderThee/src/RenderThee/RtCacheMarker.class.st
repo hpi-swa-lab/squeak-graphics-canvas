@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtCacheMarker >> cachingStrategy [
 	^ cachingStrategy
@@ -18,7 +18,7 @@ RtCacheMarker >> cachingStrategy [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtCacheMarker >> cachingStrategy: anObject [
 	cachingStrategy := anObject
@@ -26,7 +26,7 @@ RtCacheMarker >> cachingStrategy: anObject [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtCacheMarker >> shouldCacheDrawLayer: aLayer [
 
@@ -35,7 +35,7 @@ RtCacheMarker >> shouldCacheDrawLayer: aLayer [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtCacheMarker >> shouldCacheGroupLayer: aLayer [
 
@@ -44,7 +44,7 @@ RtCacheMarker >> shouldCacheGroupLayer: aLayer [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtCacheMarker >> visitDrawLayer: aLayer [
 
@@ -54,7 +54,7 @@ RtCacheMarker >> visitDrawLayer: aLayer [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtCacheMarker >> visitGroupLayer: aLayer [
 

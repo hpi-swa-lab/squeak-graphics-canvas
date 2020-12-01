@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 17:57'
+	#timestamp : ''
 }
 GLTFloatVector3 class >> componentType [
 
@@ -16,7 +16,7 @@ GLTFloatVector3 class >> componentType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 17:57'
+	#timestamp : ''
 }
 GLTFloatVector3 class >> declarators [
 
@@ -25,7 +25,7 @@ GLTFloatVector3 class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 17:57'
+	#timestamp : ''
 }
 GLTFloatVector3 class >> enum [
 
@@ -34,7 +34,7 @@ GLTFloatVector3 class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 17:57'
+	#timestamp : ''
 }
 GLTFloatVector3 class >> enumName [
 
@@ -43,7 +43,7 @@ GLTFloatVector3 class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 17:57'
+	#timestamp : ''
 }
 GLTFloatVector3 class >> numComponents [
 
@@ -52,7 +52,7 @@ GLTFloatVector3 class >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 17:57'
+	#timestamp : ''
 }
 GLTFloatVector3 class >> squeakName [
 
@@ -61,7 +61,7 @@ GLTFloatVector3 class >> squeakName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/19/2020 07:37'
+	#timestamp : ''
 }
 GLTFloatVector3 >> numComponents [
 

@@ -317,7 +317,7 @@ Class {
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 10/20/2020 16:34'
+	#timestamp : ''
 }
 GLFWConstants class >> initialize [ "self initialize"
 
@@ -344,7 +344,7 @@ GLFWConstants class >> initialize [ "self initialize"
 
 {
 	#category : #'initialization - windows',
-	#timestamp : 'stlu 10/20/2020 16:25'
+	#timestamp : ''
 }
 GLFWConstants class >> initializeContextAttributes [
 
@@ -365,7 +365,7 @@ GLFWConstants class >> initializeContextAttributes [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 10/20/2020 15:03'
+	#timestamp : ''
 }
 GLFWConstants class >> initializeErrorCodes [
 
@@ -387,7 +387,7 @@ GLFWConstants class >> initializeErrorCodes [
 
 {
 	#category : #'initialization - windows',
-	#timestamp : 'stlu 10/20/2020 16:33'
+	#timestamp : ''
 }
 GLFWConstants class >> initializeFramebufferAttributes [
 
@@ -411,7 +411,7 @@ GLFWConstants class >> initializeFramebufferAttributes [
 
 {
 	#category : #'initialization - input',
-	#timestamp : 'stlu 10/20/2020 14:58'
+	#timestamp : ''
 }
 GLFWConstants class >> initializeGamepadAxes [
 
@@ -427,7 +427,7 @@ GLFWConstants class >> initializeGamepadAxes [
 
 {
 	#category : #'initialization - input',
-	#timestamp : 'stlu 10/20/2020 14:17'
+	#timestamp : ''
 }
 GLFWConstants class >> initializeGamepadButtons [
 
@@ -457,7 +457,7 @@ GLFWConstants class >> initializeGamepadButtons [
 
 {
 	#category : #'initialization - input',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLFWConstants class >> initializeInputMacros [
 
@@ -468,7 +468,7 @@ GLFWConstants class >> initializeInputMacros [
 
 {
 	#category : #'initialization - input',
-	#timestamp : 'stlu 10/20/2020 14:06'
+	#timestamp : ''
 }
 GLFWConstants class >> initializeJoystickHatStates [
 
@@ -485,7 +485,7 @@ GLFWConstants class >> initializeJoystickHatStates [
 
 {
 	#category : #'initialization - input',
-	#timestamp : 'stlu 10/20/2020 14:13'
+	#timestamp : ''
 }
 GLFWConstants class >> initializeJoysticks [
 
@@ -511,7 +511,7 @@ GLFWConstants class >> initializeJoysticks [
 
 {
 	#category : #'initialization - input',
-	#timestamp : 'stlu 10/20/2020 14:09'
+	#timestamp : ''
 }
 GLFWConstants class >> initializeKeyboardKeys [
 
@@ -647,7 +647,7 @@ GLFWConstants class >> initializeKeyboardKeys [
 
 {
 	#category : #'initialization - windows',
-	#timestamp : 'stlu 10/20/2020 16:31'
+	#timestamp : ''
 }
 GLFWConstants class >> initializeMiscEnums [
 
@@ -718,7 +718,7 @@ GLFWConstants class >> initializeMiscEnums [
 
 {
 	#category : #'initialization - input',
-	#timestamp : 'stlu 10/20/2020 13:57'
+	#timestamp : ''
 }
 GLFWConstants class >> initializeModifierKeyFlags [
 
@@ -732,7 +732,7 @@ GLFWConstants class >> initializeModifierKeyFlags [
 
 {
 	#category : #'initialization - input',
-	#timestamp : 'stlu 10/20/2020 14:10'
+	#timestamp : ''
 }
 GLFWConstants class >> initializeMouseButtons [
 
@@ -752,7 +752,7 @@ GLFWConstants class >> initializeMouseButtons [
 
 {
 	#category : #'initialization - windows',
-	#timestamp : 'stlu 10/20/2020 16:33'
+	#timestamp : ''
 }
 GLFWConstants class >> initializePlatformSpecific [
 
@@ -768,7 +768,7 @@ GLFWConstants class >> initializePlatformSpecific [
 
 {
 	#category : #'initialization - windows',
-	#timestamp : 'stlu 10/20/2020 16:34'
+	#timestamp : ''
 }
 GLFWConstants class >> initializeWindowAttributes [
 

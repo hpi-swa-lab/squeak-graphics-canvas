@@ -11,7 +11,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/1/2020 20:13'
+	#timestamp : ''
 }
 GLGenCommand class >> registry: registry tag: commandTag [
 
@@ -22,7 +22,7 @@ GLGenCommand class >> registry: registry tag: commandTag [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/1/2020 00:23'
+	#timestamp : ''
 }
 GLGenCommand >> addParameter: param [
 
@@ -31,7 +31,7 @@ GLGenCommand >> addParameter: param [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/1/2020 20:27'
+	#timestamp : ''
 }
 GLGenCommand >> initialize [
 
@@ -41,7 +41,7 @@ GLGenCommand >> initialize [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:20'
+	#timestamp : ''
 }
 GLGenCommand >> parameters [
 
@@ -50,7 +50,7 @@ GLGenCommand >> parameters [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 11/2/2020 19:53'
+	#timestamp : ''
 }
 GLGenCommand >> printFFIPragmaOn: aStream [
 
@@ -70,7 +70,7 @@ GLGenCommand >> printFFIPragmaOn: aStream [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 11/1/2020 20:56'
+	#timestamp : ''
 }
 GLGenCommand >> printOn: aStream [
 
@@ -87,7 +87,7 @@ GLGenCommand >> printOn: aStream [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 13:04'
+	#timestamp : ''
 }
 GLGenCommand >> printRemoveSourceInProfile: aSymbol [
 
@@ -109,7 +109,7 @@ GLGenCommand >> printRemoveSourceInProfile: aSymbol [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 13:10'
+	#timestamp : ''
 }
 GLGenCommand >> printRequireSourceInProfile: aSymbol [
 
@@ -133,7 +133,7 @@ GLGenCommand >> printRequireSourceInProfile: aSymbol [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 12:58'
+	#timestamp : ''
 }
 GLGenCommand >> printSharedRemoveSource [
 
@@ -149,7 +149,7 @@ GLGenCommand >> printSharedRemoveSource [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 12:58'
+	#timestamp : ''
 }
 GLGenCommand >> printSharedRequireSource [
 
@@ -170,7 +170,7 @@ GLGenCommand >> printSharedRequireSource [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 11/2/2020 19:39'
+	#timestamp : ''
 }
 GLGenCommand >> printSignatureOn: aStream [
 
@@ -183,7 +183,7 @@ GLGenCommand >> printSignatureOn: aStream [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/1/2020 21:30'
+	#timestamp : ''
 }
 GLGenCommand >> registry: registry tag: commandTag [
 
@@ -199,7 +199,7 @@ GLGenCommand >> registry: registry tag: commandTag [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:20'
+	#timestamp : ''
 }
 GLGenCommand >> returnType [
 
@@ -208,7 +208,7 @@ GLGenCommand >> returnType [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 13:59'
+	#timestamp : ''
 }
 GLGenCommand >> selector [
 	"remove gl* prefix"

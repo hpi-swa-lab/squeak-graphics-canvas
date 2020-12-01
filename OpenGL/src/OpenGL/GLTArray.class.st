@@ -11,7 +11,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/23/2020 16:18'
+	#timestamp : ''
 }
 GLTArray class >> numElements: length enum: anInteger [
 
@@ -20,7 +20,7 @@ GLTArray class >> numElements: length enum: anInteger [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/23/2020 16:18'
+	#timestamp : ''
 }
 GLTArray class >> numElements: length type: aGLType [
 
@@ -33,7 +33,7 @@ GLTArray class >> numElements: length type: aGLType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 16:34'
+	#timestamp : ''
 }
 GLTArray >> componentType [
 
@@ -42,7 +42,7 @@ GLTArray >> componentType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 16:17'
+	#timestamp : ''
 }
 GLTArray >> numComponents [
 
@@ -51,7 +51,7 @@ GLTArray >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 16:16'
+	#timestamp : ''
 }
 GLTArray >> numElements [
 
@@ -60,7 +60,7 @@ GLTArray >> numElements [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 16:15'
+	#timestamp : ''
 }
 GLTArray >> numElements: anObject [
 
@@ -69,7 +69,7 @@ GLTArray >> numElements: anObject [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 11/23/2020 16:10'
+	#timestamp : ''
 }
 GLTArray >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
@@ -78,7 +78,7 @@ GLTArray >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/19/2020 07:24'
+	#timestamp : ''
 }
 GLTArray >> type [
 
@@ -87,7 +87,7 @@ GLTArray >> type [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/19/2020 07:24'
+	#timestamp : ''
 }
 GLTArray >> type: anObject [
 

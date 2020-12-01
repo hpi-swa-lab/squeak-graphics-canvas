@@ -11,7 +11,7 @@ Class {
 
 {
 	#category : #compositing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtCompositingCanvas >> cacheLayer: aLayer [
 
@@ -20,7 +20,7 @@ RtCompositingCanvas >> cacheLayer: aLayer [
 
 {
 	#category : #compositing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtCompositingCanvas >> compositeLayer: aLayer [
 
@@ -29,7 +29,7 @@ RtCompositingCanvas >> compositeLayer: aLayer [
 
 {
 	#category : #compositing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtCompositingCanvas >> drawLayer: aLayer [
 
@@ -50,7 +50,7 @@ RtCompositingCanvas >> drawLayer: aLayer [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtCompositingCanvas >> initialize [
 
@@ -61,7 +61,7 @@ RtCompositingCanvas >> initialize [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtCompositingCanvas >> readsCaches [
 
@@ -70,7 +70,7 @@ RtCompositingCanvas >> readsCaches [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtCompositingCanvas >> readsCaches: anObject [
 
@@ -79,7 +79,7 @@ RtCompositingCanvas >> readsCaches: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtCompositingCanvas >> writesCaches [
 
@@ -88,7 +88,7 @@ RtCompositingCanvas >> writesCaches [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtCompositingCanvas >> writesCaches: anObject [
 

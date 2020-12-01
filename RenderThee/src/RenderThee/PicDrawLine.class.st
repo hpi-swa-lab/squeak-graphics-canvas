@@ -13,7 +13,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawLine class >> from: from to: to width: width color: color [
 
@@ -27,7 +27,7 @@ PicDrawLine class >> from: from to: to width: width color: color [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawLine >> color [
 
@@ -36,7 +36,7 @@ PicDrawLine >> color [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawLine >> color: anObject [
 
@@ -45,7 +45,7 @@ PicDrawLine >> color: anObject [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawLine >> drawOn: aCanvas [
 
@@ -58,7 +58,7 @@ PicDrawLine >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawLine >> estimatedBounds [
 
@@ -67,7 +67,7 @@ PicDrawLine >> estimatedBounds [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawLine >> from [
 
@@ -76,7 +76,7 @@ PicDrawLine >> from [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawLine >> from: anObject [
 
@@ -85,7 +85,7 @@ PicDrawLine >> from: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawLine >> to [
 
@@ -94,7 +94,7 @@ PicDrawLine >> to [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawLine >> to: anObject [
 
@@ -103,7 +103,7 @@ PicDrawLine >> to: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawLine >> width [
 
@@ -112,7 +112,7 @@ PicDrawLine >> width [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 PicDrawLine >> width: anObject [
 

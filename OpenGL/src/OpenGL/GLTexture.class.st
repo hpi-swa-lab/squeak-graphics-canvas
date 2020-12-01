@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #allocation,
-	#timestamp : 'stlu 11/3/2020 15:40'
+	#timestamp : ''
 }
 GLTexture class >> allocate [
 
@@ -18,7 +18,7 @@ GLTexture class >> allocate [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 14:57'
+	#timestamp : ''
 }
 GLTexture class >> bind: id [
 
@@ -27,7 +27,7 @@ GLTexture class >> bind: id [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 14:57'
+	#timestamp : ''
 }
 GLTexture class >> bind: id to: target [
 
@@ -36,7 +36,7 @@ GLTexture class >> bind: id to: target [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 00:36'
+	#timestamp : ''
 }
 GLTexture class >> bindingEnum [
 
@@ -45,7 +45,7 @@ GLTexture class >> bindingEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/13/2020 16:26'
+	#timestamp : ''
 }
 GLTexture class >> currentBinding [
 
@@ -54,7 +54,7 @@ GLTexture class >> currentBinding [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 00:42'
+	#timestamp : ''
 }
 GLTexture class >> target [
 
@@ -63,7 +63,7 @@ GLTexture class >> target [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 14:57'
+	#timestamp : ''
 }
 GLTexture >> bind [
 
@@ -72,7 +72,7 @@ GLTexture >> bind [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 14:57'
+	#timestamp : ''
 }
 GLTexture >> boundDuring: aBlock [
 
@@ -87,7 +87,7 @@ GLTexture >> boundDuring: aBlock [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 10/29/2020 12:16'
+	#timestamp : ''
 }
 GLTexture >> isTexture [
 
@@ -96,7 +96,7 @@ GLTexture >> isTexture [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 00:25'
+	#timestamp : ''
 }
 GLTexture >> target [
 

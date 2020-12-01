@@ -11,7 +11,7 @@ Class {
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtGroupLayer >> accept: aVisitor [
 
@@ -20,7 +20,7 @@ RtGroupLayer >> accept: aVisitor [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtGroupLayer >> addChild: aLayer [
 
@@ -30,7 +30,7 @@ RtGroupLayer >> addChild: aLayer [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtGroupLayer >> children [
 
@@ -39,7 +39,7 @@ RtGroupLayer >> children [
 
 {
 	#category : #compositing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtGroupLayer >> drawLayerOn: aCanvas [
 
@@ -48,7 +48,7 @@ RtGroupLayer >> drawLayerOn: aCanvas [
 
 {
 	#category : #compositing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtGroupLayer >> drawOn: aCanvas [
 
@@ -61,7 +61,7 @@ RtGroupLayer >> drawOn: aCanvas [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtGroupLayer >> initialize [
 
@@ -71,7 +71,7 @@ RtGroupLayer >> initialize [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtGroupLayer >> layers [
 
@@ -80,7 +80,7 @@ RtGroupLayer >> layers [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtGroupLayer >> morph [
 
@@ -89,7 +89,7 @@ RtGroupLayer >> morph [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtGroupLayer >> morph: anObject [
 
@@ -98,7 +98,7 @@ RtGroupLayer >> morph: anObject [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtGroupLayer >> printOn: aStream [
 
@@ -116,7 +116,7 @@ RtGroupLayer >> printOn: aStream [
 
 {
 	#category : #caching,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtGroupLayer >> removeAllCaches [
 
@@ -126,7 +126,7 @@ RtGroupLayer >> removeAllCaches [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtGroupLayer >> removeAllChildren [
 
@@ -138,7 +138,7 @@ RtGroupLayer >> removeAllChildren [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtGroupLayer >> update [
 

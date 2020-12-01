@@ -10,12 +10,12 @@ Class {
 		'rootLayer'
 	],
 	#category : #'RenderThee-Core',
-	#commentStamp : 'stlu 8/24/2020 10:56'
+	#commentStamp : ''
 }
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas class >> example1 [
 	"self example1"
@@ -33,7 +33,7 @@ RtRecordingCanvas class >> example1 [
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas class >> example2 [
 	"self example2"
@@ -42,7 +42,7 @@ RtRecordingCanvas class >> example2 [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas class >> extent: aPoint [
 
@@ -51,7 +51,7 @@ RtRecordingCanvas class >> extent: aPoint [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas class >> record: aMorph [
 
@@ -61,7 +61,7 @@ RtRecordingCanvas class >> record: aMorph [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas class >> rootLayer: aGroupLayer [
 
@@ -72,7 +72,7 @@ RtRecordingCanvas class >> rootLayer: aGroupLayer [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas >> addLayer: aLayer [
 
@@ -82,7 +82,7 @@ RtRecordingCanvas >> addLayer: aLayer [
 
 {
 	#category : #'repaint boundaries',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas >> changeGroupLayerTo: aLayer during: aBlock [
 
@@ -99,7 +99,7 @@ RtRecordingCanvas >> changeGroupLayerTo: aLayer during: aBlock [
 
 {
 	#category : #'repaint boundaries',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas >> endPicture [
 
@@ -112,7 +112,7 @@ RtRecordingCanvas >> endPicture [
 
 {
 	#category : #'repaint boundaries',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas >> fullDraw: anObject [
 
@@ -122,7 +122,7 @@ RtRecordingCanvas >> fullDraw: anObject [
 
 {
 	#category : #'repaint boundaries',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas >> fullDrawMorph: aMorph [
 
@@ -145,7 +145,7 @@ RtRecordingCanvas >> fullDrawMorph: aMorph [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas >> initialize [
 
@@ -155,7 +155,7 @@ RtRecordingCanvas >> initialize [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas >> isReRecording [
 
@@ -164,7 +164,7 @@ RtRecordingCanvas >> isReRecording [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas >> isReRecording: anObject [
 
@@ -173,7 +173,7 @@ RtRecordingCanvas >> isReRecording: anObject [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas >> isReusingLayers [
 
@@ -182,7 +182,7 @@ RtRecordingCanvas >> isReusingLayers [
 
 {
 	#category : #'repaint boundaries',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas >> newGroupLayerFor: aMorph [
 
@@ -196,7 +196,7 @@ RtRecordingCanvas >> newGroupLayerFor: aMorph [
 
 {
 	#category : #'scoped state',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas >> pictureCanvas: aCanvas during: aBlock [
 
@@ -209,7 +209,7 @@ RtRecordingCanvas >> pictureCanvas: aCanvas during: aBlock [
 
 {
 	#category : #recording,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas >> reRecord: aMorph [
 	"Records aMorph under the assumption that layers reflect the current state of their respective morphs."
@@ -219,7 +219,7 @@ RtRecordingCanvas >> reRecord: aMorph [
 
 {
 	#category : #recording,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas >> record: aMorph [
 
@@ -231,7 +231,7 @@ RtRecordingCanvas >> record: aMorph [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas >> rootLayer [
 
@@ -240,7 +240,7 @@ RtRecordingCanvas >> rootLayer [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas >> rootLayer: aGroupLayer [
 
@@ -249,7 +249,7 @@ RtRecordingCanvas >> rootLayer: aGroupLayer [
 
 {
 	#category : #'scoped state',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtRecordingCanvas >> rootLayer: aLayer during: aBlock [
 

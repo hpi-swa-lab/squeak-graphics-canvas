@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 11:51'
+	#timestamp : ''
 }
 GLTScalar class >> commandInitials [
 
@@ -16,7 +16,7 @@ GLTScalar class >> commandInitials [
 
 {
 	#category : #'code generation',
-	#timestamp : 'stlu 11/23/2020 11:41'
+	#timestamp : ''
 }
 GLTScalar class >> compileGLSLInitialsAccessor: stringOrSymbol [
 
@@ -27,7 +27,7 @@ GLTScalar class >> compileGLSLInitialsAccessor: stringOrSymbol [
 
 {
 	#category : #'code generation',
-	#timestamp : 'stlu 11/19/2020 18:46'
+	#timestamp : ''
 }
 GLTScalar class >> compileInitialsAccessor: stringOrSymbol [
 
@@ -38,7 +38,7 @@ GLTScalar class >> compileInitialsAccessor: stringOrSymbol [
 
 {
 	#category : #'code generation',
-	#timestamp : 'stlu 11/23/2020 14:04'
+	#timestamp : 'zagto 12/1/2020 18:35'
 }
 GLTScalar class >> generateClasses [
 
@@ -60,12 +60,14 @@ GLTScalar class >> generateClasses [
 		
 		cls compileAccessor: 'squeakArrayClass' value: group last.
 		cls compileAccessor: 'commandInitials' value: group fourth storeString.
-		cls compileAccessor: 'glslInitials' value: group fifth storeString]
+		cls compileAccessor: 'glslInitials' value: group fifth storeString.
+		
+		cls compileAccessor: 'componentType' value: cls]
 ]
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 11:51'
+	#timestamp : ''
 }
 GLTScalar class >> glslInitials [
 

@@ -12,7 +12,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/2/2020 13:30'
+	#timestamp : ''
 }
 GLGenFeature class >> registry: registry tag: featureTag [
 
@@ -23,7 +23,7 @@ GLGenFeature class >> registry: registry tag: featureTag [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:47'
+	#timestamp : ''
 }
 GLGenFeature >> generateIn: aClass [
 
@@ -40,7 +40,7 @@ GLGenFeature >> generateIn: aClass [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/3/2020 14:24'
+	#timestamp : ''
 }
 GLGenFeature >> getProfile: tag [
 
@@ -52,7 +52,7 @@ GLGenFeature >> getProfile: tag [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/2/2020 13:36'
+	#timestamp : ''
 }
 GLGenFeature >> initialize [
 
@@ -62,7 +62,7 @@ GLGenFeature >> initialize [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:19'
+	#timestamp : ''
 }
 GLGenFeature >> parent [
 
@@ -71,7 +71,7 @@ GLGenFeature >> parent [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 11/2/2020 14:26'
+	#timestamp : ''
 }
 GLGenFeature >> printOn: aStream [
 
@@ -80,7 +80,7 @@ GLGenFeature >> printOn: aStream [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:22'
+	#timestamp : ''
 }
 GLGenFeature >> profiles [
 
@@ -89,7 +89,7 @@ GLGenFeature >> profiles [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/2/2020 14:25'
+	#timestamp : ''
 }
 GLGenFeature >> registry: registry tag: featureTag [
 
@@ -106,7 +106,7 @@ GLGenFeature >> registry: registry tag: featureTag [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 11/2/2020 19:03'
+	#timestamp : ''
 }
 GLGenFeature >> removeGeneratedMethodsIn: aClass [
 
@@ -116,7 +116,7 @@ GLGenFeature >> removeGeneratedMethodsIn: aClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/3/2020 14:24'
+	#timestamp : ''
 }
 GLGenFeature >> sharedProfile [
 

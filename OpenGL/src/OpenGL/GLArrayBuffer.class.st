@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 11:55'
+	#timestamp : ''
 }
 GLArrayBuffer class >> bindingEnum [
 
@@ -16,7 +16,7 @@ GLArrayBuffer class >> bindingEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 12:02'
+	#timestamp : ''
 }
 GLArrayBuffer class >> target [
 

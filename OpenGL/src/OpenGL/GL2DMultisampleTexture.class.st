@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 00:38'
+	#timestamp : ''
 }
 GL2DMultisampleTexture class >> bindingEnum [
 
@@ -16,7 +16,7 @@ GL2DMultisampleTexture class >> bindingEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 00:43'
+	#timestamp : ''
 }
 GL2DMultisampleTexture class >> target [
 

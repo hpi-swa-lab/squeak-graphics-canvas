@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #'field definition',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 FFICallbackContext class >> fields [
 	"
@@ -47,7 +47,7 @@ typedef struct {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 FFICallbackContext class >> fromHandle: aHandleOrInteger [
 
@@ -58,7 +58,7 @@ FFICallbackContext class >> fromHandle: aHandleOrInteger [
 
 {
 	#category : #'callback result',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 FFICallbackContext >> errorResult [
 
@@ -67,7 +67,7 @@ FFICallbackContext >> errorResult [
 
 {
 	#category : #'callback result',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 FFICallbackContext >> externalObjectResult: anExternalObject [
 	"ExternalStructure, ExternalUnion, ExternalData ... handle MUST BE an ExternalAddress"
@@ -77,7 +77,7 @@ FFICallbackContext >> externalObjectResult: anExternalObject [
 
 {
 	#category : #'callback result',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 FFICallbackContext >> floatResult: aFloat [
 
@@ -87,7 +87,7 @@ FFICallbackContext >> floatResult: aFloat [
 
 {
 	#category : #'callback result',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 FFICallbackContext >> pointerResult: anExternalAddress [
 
@@ -96,7 +96,7 @@ FFICallbackContext >> pointerResult: anExternalAddress [
 
 {
 	#category : #'callback result',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 FFICallbackContext >> voidResult [
 
@@ -106,7 +106,7 @@ FFICallbackContext >> voidResult [
 
 {
 	#category : #'callback result',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 FFICallbackContext >> wordResult: aValue [
 	"Accept any value in the -2^31 to 2^32-1 range or booleans."

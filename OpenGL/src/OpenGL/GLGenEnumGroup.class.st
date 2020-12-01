@@ -11,7 +11,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/1/2020 20:14'
+	#timestamp : ''
 }
 GLGenEnumGroup class >> registry: registry name: aSymbol [
 
@@ -22,7 +22,7 @@ GLGenEnumGroup class >> registry: registry name: aSymbol [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 23:16'
+	#timestamp : ''
 }
 GLGenEnumGroup >> addEnum: enum [
 
@@ -31,7 +31,7 @@ GLGenEnumGroup >> addEnum: enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 23:16'
+	#timestamp : ''
 }
 GLGenEnumGroup >> addParameter: param [
 
@@ -40,7 +40,7 @@ GLGenEnumGroup >> addParameter: param [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:19'
+	#timestamp : ''
 }
 GLGenEnumGroup >> enums [
 
@@ -49,7 +49,7 @@ GLGenEnumGroup >> enums [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 10/31/2020 22:58'
+	#timestamp : ''
 }
 GLGenEnumGroup >> initialize [
 
@@ -60,7 +60,7 @@ GLGenEnumGroup >> initialize [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:19'
+	#timestamp : ''
 }
 GLGenEnumGroup >> parameters [
 
@@ -69,7 +69,7 @@ GLGenEnumGroup >> parameters [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 10/31/2020 23:35'
+	#timestamp : ''
 }
 GLGenEnumGroup >> printOn: aStream [
 

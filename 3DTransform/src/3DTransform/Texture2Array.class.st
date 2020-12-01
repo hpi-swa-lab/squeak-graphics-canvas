@@ -11,7 +11,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 Texture2Array class >> contentsClass [
 	^Vector2
@@ -19,7 +19,7 @@ Texture2Array class >> contentsClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 Texture2Array >> at: index put: value [
 	value isPoint

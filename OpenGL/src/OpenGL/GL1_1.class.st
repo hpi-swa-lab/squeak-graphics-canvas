@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GL1_1 class >> majorVersion [
 
@@ -16,7 +16,7 @@ GL1_1 class >> majorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GL1_1 class >> minorVersion [
 
@@ -25,7 +25,7 @@ GL1_1 class >> minorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 14:50'
+	#timestamp : ''
 }
 GL1_1 class >> versionNumber [
 
@@ -34,7 +34,7 @@ GL1_1 class >> versionNumber [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> ALPHA12 [
 
@@ -44,7 +44,7 @@ GL1_1 >> ALPHA12 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> ALPHA16 [
 
@@ -54,7 +54,7 @@ GL1_1 >> ALPHA16 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> ALPHA4 [
 
@@ -64,7 +64,7 @@ GL1_1 >> ALPHA4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> ALPHA8 [
 
@@ -74,7 +74,7 @@ GL1_1 >> ALPHA8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> C3F_V3F [
 
@@ -84,7 +84,7 @@ GL1_1 >> C3F_V3F [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> C4F_N3F_V3F [
 
@@ -94,7 +94,7 @@ GL1_1 >> C4F_N3F_V3F [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> C4UB_V2F [
 
@@ -104,7 +104,7 @@ GL1_1 >> C4UB_V2F [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> C4UB_V3F [
 
@@ -114,7 +114,7 @@ GL1_1 >> C4UB_V3F [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> CLIENT_ALL_ATTRIB_BITS [
 
@@ -124,7 +124,7 @@ GL1_1 >> CLIENT_ALL_ATTRIB_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> CLIENT_ATTRIB_STACK_DEPTH [
 
@@ -134,7 +134,7 @@ GL1_1 >> CLIENT_ATTRIB_STACK_DEPTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> CLIENT_PIXEL_STORE_BIT [
 
@@ -144,7 +144,7 @@ GL1_1 >> CLIENT_PIXEL_STORE_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> CLIENT_VERTEX_ARRAY_BIT [
 
@@ -154,7 +154,7 @@ GL1_1 >> CLIENT_VERTEX_ARRAY_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> COLOR_ARRAY [
 
@@ -164,7 +164,7 @@ GL1_1 >> COLOR_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> COLOR_ARRAY_POINTER [
 
@@ -174,7 +174,7 @@ GL1_1 >> COLOR_ARRAY_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> COLOR_ARRAY_SIZE [
 
@@ -184,7 +184,7 @@ GL1_1 >> COLOR_ARRAY_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> COLOR_ARRAY_STRIDE [
 
@@ -194,7 +194,7 @@ GL1_1 >> COLOR_ARRAY_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> COLOR_ARRAY_TYPE [
 
@@ -204,7 +204,7 @@ GL1_1 >> COLOR_ARRAY_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> COLOR_LOGIC_OP [
 
@@ -214,7 +214,7 @@ GL1_1 >> COLOR_LOGIC_OP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> DOUBLE [
 
@@ -224,7 +224,7 @@ GL1_1 >> DOUBLE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> EDGE_FLAG_ARRAY [
 
@@ -234,7 +234,7 @@ GL1_1 >> EDGE_FLAG_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> EDGE_FLAG_ARRAY_POINTER [
 
@@ -244,7 +244,7 @@ GL1_1 >> EDGE_FLAG_ARRAY_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> EDGE_FLAG_ARRAY_STRIDE [
 
@@ -254,7 +254,7 @@ GL1_1 >> EDGE_FLAG_ARRAY_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> FEEDBACK_BUFFER_POINTER [
 
@@ -264,7 +264,7 @@ GL1_1 >> FEEDBACK_BUFFER_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> FEEDBACK_BUFFER_SIZE [
 
@@ -274,7 +274,7 @@ GL1_1 >> FEEDBACK_BUFFER_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> FEEDBACK_BUFFER_TYPE [
 
@@ -284,7 +284,7 @@ GL1_1 >> FEEDBACK_BUFFER_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> INDEX_ARRAY [
 
@@ -294,7 +294,7 @@ GL1_1 >> INDEX_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> INDEX_ARRAY_POINTER [
 
@@ -304,7 +304,7 @@ GL1_1 >> INDEX_ARRAY_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> INDEX_ARRAY_STRIDE [
 
@@ -314,7 +314,7 @@ GL1_1 >> INDEX_ARRAY_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> INDEX_ARRAY_TYPE [
 
@@ -324,7 +324,7 @@ GL1_1 >> INDEX_ARRAY_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> INDEX_LOGIC_OP [
 
@@ -334,7 +334,7 @@ GL1_1 >> INDEX_LOGIC_OP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> INTENSITY [
 
@@ -344,7 +344,7 @@ GL1_1 >> INTENSITY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> INTENSITY12 [
 
@@ -354,7 +354,7 @@ GL1_1 >> INTENSITY12 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> INTENSITY16 [
 
@@ -364,7 +364,7 @@ GL1_1 >> INTENSITY16 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> INTENSITY4 [
 
@@ -374,7 +374,7 @@ GL1_1 >> INTENSITY4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> INTENSITY8 [
 
@@ -384,7 +384,7 @@ GL1_1 >> INTENSITY8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> LUMINANCE12 [
 
@@ -394,7 +394,7 @@ GL1_1 >> LUMINANCE12 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> LUMINANCE12_ALPHA12 [
 
@@ -404,7 +404,7 @@ GL1_1 >> LUMINANCE12_ALPHA12 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> LUMINANCE12_ALPHA4 [
 
@@ -414,7 +414,7 @@ GL1_1 >> LUMINANCE12_ALPHA4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> LUMINANCE16 [
 
@@ -424,7 +424,7 @@ GL1_1 >> LUMINANCE16 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> LUMINANCE16_ALPHA16 [
 
@@ -434,7 +434,7 @@ GL1_1 >> LUMINANCE16_ALPHA16 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> LUMINANCE4 [
 
@@ -444,7 +444,7 @@ GL1_1 >> LUMINANCE4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> LUMINANCE4_ALPHA4 [
 
@@ -454,7 +454,7 @@ GL1_1 >> LUMINANCE4_ALPHA4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> LUMINANCE6_ALPHA2 [
 
@@ -464,7 +464,7 @@ GL1_1 >> LUMINANCE6_ALPHA2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> LUMINANCE8 [
 
@@ -474,7 +474,7 @@ GL1_1 >> LUMINANCE8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> LUMINANCE8_ALPHA8 [
 
@@ -484,7 +484,7 @@ GL1_1 >> LUMINANCE8_ALPHA8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> MAX_CLIENT_ATTRIB_STACK_DEPTH [
 
@@ -494,7 +494,7 @@ GL1_1 >> MAX_CLIENT_ATTRIB_STACK_DEPTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> N3F_V3F [
 
@@ -504,7 +504,7 @@ GL1_1 >> N3F_V3F [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> NORMAL_ARRAY [
 
@@ -514,7 +514,7 @@ GL1_1 >> NORMAL_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> NORMAL_ARRAY_POINTER [
 
@@ -524,7 +524,7 @@ GL1_1 >> NORMAL_ARRAY_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> NORMAL_ARRAY_STRIDE [
 
@@ -534,7 +534,7 @@ GL1_1 >> NORMAL_ARRAY_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> NORMAL_ARRAY_TYPE [
 
@@ -544,7 +544,7 @@ GL1_1 >> NORMAL_ARRAY_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> POLYGON_OFFSET_FACTOR [
 
@@ -554,7 +554,7 @@ GL1_1 >> POLYGON_OFFSET_FACTOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> POLYGON_OFFSET_FILL [
 
@@ -564,7 +564,7 @@ GL1_1 >> POLYGON_OFFSET_FILL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> POLYGON_OFFSET_LINE [
 
@@ -574,7 +574,7 @@ GL1_1 >> POLYGON_OFFSET_LINE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> POLYGON_OFFSET_POINT [
 
@@ -584,7 +584,7 @@ GL1_1 >> POLYGON_OFFSET_POINT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> POLYGON_OFFSET_UNITS [
 
@@ -594,7 +594,7 @@ GL1_1 >> POLYGON_OFFSET_UNITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> PROXY_TEXTURE_1D [
 
@@ -604,7 +604,7 @@ GL1_1 >> PROXY_TEXTURE_1D [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> PROXY_TEXTURE_2D [
 
@@ -614,7 +614,7 @@ GL1_1 >> PROXY_TEXTURE_2D [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> R3_G3_B2 [
 
@@ -624,7 +624,7 @@ GL1_1 >> R3_G3_B2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> RGB10 [
 
@@ -634,7 +634,7 @@ GL1_1 >> RGB10 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> RGB10_A2 [
 
@@ -644,7 +644,7 @@ GL1_1 >> RGB10_A2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> RGB12 [
 
@@ -654,7 +654,7 @@ GL1_1 >> RGB12 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> RGB16 [
 
@@ -664,7 +664,7 @@ GL1_1 >> RGB16 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> RGB4 [
 
@@ -674,7 +674,7 @@ GL1_1 >> RGB4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> RGB5 [
 
@@ -684,7 +684,7 @@ GL1_1 >> RGB5 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> RGB5_A1 [
 
@@ -694,7 +694,7 @@ GL1_1 >> RGB5_A1 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> RGB8 [
 
@@ -704,7 +704,7 @@ GL1_1 >> RGB8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> RGBA12 [
 
@@ -714,7 +714,7 @@ GL1_1 >> RGBA12 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> RGBA16 [
 
@@ -724,7 +724,7 @@ GL1_1 >> RGBA16 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> RGBA2 [
 
@@ -734,7 +734,7 @@ GL1_1 >> RGBA2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> RGBA4 [
 
@@ -744,7 +744,7 @@ GL1_1 >> RGBA4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> RGBA8 [
 
@@ -754,7 +754,7 @@ GL1_1 >> RGBA8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> SELECTION_BUFFER_POINTER [
 
@@ -764,7 +764,7 @@ GL1_1 >> SELECTION_BUFFER_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> SELECTION_BUFFER_SIZE [
 
@@ -774,7 +774,7 @@ GL1_1 >> SELECTION_BUFFER_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> T2F_C3F_V3F [
 
@@ -784,7 +784,7 @@ GL1_1 >> T2F_C3F_V3F [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> T2F_C4F_N3F_V3F [
 
@@ -794,7 +794,7 @@ GL1_1 >> T2F_C4F_N3F_V3F [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> T2F_C4UB_V3F [
 
@@ -804,7 +804,7 @@ GL1_1 >> T2F_C4UB_V3F [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> T2F_N3F_V3F [
 
@@ -814,7 +814,7 @@ GL1_1 >> T2F_N3F_V3F [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> T2F_V3F [
 
@@ -824,7 +824,7 @@ GL1_1 >> T2F_V3F [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> T4F_C4F_N3F_V4F [
 
@@ -834,7 +834,7 @@ GL1_1 >> T4F_C4F_N3F_V4F [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> T4F_V4F [
 
@@ -844,7 +844,7 @@ GL1_1 >> T4F_V4F [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> TEXTURE_ALPHA_SIZE [
 
@@ -854,7 +854,7 @@ GL1_1 >> TEXTURE_ALPHA_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> TEXTURE_BINDING_1D [
 
@@ -864,7 +864,7 @@ GL1_1 >> TEXTURE_BINDING_1D [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> TEXTURE_BINDING_2D [
 
@@ -874,7 +874,7 @@ GL1_1 >> TEXTURE_BINDING_2D [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> TEXTURE_BLUE_SIZE [
 
@@ -884,7 +884,7 @@ GL1_1 >> TEXTURE_BLUE_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> TEXTURE_COORD_ARRAY [
 
@@ -894,7 +894,7 @@ GL1_1 >> TEXTURE_COORD_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> TEXTURE_COORD_ARRAY_POINTER [
 
@@ -904,7 +904,7 @@ GL1_1 >> TEXTURE_COORD_ARRAY_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> TEXTURE_COORD_ARRAY_SIZE [
 
@@ -914,7 +914,7 @@ GL1_1 >> TEXTURE_COORD_ARRAY_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> TEXTURE_COORD_ARRAY_STRIDE [
 
@@ -924,7 +924,7 @@ GL1_1 >> TEXTURE_COORD_ARRAY_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> TEXTURE_COORD_ARRAY_TYPE [
 
@@ -934,7 +934,7 @@ GL1_1 >> TEXTURE_COORD_ARRAY_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> TEXTURE_GREEN_SIZE [
 
@@ -944,7 +944,7 @@ GL1_1 >> TEXTURE_GREEN_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> TEXTURE_INTENSITY_SIZE [
 
@@ -954,7 +954,7 @@ GL1_1 >> TEXTURE_INTENSITY_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> TEXTURE_INTERNAL_FORMAT [
 
@@ -964,7 +964,7 @@ GL1_1 >> TEXTURE_INTERNAL_FORMAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> TEXTURE_LUMINANCE_SIZE [
 
@@ -974,7 +974,7 @@ GL1_1 >> TEXTURE_LUMINANCE_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> TEXTURE_PRIORITY [
 
@@ -984,7 +984,7 @@ GL1_1 >> TEXTURE_PRIORITY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> TEXTURE_RED_SIZE [
 
@@ -994,7 +994,7 @@ GL1_1 >> TEXTURE_RED_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> TEXTURE_RESIDENT [
 
@@ -1004,7 +1004,7 @@ GL1_1 >> TEXTURE_RESIDENT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> V2F [
 
@@ -1014,7 +1014,7 @@ GL1_1 >> V2F [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> V3F [
 
@@ -1024,7 +1024,7 @@ GL1_1 >> V3F [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> VERTEX_ARRAY [
 
@@ -1034,7 +1034,7 @@ GL1_1 >> VERTEX_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> VERTEX_ARRAY_POINTER [
 
@@ -1044,7 +1044,7 @@ GL1_1 >> VERTEX_ARRAY_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> VERTEX_ARRAY_SIZE [
 
@@ -1054,7 +1054,7 @@ GL1_1 >> VERTEX_ARRAY_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> VERTEX_ARRAY_STRIDE [
 
@@ -1064,7 +1064,7 @@ GL1_1 >> VERTEX_ARRAY_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> VERTEX_ARRAY_TYPE [
 
@@ -1074,7 +1074,7 @@ GL1_1 >> VERTEX_ARRAY_TYPE [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> areTexturesResident: n with: textures with: residences [
 
@@ -1085,7 +1085,7 @@ GL1_1 >> areTexturesResident: n with: textures with: residences [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> arrayElement: i [
 
@@ -1096,7 +1096,7 @@ GL1_1 >> arrayElement: i [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> bindTexture: target with: texture [
 
@@ -1107,7 +1107,7 @@ GL1_1 >> bindTexture: target with: texture [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> colorPointer: size with: type with: stride with: pointer [
 
@@ -1118,7 +1118,7 @@ GL1_1 >> colorPointer: size with: type with: stride with: pointer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> copyTexImage1D: target with: level with: internalformat with: x with: y with: width with: border [
 
@@ -1129,7 +1129,7 @@ GL1_1 >> copyTexImage1D: target with: level with: internalformat with: x with: y
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> copyTexImage2D: target with: level with: internalformat with: x with: y with: width with: height with: border [
 
@@ -1140,7 +1140,7 @@ GL1_1 >> copyTexImage2D: target with: level with: internalformat with: x with: y
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> copyTexSubImage1D: target with: level with: xoffset with: x with: y with: width [
 
@@ -1151,7 +1151,7 @@ GL1_1 >> copyTexSubImage1D: target with: level with: xoffset with: x with: y wit
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> copyTexSubImage2D: target with: level with: xoffset with: yoffset with: x with: y with: width with: height [
 
@@ -1162,7 +1162,7 @@ GL1_1 >> copyTexSubImage2D: target with: level with: xoffset with: yoffset with:
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> deleteTextures: n with: textures [
 
@@ -1173,7 +1173,7 @@ GL1_1 >> deleteTextures: n with: textures [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> disableClientState: array [
 
@@ -1184,7 +1184,7 @@ GL1_1 >> disableClientState: array [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> drawArrays: mode with: first with: count [
 
@@ -1195,7 +1195,7 @@ GL1_1 >> drawArrays: mode with: first with: count [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> drawElements: mode with: count with: type with: indices [
 
@@ -1206,7 +1206,7 @@ GL1_1 >> drawElements: mode with: count with: type with: indices [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> edgeFlagPointer: stride with: pointer [
 
@@ -1217,7 +1217,7 @@ GL1_1 >> edgeFlagPointer: stride with: pointer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> enableClientState: array [
 
@@ -1228,7 +1228,7 @@ GL1_1 >> enableClientState: array [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> genTextures: n with: textures [
 
@@ -1239,7 +1239,7 @@ GL1_1 >> genTextures: n with: textures [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> getPointerv: pname with: params [
 
@@ -1250,7 +1250,7 @@ GL1_1 >> getPointerv: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> indexPointer: type with: stride with: pointer [
 
@@ -1261,7 +1261,7 @@ GL1_1 >> indexPointer: type with: stride with: pointer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> indexub: c [
 
@@ -1272,7 +1272,7 @@ GL1_1 >> indexub: c [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> indexubv: c [
 
@@ -1283,7 +1283,7 @@ GL1_1 >> indexubv: c [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> interleavedArrays: format with: stride with: pointer [
 
@@ -1294,7 +1294,7 @@ GL1_1 >> interleavedArrays: format with: stride with: pointer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> isTexture: texture [
 
@@ -1305,7 +1305,7 @@ GL1_1 >> isTexture: texture [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> normalPointer: type with: stride with: pointer [
 
@@ -1316,7 +1316,7 @@ GL1_1 >> normalPointer: type with: stride with: pointer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> polygonOffset: factor with: units [
 
@@ -1327,7 +1327,7 @@ GL1_1 >> polygonOffset: factor with: units [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> popClientAttrib [
 
@@ -1338,7 +1338,7 @@ GL1_1 >> popClientAttrib [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> prioritizeTextures: n with: textures with: priorities [
 
@@ -1349,7 +1349,7 @@ GL1_1 >> prioritizeTextures: n with: textures with: priorities [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> pushClientAttrib: mask [
 
@@ -1360,7 +1360,7 @@ GL1_1 >> pushClientAttrib: mask [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> texCoordPointer: size with: type with: stride with: pointer [
 
@@ -1371,7 +1371,7 @@ GL1_1 >> texCoordPointer: size with: type with: stride with: pointer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> texSubImage1D: target with: level with: xoffset with: width with: format with: type with: pixels [
 
@@ -1382,7 +1382,7 @@ GL1_1 >> texSubImage1D: target with: level with: xoffset with: width with: forma
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> texSubImage2D: target with: level with: xoffset with: yoffset with: width with: height with: format with: type with: pixels [
 
@@ -1393,7 +1393,7 @@ GL1_1 >> texSubImage2D: target with: level with: xoffset with: yoffset with: wid
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL1_1 >> vertexPointer: size with: type with: stride with: pointer [
 

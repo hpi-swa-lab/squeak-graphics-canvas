@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtMorphicProject >> canApplyUserInterfaceTheme [
 
@@ -16,7 +16,7 @@ RtMorphicProject >> canApplyUserInterfaceTheme [
 
 {
 	#category : #enter,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtMorphicProject >> finalEnterActions: leavingProject [
 
@@ -26,7 +26,7 @@ RtMorphicProject >> finalEnterActions: leavingProject [
 
 {
 	#category : #enter,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtMorphicProject >> finalExitActions: enteringProject [
 
@@ -36,7 +36,7 @@ RtMorphicProject >> finalExitActions: enteringProject [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtMorphicProject >> initialize [
 	"Initialize a new Morphic Project"
@@ -46,7 +46,7 @@ RtMorphicProject >> initialize [
 
 {
 	#category : #'scheduling & debugging',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 RtMorphicProject >> interruptName: labelString [
 

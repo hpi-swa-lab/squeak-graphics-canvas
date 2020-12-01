@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 10/28/2020 13:00'
+	#timestamp : ''
 }
 GLUniform class >> program: glProgram index: anInteger [
 
@@ -16,7 +16,7 @@ GLUniform class >> program: glProgram index: anInteger [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 10/28/2020 12:58'
+	#timestamp : ''
 }
 GLUniform class >> program: glProgram name: aString [
 

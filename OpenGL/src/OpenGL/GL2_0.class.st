@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GL2_0 class >> majorVersion [
 
@@ -16,7 +16,7 @@ GL2_0 class >> majorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GL2_0 class >> minorVersion [
 
@@ -25,7 +25,7 @@ GL2_0 class >> minorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 14:51'
+	#timestamp : ''
 }
 GL2_0 class >> versionNumber [
 
@@ -34,7 +34,7 @@ GL2_0 class >> versionNumber [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> ACTIVE_ATTRIBUTES [
 
@@ -44,7 +44,7 @@ GL2_0 >> ACTIVE_ATTRIBUTES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> ACTIVE_ATTRIBUTE_MAX_LENGTH [
 
@@ -54,7 +54,7 @@ GL2_0 >> ACTIVE_ATTRIBUTE_MAX_LENGTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> ACTIVE_UNIFORMS [
 
@@ -64,7 +64,7 @@ GL2_0 >> ACTIVE_UNIFORMS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> ACTIVE_UNIFORM_MAX_LENGTH [
 
@@ -74,7 +74,7 @@ GL2_0 >> ACTIVE_UNIFORM_MAX_LENGTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> ATTACHED_SHADERS [
 
@@ -84,7 +84,7 @@ GL2_0 >> ATTACHED_SHADERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> BLEND_EQUATION_ALPHA [
 
@@ -94,7 +94,7 @@ GL2_0 >> BLEND_EQUATION_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> BLEND_EQUATION_RGB [
 
@@ -104,7 +104,7 @@ GL2_0 >> BLEND_EQUATION_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> BOOL [
 
@@ -114,7 +114,7 @@ GL2_0 >> BOOL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> BOOL_VEC2 [
 
@@ -124,7 +124,7 @@ GL2_0 >> BOOL_VEC2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> BOOL_VEC3 [
 
@@ -134,7 +134,7 @@ GL2_0 >> BOOL_VEC3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> BOOL_VEC4 [
 
@@ -144,7 +144,7 @@ GL2_0 >> BOOL_VEC4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> COMPILE_STATUS [
 
@@ -154,7 +154,7 @@ GL2_0 >> COMPILE_STATUS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> COORD_REPLACE [
 
@@ -164,7 +164,7 @@ GL2_0 >> COORD_REPLACE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> CURRENT_PROGRAM [
 
@@ -174,7 +174,7 @@ GL2_0 >> CURRENT_PROGRAM [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> CURRENT_VERTEX_ATTRIB [
 
@@ -184,7 +184,7 @@ GL2_0 >> CURRENT_VERTEX_ATTRIB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> DELETE_STATUS [
 
@@ -194,7 +194,7 @@ GL2_0 >> DELETE_STATUS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> DRAW_BUFFER0 [
 
@@ -204,7 +204,7 @@ GL2_0 >> DRAW_BUFFER0 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> DRAW_BUFFER1 [
 
@@ -214,7 +214,7 @@ GL2_0 >> DRAW_BUFFER1 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> DRAW_BUFFER10 [
 
@@ -224,7 +224,7 @@ GL2_0 >> DRAW_BUFFER10 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> DRAW_BUFFER11 [
 
@@ -234,7 +234,7 @@ GL2_0 >> DRAW_BUFFER11 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> DRAW_BUFFER12 [
 
@@ -244,7 +244,7 @@ GL2_0 >> DRAW_BUFFER12 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> DRAW_BUFFER13 [
 
@@ -254,7 +254,7 @@ GL2_0 >> DRAW_BUFFER13 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> DRAW_BUFFER14 [
 
@@ -264,7 +264,7 @@ GL2_0 >> DRAW_BUFFER14 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> DRAW_BUFFER15 [
 
@@ -274,7 +274,7 @@ GL2_0 >> DRAW_BUFFER15 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> DRAW_BUFFER2 [
 
@@ -284,7 +284,7 @@ GL2_0 >> DRAW_BUFFER2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> DRAW_BUFFER3 [
 
@@ -294,7 +294,7 @@ GL2_0 >> DRAW_BUFFER3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> DRAW_BUFFER4 [
 
@@ -304,7 +304,7 @@ GL2_0 >> DRAW_BUFFER4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> DRAW_BUFFER5 [
 
@@ -314,7 +314,7 @@ GL2_0 >> DRAW_BUFFER5 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> DRAW_BUFFER6 [
 
@@ -324,7 +324,7 @@ GL2_0 >> DRAW_BUFFER6 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> DRAW_BUFFER7 [
 
@@ -334,7 +334,7 @@ GL2_0 >> DRAW_BUFFER7 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> DRAW_BUFFER8 [
 
@@ -344,7 +344,7 @@ GL2_0 >> DRAW_BUFFER8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> DRAW_BUFFER9 [
 
@@ -354,7 +354,7 @@ GL2_0 >> DRAW_BUFFER9 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> FLOAT_MAT2 [
 
@@ -364,7 +364,7 @@ GL2_0 >> FLOAT_MAT2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> FLOAT_MAT3 [
 
@@ -374,7 +374,7 @@ GL2_0 >> FLOAT_MAT3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> FLOAT_MAT4 [
 
@@ -384,7 +384,7 @@ GL2_0 >> FLOAT_MAT4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> FLOAT_VEC2 [
 
@@ -394,7 +394,7 @@ GL2_0 >> FLOAT_VEC2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> FLOAT_VEC3 [
 
@@ -404,7 +404,7 @@ GL2_0 >> FLOAT_VEC3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> FLOAT_VEC4 [
 
@@ -414,7 +414,7 @@ GL2_0 >> FLOAT_VEC4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> FRAGMENT_SHADER [
 
@@ -424,7 +424,7 @@ GL2_0 >> FRAGMENT_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> FRAGMENT_SHADER_DERIVATIVE_HINT [
 
@@ -434,7 +434,7 @@ GL2_0 >> FRAGMENT_SHADER_DERIVATIVE_HINT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> INFO_LOG_LENGTH [
 
@@ -444,7 +444,7 @@ GL2_0 >> INFO_LOG_LENGTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> INT_VEC2 [
 
@@ -454,7 +454,7 @@ GL2_0 >> INT_VEC2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> INT_VEC3 [
 
@@ -464,7 +464,7 @@ GL2_0 >> INT_VEC3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> INT_VEC4 [
 
@@ -474,7 +474,7 @@ GL2_0 >> INT_VEC4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> LINK_STATUS [
 
@@ -484,7 +484,7 @@ GL2_0 >> LINK_STATUS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> LOWER_LEFT [
 
@@ -494,7 +494,7 @@ GL2_0 >> LOWER_LEFT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> MAX_COMBINED_TEXTURE_IMAGE_UNITS [
 
@@ -504,7 +504,7 @@ GL2_0 >> MAX_COMBINED_TEXTURE_IMAGE_UNITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> MAX_DRAW_BUFFERS [
 
@@ -514,7 +514,7 @@ GL2_0 >> MAX_DRAW_BUFFERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> MAX_FRAGMENT_UNIFORM_COMPONENTS [
 
@@ -524,7 +524,7 @@ GL2_0 >> MAX_FRAGMENT_UNIFORM_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> MAX_TEXTURE_COORDS [
 
@@ -534,7 +534,7 @@ GL2_0 >> MAX_TEXTURE_COORDS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> MAX_TEXTURE_IMAGE_UNITS [
 
@@ -544,7 +544,7 @@ GL2_0 >> MAX_TEXTURE_IMAGE_UNITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> MAX_VARYING_FLOATS [
 
@@ -554,7 +554,7 @@ GL2_0 >> MAX_VARYING_FLOATS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> MAX_VERTEX_ATTRIBS [
 
@@ -564,7 +564,7 @@ GL2_0 >> MAX_VERTEX_ATTRIBS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> MAX_VERTEX_TEXTURE_IMAGE_UNITS [
 
@@ -574,7 +574,7 @@ GL2_0 >> MAX_VERTEX_TEXTURE_IMAGE_UNITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> MAX_VERTEX_UNIFORM_COMPONENTS [
 
@@ -584,7 +584,7 @@ GL2_0 >> MAX_VERTEX_UNIFORM_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> POINT_SPRITE [
 
@@ -594,7 +594,7 @@ GL2_0 >> POINT_SPRITE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> POINT_SPRITE_COORD_ORIGIN [
 
@@ -604,7 +604,7 @@ GL2_0 >> POINT_SPRITE_COORD_ORIGIN [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> SAMPLER_1D [
 
@@ -614,7 +614,7 @@ GL2_0 >> SAMPLER_1D [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> SAMPLER_1D_SHADOW [
 
@@ -624,7 +624,7 @@ GL2_0 >> SAMPLER_1D_SHADOW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> SAMPLER_2D [
 
@@ -634,7 +634,7 @@ GL2_0 >> SAMPLER_2D [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> SAMPLER_2D_SHADOW [
 
@@ -644,7 +644,7 @@ GL2_0 >> SAMPLER_2D_SHADOW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> SAMPLER_3D [
 
@@ -654,7 +654,7 @@ GL2_0 >> SAMPLER_3D [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> SAMPLER_CUBE [
 
@@ -664,7 +664,7 @@ GL2_0 >> SAMPLER_CUBE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> SHADER_SOURCE_LENGTH [
 
@@ -674,7 +674,7 @@ GL2_0 >> SHADER_SOURCE_LENGTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> SHADER_TYPE [
 
@@ -684,7 +684,7 @@ GL2_0 >> SHADER_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> SHADING_LANGUAGE_VERSION [
 
@@ -694,7 +694,7 @@ GL2_0 >> SHADING_LANGUAGE_VERSION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> STENCIL_BACK_FAIL [
 
@@ -704,7 +704,7 @@ GL2_0 >> STENCIL_BACK_FAIL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> STENCIL_BACK_FUNC [
 
@@ -714,7 +714,7 @@ GL2_0 >> STENCIL_BACK_FUNC [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> STENCIL_BACK_PASS_DEPTH_FAIL [
 
@@ -724,7 +724,7 @@ GL2_0 >> STENCIL_BACK_PASS_DEPTH_FAIL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> STENCIL_BACK_PASS_DEPTH_PASS [
 
@@ -734,7 +734,7 @@ GL2_0 >> STENCIL_BACK_PASS_DEPTH_PASS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> STENCIL_BACK_REF [
 
@@ -744,7 +744,7 @@ GL2_0 >> STENCIL_BACK_REF [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> STENCIL_BACK_VALUE_MASK [
 
@@ -754,7 +754,7 @@ GL2_0 >> STENCIL_BACK_VALUE_MASK [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> STENCIL_BACK_WRITEMASK [
 
@@ -764,7 +764,7 @@ GL2_0 >> STENCIL_BACK_WRITEMASK [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> UPPER_LEFT [
 
@@ -774,7 +774,7 @@ GL2_0 >> UPPER_LEFT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> VALIDATE_STATUS [
 
@@ -784,7 +784,7 @@ GL2_0 >> VALIDATE_STATUS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> VERTEX_ATTRIB_ARRAY_ENABLED [
 
@@ -794,7 +794,7 @@ GL2_0 >> VERTEX_ATTRIB_ARRAY_ENABLED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> VERTEX_ATTRIB_ARRAY_NORMALIZED [
 
@@ -804,7 +804,7 @@ GL2_0 >> VERTEX_ATTRIB_ARRAY_NORMALIZED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> VERTEX_ATTRIB_ARRAY_POINTER [
 
@@ -814,7 +814,7 @@ GL2_0 >> VERTEX_ATTRIB_ARRAY_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> VERTEX_ATTRIB_ARRAY_SIZE [
 
@@ -824,7 +824,7 @@ GL2_0 >> VERTEX_ATTRIB_ARRAY_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> VERTEX_ATTRIB_ARRAY_STRIDE [
 
@@ -834,7 +834,7 @@ GL2_0 >> VERTEX_ATTRIB_ARRAY_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> VERTEX_ATTRIB_ARRAY_TYPE [
 
@@ -844,7 +844,7 @@ GL2_0 >> VERTEX_ATTRIB_ARRAY_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> VERTEX_PROGRAM_POINT_SIZE [
 
@@ -854,7 +854,7 @@ GL2_0 >> VERTEX_PROGRAM_POINT_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> VERTEX_PROGRAM_TWO_SIDE [
 
@@ -864,7 +864,7 @@ GL2_0 >> VERTEX_PROGRAM_TWO_SIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> VERTEX_SHADER [
 
@@ -874,7 +874,7 @@ GL2_0 >> VERTEX_SHADER [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> attachShader: program with: shader [
 
@@ -885,7 +885,7 @@ GL2_0 >> attachShader: program with: shader [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> bindAttribLocation: program with: index with: name [
 
@@ -896,7 +896,7 @@ GL2_0 >> bindAttribLocation: program with: index with: name [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> blendEquationSeparate: modeRGB with: modeAlpha [
 
@@ -907,7 +907,7 @@ GL2_0 >> blendEquationSeparate: modeRGB with: modeAlpha [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> compileShader: shader [
 
@@ -918,7 +918,7 @@ GL2_0 >> compileShader: shader [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> createProgram [
 
@@ -929,7 +929,7 @@ GL2_0 >> createProgram [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> createShader: type [
 
@@ -940,7 +940,7 @@ GL2_0 >> createShader: type [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> deleteProgram: program [
 
@@ -951,7 +951,7 @@ GL2_0 >> deleteProgram: program [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> deleteShader: shader [
 
@@ -962,7 +962,7 @@ GL2_0 >> deleteShader: shader [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> detachShader: program with: shader [
 
@@ -973,7 +973,7 @@ GL2_0 >> detachShader: program with: shader [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> disableVertexAttribArray: index [
 
@@ -984,7 +984,7 @@ GL2_0 >> disableVertexAttribArray: index [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> drawBuffers: n with: bufs [
 
@@ -995,7 +995,7 @@ GL2_0 >> drawBuffers: n with: bufs [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> enableVertexAttribArray: index [
 
@@ -1006,7 +1006,7 @@ GL2_0 >> enableVertexAttribArray: index [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> getActiveAttrib: program with: index with: bufSize with: length with: size with: type with: name [
 
@@ -1017,7 +1017,7 @@ GL2_0 >> getActiveAttrib: program with: index with: bufSize with: length with: s
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> getActiveUniform: program with: index with: bufSize with: length with: size with: type with: name [
 
@@ -1028,7 +1028,7 @@ GL2_0 >> getActiveUniform: program with: index with: bufSize with: length with: 
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> getAttachedShaders: program with: maxCount with: count with: shaders [
 
@@ -1039,7 +1039,7 @@ GL2_0 >> getAttachedShaders: program with: maxCount with: count with: shaders [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> getAttribLocation: program with: name [
 
@@ -1050,7 +1050,7 @@ GL2_0 >> getAttribLocation: program with: name [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> getProgramInfoLog: program with: bufSize with: length with: infoLog [
 
@@ -1061,7 +1061,7 @@ GL2_0 >> getProgramInfoLog: program with: bufSize with: length with: infoLog [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> getProgramiv: program with: pname with: params [
 
@@ -1072,7 +1072,7 @@ GL2_0 >> getProgramiv: program with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> getShaderInfoLog: shader with: bufSize with: length with: infoLog [
 
@@ -1083,7 +1083,7 @@ GL2_0 >> getShaderInfoLog: shader with: bufSize with: length with: infoLog [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> getShaderSource: shader with: bufSize with: length with: source [
 
@@ -1094,7 +1094,7 @@ GL2_0 >> getShaderSource: shader with: bufSize with: length with: source [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> getShaderiv: shader with: pname with: params [
 
@@ -1105,7 +1105,7 @@ GL2_0 >> getShaderiv: shader with: pname with: params [
 
 {
 	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 14:43'
+	#timestamp : ''
 }
 GL2_0 >> getShadingLanguageVersion [
 
@@ -1118,7 +1118,7 @@ GL2_0 >> getShadingLanguageVersion [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> getUniformLocation: program with: name [
 
@@ -1129,7 +1129,7 @@ GL2_0 >> getUniformLocation: program with: name [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> getUniformfv: program with: location with: params [
 
@@ -1140,7 +1140,7 @@ GL2_0 >> getUniformfv: program with: location with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> getUniformiv: program with: location with: params [
 
@@ -1151,7 +1151,7 @@ GL2_0 >> getUniformiv: program with: location with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> getVertexAttribPointerv: index with: pname with: pointer [
 
@@ -1162,7 +1162,7 @@ GL2_0 >> getVertexAttribPointerv: index with: pname with: pointer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> getVertexAttribdv: index with: pname with: params [
 
@@ -1173,7 +1173,7 @@ GL2_0 >> getVertexAttribdv: index with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> getVertexAttribfv: index with: pname with: params [
 
@@ -1184,7 +1184,7 @@ GL2_0 >> getVertexAttribfv: index with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> getVertexAttribiv: index with: pname with: params [
 
@@ -1195,7 +1195,7 @@ GL2_0 >> getVertexAttribiv: index with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> isProgram: program [
 
@@ -1206,7 +1206,7 @@ GL2_0 >> isProgram: program [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> isShader: shader [
 
@@ -1217,7 +1217,7 @@ GL2_0 >> isShader: shader [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> linkProgram: program [
 
@@ -1228,7 +1228,7 @@ GL2_0 >> linkProgram: program [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> shaderSource: shader with: count with: string with: length [
 
@@ -1239,7 +1239,7 @@ GL2_0 >> shaderSource: shader with: count with: string with: length [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> stencilFuncSeparate: face with: func with: ref with: mask [
 
@@ -1250,7 +1250,7 @@ GL2_0 >> stencilFuncSeparate: face with: func with: ref with: mask [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> stencilMaskSeparate: face with: mask [
 
@@ -1261,7 +1261,7 @@ GL2_0 >> stencilMaskSeparate: face with: mask [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> stencilOpSeparate: face with: sfail with: dpfail with: dppass [
 
@@ -1272,7 +1272,7 @@ GL2_0 >> stencilOpSeparate: face with: sfail with: dpfail with: dppass [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> uniform1f: location with: v0 [
 
@@ -1283,7 +1283,7 @@ GL2_0 >> uniform1f: location with: v0 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> uniform1fv: location with: count with: value [
 
@@ -1294,7 +1294,7 @@ GL2_0 >> uniform1fv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> uniform1i: location with: v0 [
 
@@ -1305,7 +1305,7 @@ GL2_0 >> uniform1i: location with: v0 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> uniform1iv: location with: count with: value [
 
@@ -1316,7 +1316,7 @@ GL2_0 >> uniform1iv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> uniform2f: location with: v0 with: v1 [
 
@@ -1327,7 +1327,7 @@ GL2_0 >> uniform2f: location with: v0 with: v1 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> uniform2fv: location with: count with: value [
 
@@ -1338,7 +1338,7 @@ GL2_0 >> uniform2fv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> uniform2i: location with: v0 with: v1 [
 
@@ -1349,7 +1349,7 @@ GL2_0 >> uniform2i: location with: v0 with: v1 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> uniform2iv: location with: count with: value [
 
@@ -1360,7 +1360,7 @@ GL2_0 >> uniform2iv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> uniform3f: location with: v0 with: v1 with: v2 [
 
@@ -1371,7 +1371,7 @@ GL2_0 >> uniform3f: location with: v0 with: v1 with: v2 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> uniform3fv: location with: count with: value [
 
@@ -1382,7 +1382,7 @@ GL2_0 >> uniform3fv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> uniform3i: location with: v0 with: v1 with: v2 [
 
@@ -1393,7 +1393,7 @@ GL2_0 >> uniform3i: location with: v0 with: v1 with: v2 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> uniform3iv: location with: count with: value [
 
@@ -1404,7 +1404,7 @@ GL2_0 >> uniform3iv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> uniform4f: location with: v0 with: v1 with: v2 with: v3 [
 
@@ -1415,7 +1415,7 @@ GL2_0 >> uniform4f: location with: v0 with: v1 with: v2 with: v3 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> uniform4fv: location with: count with: value [
 
@@ -1426,7 +1426,7 @@ GL2_0 >> uniform4fv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> uniform4i: location with: v0 with: v1 with: v2 with: v3 [
 
@@ -1437,7 +1437,7 @@ GL2_0 >> uniform4i: location with: v0 with: v1 with: v2 with: v3 [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> uniform4iv: location with: count with: value [
 
@@ -1448,7 +1448,7 @@ GL2_0 >> uniform4iv: location with: count with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> uniformMatrix2fv: location with: count with: transpose with: value [
 
@@ -1459,7 +1459,7 @@ GL2_0 >> uniformMatrix2fv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> uniformMatrix3fv: location with: count with: transpose with: value [
 
@@ -1470,7 +1470,7 @@ GL2_0 >> uniformMatrix3fv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> uniformMatrix4fv: location with: count with: transpose with: value [
 
@@ -1481,7 +1481,7 @@ GL2_0 >> uniformMatrix4fv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> useProgram: program [
 
@@ -1492,7 +1492,7 @@ GL2_0 >> useProgram: program [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> validateProgram: program [
 
@@ -1503,7 +1503,7 @@ GL2_0 >> validateProgram: program [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib1d: index with: x [
 
@@ -1514,7 +1514,7 @@ GL2_0 >> vertexAttrib1d: index with: x [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib1dv: index with: v [
 
@@ -1525,7 +1525,7 @@ GL2_0 >> vertexAttrib1dv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib1f: index with: x [
 
@@ -1536,7 +1536,7 @@ GL2_0 >> vertexAttrib1f: index with: x [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib1fv: index with: v [
 
@@ -1547,7 +1547,7 @@ GL2_0 >> vertexAttrib1fv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib1s: index with: x [
 
@@ -1558,7 +1558,7 @@ GL2_0 >> vertexAttrib1s: index with: x [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib1sv: index with: v [
 
@@ -1569,7 +1569,7 @@ GL2_0 >> vertexAttrib1sv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib2d: index with: x with: y [
 
@@ -1580,7 +1580,7 @@ GL2_0 >> vertexAttrib2d: index with: x with: y [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib2dv: index with: v [
 
@@ -1591,7 +1591,7 @@ GL2_0 >> vertexAttrib2dv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib2f: index with: x with: y [
 
@@ -1602,7 +1602,7 @@ GL2_0 >> vertexAttrib2f: index with: x with: y [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib2fv: index with: v [
 
@@ -1613,7 +1613,7 @@ GL2_0 >> vertexAttrib2fv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib2s: index with: x with: y [
 
@@ -1624,7 +1624,7 @@ GL2_0 >> vertexAttrib2s: index with: x with: y [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib2sv: index with: v [
 
@@ -1635,7 +1635,7 @@ GL2_0 >> vertexAttrib2sv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib3d: index with: x with: y with: z [
 
@@ -1646,7 +1646,7 @@ GL2_0 >> vertexAttrib3d: index with: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib3dv: index with: v [
 
@@ -1657,7 +1657,7 @@ GL2_0 >> vertexAttrib3dv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib3f: index with: x with: y with: z [
 
@@ -1668,7 +1668,7 @@ GL2_0 >> vertexAttrib3f: index with: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib3fv: index with: v [
 
@@ -1679,7 +1679,7 @@ GL2_0 >> vertexAttrib3fv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib3s: index with: x with: y with: z [
 
@@ -1690,7 +1690,7 @@ GL2_0 >> vertexAttrib3s: index with: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib3sv: index with: v [
 
@@ -1701,7 +1701,7 @@ GL2_0 >> vertexAttrib3sv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib4Nbv: index with: v [
 
@@ -1712,7 +1712,7 @@ GL2_0 >> vertexAttrib4Nbv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib4Niv: index with: v [
 
@@ -1723,7 +1723,7 @@ GL2_0 >> vertexAttrib4Niv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib4Nsv: index with: v [
 
@@ -1734,7 +1734,7 @@ GL2_0 >> vertexAttrib4Nsv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib4Nub: index with: x with: y with: z with: w [
 
@@ -1745,7 +1745,7 @@ GL2_0 >> vertexAttrib4Nub: index with: x with: y with: z with: w [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib4Nubv: index with: v [
 
@@ -1756,7 +1756,7 @@ GL2_0 >> vertexAttrib4Nubv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib4Nuiv: index with: v [
 
@@ -1767,7 +1767,7 @@ GL2_0 >> vertexAttrib4Nuiv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib4Nusv: index with: v [
 
@@ -1778,7 +1778,7 @@ GL2_0 >> vertexAttrib4Nusv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib4bv: index with: v [
 
@@ -1789,7 +1789,7 @@ GL2_0 >> vertexAttrib4bv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib4d: index with: x with: y with: z with: w [
 
@@ -1800,7 +1800,7 @@ GL2_0 >> vertexAttrib4d: index with: x with: y with: z with: w [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib4dv: index with: v [
 
@@ -1811,7 +1811,7 @@ GL2_0 >> vertexAttrib4dv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib4f: index with: x with: y with: z with: w [
 
@@ -1822,7 +1822,7 @@ GL2_0 >> vertexAttrib4f: index with: x with: y with: z with: w [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib4fv: index with: v [
 
@@ -1833,7 +1833,7 @@ GL2_0 >> vertexAttrib4fv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib4iv: index with: v [
 
@@ -1844,7 +1844,7 @@ GL2_0 >> vertexAttrib4iv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib4s: index with: x with: y with: z with: w [
 
@@ -1855,7 +1855,7 @@ GL2_0 >> vertexAttrib4s: index with: x with: y with: z with: w [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib4sv: index with: v [
 
@@ -1866,7 +1866,7 @@ GL2_0 >> vertexAttrib4sv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib4ubv: index with: v [
 
@@ -1877,7 +1877,7 @@ GL2_0 >> vertexAttrib4ubv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib4uiv: index with: v [
 
@@ -1888,7 +1888,7 @@ GL2_0 >> vertexAttrib4uiv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttrib4usv: index with: v [
 
@@ -1899,7 +1899,7 @@ GL2_0 >> vertexAttrib4usv: index with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : ''
 }
 GL2_0 >> vertexAttribPointer: index with: size with: type with: normalized with: stride with: pointer [
 

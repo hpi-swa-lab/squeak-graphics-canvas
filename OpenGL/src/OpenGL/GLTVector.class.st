@@ -6,8 +6,22 @@ Class {
 }
 
 {
+	#category : #'as yet unclassified',
+	#timestamp : 'zagto 12/1/2020 18:23'
+}
+GLTVector class >> componentType: type numComponents: size [
+	size = 1 ifTrue: [ ^ type ].
+	
+	self allSubclassesDo: [ :cls |
+		(cls componentType instance = type and: [ cls numComponents = size ]) ifTrue: [
+			^ cls ]].
+	
+	self error: 'no such vector type'
+]
+
+{
 	#category : #'code generation',
-	#timestamp : 'stlu 11/23/2020 17:57'
+	#timestamp : ''
 }
 GLTVector class >> generateClasses [
 
@@ -29,7 +43,7 @@ GLTVector class >> generateClasses [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:21'
+	#timestamp : ''
 }
 GLTVector class >> numComponents [
 
@@ -38,7 +52,7 @@ GLTVector class >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:23'
+	#timestamp : ''
 }
 GLTVector >> numComponents [
 
