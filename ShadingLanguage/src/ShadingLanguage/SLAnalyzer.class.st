@@ -58,7 +58,7 @@ SLAnalyzer >> acceptLiteralNode: aLiteralNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 12/1/2020 18:19'
+	#timestamp : 'stlu 12/2/2020 02:54'
 }
 SLAnalyzer >> acceptMessageNode: aMessageNode [
 	| argTypes mapping |
@@ -66,7 +66,7 @@ SLAnalyzer >> acceptMessageNode: aMessageNode [
 
 	argTypes := aMessageNode arguments collect: [ :arg | arg type ] as: Array.
 	mapping := aMessageNode receiver type perform: aMessageNode selector withArguments: argTypes.
-	aMessageNode propertyAt: #mapping put: mapping.
+	aMessageNode mapping: mapping.
 	aMessageNode type: mapping type
 	
 ]
@@ -109,6 +109,15 @@ SLAnalyzer >> acceptMethodNode: aMethodNode [
 SLAnalyzer >> acceptVariableNode: aVariableNode [
 	aVariableNode isRead ifTrue: [
 		aVariableNode type: (self variableType: aVariableNode name)]
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/2/2020 00:33'
+}
+SLAnalyzer >> argumentToInterface [
+
+	^ argumentToInterface
 ]
 
 {
@@ -165,6 +174,24 @@ SLAnalyzer >> setVariable: name toType: type [
 				self error: 'Variable ' , name , ' was already declared as ' , lastType asString ,
 				' but is redeclared here as ' , type asString ]]
 		ifAbsentPut: [ type ].
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/2/2020 00:33'
+}
+SLAnalyzer >> variableToInterface [
+
+	^ variableToInterface
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/2/2020 00:33'
+}
+SLAnalyzer >> variableToType [
+
+	^ variableToType
 ]
 
 {

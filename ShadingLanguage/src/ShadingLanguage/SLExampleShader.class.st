@@ -31,14 +31,14 @@ Class {
 
 {
 	#category : #code,
-	#timestamp : 'zagto 12/1/2020 18:39'
+	#timestamp : 'stlu 12/2/2020 03:52'
 }
 SLExampleShader class >> bloom: out inputs: in uniforms: u [
 
 	| gamma hdrColor bloomColor result |
 	gamma := 2.2.
 	hdrColor := (u scene beFloat2DSampler at: in texCoords beFloatVector2) rgb.
-	bloomColor := (u bloomBlur beFloat2DSampler at: in texCoords beFloatVector2 "todo") rgb.
+	bloomColor := (u bloomBlur beFloat2DSampler at: in texCoords) rgb.
 	u bloom beBoolean ifTrue: [hdrColor := hdrColor + bloomColor].
 	"tone mapping"
 	result := 1.0 asVector3 - (hdrColor negated * u exposure beFloat) exp.
