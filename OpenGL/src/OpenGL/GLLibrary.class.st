@@ -203,31 +203,32 @@ GLLibrary >> assertIsCurrent [
 
 {
 	#category : #resources,
-	#timestamp : 'stlu 10/16/2020 12:43'
+	#timestamp : 'stlu 12/3/2020 18:54'
 }
 GLLibrary >> at: aKey [
 
-	^ context resources userData at: aKey
+	self deprecated: 'Access userData directly instead'.
+	^ self userData at: aKey
 ]
 
 {
 	#category : #resources,
-	#timestamp : 'stlu 10/16/2020 12:43'
+	#timestamp : 'stlu 12/3/2020 18:54'
 }
 GLLibrary >> at: aKey ifAbsentPut: aBlock [
 
-	^ context resources userData at: aKey ifAbsentPut: aBlock
+	self deprecated: 'Access userData directly instead'.
+	^ self userData at: aKey ifAbsentPut: aBlock
 ]
 
 {
 	#category : #resources,
-	#timestamp : 'stlu 10/16/2020 12:43'
+	#timestamp : 'stlu 12/3/2020 18:54'
 }
 GLLibrary >> at: aKey put: aValue [
 
-	^ context resources userData
-			at: aKey
-			put: aValue
+	self deprecated: 'Access userData directly instead'.
+	^ self userData at: aKey put: aValue
 ]
 
 {
@@ -405,15 +406,6 @@ GLLibrary >> getRendererString [
 ]
 
 {
-	#category : #resources,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
-GLLibrary >> getShaderProgram: aClass [
-
-	^ context resources getShaderProgram: aClass library: self
-]
-
-{
 	#category : #parameters,
 	#timestamp : 'stlu 11/12/2020 14:34'
 }
@@ -535,7 +527,7 @@ GLLibrary >> majorVersion [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/30/2020 17:57'
+	#timestamp : 'stlu 12/3/2020 19:44'
 }
 GLLibrary >> makeCurrentDuring: aBlock [
 
@@ -544,7 +536,7 @@ GLLibrary >> makeCurrentDuring: aBlock [
 			| previousContext |
 			self == previousLib ifTrue: [^ aBlock value].
 			(previousContext := previousLib context) == context
-				ifTrue: [[GL := self. aBlock value] ensure: [GL := previousLib]]
+				ifTrue: [[GL := self. ^ aBlock value] ensure: [GL := previousLib]]
 				ifFalse: [
 					[previousContext deactivate.
 					context activate.
@@ -614,6 +606,15 @@ GLLibrary >> profileError [
 
 {
 	#category : #resources,
+	#timestamp : 'stlu 12/3/2020 18:41'
+}
+GLLibrary >> programs [
+
+	^ context programs
+]
+
+{
+	#category : #resources,
 	#timestamp : 'stlu 10/26/2020 12:15'
 }
 GLLibrary >> registerObject: glObject [
@@ -664,6 +665,15 @@ GLLibrary >> shouldClose [
 GLLibrary >> swapBuffers [
 
 	context swapBuffers
+]
+
+{
+	#category : #resources,
+	#timestamp : 'stlu 12/3/2020 18:54'
+}
+GLLibrary >> userData [
+
+	^ context userData
 ]
 
 {

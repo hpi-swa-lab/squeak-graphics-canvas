@@ -74,6 +74,17 @@ GLStaticProgram class >> fragmentShader [
 ]
 
 {
+	#category : #'instance creation',
+	#timestamp : 'stlu 12/3/2020 18:58'
+}
+GLStaticProgram class >> instance [
+
+	^ GL programs
+		at: self
+		ifAbsentPut: [self create]
+]
+
+{
 	#category : #'shader code',
 	#timestamp : 'stlu 11/13/2020 16:40'
 }

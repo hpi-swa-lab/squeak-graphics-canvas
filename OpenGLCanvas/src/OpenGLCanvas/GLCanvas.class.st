@@ -213,14 +213,16 @@ GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 12/3/2020 19:40'
 }
 GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 
 	extent := aPoint.
 	framebuffer := aFrameBuffer.
 	
-	resources := self glLibrary at: GLSharedCanvasResources ifAbsentPut: [ GLSharedCanvasResources new ].
+	resources := self glLibrary userData
+					at: GLSharedCanvasResources
+					ifAbsentPut: [ GLSharedCanvasResources new ].
 	clipRect := 0 @ 0 extent: extent.
 	baseTransform := transform := Matrix4x4 ortho: clipRect near: 0 far: 1
 ]

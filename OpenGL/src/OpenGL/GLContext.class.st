@@ -2,14 +2,16 @@ Class {
 	#name : #GLContext,
 	#superclass : #Object,
 	#instVars : [
-		'api',
+		'library',
 		'bindings',
+		'objectStore',
+		'programs',
+		'userData',
+		'api',
 		'version',
 		'profile',
 		'extensions',
-		'library',
-		'resources',
-		'errorCallback'
+		'resources'
 	],
 	#pools : [
 		'GLConstants'
@@ -72,11 +74,11 @@ GLContext >> api [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:51'
+	#timestamp : 'stlu 12/3/2020 19:39'
 }
-GLContext >> api: anObject [
+GLContext >> api: aSymbol [
 
-	api := anObject
+	api := aSymbol
 ]
 
 {
@@ -117,11 +119,11 @@ GLContext >> deactivate [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 10/26/2020 12:06'
+	#timestamp : 'stlu 12/3/2020 18:52'
 }
 GLContext >> destroy [
 
-	resources cleanUp
+	objectStore do: [:each | each cleanUp]
 ]
 
 {
@@ -145,42 +147,33 @@ GLContext >> extensions [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 12/1/2020 02:58'
+	#timestamp : 'stlu 12/3/2020 18:55'
 }
 GLContext >> initialize [
 
-	resources := GLResources new.
+	objectStore := OrderedCollection new.
+	programs := IdentityDictionary new.
+	userData := Dictionary new.
 	self initializeLibrary.
-	self initializeContextState.
 	self initializeBindings
 ]
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 12/1/2020 02:44'
+	#timestamp : 'stlu 12/3/2020 19:27'
 }
 GLContext >> initializeBindings [
 
 	bindings := Dictionary new.
-	GLObject allSubclassesDo: [:cls |
-		(cls theMetaClass includesSelector: #initializeBindings:) ifTrue: [
-			cls initializeBindings: self]]
+	library makeCurrentDuring: [
+		GLObject allSubclassesDo: [:cls |
+			(cls theMetaClass includesSelector: #initializeBindings) ifTrue: [
+				cls initializeBindings]]]
 ]
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/12/2020 15:30'
-}
-GLContext >> initializeContextState [
-
-	self assert: api isSymbol.
-	
-	extensions := library getExtensions
-]
-
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/16/2020 01:23'
+	#timestamp : 'stlu 12/3/2020 18:45'
 }
 GLContext >> initializeLibrary [
 
@@ -200,17 +193,19 @@ GLContext >> initializeLibrary [
 	library checkForError.
 	library := libraryClass context: self profile: profile.
 	
+	"determine available extensions"
+	extensions := library getExtensions.
+	
 	self deactivate
 ]
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 12:29'
+	#timestamp : 'stlu 12/3/2020 18:31'
 }
 GLContext >> library [
 
-	self flag: #todo. "Stub for now until context refactoring."
-	^ GL3_3 context: self
+	^ library
 ]
 
 {
@@ -223,30 +218,21 @@ GLContext >> profile [
 ]
 
 {
-	#category : #resources,
-	#timestamp : 'stlu 10/26/2020 12:30'
+	#category : #accessing,
+	#timestamp : 'stlu 12/3/2020 18:43'
+}
+GLContext >> programs [
+
+	^ programs
+]
+
+{
+	#category : #'object store',
+	#timestamp : 'stlu 12/3/2020 18:49'
 }
 GLContext >> registerObject: glObject [
 
-	resources objects add: glObject
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
-GLContext >> resources [
-
-	^ resources
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:51'
-}
-GLContext >> resources: anObject [
-
-	resources := anObject
+	objectStore add: glObject
 ]
 
 {
@@ -275,6 +261,15 @@ GLContext >> swapBuffers [
 GLContext >> unbind: target [
 
 	bindings removeKey: target ifAbsent: []
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/3/2020 18:57'
+}
+GLContext >> userData [
+
+	^ userData
 ]
 
 {

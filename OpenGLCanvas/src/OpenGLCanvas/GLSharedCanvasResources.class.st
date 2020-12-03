@@ -100,14 +100,14 @@ GLSharedCanvasResources >> initializeProgramAttributes [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 10/26/2020 11:04'
+	#timestamp : 'stlu 12/3/2020 18:56'
 }
 GLSharedCanvasResources >> initializePrograms [
 
-	textureProgram := GL getShaderProgram: GLCanvasTextureProgram.
-	outlineProgram := GL getShaderProgram: GLCanvasOutlineProgram.
-	rectangleProgram := GL getShaderProgram: GLCanvasRectangleProgram.
-	fontProgram := GL getShaderProgram: GLCanvasFontProgram.
+	textureProgram := GLCanvasTextureProgram instance.
+	outlineProgram := GLCanvasOutlineProgram instance.
+	rectangleProgram := GLCanvasRectangleProgram instance.
+	fontProgram := GLCanvasFontProgram instance.
 	GL checkForError
 ]
 
