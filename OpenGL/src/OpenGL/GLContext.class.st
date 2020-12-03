@@ -82,24 +82,6 @@ GLContext >> api: aSymbol [
 ]
 
 {
-	#category : #bindings,
-	#timestamp : 'stlu 11/30/2020 18:19'
-}
-GLContext >> bind: anObject to: target [
-
-	^ bindings at: target put: anObject
-]
-
-{
-	#category : #bindings,
-	#timestamp : 'stlu 11/30/2020 18:19'
-}
-GLContext >> bindingOf: target [
-
-	^ bindings at: target ifAbsent: [nil]
-]
-
-{
 	#category : #accessing,
 	#timestamp : 'stlu 11/30/2020 17:53'
 }
@@ -143,6 +125,15 @@ GLContext >> endFrame [
 GLContext >> extensions [
 
 	^ extensions
+]
+
+{
+	#category : #bindings,
+	#timestamp : 'stlu 12/3/2020 19:16'
+}
+GLContext >> forgetBinding: bindingEnum [
+
+	bindings at: bindingEnum put: nil
 ]
 
 {
@@ -227,12 +218,30 @@ GLContext >> programs [
 ]
 
 {
+	#category : #bindings,
+	#timestamp : 'stlu 12/3/2020 19:17'
+}
+GLContext >> recallBinding: bindingEnum [
+
+	^ bindings at: bindingEnum ifAbsentPut: [nil]
+]
+
+{
 	#category : #'object store',
 	#timestamp : 'stlu 12/3/2020 18:49'
 }
 GLContext >> registerObject: glObject [
 
 	objectStore add: glObject
+]
+
+{
+	#category : #bindings,
+	#timestamp : 'stlu 12/3/2020 19:17'
+}
+GLContext >> rememberBinding: bindingEnum as: anObject [
+
+	^ bindings at: bindingEnum put: anObject
 ]
 
 {
@@ -252,15 +261,6 @@ GLContext >> shouldClose [
 GLContext >> swapBuffers [
 
 	self subclassResponsibility
-]
-
-{
-	#category : #bindings,
-	#timestamp : 'stlu 12/1/2020 03:24'
-}
-GLContext >> unbind: target [
-
-	bindings removeKey: target ifAbsent: []
 ]
 
 {

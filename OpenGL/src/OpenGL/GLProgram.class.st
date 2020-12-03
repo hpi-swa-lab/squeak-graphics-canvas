@@ -5,7 +5,7 @@ Class {
 		'shaders',
 		'resources'
 	],
-	#category : #'OpenGL-Wrappers-Shaders',
+	#category : #'OpenGL-Wrappers-Programs',
 	#commentStamp : ''
 }
 
@@ -30,20 +30,38 @@ GLProgram class >> allocate: n in: anIntegerArray [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/6/2020 15:05'
+	#timestamp : 'stlu 12/3/2020 19:35'
 }
-GLProgram class >> current [
+GLProgram class >> bindID: id to: target [
 
-	^ GL getIntegerParameter: GL_CURRENT_PROGRAM
+	GL useProgram: id
 ]
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/6/2020 15:05'
+	#timestamp : 'stlu 12/3/2020 19:03'
 }
-GLProgram class >> use: id [
+GLProgram class >> current [
 
-	GL useProgram: id
+	^ self bound
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/3/2020 19:05'
+}
+GLProgram class >> target [
+
+	^ GL_ACTIVE_PROGRAM
+]
+
+{
+	#category : #activation,
+	#timestamp : 'stlu 12/3/2020 19:05'
+}
+GLProgram class >> useID: id [
+
+	self bindID: id
 ]
 
 {
@@ -54,6 +72,15 @@ GLProgram >> attachShader: glShader [
 
 	GL attachShader: id with: glShader id.
 	shaders add: glShader
+]
+
+{
+	#category : #activation,
+	#timestamp : 'stlu 12/3/2020 19:33'
+}
+GLProgram >> disuse [
+
+	self unbind
 ]
 
 {
@@ -198,26 +225,29 @@ GLProgram >> shaders [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/6/2020 15:04'
+	#timestamp : 'stlu 12/3/2020 19:32'
 }
-GLProgram >> use [
+GLProgram >> target [
 
-	self class use: id
+	^ self class target
 ]
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 11/13/2020 16:20'
+	#timestamp : 'stlu 12/3/2020 19:33'
+}
+GLProgram >> use [
+
+	self bind
+]
+
+{
+	#category : #activation,
+	#timestamp : 'stlu 12/3/2020 19:33'
 }
 GLProgram >> useDuring: aBlock [
 
-	| previousID |
-	self flag: #todo. "Remember actual objects"
-	previousID := self class current.
-	previousID = id ifTrue: [^ aBlock value].
-	self class use: id.
-	aBlock ensure: [
-		self class use: previousID]
+	self boundDuring: aBlock
 ]
 
 {

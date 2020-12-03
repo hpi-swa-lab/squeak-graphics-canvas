@@ -57,6 +57,42 @@ GLObject class >> allocate: n in: anIntegerArray [
 ]
 
 {
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 19:04'
+}
+GLObject class >> bindID: anInteger [
+
+	self bindID: anInteger to: self target
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 17:58'
+}
+GLObject class >> bindID: anInteger to: target [
+
+	self subclassResponsibility
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 18:12'
+}
+GLObject class >> bound [
+
+	^ self boundTo: self target
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 19:31'
+}
+GLObject class >> boundTo: target [
+
+	^ GL recallBinding: target
+]
+
+{
 	#category : #'instance creation',
 	#timestamp : 'stlu 10/29/2020 01:25'
 }
@@ -95,15 +131,88 @@ GLObject class >> newFrom: glObject [
 ]
 
 {
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 18:11'
+}
+GLObject class >> target [
+
+	self subclassResponsibility
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 18:11'
+}
+GLObject class >> unbind [
+
+	self unbind: self target
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 19:20'
+}
+GLObject class >> unbind: target [
+
+	self bindID: GL_NONE to: target.
+	GL forgetBinding: target
+]
+
+{
 	#category : #comparing,
-	#timestamp : 'stlu 10/29/2020 01:22'
+	#timestamp : 'stlu 12/3/2020 16:01'
 }
 GLObject >> = otherObject [
 
 	self == otherObject ifTrue: [^ true].
-	context = otherObject context ifFalse: [^ false].
 	id = otherObject id ifFalse: [^ false].
+	self class = otherObject class ifFalse: [^ false].
+	context = otherObject context ifFalse: [^ false].
 	^ true
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 18:03'
+}
+GLObject >> bind [
+
+	self bindTo: self target
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 19:19'
+}
+GLObject >> bindTo: targetEnum [
+
+	self class bindID: id to: targetEnum.
+	GL rememberBinding: targetEnum as: self
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 18:08'
+}
+GLObject >> boundDuring: aBlock [
+
+	^ self boundTo: self target during: aBlock
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 18:00'
+}
+GLObject >> boundTo: targetEnum during: aBlock [
+
+	| previous |
+	previous := self class boundTo: targetEnum.
+	previous = self ifTrue: [^ aBlock value].
+	self bindTo: targetEnum.
+	^ aBlock ensure: [
+		previous
+			ifNil: [self class unbind: targetEnum]
+			ifNotNil: [previous bindTo: targetEnum]]
 ]
 
 {
@@ -135,11 +244,11 @@ GLObject >> delete [
 
 {
 	#category : #comparing,
-	#timestamp : 'stlu 10/29/2020 01:22'
+	#timestamp : 'stlu 12/3/2020 16:06'
 }
 GLObject >> hash [
 
-	^ id hash bitXor: context hash
+	^ (id hash bitXor: context hash) bitXor: self class hash
 ]
 
 {
@@ -251,4 +360,22 @@ GLObject >> printOn: aStream [
 GLObject >> register [
 
 	GL registerObject: self
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 18:04'
+}
+GLObject >> target [
+
+	self subclassResponsibility
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 18:04'
+}
+GLObject >> unbind [
+
+	self class unbind: self target
 ]

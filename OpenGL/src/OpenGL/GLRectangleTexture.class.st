@@ -7,15 +7,6 @@ Class {
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 00:40'
-}
-GLRectangleTexture class >> bindingEnum [
-
-	^ GL_TEXTURE_BINDING_RECTANGLE
-]
-
-{
-	#category : #binding,
 	#timestamp : 'stlu 10/29/2020 00:43'
 }
 GLRectangleTexture class >> target [

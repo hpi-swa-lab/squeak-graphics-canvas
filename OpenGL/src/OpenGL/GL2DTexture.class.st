@@ -7,15 +7,6 @@ Class {
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 10/29/2020 00:38'
-}
-GL2DTexture class >> bindingEnum [
-
-	^ GL_TEXTURE_BINDING_2D
-]
-
-{
-	#category : #binding,
 	#timestamp : 'stlu 10/29/2020 00:43'
 }
 GL2DTexture class >> target [

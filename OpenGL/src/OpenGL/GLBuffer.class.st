@@ -21,11 +21,11 @@ GLBuffer class >> allocate: n in: anIntegerArray [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 12/1/2020 02:19'
+	#timestamp : 'stlu 12/3/2020 17:45'
 }
-GLBuffer class >> bind: id to: target [
+GLBuffer class >> bindID: anInteger to: target [
 
-	GL bindBuffer: target with: id
+	GL bindBuffer: target with: anInteger
 ]
 
 {
@@ -35,50 +35,6 @@ GLBuffer class >> bind: id to: target [
 GLBuffer class >> defaultTarget [
 
 	^ GL_ARRAY_BUFFER
-]
-
-{
-	#category : #binding,
-	#timestamp : 'stlu 12/1/2020 02:41'
-}
-GLBuffer >> bind [
-
-	self bindTo: target
-]
-
-{
-	#category : #binding,
-	#timestamp : 'stlu 12/1/2020 03:23'
-}
-GLBuffer >> bindTo: targetEnum [
-
-	self class bind: id to: targetEnum.
-	GL context bind: self to: targetEnum
-]
-
-{
-	#category : #binding,
-	#timestamp : 'stlu 12/1/2020 02:41'
-}
-GLBuffer >> boundDuring: aBlock [
-
-	^ self boundTo: target during: aBlock
-]
-
-{
-	#category : #binding,
-	#timestamp : 'stlu 12/1/2020 03:22'
-}
-GLBuffer >> boundTo: targetEnum during: aBlock [
-
-	| previous |
-	previous := GL context bindingOf: targetEnum.
-	previous = self ifTrue: [^ aBlock value].
-	self bindTo: targetEnum.
-	^ aBlock ensure: [
-		previous
-			ifNil: [self unbindFrom: targetEnum]
-			ifNotNil: [previous bindTo: targetEnum]]
 ]
 
 {
@@ -336,25 +292,6 @@ GLBuffer >> targetTransformFeedbackBuffer [
 GLBuffer >> targetUniformBuffer [
 
 	target := GL_UNIFORM_BUFFER
-]
-
-{
-	#category : #binding,
-	#timestamp : 'stlu 12/1/2020 03:25'
-}
-GLBuffer >> unbind [
-
-	self unbindFrom: target
-]
-
-{
-	#category : #binding,
-	#timestamp : 'stlu 12/1/2020 03:26'
-}
-GLBuffer >> unbindFrom: targetEnum [
-
-	self class bind: nil to: targetEnum.
-	GL context bind: nil to: targetEnum
 ]
 
 {

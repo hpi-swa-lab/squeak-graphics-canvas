@@ -28,6 +28,18 @@ GLShader class >> allocate: n in: anIntegerArray [
 ]
 
 {
+	#category : #'instance creation',
+	#timestamp : 'stlu 12/2/2020 15:12'
+}
+GLShader class >> compileGLSL: glslSourceString [
+
+	^ self create
+		source: glslSourceString;
+		compile;
+		yourself
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 10/28/2020 17:51'
 }

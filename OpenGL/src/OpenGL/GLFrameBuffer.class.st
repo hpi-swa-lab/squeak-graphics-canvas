@@ -15,10 +15,11 @@ Class {
 	#name : #GLFrameBuffer,
 	#superclass : #GLObject,
 	#instVars : [
+		'target',
 		'colorAttachment0'
 	],
 	#category : #'OpenGL-Wrappers-Framebuffers',
-	#commentStamp : ''
+	#commentStamp : 'stlu 11/13/2020 18:20'
 }
 
 {
@@ -32,29 +33,38 @@ GLFrameBuffer class >> allocate: n in: anIntegerArray [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 15:15'
+	#timestamp : 'stlu 12/3/2020 17:44'
 }
-GLFrameBuffer class >> bind: id to: target [
+GLFrameBuffer class >> bindID: anInteger to: target [
 
-	GL bindFramebuffer: target with: id
+	GL bindFramebuffer: target with: anInteger
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/3/2020 14:54'
+}
+GLFrameBuffer class >> defaultTarget [
+
+	^ GL_FRAMEBUFFER
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/3/2020 19:28'
+}
+GLFrameBuffer class >> display [
+
+	^ GLDisplayFrameBuffer create
 ]
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 16:50'
+	#timestamp : 'stlu 12/3/2020 19:29'
 }
-GLFrameBuffer class >> currentDrawBinding [
+GLFrameBuffer class >> unbind: target [
 
-	^ GL getIntegerParameter: GL_DRAW_FRAMEBUFFER_BINDING
-]
-
-{
-	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 16:50'
-}
-GLFrameBuffer class >> currentReadBinding [
-
-	^ GL getIntegerParameter: GL_READ_FRAMEBUFFER_BINDING
+	self display bindTo: target
 ]
 
 {
@@ -86,80 +96,56 @@ GLFrameBuffer >> asFormOfExtent: aPoint [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 17:04'
+	#timestamp : 'stlu 12/3/2020 18:21'
 }
-GLFrameBuffer >> bind [
-	"binds to both read and draw"
-	self class bind: id to: GL_FRAMEBUFFER
+GLFrameBuffer >> bindTo: targetEnum [
+
+	target = GL_FRAMEBUFFER
+		ifTrue: [	self bindToReadAndDraw]
+		ifFalse: [super bindTo: targetEnum]
 ]
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 17:04'
+	#timestamp : 'stlu 12/3/2020 19:18'
 }
-GLFrameBuffer >> bindToDraw [
+GLFrameBuffer >> bindToReadAndDraw [
 
-	self class bind: id to: GL_DRAW_FRAMEBUFFER
+	self class bindID: id to: GL_FRAMEBUFFER.
+	GL
+		rememberBinding: GL_DRAW_FRAMEBUFFER as: self;
+		rememberBinding: GL_READ_FRAMEBUFFER as: self
 ]
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 17:04'
+	#timestamp : 'stlu 12/3/2020 18:19'
 }
-GLFrameBuffer >> bindToRead [
+GLFrameBuffer >> boundTo: targetEnum during: aBlock [
 
-	self class bind: id to: GL_READ_FRAMEBUFFER
+	^ targetEnum = GL_FRAMEBUFFER
+		ifTrue: [self boundToReadAndDrawDuring: aBlock]
+		ifFalse: [super boundTo: targetEnum during: aBlock]
 ]
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 17:31'
+	#timestamp : 'stlu 12/3/2020 16:22'
 }
-GLFrameBuffer >> boundDuring: aBlock [
+GLFrameBuffer >> boundToReadAndDrawDuring: aBlock [
 
 	| previousRead previousDraw |
-	self flag: #todo. "Remember actual objects"
-	previousRead := self class currentReadBinding.
-	previousDraw := self class currentDrawBinding.
-	previousRead = previousDraw = id ifTrue: [^ aBlock value].
-	self class bind: id to: GL_FRAMEBUFFER.
-	aBlock ensure: [
+	previousRead := self class boundTo: GL_READ_FRAMEBUFFER.
+	previousDraw := self class boundTo: GL_DRAW_FRAMEBUFFER.
+	previousRead = previousDraw = self ifTrue: [^ aBlock value].
+	self bindTo: GL_FRAMEBUFFER.
+	^ aBlock ensure: [
 		previousRead = previousDraw
 			ifTrue: [
-				self class bind: previousDraw to: GL_FRAMEBUFFER]
+				previousRead bindTo: GL_FRAMEBUFFER]
 			ifFalse: [
-				self class bind: previousDraw to: GL_DRAW_FRAMEBUFFER.
-				self class bind: previousRead to: GL_READ_FRAMEBUFFER]]
-]
-
-{
-	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 17:28'
-}
-GLFrameBuffer >> boundToDrawDuring: aBlock [
-
-	| previousID |
-	self flag: #todo. "Remember actual objects"
-	previousID := self class currentDrawBinding.
-	previousID = id ifTrue: [^ aBlock value].
-	self class bind: id to: GL_DRAW_BUFFER.
-	aBlock ensure: [
-		self class bind: previousID to: GL_DRAW_BUFFER]
-]
-
-{
-	#category : #binding,
-	#timestamp : 'stlu 11/6/2020 17:28'
-}
-GLFrameBuffer >> boundToReadDuring: aBlock [
-
-	| previousID |
-	self flag: #todo. "Remember actual objects"
-	previousID := self class currentReadBinding.
-	previousID = id ifTrue: [^ aBlock value].
-	self class bind: id to: GL_READ_BUFFER.
-	aBlock ensure: [
-		self class bind: previousID to: GL_READ_BUFFER]
+				previousRead bindTo: GL_READ_FRAMEBUFFER.
+				previousDraw bindTo: GL_DRAW_FRAMEBUFFER]]
 ]
 
 {
@@ -181,12 +167,40 @@ GLFrameBuffer >> delete [
 ]
 
 {
+	#category : #'initialize-release',
+	#timestamp : 'stlu 12/3/2020 16:13'
+}
+GLFrameBuffer >> initialize [
+
+	super initialize.
+	target := self class defaultTarget
+]
+
+{
 	#category : #testing,
 	#timestamp : 'stlu 10/29/2020 12:16'
 }
 GLFrameBuffer >> isFrameBuffer [
 
 	^ true
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/3/2020 14:55'
+}
+GLFrameBuffer >> target [
+
+	^ target
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/3/2020 14:55'
+}
+GLFrameBuffer >> target: anObject [
+
+	target := anObject
 ]
 
 {
