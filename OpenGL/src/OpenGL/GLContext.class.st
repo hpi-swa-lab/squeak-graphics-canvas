@@ -11,7 +11,8 @@ Class {
 		'version',
 		'profile',
 		'extensions',
-		'resources'
+		'resources',
+		'isDestroyed'
 	],
 	#pools : [
 		'GLConstants'
@@ -101,11 +102,12 @@ GLContext >> deactivate [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 12/3/2020 18:52'
+	#timestamp : 'stlu 12/8/2020 16:16'
 }
 GLContext >> destroy [
 
-	objectStore do: [:each | each cleanUp]
+	"objectStore do: [:each | each cleanUp]"
+	isDestroyed := true
 ]
 
 {
@@ -138,10 +140,11 @@ GLContext >> forgetBinding: bindingEnum [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 12/3/2020 18:55'
+	#timestamp : 'stlu 12/8/2020 16:15'
 }
 GLContext >> initialize [
 
+	isDestroyed := false.
 	objectStore := OrderedCollection new.
 	programs := IdentityDictionary new.
 	userData := Dictionary new.
@@ -188,6 +191,15 @@ GLContext >> initializeLibrary [
 	extensions := library getExtensions.
 	
 	self deactivate
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/8/2020 16:15'
+}
+GLContext >> isDestroyed [
+
+	^ isDestroyed
 ]
 
 {

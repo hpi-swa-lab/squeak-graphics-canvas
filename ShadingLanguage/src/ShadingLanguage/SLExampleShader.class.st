@@ -25,7 +25,7 @@ void main() {
 Class {
 	#name : #SLExampleShader,
 	#superclass : #Object,
-	#category : #ShadingLanguage,
+	#category : #'ShadingLanguage-Examples',
 	#commentStamp : ''
 }
 

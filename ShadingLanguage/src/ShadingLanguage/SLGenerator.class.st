@@ -70,7 +70,7 @@ SLGenerator >> acceptMessageNode: aMessageNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/2/2020 00:49'
+	#timestamp : 'stlu 12/8/2020 15:51'
 }
 SLGenerator >> acceptMethodNode: aMethodNode [
 	analyzer := SLAnalyzer new visitNode: aMethodNode.
@@ -79,11 +79,12 @@ SLGenerator >> acceptMethodNode: aMethodNode [
 	stream nextPutAll: '#version 330 core'; lf; lf.
 	
 	analyzer variableToInterface keysAndValuesDo: [:name :interface |
-		stream
-			nextPutAll: interface; space;
-			nextPutAll: (analyzer variableToType at: name) declarator; space;
-			nextPutAll: name;
-			nextPut: $;; lf].
+		(name beginsWith: 'gl_') ifFalse: [
+			stream
+				nextPutAll: interface; space;
+				nextPutAll: (analyzer variableToType at: name) declarator; space;
+				nextPutAll: name;
+				nextPut: $;; lf]].
 
 	stream nextPutAll: 'void main() {'; lf.
 	

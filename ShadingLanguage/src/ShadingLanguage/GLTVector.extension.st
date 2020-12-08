@@ -30,6 +30,28 @@ GLTVector >> - another [
 
 {
 	#category : #'*ShadingLanguage',
+	#timestamp : 'stlu 12/8/2020 14:21'
+}
+GLTVector >> @ another [
+	| resultSize resultType |
+	((another isKindOf: GLTScalar) or: [
+		another isKindOf: GLTVector]) ifFalse: [
+			^ self error: 'Attempt to use @ with a ', another class name , ', but it can only be used with scalars and vectors.'].
+	
+	resultSize := self numComponents + another numComponents.
+	resultSize > 4 ifTrue: [
+		^ self error: 'Result of @ vector concatination results in ', resultSize, ' elements, but ',
+			'the maximum possible vector size is 4.'].
+	
+	resultType := GLTVector componentType: self componentType instance numComponents: resultSize.
+	^ SLMappingToCall new
+		type: resultType instance;
+		targetSelector: resultType declarator
+	
+]
+
+{
+	#category : #'*ShadingLanguage',
 	#timestamp : 'zagto 12/1/2020 18:45'
 }
 GLTVector >> doesNotUnderstand: aMessage [

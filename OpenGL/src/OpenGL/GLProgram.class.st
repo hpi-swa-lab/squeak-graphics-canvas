@@ -75,6 +75,16 @@ GLProgram >> attachShader: glShader [
 ]
 
 {
+	#category : #actions,
+	#timestamp : 'stlu 12/8/2020 16:30'
+}
+GLProgram >> detachShader: aShader [
+
+	shaders remove: aShader.
+	GL detachShader: id with: aShader id.
+]
+
+{
 	#category : #activation,
 	#timestamp : 'stlu 12/3/2020 19:33'
 }
@@ -120,11 +130,14 @@ GLProgram >> getBinary [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 11/16/2020 13:52'
+	#timestamp : 'stlu 12/8/2020 17:27'
 }
 GLProgram >> getInfoLog [
 
-	ByteArray new: self getInfoLogLength during: [:result |
+	| length |
+	length := self getInfoLogLength.
+	length < 0 ifTrue: [^ ''].
+	ByteArray new: length during: [:result |
 		GL getProgramInfoLog: id with: result size with: nil with: result.
 		^ result allButLast "remove null-terminator" utf8Decoded withSqueakLineEndings]
 ]

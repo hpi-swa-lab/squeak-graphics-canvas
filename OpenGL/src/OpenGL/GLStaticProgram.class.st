@@ -85,6 +85,17 @@ GLStaticProgram class >> instance [
 ]
 
 {
+	#category : #'instance creation',
+	#timestamp : 'stlu 12/8/2020 15:29'
+}
+GLStaticProgram class >> instanceOrNil [
+
+	^ GL programs
+		at: self
+		ifAbsent: [nil]
+]
+
+{
 	#category : #'shader code',
 	#timestamp : 'stlu 11/13/2020 16:40'
 }
@@ -177,6 +188,17 @@ GLStaticProgram >> uniform: location value: anObject [
 
 	self assert: location >= 0.
 	anObject putAtUniform: location
+]
+
+{
+	#category : #initialization,
+	#timestamp : 'stlu 12/8/2020 16:30'
+}
+GLStaticProgram >> updateShaders [
+
+	shaders do: [:shader |
+		self detachShader: shader].
+	self initializeShaders
 ]
 
 {
