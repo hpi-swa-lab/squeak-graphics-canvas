@@ -61,12 +61,14 @@ GLFWContext >> deactivate [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 12/8/2020 17:47'
 }
 GLFWContext >> destroy [
 
 	super destroy.
-	window ifNotNil: [window destroy]
+	window ifNotNil: [
+		GLFW contexts removeKey: window.
+		window destroy]
 ]
 
 {
