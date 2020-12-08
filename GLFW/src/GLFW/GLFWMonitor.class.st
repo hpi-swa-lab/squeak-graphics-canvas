@@ -4,6 +4,5 @@ Class {
 	#pools : [
 		'GLFWConstants'
 	],
-	#category : #'GLFW-Core',
-	#commentStamp : ''
+	#category : #'GLFW-Core'
 }

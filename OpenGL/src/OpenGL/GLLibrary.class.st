@@ -456,6 +456,12 @@ GLLibrary >> profileError [
 ]
 
 { #category : #resources }
+GLLibrary >> recompileShaders [
+
+	^ context resources recompileShaders
+]
+
+{ #category : #resources }
 GLLibrary >> registerObject: glObject [
 
 	context registerObject: glObject

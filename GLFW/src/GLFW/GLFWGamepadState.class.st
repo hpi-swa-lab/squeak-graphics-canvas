@@ -4,14 +4,10 @@ Class {
 	#pools : [
 		'GLFWConstants'
 	],
-	#category : #'GLFW-Core',
-	#commentStamp : ''
+	#category : #'GLFW-Core'
 }
 
-{
-	#category : #'field definition',
-	#timestamp : 'stlu 10/20/2020 22:04'
-}
+{ #category : #'field definition' }
 GLFWGamepadState class >> fields [ "self defineFields"
 
 	^ #(

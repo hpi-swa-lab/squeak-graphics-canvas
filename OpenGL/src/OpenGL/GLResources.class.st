@@ -44,6 +44,12 @@ GLResources >> objects [
 	^ objects
 ]
 
+{ #category : #nil }
+GLResources >> recompileShaders [
+	
+	shaders keysDo: [:aClass | shaders at: aClass put: aClass create]
+]
+
 { #category : #accessing }
 GLResources >> shaders [
 

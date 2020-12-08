@@ -35,32 +35,37 @@ GLCanvas class >> extent: aPoint framebuffer: glFrameBuffer [
 { #category : #'instance creation' }
 GLCanvas class >> openAndDraw: anObject [
 
-	self openAndDraw: anObject doing: []
+	^ self openAndDraw: anObject doing: []
 	
 ]
 
 { #category : #'instance creation' }
 GLCanvas class >> openAndDraw: anObject doing: aBlock [
 
-	| display |
+	| display window |
 	display := RtDisplayFramebufferStore extent: anObject extent.
+	window := display glLibrary context window.
 	
-	[Sensor anyButtonPressed] whileFalse: [
+	[[[window shouldClose] whileFalse: [
+		"window extent: window extent + (1@1)."
+		display glLibrary makeCurrentDuring: [
+			display extent: window extent.
+			display extentChanged.].
 		display canvasDo: [:c |
-			c fullDraw: anObject.
+			c scaleBy: window extent / anObject extent during: [c fullDraw: anObject].
 			aBlock cull: c].
 		anObject step.
-		100 milliSeconds wait].
+		100 milliSeconds wait]]
+	ensure: [display glLibrary destroy]] fork.
 	
-	display glLibrary destroy
+	^ display
 	
 ]
 
 { #category : #'instance creation' }
 GLCanvas class >> openAndDrawCreatingMorphs: anObject [
-
 	
-	self openAndDraw: anObject doing: [:c | c getPixelData asMorph openInWorld]
+	^ self openAndDraw: anObject doing: [:c | c getPixelData asMorph openInWorld]
 	
 ]
 
@@ -69,7 +74,7 @@ GLCanvas class >> openAndDrawSavingImages: anObject [
 
 	| frame |
 	frame := 0.
-	self openAndDraw: anObject doing: [:c |
+	^ self openAndDraw: anObject doing: [:c |
 		c getPixelData writePNGfileNamed: frame asString , '.png'.
 		frame := frame + 1]
 	
@@ -94,6 +99,12 @@ GLCanvas >> bindAndUseProgram: aProgram during: aBlock [
 	self boundDuring: [
 		aProgram useDuring: [
 			aBlock cull: self.]]
+]
+
+{ #category : #accessing }
+GLCanvas >> bitmapPolygonProgram [
+
+	^ resources bitmapPolygonProgram
 ]
 
 { #category : #binding }
@@ -142,44 +153,160 @@ GLCanvas >> clipRect: aRectangle during: aBlock [
 ]
 
 { #category : #'drawing-polygons' }
-GLCanvas >> drawPolygon: vertices color: fillColor borderWidth: borderWidth borderColor: borderColor [
+GLCanvas >> drawBasePolygon: vbo [
+
+	self glLibrary enable: GL_STENCIL_TEST.
+	self glLibrary clear: GL_STENCIL_BUFFER_BIT.
+	
+	self glLibrary stencilFunc: GL_ALWAYS with: 0 with: 1.
+	self glLibrary stencilOp: GL_INVERT with: GL_INVERT with: GL_INVERT.
+	self glLibrary colorMask: GL_FALSE with: GL_FALSE with: GL_FALSE  with: GL_FALSE.
+	
+	vbo draw: GL_TRIANGLE_FAN from: 0 count: vbo size.
+	
+	self glLibrary stencilFunc: GL_EQUAL with: 1 with: 1.
+	self glLibrary stencilOp: GL_KEEP with: GL_KEEP with: GL_KEEP.
+	self glLibrary colorMask: GL_TRUE with: GL_TRUE with: GL_TRUE  with: GL_TRUE.
+	
+	vbo draw: GL_TRIANGLE_FAN from: 0 count: vbo size.
+	
+	self glLibrary disable: GL_STENCIL_TEST.
+	
+	^ vbo
+]
+
+{ #category : #'drawing-polygons' }
+GLCanvas >> drawBasePolygon: vertices withProgram: aProgram [
 
 	| vbo collection |
+				
+	collection := OrderedCollection new.
+	vertices do: [:position | collection add: position x.  collection add: position y.].
+	vbo := GLArrayBuffer create.
+	vbo
+		usage: GL_STATIC_DRAW
+		data: collection asFloat32Array.
+	
+	vbo boundDuring: [
+		aProgram vertexAttrib: aProgram aPosLocation components: 2 stride: 8 offset: 0.
+		GL checkForError].
+	
+	self glLibrary enable: GL_STENCIL_TEST.
+	self glLibrary clear: GL_STENCIL_BUFFER_BIT.
+	
+	self glLibrary stencilFunc: GL_ALWAYS with: 0 with: 1.
+	self glLibrary stencilOp: GL_INVERT with: GL_INVERT with: GL_INVERT.
+	self glLibrary colorMask: GL_FALSE with: GL_FALSE with: GL_FALSE  with: GL_FALSE.
+	
+	vbo draw: GL_TRIANGLE_FAN from: 0 count: vertices size.
+	
+	self glLibrary stencilFunc: GL_EQUAL with: 1 with: 1.
+	self glLibrary stencilOp: GL_KEEP with: GL_KEEP with: GL_KEEP.
+	self glLibrary colorMask: GL_TRUE with: GL_TRUE with: GL_TRUE  with: GL_TRUE.
+	
+	vbo draw: GL_TRIANGLE_FAN from: 0 count: vertices size.
+	
+	self glLibrary disable: GL_STENCIL_TEST.
+	
+	^ vbo
+]
+
+{ #category : #'drawing-polygons' }
+GLCanvas >> drawBitmapPolygon: vertices fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor [
+
+	| vbo clampMode |
+	self bindAndUseProgram: self bitmapPolygonProgram during: [
+		(RtFormStore form: aFillStyle form) glTextureDo: [:texture |
+			texture boundDuring: [
+				self bitmapPolygonProgram
+					formOrigin: aFillStyle origin;
+					formDirection: aFillStyle direction;
+					formNormal: aFillStyle normal;
+					mvp: transform.
+					
+				clampMode := aFillStyle tileFlag ifTrue: [GL_REPEAT] ifFalse: [GL_CLAMP_TO_EDGE].
+								
+				self glLibrary texParameteri: GL_TEXTURE_2D with: GL_TEXTURE_WRAP_S with: clampMode.
+				self glLibrary texParameteri: GL_TEXTURE_2D with: GL_TEXTURE_WRAP_T with: clampMode.
+			
+				vbo := self polygonVbo: vertices.
+				
+				vbo boundDuring: [
+					self bitmapPolygonProgram form: 0.
+					GL checkForError.
+					self bitmapPolygonProgram vertexAttrib: self polygonProgram aPosLocation components: 2 stride: 8 offset: 0.
+					GL checkForError].
+				
+				self drawBasePolygon: vbo.
+				self drawPolygonBorder: vbo borderWidth: borderWidth borderColor: borderColor]]]
+]
+
+{ #category : #'drawing-polygons' }
+GLCanvas >> drawGradientPolygon: vertices fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor [
+
+	| vbo ramp |
+	self bindAndUseProgram: self gradientPolygonProgram during: [
+		ramp := aFillStyle pixelRamp.
+		(RtFormStore form: (Form extent: ramp size @ 1 depth: 32 bits: ramp)) glTextureDo: [:texture |
+			texture boundDuring: [
+				self gradientPolygonProgram
+					gradientOrigin: aFillStyle origin;
+					gradientDirection: aFillStyle direction;
+					gradientRadial: aFillStyle radial;
+					mvp: transform.
+				
+				self glLibrary texParameteri: GL_TEXTURE_2D with: GL_TEXTURE_WRAP_S with: GL_CLAMP_TO_EDGE.
+				self glLibrary texParameteri: GL_TEXTURE_2D with: GL_TEXTURE_WRAP_T with: GL_CLAMP_TO_EDGE.
+			
+				vbo := self polygonVbo: vertices.
+				
+				vbo boundDuring: [
+					self gradientPolygonProgram pixelRamp: 0.
+					GL checkForError.
+					self polygonProgram vertexAttrib: self polygonProgram aPosLocation components: 2 stride: 8 offset: 0.
+					GL checkForError].
+				
+				self drawBasePolygon: vbo.
+				self drawPolygonBorder: vbo borderWidth: borderWidth borderColor: borderColor]]]
+]
+
+{ #category : #'drawing-polygons' }
+GLCanvas >> drawPolygon: vertices color: fillColor borderWidth: borderWidth borderColor: borderColor [
+
+	| vbo |
 	self bindAndUseProgram: self polygonProgram during: [
 			self polygonProgram
 				color: fillColor;
 				mvp: transform.
 			
-			collection := OrderedCollection new.
-			vertices do: [:position | collection add: position x.  collection add: position y.].
-			vbo := GLArrayBuffer create.
-			vbo
-				usage: GL_STATIC_DRAW
-				data: collection asFloat32Array.
+			vbo := self polygonVbo: vertices.
 			
 			vbo boundDuring: [
 				self polygonProgram vertexAttrib: self polygonProgram aPosLocation components: 2 stride: 8 offset: 0.
 				GL checkForError].
 			
-			self glLibrary enable: GL_STENCIL_TEST.
-			self glLibrary clear: GL_STENCIL_BUFFER_BIT.
+			self drawBasePolygon: vbo.
+			self drawPolygonBorder: vbo borderWidth: borderWidth borderColor: borderColor]
+]
+
+{ #category : #'drawing-polygons' }
+GLCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor [
+
+	aFillStyle isGradientFill
+		ifTrue: [self drawGradientPolygon: vertices fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor]
+		ifFalse: [
+			aFillStyle isBitmapFill
+				ifTrue: [self drawBitmapPolygon: vertices fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor]
+				ifFalse: [self drawPolygon: vertices color: aFillStyle asColor borderWidth: borderWidth borderColor: borderColor]]
+]
+
+{ #category : #'drawing-polygons' }
+GLCanvas >> drawPolygonBorder: vbo borderWidth: borderWidth borderColor: borderColor [
 			
-			self glLibrary stencilFunc: GL_ALWAYS with: 0 with: 1.
-			self glLibrary stencilOp: GL_INVERT with: GL_INVERT with: GL_INVERT.
-			self glLibrary colorMask: GL_FALSE with: GL_FALSE with: GL_FALSE  with: GL_FALSE.
-			
-			vbo draw: GL_TRIANGLE_FAN from: 0 count: vertices size.
-			
-			self glLibrary stencilFunc: GL_EQUAL with: 1 with: 1.
-			self glLibrary stencilOp: GL_KEEP with: GL_KEEP with: GL_KEEP.
-			self glLibrary colorMask: GL_TRUE with: GL_TRUE with: GL_TRUE  with: GL_TRUE.
-			
-			vbo draw: GL_TRIANGLE_FAN from: 0 count: vertices size.
-			
-			self glLibrary disable: GL_STENCIL_TEST.
-			
-			self polygonProgram color: borderColor.
-			vbo draw: GL_LINE_LOOP from: 0 count: vertices size]
+	borderWidth isZero ifFalse: [
+		self polygonProgram color: borderColor.
+		self glLibrary lineWidth: borderWidth asFloat.
+		vbo draw: GL_LINE_LOOP from: 0 count: vbo size]
 ]
 
 { #category : #'drawing-text' }
@@ -279,6 +406,12 @@ GLCanvas >> glLibrary [
 	^ framebuffer library
 ]
 
+{ #category : #accessing }
+GLCanvas >> gradientPolygonProgram [
+
+	^ resources gradientPolygonProgram
+]
+
 { #category : #'drawing-images' }
 GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
@@ -294,7 +427,7 @@ GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 	
 	resources := self glLibrary at: GLSharedCanvasResources ifAbsentPut: [ GLSharedCanvasResources new ].
 	clipRect := 0 @ 0 extent: extent.
-	baseTransform := transform := Matrix4x4 ortho: clipRect near: 0 far: 1
+	transform := baseTransform := Matrix4x4 ortho: clipRect near: 0 far: 1
 ]
 
 { #category : #drawing }
@@ -358,10 +491,33 @@ GLCanvas >> polygonProgram [
 	^ resources polygonProgram
 ]
 
+{ #category : #'drawing-polygons' }
+GLCanvas >> polygonVbo: vertices [
+
+	| vbo collection |
+				
+	collection := OrderedCollection new.
+	vertices do: [:position | collection add: position x.  collection add: position y.].
+	vbo := GLArrayBuffer create.
+	vbo
+		usage: GL_STATIC_DRAW
+		data: collection asFloat32Array.
+			
+	^ vbo
+]
+
 { #category : #accessing }
 GLCanvas >> rectangleProgram [
 
 	^ resources rectangleProgram
+]
+
+{ #category : #'drawing-support' }
+GLCanvas >> scaleBy: aPoint during: aBlock [
+	
+	self
+		transform: transform * (Matrix4x4 withScale: aPoint@1)
+		during: aBlock
 ]
 
 { #category : #accessing }

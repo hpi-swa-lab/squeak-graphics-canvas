@@ -4,6 +4,8 @@ Class {
 	#instVars : [
 		'vao',
 		'vbo',
+		'bitmapPolygonProgram',
+		'gradientPolygonProgram',
 		'textureProgram',
 		'outlineProgram',
 		'ovalProgram',
@@ -18,6 +20,21 @@ Class {
 	#category : #'OpenGLCanvas-Core'
 }
 
+{ #category : #'as yet unclassified' }
+GLSharedCanvasResources class >> updateIn: aGLLibrary [
+	
+	aGLLibrary makeCurrentDuring: [
+		aGLLibrary recompileShaders.
+		aGLLibrary at: self put: self new]
+	
+]
+
+{ #category : #accessing }
+GLSharedCanvasResources >> bitmapPolygonProgram [
+
+	^ bitmapPolygonProgram
+]
+
 { #category : #accessing }
 GLSharedCanvasResources >> font: aFont [
 
@@ -31,6 +48,12 @@ GLSharedCanvasResources >> font: aFont [
 GLSharedCanvasResources >> fontProgram [
 
 	^ fontProgram
+]
+
+{ #category : #accessing }
+GLSharedCanvasResources >> gradientPolygonProgram [
+
+	^ gradientPolygonProgram
 ]
 
 { #category : #initialization }
@@ -81,6 +104,8 @@ GLSharedCanvasResources >> initializeProgramAttributes [
 { #category : #initialization }
 GLSharedCanvasResources >> initializePrograms [
 	
+	bitmapPolygonProgram := GL getShaderProgram: GLCanvasBitmapPolygonProgram.
+	gradientPolygonProgram := GL getShaderProgram: GLCanvasGradientPolygonProgram.
 	textureProgram := GL getShaderProgram: GLCanvasTextureProgram.
 	ovalProgram := GL getShaderProgram: GLCanvasOvalProgram.
 	polygonProgram := GL getShaderProgram: GLCanvasPolygonProgram.

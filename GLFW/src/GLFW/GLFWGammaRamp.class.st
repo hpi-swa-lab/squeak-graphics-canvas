@@ -4,14 +4,10 @@ Class {
 	#pools : [
 		'GLFWConstants'
 	],
-	#category : #'GLFW-Core',
-	#commentStamp : ''
+	#category : #'GLFW-Core'
 }
 
-{
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 10/20/2020 22:06'
-}
+{ #category : #'as yet unclassified' }
 GLFWGammaRamp class >> fields [ "self defineFields"
 
 	^ #(

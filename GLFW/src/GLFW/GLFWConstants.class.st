@@ -311,14 +311,10 @@ Class {
 		'X11_CLASS_NAME',
 		'X11_INSTANCE_NAME'
 	],
-	#category : #'GLFW-Core',
-	#commentStamp : ''
+	#category : #'GLFW-Core'
 }
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 10/20/2020 16:34'
-}
+{ #category : #initialization }
 GLFWConstants class >> initialize [ "self initialize"
 
 	"input"
@@ -342,10 +338,7 @@ GLFWConstants class >> initialize [ "self initialize"
 	self initializeMiscEnums
 ]
 
-{
-	#category : #'initialization - windows',
-	#timestamp : 'stlu 10/20/2020 16:25'
-}
+{ #category : #'initialization - windows' }
 GLFWConstants class >> initializeContextAttributes [
 
 	CLIENT_API := 16r22001.
@@ -363,10 +356,7 @@ GLFWConstants class >> initializeContextAttributes [
 	SCALE_TO_MONITOR := 16r2200C
 ]
 
-{
-	#category : #initialization,
-	#timestamp : 'stlu 10/20/2020 15:03'
-}
+{ #category : #initialization }
 GLFWConstants class >> initializeErrorCodes [
 
 	NO_ERROR := 0.
@@ -385,10 +375,7 @@ GLFWConstants class >> initializeErrorCodes [
 	FEATURE_UNIMPLEMENTED := 16r1000D
 ]
 
-{
-	#category : #'initialization - windows',
-	#timestamp : 'stlu 10/20/2020 16:33'
-}
+{ #category : #'initialization - windows' }
 GLFWConstants class >> initializeFramebufferAttributes [
 
 	RED_BITS := 16r21001.
@@ -409,10 +396,7 @@ GLFWConstants class >> initializeFramebufferAttributes [
 	DOUBLEBUFFER := 16r21010
 ]
 
-{
-	#category : #'initialization - input',
-	#timestamp : 'stlu 10/20/2020 14:58'
-}
+{ #category : #'initialization - input' }
 GLFWConstants class >> initializeGamepadAxes [
 
 	GAMEPAD_AXIS_LEFT_X := 0.
@@ -425,10 +409,7 @@ GLFWConstants class >> initializeGamepadAxes [
 	GAMEPAD_AXIS_LAST := GAMEPAD_AXIS_RIGHT_TRIGGER
 ]
 
-{
-	#category : #'initialization - input',
-	#timestamp : 'stlu 10/20/2020 14:17'
-}
+{ #category : #'initialization - input' }
 GLFWConstants class >> initializeGamepadButtons [
 
 	GAMEPAD_BUTTON_A := 0.
@@ -455,10 +436,7 @@ GLFWConstants class >> initializeGamepadButtons [
 	GAMEPAD_BUTTON_TRIANGLE := GAMEPAD_BUTTON_Y
 ]
 
-{
-	#category : #'initialization - input',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
+{ #category : #'initialization - input' }
 GLFWConstants class >> initializeInputMacros [
 
 	RELEASE := 0.
@@ -466,10 +444,7 @@ GLFWConstants class >> initializeInputMacros [
 	REPEAT := 2
 ]
 
-{
-	#category : #'initialization - input',
-	#timestamp : 'stlu 10/20/2020 14:06'
-}
+{ #category : #'initialization - input' }
 GLFWConstants class >> initializeJoystickHatStates [
 
 	HAT_CENTERED := 0.
@@ -483,10 +458,7 @@ GLFWConstants class >> initializeJoystickHatStates [
 	HAT_LEFT_DOWN := HAT_LEFT bitOr: HAT_DOWN
 ]
 
-{
-	#category : #'initialization - input',
-	#timestamp : 'stlu 10/20/2020 14:13'
-}
+{ #category : #'initialization - input' }
 GLFWConstants class >> initializeJoysticks [
 
 	JOYSTICK_1 := 0.
@@ -509,10 +481,7 @@ GLFWConstants class >> initializeJoysticks [
 	JOYSTICK_LAST := JOYSTICK_16
 ]
 
-{
-	#category : #'initialization - input',
-	#timestamp : 'stlu 10/20/2020 14:09'
-}
+{ #category : #'initialization - input' }
 GLFWConstants class >> initializeKeyboardKeys [
 
 	"The unknown key"
@@ -645,10 +614,7 @@ GLFWConstants class >> initializeKeyboardKeys [
 	KEY_LAST := KEY_MENU
 ]
 
-{
-	#category : #'initialization - windows',
-	#timestamp : 'stlu 10/20/2020 16:31'
-}
+{ #category : #'initialization - windows' }
 GLFWConstants class >> initializeMiscEnums [
 
 	NO_API := 0.
@@ -716,10 +682,7 @@ GLFWConstants class >> initializeMiscEnums [
 	DONT_CARE := -1.
 ]
 
-{
-	#category : #'initialization - input',
-	#timestamp : 'stlu 10/20/2020 13:57'
-}
+{ #category : #'initialization - input' }
 GLFWConstants class >> initializeModifierKeyFlags [
 
 	MOD_SHIFT := 2r00000001.
@@ -730,10 +693,7 @@ GLFWConstants class >> initializeModifierKeyFlags [
 	MOD_NUM_LOCK := 2r00100000
 ]
 
-{
-	#category : #'initialization - input',
-	#timestamp : 'stlu 10/20/2020 14:10'
-}
+{ #category : #'initialization - input' }
 GLFWConstants class >> initializeMouseButtons [
 
 	MOUSE_BUTTON_1 := 0.
@@ -750,10 +710,7 @@ GLFWConstants class >> initializeMouseButtons [
 	MOUSE_BUTTON_MIDDLE := MOUSE_BUTTON_3
 ]
 
-{
-	#category : #'initialization - windows',
-	#timestamp : 'stlu 10/20/2020 16:33'
-}
+{ #category : #'initialization - windows' }
 GLFWConstants class >> initializePlatformSpecific [
 
 	COCOA_RETINA_FRAMEBUFFER := 16r23001.
@@ -766,10 +723,7 @@ GLFWConstants class >> initializePlatformSpecific [
 	WIN32_KEYBOARD_MENU := 16r25001
 ]
 
-{
-	#category : #'initialization - windows',
-	#timestamp : 'stlu 10/20/2020 16:34'
-}
+{ #category : #'initialization - windows' }
 GLFWConstants class >> initializeWindowAttributes [
 
 	FOCUSED := 16r20001.
