@@ -2,6 +2,8 @@ Class {
 	#name : #LOGLTemplate,
 	#superclass : #Object,
 	#instVars : [
+		'library',
+		'renderProcess',
 		'window'
 	],
 	#pools : [
@@ -72,25 +74,28 @@ LOGLTemplate >> render [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 10/19/2020 16:44'
+	#timestamp : 'stlu 12/8/2020 16:02'
 }
 LOGLTemplate >> renderLoop [
 
 	[self shouldClose] whileFalse: [
-		self processInput.
-		self render.
-		window swapBuffers.
-		GLFW pollEvents]
+		library makeCurrentDuring: [
+			self processInput.
+			self render.
+			window swapBuffers.
+			GLFW pollEvents.
+			Processor yield]]
 ]
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/11/2020 13:46'
+	#timestamp : 'stlu 12/8/2020 16:21'
 }
 LOGLTemplate >> run [
 
 	"GLFW init."
 	GLFW targetLibrary: GL3_3 profile: #core.
+	GLFW windowHint: GLFW FLOATING with: true.
 
 	window := GLFWWindow
 				width: self initialWidth
@@ -99,15 +104,14 @@ LOGLTemplate >> run [
 	
 	window ifNil: [^ self error: 'Failed to create GLFW window'].
 	
-	(GL3_3 context: window context) makeCurrentDuring: [
+	library := GL3_3 context: window context.
+	
+	library makeCurrentDuring: [
 		window framebufferSizeCallback: [:w :width :height |
 			self extentChanged: width @ height].
+		self setUp.].
 	
-		self setUp.
-		[self renderLoop]
-			ensure: [
-				self tearDown.
-				window destroy]]
+	self spawnNewRenderProcess
 ]
 
 {
@@ -126,6 +130,21 @@ LOGLTemplate >> setUp [
 LOGLTemplate >> shouldClose [
 
 	^ window shouldClose
+]
+
+{
+	#category : #rendering,
+	#timestamp : 'stlu 12/8/2020 16:13'
+}
+LOGLTemplate >> spawnNewRenderProcess [
+
+	renderProcess := [
+		[self renderLoop]
+			ensure: [
+				self tearDown.
+				library destroy]
+	] newProcess priority: Processor userSchedulingPriority.
+	renderProcess resume
 ]
 
 {
