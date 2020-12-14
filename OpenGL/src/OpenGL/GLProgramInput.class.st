@@ -34,10 +34,10 @@ GLProgramInput class >> interface [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/13/2020 15:52'
+	#timestamp : 'stlu 12/14/2020 16:17'
 }
 GLProgramInput >> initializeProperties: aWordArray [
 
 	location := aWordArray second.
-	type := GLType enum: aWordArray third size: aWordArray fourth
+	type := GLSLType numElements: aWordArray fourth enum: aWordArray third
 ]

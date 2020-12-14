@@ -73,7 +73,7 @@ SLAnalyzer >> acceptMessageNode: aMessageNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 11/24/2020 21:37'
+	#timestamp : 'stlu 12/14/2020 16:58'
 }
 SLAnalyzer >> acceptMethodNode: aMethodNode [
 	|args selParts|
@@ -82,7 +82,7 @@ SLAnalyzer >> acceptMethodNode: aMethodNode [
 	
 	argumentToInterface := Dictionary new. "#u -> #uniform"
 	variableToInterface := Dictionary new. "#bloomBlur -> #uniform"
-	variableToType := Dictionary new. "#bloomBlur -> GLTFloatVector3"
+	variableToType := Dictionary new. "#bloomBlur -> GLSLFloatVector3"
 	
 	argumentToInterface at: args first name put: 'out'.
 	args allButFirst with: selParts allButFirst do: [:argNode :selPart || interface |

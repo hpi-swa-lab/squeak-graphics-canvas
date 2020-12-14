@@ -29,7 +29,7 @@ SLInterfaceIntermediateObject >> analyzer: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/2/2020 03:57'
+	#timestamp : 'stlu 12/14/2020 16:58'
 }
 SLInterfaceIntermediateObject >> doesNotUnderstand: aMessage [
 	| selector className class |
@@ -38,7 +38,7 @@ SLInterfaceIntermediateObject >> doesNotUnderstand: aMessage [
 		^ self error: 'Type of resource ' , name , ' is unclear at this point, you can only use be<Type> selector ' ,
 			' on it to set the type, but you used ' , selector , '.' ].
 	
-	className := 'GLT', (selector allButFirst: 2).
+	className := 'GLSL', (selector allButFirst: 2).
 	class := self environment classNamed: className.
 	class ifNil: [
 		^ self error: 'Tried to set type of resource ' , name , ' to ' , className , ' which does not exist.'].

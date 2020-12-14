@@ -1,0 +1,69 @@
+Class {
+	#name : #GLSLFloatMatrix3x3,
+	#superclass : #GLSLMatrix,
+	#category : #'OpenGL-Wrappers-Types',
+	#commentStamp : ''
+}
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/14/2020 16:48'
+}
+GLSLFloatMatrix3x3 class >> componentType [
+
+	^ GLSLFloat
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/14/2020 16:48'
+}
+GLSLFloatMatrix3x3 class >> declarators [
+
+	^ #('mat3' 'mat3x3')
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/14/2020 16:48'
+}
+GLSLFloatMatrix3x3 class >> enum [
+
+	^ GL_FLOAT_MAT3
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/14/2020 16:48'
+}
+GLSLFloatMatrix3x3 class >> enumName [
+
+	^ 'FLOAT_MAT3'
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/14/2020 16:48'
+}
+GLSLFloatMatrix3x3 class >> numColumns [
+
+	^ 3
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/14/2020 16:48'
+}
+GLSLFloatMatrix3x3 class >> numRows [
+
+	^ 3
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/14/2020 16:48'
+}
+GLSLFloatMatrix3x3 class >> squeakName [
+
+	^ 'FloatMatrix3x3'
+]

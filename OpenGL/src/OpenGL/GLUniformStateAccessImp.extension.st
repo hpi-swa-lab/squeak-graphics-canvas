@@ -24,11 +24,11 @@ GLUniformStateAccessImp class >> generate [
 
 {
 	#category : #'*OpenGL-Wrappers-CodeGeneration',
-	#timestamp : 'stlu 11/23/2020 15:46'
+	#timestamp : 'stlu 12/14/2020 16:57'
 }
 GLUniformStateAccessImp class >> generateArrayInterfaceFor: aClass classified: categorySymbol [
 
-	{ GLTFloat . GLTDouble . GLTInteger . GLTUnsignedInteger } do: [:type |
+	{ GLSLFloat . GLSLDouble . GLSLInteger . GLSLUnsignedInteger } do: [:type |
 		1 to: 4 do: [:numComponents |
 			| code |
 			code := aClass arraySetterTemplate format: {
@@ -41,11 +41,11 @@ GLUniformStateAccessImp class >> generateArrayInterfaceFor: aClass classified: c
 
 {
 	#category : #'*OpenGL-Wrappers-CodeGeneration',
-	#timestamp : 'stlu 11/23/2020 15:47'
+	#timestamp : 'stlu 12/14/2020 16:19'
 }
 GLUniformStateAccessImp class >> generateMatrixInterfaceFor: aClass classified: categorySymbol [
 
-	GLTMatrix allSubclassesDo: [:type |
+	GLSLMatrix allSubclassesDo: [:type |
 		| code  |
 		code := aClass matrixSetterTemplate format: {
 					type componentType squeakName.
@@ -59,11 +59,11 @@ GLUniformStateAccessImp class >> generateMatrixInterfaceFor: aClass classified: 
 
 {
 	#category : #'*OpenGL-Wrappers-CodeGeneration',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 16:57'
 }
 GLUniformStateAccessImp class >> generateScalarInterfaceFor: aClass classified: categorySymbol [
 
-	{ GLTFloat . GLTDouble . GLTInteger . GLTUnsignedInteger } do: [:type |
+	{ GLSLFloat . GLSLDouble . GLSLInteger . GLSLUnsignedInteger } do: [:type |
 		| code paramName |
 		paramName := type squeakName asParameterName.
 		code := aClass scalarSetterTemplate format: {
@@ -97,11 +97,11 @@ GLUniformStateAccessImp class >> generateTypeDoubleDispatch [
 
 {
 	#category : #'*OpenGL-Wrappers-CodeGeneration',
-	#timestamp : 'stlu 11/23/2020 18:13'
+	#timestamp : 'stlu 12/14/2020 16:22'
 }
 GLUniformStateAccessImp class >> generateVectorTypeDoubleDispatch [
 
-	GLTVector allSubclassesDo: [:type |
+	GLSLVector allSubclassesDo: [:type |
 		| code |
 		code := 'setUniform: aUniform toArray: aRawBitsArray count: numElements
 

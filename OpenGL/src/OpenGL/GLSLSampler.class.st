@@ -1,0 +1,66 @@
+Class {
+	#name : #GLSLSampler,
+	#superclass : #GLSLType,
+	#category : #'OpenGL-Wrappers-Types',
+	#commentStamp : ''
+}
+
+{
+	#category : #'*OpenGL-Wrappers-CodeGeneration',
+	#timestamp : 'stlu 12/14/2020 16:49'
+}
+GLSLSampler class >> generateClasses [
+
+	{ GLSLFloat . GLSLInteger . GLSLUnsignedInteger } do: [:pixelType |
+		#(
+			('1D')
+			('1D' 'Array')
+			('2D')
+			('2D' 'Array')
+			('2D' 'Multisample')
+			('2D' 'Multisample' 'Array')
+			('2D' 'Rect')
+			('3D')
+			('Buffer')
+			('Cube')
+			('Cube' 'Map' 'Array')
+		) do: [:type |
+			| cls squeakName enumName declarator glslType |
+			squeakName := pixelType squeakName , type join , 'Sampler'.
+			cls := self subclass: 'GLSL' , squeakName.
+			cls compileAccessor: 'squeakName' value: squeakName storeString.
+			glslType := type asOrderedCollection
+							replaceAll: 'Multisample' with: 'MS';
+							remove: 'Map' ifAbsent: [];
+							yourself.
+			declarator := pixelType glslInitials , 'sampler' , glslType join.
+			cls compileAccessor: 'declarators' value: { declarator } storeString.
+			enumName := (pixelType = GLSLFloat ifTrue: [''] ifFalse: [pixelType enumName , '_'])
+							, 'SAMPLER_'
+							, (type joinSeparatedBy: '_') asUppercase.
+			cls compileAccessor: 'enumName' value: enumName storeString.
+			cls compileAccessor: 'enum' value: 'GL_' , enumName.
+			cls compileAccessor: 'componentType' value: pixelType]]
+]
+
+{
+	#category : #'program resources',
+	#timestamp : 'stlu 12/14/2020 16:57'
+}
+GLSLSampler >> at: aVector2Type [
+	self flag: #todo. "dynamic input / output dimenstions"
+	
+	self assert: (aVector2Type isKindOf: GLSLFloatVector2).
+	^ SLMappingToCall new
+		targetSelector: 'texture';
+		type: GLSLFloatVector4 instance.
+]
+
+{
+	#category : #'program resources',
+	#timestamp : 'stlu 11/23/2020 17:05'
+}
+GLSLSampler >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
+
+	aUniform setTo1ComponentIntegerArray: aRawBitsArray count: numElements
+]

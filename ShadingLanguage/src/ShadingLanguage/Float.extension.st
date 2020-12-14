@@ -10,8 +10,8 @@ Float >> asGLSLLiteral [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 11/24/2020 18:02'
+	#timestamp : 'stlu 12/14/2020 16:56'
 }
 Float >> glslType [
-	^ GLTFloat instance
+	^ GLSLFloat instance
 ]
