@@ -74,9 +74,13 @@ GLSharedCanvasResources >> initializeBuffers [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 16:20'
+	#timestamp : 'stlu 12/10/2020 13:20'
 }
 GLSharedCanvasResources >> initializeProgramAttributes [
+
+	self assert: textureProgram aPosLocation = outlineProgram aPosLocation.
+	self assert: textureProgram aPosLocation = rectangleProgram aPosLocation.
+	self assert: textureProgram aTexCoordsLocation = outlineProgram aTexCoordsLocation.
 
 	vbo boundDuring: [
 		textureProgram useDuring: [
