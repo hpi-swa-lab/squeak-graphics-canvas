@@ -74,7 +74,7 @@ LOGLTemplate >> render [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 12/8/2020 16:02'
+	#timestamp : 'stlu 12/9/2020 15:30'
 }
 LOGLTemplate >> renderLoop [
 
@@ -83,8 +83,8 @@ LOGLTemplate >> renderLoop [
 			self processInput.
 			self render.
 			window swapBuffers.
-			GLFW pollEvents.
-			Processor yield]]
+			GLFW pollEvents].
+		Processor yield]
 ]
 
 {
@@ -134,7 +134,7 @@ LOGLTemplate >> shouldClose [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 12/8/2020 16:13'
+	#timestamp : 'stlu 12/9/2020 15:31'
 }
 LOGLTemplate >> spawnNewRenderProcess [
 
@@ -143,7 +143,7 @@ LOGLTemplate >> spawnNewRenderProcess [
 			ensure: [
 				self tearDown.
 				library destroy]
-	] newProcess priority: Processor userSchedulingPriority.
+	] newProcess priority: Processor userSchedulingPriority - 1.
 	renderProcess resume
 ]
 
