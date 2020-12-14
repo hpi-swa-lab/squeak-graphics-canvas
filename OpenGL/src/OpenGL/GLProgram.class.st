@@ -257,15 +257,6 @@ GLProgram >> shaders [
 
 {
 	#category : #activation,
-	#timestamp : 'stlu 12/3/2020 19:32'
-}
-GLProgram >> target [
-
-	^ self class target
-]
-
-{
-	#category : #activation,
 	#timestamp : 'stlu 12/3/2020 19:33'
 }
 GLProgram >> use [

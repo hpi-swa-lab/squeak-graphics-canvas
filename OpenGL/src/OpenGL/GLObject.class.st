@@ -373,11 +373,11 @@ GLObject >> register [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 12/3/2020 18:04'
+	#timestamp : 'stlu 12/10/2020 13:28'
 }
 GLObject >> target [
 
-	self subclassResponsibility
+	^ self class target
 ]
 
 {

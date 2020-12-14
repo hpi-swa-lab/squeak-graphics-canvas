@@ -40,12 +40,3 @@ GLTexture >> isTexture [
 
 	^ true
 ]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 12/3/2020 19:36'
-}
-GLTexture >> target [
-
-	^ self class target
-]

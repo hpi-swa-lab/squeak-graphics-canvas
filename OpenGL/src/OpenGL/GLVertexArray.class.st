@@ -67,12 +67,3 @@ GLVertexArray >> isVertexArray [
 
 	^ true
 ]
-
-{
-	#category : #binding,
-	#timestamp : 'stlu 12/3/2020 18:08'
-}
-GLVertexArray >> target [
-
-	^ GL_VERTEX_ARRAY
-]
