@@ -113,9 +113,9 @@ GLFrameBuffer >> boundToDrawDuring: aBlock [
 	self flag: #todo. "Remember actual objects"
 	previousID := self class currentDrawBinding.
 	previousID = id ifTrue: [^ aBlock value].
-	self class bind: id to: GL_DRAW_BUFFER.
+	self class bind: id to: GL_DRAW_FRAMEBUFFER.
 	aBlock ensure: [
-		self class bind: previousID to: GL_DRAW_BUFFER]
+		self class bind: previousID to: GL_DRAW_FRAMEBUFFER]
 ]
 
 { #category : #binding }
@@ -125,9 +125,9 @@ GLFrameBuffer >> boundToReadDuring: aBlock [
 	self flag: #todo. "Remember actual objects"
 	previousID := self class currentReadBinding.
 	previousID = id ifTrue: [^ aBlock value].
-	self class bind: id to: GL_READ_BUFFER.
+	self class bind: id to: GL_READ_FRAMEBUFFER.
 	aBlock ensure: [
-		self class bind: previousID to: GL_READ_BUFFER]
+		self class bind: previousID to: GL_READ_FRAMEBUFFER]
 ]
 
 { #category : #accessing }

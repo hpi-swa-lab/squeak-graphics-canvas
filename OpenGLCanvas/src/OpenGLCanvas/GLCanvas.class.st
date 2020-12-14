@@ -43,6 +43,8 @@ GLCanvas class >> openAndDraw: anObject [
 GLCanvas class >> openAndDraw: anObject doing: aBlock [
 
 	| display window |
+	"display := RtMultisampleDisplayFramebufferStore extent: anObject extent.
+	display samples: 16."
 	display := RtDisplayFramebufferStore extent: anObject extent.
 	window := display glLibrary context window.
 	
@@ -54,8 +56,7 @@ GLCanvas class >> openAndDraw: anObject doing: aBlock [
 		display canvasDo: [:c |
 			c scaleBy: window extent / anObject extent during: [c fullDraw: anObject].
 			aBlock cull: c].
-		anObject step.
-		100 milliSeconds wait]]
+		33 milliSeconds wait]]
 	ensure: [display glLibrary destroy]] fork.
 	
 	^ display
@@ -102,9 +103,21 @@ GLCanvas >> bindAndUseProgram: aProgram during: aBlock [
 ]
 
 { #category : #accessing }
+GLCanvas >> bitmapOvalProgram [
+
+	^ resources bitmapOvalProgram
+]
+
+{ #category : #accessing }
 GLCanvas >> bitmapPolygonProgram [
 
 	^ resources bitmapPolygonProgram
+]
+
+{ #category : #accessing }
+GLCanvas >> bitmapRectangleProgram [
+
+	^ resources bitmapRectangleProgram
 ]
 
 { #category : #binding }
@@ -162,13 +175,13 @@ GLCanvas >> drawBasePolygon: vbo [
 	self glLibrary stencilOp: GL_INVERT with: GL_INVERT with: GL_INVERT.
 	self glLibrary colorMask: GL_FALSE with: GL_FALSE with: GL_FALSE  with: GL_FALSE.
 	
-	vbo draw: GL_TRIANGLE_FAN from: 0 count: vbo size.
+	vbo draw: GL_TRIANGLE_FAN from: 0 count: vbo size / 8.
 	
 	self glLibrary stencilFunc: GL_EQUAL with: 1 with: 1.
 	self glLibrary stencilOp: GL_KEEP with: GL_KEEP with: GL_KEEP.
 	self glLibrary colorMask: GL_TRUE with: GL_TRUE with: GL_TRUE  with: GL_TRUE.
 	
-	vbo draw: GL_TRIANGLE_FAN from: 0 count: vbo size.
+	vbo draw: GL_TRIANGLE_FAN from: 0 count: vbo size / 8.
 	
 	self glLibrary disable: GL_STENCIL_TEST.
 	
@@ -176,137 +189,46 @@ GLCanvas >> drawBasePolygon: vbo [
 ]
 
 { #category : #'drawing-polygons' }
-GLCanvas >> drawBasePolygon: vertices withProgram: aProgram [
+GLCanvas >> drawPolygon: vertices borderWidth: borderWidth borderColor: borderColor withProgram: aProgram [
 
-	| vbo collection |
-				
-	collection := OrderedCollection new.
-	vertices do: [:position | collection add: position x.  collection add: position y.].
-	vbo := GLArrayBuffer create.
-	vbo
-		usage: GL_STATIC_DRAW
-		data: collection asFloat32Array.
-	
+	| vbo |
+	aProgram mvp: transform.
+	vbo := self polygonVbo: vertices.
+			
 	vbo boundDuring: [
 		aProgram vertexAttrib: aProgram aPosLocation components: 2 stride: 8 offset: 0.
 		GL checkForError].
 	
-	self glLibrary enable: GL_STENCIL_TEST.
-	self glLibrary clear: GL_STENCIL_BUFFER_BIT.
-	
-	self glLibrary stencilFunc: GL_ALWAYS with: 0 with: 1.
-	self glLibrary stencilOp: GL_INVERT with: GL_INVERT with: GL_INVERT.
-	self glLibrary colorMask: GL_FALSE with: GL_FALSE with: GL_FALSE  with: GL_FALSE.
-	
-	vbo draw: GL_TRIANGLE_FAN from: 0 count: vertices size.
-	
-	self glLibrary stencilFunc: GL_EQUAL with: 1 with: 1.
-	self glLibrary stencilOp: GL_KEEP with: GL_KEEP with: GL_KEEP.
-	self glLibrary colorMask: GL_TRUE with: GL_TRUE with: GL_TRUE  with: GL_TRUE.
-	
-	vbo draw: GL_TRIANGLE_FAN from: 0 count: vertices size.
-	
-	self glLibrary disable: GL_STENCIL_TEST.
-	
-	^ vbo
-]
-
-{ #category : #'drawing-polygons' }
-GLCanvas >> drawBitmapPolygon: vertices fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor [
-
-	| vbo clampMode |
-	self bindAndUseProgram: self bitmapPolygonProgram during: [
-		(RtFormStore form: aFillStyle form) glTextureDo: [:texture |
-			texture boundDuring: [
-				self bitmapPolygonProgram
-					formOrigin: aFillStyle origin;
-					formDirection: aFillStyle direction;
-					formNormal: aFillStyle normal;
-					mvp: transform.
-					
-				clampMode := aFillStyle tileFlag ifTrue: [GL_REPEAT] ifFalse: [GL_CLAMP_TO_EDGE].
-								
-				self glLibrary texParameteri: GL_TEXTURE_2D with: GL_TEXTURE_WRAP_S with: clampMode.
-				self glLibrary texParameteri: GL_TEXTURE_2D with: GL_TEXTURE_WRAP_T with: clampMode.
-			
-				vbo := self polygonVbo: vertices.
-				
-				vbo boundDuring: [
-					self bitmapPolygonProgram form: 0.
-					GL checkForError.
-					self bitmapPolygonProgram vertexAttrib: self polygonProgram aPosLocation components: 2 stride: 8 offset: 0.
-					GL checkForError].
-				
-				self drawBasePolygon: vbo.
-				self drawPolygonBorder: vbo borderWidth: borderWidth borderColor: borderColor]]]
-]
-
-{ #category : #'drawing-polygons' }
-GLCanvas >> drawGradientPolygon: vertices fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor [
-
-	| vbo ramp |
-	self bindAndUseProgram: self gradientPolygonProgram during: [
-		ramp := aFillStyle pixelRamp.
-		(RtFormStore form: (Form extent: ramp size @ 1 depth: 32 bits: ramp)) glTextureDo: [:texture |
-			texture boundDuring: [
-				self gradientPolygonProgram
-					gradientOrigin: aFillStyle origin;
-					gradientDirection: aFillStyle direction;
-					gradientRadial: aFillStyle radial;
-					mvp: transform.
-				
-				self glLibrary texParameteri: GL_TEXTURE_2D with: GL_TEXTURE_WRAP_S with: GL_CLAMP_TO_EDGE.
-				self glLibrary texParameteri: GL_TEXTURE_2D with: GL_TEXTURE_WRAP_T with: GL_CLAMP_TO_EDGE.
-			
-				vbo := self polygonVbo: vertices.
-				
-				vbo boundDuring: [
-					self gradientPolygonProgram pixelRamp: 0.
-					GL checkForError.
-					self polygonProgram vertexAttrib: self polygonProgram aPosLocation components: 2 stride: 8 offset: 0.
-					GL checkForError].
-				
-				self drawBasePolygon: vbo.
-				self drawPolygonBorder: vbo borderWidth: borderWidth borderColor: borderColor]]]
+	self drawBasePolygon: vbo.
+	self drawPolygonBorder: vbo borderWidth: borderWidth borderColor: borderColor
 ]
 
 { #category : #'drawing-polygons' }
 GLCanvas >> drawPolygon: vertices color: fillColor borderWidth: borderWidth borderColor: borderColor [
 
-	| vbo |
-	self bindAndUseProgram: self polygonProgram during: [
-			self polygonProgram
-				color: fillColor;
-				mvp: transform.
+	self bindAndUseProgram: self solidPolygonProgram during: [
+			self solidPolygonProgram color: fillColor.
 			
-			vbo := self polygonVbo: vertices.
-			
-			vbo boundDuring: [
-				self polygonProgram vertexAttrib: self polygonProgram aPosLocation components: 2 stride: 8 offset: 0.
-				GL checkForError].
-			
-			self drawBasePolygon: vbo.
-			self drawPolygonBorder: vbo borderWidth: borderWidth borderColor: borderColor]
+			self drawPolygon: vertices borderWidth: borderWidth borderColor: borderColor withProgram: self solidPolygonProgram]
 ]
 
 { #category : #'drawing-polygons' }
 GLCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor [
 
-	aFillStyle isGradientFill
-		ifTrue: [self drawGradientPolygon: vertices fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor]
-		ifFalse: [
-			aFillStyle isBitmapFill
-				ifTrue: [self drawBitmapPolygon: vertices fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor]
-				ifFalse: [self drawPolygon: vertices color: aFillStyle asColor borderWidth: borderWidth borderColor: borderColor]]
+	| drawPolygonBlock polygonPrograms |
+	drawPolygonBlock := [:aProgram | self drawPolygon: vertices borderWidth: borderWidth borderColor: borderColor withProgram: aProgram].
+	polygonPrograms := {#solid -> self solidPolygonProgram . #gradient -> self gradientPolygonProgram . #bitmap -> self bitmapPolygonProgram} asDictionary.
+	
+	self setUniformsFrom: aFillStyle for: polygonPrograms during: drawPolygonBlock
 ]
 
 { #category : #'drawing-polygons' }
 GLCanvas >> drawPolygonBorder: vbo borderWidth: borderWidth borderColor: borderColor [
 			
 	borderWidth isZero ifFalse: [
-		self polygonProgram color: borderColor.
+		self solidPolygonProgram color: borderColor.
 		self glLibrary lineWidth: borderWidth asFloat.
-		vbo draw: GL_LINE_LOOP from: 0 count: vbo size]
+		vbo draw: GL_LINE_LOOP from: 0 count: vbo size / 8]
 ]
 
 { #category : #'drawing-text' }
@@ -315,8 +237,8 @@ GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fo
 	"self frameRectangle: (boundsRect origin extent: 10@10) color: c."
 
 	self boundDuring: [
-		resources fontProgram useDuring: [ | bitmapFont x |
-			resources fontProgram
+		self fontProgram useDuring: [ | bitmapFont x |
+			self fontProgram
 				image: 0;
 				color: c.
 			
@@ -332,13 +254,17 @@ GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fo
 							
 							GL checkForError.
 							
-							resources fontProgram
+							self fontProgram
 								extent: (bitmapFont extentFor: character);
 								offsetX: offset x asFloat;
 								mvp: transform * (Matrix4x4 withOffset: boundsRect origin + (x @ 0)).
 
 							GL checkForError.
-							
+			
+							self vbo boundDuring: [
+								self fontProgram vertexAttrib: self fontProgram aPosLocation components: 2 stride: 16 offset: 0.
+								GL checkForError].
+													
 							self vbo draw: GL_TRIANGLE_STRIP].
 							GL checkForError.
 						
@@ -352,35 +278,85 @@ GLCanvas >> extent [
 ]
 
 { #category : #'drawing-ovals' }
+GLCanvas >> fillOval: r borderWidth: borderWidth borderColor: borderColor withProgram: aProgram [
+
+	aProgram
+		extent: r extent;
+		borderColor: borderColor;
+		borderWidth: borderWidth asFloat;
+		mvp: transform * (Matrix4x4 withOffset: r origin).
+		
+	self vbo draw: GL_TRIANGLE_STRIP
+]
+
+{ #category : #'drawing-ovals' }
 GLCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderColor [
 
-	self bindAndUseProgram: self ovalProgram during: [
-			self ovalProgram
-				extent: r extent;
-				color: c;
-				borderColor: borderColor;
-				borderWidth: borderWidth asFloat;
-				mvp: transform * (Matrix4x4 withOffset: r origin).
-			self vbo draw: GL_TRIANGLE_STRIP]
+	self bindAndUseProgram: self solidOvalProgram during: [
+		self solidOvalProgram color: c.
+		self fillOval: r borderWidth: borderWidth borderColor: borderColor withProgram: self solidOvalProgram]
+]
+
+{ #category : #'drawing-ovals' }
+GLCanvas >> fillOval: r fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor [
+
+	| drawOvalBlock ovalPrograms |
+	drawOvalBlock := [:aProgram | self fillOval: r borderWidth: borderWidth borderColor: borderColor withProgram: aProgram].
+	ovalPrograms := {#solid -> self solidOvalProgram . #gradient -> self gradientOvalProgram . #bitmap -> self bitmapOvalProgram} asDictionary.
+	
+	self setUniformsFrom: aFillStyle for: ovalPrograms during: drawOvalBlock
+]
+
+{ #category : #accessing }
+GLCanvas >> fontProgram [
+
+	^ resources fontProgram
+]
+
+{ #category : #'drawing-rectangles' }
+GLCanvas >> frameAndFillRectangle: r borderWidth: borderWidth borderColor: borderColor withProgram: aProgram [
+	
+	aProgram
+		extent: r extent;
+		borderColor: borderColor;
+		borderWidth: borderWidth asFloat;
+		mvp: transform * (Matrix4x4 withOffset: r origin).
+	
+	self vbo boundDuring: [
+		aProgram vertexAttrib: aProgram aPosLocation components: 2 stride: 16 offset: 0.
+		GL checkForError].
+		
+	self vbo draw: GL_TRIANGLE_STRIP
 ]
 
 { #category : #'drawing-rectangles' }
 GLCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
 	
-	self bindAndUseProgram: self rectangleProgram during: [
-			self rectangleProgram
-				extent: r extent;
-				color: fillColor;
-				borderColor: borderColor;
-				borderWidth: borderWidth asFloat;
-				mvp: transform * (Matrix4x4 withOffset: r origin).
-			self vbo draw: GL_TRIANGLE_STRIP]
+	self bindAndUseProgram: self solidRectangleProgram during: [
+			self solidRectangleProgram color: fillColor.
+			self frameAndFillRectangle: r borderWidth: borderWidth borderColor: borderColor withProgram: self solidRectangleProgram]
+]
+
+{ #category : #'drawing-rectangles' }
+GLCanvas >> frameAndFillRectangle: r fillStyle: aFillStyle borderStyle: aBorderStyle [
+
+	| drawRectangleBlock rectanglePrograms |
+	drawRectangleBlock := [:aProgram | self frameAndFillRectangle: r borderWidth: aBorderStyle width borderColor: aBorderStyle color withProgram: aProgram].
+	rectanglePrograms := {#solid -> self solidRectangleProgram . #gradient -> self gradientRectangleProgram . #bitmap -> self bitmapRectangleProgram} asDictionary.
+	
+	self setUniformsFrom: aFillStyle for: rectanglePrograms during: drawRectangleBlock
 ]
 
 { #category : #accessing }
 GLCanvas >> framebuffer [
 
 	^ framebuffer
+]
+
+{ #category : #accessing }
+GLCanvas >> framebuffer: aFrameBuffer [
+
+	framebuffer := aFrameBuffer
 ]
 
 { #category : #accessing }
@@ -407,9 +383,21 @@ GLCanvas >> glLibrary [
 ]
 
 { #category : #accessing }
+GLCanvas >> gradientOvalProgram [
+
+	^ resources gradientOvalProgram
+]
+
+{ #category : #accessing }
 GLCanvas >> gradientPolygonProgram [
 
 	^ resources gradientPolygonProgram
+]
+
+{ #category : #accessing }
+GLCanvas >> gradientRectangleProgram [
+
+	^ resources gradientRectangleProgram
 ]
 
 { #category : #'drawing-images' }
@@ -434,8 +422,8 @@ GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 GLCanvas >> line: pt1 to: pt2 width: w color: c [
 
 	| vbo collection |
-	self bindAndUseProgram: self polygonProgram during: [
-			self polygonProgram
+	self bindAndUseProgram: self solidPolygonProgram during: [
+			self solidPolygonProgram
 				color: c;
 				mvp: transform.
 			
@@ -446,28 +434,14 @@ GLCanvas >> line: pt1 to: pt2 width: w color: c [
 				data: collection asFloat32Array.
 			
 			vbo boundDuring: [
-				self polygonProgram vertexAttrib: self polygonProgram aPosLocation components: 2 stride: 8 offset: 0.
+				self solidPolygonProgram vertexAttrib: self solidPolygonProgram aPosLocation components: 2 stride: 8 offset: 0.
 				GL checkForError].
 			
 			GL checkForError.
 			self glLibrary lineWidth: w asFloat.
 			GL checkForError.
 			vbo draw: GL_LINE_STRIP from: 0 count: 2.
-			GL checkForError.
-			
-			resources initializeProgramAttributes]
-]
-
-{ #category : #accessing }
-GLCanvas >> outlineProgram [
-
-	^ resources outlineProgram
-]
-
-{ #category : #accessing }
-GLCanvas >> ovalProgram [
-
-	^ resources ovalProgram
+			GL checkForError]
 ]
 
 { #category : #'drawing-text' }
@@ -485,12 +459,6 @@ GLCanvas >> paragraph: paragraph bounds: bounds color: c [
 	paragraph displayOn: self using: scanner at: bounds topLeft
 ]
 
-{ #category : #accessing }
-GLCanvas >> polygonProgram [
-
-	^ resources polygonProgram
-]
-
 { #category : #'drawing-polygons' }
 GLCanvas >> polygonVbo: vertices [
 
@@ -506,18 +474,97 @@ GLCanvas >> polygonVbo: vertices [
 	^ vbo
 ]
 
-{ #category : #accessing }
-GLCanvas >> rectangleProgram [
-
-	^ resources rectangleProgram
-]
-
 { #category : #'drawing-support' }
 GLCanvas >> scaleBy: aPoint during: aBlock [
 	
 	self
 		transform: transform * (Matrix4x4 withScale: aPoint@1)
 		during: aBlock
+]
+
+{ #category : #'setting-uniforms' }
+GLCanvas >> setBitmapUniformsFrom: aFillStyle for: aProgram during: aBlock [
+
+	| clampMode |
+	self bindAndUseProgram: aProgram during: [
+		(RtFormStore form: aFillStyle form) glTextureDo: [:texture |
+			texture boundDuring: [
+				aProgram
+					formOrigin: aFillStyle origin;
+					formDirection: aFillStyle direction;
+					formNormal: aFillStyle normal.
+					
+				clampMode := aFillStyle isTiled ifTrue: [GL_REPEAT] ifFalse: [GL_CLAMP_TO_EDGE].
+								
+				self glLibrary texParameteri: GL_TEXTURE_2D with: GL_TEXTURE_WRAP_S with: clampMode.
+				self glLibrary texParameteri: GL_TEXTURE_2D with: GL_TEXTURE_WRAP_T with: clampMode.
+				
+				aBlock cull: aProgram]]]
+]
+
+{ #category : #'setting-uniforms' }
+GLCanvas >> setGradientUniformsFrom: aFillStyle for: aProgram during: aBlock [
+
+	| ramp |
+	self bindAndUseProgram: aProgram during: [
+		ramp := aFillStyle pixelRamp.
+		(RtFormStore form: (Form extent: ramp size @ 1 depth: 32 bits: ramp)) glTextureDo: [:texture |
+			texture boundDuring: [
+				aProgram
+					gradientOrigin: aFillStyle origin;
+					gradientDirection: aFillStyle direction;
+					gradientRadial: aFillStyle radial;
+					pixelRamp: 0.
+				
+				self glLibrary texParameteri: GL_TEXTURE_2D with: GL_TEXTURE_WRAP_S with: GL_CLAMP_TO_EDGE.
+				self glLibrary texParameteri: GL_TEXTURE_2D with: GL_TEXTURE_WRAP_T with: GL_CLAMP_TO_EDGE.
+				
+				aBlock cull: aProgram]]]
+]
+
+{ #category : #'setting-uniforms' }
+GLCanvas >> setSolidUniformsFrom: aFillStyle for: aProgram during: aBlock [
+
+	self bindAndUseProgram: aProgram during: [
+			aProgram color: aFillStyle asColor.
+			
+			aBlock cull: aProgram]
+]
+
+{ #category : #'setting-uniforms' }
+GLCanvas >> setUniformsFrom: aFillStyle for: aDictionary during: aBlock [
+
+	| program |
+	aFillStyle isGradientFill
+		ifTrue: [
+			program := aDictionary at: #gradient.
+			self setGradientUniformsFrom: aFillStyle for: program during: aBlock]
+		ifFalse: [
+			aFillStyle isBitmapFill
+				ifTrue: [
+					program :=  aDictionary at: #bitmap.
+					self setBitmapUniformsFrom: aFillStyle for: program during: aBlock]
+				ifFalse: [
+					program :=  aDictionary at: #solid.
+					self setSolidUniformsFrom: aFillStyle for: program during: aBlock]].
+]
+
+{ #category : #accessing }
+GLCanvas >> solidOvalProgram [
+
+	^ resources solidOvalProgram
+]
+
+{ #category : #accessing }
+GLCanvas >> solidPolygonProgram [
+
+	^ resources solidPolygonProgram
+]
+
+{ #category : #accessing }
+GLCanvas >> solidRectangleProgram [
+
+	^ resources solidRectangleProgram
 ]
 
 { #category : #accessing }

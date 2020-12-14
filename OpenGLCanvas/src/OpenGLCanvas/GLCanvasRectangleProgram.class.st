@@ -1,15 +1,6 @@
 Class {
 	#name : #GLCanvasRectangleProgram,
 	#superclass : #GLStaticProgram,
-	#instVars : [
-		'mvpLocation',
-		'extentLocation',
-		'colorLocation',
-		'borderColorLocation',
-		'borderWidthLocation',
-		'aPosLocation',
-		'aTexCoordsLocation'
-	],
 	#category : #'OpenGLCanvas-Core'
 }
 
@@ -28,14 +19,15 @@ out vec4 FragColor;
 in vec2 point;
 
 uniform vec2 extent;
-uniform vec4 color;
 uniform vec4 borderColor;
 uniform float borderWidth;
+
+', self fragmentShaderFillColor, '
 
 void main() {
 	vec2 b = vec2(borderWidth, borderWidth);
 	FragColor = mix(
-		color,
+		getColor(),
 		borderColor,
 		float(any(lessThan(point, b)) || any(greaterThan(point, extent - b)))
 	);
@@ -45,7 +37,7 @@ void main() {
 { #category : #'shader code' }
 GLCanvasRectangleProgram class >> uniforms [
 
-	^ #('mvp' 'extent' 'color' 'borderColor' 'borderWidth')
+	^ #('mvp' 'extent' 'borderColor' 'borderWidth')
 ]
 
 { #category : #'shader code' }
@@ -63,54 +55,4 @@ void main()
 	point = aPos * extent;
     gl_Position = mvp * vec4(point, 0.0, 1.0);
 }' withUnixLineEndings
-]
-
-{ #category : #generated }
-GLCanvasRectangleProgram >> aPosLocation [
-
-	^ aPosLocation
-]
-
-{ #category : #generated }
-GLCanvasRectangleProgram >> borderColor: anObject [
-
-	self uniform: borderColorLocation value: anObject
-]
-
-{ #category : #generated }
-GLCanvasRectangleProgram >> borderWidth: anObject [
-
-	self uniform: borderWidthLocation value: anObject
-]
-
-{ #category : #generated }
-GLCanvasRectangleProgram >> color: anObject [
-
-	self uniform: colorLocation value: anObject
-]
-
-{ #category : #generated }
-GLCanvasRectangleProgram >> extent: anObject [
-
-	self uniform: extentLocation value: anObject
-]
-
-{ #category : #generated }
-GLCanvasRectangleProgram >> initializeLocations [
-
-	super initializeLocations.
-	
-	mvpLocation := self registerUniform: 'mvp'.
-	extentLocation := self registerUniform: 'extent'.
-	colorLocation := self registerUniform: 'color'.
-	borderColorLocation := self registerUniform: 'borderColor'.
-	borderWidthLocation := self registerUniform: 'borderWidth'.
-	
-	aPosLocation := self registerAttribute: 'aPos'.
-]
-
-{ #category : #generated }
-GLCanvasRectangleProgram >> mvp: anObject [
-
-	self uniform: mvpLocation value: anObject
 ]

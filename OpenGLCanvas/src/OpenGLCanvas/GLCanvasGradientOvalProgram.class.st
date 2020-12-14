@@ -1,8 +1,11 @@
 Class {
-	#name : #GLCanvasGradientPolygonProgram,
-	#superclass : #GLCanvasPolygonProgram,
+	#name : #GLCanvasGradientOvalProgram,
+	#superclass : #GLCanvasOvalProgram,
 	#instVars : [
 		'mvpLocation',
+		'extentLocation',
+		'borderColorLocation',
+		'borderWidthLocation',
 		'pixelRampLocation',
 		'gradientOriginLocation',
 		'gradientDirectionLocation',
@@ -13,47 +16,68 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-GLCanvasGradientPolygonProgram class >> fragmentShaderFillColor [
+GLCanvasGradientOvalProgram class >> fragmentShaderFillColor [
 
 	^ GLSharedCanvasResources fragmentShaderGradientFillStyle
 ]
 
 { #category : #'as yet unclassified' }
-GLCanvasGradientPolygonProgram class >> uniforms [
+GLCanvasGradientOvalProgram class >> uniforms [
 
 	^ super uniforms , GLSharedCanvasResources uniformsGradientFillStyle
 ]
 
 { #category : #generated }
-GLCanvasGradientPolygonProgram >> aPosLocation [
+GLCanvasGradientOvalProgram >> aPosLocation [
 
 	^ aPosLocation
 ]
 
 { #category : #generated }
-GLCanvasGradientPolygonProgram >> gradientDirection: anObject [
+GLCanvasGradientOvalProgram >> borderColor: anObject [
+
+	self uniform: borderColorLocation value: anObject
+]
+
+{ #category : #generated }
+GLCanvasGradientOvalProgram >> borderWidth: anObject [
+
+	self uniform: borderWidthLocation value: anObject
+]
+
+{ #category : #generated }
+GLCanvasGradientOvalProgram >> extent: anObject [
+
+	self uniform: extentLocation value: anObject
+]
+
+{ #category : #generated }
+GLCanvasGradientOvalProgram >> gradientDirection: anObject [
 
 	self uniform: gradientDirectionLocation value: anObject
 ]
 
 { #category : #generated }
-GLCanvasGradientPolygonProgram >> gradientOrigin: anObject [
+GLCanvasGradientOvalProgram >> gradientOrigin: anObject [
 
 	self uniform: gradientOriginLocation value: anObject
 ]
 
 { #category : #generated }
-GLCanvasGradientPolygonProgram >> gradientRadial: anObject [
+GLCanvasGradientOvalProgram >> gradientRadial: anObject [
 
 	self uniform: gradientRadialLocation value: anObject
 ]
 
 { #category : #generated }
-GLCanvasGradientPolygonProgram >> initializeLocations [
+GLCanvasGradientOvalProgram >> initializeLocations [
 
 	super initializeLocations.
 	
 	mvpLocation := self registerUniform: 'mvp'.
+	extentLocation := self registerUniform: 'extent'.
+	borderColorLocation := self registerUniform: 'borderColor'.
+	borderWidthLocation := self registerUniform: 'borderWidth'.
 	pixelRampLocation := self registerUniform: 'pixelRamp'.
 	gradientOriginLocation := self registerUniform: 'gradientOrigin'.
 	gradientDirectionLocation := self registerUniform: 'gradientDirection'.
@@ -63,13 +87,13 @@ GLCanvasGradientPolygonProgram >> initializeLocations [
 ]
 
 { #category : #generated }
-GLCanvasGradientPolygonProgram >> mvp: anObject [
+GLCanvasGradientOvalProgram >> mvp: anObject [
 
 	self uniform: mvpLocation value: anObject
 ]
 
 { #category : #generated }
-GLCanvasGradientPolygonProgram >> pixelRamp: anObject [
+GLCanvasGradientOvalProgram >> pixelRamp: anObject [
 
 	self uniform: pixelRampLocation value: anObject
 ]

@@ -1,8 +1,11 @@
 Class {
-	#name : #GLCanvasBitmapPolygonProgram,
-	#superclass : #GLCanvasPolygonProgram,
+	#name : #GLCanvasBitmapOvalProgram,
+	#superclass : #GLCanvasOvalProgram,
 	#instVars : [
 		'mvpLocation',
+		'extentLocation',
+		'borderColorLocation',
+		'borderWidthLocation',
 		'formLocation',
 		'formOriginLocation',
 		'formDirectionLocation',
@@ -13,53 +16,74 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-GLCanvasBitmapPolygonProgram class >> fragmentShaderFillColor [
+GLCanvasBitmapOvalProgram class >> fragmentShaderFillColor [
 
 	^ GLSharedCanvasResources fragmentShaderBitmapFillStyle
 ]
 
 { #category : #'as yet unclassified' }
-GLCanvasBitmapPolygonProgram class >> uniforms [
+GLCanvasBitmapOvalProgram class >> uniforms [
 
 	^ super uniforms , GLSharedCanvasResources uniformsBitmapFillStyle
 ]
 
 { #category : #generated }
-GLCanvasBitmapPolygonProgram >> aPosLocation [
+GLCanvasBitmapOvalProgram >> aPosLocation [
 
 	^ aPosLocation
 ]
 
 { #category : #generated }
-GLCanvasBitmapPolygonProgram >> form: anObject [
+GLCanvasBitmapOvalProgram >> borderColor: anObject [
+
+	self uniform: borderColorLocation value: anObject
+]
+
+{ #category : #generated }
+GLCanvasBitmapOvalProgram >> borderWidth: anObject [
+
+	self uniform: borderWidthLocation value: anObject
+]
+
+{ #category : #generated }
+GLCanvasBitmapOvalProgram >> extent: anObject [
+
+	self uniform: extentLocation value: anObject
+]
+
+{ #category : #generated }
+GLCanvasBitmapOvalProgram >> form: anObject [
 
 	self uniform: formLocation value: anObject
 ]
 
 { #category : #generated }
-GLCanvasBitmapPolygonProgram >> formDirection: anObject [
+GLCanvasBitmapOvalProgram >> formDirection: anObject [
 
 	self uniform: formDirectionLocation value: anObject
 ]
 
 { #category : #generated }
-GLCanvasBitmapPolygonProgram >> formNormal: anObject [
+GLCanvasBitmapOvalProgram >> formNormal: anObject [
 
 	self uniform: formNormalLocation value: anObject
 ]
 
 { #category : #generated }
-GLCanvasBitmapPolygonProgram >> formOrigin: anObject [
+GLCanvasBitmapOvalProgram >> formOrigin: anObject [
 
 	self uniform: formOriginLocation value: anObject
 ]
 
 { #category : #generated }
-GLCanvasBitmapPolygonProgram >> initializeLocations [
+GLCanvasBitmapOvalProgram >> initializeLocations [
 
 	super initializeLocations.
 	
 	mvpLocation := self registerUniform: 'mvp'.
+	extentLocation := self registerUniform: 'extent'.
+	borderColorLocation := self registerUniform: 'borderColor'.
+	borderWidthLocation := self registerUniform: 'borderWidth'.
 	formLocation := self registerUniform: 'form'.
 	formOriginLocation := self registerUniform: 'formOrigin'.
 	formDirectionLocation := self registerUniform: 'formDirection'.
@@ -69,7 +93,7 @@ GLCanvasBitmapPolygonProgram >> initializeLocations [
 ]
 
 { #category : #generated }
-GLCanvasBitmapPolygonProgram >> mvp: anObject [
+GLCanvasBitmapOvalProgram >> mvp: anObject [
 
 	self uniform: mvpLocation value: anObject
 ]

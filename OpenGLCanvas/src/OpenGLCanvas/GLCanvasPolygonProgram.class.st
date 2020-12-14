@@ -1,15 +1,6 @@
 Class {
 	#name : #GLCanvasPolygonProgram,
 	#superclass : #GLStaticProgram,
-	#instVars : [
-		'mvpLocation',
-		'extentLocation',
-		'colorLocation',
-		'borderColorLocation',
-		'borderWidthLocation',
-		'aPosLocation',
-		'aTexCoordsLocation'
-	],
 	#category : #'OpenGLCanvas-Core'
 }
 
@@ -27,17 +18,23 @@ out vec4 FragColor;
 
 in vec2 point;
 
-uniform vec4 color;
+', self fragmentShaderFillColor, '
 
 void main() {
-	FragColor = color;
+	FragColor = getColor();
 }' withUnixLineEndings
+]
+
+{ #category : #'shader code' }
+GLCanvasPolygonProgram class >> fragmentShaderFillColor [
+
+	self subclassResponsibility
 ]
 
 { #category : #'shader code' }
 GLCanvasPolygonProgram class >> uniforms [
 
-	^ #('mvp' 'color')
+	^ #('mvp')
 ]
 
 { #category : #'shader code' }
@@ -54,33 +51,4 @@ void main()
 	point = aPos;
 	gl_Position = mvp * vec4(point, 0.0, 1.0);
 }' withUnixLineEndings
-]
-
-{ #category : #generated }
-GLCanvasPolygonProgram >> aPosLocation [
-
-	^ aPosLocation
-]
-
-{ #category : #generated }
-GLCanvasPolygonProgram >> color: anObject [
-
-	self uniform: colorLocation value: anObject
-]
-
-{ #category : #generated }
-GLCanvasPolygonProgram >> initializeLocations [
-
-	super initializeLocations.
-	
-	mvpLocation := self registerUniform: 'mvp'.
-	colorLocation := self registerUniform: 'color'.
-	
-	aPosLocation := self registerAttribute: 'aPos'.
-]
-
-{ #category : #generated }
-GLCanvasPolygonProgram >> mvp: anObject [
-
-	self uniform: mvpLocation value: anObject
 ]
