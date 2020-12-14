@@ -508,6 +508,17 @@ GLLibrary >> getViewport [
 ]
 
 {
+	#category : #'*OpenGL-Wrappers-implementations',
+	#timestamp : 'stlu 12/13/2020 17:10'
+}
+GLLibrary >> initializeWrapperImplementations: implementations [
+
+	self flag: #todo. "move into correct apis and versions"
+	implementations programInterfaceQuery: GLDirectProgramInterfaceQueryImplementation new.
+	implementations uniformSetter: GLDirectUniformSetter new
+]
+
+{
 	#category : #testing,
 	#timestamp : 'stlu 11/12/2020 15:52'
 }
@@ -614,6 +625,15 @@ GLLibrary >> profileError [
 ]
 
 {
+	#category : #'*OpenGL-Wrappers-implementations',
+	#timestamp : 'stlu 12/13/2020 15:38'
+}
+GLLibrary >> programInterfaceQueryImplementation [
+
+	^ self wrapperImplementations programInterfaceQuery
+]
+
+{
 	#category : #resources,
 	#timestamp : 'stlu 12/3/2020 18:41'
 }
@@ -695,6 +715,15 @@ GLLibrary >> swapBuffers [
 ]
 
 {
+	#category : #'*OpenGL-Wrappers-implementations',
+	#timestamp : 'stlu 12/13/2020 17:09'
+}
+GLLibrary >> uniformSetterImplementation [
+
+	^ self wrapperImplementations uniformSetter
+]
+
+{
 	#category : #resources,
 	#timestamp : 'stlu 12/3/2020 18:54'
 }
@@ -732,4 +761,13 @@ GLLibrary >> viewport: aRectangle during: aBlock [
 	self setViewport: aRectangle.
 	aBlock value.
 	self setViewport: previousViewport
+]
+
+{
+	#category : #'*OpenGL-Wrappers-implementations',
+	#timestamp : 'stlu 12/13/2020 15:38'
+}
+GLLibrary >> wrapperImplementations [
+
+	^ context wrapperImplementations
 ]

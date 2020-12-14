@@ -65,6 +65,15 @@ GLProgram class >> useID: id [
 ]
 
 {
+	#category : #'accessing-resources',
+	#timestamp : 'stlu 11/13/2020 19:48'
+}
+GLProgram >> atomicCounterBuffers [
+
+	^ resources atomicCounterBuffers
+]
+
+{
 	#category : #actions,
 	#timestamp : 'stlu 11/3/2020 15:36'
 }
@@ -72,6 +81,15 @@ GLProgram >> attachShader: glShader [
 
 	GL attachShader: id with: glShader id.
 	shaders add: glShader
+]
+
+{
+	#category : #'accessing-resources',
+	#timestamp : 'stlu 11/13/2020 19:48'
+}
+GLProgram >> bufferVariables [
+
+	^ resources bufferVariables
 ]
 
 {
@@ -181,6 +199,15 @@ GLProgram >> initialize [
 ]
 
 {
+	#category : #'accessing-resources',
+	#timestamp : 'stlu 11/13/2020 19:47'
+}
+GLProgram >> inputs [
+
+	^ resources inputs
+]
+
+{
 	#category : #testing,
 	#timestamp : 'stlu 12/14/2020 12:12'
 }
@@ -257,12 +284,102 @@ GLProgram >> linkingSucceeded [
 ]
 
 {
+	#category : #'accessing-resources',
+	#timestamp : 'stlu 11/13/2020 19:47'
+}
+GLProgram >> outputs [
+
+	^ resources outputs
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 19:41'
+}
+GLProgram >> resources [
+
+	^ resources
+]
+
+{
+	#category : #'accessing-resources',
+	#timestamp : 'stlu 11/13/2020 19:48'
+}
+GLProgram >> shaderStorageBlocks [
+
+	^ resources shaderStorageBlocks
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLProgram >> shaders [
 
 	^ shaders
+]
+
+{
+	#category : #'accessing-resources',
+	#timestamp : 'stlu 11/13/2020 19:47'
+}
+GLProgram >> subroutineUniforms [
+
+	^ resources subroutineUniforms
+]
+
+{
+	#category : #'accessing-resources',
+	#timestamp : 'stlu 11/13/2020 19:47'
+}
+GLProgram >> subroutines [
+
+	^ resources subroutines
+]
+
+{
+	#category : #'accessing-resources',
+	#timestamp : 'stlu 11/13/2020 19:47'
+}
+GLProgram >> transformFeedbackBuffers [
+
+	^ resources transformFeedbackBuffers
+]
+
+{
+	#category : #'accessing-resources',
+	#timestamp : 'stlu 11/13/2020 19:47'
+}
+GLProgram >> transformFeedbackVaryings [
+
+	^ resources transformFeedbackVaryings
+]
+
+{
+	#category : #'accessing-resources',
+	#timestamp : 'stlu 11/13/2020 19:48'
+}
+GLProgram >> uniformBlocks [
+
+	^ resources uniformBlocks
+]
+
+{
+	#category : #'accessing-resources',
+	#timestamp : 'stlu 12/13/2020 15:21'
+}
+GLProgram >> uniformNamed: aString [
+
+	^ resources uniformNamed: aString
+]
+
+{
+	#category : #'accessing-resources',
+	#timestamp : 'stlu 11/13/2020 19:42'
+}
+GLProgram >> uniforms [
+
+	^ resources uniforms
 ]
 
 {
@@ -285,10 +402,13 @@ GLProgram >> useDuring: aBlock [
 
 {
 	#category : #actions,
-	#timestamp : 'stlu 10/27/2020 12:25'
+	#timestamp : 'stlu 12/14/2020 12:17'
 }
 GLProgram >> validate [
 
+	self isAllocated ifFalse: [^ false].
 	self isValid ifFalse: [
-		self notify: self infoLog]
+		self notify: self getInfoLog.
+		^ false].
+	^ true
 ]

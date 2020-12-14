@@ -64,6 +64,16 @@ GLType class >> enum [
 ]
 
 {
+	#category : #'instance creation',
+	#timestamp : 'stlu 12/13/2020 16:09'
+}
+GLType class >> enum: typeEnum size: arraySize [
+
+	arraySize <= 1 ifTrue: [^ self forEnum: typeEnum].
+	self notYetImplemented
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 11/23/2020 12:46'
 }

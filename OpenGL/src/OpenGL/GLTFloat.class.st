@@ -85,3 +85,12 @@ GLTFloat >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
 	aUniform setTo1ComponentFloatArray: aRawBitsArray count: numElements
 ]
+
+{
+	#category : #'program resources',
+	#timestamp : 'stlu 12/14/2020 11:54'
+}
+GLTFloat >> setUniform: aUniform toObject: anObject [
+
+	aUniform setToFloat: anObject
+]

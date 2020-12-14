@@ -5,6 +5,7 @@ Class {
 		'library',
 		'bindings',
 		'objectStore',
+		'wrapperImplementations',
 		'programs',
 		'userData',
 		'api',
@@ -140,7 +141,7 @@ GLContext >> forgetBinding: bindingEnum [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 12/8/2020 16:15'
+	#timestamp : 'stlu 12/13/2020 15:36'
 }
 GLContext >> initialize [
 
@@ -149,7 +150,8 @@ GLContext >> initialize [
 	programs := IdentityDictionary new.
 	userData := Dictionary new.
 	self initializeLibrary.
-	self initializeBindings
+	self initializeBindings.
+	self initializeWrapperImplementations
 ]
 
 {
@@ -191,6 +193,16 @@ GLContext >> initializeLibrary [
 	extensions := library getExtensions.
 	
 	self deactivate
+]
+
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 12/13/2020 15:37'
+}
+GLContext >> initializeWrapperImplementations [
+
+	self flag: #todo. "always adheres to the context's library by default"
+	wrapperImplementations := GLWrapperImplementations forLibrary: library
 ]
 
 {
@@ -291,4 +303,13 @@ GLContext >> userData [
 GLContext >> version [
 
 	^ version
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/13/2020 15:38'
+}
+GLContext >> wrapperImplementations [
+
+	^ wrapperImplementations
 ]

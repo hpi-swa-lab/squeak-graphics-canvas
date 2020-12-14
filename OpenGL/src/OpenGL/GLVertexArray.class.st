@@ -1,7 +1,7 @@
 Class {
 	#name : #GLVertexArray,
 	#superclass : #GLObject,
-	#category : #'OpenGL-Wrappers-Buffers',
+	#category : #'OpenGL-Wrappers-VertexAttributes',
 	#commentStamp : ''
 }
 
@@ -39,15 +39,6 @@ GLVertexArray class >> target [
 GLVertexArray >> delete [
 
 	GL deleteVertexArrays: 1 with: (IntegerArray with: id)
-]
-
-{
-	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
-GLVertexArray >> draw: aModeEnum [
-
-	self draw: aModeEnum from: 0 count: numElements
 ]
 
 {
