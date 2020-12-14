@@ -12,7 +12,7 @@ Class {
 
 {
 	#category : #running,
-	#timestamp : 'stlu 12/8/2020 17:52'
+	#timestamp : 'stlu 12/14/2020 11:54'
 }
 SLDemo >> render [
 
@@ -21,6 +21,9 @@ SLDemo >> render [
 	
 	vao boundDuring: [
 		program useDuring: [
+			| time |
+			time := (Time millisecondClock / 1000) sin.
+			(program uniformNamed: 'time') setTo: time asFloat.
 			vbo draw: GL_TRIANGLES from: 0 count: 3]].
 	
 	GL checkForError

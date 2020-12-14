@@ -2,11 +2,14 @@ Extension { #name : #GLTVector }
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 12/1/2020 17:58'
+	#timestamp : 'stlu 12/13/2020 17:31'
 }
 GLTVector >> + another [
-	(self = another or: [another = self componentType]) ifFalse: [
-		^ self error: 'Tried to add ', another class name , ' to ', self class name, '.'].
+	self componentType ~= another componentType ifTrue: [
+		^ self error: 'Tried to add ', another componentType asString , ' to ', self componentType asString , '.'].
+	(self numComponents ~= another numComponents
+		and: [another numComponents > 1]) ifTrue: [
+			^ self error: 'Can''t implictly convert vector of size ' , another numComponents , ' to vector of size ' , self numComponents].
 
 	^ SLMappingToOperator new
 		type: self;
@@ -52,7 +55,7 @@ GLTVector >> @ another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 12/1/2020 18:45'
+	#timestamp : 'stlu 12/9/2020 15:24'
 }
 GLTVector >> doesNotUnderstand: aMessage [
 	| selector swizzlingChars sets |
@@ -75,7 +78,7 @@ GLTVector >> doesNotUnderstand: aMessage [
 		resultType := GLTVector componentType: self componentType instance numComponents: selector size.
 		^ SLMappingToComponentRead new
 				targetSelector: selector;
-				type: resultType instance].
+				type: resultType].
 			
 	self notYetImplemented.
 ]

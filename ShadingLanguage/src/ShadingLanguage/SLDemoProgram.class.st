@@ -19,11 +19,12 @@ SLDemoProgram class >> attributes [
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 12/8/2020 17:53'
+	#timestamp : 'stlu 12/9/2020 15:56'
 }
 SLDemoProgram class >> fragmentShader: out inputs: in [
 
-	out FragColor: 1.0@1.0@0.0@1.0
+	<fragmentShader>
+	out FragColor: 1.0@0.5@0.9@1.0
 ]
 
 {
@@ -37,11 +38,14 @@ SLDemoProgram class >> initialize [
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 12/8/2020 17:14'
+	#timestamp : 'stlu 12/13/2020 17:39'
 }
-SLDemoProgram class >> vertexShader: out inputs: in [
+SLDemoProgram class >> vertexShader: out inputs: in uniforms: u [
 
-	out gl_Position: in aPos beFloatVector2 @ 0.0 @ 1.0
+	<vertexShader>
+	| pos |
+	pos := in aPos beFloatVector2.
+	out gl_Position: pos + u time beFloat @ 0.0 @ 1.0
 ]
 
 {

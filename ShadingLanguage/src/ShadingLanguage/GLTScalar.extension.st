@@ -16,11 +16,11 @@ GLTScalar >> * another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 12/1/2020 17:55'
+	#timestamp : 'stlu 12/13/2020 17:28'
 }
 GLTScalar >> + another [
-	self = another ifFalse: [
-		^ self error: 'Tried to add ', another class name , ' to ', self class name, '.'].
+	self componentType ~= another componentType ifTrue: [
+		^ self error: 'Tried to add ', another componentType asString , ' to ', self componentType asString , '.'].
 
 	^ SLMappingToOperator new
 		type: self;

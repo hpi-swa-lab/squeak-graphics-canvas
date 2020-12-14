@@ -39,23 +39,26 @@ SLStaticProgram class >> fragmentShader [
 
 {
 	#category : #compiling,
-	#timestamp : 'stlu 12/8/2020 17:52'
+	#timestamp : 'stlu 12/9/2020 15:24'
 }
 SLStaticProgram class >> noteCompilationOf: aSelector meta: isMeta [
 
-	
+	| vertexShader fragmentShader instances |
 	isMeta ifFalse: [^ self].
 	self = SLStaticProgram ifTrue: [^ self].
+	instances := self allInstances ifEmpty: [^ self].
+	
 	[
-		| vertexShader fragmentShader |
 		vertexShader := self vertexShader.
 		fragmentShader := self fragmentShader.
-		self allInstancesDo: [:instance |
+	] on: Error do: [:err | ^ err pass].
+
+	[
+		instances do: [:instance |
 			instance library context isDestroyed ifFalse: [
 				instance library makeCurrentDuring: [
 					instance updateShaders]]]
-	] on: Error do: [:err |
-		self notify: 'Did not work']
+	] on: Error do: [:err | ^ err pass]
 ]
 
 {
