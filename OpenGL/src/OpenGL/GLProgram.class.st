@@ -85,6 +85,16 @@ GLProgram >> detachShader: aShader [
 ]
 
 {
+	#category : #actions,
+	#timestamp : 'stlu 12/13/2020 15:24'
+}
+GLProgram >> detachShaders [
+
+	shaders asArray "don't change collection while iterating" do: [:shader |
+		self detachShader: shader]
+]
+
+{
 	#category : #activation,
 	#timestamp : 'stlu 12/3/2020 19:33'
 }

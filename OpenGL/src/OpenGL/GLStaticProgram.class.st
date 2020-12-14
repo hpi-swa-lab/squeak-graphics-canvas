@@ -192,12 +192,11 @@ GLStaticProgram >> uniform: location value: anObject [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/8/2020 16:30'
+	#timestamp : 'stlu 12/14/2020 12:38'
 }
 GLStaticProgram >> updateShaders [
 
-	shaders do: [:shader |
-		self detachShader: shader].
+	self detachShaders.
 	self initializeShaders
 ]
 
