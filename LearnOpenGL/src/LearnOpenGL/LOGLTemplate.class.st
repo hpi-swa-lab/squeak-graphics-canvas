@@ -89,7 +89,7 @@ LOGLTemplate >> renderLoop [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/8/2020 16:21'
+	#timestamp : 'stlu 12/13/2020 15:46'
 }
 LOGLTemplate >> run [
 
@@ -104,7 +104,7 @@ LOGLTemplate >> run [
 	
 	window ifNil: [^ self error: 'Failed to create GLFW window'].
 	
-	library := GL3_3 context: window context.
+	library := window context library.
 	
 	library makeCurrentDuring: [
 		window framebufferSizeCallback: [:w :width :height |
