@@ -1,20 +1,23 @@
+"
+1.2.1
+"
 Class {
-	#name : #'LOGL1_2_1_hello_triangle',
+	#name : #LOGLHelloTriangle,
 	#superclass : #LOGLTemplate,
 	#instVars : [
 		'program',
 		'vao',
 		'vbo'
 	],
-	#category : #'LearnOpenGL-1GettingStarted',
-	#commentStamp : ''
+	#category : #'LearnOpenGL-GettingStarted',
+	#commentStamp : 'stlu 12/14/2020 15:50'
 }
 
 {
 	#category : #shaders,
 	#timestamp : 'stlu 10/22/2020 16:53'
 }
-LOGL1_2_1_hello_triangle >> fragmentShaderSource [
+LOGLHelloTriangle >> fragmentShaderSource [
 
 	^ '#version 330 core
 out vec4 FragColor;
@@ -27,7 +30,7 @@ void main() {
 	#category : #running,
 	#timestamp : 'stlu 11/3/2020 15:01'
 }
-LOGL1_2_1_hello_triangle >> render [
+LOGLHelloTriangle >> render [
 
 	GL setClearColor: (Color gray: (Time millisecondClock \\ 5000 / 5000)).
 	GL clear: GL_COLOR_BUFFER_BIT
@@ -37,7 +40,7 @@ LOGL1_2_1_hello_triangle >> render [
 	#category : #running,
 	#timestamp : 'stlu 12/13/2020 15:49'
 }
-LOGL1_2_1_hello_triangle >> setUp [
+LOGLHelloTriangle >> setUp [
 
 	| vertexShader fragmentShader |
 	vertexShader := GLVertexShader create
@@ -61,7 +64,7 @@ LOGL1_2_1_hello_triangle >> setUp [
 	#category : #shaders,
 	#timestamp : 'stlu 10/27/2020 12:11'
 }
-LOGL1_2_1_hello_triangle >> vertexShaderSource [
+LOGLHelloTriangle >> vertexShaderSource [
 
 	^ '#version 330 core
 layout (location = 0) in vec3 aPos;
