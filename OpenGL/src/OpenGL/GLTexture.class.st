@@ -25,6 +25,15 @@ GLTexture class >> bindID: id to: target [
 
 {
 	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 12:13'
+}
+GLTexture >> isAllocated [
+
+	^ GL isTexture: id
+]
+
+{
+	#category : #testing,
 	#timestamp : 'stlu 10/29/2020 12:16'
 }
 GLTexture >> isTexture [

@@ -78,15 +78,6 @@ GLShader >> errorCompilationFailed [
 ]
 
 {
-	#category : #testing,
-	#timestamp : 'stlu 11/3/2020 15:39'
-}
-GLShader >> exists [
-
-	^ GL isShader: id
-]
-
-{
 	#category : #'accessing uncached',
 	#timestamp : 'stlu 11/3/2020 15:39'
 }
@@ -154,6 +145,15 @@ GLShader >> initialize [
 
 	super initialize.
 	source := ''
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 12:12'
+}
+GLShader >> isAllocated [
+
+	^ GL isShader: id
 ]
 
 {

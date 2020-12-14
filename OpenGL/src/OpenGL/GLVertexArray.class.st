@@ -52,6 +52,15 @@ GLVertexArray >> draw: aModeEnum [
 
 {
 	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 12:13'
+}
+GLVertexArray >> isAllocated [
+
+	^ GL isVertexArray: id
+]
+
+{
+	#category : #testing,
 	#timestamp : 'stlu 10/29/2020 12:15'
 }
 GLVertexArray >> isVertexArray [

@@ -125,6 +125,15 @@ GLBuffer >> initialize [
 
 {
 	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 12:11'
+}
+GLBuffer >> isAllocated [
+
+	^ GL isBuffer: id
+]
+
+{
+	#category : #testing,
 	#timestamp : 'stlu 10/29/2020 12:14'
 }
 GLBuffer >> isBuffer [

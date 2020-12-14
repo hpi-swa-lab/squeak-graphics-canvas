@@ -181,6 +181,15 @@ GLProgram >> initialize [
 
 {
 	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 12:12'
+}
+GLProgram >> isAllocated [
+
+	^ GL isProgram: id
+]
+
+{
+	#category : #testing,
 	#timestamp : 'stlu 10/27/2020 12:17'
 }
 GLProgram >> isFlaggedForDeletion [

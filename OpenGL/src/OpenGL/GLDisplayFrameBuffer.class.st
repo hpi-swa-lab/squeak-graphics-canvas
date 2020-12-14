@@ -43,3 +43,12 @@ GLDisplayFrameBuffer class >> initializeBindings [
 	GL rememberBinding: GL_DRAW_FRAMEBUFFER as: display.
 	GL rememberBinding: GL_READ_FRAMEBUFFER as: display
 ]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 12:15'
+}
+GLDisplayFrameBuffer >> isAllocated [
+
+	^ false
+]

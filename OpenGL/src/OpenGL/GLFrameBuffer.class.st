@@ -178,6 +178,15 @@ GLFrameBuffer >> initialize [
 
 {
 	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 12:12'
+}
+GLFrameBuffer >> isAllocated [
+
+	^ GL isFramebuffer: id
+]
+
+{
+	#category : #testing,
 	#timestamp : 'stlu 10/29/2020 12:16'
 }
 GLFrameBuffer >> isFrameBuffer [

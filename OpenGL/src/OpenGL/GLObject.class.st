@@ -280,6 +280,15 @@ GLObject >> initialize [
 
 {
 	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 12:10'
+}
+GLObject >> isAllocated [
+
+	self subclassResponsibility
+]
+
+{
+	#category : #testing,
 	#timestamp : 'stlu 10/29/2020 12:12'
 }
 GLObject >> isBuffer [
