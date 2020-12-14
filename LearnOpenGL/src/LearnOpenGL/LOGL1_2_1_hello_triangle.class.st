@@ -2,9 +2,7 @@ Class {
 	#name : #'LOGL1_2_1_hello_triangle',
 	#superclass : #LOGLTemplate,
 	#instVars : [
-		'vertexShader',
-		'fragmentShader',
-		'shaderProgram',
+		'program',
 		'vao',
 		'vbo'
 	],
@@ -37,11 +35,11 @@ LOGL1_2_1_hello_triangle >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 11/13/2020 15:47'
+	#timestamp : 'stlu 12/13/2020 15:49'
 }
 LOGL1_2_1_hello_triangle >> setUp [
 
-	| vertexShader fragmentShader program |
+	| vertexShader fragmentShader |
 	vertexShader := GLVertexShader create
 						source: self vertexShaderSource;
 						compile;
