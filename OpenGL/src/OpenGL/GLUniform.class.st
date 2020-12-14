@@ -83,12 +83,12 @@ GLUniform class >> scalarSetterTemplate [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/13/2020 17:08'
+	#timestamp : 'stlu 12/14/2020 17:43'
 }
 GLUniform >> initialize [
 
 	super initialize.
-	setImpl := GL uniformSetterImplementation
+	stateAccessImp := GL uniformSetterImplementation
 ]
 
 {
@@ -108,24 +108,6 @@ GLUniform >> initializeProperties: aWordArray [
 GLUniform >> location [
 
 	^ location
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/16/2020 00:39'
-}
-GLUniform >> setImpl [
-
-	^ setImpl
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/16/2020 00:39'
-}
-GLUniform >> setImpl: anObject [
-
-	setImpl := anObject
 ]
 
 {
