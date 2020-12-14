@@ -1,26 +1,12 @@
 Class {
 	#name : #GLDirectProgramInterfaceQueryImplementation,
 	#superclass : #GLProgramInterfaceQueryImplementation,
-	#classVars : [
-		'ProgramInputProperties',
-		'UniformProperties'
-	],
 	#category : #'OpenGL-Wrappers-Programs',
 	#commentStamp : ''
 }
 
 {
-	#category : #'class initialization',
-	#timestamp : 'stlu 12/13/2020 13:44'
-}
-GLDirectProgramInterfaceQueryImplementation class >> initialize [
-
-	UniformProperties := { GL_NAME_LENGTH . GL_LOCATION . GL_TYPE . GL_ARRAY_SIZE }asWordArray.
-	ProgramInputProperties := { GL_NAME_LENGTH . GL_LOCATION . GL_TYPE . GL_ARRAY_SIZE }asWordArray
-]
-
-{
-	#category : #'as yet unclassified',
+	#category : #inputs,
 	#timestamp : 'stlu 12/13/2020 15:52'
 }
 GLDirectProgramInterfaceQueryImplementation >> getInputs: aProgram [
@@ -29,7 +15,7 @@ GLDirectProgramInterfaceQueryImplementation >> getInputs: aProgram [
 ]
 
 {
-	#category : #'as yet unclassified',
+	#category : #'resource querying',
 	#timestamp : 'stlu 12/13/2020 14:42'
 }
 GLDirectProgramInterfaceQueryImplementation >> getResource: aResourceClass program: aProgram at: index [
@@ -52,7 +38,7 @@ GLDirectProgramInterfaceQueryImplementation >> getResource: aResourceClass progr
 ]
 
 {
-	#category : #'as yet unclassified',
+	#category : #'resource querying',
 	#timestamp : 'stlu 12/13/2020 16:06'
 }
 GLDirectProgramInterfaceQueryImplementation >> getResources: aResourceClass program: aProgram [
@@ -71,7 +57,7 @@ GLDirectProgramInterfaceQueryImplementation >> getResources: aResourceClass prog
 ]
 
 {
-	#category : #'as yet unclassified',
+	#category : #uniforms,
 	#timestamp : 'stlu 12/13/2020 14:55'
 }
 GLDirectProgramInterfaceQueryImplementation >> getUniforms: aProgram [
@@ -80,7 +66,7 @@ GLDirectProgramInterfaceQueryImplementation >> getUniforms: aProgram [
 ]
 
 {
-	#category : #'as yet unclassified',
+	#category : #'resource querying',
 	#timestamp : 'stlu 12/13/2020 14:47'
 }
 GLDirectProgramInterfaceQueryImplementation >> queryInterface: interfaceEnum program: aProgram property: propertyEnum [
@@ -96,7 +82,7 @@ GLDirectProgramInterfaceQueryImplementation >> queryInterface: interfaceEnum pro
 ]
 
 {
-	#category : #'as yet unclassified',
+	#category : #'resource querying',
 	#timestamp : 'stlu 12/13/2020 14:42'
 }
 GLDirectProgramInterfaceQueryImplementation >> queryResourceName: nameLength program: aProgram interface: interfaceEnum at: index [
@@ -114,7 +100,7 @@ GLDirectProgramInterfaceQueryImplementation >> queryResourceName: nameLength pro
 ]
 
 {
-	#category : #'as yet unclassified',
+	#category : #'resource querying',
 	#timestamp : 'stlu 12/13/2020 14:42'
 }
 GLDirectProgramInterfaceQueryImplementation >> queryResourceProperties: aWordArray program: aProgram interface: interfaceEnum at: index [
