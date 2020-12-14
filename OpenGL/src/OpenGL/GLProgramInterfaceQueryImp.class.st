@@ -1,5 +1,5 @@
 Class {
-	#name : #GLProgramInterfaceQueryImplementation,
+	#name : #GLProgramInterfaceQueryImp,
 	#superclass : #Object,
 	#pools : [
 		'GLConstants'
@@ -12,7 +12,7 @@ Class {
 	#category : #inputs,
 	#timestamp : 'stlu 12/14/2020 13:04'
 }
-GLProgramInterfaceQueryImplementation >> getInputs: aProgram [
+GLProgramInterfaceQueryImp >> getInputs: aProgram [
 
 	self subclassResponsibility
 ]
@@ -21,7 +21,7 @@ GLProgramInterfaceQueryImplementation >> getInputs: aProgram [
 	#category : #uniforms,
 	#timestamp : 'stlu 12/14/2020 13:04'
 }
-GLProgramInterfaceQueryImplementation >> getUniforms: aProgram [
+GLProgramInterfaceQueryImp >> getUniforms: aProgram [
 
 	self subclassResponsibility
 ]

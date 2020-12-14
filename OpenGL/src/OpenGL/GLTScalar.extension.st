@@ -1,18 +1,4 @@
-Class {
-	#name : #GLTScalar,
-	#superclass : #GLType,
-	#category : #'OpenGL-Wrappers-Types',
-	#commentStamp : ''
-}
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 11:51'
-}
-GLTScalar class >> commandInitials [
-
-	self subclassResponsibility
-]
+Extension { #name : #GLTScalar }
 
 {
 	#category : #'*OpenGL-Wrappers-CodeGeneration',
@@ -63,13 +49,4 @@ GLTScalar class >> generateClasses [
 		cls compileAccessor: 'glslInitials' value: group fifth storeString.
 		
 		cls compileAccessor: 'componentType' value: cls]
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 11:51'
-}
-GLTScalar class >> glslInitials [
-
-	self subclassResponsibility
 ]

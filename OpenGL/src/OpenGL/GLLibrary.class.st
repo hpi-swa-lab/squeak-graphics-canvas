@@ -509,13 +509,13 @@ GLLibrary >> getViewport [
 
 {
 	#category : #'*OpenGL-Wrappers-implementations',
-	#timestamp : 'stlu 12/13/2020 17:10'
+	#timestamp : 'stlu 12/14/2020 14:06'
 }
 GLLibrary >> initializeWrapperImplementations: implementations [
 
 	self flag: #todo. "move into correct apis and versions"
-	implementations programInterfaceQuery: GLDirectProgramInterfaceQueryImplementation new.
-	implementations uniformSetter: GLDirectUniformSetter new
+	implementations programInterfaceQuery: GLDirectProgramInterfaceQueryImp new.
+	implementations uniformSetter: GLUniformDirectStateAccessImp new
 ]
 
 {

@@ -1,23 +1,4 @@
-Class {
-	#name : #GLTVector,
-	#superclass : #GLType,
-	#category : #'OpenGL-Wrappers-Types',
-	#commentStamp : ''
-}
-
-{
-	#category : #'instance creation',
-	#timestamp : 'zagto 12/1/2020 18:23'
-}
-GLTVector class >> componentType: type numComponents: size [
-	size = 1 ifTrue: [ ^ type ].
-	
-	self allSubclassesDo: [ :cls |
-		(cls componentType instance = type and: [ cls numComponents = size ]) ifTrue: [
-			^ cls ]].
-	
-	self error: 'no such vector type'
-]
+Extension { #name : #GLTVector }
 
 {
 	#category : #'*OpenGL-Wrappers-CodeGeneration',
@@ -39,22 +20,4 @@ GLTVector class >> generateClasses [
 			
 			cls compileAccessor: 'numComponents' value: components.
 			cls compileAccessor: 'componentType' value: type name]]
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:21'
-}
-GLTVector class >> numComponents [
-
-	self subclassResponsibility
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:23'
-}
-GLTVector >> numComponents [
-
-	^ self class numComponents
 ]

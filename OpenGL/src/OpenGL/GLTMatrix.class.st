@@ -15,7 +15,7 @@ GLTMatrix class >> componentType [
 ]
 
 {
-	#category : #'code generation',
+	#category : #'*OpenGL-Wrappers-CodeGeneration',
 	#timestamp : 'stlu 11/23/2020 15:14'
 }
 GLTMatrix class >> generateClasses [

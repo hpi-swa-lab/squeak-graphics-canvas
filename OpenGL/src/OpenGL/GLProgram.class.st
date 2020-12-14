@@ -65,15 +65,6 @@ GLProgram class >> useID: id [
 ]
 
 {
-	#category : #'accessing-resources',
-	#timestamp : 'stlu 11/13/2020 19:48'
-}
-GLProgram >> atomicCounterBuffers [
-
-	^ resources atomicCounterBuffers
-]
-
-{
 	#category : #actions,
 	#timestamp : 'stlu 11/3/2020 15:36'
 }
@@ -81,15 +72,6 @@ GLProgram >> attachShader: glShader [
 
 	GL attachShader: id with: glShader id.
 	shaders add: glShader
-]
-
-{
-	#category : #'accessing-resources',
-	#timestamp : 'stlu 11/13/2020 19:48'
-}
-GLProgram >> bufferVariables [
-
-	^ resources bufferVariables
 ]
 
 {
@@ -284,15 +266,6 @@ GLProgram >> linkingSucceeded [
 ]
 
 {
-	#category : #'accessing-resources',
-	#timestamp : 'stlu 11/13/2020 19:47'
-}
-GLProgram >> outputs [
-
-	^ resources outputs
-]
-
-{
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 19:41'
 }
@@ -302,66 +275,12 @@ GLProgram >> resources [
 ]
 
 {
-	#category : #'accessing-resources',
-	#timestamp : 'stlu 11/13/2020 19:48'
-}
-GLProgram >> shaderStorageBlocks [
-
-	^ resources shaderStorageBlocks
-]
-
-{
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLProgram >> shaders [
 
 	^ shaders
-]
-
-{
-	#category : #'accessing-resources',
-	#timestamp : 'stlu 11/13/2020 19:47'
-}
-GLProgram >> subroutineUniforms [
-
-	^ resources subroutineUniforms
-]
-
-{
-	#category : #'accessing-resources',
-	#timestamp : 'stlu 11/13/2020 19:47'
-}
-GLProgram >> subroutines [
-
-	^ resources subroutines
-]
-
-{
-	#category : #'accessing-resources',
-	#timestamp : 'stlu 11/13/2020 19:47'
-}
-GLProgram >> transformFeedbackBuffers [
-
-	^ resources transformFeedbackBuffers
-]
-
-{
-	#category : #'accessing-resources',
-	#timestamp : 'stlu 11/13/2020 19:47'
-}
-GLProgram >> transformFeedbackVaryings [
-
-	^ resources transformFeedbackVaryings
-]
-
-{
-	#category : #'accessing-resources',
-	#timestamp : 'stlu 11/13/2020 19:48'
-}
-GLProgram >> uniformBlocks [
-
-	^ resources uniformBlocks
 ]
 
 {

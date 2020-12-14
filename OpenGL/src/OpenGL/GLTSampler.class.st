@@ -6,7 +6,7 @@ Class {
 }
 
 {
-	#category : #'code generation',
+	#category : #'*OpenGL-Wrappers-CodeGeneration',
 	#timestamp : 'zagto 12/1/2020 15:18'
 }
 GLTSampler class >> generateClasses [

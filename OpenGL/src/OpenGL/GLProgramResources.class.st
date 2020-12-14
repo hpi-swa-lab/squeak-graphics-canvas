@@ -62,15 +62,6 @@ GLProgramResources >> inputs [
 ]
 
 {
-	#category : #initialization,
-	#timestamp : 'stlu 12/13/2020 15:45'
-}
-GLProgramResources >> materializeUniforms [
-
-	uniforms := GL programInterfaceQueryImplementation getUniforms: program
-]
-
-{
 	#category : #accessing,
 	#timestamp : 'stlu 12/13/2020 14:57'
 }
@@ -153,11 +144,11 @@ GLProgramResources >> uniformBlocks [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/13/2020 15:26'
+	#timestamp : 'stlu 12/14/2020 13:54'
 }
 GLProgramResources >> uniformNamed: aString [
 
-	^ uniforms at: aString
+	^ uniforms detect: [:uniform | uniform name = aString]
 ]
 
 {

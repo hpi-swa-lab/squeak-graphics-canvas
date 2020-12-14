@@ -1,15 +1,10 @@
-Class {
-	#name : #GLTImage,
-	#superclass : #GLType,
-	#category : #'OpenGL-Wrappers-Types',
-	#commentStamp : ''
-}
+Extension { #name : #GLTSampler }
 
 {
 	#category : #'*OpenGL-Wrappers-CodeGeneration',
-	#timestamp : 'stlu 11/23/2020 13:48'
+	#timestamp : 'zagto 12/1/2020 15:18'
 }
-GLTImage class >> generateClasses [
+GLTSampler class >> generateClasses [
 
 	{ GLTFloat . GLTInteger . GLTUnsignedInteger } do: [:pixelType |
 		#(
@@ -26,27 +21,19 @@ GLTImage class >> generateClasses [
 			('Cube' 'Map' 'Array')
 		) do: [:type |
 			| cls squeakName enumName declarator glslType |
-			squeakName := pixelType squeakName , type join , 'Image'.
+			squeakName := pixelType squeakName , type join , 'Sampler'.
 			cls := self subclass: 'GLT' , squeakName.
 			cls compileAccessor: 'squeakName' value: squeakName storeString.
 			glslType := type asOrderedCollection
 							replaceAll: 'Multisample' with: 'MS';
 							remove: 'Map' ifAbsent: [];
 							yourself.
-			declarator := pixelType glslInitials , 'image' , glslType join.
+			declarator := pixelType glslInitials , 'sampler' , glslType join.
 			cls compileAccessor: 'declarators' value: { declarator } storeString.
 			enumName := (pixelType = GLTFloat ifTrue: [''] ifFalse: [pixelType enumName , '_'])
-							, 'IMAGE_'
+							, 'SAMPLER_'
 							, (type joinSeparatedBy: '_') asUppercase.
 			cls compileAccessor: 'enumName' value: enumName storeString.
-			cls compileAccessor: 'enum' value: 'GL_' , enumName]]
-]
-
-{
-	#category : #'program resources',
-	#timestamp : 'stlu 11/23/2020 16:47'
-}
-GLTImage >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
-
-	aUniform setTo1ComponentIntegerArray: aRawBitsArray count: numElements
+			cls compileAccessor: 'enum' value: 'GL_' , enumName.
+			cls compileAccessor: 'componentType' value: pixelType]]
 ]

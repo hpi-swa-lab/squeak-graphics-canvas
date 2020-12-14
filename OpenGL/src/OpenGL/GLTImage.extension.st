@@ -1,9 +1,4 @@
-Class {
-	#name : #GLTImage,
-	#superclass : #GLType,
-	#category : #'OpenGL-Wrappers-Types',
-	#commentStamp : ''
-}
+Extension { #name : #GLTImage }
 
 {
 	#category : #'*OpenGL-Wrappers-CodeGeneration',
@@ -40,13 +35,4 @@ GLTImage class >> generateClasses [
 							, (type joinSeparatedBy: '_') asUppercase.
 			cls compileAccessor: 'enumName' value: enumName storeString.
 			cls compileAccessor: 'enum' value: 'GL_' , enumName]]
-]
-
-{
-	#category : #'program resources',
-	#timestamp : 'stlu 11/23/2020 16:47'
-}
-GLTImage >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
-
-	aUniform setTo1ComponentIntegerArray: aRawBitsArray count: numElements
 ]

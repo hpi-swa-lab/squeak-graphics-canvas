@@ -15,7 +15,7 @@ Class {
 }
 
 {
-	#category : #'code generation',
+	#category : #'*OpenGL-Wrappers-CodeGeneration',
 	#timestamp : 'stlu 11/23/2020 11:45'
 }
 GLType class >> compileAccessor: name value: return [
@@ -24,7 +24,7 @@ GLType class >> compileAccessor: name value: return [
 ]
 
 {
-	#category : #'code generation',
+	#category : #'*OpenGL-Wrappers-CodeGeneration',
 	#timestamp : 'stlu 11/23/2020 11:44'
 }
 GLType class >> compileAccessor: name value: return classified: category [
@@ -122,7 +122,7 @@ GLType class >> instance [
 ]
 
 {
-	#category : #'code generation',
+	#category : #'*OpenGL-Wrappers-CodeGeneration',
 	#timestamp : 'stlu 11/23/2020 11:14'
 }
 GLType class >> removeAllSubclasses [
@@ -131,7 +131,7 @@ GLType class >> removeAllSubclasses [
 ]
 
 {
-	#category : #'code generation',
+	#category : #'*OpenGL-Wrappers-CodeGeneration',
 	#timestamp : 'stlu 11/19/2020 17:47'
 }
 GLType class >> subclass: symbolOrString [

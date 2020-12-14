@@ -4,32 +4,32 @@ Class {
 	#instVars : [
 		'location',
 		'type',
-		'setImpl'
+		'stateAccessImp'
 	],
 	#category : #'OpenGL-Wrappers-Programs',
 	#commentStamp : ''
 }
 
 {
-	#category : #'code generation',
-	#timestamp : 'stlu 11/23/2020 15:52'
+	#category : #'*OpenGL-Wrappers-CodeGeneration',
+	#timestamp : 'stlu 12/14/2020 14:22'
 }
 GLUniform class >> arraySetterTemplate [
 
 	^ 'setTo{1}Component{4}Array: {2} count: numElements
 
-	setImpl set: self to{1}Component{4}Array: {2} count: numElements'
+	stateAccessImp set: self to{1}Component{4}Array: {2} count: numElements'
 ]
 
 {
-	#category : #'code generation',
-	#timestamp : 'stlu 11/23/2020 15:40'
+	#category : #'*OpenGL-Wrappers-CodeGeneration',
+	#timestamp : 'stlu 12/14/2020 14:06'
 }
 GLUniform class >> generateSetterInferface [
 
-	GLUniformSetter generateArrayInterfaceFor: self classified: #'setting - arrays'.
-	GLUniformSetter generateMatrixInterfaceFor: self classified: #'setting - matrices'.
-	GLUniformSetter generateScalarInterfaceFor: self classified: #'setting - scalars'
+	GLUniformStateAccessImp generateArrayInterfaceFor: self classified: #'setting - arrays'.
+	GLUniformStateAccessImp generateMatrixInterfaceFor: self classified: #'setting - matrices'.
+	GLUniformStateAccessImp generateScalarInterfaceFor: self classified: #'setting - scalars'
 ]
 
 {
@@ -56,14 +56,14 @@ GLUniform class >> interface [
 ]
 
 {
-	#category : #'code generation',
-	#timestamp : 'stlu 11/23/2020 15:53'
+	#category : #'*OpenGL-Wrappers-CodeGeneration',
+	#timestamp : 'stlu 12/14/2020 14:22'
 }
 GLUniform class >> matrixSetterTemplate [
 
 	^ 'setTo{1}Matrices{2}x{3}: {4} count: numMatrices transpose: isRowMajor
 
-	setImpl
+	stateAccessImp
 		set: self
 		to{1}Matrices{2}x{3}: {4}
 		count: numMatrices
@@ -71,14 +71,14 @@ GLUniform class >> matrixSetterTemplate [
 ]
 
 {
-	#category : #'code generation',
-	#timestamp : 'stlu 11/23/2020 15:55'
+	#category : #'*OpenGL-Wrappers-CodeGeneration',
+	#timestamp : 'stlu 12/14/2020 14:22'
 }
 GLUniform class >> scalarSetterTemplate [
 
 	^ 'setTo{1}: {2}
 
-	setImpl set: self to{1}: {2}'
+	stateAccessImp set: self to{1}: {2}'
 ]
 
 {
@@ -130,146 +130,146 @@ GLUniform >> setImpl: anObject [
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo1ComponentDoubleArray: aFloat64Array count: numElements [
 
-	setImpl set: self to1ComponentDoubleArray: aFloat64Array count: numElements
+	stateAccessImp set: self to1ComponentDoubleArray: aFloat64Array count: numElements
 ]
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo1ComponentFloatArray: aFloat32Array count: numElements [
 
-	setImpl set: self to1ComponentFloatArray: aFloat32Array count: numElements
+	stateAccessImp set: self to1ComponentFloatArray: aFloat32Array count: numElements
 ]
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo1ComponentIntegerArray: anIntegerArray count: numElements [
 
-	setImpl set: self to1ComponentIntegerArray: anIntegerArray count: numElements
+	stateAccessImp set: self to1ComponentIntegerArray: anIntegerArray count: numElements
 ]
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo1ComponentUnsignedIntegerArray: aWordArray count: numElements [
 
-	setImpl set: self to1ComponentUnsignedIntegerArray: aWordArray count: numElements
+	stateAccessImp set: self to1ComponentUnsignedIntegerArray: aWordArray count: numElements
 ]
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo2ComponentDoubleArray: aFloat64Array count: numElements [
 
-	setImpl set: self to2ComponentDoubleArray: aFloat64Array count: numElements
+	stateAccessImp set: self to2ComponentDoubleArray: aFloat64Array count: numElements
 ]
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo2ComponentFloatArray: aFloat32Array count: numElements [
 
-	setImpl set: self to2ComponentFloatArray: aFloat32Array count: numElements
+	stateAccessImp set: self to2ComponentFloatArray: aFloat32Array count: numElements
 ]
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo2ComponentIntegerArray: anIntegerArray count: numElements [
 
-	setImpl set: self to2ComponentIntegerArray: anIntegerArray count: numElements
+	stateAccessImp set: self to2ComponentIntegerArray: anIntegerArray count: numElements
 ]
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo2ComponentUnsignedIntegerArray: aWordArray count: numElements [
 
-	setImpl set: self to2ComponentUnsignedIntegerArray: aWordArray count: numElements
+	stateAccessImp set: self to2ComponentUnsignedIntegerArray: aWordArray count: numElements
 ]
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo3ComponentDoubleArray: aFloat64Array count: numElements [
 
-	setImpl set: self to3ComponentDoubleArray: aFloat64Array count: numElements
+	stateAccessImp set: self to3ComponentDoubleArray: aFloat64Array count: numElements
 ]
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo3ComponentFloatArray: aFloat32Array count: numElements [
 
-	setImpl set: self to3ComponentFloatArray: aFloat32Array count: numElements
+	stateAccessImp set: self to3ComponentFloatArray: aFloat32Array count: numElements
 ]
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo3ComponentIntegerArray: anIntegerArray count: numElements [
 
-	setImpl set: self to3ComponentIntegerArray: anIntegerArray count: numElements
+	stateAccessImp set: self to3ComponentIntegerArray: anIntegerArray count: numElements
 ]
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo3ComponentUnsignedIntegerArray: aWordArray count: numElements [
 
-	setImpl set: self to3ComponentUnsignedIntegerArray: aWordArray count: numElements
+	stateAccessImp set: self to3ComponentUnsignedIntegerArray: aWordArray count: numElements
 ]
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo4ComponentDoubleArray: aFloat64Array count: numElements [
 
-	setImpl set: self to4ComponentDoubleArray: aFloat64Array count: numElements
+	stateAccessImp set: self to4ComponentDoubleArray: aFloat64Array count: numElements
 ]
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo4ComponentFloatArray: aFloat32Array count: numElements [
 
-	setImpl set: self to4ComponentFloatArray: aFloat32Array count: numElements
+	stateAccessImp set: self to4ComponentFloatArray: aFloat32Array count: numElements
 ]
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo4ComponentIntegerArray: anIntegerArray count: numElements [
 
-	setImpl set: self to4ComponentIntegerArray: anIntegerArray count: numElements
+	stateAccessImp set: self to4ComponentIntegerArray: anIntegerArray count: numElements
 ]
 
 {
 	#category : #'setting - arrays',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setTo4ComponentUnsignedIntegerArray: aWordArray count: numElements [
 
-	setImpl set: self to4ComponentUnsignedIntegerArray: aWordArray count: numElements
+	stateAccessImp set: self to4ComponentUnsignedIntegerArray: aWordArray count: numElements
 ]
 
 {
@@ -301,20 +301,20 @@ GLUniform >> setToArray: aRawBitsArray count: numElements [
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDouble: aDouble [
 
-	setImpl set: self toDouble: aDouble
+	stateAccessImp set: self toDouble: aDouble
 ]
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubleMatrices2x2: aFloat64Array count: numMatrices transpose: isRowMajor [
 
-	setImpl
+	stateAccessImp
 		set: self
 		toDoubleMatrices2x2: aFloat64Array
 		count: numMatrices
@@ -323,11 +323,11 @@ GLUniform >> setToDoubleMatrices2x2: aFloat64Array count: numMatrices transpose:
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubleMatrices2x3: aFloat64Array count: numMatrices transpose: isRowMajor [
 
-	setImpl
+	stateAccessImp
 		set: self
 		toDoubleMatrices2x3: aFloat64Array
 		count: numMatrices
@@ -336,11 +336,11 @@ GLUniform >> setToDoubleMatrices2x3: aFloat64Array count: numMatrices transpose:
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubleMatrices2x4: aFloat64Array count: numMatrices transpose: isRowMajor [
 
-	setImpl
+	stateAccessImp
 		set: self
 		toDoubleMatrices2x4: aFloat64Array
 		count: numMatrices
@@ -349,11 +349,11 @@ GLUniform >> setToDoubleMatrices2x4: aFloat64Array count: numMatrices transpose:
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubleMatrices3x2: aFloat64Array count: numMatrices transpose: isRowMajor [
 
-	setImpl
+	stateAccessImp
 		set: self
 		toDoubleMatrices3x2: aFloat64Array
 		count: numMatrices
@@ -362,11 +362,11 @@ GLUniform >> setToDoubleMatrices3x2: aFloat64Array count: numMatrices transpose:
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubleMatrices3x3: aFloat64Array count: numMatrices transpose: isRowMajor [
 
-	setImpl
+	stateAccessImp
 		set: self
 		toDoubleMatrices3x3: aFloat64Array
 		count: numMatrices
@@ -375,11 +375,11 @@ GLUniform >> setToDoubleMatrices3x3: aFloat64Array count: numMatrices transpose:
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubleMatrices3x4: aFloat64Array count: numMatrices transpose: isRowMajor [
 
-	setImpl
+	stateAccessImp
 		set: self
 		toDoubleMatrices3x4: aFloat64Array
 		count: numMatrices
@@ -388,11 +388,11 @@ GLUniform >> setToDoubleMatrices3x4: aFloat64Array count: numMatrices transpose:
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubleMatrices4x2: aFloat64Array count: numMatrices transpose: isRowMajor [
 
-	setImpl
+	stateAccessImp
 		set: self
 		toDoubleMatrices4x2: aFloat64Array
 		count: numMatrices
@@ -401,11 +401,11 @@ GLUniform >> setToDoubleMatrices4x2: aFloat64Array count: numMatrices transpose:
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubleMatrices4x3: aFloat64Array count: numMatrices transpose: isRowMajor [
 
-	setImpl
+	stateAccessImp
 		set: self
 		toDoubleMatrices4x3: aFloat64Array
 		count: numMatrices
@@ -414,11 +414,11 @@ GLUniform >> setToDoubleMatrices4x3: aFloat64Array count: numMatrices transpose:
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubleMatrices4x4: aFloat64Array count: numMatrices transpose: isRowMajor [
 
-	setImpl
+	stateAccessImp
 		set: self
 		toDoubleMatrices4x4: aFloat64Array
 		count: numMatrices
@@ -427,47 +427,47 @@ GLUniform >> setToDoubleMatrices4x4: aFloat64Array count: numMatrices transpose:
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubles: double1 _: double2 [
 
-	setImpl set: self toDoubles: double1 _: double2
+	stateAccessImp set: self toDoubles: double1 _: double2
 ]
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubles: double1 _: double2 _: double3 [
 
-	setImpl set: self toDoubles: double1 _: double2 _: double3
+	stateAccessImp set: self toDoubles: double1 _: double2 _: double3
 ]
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToDoubles: double1 _: double2 _: double3 _: double4 [
 
-	setImpl set: self toDoubles: double1 _: double2 _: double3 _: double4
+	stateAccessImp set: self toDoubles: double1 _: double2 _: double3 _: double4
 ]
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloat: aFloat [
 
-	setImpl set: self toFloat: aFloat
+	stateAccessImp set: self toFloat: aFloat
 ]
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloatMatrices2x2: aFloat32Array count: numMatrices transpose: isRowMajor [
 
-	setImpl
+	stateAccessImp
 		set: self
 		toFloatMatrices2x2: aFloat32Array
 		count: numMatrices
@@ -476,11 +476,11 @@ GLUniform >> setToFloatMatrices2x2: aFloat32Array count: numMatrices transpose: 
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloatMatrices2x3: aFloat32Array count: numMatrices transpose: isRowMajor [
 
-	setImpl
+	stateAccessImp
 		set: self
 		toFloatMatrices2x3: aFloat32Array
 		count: numMatrices
@@ -489,11 +489,11 @@ GLUniform >> setToFloatMatrices2x3: aFloat32Array count: numMatrices transpose: 
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloatMatrices2x4: aFloat32Array count: numMatrices transpose: isRowMajor [
 
-	setImpl
+	stateAccessImp
 		set: self
 		toFloatMatrices2x4: aFloat32Array
 		count: numMatrices
@@ -502,11 +502,11 @@ GLUniform >> setToFloatMatrices2x4: aFloat32Array count: numMatrices transpose: 
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloatMatrices3x2: aFloat32Array count: numMatrices transpose: isRowMajor [
 
-	setImpl
+	stateAccessImp
 		set: self
 		toFloatMatrices3x2: aFloat32Array
 		count: numMatrices
@@ -515,11 +515,11 @@ GLUniform >> setToFloatMatrices3x2: aFloat32Array count: numMatrices transpose: 
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloatMatrices3x3: aFloat32Array count: numMatrices transpose: isRowMajor [
 
-	setImpl
+	stateAccessImp
 		set: self
 		toFloatMatrices3x3: aFloat32Array
 		count: numMatrices
@@ -528,11 +528,11 @@ GLUniform >> setToFloatMatrices3x3: aFloat32Array count: numMatrices transpose: 
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloatMatrices3x4: aFloat32Array count: numMatrices transpose: isRowMajor [
 
-	setImpl
+	stateAccessImp
 		set: self
 		toFloatMatrices3x4: aFloat32Array
 		count: numMatrices
@@ -541,11 +541,11 @@ GLUniform >> setToFloatMatrices3x4: aFloat32Array count: numMatrices transpose: 
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloatMatrices4x2: aFloat32Array count: numMatrices transpose: isRowMajor [
 
-	setImpl
+	stateAccessImp
 		set: self
 		toFloatMatrices4x2: aFloat32Array
 		count: numMatrices
@@ -554,11 +554,11 @@ GLUniform >> setToFloatMatrices4x2: aFloat32Array count: numMatrices transpose: 
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloatMatrices4x3: aFloat32Array count: numMatrices transpose: isRowMajor [
 
-	setImpl
+	stateAccessImp
 		set: self
 		toFloatMatrices4x3: aFloat32Array
 		count: numMatrices
@@ -567,11 +567,11 @@ GLUniform >> setToFloatMatrices4x3: aFloat32Array count: numMatrices transpose: 
 
 {
 	#category : #'setting - matrices',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloatMatrices4x4: aFloat32Array count: numMatrices transpose: isRowMajor [
 
-	setImpl
+	stateAccessImp
 		set: self
 		toFloatMatrices4x4: aFloat32Array
 		count: numMatrices
@@ -580,65 +580,65 @@ GLUniform >> setToFloatMatrices4x4: aFloat32Array count: numMatrices transpose: 
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloats: float1 _: float2 [
 
-	setImpl set: self toFloats: float1 _: float2
+	stateAccessImp set: self toFloats: float1 _: float2
 ]
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloats: float1 _: float2 _: float3 [
 
-	setImpl set: self toFloats: float1 _: float2 _: float3
+	stateAccessImp set: self toFloats: float1 _: float2 _: float3
 ]
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToFloats: float1 _: float2 _: float3 _: float4 [
 
-	setImpl set: self toFloats: float1 _: float2 _: float3 _: float4
+	stateAccessImp set: self toFloats: float1 _: float2 _: float3 _: float4
 ]
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToInteger: anInteger [
 
-	setImpl set: self toInteger: anInteger
+	stateAccessImp set: self toInteger: anInteger
 ]
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToIntegers: int1 _: int2 [
 
-	setImpl set: self toIntegers: int1 _: int2
+	stateAccessImp set: self toIntegers: int1 _: int2
 ]
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToIntegers: int1 _: int2 _: int3 [
 
-	setImpl set: self toIntegers: int1 _: int2 _: int3
+	stateAccessImp set: self toIntegers: int1 _: int2 _: int3
 ]
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToIntegers: int1 _: int2 _: int3 _: int4 [
 
-	setImpl set: self toIntegers: int1 _: int2 _: int3 _: int4
+	stateAccessImp set: self toIntegers: int1 _: int2 _: int3 _: int4
 ]
 
 {
@@ -652,38 +652,38 @@ GLUniform >> setToObject: anObject [
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToUnsignedInteger: anUnsignedInteger [
 
-	setImpl set: self toUnsignedInteger: anUnsignedInteger
+	stateAccessImp set: self toUnsignedInteger: anUnsignedInteger
 ]
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToUnsignedIntegers: uint1 _: uint2 [
 
-	setImpl set: self toUnsignedIntegers: uint1 _: uint2
+	stateAccessImp set: self toUnsignedIntegers: uint1 _: uint2
 ]
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToUnsignedIntegers: uint1 _: uint2 _: uint3 [
 
-	setImpl set: self toUnsignedIntegers: uint1 _: uint2 _: uint3
+	stateAccessImp set: self toUnsignedIntegers: uint1 _: uint2 _: uint3
 ]
 
 {
 	#category : #'setting - scalars',
-	#timestamp : 'stlu 11/23/2020 16:00'
+	#timestamp : 'stlu 12/14/2020 14:24'
 }
 GLUniform >> setToUnsignedIntegers: uint1 _: uint2 _: uint3 _: uint4 [
 
-	setImpl set: self toUnsignedIntegers: uint1 _: uint2 _: uint3 _: uint4
+	stateAccessImp set: self toUnsignedIntegers: uint1 _: uint2 _: uint3 _: uint4
 ]
 
 {
