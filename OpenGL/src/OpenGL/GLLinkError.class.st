@@ -1,5 +1,5 @@
 Class {
-	#name : #GLProgramLinkingFailed,
+	#name : #GLLinkError,
 	#superclass : #Error,
 	#instVars : [
 		'program',
@@ -13,7 +13,7 @@ Class {
 	#category : #'instance creation',
 	#timestamp : 'stlu 10/27/2020 12:51'
 }
-GLProgramLinkingFailed class >> program: glProgram infoLog: aString [
+GLLinkError class >> program: glProgram infoLog: aString [
 
 	^ self new
 		program: glProgram;
@@ -25,7 +25,7 @@ GLProgramLinkingFailed class >> program: glProgram infoLog: aString [
 	#category : #accessing,
 	#timestamp : 'stlu 10/27/2020 12:51'
 }
-GLProgramLinkingFailed >> infoLog [
+GLLinkError >> infoLog [
 
 	^ infoLog
 ]
@@ -34,7 +34,7 @@ GLProgramLinkingFailed >> infoLog [
 	#category : #accessing,
 	#timestamp : 'stlu 10/27/2020 12:51'
 }
-GLProgramLinkingFailed >> infoLog: anObject [
+GLLinkError >> infoLog: anObject [
 
 	infoLog := anObject
 ]
@@ -43,7 +43,7 @@ GLProgramLinkingFailed >> infoLog: anObject [
 	#category : #accessing,
 	#timestamp : 'stlu 10/27/2020 12:51'
 }
-GLProgramLinkingFailed >> messageText [
+GLLinkError >> messageText [
 
 	^ messageText ifNil: [infoLog]
 ]
@@ -52,7 +52,7 @@ GLProgramLinkingFailed >> messageText [
 	#category : #accessing,
 	#timestamp : 'stlu 10/27/2020 12:51'
 }
-GLProgramLinkingFailed >> program [
+GLLinkError >> program [
 
 	^ program
 ]
@@ -61,7 +61,7 @@ GLProgramLinkingFailed >> program [
 	#category : #accessing,
 	#timestamp : 'stlu 10/27/2020 12:51'
 }
-GLProgramLinkingFailed >> program: anObject [
+GLLinkError >> program: anObject [
 
 	program := anObject
 ]

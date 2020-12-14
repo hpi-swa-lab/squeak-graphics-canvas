@@ -50,13 +50,32 @@ GLShader class >> type [
 
 {
 	#category : #compilation,
-	#timestamp : 'stlu 11/3/2020 15:39'
+	#timestamp : 'stlu 12/14/2020 12:25'
+}
+GLShader >> compilationFailed [
+
+	^ (GLCompileError shader: self infoLog: self getInfoLog) signal
+]
+
+{
+	#category : #compilation,
+	#timestamp : 'stlu 12/14/2020 12:28'
+}
+GLShader >> compilationSucceeded [
+
+	
+]
+
+{
+	#category : #compilation,
+	#timestamp : 'stlu 12/14/2020 12:27'
 }
 GLShader >> compile [
 
 	GL compileShader: id.
-	self lastCompilationSucceeded ifFalse: [
-		self errorCompilationFailed]
+	self lastCompilationSucceeded
+		ifTrue: [self compilationSucceeded]
+		ifFalse: [self compilationFailed]
 ]
 
 {
@@ -66,15 +85,6 @@ GLShader >> compile [
 GLShader >> delete [
 
 	GL deleteShader: id
-]
-
-{
-	#category : #compilation,
-	#timestamp : 'stlu 10/28/2020 13:27'
-}
-GLShader >> errorCompilationFailed [
-
-	^ (GLShaderCompilationFailed shader: self infoLog: self getInfoLog) signal
 ]
 
 {

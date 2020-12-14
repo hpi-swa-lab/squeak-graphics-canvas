@@ -1,5 +1,5 @@
 Class {
-	#name : #GLShaderCompilationFailed,
+	#name : #GLCompileError,
 	#superclass : #Error,
 	#instVars : [
 		'shader',
@@ -13,7 +13,7 @@ Class {
 	#category : #'instance creation',
 	#timestamp : 'stlu 10/26/2020 17:38'
 }
-GLShaderCompilationFailed class >> shader: glShader infoLog: aString [
+GLCompileError class >> shader: glShader infoLog: aString [
 
 	^ self new
 		shader: glShader;
@@ -25,7 +25,7 @@ GLShaderCompilationFailed class >> shader: glShader infoLog: aString [
 	#category : #accessing,
 	#timestamp : 'stlu 10/26/2020 17:35'
 }
-GLShaderCompilationFailed >> infoLog [
+GLCompileError >> infoLog [
 
 	^ infoLog
 ]
@@ -34,7 +34,7 @@ GLShaderCompilationFailed >> infoLog [
 	#category : #accessing,
 	#timestamp : 'stlu 10/26/2020 17:35'
 }
-GLShaderCompilationFailed >> infoLog: anObject [
+GLCompileError >> infoLog: anObject [
 
 	infoLog := anObject
 ]
@@ -43,7 +43,7 @@ GLShaderCompilationFailed >> infoLog: anObject [
 	#category : #accessing,
 	#timestamp : 'stlu 10/27/2020 12:09'
 }
-GLShaderCompilationFailed >> messageText [
+GLCompileError >> messageText [
 
 	^ messageText ifNil: [infoLog]
 ]
@@ -52,7 +52,7 @@ GLShaderCompilationFailed >> messageText [
 	#category : #accessing,
 	#timestamp : 'stlu 10/26/2020 17:34'
 }
-GLShaderCompilationFailed >> shader [
+GLCompileError >> shader [
 
 	^ shader
 ]
@@ -61,7 +61,7 @@ GLShaderCompilationFailed >> shader [
 	#category : #accessing,
 	#timestamp : 'stlu 10/26/2020 17:35'
 }
-GLShaderCompilationFailed >> shader: aGLShader [
+GLCompileError >> shader: aGLShader [
 
 	shader := aGLShader
 ]

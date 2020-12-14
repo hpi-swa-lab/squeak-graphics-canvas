@@ -94,15 +94,6 @@ GLProgram >> disuse [
 ]
 
 {
-	#category : #'error handling',
-	#timestamp : 'stlu 10/28/2020 13:27'
-}
-GLProgram >> errorLinkingFailed [
-
-	^ (GLProgramLinkingFailed program: self infoLog: self getInfoLog) signal
-]
-
-{
 	#category : #accessing,
 	#timestamp : 'stlu 11/3/2020 16:55'
 }
@@ -171,7 +162,7 @@ GLProgram >> getNumUniforms [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 15:50'
+	#timestamp : 'stlu 12/13/2020 15:59'
 }
 GLProgram >> initialize [
 
@@ -227,13 +218,32 @@ GLProgram >> lastLinkingSucceeded [
 
 {
 	#category : #actions,
-	#timestamp : 'stlu 11/3/2020 15:37'
+	#timestamp : 'stlu 12/14/2020 12:29'
 }
 GLProgram >> link [
 
 	GL linkProgram: id.
-	self lastLinkingSucceeded ifFalse: [
-		self errorLinkingFailed]
+	self lastLinkingSucceeded
+		ifTrue: [self linkingSucceeded]
+		ifFalse: [self linkingFailed]
+]
+
+{
+	#category : #'error handling',
+	#timestamp : 'stlu 12/14/2020 12:23'
+}
+GLProgram >> linkingFailed [
+
+	^ (GLLinkError program: self infoLog: self getInfoLog) signal
+]
+
+{
+	#category : #actions,
+	#timestamp : 'stlu 12/14/2020 12:29'
+}
+GLProgram >> linkingSucceeded [
+
+	resources := GLProgramResources program: self
 ]
 
 {
