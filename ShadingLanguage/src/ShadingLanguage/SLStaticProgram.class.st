@@ -39,7 +39,7 @@ SLStaticProgram class >> fragmentShader [
 
 {
 	#category : #compiling,
-	#timestamp : 'stlu 12/9/2020 15:24'
+	#timestamp : 'stlu 12/15/2020 13:59'
 }
 SLStaticProgram class >> noteCompilationOf: aSelector meta: isMeta [
 
@@ -54,10 +54,12 @@ SLStaticProgram class >> noteCompilationOf: aSelector meta: isMeta [
 	] on: Error do: [:err | ^ err pass].
 
 	[
-		instances do: [:instance |
-			instance library context isDestroyed ifFalse: [
-				instance library makeCurrentDuring: [
-					instance updateShaders]]]
+		instances do: [:program |
+			| context |
+			context := program context.
+			(context isSymbol or: [context isDestroyed]) ifFalse: [
+				context library makeCurrentDuring: [
+					program updateShaders]]]
 	] on: Error do: [:err | ^ err pass]
 ]
 

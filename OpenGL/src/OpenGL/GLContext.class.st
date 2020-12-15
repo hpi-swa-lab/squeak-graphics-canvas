@@ -46,10 +46,11 @@ GLContext class >> shutDown: quitting [
 
 {
 	#category : #'system startup',
-	#timestamp : 'stlu 11/13/2020 14:22'
+	#timestamp : 'stlu 12/15/2020 13:59'
 }
 GLContext class >> startUp: resuming [
 
+	self flag: #todo. "isDestroyed and isSymbol can both indicate destroyed contexts"
 	resuming ifTrue: [
 		self allSubInstancesDo: [:each |
 			"Replace existing contexts on startUp not shutDown to allow saving the image while contexts are active."
