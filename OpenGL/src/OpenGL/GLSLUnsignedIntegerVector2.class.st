@@ -7,16 +7,16 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedIntegerVector2 class >> componentType [
 
-	^ GLSLUnsignedInteger
+	^ GLSLUnsignedInteger instance
 ]
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedIntegerVector2 class >> declarators [
 
@@ -25,7 +25,7 @@ GLSLUnsignedIntegerVector2 class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedIntegerVector2 class >> enum [
 
@@ -34,7 +34,7 @@ GLSLUnsignedIntegerVector2 class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedIntegerVector2 class >> enumName [
 
@@ -43,7 +43,7 @@ GLSLUnsignedIntegerVector2 class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedIntegerVector2 class >> numComponents [
 
@@ -52,18 +52,9 @@ GLSLUnsignedIntegerVector2 class >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedIntegerVector2 class >> squeakName [
 
 	^ 'UnsignedIntegerVector2'
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/19/2020 07:37'
-}
-GLSLUnsignedIntegerVector2 >> numComponents [
-
-	^ 2
 ]

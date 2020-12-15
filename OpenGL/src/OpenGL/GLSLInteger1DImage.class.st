@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:44'
+	#timestamp : 'stlu 12/15/2020 13:03'
 }
 GLSLInteger1DImage class >> declarators [
 
@@ -16,7 +16,7 @@ GLSLInteger1DImage class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:44'
+	#timestamp : 'stlu 12/15/2020 13:03'
 }
 GLSLInteger1DImage class >> enum [
 
@@ -25,7 +25,7 @@ GLSLInteger1DImage class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:44'
+	#timestamp : 'stlu 12/15/2020 13:03'
 }
 GLSLInteger1DImage class >> enumName [
 
@@ -34,7 +34,16 @@ GLSLInteger1DImage class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:44'
+	#timestamp : 'stlu 12/15/2020 13:03'
+}
+GLSLInteger1DImage class >> pixelType [
+
+	^ GLSLInteger instance
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/15/2020 13:03'
 }
 GLSLInteger1DImage class >> squeakName [
 

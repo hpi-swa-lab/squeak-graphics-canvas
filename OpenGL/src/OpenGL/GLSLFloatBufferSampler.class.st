@@ -7,16 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
-}
-GLSLFloatBufferSampler class >> componentType [
-
-	^ GLSLFloat
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLFloatBufferSampler class >> declarators [
 
@@ -25,7 +16,7 @@ GLSLFloatBufferSampler class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLFloatBufferSampler class >> enum [
 
@@ -34,7 +25,7 @@ GLSLFloatBufferSampler class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLFloatBufferSampler class >> enumName [
 
@@ -43,7 +34,16 @@ GLSLFloatBufferSampler class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#timestamp : 'stlu 12/15/2020 13:04'
+}
+GLSLFloatBufferSampler class >> pixelType [
+
+	^ GLSLFloat instance
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLFloatBufferSampler class >> squeakName [
 

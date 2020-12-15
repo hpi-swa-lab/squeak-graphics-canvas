@@ -2,11 +2,13 @@ Extension { #name : #GLSLVector }
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/13/2020 17:31'
+	#timestamp : 'stlu 12/15/2020 13:09'
 }
 GLSLVector >> + another [
+	(another isScalar or: [another isVector]) ifFalse: [
+		^ self error: 'Attempt to add a ', another class name , ' to a vector, but can only add scalars and vectors.'].
 	self componentType ~= another componentType ifTrue: [
-		^ self error: 'Tried to add ', another componentType asString , ' to ', self componentType asString , '.'].
+		^ self error: 'Tried to add ', another componentType , ' to ', self componentType , '.'].
 	(self numComponents ~= another numComponents
 		and: [another numComponents > 1]) ifTrue: [
 			^ self error: 'Can''t implictly convert vector of size ' , another numComponents , ' to vector of size ' , self numComponents].
@@ -33,12 +35,11 @@ GLSLVector >> - another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/14/2020 16:22'
+	#timestamp : 'stlu 12/15/2020 13:10'
 }
 GLSLVector >> @ another [
 	| resultSize resultType |
-	((another isKindOf: GLSLScalar) or: [
-		another isKindOf: GLSLVector]) ifFalse: [
+	(another isScalar or: [another isVector]) ifFalse: [
 			^ self error: 'Attempt to use @ with a ', another class name , ', but it can only be used with scalars and vectors.'].
 	
 	resultSize := self numComponents + another numComponents.
@@ -46,16 +47,16 @@ GLSLVector >> @ another [
 		^ self error: 'Result of @ vector concatination results in ', resultSize, ' elements, but ',
 			'the maximum possible vector size is 4.'].
 	
-	resultType := GLSLVector componentType: self componentType instance numComponents: resultSize.
+	resultType := GLSLVector componentType: self componentType numComponents: resultSize.
 	^ SLMappingToCall new
-		type: resultType instance;
+		type: resultType;
 		targetSelector: resultType declarator
 	
 ]
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/14/2020 16:22'
+	#timestamp : 'stlu 12/15/2020 13:10'
 }
 GLSLVector >> doesNotUnderstand: aMessage [
 	| selector swizzlingChars sets |
@@ -75,7 +76,7 @@ GLSLVector >> doesNotUnderstand: aMessage [
 			^ self error: 'Vector compontent access ', selector , ' has ', selector size , ' components, ' ,
 				' but you can only access 4 at once.'].
 		
-		resultType := GLSLVector componentType: self componentType instance numComponents: selector size.
+		resultType := GLSLVector componentType: self componentType numComponents: selector size.
 		^ SLMappingToComponentRead new
 				targetSelector: selector;
 				type: resultType].
@@ -85,10 +86,10 @@ GLSLVector >> doesNotUnderstand: aMessage [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 12/1/2020 18:34'
+	#timestamp : 'stlu 12/15/2020 13:10'
 }
 GLSLVector >> negated [
 	^ SLMappingToOperator new
-			type: self componentType instance;
+			type: self componentType;
 			targetSelector: '-'
 ]

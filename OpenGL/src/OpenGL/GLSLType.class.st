@@ -36,6 +36,15 @@ GLSLType class >> compileAccessor: name value: return classified: category [
 
 {
 	#category : #accessing,
+	#timestamp : 'stlu 12/14/2020 18:16'
+}
+GLSLType class >> componentType [
+
+	self subclassResponsibility
+]
+
+{
+	#category : #accessing,
 	#timestamp : 'stlu 11/19/2020 18:00'
 }
 GLSLType class >> declarator [
@@ -155,15 +164,6 @@ GLSLType >> actualComponentType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 16:33'
-}
-GLSLType >> componentType [
-
-	^ self class componentType
-]
-
-{
-	#category : #accessing,
 	#timestamp : 'stlu 11/19/2020 17:58'
 }
 GLSLType >> declarator [
@@ -172,12 +172,57 @@ GLSLType >> declarator [
 ]
 
 {
-	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:23'
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:22'
 }
-GLSLType >> numComponents [
+GLSLType >> isArray [
 
-	^ 1
+	^ false
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:21'
+}
+GLSLType >> isImage [
+
+	^ false
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:22'
+}
+GLSLType >> isMatrix [
+
+	^ false
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:22'
+}
+GLSLType >> isSampler [
+
+	^ false
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:22'
+}
+GLSLType >> isScalar [
+
+	^ false
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:22'
+}
+GLSLType >> isVector [
+
+	^ false
 ]
 
 {

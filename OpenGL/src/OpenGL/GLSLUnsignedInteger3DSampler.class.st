@@ -7,16 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
-}
-GLSLUnsignedInteger3DSampler class >> componentType [
-
-	^ GLSLUnsignedInteger
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedInteger3DSampler class >> declarators [
 
@@ -25,7 +16,7 @@ GLSLUnsignedInteger3DSampler class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedInteger3DSampler class >> enum [
 
@@ -34,7 +25,7 @@ GLSLUnsignedInteger3DSampler class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedInteger3DSampler class >> enumName [
 
@@ -43,7 +34,16 @@ GLSLUnsignedInteger3DSampler class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#timestamp : 'stlu 12/15/2020 13:04'
+}
+GLSLUnsignedInteger3DSampler class >> pixelType [
+
+	^ GLSLUnsignedInteger instance
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLUnsignedInteger3DSampler class >> squeakName [
 

@@ -7,16 +7,16 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLIntegerVector4 class >> componentType [
 
-	^ GLSLInteger
+	^ GLSLInteger instance
 ]
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLIntegerVector4 class >> declarators [
 
@@ -25,7 +25,7 @@ GLSLIntegerVector4 class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLIntegerVector4 class >> enum [
 
@@ -34,7 +34,7 @@ GLSLIntegerVector4 class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLIntegerVector4 class >> enumName [
 
@@ -43,7 +43,7 @@ GLSLIntegerVector4 class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLIntegerVector4 class >> numComponents [
 
@@ -52,18 +52,9 @@ GLSLIntegerVector4 class >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLIntegerVector4 class >> squeakName [
 
 	^ 'IntegerVector4'
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/19/2020 07:37'
-}
-GLSLIntegerVector4 >> numComponents [
-
-	^ 4
 ]

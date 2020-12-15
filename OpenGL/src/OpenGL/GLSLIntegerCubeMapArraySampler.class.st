@@ -7,16 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
-}
-GLSLIntegerCubeMapArraySampler class >> componentType [
-
-	^ GLSLInteger
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLIntegerCubeMapArraySampler class >> declarators [
 
@@ -25,7 +16,7 @@ GLSLIntegerCubeMapArraySampler class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLIntegerCubeMapArraySampler class >> enum [
 
@@ -34,7 +25,7 @@ GLSLIntegerCubeMapArraySampler class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLIntegerCubeMapArraySampler class >> enumName [
 
@@ -43,7 +34,16 @@ GLSLIntegerCubeMapArraySampler class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#timestamp : 'stlu 12/15/2020 13:04'
+}
+GLSLIntegerCubeMapArraySampler class >> pixelType [
+
+	^ GLSLInteger instance
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLIntegerCubeMapArraySampler class >> squeakName [
 

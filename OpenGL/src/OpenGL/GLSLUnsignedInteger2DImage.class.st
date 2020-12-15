@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:44'
+	#timestamp : 'stlu 12/15/2020 13:03'
 }
 GLSLUnsignedInteger2DImage class >> declarators [
 
@@ -16,7 +16,7 @@ GLSLUnsignedInteger2DImage class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:44'
+	#timestamp : 'stlu 12/15/2020 13:03'
 }
 GLSLUnsignedInteger2DImage class >> enum [
 
@@ -25,7 +25,7 @@ GLSLUnsignedInteger2DImage class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:44'
+	#timestamp : 'stlu 12/15/2020 13:03'
 }
 GLSLUnsignedInteger2DImage class >> enumName [
 
@@ -34,7 +34,16 @@ GLSLUnsignedInteger2DImage class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:44'
+	#timestamp : 'stlu 12/15/2020 13:03'
+}
+GLSLUnsignedInteger2DImage class >> pixelType [
+
+	^ GLSLUnsignedInteger instance
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/15/2020 13:03'
 }
 GLSLUnsignedInteger2DImage class >> squeakName [
 

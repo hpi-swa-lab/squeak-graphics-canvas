@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:44'
+	#timestamp : 'stlu 12/15/2020 13:03'
 }
 GLSLUnsignedIntegerCubeMapArrayImage class >> declarators [
 
@@ -16,7 +16,7 @@ GLSLUnsignedIntegerCubeMapArrayImage class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:44'
+	#timestamp : 'stlu 12/15/2020 13:03'
 }
 GLSLUnsignedIntegerCubeMapArrayImage class >> enum [
 
@@ -25,7 +25,7 @@ GLSLUnsignedIntegerCubeMapArrayImage class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:44'
+	#timestamp : 'stlu 12/15/2020 13:03'
 }
 GLSLUnsignedIntegerCubeMapArrayImage class >> enumName [
 
@@ -34,7 +34,16 @@ GLSLUnsignedIntegerCubeMapArrayImage class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:44'
+	#timestamp : 'stlu 12/15/2020 13:03'
+}
+GLSLUnsignedIntegerCubeMapArrayImage class >> pixelType [
+
+	^ GLSLUnsignedInteger instance
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/15/2020 13:03'
 }
 GLSLUnsignedIntegerCubeMapArrayImage class >> squeakName [
 

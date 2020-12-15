@@ -16,11 +16,13 @@ GLSLScalar >> * another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/13/2020 17:28'
+	#timestamp : 'stlu 12/15/2020 13:07'
 }
 GLSLScalar >> + another [
+	(another isScalar or: [another isVector]) ifFalse: [
+		^ self error: 'Attempt to add a ', another class name , ' to a vector, but can only add scalars and vectors.'].
 	self componentType ~= another componentType ifTrue: [
-		^ self error: 'Tried to add ', another componentType asString , ' to ', self componentType asString , '.'].
+		^ self error: 'Tried to add ', another componentType , ' to ', self componentType , '.'].
 
 	^ SLMappingToOperator new
 		type: self;
@@ -58,12 +60,11 @@ GLSLScalar >> / another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/14/2020 16:21'
+	#timestamp : 'stlu 12/15/2020 13:12'
 }
 GLSLScalar >> @ another [
 	| resultSize resultType |
-	((another isKindOf: GLSLScalar) or: [
-		another isKindOf: GLSLVector]) ifFalse: [
+	(another isScalar or: [another isVector]) ifFalse: [
 			^ self error: 'Attempt to use @ with a ', another class name , ', but it can only be used with scalars and vectors.'].
 	
 	resultSize := self numComponents + another numComponents.
@@ -73,29 +74,29 @@ GLSLScalar >> @ another [
 	
 	resultType := GLSLVector componentType: self numComponents: resultSize.
 	^ SLMappingToCall new
-		type: resultType instance;
+		type: resultType;
 		targetSelector: resultType declarator
 	
 ]
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/14/2020 16:21'
+	#timestamp : 'stlu 12/15/2020 13:12'
 }
 GLSLScalar >> asVector3 [
 	| resultType |
 	resultType := GLSLVector componentType: self numComponents: 3.
 	^ SLMappingToCall new
-		type: resultType instance;
+		type: resultType;
 		targetSelector: resultType declarator
 ]
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 12/1/2020 17:10'
+	#timestamp : 'stlu 12/15/2020 13:07'
 }
 GLSLScalar >> negated [
 	^ SLMappingToOperator new
-			type: self componentType instance;
+			type: self componentType;
 			selector: '-'
 ]

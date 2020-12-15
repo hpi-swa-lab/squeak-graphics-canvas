@@ -7,16 +7,16 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLDoubleVector3 class >> componentType [
 
-	^ GLSLDouble
+	^ GLSLDouble instance
 ]
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLDoubleVector3 class >> declarators [
 
@@ -25,7 +25,7 @@ GLSLDoubleVector3 class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLDoubleVector3 class >> enum [
 
@@ -34,7 +34,7 @@ GLSLDoubleVector3 class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLDoubleVector3 class >> enumName [
 
@@ -43,7 +43,7 @@ GLSLDoubleVector3 class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLDoubleVector3 class >> numComponents [
 
@@ -52,18 +52,9 @@ GLSLDoubleVector3 class >> numComponents [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLDoubleVector3 class >> squeakName [
 
 	^ 'DoubleVector3'
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/19/2020 07:37'
-}
-GLSLDoubleVector3 >> numComponents [
-
-	^ 3
 ]

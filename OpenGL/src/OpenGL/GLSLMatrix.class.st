@@ -6,17 +6,8 @@ Class {
 }
 
 {
-	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 15:15'
-}
-GLSLMatrix class >> componentType [
-
-	self subclassResponsibility
-]
-
-{
 	#category : #'*OpenGL-Wrappers-CodeGeneration',
-	#timestamp : 'stlu 12/14/2020 16:45'
+	#timestamp : 'stlu 12/15/2020 12:49'
 }
 GLSLMatrix class >> generateClasses [
 
@@ -37,7 +28,7 @@ GLSLMatrix class >> generateClasses [
 				
 				cls compileAccessor: 'numColumns' value: columns.
 				cls compileAccessor: 'numRows' value: rows.
-				cls compileAccessor: 'componentType' value: type name]]]
+				cls compileAccessor: 'componentType' value: type name , ' instance']]]
 ]
 
 {
@@ -51,11 +42,11 @@ GLSLMatrix class >> numColumns [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:11'
+	#timestamp : 'stlu 12/14/2020 19:02'
 }
 GLSLMatrix class >> numComponents [
 
-	^ self numColumns * self numRows
+	^ self numRows * self numColumns
 ]
 
 {
@@ -77,6 +68,15 @@ GLSLMatrix >> componentType [
 ]
 
 {
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:22'
+}
+GLSLMatrix >> isMatrix [
+
+	^ true
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 11/23/2020 13:11'
 }
@@ -87,7 +87,7 @@ GLSLMatrix >> numColumns [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 13:23'
+	#timestamp : 'stlu 12/14/2020 19:01'
 }
 GLSLMatrix >> numComponents [
 

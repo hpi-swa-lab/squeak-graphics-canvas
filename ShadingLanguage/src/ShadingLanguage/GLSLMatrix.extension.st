@@ -2,10 +2,10 @@ Extension { #name : #GLSLMatrix }
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 12/1/2020 17:10'
+	#timestamp : 'stlu 12/15/2020 13:07'
 }
 GLSLMatrix >> negated [
 	^ SLMappingToOperator new
-			type: self componentType instance;
+			type: self componentType;
 			selector: '-'
 ]

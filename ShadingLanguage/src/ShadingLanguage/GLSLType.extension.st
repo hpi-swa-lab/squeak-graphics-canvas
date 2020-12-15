@@ -2,11 +2,10 @@ Extension { #name : #GLSLType }
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/14/2020 16:52'
+	#timestamp : 'stlu 12/15/2020 13:16'
 }
 GLSLType >> ** another [
-	((self isKindOf: GLSLFloat) or: [
-		(self isKindOf: GLSLVector) and: [self class componentType = GLSLFloat]]) ifFalse: [
+	(self isFloat or: [self isVector and: [self componentType isFloat]]) ifFalse: [
 			^ self error: 'Attempt to send message ** to ', self class name , ', but it is only ',
 			'understood by float and float vector types'].
 	self = another ifFalse: [
@@ -20,12 +19,11 @@ GLSLType >> ** another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/14/2020 16:53'
+	#timestamp : 'stlu 12/15/2020 13:09'
 }
 GLSLType >> exp [
-	((self isKindOf: GLSLFloat) or: [
-		(self isKindOf: GLSLVector) and: [self class componentType = GLSLFloat]]) ifFalse: [
-			^ self error: 'Attempt to send message exp to ', self class name , ', but it is only ',
+	(self isFloat or: [self isVector and: [self componentType isFloat]]) ifFalse: [
+			^ self error: 'Attempt to send message exp to ', self , ', but it is only ',
 			'understood by float and float vector types'].
 		
 	^ SLMappingToCall new

@@ -2,7 +2,7 @@ Extension { #name : #GLSLSampler }
 
 {
 	#category : #'*OpenGL-Wrappers-CodeGeneration',
-	#timestamp : 'stlu 12/14/2020 16:49'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLSampler class >> generateClasses [
 
@@ -35,5 +35,5 @@ GLSLSampler class >> generateClasses [
 							, (type joinSeparatedBy: '_') asUppercase.
 			cls compileAccessor: 'enumName' value: enumName storeString.
 			cls compileAccessor: 'enum' value: 'GL_' , enumName.
-			cls compileAccessor: 'componentType' value: pixelType]]
+			cls compileAccessor: 'pixelType' value: pixelType name , ' instance']]
 ]

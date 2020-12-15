@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:44'
+	#timestamp : 'stlu 12/15/2020 13:03'
 }
 GLSLFloatCubeImage class >> declarators [
 
@@ -16,7 +16,7 @@ GLSLFloatCubeImage class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:44'
+	#timestamp : 'stlu 12/15/2020 13:03'
 }
 GLSLFloatCubeImage class >> enum [
 
@@ -25,7 +25,7 @@ GLSLFloatCubeImage class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:44'
+	#timestamp : 'stlu 12/15/2020 13:03'
 }
 GLSLFloatCubeImage class >> enumName [
 
@@ -34,7 +34,16 @@ GLSLFloatCubeImage class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:44'
+	#timestamp : 'stlu 12/15/2020 13:03'
+}
+GLSLFloatCubeImage class >> pixelType [
+
+	^ GLSLFloat instance
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/15/2020 13:03'
 }
 GLSLFloatCubeImage class >> squeakName [
 

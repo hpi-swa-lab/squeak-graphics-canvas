@@ -37,6 +37,15 @@ GLSLScalar class >> compileInitialsAccessor: stringOrSymbol [
 ]
 
 {
+	#category : #accessing,
+	#timestamp : 'stlu 12/15/2020 13:05'
+}
+GLSLScalar class >> componentType [
+
+	^ self instance
+]
+
+{
 	#category : #'*OpenGL-Wrappers-CodeGeneration',
 	#timestamp : 'stlu 12/14/2020 16:49'
 }
@@ -72,4 +81,76 @@ GLSLScalar class >> generateClasses [
 GLSLScalar class >> glslInitials [
 
 	self subclassResponsibility
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/15/2020 13:15'
+}
+GLSLScalar >> componentType [
+
+	^ self class componentType
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:27'
+}
+GLSLScalar >> isBoolean [
+
+	^ false
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:27'
+}
+GLSLScalar >> isDouble [
+
+	^ false
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:27'
+}
+GLSLScalar >> isFloat [
+
+	^ false
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:27'
+}
+GLSLScalar >> isInteger [
+
+	^ false
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:23'
+}
+GLSLScalar >> isScalar [
+
+	^ true
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:27'
+}
+GLSLScalar >> isUnsignedInteger [
+
+	^ false
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/14/2020 18:50'
+}
+GLSLScalar >> numComponents [
+
+	^ 1
 ]

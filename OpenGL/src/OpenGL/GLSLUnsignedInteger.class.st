@@ -18,15 +18,6 @@ GLSLUnsignedInteger class >> commandInitials [
 	#category : #accessing,
 	#timestamp : 'stlu 12/14/2020 16:49'
 }
-GLSLUnsignedInteger class >> componentType [
-
-	^ GLSLUnsignedInteger
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
-}
 GLSLUnsignedInteger class >> declarators [
 
 	^ #('uint' 'unsigned int')
@@ -75,6 +66,15 @@ GLSLUnsignedInteger class >> squeakArrayClass [
 GLSLUnsignedInteger class >> squeakName [
 
 	^ 'UnsignedInteger'
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:29'
+}
+GLSLUnsignedInteger >> isUnsignedInteger [
+
+	^ true
 ]
 
 {

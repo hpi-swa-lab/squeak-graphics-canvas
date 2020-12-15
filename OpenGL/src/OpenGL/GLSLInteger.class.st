@@ -18,15 +18,6 @@ GLSLInteger class >> commandInitials [
 	#category : #accessing,
 	#timestamp : 'stlu 12/14/2020 16:49'
 }
-GLSLInteger class >> componentType [
-
-	^ GLSLInteger
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
-}
 GLSLInteger class >> declarators [
 
 	^ #('int')
@@ -75,6 +66,15 @@ GLSLInteger class >> squeakArrayClass [
 GLSLInteger class >> squeakName [
 
 	^ 'Integer'
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:29'
+}
+GLSLInteger >> isInteger [
+
+	^ true
 ]
 
 {

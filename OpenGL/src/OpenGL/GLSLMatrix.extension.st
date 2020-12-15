@@ -2,7 +2,7 @@ Extension { #name : #GLSLMatrix }
 
 {
 	#category : #'*OpenGL-Wrappers-CodeGeneration',
-	#timestamp : 'stlu 12/14/2020 16:45'
+	#timestamp : 'stlu 12/15/2020 12:49'
 }
 GLSLMatrix class >> generateClasses [
 
@@ -23,5 +23,5 @@ GLSLMatrix class >> generateClasses [
 				
 				cls compileAccessor: 'numColumns' value: columns.
 				cls compileAccessor: 'numRows' value: rows.
-				cls compileAccessor: 'componentType' value: type name]]]
+				cls compileAccessor: 'componentType' value: type name , ' instance']]]
 ]

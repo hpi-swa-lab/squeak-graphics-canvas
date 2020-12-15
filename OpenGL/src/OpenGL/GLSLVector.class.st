@@ -6,22 +6,31 @@ Class {
 }
 
 {
+	#category : #accessing,
+	#timestamp : 'stlu 12/15/2020 13:06'
+}
+GLSLVector class >> componentType [
+
+	self subclassResponsibility
+]
+
+{
 	#category : #'instance creation',
-	#timestamp : 'zagto 12/1/2020 18:23'
+	#timestamp : 'stlu 12/15/2020 13:13'
 }
 GLSLVector class >> componentType: type numComponents: size [
 	size = 1 ifTrue: [ ^ type ].
 	
 	self allSubclassesDo: [ :cls |
-		(cls componentType instance = type and: [ cls numComponents = size ]) ifTrue: [
-			^ cls ]].
+		(cls componentType = type and: [ cls numComponents = size ]) ifTrue: [
+			^ cls instance]].
 	
 	self error: 'no such vector type'
 ]
 
 {
 	#category : #'*OpenGL-Wrappers-CodeGeneration',
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLVector class >> generateClasses [
 
@@ -38,7 +47,7 @@ GLSLVector class >> generateClasses [
 			cls compileAccessor: 'enum' value: 'GL_' , enumName.
 			
 			cls compileAccessor: 'numComponents' value: components.
-			cls compileAccessor: 'componentType' value: type name]]
+			cls compileAccessor: 'componentType' value: type name , ' instance']]
 ]
 
 {
@@ -48,6 +57,24 @@ GLSLVector class >> generateClasses [
 GLSLVector class >> numComponents [
 
 	self subclassResponsibility
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/15/2020 13:15'
+}
+GLSLVector >> componentType [
+
+	^ self class componentType
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:23'
+}
+GLSLVector >> isVector [
+
+	^ true
 ]
 
 {

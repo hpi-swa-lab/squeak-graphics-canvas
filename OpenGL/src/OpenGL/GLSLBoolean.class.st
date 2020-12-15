@@ -18,15 +18,6 @@ GLSLBoolean class >> commandInitials [
 	#category : #accessing,
 	#timestamp : 'stlu 12/14/2020 16:49'
 }
-GLSLBoolean class >> componentType [
-
-	^ GLSLBoolean
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
-}
 GLSLBoolean class >> declarators [
 
 	^ #('bool')
@@ -84,6 +75,24 @@ GLSLBoolean class >> squeakName [
 GLSLBoolean >> actualComponentType [
 
 	^ GLSLInteger instance "Technically other types are possible too, but this is easiest."
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:28'
+}
+GLSLBoolean >> isBoolean [
+
+	^ true
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:55'
+}
+GLSLBoolean >> isScalar [
+
+	^ false "for all intents and purposes it isn't"
 ]
 
 {

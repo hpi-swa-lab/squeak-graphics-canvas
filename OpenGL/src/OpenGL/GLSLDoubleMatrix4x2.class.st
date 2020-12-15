@@ -7,16 +7,16 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:48'
+	#timestamp : 'stlu 12/15/2020 12:49'
 }
 GLSLDoubleMatrix4x2 class >> componentType [
 
-	^ GLSLDouble
+	^ GLSLDouble instance
 ]
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:48'
+	#timestamp : 'stlu 12/15/2020 12:49'
 }
 GLSLDoubleMatrix4x2 class >> declarators [
 
@@ -25,7 +25,7 @@ GLSLDoubleMatrix4x2 class >> declarators [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:48'
+	#timestamp : 'stlu 12/15/2020 12:49'
 }
 GLSLDoubleMatrix4x2 class >> enum [
 
@@ -34,7 +34,7 @@ GLSLDoubleMatrix4x2 class >> enum [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:48'
+	#timestamp : 'stlu 12/15/2020 12:49'
 }
 GLSLDoubleMatrix4x2 class >> enumName [
 
@@ -43,7 +43,7 @@ GLSLDoubleMatrix4x2 class >> enumName [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:48'
+	#timestamp : 'stlu 12/15/2020 12:49'
 }
 GLSLDoubleMatrix4x2 class >> numColumns [
 
@@ -52,7 +52,7 @@ GLSLDoubleMatrix4x2 class >> numColumns [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:48'
+	#timestamp : 'stlu 12/15/2020 12:49'
 }
 GLSLDoubleMatrix4x2 class >> numRows [
 
@@ -61,7 +61,7 @@ GLSLDoubleMatrix4x2 class >> numRows [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:48'
+	#timestamp : 'stlu 12/15/2020 12:49'
 }
 GLSLDoubleMatrix4x2 class >> squeakName [
 

@@ -2,7 +2,7 @@ Extension { #name : #GLSLVector }
 
 {
 	#category : #'*OpenGL-Wrappers-CodeGeneration',
-	#timestamp : 'stlu 12/14/2020 16:50'
+	#timestamp : 'stlu 12/15/2020 13:04'
 }
 GLSLVector class >> generateClasses [
 
@@ -19,5 +19,5 @@ GLSLVector class >> generateClasses [
 			cls compileAccessor: 'enum' value: 'GL_' , enumName.
 			
 			cls compileAccessor: 'numComponents' value: components.
-			cls compileAccessor: 'componentType' value: type name]]
+			cls compileAccessor: 'componentType' value: type name , ' instance']]
 ]

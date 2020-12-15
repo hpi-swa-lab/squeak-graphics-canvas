@@ -42,24 +42,6 @@ GLSLArray class >> numElements: length type: aGLType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 16:34'
-}
-GLSLArray >> componentType [
-
-	^ type componentType
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/23/2020 16:17'
-}
-GLSLArray >> numComponents [
-
-	^ numElements * type numComponents
-]
-
-{
-	#category : #accessing,
 	#timestamp : 'stlu 11/23/2020 16:16'
 }
 GLSLArray >> numElements [

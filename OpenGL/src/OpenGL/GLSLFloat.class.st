@@ -18,15 +18,6 @@ GLSLFloat class >> commandInitials [
 	#category : #accessing,
 	#timestamp : 'stlu 12/14/2020 16:49'
 }
-GLSLFloat class >> componentType [
-
-	^ GLSLFloat
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
-}
 GLSLFloat class >> declarators [
 
 	^ #('float')
@@ -75,6 +66,15 @@ GLSLFloat class >> squeakArrayClass [
 GLSLFloat class >> squeakName [
 
 	^ 'Float'
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:28'
+}
+GLSLFloat >> isFloat [
+
+	^ true
 ]
 
 {

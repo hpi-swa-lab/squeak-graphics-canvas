@@ -2,7 +2,7 @@ Extension { #name : #GLSLImage }
 
 {
 	#category : #'*OpenGL-Wrappers-CodeGeneration',
-	#timestamp : 'stlu 12/14/2020 16:43'
+	#timestamp : 'stlu 12/15/2020 13:03'
 }
 GLSLImage class >> generateClasses [
 
@@ -34,5 +34,6 @@ GLSLImage class >> generateClasses [
 							, 'IMAGE_'
 							, (type joinSeparatedBy: '_') asUppercase.
 			cls compileAccessor: 'enumName' value: enumName storeString.
-			cls compileAccessor: 'enum' value: 'GL_' , enumName]]
+			cls compileAccessor: 'enum' value: 'GL_' , enumName.
+			cls compileAccessor: 'pixelType' value: pixelType name , ' instance']]
 ]

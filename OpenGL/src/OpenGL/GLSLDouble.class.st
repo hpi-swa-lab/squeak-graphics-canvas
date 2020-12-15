@@ -18,15 +18,6 @@ GLSLDouble class >> commandInitials [
 	#category : #accessing,
 	#timestamp : 'stlu 12/14/2020 16:49'
 }
-GLSLDouble class >> componentType [
-
-	^ GLSLDouble
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 16:49'
-}
 GLSLDouble class >> declarators [
 
 	^ #('double')
@@ -75,6 +66,15 @@ GLSLDouble class >> squeakArrayClass [
 GLSLDouble class >> squeakName [
 
 	^ 'Double'
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 18:28'
+}
+GLSLDouble >> isDouble [
+
+	^ true
 ]
 
 {
