@@ -15,7 +15,7 @@ Class {
 
 {
 	#category : #'class initialization',
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary class >> compileConstantAccessors [
 
@@ -30,7 +30,7 @@ GLFWLibrary class >> compileConstantAccessors [
 
 {
 	#category : #'instance management',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary class >> example [
 	" self example "
@@ -47,7 +47,7 @@ GLFWLibrary class >> example [
 
 {
 	#category : #examples,
-	#timestamp : ''
+	#timestamp : 'stlu 11/11/2020 14:26'
 }
 GLFWLibrary class >> example1 [ "self example1"
 	"A minimal GLFW example window. Dismiss by clicking anywhere inside Squeak.
@@ -64,7 +64,7 @@ GLFWLibrary class >> example1 [ "self example1"
 
 {
 	#category : #'class initialization',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 14:23'
 }
 GLFWLibrary class >> initialize [
 
@@ -76,7 +76,7 @@ GLFWLibrary class >> initialize [
 
 {
 	#category : #'instance management',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary class >> initializeInstance [
 
@@ -94,7 +94,7 @@ GLFWLibrary class >> initializeInstance [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary class >> moduleName [
 
@@ -114,7 +114,7 @@ GLFWLibrary class >> moduleName [
 
 {
 	#category : #'instance management',
-	#timestamp : ''
+	#timestamp : 'stlu 10/16/2020 12:06'
 }
 GLFWLibrary class >> registerNewInstance [
 
@@ -123,7 +123,7 @@ GLFWLibrary class >> registerNewInstance [
 
 {
 	#category : #'system startup',
-	#timestamp : ''
+	#timestamp : 'stlu 11/12/2020 16:07'
 }
 GLFWLibrary class >> shutDown: quitting [
 
@@ -132,7 +132,7 @@ GLFWLibrary class >> shutDown: quitting [
 
 {
 	#category : #'system startup',
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 19:51'
 }
 GLFWLibrary class >> startUp: resuming [
 
@@ -141,7 +141,7 @@ GLFWLibrary class >> startUp: resuming [
 
 {
 	#category : #'instance management',
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 19:51'
 }
 GLFWLibrary class >> terminateInstance [
 
@@ -153,7 +153,7 @@ GLFWLibrary class >> terminateInstance [
 
 {
 	#category : #'instance management',
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 19:52'
 }
 GLFWLibrary class >> updateInstance [
 
@@ -164,7 +164,7 @@ GLFWLibrary class >> updateInstance [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> ACCUM_ALPHA_BITS [
 
@@ -174,7 +174,7 @@ GLFWLibrary >> ACCUM_ALPHA_BITS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> ACCUM_BLUE_BITS [
 
@@ -184,7 +184,7 @@ GLFWLibrary >> ACCUM_BLUE_BITS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> ACCUM_GREEN_BITS [
 
@@ -194,7 +194,7 @@ GLFWLibrary >> ACCUM_GREEN_BITS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> ACCUM_RED_BITS [
 
@@ -204,7 +204,7 @@ GLFWLibrary >> ACCUM_RED_BITS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> ALPHA_BITS [
 
@@ -214,7 +214,7 @@ GLFWLibrary >> ALPHA_BITS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> ANGLE_PLATFORM_TYPE [
 
@@ -224,7 +224,7 @@ GLFWLibrary >> ANGLE_PLATFORM_TYPE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> ANGLE_PLATFORM_TYPE_D3D11 [
 
@@ -234,7 +234,7 @@ GLFWLibrary >> ANGLE_PLATFORM_TYPE_D3D11 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> ANGLE_PLATFORM_TYPE_D3D9 [
 
@@ -244,7 +244,7 @@ GLFWLibrary >> ANGLE_PLATFORM_TYPE_D3D9 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> ANGLE_PLATFORM_TYPE_METAL [
 
@@ -254,7 +254,7 @@ GLFWLibrary >> ANGLE_PLATFORM_TYPE_METAL [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> ANGLE_PLATFORM_TYPE_NONE [
 
@@ -264,7 +264,7 @@ GLFWLibrary >> ANGLE_PLATFORM_TYPE_NONE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> ANGLE_PLATFORM_TYPE_OPENGL [
 
@@ -274,7 +274,7 @@ GLFWLibrary >> ANGLE_PLATFORM_TYPE_OPENGL [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> ANGLE_PLATFORM_TYPE_OPENGLES [
 
@@ -284,7 +284,7 @@ GLFWLibrary >> ANGLE_PLATFORM_TYPE_OPENGLES [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> ANGLE_PLATFORM_TYPE_VULKAN [
 
@@ -294,7 +294,7 @@ GLFWLibrary >> ANGLE_PLATFORM_TYPE_VULKAN [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> ANY_RELEASE_BEHAVIOR [
 
@@ -304,7 +304,7 @@ GLFWLibrary >> ANY_RELEASE_BEHAVIOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> API_UNAVAILABLE [
 
@@ -314,7 +314,7 @@ GLFWLibrary >> API_UNAVAILABLE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> ARROW_CURSOR [
 
@@ -324,7 +324,7 @@ GLFWLibrary >> ARROW_CURSOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> AUTO_ICONIFY [
 
@@ -334,7 +334,7 @@ GLFWLibrary >> AUTO_ICONIFY [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> AUX_BUFFERS [
 
@@ -344,7 +344,7 @@ GLFWLibrary >> AUX_BUFFERS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> BLUE_BITS [
 
@@ -354,7 +354,7 @@ GLFWLibrary >> BLUE_BITS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> CENTER_CURSOR [
 
@@ -364,7 +364,7 @@ GLFWLibrary >> CENTER_CURSOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> CLIENT_API [
 
@@ -374,7 +374,7 @@ GLFWLibrary >> CLIENT_API [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> COCOA_CHDIR_RESOURCES [
 
@@ -384,7 +384,7 @@ GLFWLibrary >> COCOA_CHDIR_RESOURCES [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> COCOA_FRAME_NAME [
 
@@ -394,7 +394,7 @@ GLFWLibrary >> COCOA_FRAME_NAME [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> COCOA_GRAPHICS_SWITCHING [
 
@@ -404,7 +404,7 @@ GLFWLibrary >> COCOA_GRAPHICS_SWITCHING [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> COCOA_MENUBAR [
 
@@ -414,7 +414,7 @@ GLFWLibrary >> COCOA_MENUBAR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> COCOA_RETINA_FRAMEBUFFER [
 
@@ -424,7 +424,7 @@ GLFWLibrary >> COCOA_RETINA_FRAMEBUFFER [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> CONNECTED [
 
@@ -434,7 +434,7 @@ GLFWLibrary >> CONNECTED [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> CONTEXT_CREATION_API [
 
@@ -444,7 +444,7 @@ GLFWLibrary >> CONTEXT_CREATION_API [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> CONTEXT_DEBUG [
 
@@ -454,7 +454,7 @@ GLFWLibrary >> CONTEXT_DEBUG [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> CONTEXT_NO_ERROR [
 
@@ -464,7 +464,7 @@ GLFWLibrary >> CONTEXT_NO_ERROR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> CONTEXT_RELEASE_BEHAVIOR [
 
@@ -474,7 +474,7 @@ GLFWLibrary >> CONTEXT_RELEASE_BEHAVIOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> CONTEXT_REVISION [
 
@@ -484,7 +484,7 @@ GLFWLibrary >> CONTEXT_REVISION [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> CONTEXT_ROBUSTNESS [
 
@@ -494,7 +494,7 @@ GLFWLibrary >> CONTEXT_ROBUSTNESS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> CONTEXT_VERSION_MAJOR [
 
@@ -504,7 +504,7 @@ GLFWLibrary >> CONTEXT_VERSION_MAJOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> CONTEXT_VERSION_MINOR [
 
@@ -514,7 +514,7 @@ GLFWLibrary >> CONTEXT_VERSION_MINOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> CROSSHAIR_CURSOR [
 
@@ -524,7 +524,7 @@ GLFWLibrary >> CROSSHAIR_CURSOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> CURSOR [
 
@@ -534,7 +534,7 @@ GLFWLibrary >> CURSOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> CURSOR_DISABLED [
 
@@ -544,7 +544,7 @@ GLFWLibrary >> CURSOR_DISABLED [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> CURSOR_HIDDEN [
 
@@ -554,7 +554,7 @@ GLFWLibrary >> CURSOR_HIDDEN [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> CURSOR_NORMAL [
 
@@ -564,7 +564,7 @@ GLFWLibrary >> CURSOR_NORMAL [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> CURSOR_UNAVAILABLE [
 
@@ -574,7 +574,7 @@ GLFWLibrary >> CURSOR_UNAVAILABLE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> DECORATED [
 
@@ -584,7 +584,7 @@ GLFWLibrary >> DECORATED [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> DEPTH_BITS [
 
@@ -594,7 +594,7 @@ GLFWLibrary >> DEPTH_BITS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> DISCONNECTED [
 
@@ -604,7 +604,7 @@ GLFWLibrary >> DISCONNECTED [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> DONT_CARE [
 
@@ -614,7 +614,7 @@ GLFWLibrary >> DONT_CARE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> DOUBLEBUFFER [
 
@@ -624,7 +624,7 @@ GLFWLibrary >> DOUBLEBUFFER [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> EGL_CONTEXT_API [
 
@@ -634,7 +634,7 @@ GLFWLibrary >> EGL_CONTEXT_API [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> FEATURE_UNAVAILABLE [
 
@@ -644,7 +644,7 @@ GLFWLibrary >> FEATURE_UNAVAILABLE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> FEATURE_UNIMPLEMENTED [
 
@@ -654,7 +654,7 @@ GLFWLibrary >> FEATURE_UNIMPLEMENTED [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> FLOATING [
 
@@ -664,7 +664,7 @@ GLFWLibrary >> FLOATING [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> FOCUSED [
 
@@ -674,7 +674,7 @@ GLFWLibrary >> FOCUSED [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> FOCUS_ON_SHOW [
 
@@ -684,7 +684,7 @@ GLFWLibrary >> FOCUS_ON_SHOW [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> FORMAT_UNAVAILABLE [
 
@@ -694,7 +694,7 @@ GLFWLibrary >> FORMAT_UNAVAILABLE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_AXIS_LAST [
 
@@ -704,7 +704,7 @@ GLFWLibrary >> GAMEPAD_AXIS_LAST [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_AXIS_LEFT_TRIGGER [
 
@@ -714,7 +714,7 @@ GLFWLibrary >> GAMEPAD_AXIS_LEFT_TRIGGER [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_AXIS_LEFT_X [
 
@@ -724,7 +724,7 @@ GLFWLibrary >> GAMEPAD_AXIS_LEFT_X [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_AXIS_LEFT_Y [
 
@@ -734,7 +734,7 @@ GLFWLibrary >> GAMEPAD_AXIS_LEFT_Y [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_AXIS_RIGHT_TRIGGER [
 
@@ -744,7 +744,7 @@ GLFWLibrary >> GAMEPAD_AXIS_RIGHT_TRIGGER [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_AXIS_RIGHT_X [
 
@@ -754,7 +754,7 @@ GLFWLibrary >> GAMEPAD_AXIS_RIGHT_X [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_AXIS_RIGHT_Y [
 
@@ -764,7 +764,7 @@ GLFWLibrary >> GAMEPAD_AXIS_RIGHT_Y [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_A [
 
@@ -774,7 +774,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_A [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_B [
 
@@ -784,7 +784,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_B [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_BACK [
 
@@ -794,7 +794,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_BACK [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_CIRCLE [
 
@@ -804,7 +804,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_CIRCLE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_CROSS [
 
@@ -814,7 +814,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_CROSS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_DPAD_DOWN [
 
@@ -824,7 +824,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_DPAD_DOWN [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_DPAD_LEFT [
 
@@ -834,7 +834,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_DPAD_LEFT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_DPAD_RIGHT [
 
@@ -844,7 +844,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_DPAD_RIGHT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_DPAD_UP [
 
@@ -854,7 +854,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_DPAD_UP [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_GUIDE [
 
@@ -864,7 +864,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_GUIDE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_LAST [
 
@@ -874,7 +874,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_LAST [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_LEFT_BUMPER [
 
@@ -884,7 +884,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_LEFT_BUMPER [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_LEFT_THUMB [
 
@@ -894,7 +894,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_LEFT_THUMB [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_RIGHT_BUMPER [
 
@@ -904,7 +904,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_RIGHT_BUMPER [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_RIGHT_THUMB [
 
@@ -914,7 +914,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_RIGHT_THUMB [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_SQUARE [
 
@@ -924,7 +924,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_SQUARE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_START [
 
@@ -934,7 +934,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_START [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_TRIANGLE [
 
@@ -944,7 +944,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_TRIANGLE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_X [
 
@@ -954,7 +954,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_X [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GAMEPAD_BUTTON_Y [
 
@@ -964,7 +964,7 @@ GLFWLibrary >> GAMEPAD_BUTTON_Y [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> GREEN_BITS [
 
@@ -974,7 +974,7 @@ GLFWLibrary >> GREEN_BITS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> HAND_CURSOR [
 
@@ -984,7 +984,7 @@ GLFWLibrary >> HAND_CURSOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> HAT_CENTERED [
 
@@ -994,7 +994,7 @@ GLFWLibrary >> HAT_CENTERED [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> HAT_DOWN [
 
@@ -1004,7 +1004,7 @@ GLFWLibrary >> HAT_DOWN [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> HAT_LEFT [
 
@@ -1014,7 +1014,7 @@ GLFWLibrary >> HAT_LEFT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> HAT_LEFT_DOWN [
 
@@ -1024,7 +1024,7 @@ GLFWLibrary >> HAT_LEFT_DOWN [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> HAT_LEFT_UP [
 
@@ -1034,7 +1034,7 @@ GLFWLibrary >> HAT_LEFT_UP [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> HAT_RIGHT [
 
@@ -1044,7 +1044,7 @@ GLFWLibrary >> HAT_RIGHT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> HAT_RIGHT_DOWN [
 
@@ -1054,7 +1054,7 @@ GLFWLibrary >> HAT_RIGHT_DOWN [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> HAT_RIGHT_UP [
 
@@ -1064,7 +1064,7 @@ GLFWLibrary >> HAT_RIGHT_UP [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> HAT_UP [
 
@@ -1074,7 +1074,7 @@ GLFWLibrary >> HAT_UP [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> HOVERED [
 
@@ -1084,7 +1084,7 @@ GLFWLibrary >> HOVERED [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> HRESIZE_CURSOR [
 
@@ -1094,7 +1094,7 @@ GLFWLibrary >> HRESIZE_CURSOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> IBEAM_CURSOR [
 
@@ -1104,7 +1104,7 @@ GLFWLibrary >> IBEAM_CURSOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> ICONIFIED [
 
@@ -1114,7 +1114,7 @@ GLFWLibrary >> ICONIFIED [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> INVALID_ENUM [
 
@@ -1124,7 +1124,7 @@ GLFWLibrary >> INVALID_ENUM [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> INVALID_VALUE [
 
@@ -1134,7 +1134,7 @@ GLFWLibrary >> INVALID_VALUE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> JOYSTICK_1 [
 
@@ -1144,7 +1144,7 @@ GLFWLibrary >> JOYSTICK_1 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> JOYSTICK_10 [
 
@@ -1154,7 +1154,7 @@ GLFWLibrary >> JOYSTICK_10 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> JOYSTICK_11 [
 
@@ -1164,7 +1164,7 @@ GLFWLibrary >> JOYSTICK_11 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> JOYSTICK_12 [
 
@@ -1174,7 +1174,7 @@ GLFWLibrary >> JOYSTICK_12 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> JOYSTICK_13 [
 
@@ -1184,7 +1184,7 @@ GLFWLibrary >> JOYSTICK_13 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> JOYSTICK_14 [
 
@@ -1194,7 +1194,7 @@ GLFWLibrary >> JOYSTICK_14 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> JOYSTICK_15 [
 
@@ -1204,7 +1204,7 @@ GLFWLibrary >> JOYSTICK_15 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> JOYSTICK_16 [
 
@@ -1214,7 +1214,7 @@ GLFWLibrary >> JOYSTICK_16 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> JOYSTICK_2 [
 
@@ -1224,7 +1224,7 @@ GLFWLibrary >> JOYSTICK_2 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> JOYSTICK_3 [
 
@@ -1234,7 +1234,7 @@ GLFWLibrary >> JOYSTICK_3 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> JOYSTICK_4 [
 
@@ -1244,7 +1244,7 @@ GLFWLibrary >> JOYSTICK_4 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> JOYSTICK_5 [
 
@@ -1254,7 +1254,7 @@ GLFWLibrary >> JOYSTICK_5 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> JOYSTICK_6 [
 
@@ -1264,7 +1264,7 @@ GLFWLibrary >> JOYSTICK_6 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> JOYSTICK_7 [
 
@@ -1274,7 +1274,7 @@ GLFWLibrary >> JOYSTICK_7 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> JOYSTICK_8 [
 
@@ -1284,7 +1284,7 @@ GLFWLibrary >> JOYSTICK_8 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> JOYSTICK_9 [
 
@@ -1294,7 +1294,7 @@ GLFWLibrary >> JOYSTICK_9 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> JOYSTICK_HAT_BUTTONS [
 
@@ -1304,7 +1304,7 @@ GLFWLibrary >> JOYSTICK_HAT_BUTTONS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> JOYSTICK_LAST [
 
@@ -1314,7 +1314,7 @@ GLFWLibrary >> JOYSTICK_LAST [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_0 [
 
@@ -1324,7 +1324,7 @@ GLFWLibrary >> KEY_0 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_1 [
 
@@ -1334,7 +1334,7 @@ GLFWLibrary >> KEY_1 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_2 [
 
@@ -1344,7 +1344,7 @@ GLFWLibrary >> KEY_2 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_3 [
 
@@ -1354,7 +1354,7 @@ GLFWLibrary >> KEY_3 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_4 [
 
@@ -1364,7 +1364,7 @@ GLFWLibrary >> KEY_4 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_5 [
 
@@ -1374,7 +1374,7 @@ GLFWLibrary >> KEY_5 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_6 [
 
@@ -1384,7 +1384,7 @@ GLFWLibrary >> KEY_6 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_7 [
 
@@ -1394,7 +1394,7 @@ GLFWLibrary >> KEY_7 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_8 [
 
@@ -1404,7 +1404,7 @@ GLFWLibrary >> KEY_8 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_9 [
 
@@ -1414,7 +1414,7 @@ GLFWLibrary >> KEY_9 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_A [
 
@@ -1424,7 +1424,7 @@ GLFWLibrary >> KEY_A [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_APOSTROPHE [
 
@@ -1434,7 +1434,7 @@ GLFWLibrary >> KEY_APOSTROPHE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_B [
 
@@ -1444,7 +1444,7 @@ GLFWLibrary >> KEY_B [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_BACKSLASH [
 
@@ -1454,7 +1454,7 @@ GLFWLibrary >> KEY_BACKSLASH [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_BACKSPACE [
 
@@ -1464,7 +1464,7 @@ GLFWLibrary >> KEY_BACKSPACE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_C [
 
@@ -1474,7 +1474,7 @@ GLFWLibrary >> KEY_C [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_CAPS_LOCK [
 
@@ -1484,7 +1484,7 @@ GLFWLibrary >> KEY_CAPS_LOCK [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_COMMA [
 
@@ -1494,7 +1494,7 @@ GLFWLibrary >> KEY_COMMA [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_D [
 
@@ -1504,7 +1504,7 @@ GLFWLibrary >> KEY_D [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_DELETE [
 
@@ -1514,7 +1514,7 @@ GLFWLibrary >> KEY_DELETE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_DOWN [
 
@@ -1524,7 +1524,7 @@ GLFWLibrary >> KEY_DOWN [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_E [
 
@@ -1534,7 +1534,7 @@ GLFWLibrary >> KEY_E [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_END [
 
@@ -1544,7 +1544,7 @@ GLFWLibrary >> KEY_END [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_ENTER [
 
@@ -1554,7 +1554,7 @@ GLFWLibrary >> KEY_ENTER [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_EQUAL [
 
@@ -1564,7 +1564,7 @@ GLFWLibrary >> KEY_EQUAL [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_ESCAPE [
 
@@ -1574,7 +1574,7 @@ GLFWLibrary >> KEY_ESCAPE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F [
 
@@ -1584,7 +1584,7 @@ GLFWLibrary >> KEY_F [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F1 [
 
@@ -1594,7 +1594,7 @@ GLFWLibrary >> KEY_F1 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F10 [
 
@@ -1604,7 +1604,7 @@ GLFWLibrary >> KEY_F10 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F11 [
 
@@ -1614,7 +1614,7 @@ GLFWLibrary >> KEY_F11 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F12 [
 
@@ -1624,7 +1624,7 @@ GLFWLibrary >> KEY_F12 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F13 [
 
@@ -1634,7 +1634,7 @@ GLFWLibrary >> KEY_F13 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F14 [
 
@@ -1644,7 +1644,7 @@ GLFWLibrary >> KEY_F14 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F15 [
 
@@ -1654,7 +1654,7 @@ GLFWLibrary >> KEY_F15 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F16 [
 
@@ -1664,7 +1664,7 @@ GLFWLibrary >> KEY_F16 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F17 [
 
@@ -1674,7 +1674,7 @@ GLFWLibrary >> KEY_F17 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F18 [
 
@@ -1684,7 +1684,7 @@ GLFWLibrary >> KEY_F18 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F19 [
 
@@ -1694,7 +1694,7 @@ GLFWLibrary >> KEY_F19 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F2 [
 
@@ -1704,7 +1704,7 @@ GLFWLibrary >> KEY_F2 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F20 [
 
@@ -1714,7 +1714,7 @@ GLFWLibrary >> KEY_F20 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F21 [
 
@@ -1724,7 +1724,7 @@ GLFWLibrary >> KEY_F21 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F22 [
 
@@ -1734,7 +1734,7 @@ GLFWLibrary >> KEY_F22 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F23 [
 
@@ -1744,7 +1744,7 @@ GLFWLibrary >> KEY_F23 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F24 [
 
@@ -1754,7 +1754,7 @@ GLFWLibrary >> KEY_F24 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F25 [
 
@@ -1764,7 +1764,7 @@ GLFWLibrary >> KEY_F25 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F3 [
 
@@ -1774,7 +1774,7 @@ GLFWLibrary >> KEY_F3 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F4 [
 
@@ -1784,7 +1784,7 @@ GLFWLibrary >> KEY_F4 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F5 [
 
@@ -1794,7 +1794,7 @@ GLFWLibrary >> KEY_F5 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F6 [
 
@@ -1804,7 +1804,7 @@ GLFWLibrary >> KEY_F6 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F7 [
 
@@ -1814,7 +1814,7 @@ GLFWLibrary >> KEY_F7 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F8 [
 
@@ -1824,7 +1824,7 @@ GLFWLibrary >> KEY_F8 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_F9 [
 
@@ -1834,7 +1834,7 @@ GLFWLibrary >> KEY_F9 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_G [
 
@@ -1844,7 +1844,7 @@ GLFWLibrary >> KEY_G [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_GRAVE_ACCENT [
 
@@ -1854,7 +1854,7 @@ GLFWLibrary >> KEY_GRAVE_ACCENT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_H [
 
@@ -1864,7 +1864,7 @@ GLFWLibrary >> KEY_H [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_HOME [
 
@@ -1874,7 +1874,7 @@ GLFWLibrary >> KEY_HOME [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_I [
 
@@ -1884,7 +1884,7 @@ GLFWLibrary >> KEY_I [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_INSERT [
 
@@ -1894,7 +1894,7 @@ GLFWLibrary >> KEY_INSERT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_J [
 
@@ -1904,7 +1904,7 @@ GLFWLibrary >> KEY_J [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_K [
 
@@ -1914,7 +1914,7 @@ GLFWLibrary >> KEY_K [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_KP_0 [
 
@@ -1924,7 +1924,7 @@ GLFWLibrary >> KEY_KP_0 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_KP_1 [
 
@@ -1934,7 +1934,7 @@ GLFWLibrary >> KEY_KP_1 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_KP_2 [
 
@@ -1944,7 +1944,7 @@ GLFWLibrary >> KEY_KP_2 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_KP_3 [
 
@@ -1954,7 +1954,7 @@ GLFWLibrary >> KEY_KP_3 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_KP_4 [
 
@@ -1964,7 +1964,7 @@ GLFWLibrary >> KEY_KP_4 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_KP_5 [
 
@@ -1974,7 +1974,7 @@ GLFWLibrary >> KEY_KP_5 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_KP_6 [
 
@@ -1984,7 +1984,7 @@ GLFWLibrary >> KEY_KP_6 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_KP_7 [
 
@@ -1994,7 +1994,7 @@ GLFWLibrary >> KEY_KP_7 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_KP_8 [
 
@@ -2004,7 +2004,7 @@ GLFWLibrary >> KEY_KP_8 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_KP_9 [
 
@@ -2014,7 +2014,7 @@ GLFWLibrary >> KEY_KP_9 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_KP_ADD [
 
@@ -2024,7 +2024,7 @@ GLFWLibrary >> KEY_KP_ADD [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_KP_DECIMAL [
 
@@ -2034,7 +2034,7 @@ GLFWLibrary >> KEY_KP_DECIMAL [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_KP_DIVIDE [
 
@@ -2044,7 +2044,7 @@ GLFWLibrary >> KEY_KP_DIVIDE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_KP_ENTER [
 
@@ -2054,7 +2054,7 @@ GLFWLibrary >> KEY_KP_ENTER [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_KP_EQUAL [
 
@@ -2064,7 +2064,7 @@ GLFWLibrary >> KEY_KP_EQUAL [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_KP_MULTIPLY [
 
@@ -2074,7 +2074,7 @@ GLFWLibrary >> KEY_KP_MULTIPLY [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_KP_SUBTRACT [
 
@@ -2084,7 +2084,7 @@ GLFWLibrary >> KEY_KP_SUBTRACT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_L [
 
@@ -2094,7 +2094,7 @@ GLFWLibrary >> KEY_L [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_LAST [
 
@@ -2104,7 +2104,7 @@ GLFWLibrary >> KEY_LAST [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_LEFT [
 
@@ -2114,7 +2114,7 @@ GLFWLibrary >> KEY_LEFT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_LEFT_ALT [
 
@@ -2124,7 +2124,7 @@ GLFWLibrary >> KEY_LEFT_ALT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_LEFT_BRACKET [
 
@@ -2134,7 +2134,7 @@ GLFWLibrary >> KEY_LEFT_BRACKET [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_LEFT_CONTROL [
 
@@ -2144,7 +2144,7 @@ GLFWLibrary >> KEY_LEFT_CONTROL [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_LEFT_SHIFT [
 
@@ -2154,7 +2154,7 @@ GLFWLibrary >> KEY_LEFT_SHIFT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_LEFT_SUPER [
 
@@ -2164,7 +2164,7 @@ GLFWLibrary >> KEY_LEFT_SUPER [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_M [
 
@@ -2174,7 +2174,7 @@ GLFWLibrary >> KEY_M [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_MENU [
 
@@ -2184,7 +2184,7 @@ GLFWLibrary >> KEY_MENU [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_MINUS [
 
@@ -2194,7 +2194,7 @@ GLFWLibrary >> KEY_MINUS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_N [
 
@@ -2204,7 +2204,7 @@ GLFWLibrary >> KEY_N [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_NUM_LOCK [
 
@@ -2214,7 +2214,7 @@ GLFWLibrary >> KEY_NUM_LOCK [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_O [
 
@@ -2224,7 +2224,7 @@ GLFWLibrary >> KEY_O [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_P [
 
@@ -2234,7 +2234,7 @@ GLFWLibrary >> KEY_P [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_PAGE_DOWN [
 
@@ -2244,7 +2244,7 @@ GLFWLibrary >> KEY_PAGE_DOWN [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_PAGE_UP [
 
@@ -2254,7 +2254,7 @@ GLFWLibrary >> KEY_PAGE_UP [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_PAUSE [
 
@@ -2264,7 +2264,7 @@ GLFWLibrary >> KEY_PAUSE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_PERIOD [
 
@@ -2274,7 +2274,7 @@ GLFWLibrary >> KEY_PERIOD [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_PRINT_SCREEN [
 
@@ -2284,7 +2284,7 @@ GLFWLibrary >> KEY_PRINT_SCREEN [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_Q [
 
@@ -2294,7 +2294,7 @@ GLFWLibrary >> KEY_Q [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_R [
 
@@ -2304,7 +2304,7 @@ GLFWLibrary >> KEY_R [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_RIGHT [
 
@@ -2314,7 +2314,7 @@ GLFWLibrary >> KEY_RIGHT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_RIGHT_ALT [
 
@@ -2324,7 +2324,7 @@ GLFWLibrary >> KEY_RIGHT_ALT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_RIGHT_BRACKET [
 
@@ -2334,7 +2334,7 @@ GLFWLibrary >> KEY_RIGHT_BRACKET [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_RIGHT_CONTROL [
 
@@ -2344,7 +2344,7 @@ GLFWLibrary >> KEY_RIGHT_CONTROL [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_RIGHT_SHIFT [
 
@@ -2354,7 +2354,7 @@ GLFWLibrary >> KEY_RIGHT_SHIFT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_RIGHT_SUPER [
 
@@ -2364,7 +2364,7 @@ GLFWLibrary >> KEY_RIGHT_SUPER [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_S [
 
@@ -2374,7 +2374,7 @@ GLFWLibrary >> KEY_S [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_SCROLL_LOCK [
 
@@ -2384,7 +2384,7 @@ GLFWLibrary >> KEY_SCROLL_LOCK [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_SEMICOLON [
 
@@ -2394,7 +2394,7 @@ GLFWLibrary >> KEY_SEMICOLON [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_SLASH [
 
@@ -2404,7 +2404,7 @@ GLFWLibrary >> KEY_SLASH [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_SPACE [
 
@@ -2414,7 +2414,7 @@ GLFWLibrary >> KEY_SPACE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_T [
 
@@ -2424,7 +2424,7 @@ GLFWLibrary >> KEY_T [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_TAB [
 
@@ -2434,7 +2434,7 @@ GLFWLibrary >> KEY_TAB [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_U [
 
@@ -2444,7 +2444,7 @@ GLFWLibrary >> KEY_U [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_UNKNOWN [
 
@@ -2454,7 +2454,7 @@ GLFWLibrary >> KEY_UNKNOWN [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_UP [
 
@@ -2464,7 +2464,7 @@ GLFWLibrary >> KEY_UP [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_V [
 
@@ -2474,7 +2474,7 @@ GLFWLibrary >> KEY_V [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_W [
 
@@ -2484,7 +2484,7 @@ GLFWLibrary >> KEY_W [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_WORLD_1 [
 
@@ -2494,7 +2494,7 @@ GLFWLibrary >> KEY_WORLD_1 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_WORLD_2 [
 
@@ -2504,7 +2504,7 @@ GLFWLibrary >> KEY_WORLD_2 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_X [
 
@@ -2514,7 +2514,7 @@ GLFWLibrary >> KEY_X [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_Y [
 
@@ -2524,7 +2524,7 @@ GLFWLibrary >> KEY_Y [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> KEY_Z [
 
@@ -2534,7 +2534,7 @@ GLFWLibrary >> KEY_Z [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> LOCK_KEY_MODS [
 
@@ -2544,7 +2544,7 @@ GLFWLibrary >> LOCK_KEY_MODS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> LOSE_CONTEXT_ON_RESET [
 
@@ -2554,7 +2554,7 @@ GLFWLibrary >> LOSE_CONTEXT_ON_RESET [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MAXIMIZED [
 
@@ -2564,7 +2564,7 @@ GLFWLibrary >> MAXIMIZED [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MOD_ALT [
 
@@ -2574,7 +2574,7 @@ GLFWLibrary >> MOD_ALT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MOD_CAPS_LOCK [
 
@@ -2584,7 +2584,7 @@ GLFWLibrary >> MOD_CAPS_LOCK [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MOD_CONTROL [
 
@@ -2594,7 +2594,7 @@ GLFWLibrary >> MOD_CONTROL [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MOD_NUM_LOCK [
 
@@ -2604,7 +2604,7 @@ GLFWLibrary >> MOD_NUM_LOCK [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MOD_SHIFT [
 
@@ -2614,7 +2614,7 @@ GLFWLibrary >> MOD_SHIFT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MOD_SUPER [
 
@@ -2624,7 +2624,7 @@ GLFWLibrary >> MOD_SUPER [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MOUSE_BUTTON_1 [
 
@@ -2634,7 +2634,7 @@ GLFWLibrary >> MOUSE_BUTTON_1 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MOUSE_BUTTON_2 [
 
@@ -2644,7 +2644,7 @@ GLFWLibrary >> MOUSE_BUTTON_2 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MOUSE_BUTTON_3 [
 
@@ -2654,7 +2654,7 @@ GLFWLibrary >> MOUSE_BUTTON_3 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MOUSE_BUTTON_4 [
 
@@ -2664,7 +2664,7 @@ GLFWLibrary >> MOUSE_BUTTON_4 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MOUSE_BUTTON_5 [
 
@@ -2674,7 +2674,7 @@ GLFWLibrary >> MOUSE_BUTTON_5 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MOUSE_BUTTON_6 [
 
@@ -2684,7 +2684,7 @@ GLFWLibrary >> MOUSE_BUTTON_6 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MOUSE_BUTTON_7 [
 
@@ -2694,7 +2694,7 @@ GLFWLibrary >> MOUSE_BUTTON_7 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MOUSE_BUTTON_8 [
 
@@ -2704,7 +2704,7 @@ GLFWLibrary >> MOUSE_BUTTON_8 [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MOUSE_BUTTON_LAST [
 
@@ -2714,7 +2714,7 @@ GLFWLibrary >> MOUSE_BUTTON_LAST [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MOUSE_BUTTON_LEFT [
 
@@ -2724,7 +2724,7 @@ GLFWLibrary >> MOUSE_BUTTON_LEFT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MOUSE_BUTTON_MIDDLE [
 
@@ -2734,7 +2734,7 @@ GLFWLibrary >> MOUSE_BUTTON_MIDDLE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MOUSE_BUTTON_RIGHT [
 
@@ -2744,7 +2744,7 @@ GLFWLibrary >> MOUSE_BUTTON_RIGHT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> MOUSE_PASSTHROUGH [
 
@@ -2754,7 +2754,7 @@ GLFWLibrary >> MOUSE_PASSTHROUGH [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> NATIVE_CONTEXT_API [
 
@@ -2764,7 +2764,7 @@ GLFWLibrary >> NATIVE_CONTEXT_API [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> NOT_ALLOWED_CURSOR [
 
@@ -2774,7 +2774,7 @@ GLFWLibrary >> NOT_ALLOWED_CURSOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> NOT_INITIALIZED [
 
@@ -2784,7 +2784,7 @@ GLFWLibrary >> NOT_INITIALIZED [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> NO_API [
 
@@ -2794,7 +2794,7 @@ GLFWLibrary >> NO_API [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> NO_CURRENT_CONTEXT [
 
@@ -2804,7 +2804,7 @@ GLFWLibrary >> NO_CURRENT_CONTEXT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> NO_ERROR [
 
@@ -2814,7 +2814,7 @@ GLFWLibrary >> NO_ERROR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> NO_RESET_NOTIFICATION [
 
@@ -2824,7 +2824,7 @@ GLFWLibrary >> NO_RESET_NOTIFICATION [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> NO_ROBUSTNESS [
 
@@ -2834,7 +2834,7 @@ GLFWLibrary >> NO_ROBUSTNESS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> NO_WINDOW_CONTEXT [
 
@@ -2844,7 +2844,7 @@ GLFWLibrary >> NO_WINDOW_CONTEXT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> OPENGL_ANY_PROFILE [
 
@@ -2854,7 +2854,7 @@ GLFWLibrary >> OPENGL_ANY_PROFILE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> OPENGL_API [
 
@@ -2864,7 +2864,7 @@ GLFWLibrary >> OPENGL_API [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> OPENGL_COMPAT_PROFILE [
 
@@ -2874,7 +2874,7 @@ GLFWLibrary >> OPENGL_COMPAT_PROFILE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> OPENGL_CORE_PROFILE [
 
@@ -2884,7 +2884,7 @@ GLFWLibrary >> OPENGL_CORE_PROFILE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> OPENGL_DEBUG_CONTEXT [
 
@@ -2894,7 +2894,7 @@ GLFWLibrary >> OPENGL_DEBUG_CONTEXT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> OPENGL_ES_API [
 
@@ -2904,7 +2904,7 @@ GLFWLibrary >> OPENGL_ES_API [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> OPENGL_FORWARD_COMPAT [
 
@@ -2914,7 +2914,7 @@ GLFWLibrary >> OPENGL_FORWARD_COMPAT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> OPENGL_PROFILE [
 
@@ -2924,7 +2924,7 @@ GLFWLibrary >> OPENGL_PROFILE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> OSMESA_CONTEXT_API [
 
@@ -2934,7 +2934,7 @@ GLFWLibrary >> OSMESA_CONTEXT_API [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> OUT_OF_MEMORY [
 
@@ -2944,7 +2944,7 @@ GLFWLibrary >> OUT_OF_MEMORY [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> PLATFORM_ERROR [
 
@@ -2954,7 +2954,7 @@ GLFWLibrary >> PLATFORM_ERROR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> POINTING_HAND_CURSOR [
 
@@ -2964,7 +2964,7 @@ GLFWLibrary >> POINTING_HAND_CURSOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> PRESS [
 
@@ -2974,7 +2974,7 @@ GLFWLibrary >> PRESS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> RAW_MOUSE_MOTION [
 
@@ -2984,7 +2984,7 @@ GLFWLibrary >> RAW_MOUSE_MOTION [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> RED_BITS [
 
@@ -2994,7 +2994,7 @@ GLFWLibrary >> RED_BITS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> REFRESH_RATE [
 
@@ -3004,7 +3004,7 @@ GLFWLibrary >> REFRESH_RATE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> RELEASE [
 
@@ -3014,7 +3014,7 @@ GLFWLibrary >> RELEASE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> RELEASE_BEHAVIOR_FLUSH [
 
@@ -3024,7 +3024,7 @@ GLFWLibrary >> RELEASE_BEHAVIOR_FLUSH [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> RELEASE_BEHAVIOR_NONE [
 
@@ -3034,7 +3034,7 @@ GLFWLibrary >> RELEASE_BEHAVIOR_NONE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> REPEAT [
 
@@ -3044,7 +3044,7 @@ GLFWLibrary >> REPEAT [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> RESIZABLE [
 
@@ -3054,7 +3054,7 @@ GLFWLibrary >> RESIZABLE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> RESIZE_ALL_CURSOR [
 
@@ -3064,7 +3064,7 @@ GLFWLibrary >> RESIZE_ALL_CURSOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> RESIZE_EW_CURSOR [
 
@@ -3074,7 +3074,7 @@ GLFWLibrary >> RESIZE_EW_CURSOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> RESIZE_NESW_CURSOR [
 
@@ -3084,7 +3084,7 @@ GLFWLibrary >> RESIZE_NESW_CURSOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> RESIZE_NS_CURSOR [
 
@@ -3094,7 +3094,7 @@ GLFWLibrary >> RESIZE_NS_CURSOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> RESIZE_NWSE_CURSOR [
 
@@ -3104,7 +3104,7 @@ GLFWLibrary >> RESIZE_NWSE_CURSOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> SAMPLES [
 
@@ -3114,7 +3114,7 @@ GLFWLibrary >> SAMPLES [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> SCALE_TO_MONITOR [
 
@@ -3124,7 +3124,7 @@ GLFWLibrary >> SCALE_TO_MONITOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> SRGB_CAPABLE [
 
@@ -3134,7 +3134,7 @@ GLFWLibrary >> SRGB_CAPABLE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> STENCIL_BITS [
 
@@ -3144,7 +3144,7 @@ GLFWLibrary >> STENCIL_BITS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> STEREO [
 
@@ -3154,7 +3154,7 @@ GLFWLibrary >> STEREO [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> STICKY_KEYS [
 
@@ -3164,7 +3164,7 @@ GLFWLibrary >> STICKY_KEYS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> STICKY_MOUSE_BUTTONS [
 
@@ -3174,7 +3174,7 @@ GLFWLibrary >> STICKY_MOUSE_BUTTONS [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> TRANSPARENT_FRAMEBUFFER [
 
@@ -3184,7 +3184,7 @@ GLFWLibrary >> TRANSPARENT_FRAMEBUFFER [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> VERSION_UNAVAILABLE [
 
@@ -3194,7 +3194,7 @@ GLFWLibrary >> VERSION_UNAVAILABLE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> VISIBLE [
 
@@ -3204,7 +3204,7 @@ GLFWLibrary >> VISIBLE [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> VRESIZE_CURSOR [
 
@@ -3214,7 +3214,7 @@ GLFWLibrary >> VRESIZE_CURSOR [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> WIN32_KEYBOARD_MENU [
 
@@ -3224,7 +3224,7 @@ GLFWLibrary >> WIN32_KEYBOARD_MENU [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> X11_CLASS_NAME [
 
@@ -3234,7 +3234,7 @@ GLFWLibrary >> X11_CLASS_NAME [
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#timestamp : 'stlu 10/20/2020 19:50'
 }
 GLFWLibrary >> X11_INSTANCE_NAME [
 
@@ -3244,7 +3244,7 @@ GLFWLibrary >> X11_INSTANCE_NAME [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/11/2020 14:29'
 }
 GLFWLibrary >> api [
 
@@ -3253,7 +3253,7 @@ GLFWLibrary >> api [
 
 {
 	#category : #callbacks,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> callbacksForWindow: aWindow [
 
@@ -3264,7 +3264,7 @@ GLFWLibrary >> callbacksForWindow: aWindow [
 
 {
 	#category : #contexts,
-	#timestamp : ''
+	#timestamp : 'stlu 11/11/2020 14:15'
 }
 GLFWLibrary >> contextForWindow: aWindow [
 
@@ -3273,7 +3273,7 @@ GLFWLibrary >> contextForWindow: aWindow [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/11/2020 13:58'
 }
 GLFWLibrary >> contexts [
 
@@ -3282,7 +3282,7 @@ GLFWLibrary >> contexts [
 
 {
 	#category : #callbacks,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> createCallback: aBlock signature: aString named: aSymbol [
 
@@ -3295,7 +3295,7 @@ GLFWLibrary >> createCallback: aBlock signature: aString named: aSymbol [
 
 {
 	#category : #callbacks,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> createCallback: aBlock signature: aString named: aSymbol forWindow: aWindow [
 
@@ -3308,7 +3308,7 @@ GLFWLibrary >> createCallback: aBlock signature: aString named: aSymbol forWindo
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> createWindow: width with: height with: title with: monitor with: share [
 
@@ -3318,7 +3318,7 @@ GLFWLibrary >> createWindow: width with: height with: title with: monitor with: 
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> defaultWindowHints [
 
@@ -3328,7 +3328,7 @@ GLFWLibrary >> defaultWindowHints [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> destroyWindow: handle [
 
@@ -3338,7 +3338,7 @@ GLFWLibrary >> destroyWindow: handle [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:05'
 }
 GLFWLibrary >> focusWindow: window [
 
@@ -3348,7 +3348,7 @@ GLFWLibrary >> focusWindow: window [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> getCurrentContext [
 
@@ -3358,7 +3358,7 @@ GLFWLibrary >> getCurrentContext [
 
 {
 	#category : #helpers,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> getError [
 
@@ -3367,7 +3367,7 @@ GLFWLibrary >> getError [
 
 {
 	#category : #'api - init',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> getError: stringOrNil [
 
@@ -3377,7 +3377,7 @@ GLFWLibrary >> getError: stringOrNil [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 20:34'
 }
 GLFWLibrary >> getFramebufferSize: window with: width with: height [
 
@@ -3387,7 +3387,7 @@ GLFWLibrary >> getFramebufferSize: window with: width with: height [
 
 {
 	#category : #'api - input',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> getKey: window with: key [
 
@@ -3397,7 +3397,7 @@ GLFWLibrary >> getKey: window with: key [
 
 {
 	#category : #'api - init',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> getVersion: major with: minor with: rev [
 
@@ -3407,7 +3407,7 @@ GLFWLibrary >> getVersion: major with: minor with: rev [
 
 {
 	#category : #'api - init',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> getVersionString [
 
@@ -3417,7 +3417,7 @@ GLFWLibrary >> getVersionString [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 20:50'
 }
 GLFWLibrary >> getWindowContentScale: window with: xscale with: yscale [
 
@@ -3427,7 +3427,7 @@ GLFWLibrary >> getWindowContentScale: window with: xscale with: yscale [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 20:39'
 }
 GLFWLibrary >> getWindowFrameSize: window with: left with: top with: right with: bottom [
 
@@ -3437,7 +3437,7 @@ GLFWLibrary >> getWindowFrameSize: window with: left with: top with: right with:
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:32'
 }
 GLFWLibrary >> getWindowMonitor: window [
 
@@ -3447,7 +3447,7 @@ GLFWLibrary >> getWindowMonitor: window [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 20:54'
 }
 GLFWLibrary >> getWindowOpacity: window [
 
@@ -3457,7 +3457,7 @@ GLFWLibrary >> getWindowOpacity: window [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 14:12'
 }
 GLFWLibrary >> getWindowPos: window with: xpos with: ypos [
 
@@ -3467,7 +3467,7 @@ GLFWLibrary >> getWindowPos: window with: xpos with: ypos [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 14:17'
 }
 GLFWLibrary >> getWindowSize: window with: width with: height [
 
@@ -3477,7 +3477,7 @@ GLFWLibrary >> getWindowSize: window with: width with: height [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:04'
 }
 GLFWLibrary >> hideWindow: window [
 
@@ -3487,7 +3487,7 @@ GLFWLibrary >> hideWindow: window [
 
 {
 	#category : #helpers,
-	#timestamp : ''
+	#timestamp : 'stlu 11/11/2020 13:28'
 }
 GLFWLibrary >> hintAnyProfile [
 
@@ -3496,7 +3496,7 @@ GLFWLibrary >> hintAnyProfile [
 
 {
 	#category : #helpers,
-	#timestamp : ''
+	#timestamp : 'stlu 11/11/2020 13:28'
 }
 GLFWLibrary >> hintCompatibilityProfile [
 
@@ -3505,7 +3505,7 @@ GLFWLibrary >> hintCompatibilityProfile [
 
 {
 	#category : #helpers,
-	#timestamp : ''
+	#timestamp : 'stlu 11/11/2020 13:28'
 }
 GLFWLibrary >> hintCoreProfile [
 
@@ -3514,7 +3514,7 @@ GLFWLibrary >> hintCoreProfile [
 
 {
 	#category : #helpers,
-	#timestamp : ''
+	#timestamp : 'stlu 11/11/2020 14:22'
 }
 GLFWLibrary >> hintGLAPI [
 
@@ -3524,7 +3524,7 @@ GLFWLibrary >> hintGLAPI [
 
 {
 	#category : #helpers,
-	#timestamp : ''
+	#timestamp : 'stlu 11/11/2020 14:22'
 }
 GLFWLibrary >> hintGLES1API [
 
@@ -3534,7 +3534,7 @@ GLFWLibrary >> hintGLES1API [
 
 {
 	#category : #helpers,
-	#timestamp : ''
+	#timestamp : 'stlu 11/11/2020 14:22'
 }
 GLFWLibrary >> hintGLES2API [
 
@@ -3544,7 +3544,7 @@ GLFWLibrary >> hintGLES2API [
 
 {
 	#category : #helpers,
-	#timestamp : ''
+	#timestamp : 'stlu 11/11/2020 13:27'
 }
 GLFWLibrary >> hintMajorVersion: anInteger [
 
@@ -3553,7 +3553,7 @@ GLFWLibrary >> hintMajorVersion: anInteger [
 
 {
 	#category : #helpers,
-	#timestamp : ''
+	#timestamp : 'stlu 11/11/2020 13:28'
 }
 GLFWLibrary >> hintMinorVersion: anInteger [
 
@@ -3562,7 +3562,7 @@ GLFWLibrary >> hintMinorVersion: anInteger [
 
 {
 	#category : #helpers,
-	#timestamp : ''
+	#timestamp : 'stlu 11/11/2020 14:22'
 }
 GLFWLibrary >> hintNoAPI [
 
@@ -3572,7 +3572,7 @@ GLFWLibrary >> hintNoAPI [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:04'
 }
 GLFWLibrary >> iconifyWindow: window [
 
@@ -3582,7 +3582,7 @@ GLFWLibrary >> iconifyWindow: window [
 
 {
 	#category : #'api - init',
-	#timestamp : ''
+	#timestamp : 'stlu 10/19/2020 16:34'
 }
 GLFWLibrary >> init [
 
@@ -3592,7 +3592,7 @@ GLFWLibrary >> init [
 
 {
 	#category : #'api - init',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> initHint: hint with: value [
 
@@ -3602,7 +3602,7 @@ GLFWLibrary >> initHint: hint with: value [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 10/19/2020 16:32'
 }
 GLFWLibrary >> initialize [
 
@@ -3612,7 +3612,7 @@ GLFWLibrary >> initialize [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 18:03'
 }
 GLFWLibrary >> makeContextCurrent: window [
 
@@ -3622,7 +3622,7 @@ GLFWLibrary >> makeContextCurrent: window [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:04'
 }
 GLFWLibrary >> maximizeWindow: window [
 
@@ -3632,7 +3632,7 @@ GLFWLibrary >> maximizeWindow: window [
 
 {
 	#category : #'api - events',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> pollEvents [
 
@@ -3642,7 +3642,7 @@ GLFWLibrary >> pollEvents [
 
 {
 	#category : #private,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> privateSetCursorPosCallback: aWindow with: anFFICallback [
 
@@ -3652,7 +3652,7 @@ GLFWLibrary >> privateSetCursorPosCallback: aWindow with: anFFICallback [
 
 {
 	#category : #private,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> privateSetErrorCallback: anFFICallback [
 
@@ -3662,7 +3662,7 @@ GLFWLibrary >> privateSetErrorCallback: anFFICallback [
 
 {
 	#category : #private,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> privateSetFramebufferSizeCallback: aWindow with: anFFICallback [
 
@@ -3672,7 +3672,7 @@ GLFWLibrary >> privateSetFramebufferSizeCallback: aWindow with: anFFICallback [
 
 {
 	#category : #private,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> privateSetMouseButtonCallback: aWindow with: anFFICallback [
 
@@ -3682,7 +3682,7 @@ GLFWLibrary >> privateSetMouseButtonCallback: aWindow with: anFFICallback [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:05'
 }
 GLFWLibrary >> requestWindowAttention: window [
 
@@ -3692,7 +3692,7 @@ GLFWLibrary >> requestWindowAttention: window [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 10/19/2020 16:32'
 }
 GLFWLibrary >> reset [
 
@@ -3702,7 +3702,7 @@ GLFWLibrary >> reset [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:04'
 }
 GLFWLibrary >> restoreWindow: window [
 
@@ -3712,7 +3712,7 @@ GLFWLibrary >> restoreWindow: window [
 
 {
 	#category : #'api - callbacks',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> setCursorPosCallback: aWindow with: aBlock [
 
@@ -3729,7 +3729,7 @@ GLFWLibrary >> setCursorPosCallback: aWindow with: aBlock [
 
 {
 	#category : #'api - init',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> setErrorCallback: aBlock [
 
@@ -3743,7 +3743,7 @@ GLFWLibrary >> setErrorCallback: aBlock [
 
 {
 	#category : #'api - callbacks',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> setFramebufferSizeCallback: aWindow with: aBlock [
 
@@ -3760,7 +3760,7 @@ GLFWLibrary >> setFramebufferSizeCallback: aWindow with: aBlock [
 
 {
 	#category : #'api - callbacks',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> setMouseButtonCallback: aWindow with: aBlock [
 
@@ -3777,7 +3777,7 @@ GLFWLibrary >> setMouseButtonCallback: aWindow with: aBlock [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 14:24'
 }
 GLFWLibrary >> setWindowAspectRatio: window with: numer with: denom [
 
@@ -3787,7 +3787,7 @@ GLFWLibrary >> setWindowAspectRatio: window with: numer with: denom [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 14:11'
 }
 GLFWLibrary >> setWindowIcon: window with: image [
 
@@ -3798,7 +3798,7 @@ GLFWLibrary >> setWindowIcon: window with: image [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:38'
 }
 GLFWLibrary >> setWindowMonitor: window with: monitor with: xpos with: ypos with: width with: height with: refreshRate [
 
@@ -3808,7 +3808,7 @@ GLFWLibrary >> setWindowMonitor: window with: monitor with: xpos with: ypos with
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 20:55'
 }
 GLFWLibrary >> setWindowOpacity: window with: opacity [
 
@@ -3818,7 +3818,7 @@ GLFWLibrary >> setWindowOpacity: window with: opacity [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 14:15'
 }
 GLFWLibrary >> setWindowPos: window with: xpos with: ypos [
 
@@ -3828,7 +3828,7 @@ GLFWLibrary >> setWindowPos: window with: xpos with: ypos [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> setWindowShouldClose: window with: value [
 
@@ -3838,7 +3838,7 @@ GLFWLibrary >> setWindowShouldClose: window with: value [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 14:18'
 }
 GLFWLibrary >> setWindowSize: window with: width with: height [
 
@@ -3848,7 +3848,7 @@ GLFWLibrary >> setWindowSize: window with: width with: height [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 14:21'
 }
 GLFWLibrary >> setWindowSizeLimits: window with: minWidth with: minHeight with: maxWidth with: maxHeight [
 
@@ -3858,7 +3858,7 @@ GLFWLibrary >> setWindowSizeLimits: window with: minWidth with: minHeight with: 
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> setWindowTitle: window with: title [
 
@@ -3868,7 +3868,7 @@ GLFWLibrary >> setWindowTitle: window with: title [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:04'
 }
 GLFWLibrary >> showWindow: window [
 
@@ -3878,7 +3878,7 @@ GLFWLibrary >> showWindow: window [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> swapBuffers: window [
 
@@ -3888,7 +3888,7 @@ GLFWLibrary >> swapBuffers: window [
 
 {
 	#category : #'api - initialization',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> swapInterval: aNumber [
 
@@ -3898,7 +3898,7 @@ GLFWLibrary >> swapInterval: aNumber [
 
 {
 	#category : #helpers,
-	#timestamp : ''
+	#timestamp : 'stlu 11/11/2020 13:45'
 }
 GLFWLibrary >> targetLibrary: aGLLibraryClass [
 
@@ -3907,7 +3907,7 @@ GLFWLibrary >> targetLibrary: aGLLibraryClass [
 
 {
 	#category : #helpers,
-	#timestamp : ''
+	#timestamp : 'stlu 11/11/2020 14:17'
 }
 GLFWLibrary >> targetLibrary: aGLLibraryClass profile: aSymbol [
 
@@ -3932,7 +3932,7 @@ GLFWLibrary >> targetLibrary: aGLLibraryClass profile: aSymbol [
 
 {
 	#category : #'api - init',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> terminate [
 
@@ -3942,7 +3942,7 @@ GLFWLibrary >> terminate [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> version [
 
@@ -3956,7 +3956,7 @@ GLFWLibrary >> version [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> versionString [
 
@@ -3965,7 +3965,7 @@ GLFWLibrary >> versionString [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> windowHint: hint with: value [
 
@@ -3975,7 +3975,7 @@ GLFWLibrary >> windowHint: hint with: value [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> windowHintString: hint with: value [
 
@@ -3985,7 +3985,7 @@ GLFWLibrary >> windowHintString: hint with: value [
 
 {
 	#category : #'api - windows',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> windowShouldClose: window [
 

@@ -29,27 +29,32 @@ SLInterfaceObject >> analyzer: anObject [
 
 {
 	#category : #'error handling',
-	#timestamp : 'zagto 12/1/2020 18:40'
+	#timestamp : 'stlu 12/2/2020 04:09'
 }
 SLInterfaceObject >> doesNotUnderstand: aMessage [
 	| name names |
 	name := aMessage selector asString.
 	aMessage numArgs = 0
-		ifTrue: [ | interm |
-			analyzer declareProgramResource: name kind: kind.
-			interm := SLInterfaceIntermediateObject new
-				name: name;
-				analyzer: analyzer.
-			^ SLPassthroughMapping new type: interm ].
+		ifTrue: [ | type |
+			type := analyzer variableToType
+				at: name
+				ifAbsentPut: [
+					analyzer declareProgramResource: name kind: kind.
+					SLInterfaceIntermediateObject new
+						name: name;
+						analyzer: analyzer.].
+			^ SLMappingToResourceRead new
+				type: type;
+				targetSelector: name ].
 
 	aMessage selector isBinary ifTrue: [
 		^	self error: name , ' is a binary message, which is not a possible name for a program resource'].
 
 	names := (name allButLast splitBy: ':').
 	names with: aMessage arguments do: [ :partName :type |
-		analyzer declareProgramResource: name kind: kind.
+		analyzer declareProgramResource: partName kind: kind.
 		analyzer setVariable: partName toType: type ].
-	SLMappingToResourceAssignments new targetSelector: names.
+	^ SLMappingToResourceAssignments new targetSelector: names.
 ]
 
 {

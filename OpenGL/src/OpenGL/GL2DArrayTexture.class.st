@@ -7,16 +7,7 @@ Class {
 
 {
 	#category : #binding,
-	#timestamp : ''
-}
-GL2DArrayTexture class >> bindingEnum [
-
-	^ GL_TEXTURE_BINDING_2D_ARRAY
-]
-
-{
-	#category : #binding,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 00:42'
 }
 GL2DArrayTexture class >> target [
 

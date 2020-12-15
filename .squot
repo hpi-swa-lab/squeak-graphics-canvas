@@ -6,6 +6,5 @@ OrderedDictionary {
 	'3DTransform/src/3DTransform' : #SquotTonelSerializer,
 	'Vulkan/src/Vulkan' : #SquotTonelSerializer,
 	'LearnOpenGL/src/LearnOpenGL' : #SquotTonelSerializer,
-	'ShaderLanguage/src/ShaderLanguage' : #SquotTonelSerializer,
 	'ShadingLanguage/src/ShadingLanguage' : #SquotTonelSerializer
 }

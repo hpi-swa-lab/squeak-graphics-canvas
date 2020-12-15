@@ -7,11 +7,3 @@ Extension { #name : #Float }
 Float >> asGLSLLiteral [
 	^ self asString.
 ]
-
-{
-	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 11/24/2020 18:02'
-}
-Float >> glslType [
-	^ GLTFloat instance
-]

@@ -2,6 +2,8 @@ Class {
 	#name : #LOGLTemplate,
 	#superclass : #Object,
 	#instVars : [
+		'library',
+		'renderProcess',
 		'window'
 	],
 	#pools : [
@@ -14,7 +16,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 10/12/2020 14:02'
 }
 LOGLTemplate class >> run [
 
@@ -25,7 +27,7 @@ LOGLTemplate class >> run [
 
 {
 	#category : #callbacks,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 LOGLTemplate >> extentChanged: newExtent [
 	"glfw: whenever the window size changed (by OS or user resize) this callback function executes"
@@ -35,7 +37,7 @@ LOGLTemplate >> extentChanged: newExtent [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/22/2020 16:55'
 }
 LOGLTemplate >> initialHeight [
 
@@ -44,7 +46,7 @@ LOGLTemplate >> initialHeight [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/22/2020 16:54'
 }
 LOGLTemplate >> initialWidth [
 
@@ -53,7 +55,7 @@ LOGLTemplate >> initialWidth [
 
 {
 	#category : #rendering,
-	#timestamp : ''
+	#timestamp : 'stlu 10/12/2020 14:12'
 }
 LOGLTemplate >> processInput [
 
@@ -63,7 +65,7 @@ LOGLTemplate >> processInput [
 
 {
 	#category : #rendering,
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 17:44'
 }
 LOGLTemplate >> render [
 
@@ -72,25 +74,28 @@ LOGLTemplate >> render [
 
 {
 	#category : #rendering,
-	#timestamp : ''
+	#timestamp : 'stlu 12/9/2020 15:30'
 }
 LOGLTemplate >> renderLoop [
 
 	[self shouldClose] whileFalse: [
-		self processInput.
-		self render.
-		window swapBuffers.
-		GLFW pollEvents]
+		library makeCurrentDuring: [
+			self processInput.
+			self render.
+			window swapBuffers.
+			GLFW pollEvents].
+		Processor yield]
 ]
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 12/13/2020 15:46'
 }
 LOGLTemplate >> run [
 
 	"GLFW init."
 	GLFW targetLibrary: GL3_3 profile: #core.
+	GLFW windowHint: GLFW FLOATING with: true.
 
 	window := GLFWWindow
 				width: self initialWidth
@@ -99,20 +104,19 @@ LOGLTemplate >> run [
 	
 	window ifNil: [^ self error: 'Failed to create GLFW window'].
 	
-	(GL3_3 context: window context) makeCurrentDuring: [
+	library := window context library.
+	
+	library makeCurrentDuring: [
 		window framebufferSizeCallback: [:w :width :height |
 			self extentChanged: width @ height].
+		self setUp.].
 	
-		self setUp.
-		[self renderLoop]
-			ensure: [
-				self tearDown.
-				window destroy]]
+	self spawnNewRenderProcess
 ]
 
 {
 	#category : #running,
-	#timestamp : ''
+	#timestamp : 'stlu 10/22/2020 16:43'
 }
 LOGLTemplate >> setUp [
 
@@ -121,7 +125,7 @@ LOGLTemplate >> setUp [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/12/2020 14:06'
 }
 LOGLTemplate >> shouldClose [
 
@@ -129,8 +133,23 @@ LOGLTemplate >> shouldClose [
 ]
 
 {
+	#category : #rendering,
+	#timestamp : 'stlu 12/9/2020 15:31'
+}
+LOGLTemplate >> spawnNewRenderProcess [
+
+	renderProcess := [
+		[self renderLoop]
+			ensure: [
+				self tearDown.
+				library destroy]
+	] newProcess priority: Processor userSchedulingPriority - 1.
+	renderProcess resume
+]
+
+{
 	#category : #running,
-	#timestamp : ''
+	#timestamp : 'stlu 10/22/2020 16:45'
 }
 LOGLTemplate >> tearDown [
 
@@ -139,7 +158,7 @@ LOGLTemplate >> tearDown [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/19/2020 17:18'
 }
 LOGLTemplate >> title [
 
@@ -148,7 +167,7 @@ LOGLTemplate >> title [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/9/2020 13:27'
 }
 LOGLTemplate >> window [
 

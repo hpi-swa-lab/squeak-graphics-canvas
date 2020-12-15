@@ -5,13 +5,13 @@ Class {
 		'shaders',
 		'resources'
 	],
-	#category : #'OpenGL-Wrappers-Shaders',
+	#category : #'OpenGL-Wrappers-Programs',
 	#commentStamp : ''
 }
 
 {
 	#category : #allocation,
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 15:38'
 }
 GLProgram class >> allocate [
 
@@ -19,26 +19,54 @@ GLProgram class >> allocate [
 ]
 
 {
-	#category : #activation,
-	#timestamp : ''
+	#category : #allocation,
+	#timestamp : 'stlu 11/30/2020 19:52'
 }
-GLProgram class >> current [
+GLProgram class >> allocate: n in: anIntegerArray [
 
-	^ GL getIntegerParameter: GL_CURRENT_PROGRAM
+	1 to: n do: [:i |
+		anIntegerArray at: i put: self allocate]
 ]
 
 {
 	#category : #activation,
-	#timestamp : ''
+	#timestamp : 'stlu 12/3/2020 19:35'
 }
-GLProgram class >> use: id [
+GLProgram class >> bindID: id to: target [
 
 	GL useProgram: id
 ]
 
 {
+	#category : #activation,
+	#timestamp : 'stlu 12/3/2020 19:03'
+}
+GLProgram class >> current [
+
+	^ self bound
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/3/2020 19:05'
+}
+GLProgram class >> target [
+
+	^ GL_ACTIVE_PROGRAM
+]
+
+{
+	#category : #activation,
+	#timestamp : 'stlu 12/3/2020 19:05'
+}
+GLProgram class >> useID: id [
+
+	self bindID: id
+]
+
+{
 	#category : #actions,
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 15:36'
 }
 GLProgram >> attachShader: glShader [
 
@@ -47,17 +75,37 @@ GLProgram >> attachShader: glShader [
 ]
 
 {
-	#category : #'error handling',
-	#timestamp : ''
+	#category : #actions,
+	#timestamp : 'stlu 12/8/2020 16:30'
 }
-GLProgram >> errorLinkingFailed [
+GLProgram >> detachShader: aShader [
 
-	^ (GLProgramLinkingFailed program: self infoLog: self getInfoLog) signal
+	shaders remove: aShader.
+	GL detachShader: id with: aShader id.
+]
+
+{
+	#category : #actions,
+	#timestamp : 'stlu 12/13/2020 15:24'
+}
+GLProgram >> detachShaders [
+
+	shaders asArray "don't change collection while iterating" do: [:shader |
+		self detachShader: shader]
+]
+
+{
+	#category : #activation,
+	#timestamp : 'stlu 12/3/2020 19:33'
+}
+GLProgram >> disuse [
+
+	self unbind
 ]
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 16:55'
 }
 GLProgram >> getAttribute: attributeName [
 
@@ -68,7 +116,7 @@ GLProgram >> getAttribute: attributeName [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 15:36'
 }
 GLProgram >> getBinary [
 
@@ -83,18 +131,21 @@ GLProgram >> getBinary [
 
 {
 	#category : #'error handling',
-	#timestamp : ''
+	#timestamp : 'stlu 12/8/2020 17:27'
 }
 GLProgram >> getInfoLog [
 
-	ByteArray new: self getInfoLogLength during: [:result |
+	| length |
+	length := self getInfoLogLength.
+	length < 0 ifTrue: [^ ''].
+	ByteArray new: length during: [:result |
 		GL getProgramInfoLog: id with: result size with: nil with: result.
 		^ result allButLast "remove null-terminator" utf8Decoded withSqueakLineEndings]
 ]
 
 {
 	#category : #'error handling',
-	#timestamp : ''
+	#timestamp : 'stlu 10/28/2020 14:37'
 }
 GLProgram >> getInfoLogLength [
 
@@ -103,7 +154,7 @@ GLProgram >> getInfoLogLength [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/27/2020 12:27'
 }
 GLProgram >> getNumAttributes [
 
@@ -112,7 +163,7 @@ GLProgram >> getNumAttributes [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/27/2020 12:28'
 }
 GLProgram >> getNumUniforms [
 
@@ -121,7 +172,7 @@ GLProgram >> getNumUniforms [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 12/13/2020 15:59'
 }
 GLProgram >> initialize [
 
@@ -130,8 +181,26 @@ GLProgram >> initialize [
 ]
 
 {
+	#category : #'accessing-resources',
+	#timestamp : 'stlu 11/13/2020 19:47'
+}
+GLProgram >> inputs [
+
+	^ resources inputs
+]
+
+{
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 12/14/2020 12:12'
+}
+GLProgram >> isAllocated [
+
+	^ GL isProgram: id
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 10/27/2020 12:17'
 }
 GLProgram >> isFlaggedForDeletion [
 
@@ -140,7 +209,7 @@ GLProgram >> isFlaggedForDeletion [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 12:16'
 }
 GLProgram >> isProgram [
 
@@ -149,7 +218,7 @@ GLProgram >> isProgram [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 15:37'
 }
 GLProgram >> isValid [
 
@@ -159,7 +228,7 @@ GLProgram >> isValid [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/27/2020 12:17'
 }
 GLProgram >> lastLinkingSucceeded [
 
@@ -168,18 +237,46 @@ GLProgram >> lastLinkingSucceeded [
 
 {
 	#category : #actions,
-	#timestamp : ''
+	#timestamp : 'stlu 12/14/2020 12:29'
 }
 GLProgram >> link [
 
 	GL linkProgram: id.
-	self lastLinkingSucceeded ifFalse: [
-		self errorLinkingFailed]
+	self lastLinkingSucceeded
+		ifTrue: [self linkingSucceeded]
+		ifFalse: [self linkingFailed]
+]
+
+{
+	#category : #'error handling',
+	#timestamp : 'stlu 12/14/2020 12:23'
+}
+GLProgram >> linkingFailed [
+
+	^ (GLLinkError program: self infoLog: self getInfoLog) signal
+]
+
+{
+	#category : #actions,
+	#timestamp : 'stlu 12/14/2020 12:29'
+}
+GLProgram >> linkingSucceeded [
+
+	resources := GLProgramResources program: self
 ]
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 19:41'
+}
+GLProgram >> resources [
+
+	^ resources
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLProgram >> shaders [
 
@@ -187,44 +284,50 @@ GLProgram >> shaders [
 ]
 
 {
-	#category : #accessing,
-	#timestamp : ''
+	#category : #'accessing-resources',
+	#timestamp : 'stlu 12/13/2020 15:21'
 }
-GLProgram >> shaders: anObject [
+GLProgram >> uniformNamed: aString [
 
-	shaders := anObject
+	^ resources uniformNamed: aString
+]
+
+{
+	#category : #'accessing-resources',
+	#timestamp : 'stlu 11/13/2020 19:42'
+}
+GLProgram >> uniforms [
+
+	^ resources uniforms
 ]
 
 {
 	#category : #activation,
-	#timestamp : ''
+	#timestamp : 'stlu 12/3/2020 19:33'
 }
 GLProgram >> use [
 
-	self class use: id
+	self bind
 ]
 
 {
 	#category : #activation,
-	#timestamp : ''
+	#timestamp : 'stlu 12/3/2020 19:33'
 }
 GLProgram >> useDuring: aBlock [
 
-	| previousID |
-	self flag: #todo. "Remember actual objects"
-	previousID := self class current.
-	previousID = id ifTrue: [^ aBlock value].
-	self class use: id.
-	aBlock ensure: [
-		self class use: previousID]
+	self boundDuring: aBlock
 ]
 
 {
 	#category : #actions,
-	#timestamp : ''
+	#timestamp : 'stlu 12/14/2020 12:17'
 }
 GLProgram >> validate [
 
+	self isAllocated ifFalse: [^ false].
 	self isValid ifFalse: [
-		self notify: self infoLog]
+		self notify: self getInfoLog.
+		^ false].
+	^ true
 ]

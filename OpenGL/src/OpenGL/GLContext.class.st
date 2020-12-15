@@ -2,12 +2,18 @@ Class {
 	#name : #GLContext,
 	#superclass : #Object,
 	#instVars : [
+		'library',
+		'bindings',
+		'objectStore',
+		'wrapperImplementations',
+		'programs',
+		'userData',
 		'api',
 		'version',
 		'profile',
 		'extensions',
-		'library',
-		'resources'
+		'resources',
+		'isDestroyed'
 	],
 	#pools : [
 		'GLConstants'
@@ -18,7 +24,7 @@ Class {
 
 {
 	#category : #'class initialization',
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 10:19'
 }
 GLContext class >> initialize [
 
@@ -28,7 +34,7 @@ GLContext class >> initialize [
 
 {
 	#category : #'system startup',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 14:17'
 }
 GLContext class >> shutDown: quitting [
 
@@ -40,10 +46,11 @@ GLContext class >> shutDown: quitting [
 
 {
 	#category : #'system startup',
-	#timestamp : ''
+	#timestamp : 'stlu 12/15/2020 13:59'
 }
 GLContext class >> startUp: resuming [
 
+	self flag: #todo. "isDestroyed and isSymbol can both indicate destroyed contexts"
 	resuming ifTrue: [
 		self allSubInstancesDo: [:each |
 			"Replace existing contexts on startUp not shutDown to allow saving the image while contexts are active."
@@ -52,7 +59,7 @@ GLContext class >> startUp: resuming [
 
 {
 	#category : #activation,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLContext >> activate [
 
@@ -61,7 +68,7 @@ GLContext >> activate [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/9/2020 14:51'
 }
 GLContext >> api [
 
@@ -70,16 +77,25 @@ GLContext >> api [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 12/3/2020 19:39'
 }
-GLContext >> api: anObject [
+GLContext >> api: aSymbol [
 
-	api := anObject
+	api := aSymbol
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/30/2020 17:53'
+}
+GLContext >> bindings [
+
+	^ bindings
 ]
 
 {
 	#category : #activation,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLContext >> deactivate [
 
@@ -88,16 +104,17 @@ GLContext >> deactivate [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 12/8/2020 16:16'
 }
 GLContext >> destroy [
 
-	resources cleanUp
+	"objectStore do: [:each | each cleanUp]"
+	isDestroyed := true
 ]
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 10/16/2020 12:25'
 }
 GLContext >> endFrame [
 
@@ -107,7 +124,7 @@ GLContext >> endFrame [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/9/2020 14:51'
 }
 GLContext >> extensions [
 
@@ -115,30 +132,45 @@ GLContext >> extensions [
 ]
 
 {
+	#category : #bindings,
+	#timestamp : 'stlu 12/3/2020 19:16'
+}
+GLContext >> forgetBinding: bindingEnum [
+
+	bindings at: bindingEnum put: nil
+]
+
+{
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 12/13/2020 15:36'
 }
 GLContext >> initialize [
 
-	resources := GLResources new.
+	isDestroyed := false.
+	objectStore := OrderedCollection new.
+	programs := IdentityDictionary new.
+	userData := Dictionary new.
 	self initializeLibrary.
-	self initializeContextState
+	self initializeBindings.
+	self initializeWrapperImplementations
 ]
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 12/3/2020 19:27'
 }
-GLContext >> initializeContextState [
+GLContext >> initializeBindings [
 
-	self assert: api isSymbol.
-	
-	extensions := library getExtensions
+	bindings := Dictionary new.
+	library makeCurrentDuring: [
+		GLObject allSubclassesDo: [:cls |
+			(cls theMetaClass includesSelector: #initializeBindings) ifTrue: [
+				cls initializeBindings]]]
 ]
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 12/3/2020 18:45'
 }
 GLContext >> initializeLibrary [
 
@@ -158,22 +190,43 @@ GLContext >> initializeLibrary [
 	library checkForError.
 	library := libraryClass context: self profile: profile.
 	
+	"determine available extensions"
+	extensions := library getExtensions.
+	
 	self deactivate
 ]
 
 {
-	#category : #accessing,
-	#timestamp : ''
+	#category : #'initialize-release',
+	#timestamp : 'stlu 12/13/2020 15:37'
 }
-GLContext >> library [
+GLContext >> initializeWrapperImplementations [
 
-	self flag: #todo. "Stub for now until context refactoring."
-	^ GL3_3 context: self
+	self flag: #todo. "always adheres to the context's library by default"
+	wrapperImplementations := GLWrapperImplementations forLibrary: library
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/8/2020 16:15'
+}
+GLContext >> isDestroyed [
+
+	^ isDestroyed
 ]
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 12/3/2020 18:31'
+}
+GLContext >> library [
+
+	^ library
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/9/2020 14:51'
 }
 GLContext >> profile [
 
@@ -181,35 +234,44 @@ GLContext >> profile [
 ]
 
 {
-	#category : #resources,
-	#timestamp : ''
+	#category : #accessing,
+	#timestamp : 'stlu 12/3/2020 18:43'
+}
+GLContext >> programs [
+
+	^ programs
+]
+
+{
+	#category : #bindings,
+	#timestamp : 'stlu 12/3/2020 19:17'
+}
+GLContext >> recallBinding: bindingEnum [
+
+	^ bindings at: bindingEnum ifAbsentPut: [nil]
+]
+
+{
+	#category : #'object store',
+	#timestamp : 'stlu 12/3/2020 18:49'
 }
 GLContext >> registerObject: glObject [
 
-	resources objects add: glObject
+	objectStore add: glObject
 ]
 
 {
-	#category : #accessing,
-	#timestamp : ''
+	#category : #bindings,
+	#timestamp : 'stlu 12/3/2020 19:17'
 }
-GLContext >> resources [
+GLContext >> rememberBinding: bindingEnum as: anObject [
 
-	^ resources
-]
-
-{
-	#category : #accessing,
-	#timestamp : ''
-}
-GLContext >> resources: anObject [
-
-	resources := anObject
+	^ bindings at: bindingEnum put: anObject
 ]
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/16/2020 12:23'
 }
 GLContext >> shouldClose [
 
@@ -219,7 +281,7 @@ GLContext >> shouldClose [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 10/16/2020 12:24'
 }
 GLContext >> swapBuffers [
 
@@ -228,9 +290,27 @@ GLContext >> swapBuffers [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 12/3/2020 18:57'
+}
+GLContext >> userData [
+
+	^ userData
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 11/9/2020 14:51'
 }
 GLContext >> version [
 
 	^ version
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/13/2020 15:38'
+}
+GLContext >> wrapperImplementations [
+
+	^ wrapperImplementations
 ]

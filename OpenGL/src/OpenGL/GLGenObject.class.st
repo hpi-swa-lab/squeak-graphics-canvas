@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/1/2020 19:34'
 }
 GLGenObject >> name [
 
@@ -19,7 +19,7 @@ GLGenObject >> name [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/1/2020 21:29'
 }
 GLGenObject >> name: stringOrSymbol [
 

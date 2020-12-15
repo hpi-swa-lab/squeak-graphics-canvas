@@ -14,7 +14,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas class >> canvas: aCanvas [
 
@@ -25,7 +25,7 @@ RtWrapperCanvas class >> canvas: aCanvas [
 
 {
 	#category : #converting,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> asShadowDrawingCanvas: aColor [ 
 
@@ -34,7 +34,7 @@ RtWrapperCanvas >> asShadowDrawingCanvas: aColor [
 
 {
 	#category : #'drawing-support',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> cache: aRectangle using: aCache during: aBlock [
 
@@ -44,7 +44,7 @@ RtWrapperCanvas >> cache: aRectangle using: aCache during: aBlock [
 
 {
 	#category : #'drawing-support',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> clipBy: aRectangle during: aBlock [
 
@@ -54,7 +54,7 @@ RtWrapperCanvas >> clipBy: aRectangle during: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> clipRect [
 
@@ -63,7 +63,7 @@ RtWrapperCanvas >> clipRect [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> contentsOfArea: aRectangle [
 
@@ -72,7 +72,7 @@ RtWrapperCanvas >> contentsOfArea: aRectangle [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> contentsOfArea: aRectangle into: aForm [
 
@@ -81,7 +81,7 @@ RtWrapperCanvas >> contentsOfArea: aRectangle into: aForm [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> depth [
 
@@ -90,7 +90,7 @@ RtWrapperCanvas >> depth [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> doesRoundedCorners [
 
@@ -99,7 +99,7 @@ RtWrapperCanvas >> doesRoundedCorners [
 
 {
 	#category : #'drawing-images',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> drawImage: aForm at: aPoint [
 
@@ -108,7 +108,7 @@ RtWrapperCanvas >> drawImage: aForm at: aPoint [
 
 {
 	#category : #'drawing-images',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> drawImage: aForm at: aPoint sourceRect: sourceRect [
 
@@ -117,7 +117,7 @@ RtWrapperCanvas >> drawImage: aForm at: aPoint sourceRect: sourceRect [
 
 {
 	#category : #'drawing-polygons',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderColor: bc [
 
@@ -126,7 +126,7 @@ RtWrapperCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderCol
 
 {
 	#category : #'drawing-polygons',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -135,7 +135,7 @@ RtWrapperCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBor
 
 {
 	#category : #'drawing-polygons',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: bw borderColor: bc [
 
@@ -144,7 +144,7 @@ RtWrapperCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: bw b
 
 {
 	#category : #'drawing-text',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> drawString: s at: pt [
 
@@ -153,7 +153,7 @@ RtWrapperCanvas >> drawString: s at: pt [
 
 {
 	#category : #'drawing-text',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> drawString: s at: pt font: aFont color: aColor [
 
@@ -162,7 +162,7 @@ RtWrapperCanvas >> drawString: s at: pt font: aFont color: aColor [
 
 {
 	#category : #'drawing-text',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> drawString: s from: firstIndex to: lastIndex at: pt font: font color: aColor [
 
@@ -171,7 +171,7 @@ RtWrapperCanvas >> drawString: s from: firstIndex to: lastIndex at: pt font: fon
 
 {
 	#category : #'drawing-text',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c [ 
 
@@ -180,7 +180,7 @@ RtWrapperCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect f
 
 {
 	#category : #'drawing-text',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> drawString: s in: boundsRect [
 
@@ -189,7 +189,7 @@ RtWrapperCanvas >> drawString: s in: boundsRect [
 
 {
 	#category : #'drawing-text',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> drawString: s in: boundsRect font: fontOrNil color: c [
 
@@ -198,7 +198,7 @@ RtWrapperCanvas >> drawString: s in: boundsRect font: fontOrNil color: c [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> extent [
 
@@ -207,7 +207,7 @@ RtWrapperCanvas >> extent [
 
 {
 	#category : #drawing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> fillColor: aColor [
 
@@ -216,7 +216,7 @@ RtWrapperCanvas >> fillColor: aColor [
 
 {
 	#category : #'drawing-ovals',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> fillOval: r color: c [
 
@@ -225,7 +225,7 @@ RtWrapperCanvas >> fillOval: r color: c [
 
 {
 	#category : #'drawing-ovals',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderColor [ 
 
@@ -234,7 +234,7 @@ RtWrapperCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: bo
 
 {
 	#category : #'drawing-ovals',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> fillOval: aRectangle fillStyle: aFillStyle [
 
@@ -243,7 +243,7 @@ RtWrapperCanvas >> fillOval: aRectangle fillStyle: aFillStyle [
 
 {
 	#category : #'drawing-ovals',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -252,7 +252,7 @@ RtWrapperCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderStyle: aBord
 
 {
 	#category : #'drawing-ovals',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderWidth: bw borderColor: bc [
 
@@ -261,7 +261,7 @@ RtWrapperCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderWidth: bw bo
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> fillRectangle: r color: c [
 
@@ -270,7 +270,7 @@ RtWrapperCanvas >> fillRectangle: r color: c [
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> fillRectangle: aRectangle fillStyle: aFillStyle [
 
@@ -279,7 +279,7 @@ RtWrapperCanvas >> fillRectangle: aRectangle fillStyle: aFillStyle [
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> fillRectangle: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [ 
 
@@ -288,7 +288,7 @@ RtWrapperCanvas >> fillRectangle: aRectangle fillStyle: aFillStyle borderStyle: 
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> fillRoundRect: aRectangle radius: radius fillStyle: fillStyle [
 
@@ -297,7 +297,7 @@ RtWrapperCanvas >> fillRoundRect: aRectangle radius: radius fillStyle: fillStyle
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> fillRoundRect: aRectangle radius: radius fillStyle: fillStyle borderStyle: borderStyle [
 
@@ -306,7 +306,7 @@ RtWrapperCanvas >> fillRoundRect: aRectangle radius: radius fillStyle: fillStyle
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> finish [
 
@@ -315,7 +315,7 @@ RtWrapperCanvas >> finish [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> finish: allDamage [
 
@@ -324,7 +324,7 @@ RtWrapperCanvas >> finish: allDamage [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> flush [
 
@@ -333,7 +333,7 @@ RtWrapperCanvas >> flush [
 
 {
 	#category : #other,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> flushDisplay [
 
@@ -342,7 +342,7 @@ RtWrapperCanvas >> flushDisplay [
 
 {
 	#category : #other,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> forceToScreen: rect [
 
@@ -351,7 +351,7 @@ RtWrapperCanvas >> forceToScreen: rect [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> form [
 
@@ -360,7 +360,7 @@ RtWrapperCanvas >> form [
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
 
@@ -369,7 +369,7 @@ RtWrapperCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: bo
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWidth topLeftColor: topLeftColor bottomRightColor: bottomRightColor [
 
@@ -378,7 +378,7 @@ RtWrapperCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: bo
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -387,7 +387,7 @@ RtWrapperCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borde
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: fillStyle borderStyle: borderStyle [ 
 
@@ -396,7 +396,7 @@ RtWrapperCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillSt
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: fillStyle borderWidth: bw borderColor: bc [ 
 
@@ -405,7 +405,7 @@ RtWrapperCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillSt
 
 {
 	#category : #'drawing-ovals',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> frameOval: r color: c [
 
@@ -414,7 +414,7 @@ RtWrapperCanvas >> frameOval: r color: c [
 
 {
 	#category : #'drawing-ovals',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> frameOval: r width: w color: c [
 
@@ -423,7 +423,7 @@ RtWrapperCanvas >> frameOval: r width: w color: c [
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> frameRectangle: aRectangle borderStyle: aBorderStyle [
 
@@ -432,7 +432,7 @@ RtWrapperCanvas >> frameRectangle: aRectangle borderStyle: aBorderStyle [
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> frameRectangle: r color: c [
 
@@ -441,7 +441,7 @@ RtWrapperCanvas >> frameRectangle: r color: c [
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> frameRectangle: r width: w color: c [
 
@@ -450,7 +450,7 @@ RtWrapperCanvas >> frameRectangle: r width: w color: c [
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> frameRoundRect: aRectangle radius: radius borderStyle: borderStyle [
 
@@ -459,7 +459,7 @@ RtWrapperCanvas >> frameRoundRect: aRectangle radius: radius borderStyle: border
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> frameRoundRect: aRectangle radius: radius width: borderWidth color: borderColor [
 
@@ -468,7 +468,7 @@ RtWrapperCanvas >> frameRoundRect: aRectangle radius: radius width: borderWidth 
 
 {
 	#category : #'drawing-obsolete',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> image: aForm at: aPoint [
 
@@ -478,7 +478,7 @@ RtWrapperCanvas >> image: aForm at: aPoint [
 
 {
 	#category : #'drawing-obsolete',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> image: aForm at: aPoint rule: combinationRule [
 
@@ -488,7 +488,7 @@ RtWrapperCanvas >> image: aForm at: aPoint rule: combinationRule [
 
 {
 	#category : #'drawing-images',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
@@ -497,7 +497,7 @@ RtWrapperCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
 {
 	#category : #'drawing-images',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule alpha: sourceAlpha [
 
@@ -506,7 +506,7 @@ RtWrapperCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule alp
 
 {
 	#category : #'drawing-obsolete',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> imageWithOpaqueWhite: aForm at: aPoint [
 
@@ -516,7 +516,7 @@ RtWrapperCanvas >> imageWithOpaqueWhite: aForm at: aPoint [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> isBalloonCanvas [
 
@@ -525,7 +525,7 @@ RtWrapperCanvas >> isBalloonCanvas [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> isPostscriptCanvas [
 
@@ -534,7 +534,7 @@ RtWrapperCanvas >> isPostscriptCanvas [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> isShadowDrawing [
 
@@ -543,7 +543,7 @@ RtWrapperCanvas >> isShadowDrawing [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> isVisible: aRectangle [
 
@@ -552,7 +552,7 @@ RtWrapperCanvas >> isVisible: aRectangle [
 
 {
 	#category : #'drawing-obsolete',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> line: pt1 to: pt2 brushForm: brush [
 
@@ -562,7 +562,7 @@ RtWrapperCanvas >> line: pt1 to: pt2 brushForm: brush [
 
 {
 	#category : #drawing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> line: pt1 to: pt2 color: c [
 
@@ -571,7 +571,7 @@ RtWrapperCanvas >> line: pt1 to: pt2 color: c [
 
 {
 	#category : #drawing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> line: pt1 to: pt2 width: w color: c [ 
 
@@ -580,7 +580,7 @@ RtWrapperCanvas >> line: pt1 to: pt2 width: w color: c [
 
 {
 	#category : #drawing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> line: pt1 to: pt2 width: width color: color1 dashLength: s1 secondColor: color2 secondDashLength: s2 startingOffset: startingOffset [
 
@@ -589,7 +589,7 @@ RtWrapperCanvas >> line: pt1 to: pt2 width: width color: color1 dashLength: s1 s
 
 {
 	#category : #drawing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> line: pt1 to: pt2 width: w1 color: c1 stepWidth: s1 secondWidth: w2 secondColor: c2 secondStepWidth: s2 [ 
 
@@ -598,7 +598,7 @@ RtWrapperCanvas >> line: pt1 to: pt2 width: w1 color: c1 stepWidth: s1 secondWid
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> origin [
 
@@ -607,7 +607,7 @@ RtWrapperCanvas >> origin [
 
 {
 	#category : #'drawing-images',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> paintImage: aForm at: aPoint [
 
@@ -616,7 +616,7 @@ RtWrapperCanvas >> paintImage: aForm at: aPoint [
 
 {
 	#category : #'drawing-images',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> paintImage: aForm at: aPoint sourceRect: sourceRect [
 
@@ -625,7 +625,7 @@ RtWrapperCanvas >> paintImage: aForm at: aPoint sourceRect: sourceRect [
 
 {
 	#category : #drawing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> paragraph: aParagraph bounds: aRectangle color: aColor [
 
@@ -634,7 +634,7 @@ RtWrapperCanvas >> paragraph: aParagraph bounds: aRectangle color: aColor [
 
 {
 	#category : #'drawing-obsolete',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> point: p color: c [
 
@@ -644,7 +644,7 @@ RtWrapperCanvas >> point: p color: c [
 
 {
 	#category : #'drawing-support',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> preserveStateDuring: aBlock [
 
@@ -654,7 +654,7 @@ RtWrapperCanvas >> preserveStateDuring: aBlock [
 
 {
 	#category : #drawing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> render: anObject [
 
@@ -663,7 +663,7 @@ RtWrapperCanvas >> render: anObject [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> reset [
 
@@ -672,7 +672,7 @@ RtWrapperCanvas >> reset [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> seesNothingOutside: aRectangle [
 
@@ -681,7 +681,7 @@ RtWrapperCanvas >> seesNothingOutside: aRectangle [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> shadowColor [
 
@@ -690,7 +690,7 @@ RtWrapperCanvas >> shadowColor [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> shadowColor: aColor [
 
@@ -699,7 +699,7 @@ RtWrapperCanvas >> shadowColor: aColor [
 
 {
 	#category : #'drawing-images',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> stencil: stencilForm at: aPoint color: aColor [
 
@@ -708,7 +708,7 @@ RtWrapperCanvas >> stencil: stencilForm at: aPoint color: aColor [
 
 {
 	#category : #'drawing-images',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor [
 
@@ -717,7 +717,7 @@ RtWrapperCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color:
 
 {
 	#category : #'drawing-support',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> transformBy: aDisplayTransform clippingTo: aClipRect during: aBlock [
 
@@ -727,7 +727,7 @@ RtWrapperCanvas >> transformBy: aDisplayTransform clippingTo: aClipRect during: 
 
 {
 	#category : #'drawing-support',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> transformBy: aDisplayTransform clippingTo: aClipRect during: aBlock smoothing: cellSize [
 
@@ -740,7 +740,7 @@ RtWrapperCanvas >> transformBy: aDisplayTransform clippingTo: aClipRect during: 
 
 {
 	#category : #'drawing-support',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> transformBy: aDisplayTransform during: aBlock [
 
@@ -750,7 +750,7 @@ RtWrapperCanvas >> transformBy: aDisplayTransform during: aBlock [
 
 {
 	#category : #'drawing-support',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> translateBy: delta clippingTo: aRect during: aBlock [
 
@@ -760,7 +760,7 @@ RtWrapperCanvas >> translateBy: delta clippingTo: aRect during: aBlock [
 
 {
 	#category : #'drawing-support',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> translateBy: delta during: aBlock [
 
@@ -770,7 +770,7 @@ RtWrapperCanvas >> translateBy: delta during: aBlock [
 
 {
 	#category : #'drawing-support',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> translateTo: newOrigin clippingTo: aRectangle during: aBlock [
 
@@ -780,7 +780,7 @@ RtWrapperCanvas >> translateTo: newOrigin clippingTo: aRectangle during: aBlock 
 
 {
 	#category : #'drawing-images',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> translucentImage: aForm at: aPoint [
 
@@ -789,7 +789,7 @@ RtWrapperCanvas >> translucentImage: aForm at: aPoint [
 
 {
 	#category : #'drawing-images',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> translucentImage: aForm at: aPoint sourceRect: sourceRect [ 
 
@@ -798,7 +798,7 @@ RtWrapperCanvas >> translucentImage: aForm at: aPoint sourceRect: sourceRect [
 
 {
 	#category : #'drawing-images',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> warpImage: aForm transform: aTransform [
 
@@ -807,7 +807,7 @@ RtWrapperCanvas >> warpImage: aForm transform: aTransform [
 
 {
 	#category : #'drawing-images',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> warpImage: aForm transform: aTransform at: extraOffset [
 
@@ -816,7 +816,7 @@ RtWrapperCanvas >> warpImage: aForm transform: aTransform at: extraOffset [
 
 {
 	#category : #'drawing-images',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> warpImage: aForm transform: aTransform at: extraOffset sourceRect: sourceRect cellSize: cellSize [
 
@@ -825,7 +825,7 @@ RtWrapperCanvas >> warpImage: aForm transform: aTransform at: extraOffset source
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> wrappedCanvas [
 
@@ -834,7 +834,7 @@ RtWrapperCanvas >> wrappedCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> wrappedCanvas: anObject [
 
@@ -843,7 +843,7 @@ RtWrapperCanvas >> wrappedCanvas: anObject [
 
 {
 	#category : #private,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtWrapperCanvas >> wrappedCanvas: aCanvas during: aBlock [
 

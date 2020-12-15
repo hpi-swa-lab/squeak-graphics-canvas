@@ -10,6 +10,14 @@ Class {
 }
 
 {
+	#category : #generation,
+	#timestamp : 'stlu 12/2/2020 02:59'
+}
+SLMessageMapping >> generate: aMessageNode for: aGenerator [
+	
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'zagto 12/1/2020 14:48'
 }

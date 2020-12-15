@@ -2,7 +2,7 @@ Extension { #name : #ExternalType }
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLDEBUGPROC [
 
@@ -11,7 +11,7 @@ ExternalType class >> GLDEBUGPROC [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLDEBUGPROCAMD [
 
@@ -20,7 +20,7 @@ ExternalType class >> GLDEBUGPROCAMD [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLDEBUGPROCARB [
 
@@ -29,7 +29,7 @@ ExternalType class >> GLDEBUGPROCARB [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLDEBUGPROCKHR [
 
@@ -38,7 +38,7 @@ ExternalType class >> GLDEBUGPROCKHR [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLLeglClientBufferEXT [
 
@@ -47,7 +47,7 @@ ExternalType class >> GLLeglClientBufferEXT [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLLeglImageOES [
 
@@ -56,7 +56,7 @@ ExternalType class >> GLLeglImageOES [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLbitfield [
 
@@ -65,7 +65,7 @@ ExternalType class >> GLbitfield [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 14:23'
 }
 ExternalType class >> GLboolean [
 
@@ -74,7 +74,7 @@ ExternalType class >> GLboolean [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLbyte [
 
@@ -83,7 +83,7 @@ ExternalType class >> GLbyte [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLchar [
 
@@ -92,7 +92,7 @@ ExternalType class >> GLchar [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLcharARB [
 
@@ -101,7 +101,7 @@ ExternalType class >> GLcharARB [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLclampd [
 
@@ -110,7 +110,7 @@ ExternalType class >> GLclampd [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLclampf [
 
@@ -119,7 +119,7 @@ ExternalType class >> GLclampf [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLclampx [
 
@@ -128,7 +128,7 @@ ExternalType class >> GLclampx [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLdouble [
 
@@ -137,7 +137,7 @@ ExternalType class >> GLdouble [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLenum [
 
@@ -146,7 +146,7 @@ ExternalType class >> GLenum [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLfixed [
 
@@ -155,7 +155,7 @@ ExternalType class >> GLfixed [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLfixedARG [
 
@@ -164,7 +164,7 @@ ExternalType class >> GLfixedARG [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLfloat [
 
@@ -173,7 +173,7 @@ ExternalType class >> GLfloat [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLhalf [
 
@@ -182,7 +182,7 @@ ExternalType class >> GLhalf [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLhalfARB [
 
@@ -191,7 +191,7 @@ ExternalType class >> GLhalfARB [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLhandleARB [
 
@@ -200,7 +200,7 @@ ExternalType class >> GLhandleARB [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLint [
 
@@ -209,7 +209,7 @@ ExternalType class >> GLint [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLint64 [
 
@@ -218,7 +218,7 @@ ExternalType class >> GLint64 [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLint64EXT [
 
@@ -227,7 +227,7 @@ ExternalType class >> GLint64EXT [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLintptr [
 
@@ -236,7 +236,7 @@ ExternalType class >> GLintptr [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLintptrARB [
 
@@ -245,7 +245,7 @@ ExternalType class >> GLintptrARB [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLshort [
 
@@ -254,7 +254,7 @@ ExternalType class >> GLshort [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLsizei [
 
@@ -263,7 +263,7 @@ ExternalType class >> GLsizei [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLsizeiptr [
 
@@ -272,7 +272,7 @@ ExternalType class >> GLsizeiptr [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLsizeiptrARB [
 
@@ -281,7 +281,7 @@ ExternalType class >> GLsizeiptrARB [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLsync [
 
@@ -290,7 +290,7 @@ ExternalType class >> GLsync [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLubyte [
 
@@ -299,7 +299,7 @@ ExternalType class >> GLubyte [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLuint [
 
@@ -308,7 +308,7 @@ ExternalType class >> GLuint [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLuint64 [
 
@@ -317,7 +317,7 @@ ExternalType class >> GLuint64 [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLuint64EXT [
 
@@ -326,7 +326,7 @@ ExternalType class >> GLuint64EXT [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLushort [
 
@@ -335,7 +335,7 @@ ExternalType class >> GLushort [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLvoid [
 

@@ -2,7 +2,7 @@ Extension { #name : #Collection }
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 10/28/2020 14:16'
 }
 Collection class >> new: sizeRequested during: aBlock [
 

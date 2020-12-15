@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GL1_4 class >> majorVersion [
 
@@ -16,7 +16,7 @@ GL1_4 class >> majorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GL1_4 class >> minorVersion [
 
@@ -25,7 +25,7 @@ GL1_4 class >> minorVersion [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/2/2020 14:51'
 }
 GL1_4 class >> versionNumber [
 
@@ -34,7 +34,7 @@ GL1_4 class >> versionNumber [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> BLEND_COLOR [
 
@@ -44,7 +44,7 @@ GL1_4 >> BLEND_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> BLEND_DST_ALPHA [
 
@@ -54,7 +54,7 @@ GL1_4 >> BLEND_DST_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> BLEND_DST_RGB [
 
@@ -64,7 +64,7 @@ GL1_4 >> BLEND_DST_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> BLEND_EQUATION [
 
@@ -74,7 +74,7 @@ GL1_4 >> BLEND_EQUATION [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> BLEND_SRC_ALPHA [
 
@@ -84,7 +84,7 @@ GL1_4 >> BLEND_SRC_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> BLEND_SRC_RGB [
 
@@ -94,7 +94,7 @@ GL1_4 >> BLEND_SRC_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> COLOR_SUM [
 
@@ -104,7 +104,7 @@ GL1_4 >> COLOR_SUM [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> COMPARE_R_TO_TEXTURE [
 
@@ -114,7 +114,7 @@ GL1_4 >> COMPARE_R_TO_TEXTURE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> CONSTANT_ALPHA [
 
@@ -124,7 +124,7 @@ GL1_4 >> CONSTANT_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> CONSTANT_COLOR [
 
@@ -134,7 +134,7 @@ GL1_4 >> CONSTANT_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> CURRENT_FOG_COORDINATE [
 
@@ -144,7 +144,7 @@ GL1_4 >> CURRENT_FOG_COORDINATE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> CURRENT_SECONDARY_COLOR [
 
@@ -154,7 +154,7 @@ GL1_4 >> CURRENT_SECONDARY_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> DECR_WRAP [
 
@@ -164,7 +164,7 @@ GL1_4 >> DECR_WRAP [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> DEPTH_COMPONENT16 [
 
@@ -174,7 +174,7 @@ GL1_4 >> DEPTH_COMPONENT16 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> DEPTH_COMPONENT24 [
 
@@ -184,7 +184,7 @@ GL1_4 >> DEPTH_COMPONENT24 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> DEPTH_COMPONENT32 [
 
@@ -194,7 +194,7 @@ GL1_4 >> DEPTH_COMPONENT32 [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> DEPTH_TEXTURE_MODE [
 
@@ -204,7 +204,7 @@ GL1_4 >> DEPTH_TEXTURE_MODE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> FOG_COORDINATE [
 
@@ -214,7 +214,7 @@ GL1_4 >> FOG_COORDINATE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> FOG_COORDINATE_ARRAY [
 
@@ -224,7 +224,7 @@ GL1_4 >> FOG_COORDINATE_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> FOG_COORDINATE_ARRAY_POINTER [
 
@@ -234,7 +234,7 @@ GL1_4 >> FOG_COORDINATE_ARRAY_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> FOG_COORDINATE_ARRAY_STRIDE [
 
@@ -244,7 +244,7 @@ GL1_4 >> FOG_COORDINATE_ARRAY_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> FOG_COORDINATE_ARRAY_TYPE [
 
@@ -254,7 +254,7 @@ GL1_4 >> FOG_COORDINATE_ARRAY_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> FOG_COORDINATE_SOURCE [
 
@@ -264,7 +264,7 @@ GL1_4 >> FOG_COORDINATE_SOURCE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> FRAGMENT_DEPTH [
 
@@ -274,7 +274,7 @@ GL1_4 >> FRAGMENT_DEPTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> FUNC_ADD [
 
@@ -284,7 +284,7 @@ GL1_4 >> FUNC_ADD [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> FUNC_REVERSE_SUBTRACT [
 
@@ -294,7 +294,7 @@ GL1_4 >> FUNC_REVERSE_SUBTRACT [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> FUNC_SUBTRACT [
 
@@ -304,7 +304,7 @@ GL1_4 >> FUNC_SUBTRACT [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> GENERATE_MIPMAP [
 
@@ -314,7 +314,7 @@ GL1_4 >> GENERATE_MIPMAP [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> GENERATE_MIPMAP_HINT [
 
@@ -324,7 +324,7 @@ GL1_4 >> GENERATE_MIPMAP_HINT [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> INCR_WRAP [
 
@@ -334,7 +334,7 @@ GL1_4 >> INCR_WRAP [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> MAX [
 
@@ -344,7 +344,7 @@ GL1_4 >> MAX [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> MAX_TEXTURE_LOD_BIAS [
 
@@ -354,7 +354,7 @@ GL1_4 >> MAX_TEXTURE_LOD_BIAS [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> MIN [
 
@@ -364,7 +364,7 @@ GL1_4 >> MIN [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> MIRRORED_REPEAT [
 
@@ -374,7 +374,7 @@ GL1_4 >> MIRRORED_REPEAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> ONE_MINUS_CONSTANT_ALPHA [
 
@@ -384,7 +384,7 @@ GL1_4 >> ONE_MINUS_CONSTANT_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> ONE_MINUS_CONSTANT_COLOR [
 
@@ -394,7 +394,7 @@ GL1_4 >> ONE_MINUS_CONSTANT_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> POINT_DISTANCE_ATTENUATION [
 
@@ -404,7 +404,7 @@ GL1_4 >> POINT_DISTANCE_ATTENUATION [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> POINT_FADE_THRESHOLD_SIZE [
 
@@ -414,7 +414,7 @@ GL1_4 >> POINT_FADE_THRESHOLD_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> POINT_SIZE_MAX [
 
@@ -424,7 +424,7 @@ GL1_4 >> POINT_SIZE_MAX [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> POINT_SIZE_MIN [
 
@@ -434,7 +434,7 @@ GL1_4 >> POINT_SIZE_MIN [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> SECONDARY_COLOR_ARRAY [
 
@@ -444,7 +444,7 @@ GL1_4 >> SECONDARY_COLOR_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> SECONDARY_COLOR_ARRAY_POINTER [
 
@@ -454,7 +454,7 @@ GL1_4 >> SECONDARY_COLOR_ARRAY_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> SECONDARY_COLOR_ARRAY_SIZE [
 
@@ -464,7 +464,7 @@ GL1_4 >> SECONDARY_COLOR_ARRAY_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> SECONDARY_COLOR_ARRAY_STRIDE [
 
@@ -474,7 +474,7 @@ GL1_4 >> SECONDARY_COLOR_ARRAY_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> SECONDARY_COLOR_ARRAY_TYPE [
 
@@ -484,7 +484,7 @@ GL1_4 >> SECONDARY_COLOR_ARRAY_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> TEXTURE_COMPARE_FUNC [
 
@@ -494,7 +494,7 @@ GL1_4 >> TEXTURE_COMPARE_FUNC [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> TEXTURE_COMPARE_MODE [
 
@@ -504,7 +504,7 @@ GL1_4 >> TEXTURE_COMPARE_MODE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> TEXTURE_DEPTH_SIZE [
 
@@ -514,7 +514,7 @@ GL1_4 >> TEXTURE_DEPTH_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> TEXTURE_FILTER_CONTROL [
 
@@ -524,7 +524,7 @@ GL1_4 >> TEXTURE_FILTER_CONTROL [
 
 {
 	#category : #'constants - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> TEXTURE_LOD_BIAS [
 
@@ -534,7 +534,7 @@ GL1_4 >> TEXTURE_LOD_BIAS [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> blendColor: red with: green with: blue with: alpha [
 
@@ -545,7 +545,7 @@ GL1_4 >> blendColor: red with: green with: blue with: alpha [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> blendEquation: mode [
 
@@ -556,7 +556,7 @@ GL1_4 >> blendEquation: mode [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> blendFuncSeparate: sfactorRGB with: dfactorRGB with: sfactorAlpha with: dfactorAlpha [
 
@@ -567,7 +567,7 @@ GL1_4 >> blendFuncSeparate: sfactorRGB with: dfactorRGB with: sfactorAlpha with:
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> fogCoordPointer: type with: stride with: pointer [
 
@@ -578,7 +578,7 @@ GL1_4 >> fogCoordPointer: type with: stride with: pointer [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> fogCoordd: coord [
 
@@ -589,7 +589,7 @@ GL1_4 >> fogCoordd: coord [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> fogCoorddv: coord [
 
@@ -600,7 +600,7 @@ GL1_4 >> fogCoorddv: coord [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> fogCoordf: coord [
 
@@ -611,7 +611,7 @@ GL1_4 >> fogCoordf: coord [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> fogCoordfv: coord [
 
@@ -622,7 +622,7 @@ GL1_4 >> fogCoordfv: coord [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> multiDrawArrays: mode with: first with: count with: drawcount [
 
@@ -633,7 +633,7 @@ GL1_4 >> multiDrawArrays: mode with: first with: count with: drawcount [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> multiDrawElements: mode with: count with: type with: indices with: drawcount [
 
@@ -644,7 +644,7 @@ GL1_4 >> multiDrawElements: mode with: count with: type with: indices with: draw
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> pointParameterf: pname with: param [
 
@@ -655,7 +655,7 @@ GL1_4 >> pointParameterf: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> pointParameterfv: pname with: params [
 
@@ -666,7 +666,7 @@ GL1_4 >> pointParameterfv: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> pointParameteri: pname with: param [
 
@@ -677,7 +677,7 @@ GL1_4 >> pointParameteri: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> pointParameteriv: pname with: params [
 
@@ -688,7 +688,7 @@ GL1_4 >> pointParameteriv: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> secondaryColor3b: red with: green with: blue [
 
@@ -699,7 +699,7 @@ GL1_4 >> secondaryColor3b: red with: green with: blue [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> secondaryColor3bv: v [
 
@@ -710,7 +710,7 @@ GL1_4 >> secondaryColor3bv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> secondaryColor3d: red with: green with: blue [
 
@@ -721,7 +721,7 @@ GL1_4 >> secondaryColor3d: red with: green with: blue [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> secondaryColor3dv: v [
 
@@ -732,7 +732,7 @@ GL1_4 >> secondaryColor3dv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> secondaryColor3f: red with: green with: blue [
 
@@ -743,7 +743,7 @@ GL1_4 >> secondaryColor3f: red with: green with: blue [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> secondaryColor3fv: v [
 
@@ -754,7 +754,7 @@ GL1_4 >> secondaryColor3fv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> secondaryColor3i: red with: green with: blue [
 
@@ -765,7 +765,7 @@ GL1_4 >> secondaryColor3i: red with: green with: blue [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> secondaryColor3iv: v [
 
@@ -776,7 +776,7 @@ GL1_4 >> secondaryColor3iv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> secondaryColor3s: red with: green with: blue [
 
@@ -787,7 +787,7 @@ GL1_4 >> secondaryColor3s: red with: green with: blue [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> secondaryColor3sv: v [
 
@@ -798,7 +798,7 @@ GL1_4 >> secondaryColor3sv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> secondaryColor3ub: red with: green with: blue [
 
@@ -809,7 +809,7 @@ GL1_4 >> secondaryColor3ub: red with: green with: blue [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> secondaryColor3ubv: v [
 
@@ -820,7 +820,7 @@ GL1_4 >> secondaryColor3ubv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> secondaryColor3ui: red with: green with: blue [
 
@@ -831,7 +831,7 @@ GL1_4 >> secondaryColor3ui: red with: green with: blue [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> secondaryColor3uiv: v [
 
@@ -842,7 +842,7 @@ GL1_4 >> secondaryColor3uiv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> secondaryColor3us: red with: green with: blue [
 
@@ -853,7 +853,7 @@ GL1_4 >> secondaryColor3us: red with: green with: blue [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> secondaryColor3usv: v [
 
@@ -864,7 +864,7 @@ GL1_4 >> secondaryColor3usv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> secondaryColorPointer: size with: type with: stride with: pointer [
 
@@ -875,7 +875,7 @@ GL1_4 >> secondaryColorPointer: size with: type with: stride with: pointer [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> windowPos2d: x with: y [
 
@@ -886,7 +886,7 @@ GL1_4 >> windowPos2d: x with: y [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> windowPos2dv: v [
 
@@ -897,7 +897,7 @@ GL1_4 >> windowPos2dv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> windowPos2f: x with: y [
 
@@ -908,7 +908,7 @@ GL1_4 >> windowPos2f: x with: y [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> windowPos2fv: v [
 
@@ -919,7 +919,7 @@ GL1_4 >> windowPos2fv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> windowPos2i: x with: y [
 
@@ -930,7 +930,7 @@ GL1_4 >> windowPos2i: x with: y [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> windowPos2iv: v [
 
@@ -941,7 +941,7 @@ GL1_4 >> windowPos2iv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> windowPos2s: x with: y [
 
@@ -952,7 +952,7 @@ GL1_4 >> windowPos2s: x with: y [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> windowPos2sv: v [
 
@@ -963,7 +963,7 @@ GL1_4 >> windowPos2sv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> windowPos3d: x with: y with: z [
 
@@ -974,7 +974,7 @@ GL1_4 >> windowPos3d: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> windowPos3dv: v [
 
@@ -985,7 +985,7 @@ GL1_4 >> windowPos3dv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> windowPos3f: x with: y with: z [
 
@@ -996,7 +996,7 @@ GL1_4 >> windowPos3f: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> windowPos3fv: v [
 
@@ -1007,7 +1007,7 @@ GL1_4 >> windowPos3fv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> windowPos3i: x with: y with: z [
 
@@ -1018,7 +1018,7 @@ GL1_4 >> windowPos3i: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> windowPos3iv: v [
 
@@ -1029,7 +1029,7 @@ GL1_4 >> windowPos3iv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> windowPos3s: x with: y with: z [
 
@@ -1040,7 +1040,7 @@ GL1_4 >> windowPos3s: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 14:56'
 }
 GL1_4 >> windowPos3sv: v [
 

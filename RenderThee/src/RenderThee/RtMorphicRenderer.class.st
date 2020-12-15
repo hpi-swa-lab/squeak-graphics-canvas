@@ -11,7 +11,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtMorphicRenderer >> imageStore [
 
@@ -20,7 +20,7 @@ RtMorphicRenderer >> imageStore [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtMorphicRenderer >> imageStore: anObject [
 
@@ -29,7 +29,7 @@ RtMorphicRenderer >> imageStore: anObject [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtMorphicRenderer >> initializeWithMorph: aMorph imageStore: anImageStore [
 
@@ -39,7 +39,7 @@ RtMorphicRenderer >> initializeWithMorph: aMorph imageStore: anImageStore [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtMorphicRenderer >> morph [
 
@@ -48,7 +48,7 @@ RtMorphicRenderer >> morph [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtMorphicRenderer >> morph: anObject [
 
@@ -57,7 +57,7 @@ RtMorphicRenderer >> morph: anObject [
 
 {
 	#category : #rendering,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtMorphicRenderer >> renderFrame [
 

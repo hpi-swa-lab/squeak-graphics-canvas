@@ -2,7 +2,7 @@ Extension { #name : #Rectangle }
 
 {
 	#category : #'*RenderThee',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Rectangle class >> infinite [
 
@@ -13,7 +13,7 @@ Rectangle class >> infinite [
 
 {
 	#category : #'*RenderThee-Demo',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Rectangle >> randomPoint [
 

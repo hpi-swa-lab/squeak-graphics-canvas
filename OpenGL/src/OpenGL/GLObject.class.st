@@ -28,16 +28,73 @@ Class {
 
 {
 	#category : #allocation,
-	#timestamp : ''
+	#timestamp : 'stlu 12/1/2020 02:57'
 }
 GLObject class >> allocate [
-	"Allocates an object with OpenGL. Returns the id to reference it."
+	"Allocates an object with OpenGL. Returns the allocated object's id."
+	^ (self allocate: 1) first
+]
+
+{
+	#category : #allocation,
+	#timestamp : 'stlu 11/30/2020 19:45'
+}
+GLObject class >> allocate: n [
+	"Allocates n objects with OpenGL. Returns an array of the ids of the allocated objects."
+	| array |
+	array := IntegerArray new: n.
+	self allocate: n in: array.
+	^ array
+]
+
+{
+	#category : #allocation,
+	#timestamp : 'stlu 11/30/2020 19:44'
+}
+GLObject class >> allocate: n in: anIntegerArray [
+	"Allocates n objects with OpenGL. Stores the allocated objects' ids in anIntegerArray."
 	self subclassResponsibility
 ]
 
 {
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 19:04'
+}
+GLObject class >> bindID: anInteger [
+
+	self bindID: anInteger to: self target
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 17:58'
+}
+GLObject class >> bindID: anInteger to: target [
+
+	self subclassResponsibility
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 18:12'
+}
+GLObject class >> bound [
+
+	^ self boundTo: self target
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 19:31'
+}
+GLObject class >> boundTo: target [
+
+	^ GL recallBinding: target
+]
+
+{
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 01:25'
 }
 GLObject class >> create [
 
@@ -46,7 +103,7 @@ GLObject class >> create [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 01:25'
 }
 GLObject class >> id: anInteger [
 
@@ -57,7 +114,7 @@ GLObject class >> id: anInteger [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLObject class >> new [
 
@@ -66,7 +123,7 @@ GLObject class >> new [
 
 {
 	#category : #converting,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 12:10'
 }
 GLObject class >> newFrom: glObject [
 
@@ -74,20 +131,93 @@ GLObject class >> newFrom: glObject [
 ]
 
 {
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 18:11'
+}
+GLObject class >> target [
+
+	self subclassResponsibility
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 18:11'
+}
+GLObject class >> unbind [
+
+	self unbind: self target
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 19:20'
+}
+GLObject class >> unbind: target [
+
+	self bindID: GL_NONE to: target.
+	GL forgetBinding: target
+]
+
+{
 	#category : #comparing,
-	#timestamp : ''
+	#timestamp : 'stlu 12/3/2020 16:01'
 }
 GLObject >> = otherObject [
 
 	self == otherObject ifTrue: [^ true].
-	context = otherObject context ifFalse: [^ false].
 	id = otherObject id ifFalse: [^ false].
+	self class = otherObject class ifFalse: [^ false].
+	context = otherObject context ifFalse: [^ false].
 	^ true
 ]
 
 {
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 18:03'
+}
+GLObject >> bind [
+
+	self bindTo: self target
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 19:19'
+}
+GLObject >> bindTo: targetEnum [
+
+	self class bindID: id to: targetEnum.
+	GL rememberBinding: targetEnum as: self
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 18:08'
+}
+GLObject >> boundDuring: aBlock [
+
+	^ self boundTo: self target during: aBlock
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 18:00'
+}
+GLObject >> boundTo: targetEnum during: aBlock [
+
+	| previous |
+	previous := self class boundTo: targetEnum.
+	previous = self ifTrue: [^ aBlock value].
+	self bindTo: targetEnum.
+	^ aBlock ensure: [
+		previous
+			ifNil: [self class unbind: targetEnum]
+			ifNotNil: [previous bindTo: targetEnum]]
+]
+
+{
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 12:11'
 }
 GLObject >> cleanUp [
 
@@ -96,7 +226,7 @@ GLObject >> cleanUp [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 01:33'
 }
 GLObject >> context [
 
@@ -105,7 +235,7 @@ GLObject >> context [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 01:29'
 }
 GLObject >> delete [
 
@@ -114,16 +244,16 @@ GLObject >> delete [
 
 {
 	#category : #comparing,
-	#timestamp : ''
+	#timestamp : 'stlu 12/3/2020 16:06'
 }
 GLObject >> hash [
 
-	^ id hash bitXor: context hash
+	^ (id hash bitXor: context hash) bitXor: self class hash
 ]
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLObject >> id [
 
@@ -132,7 +262,7 @@ GLObject >> id [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 16:36'
 }
 GLObject >> id: anInteger [
 
@@ -141,7 +271,7 @@ GLObject >> id: anInteger [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 12:08'
 }
 GLObject >> initialize [
 
@@ -150,7 +280,16 @@ GLObject >> initialize [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 12/14/2020 12:10'
+}
+GLObject >> isAllocated [
+
+	self subclassResponsibility
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 10/29/2020 12:12'
 }
 GLObject >> isBuffer [
 
@@ -159,7 +298,7 @@ GLObject >> isBuffer [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 12:14'
 }
 GLObject >> isFrameBuffer [
 
@@ -168,7 +307,7 @@ GLObject >> isFrameBuffer [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 12:12'
 }
 GLObject >> isProgram [
 
@@ -177,7 +316,7 @@ GLObject >> isProgram [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 12:12'
 }
 GLObject >> isShader [
 
@@ -186,7 +325,7 @@ GLObject >> isShader [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 12:12'
 }
 GLObject >> isTexture [
 
@@ -195,7 +334,7 @@ GLObject >> isTexture [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 12:14'
 }
 GLObject >> isVertexArray [
 
@@ -204,7 +343,7 @@ GLObject >> isVertexArray [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 12:08'
 }
 GLObject >> library [
 
@@ -212,10 +351,40 @@ GLObject >> library [
 ]
 
 {
+	#category : #printing,
+	#timestamp : 'stlu 12/1/2020 03:08'
+}
+GLObject >> printOn: aStream [
+
+	super printOn: aStream.
+	aStream nextPut: $(.
+	id printOn: aStream.
+	aStream nextPut: $)
+]
+
+{
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 12:14'
 }
 GLObject >> register [
 
 	GL registerObject: self
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/10/2020 13:28'
+}
+GLObject >> target [
+
+	^ self class target
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 12/3/2020 18:04'
+}
+GLObject >> unbind [
+
+	self class unbind: self target
 ]

@@ -7,98 +7,36 @@ Class {
 
 {
 	#category : #allocation,
-	#timestamp : ''
+	#timestamp : 'stlu 11/30/2020 19:54'
 }
-GLTexture class >> allocate [
+GLTexture class >> allocate: n in: anIntegerArray [
 
-	IntegerArray new: 1 during: [:ids |
-		GL genTextures: 1 with: ids.
-		^ ids first]
+	GL genTextures: n with: anIntegerArray
 ]
 
 {
 	#category : #binding,
-	#timestamp : ''
+	#timestamp : 'stlu 12/3/2020 19:37'
 }
-GLTexture class >> bind: id [
-
-	self bind: id to: self target
-]
-
-{
-	#category : #binding,
-	#timestamp : ''
-}
-GLTexture class >> bind: id to: target [
+GLTexture class >> bindID: id to: target [
 
 	GL bindTexture: target with: id
 ]
 
 {
-	#category : #binding,
-	#timestamp : ''
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 12:13'
 }
-GLTexture class >> bindingEnum [
+GLTexture >> isAllocated [
 
-	self subclassResponsibility
-]
-
-{
-	#category : #binding,
-	#timestamp : ''
-}
-GLTexture class >> currentBinding [
-
-	^ GL getIntegerParameter: self bindingEnum
-]
-
-{
-	#category : #binding,
-	#timestamp : ''
-}
-GLTexture class >> target [
-
-	self subclassResponsibility
-]
-
-{
-	#category : #binding,
-	#timestamp : ''
-}
-GLTexture >> bind [
-
-	self class bind: id
-]
-
-{
-	#category : #binding,
-	#timestamp : ''
-}
-GLTexture >> boundDuring: aBlock [
-
-	| previousID |
-	self flag: #todo. "Remember actual objects"
-	previousID := self class currentBinding.
-	previousID = id ifTrue: [^ aBlock value].
-	self class bind: id.
-	aBlock ensure: [
-		self class bind: previousID]
+	^ GL isTexture: id
 ]
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 12:16'
 }
 GLTexture >> isTexture [
 
 	^ true
-]
-
-{
-	#category : #binding,
-	#timestamp : ''
-}
-GLTexture >> target [
-
-	^ self class target
 ]

@@ -2,7 +2,7 @@ Extension { #name : #Boolean }
 
 {
 	#category : #'*OpenGL',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 15:29'
 }
 Boolean >> putAtUniform: location [
 

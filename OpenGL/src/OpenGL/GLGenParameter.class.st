@@ -13,7 +13,7 @@ Class {
 
 {
 	#category : #helpers,
-	#timestamp : ''
+	#timestamp : 'stlu 10/31/2020 23:49'
 }
 GLGenParameter class >> getType: xmlTag [
 
@@ -30,7 +30,7 @@ GLGenParameter class >> getType: xmlTag [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/1/2020 21:31'
 }
 GLGenParameter class >> registry: registry command: command tag: paramTag [
 
@@ -41,7 +41,7 @@ GLGenParameter class >> registry: registry command: command tag: paramTag [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/1/2020 20:13'
 }
 GLGenParameter class >> registry: registry tag: paramTag [
 
@@ -52,7 +52,7 @@ GLGenParameter class >> registry: registry tag: paramTag [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/31/2020 22:19'
 }
 GLGenParameter >> command [
 
@@ -61,7 +61,7 @@ GLGenParameter >> command [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/31/2020 22:19'
 }
 GLGenParameter >> group [
 
@@ -70,7 +70,7 @@ GLGenParameter >> group [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/31/2020 22:19'
 }
 GLGenParameter >> length [
 
@@ -79,7 +79,7 @@ GLGenParameter >> length [
 
 {
 	#category : #printing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/1/2020 20:50'
 }
 GLGenParameter >> printOn: aStream [
 
@@ -91,7 +91,7 @@ GLGenParameter >> printOn: aStream [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/1/2020 21:29'
 }
 GLGenParameter >> registry: registry command: aCommand tag: paramTag [
 
@@ -110,7 +110,7 @@ GLGenParameter >> registry: registry command: aCommand tag: paramTag [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/31/2020 22:19'
 }
 GLGenParameter >> type [
 

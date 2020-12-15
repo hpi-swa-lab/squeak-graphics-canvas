@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #rules,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtCachingStrategy >> shouldCacheDrawLayer: aLayer [
 
@@ -19,7 +19,7 @@ RtCachingStrategy >> shouldCacheDrawLayer: aLayer [
 
 {
 	#category : #rules,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 RtCachingStrategy >> shouldCacheGroupLayer: aLayer [
 

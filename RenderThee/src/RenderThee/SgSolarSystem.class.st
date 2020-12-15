@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 SgSolarSystem >> createPlanet: planetID [
 
@@ -25,7 +25,7 @@ SgSolarSystem >> createPlanet: planetID [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 SgSolarSystem >> createPlanets: numPlanets [
 
@@ -45,7 +45,7 @@ SgSolarSystem >> createPlanets: numPlanets [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 SgSolarSystem >> initialize [
 
@@ -56,7 +56,7 @@ SgSolarSystem >> initialize [
 
 {
 	#category : #'repaint boundary',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 SgSolarSystem >> isRepaintBoundary [
 
@@ -65,7 +65,7 @@ SgSolarSystem >> isRepaintBoundary [
 
 {
 	#category : #'stepping and presenter',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 SgSolarSystem >> step [
 
@@ -74,7 +74,7 @@ SgSolarSystem >> step [
 
 {
 	#category : #'stepping and presenter',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 SgSolarSystem >> stepTime [
 

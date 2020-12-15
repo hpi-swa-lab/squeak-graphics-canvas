@@ -1,66 +1,40 @@
 Class {
 	#name : #GLVertexArray,
 	#superclass : #GLObject,
-	#category : #'OpenGL-Wrappers-Buffers',
+	#category : #'OpenGL-Wrappers-VertexAttributes',
 	#commentStamp : ''
 }
 
 {
 	#category : #allocation,
-	#timestamp : ''
+	#timestamp : 'stlu 11/30/2020 19:49'
 }
-GLVertexArray class >> allocate [
+GLVertexArray class >> allocate: n in: anIntegerArray [
 
-	IntegerArray new: 1 during: [:ids |
-		GL genVertexArrays: 1 with: ids.
-		^ ids first]
+	GL genVertexArrays: n with: anIntegerArray
 ]
 
 {
 	#category : #binding,
-	#timestamp : ''
+	#timestamp : 'stlu 12/3/2020 18:10'
 }
-GLVertexArray class >> bind: anInteger [
+GLVertexArray class >> bindID: anInteger to: target [
 
 	GL bindVertexArray: anInteger
 ]
 
 {
 	#category : #binding,
-	#timestamp : ''
+	#timestamp : 'stlu 12/3/2020 18:13'
 }
-GLVertexArray class >> currentBinding [
+GLVertexArray class >> target [
 
-	^ GL getIntegerParameter: GL_VERTEX_ARRAY_BINDING
-]
-
-{
-	#category : #binding,
-	#timestamp : ''
-}
-GLVertexArray >> bind [
-
-	self class bind: id
-]
-
-{
-	#category : #binding,
-	#timestamp : ''
-}
-GLVertexArray >> boundDuring: aBlock [
-
-	| previousID |
-	self flag: #todo. "Remember actual objects"
-	previousID := self class currentBinding.
-	previousID = id ifTrue: [^ aBlock value].
-	self class bind: id.
-	aBlock ensure: [
-		self class bind: previousID]
+	^ GL_VERTEX_ARRAY
 ]
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 11/3/2020 15:41'
 }
 GLVertexArray >> delete [
 
@@ -68,17 +42,17 @@ GLVertexArray >> delete [
 ]
 
 {
-	#category : #drawing,
-	#timestamp : ''
+	#category : #testing,
+	#timestamp : 'stlu 12/14/2020 12:13'
 }
-GLVertexArray >> draw: aModeEnum [
+GLVertexArray >> isAllocated [
 
-	self draw: aModeEnum from: 0 count: numElements
+	^ GL isVertexArray: id
 ]
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 12:15'
 }
 GLVertexArray >> isVertexArray [
 

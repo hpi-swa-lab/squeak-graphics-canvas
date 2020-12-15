@@ -7,16 +7,7 @@ Class {
 
 {
 	#category : #binding,
-	#timestamp : ''
-}
-GLCubeMapArrayTexture class >> bindingEnum [
-
-	^ GL_TEXTURE_BINDING_CUBE_MAP_ARRAY
-]
-
-{
-	#category : #binding,
-	#timestamp : ''
+	#timestamp : 'stlu 10/29/2020 00:43'
 }
 GLCubeMapArrayTexture class >> target [
 

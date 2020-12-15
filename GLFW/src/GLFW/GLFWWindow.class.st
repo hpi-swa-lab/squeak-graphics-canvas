@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow class >> current [
 
@@ -19,7 +19,7 @@ GLFWWindow class >> current [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow class >> extent: aPoint title: aString [
 
@@ -28,7 +28,7 @@ GLFWWindow class >> extent: aPoint title: aString [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow class >> width: width height: height title: aString [
 
@@ -37,7 +37,7 @@ GLFWWindow class >> width: width height: height title: aString [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow class >> width: width height: height title: aString monitor: monitor share: window [
 
@@ -51,7 +51,7 @@ GLFWWindow class >> width: width height: height title: aString monitor: monitor 
 
 {
 	#category : #private,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow class >> window: aWindow [
 
@@ -62,7 +62,7 @@ GLFWWindow class >> window: aWindow [
 
 {
 	#category : #comparing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/26/2020 19:58'
 }
 GLFWWindow >> = otherWindow [
 
@@ -73,7 +73,7 @@ GLFWWindow >> = otherWindow [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:11'
 }
 GLFWWindow >> aspectRatio: pointOrNumber [
 
@@ -90,7 +90,7 @@ GLFWWindow >> aspectRatio: pointOrNumber [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 20:53'
 }
 GLFWWindow >> contentScale [
 	"The ratio between the current DPI and the platform's default DPI."
@@ -103,7 +103,7 @@ GLFWWindow >> contentScale [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/19/2020 15:58'
 }
 GLFWWindow >> context [
 
@@ -112,7 +112,7 @@ GLFWWindow >> context [
 
 {
 	#category : #callbacks,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:12'
 }
 GLFWWindow >> cursorPosCallback: aBlock [
 
@@ -121,7 +121,7 @@ GLFWWindow >> cursorPosCallback: aBlock [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:12'
 }
 GLFWWindow >> destroy [
 
@@ -130,7 +130,7 @@ GLFWWindow >> destroy [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:11'
 }
 GLFWWindow >> disableAspectRatio [
 
@@ -139,7 +139,7 @@ GLFWWindow >> disableAspectRatio [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 20:36'
 }
 GLFWWindow >> extent [
 
@@ -152,7 +152,7 @@ GLFWWindow >> extent [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:11'
 }
 GLFWWindow >> extent: aPoint [
 
@@ -161,7 +161,7 @@ GLFWWindow >> extent: aPoint [
 
 {
 	#category : #actions,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:26'
 }
 GLFWWindow >> focus [
 	"Brings the window to front and sets input focus. The window should already be visible and not iconified."
@@ -171,7 +171,7 @@ GLFWWindow >> focus [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 20:43'
 }
 GLFWWindow >> frameWidths [
 
@@ -187,7 +187,7 @@ GLFWWindow >> frameWidths [
 
 {
 	#category : #rendering,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 20:36'
 }
 GLFWWindow >> framebufferExtent [
 
@@ -200,7 +200,7 @@ GLFWWindow >> framebufferExtent [
 
 {
 	#category : #callbacks,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:12'
 }
 GLFWWindow >> framebufferSizeCallback: aBlock [
 
@@ -209,7 +209,7 @@ GLFWWindow >> framebufferSizeCallback: aBlock [
 
 {
 	#category : #input,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow >> getKey: key [
 
@@ -218,7 +218,7 @@ GLFWWindow >> getKey: key [
 
 {
 	#category : #comparing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow >> hash [
 
@@ -227,7 +227,7 @@ GLFWWindow >> hash [
 
 {
 	#category : #actions,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:18'
 }
 GLFWWindow >> hide [
 	"Hides the window if it was previously visible. If the window is already hidden or is in full screen mode, this function does nothing."
@@ -236,7 +236,7 @@ GLFWWindow >> hide [
 
 {
 	#category : #actions,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:18'
 }
 GLFWWindow >> iconify [
 	"Iconifies (minimizes) the window if it was previously restored. If the window is already iconified, this function does nothing. If the specified window is a full screen window, the original monitor resolution is restored until the window is restored."
@@ -245,7 +245,7 @@ GLFWWindow >> iconify [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:12'
 }
 GLFWWindow >> makeCurrent [
 
@@ -254,7 +254,7 @@ GLFWWindow >> makeCurrent [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 20:27'
 }
 GLFWWindow >> maxExtent: aPoint [
 
@@ -263,7 +263,7 @@ GLFWWindow >> maxExtent: aPoint [
 
 {
 	#category : #actions,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:18'
 }
 GLFWWindow >> maximize [
 	"Maximizes the window if it was previously not maximized. If the window is already maximized, this function does nothing. If the specified window is a full screen window, this function does nothing."
@@ -272,7 +272,7 @@ GLFWWindow >> maximize [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 20:27'
 }
 GLFWWindow >> minExtent: aPoint [
 
@@ -281,7 +281,7 @@ GLFWWindow >> minExtent: aPoint [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:11'
 }
 GLFWWindow >> minExtent: minPoint maxExtent: maxPoint [
 
@@ -295,7 +295,7 @@ GLFWWindow >> minExtent: minPoint maxExtent: maxPoint [
 
 {
 	#category : #monitor,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:37'
 }
 GLFWWindow >> monitor [
 	"Returns the handle of the monitor this window is in full screen on. Returns nil if the window is in windowed mode or an error occured."
@@ -308,7 +308,7 @@ GLFWWindow >> monitor [
 
 {
 	#category : #monitor,
-	#timestamp : ''
+	#timestamp : 'stlu 10/22/2020 15:57'
 }
 GLFWWindow >> monitor: aMonitor bounds: aRectangle refreshRate: hertz [
 	"Sets the monitor that the window uses for full screen mode or, if the monitor is nil, makes it windowed mode.
@@ -327,7 +327,7 @@ GLFWWindow >> monitor: aMonitor bounds: aRectangle refreshRate: hertz [
 
 {
 	#category : #callbacks,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:12'
 }
 GLFWWindow >> mouseButtonCallback: aBlock [
 
@@ -336,7 +336,7 @@ GLFWWindow >> mouseButtonCallback: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 20:55'
 }
 GLFWWindow >> opacity [
 
@@ -345,7 +345,7 @@ GLFWWindow >> opacity [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:11'
 }
 GLFWWindow >> opacity: aFloat [
 	"Set the opacity of the window, including any decorations.
@@ -355,7 +355,7 @@ GLFWWindow >> opacity: aFloat [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 14:13'
 }
 GLFWWindow >> position [
 
@@ -368,7 +368,7 @@ GLFWWindow >> position [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:11'
 }
 GLFWWindow >> position: aPoint [
 
@@ -377,7 +377,7 @@ GLFWWindow >> position: aPoint [
 
 {
 	#category : #actions,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:24'
 }
 GLFWWindow >> requestAttention [
 	"Requests user attention to the specified window.  On platforms where this is not supported, attention is requested to the application as a whole. Once the user has given attention, usually by focusing the window or application, the system will end the request automatically."
@@ -386,7 +386,7 @@ GLFWWindow >> requestAttention [
 
 {
 	#category : #actions,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:18'
 }
 GLFWWindow >> restore [
 	"Restores the window if it was previously iconified (minimized) or maximized. If the window is already restored, this function does nothing. If the window is a full screen window, the resolution chosen for the window is restored on the selected monitor."
@@ -395,7 +395,7 @@ GLFWWindow >> restore [
 
 {
 	#category : #testing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow >> shouldClose [
 
@@ -404,7 +404,7 @@ GLFWWindow >> shouldClose [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:11'
 }
 GLFWWindow >> shouldClose: aBoolean [
 
@@ -413,7 +413,7 @@ GLFWWindow >> shouldClose: aBoolean [
 
 {
 	#category : #actions,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:19'
 }
 GLFWWindow >> show [
 	"Makes the window visible if it was previously hidden. If the window is already visible or is in full screen mode, this function does nothing. By default, windowed mode windows are focused when shown."
@@ -422,7 +422,7 @@ GLFWWindow >> show [
 
 {
 	#category : #rendering,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:13'
 }
 GLFWWindow >> swapBuffers [
 
@@ -431,7 +431,7 @@ GLFWWindow >> swapBuffers [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 10/21/2020 21:12'
 }
 GLFWWindow >> title: aString [
 

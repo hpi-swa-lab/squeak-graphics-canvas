@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 SgSpaceGame class >> open [
 
@@ -19,7 +19,7 @@ SgSpaceGame class >> open [
 
 {
 	#category : #'repaint boundary',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 SgSpaceGame >> isRepaintBoundary [
 
@@ -28,7 +28,7 @@ SgSpaceGame >> isRepaintBoundary [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 SgSpaceGame >> open [
 	

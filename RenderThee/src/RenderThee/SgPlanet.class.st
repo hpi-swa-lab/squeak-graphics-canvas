@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 SgPlanet class >> planet: aNumber [
 
@@ -21,7 +21,7 @@ SgPlanet class >> planet: aNumber [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 SgPlanet >> id: anInteger [
 

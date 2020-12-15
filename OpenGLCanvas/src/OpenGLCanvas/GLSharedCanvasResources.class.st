@@ -19,7 +19,7 @@ Class {
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLSharedCanvasResources >> font: aFont [
 
@@ -31,7 +31,7 @@ GLSharedCanvasResources >> font: aFont [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLSharedCanvasResources >> fontProgram [
 
@@ -40,7 +40,7 @@ GLSharedCanvasResources >> fontProgram [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLSharedCanvasResources >> initialize [
 
@@ -55,13 +55,13 @@ GLSharedCanvasResources >> initialize [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 12/1/2020 02:52'
 }
 GLSharedCanvasResources >> initializeBuffers [
 
 	vao := GLVertexArray create.
 	vao bind.
-	vbo := GLArrayBuffer create.
+	vbo := GLBuffer create targetArrayBuffer.
 	vbo
 		usage: GL_STATIC_DRAW
 		data: #(
@@ -74,9 +74,13 @@ GLSharedCanvasResources >> initializeBuffers [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 12/10/2020 13:20'
 }
 GLSharedCanvasResources >> initializeProgramAttributes [
+
+	self assert: textureProgram aPosLocation = outlineProgram aPosLocation.
+	self assert: textureProgram aPosLocation = rectangleProgram aPosLocation.
+	self assert: textureProgram aTexCoordsLocation = outlineProgram aTexCoordsLocation.
 
 	vbo boundDuring: [
 		textureProgram useDuring: [
@@ -100,20 +104,20 @@ GLSharedCanvasResources >> initializeProgramAttributes [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 12/3/2020 18:56'
 }
 GLSharedCanvasResources >> initializePrograms [
 
-	textureProgram := GL getShaderProgram: GLCanvasTextureProgram.
-	outlineProgram := GL getShaderProgram: GLCanvasOutlineProgram.
-	rectangleProgram := GL getShaderProgram: GLCanvasRectangleProgram.
-	fontProgram := GL getShaderProgram: GLCanvasFontProgram.
+	textureProgram := GLCanvasTextureProgram instance.
+	outlineProgram := GLCanvasOutlineProgram instance.
+	rectangleProgram := GLCanvasRectangleProgram instance.
+	fontProgram := GLCanvasFontProgram instance.
 	GL checkForError
 ]
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLSharedCanvasResources >> outlineProgram [
 
@@ -122,7 +126,7 @@ GLSharedCanvasResources >> outlineProgram [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLSharedCanvasResources >> rectangleProgram [
 
@@ -131,7 +135,7 @@ GLSharedCanvasResources >> rectangleProgram [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLSharedCanvasResources >> textureProgram [
 
@@ -140,7 +144,7 @@ GLSharedCanvasResources >> textureProgram [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLSharedCanvasResources >> vao [
 
@@ -149,7 +153,7 @@ GLSharedCanvasResources >> vao [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLSharedCanvasResources >> vao: anObject [
 
@@ -158,7 +162,7 @@ GLSharedCanvasResources >> vao: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLSharedCanvasResources >> vbo [
 
@@ -167,7 +171,7 @@ GLSharedCanvasResources >> vbo [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLSharedCanvasResources >> vbo: anObject [
 

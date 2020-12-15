@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicDrawPolygon class >> vertices: collectionOfPoints fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -23,7 +23,7 @@ PicDrawPolygon class >> vertices: collectionOfPoints fillStyle: aFillStyle borde
 
 {
 	#category : #drawing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicDrawPolygon >> drawOn: aCanvas [
 
@@ -36,7 +36,7 @@ PicDrawPolygon >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicDrawPolygon >> estimatedBounds [
 
@@ -45,7 +45,7 @@ PicDrawPolygon >> estimatedBounds [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicDrawPolygon >> vertices [
 
@@ -54,7 +54,7 @@ PicDrawPolygon >> vertices [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicDrawPolygon >> vertices: anObject [
 
