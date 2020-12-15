@@ -2,16 +2,16 @@ Extension { #name : #GLSLScalar }
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 12/1/2020 17:52'
+	#timestamp : 'zagto 12/15/2020 18:27'
 }
 GLSLScalar >> * another [
-	self = another ifFalse: [
+	(self = another or: [(another isVector or: [another isMatrix]) and: [another componentType = self]]) ifFalse: [
 		^ self error: 'Tried to multiply ', self class name , ' with ', another class name, '.'].
 
 	^ SLMappingToOperator new
-		type: self;
+		type: another;
 		targetSelector: '*'
-	
+
 ]
 
 {
@@ -99,4 +99,16 @@ GLSLScalar >> negated [
 	^ SLMappingToOperator new
 			type: self componentType;
 			selector: '-'
+]
+
+{
+	#category : #'*ShadingLanguage',
+	#timestamp : 'zagto 12/15/2020 18:04'
+}
+GLSLScalar >> normalized [
+	(self componentType isFloat or: [ self componentType isDouble ]) ifFalse: [
+		^ self error: 'tried to normalize a scalar that is not of float or double type'].
+	^ SLMappingToCall new
+			type: self;
+			targetSelector: 'normalize'
 ]

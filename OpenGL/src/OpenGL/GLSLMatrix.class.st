@@ -6,6 +6,18 @@ Class {
 }
 
 {
+	#category : #'instance creation',
+	#timestamp : 'zagto 12/15/2020 16:20'
+}
+GLSLMatrix class >> componentType: type numColumns: columns numRows: rows [
+	self allSubclassesDo: [ :cls |
+		(cls componentType = type and: [ cls numColumns = columns ] and: [ cls numRows = rows]) ifTrue: [
+			^ cls instance]].
+	
+	self error: 'no such matrix type'
+]
+
+{
 	#category : #'*OpenGL-Wrappers-CodeGeneration',
 	#timestamp : 'stlu 12/15/2020 12:49'
 }

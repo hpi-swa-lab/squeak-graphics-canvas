@@ -2,6 +2,36 @@ Extension { #name : #GLSLVector }
 
 {
 	#category : #'*ShadingLanguage',
+	#timestamp : 'zagto 12/15/2020 17:20'
+}
+GLSLVector >> * another [
+	(another isMatrix or: [ another isVector ] or: [ another isScalar ]) ifFalse: [
+		^ self error: 'Tried to multiply vector with something that is neither a vector nor a matrix nor a scalar'].
+	self componentType = another componentType ifFalse: [
+		^ self error: 'Tried to multiply ', self class name , ' with ', another class name, ', which have different component types.'].
+	
+	another isMatrix ifTrue: [
+		self numColumns = another numRows ifFalse: [
+			^ self error: 'Tried to multiply vector of length', self numComponents, 'with matrix of height ', another numRows].
+		^ SLMappingToOperator new
+			type: (GLSLVector componentType: self componentType numComponents: another numColumns);
+			targetSelector: '*'].
+		
+	another isVector ifTrue: [
+		self numComponents = another numComponents ifFalse: [
+			^ self error: 'Tried to multiply vector of length', self numComponents, 'with vector of length ', another numComponents].
+		^ SLMappingToOperator new
+			type: self;
+			targetSelector: '*'].
+	
+	"another is a scalar"
+	^ SLMappingToOperator new
+		type: self;
+		targetSelector: '*'
+]
+
+{
+	#category : #'*ShadingLanguage',
 	#timestamp : 'stlu 12/15/2020 13:09'
 }
 GLSLVector >> + another [
@@ -86,10 +116,50 @@ GLSLVector >> doesNotUnderstand: aMessage [
 
 {
 	#category : #'*ShadingLanguage',
+	#timestamp : 'zagto 12/15/2020 18:25'
+}
+GLSLVector >> dot: another [
+	(self componentType isFloat or: [ self componentType isDouble ]) ifFalse: [
+		^ self error: 'tried to normalize a vector that is not of float or double type'].
+	another isVector ifFalse: [
+		^ self error: 'tried to take dot product of ', self, ' with a ', another, ' which is not a vector'].
+	self componentType = another componentType ifFalse: [
+		^ self error: 'tried to take dot product of ', self, ' and ', another].
+	^ SLMappingToCall new
+			type: self componentType;
+			targetSelector: 'dot'
+]
+
+{
+	#category : #'*ShadingLanguage',
+	#timestamp : 'zagto 12/15/2020 18:13'
+}
+GLSLVector >> max: another [
+	(self = another or: [another = self componentType]) ifFalse: [
+		^ self error: 'tried to take max of ', self, ' and ', another].
+	^ SLMappingToCall new
+			type: self;
+			targetSelector: 'max'
+]
+
+{
+	#category : #'*ShadingLanguage',
 	#timestamp : 'stlu 12/15/2020 13:10'
 }
 GLSLVector >> negated [
 	^ SLMappingToOperator new
 			type: self componentType;
 			targetSelector: '-'
+]
+
+{
+	#category : #'*ShadingLanguage',
+	#timestamp : 'zagto 12/15/2020 18:04'
+}
+GLSLVector >> normalized [
+	(self componentType isFloat or: [ self componentType isDouble ]) ifFalse: [
+		^ self error: 'tried to normalize a vector that is not of float or double type'].
+	^ SLMappingToCall new
+			type: self;
+			targetSelector: 'normalize'
 ]
