@@ -43,7 +43,7 @@ Matrix4x4 class >> initialize [
 ]
 
 {
-	#category : #'instance creation',
+	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Matrix4x4 class >> numElements [
@@ -69,6 +69,23 @@ Matrix4x4 class >> ortho: aRectangle near: aNumber far: anotherNumber [
     M[3][1] = -(t + b) / (t - b); 
     M[3][2] = -(f + n) / (f - n); 
     M[3][3] = 1; "
+]
+
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 12/16/2020 13:32'
+}
+Matrix4x4 class >> perspective: fovy aspectRatio: ratio near: zNear far: zFar [
+
+	| tanHalfFovy |
+	tanHalfFovy := (fovy / 2) tan.
+	^ self identity
+		a11: 1.0 / (ratio * tanHalfFovy);
+		a22: 1.0 / tanHalfFovy;
+		a33: zFar / (zNear - zFar);
+		a43: -1.0;
+		a34: (zFar * zNear) negated / (zFar - zNear);
+		yourself
 ]
 
 {
@@ -109,6 +126,32 @@ Matrix4x4 class >> perspectiveAngleOfView: angleOfView ratio: ratio near: near f
 	^ self perspective: bounds near: near far: far
 	
 	
+]
+
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 12/16/2020 12:56'
+}
+Matrix4x4 class >> position: positionVector target: targetVector up: upVector [
+	"Build a right-handed look at view matrix."
+	| front side up |
+	front := (targetVector - positionVector) normalized.
+	side := (front cross: upVector normalized) normalized.
+	up := side cross: front.
+	^ self identity
+		a11: side x;
+		a12: side y;
+		a13: side z;
+		a21: up x;
+		a22: up y;
+		a23: up z;
+		a31: front x negated;
+		a32: front y negated;
+		a33: front z negated;
+		a14: (side dot: positionVector) negated;
+		a24: (up dot: positionVector) negated;
+		a34: (front dot: positionVector) negated;
+		yourself
 ]
 
 {
