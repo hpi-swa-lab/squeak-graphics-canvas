@@ -10,6 +10,15 @@ Class {
 }
 
 {
+	#category : #'instance creation',
+	#timestamp : 'stlu 12/16/2020 20:45'
+}
+GLProgramInput class >> allInProgram: aProgram [
+
+	^ self queryImp getInputs: aProgram
+]
+
+{
 	#category : #querying,
 	#timestamp : 'stlu 12/13/2020 16:08'
 }

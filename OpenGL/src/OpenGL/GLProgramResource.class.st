@@ -17,6 +17,15 @@ Class {
 }
 
 {
+	#category : #'instance creation',
+	#timestamp : 'stlu 12/16/2020 20:44'
+}
+GLProgramResource class >> allInProgram: aProgram [
+
+	self subclassResponsibility
+]
+
+{
 	#category : #querying,
 	#timestamp : 'stlu 12/13/2020 14:25'
 }
@@ -63,6 +72,15 @@ GLProgramResource class >> propertiesToQuery [
 
 	^ propertiesToQuery ifNil: [
 		propertiesToQuery := self getPropertiesToQuery asWordArray]
+]
+
+{
+	#category : #querying,
+	#timestamp : 'stlu 12/16/2020 20:32'
+}
+GLProgramResource class >> queryImp [
+
+	^ GL programInterfaceQueryImplementation
 ]
 
 {

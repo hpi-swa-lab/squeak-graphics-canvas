@@ -2,7 +2,7 @@ Extension { #name : #GLSLVector }
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 12/15/2020 17:20'
+	#timestamp : 'stlu 12/16/2020 14:31'
 }
 GLSLVector >> * another [
 	(another isMatrix or: [ another isVector ] or: [ another isScalar ]) ifFalse: [
@@ -11,7 +11,7 @@ GLSLVector >> * another [
 		^ self error: 'Tried to multiply ', self class name , ' with ', another class name, ', which have different component types.'].
 	
 	another isMatrix ifTrue: [
-		self numColumns = another numRows ifFalse: [
+		self numComponents = another numRows ifFalse: [
 			^ self error: 'Tried to multiply vector of length', self numComponents, 'with matrix of height ', another numRows].
 		^ SLMappingToOperator new
 			type: (GLSLVector componentType: self componentType numComponents: another numColumns);

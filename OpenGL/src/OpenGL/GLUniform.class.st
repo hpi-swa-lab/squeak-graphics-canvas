@@ -4,11 +4,21 @@ Class {
 	#instVars : [
 		'location',
 		'type',
+		'value',
 		'stateAccessImp'
 	],
 	#category : #'OpenGL-Wrappers-Programs',
 	#commentStamp : ''
 }
+
+{
+	#category : #'instance creation',
+	#timestamp : 'stlu 12/16/2020 20:46'
+}
+GLUniform class >> allInProgram: aProgram [
+
+	^ self queryImp getUniforms: aProgram
+]
 
 {
 	#category : #'*OpenGL-Wrappers-CodeGeneration',
@@ -79,6 +89,15 @@ GLUniform class >> scalarSetterTemplate [
 	^ 'setTo{1}: {2}
 
 	stateAccessImp set: self to{1}: {2}'
+]
+
+{
+	#category : #getting,
+	#timestamp : 'stlu 12/16/2020 19:38'
+}
+GLUniform >> getValue [
+
+	self notYetImplemented
 ]
 
 {

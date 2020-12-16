@@ -20,22 +20,23 @@ SLDemoProgram class >> attributes [
 
 {
 	#category : #shaders,
-	#timestamp : 'zagto 12/15/2020 18:35'
+	#timestamp : 'stlu 12/16/2020 15:57'
 }
-SLDemoProgram class >> fragmentShader: out inputs: in [
+SLDemoProgram class >> fragmentShader: out inputs: in uniforms: u [
 
 	<fragmentShader>
-	| cubeColor ambientColor lightColor lightPos diff diffuse norm lightDir |
-	cubeColor := 1.0 @ 0.5 @ 0.9.
-	ambientColor := 0.1 @ 0.1 @ 0.1.
+	| objectColor lightColor lightPos ambientStrength diff diffuse norm lightDir ambient |
+	objectColor := 1.0 @ 0.5 @ 0.31.
 	lightColor := 1.0 @ 1.0 @ 1.0.
-	lightPos := 1.0 @ 1.0 @ 2.0.
+	lightPos := ((1.2 @ 1.0 @ 2.0 @ 0.0) * u model beFloatMatrix4x4) xyz.
+	ambientStrength := 0.1.
+	ambient := ambientStrength * lightColor.
 	
 	norm := in normal beFloatVector3 normalized.
 	lightDir := (lightPos - in fragPos beFloatVector3) normalized.
 	diff := (norm dot: lightDir) max: 0.0.
 	diffuse := diff * lightColor.
-	out FragColor: ((ambientColor * 1.0 + diffuse) * cubeColor) @ 1.0.
+	out FragColor: (ambient + diffuse * objectColor) @ 1.0.
 ]
 
 {
@@ -49,17 +50,20 @@ SLDemoProgram class >> initialize [
 
 {
 	#category : #shaders,
-	#timestamp : 'zagto 12/15/2020 19:06'
+	#timestamp : 'stlu 12/16/2020 13:53'
 }
 SLDemoProgram class >> vertexShader: out inputs: in uniforms: u [
 
 	<vertexShader>
-	| pos fragPos2 |
-	pos := in aPos beFloatVector3.
-	out normal: in aNormal beFloatVector3.
-	fragPos2 := (u model beFloatMatrix4x4 * (pos @ 1.0)) xyz.
-	out fragPos: fragPos2.
-	out gl_Position: u view beFloatMatrix4x4 * u projection beFloatMatrix4x4 * (fragPos2 @ 1.0).
+	| position fragPosition modelMatrix viewMatrix projectionMatrix |
+	position := in aPos beFloatVector3.
+	modelMatrix := u model beFloatMatrix4x4.
+	viewMatrix := u view beFloatMatrix4x4.
+	projectionMatrix := u projection beFloatMatrix4x4.
+	fragPosition := (modelMatrix * (position @ 1.0)) xyz.
+	out fragPos: fragPosition.
+	out normal: in aNormal beFloatVector3. "pass through"
+	out gl_Position: projectionMatrix * viewMatrix * (fragPosition @ 1.0).
 ]
 
 {

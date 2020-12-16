@@ -1,5 +1,5 @@
 Class {
-	#name : #GLProgramResources,
+	#name : #GLProgramInterfaces,
 	#superclass : #Object,
 	#instVars : [
 		'program',
@@ -14,7 +14,7 @@ Class {
 	#category : #'instance creation',
 	#timestamp : 'stlu 12/13/2020 15:28'
 }
-GLProgramResources class >> program: aProgram [
+GLProgramInterfaces class >> program: aProgram [
 
 	^ self new
 		initializeWithProgram: aProgram;
@@ -25,7 +25,7 @@ GLProgramResources class >> program: aProgram [
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 19:43'
 }
-GLProgramResources >> atomicCounterBuffers [
+GLProgramInterfaces >> atomicCounterBuffers [
 
 	self notYetImplemented
 ]
@@ -34,29 +34,27 @@ GLProgramResources >> atomicCounterBuffers [
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 19:45'
 }
-GLProgramResources >> bufferVariables [
+GLProgramInterfaces >> bufferVariables [
 
 	self notYetImplemented
 ]
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/13/2020 15:56'
+	#timestamp : 'stlu 12/16/2020 21:09'
 }
-GLProgramResources >> initializeWithProgram: aProgram [
+GLProgramInterfaces >> initializeWithProgram: aProgram [
 
-	| impl |
 	program := aProgram.
-	impl := GL programInterfaceQueryImplementation.
-	uniforms := impl getUniforms: program.
-	inputs := impl getInputs: program
+	uniforms := GLProgramInterface program: program interface: GLUniform.
+	inputs := GLProgramInterface program: program interface: GLProgramInput
 ]
 
 {
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 19:42'
 }
-GLProgramResources >> inputs [
+GLProgramInterfaces >> inputs [
 
 	^ inputs
 ]
@@ -65,7 +63,7 @@ GLProgramResources >> inputs [
 	#category : #accessing,
 	#timestamp : 'stlu 12/13/2020 14:57'
 }
-GLProgramResources >> outputs [
+GLProgramInterfaces >> outputs [
 
 	self notYetImplemented
 ]
@@ -74,7 +72,7 @@ GLProgramResources >> outputs [
 	#category : #printing,
 	#timestamp : 'stlu 12/13/2020 15:48'
 }
-GLProgramResources >> printOn: aStream [
+GLProgramInterfaces >> printOn: aStream [
 
 	super printOn: aStream
 ]
@@ -83,7 +81,7 @@ GLProgramResources >> printOn: aStream [
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 19:42'
 }
-GLProgramResources >> program [
+GLProgramInterfaces >> program [
 
 	^ program
 ]
@@ -92,7 +90,7 @@ GLProgramResources >> program [
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 19:45'
 }
-GLProgramResources >> shaderStorageBlocks [
+GLProgramInterfaces >> shaderStorageBlocks [
 
 	self notYetImplemented
 ]
@@ -101,7 +99,7 @@ GLProgramResources >> shaderStorageBlocks [
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 19:43'
 }
-GLProgramResources >> subroutineUniforms [
+GLProgramInterfaces >> subroutineUniforms [
 
 	self notYetImplemented
 ]
@@ -110,7 +108,7 @@ GLProgramResources >> subroutineUniforms [
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 19:43'
 }
-GLProgramResources >> subroutines [
+GLProgramInterfaces >> subroutines [
 
 	self notYetImplemented
 ]
@@ -119,7 +117,7 @@ GLProgramResources >> subroutines [
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 19:45'
 }
-GLProgramResources >> transformFeedbackBuffers [
+GLProgramInterfaces >> transformFeedbackBuffers [
 
 	self notYetImplemented
 ]
@@ -128,7 +126,7 @@ GLProgramResources >> transformFeedbackBuffers [
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 19:44'
 }
-GLProgramResources >> transformFeedbackVaryings [
+GLProgramInterfaces >> transformFeedbackVaryings [
 
 	self notYetImplemented
 ]
@@ -137,25 +135,16 @@ GLProgramResources >> transformFeedbackVaryings [
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 19:43'
 }
-GLProgramResources >> uniformBlocks [
+GLProgramInterfaces >> uniformBlocks [
 
 	self notYetImplemented
 ]
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 13:54'
-}
-GLProgramResources >> uniformNamed: aString [
-
-	^ uniforms detect: [:uniform | uniform name = aString]
-]
-
-{
-	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 19:42'
 }
-GLProgramResources >> uniforms [
+GLProgramInterfaces >> uniforms [
 
 	^ uniforms
 ]

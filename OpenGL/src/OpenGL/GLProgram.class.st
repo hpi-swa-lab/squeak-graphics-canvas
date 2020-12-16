@@ -3,7 +3,7 @@ Class {
 	#superclass : #GLObject,
 	#instVars : [
 		'shaders',
-		'resources'
+		'interfaces'
 	],
 	#category : #'OpenGL-Wrappers-Programs',
 	#commentStamp : ''
@@ -182,11 +182,11 @@ GLProgram >> initialize [
 
 {
 	#category : #'accessing-resources',
-	#timestamp : 'stlu 11/13/2020 19:47'
+	#timestamp : 'stlu 12/16/2020 19:59'
 }
 GLProgram >> inputs [
 
-	^ resources inputs
+	^ interfaces inputs
 ]
 
 {
@@ -258,20 +258,11 @@ GLProgram >> linkingFailed [
 
 {
 	#category : #actions,
-	#timestamp : 'stlu 12/14/2020 12:29'
+	#timestamp : 'stlu 12/16/2020 19:59'
 }
 GLProgram >> linkingSucceeded [
 
-	resources := GLProgramResources program: self
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 19:41'
-}
-GLProgram >> resources [
-
-	^ resources
+	interfaces := GLProgramInterfaces program: self
 ]
 
 {
@@ -285,20 +276,11 @@ GLProgram >> shaders [
 
 {
 	#category : #'accessing-resources',
-	#timestamp : 'stlu 12/13/2020 15:21'
-}
-GLProgram >> uniformNamed: aString [
-
-	^ resources uniformNamed: aString
-]
-
-{
-	#category : #'accessing-resources',
-	#timestamp : 'stlu 11/13/2020 19:42'
+	#timestamp : 'stlu 12/16/2020 19:59'
 }
 GLProgram >> uniforms [
 
-	^ resources uniforms
+	^ interfaces uniforms
 ]
 
 {
