@@ -181,9 +181,10 @@ SLGenerator >> generate: aMessageNode condition: isNegated [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/2/2020 03:42'
+	#timestamp : 'zagto 12/15/2020 19:01'
 }
 SLGenerator >> generate: aMessageNode operator: operator [
+	stream nextPutAll: '('.
 	aMessageNode numArgs = 0 ifTrue: [
 		stream nextPutAll: operator.
 		self visitNode: aMessageNode receiver].
@@ -191,7 +192,8 @@ SLGenerator >> generate: aMessageNode operator: operator [
 	aMessageNode numArgs = 1 ifTrue: [
 		self visitNode: aMessageNode receiver.
 		stream space; nextPutAll: operator; space.
-		self visitNode: aMessageNode arguments first]
+		self visitNode: aMessageNode arguments first].
+	stream nextPutAll: ')'
 ]
 
 {

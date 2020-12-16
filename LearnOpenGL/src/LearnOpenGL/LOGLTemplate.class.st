@@ -89,13 +89,13 @@ LOGLTemplate >> renderLoop [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/13/2020 15:46'
+	#timestamp : 'zagto 12/15/2020 14:18'
 }
 LOGLTemplate >> run [
 
 	"GLFW init."
 	GLFW targetLibrary: GL3_3 profile: #core.
-	GLFW windowHint: GLFW FLOATING with: true.
+	"GLFW windowHint: GLFW FLOATING with: true."
 
 	window := GLFWWindow
 				width: self initialWidth

@@ -2,7 +2,8 @@ Class {
 	#name : #SLDemoProgram,
 	#superclass : #SLStaticProgram,
 	#instVars : [
-		'aPosLocation'
+		'aPosLocation',
+		'aNormalLocation'
 	],
 	#category : #'ShadingLanguage-Examples',
 	#commentStamp : ''
@@ -10,21 +11,31 @@ Class {
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 12/8/2020 14:03'
+	#timestamp : 'zagto 12/15/2020 17:29'
 }
 SLDemoProgram class >> attributes [
 
-	^ #('aPos')
+	^ #('aPos' 'aNormal')
 ]
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 12/9/2020 15:56'
+	#timestamp : 'zagto 12/15/2020 18:35'
 }
 SLDemoProgram class >> fragmentShader: out inputs: in [
 
 	<fragmentShader>
-	out FragColor: 1.0@0.5@0.9@1.0
+	| cubeColor ambientColor lightColor lightPos diff diffuse norm lightDir |
+	cubeColor := 1.0 @ 0.5 @ 0.9.
+	ambientColor := 0.1 @ 0.1 @ 0.1.
+	lightColor := 1.0 @ 1.0 @ 1.0.
+	lightPos := 1.0 @ 1.0 @ 2.0.
+	
+	norm := in normal beFloatVector3 normalized.
+	lightDir := (lightPos - in fragPos beFloatVector3) normalized.
+	diff := (norm dot: lightDir) max: 0.0.
+	diffuse := diff * lightColor.
+	out FragColor: ((ambientColor * 1.0 + diffuse) * cubeColor) @ 1.0.
 ]
 
 {
@@ -38,19 +49,31 @@ SLDemoProgram class >> initialize [
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 12/13/2020 17:39'
+	#timestamp : 'zagto 12/15/2020 19:06'
 }
 SLDemoProgram class >> vertexShader: out inputs: in uniforms: u [
 
 	<vertexShader>
-	| pos |
-	pos := in aPos beFloatVector2.
-	out gl_Position: pos + u time beFloat @ 0.0 @ 1.0
+	| pos fragPos2 |
+	pos := in aPos beFloatVector3.
+	out normal: in aNormal beFloatVector3.
+	fragPos2 := (u model beFloatMatrix4x4 * (pos @ 1.0)) xyz.
+	out fragPos: fragPos2.
+	out gl_Position: u view beFloatMatrix4x4 * u projection beFloatMatrix4x4 * (fragPos2 @ 1.0).
 ]
 
 {
 	#category : #generated,
-	#timestamp : 'stlu 12/8/2020 17:01'
+	#timestamp : 'zagto 12/15/2020 17:30'
+}
+SLDemoProgram >> aNormalLocation [
+
+	^ aNormalLocation
+]
+
+{
+	#category : #generated,
+	#timestamp : 'zagto 12/15/2020 17:30'
 }
 SLDemoProgram >> aPosLocation [
 
@@ -59,7 +82,7 @@ SLDemoProgram >> aPosLocation [
 
 {
 	#category : #generated,
-	#timestamp : 'stlu 12/8/2020 17:01'
+	#timestamp : 'zagto 12/15/2020 17:30'
 }
 SLDemoProgram >> initializeLocations [
 
@@ -67,4 +90,5 @@ SLDemoProgram >> initializeLocations [
 	
 	
 	aPosLocation := self registerAttribute: 'aPos'.
+	aNormalLocation := self registerAttribute: 'aNormal'.
 ]

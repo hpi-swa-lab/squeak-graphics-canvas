@@ -73,6 +73,46 @@ Matrix4x4 class >> ortho: aRectangle near: aNumber far: anotherNumber [
 
 {
 	#category : #'instance creation',
+	#timestamp : 'zagto 12/15/2020 15:47'
+}
+Matrix4x4 class >> perspective: bounds near: near far: far [
+	
+	"https://www.scratchapixel.com/lessons/3d-basic-rendering/perspective-and-orthographic-projection-matrix/opengl-perspective-projection-matrix"
+	^ self identity
+		a11: 2 * near / bounds width;
+		a22: 2 * near / bounds height;
+		
+		a13: (bounds right + bounds left) / bounds width;
+		a23: (bounds top + bounds bottom) / bounds height;
+		a33: (far + near) / (far - near) negated;
+		a43: -1;
+		
+		a34: -2 * far * near / (far - near).
+		
+]
+
+{
+	#category : #'instance creation',
+	#timestamp : 'zagto 12/15/2020 15:48'
+}
+Matrix4x4 class >> perspectiveAngleOfView: angleOfView ratio: ratio near: near far: far [
+	| scale bounds |
+	
+	"https://www.scratchapixel.com/lessons/3d-basic-rendering/perspective-and-orthographic-projection-matrix/opengl-perspective-projection-matrix"
+	scale := (angleOfView * 0.5 * Float pi / 180.0) tan * near.
+	bounds := Rectangle
+		left: ratio * scale negated
+		right: ratio * scale
+		top: scale
+		bottom: scale negated.
+	
+	^ self perspective: bounds near: near far: far
+	
+	
+]
+
+{
+	#category : #'instance creation',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Matrix4x4 class >> rotatedBy: angle around: axis centeredAt: origin [

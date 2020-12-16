@@ -100,13 +100,13 @@ GLShader >> getAttribute: attributeName [
 
 {
 	#category : #compilation,
-	#timestamp : 'stlu 12/14/2020 12:09'
+	#timestamp : 'zagto 12/15/2020 18:17'
 }
 GLShader >> getInfoLog [
 
 	| length |
 	length := self getInfoLogLength.
-	length < 0 ifTrue: [^ ''].
+	length <= 1 ifTrue: [^ ''].
 	ByteArray new: length during: [:result |
 		GL getShaderInfoLog: id with: result size with: nil with: result.
 		^ result allButLast "remove null-terminator" utf8Decoded withSqueakLineEndings]

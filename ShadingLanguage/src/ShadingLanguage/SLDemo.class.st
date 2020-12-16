@@ -12,26 +12,34 @@ Class {
 
 {
 	#category : #running,
-	#timestamp : 'stlu 12/14/2020 11:54'
+	#timestamp : 'zagto 12/15/2020 19:11'
 }
 SLDemo >> render [
 
-	GL setClearColor: Color white.
-	GL clear: GL_COLOR_BUFFER_BIT.
+	GL setClearColor: Color black.
+	GL clear: (GL_COLOR_BUFFER_BIT bitOr: GL_DEPTH_BUFFER_BIT).
+	
+
 	
 	vao boundDuring: [
 		program useDuring: [
-			| time |
-			time := (Time millisecondClock / 1000) sin.
-			(program uniformNamed: 'time') setTo: time asFloat.
-			vbo draw: GL_TRIANGLES from: 0 count: 3]].
+			| time model view projection |
+			time := (Time millisecondClock / 100) \\ 360.
+			model :=  (Matrix4x4 withOffset: 0@0@ 0) * (Matrix4x4 withRotation: time around: 0 @ 1 @ 0) .
+			view := Matrix4x4 withOffset: 0 @ 0 @ 1.
+			projection := Matrix4x4 perspectiveAngleOfView: 90 ratio: 4/3 near: 0.1 far: 100.
+			(program uniformNamed: 'model') setTo: model.
+			(program uniformNamed: 'view') setTo: view.
+			(program uniformNamed: 'projection') setTo: projection.
+			"(program uniformNamed: 'time') setTo: time asFloat."
+			vbo draw: GL_TRIANGLES from: 0 count: 36]].
 	
 	GL checkForError
 ]
 
 {
 	#category : #running,
-	#timestamp : 'stlu 12/8/2020 17:51'
+	#timestamp : 'zagto 12/15/2020 17:52'
 }
 SLDemo >> setUp [
 
@@ -46,15 +54,62 @@ SLDemo >> setUp [
 	vbo
 		usage: GL_STATIC_DRAW
 		data: #(
-			-0.5 -0.5
-			0.5 -0.5
-			0.0 0.5) asFloat32Array.
+		  -0.5 -0.5 -0.5 0.0 0.0 -1.0
+		  0.5 -0.5 -0.5 0.0 0.0 -1.0
+		  0.5 0.5 -0.5 0.0 0.0 -1.0
+		  0.5 0.5 -0.5 0.0 0.0 -1.0
+		  -0.5 0.5 -0.5 0.0 0.0 -1.0
+		  -0.5 -0.5 -0.5 0.0 0.0 -1.0
+		  
+		  -0.5 -0.5 0.5 0.0 0.0 1.0
+		  0.5 -0.5 0.5 0.0 0.0 1.0
+		  0.5 0.5 0.5 0.0 0.0 1.0
+		  0.5 0.5 0.5 0.0 0.0 1.0
+		  -0.5 0.5 0.5 0.0 0.0 1.0
+		  -0.5 -0.5 0.5 0.0 0.0 1.0
+		  
+		  -0.5 0.5 0.5 -1.0 0.0 0.0
+		  -0.5 0.5 -0.5 -1.0 0.0 0.0
+		  -0.5 -0.5 -0.5 -1.0 0.0 0.0
+		  -0.5 -0.5 -0.5 -1.0 0.0 0.0
+		  -0.5 -0.5 0.5 -1.0 0.0 0.0
+		  -0.5 0.5 0.5 -1.0 0.0 0.0
+		  
+		  0.5 0.5 0.5 1.0 0.0 0.0
+		  0.5 0.5 -0.5 1.0 0.0 0.0
+		  0.5 -0.5 -0.5 1.0 0.0 0.0
+		  0.5 -0.5 -0.5 1.0 0.0 0.0
+		  0.5 -0.5 0.5 1.0 0.0 0.0
+		  0.5 0.5 0.5 1.0 0.0 0.0
+		  
+		  -0.5 -0.5 -0.5 0.0 -1.0 0.0
+		  0.5 -0.5 -0.5 0.0 -1.0 0.0
+		  0.5 -0.5 0.5 0.0 -1.0 0.0
+		  0.5 -0.5 0.5 0.0 -1.0 0.0
+		  -0.5 -0.5 0.5 0.0 -1.0 0.0
+		  -0.5 -0.5 -0.5 0.0 -1.0 0.0
+		  
+		  -0.5 0.5 -0.5 0.0 1.0 0.0
+		  0.5 0.5 -0.5 0.0 1.0 0.0
+		  0.5 0.5 0.5 0.0 1.0 0.0
+		  0.5 0.5 0.5 0.0 1.0 0.0
+		  -0.5 0.5 0.5 0.0 1.0 0.0
+		  -0.5 0.5 -0.5 0.0 1.0 0.0
+			) asFloat32Array.
 	
 	program
 		vertexAttrib: program aPosLocation
-		components: 2
-		stride: 8
+		components: 3
+		stride: 4*6
 		offset: 0.
+		
+	program
+		vertexAttrib: program aNormalLocation
+		components: 3
+		stride: 4*6
+		offset: 4*3.
+		
+	GL enable: GL_DEPTH_TEST.
 	
 	GL checkForError
 ]
