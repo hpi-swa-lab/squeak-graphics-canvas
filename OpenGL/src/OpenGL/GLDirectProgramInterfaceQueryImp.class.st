@@ -16,7 +16,7 @@ GLDirectProgramInterfaceQueryImp >> getInputs: aProgram [
 
 {
 	#category : #'resource querying',
-	#timestamp : 'stlu 12/13/2020 14:42'
+	#timestamp : 'stlu 12/16/2020 18:54'
 }
 GLDirectProgramInterfaceQueryImp >> getResource: aResourceClass program: aProgram at: index [
 
@@ -24,12 +24,12 @@ GLDirectProgramInterfaceQueryImp >> getResource: aResourceClass program: aProgra
 	properties := self
 					queryResourceProperties: aResourceClass propertiesToQuery
 					program: aProgram
-					interface: aResourceClass interface
+					interface: aResourceClass interfaceEnum
 					at: index.
 	name := self
 				queryResourceName: properties first
 				program: aProgram
-				interface:aResourceClass interface
+				interface:aResourceClass interfaceEnum
 				at: index.
 	^ aResourceClass
 		program: aProgram
@@ -39,13 +39,13 @@ GLDirectProgramInterfaceQueryImp >> getResource: aResourceClass program: aProgra
 
 {
 	#category : #'resource querying',
-	#timestamp : 'stlu 12/14/2020 13:52'
+	#timestamp : 'stlu 12/16/2020 18:54'
 }
 GLDirectProgramInterfaceQueryImp >> getResources: aResourceClass program: aProgram [
 
 	| numResources resources |
 	numResources := self
-						queryInterface: aResourceClass interface
+						queryInterface: aResourceClass interfaceEnum
 						program: aProgram
 						property: GL_ACTIVE_RESOURCES.
 	resources := Array new: numResources.

@@ -27,15 +27,15 @@ GLProgramResource class >> getPropertiesToQuery [
 
 {
 	#category : #querying,
-	#timestamp : 'stlu 12/13/2020 14:26'
+	#timestamp : 'stlu 12/16/2020 18:57'
 }
-GLProgramResource class >> interface [
+GLProgramResource class >> interfaceEnum [
 
 	self subclassResponsibility
 ]
 
 {
-	#category : #'instance creation',
+	#category : #private,
 	#timestamp : 'stlu 12/13/2020 14:10'
 }
 GLProgramResource class >> program: aProgram name: aString [
@@ -46,7 +46,7 @@ GLProgramResource class >> program: aProgram name: aString [
 ]
 
 {
-	#category : #'instance creation',
+	#category : #private,
 	#timestamp : 'stlu 12/13/2020 14:30'
 }
 GLProgramResource class >> program: aProgram name: aString properties: aWordArray [
@@ -72,6 +72,24 @@ GLProgramResource class >> propertiesToQuery [
 GLProgramResource >> initializeProperties: aWorldArray [
 
 	
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/16/2020 18:46'
+}
+GLProgramResource >> isInput [
+
+	^ false
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/16/2020 18:46'
+}
+GLProgramResource >> isUniform [
+
+	^ false
 ]
 
 {

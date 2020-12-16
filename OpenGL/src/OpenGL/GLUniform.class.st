@@ -48,9 +48,9 @@ GLUniform class >> getPropertiesToQuery [
 
 {
 	#category : #querying,
-	#timestamp : 'stlu 12/13/2020 14:13'
+	#timestamp : 'stlu 12/16/2020 18:54'
 }
-GLUniform class >> interface [
+GLUniform class >> interfaceEnum [
 
 	^ GL_UNIFORM
 ]
@@ -102,12 +102,35 @@ GLUniform >> initializeProperties: aWordArray [
 ]
 
 {
+	#category : #testing,
+	#timestamp : 'stlu 12/16/2020 18:45'
+}
+GLUniform >> isUniform [
+
+	^ true
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 12/13/2020 14:33'
 }
 GLUniform >> location [
 
 	^ location
+]
+
+{
+	#category : #printing,
+	#timestamp : 'stlu 12/16/2020 18:24'
+}
+GLUniform >> printOn: aStream [
+
+	aStream
+		print: location;
+		nextPutAll: ': uniform ';
+		nextPutAll: type declarator;
+		space;
+		nextPutAll: name
 ]
 
 {
@@ -679,9 +702,19 @@ GLUniform >> type [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/16/2020 00:39'
+	#timestamp : 'stlu 12/16/2020 19:48'
 }
-GLUniform >> type: anObject [
+GLUniform >> value [
 
-	type := anObject
+	^ value
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/16/2020 19:39'
+}
+GLUniform >> value: anObject [
+
+	self setTo: anObject.
+	value := anObject
 ]

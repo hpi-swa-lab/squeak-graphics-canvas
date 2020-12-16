@@ -25,9 +25,9 @@ GLProgramInput class >> getPropertiesToQuery [
 
 {
 	#category : #querying,
-	#timestamp : 'stlu 12/13/2020 14:27'
+	#timestamp : 'stlu 12/16/2020 18:57'
 }
-GLProgramInput class >> interface [
+GLProgramInput class >> interfaceEnum [
 
 	^ GL_PROGRAM_INPUT
 ]
@@ -40,4 +40,45 @@ GLProgramInput >> initializeProperties: aWordArray [
 
 	location := aWordArray second.
 	type := GLSLType numElements: aWordArray fourth enum: aWordArray third
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/16/2020 18:46'
+}
+GLProgramInput >> isInput [
+
+	^ true
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/16/2020 18:46'
+}
+GLProgramInput >> location [
+
+	^ location
+]
+
+{
+	#category : #printing,
+	#timestamp : 'stlu 12/16/2020 18:25'
+}
+GLProgramInput >> printOn: aStream [
+
+	aStream
+		print: location;
+		nextPutAll: ': uniform ';
+		nextPutAll: type declarator;
+		space;
+		nextPutAll: name
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/16/2020 18:46'
+}
+GLProgramInput >> type [
+
+	^ type
 ]
