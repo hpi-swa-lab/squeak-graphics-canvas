@@ -134,7 +134,7 @@ LOGLTemplate >> shouldClose [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 12/9/2020 15:31'
+	#timestamp : 'stlu 12/16/2020 15:58'
 }
 LOGLTemplate >> spawnNewRenderProcess [
 
@@ -143,7 +143,7 @@ LOGLTemplate >> spawnNewRenderProcess [
 			ensure: [
 				self tearDown.
 				library destroy]
-	] newProcess priority: Processor userSchedulingPriority - 1.
+	] newProcess priority: Processor userBackgroundPriority.
 	renderProcess resume
 ]
 
