@@ -139,10 +139,11 @@ GLFWWindow >> disableAspectRatio [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/21/2020 20:36'
+	#timestamp : 'stlu 12/16/2020 13:40'
 }
 GLFWWindow >> extent [
-
+	"Returns the extent (in screen coordinates) of the window's content area.
+	If you want to retrieve the size of the framebuffer, use #framebufferExtent."
 	| width height |
 	width := IntegerArray new: 1.
 	height := IntegerArray new: 1.
@@ -171,10 +172,11 @@ GLFWWindow >> focus [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/21/2020 20:43'
+	#timestamp : 'stlu 12/16/2020 13:36'
 }
 GLFWWindow >> frameWidths [
-
+	"Returns the width (in screen coordinates) of each edge of the window's frame.
+	Includes the title bar, if the window has one."
 	| left top right bottom |
 	left := IntegerArray new: 1.
 	top := IntegerArray new: 1.
@@ -187,10 +189,10 @@ GLFWWindow >> frameWidths [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 10/21/2020 20:36'
+	#timestamp : 'stlu 12/16/2020 13:41'
 }
 GLFWWindow >> framebufferExtent [
-
+	"Returns the extent (in pixels) of the window's framebuffer."
 	| width height |
 	width := IntegerArray new: 1.
 	height := IntegerArray new: 1.
