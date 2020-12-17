@@ -1,5 +1,5 @@
 Class {
-	#name : #SLMappingToComponentAssignments,
+	#name : #SLMappingToComponentWrite,
 	#superclass : #SLMessageMapping,
 	#category : #ShadingLanguage,
 	#commentStamp : ''
@@ -9,6 +9,6 @@ Class {
 	#category : #generation,
 	#timestamp : 'stlu 12/2/2020 03:01'
 }
-SLMappingToComponentAssignments >> generate: aMessageNode for: aGenerator [
+SLMappingToComponentWrite >> generate: aMessageNode for: aGenerator [
 	aGenerator generate: aMessageNode componentWrite: targetSelector
 ]

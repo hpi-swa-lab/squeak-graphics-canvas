@@ -7,7 +7,9 @@ Class {
 		'variableToType'
 	],
 	#classVars : [
-		'InterfaceTypeMap'
+		'InterfaceTypeMap',
+		'SwizzlingGetters',
+		'SwizzlingSetters'
 	],
 	#category : #ShadingLanguage,
 	#commentStamp : ''
@@ -15,13 +17,45 @@ Class {
 
 {
 	#category : #'class initialization',
-	#timestamp : 'zagto 12/1/2020 18:05'
+	#timestamp : 'stlu 12/17/2020 10:51'
 }
 SLAnalyzer class >> initialize [
+
+	self initializeInterfaceTypeMap.
+	self initializeSwizzlingSelectors
+]
+
+{
+	#category : #'class initialization',
+	#timestamp : 'stlu 12/17/2020 10:50'
+}
+SLAnalyzer class >> initializeInterfaceTypeMap [
+
 	InterfaceTypeMap := {
 		'uniforms:' -> 'uniform'.
 		'inputs:' -> 'in'
 	} as: Dictionary
+]
+
+{
+	#category : #'class initialization',
+	#timestamp : 'stlu 12/17/2020 13:36'
+}
+SLAnalyzer class >> initializeSwizzlingSelectors [
+
+	SwizzlingGetters := IdentitySet new.
+	SwizzlingSetters := IdentitySet new.
+	#('xyzw' 'rgba' 'stpq') do: [:group || func |
+		1 to: 4 do: [:i |
+			group combinations: i atATimeDo: [:combination |
+				combination permutationsDo: [:each |
+					SwizzlingSetters add: (each , ':') asSymbol]]].
+		func := [:prefix |
+					group do: [:char || sel |
+						sel := prefix , char.
+						SwizzlingGetters add: sel asSymbol.
+						sel size < 4 ifTrue: [func value: sel]]].
+		func value: ''].
 ]
 
 {
@@ -58,14 +92,14 @@ SLAnalyzer >> acceptLiteralNode: aLiteralNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/2/2020 02:54'
+	#timestamp : 'stlu 12/17/2020 12:42'
 }
 SLAnalyzer >> acceptMessageNode: aMessageNode [
-	| argTypes mapping |
+	| mapping |
 	super acceptMessageNode: aMessageNode.
 
-	argTypes := aMessageNode arguments collect: [ :arg | arg type ] as: Array.
-	mapping := aMessageNode receiver type perform: aMessageNode selector withArguments: argTypes.
+	mapping := self findMessageMapping: aMessageNode.
+	
 	aMessageNode mapping: mapping.
 	aMessageNode type: mapping type
 	
@@ -135,12 +169,58 @@ SLAnalyzer >> declareProgramResource: name kind: kind [
 ]
 
 {
+	#category : #'message mapping',
+	#timestamp : 'stlu 12/17/2020 13:24'
+}
+SLAnalyzer >> findMessageMapping: aMessageNode [
+
+	| receiver selector arguments |
+	receiver := aMessageNode receiver.
+	selector := aMessageNode selector.
+	arguments := aMessageNode arguments.
+	
+	(self mapSwizzlingSelector: selector receiver: receiver arguments: arguments) ifNotNil: [:mapping | ^ mapping].
+	
+	^ aMessageNode receiver type
+		perform: aMessageNode selector
+		withArguments: (aMessageNode arguments collect: [:arg | arg type] as: Array)
+]
+
+{
 	#category : #'initialize-release',
 	#timestamp : 'zagto 11/24/2020 16:46'
 }
 SLAnalyzer >> initialize [
 	super initialize.
 	stream := WriteStream on: (String new: 42).
+]
+
+{
+	#category : #'message mapping',
+	#timestamp : 'stlu 12/17/2020 13:30'
+}
+SLAnalyzer >> mapSwizzlingSelector: selector receiver: receiver arguments: arguments [
+
+	(receiver type isVector or: [receiver type isScalar]) ifFalse: [^ nil].
+	
+	(SwizzlingGetters includes: selector) ifTrue: [
+		| resultType |
+		resultType := GLSLVector
+						componentType: receiver type componentType
+						numComponents: selector size.
+		^ SLMappingToComponentRead new
+			targetSelector: selector;
+			type: resultType].
+	
+	(SwizzlingSetters includes: selector) ifTrue: [
+		| argType |
+		argType := arguments first type.
+		self assert: (argType isVector or: [argType isScalar]).
+		self assert: argType numComponents = (selector size - 1).
+		^ SLMappingToComponentWrite
+			targetSelector: selector allButLast;
+			type: argType].
+	^ nil
 ]
 
 {

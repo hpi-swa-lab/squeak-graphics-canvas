@@ -1,6 +1,6 @@
 Class {
 	#name : #SLInterfaceObject,
-	#superclass : #Object,
+	#superclass : #GLSLType,
 	#instVars : [
 		'kind',
 		'analyzer'

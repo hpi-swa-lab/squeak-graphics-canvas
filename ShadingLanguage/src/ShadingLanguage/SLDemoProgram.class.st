@@ -10,15 +10,6 @@ Class {
 }
 
 {
-	#category : #'as yet unclassified',
-	#timestamp : 'zagto 12/15/2020 17:29'
-}
-SLDemoProgram class >> attributes [
-
-	^ #('aPos' 'aNormal')
-]
-
-{
 	#category : #shaders,
 	#timestamp : 'stlu 12/16/2020 15:57'
 }
@@ -40,7 +31,7 @@ SLDemoProgram class >> fragmentShader: out inputs: in uniforms: u [
 ]
 
 {
-	#category : #'as yet unclassified',
+	#category : #'class initialization',
 	#timestamp : 'stlu 12/8/2020 14:54'
 }
 SLDemoProgram class >> initialize [
@@ -64,35 +55,4 @@ SLDemoProgram class >> vertexShader: out inputs: in uniforms: u [
 	out fragPos: fragPosition.
 	out normal: in aNormal beFloatVector3. "pass through"
 	out gl_Position: projectionMatrix * viewMatrix * (fragPosition @ 1.0).
-]
-
-{
-	#category : #generated,
-	#timestamp : 'zagto 12/15/2020 17:30'
-}
-SLDemoProgram >> aNormalLocation [
-
-	^ aNormalLocation
-]
-
-{
-	#category : #generated,
-	#timestamp : 'zagto 12/15/2020 17:30'
-}
-SLDemoProgram >> aPosLocation [
-
-	^ aPosLocation
-]
-
-{
-	#category : #generated,
-	#timestamp : 'zagto 12/15/2020 17:30'
-}
-SLDemoProgram >> initializeLocations [
-
-	super initializeLocations.
-	
-	
-	aPosLocation := self registerAttribute: 'aPos'.
-	aNormalLocation := self registerAttribute: 'aNormal'.
 ]

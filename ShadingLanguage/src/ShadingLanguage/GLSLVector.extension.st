@@ -86,36 +86,6 @@ GLSLVector >> @ another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/15/2020 13:10'
-}
-GLSLVector >> doesNotUnderstand: aMessage [
-	| selector swizzlingChars sets |
-	swizzlingChars := 'xyzwstpqrgba:'.
-	sets := #('xyzw:' 'stpq:' 'rgba:').
-	selector := aMessage selector asString.
-	
-	(selector findTokens: swizzlingChars) ifNotEmpty: [
-		^ super doesNotUnderstand: aMessage ].
-	
-	(sets anySatisfy: [ :set | (selector findTokens: set) isEmpty ]) ifFalse: [
-		^ self error: 'Vector component swizzling token ' , selector , ' contains component names' ,
-			' from different sets, but they have to be from only one of either xyzw, stpq or rgba.'].
-	
-	aMessage numArgs = 0 ifTrue: [ | resultType |
-		selector size > 4 ifTrue: [
-			^ self error: 'Vector compontent access ', selector , ' has ', selector size , ' components, ' ,
-				' but you can only access 4 at once.'].
-		
-		resultType := GLSLVector componentType: self componentType numComponents: selector size.
-		^ SLMappingToComponentRead new
-				targetSelector: selector;
-				type: resultType].
-			
-	self notYetImplemented.
-]
-
-{
-	#category : #'*ShadingLanguage',
 	#timestamp : 'zagto 12/15/2020 18:25'
 }
 GLSLVector >> dot: another [

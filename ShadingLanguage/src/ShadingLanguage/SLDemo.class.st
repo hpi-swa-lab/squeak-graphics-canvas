@@ -95,7 +95,7 @@ SLDemo >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 12/16/2020 18:19'
+	#timestamp : 'stlu 12/16/2020 21:48'
 }
 SLDemo >> setUp [
 
@@ -112,13 +112,13 @@ SLDemo >> setUp [
 	vbo usage: GL_STATIC_DRAW data: self cubeData.
 	
 	program
-		vertexAttrib: program aPosLocation
+		vertexAttrib: program inputs aPos location
 		components: 3
 		stride: 4*6
 		offset: 0.
 		
 	program
-		vertexAttrib: program aNormalLocation
+		vertexAttrib: program inputs aNormal location
 		components: 3
 		stride: 4*6
 		offset: 4*3.
