@@ -2,8 +2,9 @@ Class {
 	#name : #SLAnalyzer,
 	#superclass : #RBProgramNodeVisitor,
 	#instVars : [
-		'argumentToInterface',
-		'variableToInterface',
+		'interfaceVariables',
+		'resourceVariableToInterface',
+		'resourceVariableToType',
 		'variableToType'
 	],
 	#classVars : [
@@ -27,13 +28,14 @@ SLAnalyzer class >> initialize [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 12/17/2020 10:50'
+	#timestamp : 'stlu 12/18/2020 14:36'
 }
 SLAnalyzer class >> initializeInterfaceTypeMap [
 
 	InterfaceTypeMap := {
-		'uniforms:' -> 'uniform'.
-		'inputs:' -> 'in'
+		'outputs:' -> #out.
+		'uniforms:' -> #uniform.
+		'inputs:' -> #in
 	} as: Dictionary
 ]
 
@@ -60,7 +62,7 @@ SLAnalyzer class >> initializeSwizzlingSelectors [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 12/1/2020 18:08'
+	#timestamp : 'stlu 12/21/2020 14:03'
 }
 SLAnalyzer >> acceptAssignmentNode: anAssignmentNode [
 	| name |
@@ -68,7 +70,7 @@ SLAnalyzer >> acceptAssignmentNode: anAssignmentNode [
 	
 	name := anAssignmentNode variable name.
 	anAssignmentNode type: anAssignmentNode value type.
-	self setVariable: name toType: anAssignmentNode type
+	self declareVariable: name toType: anAssignmentNode type
 	
 ]
 
@@ -107,30 +109,15 @@ SLAnalyzer >> acceptMessageNode: aMessageNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/14/2020 16:58'
+	#timestamp : 'stlu 12/18/2020 22:05'
 }
 SLAnalyzer >> acceptMethodNode: aMethodNode [
-	|args selParts|
-	args := aMethodNode arguments.
-	selParts := aMethodNode selectorParts.
+
+	resourceVariableToInterface := Dictionary new.
+	resourceVariableToType := Dictionary new.
+	variableToType := Dictionary new.
 	
-	argumentToInterface := Dictionary new. "#u -> #uniform"
-	variableToInterface := Dictionary new. "#bloomBlur -> #uniform"
-	variableToType := Dictionary new. "#bloomBlur -> GLSLFloatVector3"
-	
-	argumentToInterface at: args first name put: 'out'.
-	args allButFirst with: selParts allButFirst do: [:argNode :selPart || interface |
-		interface := InterfaceTypeMap
-			at: selPart value
-			ifAbsent: [ self selectorPartError: selPart value ].
-		argumentToInterface at: argNode name put: interface ].
-	
-	args do: [ :argNode || name interfaceObj |
-		name := argNode name.
-		interfaceObj :=  SLInterfaceObject new
-			analyzer: self;
-			kind: (argumentToInterface at: name).
-		variableToType at: name put: interfaceObj ].
+	self gatherInterfaceVariables: aMethodNode.
 	
 	super acceptMethodNode: aMethodNode.
 
@@ -138,39 +125,68 @@ SLAnalyzer >> acceptMethodNode: aMethodNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 12/1/2020 14:01'
+	#timestamp : 'stlu 12/21/2020 13:39'
 }
 SLAnalyzer >> acceptVariableNode: aVariableNode [
-	aVariableNode isRead ifTrue: [
-		aVariableNode type: (self variableType: aVariableNode name)]
-]
 
-{
-	#category : #accessing,
-	#timestamp : 'stlu 12/2/2020 00:33'
-}
-SLAnalyzer >> argumentToInterface [
-
-	^ argumentToInterface
+	| type |
+	aVariableNode isRead ifFalse: [^ self].
+	(interfaceVariables includesKey: aVariableNode name) ifTrue: [^ self].
+	
+	type := variableToType
+				at: aVariableNode name
+				ifAbsent: [^ self error: 'Type of variable unknown'].
+	aVariableNode type: type
 ]
 
 {
 	#category : #'program resources',
-	#timestamp : 'zagto 11/24/2020 22:07'
+	#timestamp : 'stlu 12/18/2020 22:32'
 }
-SLAnalyzer >> declareProgramResource: name kind: kind [
-	variableToInterface
+SLAnalyzer >> declareResourceVariable: resourceName toInterface: interfaceSymbol [
+
+	resourceVariableToInterface
+		at: resourceName
+		ifPresent: [:existingInterface |
+			interfaceSymbol ~= existingInterface ifTrue: [
+				self error: 'Resource ' , resourceName , ' was already declared as ' , existingInterface ,
+							' but is redeclared as ' , interfaceSymbol]]
+		ifAbsentPut: [interfaceSymbol]
+]
+
+{
+	#category : #'program resources',
+	#timestamp : 'stlu 12/21/2020 14:11'
+}
+SLAnalyzer >> declareResourceVariable: name toType: glslType [
+
+	resourceVariableToType
 		at: name
-		ifPresent: [ :lastKind |
-			lastKind = kind ifFalse: [
-				self error: 'Program resource ' , name , ' was already declared as ' , lastKind ,
-				' but is redeclared here as ' , kind ]]
-		ifAbsentPut: [ kind ].
+		ifPresent: [:existingType |
+			glslType ~= existingType ifTrue: [
+				self error: 'Resource ' , name , ' was already declared as ' , existingType ,
+							' but is redeclared as ' , glslType]]
+		ifAbsentPut: [glslType]
+]
+
+{
+	#category : #'program resources',
+	#timestamp : 'stlu 12/21/2020 14:08'
+}
+SLAnalyzer >> declareVariable: name toType: glslType [
+
+	variableToType
+		at: name
+		ifPresent: [:existingType |
+			glslType ~= existingType ifTrue: [
+				self error: 'Variable ' , name , ' was already declared as ' , existingType ,
+							' but is redeclared as ' , glslType]]
+		ifAbsentPut: [glslType]
 ]
 
 {
 	#category : #'message mapping',
-	#timestamp : 'stlu 12/17/2020 13:24'
+	#timestamp : 'stlu 12/21/2020 13:23'
 }
 SLAnalyzer >> findMessageMapping: aMessageNode [
 
@@ -179,7 +195,9 @@ SLAnalyzer >> findMessageMapping: aMessageNode [
 	selector := aMessageNode selector.
 	arguments := aMessageNode arguments.
 	
-	(self mapSwizzlingSelector: selector receiver: receiver arguments: arguments) ifNotNil: [:mapping | ^ mapping].
+	(self mapInterfaceAccess: aMessageNode) ifNotNil: [:mapping | ^ mapping].
+	(self mapTyping: aMessageNode) ifNotNil: [:mapping | ^ mapping].
+	(self mapSwizzling: aMessageNode) ifNotNil: [:mapping | ^ mapping].
 	
 	^ aMessageNode receiver type
 		perform: aMessageNode selector
@@ -187,21 +205,75 @@ SLAnalyzer >> findMessageMapping: aMessageNode [
 ]
 
 {
-	#category : #'initialize-release',
-	#timestamp : 'zagto 11/24/2020 16:46'
+	#category : #initialization,
+	#timestamp : 'stlu 12/18/2020 16:37'
 }
-SLAnalyzer >> initialize [
-	super initialize.
-	stream := WriteStream on: (String new: 42).
+SLAnalyzer >> gatherInterfaceVariables: aMethodNode [
+
+	interfaceVariables := Dictionary new.
+	
+	1 to: aMethodNode numArgs do: [:i |
+		| arg selPart interface |
+		arg := aMethodNode arguments at: i.
+		selPart := (aMethodNode selectorParts at: i) value.
+		interface := i = 1
+						ifTrue: [#out]
+						ifFalse: [InterfaceTypeMap at: selPart].
+		interfaceVariables at: arg name put: interface ]
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/21/2020 13:59'
+}
+SLAnalyzer >> interfaceVariables [
+
+	^ interfaceVariables
 ]
 
 {
 	#category : #'message mapping',
-	#timestamp : 'stlu 12/17/2020 13:30'
+	#timestamp : 'stlu 12/21/2020 14:17'
 }
-SLAnalyzer >> mapSwizzlingSelector: selector receiver: receiver arguments: arguments [
+SLAnalyzer >> mapInterfaceAccess: aMessageNode [
 
+	| interfaceVar interface resourceNames |
+	interfaceVar := aMessageNode receiver.
+	interfaceVar isVariable ifFalse: [^ nil].
+	interface := interfaceVariables at: interfaceVar name ifAbsent: [^ nil].
+	aMessageNode propertyAt: #interface put: interface.
+	
+	aMessageNode numArgs = 0 ifTrue: [
+		| resourceName type |
+		resourceName := aMessageNode selector asString.
+		type := resourceVariableToType at: resourceName ifAbsent: [nil].
+		self declareResourceVariable: resourceName toInterface: interface.
+		^ SLMappingToResourceRead new
+			targetSelector: resourceName;
+			type: type].
+	
+	aMessageNode isKeyword ifFalse: [
+		self error: 'Invalid resource name'].
+	
+	resourceNames := aMessageNode selectorParts collect: [:part | part value allButLast].
+	resourceNames with: aMessageNode arguments do: [:resourceName :arg |
+		self declareResourceVariable: resourceName toInterface: interface.
+		self declareResourceVariable: resourceName toType: arg type].
+	^ SLMappingToResourceAssignments new
+		targetSelector: resourceNames
+]
+
+{
+	#category : #'message mapping',
+	#timestamp : 'stlu 12/21/2020 13:26'
+}
+SLAnalyzer >> mapSwizzling: aMessageNode [
+
+	| receiver selector |
+	aMessageNode numArgs > 1 ifTrue: [^ nil].
+	receiver := aMessageNode receiver.
 	(receiver type isVector or: [receiver type isScalar]) ifFalse: [^ nil].
+	selector := aMessageNode selector.
 	
 	(SwizzlingGetters includes: selector) ifTrue: [
 		| resultType |
@@ -214,55 +286,53 @@ SLAnalyzer >> mapSwizzlingSelector: selector receiver: receiver arguments: argum
 	
 	(SwizzlingSetters includes: selector) ifTrue: [
 		| argType |
-		argType := arguments first type.
+		argType := aMessageNode arguments first type.
 		self assert: (argType isVector or: [argType isScalar]).
 		self assert: argType numComponents = (selector size - 1).
 		^ SLMappingToComponentWrite
 			targetSelector: selector allButLast;
 			type: argType].
+	
 	^ nil
 ]
 
 {
-	#category : #accessing,
-	#timestamp : 'zagto 11/24/2020 16:46'
+	#category : #'message mapping',
+	#timestamp : 'stlu 12/21/2020 14:12'
 }
-SLAnalyzer >> result [
-	^ stream contents
-]
+SLAnalyzer >> mapTyping: aMessageNode [
 
-{
-	#category : #'error handling',
-	#timestamp : 'zagto 11/24/2020 18:51'
-}
-SLAnalyzer >> selectorPartError: aString [
-	aString = 'outputs:'
-		ifTrue: [ ^ self error: 'GLSL outputs are always the first argument, they should not be ' ,
-			'declared by selector part outputs:' ].
-	self error: 'Selector part ' , aString , ' is not a GLSL interface type'.
-]
-
-{
-	#category : #'program resources',
-	#timestamp : 'zagto 11/24/2020 22:11'
-}
-SLAnalyzer >> setVariable: name toType: type [
-	variableToType
-		at: name
-		ifPresent: [ :lastType |
-			lastType = type ifFalse: [
-				self error: 'Variable ' , name , ' was already declared as ' , lastType asString ,
-				' but is redeclared here as ' , type asString ]]
-		ifAbsentPut: [ type ].
+	| className class |
+	aMessageNode isUnary ifFalse: [^ nil].
+	aMessageNode receiver isMessage ifFalse: [^ nil].
+	aMessageNode receiver propertyAt: #interface ifAbsent: [^ nil].
+	(aMessageNode selector beginsWith: 'be') ifFalse: [^ nil].
+	
+	className := 'GLSL' , (aMessageNode selector allButFirst: 2).
+	class := self environment classNamed: className.
+	class ifNil: [^ self error: 'Could not resolve type name ' , className].
+	
+	self declareResourceVariable: aMessageNode receiver selector toType: class instance.
+	^ SLPassthroughMapping new
+		type: class instance
 ]
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/2/2020 00:33'
+	#timestamp : 'stlu 12/21/2020 13:59'
 }
-SLAnalyzer >> variableToInterface [
+SLAnalyzer >> resourceVariableToInterface [
 
-	^ variableToInterface
+	^ resourceVariableToInterface
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/21/2020 13:59'
+}
+SLAnalyzer >> resourceVariableToType [
+
+	^ resourceVariableToType
 ]
 
 {
@@ -272,12 +342,4 @@ SLAnalyzer >> variableToInterface [
 SLAnalyzer >> variableToType [
 
 	^ variableToType
-]
-
-{
-	#category : #'program resources',
-	#timestamp : 'zagto 11/24/2020 22:27'
-}
-SLAnalyzer >> variableType: name [
-	^ variableToType at: name ifAbsent: [ self error: '#todo' ]
 ]

@@ -70,7 +70,7 @@ SLGenerator >> acceptMessageNode: aMessageNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/8/2020 15:51'
+	#timestamp : 'stlu 12/21/2020 14:09'
 }
 SLGenerator >> acceptMethodNode: aMethodNode [
 	analyzer := SLAnalyzer new visitNode: aMethodNode.
@@ -78,11 +78,11 @@ SLGenerator >> acceptMethodNode: aMethodNode [
 
 	stream nextPutAll: '#version 330 core'; lf; lf.
 	
-	analyzer variableToInterface keysAndValuesDo: [:name :interface |
+	analyzer resourceVariableToInterface keysAndValuesDo: [:name :interface |
 		(name beginsWith: 'gl_') ifFalse: [
 			stream
 				nextPutAll: interface; space;
-				nextPutAll: (analyzer variableToType at: name) declarator; space;
+				nextPutAll: (analyzer resourceVariableToType at: name) declarator; space;
 				nextPutAll: name;
 				nextPut: $;; lf]].
 
@@ -96,9 +96,10 @@ SLGenerator >> acceptMethodNode: aMethodNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/2/2020 01:05'
+	#timestamp : 'stlu 12/21/2020 13:57'
 }
-SLGenerator >> acceptSequenceNode: aSequenceNode [ 
+SLGenerator >> acceptSequenceNode: aSequenceNode [
+
 	aSequenceNode temporaries do: [:each |
 		| type |
 		type := analyzer variableToType at: each name.
@@ -106,6 +107,7 @@ SLGenerator >> acceptSequenceNode: aSequenceNode [
 			nextPutAll: type declarator; space;
 			nextPutAll: each name;
 			nextPut: $;; lf].
+	
 	aSequenceNode statements do: [:each |
 		self visitNode: each.
 		stream nextPutAll: ';'; lf]
@@ -113,9 +115,10 @@ SLGenerator >> acceptSequenceNode: aSequenceNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/2/2020 00:26'
+	#timestamp : 'stlu 12/21/2020 13:57'
 }
 SLGenerator >> acceptVariableNode: aVariableNode [
+
 	stream nextPutAll: aVariableNode name
 ]
 

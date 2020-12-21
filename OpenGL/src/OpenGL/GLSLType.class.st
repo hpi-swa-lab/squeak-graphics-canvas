@@ -36,15 +36,6 @@ GLSLType class >> compileAccessor: name value: return classified: category [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/14/2020 18:16'
-}
-GLSLType class >> componentType [
-
-	self subclassResponsibility
-]
-
-{
-	#category : #accessing,
 	#timestamp : 'stlu 11/19/2020 18:00'
 }
 GLSLType class >> declarator [
