@@ -37,12 +37,12 @@ SLGenerator class >> transform: sourceString [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/2/2020 01:07'
+	#timestamp : 'stlu 12/21/2020 15:05'
 }
-SLGenerator >> acceptAssignmentNode: anAssignmentNode [ 
-	stream
-		nextPutAll: anAssignmentNode variable name;
-		nextPutAll: ' = '.
+SLGenerator >> acceptAssignmentNode: anAssignmentNode [
+
+	self visitNode: anAssignmentNode variable.
+	stream nextPutAll: ' = '.
 	self visitNode: anAssignmentNode value
 ]
 
@@ -72,7 +72,7 @@ SLGenerator >> acceptMessageNode: aMessageNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/21/2020 14:42'
+	#timestamp : 'stlu 12/21/2020 14:49'
 }
 SLGenerator >> acceptMethodNode: aMethodNode [
 	analyzer := SLAnalyzer new visitNode: aMethodNode.
@@ -85,7 +85,6 @@ SLGenerator >> acceptMethodNode: aMethodNode [
 	self newLine.
 	
 	analyzer resourceVariableToInterface keysAndValuesDo: [:name :interface |
-		variableNameMap at: name put: name.
 		(name beginsWith: 'gl_') ifFalse: [
 			stream
 				nextPutAll: interface; space;
@@ -110,17 +109,16 @@ SLGenerator >> acceptMethodNode: aMethodNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/21/2020 14:45'
+	#timestamp : 'stlu 12/21/2020 15:11'
 }
 SLGenerator >> acceptSequenceNode: aSequenceNode [
 
 	aSequenceNode temporaries do: [:each |
 		| type |
 		type := analyzer variableToType at: each name.
-		stream
-			nextPutAll: type declarator; space;
-			nextPutAll: each name;
-			nextPut: $;.
+		stream nextPutAll: type declarator; space.
+		self visitNode: each.
+		stream nextPut: $;.
 		self newLine].
 
 	aSequenceNode temporaries ifNotEmpty: [self newLine].
@@ -135,11 +133,30 @@ SLGenerator >> acceptSequenceNode: aSequenceNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/21/2020 13:57'
+	#timestamp : 'stlu 12/21/2020 14:57'
 }
 SLGenerator >> acceptVariableNode: aVariableNode [
 
-	stream nextPutAll: aVariableNode name
+	| actualName name |
+	name := aVariableNode name.
+	actualName := variableNameMap
+						at: name
+						ifAbsentPut: [self findUnusedName: name].
+	stream nextPutAll: actualName
+]
+
+{
+	#category : #visiting,
+	#timestamp : 'stlu 12/21/2020 15:02'
+}
+SLGenerator >> findUnusedName: name [
+
+	| alias |
+	alias := name.
+	2 to: 100 do: [:i |
+		(analyzer resourceVariableToType includesKey: alias) ifFalse: [^ alias].
+		alias := name , i].
+	self error: 'Could not alias variable ' , name , '. Something probably went wrong.'
 ]
 
 {
