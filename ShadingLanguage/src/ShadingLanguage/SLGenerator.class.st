@@ -3,6 +3,8 @@ Class {
 	#superclass : #RBProgramNodeVisitor,
 	#instVars : [
 		'stream',
+		'indentation',
+		'variableNameMap',
 		'analyzer'
 	],
 	#category : #ShadingLanguage,
@@ -70,33 +72,45 @@ SLGenerator >> acceptMessageNode: aMessageNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/21/2020 14:09'
+	#timestamp : 'stlu 12/21/2020 14:42'
 }
 SLGenerator >> acceptMethodNode: aMethodNode [
 	analyzer := SLAnalyzer new visitNode: aMethodNode.
 	stream := WriteStream on: (String new: aMethodNode source size).
+	variableNameMap := Dictionary new.
+	indentation := 0.
 
-	stream nextPutAll: '#version 330 core'; lf; lf.
+	stream nextPutAll: '#version 330 core'.
+	self newLine.
+	self newLine.
 	
 	analyzer resourceVariableToInterface keysAndValuesDo: [:name :interface |
+		variableNameMap at: name put: name.
 		(name beginsWith: 'gl_') ifFalse: [
 			stream
 				nextPutAll: interface; space;
 				nextPutAll: (analyzer resourceVariableToType at: name) declarator; space;
 				nextPutAll: name;
-				nextPut: $;; lf]].
+				nextPut: $;.
+			self newLine]].
+	
+	self newLine.
 
-	stream nextPutAll: 'void main() {'; lf.
+	stream nextPutAll: 'void main() {'.
+	self indent.
+	self newLine.
 	
 	aMethodNode pragmas do: [ :each | self visitNode: each ].
 	self visitNode: aMethodNode body.
 	
+	self outdent.
+	self newLine.
 	stream nextPut: $}
 ]
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/21/2020 13:57'
+	#timestamp : 'stlu 12/21/2020 14:45'
 }
 SLGenerator >> acceptSequenceNode: aSequenceNode [
 
@@ -106,11 +120,17 @@ SLGenerator >> acceptSequenceNode: aSequenceNode [
 		stream
 			nextPutAll: type declarator; space;
 			nextPutAll: each name;
-			nextPut: $;; lf].
+			nextPut: $;.
+		self newLine].
+
+	aSequenceNode temporaries ifNotEmpty: [self newLine].
 	
-	aSequenceNode statements do: [:each |
-		self visitNode: each.
-		stream nextPutAll: ';'; lf]
+	aSequenceNode statements
+		do: [:each |
+			self visitNode: each.
+			stream nextPutAll: ';']
+		separatedBy: [
+			self newLine]
 ]
 
 {
@@ -163,23 +183,30 @@ SLGenerator >> generate: aMessageNode componentWrite: componentName [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/2/2020 03:26'
+	#timestamp : 'stlu 12/21/2020 14:44'
 }
 SLGenerator >> generate: aMessageNode condition: isNegated [
+
 	stream nextPutAll: 'if ('.
 	isNegated ifTrue: [stream nextPutAll: '!('].
 	self visitNode: aMessageNode receiver.
 	isNegated ifTrue: [stream nextPut: $)].
-	stream nextPutAll: ') {'; lf.
+	stream nextPutAll: ') {'.
+	self indent.
+	self newLine.
 	self visitNode: aMessageNode arguments first body.
+	self outdent.
+	self newLine.
 	stream nextPut: $}.
 	
 	aMessageNode arguments size > 1 ifTrue: [
-		stream nextPutAll: ' else {'; lf.
+		stream nextPutAll: ' else {'.
+		self indent.
+		self newLine.
 		self visitNode: aMessageNode arguments second body.
-		stream nextPut: $}].
-	
-	stream lf
+		self outdent.
+		self newLine.
+		stream nextPut: $}]
 ]
 
 {
@@ -220,12 +247,41 @@ SLGenerator >> generate: aMessageNode resourceWrites: resourceNames [
 ]
 
 {
+	#category : #stream,
+	#timestamp : 'stlu 12/21/2020 14:35'
+}
+SLGenerator >> indent [
+
+	indentation := indentation + 1
+]
+
+{
 	#category : #'initialize-release',
 	#timestamp : 'stlu 12/2/2020 00:27'
 }
 SLGenerator >> initialize [
 	super initialize.
 	stream := WriteStream on: (String new: 500)
+]
+
+{
+	#category : #stream,
+	#timestamp : 'stlu 12/21/2020 14:36'
+}
+SLGenerator >> newLine [
+
+	stream lf.
+	indentation timesRepeat: [
+		stream tab]
+]
+
+{
+	#category : #stream,
+	#timestamp : 'stlu 12/21/2020 14:35'
+}
+SLGenerator >> outdent [
+
+	indentation := indentation - 1
 ]
 
 {
