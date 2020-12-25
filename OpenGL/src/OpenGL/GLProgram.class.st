@@ -65,6 +65,28 @@ GLProgram class >> useID: id [
 ]
 
 {
+	#category : #'instance creation',
+	#timestamp : 'stlu 12/22/2020 14:04'
+}
+GLProgram class >> vertexSource: vertexGLSLString fragmentSource: fragmentGLSLString [
+
+	| vertexShader fragmentShader instance |
+	vertexShader := GLVertexShader source: vertexGLSLString.
+	fragmentShader := GLFragmentShader source: fragmentGLSLString.
+	
+	instance := self create.
+	instance
+		attachShader: vertexShader;
+		attachShader: fragmentShader;
+		link.
+	
+	vertexShader delete.
+	fragmentShader delete.
+	
+	^ instance
+]
+
+{
 	#category : #actions,
 	#timestamp : 'stlu 11/3/2020 15:36'
 }
@@ -312,4 +334,20 @@ GLProgram >> validate [
 		self notify: self getInfoLog.
 		^ false].
 	^ true
+]
+
+{
+	#category : #resources,
+	#timestamp : 'stlu 12/21/2020 21:00'
+}
+GLProgram >> vertexAttrib: index components: numComponents stride: byteStride offset: byteOffset [
+
+	self flag: #todo. "Hacky and broken. Wild assumptions."
+	GL enableVertexAttribArray: index.
+	GL vertexAttribPointer: index
+		with: numComponents
+		with: GL_FLOAT "HACK until proper type dispatching"
+		with: false
+		with: byteStride
+		with: (ExternalAddress new fromInteger: byteOffset)
 ]

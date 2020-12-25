@@ -14,6 +14,15 @@ Class {
 }
 
 {
+	#category : #running,
+	#timestamp : 'stlu 12/22/2020 14:54'
+}
+LOGLHelloTriangle >> draw [
+
+	GL drawArrays: GL_TRIANGLES with: 0 with: 3
+]
+
+{
 	#category : #shaders,
 	#timestamp : 'stlu 10/22/2020 16:53'
 }
@@ -28,36 +37,40 @@ void main() {
 
 {
 	#category : #running,
-	#timestamp : 'stlu 11/3/2020 15:01'
+	#timestamp : 'stlu 12/22/2020 14:54'
 }
 LOGLHelloTriangle >> render [
 
-	GL setClearColor: (Color gray: (Time millisecondClock \\ 5000 / 5000)).
-	GL clear: GL_COLOR_BUFFER_BIT
+	GL setClearColor: (Color r: 0.2 g: 0.3 b: 0.3).
+	GL clear: GL_COLOR_BUFFER_BIT.
+	
+	vao boundDuring: [
+		program useDuring: [
+			self draw]]
 ]
 
 {
 	#category : #running,
-	#timestamp : 'stlu 12/13/2020 15:49'
+	#timestamp : 'stlu 12/22/2020 15:14'
 }
 LOGLHelloTriangle >> setUp [
 
-	| vertexShader fragmentShader |
-	vertexShader := GLVertexShader create
-						source: self vertexShaderSource;
-						compile;
-						yourself.
-	fragmentShader := GLFragmentShader create
-						source: self fragmentShaderSource;
-						compile;
-						yourself.
-	program := GLProgram create
-					attachShader: vertexShader;
-					attachShader: fragmentShader;
-					link;
-					yourself.
-	vertexShader delete.
-	fragmentShader delete
+	program := GLProgram
+					vertexSource: self vertexShaderSource
+					fragmentSource: self fragmentShaderSource.
+	
+	vbo := GLBuffer create.
+	vao := GLVertexArray create.
+	
+	vao boundDuring: [
+		vbo bind.
+		vbo usage: GL_STATIC_DRAW data: self vertices.
+	
+		program inputs aPos
+			stride: 4*3
+			offset: 0].
+	
+	GL checkForError
 ]
 
 {
@@ -71,4 +84,17 @@ layout (location = 0) in vec3 aPos;
 void main() {
 	gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
 }'
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/22/2020 14:34'
+}
+LOGLHelloTriangle >> vertices [
+
+	^ #(
+			-0.5 -0.5 0.0
+			0.5 -0.5 0.0
+			0.0 0.5 0.0
+		) asFloat32Array
 ]

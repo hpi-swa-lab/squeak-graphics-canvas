@@ -42,6 +42,23 @@ GLProgramInput class >> interfaceEnum [
 ]
 
 {
+	#category : #configuration,
+	#timestamp : 'stlu 12/22/2020 14:42'
+}
+GLProgramInput >> components: numComponents stride: byteStride offset: byteOffset [
+
+	self flag: #todo. "Not the interface of choice. Should receiver buffer object."
+	self flag: #todo. "Move actual implementation to VertexArray."
+	GL enableVertexAttribArray: location.
+	GL vertexAttribPointer: location
+		with: numComponents
+		with: type componentType enum
+		with: false "normalized? -> how to make this configurable?"
+		with: byteStride
+		with: (ExternalAddress new fromInteger: byteOffset)
+]
+
+{
 	#category : #initialization,
 	#timestamp : 'stlu 12/14/2020 16:17'
 }
@@ -81,6 +98,15 @@ GLProgramInput >> printOn: aStream [
 		nextPutAll: type declarator;
 		space;
 		nextPutAll: name
+]
+
+{
+	#category : #configuration,
+	#timestamp : 'stlu 12/22/2020 14:43'
+}
+GLProgramInput >> stride: byteStride offset: byteOffset [
+
+	self components: type numComponents stride: byteStride offset: byteOffset
 ]
 
 {

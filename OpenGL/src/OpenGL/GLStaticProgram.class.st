@@ -199,19 +199,3 @@ GLStaticProgram >> updateShaders [
 	self detachShaders.
 	self initializeShaders
 ]
-
-{
-	#category : #resources,
-	#timestamp : 'stlu 11/13/2020 16:10'
-}
-GLStaticProgram >> vertexAttrib: index components: numComponents stride: byteStride offset: byteOffset [
-
-	self flag: #todo. "Hacky and broken. Wild assumptions."
-	GL enableVertexAttribArray: index.
-	GL vertexAttribPointer: index
-		with: numComponents
-		with: GL_FLOAT "HACK until proper type dispatching"
-		with: false
-		with: byteStride
-		with: (ExternalAddress new fromInteger: byteOffset)
-]

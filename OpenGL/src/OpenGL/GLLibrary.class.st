@@ -233,13 +233,13 @@ GLLibrary >> at: aKey put: aValue [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 11/13/2020 21:59'
+	#timestamp : 'stlu 12/22/2020 15:14'
 }
 GLLibrary >> checkForError [
 	"Check for any OpenGL errors, and raise an Error if any exist."
 	| error |
 	error := self getError.
-	error ~= 0 ifTrue: [
+	error ~= GL_NO_ERROR ifTrue: [
 		self error: (self errorString: error)]
 
 ]

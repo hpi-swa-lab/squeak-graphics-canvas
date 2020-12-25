@@ -163,6 +163,15 @@ GLSLType >> declarator [
 ]
 
 {
+	#category : #accessing,
+	#timestamp : 'stlu 12/22/2020 13:51'
+}
+GLSLType >> enum [
+
+	^ self class enum
+]
+
+{
 	#category : #testing,
 	#timestamp : 'stlu 12/14/2020 18:22'
 }
