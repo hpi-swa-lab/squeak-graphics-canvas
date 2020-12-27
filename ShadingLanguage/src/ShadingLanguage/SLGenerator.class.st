@@ -253,14 +253,22 @@ SLGenerator >> generate: aMessageNode resourceRead: resourceName [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/2/2020 03:36'
+	#timestamp : 'stlu 12/21/2020 20:37'
 }
 SLGenerator >> generate: aMessageNode resourceWrites: resourceNames [
-	resourceNames with: aMessageNode arguments do: [:name :arg |
-		stream
-			nextPutAll: name;
-			nextPutAll: ' = '.
-		self visitNode: arg]
+
+	(1 to: resourceNames size)
+		do: [:i |
+			| name arg |
+			name := resourceNames at: i.
+			arg := aMessageNode arguments at: i.
+			stream
+				nextPutAll: name;
+				nextPutAll: ' = '.
+			self visitNode: arg]
+		separatedBy: [
+			stream nextPut: $;.
+			self newLine]
 ]
 
 {

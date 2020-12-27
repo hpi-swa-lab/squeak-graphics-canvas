@@ -43,19 +43,20 @@ SLDemoProgram class >> initialize [
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 12/21/2020 15:13'
+	#timestamp : 'stlu 12/21/2020 20:36'
 }
 SLDemoProgram class >> vertexShader: out inputs: in uniforms: u [
 
 	<vertexShader>
-	| position fragPosition model view projection |
+	| position fragPos model view projection |
 	position := in aPos beFloatVector3.
 	model := u model beFloatMatrix4x4.
 	view := u view beFloatMatrix4x4.
 	projection := u projection beFloatMatrix4x4.
 	
-	fragPosition := (model * (position @ 1.0)) xyz.
-	out fragPos: fragPosition.
-	out normal: in aNormal beFloatVector3. "pass through"
-	out gl_Position: projection * view * (fragPosition @ 1.0).
+	fragPos := (model * (position @ 1.0)) xyz.
+	out
+		fragPos: fragPos
+		normal: in aNormal beFloatVector3 "pass through"
+		gl_Position: projection * view * (fragPos @ 1.0)
 ]

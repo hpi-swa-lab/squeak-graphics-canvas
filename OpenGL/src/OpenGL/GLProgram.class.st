@@ -335,19 +335,3 @@ GLProgram >> validate [
 		^ false].
 	^ true
 ]
-
-{
-	#category : #resources,
-	#timestamp : 'stlu 12/21/2020 21:00'
-}
-GLProgram >> vertexAttrib: index components: numComponents stride: byteStride offset: byteOffset [
-
-	self flag: #todo. "Hacky and broken. Wild assumptions."
-	GL enableVertexAttribArray: index.
-	GL vertexAttribPointer: index
-		with: numComponents
-		with: GL_FLOAT "HACK until proper type dispatching"
-		with: false
-		with: byteStride
-		with: (ExternalAddress new fromInteger: byteOffset)
-]
