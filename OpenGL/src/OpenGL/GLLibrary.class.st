@@ -13,11 +13,14 @@ Class {
 		'context',
 		'profile'
 	],
+	#classVars : [
+		'ErrorMessages'
+	],
 	#pools : [
 		'GLConstants'
 	],
 	#category : #'OpenGL-API',
-	#commentStamp : ''
+	#commentStamp : 'stlu 11/13/2020 18:20'
 }
 
 {
@@ -113,12 +116,31 @@ GLLibrary class >> example2 [ "self example2"
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 10/26/2020 10:42'
+	#timestamp : 'stlu 12/28/2020 18:25'
 }
 GLLibrary class >> initialize [
 
 	Smalltalk addToStartUpList: self.
-	Environment current at: #GL put: nil
+	Environment current at: #GL put: nil.
+	self initializeErrorMessages
+]
+
+{
+	#category : #'class initialization',
+	#timestamp : 'stlu 12/28/2020 18:29'
+}
+GLLibrary class >> initializeErrorMessages [
+
+	ErrorMessages := {
+		GL_INVALID_ENUM -> 'Invalid enum. An unacceptable value is specified for an enumerated argument.'.
+		GL_INVALID_VALUE -> 'Invalid value. A numeric argument is out of range.'.
+		GL_INVALID_OPERATION -> 'Invalid operation. The specified operation is not allowed in the current state.'.
+		GL_STACK_OVERFLOW -> 'Stack overflow. An attempt has been made to perform an operation that would cause an internal stack overflow.'.
+		GL_STACK_UNDERFLOW -> 'Stack underflow. An attempt has been made to perform an operation that would cause an internal stack to underflow.'.
+		GL_OUT_OF_MEMORY -> 'Out of memory. There is not enought memory left to execute the command.'.
+		GL_INVALID_FRAMEBUFFER_OPERATION -> 'Invalid framebuffer operation. The framebuffer object is not complete.'.
+		GL_NO_ERROR -> 'No error. No error has been recorded.'
+	} as: Dictionary
 ]
 
 {
@@ -282,20 +304,13 @@ GLLibrary >> endFrame [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 11/13/2020 22:14'
+	#timestamp : 'stlu 12/28/2020 18:31'
 }
 GLLibrary >> errorString: error [
 
-	error caseOf: {
-		[GL_INVALID_ENUM] -> [^ 'Invalid enum. An unacceptable value is specified for an enumerated argument.'].
-		[GL_INVALID_VALUE] -> [^ 'Invalid value. A numeric argument is out of range.'].
-		[GL_INVALID_OPERATION] -> [^ 'Invalid operation. The specified operation is not allowed in the current state.'].
-		[GL_STACK_OVERFLOW] -> [^ 'Stack overflow. An attempt has been made to perform an operation that would cause an internal stack overflow.'].
-		[GL_STACK_UNDERFLOW] -> [^ 'Stack underflow. An attempt has been made to perform an operation that would cause an internal stack to underflow.'].
-		[GL_OUT_OF_MEMORY] -> [^ 'Out of memory. There is not enought memory left to execute the command.'].
-		[GL_INVALID_FRAMEBUFFER_OPERATION] -> [^ 'Invalid framebuffer operation. The framebuffer object is not complete.'].
-		[GL_NO_ERROR] -> [^ 'No error. No error has been recorded.']
-	} otherwise: [^ 'Unknown error ' , error asString]
+	^ ErrorMessages
+		at: error
+		ifAbsent: ['Unknown error ' , error asString]
 ]
 
 {
