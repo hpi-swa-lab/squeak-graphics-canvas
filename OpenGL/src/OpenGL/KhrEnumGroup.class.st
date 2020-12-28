@@ -1,6 +1,6 @@
 Class {
-	#name : #GLGenEnumGroup,
-	#superclass : #GLGenObject,
+	#name : #KhrEnumGroup,
+	#superclass : #KhrRegistryObject,
 	#instVars : [
 		'enums',
 		'parameters'
@@ -13,7 +13,7 @@ Class {
 	#category : #'instance creation',
 	#timestamp : 'stlu 11/1/2020 20:14'
 }
-GLGenEnumGroup class >> registry: registry name: aSymbol [
+KhrEnumGroup class >> registry: registry name: aSymbol [
 
 	^ registry enumGroups
 		at: aSymbol
@@ -24,7 +24,7 @@ GLGenEnumGroup class >> registry: registry name: aSymbol [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 23:16'
 }
-GLGenEnumGroup >> addEnum: enum [
+KhrEnumGroup >> addEnum: enum [
 
 	^ enums add: enum
 ]
@@ -33,7 +33,7 @@ GLGenEnumGroup >> addEnum: enum [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 23:16'
 }
-GLGenEnumGroup >> addParameter: param [
+KhrEnumGroup >> addParameter: param [
 
 	^ parameters add: param
 ]
@@ -42,7 +42,7 @@ GLGenEnumGroup >> addParameter: param [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:19'
 }
-GLGenEnumGroup >> enums [
+KhrEnumGroup >> enums [
 
 	^ enums
 ]
@@ -51,7 +51,7 @@ GLGenEnumGroup >> enums [
 	#category : #initialization,
 	#timestamp : 'stlu 10/31/2020 22:58'
 }
-GLGenEnumGroup >> initialize [
+KhrEnumGroup >> initialize [
 
 	super initialize.
 	enums := OrderedCollection new.
@@ -62,7 +62,7 @@ GLGenEnumGroup >> initialize [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:19'
 }
-GLGenEnumGroup >> parameters [
+KhrEnumGroup >> parameters [
 
 	^ parameters
 ]
@@ -71,7 +71,7 @@ GLGenEnumGroup >> parameters [
 	#category : #printing,
 	#timestamp : 'stlu 10/31/2020 23:35'
 }
-GLGenEnumGroup >> printOn: aStream [
+KhrEnumGroup >> printOn: aStream [
 
 	aStream nextPutAll: 'Group '.
 	name printOn: aStream.

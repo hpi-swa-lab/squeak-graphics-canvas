@@ -1,6 +1,6 @@
 Class {
-	#name : #GLGenProfile,
-	#superclass : #GLGenObject,
+	#name : #KhrProfile,
+	#superclass : #KhrRegistryObject,
 	#instVars : [
 		'feature',
 		'requiredCommands',
@@ -16,7 +16,7 @@ Class {
 	#category : #'instance creation',
 	#timestamp : 'stlu 11/3/2020 14:24'
 }
-GLGenProfile class >> feature: feature name: aSymbol [
+KhrProfile class >> feature: feature name: aSymbol [
 
 	^ feature profiles
 		at: aSymbol
@@ -31,7 +31,7 @@ GLGenProfile class >> feature: feature name: aSymbol [
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 13:56'
 }
-GLGenProfile >> feature [
+KhrProfile >> feature [
 
 	^ feature
 ]
@@ -40,7 +40,7 @@ GLGenProfile >> feature [
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 13:56'
 }
-GLGenProfile >> feature: anObject [
+KhrProfile >> feature: anObject [
 
 	feature := anObject
 ]
@@ -49,7 +49,7 @@ GLGenProfile >> feature: anObject [
 	#category : #generation,
 	#timestamp : 'stlu 11/3/2020 14:27'
 }
-GLGenProfile >> generateIn: aClass [
+KhrProfile >> generateIn: aClass [
 
 	requiredCommands do: [:each |
 		aClass compile: (each printRequireSourceInProfile: name) classified: 'api - required'].
@@ -65,7 +65,7 @@ GLGenProfile >> generateIn: aClass [
 	#category : #generation,
 	#timestamp : 'stlu 11/3/2020 14:21'
 }
-GLGenProfile >> generateSharedIn: aClass [
+KhrProfile >> generateSharedIn: aClass [
 
 	requiredCommands do: [:each |
 		aClass compile: each printSharedRequireSource classified: 'api - required'].
@@ -81,7 +81,7 @@ GLGenProfile >> generateSharedIn: aClass [
 	#category : #initialization,
 	#timestamp : 'stlu 11/2/2020 13:39'
 }
-GLGenProfile >> initialize [
+KhrProfile >> initialize [
 
 	super initialize.
 	requiredEnums := OrderedCollection new.
@@ -94,7 +94,7 @@ GLGenProfile >> initialize [
 	#category : #printing,
 	#timestamp : 'stlu 11/2/2020 14:29'
 }
-GLGenProfile >> printOn: aStream [
+KhrProfile >> printOn: aStream [
 
 	aStream nextPutAll: (name ifEmpty: 'SHARED')
 ]
@@ -103,7 +103,7 @@ GLGenProfile >> printOn: aStream [
 	#category : #initialization,
 	#timestamp : 'stlu 11/2/2020 13:59'
 }
-GLGenProfile >> registry: registry removeTag: removeTag [
+KhrProfile >> registry: registry removeTag: removeTag [
 
 	removeTag tagsNamed: #enum do: [:removeEnumTag |
 		| enum enumName |
@@ -122,7 +122,7 @@ GLGenProfile >> registry: registry removeTag: removeTag [
 	#category : #initialization,
 	#timestamp : 'stlu 11/2/2020 13:55'
 }
-GLGenProfile >> registry: registry requireTag: requireTag [
+KhrProfile >> registry: registry requireTag: requireTag [
 
 	requireTag tagsNamed: #enum do: [:requiredEnumTag |
 		| enum enumName |
@@ -141,7 +141,7 @@ GLGenProfile >> registry: registry requireTag: requireTag [
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 13:38'
 }
-GLGenProfile >> removedCommands [
+KhrProfile >> removedCommands [
 
 	^ removedCommands
 ]
@@ -150,7 +150,7 @@ GLGenProfile >> removedCommands [
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 13:38'
 }
-GLGenProfile >> removedEnums [
+KhrProfile >> removedEnums [
 
 	^ removedEnums
 ]
@@ -159,7 +159,7 @@ GLGenProfile >> removedEnums [
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 13:38'
 }
-GLGenProfile >> requiredCommands [
+KhrProfile >> requiredCommands [
 
 	^ requiredCommands
 ]
@@ -168,7 +168,7 @@ GLGenProfile >> requiredCommands [
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 13:38'
 }
-GLGenProfile >> requiredEnums [
+KhrProfile >> requiredEnums [
 
 	^ requiredEnums
 ]

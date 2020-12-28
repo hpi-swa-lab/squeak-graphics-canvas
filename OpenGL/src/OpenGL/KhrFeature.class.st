@@ -1,6 +1,6 @@
 Class {
-	#name : #GLGenFeature,
-	#superclass : #GLGenObject,
+	#name : #KhrFeature,
+	#superclass : #KhrRegistryObject,
 	#instVars : [
 		'parent',
 		'api',
@@ -14,7 +14,7 @@ Class {
 	#category : #'instance creation',
 	#timestamp : 'stlu 11/2/2020 13:30'
 }
-GLGenFeature class >> registry: registry tag: featureTag [
+KhrFeature class >> registry: registry tag: featureTag [
 
 	^ self new
 		registry: registry tag: featureTag;
@@ -25,7 +25,7 @@ GLGenFeature class >> registry: registry tag: featureTag [
 	#category : #generation,
 	#timestamp : 'stlu 11/3/2020 14:47'
 }
-GLGenFeature >> generateIn: aClass [
+KhrFeature >> generateIn: aClass [
 
 	self removeGeneratedMethodsIn: aClass theNonMetaClass.
 	self removeGeneratedMethodsIn: aClass theMetaClass.
@@ -40,13 +40,13 @@ GLGenFeature >> generateIn: aClass [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/3/2020 14:24'
+	#timestamp : 'stlu 12/28/2020 13:00'
 }
-GLGenFeature >> getProfile: tag [
+KhrFeature >> getProfile: tag [
 
 	^ tag attributes
 		at: #profile
-		ifPresent: [:profileName | GLGenProfile feature: self name: profileName asSymbol]
+		ifPresent: [:profileName | KhrProfile feature: self name: profileName asSymbol]
 		ifAbsent: [self sharedProfile]
 ]
 
@@ -54,7 +54,7 @@ GLGenFeature >> getProfile: tag [
 	#category : #initialization,
 	#timestamp : 'stlu 11/2/2020 13:36'
 }
-GLGenFeature >> initialize [
+KhrFeature >> initialize [
 
 	super initialize.
 	profiles := Dictionary new
@@ -64,7 +64,7 @@ GLGenFeature >> initialize [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:19'
 }
-GLGenFeature >> parent [
+KhrFeature >> parent [
 
 	^ parent
 ]
@@ -73,7 +73,7 @@ GLGenFeature >> parent [
 	#category : #printing,
 	#timestamp : 'stlu 11/2/2020 14:26'
 }
-GLGenFeature >> printOn: aStream [
+KhrFeature >> printOn: aStream [
 
 	aStream nextPutAll: name
 ]
@@ -82,18 +82,18 @@ GLGenFeature >> printOn: aStream [
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 13:22'
 }
-GLGenFeature >> profiles [
+KhrFeature >> profiles [
 
 	^ profiles
 ]
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/2/2020 14:25'
+	#timestamp : 'stlu 12/28/2020 12:59'
 }
-GLGenFeature >> registry: registry tag: featureTag [
+KhrFeature >> registry: registry tag: featureTag [
 
-	api := GLGenAPI registry: registry name: (featureTag attributes at: #api).
+	api := KhrAPI registry: registry name: (featureTag attributes at: #api).
 	api addFeature: self.
 	parent := api lastFeature.
 	name := featureTag attributes at: #number.
@@ -108,7 +108,7 @@ GLGenFeature >> registry: registry tag: featureTag [
 	#category : #generation,
 	#timestamp : 'stlu 11/2/2020 19:03'
 }
-GLGenFeature >> removeGeneratedMethodsIn: aClass [
+KhrFeature >> removeGeneratedMethodsIn: aClass [
 
 	(Pragma allNamed: #generated in: aClass) do: [:pragma |
 		aClass removeSelector: pragma method selector]
@@ -116,9 +116,9 @@ GLGenFeature >> removeGeneratedMethodsIn: aClass [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/3/2020 14:24'
+	#timestamp : 'stlu 12/28/2020 13:00'
 }
-GLGenFeature >> sharedProfile [
+KhrFeature >> sharedProfile [
 
-	^ GLGenProfile feature: self name: #''
+	^ KhrProfile feature: self name: #''
 ]

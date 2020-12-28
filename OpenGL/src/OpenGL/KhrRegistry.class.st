@@ -11,8 +11,8 @@ GLRegistry fromWeb generate.
 The registry object is not modified to generate code and can hence be used multiple times to do so.
 "
 Class {
-	#name : #GLGenRegistry,
-	#superclass : #GLGenObject,
+	#name : #KhrRegistry,
+	#superclass : #KhrRegistryObject,
 	#instVars : [
 		'commands',
 		'enums',
@@ -27,7 +27,7 @@ Class {
 	#category : #'instance creation',
 	#timestamp : 'stlu 10/31/2020 23:18'
 }
-GLGenRegistry class >> fromFile: filePath [
+KhrRegistry class >> fromFile: filePath [
 
 	^ self fromXML: (XMLDOMParser parseDocumentFrom: filePath asURI contentStream)
 ]
@@ -36,7 +36,7 @@ GLGenRegistry class >> fromFile: filePath [
 	#category : #'instance creation',
 	#timestamp : 'stlu 11/1/2020 19:47'
 }
-GLGenRegistry class >> fromTag: registryTag [
+KhrRegistry class >> fromTag: registryTag [
 
 	^ self new
 		tag: registryTag;
@@ -47,7 +47,7 @@ GLGenRegistry class >> fromTag: registryTag [
 	#category : #'instance creation',
 	#timestamp : 'stlu 11/6/2020 17:49'
 }
-GLGenRegistry class >> fromUrl: urlString [
+KhrRegistry class >> fromUrl: urlString [
 
 	| response |
 	response := WebClient httpGet: urlString.
@@ -59,7 +59,7 @@ GLGenRegistry class >> fromUrl: urlString [
 	#category : #'instance creation',
 	#timestamp : 'stlu 11/6/2020 17:52'
 }
-GLGenRegistry class >> fromWeb [
+KhrRegistry class >> fromWeb [
 
 	^ self fromUrl: 'https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml'
 ]
@@ -68,7 +68,7 @@ GLGenRegistry class >> fromWeb [
 	#category : #'instance creation',
 	#timestamp : 'stlu 11/1/2020 19:20'
 }
-GLGenRegistry class >> fromXML: xml [
+KhrRegistry class >> fromXML: xml [
 
 	^ self fromTag: (xml firstTagNamed: #registry)
 ]
@@ -77,7 +77,7 @@ GLGenRegistry class >> fromXML: xml [
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 13:20'
 }
-GLGenRegistry >> addCommand: command [
+KhrRegistry >> addCommand: command [
 
 	^ commands
 		at: command name
@@ -89,7 +89,7 @@ GLGenRegistry >> addCommand: command [
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 13:20'
 }
-GLGenRegistry >> addEnum: enum [
+KhrRegistry >> addEnum: enum [
 
 	^ enums
 		at: enum name
@@ -101,7 +101,7 @@ GLGenRegistry >> addEnum: enum [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:19'
 }
-GLGenRegistry >> apis [
+KhrRegistry >> apis [
 
 	^ apis
 ]
@@ -110,7 +110,7 @@ GLGenRegistry >> apis [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:19'
 }
-GLGenRegistry >> commands [
+KhrRegistry >> commands [
 
 	^ commands
 ]
@@ -119,7 +119,7 @@ GLGenRegistry >> commands [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:19'
 }
-GLGenRegistry >> enumGroups [
+KhrRegistry >> enumGroups [
 
 	^ enumGroups
 ]
@@ -128,7 +128,7 @@ GLGenRegistry >> enumGroups [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:19'
 }
-GLGenRegistry >> enums [
+KhrRegistry >> enums [
 
 	^ enums
 ]
@@ -137,7 +137,7 @@ GLGenRegistry >> enums [
 	#category : #generation,
 	#timestamp : 'stlu 11/2/2020 20:56'
 }
-GLGenRegistry >> generate [
+KhrRegistry >> generate [
 
 	self generateConstantsPool.
 	apis do: [:api | api generate].
@@ -147,7 +147,7 @@ GLGenRegistry >> generate [
 	#category : #generation,
 	#timestamp : 'stlu 11/2/2020 20:54'
 }
-GLGenRegistry >> generateConstantsPool [
+KhrRegistry >> generateConstantsPool [
 
 	| classVars |
 	classVars := GLConstants classVarNames asSet.
@@ -160,7 +160,7 @@ GLGenRegistry >> generateConstantsPool [
 	#category : #initialization,
 	#timestamp : 'stlu 10/31/2020 23:59'
 }
-GLGenRegistry >> initialize [
+KhrRegistry >> initialize [
 
 	super initialize.
 	enums := Dictionary new: 7000.
@@ -171,20 +171,20 @@ GLGenRegistry >> initialize [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/2/2020 20:28'
+	#timestamp : 'stlu 12/28/2020 13:01'
 }
-GLGenRegistry >> tag: registryTag [
+KhrRegistry >> tag: registryTag [
 
 	name := 'gl.xml'.
 
 	registryTag tagsNamed: #enums do: [:enumsTag |
 		enumsTag tagsNamed: #enum do: [:enumTag |
-			GLGenEnum registry: self tag: enumTag]].
+			KhrEnum registry: self tag: enumTag]].
 	
 	registryTag tagsNamed: #commands do: [:commandsTag |
 		commandsTag tagsNamed: #command do: [:commandTag |
-			GLGenCommand registry: self tag: commandTag]].
+			KhrCommand registry: self tag: commandTag]].
 	
 	registryTag tagsNamed: #feature do: [:featureTag |
-		GLGenFeature registry: self tag: featureTag]
+		KhrFeature registry: self tag: featureTag]
 ]

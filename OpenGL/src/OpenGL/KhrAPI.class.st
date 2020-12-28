@@ -1,6 +1,6 @@
 Class {
-	#name : #GLGenAPI,
-	#superclass : #GLGenObject,
+	#name : #KhrAPI,
+	#superclass : #KhrRegistryObject,
 	#instVars : [
 		'features'
 	],
@@ -12,7 +12,7 @@ Class {
 	#category : #'instance creation',
 	#timestamp : 'stlu 11/2/2020 14:08'
 }
-GLGenAPI class >> registry: registry name: aString [
+KhrAPI class >> registry: registry name: aString [
 
 	^ registry apis
 		at: aString
@@ -23,7 +23,7 @@ GLGenAPI class >> registry: registry name: aString [
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 14:03'
 }
-GLGenAPI >> addFeature: feature [
+KhrAPI >> addFeature: feature [
 
 	features add: feature
 ]
@@ -32,7 +32,7 @@ GLGenAPI >> addFeature: feature [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:20'
 }
-GLGenAPI >> features [
+KhrAPI >> features [
 
 	^ features
 ]
@@ -41,7 +41,7 @@ GLGenAPI >> features [
 	#category : #generation,
 	#timestamp : 'stlu 11/12/2020 14:58'
 }
-GLGenAPI >> generate [
+KhrAPI >> generate [
 
 	| rootClass |
 	rootClass := GLLibrary api: name.
@@ -57,7 +57,7 @@ GLGenAPI >> generate [
 	#category : #initialization,
 	#timestamp : 'stlu 11/2/2020 14:02'
 }
-GLGenAPI >> initialize [
+KhrAPI >> initialize [
 
 	super initialize.
 	features := OrderedCollection new
@@ -67,7 +67,7 @@ GLGenAPI >> initialize [
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 13:34'
 }
-GLGenAPI >> lastFeature [
+KhrAPI >> lastFeature [
 
 	^ features
 		ifNotEmpty: [features last]
@@ -78,7 +78,7 @@ GLGenAPI >> lastFeature [
 	#category : #printing,
 	#timestamp : 'stlu 11/2/2020 14:26'
 }
-GLGenAPI >> printOn: aStream [
+KhrAPI >> printOn: aStream [
 
 	aStream
 		nextPutAll: name asUppercase;

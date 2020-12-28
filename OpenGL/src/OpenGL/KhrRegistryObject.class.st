@@ -1,5 +1,5 @@
 Class {
-	#name : #GLGenObject,
+	#name : #KhrRegistryObject,
 	#superclass : #Object,
 	#instVars : [
 		'name'
@@ -12,7 +12,7 @@ Class {
 	#category : #accessing,
 	#timestamp : 'stlu 11/1/2020 19:34'
 }
-GLGenObject >> name [
+KhrRegistryObject >> name [
 
 	^ name
 ]
@@ -21,7 +21,7 @@ GLGenObject >> name [
 	#category : #accessing,
 	#timestamp : 'stlu 11/1/2020 21:29'
 }
-GLGenObject >> name: stringOrSymbol [
+KhrRegistryObject >> name: stringOrSymbol [
 
 	name := stringOrSymbol
 ]

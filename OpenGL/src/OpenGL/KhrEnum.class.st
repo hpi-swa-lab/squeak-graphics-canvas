@@ -1,6 +1,6 @@
 Class {
-	#name : #GLGenEnum,
-	#superclass : #GLGenObject,
+	#name : #KhrEnum,
+	#superclass : #KhrRegistryObject,
 	#instVars : [
 		'value',
 		'groups'
@@ -13,7 +13,7 @@ Class {
 	#category : #helpers,
 	#timestamp : 'stlu 10/31/2020 23:06'
 }
-GLGenEnum class >> convertEnumValueString: aString [
+KhrEnum class >> convertEnumValueString: aString [
 
 	^ (aString beginsWith: '0x')
 		ifTrue: [	Number
@@ -26,7 +26,7 @@ GLGenEnum class >> convertEnumValueString: aString [
 	#category : #'instance creation',
 	#timestamp : 'stlu 11/1/2020 20:12'
 }
-GLGenEnum class >> registry: registry tag: enumTag [
+KhrEnum class >> registry: registry tag: enumTag [
 
 	^ self new
 		registry: registry tag: enumTag;
@@ -37,7 +37,7 @@ GLGenEnum class >> registry: registry tag: enumTag [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:19'
 }
-GLGenEnum >> groups [
+KhrEnum >> groups [
 
 	^ groups
 ]
@@ -46,7 +46,7 @@ GLGenEnum >> groups [
 	#category : #initialization,
 	#timestamp : 'stlu 10/31/2020 22:59'
 }
-GLGenEnum >> initialize [
+KhrEnum >> initialize [
 
 	super initialize.
 	groups := OrderedCollection new
@@ -56,7 +56,7 @@ GLGenEnum >> initialize [
 	#category : #printing,
 	#timestamp : 'stlu 11/1/2020 20:58'
 }
-GLGenEnum >> printOn: aStream [
+KhrEnum >> printOn: aStream [
 
 	aStream
 		nextPutAll: name;
@@ -68,7 +68,7 @@ GLGenEnum >> printOn: aStream [
 	#category : #generation,
 	#timestamp : 'stlu 11/3/2020 14:12'
 }
-GLGenEnum >> printRemoveSourceInProfile: aSymbol [
+KhrEnum >> printRemoveSourceInProfile: aSymbol [
 
 	^ String streamContents: [:stream |
 		stream
@@ -89,7 +89,7 @@ GLGenEnum >> printRemoveSourceInProfile: aSymbol [
 	#category : #generation,
 	#timestamp : 'stlu 11/3/2020 14:15'
 }
-GLGenEnum >> printRequireSourceInProfile: aSymbol [
+KhrEnum >> printRequireSourceInProfile: aSymbol [
 
 	^ String streamContents: [:stream |
 		stream
@@ -110,7 +110,7 @@ GLGenEnum >> printRequireSourceInProfile: aSymbol [
 	#category : #generation,
 	#timestamp : 'stlu 11/3/2020 14:09'
 }
-GLGenEnum >> printSharedRemoveSource [
+KhrEnum >> printSharedRemoveSource [
 
 	^ String streamContents: [:stream |
 		stream
@@ -125,7 +125,7 @@ GLGenEnum >> printSharedRemoveSource [
 	#category : #generation,
 	#timestamp : 'stlu 11/3/2020 14:08'
 }
-GLGenEnum >> printSharedRequireSource [
+KhrEnum >> printSharedRequireSource [
 
 	^ String streamContents: [:stream |
 		stream
@@ -139,17 +139,17 @@ GLGenEnum >> printSharedRequireSource [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/1/2020 21:30'
+	#timestamp : 'stlu 12/28/2020 13:00'
 }
-GLGenEnum >> registry: registry tag: enumTag [
+KhrEnum >> registry: registry tag: enumTag [
 
 	name := enumTag attributeAt: #name.
-	value := GLGenEnum convertEnumValueString: (enumTag attributeAt: #value).
+	value := KhrEnum convertEnumValueString: (enumTag attributeAt: #value).
 	
 	enumTag attributes at: #group ifPresent: [:groupNames |
 		groupNames findTokens: ',' do: [:groupName |
 			| group |
-			group := GLGenEnumGroup registry: registry name: groupName.
+			group := KhrEnumGroup registry: registry name: groupName.
 			group addEnum: self.
 			groups add: group]].
 	
@@ -160,7 +160,7 @@ GLGenEnum >> registry: registry tag: enumTag [
 	#category : #generation,
 	#timestamp : 'stlu 11/3/2020 14:43'
 }
-GLGenEnum >> selector [
+KhrEnum >> selector [
 
 	^ name fourth canBeIdentifierInitial
 		ifTrue: [name allButFirst: 3 "remove GL_* prefix"]
@@ -171,7 +171,7 @@ GLGenEnum >> selector [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 23:00'
 }
-GLGenEnum >> value [
+KhrEnum >> value [
 
 	^ value
 ]

@@ -1,6 +1,6 @@
 Class {
-	#name : #GLGenCommand,
-	#superclass : #GLGenObject,
+	#name : #KhrCommand,
+	#superclass : #KhrRegistryObject,
 	#instVars : [
 		'parameters',
 		'returnType'
@@ -13,7 +13,7 @@ Class {
 	#category : #'instance creation',
 	#timestamp : 'stlu 11/1/2020 20:13'
 }
-GLGenCommand class >> registry: registry tag: commandTag [
+KhrCommand class >> registry: registry tag: commandTag [
 
 	^ self new
 		registry: registry tag: commandTag;
@@ -24,7 +24,7 @@ GLGenCommand class >> registry: registry tag: commandTag [
 	#category : #accessing,
 	#timestamp : 'stlu 11/1/2020 00:23'
 }
-GLGenCommand >> addParameter: param [
+KhrCommand >> addParameter: param [
 
 	parameters add: param
 ]
@@ -33,7 +33,7 @@ GLGenCommand >> addParameter: param [
 	#category : #initialization,
 	#timestamp : 'stlu 11/1/2020 20:27'
 }
-GLGenCommand >> initialize [
+KhrCommand >> initialize [
 
 	super initialize.
 	parameters := OrderedCollection new
@@ -43,7 +43,7 @@ GLGenCommand >> initialize [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:20'
 }
-GLGenCommand >> parameters [
+KhrCommand >> parameters [
 
 	^ parameters
 ]
@@ -52,7 +52,7 @@ GLGenCommand >> parameters [
 	#category : #generation,
 	#timestamp : 'stlu 11/2/2020 19:53'
 }
-GLGenCommand >> printFFIPragmaOn: aStream [
+KhrCommand >> printFFIPragmaOn: aStream [
 
 	aStream
 		nextPutAll: '<apicall: ';
@@ -72,7 +72,7 @@ GLGenCommand >> printFFIPragmaOn: aStream [
 	#category : #printing,
 	#timestamp : 'stlu 11/1/2020 20:56'
 }
-GLGenCommand >> printOn: aStream [
+KhrCommand >> printOn: aStream [
 
 	aStream
 		nextPutAll: returnType;
@@ -89,7 +89,7 @@ GLGenCommand >> printOn: aStream [
 	#category : #generation,
 	#timestamp : 'stlu 11/3/2020 13:04'
 }
-GLGenCommand >> printRemoveSourceInProfile: aSymbol [
+KhrCommand >> printRemoveSourceInProfile: aSymbol [
 
 	^ String streamContents: [:stream |
 		self printSignatureOn: stream.
@@ -111,7 +111,7 @@ GLGenCommand >> printRemoveSourceInProfile: aSymbol [
 	#category : #generation,
 	#timestamp : 'stlu 11/3/2020 13:10'
 }
-GLGenCommand >> printRequireSourceInProfile: aSymbol [
+KhrCommand >> printRequireSourceInProfile: aSymbol [
 
 	^ String streamContents: [:stream |
 		self printSignatureOn: stream.
@@ -135,7 +135,7 @@ GLGenCommand >> printRequireSourceInProfile: aSymbol [
 	#category : #generation,
 	#timestamp : 'stlu 11/3/2020 12:58'
 }
-GLGenCommand >> printSharedRemoveSource [
+KhrCommand >> printSharedRemoveSource [
 
 	^ String streamContents: [:stream |
 		self printSignatureOn: stream.
@@ -151,7 +151,7 @@ GLGenCommand >> printSharedRemoveSource [
 	#category : #generation,
 	#timestamp : 'stlu 11/3/2020 12:58'
 }
-GLGenCommand >> printSharedRequireSource [
+KhrCommand >> printSharedRequireSource [
 
 	^ String streamContents: [:stream |
 		self printSignatureOn: stream.
@@ -172,7 +172,7 @@ GLGenCommand >> printSharedRequireSource [
 	#category : #generation,
 	#timestamp : 'stlu 11/2/2020 19:39'
 }
-GLGenCommand >> printSignatureOn: aStream [
+KhrCommand >> printSignatureOn: aStream [
 
 	aStream nextPutAll: self selector.
 	parameters ifNotEmpty: [aStream nextPutAll: ': '].
@@ -183,17 +183,17 @@ GLGenCommand >> printSignatureOn: aStream [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/1/2020 21:30'
+	#timestamp : 'stlu 12/28/2020 13:00'
 }
-GLGenCommand >> registry: registry tag: commandTag [
+KhrCommand >> registry: registry tag: commandTag [
 
 	| protoTag |
 	protoTag := commandTag firstTagNamed: #proto.
 	name := (protoTag firstTagNamed: #name) contentString.
-	returnType := GLGenParameter getType: protoTag.
+	returnType := KhrParameter getType: protoTag.
 	
 	commandTag tagsNamed: #param do: [:paramTag |
-		GLGenParameter registry: registry command: self tag: paramTag].
+		KhrParameter registry: registry command: self tag: paramTag].
 	registry addCommand: self
 ]
 
@@ -201,7 +201,7 @@ GLGenCommand >> registry: registry tag: commandTag [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:20'
 }
-GLGenCommand >> returnType [
+KhrCommand >> returnType [
 
 	^ returnType
 ]
@@ -210,7 +210,7 @@ GLGenCommand >> returnType [
 	#category : #generation,
 	#timestamp : 'stlu 11/3/2020 13:59'
 }
-GLGenCommand >> selector [
+KhrCommand >> selector [
 	"remove gl* prefix"
 	| selector |
 	selector := name allButFirst: 2.

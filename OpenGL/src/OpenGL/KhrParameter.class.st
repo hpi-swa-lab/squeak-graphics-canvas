@@ -1,6 +1,6 @@
 Class {
-	#name : #GLGenParameter,
-	#superclass : #GLGenObject,
+	#name : #KhrParameter,
+	#superclass : #KhrRegistryObject,
 	#instVars : [
 		'type',
 		'group',
@@ -15,7 +15,7 @@ Class {
 	#category : #helpers,
 	#timestamp : 'stlu 10/31/2020 23:49'
 }
-GLGenParameter class >> getType: xmlTag [
+KhrParameter class >> getType: xmlTag [
 
 	| result |
 	result := String streamContents: [:stream |
@@ -32,7 +32,7 @@ GLGenParameter class >> getType: xmlTag [
 	#category : #'instance creation',
 	#timestamp : 'stlu 11/1/2020 21:31'
 }
-GLGenParameter class >> registry: registry command: command tag: paramTag [
+KhrParameter class >> registry: registry command: command tag: paramTag [
 
 	^ self new
 		registry: registry command: command tag: paramTag;
@@ -43,7 +43,7 @@ GLGenParameter class >> registry: registry command: command tag: paramTag [
 	#category : #'instance creation',
 	#timestamp : 'stlu 11/1/2020 20:13'
 }
-GLGenParameter class >> registry: registry tag: paramTag [
+KhrParameter class >> registry: registry tag: paramTag [
 
 	^ self new
 		registry: registry tag: paramTag;
@@ -54,7 +54,7 @@ GLGenParameter class >> registry: registry tag: paramTag [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:19'
 }
-GLGenParameter >> command [
+KhrParameter >> command [
 
 	^ command
 ]
@@ -63,7 +63,7 @@ GLGenParameter >> command [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:19'
 }
-GLGenParameter >> group [
+KhrParameter >> group [
 
 	^ group
 ]
@@ -72,7 +72,7 @@ GLGenParameter >> group [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:19'
 }
-GLGenParameter >> length [
+KhrParameter >> length [
 
 	^ length
 ]
@@ -81,7 +81,7 @@ GLGenParameter >> length [
 	#category : #printing,
 	#timestamp : 'stlu 11/1/2020 20:50'
 }
-GLGenParameter >> printOn: aStream [
+KhrParameter >> printOn: aStream [
 
 	aStream
 		nextPutAll: type;
@@ -91,18 +91,18 @@ GLGenParameter >> printOn: aStream [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/1/2020 21:29'
+	#timestamp : 'stlu 12/28/2020 13:00'
 }
-GLGenParameter >> registry: registry command: aCommand tag: paramTag [
+KhrParameter >> registry: registry command: aCommand tag: paramTag [
 
 	name := (paramTag firstTagNamed: #name) contentString.
-	type := GLGenParameter getType: paramTag.
+	type := KhrParameter getType: paramTag.
 	command := aCommand.
 	
 	paramTag attributes at: #len ifPresent: [:len |
 		length := len].
 	paramTag attributes at: #group ifPresent: [:groupName |
-		group := GLGenEnumGroup registry: registry name: groupName.
+		group := KhrEnumGroup registry: registry name: groupName.
 		group addParameter: self].
 	
 	command addParameter: self
@@ -112,7 +112,7 @@ GLGenParameter >> registry: registry command: aCommand tag: paramTag [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:19'
 }
-GLGenParameter >> type [
+KhrParameter >> type [
 
 	^ type
 ]
