@@ -21,6 +21,15 @@ KhrEnumGroup class >> registry: registry name: aSymbol [
 ]
 
 {
+	#category : #visiting,
+	#timestamp : 'stlu 12/28/2020 13:04'
+}
+KhrEnumGroup >> acceptVisitor: aVisitor [
+
+	^ aVisitor visitEnumGroup: self
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 23:16'
 }

@@ -51,6 +51,15 @@ KhrParameter class >> registry: registry tag: paramTag [
 ]
 
 {
+	#category : #visiting,
+	#timestamp : 'stlu 12/28/2020 13:04'
+}
+KhrParameter >> acceptVisitor: aVisitor [
+
+	^ aVisitor visitParameter: self
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:19'
 }

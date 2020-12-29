@@ -20,6 +20,15 @@ KhrAPI class >> registry: registry name: aString [
 ]
 
 {
+	#category : #visiting,
+	#timestamp : 'stlu 12/28/2020 13:02'
+}
+KhrAPI >> acceptVisitor: aVisitor [
+
+	^ aVisitor visitAPI: self
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 14:03'
 }

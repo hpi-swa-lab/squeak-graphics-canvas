@@ -22,6 +22,24 @@ KhrFeature class >> registry: registry tag: featureTag [
 ]
 
 {
+	#category : #visiting,
+	#timestamp : 'stlu 12/28/2020 13:04'
+}
+KhrFeature >> acceptVisitor: aVisitor [
+
+	^ aVisitor visitFeature: self
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/28/2020 13:27'
+}
+KhrFeature >> api [
+
+	^ api
+]
+
+{
 	#category : #generation,
 	#timestamp : 'stlu 11/3/2020 14:47'
 }
@@ -89,29 +107,17 @@ KhrFeature >> profiles [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/28/2020 12:59'
+	#timestamp : 'stlu 12/28/2020 14:26'
 }
 KhrFeature >> registry: registry tag: featureTag [
 
 	api := KhrAPI registry: registry name: (featureTag attributes at: #api).
-	api addFeature: self.
 	parent := api lastFeature.
+	api addFeature: self.
 	name := featureTag attributes at: #number.
 	
-	featureTag tagsNamed: #require do: [:requireTag |
-		(self getProfile: requireTag) registry: registry requireTag: requireTag].
-	featureTag tagsNamed: #remove do: [:removeTag |
-		(self getProfile: removeTag) registry: registry removeTag: removeTag]
-]
-
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/2/2020 19:03'
-}
-KhrFeature >> removeGeneratedMethodsIn: aClass [
-
-	(Pragma allNamed: #generated in: aClass) do: [:pragma |
-		aClass removeSelector: pragma method selector]
+	featureTag elementsDo: [:actionTag |
+		(self getProfile: actionTag) registry: registry actionTag: actionTag]
 ]
 
 {

@@ -34,6 +34,15 @@ KhrEnum class >> registry: registry tag: enumTag [
 ]
 
 {
+	#category : #visiting,
+	#timestamp : 'stlu 12/28/2020 13:03'
+}
+KhrEnum >> acceptVisitor: aVisitor [
+
+	^ aVisitor visitEnum: self
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:19'
 }
@@ -53,15 +62,24 @@ KhrEnum >> initialize [
 ]
 
 {
+	#category : #testing,
+	#timestamp : 'stlu 12/28/2020 13:52'
+}
+KhrEnum >> isEnum [
+
+	^ true
+]
+
+{
 	#category : #printing,
-	#timestamp : 'stlu 11/1/2020 20:58'
+	#timestamp : 'stlu 12/28/2020 14:33'
 }
 KhrEnum >> printOn: aStream [
 
 	aStream
 		nextPutAll: name;
-		space.
-	value printOn: aStream
+		space;
+		print: value
 ]
 
 {

@@ -74,6 +74,15 @@ KhrRegistry class >> fromXML: xml [
 ]
 
 {
+	#category : #visiting,
+	#timestamp : 'stlu 12/28/2020 13:04'
+}
+KhrRegistry >> acceptVisitor: aVisitor [
+
+	^ aVisitor visitRegistry: self
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 13:20'
 }
@@ -131,29 +140,6 @@ KhrRegistry >> enumGroups [
 KhrRegistry >> enums [
 
 	^ enums
-]
-
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/2/2020 20:56'
-}
-KhrRegistry >> generate [
-
-	self generateConstantsPool.
-	apis do: [:api | api generate].
-]
-
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/2/2020 20:54'
-}
-KhrRegistry >> generateConstantsPool [
-
-	| classVars |
-	classVars := GLConstants classVarNames asSet.
-	enums do: [:enum |
-		(classVars includes: enum name) ifFalse: [
-			GLConstants addClassVarName: enum name]]
 ]
 
 {

@@ -21,12 +21,31 @@ KhrCommand class >> registry: registry tag: commandTag [
 ]
 
 {
+	#category : #visiting,
+	#timestamp : 'stlu 12/28/2020 13:03'
+}
+KhrCommand >> acceptVisitor: aVisitor [
+
+	^ aVisitor visitCommand: self
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 11/1/2020 00:23'
 }
 KhrCommand >> addParameter: param [
 
 	parameters add: param
+]
+
+{
+	#category : #printing,
+	#timestamp : 'stlu 12/28/2020 16:36'
+}
+KhrCommand >> ffiPragma [
+
+	^ String streamContents: [:stream |
+		self printFFIPragmaOn: stream]
 ]
 
 {
@@ -40,6 +59,15 @@ KhrCommand >> initialize [
 ]
 
 {
+	#category : #testing,
+	#timestamp : 'stlu 12/28/2020 13:52'
+}
+KhrCommand >> isCommand [
+
+	^ true
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:20'
 }
@@ -49,7 +77,7 @@ KhrCommand >> parameters [
 ]
 
 {
-	#category : #generation,
+	#category : #printing,
 	#timestamp : 'stlu 11/2/2020 19:53'
 }
 KhrCommand >> printFFIPragmaOn: aStream [
@@ -87,7 +115,7 @@ KhrCommand >> printOn: aStream [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 13:04'
+	#timestamp : 'stlu 12/28/2020 15:27'
 }
 KhrCommand >> printRemoveSourceInProfile: aSymbol [
 
@@ -98,9 +126,8 @@ KhrCommand >> printRemoveSourceInProfile: aSymbol [
 			cr; cr; tab;
 			nextPutAll: '<generated>';
 			cr; tab;
-			nextPutAll: 'profile == '.
-		aSymbol storeOn: stream.
-		stream
+			nextPutAll: 'profile == ';
+			store: aSymbol;
 			nextPutAll: ' ifTrue: [^ self profileError].';
 			cr; tab;
 			nextPutAll: '^ super '.

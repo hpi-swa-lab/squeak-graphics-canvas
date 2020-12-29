@@ -3,10 +3,7 @@ Class {
 	#superclass : #KhrRegistryObject,
 	#instVars : [
 		'feature',
-		'requiredCommands',
-		'requiredEnums',
-		'removedCommands',
-		'removedEnums'
+		'definitions'
 	],
 	#category : #'OpenGL-Generation',
 	#commentStamp : ''
@@ -25,6 +22,24 @@ KhrProfile class >> feature: feature name: aSymbol [
 				feature: feature;
 				name: aSymbol;
 				yourself]
+]
+
+{
+	#category : #visiting,
+	#timestamp : 'stlu 12/28/2020 13:04'
+}
+KhrProfile >> acceptVisitor: aVisitor [
+
+	^ aVisitor visitProfile: self
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 12/28/2020 14:47'
+}
+KhrProfile >> definitions [
+
+	^ definitions
 ]
 
 {
@@ -79,15 +94,21 @@ KhrProfile >> generateSharedIn: aClass [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/2/2020 13:39'
+	#timestamp : 'stlu 12/28/2020 14:24'
 }
 KhrProfile >> initialize [
 
 	super initialize.
-	requiredEnums := OrderedCollection new.
-	requiredCommands := OrderedCollection new.
-	removedEnums := OrderedCollection new.
-	removedCommands := OrderedCollection new
+	definitions := OrderedCollection new
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 12/29/2020 19:18'
+}
+KhrProfile >> isShared [
+
+	^ name isEmpty
 ]
 
 {
@@ -101,74 +122,15 @@ KhrProfile >> printOn: aStream [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/2/2020 13:59'
+	#timestamp : 'stlu 12/28/2020 15:09'
 }
-KhrProfile >> registry: registry removeTag: removeTag [
+KhrProfile >> registry: registry actionTag: actionTag [
 
-	removeTag tagsNamed: #enum do: [:removeEnumTag |
-		| enum enumName |
-		enumName := removeEnumTag attributes at: #name.
-		enum := registry enums at: enumName.
-		removedEnums add: enum].
-	
-	removeTag tagsNamed: #command do: [:removeCommandTag |
-		| command commandName |
-		commandName := removeCommandTag attributes at: #name.
-		command := registry commands at: commandName.
-		removedCommands add: command]
-]
-
-{
-	#category : #initialization,
-	#timestamp : 'stlu 11/2/2020 13:55'
-}
-KhrProfile >> registry: registry requireTag: requireTag [
-
-	requireTag tagsNamed: #enum do: [:requiredEnumTag |
-		| enum enumName |
-		enumName := requiredEnumTag attributes at: #name.
-		enum := registry enums at: enumName.
-		requiredEnums add: enum].
-	
-	requireTag tagsNamed: #command do: [:requiredCommandTag |
-		| command commandName |
-		commandName := requiredCommandTag attributes at: #name.
-		command := registry commands at: commandName.
-		requiredCommands add: command]
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:38'
-}
-KhrProfile >> removedCommands [
-
-	^ removedCommands
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:38'
-}
-KhrProfile >> removedEnums [
-
-	^ removedEnums
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:38'
-}
-KhrProfile >> requiredCommands [
-
-	^ requiredCommands
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 13:38'
-}
-KhrProfile >> requiredEnums [
-
-	^ requiredEnums
+	actionTag elementsDo: [:targetTag |
+		targetTag tag ~= #type ifTrue: [
+			definitions add: (KhrDefinition
+								registry: registry
+								profile: self
+								actionTag: actionTag
+								targetTag: targetTag)]]
 ]

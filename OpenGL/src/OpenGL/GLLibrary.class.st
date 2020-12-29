@@ -42,6 +42,15 @@ GLLibrary class >> api: aSymbol [
 ]
 
 {
+	#category : #querying,
+	#timestamp : 'stlu 12/28/2020 13:25'
+}
+GLLibrary class >> api: apiSymbol majorVersion: major minorVersion: minor [
+
+	^ (self api: apiSymbol) majorVersion: major minorVersion: minor
+]
+
+{
 	#category : #'instance creation',
 	#timestamp : 'stlu 11/3/2020 12:53'
 }
