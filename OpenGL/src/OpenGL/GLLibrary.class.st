@@ -136,7 +136,7 @@ GLLibrary class >> initialize [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 12/28/2020 18:29'
+	#timestamp : 'stlu 12/28/2020 18:47'
 }
 GLLibrary class >> initializeErrorMessages [
 
@@ -148,6 +148,8 @@ GLLibrary class >> initializeErrorMessages [
 		GL_STACK_UNDERFLOW -> 'Stack underflow. An attempt has been made to perform an operation that would cause an internal stack to underflow.'.
 		GL_OUT_OF_MEMORY -> 'Out of memory. There is not enought memory left to execute the command.'.
 		GL_INVALID_FRAMEBUFFER_OPERATION -> 'Invalid framebuffer operation. The framebuffer object is not complete.'.
+		GL_TEXTURE_TOO_LARGE_EXT -> 'Texture too large. Cannot accomodate a texture of the size requested.'.
+		GL_TABLE_TOO_LARGE -> 'Table too large.'.
 		GL_NO_ERROR -> 'No error. No error has been recorded.'
 	} as: Dictionary
 ]
