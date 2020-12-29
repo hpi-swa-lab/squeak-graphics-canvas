@@ -34,7 +34,7 @@ GL4_4 class >> versionNumber [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> BUFFER_IMMUTABLE_STORAGE [
 
@@ -44,7 +44,7 @@ GL4_4 >> BUFFER_IMMUTABLE_STORAGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> BUFFER_STORAGE_FLAGS [
 
@@ -54,7 +54,7 @@ GL4_4 >> BUFFER_STORAGE_FLAGS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> CLEAR_TEXTURE [
 
@@ -64,7 +64,7 @@ GL4_4 >> CLEAR_TEXTURE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> CLIENT_MAPPED_BUFFER_BARRIER_BIT [
 
@@ -74,7 +74,7 @@ GL4_4 >> CLIENT_MAPPED_BUFFER_BARRIER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> CLIENT_STORAGE_BIT [
 
@@ -84,7 +84,7 @@ GL4_4 >> CLIENT_STORAGE_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> DYNAMIC_STORAGE_BIT [
 
@@ -94,7 +94,7 @@ GL4_4 >> DYNAMIC_STORAGE_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> LOCATION_COMPONENT [
 
@@ -104,7 +104,7 @@ GL4_4 >> LOCATION_COMPONENT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> MAP_COHERENT_BIT [
 
@@ -114,7 +114,7 @@ GL4_4 >> MAP_COHERENT_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> MAP_PERSISTENT_BIT [
 
@@ -124,7 +124,7 @@ GL4_4 >> MAP_PERSISTENT_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> MAP_READ_BIT [
 
@@ -134,7 +134,7 @@ GL4_4 >> MAP_READ_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> MAP_WRITE_BIT [
 
@@ -144,7 +144,7 @@ GL4_4 >> MAP_WRITE_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> MAX_VERTEX_ATTRIB_STRIDE [
 
@@ -154,7 +154,7 @@ GL4_4 >> MAX_VERTEX_ATTRIB_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> MIRROR_CLAMP_TO_EDGE [
 
@@ -164,7 +164,7 @@ GL4_4 >> MIRROR_CLAMP_TO_EDGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED [
 
@@ -174,7 +174,7 @@ GL4_4 >> PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> QUERY_BUFFER [
 
@@ -184,7 +184,7 @@ GL4_4 >> QUERY_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> QUERY_BUFFER_BARRIER_BIT [
 
@@ -194,7 +194,7 @@ GL4_4 >> QUERY_BUFFER_BARRIER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> QUERY_BUFFER_BINDING [
 
@@ -204,7 +204,7 @@ GL4_4 >> QUERY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> QUERY_RESULT_NO_WAIT [
 
@@ -214,7 +214,7 @@ GL4_4 >> QUERY_RESULT_NO_WAIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> STENCIL_INDEX [
 
@@ -224,7 +224,7 @@ GL4_4 >> STENCIL_INDEX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> STENCIL_INDEX8 [
 
@@ -234,7 +234,7 @@ GL4_4 >> STENCIL_INDEX8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> TEXTURE_BUFFER_BINDING [
 
@@ -244,7 +244,7 @@ GL4_4 >> TEXTURE_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> TRANSFORM_FEEDBACK_BUFFER [
 
@@ -254,7 +254,7 @@ GL4_4 >> TRANSFORM_FEEDBACK_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> TRANSFORM_FEEDBACK_BUFFER_INDEX [
 
@@ -264,7 +264,7 @@ GL4_4 >> TRANSFORM_FEEDBACK_BUFFER_INDEX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> TRANSFORM_FEEDBACK_BUFFER_STRIDE [
 
@@ -274,7 +274,7 @@ GL4_4 >> TRANSFORM_FEEDBACK_BUFFER_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> UNSIGNED_INT_10F_11F_11F_REV [
 
@@ -284,7 +284,7 @@ GL4_4 >> UNSIGNED_INT_10F_11F_11F_REV [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> bindBuffersBase: target with: first with: count with: buffers [
 
@@ -295,7 +295,7 @@ GL4_4 >> bindBuffersBase: target with: first with: count with: buffers [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> bindBuffersRange: target with: first with: count with: buffers with: offsets with: sizes [
 
@@ -306,7 +306,7 @@ GL4_4 >> bindBuffersRange: target with: first with: count with: buffers with: of
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> bindImageTextures: first with: count with: textures [
 
@@ -317,7 +317,7 @@ GL4_4 >> bindImageTextures: first with: count with: textures [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> bindSamplers: first with: count with: samplers [
 
@@ -328,7 +328,7 @@ GL4_4 >> bindSamplers: first with: count with: samplers [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> bindTextures: first with: count with: textures [
 
@@ -339,7 +339,7 @@ GL4_4 >> bindTextures: first with: count with: textures [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> bindVertexBuffers: first with: count with: buffers with: offsets with: strides [
 
@@ -350,7 +350,7 @@ GL4_4 >> bindVertexBuffers: first with: count with: buffers with: offsets with: 
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> bufferStorage: target with: size with: data with: flags [
 
@@ -361,7 +361,7 @@ GL4_4 >> bufferStorage: target with: size with: data with: flags [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> clearTexImage: texture with: level with: format with: type with: data [
 
@@ -372,7 +372,7 @@ GL4_4 >> clearTexImage: texture with: level with: format with: type with: data [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_4 >> clearTexSubImage: texture with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth with: format with: type with: data [
 

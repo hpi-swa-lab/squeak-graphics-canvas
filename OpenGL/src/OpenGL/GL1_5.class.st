@@ -34,7 +34,7 @@ GL1_5 class >> versionNumber [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> ARRAY_BUFFER [
 
@@ -44,7 +44,7 @@ GL1_5 >> ARRAY_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> ARRAY_BUFFER_BINDING [
 
@@ -54,7 +54,7 @@ GL1_5 >> ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> BUFFER_ACCESS [
 
@@ -64,7 +64,7 @@ GL1_5 >> BUFFER_ACCESS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> BUFFER_MAPPED [
 
@@ -74,7 +74,7 @@ GL1_5 >> BUFFER_MAPPED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> BUFFER_MAP_POINTER [
 
@@ -84,7 +84,7 @@ GL1_5 >> BUFFER_MAP_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> BUFFER_SIZE [
 
@@ -94,7 +94,7 @@ GL1_5 >> BUFFER_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> BUFFER_USAGE [
 
@@ -104,7 +104,7 @@ GL1_5 >> BUFFER_USAGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> COLOR_ARRAY_BUFFER_BINDING [
 
@@ -114,7 +114,7 @@ GL1_5 >> COLOR_ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> CURRENT_FOG_COORD [
 
@@ -124,7 +124,7 @@ GL1_5 >> CURRENT_FOG_COORD [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> CURRENT_QUERY [
 
@@ -134,7 +134,7 @@ GL1_5 >> CURRENT_QUERY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> DYNAMIC_COPY [
 
@@ -144,7 +144,7 @@ GL1_5 >> DYNAMIC_COPY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> DYNAMIC_DRAW [
 
@@ -154,7 +154,7 @@ GL1_5 >> DYNAMIC_DRAW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> DYNAMIC_READ [
 
@@ -164,7 +164,7 @@ GL1_5 >> DYNAMIC_READ [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> EDGE_FLAG_ARRAY_BUFFER_BINDING [
 
@@ -174,7 +174,7 @@ GL1_5 >> EDGE_FLAG_ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> ELEMENT_ARRAY_BUFFER [
 
@@ -184,7 +184,7 @@ GL1_5 >> ELEMENT_ARRAY_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> ELEMENT_ARRAY_BUFFER_BINDING [
 
@@ -194,7 +194,7 @@ GL1_5 >> ELEMENT_ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> FOG_COORD [
 
@@ -204,7 +204,7 @@ GL1_5 >> FOG_COORD [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> FOG_COORDINATE_ARRAY_BUFFER_BINDING [
 
@@ -214,7 +214,7 @@ GL1_5 >> FOG_COORDINATE_ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> FOG_COORD_ARRAY [
 
@@ -224,7 +224,7 @@ GL1_5 >> FOG_COORD_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> FOG_COORD_ARRAY_BUFFER_BINDING [
 
@@ -234,7 +234,7 @@ GL1_5 >> FOG_COORD_ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> FOG_COORD_ARRAY_POINTER [
 
@@ -244,7 +244,7 @@ GL1_5 >> FOG_COORD_ARRAY_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> FOG_COORD_ARRAY_STRIDE [
 
@@ -254,7 +254,7 @@ GL1_5 >> FOG_COORD_ARRAY_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> FOG_COORD_ARRAY_TYPE [
 
@@ -264,7 +264,7 @@ GL1_5 >> FOG_COORD_ARRAY_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> FOG_COORD_SRC [
 
@@ -274,7 +274,7 @@ GL1_5 >> FOG_COORD_SRC [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> INDEX_ARRAY_BUFFER_BINDING [
 
@@ -284,7 +284,7 @@ GL1_5 >> INDEX_ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> NORMAL_ARRAY_BUFFER_BINDING [
 
@@ -294,7 +294,7 @@ GL1_5 >> NORMAL_ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> QUERY_COUNTER_BITS [
 
@@ -304,7 +304,7 @@ GL1_5 >> QUERY_COUNTER_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> QUERY_RESULT [
 
@@ -314,7 +314,7 @@ GL1_5 >> QUERY_RESULT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> QUERY_RESULT_AVAILABLE [
 
@@ -324,7 +324,7 @@ GL1_5 >> QUERY_RESULT_AVAILABLE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> READ_ONLY [
 
@@ -334,7 +334,7 @@ GL1_5 >> READ_ONLY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> READ_WRITE [
 
@@ -344,7 +344,7 @@ GL1_5 >> READ_WRITE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> SAMPLES_PASSED [
 
@@ -354,7 +354,7 @@ GL1_5 >> SAMPLES_PASSED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> SECONDARY_COLOR_ARRAY_BUFFER_BINDING [
 
@@ -364,7 +364,7 @@ GL1_5 >> SECONDARY_COLOR_ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> SRC0_ALPHA [
 
@@ -374,7 +374,7 @@ GL1_5 >> SRC0_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> SRC0_RGB [
 
@@ -384,7 +384,7 @@ GL1_5 >> SRC0_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> SRC1_ALPHA [
 
@@ -394,7 +394,7 @@ GL1_5 >> SRC1_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> SRC1_RGB [
 
@@ -404,7 +404,7 @@ GL1_5 >> SRC1_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> SRC2_ALPHA [
 
@@ -414,7 +414,7 @@ GL1_5 >> SRC2_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> SRC2_RGB [
 
@@ -424,7 +424,7 @@ GL1_5 >> SRC2_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> STATIC_COPY [
 
@@ -434,7 +434,7 @@ GL1_5 >> STATIC_COPY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> STATIC_DRAW [
 
@@ -444,7 +444,7 @@ GL1_5 >> STATIC_DRAW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> STATIC_READ [
 
@@ -454,7 +454,7 @@ GL1_5 >> STATIC_READ [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> STREAM_COPY [
 
@@ -464,7 +464,7 @@ GL1_5 >> STREAM_COPY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> STREAM_DRAW [
 
@@ -474,7 +474,7 @@ GL1_5 >> STREAM_DRAW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> STREAM_READ [
 
@@ -484,7 +484,7 @@ GL1_5 >> STREAM_READ [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> TEXTURE_COORD_ARRAY_BUFFER_BINDING [
 
@@ -494,7 +494,7 @@ GL1_5 >> TEXTURE_COORD_ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> VERTEX_ARRAY_BUFFER_BINDING [
 
@@ -504,7 +504,7 @@ GL1_5 >> VERTEX_ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> VERTEX_ATTRIB_ARRAY_BUFFER_BINDING [
 
@@ -514,7 +514,7 @@ GL1_5 >> VERTEX_ATTRIB_ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> WEIGHT_ARRAY_BUFFER_BINDING [
 
@@ -524,7 +524,7 @@ GL1_5 >> WEIGHT_ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> WRITE_ONLY [
 
@@ -534,7 +534,7 @@ GL1_5 >> WRITE_ONLY [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> beginQuery: target with: id [
 
@@ -545,7 +545,7 @@ GL1_5 >> beginQuery: target with: id [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> bindBuffer: target with: buffer [
 
@@ -556,7 +556,7 @@ GL1_5 >> bindBuffer: target with: buffer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> bufferData: target with: size with: data with: usage [
 
@@ -567,7 +567,7 @@ GL1_5 >> bufferData: target with: size with: data with: usage [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> bufferSubData: target with: offset with: size with: data [
 
@@ -578,7 +578,7 @@ GL1_5 >> bufferSubData: target with: offset with: size with: data [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> deleteBuffers: n with: buffers [
 
@@ -589,7 +589,7 @@ GL1_5 >> deleteBuffers: n with: buffers [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> deleteQueries: n with: ids [
 
@@ -600,7 +600,7 @@ GL1_5 >> deleteQueries: n with: ids [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> endQuery: target [
 
@@ -611,7 +611,7 @@ GL1_5 >> endQuery: target [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> genBuffers: n with: buffers [
 
@@ -622,7 +622,7 @@ GL1_5 >> genBuffers: n with: buffers [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> genQueries: n with: ids [
 
@@ -633,7 +633,7 @@ GL1_5 >> genQueries: n with: ids [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> getBufferParameteriv: target with: pname with: params [
 
@@ -644,7 +644,7 @@ GL1_5 >> getBufferParameteriv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> getBufferPointerv: target with: pname with: params [
 
@@ -655,7 +655,7 @@ GL1_5 >> getBufferPointerv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> getBufferSubData: target with: offset with: size with: data [
 
@@ -666,7 +666,7 @@ GL1_5 >> getBufferSubData: target with: offset with: size with: data [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> getQueryObjectiv: id with: pname with: params [
 
@@ -677,7 +677,7 @@ GL1_5 >> getQueryObjectiv: id with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> getQueryObjectuiv: id with: pname with: params [
 
@@ -688,7 +688,7 @@ GL1_5 >> getQueryObjectuiv: id with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> getQueryiv: target with: pname with: params [
 
@@ -699,7 +699,7 @@ GL1_5 >> getQueryiv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> isBuffer: buffer [
 
@@ -710,7 +710,7 @@ GL1_5 >> isBuffer: buffer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> isQuery: id [
 
@@ -721,7 +721,7 @@ GL1_5 >> isQuery: id [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> mapBuffer: target with: access [
 
@@ -732,7 +732,7 @@ GL1_5 >> mapBuffer: target with: access [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:56'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL1_5 >> unmapBuffer: target [
 

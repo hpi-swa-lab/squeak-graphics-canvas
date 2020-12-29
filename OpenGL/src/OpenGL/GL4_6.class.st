@@ -34,7 +34,7 @@ GL4_6 class >> versionNumber [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> CLIPPING_INPUT_PRIMITIVES [
 
@@ -44,7 +44,7 @@ GL4_6 >> CLIPPING_INPUT_PRIMITIVES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> CLIPPING_OUTPUT_PRIMITIVES [
 
@@ -54,7 +54,7 @@ GL4_6 >> CLIPPING_OUTPUT_PRIMITIVES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> COMPUTE_SHADER_INVOCATIONS [
 
@@ -64,7 +64,7 @@ GL4_6 >> COMPUTE_SHADER_INVOCATIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> CONTEXT_FLAG_NO_ERROR_BIT [
 
@@ -74,7 +74,7 @@ GL4_6 >> CONTEXT_FLAG_NO_ERROR_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> CONTEXT_RELEASE_BEHAVIOR [
 
@@ -84,7 +84,7 @@ GL4_6 >> CONTEXT_RELEASE_BEHAVIOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> CONTEXT_RELEASE_BEHAVIOR_FLUSH [
 
@@ -94,7 +94,7 @@ GL4_6 >> CONTEXT_RELEASE_BEHAVIOR_FLUSH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> FRAGMENT_SHADER_INVOCATIONS [
 
@@ -104,7 +104,7 @@ GL4_6 >> FRAGMENT_SHADER_INVOCATIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> GEOMETRY_SHADER_INVOCATIONS [
 
@@ -114,7 +114,7 @@ GL4_6 >> GEOMETRY_SHADER_INVOCATIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> GEOMETRY_SHADER_PRIMITIVES_EMITTED [
 
@@ -124,7 +124,7 @@ GL4_6 >> GEOMETRY_SHADER_PRIMITIVES_EMITTED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> MAX_TEXTURE_MAX_ANISOTROPY [
 
@@ -134,7 +134,7 @@ GL4_6 >> MAX_TEXTURE_MAX_ANISOTROPY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> NONE [
 
@@ -144,7 +144,7 @@ GL4_6 >> NONE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> NUM_SPIR_V_EXTENSIONS [
 
@@ -154,7 +154,7 @@ GL4_6 >> NUM_SPIR_V_EXTENSIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> PARAMETER_BUFFER [
 
@@ -164,7 +164,7 @@ GL4_6 >> PARAMETER_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> PARAMETER_BUFFER_BINDING [
 
@@ -174,7 +174,7 @@ GL4_6 >> PARAMETER_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> POLYGON_OFFSET_CLAMP [
 
@@ -184,7 +184,7 @@ GL4_6 >> POLYGON_OFFSET_CLAMP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> PRIMITIVES_SUBMITTED [
 
@@ -194,7 +194,7 @@ GL4_6 >> PRIMITIVES_SUBMITTED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> SHADER_BINARY_FORMAT_SPIR_V [
 
@@ -204,7 +204,7 @@ GL4_6 >> SHADER_BINARY_FORMAT_SPIR_V [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> SPIR_V_BINARY [
 
@@ -214,7 +214,7 @@ GL4_6 >> SPIR_V_BINARY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> SPIR_V_EXTENSIONS [
 
@@ -224,7 +224,7 @@ GL4_6 >> SPIR_V_EXTENSIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> TESS_CONTROL_SHADER_PATCHES [
 
@@ -234,7 +234,7 @@ GL4_6 >> TESS_CONTROL_SHADER_PATCHES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> TESS_EVALUATION_SHADER_INVOCATIONS [
 
@@ -244,7 +244,7 @@ GL4_6 >> TESS_EVALUATION_SHADER_INVOCATIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> TEXTURE_MAX_ANISOTROPY [
 
@@ -254,7 +254,7 @@ GL4_6 >> TEXTURE_MAX_ANISOTROPY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> TRANSFORM_FEEDBACK_OVERFLOW [
 
@@ -264,7 +264,7 @@ GL4_6 >> TRANSFORM_FEEDBACK_OVERFLOW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> TRANSFORM_FEEDBACK_STREAM_OVERFLOW [
 
@@ -274,7 +274,7 @@ GL4_6 >> TRANSFORM_FEEDBACK_STREAM_OVERFLOW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> VERTEX_SHADER_INVOCATIONS [
 
@@ -284,7 +284,7 @@ GL4_6 >> VERTEX_SHADER_INVOCATIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> VERTICES_SUBMITTED [
 
@@ -294,7 +294,7 @@ GL4_6 >> VERTICES_SUBMITTED [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> multiDrawArraysIndirectCount: mode with: indirect with: drawcount with: maxdrawcount with: stride [
 
@@ -305,7 +305,7 @@ GL4_6 >> multiDrawArraysIndirectCount: mode with: indirect with: drawcount with:
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> multiDrawElementsIndirectCount: mode with: type with: indirect with: drawcount with: maxdrawcount with: stride [
 
@@ -316,7 +316,7 @@ GL4_6 >> multiDrawElementsIndirectCount: mode with: type with: indirect with: dr
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> polygonOffsetClamp: factor with: units with: clamp [
 
@@ -327,7 +327,7 @@ GL4_6 >> polygonOffsetClamp: factor with: units with: clamp [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL4_6 >> specializeShader: shader with: pEntryPoint with: numSpecializationConstants with: pConstantIndex with: pConstantValue [
 

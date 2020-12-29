@@ -34,7 +34,7 @@ GL3_3 class >> versionNumber [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> ANY_SAMPLES_PASSED [
 
@@ -44,7 +44,7 @@ GL3_3 >> ANY_SAMPLES_PASSED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> INT_2_10_10_10_REV [
 
@@ -54,7 +54,7 @@ GL3_3 >> INT_2_10_10_10_REV [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> MAX_DUAL_SOURCE_DRAW_BUFFERS [
 
@@ -64,7 +64,7 @@ GL3_3 >> MAX_DUAL_SOURCE_DRAW_BUFFERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> ONE_MINUS_SRC1_ALPHA [
 
@@ -74,7 +74,7 @@ GL3_3 >> ONE_MINUS_SRC1_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> ONE_MINUS_SRC1_COLOR [
 
@@ -84,7 +84,7 @@ GL3_3 >> ONE_MINUS_SRC1_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> RGB10_A2UI [
 
@@ -94,7 +94,7 @@ GL3_3 >> RGB10_A2UI [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> SAMPLER_BINDING [
 
@@ -104,7 +104,7 @@ GL3_3 >> SAMPLER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> SRC1_COLOR [
 
@@ -114,7 +114,7 @@ GL3_3 >> SRC1_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> TEXTURE_SWIZZLE_A [
 
@@ -124,7 +124,7 @@ GL3_3 >> TEXTURE_SWIZZLE_A [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> TEXTURE_SWIZZLE_B [
 
@@ -134,7 +134,7 @@ GL3_3 >> TEXTURE_SWIZZLE_B [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> TEXTURE_SWIZZLE_G [
 
@@ -144,7 +144,7 @@ GL3_3 >> TEXTURE_SWIZZLE_G [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> TEXTURE_SWIZZLE_R [
 
@@ -154,7 +154,7 @@ GL3_3 >> TEXTURE_SWIZZLE_R [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> TEXTURE_SWIZZLE_RGBA [
 
@@ -164,7 +164,7 @@ GL3_3 >> TEXTURE_SWIZZLE_RGBA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> TIMESTAMP [
 
@@ -174,7 +174,7 @@ GL3_3 >> TIMESTAMP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> TIME_ELAPSED [
 
@@ -184,7 +184,7 @@ GL3_3 >> TIME_ELAPSED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> VERTEX_ATTRIB_ARRAY_DIVISOR [
 
@@ -194,7 +194,7 @@ GL3_3 >> VERTEX_ATTRIB_ARRAY_DIVISOR [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> bindFragDataLocationIndexed: program with: colorNumber with: index with: name [
 
@@ -205,7 +205,7 @@ GL3_3 >> bindFragDataLocationIndexed: program with: colorNumber with: index with
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> bindSampler: unit with: sampler [
 
@@ -216,47 +216,51 @@ GL3_3 >> bindSampler: unit with: sampler [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> colorP3ui: type with: color [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glColorP3ui' (GLenum GLuint)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> colorP3uiv: type with: color [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glColorP3uiv' (GLenum GLuint*)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> colorP4ui: type with: color [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glColorP4ui' (GLenum GLuint)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> colorP4uiv: type with: color [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glColorP4uiv' (GLenum GLuint*)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> deleteSamplers: count with: samplers [
 
@@ -267,7 +271,7 @@ GL3_3 >> deleteSamplers: count with: samplers [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> genSamplers: count with: samplers [
 
@@ -278,7 +282,7 @@ GL3_3 >> genSamplers: count with: samplers [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> getFragDataIndex: program with: name [
 
@@ -289,7 +293,7 @@ GL3_3 >> getFragDataIndex: program with: name [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> getQueryObjecti64v: id with: pname with: params [
 
@@ -300,7 +304,7 @@ GL3_3 >> getQueryObjecti64v: id with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> getQueryObjectui64v: id with: pname with: params [
 
@@ -311,7 +315,7 @@ GL3_3 >> getQueryObjectui64v: id with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> getSamplerParameterIiv: sampler with: pname with: params [
 
@@ -322,7 +326,7 @@ GL3_3 >> getSamplerParameterIiv: sampler with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> getSamplerParameterIuiv: sampler with: pname with: params [
 
@@ -333,7 +337,7 @@ GL3_3 >> getSamplerParameterIuiv: sampler with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> getSamplerParameterfv: sampler with: pname with: params [
 
@@ -344,7 +348,7 @@ GL3_3 >> getSamplerParameterfv: sampler with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> getSamplerParameteriv: sampler with: pname with: params [
 
@@ -355,7 +359,7 @@ GL3_3 >> getSamplerParameteriv: sampler with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> isSampler: sampler [
 
@@ -366,107 +370,117 @@ GL3_3 >> isSampler: sampler [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> multiTexCoordP1ui: texture with: type with: coords [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glMultiTexCoordP1ui' (GLenum GLenum GLuint)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> multiTexCoordP1uiv: texture with: type with: coords [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glMultiTexCoordP1uiv' (GLenum GLenum GLuint*)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> multiTexCoordP2ui: texture with: type with: coords [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glMultiTexCoordP2ui' (GLenum GLenum GLuint)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> multiTexCoordP2uiv: texture with: type with: coords [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glMultiTexCoordP2uiv' (GLenum GLenum GLuint*)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> multiTexCoordP3ui: texture with: type with: coords [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glMultiTexCoordP3ui' (GLenum GLenum GLuint)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> multiTexCoordP3uiv: texture with: type with: coords [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glMultiTexCoordP3uiv' (GLenum GLenum GLuint*)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> multiTexCoordP4ui: texture with: type with: coords [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glMultiTexCoordP4ui' (GLenum GLenum GLuint)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> multiTexCoordP4uiv: texture with: type with: coords [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glMultiTexCoordP4uiv' (GLenum GLenum GLuint*)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> normalP3ui: type with: coords [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glNormalP3ui' (GLenum GLuint)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> normalP3uiv: type with: coords [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glNormalP3uiv' (GLenum GLuint*)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> queryCounter: id with: target [
 
@@ -477,7 +491,7 @@ GL3_3 >> queryCounter: id with: target [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> samplerParameterIiv: sampler with: pname with: param [
 
@@ -488,7 +502,7 @@ GL3_3 >> samplerParameterIiv: sampler with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> samplerParameterIuiv: sampler with: pname with: param [
 
@@ -499,7 +513,7 @@ GL3_3 >> samplerParameterIuiv: sampler with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> samplerParameterf: sampler with: pname with: param [
 
@@ -510,7 +524,7 @@ GL3_3 >> samplerParameterf: sampler with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> samplerParameterfv: sampler with: pname with: param [
 
@@ -521,7 +535,7 @@ GL3_3 >> samplerParameterfv: sampler with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> samplerParameteri: sampler with: pname with: param [
 
@@ -532,7 +546,7 @@ GL3_3 >> samplerParameteri: sampler with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> samplerParameteriv: sampler with: pname with: param [
 
@@ -543,107 +557,117 @@ GL3_3 >> samplerParameteriv: sampler with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> secondaryColorP3ui: type with: color [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glSecondaryColorP3ui' (GLenum GLuint)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> secondaryColorP3uiv: type with: color [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glSecondaryColorP3uiv' (GLenum GLuint*)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> texCoordP1ui: type with: coords [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glTexCoordP1ui' (GLenum GLuint)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> texCoordP1uiv: type with: coords [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glTexCoordP1uiv' (GLenum GLuint*)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> texCoordP2ui: type with: coords [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glTexCoordP2ui' (GLenum GLuint)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> texCoordP2uiv: type with: coords [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glTexCoordP2uiv' (GLenum GLuint*)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> texCoordP3ui: type with: coords [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glTexCoordP3ui' (GLenum GLuint)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> texCoordP3uiv: type with: coords [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glTexCoordP3uiv' (GLenum GLuint*)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> texCoordP4ui: type with: coords [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glTexCoordP4ui' (GLenum GLuint)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> texCoordP4uiv: type with: coords [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glTexCoordP4uiv' (GLenum GLuint*)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> vertexAttribDivisor: index with: divisor [
 
@@ -654,7 +678,7 @@ GL3_3 >> vertexAttribDivisor: index with: divisor [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> vertexAttribP1ui: index with: type with: normalized with: value [
 
@@ -665,7 +689,7 @@ GL3_3 >> vertexAttribP1ui: index with: type with: normalized with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> vertexAttribP1uiv: index with: type with: normalized with: value [
 
@@ -676,7 +700,7 @@ GL3_3 >> vertexAttribP1uiv: index with: type with: normalized with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> vertexAttribP2ui: index with: type with: normalized with: value [
 
@@ -687,7 +711,7 @@ GL3_3 >> vertexAttribP2ui: index with: type with: normalized with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> vertexAttribP2uiv: index with: type with: normalized with: value [
 
@@ -698,7 +722,7 @@ GL3_3 >> vertexAttribP2uiv: index with: type with: normalized with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> vertexAttribP3ui: index with: type with: normalized with: value [
 
@@ -709,7 +733,7 @@ GL3_3 >> vertexAttribP3ui: index with: type with: normalized with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> vertexAttribP3uiv: index with: type with: normalized with: value [
 
@@ -720,7 +744,7 @@ GL3_3 >> vertexAttribP3uiv: index with: type with: normalized with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> vertexAttribP4ui: index with: type with: normalized with: value [
 
@@ -731,7 +755,7 @@ GL3_3 >> vertexAttribP4ui: index with: type with: normalized with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> vertexAttribP4uiv: index with: type with: normalized with: value [
 
@@ -742,60 +766,66 @@ GL3_3 >> vertexAttribP4uiv: index with: type with: normalized with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> vertexP2ui: type with: value [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glVertexP2ui' (GLenum GLuint)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> vertexP2uiv: type with: value [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glVertexP2uiv' (GLenum GLuint*)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> vertexP3ui: type with: value [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glVertexP3ui' (GLenum GLuint)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> vertexP3uiv: type with: value [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glVertexP3uiv' (GLenum GLuint*)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> vertexP4ui: type with: value [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glVertexP4ui' (GLenum GLuint)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 11/3/2020 14:57'
+	#timestamp : 'stlu 12/29/2020 19:18'
 }
 GL3_3 >> vertexP4uiv: type with: value [
-	"Note: Only available in #compatibility profile"
+	"Note: Only available in compatibility profile."
+	<generated>
 	<apicall: void 'glVertexP4uiv' (GLenum GLuint*)>
 	^ self externalCallFailed
 ]
