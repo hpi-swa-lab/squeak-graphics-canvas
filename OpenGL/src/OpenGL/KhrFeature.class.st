@@ -40,23 +40,6 @@ KhrFeature >> api [
 ]
 
 {
-	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:47'
-}
-KhrFeature >> generateIn: aClass [
-
-	self removeGeneratedMethodsIn: aClass theNonMetaClass.
-	self removeGeneratedMethodsIn: aClass theMetaClass.
-	aClass theNonMetaClass organization removeEmptyCategories.
-	aClass theMetaClass organization removeEmptyCategories.
-	
-	self sharedProfile generateSharedIn: aClass.
-	profiles
-		do: [:profile | profile generateIn: aClass]
-		without: self sharedProfile
-]
-
-{
 	#category : #initialization,
 	#timestamp : 'stlu 12/28/2020 13:00'
 }

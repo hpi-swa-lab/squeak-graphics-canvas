@@ -83,79 +83,6 @@ KhrEnum >> printOn: aStream [
 ]
 
 {
-	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:12'
-}
-KhrEnum >> printRemoveSourceInProfile: aSymbol [
-
-	^ String streamContents: [:stream |
-		stream
-			nextPutAll: self selector;
-			cr; cr; tab;
-			nextPutAll: '<generated>';
-			cr; tab;
-			nextPutAll: 'profile == '.
-		aSymbol storeOn: stream.
-		stream
-			nextPutAll: ' ifTrue: [^ self profileError].';
-			cr; tab;
-			nextPutAll: '^ super ';
-			nextPutAll: self selector]
-]
-
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:15'
-}
-KhrEnum >> printRequireSourceInProfile: aSymbol [
-
-	^ String streamContents: [:stream |
-		stream
-			nextPutAll: self selector;
-			cr; tab;
-			nextPutAll: '"Note: Only available in '.
-		aSymbol storeOn: stream.
-		stream
-			nextPutAll: ' profile"';
-			cr; tab;
-			nextPutAll: '<generated>';
-			cr; tab;
-			nextPutAll: '^ ';
-			nextPutAll: name]
-]
-
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:09'
-}
-KhrEnum >> printSharedRemoveSource [
-
-	^ String streamContents: [:stream |
-		stream
-			nextPutAll: self selector;
-			cr; cr; tab;
-			nextPutAll: '<generated>';
-			cr; tab;
-			nextPutAll: '^ self versionError']
-]
-
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:08'
-}
-KhrEnum >> printSharedRequireSource [
-
-	^ String streamContents: [:stream |
-		stream
-			nextPutAll: self selector;
-			cr; cr; tab;
-			nextPutAll: '<generated>';
-			cr; tab;
-			nextPutAll: '^ ';
-			nextPutAll: name]
-]
-
-{
 	#category : #initialization,
 	#timestamp : 'stlu 12/28/2020 13:00'
 }
@@ -172,17 +99,6 @@ KhrEnum >> registry: registry tag: enumTag [
 			groups add: group]].
 	
 	registry addEnum: self
-]
-
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:43'
-}
-KhrEnum >> selector [
-
-	^ name fourth canBeIdentifierInitial
-		ifTrue: [name allButFirst: 3 "remove GL_* prefix"]
-		ifFalse: [name]
 ]
 
 {

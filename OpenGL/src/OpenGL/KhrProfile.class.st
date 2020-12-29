@@ -61,38 +61,6 @@ KhrProfile >> feature: anObject [
 ]
 
 {
-	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:27'
-}
-KhrProfile >> generateIn: aClass [
-
-	requiredCommands do: [:each |
-		aClass compile: (each printRequireSourceInProfile: name) classified: 'api - required'].
-	removedCommands do: [:each |
-		aClass compile: (each printRemoveSourceInProfile: name) classified: 'api - removed'].
-	requiredEnums do: [:each |
-		aClass compile: (each printRequireSourceInProfile: name) classified: 'constants - required'].
-	removedEnums do: [:each |
-		aClass compile: (each printRemoveSourceInProfile: name) classified: 'constants - removed']
-]
-
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 14:21'
-}
-KhrProfile >> generateSharedIn: aClass [
-
-	requiredCommands do: [:each |
-		aClass compile: each printSharedRequireSource classified: 'api - required'].
-	removedCommands do: [:each |
-		aClass compile: each printSharedRemoveSource classified: 'api - removed'].
-	requiredEnums do: [:each |
-		aClass compile: each printSharedRequireSource classified: 'constants - required'].
-	removedEnums do: [:each |
-		aClass compile: each printSharedRemoveSource classified: 'constants - removed']
-]
-
-{
 	#category : #initialization,
 	#timestamp : 'stlu 12/28/2020 14:24'
 }

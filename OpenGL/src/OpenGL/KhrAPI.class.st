@@ -47,22 +47,6 @@ KhrAPI >> features [
 ]
 
 {
-	#category : #generation,
-	#timestamp : 'stlu 11/12/2020 14:58'
-}
-KhrAPI >> generate [
-
-	| rootClass |
-	rootClass := GLLibrary api: name.
-	features do: [:feature |
-		| major minor featureClass |
-		major := feature name first digitValue.
-		minor := feature name third digitValue.
-		featureClass := rootClass majorVersion: major minorVersion: minor.
-		feature generateIn: featureClass]
-]
-
-{
 	#category : #initialization,
 	#timestamp : 'stlu 11/2/2020 14:02'
 }

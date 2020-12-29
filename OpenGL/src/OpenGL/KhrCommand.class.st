@@ -114,101 +114,6 @@ KhrCommand >> printOn: aStream [
 ]
 
 {
-	#category : #generation,
-	#timestamp : 'stlu 12/28/2020 15:27'
-}
-KhrCommand >> printRemoveSourceInProfile: aSymbol [
-
-	^ String streamContents: [:stream |
-		self printSignatureOn: stream.
-		
-		stream
-			cr; cr; tab;
-			nextPutAll: '<generated>';
-			cr; tab;
-			nextPutAll: 'profile == ';
-			store: aSymbol;
-			nextPutAll: ' ifTrue: [^ self profileError].';
-			cr; tab;
-			nextPutAll: '^ super '.
-		self printSignatureOn: stream]
-]
-
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 13:10'
-}
-KhrCommand >> printRequireSourceInProfile: aSymbol [
-
-	^ String streamContents: [:stream |
-		self printSignatureOn: stream.
-		
-		stream
-			cr; tab;
-			nextPutAll: '"Note: Only available in '.
-		aSymbol storeOn: stream.
-		stream
-			nextPutAll: ' profile"';
-			cr; tab.
-		
-		self printFFIPragmaOn: stream.
-		
-		stream
-			cr; tab;
-			nextPutAll: '^ self externalCallFailed']
-]
-
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 12:58'
-}
-KhrCommand >> printSharedRemoveSource [
-
-	^ String streamContents: [:stream |
-		self printSignatureOn: stream.
-		
-		stream
-			cr; cr; tab;
-			nextPutAll: '<generated>';
-			cr; tab;
-			nextPutAll: '^ self versionError']
-]
-
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 12:58'
-}
-KhrCommand >> printSharedRequireSource [
-
-	^ String streamContents: [:stream |
-		self printSignatureOn: stream.
-		
-		stream
-			cr; cr; tab;
-			nextPutAll: '<generated>';
-			cr; tab.
-		
-		self printFFIPragmaOn: stream.
-		
-		stream
-			cr; tab;
-			nextPutAll: '^ self externalCallFailed']
-]
-
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/2/2020 19:39'
-}
-KhrCommand >> printSignatureOn: aStream [
-
-	aStream nextPutAll: self selector.
-	parameters ifNotEmpty: [aStream nextPutAll: ': '].
-	parameters
-		do: [:param | aStream nextPutAll: param name]
-		separatedBy: [aStream nextPutAll: ' with: ']
-]
-
-{
 	#category : #initialization,
 	#timestamp : 'stlu 12/28/2020 13:00'
 }
@@ -231,17 +136,4 @@ KhrCommand >> registry: registry tag: commandTag [
 KhrCommand >> returnType [
 
 	^ returnType
-]
-
-{
-	#category : #generation,
-	#timestamp : 'stlu 11/3/2020 13:59'
-}
-KhrCommand >> selector [
-	"remove gl* prefix"
-	| selector |
-	selector := name allButFirst: 2.
-	selector second isLowercase ifTrue: [
-		selector at: 1 put: selector first asLowercase].
-	^ selector
 ]
