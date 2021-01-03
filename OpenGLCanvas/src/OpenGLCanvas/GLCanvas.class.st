@@ -282,9 +282,10 @@ GLCanvas >> fillOval: r borderWidth: borderWidth borderColor: borderColor withPr
 
 	aProgram
 		extent: r extent;
+		origin: r origin;
 		borderColor: borderColor;
 		borderWidth: borderWidth asFloat;
-		mvp: transform * (Matrix4x4 withOffset: r origin).
+		mvp: transform.
 		
 	self vbo draw: GL_TRIANGLE_STRIP
 ]
@@ -318,9 +319,10 @@ GLCanvas >> frameAndFillRectangle: r borderWidth: borderWidth borderColor: borde
 	
 	aProgram
 		extent: r extent;
+		origin: r origin;
 		borderColor: borderColor;
 		borderWidth: borderWidth asFloat;
-		mvp: transform * (Matrix4x4 withOffset: r origin).
+		mvp: transform.
 	
 	self vbo boundDuring: [
 		aProgram vertexAttrib: aProgram aPosLocation components: 2 stride: 16 offset: 0.

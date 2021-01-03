@@ -10,7 +10,8 @@ Class {
 		'gradientOriginLocation',
 		'gradientDirectionLocation',
 		'gradientRadialLocation',
-		'aPosLocation'
+		'aPosLocation',
+		'originLocation'
 	],
 	#category : #'OpenGLCanvas-Core'
 }
@@ -76,6 +77,7 @@ GLCanvasGradientOvalProgram >> initializeLocations [
 	
 	mvpLocation := self registerUniform: 'mvp'.
 	extentLocation := self registerUniform: 'extent'.
+	originLocation := self registerUniform: 'origin'.
 	borderColorLocation := self registerUniform: 'borderColor'.
 	borderWidthLocation := self registerUniform: 'borderWidth'.
 	pixelRampLocation := self registerUniform: 'pixelRamp'.
@@ -90,6 +92,12 @@ GLCanvasGradientOvalProgram >> initializeLocations [
 GLCanvasGradientOvalProgram >> mvp: anObject [
 
 	self uniform: mvpLocation value: anObject
+]
+
+{ #category : #generated }
+GLCanvasGradientOvalProgram >> origin: anObject [
+
+	self uniform: originLocation value: anObject
 ]
 
 { #category : #generated }

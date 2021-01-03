@@ -10,7 +10,8 @@ Class {
 		'formOriginLocation',
 		'formDirectionLocation',
 		'formNormalLocation',
-		'aPosLocation'
+		'aPosLocation',
+		'originLocation'
 	],
 	#category : #'OpenGLCanvas-Core'
 }
@@ -82,6 +83,7 @@ GLCanvasBitmapRectangleProgram >> initializeLocations [
 	
 	mvpLocation := self registerUniform: 'mvp'.
 	extentLocation := self registerUniform: 'extent'.
+	originLocation := self registerUniform: 'origin'.
 	borderColorLocation := self registerUniform: 'borderColor'.
 	borderWidthLocation := self registerUniform: 'borderWidth'.
 	formLocation := self registerUniform: 'form'.
@@ -96,4 +98,10 @@ GLCanvasBitmapRectangleProgram >> initializeLocations [
 GLCanvasBitmapRectangleProgram >> mvp: anObject [
 
 	self uniform: mvpLocation value: anObject
+]
+
+{ #category : #generated }
+GLCanvasBitmapRectangleProgram >> origin: anObject [
+
+	self uniform: originLocation value: anObject
 ]

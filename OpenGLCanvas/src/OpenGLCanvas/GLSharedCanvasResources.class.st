@@ -152,8 +152,7 @@ GLSharedCanvasResources >> initialize [
 	fonts := Dictionary new.
 	
 	self initializePrograms.
-	self initializeBuffers.
-	self initializeProgramAttributes
+	self initializeBuffers
 ]
 
 { #category : #initialization }
@@ -170,24 +169,6 @@ GLSharedCanvasResources >> initializeBuffers [
 			0.0 1.0 0.0 1.0
 			1.0 1.0 1.0 1.0 ) asFloat32Array.
 	GL checkForError
-]
-
-{ #category : #initialization }
-GLSharedCanvasResources >> initializeProgramAttributes [
-
-	vbo boundDuring: [
-		textureProgram useDuring: [
-			textureProgram image: 0.
-			GL checkForError.
-			textureProgram vertexAttrib: textureProgram aPosLocation components: 2 stride: 16 offset: 0.
-			GL checkForError.
-			textureProgram vertexAttrib: textureProgram aTexCoordsLocation components: 2 stride: 16 offset: 8.
-			GL checkForError].
-	
-		{solidRectangleProgram. gradientRectangleProgram. bitmapRectangleProgram} do: [:aProgram |
-			aProgram useDuring: [
-				aProgram vertexAttrib: aProgram aPosLocation components: 2 stride: 16 offset: 0.
-				GL checkForError]]].
 ]
 
 { #category : #initialization }

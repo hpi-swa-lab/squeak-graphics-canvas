@@ -19,19 +19,20 @@ out vec4 FragColor;
 in vec2 point;
 
 uniform vec2 extent;
+uniform vec2 origin;
 uniform vec4 borderColor;
 uniform float borderWidth;
 
 ', self fragmentShaderFillColor, '
 
 void main() {
-	vec2 relativePos = (point - extent / 2.0) / extent * 2.0;
+	vec2 relativePos = (point - extent / 2.0 - origin) / extent * 2.0;
 	if (dot(relativePos, relativePos) > 1.0)
 	{
 		discard;
 	}
 	
-	vec2 relativeInnerPos = (point - extent / 2.0) / (extent / 2.0 - vec2(borderWidth, borderWidth));
+	vec2 relativeInnerPos = (point - extent / 2.0 - origin) / (extent / 2.0 - vec2(borderWidth, borderWidth));
 	FragColor = mix(
 		getColor(),
 		borderColor,
@@ -43,7 +44,7 @@ void main() {
 { #category : #'shader code' }
 GLCanvasOvalProgram class >> uniforms [
 
-	^ #('mvp' 'extent' 'borderColor' 'borderWidth')
+	^ #('mvp' 'extent' 'origin' 'borderColor' 'borderWidth')
 ]
 
 { #category : #'shader code' }
@@ -53,12 +54,13 @@ in vec2 aPos;
 
 uniform mat4 mvp;
 uniform vec2 extent;
+uniform vec2 origin;
 
 out vec2 point;
 
 void main()
 {
-	point = aPos * extent;
-    gl_Position = mvp * vec4(point, 0.0, 1.0);
+	point = origin + aPos * extent;
+	gl_Position = mvp * vec4(point, 0.0, 1.0);
 }' withUnixLineEndings
 ]

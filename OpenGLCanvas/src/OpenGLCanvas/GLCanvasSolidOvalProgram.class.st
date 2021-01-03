@@ -7,7 +7,8 @@ Class {
 		'borderColorLocation',
 		'borderWidthLocation',
 		'colorLocation',
-		'aPosLocation'
+		'aPosLocation',
+		'originLocation'
 	],
 	#category : #'OpenGLCanvas-Core'
 }
@@ -61,6 +62,7 @@ GLCanvasSolidOvalProgram >> initializeLocations [
 	
 	mvpLocation := self registerUniform: 'mvp'.
 	extentLocation := self registerUniform: 'extent'.
+	originLocation := self registerUniform: 'origin'.
 	borderColorLocation := self registerUniform: 'borderColor'.
 	borderWidthLocation := self registerUniform: 'borderWidth'.
 	colorLocation := self registerUniform: 'color'.
@@ -72,4 +74,10 @@ GLCanvasSolidOvalProgram >> initializeLocations [
 GLCanvasSolidOvalProgram >> mvp: anObject [
 
 	self uniform: mvpLocation value: anObject
+]
+
+{ #category : #generated }
+GLCanvasSolidOvalProgram >> origin: anObject [
+
+	self uniform: originLocation value: anObject
 ]
