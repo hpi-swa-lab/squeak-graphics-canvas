@@ -1,18 +1,21 @@
+"
+1.2.2
+"
 Class {
-	#name : #LOGLHelloRectangle,
+	#name : #LOGLHelloTriangleIndexed,
 	#superclass : #LOGLHelloTriangle,
 	#instVars : [
 		'ebo'
 	],
 	#category : #'LearnOpenGL-GettingStarted',
-	#commentStamp : ''
+	#commentStamp : 'stlu 1/4/2021 04:08'
 }
 
 {
 	#category : #running,
 	#timestamp : 'stlu 12/22/2020 15:02'
 }
-LOGLHelloRectangle >> draw [
+LOGLHelloTriangleIndexed >> draw [
 
 	GL
 		drawElements: GL_TRIANGLES
@@ -25,7 +28,7 @@ LOGLHelloRectangle >> draw [
 	#category : #accessing,
 	#timestamp : 'stlu 12/22/2020 15:01'
 }
-LOGLHelloRectangle >> indices [
+LOGLHelloTriangleIndexed >> indices [
 
 	^ #(
 			0 1 3
@@ -37,7 +40,7 @@ LOGLHelloRectangle >> indices [
 	#category : #running,
 	#timestamp : 'stlu 12/22/2020 15:14'
 }
-LOGLHelloRectangle >> setUp [
+LOGLHelloTriangleIndexed >> setUp [
 
 	GL polygonMode: GL_FRONT_AND_BACK with: GL_LINE.
 	
@@ -57,7 +60,7 @@ LOGLHelloRectangle >> setUp [
 	#category : #accessing,
 	#timestamp : 'stlu 12/22/2020 14:37'
 }
-LOGLHelloRectangle >> vertices [
+LOGLHelloTriangleIndexed >> vertices [
 
 	^ #(
 			0.5 0.5 0.0

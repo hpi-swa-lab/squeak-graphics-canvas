@@ -70,8 +70,9 @@ GLSLFloatMatrix4x4 class >> squeakName [
 
 {
 	#category : #'program resources',
-	#timestamp : 'zagto 12/15/2020 16:38'
+	#timestamp : 'stlu 1/4/2021 03:58'
 }
 GLSLFloatMatrix4x4 >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
+
 	aUniform setToFloatMatrices4x4: aRawBitsArray count: numElements transpose: true
 ]
