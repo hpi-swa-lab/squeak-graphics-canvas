@@ -74,6 +74,16 @@ Vector3 >> angleTo: aVector [
 
 {
 	#category : #converting,
+	#timestamp : 'zagto 1/5/2021 15:54'
+}
+Vector3 >> asColor [
+
+	^ Color r: self x g: self y b: self z
+
+]
+
+{
+	#category : #converting,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Vector3 >> asMoveDirection [
