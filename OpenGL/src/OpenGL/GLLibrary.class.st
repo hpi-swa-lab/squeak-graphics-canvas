@@ -600,6 +600,96 @@ GLLibrary >> makeCurrentDuring: aBlock [
 ]
 
 {
+	#category : #parameters,
+	#timestamp : 'stlu 1/4/2021 15:35'
+}
+GLLibrary >> maxArrayTextureLayers [
+	"Maximum number of layers allowed in an array texture. At least 256."
+	^ self getIntegerParameter: GL_MAX_ARRAY_TEXTURE_LAYERS
+]
+
+{
+	#category : #parameters,
+	#timestamp : 'stlu 1/4/2021 15:32'
+}
+GLLibrary >> maxCombinedTextureImageUnits [
+	"Maximum number of texture image units. At least 80."
+	^ self getIntegerParameter: GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS
+]
+
+{
+	#category : #parameters,
+	#timestamp : 'stlu 1/4/2021 15:34'
+}
+GLLibrary >> maxTextureSize [
+	"Rough estimate of the largest texture that the GL can handle. At least 1024."
+	^ self getIntegerParameter: GL_MAX_TEXTURE_SIZE
+]
+
+{
+	#category : #parameters,
+	#timestamp : 'stlu 1/4/2021 15:39'
+}
+GLLibrary >> maxUniformBlockSize [
+	"Maximum size in basic machine units of a uniform block. At least 16384."
+	^ self getIntegerParameter: GL_MAX_UNIFORM_BLOCK_SIZE
+]
+
+{
+	#category : #parameters,
+	#timestamp : 'stlu 1/4/2021 15:40'
+}
+GLLibrary >> maxUniformBufferBindings [
+	"Maximum number of uniform buffer binding points on the context. At least 36."
+	^ self getIntegerParameter: GL_MAX_UNIFORM_BUFFER_BINDINGS
+]
+
+{
+	#category : #parameters,
+	#timestamp : 'stlu 1/4/2021 15:39'
+}
+GLLibrary >> maxUniformLocations [
+	"Maximum number of explicitly assignable uniform locations. At least 1024."
+	^ self getIntegerParameter: GL_MAX_UNIFORM_LOCATIONS
+]
+
+{
+	#category : #parameters,
+	#timestamp : 'stlu 1/4/2021 15:42'
+}
+GLLibrary >> maxVaryingComponents [
+	"Number of components for varying variables. At least 60."
+	^ self getIntegerParameter: GL_MAX_VARYING_COMPONENTS
+]
+
+{
+	#category : #parameters,
+	#timestamp : 'stlu 1/4/2021 15:43'
+}
+GLLibrary >> maxVaryingVectors [
+	"Number of 4-vectors for varying variables. Equivalent to #maxVaryingComponents / 4. At least 15."
+	^ self getIntegerParameter: GL_MAX_VARYING_VECTORS
+]
+
+{
+	#category : #parameters,
+	#timestamp : 'stlu 1/4/2021 15:49'
+}
+GLLibrary >> maxVertexAttributeBindings [
+	"Maximum number of vertex buffers that may be bound."
+	^ self getIntegerParameter: GL_MAX_VERTEX_ATTRIB_BINDINGS
+]
+
+{
+	#category : #parameters,
+	#timestamp : 'stlu 1/4/2021 15:46'
+}
+GLLibrary >> maxVertexAttributes [
+	"Maximum number of 4-component generic vertex attributes accessible to a vertex shader. At least 16."
+	^ self getIntegerParameter: GL_MAX_VERTEX_ATTRIBS
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 15:03'
 }
