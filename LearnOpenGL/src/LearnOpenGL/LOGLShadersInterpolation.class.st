@@ -61,11 +61,11 @@ void main() {
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/4/2021 04:10'
+	#timestamp : 'stlu 1/4/2021 04:49'
 }
 LOGLShadersInterpolation >> vertices [
 
-	^ #(
+	^ #(	"positions"		"colors"
 			-0.5 -0.5 0.0	1.0 0.0 0.0
 			0.5 -0.5 0.0	0.0 1.0 0.0
 			0.0 0.5 0.0		0.0 0.0 1.0

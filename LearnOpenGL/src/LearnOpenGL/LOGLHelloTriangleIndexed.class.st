@@ -13,7 +13,7 @@ Class {
 
 {
 	#category : #running,
-	#timestamp : 'stlu 12/22/2020 15:02'
+	#timestamp : 'stlu 1/4/2021 04:53'
 }
 LOGLHelloTriangleIndexed >> draw [
 
@@ -21,7 +21,7 @@ LOGLHelloTriangleIndexed >> draw [
 		drawElements: GL_TRIANGLES
 		with: 6
 		with: GL_UNSIGNED_INT
-		with: (ExternalAddress fromInteger: 0)
+		with: nil
 ]
 
 {
