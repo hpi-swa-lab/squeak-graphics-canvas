@@ -11,7 +11,7 @@ Class {
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 12/21/2020 15:09'
+	#timestamp : 'zagto 1/5/2021 17:46'
 }
 SLDemoProgram class >> fragmentShader: out inputs: in uniforms: u [
 
@@ -20,7 +20,7 @@ SLDemoProgram class >> fragmentShader: out inputs: in uniforms: u [
 	model := u model beFloatMatrix4x4.
 	normal := in normal beFloatVector3 normalized.
 	fragPos := in fragPos beFloatVector3.
-	objectColor := 1.0 @ 0.5 @ 0.31.
+	objectColor := 1.0 @ 0.5 @ 0.11.
 	lightColor := 1.0 @ 1.0 @ 1.0.
 	lightPos := ((1.2 @ 1.0 @ 2.0 @ 0.0) * model) xyz.
 	ambientStrength := 0.1.

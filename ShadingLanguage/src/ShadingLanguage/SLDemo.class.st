@@ -64,7 +64,7 @@ SLDemo >> cubeData [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 12/16/2020 21:30'
+	#timestamp : 'zagto 1/5/2021 17:45'
 }
 SLDemo >> render [
 
@@ -86,7 +86,6 @@ SLDemo >> render [
 							near: 0.1 far: 100.0.
 			program uniforms
 				model: model;
-				view: view;
 				projection: projection.
 			vbo draw: GL_TRIANGLES from: 0 count: 36]].
 	
@@ -95,10 +94,11 @@ SLDemo >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 12/27/2020 15:02'
+	#timestamp : 'zagto 1/5/2021 17:45'
 }
 SLDemo >> setUp [
 
+	| view |
 	camera := LOGLCamera position: 0.0 @ 0.0 @ 3.0.
 
 	program := SLDemoProgram instance.
@@ -120,6 +120,11 @@ SLDemo >> setUp [
 		components: 3
 		stride: 4*6
 		offset: 4*3.
+		
+		GL checkForError.
+	
+	view := camera viewMatrix.
+				program uniforms view: view.
 	
 	GL checkForError
 ]

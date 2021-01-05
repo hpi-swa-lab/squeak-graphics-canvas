@@ -23,6 +23,16 @@ SLGenerator class >> example1 [
 ]
 
 {
+	#category : #'class initialization',
+	#timestamp : 'zagto 1/5/2021 17:10'
+}
+SLGenerator class >> initialize [
+	CodeHolder 	addContentsSymbolQuint: #(#glsl #toggleGeneratedGLSL #showingGeneratedGLSLString 'GLSL' 'generated GLSL') afterPosition: (CodeHolder contentsSymbolQuints size).
+	
+	CodeHolder addEditContentsOption: #glsl -> #generatedGLSL
+]
+
+{
 	#category : #'instance creation',
 	#timestamp : 'stlu 12/2/2020 04:19'
 }

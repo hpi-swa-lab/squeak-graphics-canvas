@@ -192,10 +192,13 @@ GLStaticProgram >> uniform: location value: anObject [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/14/2020 12:38'
+	#timestamp : 'zagto 1/5/2021 17:33'
 }
 GLStaticProgram >> updateShaders [
 
+	| oldInterfaces |
+	oldInterfaces := interfaces.
 	self detachShaders.
-	self initializeShaders
+	self initializeShaders.
+	interfaces migrateResourcesFrom: oldInterfaces.
 ]

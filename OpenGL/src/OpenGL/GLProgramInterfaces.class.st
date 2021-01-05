@@ -60,6 +60,15 @@ GLProgramInterfaces >> inputs [
 ]
 
 {
+	#category : #initialization,
+	#timestamp : 'zagto 1/5/2021 17:38'
+}
+GLProgramInterfaces >> migrateResourcesFrom: another [
+
+	uniforms migrateResourcesFrom: another uniforms
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 12/13/2020 14:57'
 }

@@ -44,6 +44,15 @@ GLProgramInterface >> atName: aString [
 ]
 
 {
+	#category : #accessing,
+	#timestamp : 'zagto 1/5/2021 17:28'
+}
+GLProgramInterface >> atName: aString ifPresent: aBlock [
+
+	^ nameToVariable at: aString ifPresent: aBlock
+]
+
+{
 	#category : #'error handling',
 	#timestamp : 'stlu 12/16/2020 21:16'
 }
@@ -70,4 +79,14 @@ GLProgramInterface >> initializeWithProgram: aProgram interface: aProgramResourc
 	nameToVariable := Dictionary new: variables size.
 	variables do: [:var |
 		nameToVariable at: var name put: var]
+]
+
+{
+	#category : #initialization,
+	#timestamp : 'zagto 1/5/2021 17:42'
+}
+GLProgramInterface >> migrateResourcesFrom: another [
+	variables do: [:variable |
+		another atName: variable name ifPresent: [:other |
+			variable value: other value]]
 ]
