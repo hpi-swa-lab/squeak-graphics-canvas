@@ -1,9 +1,6 @@
 Class {
 	#name : #GLProgramInterfaceQueryImp,
-	#superclass : #Object,
-	#pools : [
-		'GLConstants'
-	],
+	#superclass : #GLWrapperImp,
 	#category : #'OpenGL-Wrappers-Programs',
 	#commentStamp : ''
 }

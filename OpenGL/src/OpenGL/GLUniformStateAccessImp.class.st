@@ -1,6 +1,6 @@
 Class {
 	#name : #GLUniformStateAccessImp,
-	#superclass : #Object,
+	#superclass : #GLWrapperImp,
 	#category : #'OpenGL-Wrappers-Programs',
 	#commentStamp : ''
 }
