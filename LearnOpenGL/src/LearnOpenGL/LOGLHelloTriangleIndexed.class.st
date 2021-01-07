@@ -37,12 +37,22 @@ LOGLHelloTriangleIndexed >> indices [
 ]
 
 {
+	#category : #testing,
+	#timestamp : 'stlu 1/7/2021 11:16'
+}
+LOGLHelloTriangleIndexed >> isWireframe [
+
+	^ true
+]
+
+{
 	#category : #running,
-	#timestamp : 'stlu 12/22/2020 15:14'
+	#timestamp : 'stlu 1/7/2021 11:15'
 }
 LOGLHelloTriangleIndexed >> setUp [
 
-	GL polygonMode: GL_FRONT_AND_BACK with: GL_LINE.
+	self isWireframe ifTrue: [
+		GL polygonMode: GL_FRONT_AND_BACK with: GL_LINE].
 	
 	super setUp.
 	

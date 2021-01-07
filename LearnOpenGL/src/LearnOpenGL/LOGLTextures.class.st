@@ -3,27 +3,13 @@
 "
 Class {
 	#name : #LOGLTextures,
-	#superclass : #LOGLHelloTriangle,
+	#superclass : #LOGLHelloTriangleIndexed,
 	#instVars : [
-		'ebo',
 		'texture'
 	],
 	#category : #'LearnOpenGL-GettingStarted',
 	#commentStamp : 'stlu 1/4/2021 04:37'
 }
-
-{
-	#category : #running,
-	#timestamp : 'stlu 1/4/2021 04:53'
-}
-LOGLTextures >> draw [
-
-	GL
-		drawElements: GL_TRIANGLES
-		with: 6
-		with: GL_UNSIGNED_INT
-		with: nil
-]
 
 {
 	#category : #shaders,
@@ -44,54 +30,44 @@ void main() {
 ]
 
 {
-	#category : #accessing,
-	#timestamp : 'stlu 1/4/2021 04:44'
+	#category : #testing,
+	#timestamp : 'stlu 1/7/2021 11:19'
 }
-LOGLTextures >> indices [
+LOGLTextures >> isWireframe [
 
-	^ #(
-			0 1 3
-			1 2 3
-		) asWordArray
+	^ false
+]
+
+{
+	#category : #rendering,
+	#timestamp : 'stlu 1/7/2021 11:29'
+}
+LOGLTextures >> render [
+
+	GL activeTexture: GL_TEXTURE0.
+	texture boundDuring: [
+		super render]
 ]
 
 {
 	#category : #running,
-	#timestamp : 'stlu 1/4/2021 10:08'
+	#timestamp : 'stlu 1/7/2021 11:24'
 }
 LOGLTextures >> setUp [
 
-	| form |
 	super setUp.
 	
 	texture := GL2DTexture create.
-	texture bind.
-	texture
-		wrapS: GL_REPEAT;
-		wrapT: GL_REPEAT;
-		minificationFilter: GL_LINEAR;
-		magnificationFilter: GL_LINEAR.
-	form := LOGLImages container.
-	GL
-		texImage2D: GL_TEXTURE_2D
-		with: 0
-		with: GL_RGBA
-		with: form width
-		with: form height
-		with: 0
-		with: GL_BGRA
-		with: GL_UNSIGNED_BYTE
-		with: form bits.
-	
-	texture generateMipmap.
-	
-	ebo := GLBuffer create.
-	ebo target: GL_ELEMENT_ARRAY_BUFFER.
+	texture boundDuring: [
+		texture
+			wrapS: GL_REPEAT;
+			wrapT: GL_REPEAT;
+			minificationFilter: GL_LINEAR;
+			magnificationFilter: GL_LINEAR;
+			imageForm: LOGLImages container;
+			generateMipmap].
 	
 	vao boundDuring: [
-		ebo bind.
-		ebo usage: GL_STATIC_DRAW data: self indices.
-	
 		program inputs aPos
 			stride: 4*5
 			offset: 0.
