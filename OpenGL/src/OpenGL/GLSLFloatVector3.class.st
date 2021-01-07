@@ -58,3 +58,12 @@ GLSLFloatVector3 class >> squeakName [
 
 	^ 'FloatVector3'
 ]
+
+{
+	#category : #'program resources',
+	#timestamp : 'stlu 1/6/2021 14:09'
+}
+GLSLFloatVector3 >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
+
+	aUniform setTo3ComponentFloatArray: aRawBitsArray count: numElements
+]

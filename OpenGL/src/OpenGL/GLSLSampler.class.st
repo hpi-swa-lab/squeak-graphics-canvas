@@ -91,3 +91,12 @@ GLSLSampler >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
 	aUniform setTo1ComponentIntegerArray: aRawBitsArray count: numElements
 ]
+
+{
+	#category : #'program resources',
+	#timestamp : 'stlu 1/6/2021 14:15'
+}
+GLSLSampler >> setUniform: aUniform toObject: anObject [
+
+	aUniform setToInteger: anObject
+]
