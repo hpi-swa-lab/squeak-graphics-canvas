@@ -4,7 +4,8 @@ Class {
 	#instVars : [
 		'library',
 		'renderProcess',
-		'window'
+		'window',
+		'lastFrameTime'
 	],
 	#pools : [
 		'GLConstants',
@@ -54,6 +55,15 @@ LOGLTemplate >> initialExtent [
 ]
 
 {
+	#category : #initialization,
+	#timestamp : 'stlu 1/5/2021 08:21'
+}
+LOGLTemplate >> initialize [
+
+	lastFrameTime := 0.0
+]
+
+{
 	#category : #rendering,
 	#timestamp : 'stlu 10/12/2020 14:12'
 }
@@ -61,6 +71,24 @@ LOGLTemplate >> processInput [
 
 	(window getKey: KEY_ESCAPE) = PRESS ifTrue: [
 		window shouldClose: true]
+]
+
+{
+	#category : #rendering,
+	#timestamp : 'stlu 1/5/2021 08:24'
+}
+LOGLTemplate >> processInput: deltaSecs [
+
+	self processInput
+]
+
+{
+	#category : #rendering,
+	#timestamp : 'stlu 1/7/2021 12:24'
+}
+LOGLTemplate >> processPriority [
+
+	^ Processor userBackgroundPriority
 ]
 
 {
@@ -74,16 +102,29 @@ LOGLTemplate >> render [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 12/9/2020 15:30'
+	#timestamp : 'stlu 1/5/2021 08:23'
+}
+LOGLTemplate >> render: deltaSecs [
+
+	self render
+]
+
+{
+	#category : #rendering,
+	#timestamp : 'stlu 1/5/2021 08:25'
 }
 LOGLTemplate >> renderLoop [
 
 	[self shouldClose] whileFalse: [
+		| currentFrameTime delta |
+		currentFrameTime := Time utcMicrosecondClock / 1e6.
+		delta := currentFrameTime - lastFrameTime.
 		library makeCurrentDuring: [
-			self processInput.
-			self render.
+			self processInput: delta.
+			self render: delta.
 			window swapBuffers.
 			GLFW pollEvents].
+		lastFrameTime := currentFrameTime.
 		Processor yield]
 ]
 
@@ -133,7 +174,7 @@ LOGLTemplate >> shouldClose [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 12/16/2020 15:58'
+	#timestamp : 'stlu 1/7/2021 12:24'
 }
 LOGLTemplate >> spawnNewRenderProcess [
 
@@ -142,7 +183,7 @@ LOGLTemplate >> spawnNewRenderProcess [
 			ensure: [
 				self tearDown.
 				library destroy]
-	] newProcess priority: Processor userBackgroundPriority.
+	] newProcess priority: self processPriority.
 	renderProcess resume
 ]
 
