@@ -47,15 +47,14 @@ GLFWLibrary class >> example [
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 11/11/2020 14:26'
+	#timestamp : 'stlu 1/6/2021 14:00'
 }
 GLFWLibrary class >> example1 [ "self example1"
 	"A minimal GLFW example window. Dismiss by clicking anywhere inside Squeak.
 	Do NOT force quit the window (unless you want your Squeak to force quit too)."
 	| window |
 	window := GLFWWindow
-					width: 400
-					height: 400
+					extent: 400 @ 400
 					title: 'GLFW example1'.
 	window ifNil: [^ self error: 'GLFW Error'].
 	[[Sensor anyButtonPressed] whileFalse]
@@ -3396,6 +3395,16 @@ GLFWLibrary >> getKey: window with: key [
 ]
 
 {
+	#category : #'api - events',
+	#timestamp : 'stlu 1/7/2021 11:55'
+}
+GLFWLibrary >> getTime [
+
+	<apicall: double 'glfwGetTime' ()>
+	^ self externalCallFailed
+]
+
+{
 	#category : #'api - init',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
@@ -3773,6 +3782,16 @@ GLFWLibrary >> setMouseButtonCallback: aWindow with: aBlock [
 	self
 		privateSetMouseButtonCallback: aWindow
 		with: callback thunk
+]
+
+{
+	#category : #'api - events',
+	#timestamp : 'stlu 1/7/2021 11:55'
+}
+GLFWLibrary >> setTime: time [
+
+	<apicall: void 'glfwSetTime' (double)>
+	^ self externalCallFailed
 ]
 
 {

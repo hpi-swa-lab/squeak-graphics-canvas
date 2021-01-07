@@ -19,31 +19,22 @@ GLFWWindow class >> current [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 1/6/2021 14:00'
 }
 GLFWWindow class >> extent: aPoint title: aString [
 
-	^ self width: aPoint x height: aPoint y title: aString monitor: nil share: nil
+	^ self extent: aPoint title: aString monitor: nil share: nil
 ]
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 1/6/2021 14:00'
 }
-GLFWWindow class >> width: width height: height title: aString [
-
-	^ self width: width height: height title: aString monitor: nil share: nil
-]
-
-{
-	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
-GLFWWindow class >> width: width height: height title: aString monitor: monitor share: window [
+GLFWWindow class >> extent: aPoint title: aString monitor: monitor share: window [
 
 	^ self window: (GLFW
-					createWindow: width
-					with: height
+					createWindow: aPoint x
+					with: aPoint y
 					with: aString
 					with: monitor
 					with: window)

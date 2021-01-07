@@ -26,6 +26,15 @@ LOGLTemplate class >> run [
 ]
 
 {
+	#category : #accessing,
+	#timestamp : 'stlu 1/6/2021 14:02'
+}
+LOGLTemplate >> extent [
+
+	^ window extent
+]
+
+{
 	#category : #callbacks,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
@@ -37,20 +46,11 @@ LOGLTemplate >> extentChanged: newExtent [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/22/2020 16:55'
+	#timestamp : 'stlu 1/6/2021 14:01'
 }
-LOGLTemplate >> initialHeight [
+LOGLTemplate >> initialExtent [
 
-	^ 600
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/22/2020 16:54'
-}
-LOGLTemplate >> initialWidth [
-
-	^ 800
+	^ 800 @ 600
 ]
 
 {
@@ -89,7 +89,7 @@ LOGLTemplate >> renderLoop [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/16/2020 14:12'
+	#timestamp : 'stlu 1/6/2021 14:01'
 }
 LOGLTemplate >> run [
 
@@ -98,8 +98,7 @@ LOGLTemplate >> run [
 	GLFW windowHint: GLFW FLOATING with: true.
 
 	window := GLFWWindow
-				width: self initialWidth
-				height: self initialHeight
+				extent: self initialExtent
 				title: self title.
 	
 	window ifNil: [^ self error: 'Failed to create GLFW window'].
