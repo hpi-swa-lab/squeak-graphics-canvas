@@ -784,13 +784,11 @@ Matrix4x4 >> at: a up: u [
 
 {
 	#category : #'row-access',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 1/7/2021 10:54'
 }
 Matrix4x4 >> column1 [
 	"Return column 1"
-
-	^ (Vector3 x: (self a11) y: (self a21) z: (self a31)).
-
+	^ Vector3 x: self a11 y: self a21 z: self a31
 ]
 
 {
@@ -807,50 +805,42 @@ Matrix4x4 >> column1: col [
 
 {
 	#category : #'row-access',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 1/7/2021 10:54'
 }
 Matrix4x4 >> column2 [
 	"Return column 2"
-
-	^ (Vector3 x: (self a12) y: (self a22) z: (self a32)).
-
+	^ Vector3 x: self a12 y: self a22 z: self a32
 ]
 
 {
 	#category : #'row-access',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 1/7/2021 10:55'
 }
 Matrix4x4 >> column2: col [
 	"Set column 2"
-
 	self a12: col x.
 	self a22: col y.
-	self a32: col z.
-
+	self a32: col z
 ]
 
 {
 	#category : #'row-access',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 1/7/2021 10:54'
 }
 Matrix4x4 >> column3 [
 	"Return column 3"
-
-	^ (Vector3 x: (self a13) y: (self a23) z: (self a33)).
-
+	^ Vector3 x: self a13 y: self a23 z: self a33
 ]
 
 {
 	#category : #'row-access',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 1/7/2021 10:55'
 }
 Matrix4x4 >> column3: col [
 	"Set column 3"
-
 	self a13: col x.
 	self a23: col y.
-	self a33: col z.
-
+	self a33: col z
 ]
 
 {
@@ -1179,35 +1169,29 @@ Matrix4x4 >> localPointsToGlobal: inArray [
 
 {
 	#category : #'row-access',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 1/7/2021 10:55'
 }
 Matrix4x4 >> lookAt [
 	"Return column 3"
-
-	^ (Vector3 x: (self a13) y: (self a23) z: (self a33)).
-
+	^ Vector3 x: self a13 y: self a23 z: self a33
 ]
 
 {
 	#category : #'row-access',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 1/7/2021 10:55'
 }
 Matrix4x4 >> lookSide [
 	"Return column 1"
-
-	^ (Vector3 x: (self a11) y: (self a21) z: (self a31)).
-
+	^ Vector3 x: self a11 y: self a21 z: self a31
 ]
 
 {
 	#category : #'row-access',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 1/7/2021 10:55'
 }
 Matrix4x4 >> lookUp [
 	"Return column 2"
-
-	^ (Vector3 x: (self a12) y: (self a22) z: (self a32)).
-
+	^ Vector3 x: self a12 y: self a22 z: self a32
 ]
 
 {
@@ -1743,73 +1727,62 @@ Matrix4x4 >> rotationAroundZ: anAngle [
 
 {
 	#category : #'row-access',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 1/7/2021 10:56'
 }
 Matrix4x4 >> row1 [
 	"Return row 1"
-
-	^ (Vector3 x: (self a11) y: (self a12) z: (self a13)).
-
+	^ Vector3 x: self a11 y: self a12 z: self a13
 ]
 
 {
 	#category : #'row-access',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 1/7/2021 10:56'
 }
 Matrix4x4 >> row1: row [
 	"Set row 1"
 	self a11: row x.
 	self a12: row y.
-	self a13: row z.
-
+	self a13: row z
 ]
 
 {
 	#category : #'row-access',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 1/7/2021 10:56'
 }
 Matrix4x4 >> row2 [
 	"Return row 2"
-
-	^ (Vector3 x: (self a21) y: (self a22) z: (self a23)).
-
+	^ Vector3 x: self a21 y: self a22 z: self a23
 ]
 
 {
 	#category : #'row-access',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 1/7/2021 10:56'
 }
 Matrix4x4 >> row2: row [
 	"Set row 2"
-
 	self a21: row x.
 	self a22: row y.
-	self a23: row z.
-
+	self a23: row z
 ]
 
 {
 	#category : #'row-access',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 1/7/2021 10:56'
 }
 Matrix4x4 >> row3 [
 	"Return row 3"
-
-	^ (Vector3 x: (self a31) y: (self a32) z: (self a33)).
-
+	^ Vector3 x: self a31 y: self a32 z: self a33
 ]
 
 {
 	#category : #'row-access',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 1/7/2021 10:56'
 }
 Matrix4x4 >> row3: row [
 	"Set row 3"
-
 	self a31: row x.
 	self a32: row y.
-	self a33: row z.
-
+	self a33: row z
 ]
 
 {

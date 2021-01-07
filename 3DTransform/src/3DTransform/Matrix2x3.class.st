@@ -31,7 +31,7 @@ Class {
 		'Zero'
 	],
 	#category : #'3DTransform',
-	#commentStamp : ''
+	#commentStamp : 'stlu 9/1/2020 17:53'
 }
 
 {
