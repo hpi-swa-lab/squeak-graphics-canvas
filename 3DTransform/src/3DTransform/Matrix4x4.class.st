@@ -52,23 +52,25 @@ Matrix4x4 class >> numElements [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 1/7/2021 13:34'
 }
-Matrix4x4 class >> ortho: aRectangle near: aNumber far: anotherNumber [
+Matrix4x4 class >> ortho: aRectangle near: zNear far: zFar [
 
-	" https://www.scratchapixel.com/lessons/3d-basic-rendering/perspective-and-orthographic-projection-matrix/orthographic-projection-matrix "
+	| left right bottom top width height |
+	left := aRectangle left.
+	right := aRectangle right.
+	bottom := aRectangle bottom.
+	top := aRectangle top.
+	width := right - left.
+	height := top - bottom.
 	^ self identity
-		a11: 2 / aRectangle width;
-		a22: 2 / aRectangle height;
-    		a33: -2 / (anotherNumber - aNumber);
-		a14: (aRectangle right + aRectangle left) negated / aRectangle width;
-		a24: (aRectangle top + aRectangle bottom) negated / aRectangle height;
-		a34: (anotherNumber + aNumber) negated / (anotherNumber - aNumber);
+		a11: 2.0 / width;
+		a22: 2.0 / height;
+    		a33: -2.0 / (zFar - zNear);
+		a14: (right + left) negated / width;
+		a24: (top + bottom) negated / height;
+		a34: (zFar + zNear) negated / (zFar - zNear);
 		yourself
-"    M[3][0] = -(r + l) / (r - l); 
-    M[3][1] = -(t + b) / (t - b); 
-    M[3][2] = -(f + n) / (f - n); 
-    M[3][3] = 1; "
 ]
 
 {
@@ -1560,6 +1562,15 @@ Matrix4x4 >> replaceFrom: start to: stop with: replacement startingAt: repStart 
 ]
 
 {
+	#category : #transforming,
+	#timestamp : 'stlu 1/7/2021 12:42'
+}
+Matrix4x4 >> rotatedBy: angleInDegrees around: axis [
+
+	^ (self class withRotation: angleInDegrees around: axis) * self
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
@@ -1783,6 +1794,15 @@ Matrix4x4 >> row3: row [
 	self a31: row x.
 	self a32: row y.
 	self a33: row z
+]
+
+{
+	#category : #transforming,
+	#timestamp : 'stlu 1/7/2021 12:42'
+}
+Matrix4x4 >> scaledBy: aVector3 [
+
+	^ (self class withScale: aVector3) * self
 ]
 
 {
@@ -2074,6 +2094,15 @@ Matrix4x4 >> squaredErrorDistanceTo: anotherMatrix [
 	temp := 0.
 	1 to: 4 do: [:i | 1 to: 4 do: [:j| temp := temp + ((result at: i-1*4+j) squared)]].
 	^temp sqrt.
+]
+
+{
+	#category : #transforming,
+	#timestamp : 'stlu 1/7/2021 12:42'
+}
+Matrix4x4 >> translatedBy: aVector3 [
+
+	^ (self class withOffset: aVector3) * self
 ]
 
 {
