@@ -237,6 +237,15 @@ GLFWWindow >> iconify [
 ]
 
 {
+	#category : #callbacks,
+	#timestamp : 'stlu 1/7/2021 17:06'
+}
+GLFWWindow >> keyCallback: aBlock [
+
+	GLFW setKeyCallback: self with: aBlock
+]
+
+{
 	#category : #'initialize-release',
 	#timestamp : 'stlu 10/21/2020 21:12'
 }

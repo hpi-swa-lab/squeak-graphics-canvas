@@ -3681,6 +3681,16 @@ GLFWLibrary >> privateSetFramebufferSizeCallback: aWindow with: anFFICallback [
 
 {
 	#category : #private,
+	#timestamp : 'stlu 1/7/2021 17:06'
+}
+GLFWLibrary >> privateSetKeyCallback: aWindow with: anFFICallback [
+
+	<apicall: void 'glfwSetKeyCallback' (GLFWWindow* void*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #private,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> privateSetMouseButtonCallback: aWindow with: anFFICallback [
@@ -3764,6 +3774,24 @@ GLFWLibrary >> setFramebufferSizeCallback: aWindow with: aBlock [
 					forWindow: aWindow.
 	self
 		privateSetFramebufferSizeCallback: aWindow
+		with: callback thunk
+]
+
+{
+	#category : #'api - input',
+	#timestamp : 'stlu 1/7/2021 17:15'
+}
+GLFWLibrary >> setKeyCallback: aWindow with: aBlock [
+	
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(GLFWWindow* int int int int)>'
+						"GLFWwindow* window, int key, int scancode, int action, int mods"
+					named: #key
+					forWindow: aWindow.
+	self
+		privateSetKeyCallback: aWindow
 		with: callback thunk
 ]
 
