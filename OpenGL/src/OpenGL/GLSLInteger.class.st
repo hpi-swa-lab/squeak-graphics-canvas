@@ -85,3 +85,12 @@ GLSLInteger >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
 	aUniform setTo1ComponentIntegerArray: aRawBitsArray count: numElements
 ]
+
+{
+	#category : #'program resources',
+	#timestamp : 'stlu 1/8/2021 18:49'
+}
+GLSLInteger >> setUniform: aUniform toObject: anObject [
+
+	aUniform setToFloat: anObject asInteger
+]

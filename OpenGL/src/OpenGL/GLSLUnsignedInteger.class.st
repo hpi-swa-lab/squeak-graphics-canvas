@@ -85,3 +85,12 @@ GLSLUnsignedInteger >> setUniform: aUniform toArray: aRawBitsArray count: numEle
 
 	aUniform setTo1ComponentUnsignedIntegerArray: aRawBitsArray count: numElements
 ]
+
+{
+	#category : #'program resources',
+	#timestamp : 'stlu 1/8/2021 18:49'
+}
+GLSLUnsignedInteger >> setUniform: aUniform toObject: anObject [
+
+	aUniform setToUnsignedInteger: anObject
+]

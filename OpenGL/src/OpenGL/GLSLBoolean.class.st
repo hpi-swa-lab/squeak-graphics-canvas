@@ -103,3 +103,12 @@ GLSLBoolean >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
 	aUniform setTo1ComponentIntegerArray: aRawBitsArray count: numElements
 ]
+
+{
+	#category : #'program resources',
+	#timestamp : 'stlu 1/8/2021 18:42'
+}
+GLSLBoolean >> setUniform: aUniform toObject: anObject [
+
+	aUniform setToInteger: anObject
+]

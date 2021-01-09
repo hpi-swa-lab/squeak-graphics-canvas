@@ -85,3 +85,12 @@ GLSLDouble >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
 	aUniform setTo1ComponentDoubleArray: aRawBitsArray count: numElements
 ]
+
+{
+	#category : #'program resources',
+	#timestamp : 'stlu 1/8/2021 18:47'
+}
+GLSLDouble >> setUniform: aUniform toObject: anObject [
+
+	aUniform setToDouble: anObject asFloat
+]

@@ -42,6 +42,29 @@ GLSLArray class >> numElements: length type: aGLType [
 
 {
 	#category : #accessing,
+	#timestamp : 'stlu 1/8/2021 18:20'
+}
+GLSLArray >> declarator [
+
+	^ String streamContents: [:stream |
+		stream
+			nextPutAll: type declarator;
+			nextPut: $[;
+			print: numElements;
+			nextPut: $]]
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 1/8/2021 18:30'
+}
+GLSLArray >> isArray [
+
+	^ true
+]
+
+{
+	#category : #accessing,
 	#timestamp : 'stlu 11/23/2020 16:16'
 }
 GLSLArray >> numElements [

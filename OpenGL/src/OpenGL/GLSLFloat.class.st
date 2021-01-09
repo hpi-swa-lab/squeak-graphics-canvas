@@ -88,9 +88,9 @@ GLSLFloat >> setUniform: aUniform toArray: aRawBitsArray count: numElements [
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 12/14/2020 11:54'
+	#timestamp : 'stlu 1/8/2021 18:47'
 }
 GLSLFloat >> setUniform: aUniform toObject: anObject [
 
-	aUniform setToFloat: anObject
+	aUniform setToFloat: anObject asFloat
 ]
