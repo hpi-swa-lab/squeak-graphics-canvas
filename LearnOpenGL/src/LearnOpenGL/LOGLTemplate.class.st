@@ -28,28 +28,9 @@ LOGLTemplate class >> run [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 14:02'
+	#timestamp : 'stlu 1/7/2021 17:50'
 }
-LOGLTemplate >> extent [
-
-	^ window extent
-]
-
-{
-	#category : #callbacks,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
-LOGLTemplate >> extentChanged: newExtent [
-	"glfw: whenever the window size changed (by OS or user resize) this callback function executes"
-	window context library makeCurrentDuring: [
-		GL setViewport: (0@0 extent: newExtent)]
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 1/6/2021 14:01'
-}
-LOGLTemplate >> initialExtent [
+LOGLTemplate >> initialWindowExtent [
 
 	^ 800 @ 600
 ]
@@ -61,6 +42,15 @@ LOGLTemplate >> initialExtent [
 LOGLTemplate >> initialize [
 
 	lastFrameTime := 0.0
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 1/8/2021 11:48'
+}
+LOGLTemplate >> isModal [
+
+	^ false
 ]
 
 {
@@ -111,7 +101,7 @@ LOGLTemplate >> render: deltaSecs [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 1/5/2021 08:25'
+	#timestamp : 'stlu 1/8/2021 11:48'
 }
 LOGLTemplate >> renderLoop [
 
@@ -125,12 +115,12 @@ LOGLTemplate >> renderLoop [
 			window swapBuffers.
 			GLFW pollEvents].
 		lastFrameTime := currentFrameTime.
-		Processor yield]
+		self isModal ifFalse: [Processor yield]]
 ]
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/6/2021 14:01'
+	#timestamp : 'stlu 1/7/2021 17:50'
 }
 LOGLTemplate >> run [
 
@@ -139,7 +129,7 @@ LOGLTemplate >> run [
 	GLFW windowHint: GLFW FLOATING with: true.
 
 	window := GLFWWindow
-				extent: self initialExtent
+				extent: self initialWindowExtent
 				title: self title.
 	
 	window ifNil: [^ self error: 'Failed to create GLFW window'].
@@ -148,7 +138,7 @@ LOGLTemplate >> run [
 	
 	library makeCurrentDuring: [
 		window framebufferSizeCallback: [:w :width :height |
-			self extentChanged: width @ height].
+			self windowExtentChanged: width @ height].
 		self setUp.].
 	
 	self spawnNewRenderProcess
@@ -212,4 +202,14 @@ LOGLTemplate >> title [
 LOGLTemplate >> window [
 
 	^ window
+]
+
+{
+	#category : #callbacks,
+	#timestamp : 'stlu 1/7/2021 17:49'
+}
+LOGLTemplate >> windowExtentChanged: newExtent [
+	"glfw: whenever the window size changed (by OS or user resize) this callback function executes"
+	window context library makeCurrentDuring: [
+		GL setViewport: (0@0 extent: newExtent)]
 ]
