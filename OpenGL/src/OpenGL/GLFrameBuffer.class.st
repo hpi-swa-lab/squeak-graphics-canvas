@@ -18,6 +18,9 @@ Class {
 		'target',
 		'colorAttachment0'
 	],
+	#classVars : [
+		'CompletionStatusDescriptions'
+	],
 	#category : #'OpenGL-Wrappers-Framebuffers',
 	#commentStamp : 'stlu 11/13/2020 18:20'
 }
@@ -59,6 +62,24 @@ GLFrameBuffer class >> display [
 ]
 
 {
+	#category : #'class initialization',
+	#timestamp : 'stlu 1/9/2021 13:46'
+}
+GLFrameBuffer class >> initialize [
+
+	CompletionStatusDescriptions := {
+		GL_FRAMEBUFFER_UNDEFINED -> 'Undefined framebuffer. The specified framebuffer is the default read or draw framebuffer, but the default framebuffer does not exist.'.
+		GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT -> 'Incomplete attachment. One of the framebuffer attachment points are framebuffer incomplete.'.
+		GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT -> 'Incomplete missing attachment. The framebuffer does not have at least one image attached to it.'.
+		GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER -> 'Incomplete draw buffer. The value of GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE is GL_NONE for any color attachment point(s) named by GL_DRAW_BUFFERi.'.
+		GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER -> 'Incomplete read buffer. GL_READ_BUFFER is not GL_NONE and the value of GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE is GL_NONE for the color attachment point named by GL_READ_BUFFER.'.
+		GL_FRAMEBUFFER_UNSUPPORTED -> 'Unsupported framebuffer. The combination of internal formats of the attached images violates an implementation-dependent set of restrictions.'.
+		GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE -> 'Incomplete multisample. Either the value of GL_RENDERBUFFER_SAMPLES is not the same for all attached renderbuffers; or the value of GL_TEXTURE_SAMPLES is the not same for all attached textures; or, if the attached images are a mix of renderbuffers and textures, the value of GL_RENDERBUFFER_SAMPLES does not match the value of GL_TEXTURE_SAMPLES; or if the value of GL_TEXTURE_FIXED_SAMPLE_LOCATIONS is not the same for all attached textures; or, if the attached images are a mix of renderbuffers and textures, the value of GL_TEXTURE_FIXED_SAMPLE_LOCATIONS is not GL_TRUE for all attached textures.'.
+		GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS -> 'Incomplete layer targets. One of the framebuffer attachment is layered, and one of the populated attachments is not layered, or all populated color attachments are not from textures of the same target.'.
+	} as: Dictionary
+]
+
+{
 	#category : #binding,
 	#timestamp : 'stlu 12/3/2020 19:29'
 }
@@ -95,6 +116,44 @@ GLFrameBuffer >> asFormOfExtent: aPoint [
 ]
 
 {
+	#category : #attachments,
+	#timestamp : 'stlu 1/9/2021 14:05'
+}
+GLFrameBuffer >> attach2DTexture: a2DTexture level: mipMapLevel to: attachmentEnum [
+
+	self stateAccessImp
+		framebuffer: self
+		attach2DTexture: a2DTexture
+		level: mipMapLevel
+		to: attachmentEnum
+]
+
+{
+	#category : #attachments,
+	#timestamp : 'stlu 1/9/2021 14:05'
+}
+GLFrameBuffer >> attach2DTexture: a2DTexture to: attachmentEnum [
+
+	self stateAccessImp
+		framebuffer: self
+		attach2DTexture: a2DTexture
+		level: 0
+		to: attachmentEnum
+]
+
+{
+	#category : #attachments,
+	#timestamp : 'stlu 1/9/2021 13:58'
+}
+GLFrameBuffer >> attachRenderbuffer: aRenderbuffer to: attachmentEnum [
+
+	self stateAccessImp
+		framebuffer: self
+		attachRenderbuffer: aRenderbuffer
+		to: attachmentEnum
+]
+
+{
 	#category : #binding,
 	#timestamp : 'stlu 12/3/2020 18:21'
 }
@@ -118,6 +177,35 @@ GLFrameBuffer >> bindToReadAndDraw [
 ]
 
 {
+	#category : #blitting,
+	#timestamp : 'stlu 1/9/2021 14:31'
+}
+GLFrameBuffer >> blit: bufferMask into: otherFramebuffer from: readBounds to: drawBounds [
+
+	self
+		blit: bufferMask
+		into: otherFramebuffer
+		from: readBounds
+		to: drawBounds
+		filter: GL_NEAREST
+]
+
+{
+	#category : #blitting,
+	#timestamp : 'stlu 1/9/2021 14:31'
+}
+GLFrameBuffer >> blit: bufferMask into: otherFramebuffer from: readBounds to: drawBounds filter: filterEnum [
+
+	self stateAccessImp
+		blit: bufferMask
+		from: self
+		bounds: readBounds
+		to: otherFramebuffer
+		bounds: drawBounds
+		filter: filterEnum
+]
+
+{
 	#category : #binding,
 	#timestamp : 'stlu 12/3/2020 18:19'
 }
@@ -130,14 +218,14 @@ GLFrameBuffer >> boundTo: targetEnum during: aBlock [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 12/3/2020 16:22'
+	#timestamp : 'stlu 1/9/2021 12:36'
 }
 GLFrameBuffer >> boundToReadAndDrawDuring: aBlock [
 
 	| previousRead previousDraw |
 	previousRead := self class boundTo: GL_READ_FRAMEBUFFER.
 	previousDraw := self class boundTo: GL_DRAW_FRAMEBUFFER.
-	previousRead = previousDraw = self ifTrue: [^ aBlock value].
+	(self = previousRead and: [self = previousDraw]) ifTrue: [^ aBlock value].
 	self bindTo: GL_FRAMEBUFFER.
 	^ aBlock ensure: [
 		previousRead = previousDraw
@@ -149,12 +237,53 @@ GLFrameBuffer >> boundToReadAndDrawDuring: aBlock [
 ]
 
 {
+	#category : #completion,
+	#timestamp : 'stlu 1/9/2021 13:29'
+}
+GLFrameBuffer >> checkCompletion [
+
+	self checkCompletion: target
+]
+
+{
+	#category : #completion,
+	#timestamp : 'stlu 1/9/2021 13:47'
+}
+GLFrameBuffer >> checkCompletion: target [
+
+	| status |
+	status := self completionStatus: target.
+	status ~= GL_FRAMEBUFFER_COMPLETE ifTrue: [
+		self error: (CompletionStatusDescriptions at: status)]
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 10/26/2020 12:27'
 }
 GLFrameBuffer >> colorAttachment0 [
 
 	^ colorAttachment0
+]
+
+{
+	#category : #completion,
+	#timestamp : 'stlu 1/9/2021 13:29'
+}
+GLFrameBuffer >> completionStatus [
+
+	^ self completionStatus: target
+]
+
+{
+	#category : #completion,
+	#timestamp : 'stlu 1/9/2021 13:56'
+}
+GLFrameBuffer >> completionStatus: targetEnum [
+
+	^ self stateAccessImp
+		framebuffer: self
+		completionStatus: targetEnum
 ]
 
 {
@@ -192,6 +321,15 @@ GLFrameBuffer >> isAllocated [
 GLFrameBuffer >> isFrameBuffer [
 
 	^ true
+]
+
+{
+	#category : #imps,
+	#timestamp : 'stlu 1/9/2021 13:56'
+}
+GLFrameBuffer >> stateAccessImp [
+
+	^ GLFramebufferDirectStateAccessImp new
 ]
 
 {
