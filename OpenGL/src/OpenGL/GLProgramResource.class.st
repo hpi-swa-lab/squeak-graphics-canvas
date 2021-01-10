@@ -103,6 +103,15 @@ GLProgramResource >> isInput [
 
 {
 	#category : #testing,
+	#timestamp : 'stlu 1/10/2021 23:00'
+}
+GLProgramResource >> isNull [
+
+	^ false
+]
+
+{
+	#category : #testing,
 	#timestamp : 'stlu 12/16/2020 18:46'
 }
 GLProgramResource >> isUniform [
@@ -144,4 +153,13 @@ GLProgramResource >> program [
 GLProgramResource >> program: anObject [
 
 	program := anObject
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 1/8/2021 18:37'
+}
+GLProgramResource >> type [
+
+	self subclassResponsibility
 ]

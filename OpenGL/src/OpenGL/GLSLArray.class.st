@@ -41,6 +41,17 @@ GLSLArray class >> numElements: length type: aGLType [
 ]
 
 {
+	#category : #comparing,
+	#timestamp : 'stlu 1/10/2021 19:32'
+}
+GLSLArray >> = anotherType [
+
+	self class ~= anotherType class ifTrue: [^ false].
+	numElements ~= anotherType numElements ifTrue: [^ false].
+	^ type = anotherType type
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 1/8/2021 18:20'
 }
@@ -52,6 +63,15 @@ GLSLArray >> declarator [
 			nextPut: $[;
 			print: numElements;
 			nextPut: $]]
+]
+
+{
+	#category : #comparing,
+	#timestamp : 'stlu 1/10/2021 19:30'
+}
+GLSLArray >> hash [
+
+	^ numElements hash bitXor: type hash
 ]
 
 {
@@ -79,6 +99,19 @@ GLSLArray >> numElements [
 GLSLArray >> numElements: anObject [
 
 	numElements := anObject
+]
+
+{
+	#category : #printing,
+	#timestamp : 'stlu 1/10/2021 12:44'
+}
+GLSLArray >> printDeclarationNamed: aString on: aStream [
+
+	type printDeclarationNamed: aString on: aStream.
+	aStream
+		nextPut: $[;
+		print: numElements;
+		nextPut: $]
 ]
 
 {

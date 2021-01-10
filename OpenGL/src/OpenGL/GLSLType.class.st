@@ -154,6 +154,16 @@ GLSLType >> actualComponentType [
 ]
 
 {
+	#category : #printing,
+	#timestamp : 'stlu 1/10/2021 12:35'
+}
+GLSLType >> declarationNamed: aString [
+
+	^ String streamContents: [:stream |
+		self printDeclarationNamed: aString on: stream]
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 11/19/2020 17:58'
 }
@@ -232,6 +242,18 @@ GLSLType >> isVector [
 GLSLType >> numElements [
 
 	^ 1
+]
+
+{
+	#category : #printing,
+	#timestamp : 'stlu 1/10/2021 12:35'
+}
+GLSLType >> printDeclarationNamed: aString on: aStream [
+
+	aStream
+		nextPutAll: self declarator;
+		space;
+		nextPutAll: aString
 ]
 
 {

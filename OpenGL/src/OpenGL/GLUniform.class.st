@@ -140,16 +140,14 @@ GLUniform >> location [
 
 {
 	#category : #printing,
-	#timestamp : 'stlu 12/16/2020 18:24'
+	#timestamp : 'stlu 1/10/2021 12:43'
 }
 GLUniform >> printOn: aStream [
 
 	aStream
 		print: location;
-		nextPutAll: ': uniform ';
-		nextPutAll: type declarator;
-		space;
-		nextPutAll: name
+		nextPutAll: ': uniform '.
+	type printDeclarationNamed: name on: aStream
 ]
 
 {

@@ -5,7 +5,7 @@ Class {
 		'variables',
 		'nameToVariable',
 		'program',
-		'interface'
+		'resourceClass'
 	],
 	#pools : [
 		'GLConstants'
@@ -16,40 +16,55 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 12/16/2020 21:04'
+	#timestamp : 'stlu 1/10/2021 23:07'
 }
-GLProgramInterface class >> program: aProgram interface: aProgramResourceClass [
+GLProgramInterface class >> program: aProgram resourceClass: aProgramResourceClass [
 
 	^ self new
-		initializeWithProgram: aProgram interface: aProgramResourceClass;
+		initializeWithProgram: aProgram resourceClass: aProgramResourceClass;
 		yourself
 ]
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 21:07'
+	#timestamp : 'stlu 1/6/2021 11:03'
 }
 GLProgramInterface >> atIndex: index [
 
-	^ variables at: index
+	^ variables at: index + 1
 ]
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 21:07'
+	#timestamp : 'stlu 1/10/2021 22:59'
 }
 GLProgramInterface >> atName: aString [
 
-	^ nameToVariable at: aString
+	^ self
+		atName: aString
+		ifAbsent: [
+			(self errorUnknownResourceName: aString) ifNotNil: [
+				self ignoreName: aString]]
 ]
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 1/5/2021 17:28'
+	#timestamp : 'stlu 1/8/2021 18:27'
+}
+GLProgramInterface >> atName: aString ifAbsent: aBlock [
+
+	^ nameToVariable at: aString ifAbsent: aBlock
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 1/8/2021 18:28'
 }
 GLProgramInterface >> atName: aString ifPresent: aBlock [
 
-	^ nameToVariable at: aString ifPresent: aBlock
+	| v |
+	v := self atName: aString ifAbsent: [^ nil].
+	^ aBlock value: v
 ]
 
 {
@@ -67,26 +82,100 @@ GLProgramInterface >> doesNotUnderstand: aMessage [
 ]
 
 {
-	#category : #initialization,
-	#timestamp : 'stlu 12/16/2020 21:14'
+	#category : #'error handling',
+	#timestamp : 'stlu 1/10/2021 23:10'
 }
-GLProgramInterface >> initializeWithProgram: aProgram interface: aProgramResourceClass [
+GLProgramInterface >> errorUnknownResourceName: aString [
 
-	program := aProgram.
-	interface := aProgramResourceClass.
-	
-	variables := interface allInProgram: program.
-	nameToVariable := Dictionary new: variables size.
-	variables do: [:var |
-		nameToVariable at: var name put: var]
+	^ (GLUnknownProgramResource
+		program: program
+		resourceClass: resourceClass
+		resourceName: aString) signal
+]
+
+{
+	#category : #'error handling',
+	#timestamp : 'stlu 1/10/2021 23:21'
+}
+GLProgramInterface >> ignoreName: aString [
+
+	nameToVariable
+		at: aString
+		put: (GLNullProgramResource
+				program: program
+				name: aString
+				resourceClass: resourceClass)
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 1/11/2021 00:10'
+}
+GLProgramInterface >> ignoredVariables [
+
+	^ nameToVariable select: [:variable |
+		variable isNull]
 ]
 
 {
 	#category : #initialization,
-	#timestamp : 'zagto 1/5/2021 17:42'
+	#timestamp : 'stlu 1/10/2021 23:07'
+}
+GLProgramInterface >> initializeWithProgram: aProgram resourceClass: aProgramResourceClass [
+
+	program := aProgram.
+	resourceClass := aProgramResourceClass.
+	
+	variables := resourceClass allInProgram: program.
+	nameToVariable := Dictionary new: variables size.
+	variables do: [:var |
+		nameToVariable at: var name put: var.
+		var type isArray ifTrue: [
+			| shortName |
+			shortName := var name copyUpTo: $[.
+			nameToVariable at: shortName put: var]]
+]
+
+{
+	#category : #initialization,
+	#timestamp : 'stlu 1/11/2021 00:10'
 }
 GLProgramInterface >> migrateResourcesFrom: another [
+
 	variables do: [:variable |
 		another atName: variable name ifPresent: [:other |
-			variable value: other value]]
+			other isNull ifFalse: [
+				variable value: other value]]].
+	another ignoredVariables do: [:variable |
+		variable isNull ifTrue: [
+			nameToVariable
+				at: variable name
+				ifAbsentPut: [variable]]]
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 1/10/2021 23:06'
+}
+GLProgramInterface >> program [
+
+	^ program
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 1/10/2021 23:05'
+}
+GLProgramInterface >> resourceClass [
+
+	^ resourceClass
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 1/10/2021 23:06'
+}
+GLProgramInterface >> variables [
+
+	^ variables
 ]

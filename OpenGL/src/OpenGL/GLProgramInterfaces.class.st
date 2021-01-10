@@ -41,13 +41,13 @@ GLProgramInterfaces >> bufferVariables [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/16/2020 21:09'
+	#timestamp : 'stlu 1/10/2021 23:07'
 }
 GLProgramInterfaces >> initializeWithProgram: aProgram [
 
 	program := aProgram.
-	uniforms := GLProgramInterface program: program interface: GLUniform.
-	inputs := GLProgramInterface program: program interface: GLProgramInput
+	uniforms := GLProgramInterface program: program resourceClass: GLUniform.
+	inputs := GLProgramInterface program: program resourceClass: GLProgramInput
 ]
 
 {
