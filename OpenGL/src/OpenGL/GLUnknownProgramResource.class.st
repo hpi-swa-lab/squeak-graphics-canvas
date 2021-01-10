@@ -34,6 +34,23 @@ GLUnknownProgramResource >> defaultResumeValue [
 
 {
 	#category : #accessing,
+	#timestamp : 'stlu 1/11/2021 00:45'
+}
+GLUnknownProgramResource >> messageText [
+
+	^ messageText ifNil: [
+		String streamContents: [:stream |
+			stream
+				print: program;
+				nextPutAll: ' does not have an active variable named ''';
+				nextPutAll: resourceName;
+				nextPutAll: ''' of interface ';
+				print: resourceClass;
+				nextPutAll: '. Proceeding will cause the program to emit a dummy resource object that ignores all messages for this and all future accesses.']]
+]
+
+{
+	#category : #accessing,
 	#timestamp : 'stlu 1/10/2021 23:15'
 }
 GLUnknownProgramResource >> program [
