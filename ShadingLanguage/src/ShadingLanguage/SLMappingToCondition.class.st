@@ -1,14 +1,27 @@
 Class {
 	#name : #SLMappingToCondition,
-	#superclass : #SLMappingToControlFlow,
+	#superclass : #SLMessageMapping,
+	#instVars : [
+		'isNegated'
+	],
 	#category : #ShadingLanguage,
 	#commentStamp : ''
 }
 
 {
-	#category : #generation,
-	#timestamp : 'stlu 12/2/2020 03:03'
+	#category : #accessing,
+	#timestamp : 'stlu 1/10/2021 13:41'
 }
-SLMappingToCondition >> generate: aMessageNode for: aGenerator [
-	aGenerator generate: aMessageNode condition: isNegated
+SLMappingToCondition >> isNegated [
+
+	^ isNegated
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 1/10/2021 13:41'
+}
+SLMappingToCondition >> isNegated: anObject [
+
+	isNegated := anObject
 ]

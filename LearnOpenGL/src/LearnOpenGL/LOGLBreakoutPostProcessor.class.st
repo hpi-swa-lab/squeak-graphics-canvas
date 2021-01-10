@@ -91,15 +91,15 @@ LOGLBreakoutPostProcessor >> confusion: anObject [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/9/2021 15:18'
+	#timestamp : 'stlu 1/8/2021 16:23'
 }
 LOGLBreakoutPostProcessor >> edgeKernel [
 
 	^ #(
-		-1 -1 -1
-		-1 8 -1
-		-1 -1 -1
-	) asIntegerArray
+		-1.0 -1.0 -1.0
+		-1.0 8.0 -1.0
+		-1.0 -1.0 -1.0
+	) asFloat32Array
 ]
 
 {
@@ -185,7 +185,7 @@ LOGLBreakoutPostProcessor >> initialize [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/8/2021 16:20'
+	#timestamp : 'stlu 1/10/2021 19:11'
 }
 LOGLBreakoutPostProcessor >> initializeRenderData [
 
@@ -206,8 +206,8 @@ LOGLBreakoutPostProcessor >> initializeRenderData [
 	program uniforms
 		scene: 0;
 		offsets: self offsets;
-		edge_kernel: self edgeKernel;
-		blur_kernel: self blurKernel
+		edgeKernel: self edgeKernel;
+		blurKernel: self blurKernel
 ]
 
 {

@@ -66,9 +66,10 @@ SLGenerator >> acceptBlockNode: aBlockNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/2/2020 00:24'
+	#timestamp : 'stlu 1/10/2021 12:59'
 }
 SLGenerator >> acceptLiteralNode: aLiteralNode [
+
 	stream nextPutAll: aLiteralNode value asGLSLLiteral
 ]
 
@@ -82,7 +83,7 @@ SLGenerator >> acceptMessageNode: aMessageNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/21/2020 14:49'
+	#timestamp : 'stlu 1/10/2021 12:42'
 }
 SLGenerator >> acceptMethodNode: aMethodNode [
 	analyzer := SLAnalyzer new visitNode: aMethodNode.
@@ -96,11 +97,13 @@ SLGenerator >> acceptMethodNode: aMethodNode [
 	
 	analyzer resourceVariableToInterface keysAndValuesDo: [:name :interface |
 		(name beginsWith: 'gl_') ifFalse: [
+			| type |
+			type := analyzer resourceVariableToType at: name.
 			stream
-				nextPutAll: interface; space;
-				nextPutAll: (analyzer resourceVariableToType at: name) declarator; space;
-				nextPutAll: name;
-				nextPut: $;.
+				nextPutAll: interface;
+				space.
+			type printDeclarationNamed: name on: stream.
+			stream nextPut: $;.
 			self newLine]].
 	
 	self newLine.
@@ -119,15 +122,14 @@ SLGenerator >> acceptMethodNode: aMethodNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/21/2020 15:11'
+	#timestamp : 'stlu 1/10/2021 20:22'
 }
 SLGenerator >> acceptSequenceNode: aSequenceNode [
 
-	aSequenceNode temporaries do: [:each |
+	aSequenceNode temporaries do: [:varNode |
 		| type |
-		type := analyzer variableToType at: each name.
-		stream nextPutAll: type declarator; space.
-		self visitNode: each.
+		type := analyzer variableToType at: varNode name.
+		type printDeclarationNamed: (self actualName: varNode name) on: stream.
 		stream nextPut: $;.
 		self newLine].
 
@@ -143,16 +145,22 @@ SLGenerator >> acceptSequenceNode: aSequenceNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/21/2020 14:57'
+	#timestamp : 'stlu 1/10/2021 20:21'
 }
 SLGenerator >> acceptVariableNode: aVariableNode [
 
-	| actualName name |
-	name := aVariableNode name.
-	actualName := variableNameMap
-						at: name
-						ifAbsentPut: [self findUnusedName: name].
-	stream nextPutAll: actualName
+	stream nextPutAll: (self actualName: aVariableNode name)
+]
+
+{
+	#category : #visiting,
+	#timestamp : 'stlu 1/10/2021 20:21'
+}
+SLGenerator >> actualName: varName [
+
+	^ variableNameMap
+		at: varName
+		ifAbsentPut: [self findUnusedName: varName]
 ]
 
 {
@@ -210,9 +218,26 @@ SLGenerator >> generate: aMessageNode componentWrite: componentName [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/21/2020 14:44'
+	#timestamp : 'stlu 1/10/2021 20:15'
 }
-SLGenerator >> generate: aMessageNode condition: isNegated [
+SLGenerator >> generate: aMessageNode conditionExpression: isNegated [
+
+	isNegated ifTrue: [stream nextPut: $!].
+	stream nextPut: $(.
+	self visitNode: aMessageNode receiver.
+	stream nextPutAll: ') ? '.
+	self visitNode: aMessageNode arguments first body statements last.
+	
+	aMessageNode arguments size > 1 ifTrue: [
+		stream nextPutAll: ' : '.
+		self visitNode: aMessageNode arguments second body statements last]
+]
+
+{
+	#category : #visiting,
+	#timestamp : 'stlu 1/10/2021 19:20'
+}
+SLGenerator >> generate: aMessageNode conditionStatement: isNegated [
 
 	stream nextPutAll: 'if ('.
 	isNegated ifTrue: [stream nextPutAll: '!('].
@@ -234,6 +259,37 @@ SLGenerator >> generate: aMessageNode condition: isNegated [
 		self outdent.
 		self newLine.
 		stream nextPut: $}]
+]
+
+{
+	#category : #visiting,
+	#timestamp : 'stlu 1/10/2021 14:11'
+}
+SLGenerator >> generate: aMessageNode forLoopFrom: from to: to [
+
+	| blockNode varNode |
+	blockNode := aMessageNode arguments second.
+	varNode := blockNode arguments first.
+	stream nextPutAll: 'for ('.
+	varNode type printDeclarationNamed: varNode name on: stream.
+	stream nextPutAll: ' = '.
+	self visitNode: from.
+	stream
+		nextPutAll: '; ';
+		nextPutAll: varNode name;
+		nextPutAll: ' <= '.
+	self visitNode: to.
+	stream
+		nextPutAll: '; ';
+		nextPutAll: varNode name;
+		nextPutAll: '++'.
+	stream nextPutAll: ') {'.
+	self indent.
+	self newLine.
+	self visitNode: blockNode body.
+	self outdent.
+	self newLine.
+	stream nextPut: $}
 ]
 
 {
@@ -279,6 +335,31 @@ SLGenerator >> generate: aMessageNode resourceWrites: resourceNames [
 		separatedBy: [
 			stream nextPut: $;.
 			self newLine]
+]
+
+{
+	#category : #visiting,
+	#timestamp : 'stlu 1/10/2021 17:23'
+}
+SLGenerator >> generateArrayRead: aMessageNode [
+
+	self visitNode: aMessageNode receiver.
+	stream nextPut: $[.
+	self visitNode: aMessageNode arguments first.
+	stream nextPut: $]
+]
+
+{
+	#category : #visiting,
+	#timestamp : 'stlu 1/10/2021 17:24'
+}
+SLGenerator >> generateArrayWrite: aMessageNode [
+
+	self visitNode: aMessageNode receiver.
+	stream nextPut: $[.
+	self visitNode: aMessageNode arguments first.
+	stream nextPutAll: '] = '.
+	self visitNode: aMessageNode arguments second
 ]
 
 {

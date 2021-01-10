@@ -65,6 +65,26 @@ GLSLVector >> - another [
 
 {
 	#category : #'*ShadingLanguage',
+	#timestamp : 'stlu 1/11/2021 00:06'
+}
+GLSLVector >> / another [
+	(another isVector or: [another isScalar]) ifFalse: [
+		^ self error: 'Tried to divide vector by something that is neither a vector nor a scalar'].
+	self componentType = another componentType ifFalse: [
+		^ self error: 'Tried to divide ', self class name , ' by ', another class name, ', which have different component types.'].
+	
+	another isVector ifTrue: [
+		self numComponents = another numComponents ifFalse: [
+			^ self error: 'Tried to divide vector of length', self numComponents, 'by vector of length ', another numComponents]].
+	
+	"another is a scalar"
+	^ SLMappingToOperator new
+		type: self;
+		targetSelector: '*'
+]
+
+{
+	#category : #'*ShadingLanguage',
 	#timestamp : 'stlu 12/15/2020 13:10'
 }
 GLSLVector >> @ another [
@@ -82,6 +102,19 @@ GLSLVector >> @ another [
 		type: resultType;
 		targetSelector: resultType declarator
 	
+]
+
+{
+	#category : #'*ShadingLanguage',
+	#timestamp : 'stlu 1/10/2021 00:13'
+}
+GLSLVector >> cos [
+
+	(self componentType isFloat or: [ self componentType isDouble ]) ifFalse: [
+		^ self error: 'cos only defined for float or double type'].
+	^ SLMappingToCall new
+			type: self;
+			targetSelector: 'cos'
 ]
 
 {

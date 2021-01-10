@@ -32,14 +32,15 @@ GLSLScalar >> + another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 12/1/2020 17:51'
+	#timestamp : 'stlu 1/10/2021 00:16'
 }
 GLSLScalar >> - another [
-	self = another ifFalse: [
+
+	(self = another or: [another isVector and: [another componentType = self]]) ifFalse: [
 		^ self error: 'Tried to subtract ', another class name , ' from ', self class name, '.'].
 
 	^ SLMappingToOperator new
-		type: self;
+		type: another;
 		targetSelector: '-'
 	
 ]
@@ -93,6 +94,19 @@ GLSLScalar >> asVector3 [
 
 {
 	#category : #'*ShadingLanguage',
+	#timestamp : 'stlu 1/9/2021 23:52'
+}
+GLSLScalar >> cos [
+
+	(self componentType isFloat or: [ self componentType isDouble ]) ifFalse: [
+		^ self error: 'cos only defined for float and double type'].
+	^ SLMappingToCall new
+			type: self;
+			targetSelector: 'cos'
+]
+
+{
+	#category : #'*ShadingLanguage',
 	#timestamp : 'stlu 12/15/2020 13:07'
 }
 GLSLScalar >> negated [
@@ -111,4 +125,17 @@ GLSLScalar >> normalized [
 	^ SLMappingToCall new
 			type: self;
 			targetSelector: 'normalize'
+]
+
+{
+	#category : #'*ShadingLanguage',
+	#timestamp : 'stlu 1/9/2021 23:52'
+}
+GLSLScalar >> sin [
+
+	(self componentType isFloat or: [ self componentType isDouble ]) ifFalse: [
+		^ self error: 'sin only defined for float and double type'].
+	^ SLMappingToCall new
+			type: self;
+			targetSelector: 'sin'
 ]

@@ -76,11 +76,14 @@ SLAnalyzer >> acceptAssignmentNode: anAssignmentNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 12/1/2020 18:34'
+	#timestamp : 'stlu 1/10/2021 19:36'
 }
 SLAnalyzer >> acceptBlockNode: aBlockNode [
+
+	| type |
 	super acceptBlockNode: aBlockNode.
-	aBlockNode type: nil.
+	type := aBlockNode body statements last type.
+	aBlockNode type: type.
 ]
 
 {
@@ -94,13 +97,21 @@ SLAnalyzer >> acceptLiteralNode: aLiteralNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/17/2020 12:42'
+	#timestamp : 'stlu 1/10/2021 14:26'
 }
 SLAnalyzer >> acceptMessageNode: aMessageNode [
-	| mapping |
-	super acceptMessageNode: aMessageNode.
 
-	mapping := self findMessageMapping: aMessageNode.
+	| mapping |
+	aMessageNode selector = #to:do:
+		ifTrue: [
+			self visitNode: aMessageNode receiver.
+			self visitNode: aMessageNode arguments first.
+			mapping := self mapForLoop: aMessageNode.
+			self visitNode: aMessageNode arguments second]
+		ifFalse: [
+			super acceptMessageNode: aMessageNode].
+
+	mapping ifNil: [mapping := self findMessageMapping: aMessageNode].
 	
 	aMessageNode mapping: mapping.
 	aMessageNode type: mapping type
@@ -125,7 +136,7 @@ SLAnalyzer >> acceptMethodNode: aMethodNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/21/2020 13:39'
+	#timestamp : 'stlu 1/10/2021 17:02'
 }
 SLAnalyzer >> acceptVariableNode: aVariableNode [
 
@@ -135,7 +146,7 @@ SLAnalyzer >> acceptVariableNode: aVariableNode [
 	
 	type := variableToType
 				at: aVariableNode name
-				ifAbsent: [^ self error: 'Type of variable unknown'].
+				ifAbsent: [nil"^ self error: 'Type of variable unknown'"].
 	aVariableNode type: type
 ]
 
@@ -186,18 +197,14 @@ SLAnalyzer >> declareVariable: name toType: glslType [
 
 {
 	#category : #'message mapping',
-	#timestamp : 'stlu 12/21/2020 13:23'
+	#timestamp : 'stlu 1/10/2021 20:06'
 }
 SLAnalyzer >> findMessageMapping: aMessageNode [
 
-	| receiver selector arguments |
-	receiver := aMessageNode receiver.
-	selector := aMessageNode selector.
-	arguments := aMessageNode arguments.
-	
 	(self mapInterfaceAccess: aMessageNode) ifNotNil: [:mapping | ^ mapping].
 	(self mapTyping: aMessageNode) ifNotNil: [:mapping | ^ mapping].
 	(self mapSwizzling: aMessageNode) ifNotNil: [:mapping | ^ mapping].
+	(self mapCondition: aMessageNode) ifNotNil: [:mapping | ^ mapping].
 	
 	^ aMessageNode receiver type
 		perform: aMessageNode selector
@@ -233,7 +240,61 @@ SLAnalyzer >> interfaceVariables [
 
 {
 	#category : #'message mapping',
-	#timestamp : 'stlu 12/21/2020 14:17'
+	#timestamp : 'stlu 1/10/2021 20:07'
+}
+SLAnalyzer >> mapCondition: aMessageNode [
+
+	| sel isNegated isExpression mappingClass |
+	sel := aMessageNode selector.
+	(#(ifTrue: ifFalse: ifTrue:ifFalse: ifFalse:ifTrue:) includes: sel) ifFalse: [^ nil].
+	self assert: aMessageNode receiver type isBoolean.
+	isNegated := sel beginsWith: 'ifFalse'.
+	isExpression := aMessageNode isDirectlyUsed.
+	aMessageNode arguments do: [:arg |
+		self assert: arg isBlock.
+		isExpression ifTrue: [
+			self assert: arg body statements size = 1]].
+	(isExpression and: [aMessageNode numArgs = 2]) ifTrue: [
+		| left right |
+		left := aMessageNode arguments first.
+		right := aMessageNode arguments second.
+		self assert: left type = right type].
+	
+	mappingClass := isExpression
+						ifTrue: [SLMappingToConditionExpression]
+						ifFalse: [SLMappingToConditionStatement].
+	^ mappingClass new
+		isNegated: isNegated;
+		type: aMessageNode arguments first type
+]
+
+{
+	#category : #'message mapping',
+	#timestamp : 'stlu 1/10/2021 14:27'
+}
+SLAnalyzer >> mapForLoop: aMesageNode [
+
+	| from to varNode |
+	aMesageNode selector = #to:do: ifFalse: [^ nil].
+	
+	from := aMesageNode receiver.
+	self assert: from type isInteger.
+	
+	to := aMesageNode arguments first.
+	self assert: to type isInteger.
+	
+	varNode := aMesageNode arguments second arguments first.
+	self declareVariable: varNode name toType: from type.
+	varNode type: from type.
+	
+	^ SLMappingToForLoop new
+		start: from;
+		end: to
+]
+
+{
+	#category : #'message mapping',
+	#timestamp : 'stlu 1/10/2021 14:55'
 }
 SLAnalyzer >> mapInterfaceAccess: aMessageNode [
 
@@ -248,6 +309,7 @@ SLAnalyzer >> mapInterfaceAccess: aMessageNode [
 		resourceName := aMessageNode selector asString.
 		type := resourceVariableToType at: resourceName ifAbsent: [nil].
 		self declareResourceVariable: resourceName toInterface: interface.
+		aMessageNode type: type.
 		^ SLMappingToResourceRead new
 			targetSelector: resourceName;
 			type: type].
@@ -265,7 +327,7 @@ SLAnalyzer >> mapInterfaceAccess: aMessageNode [
 
 {
 	#category : #'message mapping',
-	#timestamp : 'stlu 12/21/2020 13:26'
+	#timestamp : 'stlu 1/10/2021 17:36'
 }
 SLAnalyzer >> mapSwizzling: aMessageNode [
 
@@ -289,7 +351,7 @@ SLAnalyzer >> mapSwizzling: aMessageNode [
 		argType := aMessageNode arguments first type.
 		self assert: (argType isVector or: [argType isScalar]).
 		self assert: argType numComponents = (selector size - 1).
-		^ SLMappingToComponentWrite
+		^ SLMappingToComponentWrite new
 			targetSelector: selector allButLast;
 			type: argType].
 	
@@ -298,23 +360,46 @@ SLAnalyzer >> mapSwizzling: aMessageNode [
 
 {
 	#category : #'message mapping',
-	#timestamp : 'stlu 12/21/2020 14:12'
+	#timestamp : 'stlu 1/10/2021 17:00'
 }
 SLAnalyzer >> mapTyping: aMessageNode [
 
-	| className class |
-	aMessageNode isUnary ifFalse: [^ nil].
-	aMessageNode receiver isMessage ifFalse: [^ nil].
-	aMessageNode receiver propertyAt: #interface ifAbsent: [^ nil].
-	(aMessageNode selector beginsWith: 'be') ifFalse: [^ nil].
+	| selector typeName className class isArray type arg isResource isVariable |
+	aMessageNode isBinary ifTrue: [^ nil].
+	selector := aMessageNode selector.
+	(selector beginsWith: 'be') ifFalse: [^ nil].
 	
-	className := 'GLSL' , (aMessageNode selector allButFirst: 2).
+	isResource := isVariable := false.
+	
+	(aMessageNode receiver isMessage and: [
+		aMessageNode receiver hasProperty: #interface]) ifTrue: [
+			isResource := true].
+	
+	aMessageNode receiver isVariable ifTrue: [
+		isVariable := true].
+	
+	(isResource not and: [isVariable not]) ifTrue: [^ nil].
+	
+	isArray := selector endsWith: 'Array:'.
+	isArray ifTrue: [
+		arg := aMessageNode arguments first.
+		self assert: arg isValue].
+	typeName := selector copyFrom: 3 to: selector size - (isArray ifTrue: [6] ifFalse: [0]).
+	className := 'GLSL' , typeName.
 	class := self environment classNamed: className.
 	class ifNil: [^ self error: 'Could not resolve type name ' , className].
 	
-	self declareResourceVariable: aMessageNode receiver selector toType: class instance.
-	^ SLPassthroughMapping new
-		type: class instance
+	type := class instance.
+	isArray ifTrue: [
+		type := GLSLArray numElements: arg value type: type].
+	
+	isResource ifTrue: [
+		self declareResourceVariable: aMessageNode receiver selector toType: type].
+	isVariable ifTrue: [
+		self declareVariable: aMessageNode receiver name toType: type].
+	
+	^ SLTypingMapping new
+		type: type
 ]
 
 {
