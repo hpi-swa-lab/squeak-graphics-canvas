@@ -1,1 +1,4 @@
-Package { #name : #'3DTransform' }
+Package {
+	#name : #'3DTransform',
+	#'squeak_changestamp' : true
+}
