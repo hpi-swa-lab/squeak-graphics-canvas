@@ -8,7 +8,8 @@ Class {
 		'borderWidthLocation',
 		'colorLocation',
 		'aPosLocation',
-		'originLocation'
+		'originLocation',
+		'cornerRadiusLocation'
 	],
 	#category : #'OpenGLCanvas-Core'
 }
@@ -50,6 +51,12 @@ GLCanvasSolidRectangleProgram >> color: anObject [
 ]
 
 { #category : #generated }
+GLCanvasSolidRectangleProgram >> cornerRadius: anObject [
+
+	self uniform: cornerRadiusLocation value: anObject
+]
+
+{ #category : #generated }
 GLCanvasSolidRectangleProgram >> extent: anObject [
 
 	self uniform: extentLocation value: anObject
@@ -65,6 +72,7 @@ GLCanvasSolidRectangleProgram >> initializeLocations [
 	originLocation := self registerUniform: 'origin'.
 	borderColorLocation := self registerUniform: 'borderColor'.
 	borderWidthLocation := self registerUniform: 'borderWidth'.
+	cornerRadiusLocation := self registerUniform: 'cornerRadius'.
 	colorLocation := self registerUniform: 'color'.
 	
 	aPosLocation := self registerAttribute: 'aPos'.

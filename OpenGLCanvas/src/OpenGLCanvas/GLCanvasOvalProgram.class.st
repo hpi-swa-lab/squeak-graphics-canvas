@@ -26,13 +26,14 @@ uniform float borderWidth;
 ', self fragmentShaderFillColor, '
 
 void main() {
-	vec2 relativePos = (point - extent / 2.0 - origin) / extent * 2.0;
+	vec2 pos = point - extent / 2.0 - origin;
+	vec2 relativePos = pos / extent * 2.0;
 	if (dot(relativePos, relativePos) > 1.0)
 	{
 		discard;
 	}
 	
-	vec2 relativeInnerPos = (point - extent / 2.0 - origin) / (extent / 2.0 - vec2(borderWidth, borderWidth));
+	vec2 relativeInnerPos = pos / (extent / 2.0 - vec2(borderWidth, borderWidth));
 	FragColor = mix(
 		getColor(),
 		borderColor,

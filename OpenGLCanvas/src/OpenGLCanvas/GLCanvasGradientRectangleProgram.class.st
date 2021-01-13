@@ -11,7 +11,8 @@ Class {
 		'gradientDirectionLocation',
 		'gradientRadialLocation',
 		'aPosLocation',
-		'originLocation'
+		'originLocation',
+		'cornerRadiusLocation'
 	],
 	#category : #'OpenGLCanvas-Core'
 }
@@ -44,6 +45,12 @@ GLCanvasGradientRectangleProgram >> borderColor: anObject [
 GLCanvasGradientRectangleProgram >> borderWidth: anObject [
 
 	self uniform: borderWidthLocation value: anObject
+]
+
+{ #category : #generated }
+GLCanvasGradientRectangleProgram >> cornerRadius: anObject [
+
+	self uniform: cornerRadiusLocation value: anObject
 ]
 
 { #category : #generated }
@@ -80,6 +87,7 @@ GLCanvasGradientRectangleProgram >> initializeLocations [
 	originLocation := self registerUniform: 'origin'.
 	borderColorLocation := self registerUniform: 'borderColor'.
 	borderWidthLocation := self registerUniform: 'borderWidth'.
+	cornerRadiusLocation := self registerUniform: 'cornerRadius'.
 	pixelRampLocation := self registerUniform: 'pixelRamp'.
 	gradientOriginLocation := self registerUniform: 'gradientOrigin'.
 	gradientDirectionLocation := self registerUniform: 'gradientDirection'.

@@ -292,7 +292,7 @@ GLCanvas >> fillOval: r borderWidth: borderWidth borderColor: borderColor withPr
 
 { #category : #'drawing-ovals' }
 GLCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderColor [
-
+	
 	self bindAndUseProgram: self solidOvalProgram during: [
 		self solidOvalProgram color: c.
 		self fillOval: r borderWidth: borderWidth borderColor: borderColor withProgram: self solidOvalProgram]
@@ -315,13 +315,28 @@ GLCanvas >> fontProgram [
 ]
 
 { #category : #'drawing-rectangles' }
-GLCanvas >> frameAndFillRectangle: r borderWidth: borderWidth borderColor: borderColor withProgram: aProgram [
+GLCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
+	
+	self bindAndUseProgram: self solidRectangleProgram during: [
+			self solidRectangleProgram color: fillColor.
+			self frameAndFillRoundRect: r radius: 0 borderWidth: borderWidth borderColor: borderColor withProgram: self solidRectangleProgram]
+]
+
+{ #category : #'drawing-rectangles' }
+GLCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
+
+	self frameAndFillRoundRect: aRectangle radius: 0 fillStyle: aFillStyle borderWidth: aBorderStyle width borderColor: aBorderStyle color
+]
+
+{ #category : #'drawing-rectangles' }
+GLCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius borderWidth: borderWidth borderColor: borderColor withProgram: aProgram [
 	
 	aProgram
-		extent: r extent;
-		origin: r origin;
+		extent: aRectangle extent;
+		origin: aRectangle origin;
 		borderColor: borderColor;
 		borderWidth: borderWidth asFloat;
+		cornerRadius: cornerRadius asFloat;
 		mvp: transform.
 	
 	self vbo boundDuring: [
@@ -332,18 +347,10 @@ GLCanvas >> frameAndFillRectangle: r borderWidth: borderWidth borderColor: borde
 ]
 
 { #category : #'drawing-rectangles' }
-GLCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
-	
-	self bindAndUseProgram: self solidRectangleProgram during: [
-			self solidRectangleProgram color: fillColor.
-			self frameAndFillRectangle: r borderWidth: borderWidth borderColor: borderColor withProgram: self solidRectangleProgram]
-]
-
-{ #category : #'drawing-rectangles' }
-GLCanvas >> frameAndFillRectangle: r fillStyle: aFillStyle borderStyle: aBorderStyle [
+GLCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: aFillStyle borderWidth: bw borderColor: bc [
 
 	| drawRectangleBlock rectanglePrograms |
-	drawRectangleBlock := [:aProgram | self frameAndFillRectangle: r borderWidth: aBorderStyle width borderColor: aBorderStyle color withProgram: aProgram].
+	drawRectangleBlock := [:aProgram | self frameAndFillRoundRect: aRectangle radius: cornerRadius borderWidth: bw borderColor: bc withProgram: aProgram].
 	rectanglePrograms := {#solid -> self solidRectangleProgram . #gradient -> self gradientRectangleProgram . #bitmap -> self bitmapRectangleProgram} asDictionary.
 	
 	self setUniformsFrom: aFillStyle for: rectanglePrograms during: drawRectangleBlock
@@ -422,7 +429,7 @@ GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 
 { #category : #drawing }
 GLCanvas >> line: pt1 to: pt2 width: w color: c [
-
+	
 	| vbo collection |
 	self bindAndUseProgram: self solidPolygonProgram during: [
 			self solidPolygonProgram
