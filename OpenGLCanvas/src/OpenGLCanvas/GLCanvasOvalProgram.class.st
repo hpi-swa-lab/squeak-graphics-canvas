@@ -23,7 +23,7 @@ uniform vec2 origin;
 uniform vec4 borderColor;
 uniform float borderWidth;
 
-', self fragmentShaderFillColor, '
+' , self fragmentShaderFillColor , '
 
 void main() {
 	vec2 pos = point - extent / 2.0 - origin;
@@ -39,7 +39,13 @@ void main() {
 		borderColor,
 		float(dot(relativeInnerPos, relativeInnerPos) > 1.0)
 	);
-}' withUnixLineEndings
+}'
+]
+
+{ #category : #'shader code' }
+GLCanvasOvalProgram class >> fragmentShaderFillColor [
+
+	self subclassResponsibility
 ]
 
 { #category : #'shader code' }
@@ -63,5 +69,5 @@ void main()
 {
 	point = origin + aPos * extent;
 	gl_Position = mvp * vec4(point, 0.0, 1.0);
-}' withUnixLineEndings
+}'
 ]

@@ -24,7 +24,7 @@ uniform vec4 borderColor;
 uniform float borderWidth;
 uniform float cornerRadius;
 
-', self fragmentShaderFillColor, '
+' , self fragmentShaderFillColor , '
 
 void main() {
 	vec2 relativePos = point - origin;
@@ -44,7 +44,13 @@ void main() {
 		float(any(lessThan(relativePos, b)) || any(greaterThan(point - origin, extent - b)) ||
 			(inCorner && circleDist > innerCornerRadius * innerCornerRadius) )
 		);
-}' withUnixLineEndings
+}'
+]
+
+{ #category : #'shader code' }
+GLCanvasRectangleProgram class >> fragmentShaderFillColor [
+
+	self subclassResponsibility
 ]
 
 { #category : #'shader code' }
@@ -68,5 +74,5 @@ void main()
 {
 	point = origin + aPos * extent;
 	gl_Position = mvp * vec4(point, 0.0, 1.0);
-}' withUnixLineEndings
+}'
 ]

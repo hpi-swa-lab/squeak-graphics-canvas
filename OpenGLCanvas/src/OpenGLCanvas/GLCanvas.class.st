@@ -165,6 +165,22 @@ GLCanvas >> clipRect: aRectangle during: aBlock [
 	self clip.
 ]
 
+{ #category : #accessing }
+GLCanvas >> contentsOfArea: aRectangle into: aForm [
+	
+	| data |
+	self glLibrary readBuffer: GL_BACK.
+	data := (ByteArray new: aRectangle area * 4).
+	self glLibrary checkForError.
+	
+	self glLibrary
+		readPixels: aRectangle left with: aRectangle top with: aRectangle width with: aRectangle height
+		with: GL_BGRA with: GL_UNSIGNED_INT_8_8_8_8 with: data.
+		
+	self glLibrary checkForError.
+	aForm bits: ((Bitmap new: aRectangle area * 4) copyFromByteArray: data)
+]
+
 { #category : #'drawing-polygons' }
 GLCanvas >> drawBasePolygon: vbo [
 
@@ -286,6 +302,10 @@ GLCanvas >> fillOval: r borderWidth: borderWidth borderColor: borderColor withPr
 		borderColor: borderColor;
 		borderWidth: borderWidth asFloat;
 		mvp: transform.
+	
+	self vbo boundDuring: [
+		aProgram vertexAttrib: aProgram aPosLocation components: 2 stride: 16 offset: 0.
+		GL checkForError].
 		
 	self vbo draw: GL_TRIANGLE_STRIP
 ]
@@ -371,18 +391,10 @@ GLCanvas >> framebuffer: aFrameBuffer [
 { #category : #accessing }
 GLCanvas >> getPixelData [
 	
-	| data |
-	self glLibrary readBuffer: GL_BACK.
-	data := (ByteArray new:  self extent area * 4).
-	self glLibrary checkForError.
-	self glLibrary readPixels: 0 with: 0 with: self extent x with: self extent y with: GL_BGRA with: GL_UNSIGNED_INT_8_8_8_8 with: data.
-	self glLibrary checkForError.
-	^ Form
-		extent: self extent
-		depth: 32
-		bits: ((Bitmap new: self extent area * 4)
-			copyFromByteArray: data;
-			yourself)
+	| form |
+	form := Form extent: self extent depth: 32.
+	self contentsOfArea: (Rectangle origin: 0@0 extent: self extent) into: form.
+	^ form
 ]
 
 { #category : #accessing }
@@ -451,6 +463,12 @@ GLCanvas >> line: pt1 to: pt2 width: w color: c [
 			GL checkForError.
 			vbo draw: GL_LINE_STRIP from: 0 count: 2.
 			GL checkForError]
+]
+
+{ #category : #accessing }
+GLCanvas >> origin [
+
+	^ (transform localPointToGlobal: 0@0) truncated
 ]
 
 { #category : #'drawing-text' }
@@ -576,6 +594,37 @@ GLCanvas >> solidRectangleProgram [
 	^ resources solidRectangleProgram
 ]
 
+{ #category : #'drawing-images' }
+GLCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor [
+	
+	| store |
+	self translateBy: aPoint during: [:c |
+		store := RtFormStore form: stencilForm.
+		self bindAndUseProgram: self stencilProgram during: [
+			store glTextureDo: [:texture |
+				texture boundDuring: [					
+					self stencilProgram
+						sourcePosition: sourceRect origin asFloatPoint / store extent asFloatPoint;
+						sourceExtent: sourceRect extent asFloatPoint / store extent asFloatPoint;
+						color: aColor;
+						image: 0;
+						mvp: transform * (Matrix4x4 withScale: store extent @ 1.0).
+									
+					self vbo boundDuring: [
+						self stencilProgram vertexAttrib: self textureProgram aPosLocation components: 2 stride: 16 offset: 0.
+						GL checkForError.
+						self stencilProgram vertexAttrib: self textureProgram aTexCoordsLocation components: 2 stride: 16 offset: 8.
+						GL checkForError].
+					
+					self vbo draw: GL_TRIANGLE_STRIP]]]]
+]
+
+{ #category : #accessing }
+GLCanvas >> stencilProgram [
+
+	^ resources stencilProgram
+]
+
 { #category : #accessing }
 GLCanvas >> textureProgram [
 
@@ -625,4 +674,11 @@ GLCanvas >> vao [
 GLCanvas >> vbo [
 
 	^ resources vbo
+]
+
+{ #category : #'drawing-images' }
+GLCanvas >> warpImage: aForm transform: aTransform at: extraOffset sourceRect: sourceRect cellSize: cellSize [
+
+	self flag: #todo.
+	self transformBy: aTransform during: [self image: aForm at: extraOffset sourceRect: sourceRect rule: nil]
 ]

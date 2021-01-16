@@ -18,11 +18,11 @@ out vec4 FragColor;
 
 in vec2 point;
 
-', self fragmentShaderFillColor, '
+' , self fragmentShaderFillColor , '
 
 void main() {
 	FragColor = getColor();
-}' withUnixLineEndings
+}'
 ]
 
 { #category : #'shader code' }
@@ -50,5 +50,5 @@ void main()
 {
 	point = aPos;
 	gl_Position = mvp * vec4(point, 0.0, 1.0);
-}' withUnixLineEndings
+}'
 ]

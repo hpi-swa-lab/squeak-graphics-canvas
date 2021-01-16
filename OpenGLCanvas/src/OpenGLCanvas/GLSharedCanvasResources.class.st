@@ -15,6 +15,7 @@ Class {
 		'bitmapRectangleProgram',
 		'gradientRectangleProgram',
 		'solidRectangleProgram',
+		'stencilProgram',
 		'fonts',
 		'fontProgram'
 	],
@@ -36,7 +37,7 @@ vec4 getColor() {
 	vec2 texCoord = vec2(dot(formOrigin - point, normalize(-formDirection)) / length(formDirection),
 						    dot(formOrigin - point, normalize(-formNormal)) / length(formNormal));
 	return texture(form, texCoord);
-}' withUnixLineEndings
+}'
 ]
 
 { #category : #nil }
@@ -53,7 +54,7 @@ vec4 getColor() {
 		length(gradientOrigin - point),
 		gradientRadial) / length(gradientDirection);
 	return texture(pixelRamp, vec2(texCoord,0));
-}' withUnixLineEndings
+}'
 ]
 
 { #category : #'as yet unclassified' }
@@ -63,7 +64,7 @@ GLSharedCanvasResources class >> fragmentShaderSolidFillStyle [
 
 	vec4 getColor() {
 		return color;
-	}' withUnixLineEndings
+	}'
 ]
 
 { #category : #'as yet unclassified' }
@@ -186,6 +187,7 @@ GLSharedCanvasResources >> initializePrograms [
 	gradientRectangleProgram := GL getShaderProgram: GLCanvasGradientRectangleProgram.
 	solidRectangleProgram := GL getShaderProgram: GLCanvasSolidRectangleProgram.
 	
+	stencilProgram := GL getShaderProgram: GLCanvasStencilProgram.
 	textureProgram := GL getShaderProgram: GLCanvasTextureProgram.
 	fontProgram := GL getShaderProgram: GLCanvasFontProgram.
 	GL checkForError
@@ -207,6 +209,12 @@ GLSharedCanvasResources >> solidPolygonProgram [
 GLSharedCanvasResources >> solidRectangleProgram [
 
 	^ solidRectangleProgram
+]
+
+{ #category : #accessing }
+GLSharedCanvasResources >> stencilProgram [
+
+	^ stencilProgram
 ]
 
 { #category : #accessing }
