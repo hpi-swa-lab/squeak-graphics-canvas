@@ -1,31 +1,13 @@
 Class {
 	#name : #GLCanvasOvalProgram,
-	#superclass : #GLStaticProgram,
+	#superclass : #GLCanvasFillStyleProgram,
 	#category : #'OpenGLCanvas-Core'
 }
 
 { #category : #'shader code' }
-GLCanvasOvalProgram class >> attributes [
+GLCanvasOvalProgram class >> fragmentShaderMain [
 
-	^ #('aPos')
-]
-
-{ #category : #'shader code' }
-GLCanvasOvalProgram class >> fragmentShader [
-
-	^ '#version 330 core
-out vec4 FragColor;
-
-in vec2 point;
-
-uniform vec2 extent;
-uniform vec2 origin;
-uniform vec4 borderColor;
-uniform float borderWidth;
-
-' , self fragmentShaderFillColor , '
-
-void main() {
+	^ 'void main() {
 	vec2 pos = point - extent / 2.0 - origin;
 	vec2 relativePos = pos / extent * 2.0;
 	if (dot(relativePos, relativePos) > 1.0)
@@ -43,19 +25,28 @@ void main() {
 ]
 
 { #category : #'shader code' }
-GLCanvasOvalProgram class >> fragmentShaderFillColor [
+GLCanvasOvalProgram class >> fragmentShaderPrimitivePreamble [
 
-	self subclassResponsibility
+	^ '#version 330 core
+out vec4 FragColor;
+
+in vec2 point;
+
+uniform vec2 extent;
+uniform vec2 origin;
+uniform vec4 borderColor;
+uniform float borderWidth;'
 ]
 
 { #category : #'shader code' }
-GLCanvasOvalProgram class >> uniforms [
+GLCanvasOvalProgram class >> primitiveUniforms [
 
 	^ #('mvp' 'extent' 'origin' 'borderColor' 'borderWidth')
 ]
 
 { #category : #'shader code' }
 GLCanvasOvalProgram class >> vertexShader [
+
     ^'#version 330 core
 in vec2 aPos;
 

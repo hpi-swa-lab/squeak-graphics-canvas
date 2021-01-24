@@ -15,15 +15,15 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-GLCanvasSolidRectangleProgram class >> fragmentShaderFillColor [
+GLCanvasSolidRectangleProgram class >> fillStyleUniforms [
 
-	^ GLSharedCanvasResources fragmentShaderSolidFillStyle
+	^ self uniformsSolidFillStyle
 ]
 
 { #category : #'as yet unclassified' }
-GLCanvasSolidRectangleProgram class >> uniforms [
+GLCanvasSolidRectangleProgram class >> fragmentShaderFillColor [
 
-	^ super uniforms , GLSharedCanvasResources uniformsSolidFillStyle
+	^ self fragmentShaderSolidFillStyle
 ]
 
 { #category : #generated }

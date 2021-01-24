@@ -9,16 +9,16 @@ Class {
 	#category : #'OpenGLCanvas-Core'
 }
 
+{ #category : #nil }
+GLCanvasSolidPolygonProgram class >> fillStyleUniforms [
+
+	^ self uniformsSolidFillStyle
+]
+
 { #category : #'as yet unclassified' }
 GLCanvasSolidPolygonProgram class >> fragmentShaderFillColor [
 
-	^ GLSharedCanvasResources fragmentShaderSolidFillStyle
-]
-
-{ #category : #nil }
-GLCanvasSolidPolygonProgram class >> uniforms [
-
-	^ super uniforms , GLSharedCanvasResources uniformsSolidFillStyle
+	^ self fragmentShaderSolidFillStyle
 ]
 
 { #category : #generated }

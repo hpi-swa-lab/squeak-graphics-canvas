@@ -13,15 +13,15 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-GLCanvasGradientPolygonProgram class >> fragmentShaderFillColor [
+GLCanvasGradientPolygonProgram class >> fillStyleUniforms [
 
-	^ GLSharedCanvasResources fragmentShaderGradientFillStyle
+	^ self uniformsGradientFillStyle
 ]
 
 { #category : #'as yet unclassified' }
-GLCanvasGradientPolygonProgram class >> uniforms [
+GLCanvasGradientPolygonProgram class >> fragmentShaderFillColor [
 
-	^ super uniforms , GLSharedCanvasResources uniformsGradientFillStyle
+	^ self fragmentShaderGradientFillStyle
 ]
 
 { #category : #generated }

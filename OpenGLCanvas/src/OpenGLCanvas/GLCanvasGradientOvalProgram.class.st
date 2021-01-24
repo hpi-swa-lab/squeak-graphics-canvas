@@ -17,15 +17,15 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-GLCanvasGradientOvalProgram class >> fragmentShaderFillColor [
+GLCanvasGradientOvalProgram class >> fillStyleUniforms [
 
-	^ GLSharedCanvasResources fragmentShaderGradientFillStyle
+	^ self uniformsGradientFillStyle
 ]
 
 { #category : #'as yet unclassified' }
-GLCanvasGradientOvalProgram class >> uniforms [
+GLCanvasGradientOvalProgram class >> fragmentShaderFillColor [
 
-	^ super uniforms , GLSharedCanvasResources uniformsGradientFillStyle
+	^ self fragmentShaderGradientFillStyle
 ]
 
 { #category : #generated }

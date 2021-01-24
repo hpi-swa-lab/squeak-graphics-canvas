@@ -1,44 +1,35 @@
 Class {
 	#name : #GLCanvasPolygonProgram,
-	#superclass : #GLStaticProgram,
+	#superclass : #GLCanvasFillStyleProgram,
 	#category : #'OpenGLCanvas-Core'
 }
 
 { #category : #'shader code' }
-GLCanvasPolygonProgram class >> attributes [
+GLCanvasPolygonProgram class >> fragmentShaderMain [
 
-	^ #('aPos')
-]
-
-{ #category : #'shader code' }
-GLCanvasPolygonProgram class >> fragmentShader [
-
-	^ '#version 330 core
-out vec4 FragColor;
-
-in vec2 point;
-
-' , self fragmentShaderFillColor , '
-
-void main() {
+	^ 'void main() {
 	FragColor = getColor();
 }'
 ]
 
 { #category : #'shader code' }
-GLCanvasPolygonProgram class >> fragmentShaderFillColor [
+GLCanvasPolygonProgram class >> fragmentShaderPrimitivePreamble [
 
-	self subclassResponsibility
+	^ '#version 330 core
+out vec4 FragColor;
+
+in vec2 point;'
 ]
 
 { #category : #'shader code' }
-GLCanvasPolygonProgram class >> uniforms [
+GLCanvasPolygonProgram class >> primitiveUniforms [
 
 	^ #('mvp')
 ]
 
 { #category : #'shader code' }
 GLCanvasPolygonProgram class >> vertexShader [
+
     ^'#version 330 core
 in vec2 aPos;
 

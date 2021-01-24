@@ -30,8 +30,8 @@ uniform sampler2D image;
 uniform vec4 color;
 
 void main() {
-  FragColor = texture(image, TexCoords) * color;
-}' withUnixLineEndings
+	FragColor = texture(image, TexCoords) * color ;
+}'
 ]
 
 { #category : #'as yet unclassified' }
@@ -56,9 +56,9 @@ out vec2 TexCoords;
 
 void main()
 {
-    TexCoords = (aPos * extent + vec2(offsetX, 0.0)) / textureSize(image, 0);
-    gl_Position = mvp * vec4(aPos * extent, 0.0, 1.0);
-}' withUnixLineEndings
+	TexCoords = (aPos * extent + vec2(offsetX, 0.0)) / textureSize(image, 0);
+	gl_Position = mvp * vec4(aPos * extent, 0.0, 1.0);
+}'
 ]
 
 { #category : #generated }

@@ -14,15 +14,15 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-GLCanvasSolidOvalProgram class >> fragmentShaderFillColor [
+GLCanvasSolidOvalProgram class >> fillStyleUniforms [
 
-	^ GLSharedCanvasResources fragmentShaderSolidFillStyle
+	^ self uniformsSolidFillStyle
 ]
 
 { #category : #'as yet unclassified' }
-GLCanvasSolidOvalProgram class >> uniforms [
+GLCanvasSolidOvalProgram class >> fragmentShaderFillColor [
 
-	^ super uniforms , GLSharedCanvasResources uniformsSolidFillStyle
+	^ self fragmentShaderSolidFillStyle
 ]
 
 { #category : #generated }

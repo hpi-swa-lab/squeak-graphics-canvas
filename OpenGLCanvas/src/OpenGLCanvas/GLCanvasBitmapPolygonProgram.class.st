@@ -13,15 +13,15 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-GLCanvasBitmapPolygonProgram class >> fragmentShaderFillColor [
+GLCanvasBitmapPolygonProgram class >> fillStyleUniforms [
 
-	^ GLSharedCanvasResources fragmentShaderBitmapFillStyle
+	^ self uniformsBitmapFillStyle
 ]
 
 { #category : #'as yet unclassified' }
-GLCanvasBitmapPolygonProgram class >> uniforms [
+GLCanvasBitmapPolygonProgram class >> fragmentShaderFillColor [
 
-	^ super uniforms , GLSharedCanvasResources uniformsBitmapFillStyle
+	^ self fragmentShaderBitmapFillStyle
 ]
 
 { #category : #generated }

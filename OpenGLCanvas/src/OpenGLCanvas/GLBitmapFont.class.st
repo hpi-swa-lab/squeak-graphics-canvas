@@ -30,17 +30,21 @@ GLBitmapFont >> extentFor: aCharacter [
 { #category : #'as yet unclassified' }
 GLBitmapFont >> font: aFont [
 
-	| x |
+	| x colorCollectBlock |
 	font := aFont.
 	
 	offsets := Array new: self printableCharacters size.
 	
 	texture := GL2DTexture create extent: (self printableCharacters collect: [:char | (aFont characterFormAt: char asCharacter) width]) sum @ aFont height.
 	
-	x := 0.
+	colorCollectBlock := aFont isTTCFont
+		ifTrue: [[:c | Color white alpha: c alpha]]
+		ifFalse: [[:c | Color white alpha: 1 - c red]].
+		
+	x := 0.	
 	self printableCharacters withIndexDo: [:character :index | | form | 
 		form := aFont characterFormAt: character asCharacter.
-		texture subImage: (form collectColors: [:c | Color white alpha: 1 - c red]) at: x @ 0.
+		texture subImage: (form collectColors: colorCollectBlock) at: x @ 0.
 		x := x + form width.
 		offsets at: index put: x]
 ]

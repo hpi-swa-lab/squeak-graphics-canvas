@@ -1,32 +1,13 @@
 Class {
 	#name : #GLCanvasRectangleProgram,
-	#superclass : #GLStaticProgram,
+	#superclass : #GLCanvasFillStyleProgram,
 	#category : #'OpenGLCanvas-Core'
 }
 
 { #category : #'shader code' }
-GLCanvasRectangleProgram class >> attributes [
+GLCanvasRectangleProgram class >> fragmentShaderMain [
 
-	^ #('aPos')
-]
-
-{ #category : #'shader code' }
-GLCanvasRectangleProgram class >> fragmentShader [
-
-	^ '#version 330 core
-out vec4 FragColor;
-
-in vec2 point;
-
-uniform vec2 extent;
-uniform vec2 origin;
-uniform vec4 borderColor;
-uniform float borderWidth;
-uniform float cornerRadius;
-
-' , self fragmentShaderFillColor , '
-
-void main() {
+	^ 'void main() {
 	vec2 relativePos = point - origin;
 	vec2 relativePosFromCircle = abs(relativePos - extent / 2) - (extent/2 - vec2(cornerRadius, cornerRadius));
 	bool inCorner = all(greaterThan(relativePosFromCircle, vec2(0.0, 0.0)));
@@ -48,19 +29,29 @@ void main() {
 ]
 
 { #category : #'shader code' }
-GLCanvasRectangleProgram class >> fragmentShaderFillColor [
+GLCanvasRectangleProgram class >> fragmentShaderPrimitivePreamble [
 
-	self subclassResponsibility
+	^ '#version 330 core
+out vec4 FragColor;
+
+in vec2 point;
+
+uniform vec2 extent;
+uniform vec2 origin;
+uniform vec4 borderColor;
+uniform float borderWidth;
+uniform float cornerRadius;'
 ]
 
 { #category : #'shader code' }
-GLCanvasRectangleProgram class >> uniforms [
+GLCanvasRectangleProgram class >> primitiveUniforms [
 
 	^ #('mvp' 'extent' 'origin' 'borderColor' 'borderWidth' 'cornerRadius')
 ]
 
 { #category : #'shader code' }
 GLCanvasRectangleProgram class >> vertexShader [
+
     ^'#version 330 core
 in vec2 aPos;
 

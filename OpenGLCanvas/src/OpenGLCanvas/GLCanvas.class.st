@@ -16,6 +16,19 @@ Class {
 	#category : #'OpenGLCanvas-Core'
 }
 
+{ #category : #'instance creation' }
+GLCanvas class >> displayWithExtent: extent samples: samples [
+
+	| display |
+	samples > 1
+		ifTrue: [
+			display := RtMultisampleDisplayFramebufferStore extent: extent.
+			display samples: samples.]
+		ifFalse: [
+			display := RtDisplayFramebufferStore extent: extent].
+	^ display
+]
+
 { #category : #example }
 GLCanvas class >> exampleWindow [
 	"self exampleWindow"
@@ -42,24 +55,34 @@ GLCanvas class >> openAndDraw: anObject [
 { #category : #'instance creation' }
 GLCanvas class >> openAndDraw: anObject doing: aBlock [
 
+	^ self openAndDraw: anObject doing: aBlock samples: 1
+]
+
+{ #category : #'instance creation' }
+GLCanvas class >> openAndDraw: anObject doing: aBlock samples: samples [
+
 	| display window |
-	"display := RtMultisampleDisplayFramebufferStore extent: anObject extent.
-	display samples: 16."
-	display := RtDisplayFramebufferStore extent: anObject extent.
+	display := self displayWithExtent: anObject extent samples: samples.
 	window := display glLibrary context window.
 	
 	[[[window shouldClose] whileFalse: [
-		"window extent: window extent + (1@1)."
 		display glLibrary makeCurrentDuring: [
 			display extent: window extent.
-			display extentChanged.].
-		display canvasDo: [:c |
-			c scaleBy: window extent / anObject extent during: [c fullDraw: anObject].
-			aBlock cull: c].
+			display extentChanged].
+		window extent isZero ifFalse: [
+			display canvasDo: [:c |
+				c scaleBy: window extent / anObject extent during: [c fullDraw: anObject].
+				aBlock cull: c]].
 		33 milliSeconds wait]]
 	ensure: [display glLibrary destroy]] fork.
 	
 	^ display
+]
+
+{ #category : #'instance creation' }
+GLCanvas class >> openAndDraw: anObject samples: samples [
+
+	^ self openAndDraw: anObject doing: [] samples: samples
 	
 ]
 
@@ -100,24 +123,6 @@ GLCanvas >> bindAndUseProgram: aProgram during: aBlock [
 	self boundDuring: [
 		aProgram useDuring: [
 			aBlock cull: self.]]
-]
-
-{ #category : #accessing }
-GLCanvas >> bitmapOvalProgram [
-
-	^ resources bitmapOvalProgram
-]
-
-{ #category : #accessing }
-GLCanvas >> bitmapPolygonProgram [
-
-	^ resources bitmapPolygonProgram
-]
-
-{ #category : #accessing }
-GLCanvas >> bitmapRectangleProgram [
-
-	^ resources bitmapRectangleProgram
 ]
 
 { #category : #binding }
@@ -168,9 +173,10 @@ GLCanvas >> clipRect: aRectangle during: aBlock [
 { #category : #accessing }
 GLCanvas >> contentsOfArea: aRectangle into: aForm [
 	
-	| data |
+	| data numerOfBytes |
 	self glLibrary readBuffer: GL_BACK.
-	data := (ByteArray new: aRectangle area * 4).
+	numerOfBytes := aRectangle area * 4.
+	data := (ByteArray new: numerOfBytes).
 	self glLibrary checkForError.
 	
 	self glLibrary
@@ -178,7 +184,7 @@ GLCanvas >> contentsOfArea: aRectangle into: aForm [
 		with: GL_BGRA with: GL_UNSIGNED_INT_8_8_8_8 with: data.
 		
 	self glLibrary checkForError.
-	aForm bits: ((Bitmap new: aRectangle area * 4) copyFromByteArray: data)
+	aForm bits: ((Bitmap new: numerOfBytes) copyFromByteArray: data)
 ]
 
 { #category : #'drawing-polygons' }
@@ -222,20 +228,16 @@ GLCanvas >> drawPolygon: vertices borderWidth: borderWidth borderColor: borderCo
 { #category : #'drawing-polygons' }
 GLCanvas >> drawPolygon: vertices color: fillColor borderWidth: borderWidth borderColor: borderColor [
 
-	self bindAndUseProgram: self solidPolygonProgram during: [
-			self solidPolygonProgram color: fillColor.
-			
-			self drawPolygon: vertices borderWidth: borderWidth borderColor: borderColor withProgram: self solidPolygonProgram]
+	self drawPolygon: vertices fillStyle: fillColor borderWidth: borderWidth borderColor: borderColor
 ]
 
 { #category : #'drawing-polygons' }
 GLCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor [
 
-	| drawPolygonBlock polygonPrograms |
+	| drawPolygonBlock |
 	drawPolygonBlock := [:aProgram | self drawPolygon: vertices borderWidth: borderWidth borderColor: borderColor withProgram: aProgram].
-	polygonPrograms := {#solid -> self solidPolygonProgram . #gradient -> self gradientPolygonProgram . #bitmap -> self bitmapPolygonProgram} asDictionary.
 	
-	self setUniformsFrom: aFillStyle for: polygonPrograms during: drawPolygonBlock
+	self setUniformsFrom: aFillStyle for: self polygonPrograms during: drawPolygonBlock
 ]
 
 { #category : #'drawing-polygons' }
@@ -249,8 +251,6 @@ GLCanvas >> drawPolygonBorder: vbo borderWidth: borderWidth borderColor: borderC
 
 { #category : #'drawing-text' }
 GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c [
-
-	"self frameRectangle: (boundsRect origin extent: 10@10) color: c."
 
 	self boundDuring: [
 		self fontProgram useDuring: [ | bitmapFont x |
@@ -313,19 +313,16 @@ GLCanvas >> fillOval: r borderWidth: borderWidth borderColor: borderColor withPr
 { #category : #'drawing-ovals' }
 GLCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderColor [
 	
-	self bindAndUseProgram: self solidOvalProgram during: [
-		self solidOvalProgram color: c.
-		self fillOval: r borderWidth: borderWidth borderColor: borderColor withProgram: self solidOvalProgram]
+	self fillOval: r fillStyle: c borderWidth: borderWidth borderColor: borderColor
 ]
 
 { #category : #'drawing-ovals' }
 GLCanvas >> fillOval: r fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor [
 
-	| drawOvalBlock ovalPrograms |
+	| drawOvalBlock |
 	drawOvalBlock := [:aProgram | self fillOval: r borderWidth: borderWidth borderColor: borderColor withProgram: aProgram].
-	ovalPrograms := {#solid -> self solidOvalProgram . #gradient -> self gradientOvalProgram . #bitmap -> self bitmapOvalProgram} asDictionary.
 	
-	self setUniformsFrom: aFillStyle for: ovalPrograms during: drawOvalBlock
+	self setUniformsFrom: aFillStyle for: self ovalPrograms during: drawOvalBlock
 ]
 
 { #category : #accessing }
@@ -335,11 +332,9 @@ GLCanvas >> fontProgram [
 ]
 
 { #category : #'drawing-rectangles' }
-GLCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
+GLCanvas >> frameAndFillRectangle: aRectangle fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
 	
-	self bindAndUseProgram: self solidRectangleProgram during: [
-			self solidRectangleProgram color: fillColor.
-			self frameAndFillRoundRect: r radius: 0 borderWidth: borderWidth borderColor: borderColor withProgram: self solidRectangleProgram]
+	self frameAndFillRoundRect: aRectangle radius: 0 fillStyle: fillColor borderWidth: borderWidth borderColor: borderColor
 ]
 
 { #category : #'drawing-rectangles' }
@@ -369,11 +364,10 @@ GLCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius borderWidth: 
 { #category : #'drawing-rectangles' }
 GLCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: aFillStyle borderWidth: bw borderColor: bc [
 
-	| drawRectangleBlock rectanglePrograms |
+	| drawRectangleBlock |
 	drawRectangleBlock := [:aProgram | self frameAndFillRoundRect: aRectangle radius: cornerRadius borderWidth: bw borderColor: bc withProgram: aProgram].
-	rectanglePrograms := {#solid -> self solidRectangleProgram . #gradient -> self gradientRectangleProgram . #bitmap -> self bitmapRectangleProgram} asDictionary.
 	
-	self setUniformsFrom: aFillStyle for: rectanglePrograms during: drawRectangleBlock
+	self setUniformsFrom: aFillStyle for: self rectanglePrograms during: drawRectangleBlock
 ]
 
 { #category : #accessing }
@@ -403,24 +397,6 @@ GLCanvas >> glLibrary [
 	^ framebuffer library
 ]
 
-{ #category : #accessing }
-GLCanvas >> gradientOvalProgram [
-
-	^ resources gradientOvalProgram
-]
-
-{ #category : #accessing }
-GLCanvas >> gradientPolygonProgram [
-
-	^ resources gradientPolygonProgram
-]
-
-{ #category : #accessing }
-GLCanvas >> gradientRectangleProgram [
-
-	^ resources gradientRectangleProgram
-]
-
 { #category : #'drawing-images' }
 GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
@@ -443,8 +419,8 @@ GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 GLCanvas >> line: pt1 to: pt2 width: w color: c [
 	
 	| vbo collection |
-	self bindAndUseProgram: self solidPolygonProgram during: [
-			self solidPolygonProgram
+	self bindAndUseProgram: self lineProgram during: [
+			self lineProgram
 				color: c;
 				mvp: transform.
 			
@@ -455,7 +431,7 @@ GLCanvas >> line: pt1 to: pt2 width: w color: c [
 				data: collection asFloat32Array.
 			
 			vbo boundDuring: [
-				self solidPolygonProgram vertexAttrib: self solidPolygonProgram aPosLocation components: 2 stride: 8 offset: 0.
+				self lineProgram vertexAttrib: self lineProgram aPosLocation components: 2 stride: 8 offset: 0.
 				GL checkForError].
 			
 			GL checkForError.
@@ -466,9 +442,21 @@ GLCanvas >> line: pt1 to: pt2 width: w color: c [
 ]
 
 { #category : #accessing }
+GLCanvas >> lineProgram [
+
+	^ resources solidPolygonProgram
+]
+
+{ #category : #accessing }
 GLCanvas >> origin [
 
 	^ (transform localPointToGlobal: 0@0) truncated
+]
+
+{ #category : #accessing }
+GLCanvas >> ovalPrograms [
+
+	^ resources ovalPrograms
 ]
 
 { #category : #'drawing-text' }
@@ -486,6 +474,12 @@ GLCanvas >> paragraph: paragraph bounds: bounds color: c [
 	paragraph displayOn: self using: scanner at: bounds topLeft
 ]
 
+{ #category : #accessing }
+GLCanvas >> polygonPrograms [
+
+	^ resources polygonPrograms
+]
+
 { #category : #'drawing-polygons' }
 GLCanvas >> polygonVbo: vertices [
 
@@ -499,6 +493,12 @@ GLCanvas >> polygonVbo: vertices [
 		data: collection asFloat32Array.
 			
 	^ vbo
+]
+
+{ #category : #accessing }
+GLCanvas >> rectanglePrograms [
+
+	^ resources rectanglePrograms
 ]
 
 { #category : #'drawing-support' }
@@ -574,24 +574,6 @@ GLCanvas >> setUniformsFrom: aFillStyle for: aDictionary during: aBlock [
 				ifFalse: [
 					program :=  aDictionary at: #solid.
 					self setSolidUniformsFrom: aFillStyle for: program during: aBlock]].
-]
-
-{ #category : #accessing }
-GLCanvas >> solidOvalProgram [
-
-	^ resources solidOvalProgram
-]
-
-{ #category : #accessing }
-GLCanvas >> solidPolygonProgram [
-
-	^ resources solidPolygonProgram
-]
-
-{ #category : #accessing }
-GLCanvas >> solidRectangleProgram [
-
-	^ resources solidRectangleProgram
 ]
 
 { #category : #'drawing-images' }

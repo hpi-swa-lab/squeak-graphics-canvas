@@ -18,15 +18,15 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-GLCanvasBitmapRectangleProgram class >> fragmentShaderFillColor [
+GLCanvasBitmapRectangleProgram class >> fillStyleUniforms [
 
-	^ GLSharedCanvasResources fragmentShaderBitmapFillStyle
+	^ self uniformsBitmapFillStyle
 ]
 
 { #category : #'as yet unclassified' }
-GLCanvasBitmapRectangleProgram class >> uniforms [
+GLCanvasBitmapRectangleProgram class >> fragmentShaderFillColor [
 
-	^ super uniforms , GLSharedCanvasResources uniformsBitmapFillStyle
+	^ self fragmentShaderBitmapFillStyle
 ]
 
 { #category : #generated }

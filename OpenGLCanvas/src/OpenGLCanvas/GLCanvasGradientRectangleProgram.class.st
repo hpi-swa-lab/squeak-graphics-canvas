@@ -18,15 +18,15 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-GLCanvasGradientRectangleProgram class >> fragmentShaderFillColor [
+GLCanvasGradientRectangleProgram class >> fillStyleUniforms [
 
-	^ GLSharedCanvasResources fragmentShaderGradientFillStyle
+	^ self uniformsGradientFillStyle
 ]
 
 { #category : #'as yet unclassified' }
-GLCanvasGradientRectangleProgram class >> uniforms [
+GLCanvasGradientRectangleProgram class >> fragmentShaderFillColor [
 
-	^ super uniforms , GLSharedCanvasResources uniformsGradientFillStyle
+	^ self fragmentShaderGradientFillStyle
 ]
 
 { #category : #generated }
