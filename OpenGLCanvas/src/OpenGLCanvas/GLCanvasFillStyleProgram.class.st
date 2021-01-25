@@ -4,25 +4,25 @@ Class {
 	#category : #'OpenGLCanvas-Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasFillStyleProgram class >> attributes [
 
 	^ #('aPos')
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasFillStyleProgram class >> fillStyleUniforms [
 
 	self subclassResponsibility
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasFillStyleProgram class >> fragmentShader [
 
 	^ self fragmentShaderPrimitivePreamble , self fragmentShaderFillColor , self fragmentShaderMain
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'fill styles' }
 GLCanvasFillStyleProgram class >> fragmentShaderBitmapFillStyle [
 	
 	^ 'uniform sampler2D form;
@@ -37,13 +37,13 @@ vec4 getColor() {
 }'
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasFillStyleProgram class >> fragmentShaderFillColor [
 
 	self subclassResponsibility
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'fill styles' }
 GLCanvasFillStyleProgram class >> fragmentShaderGradientFillStyle [
 
 	^ 'uniform sampler2D pixelRamp;
@@ -60,19 +60,19 @@ vec4 getColor() {
 }'
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasFillStyleProgram class >> fragmentShaderMain [
 
 	self subclassResponsibility
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasFillStyleProgram class >> fragmentShaderPrimitivePreamble [
 
 	self subclassResponsibility
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'fill styles' }
 GLCanvasFillStyleProgram class >> fragmentShaderSolidFillStyle [
 	
 	^ 'uniform vec4 color;
@@ -82,31 +82,31 @@ vec4 getColor() {
 }'
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasFillStyleProgram class >> primitiveUniforms [
 
 	self subclassResponsibility
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasFillStyleProgram class >> uniforms [
 
 	^ self primitiveUniforms , self fillStyleUniforms
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'fill styles' }
 GLCanvasFillStyleProgram class >> uniformsBitmapFillStyle [
 
 	^ #('form' 'formOrigin' 'formDirection' 'formNormal')
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'fill styles' }
 GLCanvasFillStyleProgram class >> uniformsGradientFillStyle [
 
 	^ #('pixelRamp' 'gradientOrigin' 'gradientDirection' 'gradientRadial')
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'fill styles' }
 GLCanvasFillStyleProgram class >> uniformsSolidFillStyle [
 
 	^ #('color')

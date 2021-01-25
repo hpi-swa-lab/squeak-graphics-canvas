@@ -30,11 +30,33 @@ GLCanvas class >> displayWithExtent: extent samples: samples [
 ]
 
 { #category : #example }
-GLCanvas class >> exampleWindow [
-	"self exampleWindow"
+GLCanvas class >> exampleBrowser [
+	"self exampleBrowser"
 	| window |
 	window := (ToolBuilder build: (Browser new setClass: Morph selector: #submorphs)) position: 0 @ 0.
 	self openAndDraw: window
+]
+
+{ #category : #example }
+GLCanvas class >> exampleChineseCheckers [
+	"self exampleChineseCheckers"
+	| morph |
+	morph := (ChineseCheckers new teams: #(2 5 ) autoPlay: {true. true}) openInWorld; position: 0@0.
+	self openAndDraw: morph
+]
+
+{ #category : #example }
+GLCanvas class >> exampleChineseCheckersAA [
+	"self exampleChineseCheckersAA"
+	| morph |
+	morph := (ChineseCheckers new teams: #(2 5 ) autoPlay: {true. true}) openInWorld; position: 0@0.
+	self openAndDraw: morph samples: 16
+]
+
+{ #category : #example }
+GLCanvas class >> exampleWorld [
+	"self exampleWorld"
+	self openAndDraw: World
 ]
 
 { #category : #'instance creation' }
@@ -104,7 +126,7 @@ GLCanvas class >> openAndDrawSavingImages: anObject [
 	
 ]
 
-{ #category : #example }
+{ #category : #'instance creation' }
 GLCanvas class >> profileUsing: anObject times: aNumber [
 
 	| display testCanvas |
@@ -158,7 +180,7 @@ GLCanvas >> clipRect [
 	^ clipRect
 ]
 
-{ #category : #'scoped state' }
+{ #category : #'drawing-support' }
 GLCanvas >> clipRect: aRectangle during: aBlock [
 
 	| previousClipRect |
@@ -618,7 +640,7 @@ GLCanvas >> transform [
 	^ transform
 ]
 
-{ #category : #'scoped state' }
+{ #category : #'drawing-support' }
 GLCanvas >> transform: aMatrix during: aBlock [
 
 	| previousTransform |

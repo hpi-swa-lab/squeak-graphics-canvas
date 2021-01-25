@@ -12,13 +12,13 @@ Class {
 	#category : #'OpenGLCanvas-Fonts'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 GLBitmapFont >> advanceFor: aCharacter [
 
 	^ font advanceOf: aCharacter
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 GLBitmapFont >> extentFor: aCharacter [
 
 	| index |
@@ -27,7 +27,7 @@ GLBitmapFont >> extentFor: aCharacter [
 	^ (offsets at: index + 1) - (offsets at: index ifAbsent: [0]) @ (font characterFormAt: aCharacter) height
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 GLBitmapFont >> font: aFont [
 
 	| x colorCollectBlock |
@@ -49,32 +49,32 @@ GLBitmapFont >> font: aFont [
 		offsets at: index put: x]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 GLBitmapFont >> hasGlyphOf: aCharacter [
 
 	^ self printableCharacters includes: aCharacter asInteger
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 GLBitmapFont >> indexForCharacter: aCharacter [
 
 	^ aCharacter asInteger - self printableCharacters start
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 GLBitmapFont >> offsetFor: aCharacter [
 
 	^ ((offsets at: (self indexForCharacter: aCharacter) ifAbsent: [0]) @ font ascent)
 		 - (font characterFormAt: aCharacter) offset
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 GLBitmapFont >> printableCharacters [
 
 	^ 33 to: 126.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 GLBitmapFont >> texture [
 
 	^ texture

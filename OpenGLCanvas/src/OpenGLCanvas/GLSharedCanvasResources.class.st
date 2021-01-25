@@ -25,7 +25,7 @@ Class {
 	#category : #'OpenGLCanvas-Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #updating }
 GLSharedCanvasResources class >> updateIn: aGLLibrary [
 	
 	aGLLibrary makeCurrentDuring: [

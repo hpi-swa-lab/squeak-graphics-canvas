@@ -12,13 +12,13 @@ Class {
 	#category : #'OpenGLCanvas-Fonts'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasFontProgram class >> attributes [
 
 	^ #('aPos')
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasFontProgram class >> fragmentShader [
 
 	^ '#version 330 core
@@ -34,14 +34,14 @@ void main() {
 }'
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasFontProgram class >> uniforms [
 	"self compileAccessors"
 
 	^ #('extent' 'offsetX' 'color' 'mvp' 'image')
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasFontProgram class >> vertexShader [
 
 	^ '#version 330 core
