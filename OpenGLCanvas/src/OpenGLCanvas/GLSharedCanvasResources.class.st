@@ -1,15 +1,16 @@
+"
+I contain the resources that GLCanvases need. I contain a Vertex Buffer with vertices for a unit square, different shader programs and fonts.
+"
 Class {
 	#name : #GLSharedCanvasResources,
 	#superclass : #Object,
 	#instVars : [
-		'vao',
 		'vbo',
 		'bitmapOvalProgram',
 		'bitmapPolygonProgram',
 		'gradientPolygonProgram',
 		'gradientOvalProgram',
 		'textureProgram',
-		'outlineProgram',
 		'solidOvalProgram',
 		'solidPolygonProgram',
 		'bitmapRectangleProgram',
@@ -99,6 +100,7 @@ GLSharedCanvasResources >> initialize [
 { #category : #initialization }
 GLSharedCanvasResources >> initializeBuffers [
 
+	| vao |
 	vao := GLVertexArray create.
 	vao bind.
 	vbo := GLArrayBuffer create.
@@ -179,18 +181,6 @@ GLSharedCanvasResources >> stencilProgram [
 GLSharedCanvasResources >> textureProgram [
 
 	^ textureProgram
-]
-
-{ #category : #accessing }
-GLSharedCanvasResources >> vao [
-
-	^ vao
-]
-
-{ #category : #accessing }
-GLSharedCanvasResources >> vao: anObject [
-
-	vao := anObject.
 ]
 
 { #category : #accessing }

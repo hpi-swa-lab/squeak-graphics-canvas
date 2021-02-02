@@ -1,3 +1,8 @@
+"
+I am a canvas that uses OpenGL for drawing. To that end I need a framebuffer to render into.
+You can open a window into which I will render a morph using GLCanvas openAndDraw: aMorph (You should set the position of the mroph to 0@0). For that to work, you need to have run GLFWLibrary updateInstance beforehand and the the image needs to be able to access the GLFW binaries (e.g. via LD_LIBRARY_PATH).
+You can enable MSAA for my output by running GLCanvas openAndDraw: aMorph samples: numberOfSamples.
+"
 Class {
 	#name : #GLCanvas,
 	#superclass : #Canvas,
@@ -34,7 +39,7 @@ GLCanvas class >> exampleBrowser [
 	"self exampleBrowser"
 	| window |
 	window := (ToolBuilder build: (Browser new setClass: Morph selector: #submorphs)) position: 0 @ 0.
-	self openAndDraw: window
+	^ self openAndDraw: window
 ]
 
 { #category : #example }
@@ -42,7 +47,7 @@ GLCanvas class >> exampleChineseCheckers [
 	"self exampleChineseCheckers"
 	| morph |
 	morph := (ChineseCheckers new teams: #(2 5 ) autoPlay: {true. true}) openInWorld; position: 0@0.
-	self openAndDraw: morph
+	^ self openAndDraw: morph
 ]
 
 { #category : #example }
@@ -50,13 +55,13 @@ GLCanvas class >> exampleChineseCheckersAA [
 	"self exampleChineseCheckersAA"
 	| morph |
 	morph := (ChineseCheckers new teams: #(2 5 ) autoPlay: {true. true}) openInWorld; position: 0@0.
-	self openAndDraw: morph samples: 16
+	^ self openAndDraw: morph samples: 16
 ]
 
 { #category : #example }
 GLCanvas class >> exampleWorld [
 	"self exampleWorld"
-	self openAndDraw: World
+	^ self openAndDraw: World
 ]
 
 { #category : #'instance creation' }
@@ -282,7 +287,7 @@ GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fo
 			
 			x := 0.
 			bitmapFont := resources font: fontOrNil.
-			bitmapFont texture boundDuring: [
+			bitmapFont texture boundDuring: [	
 				s
 					from: firstIndex
 					to: lastIndex
@@ -666,12 +671,6 @@ GLCanvas >> translateBy: aPoint during: aBlock [
 	self
 		transformBy: (Matrix4x4 withOffset: aPoint)
 		during: aBlock
-]
-
-{ #category : #accessing }
-GLCanvas >> vao [
-
-	^ resources vao
 ]
 
 { #category : #accessing }

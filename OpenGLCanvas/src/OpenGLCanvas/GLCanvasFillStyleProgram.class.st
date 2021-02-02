@@ -1,3 +1,7 @@
+"
+I am an abstract OpenGL program for rendering a primitive that needs to support different FillStyles.
+
+"
 Class {
 	#name : #GLCanvasFillStyleProgram,
 	#superclass : #GLStaticProgram,

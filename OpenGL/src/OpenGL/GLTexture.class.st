@@ -60,6 +60,12 @@ GLTexture >> boundDuring: aBlock [
 		self class bind: previousID]
 ]
 
+{ #category : #'initialize-release' }
+GLTexture >> delete [
+	
+	GL deleteTextures: 1 with: (IntegerArray with: id).
+]
+
 { #category : #testing }
 GLTexture >> isTexture [
 

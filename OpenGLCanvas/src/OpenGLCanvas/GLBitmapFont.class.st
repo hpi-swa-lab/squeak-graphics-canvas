@@ -12,6 +12,12 @@ Class {
 	#category : #'OpenGLCanvas-Fonts'
 }
 
+{ #category : #constants }
+GLBitmapFont class >> characterDistance [
+	
+	^ 2
+]
+
 { #category : #accessing }
 GLBitmapFont >> advanceFor: aCharacter [
 
@@ -24,7 +30,7 @@ GLBitmapFont >> extentFor: aCharacter [
 	| index |
 	
 	index := self indexForCharacter: aCharacter.
-	^ (offsets at: index + 1) - (offsets at: index ifAbsent: [0]) @ (font characterFormAt: aCharacter) height
+	^ (offsets at: index + 1) - (offsets at: index ifAbsent: [0]) - self class characterDistance @ (font characterFormAt: aCharacter) height
 ]
 
 { #category : #accessing }
@@ -35,7 +41,7 @@ GLBitmapFont >> font: aFont [
 	
 	offsets := Array new: self printableCharacters size.
 	
-	texture := GL2DTexture create extent: (self printableCharacters collect: [:char | (aFont characterFormAt: char asCharacter) width]) sum @ aFont height.
+	texture := GL2DTexture create extent: (self printableCharacters collect: [:char | (aFont characterFormAt: char asCharacter) width + self class characterDistance]) sum @ aFont height.
 	
 	colorCollectBlock := aFont isTTCFont
 		ifTrue: [[:c | Color white alpha: c alpha]]
@@ -45,7 +51,7 @@ GLBitmapFont >> font: aFont [
 	self printableCharacters withIndexDo: [:character :index | | form | 
 		form := aFont characterFormAt: character asCharacter.
 		texture subImage: (form collectColors: colorCollectBlock) at: x @ 0.
-		x := x + form width.
+		x := x + form width + self class characterDistance.
 		offsets at: index put: x]
 ]
 

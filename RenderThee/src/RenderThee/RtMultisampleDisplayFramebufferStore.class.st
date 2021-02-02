@@ -36,6 +36,9 @@ RtMultisampleDisplayFramebufferStore >> canvasDo: aBlock [
 			self glLibrary drawBuffer: GL_BACK.
 			self glLibrary blitFramebuffer: 0 with: 0 with: self extent x truncated with: self extent y truncated with: 0 with: 0 with: self extent x truncated with: self extent y truncated with: GL_COLOR_BUFFER_BIT with: GL_NEAREST].
 		
+		multiSampleFramebuffer delete.
+		multiSampleTexture delete.
+		
 		self glLibrary checkForError.
 	]
 ]
