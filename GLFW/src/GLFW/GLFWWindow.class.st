@@ -102,11 +102,29 @@ GLFWWindow >> context [
 ]
 
 {
+	#category : #input,
+	#timestamp : 'stlu 2/1/2021 15:58'
+}
+GLFWWindow >> cursorMode [
+
+	^ GLFW getInputMode: self with: CURSOR
+]
+
+{
+	#category : #input,
+	#timestamp : 'stlu 2/1/2021 15:50'
+}
+GLFWWindow >> cursorMode: mode [
+
+	GLFW setInputMode: self with: CURSOR with: mode
+]
+
+{
 	#category : #callbacks,
-	#timestamp : 'stlu 10/21/2020 21:12'
+	#timestamp : 'stlu 2/1/2021 14:43'
 }
 GLFWWindow >> cursorPosCallback: aBlock [
-
+	"aBlock needs to have three arguments: The window, the x coordinate of the cursor and the y coordinate of the cursor."
 	GLFW setCursorPosCallback: self with: aBlock
 ]
 
@@ -126,6 +144,15 @@ GLFWWindow >> destroy [
 GLFWWindow >> disableAspectRatio [
 
 	self aspectRatio: DONT_CARE @ DONT_CARE
+]
+
+{
+	#category : #input,
+	#timestamp : 'stlu 2/1/2021 15:50'
+}
+GLFWWindow >> disableCursor [
+
+	self cursorMode: CURSOR_DISABLED
 ]
 
 {
@@ -228,12 +255,48 @@ GLFWWindow >> hide [
 ]
 
 {
+	#category : #input,
+	#timestamp : 'stlu 2/1/2021 15:50'
+}
+GLFWWindow >> hideCursor [
+
+	self cursorMode: CURSOR_HIDDEN
+]
+
+{
 	#category : #actions,
 	#timestamp : 'stlu 10/21/2020 21:18'
 }
 GLFWWindow >> iconify [
 	"Iconifies (minimizes) the window if it was previously restored. If the window is already iconified, this function does nothing. If the specified window is a full screen window, the original monitor resolution is restored until the window is restored."
 	GLFW iconifyWindow: self
+]
+
+{
+	#category : #input,
+	#timestamp : 'stlu 2/1/2021 15:59'
+}
+GLFWWindow >> isCursorDisabled [
+
+	^ self cursorMode = CURSOR_DISABLED
+]
+
+{
+	#category : #input,
+	#timestamp : 'stlu 2/1/2021 15:59'
+}
+GLFWWindow >> isCursorHidden [
+
+	^ self cursorMode = CURSOR_HIDDEN
+]
+
+{
+	#category : #input,
+	#timestamp : 'stlu 2/1/2021 15:59'
+}
+GLFWWindow >> isCursorNormal [
+
+	^ self cursorMode = CURSOR_NORMAL
 ]
 
 {
@@ -393,6 +456,24 @@ GLFWWindow >> requestAttention [
 GLFWWindow >> restore [
 	"Restores the window if it was previously iconified (minimized) or maximized. If the window is already restored, this function does nothing. If the window is a full screen window, the resolution chosen for the window is restored on the selected monitor."
 	GLFW restoreWindow: self
+]
+
+{
+	#category : #input,
+	#timestamp : 'stlu 2/1/2021 15:51'
+}
+GLFWWindow >> restoreCursor [
+
+	self cursorMode: CURSOR_NORMAL
+]
+
+{
+	#category : #callbacks,
+	#timestamp : 'stlu 2/1/2021 14:48'
+}
+GLFWWindow >> scrollCallback: aBlock [
+	"aBlock needs to have three arguments: The window, the x scroll offset and the y scroll offset."
+	GLFW setScrollCallback: self with: aBlock
 ]
 
 {

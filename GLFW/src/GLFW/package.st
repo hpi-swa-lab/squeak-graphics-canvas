@@ -1,4 +1,1 @@
-Package {
-	#name : #GLFW,
-	#'squeak_changestamp' : true
-}
+Package { #name : #GLFW }

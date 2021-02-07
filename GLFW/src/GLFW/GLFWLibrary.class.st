@@ -3386,6 +3386,16 @@ GLFWLibrary >> getFramebufferSize: window with: width with: height [
 
 {
 	#category : #'api - input',
+	#timestamp : 'stlu 2/7/2021 15:10'
+}
+GLFWLibrary >> getInputMode: window with: mode [
+
+	<apicall: int 'glfwGetInputMode' (GLFWWindow* int)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - input',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> getKey: window with: key [
@@ -3700,6 +3710,16 @@ GLFWLibrary >> privateSetMouseButtonCallback: aWindow with: anFFICallback [
 ]
 
 {
+	#category : #private,
+	#timestamp : 'stlu 2/1/2021 14:47'
+}
+GLFWLibrary >> privateSetScrollCallback: aWindow with: anFFICallback [
+
+	<apicall: void 'glfwSetScrollCallback' (GLFWWindow* void*)>
+	^ self externalCallFailed
+]
+
+{
 	#category : #'api - windows',
 	#timestamp : 'stlu 10/21/2020 21:05'
 }
@@ -3779,6 +3799,16 @@ GLFWLibrary >> setFramebufferSizeCallback: aWindow with: aBlock [
 
 {
 	#category : #'api - input',
+	#timestamp : 'stlu 2/1/2021 15:55'
+}
+GLFWLibrary >> setInputMode: window with: mode with: value [
+
+	<apicall: void 'glfwSetInputMode' (GLFWWindow* int int)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - input',
 	#timestamp : 'stlu 1/7/2021 17:15'
 }
 GLFWLibrary >> setKeyCallback: aWindow with: aBlock [
@@ -3809,6 +3839,23 @@ GLFWLibrary >> setMouseButtonCallback: aWindow with: aBlock [
 					forWindow: aWindow.
 	self
 		privateSetMouseButtonCallback: aWindow
+		with: callback thunk
+]
+
+{
+	#category : #'api - callbacks',
+	#timestamp : 'stlu 2/1/2021 14:47'
+}
+GLFWLibrary >> setScrollCallback: aWindow with: aBlock [
+
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(GLFWWindow* double double)>'
+					named: #scroll
+					forWindow: aWindow.
+	self
+		privateSetScrollCallback: aWindow
 		with: callback thunk
 ]
 
