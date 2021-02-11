@@ -103,20 +103,20 @@ GLFWWindow >> context [
 
 {
 	#category : #input,
-	#timestamp : 'stlu 2/1/2021 15:58'
+	#timestamp : 'stlu 2/12/2021 00:21'
 }
 GLFWWindow >> cursorMode [
 
-	^ GLFW getInputMode: self with: CURSOR
+	^ GLFW getInputMode: self with: GLFW_CURSOR
 ]
 
 {
 	#category : #input,
-	#timestamp : 'stlu 2/1/2021 15:50'
+	#timestamp : 'stlu 2/12/2021 00:22'
 }
 GLFWWindow >> cursorMode: mode [
 
-	GLFW setInputMode: self with: CURSOR with: mode
+	GLFW setInputMode: self with: GLFW_CURSOR with: mode
 ]
 
 {
@@ -139,20 +139,20 @@ GLFWWindow >> destroy [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/21/2020 21:11'
+	#timestamp : 'stlu 2/12/2021 00:22'
 }
 GLFWWindow >> disableAspectRatio [
 
-	self aspectRatio: DONT_CARE @ DONT_CARE
+	self aspectRatio: GLFW_DONT_CARE @ GLFW_DONT_CARE
 ]
 
 {
 	#category : #input,
-	#timestamp : 'stlu 2/1/2021 15:50'
+	#timestamp : 'stlu 2/12/2021 00:22'
 }
 GLFWWindow >> disableCursor [
 
-	self cursorMode: CURSOR_DISABLED
+	self cursorMode: GLFW_CURSOR_DISABLED
 ]
 
 {
@@ -256,11 +256,11 @@ GLFWWindow >> hide [
 
 {
 	#category : #input,
-	#timestamp : 'stlu 2/1/2021 15:50'
+	#timestamp : 'stlu 2/12/2021 00:22'
 }
 GLFWWindow >> hideCursor [
 
-	self cursorMode: CURSOR_HIDDEN
+	self cursorMode: GLFW_CURSOR_HIDDEN
 ]
 
 {
@@ -274,29 +274,29 @@ GLFWWindow >> iconify [
 
 {
 	#category : #input,
-	#timestamp : 'stlu 2/1/2021 15:59'
+	#timestamp : 'stlu 2/12/2021 00:22'
 }
 GLFWWindow >> isCursorDisabled [
 
-	^ self cursorMode = CURSOR_DISABLED
+	^ self cursorMode = GLFW_CURSOR_DISABLED
 ]
 
 {
 	#category : #input,
-	#timestamp : 'stlu 2/1/2021 15:59'
+	#timestamp : 'stlu 2/12/2021 00:22'
 }
 GLFWWindow >> isCursorHidden [
 
-	^ self cursorMode = CURSOR_HIDDEN
+	^ self cursorMode = GLFW_CURSOR_HIDDEN
 ]
 
 {
 	#category : #input,
-	#timestamp : 'stlu 2/1/2021 15:59'
+	#timestamp : 'stlu 2/12/2021 00:23'
 }
 GLFWWindow >> isCursorNormal [
 
-	^ self cursorMode = CURSOR_NORMAL
+	^ self cursorMode = GLFW_CURSOR_NORMAL
 ]
 
 {
@@ -319,11 +319,11 @@ GLFWWindow >> makeCurrent [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/21/2020 20:27'
+	#timestamp : 'stlu 2/12/2021 00:23'
 }
 GLFWWindow >> maxExtent: aPoint [
 
-	self minExtent: DONT_CARE @ DONT_CARE maxExtent: aPoint
+	self minExtent: GLFW_DONT_CARE @ GLFW_DONT_CARE maxExtent: aPoint
 ]
 
 {
@@ -337,11 +337,11 @@ GLFWWindow >> maximize [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/21/2020 20:27'
+	#timestamp : 'stlu 2/12/2021 00:23'
 }
 GLFWWindow >> minExtent: aPoint [
 
-	self minExtent: aPoint maxExtent: DONT_CARE @ DONT_CARE
+	self minExtent: aPoint maxExtent: GLFW_DONT_CARE @ GLFW_DONT_CARE
 ]
 
 {
@@ -460,11 +460,11 @@ GLFWWindow >> restore [
 
 {
 	#category : #input,
-	#timestamp : 'stlu 2/1/2021 15:51'
+	#timestamp : 'stlu 2/12/2021 00:23'
 }
 GLFWWindow >> restoreCursor [
 
-	self cursorMode: CURSOR_NORMAL
+	self cursorMode: GLFW_CURSOR_NORMAL
 ]
 
 {

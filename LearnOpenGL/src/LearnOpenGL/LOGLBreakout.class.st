@@ -277,24 +277,24 @@ LOGLBreakout >> playerVelocity [
 
 {
 	#category : #inputs,
-	#timestamp : 'stlu 1/7/2021 18:54'
+	#timestamp : 'stlu 2/12/2021 00:46'
 }
 LOGLBreakout >> processInput: elapsedSecs [
 
 	self isActive ifTrue: [
 		| distance |
 		distance := self playerVelocity * elapsedSecs.
-		(self isKeyPressed: KEY_A) ifTrue: [
+		(self isKeyPressed: GLFW_KEY_A) ifTrue: [
 			player position x > 0 ifTrue: [
 				player position: player position - (distance @ 0).
 				ball isStuck ifTrue: [
 					ball position: ball position - (distance @ 0)]]].
-		(self isKeyPressed: KEY_D) ifTrue: [
+		(self isKeyPressed: GLFW_KEY_D) ifTrue: [
 			player position x <= (self extent x - player width) ifTrue: [
 				player position: player position + (distance @ 0).
 				ball isStuck ifTrue: [
 					ball position: ball position + (distance @ 0)]]].
-		(self isKeyPressed: KEY_SPACE) ifTrue: [
+		(self isKeyPressed: GLFW_KEY_SPACE) ifTrue: [
 			ball isStuck: false]]
 ]
 
@@ -431,18 +431,18 @@ LOGLBreakout >> setUp [
 
 {
 	#category : #setup,
-	#timestamp : 'stlu 1/7/2021 17:31'
+	#timestamp : 'stlu 2/12/2021 00:46'
 }
 LOGLBreakout >> setUpInputHandling [
 
 	keys := Dictionary new.
 	
 	window keyCallback: [:w :key :scancode :action :mods |
-		(key = KEY_ESCAPE and: [action = PRESS]) ifTrue: [
+		(key = GLFW_KEY_ESCAPE and: [action = GLFW_PRESS]) ifTrue: [
 			window shouldClose: true].
 		(key between: 0 and: 1024) ifTrue: [
-			action = PRESS ifTrue: [keys at: key put: true].
-			action = RELEASE ifTrue: [keys at: key put: false]]]
+			action = GLFW_PRESS ifTrue: [keys at: key put: true].
+			action = GLFW_RELEASE ifTrue: [keys at: key put: false]]]
 ]
 
 {

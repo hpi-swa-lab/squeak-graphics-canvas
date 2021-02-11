@@ -7,7 +7,7 @@ Class {
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 1/11/2021 00:16'
+	#timestamp : 'stlu 1/11/2021 00:47'
 }
 LOGLBreakoutPostProcessingProgram class >> fragmentShader: out inputs: in uniforms: u [
 

@@ -55,11 +55,11 @@ LOGLTemplate >> isModal [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 10/12/2020 14:12'
+	#timestamp : 'stlu 2/12/2021 00:46'
 }
 LOGLTemplate >> processInput [
 
-	(window getKey: KEY_ESCAPE) = PRESS ifTrue: [
+	(window getKey: GLFW_KEY_ESCAPE) = GLFW_PRESS ifTrue: [
 		window shouldClose: true]
 ]
 
