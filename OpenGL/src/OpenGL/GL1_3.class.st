@@ -34,7 +34,7 @@ GL1_3 class >> versionNumber [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> ACTIVE_TEXTURE [
 
@@ -44,7 +44,7 @@ GL1_3 >> ACTIVE_TEXTURE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> ADD_SIGNED [
 
@@ -54,7 +54,7 @@ GL1_3 >> ADD_SIGNED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> CLAMP_TO_BORDER [
 
@@ -64,7 +64,7 @@ GL1_3 >> CLAMP_TO_BORDER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> CLIENT_ACTIVE_TEXTURE [
 
@@ -74,7 +74,7 @@ GL1_3 >> CLIENT_ACTIVE_TEXTURE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> COMBINE [
 
@@ -84,7 +84,7 @@ GL1_3 >> COMBINE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> COMBINE_ALPHA [
 
@@ -94,7 +94,7 @@ GL1_3 >> COMBINE_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> COMBINE_RGB [
 
@@ -104,7 +104,7 @@ GL1_3 >> COMBINE_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> COMPRESSED_ALPHA [
 
@@ -114,7 +114,7 @@ GL1_3 >> COMPRESSED_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> COMPRESSED_INTENSITY [
 
@@ -124,7 +124,7 @@ GL1_3 >> COMPRESSED_INTENSITY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> COMPRESSED_LUMINANCE [
 
@@ -134,7 +134,7 @@ GL1_3 >> COMPRESSED_LUMINANCE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> COMPRESSED_LUMINANCE_ALPHA [
 
@@ -144,7 +144,7 @@ GL1_3 >> COMPRESSED_LUMINANCE_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> COMPRESSED_RGB [
 
@@ -154,7 +154,7 @@ GL1_3 >> COMPRESSED_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> COMPRESSED_RGBA [
 
@@ -164,7 +164,7 @@ GL1_3 >> COMPRESSED_RGBA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> COMPRESSED_TEXTURE_FORMATS [
 
@@ -174,7 +174,7 @@ GL1_3 >> COMPRESSED_TEXTURE_FORMATS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> CONSTANT [
 
@@ -184,7 +184,7 @@ GL1_3 >> CONSTANT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> DOT3_RGB [
 
@@ -194,7 +194,7 @@ GL1_3 >> DOT3_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> DOT3_RGBA [
 
@@ -204,7 +204,7 @@ GL1_3 >> DOT3_RGBA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> INTERPOLATE [
 
@@ -214,7 +214,7 @@ GL1_3 >> INTERPOLATE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> MAX_CUBE_MAP_TEXTURE_SIZE [
 
@@ -224,7 +224,7 @@ GL1_3 >> MAX_CUBE_MAP_TEXTURE_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> MAX_TEXTURE_UNITS [
 
@@ -234,7 +234,7 @@ GL1_3 >> MAX_TEXTURE_UNITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> MULTISAMPLE [
 
@@ -244,7 +244,7 @@ GL1_3 >> MULTISAMPLE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> MULTISAMPLE_BIT [
 
@@ -254,7 +254,7 @@ GL1_3 >> MULTISAMPLE_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> NORMAL_MAP [
 
@@ -264,7 +264,7 @@ GL1_3 >> NORMAL_MAP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> NUM_COMPRESSED_TEXTURE_FORMATS [
 
@@ -274,7 +274,7 @@ GL1_3 >> NUM_COMPRESSED_TEXTURE_FORMATS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> OPERAND0_ALPHA [
 
@@ -284,7 +284,7 @@ GL1_3 >> OPERAND0_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> OPERAND0_RGB [
 
@@ -294,7 +294,7 @@ GL1_3 >> OPERAND0_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> OPERAND1_ALPHA [
 
@@ -304,7 +304,7 @@ GL1_3 >> OPERAND1_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> OPERAND1_RGB [
 
@@ -314,7 +314,7 @@ GL1_3 >> OPERAND1_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> OPERAND2_ALPHA [
 
@@ -324,7 +324,7 @@ GL1_3 >> OPERAND2_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> OPERAND2_RGB [
 
@@ -334,7 +334,7 @@ GL1_3 >> OPERAND2_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> PREVIOUS [
 
@@ -344,7 +344,7 @@ GL1_3 >> PREVIOUS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> PRIMARY_COLOR [
 
@@ -354,7 +354,7 @@ GL1_3 >> PRIMARY_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> PROXY_TEXTURE_CUBE_MAP [
 
@@ -364,7 +364,7 @@ GL1_3 >> PROXY_TEXTURE_CUBE_MAP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> REFLECTION_MAP [
 
@@ -374,7 +374,7 @@ GL1_3 >> REFLECTION_MAP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> RGB_SCALE [
 
@@ -384,7 +384,7 @@ GL1_3 >> RGB_SCALE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> SAMPLES [
 
@@ -394,7 +394,7 @@ GL1_3 >> SAMPLES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> SAMPLE_ALPHA_TO_COVERAGE [
 
@@ -404,7 +404,7 @@ GL1_3 >> SAMPLE_ALPHA_TO_COVERAGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> SAMPLE_ALPHA_TO_ONE [
 
@@ -414,7 +414,7 @@ GL1_3 >> SAMPLE_ALPHA_TO_ONE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> SAMPLE_BUFFERS [
 
@@ -424,7 +424,7 @@ GL1_3 >> SAMPLE_BUFFERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> SAMPLE_COVERAGE [
 
@@ -434,7 +434,7 @@ GL1_3 >> SAMPLE_COVERAGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> SAMPLE_COVERAGE_INVERT [
 
@@ -444,7 +444,7 @@ GL1_3 >> SAMPLE_COVERAGE_INVERT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> SAMPLE_COVERAGE_VALUE [
 
@@ -454,7 +454,7 @@ GL1_3 >> SAMPLE_COVERAGE_VALUE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> SOURCE0_ALPHA [
 
@@ -464,7 +464,7 @@ GL1_3 >> SOURCE0_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> SOURCE0_RGB [
 
@@ -474,7 +474,7 @@ GL1_3 >> SOURCE0_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> SOURCE1_ALPHA [
 
@@ -484,7 +484,7 @@ GL1_3 >> SOURCE1_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> SOURCE1_RGB [
 
@@ -494,7 +494,7 @@ GL1_3 >> SOURCE1_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> SOURCE2_ALPHA [
 
@@ -504,7 +504,7 @@ GL1_3 >> SOURCE2_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> SOURCE2_RGB [
 
@@ -514,7 +514,7 @@ GL1_3 >> SOURCE2_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> SUBTRACT [
 
@@ -524,7 +524,7 @@ GL1_3 >> SUBTRACT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE0 [
 
@@ -534,7 +534,7 @@ GL1_3 >> TEXTURE0 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE1 [
 
@@ -544,7 +544,7 @@ GL1_3 >> TEXTURE1 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE10 [
 
@@ -554,7 +554,7 @@ GL1_3 >> TEXTURE10 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE11 [
 
@@ -564,7 +564,7 @@ GL1_3 >> TEXTURE11 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE12 [
 
@@ -574,7 +574,7 @@ GL1_3 >> TEXTURE12 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE13 [
 
@@ -584,7 +584,7 @@ GL1_3 >> TEXTURE13 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE14 [
 
@@ -594,7 +594,7 @@ GL1_3 >> TEXTURE14 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE15 [
 
@@ -604,7 +604,7 @@ GL1_3 >> TEXTURE15 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE16 [
 
@@ -614,7 +614,7 @@ GL1_3 >> TEXTURE16 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE17 [
 
@@ -624,7 +624,7 @@ GL1_3 >> TEXTURE17 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE18 [
 
@@ -634,7 +634,7 @@ GL1_3 >> TEXTURE18 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE19 [
 
@@ -644,7 +644,7 @@ GL1_3 >> TEXTURE19 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE2 [
 
@@ -654,7 +654,7 @@ GL1_3 >> TEXTURE2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE20 [
 
@@ -664,7 +664,7 @@ GL1_3 >> TEXTURE20 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE21 [
 
@@ -674,7 +674,7 @@ GL1_3 >> TEXTURE21 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE22 [
 
@@ -684,7 +684,7 @@ GL1_3 >> TEXTURE22 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE23 [
 
@@ -694,7 +694,7 @@ GL1_3 >> TEXTURE23 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE24 [
 
@@ -704,7 +704,7 @@ GL1_3 >> TEXTURE24 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE25 [
 
@@ -714,7 +714,7 @@ GL1_3 >> TEXTURE25 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE26 [
 
@@ -724,7 +724,7 @@ GL1_3 >> TEXTURE26 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE27 [
 
@@ -734,7 +734,7 @@ GL1_3 >> TEXTURE27 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE28 [
 
@@ -744,7 +744,7 @@ GL1_3 >> TEXTURE28 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE29 [
 
@@ -754,7 +754,7 @@ GL1_3 >> TEXTURE29 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE3 [
 
@@ -764,7 +764,7 @@ GL1_3 >> TEXTURE3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE30 [
 
@@ -774,7 +774,7 @@ GL1_3 >> TEXTURE30 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE31 [
 
@@ -784,7 +784,7 @@ GL1_3 >> TEXTURE31 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE4 [
 
@@ -794,7 +794,7 @@ GL1_3 >> TEXTURE4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE5 [
 
@@ -804,7 +804,7 @@ GL1_3 >> TEXTURE5 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE6 [
 
@@ -814,7 +814,7 @@ GL1_3 >> TEXTURE6 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE7 [
 
@@ -824,7 +824,7 @@ GL1_3 >> TEXTURE7 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE8 [
 
@@ -834,7 +834,7 @@ GL1_3 >> TEXTURE8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE9 [
 
@@ -844,7 +844,7 @@ GL1_3 >> TEXTURE9 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE_BINDING_CUBE_MAP [
 
@@ -854,7 +854,7 @@ GL1_3 >> TEXTURE_BINDING_CUBE_MAP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE_COMPRESSED [
 
@@ -864,7 +864,7 @@ GL1_3 >> TEXTURE_COMPRESSED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE_COMPRESSED_IMAGE_SIZE [
 
@@ -874,7 +874,7 @@ GL1_3 >> TEXTURE_COMPRESSED_IMAGE_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE_COMPRESSION_HINT [
 
@@ -884,7 +884,7 @@ GL1_3 >> TEXTURE_COMPRESSION_HINT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE_CUBE_MAP [
 
@@ -894,7 +894,7 @@ GL1_3 >> TEXTURE_CUBE_MAP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE_CUBE_MAP_NEGATIVE_X [
 
@@ -904,7 +904,7 @@ GL1_3 >> TEXTURE_CUBE_MAP_NEGATIVE_X [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE_CUBE_MAP_NEGATIVE_Y [
 
@@ -914,7 +914,7 @@ GL1_3 >> TEXTURE_CUBE_MAP_NEGATIVE_Y [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE_CUBE_MAP_NEGATIVE_Z [
 
@@ -924,7 +924,7 @@ GL1_3 >> TEXTURE_CUBE_MAP_NEGATIVE_Z [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE_CUBE_MAP_POSITIVE_X [
 
@@ -934,7 +934,7 @@ GL1_3 >> TEXTURE_CUBE_MAP_POSITIVE_X [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE_CUBE_MAP_POSITIVE_Y [
 
@@ -944,7 +944,7 @@ GL1_3 >> TEXTURE_CUBE_MAP_POSITIVE_Y [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TEXTURE_CUBE_MAP_POSITIVE_Z [
 
@@ -954,7 +954,7 @@ GL1_3 >> TEXTURE_CUBE_MAP_POSITIVE_Z [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TRANSPOSE_COLOR_MATRIX [
 
@@ -964,7 +964,7 @@ GL1_3 >> TRANSPOSE_COLOR_MATRIX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TRANSPOSE_MODELVIEW_MATRIX [
 
@@ -974,7 +974,7 @@ GL1_3 >> TRANSPOSE_MODELVIEW_MATRIX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TRANSPOSE_PROJECTION_MATRIX [
 
@@ -984,7 +984,7 @@ GL1_3 >> TRANSPOSE_PROJECTION_MATRIX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> TRANSPOSE_TEXTURE_MATRIX [
 
@@ -994,7 +994,7 @@ GL1_3 >> TRANSPOSE_TEXTURE_MATRIX [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> activeTexture: texture [
 
@@ -1005,7 +1005,7 @@ GL1_3 >> activeTexture: texture [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> clientActiveTexture: texture [
 
@@ -1016,7 +1016,7 @@ GL1_3 >> clientActiveTexture: texture [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> compressedTexImage1D: target with: level with: internalformat with: width with: border with: imageSize with: data [
 
@@ -1027,7 +1027,7 @@ GL1_3 >> compressedTexImage1D: target with: level with: internalformat with: wid
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> compressedTexImage2D: target with: level with: internalformat with: width with: height with: border with: imageSize with: data [
 
@@ -1038,7 +1038,7 @@ GL1_3 >> compressedTexImage2D: target with: level with: internalformat with: wid
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> compressedTexImage3D: target with: level with: internalformat with: width with: height with: depth with: border with: imageSize with: data [
 
@@ -1049,7 +1049,7 @@ GL1_3 >> compressedTexImage3D: target with: level with: internalformat with: wid
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> compressedTexSubImage1D: target with: level with: xoffset with: width with: format with: imageSize with: data [
 
@@ -1060,7 +1060,7 @@ GL1_3 >> compressedTexSubImage1D: target with: level with: xoffset with: width w
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> compressedTexSubImage2D: target with: level with: xoffset with: yoffset with: width with: height with: format with: imageSize with: data [
 
@@ -1071,7 +1071,7 @@ GL1_3 >> compressedTexSubImage2D: target with: level with: xoffset with: yoffset
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> compressedTexSubImage3D: target with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth with: format with: imageSize with: data [
 
@@ -1082,7 +1082,7 @@ GL1_3 >> compressedTexSubImage3D: target with: level with: xoffset with: yoffset
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> getCompressedTexImage: target with: level with: img [
 
@@ -1093,7 +1093,7 @@ GL1_3 >> getCompressedTexImage: target with: level with: img [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> loadTransposeMatrixd: m [
 
@@ -1104,7 +1104,7 @@ GL1_3 >> loadTransposeMatrixd: m [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> loadTransposeMatrixf: m [
 
@@ -1115,7 +1115,7 @@ GL1_3 >> loadTransposeMatrixf: m [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multTransposeMatrixd: m [
 
@@ -1126,7 +1126,7 @@ GL1_3 >> multTransposeMatrixd: m [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multTransposeMatrixf: m [
 
@@ -1137,7 +1137,7 @@ GL1_3 >> multTransposeMatrixf: m [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord1d: target with: s [
 
@@ -1148,7 +1148,7 @@ GL1_3 >> multiTexCoord1d: target with: s [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord1dv: target with: v [
 
@@ -1159,7 +1159,7 @@ GL1_3 >> multiTexCoord1dv: target with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord1f: target with: s [
 
@@ -1170,7 +1170,7 @@ GL1_3 >> multiTexCoord1f: target with: s [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord1fv: target with: v [
 
@@ -1181,7 +1181,7 @@ GL1_3 >> multiTexCoord1fv: target with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord1i: target with: s [
 
@@ -1192,7 +1192,7 @@ GL1_3 >> multiTexCoord1i: target with: s [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord1iv: target with: v [
 
@@ -1203,7 +1203,7 @@ GL1_3 >> multiTexCoord1iv: target with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord1s: target with: s [
 
@@ -1214,7 +1214,7 @@ GL1_3 >> multiTexCoord1s: target with: s [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord1sv: target with: v [
 
@@ -1225,7 +1225,7 @@ GL1_3 >> multiTexCoord1sv: target with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord2d: target with: s with: t [
 
@@ -1236,7 +1236,7 @@ GL1_3 >> multiTexCoord2d: target with: s with: t [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord2dv: target with: v [
 
@@ -1247,7 +1247,7 @@ GL1_3 >> multiTexCoord2dv: target with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord2f: target with: s with: t [
 
@@ -1258,7 +1258,7 @@ GL1_3 >> multiTexCoord2f: target with: s with: t [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord2fv: target with: v [
 
@@ -1269,7 +1269,7 @@ GL1_3 >> multiTexCoord2fv: target with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord2i: target with: s with: t [
 
@@ -1280,7 +1280,7 @@ GL1_3 >> multiTexCoord2i: target with: s with: t [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord2iv: target with: v [
 
@@ -1291,7 +1291,7 @@ GL1_3 >> multiTexCoord2iv: target with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord2s: target with: s with: t [
 
@@ -1302,7 +1302,7 @@ GL1_3 >> multiTexCoord2s: target with: s with: t [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord2sv: target with: v [
 
@@ -1313,7 +1313,7 @@ GL1_3 >> multiTexCoord2sv: target with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord3d: target with: s with: t with: r [
 
@@ -1324,7 +1324,7 @@ GL1_3 >> multiTexCoord3d: target with: s with: t with: r [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord3dv: target with: v [
 
@@ -1335,7 +1335,7 @@ GL1_3 >> multiTexCoord3dv: target with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord3f: target with: s with: t with: r [
 
@@ -1346,7 +1346,7 @@ GL1_3 >> multiTexCoord3f: target with: s with: t with: r [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord3fv: target with: v [
 
@@ -1357,7 +1357,7 @@ GL1_3 >> multiTexCoord3fv: target with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord3i: target with: s with: t with: r [
 
@@ -1368,7 +1368,7 @@ GL1_3 >> multiTexCoord3i: target with: s with: t with: r [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord3iv: target with: v [
 
@@ -1379,7 +1379,7 @@ GL1_3 >> multiTexCoord3iv: target with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord3s: target with: s with: t with: r [
 
@@ -1390,7 +1390,7 @@ GL1_3 >> multiTexCoord3s: target with: s with: t with: r [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord3sv: target with: v [
 
@@ -1401,7 +1401,7 @@ GL1_3 >> multiTexCoord3sv: target with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord4d: target with: s with: t with: r with: q [
 
@@ -1412,7 +1412,7 @@ GL1_3 >> multiTexCoord4d: target with: s with: t with: r with: q [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord4dv: target with: v [
 
@@ -1423,7 +1423,7 @@ GL1_3 >> multiTexCoord4dv: target with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord4f: target with: s with: t with: r with: q [
 
@@ -1434,7 +1434,7 @@ GL1_3 >> multiTexCoord4f: target with: s with: t with: r with: q [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord4fv: target with: v [
 
@@ -1445,7 +1445,7 @@ GL1_3 >> multiTexCoord4fv: target with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord4i: target with: s with: t with: r with: q [
 
@@ -1456,7 +1456,7 @@ GL1_3 >> multiTexCoord4i: target with: s with: t with: r with: q [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord4iv: target with: v [
 
@@ -1467,7 +1467,7 @@ GL1_3 >> multiTexCoord4iv: target with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord4s: target with: s with: t with: r with: q [
 
@@ -1478,7 +1478,7 @@ GL1_3 >> multiTexCoord4s: target with: s with: t with: r with: q [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> multiTexCoord4sv: target with: v [
 
@@ -1489,7 +1489,7 @@ GL1_3 >> multiTexCoord4sv: target with: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL1_3 >> sampleCoverage: value with: invert [
 

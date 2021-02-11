@@ -39,14 +39,14 @@ KhrOpenGLGenerator >> commandSignature: aCommand [
 
 {
 	#category : #'method sources',
-	#timestamp : 'stlu 12/28/2020 16:45'
+	#timestamp : 'stlu 2/12/2021 00:38'
 }
 KhrOpenGLGenerator >> commandSource: definition [
 
 	| args template |
 	args := {
 		self commandSignature: definition target.
-		definition profile name.
+		definition profile name storeString.
 		definition target ffiPragma.
 	}.
 	
@@ -96,14 +96,14 @@ KhrOpenGLGenerator >> enumSignature: anEnum [
 
 {
 	#category : #'method sources',
-	#timestamp : 'stlu 12/28/2020 18:54'
+	#timestamp : 'stlu 2/12/2021 00:39'
 }
 KhrOpenGLGenerator >> enumSource: definition [
 
 	| args template |
 	args := {
 		self enumSignature: definition target.
-		definition profile name.
+		definition profile name storeString.
 		definition target name.
 	}.
 	

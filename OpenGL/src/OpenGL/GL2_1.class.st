@@ -34,7 +34,7 @@ GL2_1 class >> versionNumber [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> COMPRESSED_SLUMINANCE [
 
@@ -44,7 +44,7 @@ GL2_1 >> COMPRESSED_SLUMINANCE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> COMPRESSED_SLUMINANCE_ALPHA [
 
@@ -54,7 +54,7 @@ GL2_1 >> COMPRESSED_SLUMINANCE_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> COMPRESSED_SRGB [
 
@@ -64,7 +64,7 @@ GL2_1 >> COMPRESSED_SRGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> COMPRESSED_SRGB_ALPHA [
 
@@ -74,7 +74,7 @@ GL2_1 >> COMPRESSED_SRGB_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> CURRENT_RASTER_SECONDARY_COLOR [
 
@@ -84,7 +84,7 @@ GL2_1 >> CURRENT_RASTER_SECONDARY_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> FLOAT_MAT2x3 [
 
@@ -94,7 +94,7 @@ GL2_1 >> FLOAT_MAT2x3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> FLOAT_MAT2x4 [
 
@@ -104,7 +104,7 @@ GL2_1 >> FLOAT_MAT2x4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> FLOAT_MAT3x2 [
 
@@ -114,7 +114,7 @@ GL2_1 >> FLOAT_MAT3x2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> FLOAT_MAT3x4 [
 
@@ -124,7 +124,7 @@ GL2_1 >> FLOAT_MAT3x4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> FLOAT_MAT4x2 [
 
@@ -134,7 +134,7 @@ GL2_1 >> FLOAT_MAT4x2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> FLOAT_MAT4x3 [
 
@@ -144,7 +144,7 @@ GL2_1 >> FLOAT_MAT4x3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> PIXEL_PACK_BUFFER [
 
@@ -154,7 +154,7 @@ GL2_1 >> PIXEL_PACK_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> PIXEL_PACK_BUFFER_BINDING [
 
@@ -164,7 +164,7 @@ GL2_1 >> PIXEL_PACK_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> PIXEL_UNPACK_BUFFER [
 
@@ -174,7 +174,7 @@ GL2_1 >> PIXEL_UNPACK_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> PIXEL_UNPACK_BUFFER_BINDING [
 
@@ -184,7 +184,7 @@ GL2_1 >> PIXEL_UNPACK_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> SLUMINANCE [
 
@@ -194,7 +194,7 @@ GL2_1 >> SLUMINANCE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> SLUMINANCE8 [
 
@@ -204,7 +204,7 @@ GL2_1 >> SLUMINANCE8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> SLUMINANCE8_ALPHA8 [
 
@@ -214,7 +214,7 @@ GL2_1 >> SLUMINANCE8_ALPHA8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> SLUMINANCE_ALPHA [
 
@@ -224,7 +224,7 @@ GL2_1 >> SLUMINANCE_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> SRGB [
 
@@ -234,7 +234,7 @@ GL2_1 >> SRGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> SRGB8 [
 
@@ -244,7 +244,7 @@ GL2_1 >> SRGB8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> SRGB8_ALPHA8 [
 
@@ -254,7 +254,7 @@ GL2_1 >> SRGB8_ALPHA8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> SRGB_ALPHA [
 
@@ -264,7 +264,7 @@ GL2_1 >> SRGB_ALPHA [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> uniformMatrix2x3fv: location with: count with: transpose with: value [
 
@@ -275,7 +275,7 @@ GL2_1 >> uniformMatrix2x3fv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> uniformMatrix2x4fv: location with: count with: transpose with: value [
 
@@ -286,7 +286,7 @@ GL2_1 >> uniformMatrix2x4fv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> uniformMatrix3x2fv: location with: count with: transpose with: value [
 
@@ -297,7 +297,7 @@ GL2_1 >> uniformMatrix3x2fv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> uniformMatrix3x4fv: location with: count with: transpose with: value [
 
@@ -308,7 +308,7 @@ GL2_1 >> uniformMatrix3x4fv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> uniformMatrix4x2fv: location with: count with: transpose with: value [
 
@@ -319,7 +319,7 @@ GL2_1 >> uniformMatrix4x2fv: location with: count with: transpose with: value [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 12/29/2020 19:18'
+	#timestamp : 'stlu 2/12/2021 00:43'
 }
 GL2_1 >> uniformMatrix4x3fv: location with: count with: transpose with: value [
 
