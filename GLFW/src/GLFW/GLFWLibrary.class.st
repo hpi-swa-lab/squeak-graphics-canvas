@@ -3310,7 +3310,27 @@ GLFWLibrary >> createCallback: aBlock signature: aString named: aSymbol forWindo
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - mouse input',
+	#timestamp : 'stlu 2/12/2021 02:43'
+}
+GLFWLibrary >> createCursor: window with: xpos with: ypos [
+
+	<apicall: GLFWCursor* 'glfwCreateCursor' (GLFWImage* int int)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - mouse input',
+	#timestamp : 'stlu 2/12/2021 02:44'
+}
+GLFWLibrary >> createStandardCursor: shape [
+
+	<apicall: GLFWCursor* 'glfwCreateStandardCursor' (int)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - window creation',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> createWindow: width with: height with: title with: monitor with: share [
@@ -3320,7 +3340,18 @@ GLFWLibrary >> createWindow: width with: height with: title with: monitor with: 
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - vulkan',
+	#timestamp : 'stlu 2/12/2021 18:24'
+}
+GLFWLibrary >> createWindowSurface: instance with: window with: allocator with: surface [
+
+	"<apicall: VkResult 'glfwCreateWindowSurface' (VkInstance GLFWWindow* VkAllocationCallbacks* VkSurfaceKHR*)>
+	^ self externalCallFailed"
+	self notYetImplemented
+]
+
+{
+	#category : #'api - window creation',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> defaultWindowHints [
@@ -3330,7 +3361,17 @@ GLFWLibrary >> defaultWindowHints [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - mouse input',
+	#timestamp : 'stlu 2/12/2021 02:44'
+}
+GLFWLibrary >> destroyCursor: cursor [
+
+	<apicall: void 'glfwDestroyCursor' (GLFWCursor*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - window creation',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> destroyWindow: handle [
@@ -3340,7 +3381,17 @@ GLFWLibrary >> destroyWindow: handle [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - contexts',
+	#timestamp : 'stlu 2/12/2021 18:28'
+}
+GLFWLibrary >> extensionSupported: extension [
+
+	<apicall: bool 'glfwExtensionSupported' (string)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 21:05'
 }
 GLFWLibrary >> focusWindow: window [
@@ -3350,12 +3401,41 @@ GLFWLibrary >> focusWindow: window [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - clipboard',
+	#timestamp : 'stlu 2/12/2021 18:13'
+}
+GLFWLibrary >> getClipboardString [
+
+	^ self getClipboardString: nil
+]
+
+{
+	#category : #'api - clipboard',
+	#timestamp : 'stlu 2/12/2021 18:12'
+}
+GLFWLibrary >> getClipboardString: window [
+
+	<apicall: string 'glfwGetClipboardString' (GLFWWindow*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - contexts',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> getCurrentContext [
 
 	<apicall: GLFWWindow* 'glfwGetCurrentContext' ()>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - mouse input',
+	#timestamp : 'stlu 2/12/2021 02:42'
+}
+GLFWLibrary >> getCursorPos: window with: xpos with: ypos [
+
+	<apicall: void 'glfwGetCursorPos' (GLFWWindow* double* double*)>
 	^ self externalCallFailed
 ]
 
@@ -3379,7 +3459,7 @@ GLFWLibrary >> getError: stringOrNil [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 20:34'
 }
 GLFWLibrary >> getFramebufferSize: window with: width with: height [
@@ -3389,7 +3469,37 @@ GLFWLibrary >> getFramebufferSize: window with: width with: height [
 ]
 
 {
-	#category : #'api - input',
+	#category : #'api - joystick input',
+	#timestamp : 'stlu 2/12/2021 18:07'
+}
+GLFWLibrary >> getGamepadName: jid [
+
+	<apicall: string 'glfwGetGamepadName' (int)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - joystick input',
+	#timestamp : 'stlu 2/12/2021 18:08'
+}
+GLFWLibrary >> getGamepadState: jid with: state [
+
+	<apicall: int 'glfwGetGamepadState' (int GLFWGamepadState*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - monitors',
+	#timestamp : 'stlu 2/12/2021 01:42'
+}
+GLFWLibrary >> getGammaRamp: monitor [
+
+	<apicall: GLFWGammaRamp* 'glfwGetGammaRamp' (GLFWMonitor*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - keyboard input',
 	#timestamp : 'stlu 2/7/2021 15:10'
 }
 GLFWLibrary >> getInputMode: window with: mode [
@@ -3399,7 +3509,78 @@ GLFWLibrary >> getInputMode: window with: mode [
 ]
 
 {
-	#category : #'api - input',
+	#category : #'api - vulkan',
+	#timestamp : 'stlu 2/12/2021 18:23'
+}
+GLFWLibrary >> getInstanceProcAddress: instance with: procname [
+
+	"<apicall: GLFWVkProc* 'glfwGetInstanceProcAddress' (VkInstance string)>
+	^ self externalCallFailed"
+	self notYetImplemented
+]
+
+{
+	#category : #'api - joystick input',
+	#timestamp : 'stlu 2/12/2021 17:56'
+}
+GLFWLibrary >> getJoystickAxes: jid with: count [
+
+	<apicall: float* 'glfwGetJoystickAxes' (int int*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - joystick input',
+	#timestamp : 'stlu 2/12/2021 17:58'
+}
+GLFWLibrary >> getJoystickButtons: jid with: count [
+
+	<apicall: unsignedChar* 'glfwGetJoystickButtons' (int int*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - joystick input',
+	#timestamp : 'stlu 2/12/2021 18:00'
+}
+GLFWLibrary >> getJoystickGUID: jid [
+
+	<apicall: string 'glfwGetJoystickGUID' (int)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - joystick input',
+	#timestamp : 'stlu 2/12/2021 17:58'
+}
+GLFWLibrary >> getJoystickHats: jid with: count [
+
+	<apicall: unsignedChar* 'glfwGetJoystickHats' (int int*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - joystick input',
+	#timestamp : 'stlu 2/12/2021 17:59'
+}
+GLFWLibrary >> getJoystickName: jid [
+
+	<apicall: string 'glfwGetJoystickName' (int)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - joystick input',
+	#timestamp : 'stlu 2/12/2021 18:01'
+}
+GLFWLibrary >> getJoystickUserPointer: jid [
+
+	<apicall: void* 'glfwGetJoystickUserPointer' (int)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - keyboard input',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> getKey: window with: key [
@@ -3409,12 +3590,173 @@ GLFWLibrary >> getKey: window with: key [
 ]
 
 {
-	#category : #'api - events',
+	#category : #'api - keyboard input',
+	#timestamp : 'stlu 2/12/2021 02:36'
+}
+GLFWLibrary >> getKeyName: key with: scancode [
+
+	<apicall: string 'glfwGetKeyName' (int int)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - keyboard input',
+	#timestamp : 'stlu 2/12/2021 02:36'
+}
+GLFWLibrary >> getKeyScancode: key [
+
+	<apicall: string 'glfwGetKeyScancode' (int)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - monitors',
+	#timestamp : 'stlu 2/12/2021 01:28'
+}
+GLFWLibrary >> getMonitorContentScale: monitor with: xscale with: yscale [
+
+	<apicall: void 'glfwGetMonitorContentScale' (GLFWMonitor* float* float*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - monitors',
+	#timestamp : 'stlu 2/12/2021 01:29'
+}
+GLFWLibrary >> getMonitorName: monitor [
+
+	<apicall: string 'glfwGetMonitorName' (GLFWMonitor*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - monitors',
+	#timestamp : 'stlu 2/12/2021 01:28'
+}
+GLFWLibrary >> getMonitorPhysicalSize: monitor with: widthMM with: heightMM [
+
+	<apicall: void 'glfwGetMonitorPhysicalSize' (GLFWMonitor* int* int*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - monitors',
+	#timestamp : 'stlu 2/12/2021 01:25'
+}
+GLFWLibrary >> getMonitorPos: monitor with: xpos with: ypos [
+
+	<apicall: void 'glfwGetMonitorPos' (GLFWMonitor* int* int*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - monitors',
+	#timestamp : 'stlu 2/12/2021 01:31'
+}
+GLFWLibrary >> getMonitorUserPointer: monitor [
+
+	<apicall: void* 'glfwGetMonitorUserPointer' (GLFWMonitor*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - monitors',
+	#timestamp : 'stlu 2/12/2021 01:27'
+}
+GLFWLibrary >> getMonitorWorkarea: monitor with: xpos with: ypos with: width with: height [
+
+	<apicall: void 'glfwGetMonitorWorkarea' (GLFWMonitor* int* int* int* int*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - monitors',
+	#timestamp : 'stlu 2/12/2021 01:22'
+}
+GLFWLibrary >> getMonitors: count [
+
+	<apicall: GLFWMonitor* 'glfwGetMonitors' (int*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - mouse input',
+	#timestamp : 'stlu 2/12/2021 02:39'
+}
+GLFWLibrary >> getMouseButton: window with: button [
+
+	<apicall: int 'glfwGetMouseButton' (GLFWWindow* int)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - vulkan',
+	#timestamp : 'stlu 2/12/2021 18:23'
+}
+GLFWLibrary >> getPhysicalDevicePresentationSupport: instance with: device with: queuefamily [
+
+	"<apicall: int 'glfwGetPhysicalDevicePresentationSupport' (VkInstance VkPhysicalDevice unit32_t)>
+	^ self externalCallFailed"
+	self notYetImplemented
+]
+
+{
+	#category : #'api - monitors',
+	#timestamp : 'stlu 2/12/2021 18:32'
+}
+GLFWLibrary >> getPrimaryMonitor [
+
+	<apicall: GLFWMonitor 'glfwGetPrimaryMonitor' ()>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - contexts',
+	#timestamp : 'stlu 2/12/2021 18:30'
+}
+GLFWLibrary >> getProcAddress: procname [
+
+	<apicall: void* 'glfwGetProcAddress' (string)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - vulkan',
+	#timestamp : 'stlu 2/12/2021 16:17'
+}
+GLFWLibrary >> getRequiredInstanceExtensions: count [
+
+	<apicall: string* 'glfwGetRequiredInstanceExtensions' (uint32_t)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - time',
 	#timestamp : 'stlu 1/7/2021 11:55'
 }
 GLFWLibrary >> getTime [
 
 	<apicall: double 'glfwGetTime' ()>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - time',
+	#timestamp : 'stlu 2/12/2021 18:26'
+}
+GLFWLibrary >> getTimerFrequency [
+
+	<apicall: uint64_t 'glfwGetTimerFrequency' ()>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - time',
+	#timestamp : 'stlu 2/12/2021 18:25'
+}
+GLFWLibrary >> getTimerValue [
+
+	<apicall: uint64_t 'glfwGetTimerValue' ()>
 	^ self externalCallFailed
 ]
 
@@ -3439,7 +3781,37 @@ GLFWLibrary >> getVersionString [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - monitors',
+	#timestamp : 'stlu 2/12/2021 01:39'
+}
+GLFWLibrary >> getVideoMode: monitor [
+
+	<apicall: GLFWVidMode* 'glfwGetVideoMode' (GLFWMonitor*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - monitors',
+	#timestamp : 'stlu 2/12/2021 01:38'
+}
+GLFWLibrary >> getVideoModes: monitor with: count [
+
+	<apicall: GLFWVidMode* 'glfwGetVideoModes' (GLFWMonitor* int*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - window properties',
+	#timestamp : 'stlu 2/12/2021 01:53'
+}
+GLFWLibrary >> getWindowAttrib: window with: attrib [
+
+	<apicall: int 'glfwGetWindowAttrib' (GLFWWindow* int)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 20:50'
 }
 GLFWLibrary >> getWindowContentScale: window with: xscale with: yscale [
@@ -3449,7 +3821,7 @@ GLFWLibrary >> getWindowContentScale: window with: xscale with: yscale [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 20:39'
 }
 GLFWLibrary >> getWindowFrameSize: window with: left with: top with: right with: bottom [
@@ -3459,7 +3831,7 @@ GLFWLibrary >> getWindowFrameSize: window with: left with: top with: right with:
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 21:32'
 }
 GLFWLibrary >> getWindowMonitor: window [
@@ -3469,7 +3841,7 @@ GLFWLibrary >> getWindowMonitor: window [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 20:54'
 }
 GLFWLibrary >> getWindowOpacity: window [
@@ -3479,7 +3851,7 @@ GLFWLibrary >> getWindowOpacity: window [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 14:12'
 }
 GLFWLibrary >> getWindowPos: window with: xpos with: ypos [
@@ -3489,7 +3861,7 @@ GLFWLibrary >> getWindowPos: window with: xpos with: ypos [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 14:17'
 }
 GLFWLibrary >> getWindowSize: window with: width with: height [
@@ -3499,7 +3871,17 @@ GLFWLibrary >> getWindowSize: window with: width with: height [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window properties',
+	#timestamp : 'stlu 2/12/2021 02:00'
+}
+GLFWLibrary >> getWindowUserPointer: window [
+
+	<apicall: void* 'glfwGetWindowUserPointer' (GLFWWindow*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 21:04'
 }
 GLFWLibrary >> hideWindow: window [
@@ -3594,7 +3976,7 @@ GLFWLibrary >> hintNoAPI [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 21:04'
 }
 GLFWLibrary >> iconifyWindow: window [
@@ -3634,7 +4016,27 @@ GLFWLibrary >> initialize [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - joystick input',
+	#timestamp : 'stlu 2/12/2021 18:02'
+}
+GLFWLibrary >> joystickIsGamepad: jid [
+
+	<apicall: int 'glfwJoystickIsGamepad' (int)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - joystick input',
+	#timestamp : 'stlu 2/12/2021 17:56'
+}
+GLFWLibrary >> joystickPresent: jid [
+
+	<apicall: int 'glfwJoystickPresent' (int)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - contexts',
 	#timestamp : 'stlu 10/26/2020 18:03'
 }
 GLFWLibrary >> makeContextCurrent: window [
@@ -3644,7 +4046,7 @@ GLFWLibrary >> makeContextCurrent: window [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 21:04'
 }
 GLFWLibrary >> maximizeWindow: window [
@@ -3664,67 +4066,227 @@ GLFWLibrary >> pollEvents [
 ]
 
 {
+	#category : #'api - events',
+	#timestamp : 'stlu 2/12/2021 02:23'
+}
+GLFWLibrary >> postEmptyEvent [
+
+	<apicall: void 'glfwPostEmptyEvent' ()>
+	^ self externalCallFailed
+]
+
+{
 	#category : #private,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 2/12/2021 02:55'
+}
+GLFWLibrary >> privateSetCharCallback: aWindow with: anFFICallback [
+
+	<apicall: void* 'glfwSetCharCallback' (GLFWWindow* void*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #private,
+	#timestamp : 'stlu 2/12/2021 02:55'
+}
+GLFWLibrary >> privateSetCharModsCallback: aWindow with: anFFICallback [
+
+	<apicall: void* 'glfwSetCharModsCallback' (GLFWWindow* void*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #private,
+	#timestamp : 'stlu 2/12/2021 02:56'
+}
+GLFWLibrary >> privateSetCursorEnterCallback: aWindow with: anFFICallback [
+
+	<apicall: void* 'glfwSetCursorEnterCallback' (GLFWWindow* void*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #private,
+	#timestamp : 'stlu 2/12/2021 01:36'
 }
 GLFWLibrary >> privateSetCursorPosCallback: aWindow with: anFFICallback [
 
-	<apicall: void 'glfwSetCursorPosCallback' (GLFWWindow* void*)>
+	<apicall: void* 'glfwSetCursorPosCallback' (GLFWWindow* void*)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #private,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 2/12/2021 02:56'
+}
+GLFWLibrary >> privateSetDropCallback: aWindow with: anFFICallback [
+
+	<apicall: void* 'glfwSetDropCallback' (GLFWWindow* void*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #private,
+	#timestamp : 'stlu 2/12/2021 01:36'
 }
 GLFWLibrary >> privateSetErrorCallback: anFFICallback [
 
-	<apicall: void 'glfwSetErrorCallback' (void*)>
+	<apicall: void* 'glfwSetErrorCallback' (void*)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #private,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 2/12/2021 01:36'
 }
 GLFWLibrary >> privateSetFramebufferSizeCallback: aWindow with: anFFICallback [
 
-	<apicall: void 'glfwSetFramebufferSizeCallback' (GLFWWindow* void*)>
+	<apicall: void* 'glfwSetFramebufferSizeCallback' (GLFWWindow* void*)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #private,
-	#timestamp : 'stlu 1/7/2021 17:06'
+	#timestamp : 'stlu 2/12/2021 18:03'
+}
+GLFWLibrary >> privateSetJoystickCallback: anFFICallback [
+
+	<apicall: void* 'glfwSetJoystickCallback' (void*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #private,
+	#timestamp : 'stlu 2/12/2021 01:37'
 }
 GLFWLibrary >> privateSetKeyCallback: aWindow with: anFFICallback [
 
-	<apicall: void 'glfwSetKeyCallback' (GLFWWindow* void*)>
+	<apicall: void* 'glfwSetKeyCallback' (GLFWWindow* void*)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #private,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 2/12/2021 01:37'
+}
+GLFWLibrary >> privateSetMonitorCallback: anFFICallback [
+
+	<apicall: void* 'glfwSetMonitorCallback' (void*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #private,
+	#timestamp : 'stlu 2/12/2021 02:56'
 }
 GLFWLibrary >> privateSetMouseButtonCallback: aWindow with: anFFICallback [
 
-	<apicall: void 'glfwSetMouseButtonCallback' (GLFWWindow* void*)>
+	<apicall: void* 'glfwSetMouseButtonCallback' (GLFWWindow* void*)>
 	^ self externalCallFailed
 ]
 
 {
 	#category : #private,
-	#timestamp : 'stlu 2/1/2021 14:47'
+	#timestamp : 'stlu 2/12/2021 01:37'
 }
 GLFWLibrary >> privateSetScrollCallback: aWindow with: anFFICallback [
 
-	<apicall: void 'glfwSetScrollCallback' (GLFWWindow* void*)>
+	<apicall: void* 'glfwSetScrollCallback' (GLFWWindow* void*)>
 	^ self externalCallFailed
 ]
 
 {
-	#category : #'api - windows',
+	#category : #private,
+	#timestamp : 'stlu 2/12/2021 02:11'
+}
+GLFWLibrary >> privateSetWindowCloseCallback: aWindow with: anFFICallback [
+
+	<apicall: void* 'glfwSetWindowCloseCallback' (GLFWWindow* void*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #private,
+	#timestamp : 'stlu 2/12/2021 02:17'
+}
+GLFWLibrary >> privateSetWindowContentScaleCallback: aWindow with: anFFICallback [
+
+	<apicall: void* 'glfwSetWindowContentScaleCallback' (GLFWWindow* void*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #private,
+	#timestamp : 'stlu 2/12/2021 02:14'
+}
+GLFWLibrary >> privateSetWindowFocusCallback: aWindow with: anFFICallback [
+
+	<apicall: void* 'glfwSetWindowFocusCallback' (GLFWWindow* void*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #private,
+	#timestamp : 'stlu 2/12/2021 02:16'
+}
+GLFWLibrary >> privateSetWindowIconifyCallback: aWindow with: anFFICallback [
+
+	<apicall: void* 'glfwSetWindowIconifyCallback' (GLFWWindow* void*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #private,
+	#timestamp : 'stlu 2/12/2021 02:16'
+}
+GLFWLibrary >> privateSetWindowMaximizeCallback: aWindow with: anFFICallback [
+
+	<apicall: void* 'glfwSetWindowMaximizeCallback' (GLFWWindow* void*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #private,
+	#timestamp : 'stlu 2/12/2021 02:04'
+}
+GLFWLibrary >> privateSetWindowPosCallback: aWindow with: anFFICallback [
+
+	<apicall: void* 'glfwSetWindowPosCallback' (GLFWWindow* void*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #private,
+	#timestamp : 'stlu 2/12/2021 02:12'
+}
+GLFWLibrary >> privateSetWindowRefreshCallback: aWindow with: anFFICallback [
+
+	<apicall: void* 'glfwSetWindowRefreshCallback' (GLFWWindow* void*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #private,
+	#timestamp : 'stlu 2/12/2021 02:07'
+}
+GLFWLibrary >> privateSetWindowSizeCallback: aWindow with: anFFICallback [
+
+	<apicall: void* 'glfwSetWindowSizeCallback' (GLFWWindow* void*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - mouse input',
+	#timestamp : 'stlu 2/12/2021 02:35'
+}
+GLFWLibrary >> rawMouseMotionSupported [
+
+	<apicall: int 'glfwRawMouseMotionSupported' ()>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 21:05'
 }
 GLFWLibrary >> requestWindowAttention: window [
@@ -3744,7 +4306,7 @@ GLFWLibrary >> reset [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 21:04'
 }
 GLFWLibrary >> restoreWindow: window [
@@ -3754,8 +4316,101 @@ GLFWLibrary >> restoreWindow: window [
 ]
 
 {
-	#category : #'api - callbacks',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#category : #'api - keyboard input',
+	#timestamp : 'stlu 2/12/2021 02:59'
+}
+GLFWLibrary >> setCharCallback: aWindow with: aBlock [
+
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(GLFWWindow* uint)>'
+						"GLFWwindow* window, unsigned int codepoint"
+					named: #char
+					forWindow: aWindow.
+	self
+		privateSetCharCallback: aWindow
+		with: callback thunk
+]
+
+{
+	#category : #'api - keyboard input',
+	#timestamp : 'stlu 2/12/2021 03:00'
+}
+GLFWLibrary >> setCharModsCallback: aWindow with: aBlock [
+
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(GLFWWindow* uint int)>'
+						"GLFWwindow* window, unsigned int codepoint, int mods"
+					named: #charMods
+					forWindow: aWindow.
+	self
+		privateSetCharModsCallback: aWindow
+		with: callback thunk
+]
+
+{
+	#category : #'api - clipboard',
+	#timestamp : 'stlu 2/12/2021 18:14'
+}
+GLFWLibrary >> setClipboardString: string [
+
+	self setClipboardString: nil with: string
+]
+
+{
+	#category : #'api - clipboard',
+	#timestamp : 'stlu 2/12/2021 18:11'
+}
+GLFWLibrary >> setClipboardString: window with: string [
+
+	<apicall: void 'glfwSetClipboardString' (GLFWWindow* string)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - mouse input',
+	#timestamp : 'stlu 2/12/2021 02:46'
+}
+GLFWLibrary >> setCursor: window with: cursor [
+
+	<apicall: void 'glfwSetCursor' (GLFWWindow* GLFWCursor*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - mouse input',
+	#timestamp : 'stlu 2/12/2021 03:05'
+}
+GLFWLibrary >> setCursorEnterCallback: aWindow with: aBlock [
+
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(GLFWWindow* int)>'
+						"GLFWwindow* window, int entered"
+					named: #cursorEnter
+					forWindow: aWindow.
+	self
+		privateSetCursorEnterCallback: aWindow
+		with: callback thunk
+]
+
+{
+	#category : #'api - mouse input',
+	#timestamp : 'stlu 2/12/2021 02:42'
+}
+GLFWLibrary >> setCursorPos: window with: xpos with: ypos [
+
+	<apicall: void 'glfwSetCursorPos' (GLFWWindow* double double)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - mouse input',
+	#timestamp : 'stlu 2/12/2021 03:03'
 }
 GLFWLibrary >> setCursorPosCallback: aWindow with: aBlock [
 
@@ -3763,10 +4418,29 @@ GLFWLibrary >> setCursorPosCallback: aWindow with: aBlock [
 	callback := self
 					createCallback: aBlock
 					signature: '<callback: void (*)(GLFWWindow* double double)>'
+						"GLFWwindow* window, double xpos, double ypos"
 					named: #cursorPos
 					forWindow: aWindow.
 	self
 		privateSetCursorPosCallback: aWindow
+		with: callback thunk
+]
+
+{
+	#category : #'api - mouse input',
+	#timestamp : 'stlu 2/12/2021 03:07'
+}
+GLFWLibrary >> setDropCallback: aWindow with: aBlock [
+
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(GLFWWindow* int string*)>'
+						"GLFWwindow* window, int path_count, const char* paths[]"
+					named: #drop
+					forWindow: aWindow.
+	self
+		privateSetDropCallback: aWindow
 		with: callback thunk
 ]
 
@@ -3785,8 +4459,8 @@ GLFWLibrary >> setErrorCallback: aBlock [
 ]
 
 {
-	#category : #'api - callbacks',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#category : #'api - window callbacks',
+	#timestamp : 'stlu 2/12/2021 15:34'
 }
 GLFWLibrary >> setFramebufferSizeCallback: aWindow with: aBlock [
 
@@ -3794,6 +4468,7 @@ GLFWLibrary >> setFramebufferSizeCallback: aWindow with: aBlock [
 	callback := self
 					createCallback: aBlock
 					signature: '<callback: void (*)(GLFWWindow* int int)>'
+						"GLFWwindow* window, int width, int height"
 					named: #framebufferSize
 					forWindow: aWindow.
 	self
@@ -3802,7 +4477,27 @@ GLFWLibrary >> setFramebufferSizeCallback: aWindow with: aBlock [
 ]
 
 {
-	#category : #'api - input',
+	#category : #'api - monitors',
+	#timestamp : 'stlu 2/12/2021 01:40'
+}
+GLFWLibrary >> setGamma: monitor with: gamma [
+
+	<apicall: void 'glfwSetGamma' (GLFWMonitor* float)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - monitors',
+	#timestamp : 'stlu 2/12/2021 01:42'
+}
+GLFWLibrary >> setGammaRamp: monitor with: ramp [
+
+	<apicall: void 'glfwSetGammaRamp' (GLFWMonitor* GLFWGammaRamp*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - keyboard input',
 	#timestamp : 'stlu 2/1/2021 15:55'
 }
 GLFWLibrary >> setInputMode: window with: mode with: value [
@@ -3812,7 +4507,32 @@ GLFWLibrary >> setInputMode: window with: mode with: value [
 ]
 
 {
-	#category : #'api - input',
+	#category : #'api - joystick input',
+	#timestamp : 'stlu 2/12/2021 18:04'
+}
+GLFWLibrary >> setJoystickCallback: aBlock [
+
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(int int)>'
+						"int jid, int event"
+					named: #joystick.
+	self privateSetJoystickCallback: callback thunk
+]
+
+{
+	#category : #'api - joystick input',
+	#timestamp : 'stlu 2/12/2021 18:01'
+}
+GLFWLibrary >> setJoystickUserPointer: jid with: pointer [
+
+	<apicall: void 'glfwSetJoystickUserPointer' (int void*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - keyboard input',
 	#timestamp : 'stlu 1/7/2021 17:15'
 }
 GLFWLibrary >> setKeyCallback: aWindow with: aBlock [
@@ -3830,8 +4550,32 @@ GLFWLibrary >> setKeyCallback: aWindow with: aBlock [
 ]
 
 {
-	#category : #'api - callbacks',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#category : #'api - monitors',
+	#timestamp : 'stlu 2/12/2021 02:05'
+}
+GLFWLibrary >> setMonitorCallback: aBlock [
+
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(GLFWMonitor* int)>'
+					named: #monitor.
+	self privateSetMonitorCallback: callback thunk
+]
+
+{
+	#category : #'api - monitors',
+	#timestamp : 'stlu 2/12/2021 01:30'
+}
+GLFWLibrary >> setMonitorUserPointer: monitor with: pointer [
+
+	<apicall: void 'glfwSetMonitorUserPointer' (GLFWMonitor* void*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - mouse input',
+	#timestamp : 'stlu 2/12/2021 03:03'
 }
 GLFWLibrary >> setMouseButtonCallback: aWindow with: aBlock [
 
@@ -3839,6 +4583,7 @@ GLFWLibrary >> setMouseButtonCallback: aWindow with: aBlock [
 	callback := self
 					createCallback: aBlock
 					signature: '<callback: void (*)(GLFWWindow* int int int)>'
+						"GLFWwindow* window, int button, int action, int mods"
 					named: #mouseButton
 					forWindow: aWindow.
 	self
@@ -3847,8 +4592,8 @@ GLFWLibrary >> setMouseButtonCallback: aWindow with: aBlock [
 ]
 
 {
-	#category : #'api - callbacks',
-	#timestamp : 'stlu 2/1/2021 14:47'
+	#category : #'api - mouse input',
+	#timestamp : 'stlu 2/12/2021 03:05'
 }
 GLFWLibrary >> setScrollCallback: aWindow with: aBlock [
 
@@ -3856,6 +4601,7 @@ GLFWLibrary >> setScrollCallback: aWindow with: aBlock [
 	callback := self
 					createCallback: aBlock
 					signature: '<callback: void (*)(GLFWWindow* double double)>'
+						"GLFWwindow* window, double xoffset, double yoffset"
 					named: #scroll
 					forWindow: aWindow.
 	self
@@ -3864,7 +4610,7 @@ GLFWLibrary >> setScrollCallback: aWindow with: aBlock [
 ]
 
 {
-	#category : #'api - events',
+	#category : #'api - time',
 	#timestamp : 'stlu 1/7/2021 11:55'
 }
 GLFWLibrary >> setTime: time [
@@ -3874,7 +4620,7 @@ GLFWLibrary >> setTime: time [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 14:24'
 }
 GLFWLibrary >> setWindowAspectRatio: window with: numer with: denom [
@@ -3884,18 +4630,117 @@ GLFWLibrary >> setWindowAspectRatio: window with: numer with: denom [
 ]
 
 {
-	#category : #'api - windows',
-	#timestamp : 'stlu 10/21/2020 14:11'
+	#category : #'api - window properties',
+	#timestamp : 'stlu 2/12/2021 01:58'
 }
-GLFWLibrary >> setWindowIcon: window with: image [
+GLFWLibrary >> setWindowAttrib: window with: attrib with: value [
 
-	self notYetImplemented "Creation of GLFWimages not there yet"
-	"<apicall: void 'glfwSetWindowIcon' (GLFWWindow* int GLFWImage*)>
-	^ self externalCallFailed"
+	<apicall: void 'glfwSetWindowAttrib' (GLFWWindow* int int)>
+	^ self externalCallFailed
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window callbacks',
+	#timestamp : 'stlu 2/12/2021 15:35'
+}
+GLFWLibrary >> setWindowCloseCallback: aWindow with: aBlock [
+
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(GLFWWindow*)>'
+						"GLFWwindow* window"
+					named: #windowClose
+					forWindow: aWindow.
+	self
+		privateSetWindowCloseCallback: aWindow
+		with: callback thunk
+]
+
+{
+	#category : #'api - window callbacks',
+	#timestamp : 'stlu 2/12/2021 15:35'
+}
+GLFWLibrary >> setWindowContentScaleCallback: aWindow with: aBlock [
+
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(GLFWWindow* float float)>'
+						"GLFWwindow* window, float xscale, float yscale"
+					named: #windowContentScale
+					forWindow: aWindow.
+	self
+		privateSetWindowContentScaleCallback: aWindow
+		with: callback thunk
+]
+
+{
+	#category : #'api - window callbacks',
+	#timestamp : 'stlu 2/12/2021 15:37'
+}
+GLFWLibrary >> setWindowFocusCallback: aWindow with: aBlock [
+
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(GLFWWindow* int)>'
+						"GLFWwindow* window, int focused"
+					named: #windowFocus
+					forWindow: aWindow.
+	self
+		privateSetWindowFocusCallback: aWindow
+		with: callback thunk
+]
+
+{
+	#category : #'api - window properties',
+	#timestamp : 'stlu 2/12/2021 01:50'
+}
+GLFWLibrary >> setWindowIcon: window with: image [
+
+	<apicall: void 'glfwSetWindowIcon' (GLFWWindow* int GLFWImage*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - window callbacks',
+	#timestamp : 'stlu 2/12/2021 15:37'
+}
+GLFWLibrary >> setWindowIconifyCallback: aWindow with: aBlock [
+
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(GLFWWindow* int)>'
+						"GLFWwindow* window, int iconified"
+					named: #windowIconify
+					forWindow: aWindow.
+	self
+		privateSetWindowIconifyCallback: aWindow
+		with: callback thunk
+]
+
+{
+	#category : #'api - window callbacks',
+	#timestamp : 'stlu 2/12/2021 15:37'
+}
+GLFWLibrary >> setWindowMaximizeCallback: aWindow with: aBlock [
+
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(GLFWWindow* int)>'
+						"GLFWwindow* window, int maximized"
+					named: #windowMaximize
+					forWindow: aWindow.
+	self
+		privateSetWindowMaximizeCallback: aWindow
+		with: callback thunk
+]
+
+{
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 21:38'
 }
 GLFWLibrary >> setWindowMonitor: window with: monitor with: xpos with: ypos with: width with: height with: refreshRate [
@@ -3905,7 +4750,7 @@ GLFWLibrary >> setWindowMonitor: window with: monitor with: xpos with: ypos with
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 20:55'
 }
 GLFWLibrary >> setWindowOpacity: window with: opacity [
@@ -3915,7 +4760,7 @@ GLFWLibrary >> setWindowOpacity: window with: opacity [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 14:15'
 }
 GLFWLibrary >> setWindowPos: window with: xpos with: ypos [
@@ -3925,7 +4770,43 @@ GLFWLibrary >> setWindowPos: window with: xpos with: ypos [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window callbacks',
+	#timestamp : 'stlu 2/12/2021 15:31'
+}
+GLFWLibrary >> setWindowPosCallback: aWindow with: aBlock [
+
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(GLFWWindow* int int)>'
+						"GLFWwindow* window, int xpos, int ypos"
+					named: #windowPos
+					forWindow: aWindow.
+	self
+		privateSetWindowPosCallback: aWindow
+		with: callback thunk
+]
+
+{
+	#category : #'api - window callbacks',
+	#timestamp : 'stlu 2/12/2021 15:32'
+}
+GLFWLibrary >> setWindowRefreshCallback: aWindow with: aBlock [
+
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(GLFWWindow*)>'
+						"GLFWwindow* window"
+					named: #windowRefresh
+					forWindow: aWindow.
+	self
+		privateSetWindowRefreshCallback: aWindow
+		with: callback thunk
+]
+
+{
+	#category : #'api - window properties',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> setWindowShouldClose: window with: value [
@@ -3935,7 +4816,7 @@ GLFWLibrary >> setWindowShouldClose: window with: value [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 14:18'
 }
 GLFWLibrary >> setWindowSize: window with: width with: height [
@@ -3945,7 +4826,25 @@ GLFWLibrary >> setWindowSize: window with: width with: height [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window callbacks',
+	#timestamp : 'stlu 2/12/2021 15:31'
+}
+GLFWLibrary >> setWindowSizeCallback: aWindow with: aBlock [
+
+	| callback |
+	callback := self
+					createCallback: aBlock
+					signature: '<callback: void (*)(GLFWWindow* int int)>'
+						"GLFWwindow* window, int width, int height"
+					named: #windowSize
+					forWindow: aWindow.
+	self
+		privateSetWindowSizeCallback: aWindow
+		with: callback thunk
+]
+
+{
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 14:21'
 }
 GLFWLibrary >> setWindowSizeLimits: window with: minWidth with: minHeight with: maxWidth with: maxHeight [
@@ -3955,7 +4854,7 @@ GLFWLibrary >> setWindowSizeLimits: window with: minWidth with: minHeight with: 
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window properties',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> setWindowTitle: window with: title [
@@ -3965,7 +4864,17 @@ GLFWLibrary >> setWindowTitle: window with: title [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window properties',
+	#timestamp : 'stlu 2/12/2021 01:57'
+}
+GLFWLibrary >> setWindowUserPointer: window with: pointer [
+
+	<apicall: void 'glfwSetWindowUserPointer' (GLFWWindow* void*)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - window properties',
 	#timestamp : 'stlu 10/21/2020 21:04'
 }
 GLFWLibrary >> showWindow: window [
@@ -3975,7 +4884,7 @@ GLFWLibrary >> showWindow: window [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - contexts',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> swapBuffers: window [
@@ -3985,7 +4894,7 @@ GLFWLibrary >> swapBuffers: window [
 ]
 
 {
-	#category : #'api - initialization',
+	#category : #'api - contexts',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> swapInterval: aNumber [
@@ -4039,6 +4948,16 @@ GLFWLibrary >> terminate [
 ]
 
 {
+	#category : #'api - joystick input',
+	#timestamp : 'stlu 2/12/2021 18:06'
+}
+GLFWLibrary >> updateGamepadMappings: string [
+
+	<apicall: int 'glfwUpdateGamepadMappings' (string*)>
+	^ self externalCallFailed
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
@@ -4062,7 +4981,37 @@ GLFWLibrary >> versionString [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - vulkan',
+	#timestamp : 'stlu 2/12/2021 16:15'
+}
+GLFWLibrary >> vulkanSupported [
+
+	<apicall: bool 'glfwVulkanSupported' ()>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - events',
+	#timestamp : 'stlu 2/12/2021 02:22'
+}
+GLFWLibrary >> waitEvents [
+
+	<apicall: void 'glfwWaitEvents' ()>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - events',
+	#timestamp : 'stlu 2/12/2021 02:23'
+}
+GLFWLibrary >> waitEventsTimeout: timeout [
+
+	<apicall: void 'glfwWaitEventsTimeout' (double)>
+	^ self externalCallFailed
+]
+
+{
+	#category : #'api - window creation',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> windowHint: hint with: value [
@@ -4072,7 +5021,7 @@ GLFWLibrary >> windowHint: hint with: value [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window creation',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> windowHintString: hint with: value [
@@ -4082,7 +5031,7 @@ GLFWLibrary >> windowHintString: hint with: value [
 ]
 
 {
-	#category : #'api - windows',
+	#category : #'api - window properties',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWLibrary >> windowShouldClose: window [
