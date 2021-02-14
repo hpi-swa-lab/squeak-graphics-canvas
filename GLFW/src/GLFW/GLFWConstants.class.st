@@ -49,6 +49,7 @@ Class {
 		'GLFW_DONT_CARE',
 		'GLFW_DOUBLEBUFFER',
 		'GLFW_EGL_CONTEXT_API',
+		'GLFW_FALSE',
 		'GLFW_FEATURE_UNAVAILABLE',
 		'GLFW_FEATURE_UNIMPLEMENTED',
 		'GLFW_FLOATING',
@@ -304,6 +305,7 @@ Class {
 		'GLFW_STICKY_KEYS',
 		'GLFW_STICKY_MOUSE_BUTTONS',
 		'GLFW_TRANSPARENT_FRAMEBUFFER',
+		'GLFW_TRUE',
 		'GLFW_VERSION_UNAVAILABLE',
 		'GLFW_VISIBLE',
 		'GLFW_VRESIZE_CURSOR',
@@ -647,9 +649,12 @@ GLFWConstants class >> initializeKeyboardKeys [
 
 {
 	#category : #'initialization - windows',
-	#timestamp : 'stlu 2/12/2021 00:16'
+	#timestamp : 'stlu 2/12/2021 20:41'
 }
 GLFWConstants class >> initializeMiscEnums [
+
+	GLFW_FALSE := 0.
+	GLFW_TRUE := 1.
 
 	GLFW_NO_API := 0.
 	GLFW_OPENGL_API := 16r30001.

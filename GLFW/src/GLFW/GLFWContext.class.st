@@ -26,7 +26,7 @@ GLFWContext class >> newIn: bounds forLibraryClass: aLibraryClass title: aString
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/11/2020 14:22'
+	#timestamp : 'stlu 2/12/2021 22:59'
 }
 GLFWContext class >> window: aWindow [
 
@@ -35,7 +35,6 @@ GLFWContext class >> window: aWindow [
 		ifAbsentPut: [
 			self basicNew
 				window: aWindow;
-				api: GLFW api; "assumes context is created before hinted api changes again"
 				initialize;
 				yourself]
 ]
@@ -47,6 +46,82 @@ GLFWContext class >> window: aWindow [
 GLFWContext >> activate [
 
 	window makeCurrent
+]
+
+{
+	#category : #'client api',
+	#timestamp : 'stlu 2/12/2021 22:40'
+}
+GLFWContext >> clientAPI [
+
+	^ window getAttribute: GLFW_CLIENT_API
+]
+
+{
+	#category : #'client api',
+	#timestamp : 'stlu 2/12/2021 22:39'
+}
+GLFWContext >> clientAPIMajorVersion [
+
+	^ window getAttribute: GLFW_CONTEXT_VERSION_MAJOR
+]
+
+{
+	#category : #'client api',
+	#timestamp : 'stlu 2/12/2021 22:40'
+}
+GLFWContext >> clientAPIMinorVersion [
+
+	^ window getAttribute: GLFW_CONTEXT_VERSION_MINOR
+]
+
+{
+	#category : #'client api',
+	#timestamp : 'stlu 2/12/2021 22:39'
+}
+GLFWContext >> clientAPIName [
+
+	| api |
+	api := self clientAPI.
+	api = GLFW_OPENGL_API ifTrue: [^ #gl].
+	api = GLFW_NO_API ifTrue: [^ #none].
+	api = GLFW_OPENGL_ES_API ifTrue: [
+		self clientAPIMajorVersion > 1
+			ifTrue: [^ #gles2]
+			ifFalse: [^ #gles1]].
+	self error: 'Unkown client API'
+]
+
+{
+	#category : #'client api',
+	#timestamp : 'stlu 2/12/2021 22:40'
+}
+GLFWContext >> clientAPIRevision [
+
+	^ window getAttribute: GLFW_CONTEXT_REVISION
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 2/12/2021 22:41'
+}
+GLFWContext >> creationAPI [
+
+	^ window getAttribute: GLFW_CONTEXT_CREATION_API
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 2/12/2021 22:41'
+}
+GLFWContext >> creationAPIName [
+
+	| api |
+	api := self contextCreationAPI.
+	api = GLFW_NATIVE_CONTEXT_API ifTrue: [^ #native].
+	api = GLFW_EGL_CONTEXT_API ifTrue: [^ #egl].
+	api = GLFW_OSMESA_CONTEXT_API ifTrue: [^ #mesa].
+	self error: 'Unkown context creation API'
 ]
 
 {
@@ -77,6 +152,97 @@ GLFWContext >> destroy [
 GLFWContext >> endFrame [
 
 	GLFW pollEvents
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 2/12/2021 22:41'
+}
+GLFWContext >> generatesErrors [
+
+	^ (window getAttribute: GLFW_CONTEXT_NO_ERROR) = GLFW_FALSE
+]
+
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 2/12/2021 22:59'
+}
+GLFWContext >> initializeLibrary [
+
+	| major minor libraryClass |
+	api := self clientAPIName.
+	major := self clientAPIMajorVersion.
+	minor := self clientAPIMinorVersion.
+	version := { major . minor }.
+	profile := self openGLProfile.
+	
+	libraryClass := GLLibrary
+					api: api
+					majorVersion: major
+					minorVersion: minor.
+	library := libraryClass context: self.
+	
+	library makeCurrentDuring: [
+		extensions := library getExtensions]
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 2/12/2021 22:43'
+}
+GLFWContext >> isDebug [
+
+	^ (window getAttribute: GLFW_OPENGL_DEBUG_CONTEXT) = GLFW_TRUE
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 2/12/2021 22:42'
+}
+GLFWContext >> isForwardCompatible [
+
+	^ (window getAttribute: GLFW_OPENGL_FORWARD_COMPAT) = GLFW_TRUE
+]
+
+{
+	#category : #'client api',
+	#timestamp : 'stlu 2/12/2021 22:44'
+}
+GLFWContext >> openGLProfile [
+
+	^ window getAttribute: GLFW_OPENGL_PROFILE
+]
+
+{
+	#category : #'client api',
+	#timestamp : 'stlu 2/12/2021 22:43'
+}
+GLFWContext >> openGLProfileName [
+
+	| profile |
+	profile := self openGLProfile.
+	profile = GLFW_OPENGL_CORE_PROFILE ifTrue: [^ #core].
+	profile = GLFW_OPENGL_COMPAT_PROFILE ifTrue: [^ #compatibility].
+	profile = GLFW_OPENGL_ANY_PROFILE ifTrue: [^ #unkown].
+	self error: 'Unkown context profile'
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 2/12/2021 22:44'
+}
+GLFWContext >> releaseBehavior [
+
+	^ window getAttribute: GLFW_CONTEXT_RELEASE_BEHAVIOR
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 2/12/2021 22:45'
+}
+GLFWContext >> robustness [
+
+	^ window getAttribute: GLFW_CONTEXT_ROBUSTNESS
 ]
 
 {

@@ -1,16 +1,18 @@
+"
+3.3.3
+"
 Class {
 	#name : #GLFWLibrary,
 	#superclass : #ExternalLibrary,
 	#instVars : [
 		'callbacks',
-		'contexts',
-		'api'
+		'contexts'
 	],
 	#pools : [
 		'GLFWConstants'
 	],
 	#category : #'GLFW-Core',
-	#commentStamp : ''
+	#commentStamp : 'stlu 2/12/2021 21:09'
 }
 
 {
@@ -3246,15 +3248,6 @@ GLFWLibrary >> X11_INSTANCE_NAME [
 ]
 
 {
-	#category : #accessing,
-	#timestamp : 'stlu 11/11/2020 14:29'
-}
-GLFWLibrary >> api [
-
-	^ api
-]
-
-{
 	#category : #callbacks,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
@@ -3702,11 +3695,11 @@ GLFWLibrary >> getPhysicalDevicePresentationSupport: instance with: device with:
 
 {
 	#category : #'api - monitors',
-	#timestamp : 'stlu 2/12/2021 18:32'
+	#timestamp : 'stlu 2/12/2021 18:58'
 }
 GLFWLibrary >> getPrimaryMonitor [
 
-	<apicall: GLFWMonitor 'glfwGetPrimaryMonitor' ()>
+	<apicall: GLFWMonitor* 'glfwGetPrimaryMonitor' ()>
 	^ self externalCallFailed
 ]
 
@@ -3901,6 +3894,15 @@ GLFWLibrary >> hintAnyProfile [
 
 {
 	#category : #helpers,
+	#timestamp : 'stlu 2/12/2021 21:53'
+}
+GLFWLibrary >> hintClientAPI: apiEnum [
+
+	self windowHint: GLFW_CLIENT_API with: apiEnum
+]
+
+{
+	#category : #helpers,
 	#timestamp : 'stlu 2/12/2021 00:47'
 }
 GLFWLibrary >> hintCompatibilityProfile [
@@ -3919,32 +3921,29 @@ GLFWLibrary >> hintCoreProfile [
 
 {
 	#category : #helpers,
-	#timestamp : 'stlu 2/12/2021 00:46'
+	#timestamp : 'stlu 2/12/2021 21:57'
 }
 GLFWLibrary >> hintGLAPI [
 
-	self windowHint: GLFW_CLIENT_API with: GLFW_OPENGL_API.
-	api := #gl
+	self hintClientAPI: GLFW_OPENGL_API
 ]
 
 {
 	#category : #helpers,
-	#timestamp : 'stlu 2/12/2021 00:46'
+	#timestamp : 'stlu 2/12/2021 21:57'
 }
 GLFWLibrary >> hintGLES1API [
 
-	self windowHint: GLFW_CLIENT_API with: GLFW_OPENGL_ES_API.
-	api := #gles1
+	self hintClientAPI: GLFW_OPENGL_ES_API
 ]
 
 {
 	#category : #helpers,
-	#timestamp : 'stlu 2/12/2021 00:45'
+	#timestamp : 'stlu 2/12/2021 21:57'
 }
 GLFWLibrary >> hintGLES2API [
 
-	self windowHint: GLFW_CLIENT_API with: GLFW_OPENGL_ES_API.
-	api := #gles2
+	self hintClientAPI: GLFW_OPENGL_ES_API
 ]
 
 {
@@ -3967,12 +3966,11 @@ GLFWLibrary >> hintMinorVersion: anInteger [
 
 {
 	#category : #helpers,
-	#timestamp : 'stlu 2/12/2021 00:47'
+	#timestamp : 'stlu 2/12/2021 21:57'
 }
 GLFWLibrary >> hintNoAPI [
 
-	self windowHint: GLFW_CLIENT_API with: GLFW_NO_API.
-	api := #none
+	self hintClientAPI: GLFW_NO_API
 ]
 
 {
@@ -4277,11 +4275,11 @@ GLFWLibrary >> privateSetWindowSizeCallback: aWindow with: anFFICallback [
 
 {
 	#category : #'api - mouse input',
-	#timestamp : 'stlu 2/12/2021 02:35'
+	#timestamp : 'stlu 2/13/2021 00:12'
 }
 GLFWLibrary >> rawMouseMotionSupported [
 
-	<apicall: int 'glfwRawMouseMotionSupported' ()>
+	<apicall: bool 'glfwRawMouseMotionSupported' ()>
 	^ self externalCallFailed
 ]
 
@@ -4551,7 +4549,7 @@ GLFWLibrary >> setKeyCallback: aWindow with: aBlock [
 
 {
 	#category : #'api - monitors',
-	#timestamp : 'stlu 2/12/2021 02:05'
+	#timestamp : 'stlu 2/12/2021 19:47'
 }
 GLFWLibrary >> setMonitorCallback: aBlock [
 
@@ -4559,6 +4557,7 @@ GLFWLibrary >> setMonitorCallback: aBlock [
 	callback := self
 					createCallback: aBlock
 					signature: '<callback: void (*)(GLFWMonitor* int)>'
+						"GLFWmonitor* monitor, int event"
 					named: #monitor.
 	self privateSetMonitorCallback: callback thunk
 ]
@@ -4695,9 +4694,9 @@ GLFWLibrary >> setWindowFocusCallback: aWindow with: aBlock [
 
 {
 	#category : #'api - window properties',
-	#timestamp : 'stlu 2/12/2021 01:50'
+	#timestamp : 'stlu 2/12/2021 20:24'
 }
-GLFWLibrary >> setWindowIcon: window with: image [
+GLFWLibrary >> setWindowIcon: window with: count with: images [
 
 	<apicall: void 'glfwSetWindowIcon' (GLFWWindow* int GLFWImage*)>
 	^ self externalCallFailed

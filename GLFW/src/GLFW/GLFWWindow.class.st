@@ -80,6 +80,15 @@ GLFWWindow >> aspectRatio: pointOrNumber [
 ]
 
 {
+	#category : #callbacks,
+	#timestamp : 'stlu 2/12/2021 23:54'
+}
+GLFWWindow >> closeCallback: aBlock [
+
+	GLFW setWindowCloseCallback: self with: aBlock
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 10/21/2020 20:53'
 }
@@ -93,6 +102,15 @@ GLFWWindow >> contentScale [
 ]
 
 {
+	#category : #callbacks,
+	#timestamp : 'stlu 2/12/2021 23:57'
+}
+GLFWWindow >> contentScaleCallback: aBlock [
+
+	GLFW setWindowContentScaleCallback: self with: aBlock
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 10/19/2020 15:58'
 }
@@ -102,7 +120,16 @@ GLFWWindow >> context [
 ]
 
 {
-	#category : #input,
+	#category : #'mouse input',
+	#timestamp : 'stlu 2/13/2021 00:24'
+}
+GLFWWindow >> cursor: aCursor [
+
+	GLFW setCursor: self with: aCursor
+]
+
+{
+	#category : #cursor,
 	#timestamp : 'stlu 2/12/2021 00:21'
 }
 GLFWWindow >> cursorMode [
@@ -111,7 +138,7 @@ GLFWWindow >> cursorMode [
 ]
 
 {
-	#category : #input,
+	#category : #cursor,
 	#timestamp : 'stlu 2/12/2021 00:22'
 }
 GLFWWindow >> cursorMode: mode [
@@ -120,12 +147,34 @@ GLFWWindow >> cursorMode: mode [
 ]
 
 {
-	#category : #callbacks,
+	#category : #'mouse input',
 	#timestamp : 'stlu 2/1/2021 14:43'
 }
 GLFWWindow >> cursorPosCallback: aBlock [
 	"aBlock needs to have three arguments: The window, the x coordinate of the cursor and the y coordinate of the cursor."
 	GLFW setCursorPosCallback: self with: aBlock
+]
+
+{
+	#category : #'mouse input',
+	#timestamp : 'stlu 2/13/2021 00:21'
+}
+GLFWWindow >> cursorPosition [
+
+	| x y |
+	x := Float64Array new: 1.
+	y := Float64Array new: 1.
+	GLFW getCursorPos: self with: x with: y.
+	^ x first @ y first
+]
+
+{
+	#category : #'mouse input',
+	#timestamp : 'stlu 2/13/2021 00:21'
+}
+GLFWWindow >> cursorPosition: aPoint [
+
+	GLFW setCursorPos: self with: aPoint x asFloat with: aPoint y asFloat
 ]
 
 {
@@ -147,7 +196,7 @@ GLFWWindow >> disableAspectRatio [
 ]
 
 {
-	#category : #input,
+	#category : #cursor,
 	#timestamp : 'stlu 2/12/2021 00:22'
 }
 GLFWWindow >> disableCursor [
@@ -179,13 +228,31 @@ GLFWWindow >> extent: aPoint [
 ]
 
 {
-	#category : #actions,
+	#category : #callbacks,
+	#timestamp : 'stlu 2/12/2021 23:54'
+}
+GLFWWindow >> extentCallback: aBlock [
+
+	GLFW setWindowSizeCallback: self with: aBlock
+]
+
+{
+	#category : #visibility,
 	#timestamp : 'stlu 10/21/2020 21:26'
 }
 GLFWWindow >> focus [
 	"Brings the window to front and sets input focus. The window should already be visible and not iconified."
 	"Do NOT use this function to steal focus from other applications unless you are certain that is what the user wants. Focus stealing can be extremely disruptive. For a less disruptive way of getting the user's attention, see #requestAttention"
 	GLFW focusWindow: self
+]
+
+{
+	#category : #callbacks,
+	#timestamp : 'stlu 2/12/2021 23:55'
+}
+GLFWWindow >> focusCallback: aBlock [
+
+	GLFW setWindowFocusCallback: self with: aBlock
 ]
 
 {
@@ -206,7 +273,7 @@ GLFWWindow >> frameWidths [
 ]
 
 {
-	#category : #rendering,
+	#category : #accessing,
 	#timestamp : 'stlu 12/16/2020 13:41'
 }
 GLFWWindow >> framebufferExtent [
@@ -219,21 +286,48 @@ GLFWWindow >> framebufferExtent [
 ]
 
 {
-	#category : #callbacks,
-	#timestamp : 'stlu 10/21/2020 21:12'
+	#category : #context,
+	#timestamp : 'stlu 2/12/2021 23:56'
 }
-GLFWWindow >> framebufferSizeCallback: aBlock [
+GLFWWindow >> framebufferExtentCallback: aBlock [
 
 	GLFW setFramebufferSizeCallback: self with: aBlock
 ]
 
 {
-	#category : #input,
+	#category : #private,
+	#timestamp : 'stlu 2/12/2021 20:37'
+}
+GLFWWindow >> getAttribute: enum [
+
+	^ GLFW getWindowAttrib: self with: enum
+]
+
+{
+	#category : #'keyboard input',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWWindow >> getKey: key [
 
 	^ GLFW getKey: self with: key
+]
+
+{
+	#category : #'mouse input',
+	#timestamp : 'stlu 2/13/2021 00:20'
+}
+GLFWWindow >> getMouseButton: button [
+
+	^ GLFW getMouseButton: self with: button
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 2/12/2021 20:46'
+}
+GLFWWindow >> hasTransparentFramebuffer [
+
+	^ (self getAttribute: GLFW_TRANSPARENT_FRAMEBUFFER) = GLFW_TRUE
 ]
 
 {
@@ -246,7 +340,7 @@ GLFWWindow >> hash [
 ]
 
 {
-	#category : #actions,
+	#category : #visibility,
 	#timestamp : 'stlu 10/21/2020 21:18'
 }
 GLFWWindow >> hide [
@@ -255,7 +349,7 @@ GLFWWindow >> hide [
 ]
 
 {
-	#category : #input,
+	#category : #cursor,
 	#timestamp : 'stlu 2/12/2021 00:22'
 }
 GLFWWindow >> hideCursor [
@@ -264,7 +358,17 @@ GLFWWindow >> hideCursor [
 ]
 
 {
-	#category : #actions,
+	#category : #accessing,
+	#timestamp : 'stlu 2/12/2021 20:25'
+}
+GLFWWindow >> icon: aForm [
+
+	self notYetImplemented.
+	GLFW setWindowIcon: self with: 1 with: aForm
+]
+
+{
+	#category : #visibility,
 	#timestamp : 'stlu 10/21/2020 21:18'
 }
 GLFWWindow >> iconify [
@@ -273,7 +377,34 @@ GLFWWindow >> iconify [
 ]
 
 {
-	#category : #input,
+	#category : #callbacks,
+	#timestamp : 'stlu 2/12/2021 23:55'
+}
+GLFWWindow >> iconifyCallback: aBlock [
+
+	GLFW setWindowIconifyCallback: self with: aBlock
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 2/12/2021 20:45'
+}
+GLFWWindow >> isAutoIconified [
+
+	^ (self getAttribute: GLFW_AUTO_ICONIFY) = GLFW_TRUE
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 2/12/2021 23:48'
+}
+GLFWWindow >> isAutoIconified: aBoolean [
+
+	self setAttribute: GLFW_AUTO_ICONIFY to: aBoolean
+]
+
+{
+	#category : #testing,
 	#timestamp : 'stlu 2/12/2021 00:22'
 }
 GLFWWindow >> isCursorDisabled [
@@ -282,7 +413,7 @@ GLFWWindow >> isCursorDisabled [
 ]
 
 {
-	#category : #input,
+	#category : #testing,
 	#timestamp : 'stlu 2/12/2021 00:22'
 }
 GLFWWindow >> isCursorHidden [
@@ -291,7 +422,7 @@ GLFWWindow >> isCursorHidden [
 ]
 
 {
-	#category : #input,
+	#category : #testing,
 	#timestamp : 'stlu 2/12/2021 00:23'
 }
 GLFWWindow >> isCursorNormal [
@@ -300,7 +431,124 @@ GLFWWindow >> isCursorNormal [
 ]
 
 {
-	#category : #callbacks,
+	#category : #testing,
+	#timestamp : 'stlu 2/12/2021 20:45'
+}
+GLFWWindow >> isDecorated [
+
+	^ (self getAttribute: GLFW_DECORATED) = GLFW_TRUE
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 2/12/2021 23:47'
+}
+GLFWWindow >> isDecorated: aBoolean [
+
+	self setAttribute: GLFW_DECORATED to: aBoolean
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 2/12/2021 20:46'
+}
+GLFWWindow >> isFloating [
+
+	^ (self getAttribute: GLFW_FLOATING) = GLFW_TRUE
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 2/12/2021 23:47'
+}
+GLFWWindow >> isFloating: aBoolean [
+
+	self setAttribute: GLFW_FLOATING to: aBoolean
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 2/12/2021 20:41'
+}
+GLFWWindow >> isFocused [
+
+	^ (self getAttribute: GLFW_FOCUSED) = GLFW_TRUE
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 2/12/2021 20:47'
+}
+GLFWWindow >> isFocusedOnShow [
+
+	^ (self getAttribute: GLFW_FOCUS_ON_SHOW) = GLFW_TRUE
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 2/12/2021 23:48'
+}
+GLFWWindow >> isFocusedOnShow: aBoolean [
+
+	self setAttribute: GLFW_FOCUS_ON_SHOW to: aBoolean
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 2/12/2021 20:45'
+}
+GLFWWindow >> isHovered [
+
+	^ (self getAttribute: GLFW_HOVERED) = GLFW_TRUE
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 2/12/2021 20:42'
+}
+GLFWWindow >> isIconified [
+
+	^ (self getAttribute: GLFW_ICONIFIED) = GLFW_TRUE
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 2/12/2021 20:44'
+}
+GLFWWindow >> isMaximized [
+
+	^ (self getAttribute: GLFW_MAXIMIZED) = GLFW_TRUE
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 2/12/2021 20:45'
+}
+GLFWWindow >> isResizable [
+
+	^ (self getAttribute: GLFW_RESIZABLE) = GLFW_TRUE
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 2/12/2021 23:47'
+}
+GLFWWindow >> isResizable: aBoolean [
+
+	self setAttribute: GLFW_RESIZABLE to: aBoolean
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 2/12/2021 20:45'
+}
+GLFWWindow >> isVisible [
+
+	^ (self getAttribute: GLFW_VISIBLE) = GLFW_TRUE
+]
+
+{
+	#category : #'keyboard input',
 	#timestamp : 'stlu 1/7/2021 17:06'
 }
 GLFWWindow >> keyCallback: aBlock [
@@ -309,7 +557,25 @@ GLFWWindow >> keyCallback: aBlock [
 ]
 
 {
-	#category : #'initialize-release',
+	#category : #'keyboard input',
+	#timestamp : 'stlu 2/13/2021 00:08'
+}
+GLFWWindow >> lockKeyMods [
+
+	^ (GLFW getInputMode: self with: GLFW_LOCK_KEY_MODS) = GLFW_TRUE
+]
+
+{
+	#category : #'keyboard input',
+	#timestamp : 'stlu 2/13/2021 00:08'
+}
+GLFWWindow >> lockKeyMods: aBoolean [
+
+	GLFW setInputMode: self with: GLFW_LOCK_KEY_MODS with: aBoolean
+]
+
+{
+	#category : #context,
 	#timestamp : 'stlu 10/21/2020 21:12'
 }
 GLFWWindow >> makeCurrent [
@@ -327,12 +593,21 @@ GLFWWindow >> maxExtent: aPoint [
 ]
 
 {
-	#category : #actions,
+	#category : #visibility,
 	#timestamp : 'stlu 10/21/2020 21:18'
 }
 GLFWWindow >> maximize [
 	"Maximizes the window if it was previously not maximized. If the window is already maximized, this function does nothing. If the specified window is a full screen window, this function does nothing."
 	GLFW maximizeWindow: self
+]
+
+{
+	#category : #callbacks,
+	#timestamp : 'stlu 2/12/2021 23:56'
+}
+GLFWWindow >> maximizeCallback: aBlock [
+
+	GLFW setWindowMaximizeCallback: self with: aBlock
 ]
 
 {
@@ -391,7 +666,7 @@ GLFWWindow >> monitor: aMonitor bounds: aRectangle refreshRate: hertz [
 ]
 
 {
-	#category : #callbacks,
+	#category : #'mouse input',
 	#timestamp : 'stlu 10/21/2020 21:12'
 }
 GLFWWindow >> mouseButtonCallback: aBlock [
@@ -441,7 +716,43 @@ GLFWWindow >> position: aPoint [
 ]
 
 {
-	#category : #actions,
+	#category : #callbacks,
+	#timestamp : 'stlu 2/12/2021 23:53'
+}
+GLFWWindow >> positionCallback: aBlock [
+
+	GLFW setWindowPosCallback: self with: aBlock
+]
+
+{
+	#category : #'mouse input',
+	#timestamp : 'stlu 2/13/2021 00:09'
+}
+GLFWWindow >> rawMouseMotion [
+
+	^ (GLFW getInputMode: self with: GLFW_RAW_MOUSE_MOTION) = GLFW_TRUE
+]
+
+{
+	#category : #'mouse input',
+	#timestamp : 'stlu 2/13/2021 00:10'
+}
+GLFWWindow >> rawMouseMotion: aBoolean [
+
+	GLFW setInputMode: self with: GLFW_RAW_MOUSE_MOTION with: aBoolean
+]
+
+{
+	#category : #callbacks,
+	#timestamp : 'stlu 2/12/2021 23:55'
+}
+GLFWWindow >> refreshCallback: aBlock [
+
+	GLFW setWindowRefreshCallback: self with: aBlock
+]
+
+{
+	#category : #visibility,
 	#timestamp : 'stlu 10/21/2020 21:24'
 }
 GLFWWindow >> requestAttention [
@@ -450,7 +761,7 @@ GLFWWindow >> requestAttention [
 ]
 
 {
-	#category : #actions,
+	#category : #visibility,
 	#timestamp : 'stlu 10/21/2020 21:18'
 }
 GLFWWindow >> restore [
@@ -459,7 +770,7 @@ GLFWWindow >> restore [
 ]
 
 {
-	#category : #input,
+	#category : #cursor,
 	#timestamp : 'stlu 2/12/2021 00:23'
 }
 GLFWWindow >> restoreCursor [
@@ -468,12 +779,21 @@ GLFWWindow >> restoreCursor [
 ]
 
 {
-	#category : #callbacks,
+	#category : #'mouse input',
 	#timestamp : 'stlu 2/1/2021 14:48'
 }
 GLFWWindow >> scrollCallback: aBlock [
 	"aBlock needs to have three arguments: The window, the x scroll offset and the y scroll offset."
 	GLFW setScrollCallback: self with: aBlock
+]
+
+{
+	#category : #private,
+	#timestamp : 'stlu 2/12/2021 20:38'
+}
+GLFWWindow >> setAttribute: enum to: value [
+
+	^ GLFW setWindowAttrib: self with: enum with: value
 ]
 
 {
@@ -495,7 +815,7 @@ GLFWWindow >> shouldClose: aBoolean [
 ]
 
 {
-	#category : #actions,
+	#category : #visibility,
 	#timestamp : 'stlu 10/21/2020 21:19'
 }
 GLFWWindow >> show [
@@ -504,7 +824,43 @@ GLFWWindow >> show [
 ]
 
 {
-	#category : #rendering,
+	#category : #'keyboard input',
+	#timestamp : 'stlu 2/13/2021 00:07'
+}
+GLFWWindow >> stickyKeys [
+
+	^ (GLFW getInputMode: self with: GLFW_STICKY_KEYS) = GLFW_TRUE
+]
+
+{
+	#category : #'keyboard input',
+	#timestamp : 'stlu 2/13/2021 00:05'
+}
+GLFWWindow >> stickyKeys: aBoolean [
+
+	GLFW setInputMode: self with: GLFW_STICKY_KEYS with: aBoolean
+]
+
+{
+	#category : #'mouse input',
+	#timestamp : 'stlu 2/13/2021 00:07'
+}
+GLFWWindow >> stickyMouseButtons [
+
+	^ (GLFW getInputMode: self with: GLFW_STICKY_MOUSE_BUTTONS) = GLFW_TRUE
+]
+
+{
+	#category : #'mouse input',
+	#timestamp : 'stlu 2/13/2021 00:06'
+}
+GLFWWindow >> stickyMouseButtons: aBoolean [
+
+	GLFW setInputMode: self with: GLFW_STICKY_MOUSE_BUTTONS with: aBoolean
+]
+
+{
+	#category : #context,
 	#timestamp : 'stlu 10/21/2020 21:13'
 }
 GLFWWindow >> swapBuffers [
@@ -519,4 +875,22 @@ GLFWWindow >> swapBuffers [
 GLFWWindow >> title: aString [
 
 	GLFW setWindowTitle: self with: aString
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 2/12/2021 23:52'
+}
+GLFWWindow >> userPointer [
+
+	^ GLFW getWindowUserPointer: self
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 2/12/2021 23:52'
+}
+GLFWWindow >> userPointer: pointer [
+
+	^ GLFW setWindowUserPointer: self with: pointer
 ]
