@@ -34,9 +34,11 @@ uniform vec2 formOrigin;
 uniform vec2 formDirection;
 uniform vec2 formNormal;
 
-vec4 getColor() {
-	vec2 texCoord = vec2(dot(formOrigin - point, normalize(-formDirection)) / length(formDirection),
-						    dot(formOrigin - point, normalize(-formNormal)) / length(formNormal));
+vec4 getColor()
+{
+	vec2 relativePoint = point - origin - formOrigin;
+	vec2 texCoord = vec2(dot(relativePoint, normalize(formDirection)) / length(formDirection),
+						    dot(relativePoint, normalize(formNormal)) / length(formNormal));
 	return texture(form, texCoord);
 }'
 ]
@@ -55,7 +57,8 @@ uniform vec2 gradientOrigin;
 uniform vec2 gradientDirection;
 uniform bool gradientRadial;
 
-vec4 getColor() {
+vec4 getColor()
+{
 	float texCoord = mix(
 		dot(gradientOrigin - point, normalize(-gradientDirection)),
 		length(gradientOrigin - point),
@@ -81,7 +84,8 @@ GLCanvasFillStyleProgram class >> fragmentShaderSolidFillStyle [
 	
 	^ 'uniform vec4 color;
 
-vec4 getColor() {
+vec4 getColor()
+{
 	return color;
 }'
 ]

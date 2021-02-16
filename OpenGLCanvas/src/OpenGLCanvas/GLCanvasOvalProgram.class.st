@@ -7,7 +7,8 @@ Class {
 { #category : #'shader code' }
 GLCanvasOvalProgram class >> fragmentShaderMain [
 
-	^ 'void main() {
+	^ 'void main()
+{
 	vec2 pos = point - extent / 2.0 - origin;
 	vec2 relativePos = pos / extent * 2.0;
 	if (dot(relativePos, relativePos) > 1.0)

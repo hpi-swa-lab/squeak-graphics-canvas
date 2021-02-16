@@ -461,11 +461,12 @@ GLCanvas >> line: pt1 to: pt2 width: w color: c [
 				self lineProgram vertexAttrib: self lineProgram aPosLocation components: 2 stride: 8 offset: 0.
 				GL checkForError].
 			
-			GL checkForError.
-			self glLibrary lineWidth: w asFloat.
-			GL checkForError.
-			vbo draw: GL_LINE_STRIP from: 0 count: 2.
-			GL checkForError]
+			w > 0 ifTrue: [
+				self glLibrary lineWidth: w asFloat.
+				GL checkForError.
+				vbo draw: GL_LINE_STRIP from: 0 count: 2.
+				GL checkForError]
+			]
 ]
 
 { #category : #accessing }

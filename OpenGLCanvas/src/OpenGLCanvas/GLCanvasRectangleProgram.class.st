@@ -7,23 +7,25 @@ Class {
 { #category : #'shader code' }
 GLCanvasRectangleProgram class >> fragmentShaderMain [
 
-	^ 'void main() {
+	^ 'void main()
+{
 	vec2 relativePos = point - origin;
-	vec2 relativePosFromCircle = abs(relativePos - extent / 2) - (extent/2 - vec2(cornerRadius, cornerRadius));
+	vec2 relativePosFromCircle = abs(relativePos - extent/2.0) - (extent/2.0 - vec2(cornerRadius, cornerRadius));
 	bool inCorner = all(greaterThan(relativePosFromCircle, vec2(0.0, 0.0)));
-	float circleDist = dot(relativePosFromCircle, relativePosFromCircle);
+	float circleDistance = dot(relativePosFromCircle, relativePosFromCircle);
 	
-	if (inCorner && circleDist > cornerRadius * cornerRadius)
+	if (inCorner && circleDistance > cornerRadius * cornerRadius )
 	{
 		discard;
 	}
+	
 	float innerCornerRadius = cornerRadius - borderWidth;
 	vec2 b = vec2(borderWidth, borderWidth);
 	FragColor = mix(
 		getColor(),
 		borderColor,
-		float(any(lessThan(relativePos, b)) || any(greaterThan(point - origin, extent - b)) ||
-			(inCorner && circleDist > innerCornerRadius * innerCornerRadius) )
+		float(any(lessThan(relativePos, b)) || any(greaterThan(point - origin, extent - b))  ||
+			(inCorner && circleDistance > innerCornerRadius * innerCornerRadius))
 		);
 }'
 ]

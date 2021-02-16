@@ -7,7 +7,8 @@ Class {
 { #category : #'shader code' }
 GLCanvasPolygonProgram class >> fragmentShaderMain [
 
-	^ 'void main() {
+	^ 'void main()
+{
 	FragColor = getColor();
 }'
 ]
@@ -18,7 +19,9 @@ GLCanvasPolygonProgram class >> fragmentShaderPrimitivePreamble [
 	^ '#version 330 core
 out vec4 FragColor;
 
-in vec2 point;'
+in vec2 point;
+
+uniform vec2 origin;'
 ]
 
 { #category : #'shader code' }

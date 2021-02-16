@@ -29,7 +29,8 @@ in vec2 TexCoords;
 uniform sampler2D image;
 uniform vec4 color;
 
-void main() {
+void main()
+{
 	FragColor = texture(image, TexCoords) * color ;
 }'
 ]

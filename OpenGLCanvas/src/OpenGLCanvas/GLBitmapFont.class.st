@@ -77,7 +77,7 @@ GLBitmapFont >> offsetFor: aCharacter [
 { #category : #accessing }
 GLBitmapFont >> printableCharacters [
 
-	^ 33 to: 126.
+	^ 33 to: 255.
 ]
 
 { #category : #accessing }
