@@ -16,13 +16,13 @@ Class {
 	#category : #'OpenGLCanvas-Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasBitmapOvalProgram class >> fillStyleUniforms [
 
 	^ self uniformsBitmapFillStyle
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasBitmapOvalProgram class >> fragmentShaderFillColor [
 
 	^ self fragmentShaderBitmapFillStyle

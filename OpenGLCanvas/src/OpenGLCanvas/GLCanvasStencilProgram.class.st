@@ -89,12 +89,6 @@ GLCanvasStencilProgram >> image: anObject [
 	self uniform: imageLocation value: anObject
 ]
 
-{ #category : #accessing }
-GLCanvasStencilProgram >> imageLocation [
-
-	^ imageLocation
-]
-
 { #category : #generated }
 GLCanvasStencilProgram >> initializeLocations [
 
@@ -114,12 +108,6 @@ GLCanvasStencilProgram >> initializeLocations [
 GLCanvasStencilProgram >> mvp: anObject [
 
 	self uniform: mvpLocation value: anObject
-]
-
-{ #category : #accessing }
-GLCanvasStencilProgram >> mvpLocation [
-
-	^ mvpLocation
 ]
 
 { #category : #generated }

@@ -17,7 +17,7 @@ GLCanvasFillStyleProgram class >> attributes [
 { #category : #'shader code' }
 GLCanvasFillStyleProgram class >> fillStyleUniforms [
 
-	self subclassResponsibility
+	self subclassResponsibility.
 ]
 
 { #category : #'shader code' }
@@ -46,7 +46,7 @@ vec4 getColor()
 { #category : #'shader code' }
 GLCanvasFillStyleProgram class >> fragmentShaderFillColor [
 
-	self subclassResponsibility
+	self subclassResponsibility.
 ]
 
 { #category : #'fill styles' }
@@ -70,13 +70,13 @@ vec4 getColor()
 { #category : #'shader code' }
 GLCanvasFillStyleProgram class >> fragmentShaderMain [
 
-	self subclassResponsibility
+	self subclassResponsibility.
 ]
 
 { #category : #'shader code' }
 GLCanvasFillStyleProgram class >> fragmentShaderPrimitivePreamble [
 
-	self subclassResponsibility
+	self subclassResponsibility.
 ]
 
 { #category : #'fill styles' }
@@ -93,7 +93,7 @@ vec4 getColor()
 { #category : #'shader code' }
 GLCanvasFillStyleProgram class >> primitiveUniforms [
 
-	self subclassResponsibility
+	self subclassResponsibility.
 ]
 
 { #category : #'shader code' }

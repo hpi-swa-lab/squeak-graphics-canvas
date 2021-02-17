@@ -17,13 +17,13 @@ Class {
 	#category : #'OpenGLCanvas-Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasBitmapRectangleProgram class >> fillStyleUniforms [
 
 	^ self uniformsBitmapFillStyle
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasBitmapRectangleProgram class >> fragmentShaderFillColor [
 
 	^ self fragmentShaderBitmapFillStyle

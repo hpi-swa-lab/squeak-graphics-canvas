@@ -24,5 +24,5 @@ GLCanvas >> paintImageStore: aStore sourceRect: sourceRect [
 						self textureProgram vertexAttrib: self textureProgram aTexCoordsLocation components: 2 stride: 16 offset: 8.
 						GL checkForError].
 					
-					self vbo draw: GL_TRIANGLE_STRIP]]]
+					self vbo draw: GL_TRIANGLE_STRIP]]].
 ]

@@ -13,13 +13,13 @@ Class {
 	#category : #'OpenGLCanvas-Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasSolidOvalProgram class >> fillStyleUniforms [
 
 	^ self uniformsSolidFillStyle
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasSolidOvalProgram class >> fragmentShaderFillColor [
 
 	^ self fragmentShaderSolidFillStyle

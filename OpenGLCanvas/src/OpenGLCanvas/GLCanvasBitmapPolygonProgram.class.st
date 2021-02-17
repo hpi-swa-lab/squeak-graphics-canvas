@@ -12,13 +12,13 @@ Class {
 	#category : #'OpenGLCanvas-Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasBitmapPolygonProgram class >> fillStyleUniforms [
 
 	^ self uniformsBitmapFillStyle
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasBitmapPolygonProgram class >> fragmentShaderFillColor [
 
 	^ self fragmentShaderBitmapFillStyle

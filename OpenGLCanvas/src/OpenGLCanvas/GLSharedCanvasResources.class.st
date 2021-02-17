@@ -31,7 +31,7 @@ GLSharedCanvasResources class >> updateIn: aGLLibrary [
 	
 	aGLLibrary makeCurrentDuring: [
 		aGLLibrary recompileShaders.
-		aGLLibrary at: self put: self new]
+		aGLLibrary at: self put: self new].
 	
 ]
 
@@ -94,7 +94,7 @@ GLSharedCanvasResources >> initialize [
 	fonts := Dictionary new.
 	
 	self initializePrograms.
-	self initializeBuffers
+	self initializeBuffers.
 ]
 
 { #category : #initialization }
@@ -111,7 +111,7 @@ GLSharedCanvasResources >> initializeBuffers [
 			1.0 0.0 1.0 0.0
 			0.0 1.0 0.0 1.0
 			1.0 1.0 1.0 1.0 ) asFloat32Array.
-	GL checkForError
+	GL checkForError.
 ]
 
 { #category : #initialization }
@@ -132,7 +132,7 @@ GLSharedCanvasResources >> initializePrograms [
 	stencilProgram := GL getShaderProgram: GLCanvasStencilProgram.
 	textureProgram := GL getShaderProgram: GLCanvasTextureProgram.
 	fontProgram := GL getShaderProgram: GLCanvasFontProgram.
-	GL checkForError
+	GL checkForError.
 ]
 
 { #category : #accessing }
@@ -150,7 +150,7 @@ GLSharedCanvasResources >> polygonPrograms [
 { #category : #accessing }
 GLSharedCanvasResources >> rectanglePrograms [
 	
-		^ {#solid -> self solidRectangleProgram . #gradient -> self gradientRectangleProgram . #bitmap -> self bitmapRectangleProgram} asDictionary
+	^ {#solid -> self solidRectangleProgram . #gradient -> self gradientRectangleProgram . #bitmap -> self bitmapRectangleProgram} asDictionary
 ]
 
 { #category : #accessing }

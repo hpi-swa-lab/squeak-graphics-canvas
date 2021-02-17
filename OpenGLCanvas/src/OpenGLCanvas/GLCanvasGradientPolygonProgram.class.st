@@ -12,13 +12,13 @@ Class {
 	#category : #'OpenGLCanvas-Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasGradientPolygonProgram class >> fillStyleUniforms [
 
 	^ self uniformsGradientFillStyle
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasGradientPolygonProgram class >> fragmentShaderFillColor [
 
 	^ self fragmentShaderGradientFillStyle

@@ -9,13 +9,13 @@ Class {
 	#category : #'OpenGLCanvas-Core'
 }
 
-{ #category : #nil }
+{ #category : #'shader code' }
 GLCanvasSolidPolygonProgram class >> fillStyleUniforms [
 
 	^ self uniformsSolidFillStyle
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasSolidPolygonProgram class >> fragmentShaderFillColor [
 
 	^ self fragmentShaderSolidFillStyle

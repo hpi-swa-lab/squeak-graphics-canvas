@@ -78,12 +78,6 @@ GLCanvasTextureProgram >> image: anObject [
 	self uniform: imageLocation value: anObject
 ]
 
-{ #category : #accessing }
-GLCanvasTextureProgram >> imageLocation [
-
-	^ imageLocation
-]
-
 { #category : #generated }
 GLCanvasTextureProgram >> initializeLocations [
 
@@ -102,12 +96,6 @@ GLCanvasTextureProgram >> initializeLocations [
 GLCanvasTextureProgram >> mvp: anObject [
 
 	self uniform: mvpLocation value: anObject
-]
-
-{ #category : #accessing }
-GLCanvasTextureProgram >> mvpLocation [
-
-	^ mvpLocation
 ]
 
 { #category : #generated }

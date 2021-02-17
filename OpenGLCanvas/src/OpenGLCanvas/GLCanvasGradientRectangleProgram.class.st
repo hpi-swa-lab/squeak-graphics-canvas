@@ -17,13 +17,13 @@ Class {
 	#category : #'OpenGLCanvas-Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasGradientRectangleProgram class >> fillStyleUniforms [
 
 	^ self uniformsGradientFillStyle
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasGradientRectangleProgram class >> fragmentShaderFillColor [
 
 	^ self fragmentShaderGradientFillStyle

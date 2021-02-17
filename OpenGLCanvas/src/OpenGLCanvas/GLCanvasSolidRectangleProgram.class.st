@@ -14,13 +14,13 @@ Class {
 	#category : #'OpenGLCanvas-Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasSolidRectangleProgram class >> fillStyleUniforms [
 
 	^ self uniformsSolidFillStyle
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'shader code' }
 GLCanvasSolidRectangleProgram class >> fragmentShaderFillColor [
 
 	^ self fragmentShaderSolidFillStyle
