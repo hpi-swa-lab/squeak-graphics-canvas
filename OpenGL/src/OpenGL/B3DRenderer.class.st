@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'handle'
 	],
-	#category : #'OpenGL-Context',
+	#category : #'OpenGL-Core',
 	#commentStamp : ''
 }
 

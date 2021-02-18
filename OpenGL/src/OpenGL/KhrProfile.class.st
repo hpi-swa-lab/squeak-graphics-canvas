@@ -90,7 +90,7 @@ KhrProfile >> printOn: aStream [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/28/2020 15:09'
+	#timestamp : 'stlu 2/15/2021 21:06'
 }
 KhrProfile >> registry: registry actionTag: actionTag [
 
@@ -98,7 +98,7 @@ KhrProfile >> registry: registry actionTag: actionTag [
 		targetTag tag ~= #type ifTrue: [
 			definitions add: (KhrDefinition
 								registry: registry
-								profile: self
+								owner: self
 								actionTag: actionTag
 								targetTag: targetTag)]]
 ]

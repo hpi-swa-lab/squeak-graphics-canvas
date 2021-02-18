@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'renderer'
 	],
-	#category : #'OpenGL-Context',
+	#category : #'OpenGL-Core',
 	#commentStamp : ''
 }
 

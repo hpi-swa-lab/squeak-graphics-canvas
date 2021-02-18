@@ -2,7 +2,7 @@ Class {
 	#name : #KhrDefinition,
 	#superclass : #KhrRegistryObject,
 	#instVars : [
-		'profile',
+		'owner',
 		'target',
 		'action'
 	],
@@ -12,12 +12,12 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 12/28/2020 14:38'
+	#timestamp : 'stlu 2/15/2021 21:06'
 }
-KhrDefinition class >> registry: registry profile: profile actionTag: actionTag targetTag: targetTag [
+KhrDefinition class >> registry: registry owner: owner actionTag: actionTag targetTag: targetTag [
 
 	^ self new
-		registry: registry profile: profile actionTag: actionTag targetTag: targetTag;
+		registry: registry owner: owner actionTag: actionTag targetTag: targetTag;
 		yourself
 ]
 
@@ -58,6 +58,15 @@ KhrDefinition >> isRequire [
 ]
 
 {
+	#category : #accessing,
+	#timestamp : 'stlu 2/15/2021 21:05'
+}
+KhrDefinition >> owner [
+
+	^ owner
+]
+
+{
 	#category : #printing,
 	#timestamp : 'stlu 12/28/2020 14:42'
 }
@@ -75,22 +84,22 @@ KhrDefinition >> printOn: aStream [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/28/2020 14:36'
+	#timestamp : 'stlu 2/15/2021 21:05'
 }
 KhrDefinition >> profile [
 
-	^ profile
+	^ self owner
 ]
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 12/28/2020 14:39'
+	#timestamp : 'stlu 2/15/2021 21:07'
 }
-KhrDefinition >> registry: registry profile: aProfile actionTag: actionTag targetTag: targetTag [
+KhrDefinition >> registry: registry owner: anOwner actionTag: actionTag targetTag: targetTag [
 
 	| targets |
 	name := targetTag attributes at: #name.
-	profile := aProfile.
+	owner := anOwner.
 	action := actionTag tag.
 	targets := targetTag tag = #command
 				ifTrue: [registry commands]

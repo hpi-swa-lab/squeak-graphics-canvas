@@ -5,7 +5,7 @@ Class {
 		'programInterfaceQuery',
 		'uniformSetter'
 	],
-	#category : #'OpenGL-Context',
+	#category : #'OpenGL-Core',
 	#commentStamp : ''
 }
 

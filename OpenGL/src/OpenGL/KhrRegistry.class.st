@@ -17,7 +17,8 @@ Class {
 		'commands',
 		'enums',
 		'enumGroups',
-		'apis'
+		'apis',
+		'extensions'
 	],
 	#category : #'OpenGL-Generation',
 	#commentStamp : 'stlu 11/6/2020 17:57'
@@ -108,6 +109,17 @@ KhrRegistry >> addEnum: enum [
 
 {
 	#category : #accessing,
+	#timestamp : 'stlu 2/17/2021 17:45'
+}
+KhrRegistry >> addExtension: extension [
+
+	^ extensions
+		at: extension name
+		ifAbsentPut: [extension]
+]
+
+{
+	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:19'
 }
 KhrRegistry >> apis [
@@ -144,7 +156,7 @@ KhrRegistry >> enums [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 10/31/2020 23:59'
+	#timestamp : 'stlu 2/17/2021 17:45'
 }
 KhrRegistry >> initialize [
 
@@ -152,12 +164,13 @@ KhrRegistry >> initialize [
 	enums := Dictionary new: 7000.
 	commands := Dictionary new: 4000.
 	enumGroups := Dictionary new: 500.
-	apis := Dictionary new
+	apis := Dictionary new.
+	extensions := Dictionary new: 500
 ]
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/28/2020 13:01'
+	#timestamp : 'stlu 2/17/2021 17:41'
 }
 KhrRegistry >> tag: registryTag [
 
@@ -172,5 +185,9 @@ KhrRegistry >> tag: registryTag [
 			KhrCommand registry: self tag: commandTag]].
 	
 	registryTag tagsNamed: #feature do: [:featureTag |
-		KhrFeature registry: self tag: featureTag]
+		KhrFeature registry: self tag: featureTag].
+	
+	registryTag tagsNamed: #extensions do: [:extensionsTag |
+		extensionsTag tagsNamed: #extension do: [:extensionTag |
+			KhrExtension registry: self tag: extensionTag]]
 ]

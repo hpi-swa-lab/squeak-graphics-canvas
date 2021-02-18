@@ -18,7 +18,7 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'OpenGL-Context',
+	#category : #'OpenGL-Core',
 	#commentStamp : ''
 }
 
