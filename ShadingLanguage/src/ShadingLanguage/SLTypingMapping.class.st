@@ -7,10 +7,10 @@ Class {
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 1/10/2021 20:26'
+	#timestamp : 'zagto 2/28/2021 19:26'
 }
 SLTypingMapping >> generate: aMessageNode for: aGenerator [
 
 	aMessageNode isUsed ifTrue: [
-		aGenerator visitNode: aMessageNode receiver]
+		aGenerator visitNode: aMessageNode receiver].
 ]

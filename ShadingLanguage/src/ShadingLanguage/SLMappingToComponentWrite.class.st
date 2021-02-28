@@ -7,8 +7,9 @@ Class {
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 12/2/2020 03:01'
+	#timestamp : 'zagto 2/28/2021 19:26'
 }
 SLMappingToComponentWrite >> generate: aMessageNode for: aGenerator [
-	aGenerator generate: aMessageNode componentWrite: targetSelector
+
+	aGenerator generate: aMessageNode componentWrite: targetSelector.
 ]

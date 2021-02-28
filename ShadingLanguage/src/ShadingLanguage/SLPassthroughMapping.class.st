@@ -7,9 +7,10 @@ Class {
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 1/10/2021 13:04'
+	#timestamp : 'zagto 2/28/2021 19:26'
 }
 SLPassthroughMapping >> generate: aMessageNode for: aGenerator [
+
 	(aMessageNode isCascaded not or: [aMessageNode isFirstCascaded]) ifTrue: [
-		aGenerator visitNode: aMessageNode receiver]
+		aGenerator visitNode: aMessageNode receiver].
 ]

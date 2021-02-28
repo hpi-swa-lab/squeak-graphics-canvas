@@ -7,8 +7,9 @@ Class {
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 12/2/2020 03:37'
+	#timestamp : 'zagto 2/28/2021 19:26'
 }
 SLMappingToResourceAssignments >> generate: aMessageNode for: aGenerator [
-	aGenerator generate: aMessageNode resourceWrites: targetSelector
+
+	aGenerator generate: aMessageNode resourceWrites: targetSelector.
 ]

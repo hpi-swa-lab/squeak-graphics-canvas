@@ -24,12 +24,12 @@ SLGenerator class >> example1 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'zagto 1/5/2021 17:10'
+	#timestamp : 'zagto 2/28/2021 19:27'
 }
 SLGenerator class >> initialize [
 	CodeHolder 	addContentsSymbolQuint: #(#glsl #toggleGeneratedGLSL #showingGeneratedGLSLString 'GLSL' 'generated GLSL') afterPosition: (CodeHolder contentsSymbolQuints size).
 	
-	CodeHolder addEditContentsOption: #glsl -> #generatedGLSL
+	CodeHolder addEditContentsOption: #glsl -> #generatedGLSL.
 ]
 
 {
@@ -188,19 +188,19 @@ SLGenerator >> generate: aMessageNode call: callName [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:02'
+	#timestamp : 'zagto 2/28/2021 19:22'
 }
 SLGenerator >> generate: aMessageNode componentRead: componentName [
 
 	self visitNode: aMessageNode receiver.
 	stream
 		nextPut: $.;
-		nextPutAll: componentName
+		nextPutAll: componentName.
 ]
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:03'
+	#timestamp : 'zagto 2/28/2021 19:22'
 }
 SLGenerator >> generate: aMessageNode componentWrite: componentName [
 
@@ -209,12 +209,12 @@ SLGenerator >> generate: aMessageNode componentWrite: componentName [
 		nextPut: $.;
 		nextPutAll: componentName;
 		nextPutAll: ' = '.
-	self visitNode: aMessageNode arguments first
+	self visitNode: aMessageNode arguments first.
 ]
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 1/10/2021 20:15'
+	#timestamp : 'zagto 2/28/2021 19:22'
 }
 SLGenerator >> generate: aMessageNode conditionExpression: isNegated [
 
@@ -226,12 +226,12 @@ SLGenerator >> generate: aMessageNode conditionExpression: isNegated [
 	
 	aMessageNode arguments size > 1 ifTrue: [
 		stream nextPutAll: ' : '.
-		self visitNode: aMessageNode arguments second body statements last]
+		self visitNode: aMessageNode arguments second body statements last].
 ]
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:05'
+	#timestamp : 'zagto 2/28/2021 19:22'
 }
 SLGenerator >> generate: aMessageNode conditionStatement: isNegated [
 
@@ -248,7 +248,7 @@ SLGenerator >> generate: aMessageNode conditionStatement: isNegated [
 		stream nextPutAll: ' else '.
 		self openBlock.
 		self visitNode: aMessageNode arguments second body.
-		self closeBlock]
+		self closeBlock].
 ]
 
 {
@@ -281,9 +281,10 @@ SLGenerator >> generate: aMessageNode forLoopFrom: from to: to [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 12/15/2020 19:01'
+	#timestamp : 'zagto 2/28/2021 19:22'
 }
 SLGenerator >> generate: aMessageNode operator: operator [
+
 	stream nextPutAll: '('.
 	aMessageNode numArgs = 0 ifTrue: [
 		stream nextPutAll: operator.
@@ -293,20 +294,21 @@ SLGenerator >> generate: aMessageNode operator: operator [
 		self visitNode: aMessageNode receiver.
 		stream space; nextPutAll: operator; space.
 		self visitNode: aMessageNode arguments first].
-	stream nextPutAll: ')'
+	stream nextPutAll: ')'.
 ]
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/2/2020 03:27'
+	#timestamp : 'zagto 2/28/2021 19:22'
 }
 SLGenerator >> generate: aMessageNode resourceRead: resourceName [
-	stream nextPutAll: resourceName
+
+	stream nextPutAll: resourceName.
 ]
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:07'
+	#timestamp : 'zagto 2/28/2021 19:22'
 }
 SLGenerator >> generate: aMessageNode resourceWrites: resourceNames [
 
@@ -321,24 +323,24 @@ SLGenerator >> generate: aMessageNode resourceWrites: resourceNames [
 			self visitNode: arg]
 		separatedBy: [
 			self statementSeparator.
-			self newLine]
+			self newLine].
 ]
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 1/10/2021 17:23'
+	#timestamp : 'zagto 2/28/2021 19:22'
 }
 SLGenerator >> generateArrayRead: aMessageNode [
 
 	self visitNode: aMessageNode receiver.
 	stream nextPut: $[.
 	self visitNode: aMessageNode arguments first.
-	stream nextPut: $]
+	stream nextPut: $].
 ]
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 1/10/2021 17:24'
+	#timestamp : 'zagto 2/28/2021 19:23'
 }
 SLGenerator >> generateArrayWrite: aMessageNode [
 
@@ -346,7 +348,7 @@ SLGenerator >> generateArrayWrite: aMessageNode [
 	stream nextPut: $[.
 	self visitNode: aMessageNode arguments first.
 	stream nextPutAll: '] = '.
-	self visitNode: aMessageNode arguments second
+	self visitNode: aMessageNode arguments second.
 ]
 
 {
@@ -369,11 +371,11 @@ SLGenerator >> generateResourceVariables [
 
 {
 	#category : #stream,
-	#timestamp : 'stlu 12/21/2020 14:35'
+	#timestamp : 'zagto 2/28/2021 19:23'
 }
 SLGenerator >> indent [
 
-	indentation := indentation + 1
+	indentation := indentation + 1.
 ]
 
 {
@@ -408,13 +410,13 @@ SLGenerator >> maximumAliasAttempts [
 
 {
 	#category : #stream,
-	#timestamp : 'stlu 12/21/2020 14:36'
+	#timestamp : 'zagto 2/28/2021 19:23'
 }
 SLGenerator >> newLine [
 
 	stream lf.
 	indentation timesRepeat: [
-		stream tab]
+		stream tab].
 ]
 
 {
@@ -430,22 +432,21 @@ SLGenerator >> openBlock [
 
 {
 	#category : #'glsl snippets',
-	#timestamp : 'zagto 2/28/2021 18:37'
+	#timestamp : 'zagto 2/28/2021 19:23'
 }
 SLGenerator >> openMainBlock [
 
-	stream nextPutAll: 'void main() {'.
-	self indent.
-	self newLine.
+	stream nextPutAll: 'void main() '.
+	self openBlock.
 ]
 
 {
 	#category : #stream,
-	#timestamp : 'stlu 12/21/2020 14:35'
+	#timestamp : 'zagto 2/28/2021 19:23'
 }
 SLGenerator >> outdent [
 
-	indentation := indentation - 1
+	indentation := indentation - 1.
 ]
 
 {

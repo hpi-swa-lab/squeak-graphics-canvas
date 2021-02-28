@@ -18,14 +18,14 @@ SLStaticProgram class >> compileShader: selectorStart [
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 12/8/2020 15:20'
+	#timestamp : 'zagto 2/28/2021 19:27'
 }
 SLStaticProgram class >> findShader: selectorStart [
 
 	self theMetaClass selectorsAndMethodsDo: [:selector :method |
 		(selector beginsWith: selectorStart , ':') ifTrue: [
 			^ method getSource asString]].
-	self error: 'Could not find ' , selectorStart
+	self error: 'Could not find ' , selectorStart.
 ]
 
 {
@@ -39,7 +39,7 @@ SLStaticProgram class >> fragmentShader [
 
 {
 	#category : #compiling,
-	#timestamp : 'stlu 12/15/2020 13:59'
+	#timestamp : 'zagto 2/28/2021 19:28'
 }
 SLStaticProgram class >> noteCompilationOf: aSelector meta: isMeta [
 
@@ -60,7 +60,7 @@ SLStaticProgram class >> noteCompilationOf: aSelector meta: isMeta [
 			(context isSymbol or: [context isDestroyed]) ifFalse: [
 				context library makeCurrentDuring: [
 					program updateShaders]]]
-	] on: Error do: [:err | ^ err pass]
+	] on: Error do: [:err | ^ err pass].
 ]
 
 {

@@ -7,8 +7,9 @@ Class {
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 1/10/2021 17:24'
+	#timestamp : 'zagto 2/28/2021 19:25'
 }
 SLMappingToArrayWrite >> generate: aMessageNode for: aGenerator [
-	aGenerator generateArrayWrite: aMessageNode
+
+	aGenerator generateArrayWrite: aMessageNode.
 ]

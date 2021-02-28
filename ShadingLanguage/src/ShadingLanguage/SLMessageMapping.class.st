@@ -11,10 +11,11 @@ Class {
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 12/2/2020 02:59'
+	#timestamp : 'zagto 2/28/2021 19:25'
 }
 SLMessageMapping >> generate: aMessageNode for: aGenerator [
 	
+	self subclassResponsibility.
 ]
 
 {
@@ -28,11 +29,11 @@ SLMessageMapping >> targetSelector [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 14:48'
+	#timestamp : 'zagto 2/28/2021 19:25'
 }
 SLMessageMapping >> targetSelector: anObject [
 
-	targetSelector := anObject
+	targetSelector := anObject.
 ]
 
 {
@@ -46,9 +47,9 @@ SLMessageMapping >> type [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 14:49'
+	#timestamp : 'zagto 2/28/2021 19:25'
 }
 SLMessageMapping >> type: anObject [
 
-	type := anObject
+	type := anObject.
 ]

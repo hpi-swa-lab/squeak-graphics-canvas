@@ -7,8 +7,9 @@ Class {
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 12/2/2020 03:00'
+	#timestamp : 'zagto 2/28/2021 19:25'
 }
 SLMappingToCall >> generate: aMessageNode for: aGenerator [
-	aGenerator generate: aMessageNode call: targetSelector
+
+	aGenerator generate: aMessageNode call: targetSelector.
 ]

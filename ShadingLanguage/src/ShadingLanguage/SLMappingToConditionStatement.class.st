@@ -7,9 +7,9 @@ Class {
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 1/10/2021 19:43'
+	#timestamp : 'zagto 2/28/2021 19:26'
 }
 SLMappingToConditionStatement >> generate: aMessageNode for: aGenerator [
 
-	aGenerator generate: aMessageNode conditionStatement: isNegated
+	aGenerator generate: aMessageNode conditionStatement: isNegated.
 ]

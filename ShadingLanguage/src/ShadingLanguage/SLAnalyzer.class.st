@@ -18,12 +18,12 @@ Class {
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 12/17/2020 10:51'
+	#timestamp : 'zagto 2/28/2021 19:27'
 }
 SLAnalyzer class >> initialize [
 
 	self initializeInterfaceTypeMap.
-	self initializeSwizzlingSelectors
+	self initializeSwizzlingSelectors.
 ]
 
 {
@@ -62,16 +62,16 @@ SLAnalyzer class >> initializeSwizzlingSelectors [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/21/2020 14:03'
+	#timestamp : 'zagto 2/28/2021 19:19'
 }
 SLAnalyzer >> acceptAssignmentNode: anAssignmentNode [
+
 	| name |
 	super acceptAssignmentNode: anAssignmentNode.
 	
 	name := anAssignmentNode variable name.
 	anAssignmentNode type: anAssignmentNode value type.
-	self declareVariable: name toType: anAssignmentNode type
-	
+	self declareVariable: name toType: anAssignmentNode type.
 ]
 
 {
@@ -88,16 +88,17 @@ SLAnalyzer >> acceptBlockNode: aBlockNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 12/1/2020 13:57'
+	#timestamp : 'zagto 2/28/2021 19:20'
 }
 SLAnalyzer >> acceptLiteralNode: aLiteralNode [
+
 	super acceptLiteralNode: aLiteralNode.
-	aLiteralNode type: aLiteralNode value glslType
+	aLiteralNode type: aLiteralNode value glslType.
 ]
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 1/10/2021 14:26'
+	#timestamp : 'zagto 2/28/2021 19:20'
 }
 SLAnalyzer >> acceptMessageNode: aMessageNode [
 
@@ -114,7 +115,7 @@ SLAnalyzer >> acceptMessageNode: aMessageNode [
 	mapping ifNil: [mapping := self findMessageMapping: aMessageNode].
 	
 	aMessageNode mapping: mapping.
-	aMessageNode type: mapping type
+	aMessageNode type: mapping type.
 	
 ]
 
@@ -136,7 +137,7 @@ SLAnalyzer >> acceptMethodNode: aMethodNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 1/10/2021 17:02'
+	#timestamp : 'zagto 2/28/2021 19:20'
 }
 SLAnalyzer >> acceptVariableNode: aVariableNode [
 
@@ -147,12 +148,12 @@ SLAnalyzer >> acceptVariableNode: aVariableNode [
 	type := variableToType
 				at: aVariableNode name
 				ifAbsent: [nil"^ self error: 'Type of variable unknown'"].
-	aVariableNode type: type
+	aVariableNode type: type.
 ]
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 12/18/2020 22:32'
+	#timestamp : 'zagto 2/28/2021 19:20'
 }
 SLAnalyzer >> declareResourceVariable: resourceName toInterface: interfaceSymbol [
 
@@ -162,12 +163,12 @@ SLAnalyzer >> declareResourceVariable: resourceName toInterface: interfaceSymbol
 			interfaceSymbol ~= existingInterface ifTrue: [
 				self error: 'Resource ' , resourceName , ' was already declared as ' , existingInterface ,
 							' but is redeclared as ' , interfaceSymbol]]
-		ifAbsentPut: [interfaceSymbol]
+		ifAbsentPut: [interfaceSymbol].
 ]
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 12/21/2020 14:11'
+	#timestamp : 'zagto 2/28/2021 19:20'
 }
 SLAnalyzer >> declareResourceVariable: name toType: glslType [
 
@@ -177,12 +178,12 @@ SLAnalyzer >> declareResourceVariable: name toType: glslType [
 			glslType ~= existingType ifTrue: [
 				self error: 'Resource ' , name , ' was already declared as ' , existingType ,
 							' but is redeclared as ' , glslType]]
-		ifAbsentPut: [glslType]
+		ifAbsentPut: [glslType].
 ]
 
 {
 	#category : #'program resources',
-	#timestamp : 'stlu 12/21/2020 14:08'
+	#timestamp : 'zagto 2/28/2021 19:20'
 }
 SLAnalyzer >> declareVariable: name toType: glslType [
 
@@ -192,7 +193,7 @@ SLAnalyzer >> declareVariable: name toType: glslType [
 			glslType ~= existingType ifTrue: [
 				self error: 'Variable ' , name , ' was already declared as ' , existingType ,
 							' but is redeclared as ' , glslType]]
-		ifAbsentPut: [glslType]
+		ifAbsentPut: [glslType].
 ]
 
 {
@@ -213,7 +214,7 @@ SLAnalyzer >> findMessageMapping: aMessageNode [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/18/2020 16:37'
+	#timestamp : 'zagto 2/28/2021 19:20'
 }
 SLAnalyzer >> gatherInterfaceVariables: aMethodNode [
 
@@ -226,7 +227,7 @@ SLAnalyzer >> gatherInterfaceVariables: aMethodNode [
 		interface := i = 1
 						ifTrue: [#out]
 						ifFalse: [InterfaceTypeMap at: selPart].
-		interfaceVariables at: arg name put: interface ]
+		interfaceVariables at: arg name put: interface ].
 ]
 
 {

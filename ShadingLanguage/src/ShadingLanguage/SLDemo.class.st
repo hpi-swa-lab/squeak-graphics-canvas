@@ -64,7 +64,7 @@ SLDemo >> cubeData [
 
 {
 	#category : #running,
-	#timestamp : 'zagto 1/5/2021 17:45'
+	#timestamp : 'zagto 2/28/2021 19:28'
 }
 SLDemo >> render [
 
@@ -89,12 +89,12 @@ SLDemo >> render [
 				projection: projection.
 			vbo draw: GL_TRIANGLES from: 0 count: 36]].
 	
-	GL checkForError
+	GL checkForError.
 ]
 
 {
 	#category : #running,
-	#timestamp : 'zagto 1/5/2021 17:45'
+	#timestamp : 'zagto 2/28/2021 19:29'
 }
 SLDemo >> setUp [
 
@@ -126,5 +126,5 @@ SLDemo >> setUp [
 	view := camera viewMatrix.
 				program uniforms view: view.
 	
-	GL checkForError
+	GL checkForError.
 ]
