@@ -1,4 +1,1 @@
-Package {
-	#name : #ShadingLanguage,
-	#'squeak_changestamp' : true
-}
+Package { #name : #ShadingLanguage }

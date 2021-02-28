@@ -83,7 +83,7 @@ SLGenerator >> acceptMessageNode: aMessageNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 1/10/2021 12:42'
+	#timestamp : 'zagto 2/28/2021 18:41'
 }
 SLGenerator >> acceptMethodNode: aMethodNode [
 	analyzer := SLAnalyzer new visitNode: aMethodNode.
@@ -91,33 +91,14 @@ SLGenerator >> acceptMethodNode: aMethodNode [
 	variableNameMap := Dictionary new.
 	indentation := 0.
 
-	stream nextPutAll: '#version 330 core'.
-	self newLine.
-	self newLine.
-	
-	analyzer resourceVariableToInterface keysAndValuesDo: [:name :interface |
-		(name beginsWith: 'gl_') ifFalse: [
-			| type |
-			type := analyzer resourceVariableToType at: name.
-			stream
-				nextPutAll: interface;
-				space.
-			type printDeclarationNamed: name on: stream.
-			stream nextPut: $;.
-			self newLine]].
-	
-	self newLine.
-
-	stream nextPutAll: 'void main() {'.
-	self indent.
-	self newLine.
+	self versionHeader.
+	self generateResourceVariables.
+	self openMainBlock.
 	
 	aMethodNode pragmas do: [ :each | self visitNode: each ].
 	self visitNode: aMethodNode body.
 	
-	self outdent.
-	self newLine.
-	stream nextPut: $}
+	self closeBlock
 ]
 
 {
@@ -161,6 +142,17 @@ SLGenerator >> actualName: varName [
 	^ variableNameMap
 		at: varName
 		ifAbsentPut: [self findUnusedName: varName]
+]
+
+{
+	#category : #'glsl snippets',
+	#timestamp : 'zagto 2/28/2021 18:35'
+}
+SLGenerator >> closeBlock [
+
+	self outdent.
+	self newLine.
+	stream nextPut: $}.
 ]
 
 {
@@ -235,7 +227,7 @@ SLGenerator >> generate: aMessageNode conditionExpression: isNegated [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 1/10/2021 19:20'
+	#timestamp : 'zagto 2/28/2021 18:35'
 }
 SLGenerator >> generate: aMessageNode conditionStatement: isNegated [
 
@@ -247,23 +239,19 @@ SLGenerator >> generate: aMessageNode conditionStatement: isNegated [
 	self indent.
 	self newLine.
 	self visitNode: aMessageNode arguments first body.
-	self outdent.
-	self newLine.
-	stream nextPut: $}.
+	self closeBlock.
 	
 	aMessageNode arguments size > 1 ifTrue: [
 		stream nextPutAll: ' else {'.
 		self indent.
 		self newLine.
 		self visitNode: aMessageNode arguments second body.
-		self outdent.
-		self newLine.
-		stream nextPut: $}]
+		self closeBlock]
 ]
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 1/10/2021 14:11'
+	#timestamp : 'zagto 2/28/2021 18:36'
 }
 SLGenerator >> generate: aMessageNode forLoopFrom: from to: to [
 
@@ -287,9 +275,7 @@ SLGenerator >> generate: aMessageNode forLoopFrom: from to: to [
 	self indent.
 	self newLine.
 	self visitNode: blockNode body.
-	self outdent.
-	self newLine.
-	stream nextPut: $}
+	self closeBlock.
 ]
 
 {
@@ -363,6 +349,24 @@ SLGenerator >> generateArrayWrite: aMessageNode [
 ]
 
 {
+	#category : #visiting,
+	#timestamp : 'zagto 2/28/2021 18:41'
+}
+SLGenerator >> generateResourceVariables [
+	analyzer resourceVariableToInterface keysAndValuesDo: [:name :interface |
+		(name beginsWith: 'gl_') ifFalse: [
+			| type |
+			type := analyzer resourceVariableToType at: name.
+			stream
+				nextPutAll: interface;
+				space.
+			type printDeclarationNamed: name on: stream.
+			stream nextPut: $;.
+			self newLine]].
+	self newLine.
+]
+
+{
 	#category : #stream,
 	#timestamp : 'stlu 12/21/2020 14:35'
 }
@@ -392,6 +396,17 @@ SLGenerator >> newLine [
 ]
 
 {
+	#category : #'glsl snippets',
+	#timestamp : 'zagto 2/28/2021 18:37'
+}
+SLGenerator >> openMainBlock [
+
+	stream nextPutAll: 'void main() {'.
+	self indent.
+	self newLine.
+]
+
+{
 	#category : #stream,
 	#timestamp : 'stlu 12/21/2020 14:35'
 }
@@ -406,4 +421,16 @@ SLGenerator >> outdent [
 }
 SLGenerator >> result [
 	^ stream contents
+]
+
+{
+	#category : #'glsl snippets',
+	#timestamp : 'zagto 2/28/2021 18:29'
+}
+SLGenerator >> versionHeader [
+
+	"currently we only support generating 3.30 shader code"
+	stream nextPutAll: '#version 330 core'.
+	self newLine.
+	self newLine.
 ]
