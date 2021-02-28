@@ -47,49 +47,50 @@ SLGenerator class >> transform: sourceString [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/21/2020 15:05'
+	#timestamp : 'zagto 2/28/2021 18:58'
 }
 SLGenerator >> acceptAssignmentNode: anAssignmentNode [
 
 	self visitNode: anAssignmentNode variable.
 	stream nextPutAll: ' = '.
-	self visitNode: anAssignmentNode value
+	self visitNode: anAssignmentNode value.
 ]
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/2/2020 03:23'
+	#timestamp : 'zagto 2/28/2021 18:58'
 }
 SLGenerator >> acceptBlockNode: aBlockNode [
-	self visitNode: aBlockNode body
+
+	self visitNode: aBlockNode body.
 ]
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 1/10/2021 12:59'
+	#timestamp : 'zagto 2/28/2021 18:58'
 }
 SLGenerator >> acceptLiteralNode: aLiteralNode [
 
-	stream nextPutAll: aLiteralNode value asGLSLLiteral
+	stream nextPutAll: aLiteralNode value asGLSLLiteral.
 ]
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/2/2020 02:58'
+	#timestamp : 'zagto 2/28/2021 18:58'
 }
 SLGenerator >> acceptMessageNode: aMessageNode [
-	aMessageNode mapping generate: aMessageNode for: self
+
+	aMessageNode mapping generate: aMessageNode for: self.
 ]
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 18:41'
+	#timestamp : 'zagto 2/28/2021 19:13'
 }
 SLGenerator >> acceptMethodNode: aMethodNode [
+
 	analyzer := SLAnalyzer new visitNode: aMethodNode.
 	stream := WriteStream on: (String new: aMethodNode source size).
-	variableNameMap := Dictionary new.
-	indentation := 0.
 
 	self versionHeader.
 	self generateResourceVariables.
@@ -98,12 +99,12 @@ SLGenerator >> acceptMethodNode: aMethodNode [
 	aMethodNode pragmas do: [ :each | self visitNode: each ].
 	self visitNode: aMethodNode body.
 	
-	self closeBlock
+	self closeBlock.
 ]
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 1/10/2021 20:22'
+	#timestamp : 'zagto 2/28/2021 18:59'
 }
 SLGenerator >> acceptSequenceNode: aSequenceNode [
 
@@ -111,7 +112,7 @@ SLGenerator >> acceptSequenceNode: aSequenceNode [
 		| type |
 		type := analyzer variableToType at: varNode name.
 		type printDeclarationNamed: (self actualName: varNode name) on: stream.
-		stream nextPut: $;.
+		self statementSeparator.
 		self newLine].
 
 	aSequenceNode temporaries ifNotEmpty: [self newLine].
@@ -119,18 +120,18 @@ SLGenerator >> acceptSequenceNode: aSequenceNode [
 	aSequenceNode statements
 		do: [:each |
 			self visitNode: each.
-			stream nextPutAll: ';']
+			self statementSeparator]
 		separatedBy: [
-			self newLine]
+			self newLine].
 ]
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 1/10/2021 20:21'
+	#timestamp : 'zagto 2/28/2021 18:59'
 }
 SLGenerator >> acceptVariableNode: aVariableNode [
 
-	stream nextPutAll: (self actualName: aVariableNode name)
+	stream nextPutAll: (self actualName: aVariableNode name).
 ]
 
 {
@@ -157,23 +158,24 @@ SLGenerator >> closeBlock [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/21/2020 15:02'
+	#timestamp : 'zagto 2/28/2021 19:01'
 }
 SLGenerator >> findUnusedName: name [
 
 	| alias |
 	alias := name.
-	2 to: 100 do: [:i |
+	2 to: self maximumAliasAttempts do: [:i |
 		(analyzer resourceVariableToType includesKey: alias) ifFalse: [^ alias].
 		alias := name , i].
-	self error: 'Could not alias variable ' , name , '. Something probably went wrong.'
+	self error: 'Could not alias variable ' , name , '. Something probably went wrong.'.
 ]
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/2/2020 03:38'
+	#timestamp : 'zagto 2/28/2021 19:01'
 }
 SLGenerator >> generate: aMessageNode call: callName [
+
 	stream
 		nextPutAll: callName;
 		nextPut: $(.
@@ -181,14 +183,15 @@ SLGenerator >> generate: aMessageNode call: callName [
 	aMessageNode arguments do: [:each |
 		stream nextPut: $,; space.
 		self visitNode: each].
-	stream nextPut: $)
+	stream nextPut: $).
 ]
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/2/2020 03:13'
+	#timestamp : 'zagto 2/28/2021 19:02'
 }
 SLGenerator >> generate: aMessageNode componentRead: componentName [
+
 	self visitNode: aMessageNode receiver.
 	stream
 		nextPut: $.;
@@ -197,9 +200,10 @@ SLGenerator >> generate: aMessageNode componentRead: componentName [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/2/2020 03:12'
+	#timestamp : 'zagto 2/28/2021 19:03'
 }
 SLGenerator >> generate: aMessageNode componentWrite: componentName [
+
 	self visitNode: aMessageNode receiver.
 	stream
 		nextPut: $.;
@@ -227,7 +231,7 @@ SLGenerator >> generate: aMessageNode conditionExpression: isNegated [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 18:35'
+	#timestamp : 'zagto 2/28/2021 19:05'
 }
 SLGenerator >> generate: aMessageNode conditionStatement: isNegated [
 
@@ -235,23 +239,21 @@ SLGenerator >> generate: aMessageNode conditionStatement: isNegated [
 	isNegated ifTrue: [stream nextPutAll: '!('].
 	self visitNode: aMessageNode receiver.
 	isNegated ifTrue: [stream nextPut: $)].
-	stream nextPutAll: ') {'.
-	self indent.
-	self newLine.
+	stream nextPutAll: ') '.
+	self openBlock.
 	self visitNode: aMessageNode arguments first body.
 	self closeBlock.
 	
 	aMessageNode arguments size > 1 ifTrue: [
-		stream nextPutAll: ' else {'.
-		self indent.
-		self newLine.
+		stream nextPutAll: ' else '.
+		self openBlock.
 		self visitNode: aMessageNode arguments second body.
 		self closeBlock]
 ]
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 18:36'
+	#timestamp : 'zagto 2/28/2021 19:06'
 }
 SLGenerator >> generate: aMessageNode forLoopFrom: from to: to [
 
@@ -271,9 +273,8 @@ SLGenerator >> generate: aMessageNode forLoopFrom: from to: to [
 		nextPutAll: '; ';
 		nextPutAll: varNode name;
 		nextPutAll: '++'.
-	stream nextPutAll: ') {'.
-	self indent.
-	self newLine.
+	stream nextPutAll: ') '.
+	self openBlock.
 	self visitNode: blockNode body.
 	self closeBlock.
 ]
@@ -305,7 +306,7 @@ SLGenerator >> generate: aMessageNode resourceRead: resourceName [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/21/2020 20:37'
+	#timestamp : 'zagto 2/28/2021 19:07'
 }
 SLGenerator >> generate: aMessageNode resourceWrites: resourceNames [
 
@@ -319,7 +320,7 @@ SLGenerator >> generate: aMessageNode resourceWrites: resourceNames [
 				nextPutAll: ' = '.
 			self visitNode: arg]
 		separatedBy: [
-			stream nextPut: $;.
+			self statementSeparator.
 			self newLine]
 ]
 
@@ -350,18 +351,18 @@ SLGenerator >> generateArrayWrite: aMessageNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 18:41'
+	#timestamp : 'zagto 2/28/2021 19:11'
 }
 SLGenerator >> generateResourceVariables [
 	analyzer resourceVariableToInterface keysAndValuesDo: [:name :interface |
-		(name beginsWith: 'gl_') ifFalse: [
+		(self isGLIntegrated: name) ifFalse: [
 			| type |
 			type := analyzer resourceVariableToType at: name.
 			stream
 				nextPutAll: interface;
 				space.
 			type printDeclarationNamed: name on: stream.
-			stream nextPut: $;.
+			self statementSeparator.
 			self newLine]].
 	self newLine.
 ]
@@ -377,11 +378,32 @@ SLGenerator >> indent [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 12/2/2020 00:27'
+	#timestamp : 'zagto 2/28/2021 19:14'
 }
 SLGenerator >> initialize [
+
 	super initialize.
-	stream := WriteStream on: (String new: 500)
+	stream := WriteStream on: (String new: 500).
+	variableNameMap := Dictionary new.
+	indentation := 0.
+]
+
+{
+	#category : #visiting,
+	#timestamp : 'zagto 2/28/2021 19:11'
+}
+SLGenerator >> isGLIntegrated: resourceName [
+
+	^ resourceName beginsWith: 'gl_'
+]
+
+{
+	#category : #visiting,
+	#timestamp : 'zagto 2/28/2021 19:01'
+}
+SLGenerator >> maximumAliasAttempts [
+
+	^ 100
 ]
 
 {
@@ -393,6 +415,17 @@ SLGenerator >> newLine [
 	stream lf.
 	indentation timesRepeat: [
 		stream tab]
+]
+
+{
+	#category : #'glsl snippets',
+	#timestamp : 'zagto 2/28/2021 19:04'
+}
+SLGenerator >> openBlock [
+
+	stream nextPut: ${.
+	self indent.
+	self newLine.
 ]
 
 {
@@ -417,10 +450,20 @@ SLGenerator >> outdent [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 11/24/2020 16:46'
+	#timestamp : 'zagto 2/28/2021 19:14'
 }
 SLGenerator >> result [
+
 	^ stream contents
+]
+
+{
+	#category : #'glsl snippets',
+	#timestamp : 'zagto 2/28/2021 19:09'
+}
+SLGenerator >> statementSeparator [
+
+	stream nextPut: $;.
 ]
 
 {
