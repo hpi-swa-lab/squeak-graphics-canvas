@@ -55,27 +55,6 @@ Vector >> copyFrom: array [
 ]
 
 {
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
-Vector >> floatAt: index [
-	"For subclasses that override #at:"
-	<primitive: 'primitiveAt' module: 'FloatArrayPlugin'>
-	^Float fromIEEE32Bit: (self basicAt: index)
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
-Vector >> floatAt: index put: value [
-	"For subclasses that override #at:put:"
-	<primitive: 'primitiveAtPut' module: 'FloatArrayPlugin'>
-	self basicAt: index put: value asIEEE32BitWord.
-	^value
-]
-
-{
 	#category : #initialize,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
