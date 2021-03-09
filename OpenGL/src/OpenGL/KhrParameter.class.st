@@ -100,7 +100,7 @@ KhrParameter >> printOn: aStream [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/28/2020 13:00'
+	#timestamp : 'stlu 3/3/2021 13:32'
 }
 KhrParameter >> registry: registry command: aCommand tag: paramTag [
 
@@ -108,11 +108,8 @@ KhrParameter >> registry: registry command: aCommand tag: paramTag [
 	type := KhrParameter getType: paramTag.
 	command := aCommand.
 	
-	paramTag attributes at: #len ifPresent: [:len |
-		length := len].
-	paramTag attributes at: #group ifPresent: [:groupName |
-		group := KhrEnumGroup registry: registry name: groupName.
-		group addParameter: self].
+	length := paramTag attributes at: #len ifAbsent: [].
+	group := paramTag attributes at: #group ifAbsent: [].
 	
 	command addParameter: self
 ]

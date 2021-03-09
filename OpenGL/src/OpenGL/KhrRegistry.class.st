@@ -16,7 +16,6 @@ Class {
 	#instVars : [
 		'commands',
 		'enums',
-		'enumGroups',
 		'apis',
 		'extensions'
 	],
@@ -140,15 +139,6 @@ KhrRegistry >> commands [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:19'
 }
-KhrRegistry >> enumGroups [
-
-	^ enumGroups
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 10/31/2020 22:19'
-}
 KhrRegistry >> enums [
 
 	^ enums
@@ -156,29 +146,39 @@ KhrRegistry >> enums [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 2/17/2021 17:45'
+	#timestamp : 'stlu 3/4/2021 12:20'
 }
 KhrRegistry >> initialize [
 
 	super initialize.
 	enums := Dictionary new: 7000.
 	commands := Dictionary new: 4000.
-	enumGroups := Dictionary new: 500.
 	apis := Dictionary new.
 	extensions := Dictionary new: 500
 ]
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 2/17/2021 17:41'
+	#timestamp : 'stlu 3/5/2021 12:55'
 }
 KhrRegistry >> tag: registryTag [
 
 	name := 'gl.xml'.
 
 	registryTag tagsNamed: #enums do: [:enumsTag |
+		| vendor type namespace group |
+		vendor := enumsTag attributes at: #vendor ifAbsent: [].
+		type := enumsTag attributes at: #type ifAbsent: [].
+		namespace := enumsTag attributes at: #namespace ifAbsent: [].
+		group := enumsTag attributes at: #group ifAbsent: [].
 		enumsTag tagsNamed: #enum do: [:enumTag |
-			KhrEnum registry: self tag: enumTag]].
+			| enum |
+			enum := KhrEnum fromXMLTag: enumTag.
+			enum vendor: vendor.
+			enum type: type.
+			enum namespace: namespace.
+			group ifNotNil: [enum addGroup: group].
+			self addEnum: enum]].
 	
 	registryTag tagsNamed: #commands do: [:commandsTag |
 		commandsTag tagsNamed: #command do: [:commandTag |

@@ -81,6 +81,15 @@ KhrFeature >> printOn: aStream [
 
 {
 	#category : #accessing,
+	#timestamp : 'stlu 2/22/2021 13:04'
+}
+KhrFeature >> profileNamed: profileName [
+
+	^ profiles at: profileName
+]
+
+{
+	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 13:22'
 }
 KhrFeature >> profiles [

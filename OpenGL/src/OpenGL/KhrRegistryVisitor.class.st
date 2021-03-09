@@ -6,6 +6,25 @@ Class {
 }
 
 {
+	#category : #'instance creation',
+	#timestamp : 'stlu 2/22/2021 12:29'
+}
+KhrRegistryVisitor class >> visit: aNode [
+
+	^ self new visit: aNode
+]
+
+{
+	#category : #utility,
+	#timestamp : 'stlu 2/22/2021 12:27'
+}
+KhrRegistryVisitor >> removeGeneratedMethodsIn: aClass [
+
+	(Pragma allNamed: #generated in: aClass) do: [:pragma |
+		aClass removeSelector: pragma method selector]
+]
+
+{
 	#category : #visiting,
 	#timestamp : 'stlu 12/28/2020 13:12'
 }
@@ -35,9 +54,9 @@ KhrRegistryVisitor >> visitCommand: cmd [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/28/2020 14:30'
+	#timestamp : 'stlu 2/22/2021 12:33'
 }
-KhrRegistryVisitor >> visitDefinition: definition [
+KhrRegistryVisitor >> visitCommandDefinition: definition [
 
 	
 ]
@@ -53,6 +72,15 @@ KhrRegistryVisitor >> visitEnum: enum [
 
 {
 	#category : #visiting,
+	#timestamp : 'stlu 2/22/2021 12:33'
+}
+KhrRegistryVisitor >> visitEnumDefinition: definition [
+
+	
+]
+
+{
+	#category : #visiting,
 	#timestamp : 'stlu 12/28/2020 13:37'
 }
 KhrRegistryVisitor >> visitEnumGroup: enumGroup [
@@ -62,12 +90,11 @@ KhrRegistryVisitor >> visitEnumGroup: enumGroup [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/28/2020 13:33'
+	#timestamp : 'stlu 2/22/2021 12:55'
 }
 KhrRegistryVisitor >> visitFeature: feature [
 
-	feature profiles do: [:profile |
-		self visit: profile]
+	
 ]
 
 {
@@ -95,4 +122,13 @@ KhrRegistryVisitor >> visitRegistry: registry [
 
 	registry apis do: [:api |
 		self visit: api].
+]
+
+{
+	#category : #visiting,
+	#timestamp : 'stlu 2/22/2021 12:33'
+}
+KhrRegistryVisitor >> visitTypeDefinition: definition [
+
+	
 ]

@@ -4,9 +4,22 @@ Class {
 	#instVars : [
 		'name'
 	],
+	#classVars : [
+		'Suffixes'
+	],
 	#category : #'OpenGL-Generation',
 	#commentStamp : ''
 }
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/5/2021 12:58'
+}
+KhrRegistryObject class >> suffixes [
+
+	^ Suffixes ifNil: [
+		Suffixes := #('3DFX' '3DL' 'AMD' 'APPLE' 'ARB' 'ARM' 'ATI' 'DMP' 'EXT' 'FJ' 'GREMEDY' 'HP' 'I3D' 'IBM' 'IMG' 'INGR' 'INTEL' 'KHR' 'MESA' 'MESAX' 'NV' 'NVX' 'OES' 'OML' 'OVR' 'PGI' 'QCOM' 'REND' 'S3TC' 'SGI' 'SGIS' 'SGIX' 'SUN' 'SUNX' 'WIN') asSet]
+]
 
 {
 	#category : #visiting,

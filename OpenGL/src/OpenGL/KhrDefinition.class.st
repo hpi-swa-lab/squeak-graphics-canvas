@@ -12,22 +12,27 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 2/15/2021 21:06'
+	#timestamp : 'stlu 2/22/2021 12:21'
 }
 KhrDefinition class >> registry: registry owner: owner actionTag: actionTag targetTag: targetTag [
 
-	^ self new
+	| cls |
+	cls := self subclassForTarget: targetTag.
+	^ cls new
 		registry: registry owner: owner actionTag: actionTag targetTag: targetTag;
 		yourself
 ]
 
 {
-	#category : #visiting,
-	#timestamp : 'stlu 12/28/2020 14:27'
+	#category : #accessing,
+	#timestamp : 'stlu 2/22/2021 12:20'
 }
-KhrDefinition >> acceptVisitor: aVisitor [
+KhrDefinition class >> subclassForTarget: targetTag [
 
-	^ aVisitor visitDefinition: self
+	targetTag tag = #command ifTrue: [^ KhrCommandDefinition].
+	targetTag tag = #enum ifTrue: [^ KhrEnumDefinition].
+	targetTag tag = #type ifTrue: [^ KhrTypeDefinition].
+	^ nil
 ]
 
 {
@@ -93,21 +98,14 @@ KhrDefinition >> profile [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 2/15/2021 21:07'
+	#timestamp : 'stlu 2/22/2021 12:23'
 }
 KhrDefinition >> registry: registry owner: anOwner actionTag: actionTag targetTag: targetTag [
 
-	| targets |
 	name := targetTag attributes at: #name.
 	owner := anOwner.
 	action := actionTag tag.
-	targets := targetTag tag = #command
-				ifTrue: [registry commands]
-				ifFalse: [
-					targetTag tag = #enum
-						ifTrue: [registry enums]
-						ifFalse: [^ self error: 'Ill-defined xml']].
-	target := targets at: name
+	target := (self targets: registry) at: name
 ]
 
 {

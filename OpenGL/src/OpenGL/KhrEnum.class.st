@@ -3,7 +3,14 @@ Class {
 	#superclass : #KhrRegistryObject,
 	#instVars : [
 		'value',
-		'groups'
+		'namespace',
+		'api',
+		'groups',
+		'vendor',
+		'suffix',
+		'aliases',
+		'type',
+		'typeSuffix'
 	],
 	#category : #'OpenGL-Generation',
 	#commentStamp : ''
@@ -24,12 +31,12 @@ KhrEnum class >> convertEnumValueString: aString [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/1/2020 20:12'
+	#timestamp : 'stlu 3/4/2021 11:36'
 }
-KhrEnum class >> registry: registry tag: enumTag [
+KhrEnum class >> fromXMLTag: tag [
 
 	^ self new
-		registry: registry tag: enumTag;
+		initializeWithXMLTag: tag;
 		yourself
 ]
 
@@ -44,6 +51,42 @@ KhrEnum >> acceptVisitor: aVisitor [
 
 {
 	#category : #accessing,
+	#timestamp : 'stlu 3/4/2021 12:09'
+}
+KhrEnum >> addAlias: aString [
+
+	aliases add: aString
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/5/2021 12:50'
+}
+KhrEnum >> addGroup: aString [
+
+	groups add: aString
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/4/2021 11:40'
+}
+KhrEnum >> aliases [
+
+	^ aliases
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/4/2021 12:05'
+}
+KhrEnum >> api [
+
+	^ api
+]
+
+{
+	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:19'
 }
 KhrEnum >> groups [
@@ -53,12 +96,45 @@ KhrEnum >> groups [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 10/31/2020 22:59'
+	#timestamp : 'stlu 3/5/2021 12:47'
 }
 KhrEnum >> initialize [
 
 	super initialize.
-	groups := OrderedCollection new
+	groups := Set new.
+	aliases := Set new
+]
+
+{
+	#category : #initialization,
+	#timestamp : 'stlu 3/5/2021 13:03'
+}
+KhrEnum >> initializeWithXMLTag: tag [
+
+	name := tag attributeAt: #name.
+	value := self class convertEnumValueString: (tag attributeAt: #value).
+	
+	tag attributes
+		at: #group
+		ifPresent: [:groupNames |
+			groupNames findTokens: ',' do: [:groupName |
+				self addGroup: groupName]].
+	
+	api := tag attributes at: #api ifAbsent: [].
+	typeSuffix := tag attributes at: #type ifAbsent: [].
+	suffix := (name findTokens: '_') last.
+	(self class suffixes includes: suffix) ifFalse: [suffix := nil].
+	
+	tag attributes at: #alias ifPresent: [:alias | self addAlias: alias].
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 3/4/2021 12:13'
+}
+KhrEnum >> isBitmask [
+
+	^ type = 'bitmask'
 ]
 
 {
@@ -71,34 +147,69 @@ KhrEnum >> isEnum [
 ]
 
 {
+	#category : #accessing,
+	#timestamp : 'stlu 3/4/2021 12:24'
+}
+KhrEnum >> namespace [
+
+	^ namespace
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/4/2021 12:24'
+}
+KhrEnum >> namespace: anObject [
+
+	namespace := anObject
+]
+
+{
 	#category : #printing,
-	#timestamp : 'stlu 12/28/2020 14:33'
+	#timestamp : 'stlu 3/5/2021 13:31'
 }
 KhrEnum >> printOn: aStream [
 
 	aStream
 		nextPutAll: name;
 		space;
-		print: value
+		nextPutAll: self valueString
 ]
 
 {
-	#category : #initialization,
-	#timestamp : 'stlu 12/28/2020 13:00'
+	#category : #accessing,
+	#timestamp : 'stlu 3/4/2021 12:27'
 }
-KhrEnum >> registry: registry tag: enumTag [
+KhrEnum >> suffix [
 
-	name := enumTag attributeAt: #name.
-	value := KhrEnum convertEnumValueString: (enumTag attributeAt: #value).
-	
-	enumTag attributes at: #group ifPresent: [:groupNames |
-		groupNames findTokens: ',' do: [:groupName |
-			| group |
-			group := KhrEnumGroup registry: registry name: groupName.
-			group addEnum: self.
-			groups add: group]].
-	
-	registry addEnum: self
+	^ suffix
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/4/2021 12:14'
+}
+KhrEnum >> type [
+
+	^ type
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/4/2021 12:14'
+}
+KhrEnum >> type: anObject [
+
+	type := anObject
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/4/2021 12:19'
+}
+KhrEnum >> typeSuffix [
+
+	^ typeSuffix
 ]
 
 {
@@ -108,4 +219,31 @@ KhrEnum >> registry: registry tag: enumTag [
 KhrEnum >> value [
 
 	^ value
+]
+
+{
+	#category : #printing,
+	#timestamp : 'stlu 3/5/2021 13:30'
+}
+KhrEnum >> valueString [
+
+	^ value storeStringBase: (self isBitmask ifTrue: [2] ifFalse: [16])
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/4/2021 11:40'
+}
+KhrEnum >> vendor [
+
+	^ vendor
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/4/2021 11:40'
+}
+KhrEnum >> vendor: anObject [
+
+	vendor := anObject
 ]

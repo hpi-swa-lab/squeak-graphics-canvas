@@ -3,7 +3,8 @@ Class {
 	#superclass : #KhrRegistryObject,
 	#instVars : [
 		'parameters',
-		'returnType'
+		'returnType',
+		'returnGroup'
 	],
 	#category : #'OpenGL-Generation',
 	#commentStamp : ''
@@ -115,7 +116,7 @@ KhrCommand >> printOn: aStream [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/28/2020 13:00'
+	#timestamp : 'stlu 3/3/2021 13:12'
 }
 KhrCommand >> registry: registry tag: commandTag [
 
@@ -123,10 +124,20 @@ KhrCommand >> registry: registry tag: commandTag [
 	protoTag := commandTag firstTagNamed: #proto.
 	name := (protoTag firstTagNamed: #name) contentString.
 	returnType := KhrParameter getType: protoTag.
+	returnGroup := commandTag attributes at: #group ifAbsent: [].
 	
 	commandTag tagsNamed: #param do: [:paramTag |
 		KhrParameter registry: registry command: self tag: paramTag].
 	registry addCommand: self
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/3/2021 13:11'
+}
+KhrCommand >> returnGroup [
+
+	^ returnGroup
 ]
 
 {

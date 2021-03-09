@@ -34,11 +34,12 @@ GLLibrary class >> api [
 
 {
 	#category : #querying,
-	#timestamp : 'stlu 11/12/2020 14:56'
+	#timestamp : 'stlu 2/18/2021 22:27'
 }
 GLLibrary class >> api: aSymbol [
 
-	^ GLLibrary subclasses detect: [:cls | cls api = aSymbol]
+	^ GLLibrary subclasses detect: [:cls |
+		cls isAPI: aSymbol]
 ]
 
 {
@@ -48,6 +49,15 @@ GLLibrary class >> api: aSymbol [
 GLLibrary class >> api: apiSymbol majorVersion: major minorVersion: minor [
 
 	^ (self api: apiSymbol) majorVersion: major minorVersion: minor
+]
+
+{
+	#category : #querying,
+	#timestamp : 'stlu 2/18/2021 22:45'
+}
+GLLibrary class >> api: apiSymbol majorVersion: major minorVersion: minor profile: profileSymbol [
+
+	^ (self api: apiSymbol) majorVersion: major minorVersion: minor profile: profileSymbol
 ]
 
 {
@@ -69,6 +79,15 @@ GLLibrary class >> context: aContext profile: aSymbol [
 		context: aContext;
 		profile: aSymbol;
 		yourself
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 2/18/2021 22:36'
+}
+GLLibrary class >> defaultProfile [
+
+	^ nil
 ]
 
 {
@@ -96,7 +115,7 @@ GLLibrary class >> example1 [ "self example1"
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 11/9/2020 18:29'
+	#timestamp : 'stlu 2/18/2021 22:47'
 }
 GLLibrary class >> example2 [ "self example2"
 	"A very simple OpenGL 1.0 example showing a rotating red rectangle on white background.
@@ -104,7 +123,7 @@ GLLibrary class >> example2 [ "self example2"
 	| context |
 	context := B3DContext bounds: (0@0 extent: 400@400).
 	[
-		(GL1_0 context: context) makeCurrentDuring: [
+		(GL10 context: context) makeCurrentDuring: [
 			GL disable: GL_DEPTH_TEST.
 			GL clearColor: 1.0 with: 1.0 with: 1.0 with: 1.0.
 			[Sensor anyButtonPressed] whileFalse: [
@@ -155,31 +174,78 @@ GLLibrary class >> initializeErrorMessages [
 ]
 
 {
+	#category : #testing,
+	#timestamp : 'stlu 2/18/2021 22:23'
+}
+GLLibrary class >> isAPI: aSymbol [
+
+	^ self api = aSymbol
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 2/18/2021 22:20'
+}
+GLLibrary class >> isMajorVersion: aNumber [
+
+	^ self majorVersion = aNumber
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 2/18/2021 22:20'
+}
+GLLibrary class >> isMinorVersion: aNumber [
+
+	^ self minorVersion = aNumber
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 2/18/2021 22:29'
+}
+GLLibrary class >> isProfile: aSymbol [
+
+	^ true
+]
+
+{
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 15:02'
+	#timestamp : 'stlu 2/18/2021 22:19'
 }
 GLLibrary class >> majorVersion [
 
-	self subclassResponsibility
+	^ nil
 ]
 
 {
 	#category : #querying,
-	#timestamp : 'stlu 11/12/2020 14:58'
+	#timestamp : 'stlu 2/18/2021 22:36'
 }
 GLLibrary class >> majorVersion: major minorVersion: minor [
 
+	^ self majorVersion: major minorVersion: minor profile: self defaultProfile
+]
+
+{
+	#category : #querying,
+	#timestamp : 'stlu 2/18/2021 22:28'
+}
+GLLibrary class >> majorVersion: major minorVersion: minor profile: profileSymbol [
+
 	^ self withAllSubclasses detect: [:cls |
-		cls majorVersion = major and: [cls minorVersion = minor]]
+		(cls isMajorVersion: major)
+			and: [cls isMinorVersion: minor]
+			and: [cls isProfile: profileSymbol]]
 ]
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 15:03'
+	#timestamp : 'stlu 2/18/2021 22:19'
 }
 GLLibrary class >> minorVersion [
 
-	self subclassResponsibility
+	^ nil
 ]
 
 {
@@ -196,6 +262,19 @@ GLLibrary class >> startUp: resuming [
 							stream nextPut: each]].
 		replacements := Array new: instances size withAll: #SuspendedOpenGL.
 		instances elementsForwardIdentityTo: replacements]
+]
+
+{
+	#category : #'tool icons',
+	#timestamp : 'stlu 2/18/2021 21:30'
+}
+GLLibrary class >> toolIconSelector: aSymbol [
+
+	self methodDictionary at: aSymbol ifPresent: [ :method |
+		method selectorsDo: [:messageSelector |
+			messageSelector == #profileError ifTrue: [^ #no]]].
+	
+	^ super toolIconSelector: aSymbol
 ]
 
 {
@@ -371,6 +450,17 @@ GLLibrary >> getClearColor [
 ]
 
 {
+	#category : #api,
+	#timestamp : 'stlu 3/6/2021 14:43'
+}
+GLLibrary >> getError [
+
+	<generated>
+	<apicall: GLenum 'glGetError' ()>
+	^ self externalCallFailed
+]
+
+{
 	#category : #parameters,
 	#timestamp : 'stlu 11/12/2020 14:17'
 }
@@ -456,6 +546,17 @@ GLLibrary >> getShadingLanguageVersion [
 GLLibrary >> getShadingLanguageVersionString [
 
 	^ self getStringParameter: GL_SHADING_LANGUAGE_VERSION
+]
+
+{
+	#category : #api,
+	#timestamp : 'stlu 3/6/2021 14:43'
+}
+GLLibrary >> getString: name [
+
+	<generated>
+	<apicall: GLubyte* 'glGetString' (GLenum)>
+	^ self externalCallFailed
 ]
 
 {
