@@ -130,14 +130,14 @@ GLSharedCanvasResources >> initialize [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 3/9/2021 12:53'
 }
 GLSharedCanvasResources >> initializeBuffers [
 
 	| vao |
 	vao := GLVertexArray create.
 	vao bind.
-	vbo := GLArrayBuffer create.
+	vbo := GLBuffer create.
 	vbo
 		usage: GL_STATIC_DRAW
 		data: #(
@@ -150,25 +150,25 @@ GLSharedCanvasResources >> initializeBuffers [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 3/9/2021 12:54'
 }
 GLSharedCanvasResources >> initializePrograms [
 	
-	bitmapOvalProgram := GL getShaderProgram: GLCanvasBitmapOvalProgram.
-	gradientOvalProgram := GL getShaderProgram: GLCanvasGradientOvalProgram.
-	solidOvalProgram := GL getShaderProgram: GLCanvasSolidOvalProgram.
+	bitmapOvalProgram := GLCanvasBitmapOvalProgram instance.
+	gradientOvalProgram := GLCanvasGradientOvalProgram instance.
+	solidOvalProgram := GLCanvasSolidOvalProgram instance.
 	
-	bitmapPolygonProgram := GL getShaderProgram: GLCanvasBitmapPolygonProgram.
-	gradientPolygonProgram := GL getShaderProgram: GLCanvasGradientPolygonProgram.
-	solidPolygonProgram := GL getShaderProgram: GLCanvasSolidPolygonProgram.
+	bitmapPolygonProgram := GLCanvasBitmapPolygonProgram instance.
+	gradientPolygonProgram := GLCanvasGradientPolygonProgram instance.
+	solidPolygonProgram := GLCanvasSolidPolygonProgram instance.
 	
-	bitmapRectangleProgram := GL getShaderProgram: GLCanvasBitmapRectangleProgram.
-	gradientRectangleProgram := GL getShaderProgram: GLCanvasGradientRectangleProgram.
-	solidRectangleProgram := GL getShaderProgram: GLCanvasSolidRectangleProgram.
+	bitmapRectangleProgram := GLCanvasBitmapRectangleProgram instance.
+	gradientRectangleProgram := GLCanvasGradientRectangleProgram instance.
+	solidRectangleProgram := GLCanvasSolidRectangleProgram instance.
 	
-	stencilProgram := GL getShaderProgram: GLCanvasStencilProgram.
-	textureProgram := GL getShaderProgram: GLCanvasTextureProgram.
-	fontProgram := GL getShaderProgram: GLCanvasFontProgram.
+	stencilProgram := GLCanvasStencilProgram instance.
+	textureProgram := GLCanvasTextureProgram instance.
+	fontProgram := GLCanvasFontProgram instance.
 	GL checkForError.
 ]
 

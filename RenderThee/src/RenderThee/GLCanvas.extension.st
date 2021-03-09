@@ -11,7 +11,7 @@ GLCanvas >> imageStoreClass [
 
 {
 	#category : #'*RenderThee-LayerTree',
-	#timestamp : ''
+	#timestamp : 'stlu 3/9/2021 12:51'
 }
 GLCanvas >> paintImageStore: aStore sourceRect: sourceRect [
 
@@ -25,9 +25,9 @@ GLCanvas >> paintImageStore: aStore sourceRect: sourceRect [
 						mvp: transform * (Matrix4x4 withScale: aStore extent @ 1.0).
 			
 					self vbo boundDuring: [
-						self textureProgram vertexAttrib: self textureProgram aPosLocation components: 2 stride: 16 offset: 0.
+						self textureProgram inputs aPos components: 2 stride: 16 offset: 0.
 						GL checkForError.
-						self textureProgram vertexAttrib: self textureProgram aTexCoordsLocation components: 2 stride: 16 offset: 8.
+						self textureProgram inputs aTexCoords components: 2 stride: 16 offset: 8.
 						GL checkForError].
 					
 					self vbo draw: GL_TRIANGLE_STRIP]]].
