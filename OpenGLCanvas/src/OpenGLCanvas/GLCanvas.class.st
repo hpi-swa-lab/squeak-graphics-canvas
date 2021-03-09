@@ -260,9 +260,9 @@ GLCanvas >> contentsOfArea: aRectangle into: aForm [
 
 {
 	#category : #'drawing-polygons',
-	#timestamp : 'stlu 3/9/2021 14:33'
+	#timestamp : 'stlu 3/9/2021 16:18'
 }
-GLCanvas >> drawBasePolygon: vbo [
+GLCanvas >> drawBasePolygon: numVertices [
 
 	GL enable: GL_STENCIL_TEST.
 	GL clear: GL_STENCIL_BUFFER_BIT.
@@ -271,22 +271,20 @@ GLCanvas >> drawBasePolygon: vbo [
 	GL stencilOp: GL_INVERT with: GL_INVERT with: GL_INVERT.
 	GL colorMask: GL_FALSE with: GL_FALSE with: GL_FALSE  with: GL_FALSE.
 	
-	vbo boundDuring: [
-		GL drawArrays: GL_TRIANGLE_FAN with: 0 with: vbo size / 8].
+	GL drawArrays: GL_TRIANGLE_FAN with: 0 with: numVertices.
 	
 	GL stencilFunc: GL_EQUAL with: 1 with: 1.
 	GL stencilOp: GL_KEEP with: GL_KEEP with: GL_KEEP.
 	GL colorMask: GL_TRUE with: GL_TRUE with: GL_TRUE  with: GL_TRUE.
 	
-	vbo boundDuring: [
-		GL drawArrays: GL_TRIANGLE_FAN with: 0 with: vbo size / 8].
+	GL drawArrays: GL_TRIANGLE_FAN with: 0 with: numVertices.
 	
 	GL disable: GL_STENCIL_TEST.
 ]
 
 {
 	#category : #'drawing-text',
-	#timestamp : 'stlu 3/9/2021 12:48'
+	#timestamp : 'stlu 3/9/2021 15:54'
 }
 GLCanvas >> drawCharacter: character bitmapFont: bitmapFont position: position [
 	"Draw the character's texture onto a rectangle. self fontProgram and bitmapFont texture need to be bound and the color for self fontProgram needs to be set"
@@ -296,36 +294,33 @@ GLCanvas >> drawCharacter: character bitmapFont: bitmapFont position: position [
 		
 		GL checkForError.
 		
-		self fontProgram
+		self fontProgram uniforms
 			extent: (bitmapFont extentFor: character);
 			offsetX: sourceOffset x asFloat;
 			mvp: transform * (Matrix4x4 withOffset: position).
 
 		GL checkForError.
-
-		self vbo boundDuring: [
-			self fontProgram inputs aPos components: 2 stride: 16 offset: 0.
-			GL checkForError].
-								
-		self vbo draw: GL_TRIANGLE_STRIP].
+		GL drawArrays: GL_TRIANGLE_STRIP with: 0 with: 4].
 ]
 
 {
 	#category : #'drawing-polygons',
-	#timestamp : 'stlu 3/9/2021 12:49'
+	#timestamp : 'stlu 3/9/2021 16:18'
 }
 GLCanvas >> drawPolygon: vertices borderWidth: borderWidth borderColor: borderColor withProgram: aProgram [
 
-	| vbo |
-	aProgram mvp: transform.
-	vbo := self polygonVbo: vertices.
-			
-	vbo boundDuring: [
-		aProgram inputs aPos components: 2 stride: 8 offset: 0.
-		GL checkForError].
+	| vertexData |
+	aProgram uniforms mvp: transform.
 	
-	self drawBasePolygon: vbo.
-	self drawPolygonBorder: vbo borderWidth: borderWidth borderColor: borderColor.
+	vertexData := Float32Array new: vertices size * 2 streamContents: [:s |
+						vertices do: [:position |
+							s nextPut: position x.
+							s nextPut: position y]].
+	
+	self dynamicVBO data: vertexData.
+	
+	self drawBasePolygon: vertices size.
+	self drawPolygonBorder: vertices size borderWidth: borderWidth borderColor: borderColor.
 ]
 
 {
@@ -349,24 +344,25 @@ GLCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: borderWidth
 
 {
 	#category : #'drawing-polygons',
-	#timestamp : 'stlu 3/9/2021 14:33'
+	#timestamp : 'stlu 3/9/2021 16:19'
 }
-GLCanvas >> drawPolygonBorder: vbo borderWidth: borderWidth borderColor: borderColor [
-			
+GLCanvas >> drawPolygonBorder: numVertices borderWidth: borderWidth borderColor: borderColor [
+
 	borderWidth isZero ifFalse: [
 		self solidPolygonProgram color: borderColor.
 		GL lineWidth: borderWidth asFloat.
-		vbo draw: GL_LINE_LOOP from: 0 count: vbo size / 8].
+		GL drawArrays: GL_LINE_LOOP with: 0 with: numVertices].
 ]
 
 {
 	#category : #'drawing-text',
-	#timestamp : ''
+	#timestamp : 'stlu 3/9/2021 16:06'
 }
 GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c [
 
-	self bindAndUseProgram: self fontProgram during: [ | bitmapFont x |
-		self fontProgram
+	self bindAndUseProgram: self fontProgram during: [
+		| bitmapFont x |
+		self fontProgram uniforms
 			image: 0;
 			color: c.
 		
@@ -383,6 +379,15 @@ GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fo
 
 {
 	#category : #accessing,
+	#timestamp : 'stlu 3/9/2021 15:28'
+}
+GLCanvas >> dynamicVBO [
+
+	^ resources dynamicVBO
+]
+
+{
+	#category : #accessing,
 	#timestamp : ''
 }
 GLCanvas >> extent [
@@ -392,22 +397,18 @@ GLCanvas >> extent [
 
 {
 	#category : #'drawing-ovals',
-	#timestamp : 'stlu 3/9/2021 12:50'
+	#timestamp : 'stlu 3/9/2021 15:57'
 }
 GLCanvas >> fillOval: r borderWidth: borderWidth borderColor: borderColor withProgram: aProgram [
 
-	aProgram
+	aProgram uniforms
 		extent: r extent;
 		origin: r origin;
 		borderColor: borderColor;
 		borderWidth: borderWidth asFloat;
 		mvp: transform.
 	
-	self vbo boundDuring: [
-		aProgram inputs aPos components: 2 stride: 16 offset: 0.
-		GL checkForError].
-		
-	self vbo draw: GL_TRIANGLE_STRIP.
+	GL drawArrays: GL_TRIANGLE_STRIP with: 0 with: 4.
 ]
 
 {
@@ -459,23 +460,19 @@ GLCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle:
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 3/9/2021 12:50'
+	#timestamp : 'stlu 3/9/2021 15:57'
 }
 GLCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius borderWidth: borderWidth borderColor: borderColor withProgram: aProgram [
 	
-	aProgram
+	aProgram uniforms
 		extent: aRectangle extent;
 		origin: aRectangle origin;
 		borderColor: borderColor;
 		borderWidth: borderWidth asFloat;
 		cornerRadius: cornerRadius asFloat;
 		mvp: transform.
-	
-	self vbo boundDuring: [
-		aProgram inputs aPos components: 2 stride: 16 offset: 0.
-		GL checkForError].
 		
-	self vbo draw: GL_TRIANGLE_STRIP.
+	GL drawArrays: GL_TRIANGLE_STRIP with: 0 with: 4.
 ]
 
 {
@@ -519,15 +516,6 @@ GLCanvas >> getPixelData [
 ]
 
 {
-	#category : #accessing,
-	#timestamp : ''
-}
-GLCanvas >> glLibrary [
-
-	^ framebuffer library
-]
-
-{
 	#category : #'drawing-images',
 	#timestamp : ''
 }
@@ -555,30 +543,23 @@ GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 3/9/2021 14:33'
+	#timestamp : 'stlu 3/9/2021 15:57'
 }
 GLCanvas >> line: pt1 to: pt2 width: w color: c [
 	
-	| vbo collection |
+	| vbo |
 	w > 0 ifTrue: [
 		self bindAndUseProgram: self lineProgram during: [
-			self lineProgram
+			self lineProgram uniforms
 				color: c;
 				mvp: transform.
 			
-			collection := Array with: pt1 x with: pt1 y with: pt2 x with: pt2 y.
-			vbo := GLBuffer create.
-			vbo
-				usage: GL_STATIC_DRAW
-				data: collection asFloat32Array.
-			
-			vbo boundDuring: [
-				self lineProgram inputs aPos components: 2 stride: 8 offset: 0.
-				GL checkForError].
+			vbo := self dynamicVBO.
+			vbo data: (Float32Array with: pt1 x with: pt1 y with: pt2 x with: pt2 y).
 			
 			GL lineWidth: w asFloat.
 			GL checkForError.
-			vbo draw: GL_LINE_STRIP from: 0 count: 2.
+			GL drawArrays: GL_LINE_STRIP with: 0 with: 2.
 			GL checkForError]].
 ]
 
@@ -637,24 +618,12 @@ GLCanvas >> polygonPrograms [
 ]
 
 {
-	#category : #'drawing-polygons',
-	#timestamp : 'stlu 3/9/2021 12:52'
+	#category : #accessing,
+	#timestamp : 'stlu 3/9/2021 15:05'
 }
-GLCanvas >> polygonVbo: vertices [
+GLCanvas >> quadVBO [
 
-	| vbo collection |
-				
-	collection := OrderedCollection streamContents: [:s |
-		vertices do: [:position |
-			s nextPut: position x.
-			s nextPut: position y]].
-	
-	vbo := GLBuffer create.
-	vbo
-		usage: GL_STATIC_DRAW
-		data: collection asFloat32Array.
-			
-	^ vbo
+	^ resources quadVBO
 ]
 
 {
@@ -679,7 +648,7 @@ GLCanvas >> scaleBy: aPoint during: aBlock [
 
 {
 	#category : #'setting-uniforms',
-	#timestamp : 'stlu 3/9/2021 14:33'
+	#timestamp : 'stlu 3/9/2021 16:13'
 }
 GLCanvas >> setBitmapUniformsFrom: aFillStyle for: aProgram during: aBlock [
 
@@ -687,22 +656,22 @@ GLCanvas >> setBitmapUniformsFrom: aFillStyle for: aProgram during: aBlock [
 	self bindAndUseProgram: aProgram during: [
 		(RtFormStore form: aFillStyle form) glTextureDo: [:texture |
 			texture boundDuring: [
-				aProgram
+				aProgram uniforms
 					formOrigin: aFillStyle origin;
 					formDirection: aFillStyle direction;
 					formNormal: aFillStyle normal.
 					
 				clampMode := aFillStyle isTiled ifTrue: [GL_REPEAT] ifFalse: [GL_CLAMP_TO_EDGE].
-								
-				GL texParameteri: GL_TEXTURE_2D with: GL_TEXTURE_WRAP_S with: clampMode.
-				GL texParameteri: GL_TEXTURE_2D with: GL_TEXTURE_WRAP_T with: clampMode.
+				texture
+					wrapS: clampMode;
+					wrapT: clampMode.
 				
 				aBlock cull: aProgram]]].
 ]
 
 {
 	#category : #'setting-uniforms',
-	#timestamp : 'stlu 3/9/2021 14:34'
+	#timestamp : 'stlu 3/9/2021 16:14'
 }
 GLCanvas >> setGradientUniformsFrom: aFillStyle for: aProgram during: aBlock [
 
@@ -711,14 +680,15 @@ GLCanvas >> setGradientUniformsFrom: aFillStyle for: aProgram during: aBlock [
 		ramp := aFillStyle pixelRamp.
 		(RtFormStore form: (Form extent: ramp size @ 1 depth: 32 bits: ramp)) glTextureDo: [:texture |
 			texture boundDuring: [
-				aProgram
+				aProgram uniforms
 					gradientOrigin: aFillStyle origin;
 					gradientDirection: aFillStyle direction;
 					gradientRadial: aFillStyle radial;
 					pixelRamp: 0.
 				
-				GL texParameteri: GL_TEXTURE_2D with: GL_TEXTURE_WRAP_S with: GL_CLAMP_TO_EDGE.
-				GL texParameteri: GL_TEXTURE_2D with: GL_TEXTURE_WRAP_T with: GL_CLAMP_TO_EDGE.
+				texture
+					wrapS: GL_CLAMP_TO_EDGE;
+					wrapT: GL_CLAMP_TO_EDGE.
 				
 				aBlock cull: aProgram]]].
 ]
@@ -743,14 +713,14 @@ GLCanvas >> setScissorRectangle [
 
 {
 	#category : #'setting-uniforms',
-	#timestamp : ''
+	#timestamp : 'stlu 3/9/2021 16:14'
 }
 GLCanvas >> setSolidUniformsFrom: aFillStyle for: aProgram during: aBlock [
 
 	self bindAndUseProgram: aProgram during: [
-			aProgram color: aFillStyle asColor.
-			
-			aBlock cull: aProgram].
+		aProgram uniforms color: aFillStyle asColor.
+		
+		aBlock cull: aProgram].
 ]
 
 {
@@ -776,7 +746,7 @@ GLCanvas >> setUniformsFrom: aFillStyle for: aDictionary during: aBlock [
 
 {
 	#category : #'drawing-images',
-	#timestamp : 'stlu 3/9/2021 12:52'
+	#timestamp : 'stlu 3/9/2021 15:58'
 }
 GLCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor [
 	
@@ -786,20 +756,14 @@ GLCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor
 		self bindAndUseProgram: self stencilProgram during: [
 			store glTextureDo: [:texture |
 				texture boundDuring: [					
-					self stencilProgram
+					self stencilProgram uniforms
 						sourcePosition: sourceRect origin asFloatPoint / store extent asFloatPoint;
 						sourceExtent: sourceRect extent asFloatPoint / store extent asFloatPoint;
 						color: aColor;
 						image: 0;
 						mvp: transform * (Matrix4x4 withScale: store extent @ 1.0).
-									
-					self vbo boundDuring: [
-						self stencilProgram inputs aPos components: 2 stride: 16 offset: 0.
-						GL checkForError.
-						self stencilProgram inputs aTexCoords components: 2 stride: 16 offset: 8.
-						GL checkForError].
 					
-					self vbo draw: GL_TRIANGLE_STRIP]]]].
+					GL drawArrays: GL_TRIANGLE_STRIP with: 0 with: 4]]]].
 ]
 
 {
@@ -866,15 +830,6 @@ GLCanvas >> translateBy: aPoint during: aBlock [
 	self
 		transformBy: (Matrix4x4 withOffset: aPoint)
 		during: aBlock.
-]
-
-{
-	#category : #accessing,
-	#timestamp : ''
-}
-GLCanvas >> vbo [
-
-	^ resources vbo
 ]
 
 {

@@ -13,24 +13,6 @@ Class {
 	#category : #'shader code',
 	#timestamp : ''
 }
-GLCanvasFillStyleProgram class >> attributes [
-
-	^ #('aPos')
-]
-
-{
-	#category : #'shader code',
-	#timestamp : ''
-}
-GLCanvasFillStyleProgram class >> fillStyleUniforms [
-
-	self subclassResponsibility.
-]
-
-{
-	#category : #'shader code',
-	#timestamp : ''
-}
 GLCanvasFillStyleProgram class >> fragmentShader [
 
 	^ self fragmentShaderPrimitivePreamble , self fragmentShaderFillColor , self fragmentShaderMain
@@ -116,49 +98,4 @@ vec4 getColor()
 {
 	return color;
 }'
-]
-
-{
-	#category : #'shader code',
-	#timestamp : ''
-}
-GLCanvasFillStyleProgram class >> primitiveUniforms [
-
-	self subclassResponsibility.
-]
-
-{
-	#category : #'shader code',
-	#timestamp : ''
-}
-GLCanvasFillStyleProgram class >> uniforms [
-
-	^ self primitiveUniforms , self fillStyleUniforms
-]
-
-{
-	#category : #'fill styles',
-	#timestamp : ''
-}
-GLCanvasFillStyleProgram class >> uniformsBitmapFillStyle [
-
-	^ #('form' 'formOrigin' 'formDirection' 'formNormal')
-]
-
-{
-	#category : #'fill styles',
-	#timestamp : ''
-}
-GLCanvasFillStyleProgram class >> uniformsGradientFillStyle [
-
-	^ #('pixelRamp' 'gradientOrigin' 'gradientDirection' 'gradientRadial')
-]
-
-{
-	#category : #'fill styles',
-	#timestamp : ''
-}
-GLCanvasFillStyleProgram class >> uniformsSolidFillStyle [
-
-	^ #('color')
 ]

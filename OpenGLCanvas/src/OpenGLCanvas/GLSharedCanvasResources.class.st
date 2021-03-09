@@ -5,7 +5,9 @@ Class {
 	#name : #GLSharedCanvasResources,
 	#superclass : #Object,
 	#instVars : [
-		'vbo',
+		'vao',
+		'quadVBO',
+		'dynamicVBO',
 		'bitmapOvalProgram',
 		'bitmapPolygonProgram',
 		'gradientPolygonProgram',
@@ -40,7 +42,7 @@ GLSharedCanvasResources class >> updateIn: aGLLibrary [
 ]
 
 {
-	#category : #accessing,
+	#category : #programs,
 	#timestamp : ''
 }
 GLSharedCanvasResources >> bitmapOvalProgram [
@@ -49,7 +51,7 @@ GLSharedCanvasResources >> bitmapOvalProgram [
 ]
 
 {
-	#category : #accessing,
+	#category : #programs,
 	#timestamp : ''
 }
 GLSharedCanvasResources >> bitmapPolygonProgram [
@@ -58,7 +60,7 @@ GLSharedCanvasResources >> bitmapPolygonProgram [
 ]
 
 {
-	#category : #accessing,
+	#category : #programs,
 	#timestamp : ''
 }
 GLSharedCanvasResources >> bitmapRectangleProgram [
@@ -67,7 +69,16 @@ GLSharedCanvasResources >> bitmapRectangleProgram [
 ]
 
 {
-	#category : #accessing,
+	#category : #buffers,
+	#timestamp : 'stlu 3/9/2021 15:28'
+}
+GLSharedCanvasResources >> dynamicVBO [
+
+	^ dynamicVBO
+]
+
+{
+	#category : #fonts,
 	#timestamp : ''
 }
 GLSharedCanvasResources >> font: aFont [
@@ -79,7 +90,7 @@ GLSharedCanvasResources >> font: aFont [
 ]
 
 {
-	#category : #accessing,
+	#category : #programs,
 	#timestamp : ''
 }
 GLSharedCanvasResources >> fontProgram [
@@ -88,7 +99,7 @@ GLSharedCanvasResources >> fontProgram [
 ]
 
 {
-	#category : #accessing,
+	#category : #programs,
 	#timestamp : ''
 }
 GLSharedCanvasResources >> gradientOvalProgram [
@@ -97,7 +108,7 @@ GLSharedCanvasResources >> gradientOvalProgram [
 ]
 
 {
-	#category : #accessing,
+	#category : #programs,
 	#timestamp : ''
 }
 GLSharedCanvasResources >> gradientPolygonProgram [
@@ -106,7 +117,7 @@ GLSharedCanvasResources >> gradientPolygonProgram [
 ]
 
 {
-	#category : #accessing,
+	#category : #programs,
 	#timestamp : ''
 }
 GLSharedCanvasResources >> gradientRectangleProgram [
@@ -116,36 +127,58 @@ GLSharedCanvasResources >> gradientRectangleProgram [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#timestamp : 'stlu 3/9/2021 15:47'
 }
 GLSharedCanvasResources >> initialize [
 
 	super initialize.
 	
-	fonts := Dictionary new.
-	
 	self initializePrograms.
 	self initializeBuffers.
+	self initializeFonts.
 ]
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/9/2021 12:53'
+	#timestamp : 'stlu 3/9/2021 15:49'
 }
 GLSharedCanvasResources >> initializeBuffers [
 
 	| vao |
 	vao := GLVertexArray create.
 	vao bind.
-	vbo := GLBuffer create.
-	vbo
+
+	quadVBO := GLBuffer create.
+	quadVBO
 		usage: GL_STATIC_DRAW
 		data: #(
 			0.0 0.0 0.0 0.0
 			1.0 0.0 1.0 0.0
 			0.0 1.0 0.0 1.0
 			1.0 1.0 1.0 1.0 ) asFloat32Array.
+	
+	dynamicVBO := GLBuffer create.
+	dynamicVBO usage: GL_DYNAMIC_DRAW size: 100.
+	
 	GL checkForError.
+	
+	self flag: #todo. "should not take the detour over program and program inputs"
+	quadVBO boundDuring: [
+		textureProgram inputs aPos stride: 16 offset: 0.
+		textureProgram inputs aTexCoords stride: 16 offset: 8].
+	dynamicVBO boundDuring: [
+		solidPolygonProgram inputs aPos stride: 8 offset: 0].
+	
+	GL checkForError.
+]
+
+{
+	#category : #initialization,
+	#timestamp : 'stlu 3/9/2021 14:56'
+}
+GLSharedCanvasResources >> initializeFonts [
+
+	fonts := Dictionary new.
 ]
 
 {
@@ -173,34 +206,55 @@ GLSharedCanvasResources >> initializePrograms [
 ]
 
 {
-	#category : #accessing,
-	#timestamp : ''
+	#category : #programs,
+	#timestamp : 'stlu 3/9/2021 14:54'
 }
 GLSharedCanvasResources >> ovalPrograms [
 	
-	^ {#solid -> self solidOvalProgram . #gradient -> self gradientOvalProgram . #bitmap -> self bitmapOvalProgram} asDictionary
+	^ {
+		#solid -> self solidOvalProgram.
+		#gradient -> self gradientOvalProgram.
+		#bitmap -> self bitmapOvalProgram.
+	} as: Dictionary
 ]
 
 {
-	#category : #accessing,
-	#timestamp : ''
+	#category : #programs,
+	#timestamp : 'stlu 3/9/2021 14:54'
 }
 GLSharedCanvasResources >> polygonPrograms [
 
-	^ {#solid -> self solidPolygonProgram . #gradient -> self gradientPolygonProgram . #bitmap -> self bitmapPolygonProgram} asDictionary
+	^ {
+		#solid -> self solidPolygonProgram.
+		#gradient -> self gradientPolygonProgram.
+		#bitmap -> self bitmapPolygonProgram.
+	} as: Dictionary
 ]
 
 {
-	#category : #accessing,
-	#timestamp : ''
+	#category : #buffers,
+	#timestamp : 'stlu 3/9/2021 15:00'
+}
+GLSharedCanvasResources >> quadVBO [
+
+	^ quadVBO
+]
+
+{
+	#category : #programs,
+	#timestamp : 'stlu 3/9/2021 14:55'
 }
 GLSharedCanvasResources >> rectanglePrograms [
 	
-	^ {#solid -> self solidRectangleProgram . #gradient -> self gradientRectangleProgram . #bitmap -> self bitmapRectangleProgram} asDictionary
+	^ {
+		#solid -> self solidRectangleProgram.
+		#gradient -> self gradientRectangleProgram.
+		#bitmap -> self bitmapRectangleProgram.
+	} as: Dictionary
 ]
 
 {
-	#category : #accessing,
+	#category : #programs,
 	#timestamp : ''
 }
 GLSharedCanvasResources >> solidOvalProgram [
@@ -209,7 +263,7 @@ GLSharedCanvasResources >> solidOvalProgram [
 ]
 
 {
-	#category : #accessing,
+	#category : #programs,
 	#timestamp : ''
 }
 GLSharedCanvasResources >> solidPolygonProgram [
@@ -218,7 +272,7 @@ GLSharedCanvasResources >> solidPolygonProgram [
 ]
 
 {
-	#category : #accessing,
+	#category : #programs,
 	#timestamp : ''
 }
 GLSharedCanvasResources >> solidRectangleProgram [
@@ -227,7 +281,7 @@ GLSharedCanvasResources >> solidRectangleProgram [
 ]
 
 {
-	#category : #accessing,
+	#category : #programs,
 	#timestamp : ''
 }
 GLSharedCanvasResources >> stencilProgram [
@@ -236,7 +290,7 @@ GLSharedCanvasResources >> stencilProgram [
 ]
 
 {
-	#category : #accessing,
+	#category : #programs,
 	#timestamp : ''
 }
 GLSharedCanvasResources >> textureProgram [
@@ -245,19 +299,10 @@ GLSharedCanvasResources >> textureProgram [
 ]
 
 {
-	#category : #accessing,
-	#timestamp : ''
+	#category : #buffers,
+	#timestamp : 'stlu 3/9/2021 15:04'
 }
-GLSharedCanvasResources >> vbo [
+GLSharedCanvasResources >> vao [
 
-	^ vbo
-]
-
-{
-	#category : #accessing,
-	#timestamp : ''
-}
-GLSharedCanvasResources >> vbo: anObject [
-
-	vbo := anObject.
+	^ vao
 ]

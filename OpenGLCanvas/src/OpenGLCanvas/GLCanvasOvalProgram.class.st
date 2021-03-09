@@ -48,21 +48,12 @@ uniform float borderWidth;'
 
 {
 	#category : #'shader code',
-	#timestamp : ''
-}
-GLCanvasOvalProgram class >> primitiveUniforms [
-
-	^ #('mvp' 'extent' 'origin' 'borderColor' 'borderWidth')
-]
-
-{
-	#category : #'shader code',
-	#timestamp : ''
+	#timestamp : 'stlu 3/9/2021 14:46'
 }
 GLCanvasOvalProgram class >> vertexShader [
 
-    ^'#version 330 core
-in vec2 aPos;
+	^ '#version 330 core
+layout (location = 0) in vec2 aPos;
 
 uniform mat4 mvp;
 uniform vec2 extent;

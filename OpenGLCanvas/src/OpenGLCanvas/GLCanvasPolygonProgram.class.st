@@ -42,12 +42,12 @@ GLCanvasPolygonProgram class >> primitiveUniforms [
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#timestamp : 'stlu 3/9/2021 15:40'
 }
 GLCanvasPolygonProgram class >> vertexShader [
 
-    ^'#version 330 core
-in vec2 aPos;
+	^ '#version 330 core
+layout (location = 2) in vec2 aPos;
 
 uniform mat4 mvp;
 

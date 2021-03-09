@@ -54,12 +54,12 @@ GLCanvasFontProgram class >> uniforms [
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#timestamp : 'stlu 3/9/2021 14:45'
 }
 GLCanvasFontProgram class >> vertexShader [
 
 	^ '#version 330 core
-in vec2 aPos;
+layout (location = 0) in vec2 aPos;
 
 uniform float offsetX;
 uniform vec2 extent;
