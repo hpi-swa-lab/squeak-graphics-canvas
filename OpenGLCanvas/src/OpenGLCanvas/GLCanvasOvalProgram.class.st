@@ -48,14 +48,15 @@ uniform float borderWidth;'
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 3/9/2021 14:46'
+	#timestamp : 'stlu 3/9/2021 16:51'
 }
 GLCanvasOvalProgram class >> vertexShader [
 
 	^ '#version 330 core
 layout (location = 0) in vec2 aPos;
 
-uniform mat4 mvp;
+uniform mat4 projectionMatrix;
+uniform mat4 modelMatrix;
 uniform vec2 extent;
 uniform vec2 origin;
 
@@ -64,6 +65,6 @@ out vec2 point;
 void main()
 {
 	point = origin + aPos * extent;
-	gl_Position = mvp * vec4(point, 0.0, 1.0);
+	gl_Position = projectionMatrix * modelMatrix * vec4(point, 0.0, 1.0);
 }'
 ]

@@ -17,15 +17,6 @@ Class {
 	#category : #'shader code',
 	#timestamp : ''
 }
-GLCanvasFontProgram class >> attributes [
-
-	^ #('aPos')
-]
-
-{
-	#category : #'shader code',
-	#timestamp : ''
-}
 GLCanvasFontProgram class >> fragmentShader [
 
 	^ '#version 330 core
@@ -44,26 +35,17 @@ void main()
 
 {
 	#category : #'shader code',
-	#timestamp : ''
-}
-GLCanvasFontProgram class >> uniforms [
-	"self compileAccessors"
-
-	^ #('extent' 'offsetX' 'color' 'mvp' 'image')
-]
-
-{
-	#category : #'shader code',
-	#timestamp : 'stlu 3/9/2021 14:45'
+	#timestamp : 'stlu 3/9/2021 16:51'
 }
 GLCanvasFontProgram class >> vertexShader [
 
 	^ '#version 330 core
 layout (location = 0) in vec2 aPos;
 
+uniform mat4 projectionMatrix;
+uniform mat4 modelMatrix;
 uniform float offsetX;
 uniform vec2 extent;
-uniform mat4 mvp;
 uniform sampler2D image;
 
 out vec2 TexCoords;
@@ -71,77 +53,6 @@ out vec2 TexCoords;
 void main()
 {
 	TexCoords = (aPos * extent + vec2(offsetX, 0.0)) / textureSize(image, 0);
-	gl_Position = mvp * vec4(aPos * extent, 0.0, 1.0);
+	gl_Position = projectionMatrix * modelMatrix * vec4(aPos * extent, 0.0, 1.0);
 }'
-]
-
-{
-	#category : #generated,
-	#timestamp : ''
-}
-GLCanvasFontProgram >> aPosLocation [
-
-	^ aPosLocation
-]
-
-{
-	#category : #generated,
-	#timestamp : ''
-}
-GLCanvasFontProgram >> color: anObject [
-
-	self uniform: colorLocation value: anObject
-]
-
-{
-	#category : #generated,
-	#timestamp : ''
-}
-GLCanvasFontProgram >> extent: anObject [
-
-	self uniform: extentLocation value: anObject
-]
-
-{
-	#category : #generated,
-	#timestamp : ''
-}
-GLCanvasFontProgram >> image: anObject [
-
-	self uniform: imageLocation value: anObject
-]
-
-{
-	#category : #generated,
-	#timestamp : ''
-}
-GLCanvasFontProgram >> initializeLocations [
-
-	super initializeLocations.
-	
-	extentLocation := self registerUniform: 'extent'.
-	offsetXLocation := self registerUniform: 'offsetX'.
-	colorLocation := self registerUniform: 'color'.
-	mvpLocation := self registerUniform: 'mvp'.
-	imageLocation := self registerUniform: 'image'.
-	
-	aPosLocation := self registerAttribute: 'aPos'.
-]
-
-{
-	#category : #generated,
-	#timestamp : ''
-}
-GLCanvasFontProgram >> mvp: anObject [
-
-	self uniform: mvpLocation value: anObject
-]
-
-{
-	#category : #generated,
-	#timestamp : ''
-}
-GLCanvasFontProgram >> offsetX: anObject [
-
-	self uniform: offsetXLocation value: anObject
 ]

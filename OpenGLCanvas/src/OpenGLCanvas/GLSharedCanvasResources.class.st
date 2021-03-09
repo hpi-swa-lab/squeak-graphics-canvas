@@ -232,6 +232,29 @@ GLSharedCanvasResources >> polygonPrograms [
 ]
 
 {
+	#category : #programs,
+	#timestamp : 'stlu 3/9/2021 16:44'
+}
+GLSharedCanvasResources >> programsDo: aBlock [
+
+	aBlock value: bitmapOvalProgram.
+	aBlock value: bitmapPolygonProgram.
+	aBlock value: bitmapRectangleProgram.
+	
+	aBlock value: gradientOvalProgram.
+	aBlock value: gradientPolygonProgram.
+	aBlock value: gradientRectangleProgram.
+	
+	aBlock value: solidOvalProgram.
+	aBlock value: solidPolygonProgram.
+	aBlock value: solidRectangleProgram.
+	
+	aBlock value: fontProgram.
+	aBlock value: stencilProgram.
+	aBlock value: textureProgram.
+]
+
+{
 	#category : #buffers,
 	#timestamp : 'stlu 3/9/2021 15:00'
 }

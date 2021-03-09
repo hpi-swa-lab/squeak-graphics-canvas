@@ -42,20 +42,21 @@ GLCanvasPolygonProgram class >> primitiveUniforms [
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 3/9/2021 15:40'
+	#timestamp : 'stlu 3/9/2021 16:51'
 }
 GLCanvasPolygonProgram class >> vertexShader [
 
 	^ '#version 330 core
 layout (location = 2) in vec2 aPos;
 
-uniform mat4 mvp;
+uniform mat4 projectionMatrix;
+uniform mat4 modelMatrix;
 
 out vec2 point;
 
 void main()
 {
 	point = aPos;
-	gl_Position = mvp * vec4(point, 0.0, 1.0);
+	gl_Position = projectionMatrix * modelMatrix * vec4(point, 0.0, 1.0);
 }'
 ]

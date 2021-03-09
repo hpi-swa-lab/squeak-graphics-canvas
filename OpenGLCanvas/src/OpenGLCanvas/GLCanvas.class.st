@@ -10,7 +10,7 @@ Class {
 		'extent',
 		'framebuffer',
 		'transform',
-		'baseTransform',
+		'projectionMatrix',
 		'clipRect',
 		'resources'
 	],
@@ -284,7 +284,7 @@ GLCanvas >> drawBasePolygon: numVertices [
 
 {
 	#category : #'drawing-text',
-	#timestamp : 'stlu 3/9/2021 15:54'
+	#timestamp : 'stlu 3/9/2021 16:48'
 }
 GLCanvas >> drawCharacter: character bitmapFont: bitmapFont position: position [
 	"Draw the character's texture onto a rectangle. self fontProgram and bitmapFont texture need to be bound and the color for self fontProgram needs to be set"
@@ -297,7 +297,7 @@ GLCanvas >> drawCharacter: character bitmapFont: bitmapFont position: position [
 		self fontProgram uniforms
 			extent: (bitmapFont extentFor: character);
 			offsetX: sourceOffset x asFloat;
-			mvp: transform * (Matrix4x4 withOffset: position).
+			modelMatrix: transform * (Matrix4x4 withOffset: position).
 
 		GL checkForError.
 		GL drawArrays: GL_TRIANGLE_STRIP with: 0 with: 4].
@@ -305,12 +305,12 @@ GLCanvas >> drawCharacter: character bitmapFont: bitmapFont position: position [
 
 {
 	#category : #'drawing-polygons',
-	#timestamp : 'stlu 3/9/2021 16:18'
+	#timestamp : 'stlu 3/9/2021 16:48'
 }
 GLCanvas >> drawPolygon: vertices borderWidth: borderWidth borderColor: borderColor withProgram: aProgram [
 
 	| vertexData |
-	aProgram uniforms mvp: transform.
+	aProgram uniforms modelMatrix: transform.
 	
 	vertexData := Float32Array new: vertices size * 2 streamContents: [:s |
 						vertices do: [:position |
@@ -397,7 +397,7 @@ GLCanvas >> extent [
 
 {
 	#category : #'drawing-ovals',
-	#timestamp : 'stlu 3/9/2021 15:57'
+	#timestamp : 'stlu 3/9/2021 16:49'
 }
 GLCanvas >> fillOval: r borderWidth: borderWidth borderColor: borderColor withProgram: aProgram [
 
@@ -406,7 +406,7 @@ GLCanvas >> fillOval: r borderWidth: borderWidth borderColor: borderColor withPr
 		origin: r origin;
 		borderColor: borderColor;
 		borderWidth: borderWidth asFloat;
-		mvp: transform.
+		modelMatrix: transform.
 	
 	GL drawArrays: GL_TRIANGLE_STRIP with: 0 with: 4.
 ]
@@ -460,7 +460,7 @@ GLCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle:
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 3/9/2021 15:57'
+	#timestamp : 'stlu 3/9/2021 16:49'
 }
 GLCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius borderWidth: borderWidth borderColor: borderColor withProgram: aProgram [
 	
@@ -470,7 +470,7 @@ GLCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius borderWidth: 
 		borderColor: borderColor;
 		borderWidth: borderWidth asFloat;
 		cornerRadius: cornerRadius asFloat;
-		mvp: transform.
+		modelMatrix: transform.
 		
 	GL drawArrays: GL_TRIANGLE_STRIP with: 0 with: 4.
 ]
@@ -527,7 +527,7 @@ GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/9/2021 14:33'
+	#timestamp : 'stlu 3/9/2021 16:50'
 }
 GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 
@@ -537,13 +537,18 @@ GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 	resources := GL userData
 					at: GLSharedCanvasResources
 					ifAbsentPut: [ GLSharedCanvasResources new ].
+	
 	clipRect := 0 @ 0 extent: extent.
-	baseTransform := transform := Matrix4x4 ortho: clipRect near: 0 far: 1
+	transform := Matrix4x4 identity.
+	
+	projectionMatrix := Matrix4x4 ortho: clipRect near: 0 far: 1.
+	resources programsDo: [:program |
+		program uniforms projectionMatrix: projectionMatrix].
 ]
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 3/9/2021 15:57'
+	#timestamp : 'stlu 3/9/2021 16:49'
 }
 GLCanvas >> line: pt1 to: pt2 width: w color: c [
 	
@@ -552,7 +557,7 @@ GLCanvas >> line: pt1 to: pt2 width: w color: c [
 		self bindAndUseProgram: self lineProgram during: [
 			self lineProgram uniforms
 				color: c;
-				mvp: transform.
+				modelMatrix: transform.
 			
 			vbo := self dynamicVBO.
 			vbo data: (Float32Array with: pt1 x with: pt1 y with: pt2 x with: pt2 y).
@@ -695,20 +700,19 @@ GLCanvas >> setGradientUniformsFrom: aFillStyle for: aProgram during: aBlock [
 
 {
 	#category : #'drawing-support',
-	#timestamp : 'stlu 3/9/2021 14:37'
+	#timestamp : 'stlu 3/9/2021 17:07'
 }
 GLCanvas >> setScissorRectangle [
 
-	"| rect viewTransform |
-	viewTransform := baseTransform inverseTransformation * transform.
-	
-	viewTransform preservesAxisAlignment ifTrue: [
-		rect := (viewTransform localBoundsToGlobal: clipRect) expanded.
+	| screenTransform rect |
+	screenTransform := (transform translatedBy: 0.0 @ extent y negated @ 0.0) scaledBy: 1.0 @ -1.0 @ 1.0. "flip vertically since screen coordinates have their origin in bottom left not top left"
+	screenTransform preservesAxisAlignment ifTrue: [
+		rect := (screenTransform localBoundsToGlobal: clipRect) expanded.
 		GL
 			scissor: rect left
 			with: rect top
 			with: rect width
-			with: rect height]."
+			with: rect height].
 ]
 
 {
@@ -746,7 +750,7 @@ GLCanvas >> setUniformsFrom: aFillStyle for: aDictionary during: aBlock [
 
 {
 	#category : #'drawing-images',
-	#timestamp : 'stlu 3/9/2021 15:58'
+	#timestamp : 'stlu 3/9/2021 16:49'
 }
 GLCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor [
 	
@@ -761,7 +765,7 @@ GLCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor
 						sourceExtent: sourceRect extent asFloatPoint / store extent asFloatPoint;
 						color: aColor;
 						image: 0;
-						mvp: transform * (Matrix4x4 withScale: store extent @ 1.0).
+						modelMatrix: transform * (Matrix4x4 withScale: store extent @ 1.0).
 					
 					GL drawArrays: GL_TRIANGLE_STRIP with: 0 with: 4]]]].
 ]

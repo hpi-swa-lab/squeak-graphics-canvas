@@ -30,7 +30,7 @@ void main() {
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 3/9/2021 14:46'
+	#timestamp : 'stlu 3/9/2021 16:52'
 }
 GLCanvasStencilProgram class >> vertexShader [
 
@@ -38,7 +38,8 @@ GLCanvasStencilProgram class >> vertexShader [
 layout (location = 0) in vec2 aPos;
 layout (location = 1) in vec2 aTexCoords;
 
-uniform mat4 mvp;
+uniform mat4 projectionMatrix;
+uniform mat4 modelMatrix;
 uniform vec2 sourcePosition;
 uniform vec2 sourceExtent;
 
@@ -47,6 +48,6 @@ out vec2 TexCoords;
 void main()
 {
 	TexCoords = aTexCoords * sourceExtent + sourcePosition;
-	gl_Position = mvp * vec4(aPos, 0.0, 1.0);
+	gl_Position = projectionMatrix * modelMatrix * vec4(aPos, 0.0, 1.0);
 }'
 ]
