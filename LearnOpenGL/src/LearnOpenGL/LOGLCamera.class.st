@@ -74,6 +74,51 @@ LOGLCamera >> mouseSensitivity: anObject [
 ]
 
 {
+	#category : #movement,
+	#timestamp : 'stlu 2/1/2021 14:36'
+}
+LOGLCamera >> moveBackward: deltaTime [
+
+	self moveBy: front negated * movementSpeed * deltaTime
+]
+
+{
+	#category : #movement,
+	#timestamp : 'stlu 2/1/2021 14:34'
+}
+LOGLCamera >> moveBy: aVector [
+
+	position := position + aVector
+]
+
+{
+	#category : #movement,
+	#timestamp : 'stlu 2/1/2021 14:36'
+}
+LOGLCamera >> moveForward: deltaTime [
+
+	self moveBy: front * movementSpeed * deltaTime
+]
+
+{
+	#category : #movement,
+	#timestamp : 'stlu 2/1/2021 14:35'
+}
+LOGLCamera >> moveLeft: deltaTime [
+
+	self moveBy: right negated * movementSpeed * deltaTime
+]
+
+{
+	#category : #movement,
+	#timestamp : 'stlu 2/1/2021 14:36'
+}
+LOGLCamera >> moveRight: deltaTime [
+
+	self moveBy: right * movementSpeed * deltaTime
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 12/16/2020 13:06'
 }
@@ -130,6 +175,30 @@ LOGLCamera >> position: anObject [
 ]
 
 {
+	#category : #updating,
+	#timestamp : 'stlu 2/1/2021 14:13'
+}
+LOGLCamera >> processMouseMove: offset [
+
+	| delta |
+	delta := mouseSensitivity * offset.
+	yaw := yaw + delta x.
+	"make sure that when pitch is out of bounds, screen doesn't get flipped"
+	pitch := pitch + delta y clampLow: -89.0 high: 89.0.
+	
+	self updateCameraVectors
+]
+
+{
+	#category : #updating,
+	#timestamp : 'stlu 2/1/2021 14:14'
+}
+LOGLCamera >> processMouseScroll: offset [
+
+	zoom := zoom - offset clampLow: 1.0 high: 45.0
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 12/16/2020 13:06'
 }
@@ -173,11 +242,14 @@ LOGLCamera >> updateCameraVectors [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 12:59'
+	#timestamp : 'stlu 2/1/2021 14:19'
 }
 LOGLCamera >> viewMatrix [
 
-	^ Matrix4x4 position: position target: position + front up: up
+	^ Matrix4x4
+		lookAt: position + front
+		from: position
+		up: up
 ]
 
 {

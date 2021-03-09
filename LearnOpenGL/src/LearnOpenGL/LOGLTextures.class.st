@@ -51,7 +51,7 @@ LOGLTextures >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 1/7/2021 11:24'
+	#timestamp : 'stlu 1/29/2021 14:48'
 }
 LOGLTextures >> setUp [
 
@@ -64,7 +64,7 @@ LOGLTextures >> setUp [
 			wrapT: GL_REPEAT;
 			minificationFilter: GL_LINEAR;
 			magnificationFilter: GL_LINEAR;
-			imageForm: LOGLImages container;
+			imageForm: LOGLImages container flipVertically;
 			generateMipmap].
 	
 	vao boundDuring: [

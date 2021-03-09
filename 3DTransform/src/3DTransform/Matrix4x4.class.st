@@ -43,6 +43,32 @@ Matrix4x4 class >> initialize [
 ]
 
 {
+	#category : #'instance creation',
+	#timestamp : 'stlu 2/1/2021 13:39'
+}
+Matrix4x4 class >> lookAt: center from: eye up: up [
+	"Build a right-handed look at view matrix. The camera is positioned at eye, looks at center, and is positioned in a world where up points upwards in world space. Up is expected to be normalized already."
+	| forward sideward upward |
+	forward := (eye - center) normalized.
+	sideward := (forward cross: up) normalized.
+	upward := sideward cross: forward.
+	^ self identity
+		a11: sideward x;
+		a12: sideward y;
+		a13: sideward z;
+		a21: upward x;
+		a22: upward y;
+		a23: upward z;
+		a31: forward x negated;
+		a32: forward y negated;
+		a33: forward z negated;
+		a14: (sideward dot: eye) negated;
+		a24: (upward dot: eye) negated;
+		a34: (forward dot: eye) negated;
+		yourself
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }

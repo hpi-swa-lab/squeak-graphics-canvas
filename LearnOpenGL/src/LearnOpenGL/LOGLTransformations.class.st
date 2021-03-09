@@ -12,6 +12,20 @@ Class {
 }
 
 {
+	#category : #running,
+	#timestamp : 'stlu 1/29/2021 15:11'
+}
+LOGLTransformations >> draw [
+
+	| transform |
+	transform := Matrix4x4 identity.
+	transform := transform rotatedBy: lastFrameTime radiansToDegrees around: 0.0 @ 0.0 @ 1.0.
+	transform := transform translatedBy: 0.5 @ -0.5 @ 0.0.
+	program uniforms transform: transform.
+	super draw
+]
+
+{
 	#category : #shaders,
 	#timestamp : 'stlu 1/7/2021 11:26'
 }
@@ -34,32 +48,20 @@ void main()
 ]
 
 {
-	#category : #rendering,
-	#timestamp : 'stlu 1/7/2021 12:42'
+	#category : #running,
+	#timestamp : 'stlu 1/29/2021 15:12'
 }
 LOGLTransformations >> render [
 
-	GL setClearColor: (Color r: 0.2 g: 0.3 b: 0.3).
-	GL clear: GL_COLOR_BUFFER_BIT.
-
-	GL activeTexture: GL_TEXTURE0.
-	texture bind.
 	GL activeTexture: GL_TEXTURE1.
 	texture2 bind.
 	
-	vao boundDuring: [
-		program useDuring: [
-			| transform |
-			transform := Matrix4x4 identity.
-			transform := transform rotatedBy: lastFrameTime radiansToDegrees around: 0.0 @ 0.0 @ 1.0.
-			transform := transform translatedBy: 0.5 @ -0.5 @ 0.0.
-			program uniforms transform: transform.
-			self draw]]
+	super render
 ]
 
 {
 	#category : #running,
-	#timestamp : 'stlu 1/7/2021 11:28'
+	#timestamp : 'stlu 1/29/2021 14:48'
 }
 LOGLTransformations >> setUp [
 
@@ -72,7 +74,7 @@ LOGLTransformations >> setUp [
 			wrapT: GL_REPEAT;
 			minificationFilter: GL_LINEAR;
 			magnificationFilter: GL_LINEAR;
-			imageForm: LOGLImages awesomeface;
+			imageForm: LOGLImages awesomeface flipVertically;
 			generateMipmap].
 	
 	program uniforms
