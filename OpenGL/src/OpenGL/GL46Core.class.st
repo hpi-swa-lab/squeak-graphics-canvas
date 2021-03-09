@@ -1,6 +1,6 @@
 Class {
-	#name : #'GL4_6',
-	#superclass : #'GL4_5',
+	#name : #GL46Core,
+	#superclass : #GL45Core,
 	#category : #'OpenGL-API-GL',
 	#commentStamp : ''
 }
@@ -9,7 +9,7 @@ Class {
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
-GL4_6 class >> majorVersion [
+GL46Core class >> majorVersion [
 
 	^ 4
 ]
@@ -18,7 +18,7 @@ GL4_6 class >> majorVersion [
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
-GL4_6 class >> minorVersion [
+GL46Core class >> minorVersion [
 
 	^ 6
 ]
@@ -27,16 +27,16 @@ GL4_6 class >> minorVersion [
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 14:53'
 }
-GL4_6 class >> versionNumber [
+GL46Core class >> versionNumber [
 
 	^ 46
 ]
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> CLIPPING_INPUT_PRIMITIVES [
+GL46Core >> CLIPPING_INPUT_PRIMITIVES [
 
 	<generated>
 	^ GL_CLIPPING_INPUT_PRIMITIVES
@@ -44,9 +44,9 @@ GL4_6 >> CLIPPING_INPUT_PRIMITIVES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> CLIPPING_OUTPUT_PRIMITIVES [
+GL46Core >> CLIPPING_OUTPUT_PRIMITIVES [
 
 	<generated>
 	^ GL_CLIPPING_OUTPUT_PRIMITIVES
@@ -54,9 +54,9 @@ GL4_6 >> CLIPPING_OUTPUT_PRIMITIVES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> COMPUTE_SHADER_INVOCATIONS [
+GL46Core >> COMPUTE_SHADER_INVOCATIONS [
 
 	<generated>
 	^ GL_COMPUTE_SHADER_INVOCATIONS
@@ -64,9 +64,9 @@ GL4_6 >> COMPUTE_SHADER_INVOCATIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> CONTEXT_FLAG_NO_ERROR_BIT [
+GL46Core >> CONTEXT_FLAG_NO_ERROR_BIT [
 
 	<generated>
 	^ GL_CONTEXT_FLAG_NO_ERROR_BIT
@@ -74,9 +74,9 @@ GL4_6 >> CONTEXT_FLAG_NO_ERROR_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> CONTEXT_RELEASE_BEHAVIOR [
+GL46Core >> CONTEXT_RELEASE_BEHAVIOR [
 
 	<generated>
 	^ GL_CONTEXT_RELEASE_BEHAVIOR
@@ -84,9 +84,9 @@ GL4_6 >> CONTEXT_RELEASE_BEHAVIOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> CONTEXT_RELEASE_BEHAVIOR_FLUSH [
+GL46Core >> CONTEXT_RELEASE_BEHAVIOR_FLUSH [
 
 	<generated>
 	^ GL_CONTEXT_RELEASE_BEHAVIOR_FLUSH
@@ -94,9 +94,9 @@ GL4_6 >> CONTEXT_RELEASE_BEHAVIOR_FLUSH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> FRAGMENT_SHADER_INVOCATIONS [
+GL46Core >> FRAGMENT_SHADER_INVOCATIONS [
 
 	<generated>
 	^ GL_FRAGMENT_SHADER_INVOCATIONS
@@ -104,9 +104,9 @@ GL4_6 >> FRAGMENT_SHADER_INVOCATIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> GEOMETRY_SHADER_INVOCATIONS [
+GL46Core >> GEOMETRY_SHADER_INVOCATIONS [
 
 	<generated>
 	^ GL_GEOMETRY_SHADER_INVOCATIONS
@@ -114,9 +114,9 @@ GL4_6 >> GEOMETRY_SHADER_INVOCATIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> GEOMETRY_SHADER_PRIMITIVES_EMITTED [
+GL46Core >> GEOMETRY_SHADER_PRIMITIVES_EMITTED [
 
 	<generated>
 	^ GL_GEOMETRY_SHADER_PRIMITIVES_EMITTED
@@ -124,9 +124,9 @@ GL4_6 >> GEOMETRY_SHADER_PRIMITIVES_EMITTED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> MAX_TEXTURE_MAX_ANISOTROPY [
+GL46Core >> MAX_TEXTURE_MAX_ANISOTROPY [
 
 	<generated>
 	^ GL_MAX_TEXTURE_MAX_ANISOTROPY
@@ -134,9 +134,9 @@ GL4_6 >> MAX_TEXTURE_MAX_ANISOTROPY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> NONE [
+GL46Core >> NONE [
 
 	<generated>
 	^ GL_NONE
@@ -144,9 +144,9 @@ GL4_6 >> NONE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> NUM_SPIR_V_EXTENSIONS [
+GL46Core >> NUM_SPIR_V_EXTENSIONS [
 
 	<generated>
 	^ GL_NUM_SPIR_V_EXTENSIONS
@@ -154,9 +154,9 @@ GL4_6 >> NUM_SPIR_V_EXTENSIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> PARAMETER_BUFFER [
+GL46Core >> PARAMETER_BUFFER [
 
 	<generated>
 	^ GL_PARAMETER_BUFFER
@@ -164,9 +164,9 @@ GL4_6 >> PARAMETER_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> PARAMETER_BUFFER_BINDING [
+GL46Core >> PARAMETER_BUFFER_BINDING [
 
 	<generated>
 	^ GL_PARAMETER_BUFFER_BINDING
@@ -174,9 +174,9 @@ GL4_6 >> PARAMETER_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> POLYGON_OFFSET_CLAMP [
+GL46Core >> POLYGON_OFFSET_CLAMP [
 
 	<generated>
 	^ GL_POLYGON_OFFSET_CLAMP
@@ -184,9 +184,9 @@ GL4_6 >> POLYGON_OFFSET_CLAMP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> PRIMITIVES_SUBMITTED [
+GL46Core >> PRIMITIVES_SUBMITTED [
 
 	<generated>
 	^ GL_PRIMITIVES_SUBMITTED
@@ -194,9 +194,9 @@ GL4_6 >> PRIMITIVES_SUBMITTED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> SHADER_BINARY_FORMAT_SPIR_V [
+GL46Core >> SHADER_BINARY_FORMAT_SPIR_V [
 
 	<generated>
 	^ GL_SHADER_BINARY_FORMAT_SPIR_V
@@ -204,9 +204,9 @@ GL4_6 >> SHADER_BINARY_FORMAT_SPIR_V [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> SPIR_V_BINARY [
+GL46Core >> SPIR_V_BINARY [
 
 	<generated>
 	^ GL_SPIR_V_BINARY
@@ -214,9 +214,9 @@ GL4_6 >> SPIR_V_BINARY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> SPIR_V_EXTENSIONS [
+GL46Core >> SPIR_V_EXTENSIONS [
 
 	<generated>
 	^ GL_SPIR_V_EXTENSIONS
@@ -224,9 +224,9 @@ GL4_6 >> SPIR_V_EXTENSIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> TESS_CONTROL_SHADER_PATCHES [
+GL46Core >> TESS_CONTROL_SHADER_PATCHES [
 
 	<generated>
 	^ GL_TESS_CONTROL_SHADER_PATCHES
@@ -234,9 +234,9 @@ GL4_6 >> TESS_CONTROL_SHADER_PATCHES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> TESS_EVALUATION_SHADER_INVOCATIONS [
+GL46Core >> TESS_EVALUATION_SHADER_INVOCATIONS [
 
 	<generated>
 	^ GL_TESS_EVALUATION_SHADER_INVOCATIONS
@@ -244,9 +244,9 @@ GL4_6 >> TESS_EVALUATION_SHADER_INVOCATIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> TEXTURE_MAX_ANISOTROPY [
+GL46Core >> TEXTURE_MAX_ANISOTROPY [
 
 	<generated>
 	^ GL_TEXTURE_MAX_ANISOTROPY
@@ -254,9 +254,9 @@ GL4_6 >> TEXTURE_MAX_ANISOTROPY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> TRANSFORM_FEEDBACK_OVERFLOW [
+GL46Core >> TRANSFORM_FEEDBACK_OVERFLOW [
 
 	<generated>
 	^ GL_TRANSFORM_FEEDBACK_OVERFLOW
@@ -264,9 +264,9 @@ GL4_6 >> TRANSFORM_FEEDBACK_OVERFLOW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> TRANSFORM_FEEDBACK_STREAM_OVERFLOW [
+GL46Core >> TRANSFORM_FEEDBACK_STREAM_OVERFLOW [
 
 	<generated>
 	^ GL_TRANSFORM_FEEDBACK_STREAM_OVERFLOW
@@ -274,9 +274,9 @@ GL4_6 >> TRANSFORM_FEEDBACK_STREAM_OVERFLOW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> VERTEX_SHADER_INVOCATIONS [
+GL46Core >> VERTEX_SHADER_INVOCATIONS [
 
 	<generated>
 	^ GL_VERTEX_SHADER_INVOCATIONS
@@ -284,9 +284,9 @@ GL4_6 >> VERTEX_SHADER_INVOCATIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> VERTICES_SUBMITTED [
+GL46Core >> VERTICES_SUBMITTED [
 
 	<generated>
 	^ GL_VERTICES_SUBMITTED
@@ -294,9 +294,9 @@ GL4_6 >> VERTICES_SUBMITTED [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> multiDrawArraysIndirectCount: mode with: indirect with: drawcount with: maxdrawcount with: stride [
+GL46Core >> multiDrawArraysIndirectCount: mode with: indirect with: drawcount with: maxdrawcount with: stride [
 
 	<generated>
 	<apicall: void 'glMultiDrawArraysIndirectCount' (GLenum void* GLintptr GLsizei GLsizei)>
@@ -305,9 +305,9 @@ GL4_6 >> multiDrawArraysIndirectCount: mode with: indirect with: drawcount with:
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> multiDrawElementsIndirectCount: mode with: type with: indirect with: drawcount with: maxdrawcount with: stride [
+GL46Core >> multiDrawElementsIndirectCount: mode with: type with: indirect with: drawcount with: maxdrawcount with: stride [
 
 	<generated>
 	<apicall: void 'glMultiDrawElementsIndirectCount' (GLenum GLenum void* GLintptr GLsizei GLsizei)>
@@ -316,9 +316,9 @@ GL4_6 >> multiDrawElementsIndirectCount: mode with: type with: indirect with: dr
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> polygonOffsetClamp: factor with: units with: clamp [
+GL46Core >> polygonOffsetClamp: factor with: units with: clamp [
 
 	<generated>
 	<apicall: void 'glPolygonOffsetClamp' (GLfloat GLfloat GLfloat)>
@@ -327,9 +327,9 @@ GL4_6 >> polygonOffsetClamp: factor with: units with: clamp [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_6 >> specializeShader: shader with: pEntryPoint with: numSpecializationConstants with: pConstantIndex with: pConstantValue [
+GL46Core >> specializeShader: shader with: pEntryPoint with: numSpecializationConstants with: pConstantIndex with: pConstantValue [
 
 	<generated>
 	<apicall: void 'glSpecializeShader' (GLuint GLchar* GLuint GLuint* GLuint*)>

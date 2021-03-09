@@ -1,33 +1,15 @@
 Class {
-	#name : #'GLES1_0',
-	#superclass : #GLLibrary,
+	#name : #GLES10,
+	#superclass : #GLES1API,
 	#category : #'OpenGL-API-GLES1',
 	#commentStamp : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/11/2020 14:19'
-}
-GLES1_0 class >> api [
-
-	^ #gles1
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/3/2020 12:49'
-}
-GLES1_0 class >> defaultProfile [
-
-	^ #common
-]
-
-{
-	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 16:10'
 }
-GLES1_0 class >> majorVersion [
+GLES10 class >> majorVersion [
 
 	^ 1
 ]
@@ -36,40 +18,25 @@ GLES1_0 class >> majorVersion [
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 16:10'
 }
-GLES1_0 class >> minorVersion [
+GLES10 class >> minorVersion [
 
 	^ 0
 ]
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:24'
-}
-GLES1_0 class >> moduleName [
-
-	| platform version |
-	platform := Smalltalk platformName.
-	version := Smalltalk osVersion.
-	platform = 'unix' ifTrue: [
-		version = 'linux-gnu' ifTrue: [^ 'libGLESv1_CM.so'].
-		^ self notYetImplemented].
-	self notYetImplemented
-]
-
-{
-	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 16:10'
 }
-GLES1_0 class >> versionNumber [
+GLES10 class >> versionNumber [
 
 	^ 10
 ]
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ACTIVE_TEXTURE [
+GLES10 >> ACTIVE_TEXTURE [
 
 	<generated>
 	^ GL_ACTIVE_TEXTURE
@@ -77,9 +44,9 @@ GLES1_0 >> ACTIVE_TEXTURE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ADD [
+GLES10 >> ADD [
 
 	<generated>
 	^ GL_ADD
@@ -87,9 +54,9 @@ GLES1_0 >> ADD [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ADD_SIGNED [
+GLES10 >> ADD_SIGNED [
 
 	<generated>
 	^ GL_ADD_SIGNED
@@ -97,9 +64,9 @@ GLES1_0 >> ADD_SIGNED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ALIASED_LINE_WIDTH_RANGE [
+GLES10 >> ALIASED_LINE_WIDTH_RANGE [
 
 	<generated>
 	^ GL_ALIASED_LINE_WIDTH_RANGE
@@ -107,9 +74,9 @@ GLES1_0 >> ALIASED_LINE_WIDTH_RANGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ALIASED_POINT_SIZE_RANGE [
+GLES10 >> ALIASED_POINT_SIZE_RANGE [
 
 	<generated>
 	^ GL_ALIASED_POINT_SIZE_RANGE
@@ -117,9 +84,9 @@ GLES1_0 >> ALIASED_POINT_SIZE_RANGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ALPHA [
+GLES10 >> ALPHA [
 
 	<generated>
 	^ GL_ALPHA
@@ -127,9 +94,9 @@ GLES1_0 >> ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ALPHA_BITS [
+GLES10 >> ALPHA_BITS [
 
 	<generated>
 	^ GL_ALPHA_BITS
@@ -137,9 +104,9 @@ GLES1_0 >> ALPHA_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ALPHA_SCALE [
+GLES10 >> ALPHA_SCALE [
 
 	<generated>
 	^ GL_ALPHA_SCALE
@@ -147,9 +114,9 @@ GLES1_0 >> ALPHA_SCALE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ALPHA_TEST [
+GLES10 >> ALPHA_TEST [
 
 	<generated>
 	^ GL_ALPHA_TEST
@@ -157,9 +124,9 @@ GLES1_0 >> ALPHA_TEST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ALPHA_TEST_FUNC [
+GLES10 >> ALPHA_TEST_FUNC [
 
 	<generated>
 	^ GL_ALPHA_TEST_FUNC
@@ -167,9 +134,9 @@ GLES1_0 >> ALPHA_TEST_FUNC [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ALPHA_TEST_REF [
+GLES10 >> ALPHA_TEST_REF [
 
 	<generated>
 	^ GL_ALPHA_TEST_REF
@@ -177,9 +144,9 @@ GLES1_0 >> ALPHA_TEST_REF [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ALWAYS [
+GLES10 >> ALWAYS [
 
 	<generated>
 	^ GL_ALWAYS
@@ -187,9 +154,9 @@ GLES1_0 >> ALWAYS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> AMBIENT [
+GLES10 >> AMBIENT [
 
 	<generated>
 	^ GL_AMBIENT
@@ -197,9 +164,9 @@ GLES1_0 >> AMBIENT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> AMBIENT_AND_DIFFUSE [
+GLES10 >> AMBIENT_AND_DIFFUSE [
 
 	<generated>
 	^ GL_AMBIENT_AND_DIFFUSE
@@ -207,9 +174,9 @@ GLES1_0 >> AMBIENT_AND_DIFFUSE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> AND [
+GLES10 >> AND [
 
 	<generated>
 	^ GL_AND
@@ -217,9 +184,9 @@ GLES1_0 >> AND [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> AND_INVERTED [
+GLES10 >> AND_INVERTED [
 
 	<generated>
 	^ GL_AND_INVERTED
@@ -227,9 +194,9 @@ GLES1_0 >> AND_INVERTED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> AND_REVERSE [
+GLES10 >> AND_REVERSE [
 
 	<generated>
 	^ GL_AND_REVERSE
@@ -237,9 +204,9 @@ GLES1_0 >> AND_REVERSE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ARRAY_BUFFER [
+GLES10 >> ARRAY_BUFFER [
 
 	<generated>
 	^ GL_ARRAY_BUFFER
@@ -247,9 +214,9 @@ GLES1_0 >> ARRAY_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ARRAY_BUFFER_BINDING [
+GLES10 >> ARRAY_BUFFER_BINDING [
 
 	<generated>
 	^ GL_ARRAY_BUFFER_BINDING
@@ -257,9 +224,9 @@ GLES1_0 >> ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> BACK [
+GLES10 >> BACK [
 
 	<generated>
 	^ GL_BACK
@@ -267,9 +234,9 @@ GLES1_0 >> BACK [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> BLEND [
+GLES10 >> BLEND [
 
 	<generated>
 	^ GL_BLEND
@@ -277,9 +244,9 @@ GLES1_0 >> BLEND [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> BLEND_DST [
+GLES10 >> BLEND_DST [
 
 	<generated>
 	^ GL_BLEND_DST
@@ -287,9 +254,9 @@ GLES1_0 >> BLEND_DST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> BLEND_SRC [
+GLES10 >> BLEND_SRC [
 
 	<generated>
 	^ GL_BLEND_SRC
@@ -297,9 +264,9 @@ GLES1_0 >> BLEND_SRC [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> BLUE_BITS [
+GLES10 >> BLUE_BITS [
 
 	<generated>
 	^ GL_BLUE_BITS
@@ -307,9 +274,9 @@ GLES1_0 >> BLUE_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> BUFFER_SIZE [
+GLES10 >> BUFFER_SIZE [
 
 	<generated>
 	^ GL_BUFFER_SIZE
@@ -317,9 +284,9 @@ GLES1_0 >> BUFFER_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> BUFFER_USAGE [
+GLES10 >> BUFFER_USAGE [
 
 	<generated>
 	^ GL_BUFFER_USAGE
@@ -327,9 +294,9 @@ GLES1_0 >> BUFFER_USAGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> BYTE [
+GLES10 >> BYTE [
 
 	<generated>
 	^ GL_BYTE
@@ -337,9 +304,9 @@ GLES1_0 >> BYTE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> CCW [
+GLES10 >> CCW [
 
 	<generated>
 	^ GL_CCW
@@ -347,9 +314,9 @@ GLES1_0 >> CCW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> CLAMP_TO_EDGE [
+GLES10 >> CLAMP_TO_EDGE [
 
 	<generated>
 	^ GL_CLAMP_TO_EDGE
@@ -357,9 +324,9 @@ GLES1_0 >> CLAMP_TO_EDGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> CLEAR [
+GLES10 >> CLEAR [
 
 	<generated>
 	^ GL_CLEAR
@@ -367,9 +334,9 @@ GLES1_0 >> CLEAR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> CLIENT_ACTIVE_TEXTURE [
+GLES10 >> CLIENT_ACTIVE_TEXTURE [
 
 	<generated>
 	^ GL_CLIENT_ACTIVE_TEXTURE
@@ -377,9 +344,9 @@ GLES1_0 >> CLIENT_ACTIVE_TEXTURE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> CLIP_PLANE0 [
+GLES10 >> CLIP_PLANE0 [
 
 	<generated>
 	^ GL_CLIP_PLANE0
@@ -387,9 +354,9 @@ GLES1_0 >> CLIP_PLANE0 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> CLIP_PLANE1 [
+GLES10 >> CLIP_PLANE1 [
 
 	<generated>
 	^ GL_CLIP_PLANE1
@@ -397,9 +364,9 @@ GLES1_0 >> CLIP_PLANE1 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> CLIP_PLANE2 [
+GLES10 >> CLIP_PLANE2 [
 
 	<generated>
 	^ GL_CLIP_PLANE2
@@ -407,9 +374,9 @@ GLES1_0 >> CLIP_PLANE2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> CLIP_PLANE3 [
+GLES10 >> CLIP_PLANE3 [
 
 	<generated>
 	^ GL_CLIP_PLANE3
@@ -417,9 +384,9 @@ GLES1_0 >> CLIP_PLANE3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> CLIP_PLANE4 [
+GLES10 >> CLIP_PLANE4 [
 
 	<generated>
 	^ GL_CLIP_PLANE4
@@ -427,9 +394,9 @@ GLES1_0 >> CLIP_PLANE4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> CLIP_PLANE5 [
+GLES10 >> CLIP_PLANE5 [
 
 	<generated>
 	^ GL_CLIP_PLANE5
@@ -437,9 +404,9 @@ GLES1_0 >> CLIP_PLANE5 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> COLOR_ARRAY [
+GLES10 >> COLOR_ARRAY [
 
 	<generated>
 	^ GL_COLOR_ARRAY
@@ -447,9 +414,9 @@ GLES1_0 >> COLOR_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> COLOR_ARRAY_BUFFER_BINDING [
+GLES10 >> COLOR_ARRAY_BUFFER_BINDING [
 
 	<generated>
 	^ GL_COLOR_ARRAY_BUFFER_BINDING
@@ -457,9 +424,9 @@ GLES1_0 >> COLOR_ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> COLOR_ARRAY_POINTER [
+GLES10 >> COLOR_ARRAY_POINTER [
 
 	<generated>
 	^ GL_COLOR_ARRAY_POINTER
@@ -467,9 +434,9 @@ GLES1_0 >> COLOR_ARRAY_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> COLOR_ARRAY_SIZE [
+GLES10 >> COLOR_ARRAY_SIZE [
 
 	<generated>
 	^ GL_COLOR_ARRAY_SIZE
@@ -477,9 +444,9 @@ GLES1_0 >> COLOR_ARRAY_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> COLOR_ARRAY_STRIDE [
+GLES10 >> COLOR_ARRAY_STRIDE [
 
 	<generated>
 	^ GL_COLOR_ARRAY_STRIDE
@@ -487,9 +454,9 @@ GLES1_0 >> COLOR_ARRAY_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> COLOR_ARRAY_TYPE [
+GLES10 >> COLOR_ARRAY_TYPE [
 
 	<generated>
 	^ GL_COLOR_ARRAY_TYPE
@@ -497,9 +464,9 @@ GLES1_0 >> COLOR_ARRAY_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> COLOR_BUFFER_BIT [
+GLES10 >> COLOR_BUFFER_BIT [
 
 	<generated>
 	^ GL_COLOR_BUFFER_BIT
@@ -507,9 +474,9 @@ GLES1_0 >> COLOR_BUFFER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> COLOR_CLEAR_VALUE [
+GLES10 >> COLOR_CLEAR_VALUE [
 
 	<generated>
 	^ GL_COLOR_CLEAR_VALUE
@@ -517,9 +484,9 @@ GLES1_0 >> COLOR_CLEAR_VALUE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> COLOR_LOGIC_OP [
+GLES10 >> COLOR_LOGIC_OP [
 
 	<generated>
 	^ GL_COLOR_LOGIC_OP
@@ -527,9 +494,9 @@ GLES1_0 >> COLOR_LOGIC_OP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> COLOR_MATERIAL [
+GLES10 >> COLOR_MATERIAL [
 
 	<generated>
 	^ GL_COLOR_MATERIAL
@@ -537,9 +504,9 @@ GLES1_0 >> COLOR_MATERIAL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> COLOR_WRITEMASK [
+GLES10 >> COLOR_WRITEMASK [
 
 	<generated>
 	^ GL_COLOR_WRITEMASK
@@ -547,9 +514,9 @@ GLES1_0 >> COLOR_WRITEMASK [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> COMBINE [
+GLES10 >> COMBINE [
 
 	<generated>
 	^ GL_COMBINE
@@ -557,9 +524,9 @@ GLES1_0 >> COMBINE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> COMBINE_ALPHA [
+GLES10 >> COMBINE_ALPHA [
 
 	<generated>
 	^ GL_COMBINE_ALPHA
@@ -567,9 +534,9 @@ GLES1_0 >> COMBINE_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> COMBINE_RGB [
+GLES10 >> COMBINE_RGB [
 
 	<generated>
 	^ GL_COMBINE_RGB
@@ -577,9 +544,9 @@ GLES1_0 >> COMBINE_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> COMPRESSED_TEXTURE_FORMATS [
+GLES10 >> COMPRESSED_TEXTURE_FORMATS [
 
 	<generated>
 	^ GL_COMPRESSED_TEXTURE_FORMATS
@@ -587,9 +554,9 @@ GLES1_0 >> COMPRESSED_TEXTURE_FORMATS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> CONSTANT [
+GLES10 >> CONSTANT [
 
 	<generated>
 	^ GL_CONSTANT
@@ -597,9 +564,9 @@ GLES1_0 >> CONSTANT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> CONSTANT_ATTENUATION [
+GLES10 >> CONSTANT_ATTENUATION [
 
 	<generated>
 	^ GL_CONSTANT_ATTENUATION
@@ -607,9 +574,9 @@ GLES1_0 >> CONSTANT_ATTENUATION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> COPY [
+GLES10 >> COPY [
 
 	<generated>
 	^ GL_COPY
@@ -617,9 +584,9 @@ GLES1_0 >> COPY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> COPY_INVERTED [
+GLES10 >> COPY_INVERTED [
 
 	<generated>
 	^ GL_COPY_INVERTED
@@ -627,9 +594,9 @@ GLES1_0 >> COPY_INVERTED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> CULL_FACE [
+GLES10 >> CULL_FACE [
 
 	<generated>
 	^ GL_CULL_FACE
@@ -637,9 +604,9 @@ GLES1_0 >> CULL_FACE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> CULL_FACE_MODE [
+GLES10 >> CULL_FACE_MODE [
 
 	<generated>
 	^ GL_CULL_FACE_MODE
@@ -647,9 +614,9 @@ GLES1_0 >> CULL_FACE_MODE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> CURRENT_COLOR [
+GLES10 >> CURRENT_COLOR [
 
 	<generated>
 	^ GL_CURRENT_COLOR
@@ -657,9 +624,9 @@ GLES1_0 >> CURRENT_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> CURRENT_NORMAL [
+GLES10 >> CURRENT_NORMAL [
 
 	<generated>
 	^ GL_CURRENT_NORMAL
@@ -667,9 +634,9 @@ GLES1_0 >> CURRENT_NORMAL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> CURRENT_TEXTURE_COORDS [
+GLES10 >> CURRENT_TEXTURE_COORDS [
 
 	<generated>
 	^ GL_CURRENT_TEXTURE_COORDS
@@ -677,9 +644,9 @@ GLES1_0 >> CURRENT_TEXTURE_COORDS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> CW [
+GLES10 >> CW [
 
 	<generated>
 	^ GL_CW
@@ -687,9 +654,9 @@ GLES1_0 >> CW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> DECAL [
+GLES10 >> DECAL [
 
 	<generated>
 	^ GL_DECAL
@@ -697,9 +664,9 @@ GLES1_0 >> DECAL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> DECR [
+GLES10 >> DECR [
 
 	<generated>
 	^ GL_DECR
@@ -707,9 +674,9 @@ GLES1_0 >> DECR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> DEPTH_BITS [
+GLES10 >> DEPTH_BITS [
 
 	<generated>
 	^ GL_DEPTH_BITS
@@ -717,9 +684,9 @@ GLES1_0 >> DEPTH_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> DEPTH_BUFFER_BIT [
+GLES10 >> DEPTH_BUFFER_BIT [
 
 	<generated>
 	^ GL_DEPTH_BUFFER_BIT
@@ -727,9 +694,9 @@ GLES1_0 >> DEPTH_BUFFER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> DEPTH_CLEAR_VALUE [
+GLES10 >> DEPTH_CLEAR_VALUE [
 
 	<generated>
 	^ GL_DEPTH_CLEAR_VALUE
@@ -737,9 +704,9 @@ GLES1_0 >> DEPTH_CLEAR_VALUE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> DEPTH_FUNC [
+GLES10 >> DEPTH_FUNC [
 
 	<generated>
 	^ GL_DEPTH_FUNC
@@ -747,9 +714,9 @@ GLES1_0 >> DEPTH_FUNC [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> DEPTH_RANGE [
+GLES10 >> DEPTH_RANGE [
 
 	<generated>
 	^ GL_DEPTH_RANGE
@@ -757,9 +724,9 @@ GLES1_0 >> DEPTH_RANGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> DEPTH_TEST [
+GLES10 >> DEPTH_TEST [
 
 	<generated>
 	^ GL_DEPTH_TEST
@@ -767,9 +734,9 @@ GLES1_0 >> DEPTH_TEST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> DEPTH_WRITEMASK [
+GLES10 >> DEPTH_WRITEMASK [
 
 	<generated>
 	^ GL_DEPTH_WRITEMASK
@@ -777,9 +744,9 @@ GLES1_0 >> DEPTH_WRITEMASK [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> DIFFUSE [
+GLES10 >> DIFFUSE [
 
 	<generated>
 	^ GL_DIFFUSE
@@ -787,9 +754,9 @@ GLES1_0 >> DIFFUSE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> DITHER [
+GLES10 >> DITHER [
 
 	<generated>
 	^ GL_DITHER
@@ -797,9 +764,9 @@ GLES1_0 >> DITHER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> DONT_CARE [
+GLES10 >> DONT_CARE [
 
 	<generated>
 	^ GL_DONT_CARE
@@ -807,9 +774,9 @@ GLES1_0 >> DONT_CARE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> DOT3_RGB [
+GLES10 >> DOT3_RGB [
 
 	<generated>
 	^ GL_DOT3_RGB
@@ -817,9 +784,9 @@ GLES1_0 >> DOT3_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> DOT3_RGBA [
+GLES10 >> DOT3_RGBA [
 
 	<generated>
 	^ GL_DOT3_RGBA
@@ -827,9 +794,9 @@ GLES1_0 >> DOT3_RGBA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> DST_ALPHA [
+GLES10 >> DST_ALPHA [
 
 	<generated>
 	^ GL_DST_ALPHA
@@ -837,9 +804,9 @@ GLES1_0 >> DST_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> DST_COLOR [
+GLES10 >> DST_COLOR [
 
 	<generated>
 	^ GL_DST_COLOR
@@ -847,9 +814,9 @@ GLES1_0 >> DST_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> DYNAMIC_DRAW [
+GLES10 >> DYNAMIC_DRAW [
 
 	<generated>
 	^ GL_DYNAMIC_DRAW
@@ -857,9 +824,9 @@ GLES1_0 >> DYNAMIC_DRAW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ELEMENT_ARRAY_BUFFER [
+GLES10 >> ELEMENT_ARRAY_BUFFER [
 
 	<generated>
 	^ GL_ELEMENT_ARRAY_BUFFER
@@ -867,9 +834,9 @@ GLES1_0 >> ELEMENT_ARRAY_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ELEMENT_ARRAY_BUFFER_BINDING [
+GLES10 >> ELEMENT_ARRAY_BUFFER_BINDING [
 
 	<generated>
 	^ GL_ELEMENT_ARRAY_BUFFER_BINDING
@@ -877,9 +844,9 @@ GLES1_0 >> ELEMENT_ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> EMISSION [
+GLES10 >> EMISSION [
 
 	<generated>
 	^ GL_EMISSION
@@ -887,9 +854,9 @@ GLES1_0 >> EMISSION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> EQUAL [
+GLES10 >> EQUAL [
 
 	<generated>
 	^ GL_EQUAL
@@ -897,9 +864,9 @@ GLES1_0 >> EQUAL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> EQUIV [
+GLES10 >> EQUIV [
 
 	<generated>
 	^ GL_EQUIV
@@ -907,9 +874,9 @@ GLES1_0 >> EQUIV [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> EXP [
+GLES10 >> EXP [
 
 	<generated>
 	^ GL_EXP
@@ -917,9 +884,9 @@ GLES1_0 >> EXP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> EXP2 [
+GLES10 >> EXP2 [
 
 	<generated>
 	^ GL_EXP2
@@ -927,9 +894,9 @@ GLES1_0 >> EXP2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> EXTENSIONS [
+GLES10 >> EXTENSIONS [
 
 	<generated>
 	^ GL_EXTENSIONS
@@ -937,9 +904,9 @@ GLES1_0 >> EXTENSIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> FALSE [
+GLES10 >> FALSE [
 
 	<generated>
 	^ GL_FALSE
@@ -947,9 +914,9 @@ GLES1_0 >> FALSE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> FASTEST [
+GLES10 >> FASTEST [
 
 	<generated>
 	^ GL_FASTEST
@@ -957,9 +924,9 @@ GLES1_0 >> FASTEST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> FIXED [
+GLES10 >> FIXED [
 
 	<generated>
 	^ GL_FIXED
@@ -967,9 +934,9 @@ GLES1_0 >> FIXED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> FLAT [
+GLES10 >> FLAT [
 
 	<generated>
 	^ GL_FLAT
@@ -977,9 +944,9 @@ GLES1_0 >> FLAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> FLOAT [
+GLES10 >> FLOAT [
 
 	<generated>
 	^ GL_FLOAT
@@ -987,9 +954,9 @@ GLES1_0 >> FLOAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> FOG [
+GLES10 >> FOG [
 
 	<generated>
 	^ GL_FOG
@@ -997,9 +964,9 @@ GLES1_0 >> FOG [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> FOG_COLOR [
+GLES10 >> FOG_COLOR [
 
 	<generated>
 	^ GL_FOG_COLOR
@@ -1007,9 +974,9 @@ GLES1_0 >> FOG_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> FOG_DENSITY [
+GLES10 >> FOG_DENSITY [
 
 	<generated>
 	^ GL_FOG_DENSITY
@@ -1017,9 +984,9 @@ GLES1_0 >> FOG_DENSITY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> FOG_END [
+GLES10 >> FOG_END [
 
 	<generated>
 	^ GL_FOG_END
@@ -1027,9 +994,9 @@ GLES1_0 >> FOG_END [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> FOG_HINT [
+GLES10 >> FOG_HINT [
 
 	<generated>
 	^ GL_FOG_HINT
@@ -1037,9 +1004,9 @@ GLES1_0 >> FOG_HINT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> FOG_MODE [
+GLES10 >> FOG_MODE [
 
 	<generated>
 	^ GL_FOG_MODE
@@ -1047,9 +1014,9 @@ GLES1_0 >> FOG_MODE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> FOG_START [
+GLES10 >> FOG_START [
 
 	<generated>
 	^ GL_FOG_START
@@ -1057,9 +1024,9 @@ GLES1_0 >> FOG_START [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> FRONT [
+GLES10 >> FRONT [
 
 	<generated>
 	^ GL_FRONT
@@ -1067,9 +1034,9 @@ GLES1_0 >> FRONT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> FRONT_AND_BACK [
+GLES10 >> FRONT_AND_BACK [
 
 	<generated>
 	^ GL_FRONT_AND_BACK
@@ -1077,9 +1044,9 @@ GLES1_0 >> FRONT_AND_BACK [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> FRONT_FACE [
+GLES10 >> FRONT_FACE [
 
 	<generated>
 	^ GL_FRONT_FACE
@@ -1087,9 +1054,9 @@ GLES1_0 >> FRONT_FACE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> GENERATE_MIPMAP [
+GLES10 >> GENERATE_MIPMAP [
 
 	<generated>
 	^ GL_GENERATE_MIPMAP
@@ -1097,9 +1064,9 @@ GLES1_0 >> GENERATE_MIPMAP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> GENERATE_MIPMAP_HINT [
+GLES10 >> GENERATE_MIPMAP_HINT [
 
 	<generated>
 	^ GL_GENERATE_MIPMAP_HINT
@@ -1107,9 +1074,9 @@ GLES1_0 >> GENERATE_MIPMAP_HINT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> GEQUAL [
+GLES10 >> GEQUAL [
 
 	<generated>
 	^ GL_GEQUAL
@@ -1117,9 +1084,9 @@ GLES1_0 >> GEQUAL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> GREATER [
+GLES10 >> GREATER [
 
 	<generated>
 	^ GL_GREATER
@@ -1127,9 +1094,9 @@ GLES1_0 >> GREATER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> GREEN_BITS [
+GLES10 >> GREEN_BITS [
 
 	<generated>
 	^ GL_GREEN_BITS
@@ -1137,9 +1104,9 @@ GLES1_0 >> GREEN_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> INCR [
+GLES10 >> INCR [
 
 	<generated>
 	^ GL_INCR
@@ -1147,9 +1114,9 @@ GLES1_0 >> INCR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> INTERPOLATE [
+GLES10 >> INTERPOLATE [
 
 	<generated>
 	^ GL_INTERPOLATE
@@ -1157,9 +1124,9 @@ GLES1_0 >> INTERPOLATE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> INVALID_ENUM [
+GLES10 >> INVALID_ENUM [
 
 	<generated>
 	^ GL_INVALID_ENUM
@@ -1167,9 +1134,9 @@ GLES1_0 >> INVALID_ENUM [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> INVALID_OPERATION [
+GLES10 >> INVALID_OPERATION [
 
 	<generated>
 	^ GL_INVALID_OPERATION
@@ -1177,9 +1144,9 @@ GLES1_0 >> INVALID_OPERATION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> INVALID_VALUE [
+GLES10 >> INVALID_VALUE [
 
 	<generated>
 	^ GL_INVALID_VALUE
@@ -1187,9 +1154,9 @@ GLES1_0 >> INVALID_VALUE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> INVERT [
+GLES10 >> INVERT [
 
 	<generated>
 	^ GL_INVERT
@@ -1197,9 +1164,9 @@ GLES1_0 >> INVERT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> KEEP [
+GLES10 >> KEEP [
 
 	<generated>
 	^ GL_KEEP
@@ -1207,9 +1174,9 @@ GLES1_0 >> KEEP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LEQUAL [
+GLES10 >> LEQUAL [
 
 	<generated>
 	^ GL_LEQUAL
@@ -1217,9 +1184,9 @@ GLES1_0 >> LEQUAL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LESS [
+GLES10 >> LESS [
 
 	<generated>
 	^ GL_LESS
@@ -1227,9 +1194,9 @@ GLES1_0 >> LESS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LIGHT0 [
+GLES10 >> LIGHT0 [
 
 	<generated>
 	^ GL_LIGHT0
@@ -1237,9 +1204,9 @@ GLES1_0 >> LIGHT0 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LIGHT1 [
+GLES10 >> LIGHT1 [
 
 	<generated>
 	^ GL_LIGHT1
@@ -1247,9 +1214,9 @@ GLES1_0 >> LIGHT1 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LIGHT2 [
+GLES10 >> LIGHT2 [
 
 	<generated>
 	^ GL_LIGHT2
@@ -1257,9 +1224,9 @@ GLES1_0 >> LIGHT2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LIGHT3 [
+GLES10 >> LIGHT3 [
 
 	<generated>
 	^ GL_LIGHT3
@@ -1267,9 +1234,9 @@ GLES1_0 >> LIGHT3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LIGHT4 [
+GLES10 >> LIGHT4 [
 
 	<generated>
 	^ GL_LIGHT4
@@ -1277,9 +1244,9 @@ GLES1_0 >> LIGHT4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LIGHT5 [
+GLES10 >> LIGHT5 [
 
 	<generated>
 	^ GL_LIGHT5
@@ -1287,9 +1254,9 @@ GLES1_0 >> LIGHT5 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LIGHT6 [
+GLES10 >> LIGHT6 [
 
 	<generated>
 	^ GL_LIGHT6
@@ -1297,9 +1264,9 @@ GLES1_0 >> LIGHT6 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LIGHT7 [
+GLES10 >> LIGHT7 [
 
 	<generated>
 	^ GL_LIGHT7
@@ -1307,9 +1274,9 @@ GLES1_0 >> LIGHT7 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LIGHTING [
+GLES10 >> LIGHTING [
 
 	<generated>
 	^ GL_LIGHTING
@@ -1317,9 +1284,9 @@ GLES1_0 >> LIGHTING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LIGHT_MODEL_AMBIENT [
+GLES10 >> LIGHT_MODEL_AMBIENT [
 
 	<generated>
 	^ GL_LIGHT_MODEL_AMBIENT
@@ -1327,9 +1294,9 @@ GLES1_0 >> LIGHT_MODEL_AMBIENT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LIGHT_MODEL_TWO_SIDE [
+GLES10 >> LIGHT_MODEL_TWO_SIDE [
 
 	<generated>
 	^ GL_LIGHT_MODEL_TWO_SIDE
@@ -1337,9 +1304,9 @@ GLES1_0 >> LIGHT_MODEL_TWO_SIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LINEAR [
+GLES10 >> LINEAR [
 
 	<generated>
 	^ GL_LINEAR
@@ -1347,9 +1314,9 @@ GLES1_0 >> LINEAR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LINEAR_ATTENUATION [
+GLES10 >> LINEAR_ATTENUATION [
 
 	<generated>
 	^ GL_LINEAR_ATTENUATION
@@ -1357,9 +1324,9 @@ GLES1_0 >> LINEAR_ATTENUATION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LINEAR_MIPMAP_LINEAR [
+GLES10 >> LINEAR_MIPMAP_LINEAR [
 
 	<generated>
 	^ GL_LINEAR_MIPMAP_LINEAR
@@ -1367,9 +1334,9 @@ GLES1_0 >> LINEAR_MIPMAP_LINEAR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LINEAR_MIPMAP_NEAREST [
+GLES10 >> LINEAR_MIPMAP_NEAREST [
 
 	<generated>
 	^ GL_LINEAR_MIPMAP_NEAREST
@@ -1377,9 +1344,9 @@ GLES1_0 >> LINEAR_MIPMAP_NEAREST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LINES [
+GLES10 >> LINES [
 
 	<generated>
 	^ GL_LINES
@@ -1387,9 +1354,9 @@ GLES1_0 >> LINES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LINE_LOOP [
+GLES10 >> LINE_LOOP [
 
 	<generated>
 	^ GL_LINE_LOOP
@@ -1397,9 +1364,9 @@ GLES1_0 >> LINE_LOOP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LINE_SMOOTH [
+GLES10 >> LINE_SMOOTH [
 
 	<generated>
 	^ GL_LINE_SMOOTH
@@ -1407,9 +1374,9 @@ GLES1_0 >> LINE_SMOOTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LINE_SMOOTH_HINT [
+GLES10 >> LINE_SMOOTH_HINT [
 
 	<generated>
 	^ GL_LINE_SMOOTH_HINT
@@ -1417,9 +1384,9 @@ GLES1_0 >> LINE_SMOOTH_HINT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LINE_STRIP [
+GLES10 >> LINE_STRIP [
 
 	<generated>
 	^ GL_LINE_STRIP
@@ -1427,9 +1394,9 @@ GLES1_0 >> LINE_STRIP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LINE_WIDTH [
+GLES10 >> LINE_WIDTH [
 
 	<generated>
 	^ GL_LINE_WIDTH
@@ -1437,9 +1404,9 @@ GLES1_0 >> LINE_WIDTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LOGIC_OP_MODE [
+GLES10 >> LOGIC_OP_MODE [
 
 	<generated>
 	^ GL_LOGIC_OP_MODE
@@ -1447,9 +1414,9 @@ GLES1_0 >> LOGIC_OP_MODE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LUMINANCE [
+GLES10 >> LUMINANCE [
 
 	<generated>
 	^ GL_LUMINANCE
@@ -1457,9 +1424,9 @@ GLES1_0 >> LUMINANCE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> LUMINANCE_ALPHA [
+GLES10 >> LUMINANCE_ALPHA [
 
 	<generated>
 	^ GL_LUMINANCE_ALPHA
@@ -1467,9 +1434,9 @@ GLES1_0 >> LUMINANCE_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> MATRIX_MODE [
+GLES10 >> MATRIX_MODE [
 
 	<generated>
 	^ GL_MATRIX_MODE
@@ -1477,9 +1444,9 @@ GLES1_0 >> MATRIX_MODE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> MAX_CLIP_PLANES [
+GLES10 >> MAX_CLIP_PLANES [
 
 	<generated>
 	^ GL_MAX_CLIP_PLANES
@@ -1487,9 +1454,9 @@ GLES1_0 >> MAX_CLIP_PLANES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> MAX_LIGHTS [
+GLES10 >> MAX_LIGHTS [
 
 	<generated>
 	^ GL_MAX_LIGHTS
@@ -1497,9 +1464,9 @@ GLES1_0 >> MAX_LIGHTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> MAX_MODELVIEW_STACK_DEPTH [
+GLES10 >> MAX_MODELVIEW_STACK_DEPTH [
 
 	<generated>
 	^ GL_MAX_MODELVIEW_STACK_DEPTH
@@ -1507,9 +1474,9 @@ GLES1_0 >> MAX_MODELVIEW_STACK_DEPTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> MAX_PROJECTION_STACK_DEPTH [
+GLES10 >> MAX_PROJECTION_STACK_DEPTH [
 
 	<generated>
 	^ GL_MAX_PROJECTION_STACK_DEPTH
@@ -1517,9 +1484,9 @@ GLES1_0 >> MAX_PROJECTION_STACK_DEPTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> MAX_TEXTURE_SIZE [
+GLES10 >> MAX_TEXTURE_SIZE [
 
 	<generated>
 	^ GL_MAX_TEXTURE_SIZE
@@ -1527,9 +1494,9 @@ GLES1_0 >> MAX_TEXTURE_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> MAX_TEXTURE_STACK_DEPTH [
+GLES10 >> MAX_TEXTURE_STACK_DEPTH [
 
 	<generated>
 	^ GL_MAX_TEXTURE_STACK_DEPTH
@@ -1537,9 +1504,9 @@ GLES1_0 >> MAX_TEXTURE_STACK_DEPTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> MAX_TEXTURE_UNITS [
+GLES10 >> MAX_TEXTURE_UNITS [
 
 	<generated>
 	^ GL_MAX_TEXTURE_UNITS
@@ -1547,9 +1514,9 @@ GLES1_0 >> MAX_TEXTURE_UNITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> MAX_VIEWPORT_DIMS [
+GLES10 >> MAX_VIEWPORT_DIMS [
 
 	<generated>
 	^ GL_MAX_VIEWPORT_DIMS
@@ -1557,9 +1524,9 @@ GLES1_0 >> MAX_VIEWPORT_DIMS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> MODELVIEW [
+GLES10 >> MODELVIEW [
 
 	<generated>
 	^ GL_MODELVIEW
@@ -1567,9 +1534,9 @@ GLES1_0 >> MODELVIEW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> MODELVIEW_MATRIX [
+GLES10 >> MODELVIEW_MATRIX [
 
 	<generated>
 	^ GL_MODELVIEW_MATRIX
@@ -1577,9 +1544,9 @@ GLES1_0 >> MODELVIEW_MATRIX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> MODELVIEW_STACK_DEPTH [
+GLES10 >> MODELVIEW_STACK_DEPTH [
 
 	<generated>
 	^ GL_MODELVIEW_STACK_DEPTH
@@ -1587,9 +1554,9 @@ GLES1_0 >> MODELVIEW_STACK_DEPTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> MODULATE [
+GLES10 >> MODULATE [
 
 	<generated>
 	^ GL_MODULATE
@@ -1597,9 +1564,9 @@ GLES1_0 >> MODULATE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> MULTISAMPLE [
+GLES10 >> MULTISAMPLE [
 
 	<generated>
 	^ GL_MULTISAMPLE
@@ -1607,9 +1574,9 @@ GLES1_0 >> MULTISAMPLE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> NAND [
+GLES10 >> NAND [
 
 	<generated>
 	^ GL_NAND
@@ -1617,9 +1584,9 @@ GLES1_0 >> NAND [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> NEAREST [
+GLES10 >> NEAREST [
 
 	<generated>
 	^ GL_NEAREST
@@ -1627,9 +1594,9 @@ GLES1_0 >> NEAREST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> NEAREST_MIPMAP_LINEAR [
+GLES10 >> NEAREST_MIPMAP_LINEAR [
 
 	<generated>
 	^ GL_NEAREST_MIPMAP_LINEAR
@@ -1637,9 +1604,9 @@ GLES1_0 >> NEAREST_MIPMAP_LINEAR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> NEAREST_MIPMAP_NEAREST [
+GLES10 >> NEAREST_MIPMAP_NEAREST [
 
 	<generated>
 	^ GL_NEAREST_MIPMAP_NEAREST
@@ -1647,9 +1614,9 @@ GLES1_0 >> NEAREST_MIPMAP_NEAREST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> NEVER [
+GLES10 >> NEVER [
 
 	<generated>
 	^ GL_NEVER
@@ -1657,9 +1624,9 @@ GLES1_0 >> NEVER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> NICEST [
+GLES10 >> NICEST [
 
 	<generated>
 	^ GL_NICEST
@@ -1667,9 +1634,9 @@ GLES1_0 >> NICEST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> NOOP [
+GLES10 >> NOOP [
 
 	<generated>
 	^ GL_NOOP
@@ -1677,9 +1644,9 @@ GLES1_0 >> NOOP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> NOR [
+GLES10 >> NOR [
 
 	<generated>
 	^ GL_NOR
@@ -1687,9 +1654,9 @@ GLES1_0 >> NOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> NORMALIZE [
+GLES10 >> NORMALIZE [
 
 	<generated>
 	^ GL_NORMALIZE
@@ -1697,9 +1664,9 @@ GLES1_0 >> NORMALIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> NORMAL_ARRAY [
+GLES10 >> NORMAL_ARRAY [
 
 	<generated>
 	^ GL_NORMAL_ARRAY
@@ -1707,9 +1674,9 @@ GLES1_0 >> NORMAL_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> NORMAL_ARRAY_BUFFER_BINDING [
+GLES10 >> NORMAL_ARRAY_BUFFER_BINDING [
 
 	<generated>
 	^ GL_NORMAL_ARRAY_BUFFER_BINDING
@@ -1717,9 +1684,9 @@ GLES1_0 >> NORMAL_ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> NORMAL_ARRAY_POINTER [
+GLES10 >> NORMAL_ARRAY_POINTER [
 
 	<generated>
 	^ GL_NORMAL_ARRAY_POINTER
@@ -1727,9 +1694,9 @@ GLES1_0 >> NORMAL_ARRAY_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> NORMAL_ARRAY_STRIDE [
+GLES10 >> NORMAL_ARRAY_STRIDE [
 
 	<generated>
 	^ GL_NORMAL_ARRAY_STRIDE
@@ -1737,9 +1704,9 @@ GLES1_0 >> NORMAL_ARRAY_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> NORMAL_ARRAY_TYPE [
+GLES10 >> NORMAL_ARRAY_TYPE [
 
 	<generated>
 	^ GL_NORMAL_ARRAY_TYPE
@@ -1747,9 +1714,9 @@ GLES1_0 >> NORMAL_ARRAY_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> NOTEQUAL [
+GLES10 >> NOTEQUAL [
 
 	<generated>
 	^ GL_NOTEQUAL
@@ -1757,9 +1724,9 @@ GLES1_0 >> NOTEQUAL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> NO_ERROR [
+GLES10 >> NO_ERROR [
 
 	<generated>
 	^ GL_NO_ERROR
@@ -1767,9 +1734,9 @@ GLES1_0 >> NO_ERROR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> NUM_COMPRESSED_TEXTURE_FORMATS [
+GLES10 >> NUM_COMPRESSED_TEXTURE_FORMATS [
 
 	<generated>
 	^ GL_NUM_COMPRESSED_TEXTURE_FORMATS
@@ -1777,9 +1744,9 @@ GLES1_0 >> NUM_COMPRESSED_TEXTURE_FORMATS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ONE [
+GLES10 >> ONE [
 
 	<generated>
 	^ GL_ONE
@@ -1787,9 +1754,9 @@ GLES1_0 >> ONE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ONE_MINUS_DST_ALPHA [
+GLES10 >> ONE_MINUS_DST_ALPHA [
 
 	<generated>
 	^ GL_ONE_MINUS_DST_ALPHA
@@ -1797,9 +1764,9 @@ GLES1_0 >> ONE_MINUS_DST_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ONE_MINUS_DST_COLOR [
+GLES10 >> ONE_MINUS_DST_COLOR [
 
 	<generated>
 	^ GL_ONE_MINUS_DST_COLOR
@@ -1807,9 +1774,9 @@ GLES1_0 >> ONE_MINUS_DST_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ONE_MINUS_SRC_ALPHA [
+GLES10 >> ONE_MINUS_SRC_ALPHA [
 
 	<generated>
 	^ GL_ONE_MINUS_SRC_ALPHA
@@ -1817,9 +1784,9 @@ GLES1_0 >> ONE_MINUS_SRC_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ONE_MINUS_SRC_COLOR [
+GLES10 >> ONE_MINUS_SRC_COLOR [
 
 	<generated>
 	^ GL_ONE_MINUS_SRC_COLOR
@@ -1827,9 +1794,9 @@ GLES1_0 >> ONE_MINUS_SRC_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> OPERAND0_ALPHA [
+GLES10 >> OPERAND0_ALPHA [
 
 	<generated>
 	^ GL_OPERAND0_ALPHA
@@ -1837,9 +1804,9 @@ GLES1_0 >> OPERAND0_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> OPERAND0_RGB [
+GLES10 >> OPERAND0_RGB [
 
 	<generated>
 	^ GL_OPERAND0_RGB
@@ -1847,9 +1814,9 @@ GLES1_0 >> OPERAND0_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> OPERAND1_ALPHA [
+GLES10 >> OPERAND1_ALPHA [
 
 	<generated>
 	^ GL_OPERAND1_ALPHA
@@ -1857,9 +1824,9 @@ GLES1_0 >> OPERAND1_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> OPERAND1_RGB [
+GLES10 >> OPERAND1_RGB [
 
 	<generated>
 	^ GL_OPERAND1_RGB
@@ -1867,9 +1834,9 @@ GLES1_0 >> OPERAND1_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> OPERAND2_ALPHA [
+GLES10 >> OPERAND2_ALPHA [
 
 	<generated>
 	^ GL_OPERAND2_ALPHA
@@ -1877,9 +1844,9 @@ GLES1_0 >> OPERAND2_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> OPERAND2_RGB [
+GLES10 >> OPERAND2_RGB [
 
 	<generated>
 	^ GL_OPERAND2_RGB
@@ -1887,9 +1854,9 @@ GLES1_0 >> OPERAND2_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> OR [
+GLES10 >> OR [
 
 	<generated>
 	^ GL_OR
@@ -1897,9 +1864,9 @@ GLES1_0 >> OR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> OR_INVERTED [
+GLES10 >> OR_INVERTED [
 
 	<generated>
 	^ GL_OR_INVERTED
@@ -1907,9 +1874,9 @@ GLES1_0 >> OR_INVERTED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> OR_REVERSE [
+GLES10 >> OR_REVERSE [
 
 	<generated>
 	^ GL_OR_REVERSE
@@ -1917,9 +1884,9 @@ GLES1_0 >> OR_REVERSE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> OUT_OF_MEMORY [
+GLES10 >> OUT_OF_MEMORY [
 
 	<generated>
 	^ GL_OUT_OF_MEMORY
@@ -1927,9 +1894,9 @@ GLES1_0 >> OUT_OF_MEMORY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> PACK_ALIGNMENT [
+GLES10 >> PACK_ALIGNMENT [
 
 	<generated>
 	^ GL_PACK_ALIGNMENT
@@ -1937,9 +1904,9 @@ GLES1_0 >> PACK_ALIGNMENT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> PERSPECTIVE_CORRECTION_HINT [
+GLES10 >> PERSPECTIVE_CORRECTION_HINT [
 
 	<generated>
 	^ GL_PERSPECTIVE_CORRECTION_HINT
@@ -1947,9 +1914,9 @@ GLES1_0 >> PERSPECTIVE_CORRECTION_HINT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> POINTS [
+GLES10 >> POINTS [
 
 	<generated>
 	^ GL_POINTS
@@ -1957,9 +1924,9 @@ GLES1_0 >> POINTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> POINT_DISTANCE_ATTENUATION [
+GLES10 >> POINT_DISTANCE_ATTENUATION [
 
 	<generated>
 	^ GL_POINT_DISTANCE_ATTENUATION
@@ -1967,9 +1934,9 @@ GLES1_0 >> POINT_DISTANCE_ATTENUATION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> POINT_FADE_THRESHOLD_SIZE [
+GLES10 >> POINT_FADE_THRESHOLD_SIZE [
 
 	<generated>
 	^ GL_POINT_FADE_THRESHOLD_SIZE
@@ -1977,9 +1944,9 @@ GLES1_0 >> POINT_FADE_THRESHOLD_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> POINT_SIZE [
+GLES10 >> POINT_SIZE [
 
 	<generated>
 	^ GL_POINT_SIZE
@@ -1987,9 +1954,9 @@ GLES1_0 >> POINT_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> POINT_SIZE_MAX [
+GLES10 >> POINT_SIZE_MAX [
 
 	<generated>
 	^ GL_POINT_SIZE_MAX
@@ -1997,9 +1964,9 @@ GLES1_0 >> POINT_SIZE_MAX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> POINT_SIZE_MIN [
+GLES10 >> POINT_SIZE_MIN [
 
 	<generated>
 	^ GL_POINT_SIZE_MIN
@@ -2007,9 +1974,9 @@ GLES1_0 >> POINT_SIZE_MIN [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> POINT_SMOOTH [
+GLES10 >> POINT_SMOOTH [
 
 	<generated>
 	^ GL_POINT_SMOOTH
@@ -2017,9 +1984,9 @@ GLES1_0 >> POINT_SMOOTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> POINT_SMOOTH_HINT [
+GLES10 >> POINT_SMOOTH_HINT [
 
 	<generated>
 	^ GL_POINT_SMOOTH_HINT
@@ -2027,9 +1994,9 @@ GLES1_0 >> POINT_SMOOTH_HINT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> POLYGON_OFFSET_FACTOR [
+GLES10 >> POLYGON_OFFSET_FACTOR [
 
 	<generated>
 	^ GL_POLYGON_OFFSET_FACTOR
@@ -2037,9 +2004,9 @@ GLES1_0 >> POLYGON_OFFSET_FACTOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> POLYGON_OFFSET_FILL [
+GLES10 >> POLYGON_OFFSET_FILL [
 
 	<generated>
 	^ GL_POLYGON_OFFSET_FILL
@@ -2047,9 +2014,9 @@ GLES1_0 >> POLYGON_OFFSET_FILL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> POLYGON_OFFSET_UNITS [
+GLES10 >> POLYGON_OFFSET_UNITS [
 
 	<generated>
 	^ GL_POLYGON_OFFSET_UNITS
@@ -2057,9 +2024,9 @@ GLES1_0 >> POLYGON_OFFSET_UNITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> POSITION [
+GLES10 >> POSITION [
 
 	<generated>
 	^ GL_POSITION
@@ -2067,9 +2034,9 @@ GLES1_0 >> POSITION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> PREVIOUS [
+GLES10 >> PREVIOUS [
 
 	<generated>
 	^ GL_PREVIOUS
@@ -2077,9 +2044,9 @@ GLES1_0 >> PREVIOUS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> PRIMARY_COLOR [
+GLES10 >> PRIMARY_COLOR [
 
 	<generated>
 	^ GL_PRIMARY_COLOR
@@ -2087,9 +2054,9 @@ GLES1_0 >> PRIMARY_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> PROJECTION [
+GLES10 >> PROJECTION [
 
 	<generated>
 	^ GL_PROJECTION
@@ -2097,9 +2064,9 @@ GLES1_0 >> PROJECTION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> PROJECTION_MATRIX [
+GLES10 >> PROJECTION_MATRIX [
 
 	<generated>
 	^ GL_PROJECTION_MATRIX
@@ -2107,9 +2074,9 @@ GLES1_0 >> PROJECTION_MATRIX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> PROJECTION_STACK_DEPTH [
+GLES10 >> PROJECTION_STACK_DEPTH [
 
 	<generated>
 	^ GL_PROJECTION_STACK_DEPTH
@@ -2117,9 +2084,9 @@ GLES1_0 >> PROJECTION_STACK_DEPTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> QUADRATIC_ATTENUATION [
+GLES10 >> QUADRATIC_ATTENUATION [
 
 	<generated>
 	^ GL_QUADRATIC_ATTENUATION
@@ -2127,9 +2094,9 @@ GLES1_0 >> QUADRATIC_ATTENUATION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> RED_BITS [
+GLES10 >> RED_BITS [
 
 	<generated>
 	^ GL_RED_BITS
@@ -2137,9 +2104,9 @@ GLES1_0 >> RED_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> RENDERER [
+GLES10 >> RENDERER [
 
 	<generated>
 	^ GL_RENDERER
@@ -2147,9 +2114,9 @@ GLES1_0 >> RENDERER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> REPEAT [
+GLES10 >> REPEAT [
 
 	<generated>
 	^ GL_REPEAT
@@ -2157,9 +2124,9 @@ GLES1_0 >> REPEAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> REPLACE [
+GLES10 >> REPLACE [
 
 	<generated>
 	^ GL_REPLACE
@@ -2167,9 +2134,9 @@ GLES1_0 >> REPLACE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> RESCALE_NORMAL [
+GLES10 >> RESCALE_NORMAL [
 
 	<generated>
 	^ GL_RESCALE_NORMAL
@@ -2177,9 +2144,9 @@ GLES1_0 >> RESCALE_NORMAL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> RGB [
+GLES10 >> RGB [
 
 	<generated>
 	^ GL_RGB
@@ -2187,9 +2154,9 @@ GLES1_0 >> RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> RGBA [
+GLES10 >> RGBA [
 
 	<generated>
 	^ GL_RGBA
@@ -2197,9 +2164,9 @@ GLES1_0 >> RGBA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> RGB_SCALE [
+GLES10 >> RGB_SCALE [
 
 	<generated>
 	^ GL_RGB_SCALE
@@ -2207,9 +2174,9 @@ GLES1_0 >> RGB_SCALE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SAMPLES [
+GLES10 >> SAMPLES [
 
 	<generated>
 	^ GL_SAMPLES
@@ -2217,9 +2184,9 @@ GLES1_0 >> SAMPLES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SAMPLE_ALPHA_TO_COVERAGE [
+GLES10 >> SAMPLE_ALPHA_TO_COVERAGE [
 
 	<generated>
 	^ GL_SAMPLE_ALPHA_TO_COVERAGE
@@ -2227,9 +2194,9 @@ GLES1_0 >> SAMPLE_ALPHA_TO_COVERAGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SAMPLE_ALPHA_TO_ONE [
+GLES10 >> SAMPLE_ALPHA_TO_ONE [
 
 	<generated>
 	^ GL_SAMPLE_ALPHA_TO_ONE
@@ -2237,9 +2204,9 @@ GLES1_0 >> SAMPLE_ALPHA_TO_ONE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SAMPLE_BUFFERS [
+GLES10 >> SAMPLE_BUFFERS [
 
 	<generated>
 	^ GL_SAMPLE_BUFFERS
@@ -2247,9 +2214,9 @@ GLES1_0 >> SAMPLE_BUFFERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SAMPLE_COVERAGE [
+GLES10 >> SAMPLE_COVERAGE [
 
 	<generated>
 	^ GL_SAMPLE_COVERAGE
@@ -2257,9 +2224,9 @@ GLES1_0 >> SAMPLE_COVERAGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SAMPLE_COVERAGE_INVERT [
+GLES10 >> SAMPLE_COVERAGE_INVERT [
 
 	<generated>
 	^ GL_SAMPLE_COVERAGE_INVERT
@@ -2267,9 +2234,9 @@ GLES1_0 >> SAMPLE_COVERAGE_INVERT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SAMPLE_COVERAGE_VALUE [
+GLES10 >> SAMPLE_COVERAGE_VALUE [
 
 	<generated>
 	^ GL_SAMPLE_COVERAGE_VALUE
@@ -2277,9 +2244,9 @@ GLES1_0 >> SAMPLE_COVERAGE_VALUE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SCISSOR_BOX [
+GLES10 >> SCISSOR_BOX [
 
 	<generated>
 	^ GL_SCISSOR_BOX
@@ -2287,9 +2254,9 @@ GLES1_0 >> SCISSOR_BOX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SCISSOR_TEST [
+GLES10 >> SCISSOR_TEST [
 
 	<generated>
 	^ GL_SCISSOR_TEST
@@ -2297,9 +2264,9 @@ GLES1_0 >> SCISSOR_TEST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SET [
+GLES10 >> SET [
 
 	<generated>
 	^ GL_SET
@@ -2307,9 +2274,9 @@ GLES1_0 >> SET [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SHADE_MODEL [
+GLES10 >> SHADE_MODEL [
 
 	<generated>
 	^ GL_SHADE_MODEL
@@ -2317,9 +2284,9 @@ GLES1_0 >> SHADE_MODEL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SHININESS [
+GLES10 >> SHININESS [
 
 	<generated>
 	^ GL_SHININESS
@@ -2327,9 +2294,9 @@ GLES1_0 >> SHININESS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SHORT [
+GLES10 >> SHORT [
 
 	<generated>
 	^ GL_SHORT
@@ -2337,9 +2304,9 @@ GLES1_0 >> SHORT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SMOOTH [
+GLES10 >> SMOOTH [
 
 	<generated>
 	^ GL_SMOOTH
@@ -2347,9 +2314,9 @@ GLES1_0 >> SMOOTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SMOOTH_LINE_WIDTH_RANGE [
+GLES10 >> SMOOTH_LINE_WIDTH_RANGE [
 
 	<generated>
 	^ GL_SMOOTH_LINE_WIDTH_RANGE
@@ -2357,9 +2324,9 @@ GLES1_0 >> SMOOTH_LINE_WIDTH_RANGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SMOOTH_POINT_SIZE_RANGE [
+GLES10 >> SMOOTH_POINT_SIZE_RANGE [
 
 	<generated>
 	^ GL_SMOOTH_POINT_SIZE_RANGE
@@ -2367,9 +2334,9 @@ GLES1_0 >> SMOOTH_POINT_SIZE_RANGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SPECULAR [
+GLES10 >> SPECULAR [
 
 	<generated>
 	^ GL_SPECULAR
@@ -2377,9 +2344,9 @@ GLES1_0 >> SPECULAR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SPOT_CUTOFF [
+GLES10 >> SPOT_CUTOFF [
 
 	<generated>
 	^ GL_SPOT_CUTOFF
@@ -2387,9 +2354,9 @@ GLES1_0 >> SPOT_CUTOFF [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SPOT_DIRECTION [
+GLES10 >> SPOT_DIRECTION [
 
 	<generated>
 	^ GL_SPOT_DIRECTION
@@ -2397,9 +2364,9 @@ GLES1_0 >> SPOT_DIRECTION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SPOT_EXPONENT [
+GLES10 >> SPOT_EXPONENT [
 
 	<generated>
 	^ GL_SPOT_EXPONENT
@@ -2407,9 +2374,9 @@ GLES1_0 >> SPOT_EXPONENT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SRC0_ALPHA [
+GLES10 >> SRC0_ALPHA [
 
 	<generated>
 	^ GL_SRC0_ALPHA
@@ -2417,9 +2384,9 @@ GLES1_0 >> SRC0_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SRC0_RGB [
+GLES10 >> SRC0_RGB [
 
 	<generated>
 	^ GL_SRC0_RGB
@@ -2427,9 +2394,9 @@ GLES1_0 >> SRC0_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SRC1_ALPHA [
+GLES10 >> SRC1_ALPHA [
 
 	<generated>
 	^ GL_SRC1_ALPHA
@@ -2437,9 +2404,9 @@ GLES1_0 >> SRC1_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SRC1_RGB [
+GLES10 >> SRC1_RGB [
 
 	<generated>
 	^ GL_SRC1_RGB
@@ -2447,9 +2414,9 @@ GLES1_0 >> SRC1_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SRC2_ALPHA [
+GLES10 >> SRC2_ALPHA [
 
 	<generated>
 	^ GL_SRC2_ALPHA
@@ -2457,9 +2424,9 @@ GLES1_0 >> SRC2_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SRC2_RGB [
+GLES10 >> SRC2_RGB [
 
 	<generated>
 	^ GL_SRC2_RGB
@@ -2467,9 +2434,9 @@ GLES1_0 >> SRC2_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SRC_ALPHA [
+GLES10 >> SRC_ALPHA [
 
 	<generated>
 	^ GL_SRC_ALPHA
@@ -2477,9 +2444,9 @@ GLES1_0 >> SRC_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SRC_ALPHA_SATURATE [
+GLES10 >> SRC_ALPHA_SATURATE [
 
 	<generated>
 	^ GL_SRC_ALPHA_SATURATE
@@ -2487,9 +2454,9 @@ GLES1_0 >> SRC_ALPHA_SATURATE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SRC_COLOR [
+GLES10 >> SRC_COLOR [
 
 	<generated>
 	^ GL_SRC_COLOR
@@ -2497,9 +2464,9 @@ GLES1_0 >> SRC_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> STACK_OVERFLOW [
+GLES10 >> STACK_OVERFLOW [
 
 	<generated>
 	^ GL_STACK_OVERFLOW
@@ -2507,9 +2474,9 @@ GLES1_0 >> STACK_OVERFLOW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> STACK_UNDERFLOW [
+GLES10 >> STACK_UNDERFLOW [
 
 	<generated>
 	^ GL_STACK_UNDERFLOW
@@ -2517,9 +2484,9 @@ GLES1_0 >> STACK_UNDERFLOW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> STATIC_DRAW [
+GLES10 >> STATIC_DRAW [
 
 	<generated>
 	^ GL_STATIC_DRAW
@@ -2527,9 +2494,9 @@ GLES1_0 >> STATIC_DRAW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> STENCIL_BITS [
+GLES10 >> STENCIL_BITS [
 
 	<generated>
 	^ GL_STENCIL_BITS
@@ -2537,9 +2504,9 @@ GLES1_0 >> STENCIL_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> STENCIL_BUFFER_BIT [
+GLES10 >> STENCIL_BUFFER_BIT [
 
 	<generated>
 	^ GL_STENCIL_BUFFER_BIT
@@ -2547,9 +2514,9 @@ GLES1_0 >> STENCIL_BUFFER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> STENCIL_CLEAR_VALUE [
+GLES10 >> STENCIL_CLEAR_VALUE [
 
 	<generated>
 	^ GL_STENCIL_CLEAR_VALUE
@@ -2557,9 +2524,9 @@ GLES1_0 >> STENCIL_CLEAR_VALUE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> STENCIL_FAIL [
+GLES10 >> STENCIL_FAIL [
 
 	<generated>
 	^ GL_STENCIL_FAIL
@@ -2567,9 +2534,9 @@ GLES1_0 >> STENCIL_FAIL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> STENCIL_FUNC [
+GLES10 >> STENCIL_FUNC [
 
 	<generated>
 	^ GL_STENCIL_FUNC
@@ -2577,9 +2544,9 @@ GLES1_0 >> STENCIL_FUNC [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> STENCIL_PASS_DEPTH_FAIL [
+GLES10 >> STENCIL_PASS_DEPTH_FAIL [
 
 	<generated>
 	^ GL_STENCIL_PASS_DEPTH_FAIL
@@ -2587,9 +2554,9 @@ GLES1_0 >> STENCIL_PASS_DEPTH_FAIL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> STENCIL_PASS_DEPTH_PASS [
+GLES10 >> STENCIL_PASS_DEPTH_PASS [
 
 	<generated>
 	^ GL_STENCIL_PASS_DEPTH_PASS
@@ -2597,9 +2564,9 @@ GLES1_0 >> STENCIL_PASS_DEPTH_PASS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> STENCIL_REF [
+GLES10 >> STENCIL_REF [
 
 	<generated>
 	^ GL_STENCIL_REF
@@ -2607,9 +2574,9 @@ GLES1_0 >> STENCIL_REF [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> STENCIL_TEST [
+GLES10 >> STENCIL_TEST [
 
 	<generated>
 	^ GL_STENCIL_TEST
@@ -2617,9 +2584,9 @@ GLES1_0 >> STENCIL_TEST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> STENCIL_VALUE_MASK [
+GLES10 >> STENCIL_VALUE_MASK [
 
 	<generated>
 	^ GL_STENCIL_VALUE_MASK
@@ -2627,9 +2594,9 @@ GLES1_0 >> STENCIL_VALUE_MASK [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> STENCIL_WRITEMASK [
+GLES10 >> STENCIL_WRITEMASK [
 
 	<generated>
 	^ GL_STENCIL_WRITEMASK
@@ -2637,9 +2604,9 @@ GLES1_0 >> STENCIL_WRITEMASK [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SUBPIXEL_BITS [
+GLES10 >> SUBPIXEL_BITS [
 
 	<generated>
 	^ GL_SUBPIXEL_BITS
@@ -2647,9 +2614,9 @@ GLES1_0 >> SUBPIXEL_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> SUBTRACT [
+GLES10 >> SUBTRACT [
 
 	<generated>
 	^ GL_SUBTRACT
@@ -2657,9 +2624,9 @@ GLES1_0 >> SUBTRACT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE [
+GLES10 >> TEXTURE [
 
 	<generated>
 	^ GL_TEXTURE
@@ -2667,9 +2634,9 @@ GLES1_0 >> TEXTURE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE0 [
+GLES10 >> TEXTURE0 [
 
 	<generated>
 	^ GL_TEXTURE0
@@ -2677,9 +2644,9 @@ GLES1_0 >> TEXTURE0 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE1 [
+GLES10 >> TEXTURE1 [
 
 	<generated>
 	^ GL_TEXTURE1
@@ -2687,9 +2654,9 @@ GLES1_0 >> TEXTURE1 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE10 [
+GLES10 >> TEXTURE10 [
 
 	<generated>
 	^ GL_TEXTURE10
@@ -2697,9 +2664,9 @@ GLES1_0 >> TEXTURE10 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE11 [
+GLES10 >> TEXTURE11 [
 
 	<generated>
 	^ GL_TEXTURE11
@@ -2707,9 +2674,9 @@ GLES1_0 >> TEXTURE11 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE12 [
+GLES10 >> TEXTURE12 [
 
 	<generated>
 	^ GL_TEXTURE12
@@ -2717,9 +2684,9 @@ GLES1_0 >> TEXTURE12 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE13 [
+GLES10 >> TEXTURE13 [
 
 	<generated>
 	^ GL_TEXTURE13
@@ -2727,9 +2694,9 @@ GLES1_0 >> TEXTURE13 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE14 [
+GLES10 >> TEXTURE14 [
 
 	<generated>
 	^ GL_TEXTURE14
@@ -2737,9 +2704,9 @@ GLES1_0 >> TEXTURE14 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE15 [
+GLES10 >> TEXTURE15 [
 
 	<generated>
 	^ GL_TEXTURE15
@@ -2747,9 +2714,9 @@ GLES1_0 >> TEXTURE15 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE16 [
+GLES10 >> TEXTURE16 [
 
 	<generated>
 	^ GL_TEXTURE16
@@ -2757,9 +2724,9 @@ GLES1_0 >> TEXTURE16 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE17 [
+GLES10 >> TEXTURE17 [
 
 	<generated>
 	^ GL_TEXTURE17
@@ -2767,9 +2734,9 @@ GLES1_0 >> TEXTURE17 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE18 [
+GLES10 >> TEXTURE18 [
 
 	<generated>
 	^ GL_TEXTURE18
@@ -2777,9 +2744,9 @@ GLES1_0 >> TEXTURE18 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE19 [
+GLES10 >> TEXTURE19 [
 
 	<generated>
 	^ GL_TEXTURE19
@@ -2787,9 +2754,9 @@ GLES1_0 >> TEXTURE19 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE2 [
+GLES10 >> TEXTURE2 [
 
 	<generated>
 	^ GL_TEXTURE2
@@ -2797,9 +2764,9 @@ GLES1_0 >> TEXTURE2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE20 [
+GLES10 >> TEXTURE20 [
 
 	<generated>
 	^ GL_TEXTURE20
@@ -2807,9 +2774,9 @@ GLES1_0 >> TEXTURE20 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE21 [
+GLES10 >> TEXTURE21 [
 
 	<generated>
 	^ GL_TEXTURE21
@@ -2817,9 +2784,9 @@ GLES1_0 >> TEXTURE21 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE22 [
+GLES10 >> TEXTURE22 [
 
 	<generated>
 	^ GL_TEXTURE22
@@ -2827,9 +2794,9 @@ GLES1_0 >> TEXTURE22 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE23 [
+GLES10 >> TEXTURE23 [
 
 	<generated>
 	^ GL_TEXTURE23
@@ -2837,9 +2804,9 @@ GLES1_0 >> TEXTURE23 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE24 [
+GLES10 >> TEXTURE24 [
 
 	<generated>
 	^ GL_TEXTURE24
@@ -2847,9 +2814,9 @@ GLES1_0 >> TEXTURE24 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE25 [
+GLES10 >> TEXTURE25 [
 
 	<generated>
 	^ GL_TEXTURE25
@@ -2857,9 +2824,9 @@ GLES1_0 >> TEXTURE25 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE26 [
+GLES10 >> TEXTURE26 [
 
 	<generated>
 	^ GL_TEXTURE26
@@ -2867,9 +2834,9 @@ GLES1_0 >> TEXTURE26 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE27 [
+GLES10 >> TEXTURE27 [
 
 	<generated>
 	^ GL_TEXTURE27
@@ -2877,9 +2844,9 @@ GLES1_0 >> TEXTURE27 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE28 [
+GLES10 >> TEXTURE28 [
 
 	<generated>
 	^ GL_TEXTURE28
@@ -2887,9 +2854,9 @@ GLES1_0 >> TEXTURE28 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE29 [
+GLES10 >> TEXTURE29 [
 
 	<generated>
 	^ GL_TEXTURE29
@@ -2897,9 +2864,9 @@ GLES1_0 >> TEXTURE29 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE3 [
+GLES10 >> TEXTURE3 [
 
 	<generated>
 	^ GL_TEXTURE3
@@ -2907,9 +2874,9 @@ GLES1_0 >> TEXTURE3 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE30 [
+GLES10 >> TEXTURE30 [
 
 	<generated>
 	^ GL_TEXTURE30
@@ -2917,9 +2884,9 @@ GLES1_0 >> TEXTURE30 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE31 [
+GLES10 >> TEXTURE31 [
 
 	<generated>
 	^ GL_TEXTURE31
@@ -2927,9 +2894,9 @@ GLES1_0 >> TEXTURE31 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE4 [
+GLES10 >> TEXTURE4 [
 
 	<generated>
 	^ GL_TEXTURE4
@@ -2937,9 +2904,9 @@ GLES1_0 >> TEXTURE4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE5 [
+GLES10 >> TEXTURE5 [
 
 	<generated>
 	^ GL_TEXTURE5
@@ -2947,9 +2914,9 @@ GLES1_0 >> TEXTURE5 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE6 [
+GLES10 >> TEXTURE6 [
 
 	<generated>
 	^ GL_TEXTURE6
@@ -2957,9 +2924,9 @@ GLES1_0 >> TEXTURE6 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE7 [
+GLES10 >> TEXTURE7 [
 
 	<generated>
 	^ GL_TEXTURE7
@@ -2967,9 +2934,9 @@ GLES1_0 >> TEXTURE7 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE8 [
+GLES10 >> TEXTURE8 [
 
 	<generated>
 	^ GL_TEXTURE8
@@ -2977,9 +2944,9 @@ GLES1_0 >> TEXTURE8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE9 [
+GLES10 >> TEXTURE9 [
 
 	<generated>
 	^ GL_TEXTURE9
@@ -2987,9 +2954,9 @@ GLES1_0 >> TEXTURE9 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE_2D [
+GLES10 >> TEXTURE_2D [
 
 	<generated>
 	^ GL_TEXTURE_2D
@@ -2997,9 +2964,9 @@ GLES1_0 >> TEXTURE_2D [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE_BINDING_2D [
+GLES10 >> TEXTURE_BINDING_2D [
 
 	<generated>
 	^ GL_TEXTURE_BINDING_2D
@@ -3007,9 +2974,9 @@ GLES1_0 >> TEXTURE_BINDING_2D [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE_COORD_ARRAY [
+GLES10 >> TEXTURE_COORD_ARRAY [
 
 	<generated>
 	^ GL_TEXTURE_COORD_ARRAY
@@ -3017,9 +2984,9 @@ GLES1_0 >> TEXTURE_COORD_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE_COORD_ARRAY_BUFFER_BINDING [
+GLES10 >> TEXTURE_COORD_ARRAY_BUFFER_BINDING [
 
 	<generated>
 	^ GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING
@@ -3027,9 +2994,9 @@ GLES1_0 >> TEXTURE_COORD_ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE_COORD_ARRAY_POINTER [
+GLES10 >> TEXTURE_COORD_ARRAY_POINTER [
 
 	<generated>
 	^ GL_TEXTURE_COORD_ARRAY_POINTER
@@ -3037,9 +3004,9 @@ GLES1_0 >> TEXTURE_COORD_ARRAY_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE_COORD_ARRAY_SIZE [
+GLES10 >> TEXTURE_COORD_ARRAY_SIZE [
 
 	<generated>
 	^ GL_TEXTURE_COORD_ARRAY_SIZE
@@ -3047,9 +3014,9 @@ GLES1_0 >> TEXTURE_COORD_ARRAY_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE_COORD_ARRAY_STRIDE [
+GLES10 >> TEXTURE_COORD_ARRAY_STRIDE [
 
 	<generated>
 	^ GL_TEXTURE_COORD_ARRAY_STRIDE
@@ -3057,9 +3024,9 @@ GLES1_0 >> TEXTURE_COORD_ARRAY_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE_COORD_ARRAY_TYPE [
+GLES10 >> TEXTURE_COORD_ARRAY_TYPE [
 
 	<generated>
 	^ GL_TEXTURE_COORD_ARRAY_TYPE
@@ -3067,9 +3034,9 @@ GLES1_0 >> TEXTURE_COORD_ARRAY_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE_ENV [
+GLES10 >> TEXTURE_ENV [
 
 	<generated>
 	^ GL_TEXTURE_ENV
@@ -3077,9 +3044,9 @@ GLES1_0 >> TEXTURE_ENV [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE_ENV_COLOR [
+GLES10 >> TEXTURE_ENV_COLOR [
 
 	<generated>
 	^ GL_TEXTURE_ENV_COLOR
@@ -3087,9 +3054,9 @@ GLES1_0 >> TEXTURE_ENV_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE_ENV_MODE [
+GLES10 >> TEXTURE_ENV_MODE [
 
 	<generated>
 	^ GL_TEXTURE_ENV_MODE
@@ -3097,9 +3064,9 @@ GLES1_0 >> TEXTURE_ENV_MODE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE_MAG_FILTER [
+GLES10 >> TEXTURE_MAG_FILTER [
 
 	<generated>
 	^ GL_TEXTURE_MAG_FILTER
@@ -3107,9 +3074,9 @@ GLES1_0 >> TEXTURE_MAG_FILTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE_MATRIX [
+GLES10 >> TEXTURE_MATRIX [
 
 	<generated>
 	^ GL_TEXTURE_MATRIX
@@ -3117,9 +3084,9 @@ GLES1_0 >> TEXTURE_MATRIX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE_MIN_FILTER [
+GLES10 >> TEXTURE_MIN_FILTER [
 
 	<generated>
 	^ GL_TEXTURE_MIN_FILTER
@@ -3127,9 +3094,9 @@ GLES1_0 >> TEXTURE_MIN_FILTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE_STACK_DEPTH [
+GLES10 >> TEXTURE_STACK_DEPTH [
 
 	<generated>
 	^ GL_TEXTURE_STACK_DEPTH
@@ -3137,9 +3104,9 @@ GLES1_0 >> TEXTURE_STACK_DEPTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE_WRAP_S [
+GLES10 >> TEXTURE_WRAP_S [
 
 	<generated>
 	^ GL_TEXTURE_WRAP_S
@@ -3147,9 +3114,9 @@ GLES1_0 >> TEXTURE_WRAP_S [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TEXTURE_WRAP_T [
+GLES10 >> TEXTURE_WRAP_T [
 
 	<generated>
 	^ GL_TEXTURE_WRAP_T
@@ -3157,9 +3124,9 @@ GLES1_0 >> TEXTURE_WRAP_T [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TRIANGLES [
+GLES10 >> TRIANGLES [
 
 	<generated>
 	^ GL_TRIANGLES
@@ -3167,9 +3134,9 @@ GLES1_0 >> TRIANGLES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TRIANGLE_FAN [
+GLES10 >> TRIANGLE_FAN [
 
 	<generated>
 	^ GL_TRIANGLE_FAN
@@ -3177,9 +3144,9 @@ GLES1_0 >> TRIANGLE_FAN [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TRIANGLE_STRIP [
+GLES10 >> TRIANGLE_STRIP [
 
 	<generated>
 	^ GL_TRIANGLE_STRIP
@@ -3187,9 +3154,9 @@ GLES1_0 >> TRIANGLE_STRIP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> TRUE [
+GLES10 >> TRUE [
 
 	<generated>
 	^ GL_TRUE
@@ -3197,9 +3164,9 @@ GLES1_0 >> TRUE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> UNPACK_ALIGNMENT [
+GLES10 >> UNPACK_ALIGNMENT [
 
 	<generated>
 	^ GL_UNPACK_ALIGNMENT
@@ -3207,9 +3174,9 @@ GLES1_0 >> UNPACK_ALIGNMENT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> UNSIGNED_BYTE [
+GLES10 >> UNSIGNED_BYTE [
 
 	<generated>
 	^ GL_UNSIGNED_BYTE
@@ -3217,9 +3184,9 @@ GLES1_0 >> UNSIGNED_BYTE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> UNSIGNED_SHORT [
+GLES10 >> UNSIGNED_SHORT [
 
 	<generated>
 	^ GL_UNSIGNED_SHORT
@@ -3227,9 +3194,9 @@ GLES1_0 >> UNSIGNED_SHORT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> UNSIGNED_SHORT_4_4_4_4 [
+GLES10 >> UNSIGNED_SHORT_4_4_4_4 [
 
 	<generated>
 	^ GL_UNSIGNED_SHORT_4_4_4_4
@@ -3237,9 +3204,9 @@ GLES1_0 >> UNSIGNED_SHORT_4_4_4_4 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> UNSIGNED_SHORT_5_5_5_1 [
+GLES10 >> UNSIGNED_SHORT_5_5_5_1 [
 
 	<generated>
 	^ GL_UNSIGNED_SHORT_5_5_5_1
@@ -3247,9 +3214,9 @@ GLES1_0 >> UNSIGNED_SHORT_5_5_5_1 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> UNSIGNED_SHORT_5_6_5 [
+GLES10 >> UNSIGNED_SHORT_5_6_5 [
 
 	<generated>
 	^ GL_UNSIGNED_SHORT_5_6_5
@@ -3257,9 +3224,9 @@ GLES1_0 >> UNSIGNED_SHORT_5_6_5 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> VENDOR [
+GLES10 >> VENDOR [
 
 	<generated>
 	^ GL_VENDOR
@@ -3267,9 +3234,9 @@ GLES1_0 >> VENDOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> VERSION [
+GLES10 >> VERSION [
 
 	<generated>
 	^ GL_VERSION
@@ -3277,9 +3244,9 @@ GLES1_0 >> VERSION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> VERSION_ES_CL_1_0 [
+GLES10 >> VERSION_ES_CL_1_0 [
 
 	<generated>
 	^ GL_VERSION_ES_CL_1_0
@@ -3287,9 +3254,9 @@ GLES1_0 >> VERSION_ES_CL_1_0 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> VERSION_ES_CL_1_1 [
+GLES10 >> VERSION_ES_CL_1_1 [
 
 	<generated>
 	^ GL_VERSION_ES_CL_1_1
@@ -3297,9 +3264,9 @@ GLES1_0 >> VERSION_ES_CL_1_1 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> VERSION_ES_CM_1_1 [
+GLES10 >> VERSION_ES_CM_1_1 [
 
 	<generated>
 	^ GL_VERSION_ES_CM_1_1
@@ -3307,9 +3274,9 @@ GLES1_0 >> VERSION_ES_CM_1_1 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> VERTEX_ARRAY [
+GLES10 >> VERTEX_ARRAY [
 
 	<generated>
 	^ GL_VERTEX_ARRAY
@@ -3317,9 +3284,9 @@ GLES1_0 >> VERTEX_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> VERTEX_ARRAY_BUFFER_BINDING [
+GLES10 >> VERTEX_ARRAY_BUFFER_BINDING [
 
 	<generated>
 	^ GL_VERTEX_ARRAY_BUFFER_BINDING
@@ -3327,9 +3294,9 @@ GLES1_0 >> VERTEX_ARRAY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> VERTEX_ARRAY_POINTER [
+GLES10 >> VERTEX_ARRAY_POINTER [
 
 	<generated>
 	^ GL_VERTEX_ARRAY_POINTER
@@ -3337,9 +3304,9 @@ GLES1_0 >> VERTEX_ARRAY_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> VERTEX_ARRAY_SIZE [
+GLES10 >> VERTEX_ARRAY_SIZE [
 
 	<generated>
 	^ GL_VERTEX_ARRAY_SIZE
@@ -3347,9 +3314,9 @@ GLES1_0 >> VERTEX_ARRAY_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> VERTEX_ARRAY_STRIDE [
+GLES10 >> VERTEX_ARRAY_STRIDE [
 
 	<generated>
 	^ GL_VERTEX_ARRAY_STRIDE
@@ -3357,9 +3324,9 @@ GLES1_0 >> VERTEX_ARRAY_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> VERTEX_ARRAY_TYPE [
+GLES10 >> VERTEX_ARRAY_TYPE [
 
 	<generated>
 	^ GL_VERTEX_ARRAY_TYPE
@@ -3367,9 +3334,9 @@ GLES1_0 >> VERTEX_ARRAY_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> VIEWPORT [
+GLES10 >> VIEWPORT [
 
 	<generated>
 	^ GL_VIEWPORT
@@ -3377,9 +3344,9 @@ GLES1_0 >> VIEWPORT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> XOR [
+GLES10 >> XOR [
 
 	<generated>
 	^ GL_XOR
@@ -3387,9 +3354,9 @@ GLES1_0 >> XOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> ZERO [
+GLES10 >> ZERO [
 
 	<generated>
 	^ GL_ZERO
@@ -3397,9 +3364,9 @@ GLES1_0 >> ZERO [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> activeTexture: texture [
+GLES10 >> activeTexture: texture [
 
 	<generated>
 	<apicall: void 'glActiveTexture' (GLenum)>
@@ -3408,10 +3375,10 @@ GLES1_0 >> activeTexture: texture [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> alphaFunc: func with: ref [
-	"Note: Only available in #common profile."
+GLES10 >> alphaFunc: func with: ref [
+
 	<generated>
 	<apicall: void 'glAlphaFunc' (GLenum GLfloat)>
 	^ self externalCallFailed
@@ -3419,9 +3386,9 @@ GLES1_0 >> alphaFunc: func with: ref [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> alphaFuncx: func with: ref [
+GLES10 >> alphaFuncx: func with: ref [
 
 	<generated>
 	<apicall: void 'glAlphaFuncx' (GLenum GLfixed)>
@@ -3430,9 +3397,9 @@ GLES1_0 >> alphaFuncx: func with: ref [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> bindBuffer: target with: buffer [
+GLES10 >> bindBuffer: target with: buffer [
 
 	<generated>
 	<apicall: void 'glBindBuffer' (GLenum GLuint)>
@@ -3441,9 +3408,9 @@ GLES1_0 >> bindBuffer: target with: buffer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> bindTexture: target with: texture [
+GLES10 >> bindTexture: target with: texture [
 
 	<generated>
 	<apicall: void 'glBindTexture' (GLenum GLuint)>
@@ -3452,9 +3419,9 @@ GLES1_0 >> bindTexture: target with: texture [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> blendFunc: sfactor with: dfactor [
+GLES10 >> blendFunc: sfactor with: dfactor [
 
 	<generated>
 	<apicall: void 'glBlendFunc' (GLenum GLenum)>
@@ -3463,9 +3430,9 @@ GLES1_0 >> blendFunc: sfactor with: dfactor [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> bufferData: target with: size with: data with: usage [
+GLES10 >> bufferData: target with: size with: data with: usage [
 
 	<generated>
 	<apicall: void 'glBufferData' (GLenum GLsizeiptr void* GLenum)>
@@ -3474,9 +3441,9 @@ GLES1_0 >> bufferData: target with: size with: data with: usage [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> bufferSubData: target with: offset with: size with: data [
+GLES10 >> bufferSubData: target with: offset with: size with: data [
 
 	<generated>
 	<apicall: void 'glBufferSubData' (GLenum GLintptr GLsizeiptr void*)>
@@ -3485,9 +3452,9 @@ GLES1_0 >> bufferSubData: target with: offset with: size with: data [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> clear: mask [
+GLES10 >> clear: mask [
 
 	<generated>
 	<apicall: void 'glClear' (GLbitfield)>
@@ -3496,10 +3463,10 @@ GLES1_0 >> clear: mask [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> clearColor: red with: green with: blue with: alpha [
-	"Note: Only available in #common profile."
+GLES10 >> clearColor: red with: green with: blue with: alpha [
+
 	<generated>
 	<apicall: void 'glClearColor' (GLfloat GLfloat GLfloat GLfloat)>
 	^ self externalCallFailed
@@ -3507,9 +3474,9 @@ GLES1_0 >> clearColor: red with: green with: blue with: alpha [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> clearColorx: red with: green with: blue with: alpha [
+GLES10 >> clearColorx: red with: green with: blue with: alpha [
 
 	<generated>
 	<apicall: void 'glClearColorx' (GLfixed GLfixed GLfixed GLfixed)>
@@ -3518,10 +3485,10 @@ GLES1_0 >> clearColorx: red with: green with: blue with: alpha [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> clearDepthf: d [
-	"Note: Only available in #common profile."
+GLES10 >> clearDepthf: d [
+
 	<generated>
 	<apicall: void 'glClearDepthf' (GLfloat)>
 	^ self externalCallFailed
@@ -3529,9 +3496,9 @@ GLES1_0 >> clearDepthf: d [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> clearDepthx: depth [
+GLES10 >> clearDepthx: depth [
 
 	<generated>
 	<apicall: void 'glClearDepthx' (GLfixed)>
@@ -3540,9 +3507,9 @@ GLES1_0 >> clearDepthx: depth [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> clearStencil: s [
+GLES10 >> clearStencil: s [
 
 	<generated>
 	<apicall: void 'glClearStencil' (GLint)>
@@ -3551,9 +3518,9 @@ GLES1_0 >> clearStencil: s [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> clientActiveTexture: texture [
+GLES10 >> clientActiveTexture: texture [
 
 	<generated>
 	<apicall: void 'glClientActiveTexture' (GLenum)>
@@ -3562,10 +3529,10 @@ GLES1_0 >> clientActiveTexture: texture [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> clipPlanef: p with: eqn [
-	"Note: Only available in #common profile."
+GLES10 >> clipPlanef: p with: eqn [
+
 	<generated>
 	<apicall: void 'glClipPlanef' (GLenum GLfloat*)>
 	^ self externalCallFailed
@@ -3573,9 +3540,9 @@ GLES1_0 >> clipPlanef: p with: eqn [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> clipPlanex: plane with: equation [
+GLES10 >> clipPlanex: plane with: equation [
 
 	<generated>
 	<apicall: void 'glClipPlanex' (GLenum GLfixed*)>
@@ -3584,10 +3551,10 @@ GLES1_0 >> clipPlanex: plane with: equation [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> color4f: red with: green with: blue with: alpha [
-	"Note: Only available in #common profile."
+GLES10 >> color4f: red with: green with: blue with: alpha [
+
 	<generated>
 	<apicall: void 'glColor4f' (GLfloat GLfloat GLfloat GLfloat)>
 	^ self externalCallFailed
@@ -3595,9 +3562,9 @@ GLES1_0 >> color4f: red with: green with: blue with: alpha [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> color4ub: red with: green with: blue with: alpha [
+GLES10 >> color4ub: red with: green with: blue with: alpha [
 
 	<generated>
 	<apicall: void 'glColor4ub' (GLubyte GLubyte GLubyte GLubyte)>
@@ -3606,9 +3573,9 @@ GLES1_0 >> color4ub: red with: green with: blue with: alpha [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> color4x: red with: green with: blue with: alpha [
+GLES10 >> color4x: red with: green with: blue with: alpha [
 
 	<generated>
 	<apicall: void 'glColor4x' (GLfixed GLfixed GLfixed GLfixed)>
@@ -3617,9 +3584,9 @@ GLES1_0 >> color4x: red with: green with: blue with: alpha [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> colorMask: red with: green with: blue with: alpha [
+GLES10 >> colorMask: red with: green with: blue with: alpha [
 
 	<generated>
 	<apicall: void 'glColorMask' (GLboolean GLboolean GLboolean GLboolean)>
@@ -3628,9 +3595,9 @@ GLES1_0 >> colorMask: red with: green with: blue with: alpha [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> colorPointer: size with: type with: stride with: pointer [
+GLES10 >> colorPointer: size with: type with: stride with: pointer [
 
 	<generated>
 	<apicall: void 'glColorPointer' (GLint GLenum GLsizei void*)>
@@ -3639,9 +3606,9 @@ GLES1_0 >> colorPointer: size with: type with: stride with: pointer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> compressedTexImage2D: target with: level with: internalformat with: width with: height with: border with: imageSize with: data [
+GLES10 >> compressedTexImage2D: target with: level with: internalformat with: width with: height with: border with: imageSize with: data [
 
 	<generated>
 	<apicall: void 'glCompressedTexImage2D' (GLenum GLint GLenum GLsizei GLsizei GLint GLsizei void*)>
@@ -3650,9 +3617,9 @@ GLES1_0 >> compressedTexImage2D: target with: level with: internalformat with: w
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> compressedTexSubImage2D: target with: level with: xoffset with: yoffset with: width with: height with: format with: imageSize with: data [
+GLES10 >> compressedTexSubImage2D: target with: level with: xoffset with: yoffset with: width with: height with: format with: imageSize with: data [
 
 	<generated>
 	<apicall: void 'glCompressedTexSubImage2D' (GLenum GLint GLint GLint GLsizei GLsizei GLenum GLsizei void*)>
@@ -3661,9 +3628,9 @@ GLES1_0 >> compressedTexSubImage2D: target with: level with: xoffset with: yoffs
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> copyTexImage2D: target with: level with: internalformat with: x with: y with: width with: height with: border [
+GLES10 >> copyTexImage2D: target with: level with: internalformat with: x with: y with: width with: height with: border [
 
 	<generated>
 	<apicall: void 'glCopyTexImage2D' (GLenum GLint GLenum GLint GLint GLsizei GLsizei GLint)>
@@ -3672,9 +3639,9 @@ GLES1_0 >> copyTexImage2D: target with: level with: internalformat with: x with:
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> copyTexSubImage2D: target with: level with: xoffset with: yoffset with: x with: y with: width with: height [
+GLES10 >> copyTexSubImage2D: target with: level with: xoffset with: yoffset with: x with: y with: width with: height [
 
 	<generated>
 	<apicall: void 'glCopyTexSubImage2D' (GLenum GLint GLint GLint GLint GLint GLsizei GLsizei)>
@@ -3683,9 +3650,9 @@ GLES1_0 >> copyTexSubImage2D: target with: level with: xoffset with: yoffset wit
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> cullFace: mode [
+GLES10 >> cullFace: mode [
 
 	<generated>
 	<apicall: void 'glCullFace' (GLenum)>
@@ -3694,9 +3661,9 @@ GLES1_0 >> cullFace: mode [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> deleteBuffers: n with: buffers [
+GLES10 >> deleteBuffers: n with: buffers [
 
 	<generated>
 	<apicall: void 'glDeleteBuffers' (GLsizei GLuint*)>
@@ -3705,9 +3672,9 @@ GLES1_0 >> deleteBuffers: n with: buffers [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> deleteTextures: n with: textures [
+GLES10 >> deleteTextures: n with: textures [
 
 	<generated>
 	<apicall: void 'glDeleteTextures' (GLsizei GLuint*)>
@@ -3716,9 +3683,9 @@ GLES1_0 >> deleteTextures: n with: textures [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> depthFunc: func [
+GLES10 >> depthFunc: func [
 
 	<generated>
 	<apicall: void 'glDepthFunc' (GLenum)>
@@ -3727,9 +3694,9 @@ GLES1_0 >> depthFunc: func [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> depthMask: flag [
+GLES10 >> depthMask: flag [
 
 	<generated>
 	<apicall: void 'glDepthMask' (GLboolean)>
@@ -3738,10 +3705,10 @@ GLES1_0 >> depthMask: flag [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> depthRangef: n with: f [
-	"Note: Only available in #common profile."
+GLES10 >> depthRangef: n with: f [
+
 	<generated>
 	<apicall: void 'glDepthRangef' (GLfloat GLfloat)>
 	^ self externalCallFailed
@@ -3749,9 +3716,9 @@ GLES1_0 >> depthRangef: n with: f [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> depthRangex: n with: f [
+GLES10 >> depthRangex: n with: f [
 
 	<generated>
 	<apicall: void 'glDepthRangex' (GLfixed GLfixed)>
@@ -3760,9 +3727,9 @@ GLES1_0 >> depthRangex: n with: f [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> disable: cap [
+GLES10 >> disable: cap [
 
 	<generated>
 	<apicall: void 'glDisable' (GLenum)>
@@ -3771,9 +3738,9 @@ GLES1_0 >> disable: cap [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> disableClientState: array [
+GLES10 >> disableClientState: array [
 
 	<generated>
 	<apicall: void 'glDisableClientState' (GLenum)>
@@ -3782,9 +3749,9 @@ GLES1_0 >> disableClientState: array [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> drawArrays: mode with: first with: count [
+GLES10 >> drawArrays: mode with: first with: count [
 
 	<generated>
 	<apicall: void 'glDrawArrays' (GLenum GLint GLsizei)>
@@ -3793,9 +3760,9 @@ GLES1_0 >> drawArrays: mode with: first with: count [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> drawElements: mode with: count with: type with: indices [
+GLES10 >> drawElements: mode with: count with: type with: indices [
 
 	<generated>
 	<apicall: void 'glDrawElements' (GLenum GLsizei GLenum void*)>
@@ -3804,9 +3771,9 @@ GLES1_0 >> drawElements: mode with: count with: type with: indices [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> enable: cap [
+GLES10 >> enable: cap [
 
 	<generated>
 	<apicall: void 'glEnable' (GLenum)>
@@ -3815,9 +3782,9 @@ GLES1_0 >> enable: cap [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> enableClientState: array [
+GLES10 >> enableClientState: array [
 
 	<generated>
 	<apicall: void 'glEnableClientState' (GLenum)>
@@ -3826,9 +3793,9 @@ GLES1_0 >> enableClientState: array [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> finish [
+GLES10 >> finish [
 
 	<generated>
 	<apicall: void 'glFinish' ()>
@@ -3837,9 +3804,9 @@ GLES1_0 >> finish [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> flush [
+GLES10 >> flush [
 
 	<generated>
 	<apicall: void 'glFlush' ()>
@@ -3848,10 +3815,10 @@ GLES1_0 >> flush [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> fogf: pname with: param [
-	"Note: Only available in #common profile."
+GLES10 >> fogf: pname with: param [
+
 	<generated>
 	<apicall: void 'glFogf' (GLenum GLfloat)>
 	^ self externalCallFailed
@@ -3859,10 +3826,10 @@ GLES1_0 >> fogf: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> fogfv: pname with: params [
-	"Note: Only available in #common profile."
+GLES10 >> fogfv: pname with: params [
+
 	<generated>
 	<apicall: void 'glFogfv' (GLenum GLfloat*)>
 	^ self externalCallFailed
@@ -3870,9 +3837,9 @@ GLES1_0 >> fogfv: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> fogx: pname with: param [
+GLES10 >> fogx: pname with: param [
 
 	<generated>
 	<apicall: void 'glFogx' (GLenum GLfixed)>
@@ -3881,9 +3848,9 @@ GLES1_0 >> fogx: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> fogxv: pname with: param [
+GLES10 >> fogxv: pname with: param [
 
 	<generated>
 	<apicall: void 'glFogxv' (GLenum GLfixed*)>
@@ -3892,9 +3859,9 @@ GLES1_0 >> fogxv: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> frontFace: mode [
+GLES10 >> frontFace: mode [
 
 	<generated>
 	<apicall: void 'glFrontFace' (GLenum)>
@@ -3903,10 +3870,10 @@ GLES1_0 >> frontFace: mode [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> frustumf: l with: r with: b with: t with: n with: f [
-	"Note: Only available in #common profile."
+GLES10 >> frustumf: l with: r with: b with: t with: n with: f [
+
 	<generated>
 	<apicall: void 'glFrustumf' (GLfloat GLfloat GLfloat GLfloat GLfloat GLfloat)>
 	^ self externalCallFailed
@@ -3914,9 +3881,9 @@ GLES1_0 >> frustumf: l with: r with: b with: t with: n with: f [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> frustumx: l with: r with: b with: t with: n with: f [
+GLES10 >> frustumx: l with: r with: b with: t with: n with: f [
 
 	<generated>
 	<apicall: void 'glFrustumx' (GLfixed GLfixed GLfixed GLfixed GLfixed GLfixed)>
@@ -3925,9 +3892,9 @@ GLES1_0 >> frustumx: l with: r with: b with: t with: n with: f [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> genBuffers: n with: buffers [
+GLES10 >> genBuffers: n with: buffers [
 
 	<generated>
 	<apicall: void 'glGenBuffers' (GLsizei GLuint*)>
@@ -3936,9 +3903,9 @@ GLES1_0 >> genBuffers: n with: buffers [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> genTextures: n with: textures [
+GLES10 >> genTextures: n with: textures [
 
 	<generated>
 	<apicall: void 'glGenTextures' (GLsizei GLuint*)>
@@ -3947,9 +3914,9 @@ GLES1_0 >> genTextures: n with: textures [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> getBooleanv: pname with: data [
+GLES10 >> getBooleanv: pname with: data [
 
 	<generated>
 	<apicall: void 'glGetBooleanv' (GLenum GLboolean*)>
@@ -3958,9 +3925,9 @@ GLES1_0 >> getBooleanv: pname with: data [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> getBufferParameteriv: target with: pname with: params [
+GLES10 >> getBufferParameteriv: target with: pname with: params [
 
 	<generated>
 	<apicall: void 'glGetBufferParameteriv' (GLenum GLenum GLint*)>
@@ -3969,10 +3936,10 @@ GLES1_0 >> getBufferParameteriv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> getClipPlanef: plane with: equation [
-	"Note: Only available in #common profile."
+GLES10 >> getClipPlanef: plane with: equation [
+
 	<generated>
 	<apicall: void 'glGetClipPlanef' (GLenum GLfloat*)>
 	^ self externalCallFailed
@@ -3980,9 +3947,9 @@ GLES1_0 >> getClipPlanef: plane with: equation [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> getClipPlanex: plane with: equation [
+GLES10 >> getClipPlanex: plane with: equation [
 
 	<generated>
 	<apicall: void 'glGetClipPlanex' (GLenum GLfixed*)>
@@ -3991,9 +3958,9 @@ GLES1_0 >> getClipPlanex: plane with: equation [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> getError [
+GLES10 >> getError [
 
 	<generated>
 	<apicall: GLenum 'glGetError' ()>
@@ -4002,9 +3969,9 @@ GLES1_0 >> getError [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> getFixedv: pname with: params [
+GLES10 >> getFixedv: pname with: params [
 
 	<generated>
 	<apicall: void 'glGetFixedv' (GLenum GLfixed*)>
@@ -4013,10 +3980,10 @@ GLES1_0 >> getFixedv: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> getFloatv: pname with: data [
-	"Note: Only available in #common profile."
+GLES10 >> getFloatv: pname with: data [
+
 	<generated>
 	<apicall: void 'glGetFloatv' (GLenum GLfloat*)>
 	^ self externalCallFailed
@@ -4024,9 +3991,9 @@ GLES1_0 >> getFloatv: pname with: data [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> getIntegerv: pname with: data [
+GLES10 >> getIntegerv: pname with: data [
 
 	<generated>
 	<apicall: void 'glGetIntegerv' (GLenum GLint*)>
@@ -4035,10 +4002,10 @@ GLES1_0 >> getIntegerv: pname with: data [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> getLightfv: light with: pname with: params [
-	"Note: Only available in #common profile."
+GLES10 >> getLightfv: light with: pname with: params [
+
 	<generated>
 	<apicall: void 'glGetLightfv' (GLenum GLenum GLfloat*)>
 	^ self externalCallFailed
@@ -4046,9 +4013,9 @@ GLES1_0 >> getLightfv: light with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> getLightxv: light with: pname with: params [
+GLES10 >> getLightxv: light with: pname with: params [
 
 	<generated>
 	<apicall: void 'glGetLightxv' (GLenum GLenum GLfixed*)>
@@ -4057,10 +4024,10 @@ GLES1_0 >> getLightxv: light with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> getMaterialfv: face with: pname with: params [
-	"Note: Only available in #common profile."
+GLES10 >> getMaterialfv: face with: pname with: params [
+
 	<generated>
 	<apicall: void 'glGetMaterialfv' (GLenum GLenum GLfloat*)>
 	^ self externalCallFailed
@@ -4068,9 +4035,9 @@ GLES1_0 >> getMaterialfv: face with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> getMaterialxv: face with: pname with: params [
+GLES10 >> getMaterialxv: face with: pname with: params [
 
 	<generated>
 	<apicall: void 'glGetMaterialxv' (GLenum GLenum GLfixed*)>
@@ -4079,9 +4046,9 @@ GLES1_0 >> getMaterialxv: face with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> getPointerv: pname with: params [
+GLES10 >> getPointerv: pname with: params [
 
 	<generated>
 	<apicall: void 'glGetPointerv' (GLenum void**)>
@@ -4090,9 +4057,9 @@ GLES1_0 >> getPointerv: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> getString: name [
+GLES10 >> getString: name [
 
 	<generated>
 	<apicall: GLubyte* 'glGetString' (GLenum)>
@@ -4101,10 +4068,10 @@ GLES1_0 >> getString: name [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> getTexEnvfv: target with: pname with: params [
-	"Note: Only available in #common profile."
+GLES10 >> getTexEnvfv: target with: pname with: params [
+
 	<generated>
 	<apicall: void 'glGetTexEnvfv' (GLenum GLenum GLfloat*)>
 	^ self externalCallFailed
@@ -4112,9 +4079,9 @@ GLES1_0 >> getTexEnvfv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> getTexEnviv: target with: pname with: params [
+GLES10 >> getTexEnviv: target with: pname with: params [
 
 	<generated>
 	<apicall: void 'glGetTexEnviv' (GLenum GLenum GLint*)>
@@ -4123,9 +4090,9 @@ GLES1_0 >> getTexEnviv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> getTexEnvxv: target with: pname with: params [
+GLES10 >> getTexEnvxv: target with: pname with: params [
 
 	<generated>
 	<apicall: void 'glGetTexEnvxv' (GLenum GLenum GLfixed*)>
@@ -4134,10 +4101,10 @@ GLES1_0 >> getTexEnvxv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> getTexParameterfv: target with: pname with: params [
-	"Note: Only available in #common profile."
+GLES10 >> getTexParameterfv: target with: pname with: params [
+
 	<generated>
 	<apicall: void 'glGetTexParameterfv' (GLenum GLenum GLfloat*)>
 	^ self externalCallFailed
@@ -4145,9 +4112,9 @@ GLES1_0 >> getTexParameterfv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> getTexParameteriv: target with: pname with: params [
+GLES10 >> getTexParameteriv: target with: pname with: params [
 
 	<generated>
 	<apicall: void 'glGetTexParameteriv' (GLenum GLenum GLint*)>
@@ -4156,9 +4123,9 @@ GLES1_0 >> getTexParameteriv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> getTexParameterxv: target with: pname with: params [
+GLES10 >> getTexParameterxv: target with: pname with: params [
 
 	<generated>
 	<apicall: void 'glGetTexParameterxv' (GLenum GLenum GLfixed*)>
@@ -4166,23 +4133,10 @@ GLES1_0 >> getTexParameterxv: target with: pname with: params [
 ]
 
 {
-	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 15:42'
-}
-GLES1_0 >> getVersion [
-
-	| versionString tokens |
-	versionString := self getVersionString.
-	"OpenGL ES-XX N.M" "XX={CM,CL}"
-	tokens := versionString findTokens: '. '.
-	^ { tokens third asInteger . tokens fourth asInteger }
-]
-
-{
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> hint: target with: mode [
+GLES10 >> hint: target with: mode [
 
 	<generated>
 	<apicall: void 'glHint' (GLenum GLenum)>
@@ -4191,9 +4145,9 @@ GLES1_0 >> hint: target with: mode [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> isBuffer: buffer [
+GLES10 >> isBuffer: buffer [
 
 	<generated>
 	<apicall: GLboolean 'glIsBuffer' (GLuint)>
@@ -4202,9 +4156,9 @@ GLES1_0 >> isBuffer: buffer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> isEnabled: cap [
+GLES10 >> isEnabled: cap [
 
 	<generated>
 	<apicall: GLboolean 'glIsEnabled' (GLenum)>
@@ -4213,9 +4167,9 @@ GLES1_0 >> isEnabled: cap [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> isTexture: texture [
+GLES10 >> isTexture: texture [
 
 	<generated>
 	<apicall: GLboolean 'glIsTexture' (GLuint)>
@@ -4224,10 +4178,10 @@ GLES1_0 >> isTexture: texture [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> lightModelf: pname with: param [
-	"Note: Only available in #common profile."
+GLES10 >> lightModelf: pname with: param [
+
 	<generated>
 	<apicall: void 'glLightModelf' (GLenum GLfloat)>
 	^ self externalCallFailed
@@ -4235,10 +4189,10 @@ GLES1_0 >> lightModelf: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> lightModelfv: pname with: params [
-	"Note: Only available in #common profile."
+GLES10 >> lightModelfv: pname with: params [
+
 	<generated>
 	<apicall: void 'glLightModelfv' (GLenum GLfloat*)>
 	^ self externalCallFailed
@@ -4246,9 +4200,9 @@ GLES1_0 >> lightModelfv: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> lightModelx: pname with: param [
+GLES10 >> lightModelx: pname with: param [
 
 	<generated>
 	<apicall: void 'glLightModelx' (GLenum GLfixed)>
@@ -4257,9 +4211,9 @@ GLES1_0 >> lightModelx: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> lightModelxv: pname with: param [
+GLES10 >> lightModelxv: pname with: param [
 
 	<generated>
 	<apicall: void 'glLightModelxv' (GLenum GLfixed*)>
@@ -4268,10 +4222,10 @@ GLES1_0 >> lightModelxv: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> lightf: light with: pname with: param [
-	"Note: Only available in #common profile."
+GLES10 >> lightf: light with: pname with: param [
+
 	<generated>
 	<apicall: void 'glLightf' (GLenum GLenum GLfloat)>
 	^ self externalCallFailed
@@ -4279,10 +4233,10 @@ GLES1_0 >> lightf: light with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> lightfv: light with: pname with: params [
-	"Note: Only available in #common profile."
+GLES10 >> lightfv: light with: pname with: params [
+
 	<generated>
 	<apicall: void 'glLightfv' (GLenum GLenum GLfloat*)>
 	^ self externalCallFailed
@@ -4290,9 +4244,9 @@ GLES1_0 >> lightfv: light with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> lightx: light with: pname with: param [
+GLES10 >> lightx: light with: pname with: param [
 
 	<generated>
 	<apicall: void 'glLightx' (GLenum GLenum GLfixed)>
@@ -4301,9 +4255,9 @@ GLES1_0 >> lightx: light with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> lightxv: light with: pname with: params [
+GLES10 >> lightxv: light with: pname with: params [
 
 	<generated>
 	<apicall: void 'glLightxv' (GLenum GLenum GLfixed*)>
@@ -4312,10 +4266,10 @@ GLES1_0 >> lightxv: light with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> lineWidth: width [
-	"Note: Only available in #common profile."
+GLES10 >> lineWidth: width [
+
 	<generated>
 	<apicall: void 'glLineWidth' (GLfloat)>
 	^ self externalCallFailed
@@ -4323,9 +4277,9 @@ GLES1_0 >> lineWidth: width [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> lineWidthx: width [
+GLES10 >> lineWidthx: width [
 
 	<generated>
 	<apicall: void 'glLineWidthx' (GLfixed)>
@@ -4334,9 +4288,9 @@ GLES1_0 >> lineWidthx: width [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> loadIdentity [
+GLES10 >> loadIdentity [
 
 	<generated>
 	<apicall: void 'glLoadIdentity' ()>
@@ -4345,10 +4299,10 @@ GLES1_0 >> loadIdentity [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> loadMatrixf: m [
-	"Note: Only available in #common profile."
+GLES10 >> loadMatrixf: m [
+
 	<generated>
 	<apicall: void 'glLoadMatrixf' (GLfloat*)>
 	^ self externalCallFailed
@@ -4356,9 +4310,9 @@ GLES1_0 >> loadMatrixf: m [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> loadMatrixx: m [
+GLES10 >> loadMatrixx: m [
 
 	<generated>
 	<apicall: void 'glLoadMatrixx' (GLfixed*)>
@@ -4367,9 +4321,9 @@ GLES1_0 >> loadMatrixx: m [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> logicOp: opcode [
+GLES10 >> logicOp: opcode [
 
 	<generated>
 	<apicall: void 'glLogicOp' (GLenum)>
@@ -4378,10 +4332,10 @@ GLES1_0 >> logicOp: opcode [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> materialf: face with: pname with: param [
-	"Note: Only available in #common profile."
+GLES10 >> materialf: face with: pname with: param [
+
 	<generated>
 	<apicall: void 'glMaterialf' (GLenum GLenum GLfloat)>
 	^ self externalCallFailed
@@ -4389,10 +4343,10 @@ GLES1_0 >> materialf: face with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> materialfv: face with: pname with: params [
-	"Note: Only available in #common profile."
+GLES10 >> materialfv: face with: pname with: params [
+
 	<generated>
 	<apicall: void 'glMaterialfv' (GLenum GLenum GLfloat*)>
 	^ self externalCallFailed
@@ -4400,9 +4354,9 @@ GLES1_0 >> materialfv: face with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> materialx: face with: pname with: param [
+GLES10 >> materialx: face with: pname with: param [
 
 	<generated>
 	<apicall: void 'glMaterialx' (GLenum GLenum GLfixed)>
@@ -4411,9 +4365,9 @@ GLES1_0 >> materialx: face with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> materialxv: face with: pname with: param [
+GLES10 >> materialxv: face with: pname with: param [
 
 	<generated>
 	<apicall: void 'glMaterialxv' (GLenum GLenum GLfixed*)>
@@ -4422,9 +4376,9 @@ GLES1_0 >> materialxv: face with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> matrixMode: mode [
+GLES10 >> matrixMode: mode [
 
 	<generated>
 	<apicall: void 'glMatrixMode' (GLenum)>
@@ -4433,10 +4387,10 @@ GLES1_0 >> matrixMode: mode [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> multMatrixf: m [
-	"Note: Only available in #common profile."
+GLES10 >> multMatrixf: m [
+
 	<generated>
 	<apicall: void 'glMultMatrixf' (GLfloat*)>
 	^ self externalCallFailed
@@ -4444,9 +4398,9 @@ GLES1_0 >> multMatrixf: m [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> multMatrixx: m [
+GLES10 >> multMatrixx: m [
 
 	<generated>
 	<apicall: void 'glMultMatrixx' (GLfixed*)>
@@ -4455,10 +4409,10 @@ GLES1_0 >> multMatrixx: m [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> multiTexCoord4f: target with: s with: t with: r with: q [
-	"Note: Only available in #common profile."
+GLES10 >> multiTexCoord4f: target with: s with: t with: r with: q [
+
 	<generated>
 	<apicall: void 'glMultiTexCoord4f' (GLenum GLfloat GLfloat GLfloat GLfloat)>
 	^ self externalCallFailed
@@ -4466,9 +4420,9 @@ GLES1_0 >> multiTexCoord4f: target with: s with: t with: r with: q [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> multiTexCoord4x: texture with: s with: t with: r with: q [
+GLES10 >> multiTexCoord4x: texture with: s with: t with: r with: q [
 
 	<generated>
 	<apicall: void 'glMultiTexCoord4x' (GLenum GLfixed GLfixed GLfixed GLfixed)>
@@ -4477,10 +4431,10 @@ GLES1_0 >> multiTexCoord4x: texture with: s with: t with: r with: q [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> normal3f: nx with: ny with: nz [
-	"Note: Only available in #common profile."
+GLES10 >> normal3f: nx with: ny with: nz [
+
 	<generated>
 	<apicall: void 'glNormal3f' (GLfloat GLfloat GLfloat)>
 	^ self externalCallFailed
@@ -4488,9 +4442,9 @@ GLES1_0 >> normal3f: nx with: ny with: nz [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> normal3x: nx with: ny with: nz [
+GLES10 >> normal3x: nx with: ny with: nz [
 
 	<generated>
 	<apicall: void 'glNormal3x' (GLfixed GLfixed GLfixed)>
@@ -4499,9 +4453,9 @@ GLES1_0 >> normal3x: nx with: ny with: nz [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> normalPointer: type with: stride with: pointer [
+GLES10 >> normalPointer: type with: stride with: pointer [
 
 	<generated>
 	<apicall: void 'glNormalPointer' (GLenum GLsizei void*)>
@@ -4510,10 +4464,10 @@ GLES1_0 >> normalPointer: type with: stride with: pointer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> orthof: l with: r with: b with: t with: n with: f [
-	"Note: Only available in #common profile."
+GLES10 >> orthof: l with: r with: b with: t with: n with: f [
+
 	<generated>
 	<apicall: void 'glOrthof' (GLfloat GLfloat GLfloat GLfloat GLfloat GLfloat)>
 	^ self externalCallFailed
@@ -4521,9 +4475,9 @@ GLES1_0 >> orthof: l with: r with: b with: t with: n with: f [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> orthox: l with: r with: b with: t with: n with: f [
+GLES10 >> orthox: l with: r with: b with: t with: n with: f [
 
 	<generated>
 	<apicall: void 'glOrthox' (GLfixed GLfixed GLfixed GLfixed GLfixed GLfixed)>
@@ -4532,9 +4486,9 @@ GLES1_0 >> orthox: l with: r with: b with: t with: n with: f [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> pixelStorei: pname with: param [
+GLES10 >> pixelStorei: pname with: param [
 
 	<generated>
 	<apicall: void 'glPixelStorei' (GLenum GLint)>
@@ -4543,10 +4497,10 @@ GLES1_0 >> pixelStorei: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> pointParameterf: pname with: param [
-	"Note: Only available in #common profile."
+GLES10 >> pointParameterf: pname with: param [
+
 	<generated>
 	<apicall: void 'glPointParameterf' (GLenum GLfloat)>
 	^ self externalCallFailed
@@ -4554,10 +4508,10 @@ GLES1_0 >> pointParameterf: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> pointParameterfv: pname with: params [
-	"Note: Only available in #common profile."
+GLES10 >> pointParameterfv: pname with: params [
+
 	<generated>
 	<apicall: void 'glPointParameterfv' (GLenum GLfloat*)>
 	^ self externalCallFailed
@@ -4565,9 +4519,9 @@ GLES1_0 >> pointParameterfv: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> pointParameterx: pname with: param [
+GLES10 >> pointParameterx: pname with: param [
 
 	<generated>
 	<apicall: void 'glPointParameterx' (GLenum GLfixed)>
@@ -4576,9 +4530,9 @@ GLES1_0 >> pointParameterx: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> pointParameterxv: pname with: params [
+GLES10 >> pointParameterxv: pname with: params [
 
 	<generated>
 	<apicall: void 'glPointParameterxv' (GLenum GLfixed*)>
@@ -4587,10 +4541,10 @@ GLES1_0 >> pointParameterxv: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> pointSize: size [
-	"Note: Only available in #common profile."
+GLES10 >> pointSize: size [
+
 	<generated>
 	<apicall: void 'glPointSize' (GLfloat)>
 	^ self externalCallFailed
@@ -4598,9 +4552,9 @@ GLES1_0 >> pointSize: size [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> pointSizex: size [
+GLES10 >> pointSizex: size [
 
 	<generated>
 	<apicall: void 'glPointSizex' (GLfixed)>
@@ -4609,10 +4563,10 @@ GLES1_0 >> pointSizex: size [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> polygonOffset: factor with: units [
-	"Note: Only available in #common profile."
+GLES10 >> polygonOffset: factor with: units [
+
 	<generated>
 	<apicall: void 'glPolygonOffset' (GLfloat GLfloat)>
 	^ self externalCallFailed
@@ -4620,9 +4574,9 @@ GLES1_0 >> polygonOffset: factor with: units [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> polygonOffsetx: factor with: units [
+GLES10 >> polygonOffsetx: factor with: units [
 
 	<generated>
 	<apicall: void 'glPolygonOffsetx' (GLfixed GLfixed)>
@@ -4631,9 +4585,9 @@ GLES1_0 >> polygonOffsetx: factor with: units [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> popMatrix [
+GLES10 >> popMatrix [
 
 	<generated>
 	<apicall: void 'glPopMatrix' ()>
@@ -4642,9 +4596,9 @@ GLES1_0 >> popMatrix [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> pushMatrix [
+GLES10 >> pushMatrix [
 
 	<generated>
 	<apicall: void 'glPushMatrix' ()>
@@ -4653,9 +4607,9 @@ GLES1_0 >> pushMatrix [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> readPixels: x with: y with: width with: height with: format with: type with: pixels [
+GLES10 >> readPixels: x with: y with: width with: height with: format with: type with: pixels [
 
 	<generated>
 	<apicall: void 'glReadPixels' (GLint GLint GLsizei GLsizei GLenum GLenum void*)>
@@ -4664,10 +4618,10 @@ GLES1_0 >> readPixels: x with: y with: width with: height with: format with: typ
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> rotatef: angle with: x with: y with: z [
-	"Note: Only available in #common profile."
+GLES10 >> rotatef: angle with: x with: y with: z [
+
 	<generated>
 	<apicall: void 'glRotatef' (GLfloat GLfloat GLfloat GLfloat)>
 	^ self externalCallFailed
@@ -4675,9 +4629,9 @@ GLES1_0 >> rotatef: angle with: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> rotatex: angle with: x with: y with: z [
+GLES10 >> rotatex: angle with: x with: y with: z [
 
 	<generated>
 	<apicall: void 'glRotatex' (GLfixed GLfixed GLfixed GLfixed)>
@@ -4686,9 +4640,9 @@ GLES1_0 >> rotatex: angle with: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> sampleCoverage: value with: invert [
+GLES10 >> sampleCoverage: value with: invert [
 
 	<generated>
 	<apicall: void 'glSampleCoverage' (GLfloat GLboolean)>
@@ -4697,9 +4651,9 @@ GLES1_0 >> sampleCoverage: value with: invert [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> sampleCoveragex: value with: invert [
+GLES10 >> sampleCoveragex: value with: invert [
 
 	<generated>
 	<apicall: void 'glSampleCoveragex' (GLclampx GLboolean)>
@@ -4708,10 +4662,10 @@ GLES1_0 >> sampleCoveragex: value with: invert [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> scalef: x with: y with: z [
-	"Note: Only available in #common profile."
+GLES10 >> scalef: x with: y with: z [
+
 	<generated>
 	<apicall: void 'glScalef' (GLfloat GLfloat GLfloat)>
 	^ self externalCallFailed
@@ -4719,9 +4673,9 @@ GLES1_0 >> scalef: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> scalex: x with: y with: z [
+GLES10 >> scalex: x with: y with: z [
 
 	<generated>
 	<apicall: void 'glScalex' (GLfixed GLfixed GLfixed)>
@@ -4730,9 +4684,9 @@ GLES1_0 >> scalex: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> scissor: x with: y with: width with: height [
+GLES10 >> scissor: x with: y with: width with: height [
 
 	<generated>
 	<apicall: void 'glScissor' (GLint GLint GLsizei GLsizei)>
@@ -4741,9 +4695,9 @@ GLES1_0 >> scissor: x with: y with: width with: height [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> shadeModel: mode [
+GLES10 >> shadeModel: mode [
 
 	<generated>
 	<apicall: void 'glShadeModel' (GLenum)>
@@ -4752,9 +4706,9 @@ GLES1_0 >> shadeModel: mode [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> stencilFunc: func with: ref with: mask [
+GLES10 >> stencilFunc: func with: ref with: mask [
 
 	<generated>
 	<apicall: void 'glStencilFunc' (GLenum GLint GLuint)>
@@ -4763,9 +4717,9 @@ GLES1_0 >> stencilFunc: func with: ref with: mask [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> stencilMask: mask [
+GLES10 >> stencilMask: mask [
 
 	<generated>
 	<apicall: void 'glStencilMask' (GLuint)>
@@ -4774,9 +4728,9 @@ GLES1_0 >> stencilMask: mask [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> stencilOp: fail with: zfail with: zpass [
+GLES10 >> stencilOp: fail with: zfail with: zpass [
 
 	<generated>
 	<apicall: void 'glStencilOp' (GLenum GLenum GLenum)>
@@ -4785,9 +4739,9 @@ GLES1_0 >> stencilOp: fail with: zfail with: zpass [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> texCoordPointer: size with: type with: stride with: pointer [
+GLES10 >> texCoordPointer: size with: type with: stride with: pointer [
 
 	<generated>
 	<apicall: void 'glTexCoordPointer' (GLint GLenum GLsizei void*)>
@@ -4796,10 +4750,10 @@ GLES1_0 >> texCoordPointer: size with: type with: stride with: pointer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> texEnvf: target with: pname with: param [
-	"Note: Only available in #common profile."
+GLES10 >> texEnvf: target with: pname with: param [
+
 	<generated>
 	<apicall: void 'glTexEnvf' (GLenum GLenum GLfloat)>
 	^ self externalCallFailed
@@ -4807,10 +4761,10 @@ GLES1_0 >> texEnvf: target with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> texEnvfv: target with: pname with: params [
-	"Note: Only available in #common profile."
+GLES10 >> texEnvfv: target with: pname with: params [
+
 	<generated>
 	<apicall: void 'glTexEnvfv' (GLenum GLenum GLfloat*)>
 	^ self externalCallFailed
@@ -4818,9 +4772,9 @@ GLES1_0 >> texEnvfv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> texEnvi: target with: pname with: param [
+GLES10 >> texEnvi: target with: pname with: param [
 
 	<generated>
 	<apicall: void 'glTexEnvi' (GLenum GLenum GLint)>
@@ -4829,9 +4783,9 @@ GLES1_0 >> texEnvi: target with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> texEnviv: target with: pname with: params [
+GLES10 >> texEnviv: target with: pname with: params [
 
 	<generated>
 	<apicall: void 'glTexEnviv' (GLenum GLenum GLint*)>
@@ -4840,9 +4794,9 @@ GLES1_0 >> texEnviv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> texEnvx: target with: pname with: param [
+GLES10 >> texEnvx: target with: pname with: param [
 
 	<generated>
 	<apicall: void 'glTexEnvx' (GLenum GLenum GLfixed)>
@@ -4851,9 +4805,9 @@ GLES1_0 >> texEnvx: target with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> texEnvxv: target with: pname with: params [
+GLES10 >> texEnvxv: target with: pname with: params [
 
 	<generated>
 	<apicall: void 'glTexEnvxv' (GLenum GLenum GLfixed*)>
@@ -4862,9 +4816,9 @@ GLES1_0 >> texEnvxv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> texImage2D: target with: level with: internalformat with: width with: height with: border with: format with: type with: pixels [
+GLES10 >> texImage2D: target with: level with: internalformat with: width with: height with: border with: format with: type with: pixels [
 
 	<generated>
 	<apicall: void 'glTexImage2D' (GLenum GLint GLint GLsizei GLsizei GLint GLenum GLenum void*)>
@@ -4873,10 +4827,10 @@ GLES1_0 >> texImage2D: target with: level with: internalformat with: width with:
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> texParameterf: target with: pname with: param [
-	"Note: Only available in #common profile."
+GLES10 >> texParameterf: target with: pname with: param [
+
 	<generated>
 	<apicall: void 'glTexParameterf' (GLenum GLenum GLfloat)>
 	^ self externalCallFailed
@@ -4884,10 +4838,10 @@ GLES1_0 >> texParameterf: target with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> texParameterfv: target with: pname with: params [
-	"Note: Only available in #common profile."
+GLES10 >> texParameterfv: target with: pname with: params [
+
 	<generated>
 	<apicall: void 'glTexParameterfv' (GLenum GLenum GLfloat*)>
 	^ self externalCallFailed
@@ -4895,9 +4849,9 @@ GLES1_0 >> texParameterfv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> texParameteri: target with: pname with: param [
+GLES10 >> texParameteri: target with: pname with: param [
 
 	<generated>
 	<apicall: void 'glTexParameteri' (GLenum GLenum GLint)>
@@ -4906,9 +4860,9 @@ GLES1_0 >> texParameteri: target with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> texParameteriv: target with: pname with: params [
+GLES10 >> texParameteriv: target with: pname with: params [
 
 	<generated>
 	<apicall: void 'glTexParameteriv' (GLenum GLenum GLint*)>
@@ -4917,9 +4871,9 @@ GLES1_0 >> texParameteriv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> texParameterx: target with: pname with: param [
+GLES10 >> texParameterx: target with: pname with: param [
 
 	<generated>
 	<apicall: void 'glTexParameterx' (GLenum GLenum GLfixed)>
@@ -4928,9 +4882,9 @@ GLES1_0 >> texParameterx: target with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> texParameterxv: target with: pname with: params [
+GLES10 >> texParameterxv: target with: pname with: params [
 
 	<generated>
 	<apicall: void 'glTexParameterxv' (GLenum GLenum GLfixed*)>
@@ -4939,9 +4893,9 @@ GLES1_0 >> texParameterxv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> texSubImage2D: target with: level with: xoffset with: yoffset with: width with: height with: format with: type with: pixels [
+GLES10 >> texSubImage2D: target with: level with: xoffset with: yoffset with: width with: height with: format with: type with: pixels [
 
 	<generated>
 	<apicall: void 'glTexSubImage2D' (GLenum GLint GLint GLint GLsizei GLsizei GLenum GLenum void*)>
@@ -4950,10 +4904,10 @@ GLES1_0 >> texSubImage2D: target with: level with: xoffset with: yoffset with: w
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GLES1_0 >> translatef: x with: y with: z [
-	"Note: Only available in #common profile."
+GLES10 >> translatef: x with: y with: z [
+
 	<generated>
 	<apicall: void 'glTranslatef' (GLfloat GLfloat GLfloat)>
 	^ self externalCallFailed
@@ -4961,9 +4915,9 @@ GLES1_0 >> translatef: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> translatex: x with: y with: z [
+GLES10 >> translatex: x with: y with: z [
 
 	<generated>
 	<apicall: void 'glTranslatex' (GLfixed GLfixed GLfixed)>
@@ -4972,9 +4926,9 @@ GLES1_0 >> translatex: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> vertexPointer: size with: type with: stride with: pointer [
+GLES10 >> vertexPointer: size with: type with: stride with: pointer [
 
 	<generated>
 	<apicall: void 'glVertexPointer' (GLint GLenum GLsizei void*)>
@@ -4983,9 +4937,9 @@ GLES1_0 >> vertexPointer: size with: type with: stride with: pointer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:14'
 }
-GLES1_0 >> viewport: x with: y with: width with: height [
+GLES10 >> viewport: x with: y with: width with: height [
 
 	<generated>
 	<apicall: void 'glViewport' (GLint GLint GLsizei GLsizei)>

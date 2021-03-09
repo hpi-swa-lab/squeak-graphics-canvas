@@ -27,6 +27,15 @@ LOGLTemplate class >> run [
 ]
 
 {
+	#category : #callbacks,
+	#timestamp : 'stlu 2/1/2021 14:44'
+}
+LOGLTemplate >> cursorPositionChanged: aPoint [
+
+	"do nothing by default"
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 1/7/2021 17:50'
 }
@@ -82,6 +91,22 @@ LOGLTemplate >> processPriority [
 ]
 
 {
+	#category : #callbacks,
+	#timestamp : 'stlu 2/12/2021 23:56'
+}
+LOGLTemplate >> registerCallbacks [
+
+	window framebufferExtentCallback: [:w :width :height |
+		self windowExtentChanged: width @ height].
+	
+	window cursorPosCallback: [:w :x :y |
+		self cursorPositionChanged: x @ y].
+	
+	window scrollCallback: [:w :xOffset :yOffset |
+		self scrolledBy: xOffset @ yOffset]
+]
+
+{
 	#category : #rendering,
 	#timestamp : 'stlu 10/26/2020 17:44'
 }
@@ -120,13 +145,13 @@ LOGLTemplate >> renderLoop [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/7/2021 17:50'
+	#timestamp : 'stlu 2/18/2021 22:48'
 }
 LOGLTemplate >> run [
 
 	"GLFW init."
-	GLFW targetLibrary: GL3_3 profile: #core.
-	GLFW windowHint: GLFW FLOATING with: true.
+	GLFW targetLibrary: GL33Core.
+	GLFW windowHint: GLFW_FLOATING with: true.
 
 	window := GLFWWindow
 				extent: self initialWindowExtent
@@ -137,11 +162,19 @@ LOGLTemplate >> run [
 	library := window context library.
 	
 	library makeCurrentDuring: [
-		window framebufferSizeCallback: [:w :width :height |
-			self windowExtentChanged: width @ height].
+		self registerCallbacks.
 		self setUp.].
 	
 	self spawnNewRenderProcess
+]
+
+{
+	#category : #callbacks,
+	#timestamp : 'stlu 2/1/2021 14:51'
+}
+LOGLTemplate >> scrolledBy: offset [
+
+	"do nothing by default"
 ]
 
 {

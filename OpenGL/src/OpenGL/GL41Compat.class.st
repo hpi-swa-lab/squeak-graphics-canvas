@@ -1,6 +1,6 @@
 Class {
-	#name : #'GL4_1',
-	#superclass : #'GL4_0',
+	#name : #GL41Compat,
+	#superclass : #GL40Compat,
 	#category : #'OpenGL-API-GL',
 	#commentStamp : ''
 }
@@ -9,7 +9,7 @@ Class {
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
-GL4_1 class >> majorVersion [
+GL41Compat class >> majorVersion [
 
 	^ 4
 ]
@@ -18,7 +18,7 @@ GL4_1 class >> majorVersion [
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
-GL4_1 class >> minorVersion [
+GL41Compat class >> minorVersion [
 
 	^ 1
 ]
@@ -27,7 +27,7 @@ GL4_1 class >> minorVersion [
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 14:52'
 }
-GL4_1 class >> versionNumber [
+GL41Compat class >> versionNumber [
 
 	^ 41
 ]
@@ -36,7 +36,7 @@ GL4_1 class >> versionNumber [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> ACTIVE_PROGRAM [
+GL41Compat >> ACTIVE_PROGRAM [
 
 	<generated>
 	^ GL_ACTIVE_PROGRAM
@@ -46,7 +46,7 @@ GL4_1 >> ACTIVE_PROGRAM [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> ALL_SHADER_BITS [
+GL41Compat >> ALL_SHADER_BITS [
 
 	<generated>
 	^ GL_ALL_SHADER_BITS
@@ -56,7 +56,7 @@ GL4_1 >> ALL_SHADER_BITS [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> FIXED [
+GL41Compat >> FIXED [
 
 	<generated>
 	^ GL_FIXED
@@ -66,7 +66,7 @@ GL4_1 >> FIXED [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> FRAGMENT_SHADER_BIT [
+GL41Compat >> FRAGMENT_SHADER_BIT [
 
 	<generated>
 	^ GL_FRAGMENT_SHADER_BIT
@@ -76,7 +76,7 @@ GL4_1 >> FRAGMENT_SHADER_BIT [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> GEOMETRY_SHADER_BIT [
+GL41Compat >> GEOMETRY_SHADER_BIT [
 
 	<generated>
 	^ GL_GEOMETRY_SHADER_BIT
@@ -86,7 +86,7 @@ GL4_1 >> GEOMETRY_SHADER_BIT [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> HIGH_FLOAT [
+GL41Compat >> HIGH_FLOAT [
 
 	<generated>
 	^ GL_HIGH_FLOAT
@@ -96,7 +96,7 @@ GL4_1 >> HIGH_FLOAT [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> HIGH_INT [
+GL41Compat >> HIGH_INT [
 
 	<generated>
 	^ GL_HIGH_INT
@@ -106,7 +106,7 @@ GL4_1 >> HIGH_INT [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> IMPLEMENTATION_COLOR_READ_FORMAT [
+GL41Compat >> IMPLEMENTATION_COLOR_READ_FORMAT [
 
 	<generated>
 	^ GL_IMPLEMENTATION_COLOR_READ_FORMAT
@@ -116,7 +116,7 @@ GL4_1 >> IMPLEMENTATION_COLOR_READ_FORMAT [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> IMPLEMENTATION_COLOR_READ_TYPE [
+GL41Compat >> IMPLEMENTATION_COLOR_READ_TYPE [
 
 	<generated>
 	^ GL_IMPLEMENTATION_COLOR_READ_TYPE
@@ -126,7 +126,7 @@ GL4_1 >> IMPLEMENTATION_COLOR_READ_TYPE [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> LAYER_PROVOKING_VERTEX [
+GL41Compat >> LAYER_PROVOKING_VERTEX [
 
 	<generated>
 	^ GL_LAYER_PROVOKING_VERTEX
@@ -136,7 +136,7 @@ GL4_1 >> LAYER_PROVOKING_VERTEX [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> LOW_FLOAT [
+GL41Compat >> LOW_FLOAT [
 
 	<generated>
 	^ GL_LOW_FLOAT
@@ -146,7 +146,7 @@ GL4_1 >> LOW_FLOAT [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> LOW_INT [
+GL41Compat >> LOW_INT [
 
 	<generated>
 	^ GL_LOW_INT
@@ -156,7 +156,7 @@ GL4_1 >> LOW_INT [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> MAX_FRAGMENT_UNIFORM_VECTORS [
+GL41Compat >> MAX_FRAGMENT_UNIFORM_VECTORS [
 
 	<generated>
 	^ GL_MAX_FRAGMENT_UNIFORM_VECTORS
@@ -166,7 +166,7 @@ GL4_1 >> MAX_FRAGMENT_UNIFORM_VECTORS [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> MAX_VARYING_VECTORS [
+GL41Compat >> MAX_VARYING_VECTORS [
 
 	<generated>
 	^ GL_MAX_VARYING_VECTORS
@@ -176,7 +176,7 @@ GL4_1 >> MAX_VARYING_VECTORS [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> MAX_VERTEX_UNIFORM_VECTORS [
+GL41Compat >> MAX_VERTEX_UNIFORM_VECTORS [
 
 	<generated>
 	^ GL_MAX_VERTEX_UNIFORM_VECTORS
@@ -186,7 +186,7 @@ GL4_1 >> MAX_VERTEX_UNIFORM_VECTORS [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> MAX_VIEWPORTS [
+GL41Compat >> MAX_VIEWPORTS [
 
 	<generated>
 	^ GL_MAX_VIEWPORTS
@@ -196,7 +196,7 @@ GL4_1 >> MAX_VIEWPORTS [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> MEDIUM_FLOAT [
+GL41Compat >> MEDIUM_FLOAT [
 
 	<generated>
 	^ GL_MEDIUM_FLOAT
@@ -206,7 +206,7 @@ GL4_1 >> MEDIUM_FLOAT [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> MEDIUM_INT [
+GL41Compat >> MEDIUM_INT [
 
 	<generated>
 	^ GL_MEDIUM_INT
@@ -216,7 +216,7 @@ GL4_1 >> MEDIUM_INT [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> NUM_PROGRAM_BINARY_FORMATS [
+GL41Compat >> NUM_PROGRAM_BINARY_FORMATS [
 
 	<generated>
 	^ GL_NUM_PROGRAM_BINARY_FORMATS
@@ -226,7 +226,7 @@ GL4_1 >> NUM_PROGRAM_BINARY_FORMATS [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> NUM_SHADER_BINARY_FORMATS [
+GL41Compat >> NUM_SHADER_BINARY_FORMATS [
 
 	<generated>
 	^ GL_NUM_SHADER_BINARY_FORMATS
@@ -236,7 +236,7 @@ GL4_1 >> NUM_SHADER_BINARY_FORMATS [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> PROGRAM_BINARY_FORMATS [
+GL41Compat >> PROGRAM_BINARY_FORMATS [
 
 	<generated>
 	^ GL_PROGRAM_BINARY_FORMATS
@@ -246,7 +246,7 @@ GL4_1 >> PROGRAM_BINARY_FORMATS [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> PROGRAM_BINARY_LENGTH [
+GL41Compat >> PROGRAM_BINARY_LENGTH [
 
 	<generated>
 	^ GL_PROGRAM_BINARY_LENGTH
@@ -256,7 +256,7 @@ GL4_1 >> PROGRAM_BINARY_LENGTH [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> PROGRAM_BINARY_RETRIEVABLE_HINT [
+GL41Compat >> PROGRAM_BINARY_RETRIEVABLE_HINT [
 
 	<generated>
 	^ GL_PROGRAM_BINARY_RETRIEVABLE_HINT
@@ -266,7 +266,7 @@ GL4_1 >> PROGRAM_BINARY_RETRIEVABLE_HINT [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> PROGRAM_PIPELINE_BINDING [
+GL41Compat >> PROGRAM_PIPELINE_BINDING [
 
 	<generated>
 	^ GL_PROGRAM_PIPELINE_BINDING
@@ -276,7 +276,7 @@ GL4_1 >> PROGRAM_PIPELINE_BINDING [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> PROGRAM_SEPARABLE [
+GL41Compat >> PROGRAM_SEPARABLE [
 
 	<generated>
 	^ GL_PROGRAM_SEPARABLE
@@ -286,7 +286,7 @@ GL4_1 >> PROGRAM_SEPARABLE [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> RGB565 [
+GL41Compat >> RGB565 [
 
 	<generated>
 	^ GL_RGB565
@@ -296,7 +296,7 @@ GL4_1 >> RGB565 [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> SHADER_BINARY_FORMATS [
+GL41Compat >> SHADER_BINARY_FORMATS [
 
 	<generated>
 	^ GL_SHADER_BINARY_FORMATS
@@ -306,7 +306,7 @@ GL4_1 >> SHADER_BINARY_FORMATS [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> SHADER_COMPILER [
+GL41Compat >> SHADER_COMPILER [
 
 	<generated>
 	^ GL_SHADER_COMPILER
@@ -316,7 +316,7 @@ GL4_1 >> SHADER_COMPILER [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> TESS_CONTROL_SHADER_BIT [
+GL41Compat >> TESS_CONTROL_SHADER_BIT [
 
 	<generated>
 	^ GL_TESS_CONTROL_SHADER_BIT
@@ -326,7 +326,7 @@ GL4_1 >> TESS_CONTROL_SHADER_BIT [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> TESS_EVALUATION_SHADER_BIT [
+GL41Compat >> TESS_EVALUATION_SHADER_BIT [
 
 	<generated>
 	^ GL_TESS_EVALUATION_SHADER_BIT
@@ -336,7 +336,7 @@ GL4_1 >> TESS_EVALUATION_SHADER_BIT [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> UNDEFINED_VERTEX [
+GL41Compat >> UNDEFINED_VERTEX [
 
 	<generated>
 	^ GL_UNDEFINED_VERTEX
@@ -346,7 +346,7 @@ GL4_1 >> UNDEFINED_VERTEX [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> VERTEX_SHADER_BIT [
+GL41Compat >> VERTEX_SHADER_BIT [
 
 	<generated>
 	^ GL_VERTEX_SHADER_BIT
@@ -356,7 +356,7 @@ GL4_1 >> VERTEX_SHADER_BIT [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> VIEWPORT_BOUNDS_RANGE [
+GL41Compat >> VIEWPORT_BOUNDS_RANGE [
 
 	<generated>
 	^ GL_VIEWPORT_BOUNDS_RANGE
@@ -366,7 +366,7 @@ GL4_1 >> VIEWPORT_BOUNDS_RANGE [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> VIEWPORT_INDEX_PROVOKING_VERTEX [
+GL41Compat >> VIEWPORT_INDEX_PROVOKING_VERTEX [
 
 	<generated>
 	^ GL_VIEWPORT_INDEX_PROVOKING_VERTEX
@@ -376,7 +376,7 @@ GL4_1 >> VIEWPORT_INDEX_PROVOKING_VERTEX [
 	#category : #'constants - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> VIEWPORT_SUBPIXEL_BITS [
+GL41Compat >> VIEWPORT_SUBPIXEL_BITS [
 
 	<generated>
 	^ GL_VIEWPORT_SUBPIXEL_BITS
@@ -386,7 +386,7 @@ GL4_1 >> VIEWPORT_SUBPIXEL_BITS [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> activeShaderProgram: pipeline with: program [
+GL41Compat >> activeShaderProgram: pipeline with: program [
 
 	<generated>
 	<apicall: void 'glActiveShaderProgram' (GLuint GLuint)>
@@ -397,7 +397,7 @@ GL4_1 >> activeShaderProgram: pipeline with: program [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> bindProgramPipeline: pipeline [
+GL41Compat >> bindProgramPipeline: pipeline [
 
 	<generated>
 	<apicall: void 'glBindProgramPipeline' (GLuint)>
@@ -408,7 +408,7 @@ GL4_1 >> bindProgramPipeline: pipeline [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> clearDepthf: d [
+GL41Compat >> clearDepthf: d [
 
 	<generated>
 	<apicall: void 'glClearDepthf' (GLfloat)>
@@ -419,7 +419,7 @@ GL4_1 >> clearDepthf: d [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> createShaderProgramv: type with: count with: strings [
+GL41Compat >> createShaderProgramv: type with: count with: strings [
 
 	<generated>
 	<apicall: GLuint 'glCreateShaderProgramv' (GLenum GLsizei GLchar**)>
@@ -430,7 +430,7 @@ GL4_1 >> createShaderProgramv: type with: count with: strings [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> deleteProgramPipelines: n with: pipelines [
+GL41Compat >> deleteProgramPipelines: n with: pipelines [
 
 	<generated>
 	<apicall: void 'glDeleteProgramPipelines' (GLsizei GLuint*)>
@@ -441,7 +441,7 @@ GL4_1 >> deleteProgramPipelines: n with: pipelines [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> depthRangeArrayv: first with: count with: v [
+GL41Compat >> depthRangeArrayv: first with: count with: v [
 
 	<generated>
 	<apicall: void 'glDepthRangeArrayv' (GLuint GLsizei GLdouble*)>
@@ -452,7 +452,7 @@ GL4_1 >> depthRangeArrayv: first with: count with: v [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> depthRangeIndexed: index with: n with: f [
+GL41Compat >> depthRangeIndexed: index with: n with: f [
 
 	<generated>
 	<apicall: void 'glDepthRangeIndexed' (GLuint GLdouble GLdouble)>
@@ -463,7 +463,7 @@ GL4_1 >> depthRangeIndexed: index with: n with: f [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> depthRangef: n with: f [
+GL41Compat >> depthRangef: n with: f [
 
 	<generated>
 	<apicall: void 'glDepthRangef' (GLfloat GLfloat)>
@@ -474,7 +474,7 @@ GL4_1 >> depthRangef: n with: f [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> genProgramPipelines: n with: pipelines [
+GL41Compat >> genProgramPipelines: n with: pipelines [
 
 	<generated>
 	<apicall: void 'glGenProgramPipelines' (GLsizei GLuint*)>
@@ -485,7 +485,7 @@ GL4_1 >> genProgramPipelines: n with: pipelines [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> getDoublei_v: target with: index with: data [
+GL41Compat >> getDoublei_v: target with: index with: data [
 
 	<generated>
 	<apicall: void 'glGetDoublei_v' (GLenum GLuint GLdouble*)>
@@ -496,7 +496,7 @@ GL4_1 >> getDoublei_v: target with: index with: data [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> getFloati_v: target with: index with: data [
+GL41Compat >> getFloati_v: target with: index with: data [
 
 	<generated>
 	<apicall: void 'glGetFloati_v' (GLenum GLuint GLfloat*)>
@@ -507,7 +507,7 @@ GL4_1 >> getFloati_v: target with: index with: data [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> getProgramBinary: program with: bufSize with: length with: binaryFormat with: binary [
+GL41Compat >> getProgramBinary: program with: bufSize with: length with: binaryFormat with: binary [
 
 	<generated>
 	<apicall: void 'glGetProgramBinary' (GLuint GLsizei GLsizei* GLenum* void*)>
@@ -518,7 +518,7 @@ GL4_1 >> getProgramBinary: program with: bufSize with: length with: binaryFormat
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> getProgramPipelineInfoLog: pipeline with: bufSize with: length with: infoLog [
+GL41Compat >> getProgramPipelineInfoLog: pipeline with: bufSize with: length with: infoLog [
 
 	<generated>
 	<apicall: void 'glGetProgramPipelineInfoLog' (GLuint GLsizei GLsizei* GLchar*)>
@@ -529,7 +529,7 @@ GL4_1 >> getProgramPipelineInfoLog: pipeline with: bufSize with: length with: in
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> getProgramPipelineiv: pipeline with: pname with: params [
+GL41Compat >> getProgramPipelineiv: pipeline with: pname with: params [
 
 	<generated>
 	<apicall: void 'glGetProgramPipelineiv' (GLuint GLenum GLint*)>
@@ -540,7 +540,7 @@ GL4_1 >> getProgramPipelineiv: pipeline with: pname with: params [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> getShaderPrecisionFormat: shadertype with: precisiontype with: range with: precision [
+GL41Compat >> getShaderPrecisionFormat: shadertype with: precisiontype with: range with: precision [
 
 	<generated>
 	<apicall: void 'glGetShaderPrecisionFormat' (GLenum GLenum GLint* GLint*)>
@@ -551,7 +551,7 @@ GL4_1 >> getShaderPrecisionFormat: shadertype with: precisiontype with: range wi
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> getVertexAttribLdv: index with: pname with: params [
+GL41Compat >> getVertexAttribLdv: index with: pname with: params [
 
 	<generated>
 	<apicall: void 'glGetVertexAttribLdv' (GLuint GLenum GLdouble*)>
@@ -562,7 +562,7 @@ GL4_1 >> getVertexAttribLdv: index with: pname with: params [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> isProgramPipeline: pipeline [
+GL41Compat >> isProgramPipeline: pipeline [
 
 	<generated>
 	<apicall: GLboolean 'glIsProgramPipeline' (GLuint)>
@@ -573,7 +573,7 @@ GL4_1 >> isProgramPipeline: pipeline [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programBinary: program with: binaryFormat with: binary with: length [
+GL41Compat >> programBinary: program with: binaryFormat with: binary with: length [
 
 	<generated>
 	<apicall: void 'glProgramBinary' (GLuint GLenum void* GLsizei)>
@@ -584,7 +584,7 @@ GL4_1 >> programBinary: program with: binaryFormat with: binary with: length [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programParameteri: program with: pname with: value [
+GL41Compat >> programParameteri: program with: pname with: value [
 
 	<generated>
 	<apicall: void 'glProgramParameteri' (GLuint GLenum GLint)>
@@ -595,7 +595,7 @@ GL4_1 >> programParameteri: program with: pname with: value [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform1d: program with: location with: v0 [
+GL41Compat >> programUniform1d: program with: location with: v0 [
 
 	<generated>
 	<apicall: void 'glProgramUniform1d' (GLuint GLint GLdouble)>
@@ -606,7 +606,7 @@ GL4_1 >> programUniform1d: program with: location with: v0 [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform1dv: program with: location with: count with: value [
+GL41Compat >> programUniform1dv: program with: location with: count with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniform1dv' (GLuint GLint GLsizei GLdouble*)>
@@ -617,7 +617,7 @@ GL4_1 >> programUniform1dv: program with: location with: count with: value [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform1f: program with: location with: v0 [
+GL41Compat >> programUniform1f: program with: location with: v0 [
 
 	<generated>
 	<apicall: void 'glProgramUniform1f' (GLuint GLint GLfloat)>
@@ -628,7 +628,7 @@ GL4_1 >> programUniform1f: program with: location with: v0 [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform1fv: program with: location with: count with: value [
+GL41Compat >> programUniform1fv: program with: location with: count with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniform1fv' (GLuint GLint GLsizei GLfloat*)>
@@ -639,7 +639,7 @@ GL4_1 >> programUniform1fv: program with: location with: count with: value [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform1i: program with: location with: v0 [
+GL41Compat >> programUniform1i: program with: location with: v0 [
 
 	<generated>
 	<apicall: void 'glProgramUniform1i' (GLuint GLint GLint)>
@@ -650,7 +650,7 @@ GL4_1 >> programUniform1i: program with: location with: v0 [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform1iv: program with: location with: count with: value [
+GL41Compat >> programUniform1iv: program with: location with: count with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniform1iv' (GLuint GLint GLsizei GLint*)>
@@ -661,7 +661,7 @@ GL4_1 >> programUniform1iv: program with: location with: count with: value [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform1ui: program with: location with: v0 [
+GL41Compat >> programUniform1ui: program with: location with: v0 [
 
 	<generated>
 	<apicall: void 'glProgramUniform1ui' (GLuint GLint GLuint)>
@@ -672,7 +672,7 @@ GL4_1 >> programUniform1ui: program with: location with: v0 [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform1uiv: program with: location with: count with: value [
+GL41Compat >> programUniform1uiv: program with: location with: count with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniform1uiv' (GLuint GLint GLsizei GLuint*)>
@@ -683,7 +683,7 @@ GL4_1 >> programUniform1uiv: program with: location with: count with: value [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform2d: program with: location with: v0 with: v1 [
+GL41Compat >> programUniform2d: program with: location with: v0 with: v1 [
 
 	<generated>
 	<apicall: void 'glProgramUniform2d' (GLuint GLint GLdouble GLdouble)>
@@ -694,7 +694,7 @@ GL4_1 >> programUniform2d: program with: location with: v0 with: v1 [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform2dv: program with: location with: count with: value [
+GL41Compat >> programUniform2dv: program with: location with: count with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniform2dv' (GLuint GLint GLsizei GLdouble*)>
@@ -705,7 +705,7 @@ GL4_1 >> programUniform2dv: program with: location with: count with: value [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform2f: program with: location with: v0 with: v1 [
+GL41Compat >> programUniform2f: program with: location with: v0 with: v1 [
 
 	<generated>
 	<apicall: void 'glProgramUniform2f' (GLuint GLint GLfloat GLfloat)>
@@ -716,7 +716,7 @@ GL4_1 >> programUniform2f: program with: location with: v0 with: v1 [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform2fv: program with: location with: count with: value [
+GL41Compat >> programUniform2fv: program with: location with: count with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniform2fv' (GLuint GLint GLsizei GLfloat*)>
@@ -727,7 +727,7 @@ GL4_1 >> programUniform2fv: program with: location with: count with: value [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform2i: program with: location with: v0 with: v1 [
+GL41Compat >> programUniform2i: program with: location with: v0 with: v1 [
 
 	<generated>
 	<apicall: void 'glProgramUniform2i' (GLuint GLint GLint GLint)>
@@ -738,7 +738,7 @@ GL4_1 >> programUniform2i: program with: location with: v0 with: v1 [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform2iv: program with: location with: count with: value [
+GL41Compat >> programUniform2iv: program with: location with: count with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniform2iv' (GLuint GLint GLsizei GLint*)>
@@ -749,7 +749,7 @@ GL4_1 >> programUniform2iv: program with: location with: count with: value [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform2ui: program with: location with: v0 with: v1 [
+GL41Compat >> programUniform2ui: program with: location with: v0 with: v1 [
 
 	<generated>
 	<apicall: void 'glProgramUniform2ui' (GLuint GLint GLuint GLuint)>
@@ -760,7 +760,7 @@ GL4_1 >> programUniform2ui: program with: location with: v0 with: v1 [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform2uiv: program with: location with: count with: value [
+GL41Compat >> programUniform2uiv: program with: location with: count with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniform2uiv' (GLuint GLint GLsizei GLuint*)>
@@ -771,7 +771,7 @@ GL4_1 >> programUniform2uiv: program with: location with: count with: value [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform3d: program with: location with: v0 with: v1 with: v2 [
+GL41Compat >> programUniform3d: program with: location with: v0 with: v1 with: v2 [
 
 	<generated>
 	<apicall: void 'glProgramUniform3d' (GLuint GLint GLdouble GLdouble GLdouble)>
@@ -782,7 +782,7 @@ GL4_1 >> programUniform3d: program with: location with: v0 with: v1 with: v2 [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform3dv: program with: location with: count with: value [
+GL41Compat >> programUniform3dv: program with: location with: count with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniform3dv' (GLuint GLint GLsizei GLdouble*)>
@@ -793,7 +793,7 @@ GL4_1 >> programUniform3dv: program with: location with: count with: value [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform3f: program with: location with: v0 with: v1 with: v2 [
+GL41Compat >> programUniform3f: program with: location with: v0 with: v1 with: v2 [
 
 	<generated>
 	<apicall: void 'glProgramUniform3f' (GLuint GLint GLfloat GLfloat GLfloat)>
@@ -804,7 +804,7 @@ GL4_1 >> programUniform3f: program with: location with: v0 with: v1 with: v2 [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform3fv: program with: location with: count with: value [
+GL41Compat >> programUniform3fv: program with: location with: count with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniform3fv' (GLuint GLint GLsizei GLfloat*)>
@@ -815,7 +815,7 @@ GL4_1 >> programUniform3fv: program with: location with: count with: value [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform3i: program with: location with: v0 with: v1 with: v2 [
+GL41Compat >> programUniform3i: program with: location with: v0 with: v1 with: v2 [
 
 	<generated>
 	<apicall: void 'glProgramUniform3i' (GLuint GLint GLint GLint GLint)>
@@ -826,7 +826,7 @@ GL4_1 >> programUniform3i: program with: location with: v0 with: v1 with: v2 [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform3iv: program with: location with: count with: value [
+GL41Compat >> programUniform3iv: program with: location with: count with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniform3iv' (GLuint GLint GLsizei GLint*)>
@@ -837,7 +837,7 @@ GL4_1 >> programUniform3iv: program with: location with: count with: value [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform3ui: program with: location with: v0 with: v1 with: v2 [
+GL41Compat >> programUniform3ui: program with: location with: v0 with: v1 with: v2 [
 
 	<generated>
 	<apicall: void 'glProgramUniform3ui' (GLuint GLint GLuint GLuint GLuint)>
@@ -848,7 +848,7 @@ GL4_1 >> programUniform3ui: program with: location with: v0 with: v1 with: v2 [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform3uiv: program with: location with: count with: value [
+GL41Compat >> programUniform3uiv: program with: location with: count with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniform3uiv' (GLuint GLint GLsizei GLuint*)>
@@ -859,7 +859,7 @@ GL4_1 >> programUniform3uiv: program with: location with: count with: value [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform4d: program with: location with: v0 with: v1 with: v2 with: v3 [
+GL41Compat >> programUniform4d: program with: location with: v0 with: v1 with: v2 with: v3 [
 
 	<generated>
 	<apicall: void 'glProgramUniform4d' (GLuint GLint GLdouble GLdouble GLdouble GLdouble)>
@@ -870,7 +870,7 @@ GL4_1 >> programUniform4d: program with: location with: v0 with: v1 with: v2 wit
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform4dv: program with: location with: count with: value [
+GL41Compat >> programUniform4dv: program with: location with: count with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniform4dv' (GLuint GLint GLsizei GLdouble*)>
@@ -881,7 +881,7 @@ GL4_1 >> programUniform4dv: program with: location with: count with: value [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform4f: program with: location with: v0 with: v1 with: v2 with: v3 [
+GL41Compat >> programUniform4f: program with: location with: v0 with: v1 with: v2 with: v3 [
 
 	<generated>
 	<apicall: void 'glProgramUniform4f' (GLuint GLint GLfloat GLfloat GLfloat GLfloat)>
@@ -892,7 +892,7 @@ GL4_1 >> programUniform4f: program with: location with: v0 with: v1 with: v2 wit
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform4fv: program with: location with: count with: value [
+GL41Compat >> programUniform4fv: program with: location with: count with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniform4fv' (GLuint GLint GLsizei GLfloat*)>
@@ -903,7 +903,7 @@ GL4_1 >> programUniform4fv: program with: location with: count with: value [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform4i: program with: location with: v0 with: v1 with: v2 with: v3 [
+GL41Compat >> programUniform4i: program with: location with: v0 with: v1 with: v2 with: v3 [
 
 	<generated>
 	<apicall: void 'glProgramUniform4i' (GLuint GLint GLint GLint GLint GLint)>
@@ -914,7 +914,7 @@ GL4_1 >> programUniform4i: program with: location with: v0 with: v1 with: v2 wit
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform4iv: program with: location with: count with: value [
+GL41Compat >> programUniform4iv: program with: location with: count with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniform4iv' (GLuint GLint GLsizei GLint*)>
@@ -925,7 +925,7 @@ GL4_1 >> programUniform4iv: program with: location with: count with: value [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform4ui: program with: location with: v0 with: v1 with: v2 with: v3 [
+GL41Compat >> programUniform4ui: program with: location with: v0 with: v1 with: v2 with: v3 [
 
 	<generated>
 	<apicall: void 'glProgramUniform4ui' (GLuint GLint GLuint GLuint GLuint GLuint)>
@@ -936,7 +936,7 @@ GL4_1 >> programUniform4ui: program with: location with: v0 with: v1 with: v2 wi
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniform4uiv: program with: location with: count with: value [
+GL41Compat >> programUniform4uiv: program with: location with: count with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniform4uiv' (GLuint GLint GLsizei GLuint*)>
@@ -947,7 +947,7 @@ GL4_1 >> programUniform4uiv: program with: location with: count with: value [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniformMatrix2dv: program with: location with: count with: transpose with: value [
+GL41Compat >> programUniformMatrix2dv: program with: location with: count with: transpose with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniformMatrix2dv' (GLuint GLint GLsizei GLboolean GLdouble*)>
@@ -958,7 +958,7 @@ GL4_1 >> programUniformMatrix2dv: program with: location with: count with: trans
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniformMatrix2fv: program with: location with: count with: transpose with: value [
+GL41Compat >> programUniformMatrix2fv: program with: location with: count with: transpose with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniformMatrix2fv' (GLuint GLint GLsizei GLboolean GLfloat*)>
@@ -969,7 +969,7 @@ GL4_1 >> programUniformMatrix2fv: program with: location with: count with: trans
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniformMatrix2x3dv: program with: location with: count with: transpose with: value [
+GL41Compat >> programUniformMatrix2x3dv: program with: location with: count with: transpose with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniformMatrix2x3dv' (GLuint GLint GLsizei GLboolean GLdouble*)>
@@ -980,7 +980,7 @@ GL4_1 >> programUniformMatrix2x3dv: program with: location with: count with: tra
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniformMatrix2x3fv: program with: location with: count with: transpose with: value [
+GL41Compat >> programUniformMatrix2x3fv: program with: location with: count with: transpose with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniformMatrix2x3fv' (GLuint GLint GLsizei GLboolean GLfloat*)>
@@ -991,7 +991,7 @@ GL4_1 >> programUniformMatrix2x3fv: program with: location with: count with: tra
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniformMatrix2x4dv: program with: location with: count with: transpose with: value [
+GL41Compat >> programUniformMatrix2x4dv: program with: location with: count with: transpose with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniformMatrix2x4dv' (GLuint GLint GLsizei GLboolean GLdouble*)>
@@ -1002,7 +1002,7 @@ GL4_1 >> programUniformMatrix2x4dv: program with: location with: count with: tra
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniformMatrix2x4fv: program with: location with: count with: transpose with: value [
+GL41Compat >> programUniformMatrix2x4fv: program with: location with: count with: transpose with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniformMatrix2x4fv' (GLuint GLint GLsizei GLboolean GLfloat*)>
@@ -1013,7 +1013,7 @@ GL4_1 >> programUniformMatrix2x4fv: program with: location with: count with: tra
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniformMatrix3dv: program with: location with: count with: transpose with: value [
+GL41Compat >> programUniformMatrix3dv: program with: location with: count with: transpose with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniformMatrix3dv' (GLuint GLint GLsizei GLboolean GLdouble*)>
@@ -1024,7 +1024,7 @@ GL4_1 >> programUniformMatrix3dv: program with: location with: count with: trans
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniformMatrix3fv: program with: location with: count with: transpose with: value [
+GL41Compat >> programUniformMatrix3fv: program with: location with: count with: transpose with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniformMatrix3fv' (GLuint GLint GLsizei GLboolean GLfloat*)>
@@ -1035,7 +1035,7 @@ GL4_1 >> programUniformMatrix3fv: program with: location with: count with: trans
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniformMatrix3x2dv: program with: location with: count with: transpose with: value [
+GL41Compat >> programUniformMatrix3x2dv: program with: location with: count with: transpose with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniformMatrix3x2dv' (GLuint GLint GLsizei GLboolean GLdouble*)>
@@ -1046,7 +1046,7 @@ GL4_1 >> programUniformMatrix3x2dv: program with: location with: count with: tra
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniformMatrix3x2fv: program with: location with: count with: transpose with: value [
+GL41Compat >> programUniformMatrix3x2fv: program with: location with: count with: transpose with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniformMatrix3x2fv' (GLuint GLint GLsizei GLboolean GLfloat*)>
@@ -1057,7 +1057,7 @@ GL4_1 >> programUniformMatrix3x2fv: program with: location with: count with: tra
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniformMatrix3x4dv: program with: location with: count with: transpose with: value [
+GL41Compat >> programUniformMatrix3x4dv: program with: location with: count with: transpose with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniformMatrix3x4dv' (GLuint GLint GLsizei GLboolean GLdouble*)>
@@ -1068,7 +1068,7 @@ GL4_1 >> programUniformMatrix3x4dv: program with: location with: count with: tra
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniformMatrix3x4fv: program with: location with: count with: transpose with: value [
+GL41Compat >> programUniformMatrix3x4fv: program with: location with: count with: transpose with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniformMatrix3x4fv' (GLuint GLint GLsizei GLboolean GLfloat*)>
@@ -1079,7 +1079,7 @@ GL4_1 >> programUniformMatrix3x4fv: program with: location with: count with: tra
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniformMatrix4dv: program with: location with: count with: transpose with: value [
+GL41Compat >> programUniformMatrix4dv: program with: location with: count with: transpose with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniformMatrix4dv' (GLuint GLint GLsizei GLboolean GLdouble*)>
@@ -1090,7 +1090,7 @@ GL4_1 >> programUniformMatrix4dv: program with: location with: count with: trans
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniformMatrix4fv: program with: location with: count with: transpose with: value [
+GL41Compat >> programUniformMatrix4fv: program with: location with: count with: transpose with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniformMatrix4fv' (GLuint GLint GLsizei GLboolean GLfloat*)>
@@ -1101,7 +1101,7 @@ GL4_1 >> programUniformMatrix4fv: program with: location with: count with: trans
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniformMatrix4x2dv: program with: location with: count with: transpose with: value [
+GL41Compat >> programUniformMatrix4x2dv: program with: location with: count with: transpose with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniformMatrix4x2dv' (GLuint GLint GLsizei GLboolean GLdouble*)>
@@ -1112,7 +1112,7 @@ GL4_1 >> programUniformMatrix4x2dv: program with: location with: count with: tra
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniformMatrix4x2fv: program with: location with: count with: transpose with: value [
+GL41Compat >> programUniformMatrix4x2fv: program with: location with: count with: transpose with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniformMatrix4x2fv' (GLuint GLint GLsizei GLboolean GLfloat*)>
@@ -1123,7 +1123,7 @@ GL4_1 >> programUniformMatrix4x2fv: program with: location with: count with: tra
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniformMatrix4x3dv: program with: location with: count with: transpose with: value [
+GL41Compat >> programUniformMatrix4x3dv: program with: location with: count with: transpose with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniformMatrix4x3dv' (GLuint GLint GLsizei GLboolean GLdouble*)>
@@ -1134,7 +1134,7 @@ GL4_1 >> programUniformMatrix4x3dv: program with: location with: count with: tra
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> programUniformMatrix4x3fv: program with: location with: count with: transpose with: value [
+GL41Compat >> programUniformMatrix4x3fv: program with: location with: count with: transpose with: value [
 
 	<generated>
 	<apicall: void 'glProgramUniformMatrix4x3fv' (GLuint GLint GLsizei GLboolean GLfloat*)>
@@ -1145,7 +1145,7 @@ GL4_1 >> programUniformMatrix4x3fv: program with: location with: count with: tra
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> releaseShaderCompiler [
+GL41Compat >> releaseShaderCompiler [
 
 	<generated>
 	<apicall: void 'glReleaseShaderCompiler' ()>
@@ -1156,7 +1156,7 @@ GL4_1 >> releaseShaderCompiler [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> scissorArrayv: first with: count with: v [
+GL41Compat >> scissorArrayv: first with: count with: v [
 
 	<generated>
 	<apicall: void 'glScissorArrayv' (GLuint GLsizei GLint*)>
@@ -1167,7 +1167,7 @@ GL4_1 >> scissorArrayv: first with: count with: v [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> scissorIndexed: index with: left with: bottom with: width with: height [
+GL41Compat >> scissorIndexed: index with: left with: bottom with: width with: height [
 
 	<generated>
 	<apicall: void 'glScissorIndexed' (GLuint GLint GLint GLsizei GLsizei)>
@@ -1178,7 +1178,7 @@ GL4_1 >> scissorIndexed: index with: left with: bottom with: width with: height 
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> scissorIndexedv: index with: v [
+GL41Compat >> scissorIndexedv: index with: v [
 
 	<generated>
 	<apicall: void 'glScissorIndexedv' (GLuint GLint*)>
@@ -1189,7 +1189,7 @@ GL4_1 >> scissorIndexedv: index with: v [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> shaderBinary: count with: shaders with: binaryFormat with: binary with: length [
+GL41Compat >> shaderBinary: count with: shaders with: binaryFormat with: binary with: length [
 
 	<generated>
 	<apicall: void 'glShaderBinary' (GLsizei GLuint* GLenum void* GLsizei)>
@@ -1200,7 +1200,7 @@ GL4_1 >> shaderBinary: count with: shaders with: binaryFormat with: binary with:
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> useProgramStages: pipeline with: stages with: program [
+GL41Compat >> useProgramStages: pipeline with: stages with: program [
 
 	<generated>
 	<apicall: void 'glUseProgramStages' (GLuint GLbitfield GLuint)>
@@ -1211,7 +1211,7 @@ GL4_1 >> useProgramStages: pipeline with: stages with: program [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> validateProgramPipeline: pipeline [
+GL41Compat >> validateProgramPipeline: pipeline [
 
 	<generated>
 	<apicall: void 'glValidateProgramPipeline' (GLuint)>
@@ -1222,7 +1222,7 @@ GL4_1 >> validateProgramPipeline: pipeline [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> vertexAttribL1d: index with: x [
+GL41Compat >> vertexAttribL1d: index with: x [
 
 	<generated>
 	<apicall: void 'glVertexAttribL1d' (GLuint GLdouble)>
@@ -1233,7 +1233,7 @@ GL4_1 >> vertexAttribL1d: index with: x [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> vertexAttribL1dv: index with: v [
+GL41Compat >> vertexAttribL1dv: index with: v [
 
 	<generated>
 	<apicall: void 'glVertexAttribL1dv' (GLuint GLdouble*)>
@@ -1244,7 +1244,7 @@ GL4_1 >> vertexAttribL1dv: index with: v [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> vertexAttribL2d: index with: x with: y [
+GL41Compat >> vertexAttribL2d: index with: x with: y [
 
 	<generated>
 	<apicall: void 'glVertexAttribL2d' (GLuint GLdouble GLdouble)>
@@ -1255,7 +1255,7 @@ GL4_1 >> vertexAttribL2d: index with: x with: y [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> vertexAttribL2dv: index with: v [
+GL41Compat >> vertexAttribL2dv: index with: v [
 
 	<generated>
 	<apicall: void 'glVertexAttribL2dv' (GLuint GLdouble*)>
@@ -1266,7 +1266,7 @@ GL4_1 >> vertexAttribL2dv: index with: v [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> vertexAttribL3d: index with: x with: y with: z [
+GL41Compat >> vertexAttribL3d: index with: x with: y with: z [
 
 	<generated>
 	<apicall: void 'glVertexAttribL3d' (GLuint GLdouble GLdouble GLdouble)>
@@ -1277,7 +1277,7 @@ GL4_1 >> vertexAttribL3d: index with: x with: y with: z [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> vertexAttribL3dv: index with: v [
+GL41Compat >> vertexAttribL3dv: index with: v [
 
 	<generated>
 	<apicall: void 'glVertexAttribL3dv' (GLuint GLdouble*)>
@@ -1288,7 +1288,7 @@ GL4_1 >> vertexAttribL3dv: index with: v [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> vertexAttribL4d: index with: x with: y with: z with: w [
+GL41Compat >> vertexAttribL4d: index with: x with: y with: z with: w [
 
 	<generated>
 	<apicall: void 'glVertexAttribL4d' (GLuint GLdouble GLdouble GLdouble GLdouble)>
@@ -1299,7 +1299,7 @@ GL4_1 >> vertexAttribL4d: index with: x with: y with: z with: w [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> vertexAttribL4dv: index with: v [
+GL41Compat >> vertexAttribL4dv: index with: v [
 
 	<generated>
 	<apicall: void 'glVertexAttribL4dv' (GLuint GLdouble*)>
@@ -1310,7 +1310,7 @@ GL4_1 >> vertexAttribL4dv: index with: v [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> vertexAttribLPointer: index with: size with: type with: stride with: pointer [
+GL41Compat >> vertexAttribLPointer: index with: size with: type with: stride with: pointer [
 
 	<generated>
 	<apicall: void 'glVertexAttribLPointer' (GLuint GLint GLenum GLsizei void*)>
@@ -1321,7 +1321,7 @@ GL4_1 >> vertexAttribLPointer: index with: size with: type with: stride with: po
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> viewportArrayv: first with: count with: v [
+GL41Compat >> viewportArrayv: first with: count with: v [
 
 	<generated>
 	<apicall: void 'glViewportArrayv' (GLuint GLsizei GLfloat*)>
@@ -1332,7 +1332,7 @@ GL4_1 >> viewportArrayv: first with: count with: v [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> viewportIndexedf: index with: x with: y with: w with: h [
+GL41Compat >> viewportIndexedf: index with: x with: y with: w with: h [
 
 	<generated>
 	<apicall: void 'glViewportIndexedf' (GLuint GLfloat GLfloat GLfloat GLfloat)>
@@ -1343,7 +1343,7 @@ GL4_1 >> viewportIndexedf: index with: x with: y with: w with: h [
 	#category : #'api - required',
 	#timestamp : 'stlu 2/12/2021 00:43'
 }
-GL4_1 >> viewportIndexedfv: index with: v [
+GL41Compat >> viewportIndexedfv: index with: v [
 
 	<generated>
 	<apicall: void 'glViewportIndexedfv' (GLuint GLfloat*)>

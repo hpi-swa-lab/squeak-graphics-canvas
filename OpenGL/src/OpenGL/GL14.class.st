@@ -1,6 +1,6 @@
 Class {
-	#name : #'GL1_4',
-	#superclass : #'GL1_3',
+	#name : #GL14,
+	#superclass : #GL13,
 	#category : #'OpenGL-API-GL',
 	#commentStamp : ''
 }
@@ -9,7 +9,7 @@ Class {
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
-GL1_4 class >> majorVersion [
+GL14 class >> majorVersion [
 
 	^ 1
 ]
@@ -18,7 +18,7 @@ GL1_4 class >> majorVersion [
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
-GL1_4 class >> minorVersion [
+GL14 class >> minorVersion [
 
 	^ 4
 ]
@@ -27,16 +27,16 @@ GL1_4 class >> minorVersion [
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 14:51'
 }
-GL1_4 class >> versionNumber [
+GL14 class >> versionNumber [
 
 	^ 14
 ]
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> BLEND_COLOR [
+GL14 >> BLEND_COLOR [
 
 	<generated>
 	^ GL_BLEND_COLOR
@@ -44,9 +44,9 @@ GL1_4 >> BLEND_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> BLEND_DST_ALPHA [
+GL14 >> BLEND_DST_ALPHA [
 
 	<generated>
 	^ GL_BLEND_DST_ALPHA
@@ -54,9 +54,9 @@ GL1_4 >> BLEND_DST_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> BLEND_DST_RGB [
+GL14 >> BLEND_DST_RGB [
 
 	<generated>
 	^ GL_BLEND_DST_RGB
@@ -64,9 +64,9 @@ GL1_4 >> BLEND_DST_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> BLEND_EQUATION [
+GL14 >> BLEND_EQUATION [
 
 	<generated>
 	^ GL_BLEND_EQUATION
@@ -74,9 +74,9 @@ GL1_4 >> BLEND_EQUATION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> BLEND_SRC_ALPHA [
+GL14 >> BLEND_SRC_ALPHA [
 
 	<generated>
 	^ GL_BLEND_SRC_ALPHA
@@ -84,9 +84,9 @@ GL1_4 >> BLEND_SRC_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> BLEND_SRC_RGB [
+GL14 >> BLEND_SRC_RGB [
 
 	<generated>
 	^ GL_BLEND_SRC_RGB
@@ -94,9 +94,9 @@ GL1_4 >> BLEND_SRC_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> COLOR_SUM [
+GL14 >> COLOR_SUM [
 
 	<generated>
 	^ GL_COLOR_SUM
@@ -104,9 +104,9 @@ GL1_4 >> COLOR_SUM [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> COMPARE_R_TO_TEXTURE [
+GL14 >> COMPARE_R_TO_TEXTURE [
 
 	<generated>
 	^ GL_COMPARE_R_TO_TEXTURE
@@ -114,9 +114,9 @@ GL1_4 >> COMPARE_R_TO_TEXTURE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> CONSTANT_ALPHA [
+GL14 >> CONSTANT_ALPHA [
 
 	<generated>
 	^ GL_CONSTANT_ALPHA
@@ -124,9 +124,9 @@ GL1_4 >> CONSTANT_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> CONSTANT_COLOR [
+GL14 >> CONSTANT_COLOR [
 
 	<generated>
 	^ GL_CONSTANT_COLOR
@@ -134,9 +134,9 @@ GL1_4 >> CONSTANT_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> CURRENT_FOG_COORDINATE [
+GL14 >> CURRENT_FOG_COORDINATE [
 
 	<generated>
 	^ GL_CURRENT_FOG_COORDINATE
@@ -144,9 +144,9 @@ GL1_4 >> CURRENT_FOG_COORDINATE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> CURRENT_SECONDARY_COLOR [
+GL14 >> CURRENT_SECONDARY_COLOR [
 
 	<generated>
 	^ GL_CURRENT_SECONDARY_COLOR
@@ -154,9 +154,9 @@ GL1_4 >> CURRENT_SECONDARY_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> DECR_WRAP [
+GL14 >> DECR_WRAP [
 
 	<generated>
 	^ GL_DECR_WRAP
@@ -164,9 +164,9 @@ GL1_4 >> DECR_WRAP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> DEPTH_COMPONENT16 [
+GL14 >> DEPTH_COMPONENT16 [
 
 	<generated>
 	^ GL_DEPTH_COMPONENT16
@@ -174,9 +174,9 @@ GL1_4 >> DEPTH_COMPONENT16 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> DEPTH_COMPONENT24 [
+GL14 >> DEPTH_COMPONENT24 [
 
 	<generated>
 	^ GL_DEPTH_COMPONENT24
@@ -184,9 +184,9 @@ GL1_4 >> DEPTH_COMPONENT24 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> DEPTH_COMPONENT32 [
+GL14 >> DEPTH_COMPONENT32 [
 
 	<generated>
 	^ GL_DEPTH_COMPONENT32
@@ -194,9 +194,9 @@ GL1_4 >> DEPTH_COMPONENT32 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> DEPTH_TEXTURE_MODE [
+GL14 >> DEPTH_TEXTURE_MODE [
 
 	<generated>
 	^ GL_DEPTH_TEXTURE_MODE
@@ -204,9 +204,9 @@ GL1_4 >> DEPTH_TEXTURE_MODE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> FOG_COORDINATE [
+GL14 >> FOG_COORDINATE [
 
 	<generated>
 	^ GL_FOG_COORDINATE
@@ -214,9 +214,9 @@ GL1_4 >> FOG_COORDINATE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> FOG_COORDINATE_ARRAY [
+GL14 >> FOG_COORDINATE_ARRAY [
 
 	<generated>
 	^ GL_FOG_COORDINATE_ARRAY
@@ -224,9 +224,9 @@ GL1_4 >> FOG_COORDINATE_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> FOG_COORDINATE_ARRAY_POINTER [
+GL14 >> FOG_COORDINATE_ARRAY_POINTER [
 
 	<generated>
 	^ GL_FOG_COORDINATE_ARRAY_POINTER
@@ -234,9 +234,9 @@ GL1_4 >> FOG_COORDINATE_ARRAY_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> FOG_COORDINATE_ARRAY_STRIDE [
+GL14 >> FOG_COORDINATE_ARRAY_STRIDE [
 
 	<generated>
 	^ GL_FOG_COORDINATE_ARRAY_STRIDE
@@ -244,9 +244,9 @@ GL1_4 >> FOG_COORDINATE_ARRAY_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> FOG_COORDINATE_ARRAY_TYPE [
+GL14 >> FOG_COORDINATE_ARRAY_TYPE [
 
 	<generated>
 	^ GL_FOG_COORDINATE_ARRAY_TYPE
@@ -254,9 +254,9 @@ GL1_4 >> FOG_COORDINATE_ARRAY_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> FOG_COORDINATE_SOURCE [
+GL14 >> FOG_COORDINATE_SOURCE [
 
 	<generated>
 	^ GL_FOG_COORDINATE_SOURCE
@@ -264,9 +264,9 @@ GL1_4 >> FOG_COORDINATE_SOURCE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> FRAGMENT_DEPTH [
+GL14 >> FRAGMENT_DEPTH [
 
 	<generated>
 	^ GL_FRAGMENT_DEPTH
@@ -274,9 +274,9 @@ GL1_4 >> FRAGMENT_DEPTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> FUNC_ADD [
+GL14 >> FUNC_ADD [
 
 	<generated>
 	^ GL_FUNC_ADD
@@ -284,9 +284,9 @@ GL1_4 >> FUNC_ADD [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> FUNC_REVERSE_SUBTRACT [
+GL14 >> FUNC_REVERSE_SUBTRACT [
 
 	<generated>
 	^ GL_FUNC_REVERSE_SUBTRACT
@@ -294,9 +294,9 @@ GL1_4 >> FUNC_REVERSE_SUBTRACT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> FUNC_SUBTRACT [
+GL14 >> FUNC_SUBTRACT [
 
 	<generated>
 	^ GL_FUNC_SUBTRACT
@@ -304,9 +304,9 @@ GL1_4 >> FUNC_SUBTRACT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> GENERATE_MIPMAP [
+GL14 >> GENERATE_MIPMAP [
 
 	<generated>
 	^ GL_GENERATE_MIPMAP
@@ -314,9 +314,9 @@ GL1_4 >> GENERATE_MIPMAP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> GENERATE_MIPMAP_HINT [
+GL14 >> GENERATE_MIPMAP_HINT [
 
 	<generated>
 	^ GL_GENERATE_MIPMAP_HINT
@@ -324,9 +324,9 @@ GL1_4 >> GENERATE_MIPMAP_HINT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> INCR_WRAP [
+GL14 >> INCR_WRAP [
 
 	<generated>
 	^ GL_INCR_WRAP
@@ -334,9 +334,9 @@ GL1_4 >> INCR_WRAP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> MAX [
+GL14 >> MAX [
 
 	<generated>
 	^ GL_MAX
@@ -344,9 +344,9 @@ GL1_4 >> MAX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> MAX_TEXTURE_LOD_BIAS [
+GL14 >> MAX_TEXTURE_LOD_BIAS [
 
 	<generated>
 	^ GL_MAX_TEXTURE_LOD_BIAS
@@ -354,9 +354,9 @@ GL1_4 >> MAX_TEXTURE_LOD_BIAS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> MIN [
+GL14 >> MIN [
 
 	<generated>
 	^ GL_MIN
@@ -364,9 +364,9 @@ GL1_4 >> MIN [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> MIRRORED_REPEAT [
+GL14 >> MIRRORED_REPEAT [
 
 	<generated>
 	^ GL_MIRRORED_REPEAT
@@ -374,9 +374,9 @@ GL1_4 >> MIRRORED_REPEAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> ONE_MINUS_CONSTANT_ALPHA [
+GL14 >> ONE_MINUS_CONSTANT_ALPHA [
 
 	<generated>
 	^ GL_ONE_MINUS_CONSTANT_ALPHA
@@ -384,9 +384,9 @@ GL1_4 >> ONE_MINUS_CONSTANT_ALPHA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> ONE_MINUS_CONSTANT_COLOR [
+GL14 >> ONE_MINUS_CONSTANT_COLOR [
 
 	<generated>
 	^ GL_ONE_MINUS_CONSTANT_COLOR
@@ -394,9 +394,9 @@ GL1_4 >> ONE_MINUS_CONSTANT_COLOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> POINT_DISTANCE_ATTENUATION [
+GL14 >> POINT_DISTANCE_ATTENUATION [
 
 	<generated>
 	^ GL_POINT_DISTANCE_ATTENUATION
@@ -404,9 +404,9 @@ GL1_4 >> POINT_DISTANCE_ATTENUATION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> POINT_FADE_THRESHOLD_SIZE [
+GL14 >> POINT_FADE_THRESHOLD_SIZE [
 
 	<generated>
 	^ GL_POINT_FADE_THRESHOLD_SIZE
@@ -414,9 +414,9 @@ GL1_4 >> POINT_FADE_THRESHOLD_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> POINT_SIZE_MAX [
+GL14 >> POINT_SIZE_MAX [
 
 	<generated>
 	^ GL_POINT_SIZE_MAX
@@ -424,9 +424,9 @@ GL1_4 >> POINT_SIZE_MAX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> POINT_SIZE_MIN [
+GL14 >> POINT_SIZE_MIN [
 
 	<generated>
 	^ GL_POINT_SIZE_MIN
@@ -434,9 +434,9 @@ GL1_4 >> POINT_SIZE_MIN [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> SECONDARY_COLOR_ARRAY [
+GL14 >> SECONDARY_COLOR_ARRAY [
 
 	<generated>
 	^ GL_SECONDARY_COLOR_ARRAY
@@ -444,9 +444,9 @@ GL1_4 >> SECONDARY_COLOR_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> SECONDARY_COLOR_ARRAY_POINTER [
+GL14 >> SECONDARY_COLOR_ARRAY_POINTER [
 
 	<generated>
 	^ GL_SECONDARY_COLOR_ARRAY_POINTER
@@ -454,9 +454,9 @@ GL1_4 >> SECONDARY_COLOR_ARRAY_POINTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> SECONDARY_COLOR_ARRAY_SIZE [
+GL14 >> SECONDARY_COLOR_ARRAY_SIZE [
 
 	<generated>
 	^ GL_SECONDARY_COLOR_ARRAY_SIZE
@@ -464,9 +464,9 @@ GL1_4 >> SECONDARY_COLOR_ARRAY_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> SECONDARY_COLOR_ARRAY_STRIDE [
+GL14 >> SECONDARY_COLOR_ARRAY_STRIDE [
 
 	<generated>
 	^ GL_SECONDARY_COLOR_ARRAY_STRIDE
@@ -474,9 +474,9 @@ GL1_4 >> SECONDARY_COLOR_ARRAY_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> SECONDARY_COLOR_ARRAY_TYPE [
+GL14 >> SECONDARY_COLOR_ARRAY_TYPE [
 
 	<generated>
 	^ GL_SECONDARY_COLOR_ARRAY_TYPE
@@ -484,9 +484,9 @@ GL1_4 >> SECONDARY_COLOR_ARRAY_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> TEXTURE_COMPARE_FUNC [
+GL14 >> TEXTURE_COMPARE_FUNC [
 
 	<generated>
 	^ GL_TEXTURE_COMPARE_FUNC
@@ -494,9 +494,9 @@ GL1_4 >> TEXTURE_COMPARE_FUNC [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> TEXTURE_COMPARE_MODE [
+GL14 >> TEXTURE_COMPARE_MODE [
 
 	<generated>
 	^ GL_TEXTURE_COMPARE_MODE
@@ -504,9 +504,9 @@ GL1_4 >> TEXTURE_COMPARE_MODE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> TEXTURE_DEPTH_SIZE [
+GL14 >> TEXTURE_DEPTH_SIZE [
 
 	<generated>
 	^ GL_TEXTURE_DEPTH_SIZE
@@ -514,9 +514,9 @@ GL1_4 >> TEXTURE_DEPTH_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> TEXTURE_FILTER_CONTROL [
+GL14 >> TEXTURE_FILTER_CONTROL [
 
 	<generated>
 	^ GL_TEXTURE_FILTER_CONTROL
@@ -524,9 +524,9 @@ GL1_4 >> TEXTURE_FILTER_CONTROL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> TEXTURE_LOD_BIAS [
+GL14 >> TEXTURE_LOD_BIAS [
 
 	<generated>
 	^ GL_TEXTURE_LOD_BIAS
@@ -534,9 +534,9 @@ GL1_4 >> TEXTURE_LOD_BIAS [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> blendColor: red with: green with: blue with: alpha [
+GL14 >> blendColor: red with: green with: blue with: alpha [
 
 	<generated>
 	<apicall: void 'glBlendColor' (GLfloat GLfloat GLfloat GLfloat)>
@@ -545,9 +545,9 @@ GL1_4 >> blendColor: red with: green with: blue with: alpha [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> blendEquation: mode [
+GL14 >> blendEquation: mode [
 
 	<generated>
 	<apicall: void 'glBlendEquation' (GLenum)>
@@ -556,9 +556,9 @@ GL1_4 >> blendEquation: mode [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> blendFuncSeparate: sfactorRGB with: dfactorRGB with: sfactorAlpha with: dfactorAlpha [
+GL14 >> blendFuncSeparate: sfactorRGB with: dfactorRGB with: sfactorAlpha with: dfactorAlpha [
 
 	<generated>
 	<apicall: void 'glBlendFuncSeparate' (GLenum GLenum GLenum GLenum)>
@@ -567,9 +567,9 @@ GL1_4 >> blendFuncSeparate: sfactorRGB with: dfactorRGB with: sfactorAlpha with:
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> fogCoordPointer: type with: stride with: pointer [
+GL14 >> fogCoordPointer: type with: stride with: pointer [
 
 	<generated>
 	<apicall: void 'glFogCoordPointer' (GLenum GLsizei void*)>
@@ -578,9 +578,9 @@ GL1_4 >> fogCoordPointer: type with: stride with: pointer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> fogCoordd: coord [
+GL14 >> fogCoordd: coord [
 
 	<generated>
 	<apicall: void 'glFogCoordd' (GLdouble)>
@@ -589,9 +589,9 @@ GL1_4 >> fogCoordd: coord [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> fogCoorddv: coord [
+GL14 >> fogCoorddv: coord [
 
 	<generated>
 	<apicall: void 'glFogCoorddv' (GLdouble*)>
@@ -600,9 +600,9 @@ GL1_4 >> fogCoorddv: coord [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> fogCoordf: coord [
+GL14 >> fogCoordf: coord [
 
 	<generated>
 	<apicall: void 'glFogCoordf' (GLfloat)>
@@ -611,9 +611,9 @@ GL1_4 >> fogCoordf: coord [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> fogCoordfv: coord [
+GL14 >> fogCoordfv: coord [
 
 	<generated>
 	<apicall: void 'glFogCoordfv' (GLfloat*)>
@@ -622,9 +622,9 @@ GL1_4 >> fogCoordfv: coord [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> multiDrawArrays: mode with: first with: count with: drawcount [
+GL14 >> multiDrawArrays: mode with: first with: count with: drawcount [
 
 	<generated>
 	<apicall: void 'glMultiDrawArrays' (GLenum GLint* GLsizei* GLsizei)>
@@ -633,9 +633,9 @@ GL1_4 >> multiDrawArrays: mode with: first with: count with: drawcount [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> multiDrawElements: mode with: count with: type with: indices with: drawcount [
+GL14 >> multiDrawElements: mode with: count with: type with: indices with: drawcount [
 
 	<generated>
 	<apicall: void 'glMultiDrawElements' (GLenum GLsizei* GLenum void** GLsizei)>
@@ -644,9 +644,9 @@ GL1_4 >> multiDrawElements: mode with: count with: type with: indices with: draw
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> pointParameterf: pname with: param [
+GL14 >> pointParameterf: pname with: param [
 
 	<generated>
 	<apicall: void 'glPointParameterf' (GLenum GLfloat)>
@@ -655,9 +655,9 @@ GL1_4 >> pointParameterf: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> pointParameterfv: pname with: params [
+GL14 >> pointParameterfv: pname with: params [
 
 	<generated>
 	<apicall: void 'glPointParameterfv' (GLenum GLfloat*)>
@@ -666,9 +666,9 @@ GL1_4 >> pointParameterfv: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> pointParameteri: pname with: param [
+GL14 >> pointParameteri: pname with: param [
 
 	<generated>
 	<apicall: void 'glPointParameteri' (GLenum GLint)>
@@ -677,9 +677,9 @@ GL1_4 >> pointParameteri: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> pointParameteriv: pname with: params [
+GL14 >> pointParameteriv: pname with: params [
 
 	<generated>
 	<apicall: void 'glPointParameteriv' (GLenum GLint*)>
@@ -688,9 +688,9 @@ GL1_4 >> pointParameteriv: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> secondaryColor3b: red with: green with: blue [
+GL14 >> secondaryColor3b: red with: green with: blue [
 
 	<generated>
 	<apicall: void 'glSecondaryColor3b' (GLbyte GLbyte GLbyte)>
@@ -699,9 +699,9 @@ GL1_4 >> secondaryColor3b: red with: green with: blue [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> secondaryColor3bv: v [
+GL14 >> secondaryColor3bv: v [
 
 	<generated>
 	<apicall: void 'glSecondaryColor3bv' (GLbyte*)>
@@ -710,9 +710,9 @@ GL1_4 >> secondaryColor3bv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> secondaryColor3d: red with: green with: blue [
+GL14 >> secondaryColor3d: red with: green with: blue [
 
 	<generated>
 	<apicall: void 'glSecondaryColor3d' (GLdouble GLdouble GLdouble)>
@@ -721,9 +721,9 @@ GL1_4 >> secondaryColor3d: red with: green with: blue [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> secondaryColor3dv: v [
+GL14 >> secondaryColor3dv: v [
 
 	<generated>
 	<apicall: void 'glSecondaryColor3dv' (GLdouble*)>
@@ -732,9 +732,9 @@ GL1_4 >> secondaryColor3dv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> secondaryColor3f: red with: green with: blue [
+GL14 >> secondaryColor3f: red with: green with: blue [
 
 	<generated>
 	<apicall: void 'glSecondaryColor3f' (GLfloat GLfloat GLfloat)>
@@ -743,9 +743,9 @@ GL1_4 >> secondaryColor3f: red with: green with: blue [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> secondaryColor3fv: v [
+GL14 >> secondaryColor3fv: v [
 
 	<generated>
 	<apicall: void 'glSecondaryColor3fv' (GLfloat*)>
@@ -754,9 +754,9 @@ GL1_4 >> secondaryColor3fv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> secondaryColor3i: red with: green with: blue [
+GL14 >> secondaryColor3i: red with: green with: blue [
 
 	<generated>
 	<apicall: void 'glSecondaryColor3i' (GLint GLint GLint)>
@@ -765,9 +765,9 @@ GL1_4 >> secondaryColor3i: red with: green with: blue [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> secondaryColor3iv: v [
+GL14 >> secondaryColor3iv: v [
 
 	<generated>
 	<apicall: void 'glSecondaryColor3iv' (GLint*)>
@@ -776,9 +776,9 @@ GL1_4 >> secondaryColor3iv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> secondaryColor3s: red with: green with: blue [
+GL14 >> secondaryColor3s: red with: green with: blue [
 
 	<generated>
 	<apicall: void 'glSecondaryColor3s' (GLshort GLshort GLshort)>
@@ -787,9 +787,9 @@ GL1_4 >> secondaryColor3s: red with: green with: blue [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> secondaryColor3sv: v [
+GL14 >> secondaryColor3sv: v [
 
 	<generated>
 	<apicall: void 'glSecondaryColor3sv' (GLshort*)>
@@ -798,9 +798,9 @@ GL1_4 >> secondaryColor3sv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> secondaryColor3ub: red with: green with: blue [
+GL14 >> secondaryColor3ub: red with: green with: blue [
 
 	<generated>
 	<apicall: void 'glSecondaryColor3ub' (GLubyte GLubyte GLubyte)>
@@ -809,9 +809,9 @@ GL1_4 >> secondaryColor3ub: red with: green with: blue [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> secondaryColor3ubv: v [
+GL14 >> secondaryColor3ubv: v [
 
 	<generated>
 	<apicall: void 'glSecondaryColor3ubv' (GLubyte*)>
@@ -820,9 +820,9 @@ GL1_4 >> secondaryColor3ubv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> secondaryColor3ui: red with: green with: blue [
+GL14 >> secondaryColor3ui: red with: green with: blue [
 
 	<generated>
 	<apicall: void 'glSecondaryColor3ui' (GLuint GLuint GLuint)>
@@ -831,9 +831,9 @@ GL1_4 >> secondaryColor3ui: red with: green with: blue [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> secondaryColor3uiv: v [
+GL14 >> secondaryColor3uiv: v [
 
 	<generated>
 	<apicall: void 'glSecondaryColor3uiv' (GLuint*)>
@@ -842,9 +842,9 @@ GL1_4 >> secondaryColor3uiv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> secondaryColor3us: red with: green with: blue [
+GL14 >> secondaryColor3us: red with: green with: blue [
 
 	<generated>
 	<apicall: void 'glSecondaryColor3us' (GLushort GLushort GLushort)>
@@ -853,9 +853,9 @@ GL1_4 >> secondaryColor3us: red with: green with: blue [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> secondaryColor3usv: v [
+GL14 >> secondaryColor3usv: v [
 
 	<generated>
 	<apicall: void 'glSecondaryColor3usv' (GLushort*)>
@@ -864,9 +864,9 @@ GL1_4 >> secondaryColor3usv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> secondaryColorPointer: size with: type with: stride with: pointer [
+GL14 >> secondaryColorPointer: size with: type with: stride with: pointer [
 
 	<generated>
 	<apicall: void 'glSecondaryColorPointer' (GLint GLenum GLsizei void*)>
@@ -875,9 +875,9 @@ GL1_4 >> secondaryColorPointer: size with: type with: stride with: pointer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> windowPos2d: x with: y [
+GL14 >> windowPos2d: x with: y [
 
 	<generated>
 	<apicall: void 'glWindowPos2d' (GLdouble GLdouble)>
@@ -886,9 +886,9 @@ GL1_4 >> windowPos2d: x with: y [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> windowPos2dv: v [
+GL14 >> windowPos2dv: v [
 
 	<generated>
 	<apicall: void 'glWindowPos2dv' (GLdouble*)>
@@ -897,9 +897,9 @@ GL1_4 >> windowPos2dv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> windowPos2f: x with: y [
+GL14 >> windowPos2f: x with: y [
 
 	<generated>
 	<apicall: void 'glWindowPos2f' (GLfloat GLfloat)>
@@ -908,9 +908,9 @@ GL1_4 >> windowPos2f: x with: y [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> windowPos2fv: v [
+GL14 >> windowPos2fv: v [
 
 	<generated>
 	<apicall: void 'glWindowPos2fv' (GLfloat*)>
@@ -919,9 +919,9 @@ GL1_4 >> windowPos2fv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> windowPos2i: x with: y [
+GL14 >> windowPos2i: x with: y [
 
 	<generated>
 	<apicall: void 'glWindowPos2i' (GLint GLint)>
@@ -930,9 +930,9 @@ GL1_4 >> windowPos2i: x with: y [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> windowPos2iv: v [
+GL14 >> windowPos2iv: v [
 
 	<generated>
 	<apicall: void 'glWindowPos2iv' (GLint*)>
@@ -941,9 +941,9 @@ GL1_4 >> windowPos2iv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> windowPos2s: x with: y [
+GL14 >> windowPos2s: x with: y [
 
 	<generated>
 	<apicall: void 'glWindowPos2s' (GLshort GLshort)>
@@ -952,9 +952,9 @@ GL1_4 >> windowPos2s: x with: y [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> windowPos2sv: v [
+GL14 >> windowPos2sv: v [
 
 	<generated>
 	<apicall: void 'glWindowPos2sv' (GLshort*)>
@@ -963,9 +963,9 @@ GL1_4 >> windowPos2sv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> windowPos3d: x with: y with: z [
+GL14 >> windowPos3d: x with: y with: z [
 
 	<generated>
 	<apicall: void 'glWindowPos3d' (GLdouble GLdouble GLdouble)>
@@ -974,9 +974,9 @@ GL1_4 >> windowPos3d: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> windowPos3dv: v [
+GL14 >> windowPos3dv: v [
 
 	<generated>
 	<apicall: void 'glWindowPos3dv' (GLdouble*)>
@@ -985,9 +985,9 @@ GL1_4 >> windowPos3dv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> windowPos3f: x with: y with: z [
+GL14 >> windowPos3f: x with: y with: z [
 
 	<generated>
 	<apicall: void 'glWindowPos3f' (GLfloat GLfloat GLfloat)>
@@ -996,9 +996,9 @@ GL1_4 >> windowPos3f: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> windowPos3fv: v [
+GL14 >> windowPos3fv: v [
 
 	<generated>
 	<apicall: void 'glWindowPos3fv' (GLfloat*)>
@@ -1007,9 +1007,9 @@ GL1_4 >> windowPos3fv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> windowPos3i: x with: y with: z [
+GL14 >> windowPos3i: x with: y with: z [
 
 	<generated>
 	<apicall: void 'glWindowPos3i' (GLint GLint GLint)>
@@ -1018,9 +1018,9 @@ GL1_4 >> windowPos3i: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> windowPos3iv: v [
+GL14 >> windowPos3iv: v [
 
 	<generated>
 	<apicall: void 'glWindowPos3iv' (GLint*)>
@@ -1029,9 +1029,9 @@ GL1_4 >> windowPos3iv: v [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> windowPos3s: x with: y with: z [
+GL14 >> windowPos3s: x with: y with: z [
 
 	<generated>
 	<apicall: void 'glWindowPos3s' (GLshort GLshort GLshort)>
@@ -1040,9 +1040,9 @@ GL1_4 >> windowPos3s: x with: y with: z [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL1_4 >> windowPos3sv: v [
+GL14 >> windowPos3sv: v [
 
 	<generated>
 	<apicall: void 'glWindowPos3sv' (GLshort*)>

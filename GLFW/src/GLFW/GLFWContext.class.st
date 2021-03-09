@@ -13,12 +13,12 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/6/2021 14:01'
+	#timestamp : 'stlu 2/18/2021 22:47'
 }
 GLFWContext class >> newIn: bounds forLibraryClass: aLibraryClass title: aString [
 
 	self flag: #todo. "Deprecated"
-	GLFW targetLibrary: GL3_3.
+	GLFW targetLibrary: GL33Core.
 	^ self window: (GLFWWindow
 						extent: bounds extent
 						title: aString)

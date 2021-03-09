@@ -56,6 +56,15 @@ ExternalType class >> GLLeglImageOES [
 
 {
 	#category : #'*OpenGL',
+	#timestamp : 'stlu 3/3/2021 14:30'
+}
+ExternalType class >> GLVULKANPROCNV [
+
+	^ self GLDEBUGPROC
+]
+
+{
+	#category : #'*OpenGL',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLbitfield [
@@ -137,6 +146,24 @@ ExternalType class >> GLdouble [
 
 {
 	#category : #'*OpenGL',
+	#timestamp : 'stlu 3/3/2021 14:32'
+}
+ExternalType class >> GLeglClientBufferEXT [
+
+	^ self void asPointerType
+]
+
+{
+	#category : #'*OpenGL',
+	#timestamp : 'stlu 3/3/2021 14:32'
+}
+ExternalType class >> GLeglImageOES [
+
+	^ self void asPointerType
+]
+
+{
+	#category : #'*OpenGL',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalType class >> GLenum [
@@ -191,11 +218,20 @@ ExternalType class >> GLhalfARB [
 
 {
 	#category : #'*OpenGL',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 3/3/2021 14:28'
+}
+ExternalType class >> GLhalfNV [
+
+	^ self GLhalf
+]
+
+{
+	#category : #'*OpenGL',
+	#timestamp : 'stlu 3/3/2021 14:33'
 }
 ExternalType class >> GLhandleARB [
 
-	^ self int32_t "void* on Apple"
+	^ self uint32_t "void* on Apple"
 ]
 
 {
@@ -331,6 +367,15 @@ ExternalType class >> GLuint64EXT [
 ExternalType class >> GLushort [
 
 	^ self uint16_t
+]
+
+{
+	#category : #'*OpenGL',
+	#timestamp : 'stlu 3/3/2021 14:30'
+}
+ExternalType class >> GLvdpauSurfaceNV [
+
+	^ self GLintptr
 ]
 
 {

@@ -62,7 +62,7 @@ RtDisplayFramebufferStore >> initializeGLSettings [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/27/2020 15:00'
+	#timestamp : 'stlu 2/18/2021 22:46'
 }
 RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 
@@ -70,7 +70,7 @@ RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 	self flag: #todo. "This has become very GLFW-specific. New variation point?"
 	context := GLFWContext
 					newIn: (0@0 extent: aPoint)
-					forLibraryClass: GL3_3
+					forLibraryClass: GL33Core
 					title: 'Squeak (GLFW)'.
 	context useMorphicEventHandling.
 	extent := aPoint.

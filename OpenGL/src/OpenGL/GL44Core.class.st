@@ -1,6 +1,6 @@
 Class {
-	#name : #'GL4_4',
-	#superclass : #'GL4_3',
+	#name : #GL44Core,
+	#superclass : #GL43Core,
 	#category : #'OpenGL-API-GL',
 	#commentStamp : ''
 }
@@ -9,7 +9,7 @@ Class {
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
-GL4_4 class >> majorVersion [
+GL44Core class >> majorVersion [
 
 	^ 4
 ]
@@ -18,7 +18,7 @@ GL4_4 class >> majorVersion [
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
-GL4_4 class >> minorVersion [
+GL44Core class >> minorVersion [
 
 	^ 4
 ]
@@ -27,16 +27,16 @@ GL4_4 class >> minorVersion [
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 14:53'
 }
-GL4_4 class >> versionNumber [
+GL44Core class >> versionNumber [
 
 	^ 44
 ]
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> BUFFER_IMMUTABLE_STORAGE [
+GL44Core >> BUFFER_IMMUTABLE_STORAGE [
 
 	<generated>
 	^ GL_BUFFER_IMMUTABLE_STORAGE
@@ -44,9 +44,9 @@ GL4_4 >> BUFFER_IMMUTABLE_STORAGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> BUFFER_STORAGE_FLAGS [
+GL44Core >> BUFFER_STORAGE_FLAGS [
 
 	<generated>
 	^ GL_BUFFER_STORAGE_FLAGS
@@ -54,9 +54,9 @@ GL4_4 >> BUFFER_STORAGE_FLAGS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> CLEAR_TEXTURE [
+GL44Core >> CLEAR_TEXTURE [
 
 	<generated>
 	^ GL_CLEAR_TEXTURE
@@ -64,9 +64,9 @@ GL4_4 >> CLEAR_TEXTURE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> CLIENT_MAPPED_BUFFER_BARRIER_BIT [
+GL44Core >> CLIENT_MAPPED_BUFFER_BARRIER_BIT [
 
 	<generated>
 	^ GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT
@@ -74,9 +74,9 @@ GL4_4 >> CLIENT_MAPPED_BUFFER_BARRIER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> CLIENT_STORAGE_BIT [
+GL44Core >> CLIENT_STORAGE_BIT [
 
 	<generated>
 	^ GL_CLIENT_STORAGE_BIT
@@ -84,9 +84,9 @@ GL4_4 >> CLIENT_STORAGE_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> DYNAMIC_STORAGE_BIT [
+GL44Core >> DYNAMIC_STORAGE_BIT [
 
 	<generated>
 	^ GL_DYNAMIC_STORAGE_BIT
@@ -94,9 +94,9 @@ GL4_4 >> DYNAMIC_STORAGE_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> LOCATION_COMPONENT [
+GL44Core >> LOCATION_COMPONENT [
 
 	<generated>
 	^ GL_LOCATION_COMPONENT
@@ -104,9 +104,9 @@ GL4_4 >> LOCATION_COMPONENT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> MAP_COHERENT_BIT [
+GL44Core >> MAP_COHERENT_BIT [
 
 	<generated>
 	^ GL_MAP_COHERENT_BIT
@@ -114,9 +114,9 @@ GL4_4 >> MAP_COHERENT_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> MAP_PERSISTENT_BIT [
+GL44Core >> MAP_PERSISTENT_BIT [
 
 	<generated>
 	^ GL_MAP_PERSISTENT_BIT
@@ -124,9 +124,9 @@ GL4_4 >> MAP_PERSISTENT_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> MAP_READ_BIT [
+GL44Core >> MAP_READ_BIT [
 
 	<generated>
 	^ GL_MAP_READ_BIT
@@ -134,9 +134,9 @@ GL4_4 >> MAP_READ_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> MAP_WRITE_BIT [
+GL44Core >> MAP_WRITE_BIT [
 
 	<generated>
 	^ GL_MAP_WRITE_BIT
@@ -144,9 +144,9 @@ GL4_4 >> MAP_WRITE_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> MAX_VERTEX_ATTRIB_STRIDE [
+GL44Core >> MAX_VERTEX_ATTRIB_STRIDE [
 
 	<generated>
 	^ GL_MAX_VERTEX_ATTRIB_STRIDE
@@ -154,9 +154,9 @@ GL4_4 >> MAX_VERTEX_ATTRIB_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> MIRROR_CLAMP_TO_EDGE [
+GL44Core >> MIRROR_CLAMP_TO_EDGE [
 
 	<generated>
 	^ GL_MIRROR_CLAMP_TO_EDGE
@@ -164,9 +164,9 @@ GL4_4 >> MIRROR_CLAMP_TO_EDGE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED [
+GL44Core >> PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED [
 
 	<generated>
 	^ GL_PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED
@@ -174,9 +174,9 @@ GL4_4 >> PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> QUERY_BUFFER [
+GL44Core >> QUERY_BUFFER [
 
 	<generated>
 	^ GL_QUERY_BUFFER
@@ -184,9 +184,9 @@ GL4_4 >> QUERY_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> QUERY_BUFFER_BARRIER_BIT [
+GL44Core >> QUERY_BUFFER_BARRIER_BIT [
 
 	<generated>
 	^ GL_QUERY_BUFFER_BARRIER_BIT
@@ -194,9 +194,9 @@ GL4_4 >> QUERY_BUFFER_BARRIER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> QUERY_BUFFER_BINDING [
+GL44Core >> QUERY_BUFFER_BINDING [
 
 	<generated>
 	^ GL_QUERY_BUFFER_BINDING
@@ -204,9 +204,9 @@ GL4_4 >> QUERY_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> QUERY_RESULT_NO_WAIT [
+GL44Core >> QUERY_RESULT_NO_WAIT [
 
 	<generated>
 	^ GL_QUERY_RESULT_NO_WAIT
@@ -214,9 +214,9 @@ GL4_4 >> QUERY_RESULT_NO_WAIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> STENCIL_INDEX [
+GL44Core >> STENCIL_INDEX [
 
 	<generated>
 	^ GL_STENCIL_INDEX
@@ -224,9 +224,9 @@ GL4_4 >> STENCIL_INDEX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> STENCIL_INDEX8 [
+GL44Core >> STENCIL_INDEX8 [
 
 	<generated>
 	^ GL_STENCIL_INDEX8
@@ -234,9 +234,9 @@ GL4_4 >> STENCIL_INDEX8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> TEXTURE_BUFFER_BINDING [
+GL44Core >> TEXTURE_BUFFER_BINDING [
 
 	<generated>
 	^ GL_TEXTURE_BUFFER_BINDING
@@ -244,9 +244,9 @@ GL4_4 >> TEXTURE_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> TRANSFORM_FEEDBACK_BUFFER [
+GL44Core >> TRANSFORM_FEEDBACK_BUFFER [
 
 	<generated>
 	^ GL_TRANSFORM_FEEDBACK_BUFFER
@@ -254,9 +254,9 @@ GL4_4 >> TRANSFORM_FEEDBACK_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> TRANSFORM_FEEDBACK_BUFFER_INDEX [
+GL44Core >> TRANSFORM_FEEDBACK_BUFFER_INDEX [
 
 	<generated>
 	^ GL_TRANSFORM_FEEDBACK_BUFFER_INDEX
@@ -264,9 +264,9 @@ GL4_4 >> TRANSFORM_FEEDBACK_BUFFER_INDEX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> TRANSFORM_FEEDBACK_BUFFER_STRIDE [
+GL44Core >> TRANSFORM_FEEDBACK_BUFFER_STRIDE [
 
 	<generated>
 	^ GL_TRANSFORM_FEEDBACK_BUFFER_STRIDE
@@ -274,9 +274,9 @@ GL4_4 >> TRANSFORM_FEEDBACK_BUFFER_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> UNSIGNED_INT_10F_11F_11F_REV [
+GL44Core >> UNSIGNED_INT_10F_11F_11F_REV [
 
 	<generated>
 	^ GL_UNSIGNED_INT_10F_11F_11F_REV
@@ -284,9 +284,9 @@ GL4_4 >> UNSIGNED_INT_10F_11F_11F_REV [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> bindBuffersBase: target with: first with: count with: buffers [
+GL44Core >> bindBuffersBase: target with: first with: count with: buffers [
 
 	<generated>
 	<apicall: void 'glBindBuffersBase' (GLenum GLuint GLsizei GLuint*)>
@@ -295,9 +295,9 @@ GL4_4 >> bindBuffersBase: target with: first with: count with: buffers [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> bindBuffersRange: target with: first with: count with: buffers with: offsets with: sizes [
+GL44Core >> bindBuffersRange: target with: first with: count with: buffers with: offsets with: sizes [
 
 	<generated>
 	<apicall: void 'glBindBuffersRange' (GLenum GLuint GLsizei GLuint* GLintptr* GLsizeiptr*)>
@@ -306,9 +306,9 @@ GL4_4 >> bindBuffersRange: target with: first with: count with: buffers with: of
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> bindImageTextures: first with: count with: textures [
+GL44Core >> bindImageTextures: first with: count with: textures [
 
 	<generated>
 	<apicall: void 'glBindImageTextures' (GLuint GLsizei GLuint*)>
@@ -317,9 +317,9 @@ GL4_4 >> bindImageTextures: first with: count with: textures [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> bindSamplers: first with: count with: samplers [
+GL44Core >> bindSamplers: first with: count with: samplers [
 
 	<generated>
 	<apicall: void 'glBindSamplers' (GLuint GLsizei GLuint*)>
@@ -328,9 +328,9 @@ GL4_4 >> bindSamplers: first with: count with: samplers [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> bindTextures: first with: count with: textures [
+GL44Core >> bindTextures: first with: count with: textures [
 
 	<generated>
 	<apicall: void 'glBindTextures' (GLuint GLsizei GLuint*)>
@@ -339,9 +339,9 @@ GL4_4 >> bindTextures: first with: count with: textures [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> bindVertexBuffers: first with: count with: buffers with: offsets with: strides [
+GL44Core >> bindVertexBuffers: first with: count with: buffers with: offsets with: strides [
 
 	<generated>
 	<apicall: void 'glBindVertexBuffers' (GLuint GLsizei GLuint* GLintptr* GLsizei*)>
@@ -350,9 +350,9 @@ GL4_4 >> bindVertexBuffers: first with: count with: buffers with: offsets with: 
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> bufferStorage: target with: size with: data with: flags [
+GL44Core >> bufferStorage: target with: size with: data with: flags [
 
 	<generated>
 	<apicall: void 'glBufferStorage' (GLenum GLsizeiptr void* GLbitfield)>
@@ -361,9 +361,9 @@ GL4_4 >> bufferStorage: target with: size with: data with: flags [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> clearTexImage: texture with: level with: format with: type with: data [
+GL44Core >> clearTexImage: texture with: level with: format with: type with: data [
 
 	<generated>
 	<apicall: void 'glClearTexImage' (GLuint GLint GLenum GLenum void*)>
@@ -372,9 +372,9 @@ GL4_4 >> clearTexImage: texture with: level with: format with: type with: data [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_4 >> clearTexSubImage: texture with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth with: format with: type with: data [
+GL44Core >> clearTexSubImage: texture with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth with: format with: type with: data [
 
 	<generated>
 	<apicall: void 'glClearTexSubImage' (GLuint GLint GLint GLint GLint GLsizei GLsizei GLsizei GLenum GLenum void*)>

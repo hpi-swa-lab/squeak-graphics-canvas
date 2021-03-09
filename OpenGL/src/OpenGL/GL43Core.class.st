@@ -1,6 +1,6 @@
 Class {
-	#name : #'GL4_3',
-	#superclass : #'GL4_2',
+	#name : #GL43Core,
+	#superclass : #GL42Core,
 	#category : #'OpenGL-API-GL',
 	#commentStamp : ''
 }
@@ -9,7 +9,7 @@ Class {
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
-GL4_3 class >> majorVersion [
+GL43Core class >> majorVersion [
 
 	^ 4
 ]
@@ -18,7 +18,7 @@ GL4_3 class >> majorVersion [
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
-GL4_3 class >> minorVersion [
+GL43Core class >> minorVersion [
 
 	^ 3
 ]
@@ -27,16 +27,16 @@ GL4_3 class >> minorVersion [
 	#category : #accessing,
 	#timestamp : 'stlu 11/2/2020 14:52'
 }
-GL4_3 class >> versionNumber [
+GL43Core class >> versionNumber [
 
 	^ 43
 ]
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> ACTIVE_RESOURCES [
+GL43Core >> ACTIVE_RESOURCES [
 
 	<generated>
 	^ GL_ACTIVE_RESOURCES
@@ -44,9 +44,9 @@ GL4_3 >> ACTIVE_RESOURCES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> ACTIVE_VARIABLES [
+GL43Core >> ACTIVE_VARIABLES [
 
 	<generated>
 	^ GL_ACTIVE_VARIABLES
@@ -54,9 +54,9 @@ GL4_3 >> ACTIVE_VARIABLES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> ANY_SAMPLES_PASSED_CONSERVATIVE [
+GL43Core >> ANY_SAMPLES_PASSED_CONSERVATIVE [
 
 	<generated>
 	^ GL_ANY_SAMPLES_PASSED_CONSERVATIVE
@@ -64,9 +64,9 @@ GL4_3 >> ANY_SAMPLES_PASSED_CONSERVATIVE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> ARRAY_SIZE [
+GL43Core >> ARRAY_SIZE [
 
 	<generated>
 	^ GL_ARRAY_SIZE
@@ -74,9 +74,9 @@ GL4_3 >> ARRAY_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> ARRAY_STRIDE [
+GL43Core >> ARRAY_STRIDE [
 
 	<generated>
 	^ GL_ARRAY_STRIDE
@@ -84,9 +84,9 @@ GL4_3 >> ARRAY_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> ATOMIC_COUNTER_BUFFER_INDEX [
+GL43Core >> ATOMIC_COUNTER_BUFFER_INDEX [
 
 	<generated>
 	^ GL_ATOMIC_COUNTER_BUFFER_INDEX
@@ -94,9 +94,9 @@ GL4_3 >> ATOMIC_COUNTER_BUFFER_INDEX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER [
+GL43Core >> ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER [
 
 	<generated>
 	^ GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER
@@ -104,9 +104,9 @@ GL4_3 >> ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> AUTO_GENERATE_MIPMAP [
+GL43Core >> AUTO_GENERATE_MIPMAP [
 
 	<generated>
 	^ GL_AUTO_GENERATE_MIPMAP
@@ -114,9 +114,9 @@ GL4_3 >> AUTO_GENERATE_MIPMAP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> BLOCK_INDEX [
+GL43Core >> BLOCK_INDEX [
 
 	<generated>
 	^ GL_BLOCK_INDEX
@@ -124,9 +124,9 @@ GL4_3 >> BLOCK_INDEX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> BUFFER [
+GL43Core >> BUFFER [
 
 	<generated>
 	^ GL_BUFFER
@@ -134,9 +134,9 @@ GL4_3 >> BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> BUFFER_BINDING [
+GL43Core >> BUFFER_BINDING [
 
 	<generated>
 	^ GL_BUFFER_BINDING
@@ -144,9 +144,9 @@ GL4_3 >> BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> BUFFER_DATA_SIZE [
+GL43Core >> BUFFER_DATA_SIZE [
 
 	<generated>
 	^ GL_BUFFER_DATA_SIZE
@@ -154,9 +154,9 @@ GL4_3 >> BUFFER_DATA_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> BUFFER_VARIABLE [
+GL43Core >> BUFFER_VARIABLE [
 
 	<generated>
 	^ GL_BUFFER_VARIABLE
@@ -164,9 +164,9 @@ GL4_3 >> BUFFER_VARIABLE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> CAVEAT_SUPPORT [
+GL43Core >> CAVEAT_SUPPORT [
 
 	<generated>
 	^ GL_CAVEAT_SUPPORT
@@ -174,9 +174,9 @@ GL4_3 >> CAVEAT_SUPPORT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> CLEAR_BUFFER [
+GL43Core >> CLEAR_BUFFER [
 
 	<generated>
 	^ GL_CLEAR_BUFFER
@@ -184,9 +184,9 @@ GL4_3 >> CLEAR_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> COLOR_COMPONENTS [
+GL43Core >> COLOR_COMPONENTS [
 
 	<generated>
 	^ GL_COLOR_COMPONENTS
@@ -194,9 +194,9 @@ GL4_3 >> COLOR_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> COLOR_ENCODING [
+GL43Core >> COLOR_ENCODING [
 
 	<generated>
 	^ GL_COLOR_ENCODING
@@ -204,9 +204,9 @@ GL4_3 >> COLOR_ENCODING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> COLOR_RENDERABLE [
+GL43Core >> COLOR_RENDERABLE [
 
 	<generated>
 	^ GL_COLOR_RENDERABLE
@@ -214,9 +214,9 @@ GL4_3 >> COLOR_RENDERABLE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> COMPRESSED_R11_EAC [
+GL43Core >> COMPRESSED_R11_EAC [
 
 	<generated>
 	^ GL_COMPRESSED_R11_EAC
@@ -224,9 +224,9 @@ GL4_3 >> COMPRESSED_R11_EAC [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> COMPRESSED_RG11_EAC [
+GL43Core >> COMPRESSED_RG11_EAC [
 
 	<generated>
 	^ GL_COMPRESSED_RG11_EAC
@@ -234,9 +234,9 @@ GL4_3 >> COMPRESSED_RG11_EAC [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> COMPRESSED_RGB8_ETC2 [
+GL43Core >> COMPRESSED_RGB8_ETC2 [
 
 	<generated>
 	^ GL_COMPRESSED_RGB8_ETC2
@@ -244,9 +244,9 @@ GL4_3 >> COMPRESSED_RGB8_ETC2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2 [
+GL43Core >> COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2 [
 
 	<generated>
 	^ GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2
@@ -254,9 +254,9 @@ GL4_3 >> COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> COMPRESSED_RGBA8_ETC2_EAC [
+GL43Core >> COMPRESSED_RGBA8_ETC2_EAC [
 
 	<generated>
 	^ GL_COMPRESSED_RGBA8_ETC2_EAC
@@ -264,9 +264,9 @@ GL4_3 >> COMPRESSED_RGBA8_ETC2_EAC [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> COMPRESSED_SIGNED_R11_EAC [
+GL43Core >> COMPRESSED_SIGNED_R11_EAC [
 
 	<generated>
 	^ GL_COMPRESSED_SIGNED_R11_EAC
@@ -274,9 +274,9 @@ GL4_3 >> COMPRESSED_SIGNED_R11_EAC [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> COMPRESSED_SIGNED_RG11_EAC [
+GL43Core >> COMPRESSED_SIGNED_RG11_EAC [
 
 	<generated>
 	^ GL_COMPRESSED_SIGNED_RG11_EAC
@@ -284,9 +284,9 @@ GL4_3 >> COMPRESSED_SIGNED_RG11_EAC [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> COMPRESSED_SRGB8_ALPHA8_ETC2_EAC [
+GL43Core >> COMPRESSED_SRGB8_ALPHA8_ETC2_EAC [
 
 	<generated>
 	^ GL_COMPRESSED_SRGB8_ALPHA8_ETC2_EAC
@@ -294,9 +294,9 @@ GL4_3 >> COMPRESSED_SRGB8_ALPHA8_ETC2_EAC [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> COMPRESSED_SRGB8_ETC2 [
+GL43Core >> COMPRESSED_SRGB8_ETC2 [
 
 	<generated>
 	^ GL_COMPRESSED_SRGB8_ETC2
@@ -304,9 +304,9 @@ GL4_3 >> COMPRESSED_SRGB8_ETC2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2 [
+GL43Core >> COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2 [
 
 	<generated>
 	^ GL_COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2
@@ -314,9 +314,9 @@ GL4_3 >> COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> COMPUTE_SHADER [
+GL43Core >> COMPUTE_SHADER [
 
 	<generated>
 	^ GL_COMPUTE_SHADER
@@ -324,9 +324,9 @@ GL4_3 >> COMPUTE_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> COMPUTE_SHADER_BIT [
+GL43Core >> COMPUTE_SHADER_BIT [
 
 	<generated>
 	^ GL_COMPUTE_SHADER_BIT
@@ -334,9 +334,9 @@ GL4_3 >> COMPUTE_SHADER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> COMPUTE_SUBROUTINE [
+GL43Core >> COMPUTE_SUBROUTINE [
 
 	<generated>
 	^ GL_COMPUTE_SUBROUTINE
@@ -344,9 +344,9 @@ GL4_3 >> COMPUTE_SUBROUTINE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> COMPUTE_SUBROUTINE_UNIFORM [
+GL43Core >> COMPUTE_SUBROUTINE_UNIFORM [
 
 	<generated>
 	^ GL_COMPUTE_SUBROUTINE_UNIFORM
@@ -354,9 +354,9 @@ GL4_3 >> COMPUTE_SUBROUTINE_UNIFORM [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> COMPUTE_TEXTURE [
+GL43Core >> COMPUTE_TEXTURE [
 
 	<generated>
 	^ GL_COMPUTE_TEXTURE
@@ -364,9 +364,9 @@ GL4_3 >> COMPUTE_TEXTURE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> COMPUTE_WORK_GROUP_SIZE [
+GL43Core >> COMPUTE_WORK_GROUP_SIZE [
 
 	<generated>
 	^ GL_COMPUTE_WORK_GROUP_SIZE
@@ -374,9 +374,9 @@ GL4_3 >> COMPUTE_WORK_GROUP_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> CONTEXT_FLAG_DEBUG_BIT [
+GL43Core >> CONTEXT_FLAG_DEBUG_BIT [
 
 	<generated>
 	^ GL_CONTEXT_FLAG_DEBUG_BIT
@@ -384,9 +384,9 @@ GL4_3 >> CONTEXT_FLAG_DEBUG_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_CALLBACK_FUNCTION [
+GL43Core >> DEBUG_CALLBACK_FUNCTION [
 
 	<generated>
 	^ GL_DEBUG_CALLBACK_FUNCTION
@@ -394,9 +394,9 @@ GL4_3 >> DEBUG_CALLBACK_FUNCTION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_CALLBACK_USER_PARAM [
+GL43Core >> DEBUG_CALLBACK_USER_PARAM [
 
 	<generated>
 	^ GL_DEBUG_CALLBACK_USER_PARAM
@@ -404,9 +404,9 @@ GL4_3 >> DEBUG_CALLBACK_USER_PARAM [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_GROUP_STACK_DEPTH [
+GL43Core >> DEBUG_GROUP_STACK_DEPTH [
 
 	<generated>
 	^ GL_DEBUG_GROUP_STACK_DEPTH
@@ -414,9 +414,9 @@ GL4_3 >> DEBUG_GROUP_STACK_DEPTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_LOGGED_MESSAGES [
+GL43Core >> DEBUG_LOGGED_MESSAGES [
 
 	<generated>
 	^ GL_DEBUG_LOGGED_MESSAGES
@@ -424,9 +424,9 @@ GL4_3 >> DEBUG_LOGGED_MESSAGES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_NEXT_LOGGED_MESSAGE_LENGTH [
+GL43Core >> DEBUG_NEXT_LOGGED_MESSAGE_LENGTH [
 
 	<generated>
 	^ GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH
@@ -434,9 +434,9 @@ GL4_3 >> DEBUG_NEXT_LOGGED_MESSAGE_LENGTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_OUTPUT [
+GL43Core >> DEBUG_OUTPUT [
 
 	<generated>
 	^ GL_DEBUG_OUTPUT
@@ -444,9 +444,9 @@ GL4_3 >> DEBUG_OUTPUT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_OUTPUT_SYNCHRONOUS [
+GL43Core >> DEBUG_OUTPUT_SYNCHRONOUS [
 
 	<generated>
 	^ GL_DEBUG_OUTPUT_SYNCHRONOUS
@@ -454,9 +454,9 @@ GL4_3 >> DEBUG_OUTPUT_SYNCHRONOUS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_SEVERITY_HIGH [
+GL43Core >> DEBUG_SEVERITY_HIGH [
 
 	<generated>
 	^ GL_DEBUG_SEVERITY_HIGH
@@ -464,9 +464,9 @@ GL4_3 >> DEBUG_SEVERITY_HIGH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_SEVERITY_LOW [
+GL43Core >> DEBUG_SEVERITY_LOW [
 
 	<generated>
 	^ GL_DEBUG_SEVERITY_LOW
@@ -474,9 +474,9 @@ GL4_3 >> DEBUG_SEVERITY_LOW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_SEVERITY_MEDIUM [
+GL43Core >> DEBUG_SEVERITY_MEDIUM [
 
 	<generated>
 	^ GL_DEBUG_SEVERITY_MEDIUM
@@ -484,9 +484,9 @@ GL4_3 >> DEBUG_SEVERITY_MEDIUM [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_SEVERITY_NOTIFICATION [
+GL43Core >> DEBUG_SEVERITY_NOTIFICATION [
 
 	<generated>
 	^ GL_DEBUG_SEVERITY_NOTIFICATION
@@ -494,9 +494,9 @@ GL4_3 >> DEBUG_SEVERITY_NOTIFICATION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_SOURCE_API [
+GL43Core >> DEBUG_SOURCE_API [
 
 	<generated>
 	^ GL_DEBUG_SOURCE_API
@@ -504,9 +504,9 @@ GL4_3 >> DEBUG_SOURCE_API [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_SOURCE_APPLICATION [
+GL43Core >> DEBUG_SOURCE_APPLICATION [
 
 	<generated>
 	^ GL_DEBUG_SOURCE_APPLICATION
@@ -514,9 +514,9 @@ GL4_3 >> DEBUG_SOURCE_APPLICATION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_SOURCE_OTHER [
+GL43Core >> DEBUG_SOURCE_OTHER [
 
 	<generated>
 	^ GL_DEBUG_SOURCE_OTHER
@@ -524,9 +524,9 @@ GL4_3 >> DEBUG_SOURCE_OTHER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_SOURCE_SHADER_COMPILER [
+GL43Core >> DEBUG_SOURCE_SHADER_COMPILER [
 
 	<generated>
 	^ GL_DEBUG_SOURCE_SHADER_COMPILER
@@ -534,9 +534,9 @@ GL4_3 >> DEBUG_SOURCE_SHADER_COMPILER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_SOURCE_THIRD_PARTY [
+GL43Core >> DEBUG_SOURCE_THIRD_PARTY [
 
 	<generated>
 	^ GL_DEBUG_SOURCE_THIRD_PARTY
@@ -544,9 +544,9 @@ GL4_3 >> DEBUG_SOURCE_THIRD_PARTY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_SOURCE_WINDOW_SYSTEM [
+GL43Core >> DEBUG_SOURCE_WINDOW_SYSTEM [
 
 	<generated>
 	^ GL_DEBUG_SOURCE_WINDOW_SYSTEM
@@ -554,9 +554,9 @@ GL4_3 >> DEBUG_SOURCE_WINDOW_SYSTEM [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_TYPE_DEPRECATED_BEHAVIOR [
+GL43Core >> DEBUG_TYPE_DEPRECATED_BEHAVIOR [
 
 	<generated>
 	^ GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR
@@ -564,9 +564,9 @@ GL4_3 >> DEBUG_TYPE_DEPRECATED_BEHAVIOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_TYPE_ERROR [
+GL43Core >> DEBUG_TYPE_ERROR [
 
 	<generated>
 	^ GL_DEBUG_TYPE_ERROR
@@ -574,9 +574,9 @@ GL4_3 >> DEBUG_TYPE_ERROR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_TYPE_MARKER [
+GL43Core >> DEBUG_TYPE_MARKER [
 
 	<generated>
 	^ GL_DEBUG_TYPE_MARKER
@@ -584,9 +584,9 @@ GL4_3 >> DEBUG_TYPE_MARKER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_TYPE_OTHER [
+GL43Core >> DEBUG_TYPE_OTHER [
 
 	<generated>
 	^ GL_DEBUG_TYPE_OTHER
@@ -594,9 +594,9 @@ GL4_3 >> DEBUG_TYPE_OTHER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_TYPE_PERFORMANCE [
+GL43Core >> DEBUG_TYPE_PERFORMANCE [
 
 	<generated>
 	^ GL_DEBUG_TYPE_PERFORMANCE
@@ -604,9 +604,9 @@ GL4_3 >> DEBUG_TYPE_PERFORMANCE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_TYPE_POP_GROUP [
+GL43Core >> DEBUG_TYPE_POP_GROUP [
 
 	<generated>
 	^ GL_DEBUG_TYPE_POP_GROUP
@@ -614,9 +614,9 @@ GL4_3 >> DEBUG_TYPE_POP_GROUP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_TYPE_PORTABILITY [
+GL43Core >> DEBUG_TYPE_PORTABILITY [
 
 	<generated>
 	^ GL_DEBUG_TYPE_PORTABILITY
@@ -624,9 +624,9 @@ GL4_3 >> DEBUG_TYPE_PORTABILITY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_TYPE_PUSH_GROUP [
+GL43Core >> DEBUG_TYPE_PUSH_GROUP [
 
 	<generated>
 	^ GL_DEBUG_TYPE_PUSH_GROUP
@@ -634,9 +634,9 @@ GL4_3 >> DEBUG_TYPE_PUSH_GROUP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEBUG_TYPE_UNDEFINED_BEHAVIOR [
+GL43Core >> DEBUG_TYPE_UNDEFINED_BEHAVIOR [
 
 	<generated>
 	^ GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR
@@ -644,9 +644,9 @@ GL4_3 >> DEBUG_TYPE_UNDEFINED_BEHAVIOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEPTH_COMPONENTS [
+GL43Core >> DEPTH_COMPONENTS [
 
 	<generated>
 	^ GL_DEPTH_COMPONENTS
@@ -654,9 +654,9 @@ GL4_3 >> DEPTH_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEPTH_RENDERABLE [
+GL43Core >> DEPTH_RENDERABLE [
 
 	<generated>
 	^ GL_DEPTH_RENDERABLE
@@ -664,9 +664,9 @@ GL4_3 >> DEPTH_RENDERABLE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DEPTH_STENCIL_TEXTURE_MODE [
+GL43Core >> DEPTH_STENCIL_TEXTURE_MODE [
 
 	<generated>
 	^ GL_DEPTH_STENCIL_TEXTURE_MODE
@@ -674,9 +674,9 @@ GL4_3 >> DEPTH_STENCIL_TEXTURE_MODE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DISPATCH_INDIRECT_BUFFER [
+GL43Core >> DISPATCH_INDIRECT_BUFFER [
 
 	<generated>
 	^ GL_DISPATCH_INDIRECT_BUFFER
@@ -684,9 +684,9 @@ GL4_3 >> DISPATCH_INDIRECT_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DISPATCH_INDIRECT_BUFFER_BINDING [
+GL43Core >> DISPATCH_INDIRECT_BUFFER_BINDING [
 
 	<generated>
 	^ GL_DISPATCH_INDIRECT_BUFFER_BINDING
@@ -694,19 +694,9 @@ GL4_3 >> DISPATCH_INDIRECT_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> DISPLAY_LIST [
-	"Note: Only available in #compatibility profile."
-	<generated>
-	^ GL_DISPLAY_LIST
-]
-
-{
-	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
-}
-GL4_3 >> FILTER [
+GL43Core >> FILTER [
 
 	<generated>
 	^ GL_FILTER
@@ -714,9 +704,9 @@ GL4_3 >> FILTER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> FRAGMENT_SUBROUTINE [
+GL43Core >> FRAGMENT_SUBROUTINE [
 
 	<generated>
 	^ GL_FRAGMENT_SUBROUTINE
@@ -724,9 +714,9 @@ GL4_3 >> FRAGMENT_SUBROUTINE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> FRAGMENT_SUBROUTINE_UNIFORM [
+GL43Core >> FRAGMENT_SUBROUTINE_UNIFORM [
 
 	<generated>
 	^ GL_FRAGMENT_SUBROUTINE_UNIFORM
@@ -734,9 +724,9 @@ GL4_3 >> FRAGMENT_SUBROUTINE_UNIFORM [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> FRAGMENT_TEXTURE [
+GL43Core >> FRAGMENT_TEXTURE [
 
 	<generated>
 	^ GL_FRAGMENT_TEXTURE
@@ -744,9 +734,9 @@ GL4_3 >> FRAGMENT_TEXTURE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> FRAMEBUFFER_BLEND [
+GL43Core >> FRAMEBUFFER_BLEND [
 
 	<generated>
 	^ GL_FRAMEBUFFER_BLEND
@@ -754,9 +744,9 @@ GL4_3 >> FRAMEBUFFER_BLEND [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS [
+GL43Core >> FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS [
 
 	<generated>
 	^ GL_FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS
@@ -764,9 +754,9 @@ GL4_3 >> FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> FRAMEBUFFER_DEFAULT_HEIGHT [
+GL43Core >> FRAMEBUFFER_DEFAULT_HEIGHT [
 
 	<generated>
 	^ GL_FRAMEBUFFER_DEFAULT_HEIGHT
@@ -774,9 +764,9 @@ GL4_3 >> FRAMEBUFFER_DEFAULT_HEIGHT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> FRAMEBUFFER_DEFAULT_LAYERS [
+GL43Core >> FRAMEBUFFER_DEFAULT_LAYERS [
 
 	<generated>
 	^ GL_FRAMEBUFFER_DEFAULT_LAYERS
@@ -784,9 +774,9 @@ GL4_3 >> FRAMEBUFFER_DEFAULT_LAYERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> FRAMEBUFFER_DEFAULT_SAMPLES [
+GL43Core >> FRAMEBUFFER_DEFAULT_SAMPLES [
 
 	<generated>
 	^ GL_FRAMEBUFFER_DEFAULT_SAMPLES
@@ -794,9 +784,9 @@ GL4_3 >> FRAMEBUFFER_DEFAULT_SAMPLES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> FRAMEBUFFER_DEFAULT_WIDTH [
+GL43Core >> FRAMEBUFFER_DEFAULT_WIDTH [
 
 	<generated>
 	^ GL_FRAMEBUFFER_DEFAULT_WIDTH
@@ -804,9 +794,9 @@ GL4_3 >> FRAMEBUFFER_DEFAULT_WIDTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> FRAMEBUFFER_RENDERABLE [
+GL43Core >> FRAMEBUFFER_RENDERABLE [
 
 	<generated>
 	^ GL_FRAMEBUFFER_RENDERABLE
@@ -814,9 +804,9 @@ GL4_3 >> FRAMEBUFFER_RENDERABLE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> FRAMEBUFFER_RENDERABLE_LAYERED [
+GL43Core >> FRAMEBUFFER_RENDERABLE_LAYERED [
 
 	<generated>
 	^ GL_FRAMEBUFFER_RENDERABLE_LAYERED
@@ -824,9 +814,9 @@ GL4_3 >> FRAMEBUFFER_RENDERABLE_LAYERED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> FULL_SUPPORT [
+GL43Core >> FULL_SUPPORT [
 
 	<generated>
 	^ GL_FULL_SUPPORT
@@ -834,9 +824,9 @@ GL4_3 >> FULL_SUPPORT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> GEOMETRY_SUBROUTINE [
+GL43Core >> GEOMETRY_SUBROUTINE [
 
 	<generated>
 	^ GL_GEOMETRY_SUBROUTINE
@@ -844,9 +834,9 @@ GL4_3 >> GEOMETRY_SUBROUTINE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> GEOMETRY_SUBROUTINE_UNIFORM [
+GL43Core >> GEOMETRY_SUBROUTINE_UNIFORM [
 
 	<generated>
 	^ GL_GEOMETRY_SUBROUTINE_UNIFORM
@@ -854,9 +844,9 @@ GL4_3 >> GEOMETRY_SUBROUTINE_UNIFORM [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> GEOMETRY_TEXTURE [
+GL43Core >> GEOMETRY_TEXTURE [
 
 	<generated>
 	^ GL_GEOMETRY_TEXTURE
@@ -864,9 +854,9 @@ GL4_3 >> GEOMETRY_TEXTURE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> GET_TEXTURE_IMAGE_FORMAT [
+GL43Core >> GET_TEXTURE_IMAGE_FORMAT [
 
 	<generated>
 	^ GL_GET_TEXTURE_IMAGE_FORMAT
@@ -874,9 +864,9 @@ GL4_3 >> GET_TEXTURE_IMAGE_FORMAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> GET_TEXTURE_IMAGE_TYPE [
+GL43Core >> GET_TEXTURE_IMAGE_TYPE [
 
 	<generated>
 	^ GL_GET_TEXTURE_IMAGE_TYPE
@@ -884,9 +874,9 @@ GL4_3 >> GET_TEXTURE_IMAGE_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> IMAGE_CLASS_10_10_10_2 [
+GL43Core >> IMAGE_CLASS_10_10_10_2 [
 
 	<generated>
 	^ GL_IMAGE_CLASS_10_10_10_2
@@ -894,9 +884,9 @@ GL4_3 >> IMAGE_CLASS_10_10_10_2 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> IMAGE_CLASS_11_11_10 [
+GL43Core >> IMAGE_CLASS_11_11_10 [
 
 	<generated>
 	^ GL_IMAGE_CLASS_11_11_10
@@ -904,9 +894,9 @@ GL4_3 >> IMAGE_CLASS_11_11_10 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> IMAGE_CLASS_1_X_16 [
+GL43Core >> IMAGE_CLASS_1_X_16 [
 
 	<generated>
 	^ GL_IMAGE_CLASS_1_X_16
@@ -914,9 +904,9 @@ GL4_3 >> IMAGE_CLASS_1_X_16 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> IMAGE_CLASS_1_X_32 [
+GL43Core >> IMAGE_CLASS_1_X_32 [
 
 	<generated>
 	^ GL_IMAGE_CLASS_1_X_32
@@ -924,9 +914,9 @@ GL4_3 >> IMAGE_CLASS_1_X_32 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> IMAGE_CLASS_1_X_8 [
+GL43Core >> IMAGE_CLASS_1_X_8 [
 
 	<generated>
 	^ GL_IMAGE_CLASS_1_X_8
@@ -934,9 +924,9 @@ GL4_3 >> IMAGE_CLASS_1_X_8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> IMAGE_CLASS_2_X_16 [
+GL43Core >> IMAGE_CLASS_2_X_16 [
 
 	<generated>
 	^ GL_IMAGE_CLASS_2_X_16
@@ -944,9 +934,9 @@ GL4_3 >> IMAGE_CLASS_2_X_16 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> IMAGE_CLASS_2_X_32 [
+GL43Core >> IMAGE_CLASS_2_X_32 [
 
 	<generated>
 	^ GL_IMAGE_CLASS_2_X_32
@@ -954,9 +944,9 @@ GL4_3 >> IMAGE_CLASS_2_X_32 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> IMAGE_CLASS_2_X_8 [
+GL43Core >> IMAGE_CLASS_2_X_8 [
 
 	<generated>
 	^ GL_IMAGE_CLASS_2_X_8
@@ -964,9 +954,9 @@ GL4_3 >> IMAGE_CLASS_2_X_8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> IMAGE_CLASS_4_X_16 [
+GL43Core >> IMAGE_CLASS_4_X_16 [
 
 	<generated>
 	^ GL_IMAGE_CLASS_4_X_16
@@ -974,9 +964,9 @@ GL4_3 >> IMAGE_CLASS_4_X_16 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> IMAGE_CLASS_4_X_32 [
+GL43Core >> IMAGE_CLASS_4_X_32 [
 
 	<generated>
 	^ GL_IMAGE_CLASS_4_X_32
@@ -984,9 +974,9 @@ GL4_3 >> IMAGE_CLASS_4_X_32 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> IMAGE_CLASS_4_X_8 [
+GL43Core >> IMAGE_CLASS_4_X_8 [
 
 	<generated>
 	^ GL_IMAGE_CLASS_4_X_8
@@ -994,9 +984,9 @@ GL4_3 >> IMAGE_CLASS_4_X_8 [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> IMAGE_COMPATIBILITY_CLASS [
+GL43Core >> IMAGE_COMPATIBILITY_CLASS [
 
 	<generated>
 	^ GL_IMAGE_COMPATIBILITY_CLASS
@@ -1004,9 +994,9 @@ GL4_3 >> IMAGE_COMPATIBILITY_CLASS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> IMAGE_PIXEL_FORMAT [
+GL43Core >> IMAGE_PIXEL_FORMAT [
 
 	<generated>
 	^ GL_IMAGE_PIXEL_FORMAT
@@ -1014,9 +1004,9 @@ GL4_3 >> IMAGE_PIXEL_FORMAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> IMAGE_PIXEL_TYPE [
+GL43Core >> IMAGE_PIXEL_TYPE [
 
 	<generated>
 	^ GL_IMAGE_PIXEL_TYPE
@@ -1024,9 +1014,9 @@ GL4_3 >> IMAGE_PIXEL_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> IMAGE_TEXEL_SIZE [
+GL43Core >> IMAGE_TEXEL_SIZE [
 
 	<generated>
 	^ GL_IMAGE_TEXEL_SIZE
@@ -1034,9 +1024,9 @@ GL4_3 >> IMAGE_TEXEL_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> INTERNALFORMAT_ALPHA_SIZE [
+GL43Core >> INTERNALFORMAT_ALPHA_SIZE [
 
 	<generated>
 	^ GL_INTERNALFORMAT_ALPHA_SIZE
@@ -1044,9 +1034,9 @@ GL4_3 >> INTERNALFORMAT_ALPHA_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> INTERNALFORMAT_ALPHA_TYPE [
+GL43Core >> INTERNALFORMAT_ALPHA_TYPE [
 
 	<generated>
 	^ GL_INTERNALFORMAT_ALPHA_TYPE
@@ -1054,9 +1044,9 @@ GL4_3 >> INTERNALFORMAT_ALPHA_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> INTERNALFORMAT_BLUE_SIZE [
+GL43Core >> INTERNALFORMAT_BLUE_SIZE [
 
 	<generated>
 	^ GL_INTERNALFORMAT_BLUE_SIZE
@@ -1064,9 +1054,9 @@ GL4_3 >> INTERNALFORMAT_BLUE_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> INTERNALFORMAT_BLUE_TYPE [
+GL43Core >> INTERNALFORMAT_BLUE_TYPE [
 
 	<generated>
 	^ GL_INTERNALFORMAT_BLUE_TYPE
@@ -1074,9 +1064,9 @@ GL4_3 >> INTERNALFORMAT_BLUE_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> INTERNALFORMAT_DEPTH_SIZE [
+GL43Core >> INTERNALFORMAT_DEPTH_SIZE [
 
 	<generated>
 	^ GL_INTERNALFORMAT_DEPTH_SIZE
@@ -1084,9 +1074,9 @@ GL4_3 >> INTERNALFORMAT_DEPTH_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> INTERNALFORMAT_DEPTH_TYPE [
+GL43Core >> INTERNALFORMAT_DEPTH_TYPE [
 
 	<generated>
 	^ GL_INTERNALFORMAT_DEPTH_TYPE
@@ -1094,9 +1084,9 @@ GL4_3 >> INTERNALFORMAT_DEPTH_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> INTERNALFORMAT_GREEN_SIZE [
+GL43Core >> INTERNALFORMAT_GREEN_SIZE [
 
 	<generated>
 	^ GL_INTERNALFORMAT_GREEN_SIZE
@@ -1104,9 +1094,9 @@ GL4_3 >> INTERNALFORMAT_GREEN_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> INTERNALFORMAT_GREEN_TYPE [
+GL43Core >> INTERNALFORMAT_GREEN_TYPE [
 
 	<generated>
 	^ GL_INTERNALFORMAT_GREEN_TYPE
@@ -1114,9 +1104,9 @@ GL4_3 >> INTERNALFORMAT_GREEN_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> INTERNALFORMAT_PREFERRED [
+GL43Core >> INTERNALFORMAT_PREFERRED [
 
 	<generated>
 	^ GL_INTERNALFORMAT_PREFERRED
@@ -1124,9 +1114,9 @@ GL4_3 >> INTERNALFORMAT_PREFERRED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> INTERNALFORMAT_RED_SIZE [
+GL43Core >> INTERNALFORMAT_RED_SIZE [
 
 	<generated>
 	^ GL_INTERNALFORMAT_RED_SIZE
@@ -1134,9 +1124,9 @@ GL4_3 >> INTERNALFORMAT_RED_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> INTERNALFORMAT_RED_TYPE [
+GL43Core >> INTERNALFORMAT_RED_TYPE [
 
 	<generated>
 	^ GL_INTERNALFORMAT_RED_TYPE
@@ -1144,9 +1134,9 @@ GL4_3 >> INTERNALFORMAT_RED_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> INTERNALFORMAT_SHARED_SIZE [
+GL43Core >> INTERNALFORMAT_SHARED_SIZE [
 
 	<generated>
 	^ GL_INTERNALFORMAT_SHARED_SIZE
@@ -1154,9 +1144,9 @@ GL4_3 >> INTERNALFORMAT_SHARED_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> INTERNALFORMAT_STENCIL_SIZE [
+GL43Core >> INTERNALFORMAT_STENCIL_SIZE [
 
 	<generated>
 	^ GL_INTERNALFORMAT_STENCIL_SIZE
@@ -1164,9 +1154,9 @@ GL4_3 >> INTERNALFORMAT_STENCIL_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> INTERNALFORMAT_STENCIL_TYPE [
+GL43Core >> INTERNALFORMAT_STENCIL_TYPE [
 
 	<generated>
 	^ GL_INTERNALFORMAT_STENCIL_TYPE
@@ -1174,9 +1164,9 @@ GL4_3 >> INTERNALFORMAT_STENCIL_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> INTERNALFORMAT_SUPPORTED [
+GL43Core >> INTERNALFORMAT_SUPPORTED [
 
 	<generated>
 	^ GL_INTERNALFORMAT_SUPPORTED
@@ -1184,9 +1174,9 @@ GL4_3 >> INTERNALFORMAT_SUPPORTED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> IS_PER_PATCH [
+GL43Core >> IS_PER_PATCH [
 
 	<generated>
 	^ GL_IS_PER_PATCH
@@ -1194,9 +1184,9 @@ GL4_3 >> IS_PER_PATCH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> IS_ROW_MAJOR [
+GL43Core >> IS_ROW_MAJOR [
 
 	<generated>
 	^ GL_IS_ROW_MAJOR
@@ -1204,9 +1194,9 @@ GL4_3 >> IS_ROW_MAJOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> LOCATION [
+GL43Core >> LOCATION [
 
 	<generated>
 	^ GL_LOCATION
@@ -1214,9 +1204,9 @@ GL4_3 >> LOCATION [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> LOCATION_INDEX [
+GL43Core >> LOCATION_INDEX [
 
 	<generated>
 	^ GL_LOCATION_INDEX
@@ -1224,9 +1214,9 @@ GL4_3 >> LOCATION_INDEX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MANUAL_GENERATE_MIPMAP [
+GL43Core >> MANUAL_GENERATE_MIPMAP [
 
 	<generated>
 	^ GL_MANUAL_GENERATE_MIPMAP
@@ -1234,9 +1224,9 @@ GL4_3 >> MANUAL_GENERATE_MIPMAP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MATRIX_STRIDE [
+GL43Core >> MATRIX_STRIDE [
 
 	<generated>
 	^ GL_MATRIX_STRIDE
@@ -1244,9 +1234,9 @@ GL4_3 >> MATRIX_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_COMBINED_COMPUTE_UNIFORM_COMPONENTS [
+GL43Core >> MAX_COMBINED_COMPUTE_UNIFORM_COMPONENTS [
 
 	<generated>
 	^ GL_MAX_COMBINED_COMPUTE_UNIFORM_COMPONENTS
@@ -1254,9 +1244,9 @@ GL4_3 >> MAX_COMBINED_COMPUTE_UNIFORM_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_COMBINED_DIMENSIONS [
+GL43Core >> MAX_COMBINED_DIMENSIONS [
 
 	<generated>
 	^ GL_MAX_COMBINED_DIMENSIONS
@@ -1264,9 +1254,9 @@ GL4_3 >> MAX_COMBINED_DIMENSIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_COMBINED_SHADER_OUTPUT_RESOURCES [
+GL43Core >> MAX_COMBINED_SHADER_OUTPUT_RESOURCES [
 
 	<generated>
 	^ GL_MAX_COMBINED_SHADER_OUTPUT_RESOURCES
@@ -1274,9 +1264,9 @@ GL4_3 >> MAX_COMBINED_SHADER_OUTPUT_RESOURCES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_COMBINED_SHADER_STORAGE_BLOCKS [
+GL43Core >> MAX_COMBINED_SHADER_STORAGE_BLOCKS [
 
 	<generated>
 	^ GL_MAX_COMBINED_SHADER_STORAGE_BLOCKS
@@ -1284,9 +1274,9 @@ GL4_3 >> MAX_COMBINED_SHADER_STORAGE_BLOCKS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_COMPUTE_ATOMIC_COUNTERS [
+GL43Core >> MAX_COMPUTE_ATOMIC_COUNTERS [
 
 	<generated>
 	^ GL_MAX_COMPUTE_ATOMIC_COUNTERS
@@ -1294,9 +1284,9 @@ GL4_3 >> MAX_COMPUTE_ATOMIC_COUNTERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_COMPUTE_ATOMIC_COUNTER_BUFFERS [
+GL43Core >> MAX_COMPUTE_ATOMIC_COUNTER_BUFFERS [
 
 	<generated>
 	^ GL_MAX_COMPUTE_ATOMIC_COUNTER_BUFFERS
@@ -1304,9 +1294,9 @@ GL4_3 >> MAX_COMPUTE_ATOMIC_COUNTER_BUFFERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_COMPUTE_IMAGE_UNIFORMS [
+GL43Core >> MAX_COMPUTE_IMAGE_UNIFORMS [
 
 	<generated>
 	^ GL_MAX_COMPUTE_IMAGE_UNIFORMS
@@ -1314,9 +1304,9 @@ GL4_3 >> MAX_COMPUTE_IMAGE_UNIFORMS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_COMPUTE_SHADER_STORAGE_BLOCKS [
+GL43Core >> MAX_COMPUTE_SHADER_STORAGE_BLOCKS [
 
 	<generated>
 	^ GL_MAX_COMPUTE_SHADER_STORAGE_BLOCKS
@@ -1324,9 +1314,9 @@ GL4_3 >> MAX_COMPUTE_SHADER_STORAGE_BLOCKS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_COMPUTE_SHARED_MEMORY_SIZE [
+GL43Core >> MAX_COMPUTE_SHARED_MEMORY_SIZE [
 
 	<generated>
 	^ GL_MAX_COMPUTE_SHARED_MEMORY_SIZE
@@ -1334,9 +1324,9 @@ GL4_3 >> MAX_COMPUTE_SHARED_MEMORY_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_COMPUTE_TEXTURE_IMAGE_UNITS [
+GL43Core >> MAX_COMPUTE_TEXTURE_IMAGE_UNITS [
 
 	<generated>
 	^ GL_MAX_COMPUTE_TEXTURE_IMAGE_UNITS
@@ -1344,9 +1334,9 @@ GL4_3 >> MAX_COMPUTE_TEXTURE_IMAGE_UNITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_COMPUTE_UNIFORM_BLOCKS [
+GL43Core >> MAX_COMPUTE_UNIFORM_BLOCKS [
 
 	<generated>
 	^ GL_MAX_COMPUTE_UNIFORM_BLOCKS
@@ -1354,9 +1344,9 @@ GL4_3 >> MAX_COMPUTE_UNIFORM_BLOCKS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_COMPUTE_UNIFORM_COMPONENTS [
+GL43Core >> MAX_COMPUTE_UNIFORM_COMPONENTS [
 
 	<generated>
 	^ GL_MAX_COMPUTE_UNIFORM_COMPONENTS
@@ -1364,9 +1354,9 @@ GL4_3 >> MAX_COMPUTE_UNIFORM_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_COMPUTE_WORK_GROUP_COUNT [
+GL43Core >> MAX_COMPUTE_WORK_GROUP_COUNT [
 
 	<generated>
 	^ GL_MAX_COMPUTE_WORK_GROUP_COUNT
@@ -1374,9 +1364,9 @@ GL4_3 >> MAX_COMPUTE_WORK_GROUP_COUNT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_COMPUTE_WORK_GROUP_INVOCATIONS [
+GL43Core >> MAX_COMPUTE_WORK_GROUP_INVOCATIONS [
 
 	<generated>
 	^ GL_MAX_COMPUTE_WORK_GROUP_INVOCATIONS
@@ -1384,9 +1374,9 @@ GL4_3 >> MAX_COMPUTE_WORK_GROUP_INVOCATIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_COMPUTE_WORK_GROUP_SIZE [
+GL43Core >> MAX_COMPUTE_WORK_GROUP_SIZE [
 
 	<generated>
 	^ GL_MAX_COMPUTE_WORK_GROUP_SIZE
@@ -1394,9 +1384,9 @@ GL4_3 >> MAX_COMPUTE_WORK_GROUP_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_DEBUG_GROUP_STACK_DEPTH [
+GL43Core >> MAX_DEBUG_GROUP_STACK_DEPTH [
 
 	<generated>
 	^ GL_MAX_DEBUG_GROUP_STACK_DEPTH
@@ -1404,9 +1394,9 @@ GL4_3 >> MAX_DEBUG_GROUP_STACK_DEPTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_DEBUG_LOGGED_MESSAGES [
+GL43Core >> MAX_DEBUG_LOGGED_MESSAGES [
 
 	<generated>
 	^ GL_MAX_DEBUG_LOGGED_MESSAGES
@@ -1414,9 +1404,9 @@ GL4_3 >> MAX_DEBUG_LOGGED_MESSAGES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_DEBUG_MESSAGE_LENGTH [
+GL43Core >> MAX_DEBUG_MESSAGE_LENGTH [
 
 	<generated>
 	^ GL_MAX_DEBUG_MESSAGE_LENGTH
@@ -1424,9 +1414,9 @@ GL4_3 >> MAX_DEBUG_MESSAGE_LENGTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_DEPTH [
+GL43Core >> MAX_DEPTH [
 
 	<generated>
 	^ GL_MAX_DEPTH
@@ -1434,9 +1424,9 @@ GL4_3 >> MAX_DEPTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_ELEMENT_INDEX [
+GL43Core >> MAX_ELEMENT_INDEX [
 
 	<generated>
 	^ GL_MAX_ELEMENT_INDEX
@@ -1444,9 +1434,9 @@ GL4_3 >> MAX_ELEMENT_INDEX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_FRAGMENT_SHADER_STORAGE_BLOCKS [
+GL43Core >> MAX_FRAGMENT_SHADER_STORAGE_BLOCKS [
 
 	<generated>
 	^ GL_MAX_FRAGMENT_SHADER_STORAGE_BLOCKS
@@ -1454,9 +1444,9 @@ GL4_3 >> MAX_FRAGMENT_SHADER_STORAGE_BLOCKS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_FRAMEBUFFER_HEIGHT [
+GL43Core >> MAX_FRAMEBUFFER_HEIGHT [
 
 	<generated>
 	^ GL_MAX_FRAMEBUFFER_HEIGHT
@@ -1464,9 +1454,9 @@ GL4_3 >> MAX_FRAMEBUFFER_HEIGHT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_FRAMEBUFFER_LAYERS [
+GL43Core >> MAX_FRAMEBUFFER_LAYERS [
 
 	<generated>
 	^ GL_MAX_FRAMEBUFFER_LAYERS
@@ -1474,9 +1464,9 @@ GL4_3 >> MAX_FRAMEBUFFER_LAYERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_FRAMEBUFFER_SAMPLES [
+GL43Core >> MAX_FRAMEBUFFER_SAMPLES [
 
 	<generated>
 	^ GL_MAX_FRAMEBUFFER_SAMPLES
@@ -1484,9 +1474,9 @@ GL4_3 >> MAX_FRAMEBUFFER_SAMPLES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_FRAMEBUFFER_WIDTH [
+GL43Core >> MAX_FRAMEBUFFER_WIDTH [
 
 	<generated>
 	^ GL_MAX_FRAMEBUFFER_WIDTH
@@ -1494,9 +1484,9 @@ GL4_3 >> MAX_FRAMEBUFFER_WIDTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_GEOMETRY_SHADER_STORAGE_BLOCKS [
+GL43Core >> MAX_GEOMETRY_SHADER_STORAGE_BLOCKS [
 
 	<generated>
 	^ GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS
@@ -1504,9 +1494,9 @@ GL4_3 >> MAX_GEOMETRY_SHADER_STORAGE_BLOCKS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_HEIGHT [
+GL43Core >> MAX_HEIGHT [
 
 	<generated>
 	^ GL_MAX_HEIGHT
@@ -1514,9 +1504,9 @@ GL4_3 >> MAX_HEIGHT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_LABEL_LENGTH [
+GL43Core >> MAX_LABEL_LENGTH [
 
 	<generated>
 	^ GL_MAX_LABEL_LENGTH
@@ -1524,9 +1514,9 @@ GL4_3 >> MAX_LABEL_LENGTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_LAYERS [
+GL43Core >> MAX_LAYERS [
 
 	<generated>
 	^ GL_MAX_LAYERS
@@ -1534,9 +1524,9 @@ GL4_3 >> MAX_LAYERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_NAME_LENGTH [
+GL43Core >> MAX_NAME_LENGTH [
 
 	<generated>
 	^ GL_MAX_NAME_LENGTH
@@ -1544,9 +1534,9 @@ GL4_3 >> MAX_NAME_LENGTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_NUM_ACTIVE_VARIABLES [
+GL43Core >> MAX_NUM_ACTIVE_VARIABLES [
 
 	<generated>
 	^ GL_MAX_NUM_ACTIVE_VARIABLES
@@ -1554,9 +1544,9 @@ GL4_3 >> MAX_NUM_ACTIVE_VARIABLES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_NUM_COMPATIBLE_SUBROUTINES [
+GL43Core >> MAX_NUM_COMPATIBLE_SUBROUTINES [
 
 	<generated>
 	^ GL_MAX_NUM_COMPATIBLE_SUBROUTINES
@@ -1564,9 +1554,9 @@ GL4_3 >> MAX_NUM_COMPATIBLE_SUBROUTINES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_SHADER_STORAGE_BLOCK_SIZE [
+GL43Core >> MAX_SHADER_STORAGE_BLOCK_SIZE [
 
 	<generated>
 	^ GL_MAX_SHADER_STORAGE_BLOCK_SIZE
@@ -1574,9 +1564,9 @@ GL4_3 >> MAX_SHADER_STORAGE_BLOCK_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_SHADER_STORAGE_BUFFER_BINDINGS [
+GL43Core >> MAX_SHADER_STORAGE_BUFFER_BINDINGS [
 
 	<generated>
 	^ GL_MAX_SHADER_STORAGE_BUFFER_BINDINGS
@@ -1584,9 +1574,9 @@ GL4_3 >> MAX_SHADER_STORAGE_BUFFER_BINDINGS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS [
+GL43Core >> MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS [
 
 	<generated>
 	^ GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS
@@ -1594,9 +1584,9 @@ GL4_3 >> MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS [
+GL43Core >> MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS [
 
 	<generated>
 	^ GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS
@@ -1604,9 +1594,9 @@ GL4_3 >> MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_UNIFORM_LOCATIONS [
+GL43Core >> MAX_UNIFORM_LOCATIONS [
 
 	<generated>
 	^ GL_MAX_UNIFORM_LOCATIONS
@@ -1614,9 +1604,9 @@ GL4_3 >> MAX_UNIFORM_LOCATIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_VERTEX_ATTRIB_BINDINGS [
+GL43Core >> MAX_VERTEX_ATTRIB_BINDINGS [
 
 	<generated>
 	^ GL_MAX_VERTEX_ATTRIB_BINDINGS
@@ -1624,9 +1614,9 @@ GL4_3 >> MAX_VERTEX_ATTRIB_BINDINGS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_VERTEX_ATTRIB_RELATIVE_OFFSET [
+GL43Core >> MAX_VERTEX_ATTRIB_RELATIVE_OFFSET [
 
 	<generated>
 	^ GL_MAX_VERTEX_ATTRIB_RELATIVE_OFFSET
@@ -1634,9 +1624,9 @@ GL4_3 >> MAX_VERTEX_ATTRIB_RELATIVE_OFFSET [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_VERTEX_SHADER_STORAGE_BLOCKS [
+GL43Core >> MAX_VERTEX_SHADER_STORAGE_BLOCKS [
 
 	<generated>
 	^ GL_MAX_VERTEX_SHADER_STORAGE_BLOCKS
@@ -1644,9 +1634,9 @@ GL4_3 >> MAX_VERTEX_SHADER_STORAGE_BLOCKS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MAX_WIDTH [
+GL43Core >> MAX_WIDTH [
 
 	<generated>
 	^ GL_MAX_WIDTH
@@ -1654,9 +1644,9 @@ GL4_3 >> MAX_WIDTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> MIPMAP [
+GL43Core >> MIPMAP [
 
 	<generated>
 	^ GL_MIPMAP
@@ -1664,9 +1654,9 @@ GL4_3 >> MIPMAP [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> NAME_LENGTH [
+GL43Core >> NAME_LENGTH [
 
 	<generated>
 	^ GL_NAME_LENGTH
@@ -1674,9 +1664,9 @@ GL4_3 >> NAME_LENGTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> NUM_ACTIVE_VARIABLES [
+GL43Core >> NUM_ACTIVE_VARIABLES [
 
 	<generated>
 	^ GL_NUM_ACTIVE_VARIABLES
@@ -1684,9 +1674,9 @@ GL4_3 >> NUM_ACTIVE_VARIABLES [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> NUM_SHADING_LANGUAGE_VERSIONS [
+GL43Core >> NUM_SHADING_LANGUAGE_VERSIONS [
 
 	<generated>
 	^ GL_NUM_SHADING_LANGUAGE_VERSIONS
@@ -1694,9 +1684,9 @@ GL4_3 >> NUM_SHADING_LANGUAGE_VERSIONS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> OFFSET [
+GL43Core >> OFFSET [
 
 	<generated>
 	^ GL_OFFSET
@@ -1704,9 +1694,9 @@ GL4_3 >> OFFSET [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> PRIMITIVE_RESTART_FIXED_INDEX [
+GL43Core >> PRIMITIVE_RESTART_FIXED_INDEX [
 
 	<generated>
 	^ GL_PRIMITIVE_RESTART_FIXED_INDEX
@@ -1714,9 +1704,9 @@ GL4_3 >> PRIMITIVE_RESTART_FIXED_INDEX [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> PROGRAM [
+GL43Core >> PROGRAM [
 
 	<generated>
 	^ GL_PROGRAM
@@ -1724,9 +1714,9 @@ GL4_3 >> PROGRAM [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> PROGRAM_INPUT [
+GL43Core >> PROGRAM_INPUT [
 
 	<generated>
 	^ GL_PROGRAM_INPUT
@@ -1734,9 +1724,9 @@ GL4_3 >> PROGRAM_INPUT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> PROGRAM_OUTPUT [
+GL43Core >> PROGRAM_OUTPUT [
 
 	<generated>
 	^ GL_PROGRAM_OUTPUT
@@ -1744,9 +1734,9 @@ GL4_3 >> PROGRAM_OUTPUT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> PROGRAM_PIPELINE [
+GL43Core >> PROGRAM_PIPELINE [
 
 	<generated>
 	^ GL_PROGRAM_PIPELINE
@@ -1754,9 +1744,9 @@ GL4_3 >> PROGRAM_PIPELINE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> QUERY [
+GL43Core >> QUERY [
 
 	<generated>
 	^ GL_QUERY
@@ -1764,9 +1754,9 @@ GL4_3 >> QUERY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> READ_PIXELS [
+GL43Core >> READ_PIXELS [
 
 	<generated>
 	^ GL_READ_PIXELS
@@ -1774,9 +1764,9 @@ GL4_3 >> READ_PIXELS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> READ_PIXELS_FORMAT [
+GL43Core >> READ_PIXELS_FORMAT [
 
 	<generated>
 	^ GL_READ_PIXELS_FORMAT
@@ -1784,9 +1774,9 @@ GL4_3 >> READ_PIXELS_FORMAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> READ_PIXELS_TYPE [
+GL43Core >> READ_PIXELS_TYPE [
 
 	<generated>
 	^ GL_READ_PIXELS_TYPE
@@ -1794,9 +1784,9 @@ GL4_3 >> READ_PIXELS_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> REFERENCED_BY_COMPUTE_SHADER [
+GL43Core >> REFERENCED_BY_COMPUTE_SHADER [
 
 	<generated>
 	^ GL_REFERENCED_BY_COMPUTE_SHADER
@@ -1804,9 +1794,9 @@ GL4_3 >> REFERENCED_BY_COMPUTE_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> REFERENCED_BY_FRAGMENT_SHADER [
+GL43Core >> REFERENCED_BY_FRAGMENT_SHADER [
 
 	<generated>
 	^ GL_REFERENCED_BY_FRAGMENT_SHADER
@@ -1814,9 +1804,9 @@ GL4_3 >> REFERENCED_BY_FRAGMENT_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> REFERENCED_BY_GEOMETRY_SHADER [
+GL43Core >> REFERENCED_BY_GEOMETRY_SHADER [
 
 	<generated>
 	^ GL_REFERENCED_BY_GEOMETRY_SHADER
@@ -1824,9 +1814,9 @@ GL4_3 >> REFERENCED_BY_GEOMETRY_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> REFERENCED_BY_TESS_CONTROL_SHADER [
+GL43Core >> REFERENCED_BY_TESS_CONTROL_SHADER [
 
 	<generated>
 	^ GL_REFERENCED_BY_TESS_CONTROL_SHADER
@@ -1834,9 +1824,9 @@ GL4_3 >> REFERENCED_BY_TESS_CONTROL_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> REFERENCED_BY_TESS_EVALUATION_SHADER [
+GL43Core >> REFERENCED_BY_TESS_EVALUATION_SHADER [
 
 	<generated>
 	^ GL_REFERENCED_BY_TESS_EVALUATION_SHADER
@@ -1844,9 +1834,9 @@ GL4_3 >> REFERENCED_BY_TESS_EVALUATION_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> REFERENCED_BY_VERTEX_SHADER [
+GL43Core >> REFERENCED_BY_VERTEX_SHADER [
 
 	<generated>
 	^ GL_REFERENCED_BY_VERTEX_SHADER
@@ -1854,9 +1844,9 @@ GL4_3 >> REFERENCED_BY_VERTEX_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> SAMPLER [
+GL43Core >> SAMPLER [
 
 	<generated>
 	^ GL_SAMPLER
@@ -1864,9 +1854,9 @@ GL4_3 >> SAMPLER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> SHADER [
+GL43Core >> SHADER [
 
 	<generated>
 	^ GL_SHADER
@@ -1874,9 +1864,9 @@ GL4_3 >> SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> SHADER_IMAGE_ATOMIC [
+GL43Core >> SHADER_IMAGE_ATOMIC [
 
 	<generated>
 	^ GL_SHADER_IMAGE_ATOMIC
@@ -1884,9 +1874,9 @@ GL4_3 >> SHADER_IMAGE_ATOMIC [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> SHADER_IMAGE_LOAD [
+GL43Core >> SHADER_IMAGE_LOAD [
 
 	<generated>
 	^ GL_SHADER_IMAGE_LOAD
@@ -1894,9 +1884,9 @@ GL4_3 >> SHADER_IMAGE_LOAD [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> SHADER_IMAGE_STORE [
+GL43Core >> SHADER_IMAGE_STORE [
 
 	<generated>
 	^ GL_SHADER_IMAGE_STORE
@@ -1904,9 +1894,9 @@ GL4_3 >> SHADER_IMAGE_STORE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> SHADER_STORAGE_BARRIER_BIT [
+GL43Core >> SHADER_STORAGE_BARRIER_BIT [
 
 	<generated>
 	^ GL_SHADER_STORAGE_BARRIER_BIT
@@ -1914,9 +1904,9 @@ GL4_3 >> SHADER_STORAGE_BARRIER_BIT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> SHADER_STORAGE_BLOCK [
+GL43Core >> SHADER_STORAGE_BLOCK [
 
 	<generated>
 	^ GL_SHADER_STORAGE_BLOCK
@@ -1924,9 +1914,9 @@ GL4_3 >> SHADER_STORAGE_BLOCK [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> SHADER_STORAGE_BUFFER [
+GL43Core >> SHADER_STORAGE_BUFFER [
 
 	<generated>
 	^ GL_SHADER_STORAGE_BUFFER
@@ -1934,9 +1924,9 @@ GL4_3 >> SHADER_STORAGE_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> SHADER_STORAGE_BUFFER_BINDING [
+GL43Core >> SHADER_STORAGE_BUFFER_BINDING [
 
 	<generated>
 	^ GL_SHADER_STORAGE_BUFFER_BINDING
@@ -1944,9 +1934,9 @@ GL4_3 >> SHADER_STORAGE_BUFFER_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT [
+GL43Core >> SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT [
 
 	<generated>
 	^ GL_SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT
@@ -1954,9 +1944,9 @@ GL4_3 >> SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> SHADER_STORAGE_BUFFER_SIZE [
+GL43Core >> SHADER_STORAGE_BUFFER_SIZE [
 
 	<generated>
 	^ GL_SHADER_STORAGE_BUFFER_SIZE
@@ -1964,9 +1954,9 @@ GL4_3 >> SHADER_STORAGE_BUFFER_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> SHADER_STORAGE_BUFFER_START [
+GL43Core >> SHADER_STORAGE_BUFFER_START [
 
 	<generated>
 	^ GL_SHADER_STORAGE_BUFFER_START
@@ -1974,9 +1964,9 @@ GL4_3 >> SHADER_STORAGE_BUFFER_START [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> SIMULTANEOUS_TEXTURE_AND_DEPTH_TEST [
+GL43Core >> SIMULTANEOUS_TEXTURE_AND_DEPTH_TEST [
 
 	<generated>
 	^ GL_SIMULTANEOUS_TEXTURE_AND_DEPTH_TEST
@@ -1984,9 +1974,9 @@ GL4_3 >> SIMULTANEOUS_TEXTURE_AND_DEPTH_TEST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> SIMULTANEOUS_TEXTURE_AND_DEPTH_WRITE [
+GL43Core >> SIMULTANEOUS_TEXTURE_AND_DEPTH_WRITE [
 
 	<generated>
 	^ GL_SIMULTANEOUS_TEXTURE_AND_DEPTH_WRITE
@@ -1994,9 +1984,9 @@ GL4_3 >> SIMULTANEOUS_TEXTURE_AND_DEPTH_WRITE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> SIMULTANEOUS_TEXTURE_AND_STENCIL_TEST [
+GL43Core >> SIMULTANEOUS_TEXTURE_AND_STENCIL_TEST [
 
 	<generated>
 	^ GL_SIMULTANEOUS_TEXTURE_AND_STENCIL_TEST
@@ -2004,9 +1994,9 @@ GL4_3 >> SIMULTANEOUS_TEXTURE_AND_STENCIL_TEST [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> SIMULTANEOUS_TEXTURE_AND_STENCIL_WRITE [
+GL43Core >> SIMULTANEOUS_TEXTURE_AND_STENCIL_WRITE [
 
 	<generated>
 	^ GL_SIMULTANEOUS_TEXTURE_AND_STENCIL_WRITE
@@ -2014,9 +2004,9 @@ GL4_3 >> SIMULTANEOUS_TEXTURE_AND_STENCIL_WRITE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> SRGB_READ [
+GL43Core >> SRGB_READ [
 
 	<generated>
 	^ GL_SRGB_READ
@@ -2024,9 +2014,9 @@ GL4_3 >> SRGB_READ [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> SRGB_WRITE [
+GL43Core >> SRGB_WRITE [
 
 	<generated>
 	^ GL_SRGB_WRITE
@@ -2034,29 +2024,29 @@ GL4_3 >> SRGB_WRITE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> STACK_OVERFLOW [
-	"Note: Only available in #core profile."
+GL43Core >> STACK_OVERFLOW [
+
 	<generated>
 	^ GL_STACK_OVERFLOW
 ]
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> STACK_UNDERFLOW [
-	"Note: Only available in #core profile."
+GL43Core >> STACK_UNDERFLOW [
+
 	<generated>
 	^ GL_STACK_UNDERFLOW
 ]
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> STENCIL_COMPONENTS [
+GL43Core >> STENCIL_COMPONENTS [
 
 	<generated>
 	^ GL_STENCIL_COMPONENTS
@@ -2064,9 +2054,9 @@ GL4_3 >> STENCIL_COMPONENTS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> STENCIL_RENDERABLE [
+GL43Core >> STENCIL_RENDERABLE [
 
 	<generated>
 	^ GL_STENCIL_RENDERABLE
@@ -2074,9 +2064,9 @@ GL4_3 >> STENCIL_RENDERABLE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TESS_CONTROL_SUBROUTINE [
+GL43Core >> TESS_CONTROL_SUBROUTINE [
 
 	<generated>
 	^ GL_TESS_CONTROL_SUBROUTINE
@@ -2084,9 +2074,9 @@ GL4_3 >> TESS_CONTROL_SUBROUTINE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TESS_CONTROL_SUBROUTINE_UNIFORM [
+GL43Core >> TESS_CONTROL_SUBROUTINE_UNIFORM [
 
 	<generated>
 	^ GL_TESS_CONTROL_SUBROUTINE_UNIFORM
@@ -2094,9 +2084,9 @@ GL4_3 >> TESS_CONTROL_SUBROUTINE_UNIFORM [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TESS_CONTROL_TEXTURE [
+GL43Core >> TESS_CONTROL_TEXTURE [
 
 	<generated>
 	^ GL_TESS_CONTROL_TEXTURE
@@ -2104,9 +2094,9 @@ GL4_3 >> TESS_CONTROL_TEXTURE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TESS_EVALUATION_SUBROUTINE [
+GL43Core >> TESS_EVALUATION_SUBROUTINE [
 
 	<generated>
 	^ GL_TESS_EVALUATION_SUBROUTINE
@@ -2114,9 +2104,9 @@ GL4_3 >> TESS_EVALUATION_SUBROUTINE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TESS_EVALUATION_SUBROUTINE_UNIFORM [
+GL43Core >> TESS_EVALUATION_SUBROUTINE_UNIFORM [
 
 	<generated>
 	^ GL_TESS_EVALUATION_SUBROUTINE_UNIFORM
@@ -2124,9 +2114,9 @@ GL4_3 >> TESS_EVALUATION_SUBROUTINE_UNIFORM [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TESS_EVALUATION_TEXTURE [
+GL43Core >> TESS_EVALUATION_TEXTURE [
 
 	<generated>
 	^ GL_TESS_EVALUATION_TEXTURE
@@ -2134,9 +2124,9 @@ GL4_3 >> TESS_EVALUATION_TEXTURE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TEXTURE_BUFFER_OFFSET [
+GL43Core >> TEXTURE_BUFFER_OFFSET [
 
 	<generated>
 	^ GL_TEXTURE_BUFFER_OFFSET
@@ -2144,9 +2134,9 @@ GL4_3 >> TEXTURE_BUFFER_OFFSET [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TEXTURE_BUFFER_OFFSET_ALIGNMENT [
+GL43Core >> TEXTURE_BUFFER_OFFSET_ALIGNMENT [
 
 	<generated>
 	^ GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT
@@ -2154,9 +2144,9 @@ GL4_3 >> TEXTURE_BUFFER_OFFSET_ALIGNMENT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TEXTURE_BUFFER_SIZE [
+GL43Core >> TEXTURE_BUFFER_SIZE [
 
 	<generated>
 	^ GL_TEXTURE_BUFFER_SIZE
@@ -2164,9 +2154,9 @@ GL4_3 >> TEXTURE_BUFFER_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TEXTURE_COMPRESSED_BLOCK_HEIGHT [
+GL43Core >> TEXTURE_COMPRESSED_BLOCK_HEIGHT [
 
 	<generated>
 	^ GL_TEXTURE_COMPRESSED_BLOCK_HEIGHT
@@ -2174,9 +2164,9 @@ GL4_3 >> TEXTURE_COMPRESSED_BLOCK_HEIGHT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TEXTURE_COMPRESSED_BLOCK_SIZE [
+GL43Core >> TEXTURE_COMPRESSED_BLOCK_SIZE [
 
 	<generated>
 	^ GL_TEXTURE_COMPRESSED_BLOCK_SIZE
@@ -2184,9 +2174,9 @@ GL4_3 >> TEXTURE_COMPRESSED_BLOCK_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TEXTURE_COMPRESSED_BLOCK_WIDTH [
+GL43Core >> TEXTURE_COMPRESSED_BLOCK_WIDTH [
 
 	<generated>
 	^ GL_TEXTURE_COMPRESSED_BLOCK_WIDTH
@@ -2194,9 +2184,9 @@ GL4_3 >> TEXTURE_COMPRESSED_BLOCK_WIDTH [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TEXTURE_GATHER [
+GL43Core >> TEXTURE_GATHER [
 
 	<generated>
 	^ GL_TEXTURE_GATHER
@@ -2204,9 +2194,9 @@ GL4_3 >> TEXTURE_GATHER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TEXTURE_GATHER_SHADOW [
+GL43Core >> TEXTURE_GATHER_SHADOW [
 
 	<generated>
 	^ GL_TEXTURE_GATHER_SHADOW
@@ -2214,9 +2204,9 @@ GL4_3 >> TEXTURE_GATHER_SHADOW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TEXTURE_IMAGE_FORMAT [
+GL43Core >> TEXTURE_IMAGE_FORMAT [
 
 	<generated>
 	^ GL_TEXTURE_IMAGE_FORMAT
@@ -2224,9 +2214,9 @@ GL4_3 >> TEXTURE_IMAGE_FORMAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TEXTURE_IMAGE_TYPE [
+GL43Core >> TEXTURE_IMAGE_TYPE [
 
 	<generated>
 	^ GL_TEXTURE_IMAGE_TYPE
@@ -2234,9 +2224,9 @@ GL4_3 >> TEXTURE_IMAGE_TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TEXTURE_IMMUTABLE_LEVELS [
+GL43Core >> TEXTURE_IMMUTABLE_LEVELS [
 
 	<generated>
 	^ GL_TEXTURE_IMMUTABLE_LEVELS
@@ -2244,9 +2234,9 @@ GL4_3 >> TEXTURE_IMMUTABLE_LEVELS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TEXTURE_SHADOW [
+GL43Core >> TEXTURE_SHADOW [
 
 	<generated>
 	^ GL_TEXTURE_SHADOW
@@ -2254,9 +2244,9 @@ GL4_3 >> TEXTURE_SHADOW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TEXTURE_VIEW [
+GL43Core >> TEXTURE_VIEW [
 
 	<generated>
 	^ GL_TEXTURE_VIEW
@@ -2264,9 +2254,9 @@ GL4_3 >> TEXTURE_VIEW [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TEXTURE_VIEW_MIN_LAYER [
+GL43Core >> TEXTURE_VIEW_MIN_LAYER [
 
 	<generated>
 	^ GL_TEXTURE_VIEW_MIN_LAYER
@@ -2274,9 +2264,9 @@ GL4_3 >> TEXTURE_VIEW_MIN_LAYER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TEXTURE_VIEW_MIN_LEVEL [
+GL43Core >> TEXTURE_VIEW_MIN_LEVEL [
 
 	<generated>
 	^ GL_TEXTURE_VIEW_MIN_LEVEL
@@ -2284,9 +2274,9 @@ GL4_3 >> TEXTURE_VIEW_MIN_LEVEL [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TEXTURE_VIEW_NUM_LAYERS [
+GL43Core >> TEXTURE_VIEW_NUM_LAYERS [
 
 	<generated>
 	^ GL_TEXTURE_VIEW_NUM_LAYERS
@@ -2294,9 +2284,9 @@ GL4_3 >> TEXTURE_VIEW_NUM_LAYERS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TEXTURE_VIEW_NUM_LEVELS [
+GL43Core >> TEXTURE_VIEW_NUM_LEVELS [
 
 	<generated>
 	^ GL_TEXTURE_VIEW_NUM_LEVELS
@@ -2304,9 +2294,9 @@ GL4_3 >> TEXTURE_VIEW_NUM_LEVELS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TOP_LEVEL_ARRAY_SIZE [
+GL43Core >> TOP_LEVEL_ARRAY_SIZE [
 
 	<generated>
 	^ GL_TOP_LEVEL_ARRAY_SIZE
@@ -2314,9 +2304,9 @@ GL4_3 >> TOP_LEVEL_ARRAY_SIZE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TOP_LEVEL_ARRAY_STRIDE [
+GL43Core >> TOP_LEVEL_ARRAY_STRIDE [
 
 	<generated>
 	^ GL_TOP_LEVEL_ARRAY_STRIDE
@@ -2324,9 +2314,9 @@ GL4_3 >> TOP_LEVEL_ARRAY_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TRANSFORM_FEEDBACK_VARYING [
+GL43Core >> TRANSFORM_FEEDBACK_VARYING [
 
 	<generated>
 	^ GL_TRANSFORM_FEEDBACK_VARYING
@@ -2334,9 +2324,9 @@ GL4_3 >> TRANSFORM_FEEDBACK_VARYING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> TYPE [
+GL43Core >> TYPE [
 
 	<generated>
 	^ GL_TYPE
@@ -2344,9 +2334,9 @@ GL4_3 >> TYPE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> UNIFORM [
+GL43Core >> UNIFORM [
 
 	<generated>
 	^ GL_UNIFORM
@@ -2354,9 +2344,9 @@ GL4_3 >> UNIFORM [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> UNIFORM_BLOCK [
+GL43Core >> UNIFORM_BLOCK [
 
 	<generated>
 	^ GL_UNIFORM_BLOCK
@@ -2364,9 +2354,9 @@ GL4_3 >> UNIFORM_BLOCK [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> UNIFORM_BLOCK_REFERENCED_BY_COMPUTE_SHADER [
+GL43Core >> UNIFORM_BLOCK_REFERENCED_BY_COMPUTE_SHADER [
 
 	<generated>
 	^ GL_UNIFORM_BLOCK_REFERENCED_BY_COMPUTE_SHADER
@@ -2374,9 +2364,9 @@ GL4_3 >> UNIFORM_BLOCK_REFERENCED_BY_COMPUTE_SHADER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VERTEX_ARRAY [
+GL43Core >> VERTEX_ARRAY [
 
 	<generated>
 	^ GL_VERTEX_ARRAY
@@ -2384,9 +2374,9 @@ GL4_3 >> VERTEX_ARRAY [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VERTEX_ATTRIB_ARRAY_LONG [
+GL43Core >> VERTEX_ATTRIB_ARRAY_LONG [
 
 	<generated>
 	^ GL_VERTEX_ATTRIB_ARRAY_LONG
@@ -2394,9 +2384,9 @@ GL4_3 >> VERTEX_ATTRIB_ARRAY_LONG [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VERTEX_ATTRIB_BINDING [
+GL43Core >> VERTEX_ATTRIB_BINDING [
 
 	<generated>
 	^ GL_VERTEX_ATTRIB_BINDING
@@ -2404,9 +2394,9 @@ GL4_3 >> VERTEX_ATTRIB_BINDING [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VERTEX_ATTRIB_RELATIVE_OFFSET [
+GL43Core >> VERTEX_ATTRIB_RELATIVE_OFFSET [
 
 	<generated>
 	^ GL_VERTEX_ATTRIB_RELATIVE_OFFSET
@@ -2414,9 +2404,9 @@ GL4_3 >> VERTEX_ATTRIB_RELATIVE_OFFSET [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VERTEX_BINDING_BUFFER [
+GL43Core >> VERTEX_BINDING_BUFFER [
 
 	<generated>
 	^ GL_VERTEX_BINDING_BUFFER
@@ -2424,9 +2414,9 @@ GL4_3 >> VERTEX_BINDING_BUFFER [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VERTEX_BINDING_DIVISOR [
+GL43Core >> VERTEX_BINDING_DIVISOR [
 
 	<generated>
 	^ GL_VERTEX_BINDING_DIVISOR
@@ -2434,9 +2424,9 @@ GL4_3 >> VERTEX_BINDING_DIVISOR [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VERTEX_BINDING_OFFSET [
+GL43Core >> VERTEX_BINDING_OFFSET [
 
 	<generated>
 	^ GL_VERTEX_BINDING_OFFSET
@@ -2444,9 +2434,9 @@ GL4_3 >> VERTEX_BINDING_OFFSET [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VERTEX_BINDING_STRIDE [
+GL43Core >> VERTEX_BINDING_STRIDE [
 
 	<generated>
 	^ GL_VERTEX_BINDING_STRIDE
@@ -2454,9 +2444,9 @@ GL4_3 >> VERTEX_BINDING_STRIDE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VERTEX_SUBROUTINE [
+GL43Core >> VERTEX_SUBROUTINE [
 
 	<generated>
 	^ GL_VERTEX_SUBROUTINE
@@ -2464,9 +2454,9 @@ GL4_3 >> VERTEX_SUBROUTINE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VERTEX_SUBROUTINE_UNIFORM [
+GL43Core >> VERTEX_SUBROUTINE_UNIFORM [
 
 	<generated>
 	^ GL_VERTEX_SUBROUTINE_UNIFORM
@@ -2474,9 +2464,9 @@ GL4_3 >> VERTEX_SUBROUTINE_UNIFORM [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VERTEX_TEXTURE [
+GL43Core >> VERTEX_TEXTURE [
 
 	<generated>
 	^ GL_VERTEX_TEXTURE
@@ -2484,9 +2474,9 @@ GL4_3 >> VERTEX_TEXTURE [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VIEW_CLASS_128_BITS [
+GL43Core >> VIEW_CLASS_128_BITS [
 
 	<generated>
 	^ GL_VIEW_CLASS_128_BITS
@@ -2494,9 +2484,9 @@ GL4_3 >> VIEW_CLASS_128_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VIEW_CLASS_16_BITS [
+GL43Core >> VIEW_CLASS_16_BITS [
 
 	<generated>
 	^ GL_VIEW_CLASS_16_BITS
@@ -2504,9 +2494,9 @@ GL4_3 >> VIEW_CLASS_16_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VIEW_CLASS_24_BITS [
+GL43Core >> VIEW_CLASS_24_BITS [
 
 	<generated>
 	^ GL_VIEW_CLASS_24_BITS
@@ -2514,9 +2504,9 @@ GL4_3 >> VIEW_CLASS_24_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VIEW_CLASS_32_BITS [
+GL43Core >> VIEW_CLASS_32_BITS [
 
 	<generated>
 	^ GL_VIEW_CLASS_32_BITS
@@ -2524,9 +2514,9 @@ GL4_3 >> VIEW_CLASS_32_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VIEW_CLASS_48_BITS [
+GL43Core >> VIEW_CLASS_48_BITS [
 
 	<generated>
 	^ GL_VIEW_CLASS_48_BITS
@@ -2534,9 +2524,9 @@ GL4_3 >> VIEW_CLASS_48_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VIEW_CLASS_64_BITS [
+GL43Core >> VIEW_CLASS_64_BITS [
 
 	<generated>
 	^ GL_VIEW_CLASS_64_BITS
@@ -2544,9 +2534,9 @@ GL4_3 >> VIEW_CLASS_64_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VIEW_CLASS_8_BITS [
+GL43Core >> VIEW_CLASS_8_BITS [
 
 	<generated>
 	^ GL_VIEW_CLASS_8_BITS
@@ -2554,9 +2544,9 @@ GL4_3 >> VIEW_CLASS_8_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VIEW_CLASS_96_BITS [
+GL43Core >> VIEW_CLASS_96_BITS [
 
 	<generated>
 	^ GL_VIEW_CLASS_96_BITS
@@ -2564,9 +2554,9 @@ GL4_3 >> VIEW_CLASS_96_BITS [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VIEW_CLASS_BPTC_FLOAT [
+GL43Core >> VIEW_CLASS_BPTC_FLOAT [
 
 	<generated>
 	^ GL_VIEW_CLASS_BPTC_FLOAT
@@ -2574,9 +2564,9 @@ GL4_3 >> VIEW_CLASS_BPTC_FLOAT [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VIEW_CLASS_BPTC_UNORM [
+GL43Core >> VIEW_CLASS_BPTC_UNORM [
 
 	<generated>
 	^ GL_VIEW_CLASS_BPTC_UNORM
@@ -2584,9 +2574,9 @@ GL4_3 >> VIEW_CLASS_BPTC_UNORM [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VIEW_CLASS_RGTC1_RED [
+GL43Core >> VIEW_CLASS_RGTC1_RED [
 
 	<generated>
 	^ GL_VIEW_CLASS_RGTC1_RED
@@ -2594,9 +2584,9 @@ GL4_3 >> VIEW_CLASS_RGTC1_RED [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VIEW_CLASS_RGTC2_RG [
+GL43Core >> VIEW_CLASS_RGTC2_RG [
 
 	<generated>
 	^ GL_VIEW_CLASS_RGTC2_RG
@@ -2604,9 +2594,9 @@ GL4_3 >> VIEW_CLASS_RGTC2_RG [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VIEW_CLASS_S3TC_DXT1_RGB [
+GL43Core >> VIEW_CLASS_S3TC_DXT1_RGB [
 
 	<generated>
 	^ GL_VIEW_CLASS_S3TC_DXT1_RGB
@@ -2614,9 +2604,9 @@ GL4_3 >> VIEW_CLASS_S3TC_DXT1_RGB [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VIEW_CLASS_S3TC_DXT1_RGBA [
+GL43Core >> VIEW_CLASS_S3TC_DXT1_RGBA [
 
 	<generated>
 	^ GL_VIEW_CLASS_S3TC_DXT1_RGBA
@@ -2624,9 +2614,9 @@ GL4_3 >> VIEW_CLASS_S3TC_DXT1_RGBA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VIEW_CLASS_S3TC_DXT3_RGBA [
+GL43Core >> VIEW_CLASS_S3TC_DXT3_RGBA [
 
 	<generated>
 	^ GL_VIEW_CLASS_S3TC_DXT3_RGBA
@@ -2634,9 +2624,9 @@ GL4_3 >> VIEW_CLASS_S3TC_DXT3_RGBA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VIEW_CLASS_S3TC_DXT5_RGBA [
+GL43Core >> VIEW_CLASS_S3TC_DXT5_RGBA [
 
 	<generated>
 	^ GL_VIEW_CLASS_S3TC_DXT5_RGBA
@@ -2644,9 +2634,9 @@ GL4_3 >> VIEW_CLASS_S3TC_DXT5_RGBA [
 
 {
 	#category : #'constants - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> VIEW_COMPATIBILITY_CLASS [
+GL43Core >> VIEW_COMPATIBILITY_CLASS [
 
 	<generated>
 	^ GL_VIEW_COMPATIBILITY_CLASS
@@ -2654,9 +2644,9 @@ GL4_3 >> VIEW_COMPATIBILITY_CLASS [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> bindVertexBuffer: bindingindex with: buffer with: offset with: stride [
+GL43Core >> bindVertexBuffer: bindingindex with: buffer with: offset with: stride [
 
 	<generated>
 	<apicall: void 'glBindVertexBuffer' (GLuint GLuint GLintptr GLsizei)>
@@ -2665,9 +2655,9 @@ GL4_3 >> bindVertexBuffer: bindingindex with: buffer with: offset with: stride [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> clearBufferData: target with: internalformat with: format with: type with: data [
+GL43Core >> clearBufferData: target with: internalformat with: format with: type with: data [
 
 	<generated>
 	<apicall: void 'glClearBufferData' (GLenum GLenum GLenum GLenum void*)>
@@ -2676,9 +2666,9 @@ GL4_3 >> clearBufferData: target with: internalformat with: format with: type wi
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> clearBufferSubData: target with: internalformat with: offset with: size with: format with: type with: data [
+GL43Core >> clearBufferSubData: target with: internalformat with: offset with: size with: format with: type with: data [
 
 	<generated>
 	<apicall: void 'glClearBufferSubData' (GLenum GLenum GLintptr GLsizeiptr GLenum GLenum void*)>
@@ -2687,9 +2677,9 @@ GL4_3 >> clearBufferSubData: target with: internalformat with: offset with: size
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> copyImageSubData: srcName with: srcTarget with: srcLevel with: srcX with: srcY with: srcZ with: dstName with: dstTarget with: dstLevel with: dstX with: dstY with: dstZ with: srcWidth with: srcHeight with: srcDepth [
+GL43Core >> copyImageSubData: srcName with: srcTarget with: srcLevel with: srcX with: srcY with: srcZ with: dstName with: dstTarget with: dstLevel with: dstX with: dstY with: dstZ with: srcWidth with: srcHeight with: srcDepth [
 
 	<generated>
 	<apicall: void 'glCopyImageSubData' (GLuint GLenum GLint GLint GLint GLint GLuint GLenum GLint GLint GLint GLint GLsizei GLsizei GLsizei)>
@@ -2698,9 +2688,9 @@ GL4_3 >> copyImageSubData: srcName with: srcTarget with: srcLevel with: srcX wit
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> debugMessageCallback: callback with: userParam [
+GL43Core >> debugMessageCallback: callback with: userParam [
 
 	<generated>
 	<apicall: void 'glDebugMessageCallback' (GLDEBUGPROC void*)>
@@ -2709,9 +2699,9 @@ GL4_3 >> debugMessageCallback: callback with: userParam [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> debugMessageControl: source with: type with: severity with: count with: ids with: enabled [
+GL43Core >> debugMessageControl: source with: type with: severity with: count with: ids with: enabled [
 
 	<generated>
 	<apicall: void 'glDebugMessageControl' (GLenum GLenum GLenum GLsizei GLuint* GLboolean)>
@@ -2720,9 +2710,9 @@ GL4_3 >> debugMessageControl: source with: type with: severity with: count with:
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> debugMessageInsert: source with: type with: id with: severity with: length with: buf [
+GL43Core >> debugMessageInsert: source with: type with: id with: severity with: length with: buf [
 
 	<generated>
 	<apicall: void 'glDebugMessageInsert' (GLenum GLenum GLuint GLenum GLsizei GLchar*)>
@@ -2731,9 +2721,9 @@ GL4_3 >> debugMessageInsert: source with: type with: id with: severity with: len
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> dispatchCompute: num_groups_x with: num_groups_y with: num_groups_z [
+GL43Core >> dispatchCompute: num_groups_x with: num_groups_y with: num_groups_z [
 
 	<generated>
 	<apicall: void 'glDispatchCompute' (GLuint GLuint GLuint)>
@@ -2742,9 +2732,9 @@ GL4_3 >> dispatchCompute: num_groups_x with: num_groups_y with: num_groups_z [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> dispatchComputeIndirect: indirect [
+GL43Core >> dispatchComputeIndirect: indirect [
 
 	<generated>
 	<apicall: void 'glDispatchComputeIndirect' (GLintptr)>
@@ -2753,9 +2743,9 @@ GL4_3 >> dispatchComputeIndirect: indirect [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> framebufferParameteri: target with: pname with: param [
+GL43Core >> framebufferParameteri: target with: pname with: param [
 
 	<generated>
 	<apicall: void 'glFramebufferParameteri' (GLenum GLenum GLint)>
@@ -2764,9 +2754,9 @@ GL4_3 >> framebufferParameteri: target with: pname with: param [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> getDebugMessageLog: count with: bufSize with: sources with: types with: ids with: severities with: lengths with: messageLog [
+GL43Core >> getDebugMessageLog: count with: bufSize with: sources with: types with: ids with: severities with: lengths with: messageLog [
 
 	<generated>
 	<apicall: GLuint 'glGetDebugMessageLog' (GLuint GLsizei GLenum* GLenum* GLuint* GLenum* GLsizei* GLchar*)>
@@ -2775,9 +2765,9 @@ GL4_3 >> getDebugMessageLog: count with: bufSize with: sources with: types with:
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> getFramebufferParameteriv: target with: pname with: params [
+GL43Core >> getFramebufferParameteriv: target with: pname with: params [
 
 	<generated>
 	<apicall: void 'glGetFramebufferParameteriv' (GLenum GLenum GLint*)>
@@ -2786,9 +2776,9 @@ GL4_3 >> getFramebufferParameteriv: target with: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> getInternalformati64v: target with: internalformat with: pname with: count with: params [
+GL43Core >> getInternalformati64v: target with: internalformat with: pname with: count with: params [
 
 	<generated>
 	<apicall: void 'glGetInternalformati64v' (GLenum GLenum GLenum GLsizei GLint64*)>
@@ -2797,9 +2787,9 @@ GL4_3 >> getInternalformati64v: target with: internalformat with: pname with: co
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> getObjectLabel: identifier with: name with: bufSize with: length with: label [
+GL43Core >> getObjectLabel: identifier with: name with: bufSize with: length with: label [
 
 	<generated>
 	<apicall: void 'glGetObjectLabel' (GLenum GLuint GLsizei GLsizei* GLchar*)>
@@ -2808,9 +2798,9 @@ GL4_3 >> getObjectLabel: identifier with: name with: bufSize with: length with: 
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> getObjectPtrLabel: ptr with: bufSize with: length with: label [
+GL43Core >> getObjectPtrLabel: ptr with: bufSize with: length with: label [
 
 	<generated>
 	<apicall: void 'glGetObjectPtrLabel' (void* GLsizei GLsizei* GLchar*)>
@@ -2819,9 +2809,9 @@ GL4_3 >> getObjectPtrLabel: ptr with: bufSize with: length with: label [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> getPointerv: pname with: params [
+GL43Core >> getPointerv: pname with: params [
 
 	<generated>
 	<apicall: void 'glGetPointerv' (GLenum void**)>
@@ -2830,9 +2820,9 @@ GL4_3 >> getPointerv: pname with: params [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> getProgramInterfaceiv: program with: programInterface with: pname with: params [
+GL43Core >> getProgramInterfaceiv: program with: programInterface with: pname with: params [
 
 	<generated>
 	<apicall: void 'glGetProgramInterfaceiv' (GLuint GLenum GLenum GLint*)>
@@ -2841,9 +2831,9 @@ GL4_3 >> getProgramInterfaceiv: program with: programInterface with: pname with:
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> getProgramResourceIndex: program with: programInterface with: name [
+GL43Core >> getProgramResourceIndex: program with: programInterface with: name [
 
 	<generated>
 	<apicall: GLuint 'glGetProgramResourceIndex' (GLuint GLenum GLchar*)>
@@ -2852,9 +2842,9 @@ GL4_3 >> getProgramResourceIndex: program with: programInterface with: name [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> getProgramResourceLocation: program with: programInterface with: name [
+GL43Core >> getProgramResourceLocation: program with: programInterface with: name [
 
 	<generated>
 	<apicall: GLint 'glGetProgramResourceLocation' (GLuint GLenum GLchar*)>
@@ -2863,9 +2853,9 @@ GL4_3 >> getProgramResourceLocation: program with: programInterface with: name [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> getProgramResourceLocationIndex: program with: programInterface with: name [
+GL43Core >> getProgramResourceLocationIndex: program with: programInterface with: name [
 
 	<generated>
 	<apicall: GLint 'glGetProgramResourceLocationIndex' (GLuint GLenum GLchar*)>
@@ -2874,9 +2864,9 @@ GL4_3 >> getProgramResourceLocationIndex: program with: programInterface with: n
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> getProgramResourceName: program with: programInterface with: index with: bufSize with: length with: name [
+GL43Core >> getProgramResourceName: program with: programInterface with: index with: bufSize with: length with: name [
 
 	<generated>
 	<apicall: void 'glGetProgramResourceName' (GLuint GLenum GLuint GLsizei GLsizei* GLchar*)>
@@ -2885,9 +2875,9 @@ GL4_3 >> getProgramResourceName: program with: programInterface with: index with
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> getProgramResourceiv: program with: programInterface with: index with: propCount with: props with: count with: length with: params [
+GL43Core >> getProgramResourceiv: program with: programInterface with: index with: propCount with: props with: count with: length with: params [
 
 	<generated>
 	<apicall: void 'glGetProgramResourceiv' (GLuint GLenum GLuint GLsizei GLenum* GLsizei GLsizei* GLint*)>
@@ -2896,9 +2886,9 @@ GL4_3 >> getProgramResourceiv: program with: programInterface with: index with: 
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> invalidateBufferData: buffer [
+GL43Core >> invalidateBufferData: buffer [
 
 	<generated>
 	<apicall: void 'glInvalidateBufferData' (GLuint)>
@@ -2907,9 +2897,9 @@ GL4_3 >> invalidateBufferData: buffer [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> invalidateBufferSubData: buffer with: offset with: length [
+GL43Core >> invalidateBufferSubData: buffer with: offset with: length [
 
 	<generated>
 	<apicall: void 'glInvalidateBufferSubData' (GLuint GLintptr GLsizeiptr)>
@@ -2918,9 +2908,9 @@ GL4_3 >> invalidateBufferSubData: buffer with: offset with: length [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> invalidateFramebuffer: target with: numAttachments with: attachments [
+GL43Core >> invalidateFramebuffer: target with: numAttachments with: attachments [
 
 	<generated>
 	<apicall: void 'glInvalidateFramebuffer' (GLenum GLsizei GLenum*)>
@@ -2929,9 +2919,9 @@ GL4_3 >> invalidateFramebuffer: target with: numAttachments with: attachments [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> invalidateSubFramebuffer: target with: numAttachments with: attachments with: x with: y with: width with: height [
+GL43Core >> invalidateSubFramebuffer: target with: numAttachments with: attachments with: x with: y with: width with: height [
 
 	<generated>
 	<apicall: void 'glInvalidateSubFramebuffer' (GLenum GLsizei GLenum* GLint GLint GLsizei GLsizei)>
@@ -2940,9 +2930,9 @@ GL4_3 >> invalidateSubFramebuffer: target with: numAttachments with: attachments
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> invalidateTexImage: texture with: level [
+GL43Core >> invalidateTexImage: texture with: level [
 
 	<generated>
 	<apicall: void 'glInvalidateTexImage' (GLuint GLint)>
@@ -2951,9 +2941,9 @@ GL4_3 >> invalidateTexImage: texture with: level [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> invalidateTexSubImage: texture with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth [
+GL43Core >> invalidateTexSubImage: texture with: level with: xoffset with: yoffset with: zoffset with: width with: height with: depth [
 
 	<generated>
 	<apicall: void 'glInvalidateTexSubImage' (GLuint GLint GLint GLint GLint GLsizei GLsizei GLsizei)>
@@ -2962,9 +2952,9 @@ GL4_3 >> invalidateTexSubImage: texture with: level with: xoffset with: yoffset 
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> multiDrawArraysIndirect: mode with: indirect with: drawcount with: stride [
+GL43Core >> multiDrawArraysIndirect: mode with: indirect with: drawcount with: stride [
 
 	<generated>
 	<apicall: void 'glMultiDrawArraysIndirect' (GLenum void* GLsizei GLsizei)>
@@ -2973,9 +2963,9 @@ GL4_3 >> multiDrawArraysIndirect: mode with: indirect with: drawcount with: stri
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> multiDrawElementsIndirect: mode with: type with: indirect with: drawcount with: stride [
+GL43Core >> multiDrawElementsIndirect: mode with: type with: indirect with: drawcount with: stride [
 
 	<generated>
 	<apicall: void 'glMultiDrawElementsIndirect' (GLenum GLenum void* GLsizei GLsizei)>
@@ -2984,9 +2974,9 @@ GL4_3 >> multiDrawElementsIndirect: mode with: type with: indirect with: drawcou
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> objectLabel: identifier with: name with: length with: label [
+GL43Core >> objectLabel: identifier with: name with: length with: label [
 
 	<generated>
 	<apicall: void 'glObjectLabel' (GLenum GLuint GLsizei GLchar*)>
@@ -2995,9 +2985,9 @@ GL4_3 >> objectLabel: identifier with: name with: length with: label [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> objectPtrLabel: ptr with: length with: label [
+GL43Core >> objectPtrLabel: ptr with: length with: label [
 
 	<generated>
 	<apicall: void 'glObjectPtrLabel' (void* GLsizei GLchar*)>
@@ -3006,9 +2996,9 @@ GL4_3 >> objectPtrLabel: ptr with: length with: label [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> popDebugGroup [
+GL43Core >> popDebugGroup [
 
 	<generated>
 	<apicall: void 'glPopDebugGroup' ()>
@@ -3017,9 +3007,9 @@ GL4_3 >> popDebugGroup [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> pushDebugGroup: source with: id with: length with: message [
+GL43Core >> pushDebugGroup: source with: id with: length with: message [
 
 	<generated>
 	<apicall: void 'glPushDebugGroup' (GLenum GLuint GLsizei GLchar*)>
@@ -3028,9 +3018,9 @@ GL4_3 >> pushDebugGroup: source with: id with: length with: message [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> shaderStorageBlockBinding: program with: storageBlockIndex with: storageBlockBinding [
+GL43Core >> shaderStorageBlockBinding: program with: storageBlockIndex with: storageBlockBinding [
 
 	<generated>
 	<apicall: void 'glShaderStorageBlockBinding' (GLuint GLuint GLuint)>
@@ -3039,9 +3029,9 @@ GL4_3 >> shaderStorageBlockBinding: program with: storageBlockIndex with: storag
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> texBufferRange: target with: internalformat with: buffer with: offset with: size [
+GL43Core >> texBufferRange: target with: internalformat with: buffer with: offset with: size [
 
 	<generated>
 	<apicall: void 'glTexBufferRange' (GLenum GLenum GLuint GLintptr GLsizeiptr)>
@@ -3050,9 +3040,9 @@ GL4_3 >> texBufferRange: target with: internalformat with: buffer with: offset w
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> texStorage2DMultisample: target with: samples with: internalformat with: width with: height with: fixedsamplelocations [
+GL43Core >> texStorage2DMultisample: target with: samples with: internalformat with: width with: height with: fixedsamplelocations [
 
 	<generated>
 	<apicall: void 'glTexStorage2DMultisample' (GLenum GLsizei GLenum GLsizei GLsizei GLboolean)>
@@ -3061,9 +3051,9 @@ GL4_3 >> texStorage2DMultisample: target with: samples with: internalformat with
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> texStorage3DMultisample: target with: samples with: internalformat with: width with: height with: depth with: fixedsamplelocations [
+GL43Core >> texStorage3DMultisample: target with: samples with: internalformat with: width with: height with: depth with: fixedsamplelocations [
 
 	<generated>
 	<apicall: void 'glTexStorage3DMultisample' (GLenum GLsizei GLenum GLsizei GLsizei GLsizei GLboolean)>
@@ -3072,9 +3062,9 @@ GL4_3 >> texStorage3DMultisample: target with: samples with: internalformat with
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> textureView: texture with: target with: origtexture with: internalformat with: minlevel with: numlevels with: minlayer with: numlayers [
+GL43Core >> textureView: texture with: target with: origtexture with: internalformat with: minlevel with: numlevels with: minlayer with: numlayers [
 
 	<generated>
 	<apicall: void 'glTextureView' (GLuint GLenum GLuint GLenum GLuint GLuint GLuint GLuint)>
@@ -3083,9 +3073,9 @@ GL4_3 >> textureView: texture with: target with: origtexture with: internalforma
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> vertexAttribBinding: attribindex with: bindingindex [
+GL43Core >> vertexAttribBinding: attribindex with: bindingindex [
 
 	<generated>
 	<apicall: void 'glVertexAttribBinding' (GLuint GLuint)>
@@ -3094,9 +3084,9 @@ GL4_3 >> vertexAttribBinding: attribindex with: bindingindex [
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> vertexAttribFormat: attribindex with: size with: type with: normalized with: relativeoffset [
+GL43Core >> vertexAttribFormat: attribindex with: size with: type with: normalized with: relativeoffset [
 
 	<generated>
 	<apicall: void 'glVertexAttribFormat' (GLuint GLint GLenum GLboolean GLuint)>
@@ -3105,9 +3095,9 @@ GL4_3 >> vertexAttribFormat: attribindex with: size with: type with: normalized 
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> vertexAttribIFormat: attribindex with: size with: type with: relativeoffset [
+GL43Core >> vertexAttribIFormat: attribindex with: size with: type with: relativeoffset [
 
 	<generated>
 	<apicall: void 'glVertexAttribIFormat' (GLuint GLint GLenum GLuint)>
@@ -3116,9 +3106,9 @@ GL4_3 >> vertexAttribIFormat: attribindex with: size with: type with: relativeof
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> vertexAttribLFormat: attribindex with: size with: type with: relativeoffset [
+GL43Core >> vertexAttribLFormat: attribindex with: size with: type with: relativeoffset [
 
 	<generated>
 	<apicall: void 'glVertexAttribLFormat' (GLuint GLint GLenum GLuint)>
@@ -3127,9 +3117,9 @@ GL4_3 >> vertexAttribLFormat: attribindex with: size with: type with: relativeof
 
 {
 	#category : #'api - required',
-	#timestamp : 'stlu 2/12/2021 00:43'
+	#timestamp : 'stlu 2/22/2021 13:15'
 }
-GL4_3 >> vertexBindingDivisor: bindingindex with: divisor [
+GL43Core >> vertexBindingDivisor: bindingindex with: divisor [
 
 	<generated>
 	<apicall: void 'glVertexBindingDivisor' (GLuint GLuint)>
