@@ -14,8 +14,17 @@ Class {
 }
 
 {
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#category : #constants,
+	#timestamp : ''
+}
+GLBitmapFont class >> characterDistance [
+	
+	^ 2
+]
+
+{
+	#category : #accessing,
+	#timestamp : ''
 }
 GLBitmapFont >> advanceFor: aCharacter [
 
@@ -23,41 +32,45 @@ GLBitmapFont >> advanceFor: aCharacter [
 ]
 
 {
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#category : #accessing,
+	#timestamp : ''
 }
 GLBitmapFont >> extentFor: aCharacter [
 
 	| index |
 	
 	index := self indexForCharacter: aCharacter.
-	^ (offsets at: index + 1) - (offsets at: index ifAbsent: [0]) @ (font characterFormAt: aCharacter) height
+	^ (offsets at: index + 1) - (offsets at: index ifAbsent: [0]) - self class characterDistance @ (font characterFormAt: aCharacter) height
 ]
 
 {
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 10/28/2020 23:48'
+	#category : #accessing,
+	#timestamp : ''
 }
 GLBitmapFont >> font: aFont [
 
-	| x |
+	| x colorCollectBlock |
 	font := aFont.
 	
 	offsets := Array new: self printableCharacters size.
 	
-	texture := GL2DTexture create extent: (self printableCharacters collect: [:char | (aFont characterFormAt: char asCharacter) width]) sum @ aFont height.
+	texture := GL2DTexture create extent: (self printableCharacters collect: [:char | (aFont characterFormAt: char asCharacter) width + self class characterDistance]) sum @ aFont height.
 	
-	x := 0.
+	colorCollectBlock := aFont isTTCFont
+		ifTrue: [[:c | Color white alpha: c alpha]]
+		ifFalse: [[:c | Color white alpha: 1 - c red]].
+		
+	x := 0.	
 	self printableCharacters withIndexDo: [:character :index | | form | 
 		form := aFont characterFormAt: character asCharacter.
-		texture subImage: (form collectColors: [:c | Color white alpha: 1 - c red]) at: x @ 0.
-		x := x + form width.
+		texture subImage: (form collectColors: colorCollectBlock) at: x @ 0.
+		x := x + form width + self class characterDistance.
 		offsets at: index put: x]
 ]
 
 {
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#category : #accessing,
+	#timestamp : ''
 }
 GLBitmapFont >> hasGlyphOf: aCharacter [
 
@@ -65,8 +78,8 @@ GLBitmapFont >> hasGlyphOf: aCharacter [
 ]
 
 {
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#category : #accessing,
+	#timestamp : ''
 }
 GLBitmapFont >> indexForCharacter: aCharacter [
 
@@ -74,8 +87,8 @@ GLBitmapFont >> indexForCharacter: aCharacter [
 ]
 
 {
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#category : #accessing,
+	#timestamp : ''
 }
 GLBitmapFont >> offsetFor: aCharacter [
 
@@ -84,17 +97,17 @@ GLBitmapFont >> offsetFor: aCharacter [
 ]
 
 {
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#category : #accessing,
+	#timestamp : ''
 }
 GLBitmapFont >> printableCharacters [
 
-	^ 33 to: 126.
+	^ 33 to: 255.
 ]
 
 {
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#category : #accessing,
+	#timestamp : ''
 }
 GLBitmapFont >> texture [
 

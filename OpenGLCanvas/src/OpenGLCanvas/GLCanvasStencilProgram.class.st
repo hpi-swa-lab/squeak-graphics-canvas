@@ -1,5 +1,5 @@
 Class {
-	#name : #GLCanvasTextureProgram,
+	#name : #GLCanvasStencilProgram,
 	#superclass : #GLStaticProgram,
 	#instVars : [
 		'mvpLocation',
@@ -18,7 +18,7 @@ Class {
 	#category : #'shader code',
 	#timestamp : ''
 }
-GLCanvasTextureProgram class >> attributes [
+GLCanvasStencilProgram class >> attributes [
 
 	^ #('aPos' 'aTexCoords')
 ]
@@ -27,7 +27,7 @@ GLCanvasTextureProgram class >> attributes [
 	#category : #'shader code',
 	#timestamp : ''
 }
-GLCanvasTextureProgram class >> fragmentShader [
+GLCanvasStencilProgram class >> fragmentShader [
 
 	^'#version 330 core
 out vec4 FragColor;
@@ -35,9 +35,14 @@ out vec4 FragColor;
 in vec2 TexCoords;
 
 uniform sampler2D image;
+uniform vec4 color;
 
 void main() {
-	FragColor = texture(image, TexCoords);
+	if (texture(image, TexCoords) == vec4(0.0, 0.0, 0.0, 0.0))
+	{
+		discard;
+	}
+	FragColor = color;
 }'
 ]
 
@@ -45,16 +50,16 @@ void main() {
 	#category : #'shader code',
 	#timestamp : ''
 }
-GLCanvasTextureProgram class >> uniforms [
+GLCanvasStencilProgram class >> uniforms [
 
-	^ #('mvp' 'sourcePosition' 'sourceExtent' 'image')
+	^ #('mvp' 'sourcePosition' 'sourceExtent' 'image' 'color')
 ]
 
 {
 	#category : #'shader code',
 	#timestamp : ''
 }
-GLCanvasTextureProgram class >> vertexShader [
+GLCanvasStencilProgram class >> vertexShader [
 
     ^'#version 330 core
 in vec2 aPos;
@@ -77,7 +82,7 @@ void main()
 	#category : #generated,
 	#timestamp : ''
 }
-GLCanvasTextureProgram >> aPosLocation [
+GLCanvasStencilProgram >> aPosLocation [
 
 	^ aPosLocation
 ]
@@ -86,7 +91,7 @@ GLCanvasTextureProgram >> aPosLocation [
 	#category : #generated,
 	#timestamp : ''
 }
-GLCanvasTextureProgram >> aTexCoordsLocation [
+GLCanvasStencilProgram >> aTexCoordsLocation [
 
 	^ aTexCoordsLocation
 ]
@@ -95,7 +100,16 @@ GLCanvasTextureProgram >> aTexCoordsLocation [
 	#category : #generated,
 	#timestamp : ''
 }
-GLCanvasTextureProgram >> image: anObject [
+GLCanvasStencilProgram >> color: anObject [
+
+	self uniform: colorLocation value: anObject
+]
+
+{
+	#category : #generated,
+	#timestamp : ''
+}
+GLCanvasStencilProgram >> image: anObject [
 
 	self uniform: imageLocation value: anObject
 ]
@@ -104,7 +118,7 @@ GLCanvasTextureProgram >> image: anObject [
 	#category : #generated,
 	#timestamp : ''
 }
-GLCanvasTextureProgram >> initializeLocations [
+GLCanvasStencilProgram >> initializeLocations [
 
 	super initializeLocations.
 	
@@ -112,6 +126,7 @@ GLCanvasTextureProgram >> initializeLocations [
 	sourcePositionLocation := self registerUniform: 'sourcePosition'.
 	sourceExtentLocation := self registerUniform: 'sourceExtent'.
 	imageLocation := self registerUniform: 'image'.
+	colorLocation := self registerUniform: 'color'.
 	
 	aPosLocation := self registerAttribute: 'aPos'.
 	aTexCoordsLocation := self registerAttribute: 'aTexCoords'.
@@ -121,7 +136,7 @@ GLCanvasTextureProgram >> initializeLocations [
 	#category : #generated,
 	#timestamp : ''
 }
-GLCanvasTextureProgram >> mvp: anObject [
+GLCanvasStencilProgram >> mvp: anObject [
 
 	self uniform: mvpLocation value: anObject
 ]
@@ -130,7 +145,7 @@ GLCanvasTextureProgram >> mvp: anObject [
 	#category : #generated,
 	#timestamp : ''
 }
-GLCanvasTextureProgram >> sourceExtent: anObject [
+GLCanvasStencilProgram >> sourceExtent: anObject [
 
 	self uniform: sourceExtentLocation value: anObject
 ]
@@ -139,7 +154,7 @@ GLCanvasTextureProgram >> sourceExtent: anObject [
 	#category : #generated,
 	#timestamp : ''
 }
-GLCanvasTextureProgram >> sourcePosition: anObject [
+GLCanvasStencilProgram >> sourcePosition: anObject [
 
 	self uniform: sourcePositionLocation value: anObject
 ]

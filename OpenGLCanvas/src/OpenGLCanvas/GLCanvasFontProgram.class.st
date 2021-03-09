@@ -14,8 +14,8 @@ Class {
 }
 
 {
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#category : #'shader code',
+	#timestamp : ''
 }
 GLCanvasFontProgram class >> attributes [
 
@@ -23,8 +23,8 @@ GLCanvasFontProgram class >> attributes [
 ]
 
 {
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#category : #'shader code',
+	#timestamp : ''
 }
 GLCanvasFontProgram class >> fragmentShader [
 
@@ -36,14 +36,15 @@ in vec2 TexCoords;
 uniform sampler2D image;
 uniform vec4 color;
 
-void main() {
-  FragColor = texture(image, TexCoords) * color;
-}' withUnixLineEndings
+void main()
+{
+	FragColor = texture(image, TexCoords) * color ;
+}'
 ]
 
 {
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#category : #'shader code',
+	#timestamp : ''
 }
 GLCanvasFontProgram class >> uniforms [
 	"self compileAccessors"
@@ -52,8 +53,8 @@ GLCanvasFontProgram class >> uniforms [
 ]
 
 {
-	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#category : #'shader code',
+	#timestamp : ''
 }
 GLCanvasFontProgram class >> vertexShader [
 
@@ -69,14 +70,14 @@ out vec2 TexCoords;
 
 void main()
 {
-    TexCoords = (aPos * extent + vec2(offsetX, 0.0)) / textureSize(image, 0);
-    gl_Position = mvp * vec4(aPos * extent, 0.0, 1.0);
-}' withUnixLineEndings
+	TexCoords = (aPos * extent + vec2(offsetX, 0.0)) / textureSize(image, 0);
+	gl_Position = mvp * vec4(aPos * extent, 0.0, 1.0);
+}'
 ]
 
 {
 	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasFontProgram >> aPosLocation [
 
@@ -85,7 +86,7 @@ GLCanvasFontProgram >> aPosLocation [
 
 {
 	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasFontProgram >> color: anObject [
 
@@ -94,7 +95,7 @@ GLCanvasFontProgram >> color: anObject [
 
 {
 	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasFontProgram >> extent: anObject [
 
@@ -103,7 +104,7 @@ GLCanvasFontProgram >> extent: anObject [
 
 {
 	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasFontProgram >> image: anObject [
 
@@ -112,7 +113,7 @@ GLCanvasFontProgram >> image: anObject [
 
 {
 	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasFontProgram >> initializeLocations [
 
@@ -129,7 +130,7 @@ GLCanvasFontProgram >> initializeLocations [
 
 {
 	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasFontProgram >> mvp: anObject [
 
@@ -138,7 +139,7 @@ GLCanvasFontProgram >> mvp: anObject [
 
 {
 	#category : #generated,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLCanvasFontProgram >> offsetX: anObject [
 

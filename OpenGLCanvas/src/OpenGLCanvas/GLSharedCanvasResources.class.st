@@ -1,12 +1,22 @@
+"
+I contain the resources that GLCanvases need. I contain a Vertex Buffer with vertices for a unit square, different shader programs and fonts.
+"
 Class {
 	#name : #GLSharedCanvasResources,
 	#superclass : #Object,
 	#instVars : [
-		'vao',
 		'vbo',
+		'bitmapOvalProgram',
+		'bitmapPolygonProgram',
+		'gradientPolygonProgram',
+		'gradientOvalProgram',
 		'textureProgram',
-		'outlineProgram',
-		'rectangleProgram',
+		'solidOvalProgram',
+		'solidPolygonProgram',
+		'bitmapRectangleProgram',
+		'gradientRectangleProgram',
+		'solidRectangleProgram',
+		'stencilProgram',
 		'fonts',
 		'fontProgram'
 	],
@@ -18,8 +28,47 @@ Class {
 }
 
 {
+	#category : #updating,
+	#timestamp : ''
+}
+GLSharedCanvasResources class >> updateIn: aGLLibrary [
+	
+	aGLLibrary makeCurrentDuring: [
+		aGLLibrary recompileShaders.
+		aGLLibrary at: self put: self new].
+	
+]
+
+{
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
+}
+GLSharedCanvasResources >> bitmapOvalProgram [
+
+	^ bitmapOvalProgram
+]
+
+{
+	#category : #accessing,
+	#timestamp : ''
+}
+GLSharedCanvasResources >> bitmapPolygonProgram [
+
+	^ bitmapPolygonProgram
+]
+
+{
+	#category : #accessing,
+	#timestamp : ''
+}
+GLSharedCanvasResources >> bitmapRectangleProgram [
+
+	^ bitmapRectangleProgram
+]
+
+{
+	#category : #accessing,
+	#timestamp : ''
 }
 GLSharedCanvasResources >> font: aFont [
 
@@ -31,7 +80,7 @@ GLSharedCanvasResources >> font: aFont [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLSharedCanvasResources >> fontProgram [
 
@@ -39,8 +88,35 @@ GLSharedCanvasResources >> fontProgram [
 ]
 
 {
+	#category : #accessing,
+	#timestamp : ''
+}
+GLSharedCanvasResources >> gradientOvalProgram [
+
+	^ gradientOvalProgram
+]
+
+{
+	#category : #accessing,
+	#timestamp : ''
+}
+GLSharedCanvasResources >> gradientPolygonProgram [
+
+	^ gradientPolygonProgram
+]
+
+{
+	#category : #accessing,
+	#timestamp : ''
+}
+GLSharedCanvasResources >> gradientRectangleProgram [
+
+	^ gradientRectangleProgram
+]
+
+{
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLSharedCanvasResources >> initialize [
 
@@ -50,18 +126,18 @@ GLSharedCanvasResources >> initialize [
 	
 	self initializePrograms.
 	self initializeBuffers.
-	self initializeProgramAttributes
 ]
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/1/2020 02:52'
+	#timestamp : ''
 }
 GLSharedCanvasResources >> initializeBuffers [
 
+	| vao |
 	vao := GLVertexArray create.
 	vao bind.
-	vbo := GLBuffer create targetArrayBuffer.
+	vbo := GLArrayBuffer create.
 	vbo
 		usage: GL_STATIC_DRAW
 		data: #(
@@ -69,73 +145,99 @@ GLSharedCanvasResources >> initializeBuffers [
 			1.0 0.0 1.0 0.0
 			0.0 1.0 0.0 1.0
 			1.0 1.0 1.0 1.0 ) asFloat32Array.
-	GL checkForError
+	GL checkForError.
 ]
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/27/2020 15:01'
-}
-GLSharedCanvasResources >> initializeProgramAttributes [
-
-	self assert: textureProgram inputs aPos location = outlineProgram inputs aPos location.
-	self assert: textureProgram inputs aPos location = rectangleProgram inputs aPos location.
-	self assert: textureProgram inputs aTexCoords location = outlineProgram inputs aTexCoords location.
-
-	vbo boundDuring: [
-		textureProgram useDuring: [
-			textureProgram image: 0.
-			GL checkForError.
-			textureProgram inputs aPos components: 2 stride: 16 offset: 0.
-			GL checkForError.
-			textureProgram inputs aTexCoords components: 2 stride: 16 offset: 8.
-			GL checkForError].
-	
-		"outlineProgram useDuring: [
-			outlineProgram vertexAttrib: outlineProgram aPosLocation components: 2 stride: 16 offset: 0.
-			GL checkForError.
-			outlineProgram vertexAttrib: outlineProgram aTexCoordsLocation components: 2 stride: 16 offset: 8.
-			GL checkForError].
-	
-		rectangleProgram useDuring: [
-			rectangleProgram vertexAttrib: rectangleProgram aPosLocation components: 2 stride: 16 offset: 0.
-			GL checkForError]"]
-]
-
-{
-	#category : #initialization,
-	#timestamp : 'stlu 12/3/2020 18:56'
+	#timestamp : ''
 }
 GLSharedCanvasResources >> initializePrograms [
-
-	textureProgram := GLCanvasTextureProgram instance.
-	outlineProgram := GLCanvasOutlineProgram instance.
-	rectangleProgram := GLCanvasRectangleProgram instance.
-	fontProgram := GLCanvasFontProgram instance.
-	GL checkForError
+	
+	bitmapOvalProgram := GL getShaderProgram: GLCanvasBitmapOvalProgram.
+	gradientOvalProgram := GL getShaderProgram: GLCanvasGradientOvalProgram.
+	solidOvalProgram := GL getShaderProgram: GLCanvasSolidOvalProgram.
+	
+	bitmapPolygonProgram := GL getShaderProgram: GLCanvasBitmapPolygonProgram.
+	gradientPolygonProgram := GL getShaderProgram: GLCanvasGradientPolygonProgram.
+	solidPolygonProgram := GL getShaderProgram: GLCanvasSolidPolygonProgram.
+	
+	bitmapRectangleProgram := GL getShaderProgram: GLCanvasBitmapRectangleProgram.
+	gradientRectangleProgram := GL getShaderProgram: GLCanvasGradientRectangleProgram.
+	solidRectangleProgram := GL getShaderProgram: GLCanvasSolidRectangleProgram.
+	
+	stencilProgram := GL getShaderProgram: GLCanvasStencilProgram.
+	textureProgram := GL getShaderProgram: GLCanvasTextureProgram.
+	fontProgram := GL getShaderProgram: GLCanvasFontProgram.
+	GL checkForError.
 ]
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
-GLSharedCanvasResources >> outlineProgram [
-
-	^ outlineProgram
+GLSharedCanvasResources >> ovalPrograms [
+	
+	^ {#solid -> self solidOvalProgram . #gradient -> self gradientOvalProgram . #bitmap -> self bitmapOvalProgram} asDictionary
 ]
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
-GLSharedCanvasResources >> rectangleProgram [
+GLSharedCanvasResources >> polygonPrograms [
 
-	^ rectangleProgram
+	^ {#solid -> self solidPolygonProgram . #gradient -> self gradientPolygonProgram . #bitmap -> self bitmapPolygonProgram} asDictionary
 ]
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
+}
+GLSharedCanvasResources >> rectanglePrograms [
+	
+	^ {#solid -> self solidRectangleProgram . #gradient -> self gradientRectangleProgram . #bitmap -> self bitmapRectangleProgram} asDictionary
+]
+
+{
+	#category : #accessing,
+	#timestamp : ''
+}
+GLSharedCanvasResources >> solidOvalProgram [
+
+	^ solidOvalProgram
+]
+
+{
+	#category : #accessing,
+	#timestamp : ''
+}
+GLSharedCanvasResources >> solidPolygonProgram [
+
+	^ solidPolygonProgram
+]
+
+{
+	#category : #accessing,
+	#timestamp : ''
+}
+GLSharedCanvasResources >> solidRectangleProgram [
+
+	^ solidRectangleProgram
+]
+
+{
+	#category : #accessing,
+	#timestamp : ''
+}
+GLSharedCanvasResources >> stencilProgram [
+
+	^ stencilProgram
+]
+
+{
+	#category : #accessing,
+	#timestamp : ''
 }
 GLSharedCanvasResources >> textureProgram [
 
@@ -144,25 +246,7 @@ GLSharedCanvasResources >> textureProgram [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
-GLSharedCanvasResources >> vao [
-
-	^ vao
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
-}
-GLSharedCanvasResources >> vao: anObject [
-
-	vao := anObject.
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLSharedCanvasResources >> vbo [
 
@@ -171,7 +255,7 @@ GLSharedCanvasResources >> vbo [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : ''
 }
 GLSharedCanvasResources >> vbo: anObject [
 
