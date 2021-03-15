@@ -1,6 +1,6 @@
 Class {
 	#name : #GLFramebufferStateAccessImp,
-	#superclass : #GLWrapperImp,
+	#superclass : #GLObjectImp,
 	#category : #'OpenGLObjects-Framebuffers',
 	#commentStamp : ''
 }

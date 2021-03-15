@@ -1,6 +1,6 @@
 Class {
 	#name : #GLBufferMappingImp,
-	#superclass : #GLWrapperImp,
+	#superclass : #GLObjectImp,
 	#category : #'OpenGLObjects-Buffers',
 	#commentStamp : ''
 }

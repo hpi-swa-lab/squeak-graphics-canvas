@@ -1,5 +1,5 @@
 Class {
-	#name : #GLWrapperImp,
+	#name : #GLObjectImp,
 	#superclass : #Object,
 	#pools : [
 		'GLConstants'

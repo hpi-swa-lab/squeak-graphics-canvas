@@ -1,6 +1,6 @@
 Class {
 	#name : #GLTextureStateAccessImp,
-	#superclass : #GLWrapperImp,
+	#superclass : #GLObjectImp,
 	#category : #'OpenGLObjects-Textures',
 	#commentStamp : ''
 }
