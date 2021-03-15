@@ -15,12 +15,22 @@ GLTexture class >> allocate: n in: anIntegerArray [
 ]
 
 {
-	#category : #binding,
-	#timestamp : 'stlu 12/3/2020 19:37'
+	#category : #private,
+	#timestamp : 'stlu 3/15/2021 11:46'
 }
-GLTexture class >> bindID: id to: target [
+GLTexture class >> privateSetBinding: aTexture [
 
-	GL bindTexture: target with: id
+	self subclassResponsibility
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 11:40'
+}
+GLTexture class >> unbind [
+
+	GL bindTexture: self target with: GL_NONE.
+	self privateSetBinding: nil
 ]
 
 {
@@ -47,6 +57,16 @@ GLTexture >> baseLevel: anInteger [
 ]
 
 {
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 11:54'
+}
+GLTexture >> bind [
+
+	GL bindTexture: self class target with: id.
+	self class privateSetBinding: self
+]
+
+{
 	#category : #'sampling parameters',
 	#timestamp : 'stlu 1/4/2021 10:13'
 }
@@ -70,6 +90,21 @@ GLTexture >> borderColor: aColor [
 		texture: self
 		setParameter: GL_TEXTURE_BORDER_COLOR
 		toFloatArray: { aColor red . aColor green . aColor blue . aColor alpha } asFloat32Array
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 11:53'
+}
+GLTexture >> boundDuring: aBlock [
+
+	| previous |
+	(previous := self class bound) = self ifTrue: [^ aBlock value].
+	self bind.
+	^ aBlock ensure: [
+		previous
+			ifNil: [self class unbind]
+			ifNotNil: [previous bind]]
 ]
 
 {
@@ -544,6 +579,15 @@ GLTexture >> swizzleRGBA: aWordArray [
 		texture: self
 		setParameter: GL_TEXTURE_SWIZZLE_RGBA
 		toUnsignedIntegerArray: aWordArray
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/15/2021 13:16'
+}
+GLTexture >> target [
+
+	^ self class target
 ]
 
 {

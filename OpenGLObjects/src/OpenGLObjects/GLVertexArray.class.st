@@ -21,20 +21,46 @@ GLVertexArray class >> allocate: n in: anIntegerArray [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 12/3/2020 18:10'
+	#timestamp : 'stlu 3/14/2021 22:12'
 }
-GLVertexArray class >> bindID: anInteger to: target [
+GLVertexArray class >> bound [
 
-	GL bindVertexArray: anInteger
+	^ GLObjectBindings current vertexArray
 ]
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 12/3/2020 18:13'
+	#timestamp : 'stlu 3/14/2021 22:13'
 }
-GLVertexArray class >> target [
+GLVertexArray class >> unbind [
 
-	^ GL_VERTEX_ARRAY
+	GL bindVertexArray: GL_NONE.
+	GLObjectBindings current vertexArray: nil
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/14/2021 22:11'
+}
+GLVertexArray >> bind [
+
+	GL bindVertexArray: id.
+	GLObjectBindings current vertexArray: self
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/14/2021 22:10'
+}
+GLVertexArray >> boundDuring: aBlock [
+
+	| previous |
+	(previous := self class bound) = self ifTrue: [^ aBlock value].
+	self bind.
+	^ aBlock ensure: [
+		previous
+			ifNil: [self class unbind]
+			ifNotNil: [previous bind]]
 ]
 
 {

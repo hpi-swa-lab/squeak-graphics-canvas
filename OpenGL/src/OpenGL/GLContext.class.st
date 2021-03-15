@@ -3,7 +3,7 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'library',
-		'bindings',
+		'objectBindings',
 		'objectStore',
 		'wrapperImplementations',
 		'programs',
@@ -85,15 +85,6 @@ GLContext >> api: aSymbol [
 ]
 
 {
-	#category : #accessing,
-	#timestamp : 'stlu 11/30/2020 17:53'
-}
-GLContext >> bindings [
-
-	^ bindings
-]
-
-{
 	#category : #activation,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
@@ -132,15 +123,6 @@ GLContext >> extensions [
 ]
 
 {
-	#category : #bindings,
-	#timestamp : 'stlu 12/3/2020 19:16'
-}
-GLContext >> forgetBinding: bindingEnum [
-
-	bindings at: bindingEnum put: nil
-]
-
-{
 	#category : #'initialize-release',
 	#timestamp : 'stlu 12/13/2020 15:36'
 }
@@ -157,11 +139,12 @@ GLContext >> initialize [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 12/3/2020 19:27'
+	#timestamp : 'stlu 3/14/2021 18:25'
 }
 GLContext >> initializeBindings [
 
-	bindings := Dictionary new.
+	objectBindings := GLObjectBindings new.
+	self flag: #todo. "do not depend on library class hierarchy"
 	library makeCurrentDuring: [
 		GLObject allSubclassesDo: [:cls |
 			(cls theMetaClass includesSelector: #initializeBindings) ifTrue: [
@@ -226,6 +209,15 @@ GLContext >> library [
 
 {
 	#category : #accessing,
+	#timestamp : 'stlu 3/14/2021 18:25'
+}
+GLContext >> objectBindings [
+
+	^ objectBindings
+]
+
+{
+	#category : #accessing,
 	#timestamp : 'stlu 11/9/2020 14:51'
 }
 GLContext >> profile [
@@ -240,33 +232,6 @@ GLContext >> profile [
 GLContext >> programs [
 
 	^ programs
-]
-
-{
-	#category : #bindings,
-	#timestamp : 'stlu 12/3/2020 19:17'
-}
-GLContext >> recallBinding: bindingEnum [
-
-	^ bindings at: bindingEnum ifAbsentPut: [nil]
-]
-
-{
-	#category : #'object store',
-	#timestamp : 'stlu 12/3/2020 18:49'
-}
-GLContext >> registerObject: glObject [
-
-	objectStore add: glObject
-]
-
-{
-	#category : #bindings,
-	#timestamp : 'stlu 12/3/2020 19:17'
-}
-GLContext >> rememberBinding: bindingEnum as: anObject [
-
-	^ bindings at: bindingEnum put: anObject
 ]
 
 {

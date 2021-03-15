@@ -29,21 +29,12 @@ GLProgram class >> allocate: n in: anIntegerArray [
 ]
 
 {
-	#category : #activation,
-	#timestamp : 'stlu 12/3/2020 19:35'
+	#category : #binding,
+	#timestamp : 'stlu 3/14/2021 19:50'
 }
-GLProgram class >> bindID: id to: target [
+GLProgram class >> bound [
 
-	GL useProgram: id
-]
-
-{
-	#category : #activation,
-	#timestamp : 'stlu 12/3/2020 19:03'
-}
-GLProgram class >> current [
-
-	^ self bound
+	^ GLObjectBindings current program
 ]
 
 {
@@ -68,12 +59,13 @@ GLProgram class >> target [
 ]
 
 {
-	#category : #activation,
-	#timestamp : 'stlu 12/3/2020 19:05'
+	#category : #binding,
+	#timestamp : 'stlu 3/14/2021 22:02'
 }
-GLProgram class >> useID: id [
+GLProgram class >> unbind [
 
-	self bindID: id
+	GL useProgram: GL_NONE.
+	GLObjectBindings current program: nil
 ]
 
 {
@@ -151,6 +143,31 @@ GLProgram >> attachShaders: aCollection [
 ]
 
 {
+	#category : #binding,
+	#timestamp : 'stlu 3/14/2021 19:59'
+}
+GLProgram >> bind [
+
+	GL useProgram: id.
+	GLObjectBindings current program: self
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/14/2021 22:07'
+}
+GLProgram >> boundDuring: aBlock [
+
+	| previous |
+	(previous := self class bound) = self ifTrue: [^ aBlock value].
+	self bind.
+	^ aBlock ensure: [
+		previous
+			ifNil: [self class unbind]
+			ifNotNil: [previous bind]]
+]
+
+{
 	#category : #actions,
 	#timestamp : 'stlu 12/8/2020 16:30'
 }
@@ -168,15 +185,6 @@ GLProgram >> detachShaders [
 
 	shaders asArray "don't change collection while iterating" do: [:shader |
 		self detachShader: shader]
-]
-
-{
-	#category : #activation,
-	#timestamp : 'stlu 12/3/2020 19:33'
-}
-GLProgram >> disuse [
-
-	self unbind
 ]
 
 {
@@ -373,20 +381,12 @@ GLProgram >> update: anAspect with: anObject [
 ]
 
 {
-	#category : #activation,
-	#timestamp : 'stlu 12/3/2020 19:33'
-}
-GLProgram >> use [
-
-	self bind
-]
-
-{
-	#category : #activation,
-	#timestamp : 'stlu 12/3/2020 19:33'
+	#category : #binding,
+	#timestamp : 'stlu 3/14/2021 19:33'
 }
 GLProgram >> useDuring: aBlock [
 
+	self flag: #todo. "deprecate"
 	self boundDuring: aBlock
 ]
 

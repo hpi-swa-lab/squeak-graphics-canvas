@@ -21,11 +21,11 @@ GLBuffer class >> allocate: n in: anIntegerArray [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 12/3/2020 17:45'
+	#timestamp : 'stlu 3/15/2021 13:06'
 }
-GLBuffer class >> bindID: anInteger to: target [
+GLBuffer class >> boundTo: targetEnum [
 
-	GL bindBuffer: target with: anInteger
+	^ GLObjectBindings current dictionary at: targetEnum ifAbsentPut: [nil]
 ]
 
 {
@@ -35,6 +35,63 @@ GLBuffer class >> bindID: anInteger to: target [
 GLBuffer class >> defaultTarget [
 
 	^ GL_ARRAY_BUFFER
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 13:12'
+}
+GLBuffer class >> unbind: targetEnum [
+
+	GL bindBuffer: targetEnum with: GL_NONE.
+	GLObjectBindings current dictionary at: targetEnum put: nil
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 13:01'
+}
+GLBuffer >> bind [
+
+	self bindTo: target
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 13:11'
+}
+GLBuffer >> bindTo: targetEnum [
+
+	self flag: #todo. "dictionary -> inst var"
+	self flag: #todo. "bindTo* vs. bindAs*"
+	self flag: #todo. "bind* vs. bind*Buffer"
+	GL bindBuffer: targetEnum with: id.
+	GLObjectBindings current dictionary at: targetEnum put: self
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 13:02'
+}
+GLBuffer >> boundDuring: aBlock [
+
+	^ self boundTo: target during: aBlock
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 13:02'
+}
+GLBuffer >> boundTo: targetEnum during: aBlock [
+
+	| previous |
+	previous := self class boundTo: targetEnum.
+	previous = self ifTrue: [^ aBlock value].
+	self bindTo: targetEnum.
+	^ aBlock ensure: [
+		previous
+			ifNil: [self class unbind: targetEnum]
+			ifNotNil: [previous bindTo: targetEnum]]
 ]
 
 {
@@ -89,27 +146,6 @@ GLBuffer >> data: aRawBitsArray size: byteSize offset: byteOffset [
 GLBuffer >> delete [
 
 	GL deleteBuffers: 1 with: (IntegerArray with: id)
-]
-
-{
-	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 16:24'
-}
-GLBuffer >> draw: aModeEnum [
-
-	self flag: #todo. "HACKIDY HACK HACK Oh god no..."
-	self draw: aModeEnum from: 0 count: 4
-]
-
-{
-	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 22:53'
-}
-GLBuffer >> draw: aModeEnum from: startIndex count: count [
-
-	self flag: #todo. "There is no reason to have this in GLBuffer"
-	self boundDuring: [
-		GL drawArrays: aModeEnum with: startIndex with: count]
 ]
 
 {
@@ -328,6 +364,15 @@ GLBuffer >> targetTransformFeedbackBuffer [
 GLBuffer >> targetUniformBuffer [
 
 	target := GL_UNIFORM_BUFFER
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 13:02'
+}
+GLBuffer >> unbind [
+
+	self class unbind: target
 ]
 
 {

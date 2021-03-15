@@ -137,7 +137,7 @@ LOGLBreakoutPostProcessor >> extent: anObject [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 1/9/2021 14:53'
+	#timestamp : 'stlu 3/15/2021 13:16'
 }
 LOGLBreakoutPostProcessor >> initialize [
 
@@ -149,14 +149,14 @@ LOGLBreakoutPostProcessor >> initialize [
 	texture := GL2DTexture create.
 	msfbo := GLFrameBuffer create.
 	fbo := GLFrameBuffer create.
-	rbo := GLRenderbuffer create.
+	rbo := GLRenderBuffer create.
 	
 	msfbo bind.
 	rbo bind.
 	
 	rbo initializeStorage: extent format: GL RGB samples: 4.
 	msfbo attachRenderbuffer: rbo to: GL COLOR_ATTACHMENT0.
-	msfbo checkCompletion.
+	msfbo checkCompletionStatus.
 	
 	fbo bind.
 	texture boundDuring: [
@@ -176,7 +176,7 @@ LOGLBreakoutPostProcessor >> initialize [
 			wrapS: GL REPEAT;
 			wrapT: GL REPEAT].
 	fbo attach2DTexture: texture to: GL COLOR_ATTACHMENT0.
-	fbo checkCompletion.
+	fbo checkCompletionStatus.
 	
 	fbo unbind.
 	

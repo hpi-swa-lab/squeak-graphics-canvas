@@ -94,7 +94,7 @@ SLDemo >> render [
 
 {
 	#category : #running,
-	#timestamp : 'zagto 2/28/2021 19:29'
+	#timestamp : 'stlu 3/14/2021 19:33'
 }
 SLDemo >> setUp [
 
@@ -102,7 +102,7 @@ SLDemo >> setUp [
 	camera := LOGLCamera position: 0.0 @ 0.0 @ 3.0.
 
 	program := SLDemoProgram instance.
-	program use.
+	program bind.
 	
 	vao := GLVertexArray create.
 	vao bind.

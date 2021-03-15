@@ -15,7 +15,6 @@ Class {
 	#name : #GLFrameBuffer,
 	#superclass : #GLObject,
 	#instVars : [
-		'target',
 		'colorAttachment0'
 	],
 	#classVars : [
@@ -36,11 +35,20 @@ GLFrameBuffer class >> allocate: n in: anIntegerArray [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 12/3/2020 17:44'
+	#timestamp : 'stlu 3/14/2021 18:37'
 }
-GLFrameBuffer class >> bindID: anInteger to: target [
+GLFrameBuffer class >> boundToDraw [
 
-	GL bindFramebuffer: target with: anInteger
+	^ GLObjectBindings current drawFrameBuffer
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/14/2021 18:36'
+}
+GLFrameBuffer class >> boundToRead [
+
+	^ GLObjectBindings current readFrameBuffer
 ]
 
 {
@@ -81,11 +89,38 @@ GLFrameBuffer class >> initialize [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 12/3/2020 19:29'
+	#timestamp : 'stlu 3/15/2021 12:43'
 }
-GLFrameBuffer class >> unbind: target [
+GLFrameBuffer class >> unbind [
 
-	self display bindTo: target
+	self unbindFromReadAndDraw
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 12:42'
+}
+GLFrameBuffer class >> unbindFromDraw [
+
+	self display bindToDraw
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 12:42'
+}
+GLFrameBuffer class >> unbindFromRead [
+
+	self display bindToRead
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 12:42'
+}
+GLFrameBuffer class >> unbindFromReadAndDraw [
+
+	self display bindToReadAndDraw
 ]
 
 {
@@ -155,25 +190,43 @@ GLFrameBuffer >> attachRenderbuffer: aRenderbuffer to: attachmentEnum [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 12/3/2020 18:21'
+	#timestamp : 'stlu 3/15/2021 12:13'
 }
-GLFrameBuffer >> bindTo: targetEnum [
+GLFrameBuffer >> bind [
 
-	target = GL_FRAMEBUFFER
-		ifTrue: [	self bindToReadAndDraw]
-		ifFalse: [super bindTo: targetEnum]
+	self bindToReadAndDraw
 ]
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 12/3/2020 19:18'
+	#timestamp : 'stlu 3/15/2021 12:13'
+}
+GLFrameBuffer >> bindToDraw [
+
+	GL bindFramebuffer: GL_DRAW_FRAMEBUFFER with: id.
+	GLObjectBindings current drawFrameBuffer: self
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 12:12'
+}
+GLFrameBuffer >> bindToRead [
+
+	GL bindFramebuffer: GL_READ_FRAMEBUFFER with: id.
+	GLObjectBindings current readFrameBuffer: self
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 13:14'
 }
 GLFrameBuffer >> bindToReadAndDraw [
 
-	self class bindID: id to: GL_FRAMEBUFFER.
-	GL
-		rememberBinding: GL_DRAW_FRAMEBUFFER as: self;
-		rememberBinding: GL_READ_FRAMEBUFFER as: self
+	GL bindFramebuffer: GL_DRAW_FRAMEBUFFER with: id.
+	GLObjectBindings current
+		drawFrameBuffer: self;
+		readFrameBuffer: self
 ]
 
 {
@@ -207,54 +260,177 @@ GLFrameBuffer >> blit: bufferMask into: otherFramebuffer from: readBounds to: dr
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 12/3/2020 18:19'
+	#timestamp : 'stlu 3/15/2021 12:14'
 }
-GLFrameBuffer >> boundTo: targetEnum during: aBlock [
+GLFrameBuffer >> boundDuring: aBlock [
 
-	^ targetEnum = GL_FRAMEBUFFER
-		ifTrue: [self boundToReadAndDrawDuring: aBlock]
-		ifFalse: [super boundTo: targetEnum during: aBlock]
+	self boundToReadAndDrawDuring: aBlock
 ]
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 1/9/2021 12:36'
+	#timestamp : 'stlu 3/15/2021 12:08'
+}
+GLFrameBuffer >> boundToDrawDuring: aBlock [
+
+	| previous |
+	self flag: #todo. "fast path does not restore binding on block exit"
+	(previous := self class boundToDraw) = self ifTrue: [^ aBlock value].
+	self bindToDraw.
+	^ aBlock ensure: [
+		previous
+			ifNil: [self class unbindDraw]
+			ifNotNil: [previous bindToDraw]]
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 12:10'
 }
 GLFrameBuffer >> boundToReadAndDrawDuring: aBlock [
 
 	| previousRead previousDraw |
-	previousRead := self class boundTo: GL_READ_FRAMEBUFFER.
-	previousDraw := self class boundTo: GL_DRAW_FRAMEBUFFER.
+	previousRead := self class boundToRead.
+	previousDraw := self class boundToDraw.
 	(self = previousRead and: [self = previousDraw]) ifTrue: [^ aBlock value].
-	self bindTo: GL_FRAMEBUFFER.
+	self bindToReadAndDraw.
 	^ aBlock ensure: [
 		previousRead = previousDraw
 			ifTrue: [
-				previousRead bindTo: GL_FRAMEBUFFER]
+				previousRead bindToReadAndDraw]
 			ifFalse: [
-				previousRead bindTo: GL_READ_FRAMEBUFFER.
-				previousDraw bindTo: GL_DRAW_FRAMEBUFFER]]
+				previousRead bindToRead.
+				previousDraw bindToDraw]]
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 12:02'
+}
+GLFrameBuffer >> boundToReadDuring: aBlock [
+
+	| previous |
+	(previous := self class boundToRead) = self ifTrue: [^ aBlock value].
+	self bindToRead.
+	^ aBlock ensure: [
+		previous
+			ifNil: [self class unbindRead]
+			ifNotNil: [previous bindToRead]]
 ]
 
 {
 	#category : #completion,
-	#timestamp : 'stlu 1/9/2021 13:29'
+	#timestamp : 'stlu 3/15/2021 12:30'
 }
-GLFrameBuffer >> checkCompletion [
+GLFrameBuffer >> checkCompletionStatus [
 
-	self checkCompletion: target
+	self checkCompletionStatusForRead.
+	self checkCompletionStatusForDraw.
 ]
 
 {
 	#category : #completion,
-	#timestamp : 'stlu 1/9/2021 13:47'
+	#timestamp : 'stlu 3/15/2021 12:31'
 }
-GLFrameBuffer >> checkCompletion: target [
+GLFrameBuffer >> checkCompletionStatusFor: targetEnum [
 
 	| status |
-	status := self completionStatus: target.
+	status := self completionStatusFor: targetEnum.
 	status ~= GL_FRAMEBUFFER_COMPLETE ifTrue: [
 		self error: (CompletionStatusDescriptions at: status)]
+]
+
+{
+	#category : #completion,
+	#timestamp : 'stlu 3/15/2021 12:31'
+}
+GLFrameBuffer >> checkCompletionStatusForDraw [
+
+	self checkCompletionStatusFor: GL_DRAW_FRAMEBUFFER
+]
+
+{
+	#category : #completion,
+	#timestamp : 'stlu 3/15/2021 12:31'
+}
+GLFrameBuffer >> checkCompletionStatusForRead [
+
+	self checkCompletionStatusFor: GL_READ_FRAMEBUFFER
+]
+
+{
+	#category : #clearing,
+	#timestamp : 'stlu 3/11/2021 14:23'
+}
+GLFrameBuffer >> clearBuffers: bufferBitMask [
+
+	self stateAccessImp framebuffer: self clearBuffers: bufferBitMask
+]
+
+{
+	#category : #clearing,
+	#timestamp : 'stlu 3/11/2021 14:07'
+}
+GLFrameBuffer >> clearColorBuffer: i to: aColor [
+
+	self flag: #todo. "respect actual type of color buffer"
+	self clearColorBuffer: i toFloat32Vector4: aColor asVectorColor
+]
+
+{
+	#category : #clearing,
+	#timestamp : 'stlu 3/11/2021 14:25'
+}
+GLFrameBuffer >> clearColorBuffer: i toFloat32Vector4: aFloat32Array [
+
+	self stateAccessImp
+		framebuffer: self
+		clearColorBuffer: GL_DRAW_BUFFER0 + i
+		toFloat32Vector4: aFloat32Array
+]
+
+{
+	#category : #clearing,
+	#timestamp : 'stlu 3/11/2021 14:25'
+}
+GLFrameBuffer >> clearColorBuffer: i toIntegerVector4: anIntegerArray [
+
+	self stateAccessImp
+		framebuffer: self
+		clearColorBuffer: GL_DRAW_BUFFER0 + i
+		toFloat32Vector4: anIntegerArray
+]
+
+{
+	#category : #clearing,
+	#timestamp : 'stlu 3/11/2021 14:25'
+}
+GLFrameBuffer >> clearColorBuffer: i toUnsignedIntegerVector4: aWordArray [
+
+	self stateAccessImp
+		framebuffer: self
+		clearColorBuffer: GL_DRAW_BUFFER0 + i
+		toFloat32Vector4: aWordArray
+]
+
+{
+	#category : #clearing,
+	#timestamp : 'stlu 3/11/2021 14:25'
+}
+GLFrameBuffer >> clearDepthBufferTo: aFloat [
+
+	self flag: #todo. "does FFI treat aFloat like a 1 element array?"
+	self stateAccessImp framebuffer: self clearDepthBufferTo: aFloat
+]
+
+{
+	#category : #clearing,
+	#timestamp : 'stlu 3/11/2021 14:26'
+}
+GLFrameBuffer >> clearStencilBufferTo: anInteger [
+
+	self flag: #todo. "does FFI treat anInteger like a 1 element array?"
+	self stateAccessImp framebuffer: self clearStencilBufferTo: anInteger
 ]
 
 {
@@ -268,22 +444,13 @@ GLFrameBuffer >> colorAttachment0 [
 
 {
 	#category : #completion,
-	#timestamp : 'stlu 1/9/2021 13:29'
+	#timestamp : 'stlu 3/15/2021 13:15'
 }
-GLFrameBuffer >> completionStatus [
-
-	^ self completionStatus: target
-]
-
-{
-	#category : #completion,
-	#timestamp : 'stlu 1/9/2021 13:56'
-}
-GLFrameBuffer >> completionStatus: targetEnum [
+GLFrameBuffer >> completionStatusFor: targetEnum [
 
 	^ self stateAccessImp
-		framebuffer: self
-		completionStatus: targetEnum
+		frameBuffer: self
+		completionStatusFor: targetEnum
 ]
 
 {
@@ -293,16 +460,6 @@ GLFrameBuffer >> completionStatus: targetEnum [
 GLFrameBuffer >> delete [
 	
 	GL deleteFramebuffers: 1 with: (IntegerArray with: id).
-]
-
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 12/3/2020 16:13'
-}
-GLFrameBuffer >> initialize [
-
-	super initialize.
-	target := self class defaultTarget
 ]
 
 {
@@ -333,24 +490,6 @@ GLFrameBuffer >> stateAccessImp [
 ]
 
 {
-	#category : #accessing,
-	#timestamp : 'stlu 12/3/2020 14:55'
-}
-GLFrameBuffer >> target [
-
-	^ target
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 12/3/2020 14:55'
-}
-GLFrameBuffer >> target: anObject [
-
-	target := anObject
-]
-
-{
 	#category : #attachments,
 	#timestamp : 'stlu 10/26/2020 12:26'
 }
@@ -374,4 +513,41 @@ GLFrameBuffer >> texture2D: aTexture attachment: anAttachment [
 			with: aTexture id
 			with: 0.
 		GL checkForError]
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 12:35'
+}
+GLFrameBuffer >> unbind [
+
+	self unbindFromReadAndDraw
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 12:44'
+}
+GLFrameBuffer >> unbindFromDraw [
+
+	self flag: #todo. "should the instance-side methods only unbind when the bound object = self?"
+	self class unbindFromDraw
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 12:34'
+}
+GLFrameBuffer >> unbindFromRead [
+
+	self class unbindFromRead
+]
+
+{
+	#category : #binding,
+	#timestamp : 'stlu 3/15/2021 12:35'
+}
+GLFrameBuffer >> unbindFromReadAndDraw [
+
+	self class unbindFromReadAndDraw
 ]
