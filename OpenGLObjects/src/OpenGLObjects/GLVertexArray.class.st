@@ -73,6 +73,113 @@ GLVertexArray >> delete [
 ]
 
 {
+	#category : #'drawing - arrays',
+	#timestamp : 'stlu 3/14/2021 16:58'
+}
+GLVertexArray >> drawArrays: primitiveTypeEnum command: aDrawArraysIndirectCommand [
+
+	self boundDuring: [
+		GL
+			drawArraysIndirect: primitiveTypeEnum
+			with: aDrawArraysIndirectCommand]
+]
+
+{
+	#category : #'drawing - arrays',
+	#timestamp : 'stlu 3/14/2021 17:13'
+}
+GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices [
+
+	self
+		drawArrays: primitiveTypeEnum
+		count: numVertices
+		startingAt: 0
+]
+
+{
+	#category : #'drawing - arrays',
+	#timestamp : 'stlu 3/14/2021 17:13'
+}
+GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices numInstances: numInstances [
+
+	self
+		drawArrays: primitiveTypeEnum
+		count: numVertices
+		startingAt: 0
+		numInstances: numInstances
+]
+
+{
+	#category : #'drawing - arrays',
+	#timestamp : 'stlu 3/14/2021 17:12'
+}
+GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices numInstances: numInstances baseInstance: baseInstance [
+
+	self
+		drawArrays: primitiveTypeEnum
+		count: numVertices
+		startingAt: 0
+		numInstances: numInstances
+		baseInstance: baseInstance
+]
+
+{
+	#category : #'drawing - arrays',
+	#timestamp : 'stlu 3/14/2021 17:01'
+}
+GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices startingAt: startingIndex [
+
+	self boundDuring: [
+		GL
+			drawArrays: primitiveTypeEnum
+			with: startingIndex
+			with: numVertices]
+]
+
+{
+	#category : #'drawing - arrays',
+	#timestamp : 'stlu 3/14/2021 17:02'
+}
+GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices startingAt: startingIndex numInstances: numInstances [
+
+	self boundDuring: [
+		GL
+			drawArraysInstanced: primitiveTypeEnum
+			with: startingIndex
+			with: numVertices
+			with: numInstances]
+]
+
+{
+	#category : #'drawing - arrays',
+	#timestamp : 'stlu 3/14/2021 17:02'
+}
+GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices startingAt: startingIndex numInstances: numInstances baseInstance: baseInstance [
+
+	self boundDuring: [
+		GL
+			drawArraysInstancedBaseInstance: primitiveTypeEnum
+			with: startingIndex
+			with: numVertices
+			with: numInstances
+			with: baseInstance]
+]
+
+{
+	#category : #'drawing - indexed',
+	#timestamp : 'stlu 3/14/2021 17:59'
+}
+GLVertexArray >> drawElements: primitiveTypeEnum count: numVertices startingAt: elementBufferOffset type: indexTypeEnum [
+	"indexTypeEnum must be one of UNSIGNED_BYTE, UNSIGNED_SHORT, or UNSIGNED_INT"
+	self boundDuring: [
+		GL
+			drawElements: primitiveTypeEnum
+			with: numVertices
+			with: indexTypeEnum
+			with: (ExternalAddress fromInteger: elementBufferOffset)]
+]
+
+{
 	#category : #testing,
 	#timestamp : 'stlu 12/14/2020 12:13'
 }
@@ -88,4 +195,33 @@ GLVertexArray >> isAllocated [
 GLVertexArray >> isVertexArray [
 
 	^ true
+]
+
+{
+	#category : #'drawing - arrays',
+	#timestamp : 'stlu 3/15/2021 16:09'
+}
+GLVertexArray >> multiDrawArrays: primitiveTypeEnum counts: rawBitsCountsArray startIndices: rawBitsStartsArray drawCount: drawCount [
+
+	self boundDuring: [
+		GL
+			multiDrawArrays: primitiveTypeEnum
+			with: rawBitsStartsArray
+			with: rawBitsCountsArray
+			with: drawCount]
+]
+
+{
+	#category : #'drawing - arrays',
+	#timestamp : 'stlu 3/15/2021 16:10'
+}
+GLVertexArray >> multiDrawArraysIndirect: primitiveTypeEnum commands: rawBitsArrayOfDrawArraysIndirectCommand drawCount: drawCount stride: byteStride [
+
+	self flag: #todo. "add remaining draw commands"
+	self boundDuring: [
+		GL
+			multiDrawArraysIndirect: primitiveTypeEnum
+			with: rawBitsArrayOfDrawArraysIndirectCommand
+			with: drawCount
+			with: byteStride]
 ]

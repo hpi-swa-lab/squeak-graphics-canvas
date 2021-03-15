@@ -10,7 +10,7 @@ Class {
 
 {
 	#category : #running,
-	#timestamp : 'stlu 1/29/2021 17:37'
+	#timestamp : 'stlu 3/15/2021 16:20'
 }
 LOGLCoordinateSystemsDepth >> draw [
 
@@ -22,7 +22,7 @@ LOGLCoordinateSystemsDepth >> draw [
 		model: model;
 		view: self viewMatrix;
 		projection: self projectionMatrix.
-	GL drawArrays: GL_TRIANGLES with: 0 with: 36
+	vao drawArrays: GL_TRIANGLES count: 36
 ]
 
 {

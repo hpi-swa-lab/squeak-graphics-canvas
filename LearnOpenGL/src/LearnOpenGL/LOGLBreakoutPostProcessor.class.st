@@ -234,7 +234,7 @@ LOGLBreakoutPostProcessor >> offsets [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 1/8/2021 19:20'
+	#timestamp : 'stlu 3/15/2021 16:19'
 }
 LOGLBreakoutPostProcessor >> render: secs [
 
@@ -246,8 +246,7 @@ LOGLBreakoutPostProcessor >> render: secs [
 			shake: shake.
 		GL activeTexture: GL TEXTURE0.
 		texture boundDuring: [
-			vao boundDuring: [
-				GL drawArrays: GL TRIANGLES with: 0 with: 6]]]
+			vao drawArrays: GL TRIANGLES count: 6]]
 ]
 
 {

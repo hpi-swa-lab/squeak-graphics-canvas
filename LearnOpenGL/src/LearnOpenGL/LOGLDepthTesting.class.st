@@ -106,7 +106,7 @@ LOGLDepthTesting >> planeVertices [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/13/2021 01:58'
+	#timestamp : 'stlu 3/15/2021 16:21'
 }
 LOGLDepthTesting >> render [
 
@@ -122,13 +122,13 @@ LOGLDepthTesting >> render [
 		cubeVAO boundDuring: [
 			cubeTexture bind.
 			program uniforms model: (Matrix4x4 withOffset: -1.0 @ 0.0 @ -1.0).
-			GL drawArrays: GL_TRIANGLES with: 0 with: 36.
+			cubeVAO drawArrays: GL_TRIANGLES count: 36.
 			program uniforms model: (Matrix4x4 withOffset: 2.0 @ 0.0 @ 0.0).
-			GL drawArrays: GL_TRIANGLES with: 0 with: 36].
+			cubeVAO drawArrays: GL_TRIANGLES count: 36].
 		planeVAO boundDuring: [
 			planeTexture bind.
 			program uniforms model: Matrix4x4 identity.
-			GL drawArrays: GL_TRIANGLES with: 0 with: 6]]
+			planeVAO drawArrays: GL_TRIANGLES count: 6]]
 ]
 
 {

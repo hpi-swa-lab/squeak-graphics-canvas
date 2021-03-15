@@ -64,7 +64,7 @@ SLDemo >> cubeData [
 
 {
 	#category : #running,
-	#timestamp : 'zagto 2/28/2021 19:28'
+	#timestamp : 'stlu 3/14/2021 18:01'
 }
 SLDemo >> render [
 
@@ -87,7 +87,7 @@ SLDemo >> render [
 			program uniforms
 				model: model;
 				projection: projection.
-			vbo draw: GL_TRIANGLES from: 0 count: 36]].
+			vao drawArrays: GL_TRIANGLES count: 36]].
 	
 	GL checkForError.
 ]

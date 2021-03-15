@@ -15,11 +15,11 @@ Class {
 
 {
 	#category : #running,
-	#timestamp : 'stlu 12/22/2020 14:54'
+	#timestamp : 'stlu 3/15/2021 16:22'
 }
 LOGLHelloTriangle >> draw [
 
-	GL drawArrays: GL_TRIANGLES with: 0 with: 3
+	vao drawArrays: GL_TRIANGLES count: 3
 ]
 
 {

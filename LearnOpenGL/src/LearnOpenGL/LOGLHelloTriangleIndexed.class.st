@@ -13,15 +13,15 @@ Class {
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/14/2021 16:38'
+	#timestamp : 'stlu 3/15/2021 16:27'
 }
 LOGLHelloTriangleIndexed >> draw [
 
-	GL
+	vao
 		drawElements: GL_TRIANGLES
-		with: 6
-		with: GL_UNSIGNED_INT
-		with: (ExternalAddress fromInteger: 0)
+		count: 6
+		startingAt: 0
+		type: GL_UNSIGNED_INT
 ]
 
 {

@@ -15,15 +15,6 @@ Class {
 }
 
 {
-	#category : #running,
-	#timestamp : 'stlu 3/12/2021 20:08'
-}
-LOGLInstancing >> draw [
-
-	GL drawArraysInstanced: GL_TRIANGLES with: 0 with: 6 with: 100
-]
-
-{
 	#category : #shaders,
 	#timestamp : 'stlu 3/12/2021 19:44'
 }
@@ -59,7 +50,7 @@ LOGLInstancing >> quadVertices [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/12/2021 20:09'
+	#timestamp : 'stlu 3/13/2021 12:53'
 }
 LOGLInstancing >> render [
 
@@ -68,7 +59,7 @@ LOGLInstancing >> render [
 	
 	vao boundDuring: [
 		program useDuring: [
-			self draw]]
+			GL drawArraysInstanced: GL_TRIANGLES with: 0 with: 6 with: 100]]
 ]
 
 {
