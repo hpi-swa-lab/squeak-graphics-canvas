@@ -181,12 +181,12 @@ GLContext >> initializeLibrary [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 12/13/2020 15:37'
+	#timestamp : 'stlu 3/17/2021 12:33'
 }
 GLContext >> initializeWrapperImplementations [
 
 	self flag: #todo. "always adheres to the context's library by default"
-	wrapperImplementations := GLWrapperImplementations forLibrary: library
+	wrapperImplementations := GLObjectImps forLibrary: library
 ]
 
 {
@@ -214,6 +214,15 @@ GLContext >> library [
 GLContext >> objectBindings [
 
 	^ objectBindings
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/17/2021 23:05'
+}
+GLContext >> objectImps [
+
+	^ wrapperImplementations
 ]
 
 {

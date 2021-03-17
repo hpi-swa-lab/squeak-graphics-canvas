@@ -2,14 +2,15 @@ Extension { #name : #GLLibrary }
 
 {
 	#category : #'*OpenGLObjects-implementations',
-	#timestamp : 'stlu 3/15/2021 16:13'
+	#timestamp : 'stlu 3/17/2021 12:35'
 }
 GLLibrary >> initializeWrapperImplementations: implementations [
 
 	self flag: #todo. "move into correct apis and versions"
 	self flag: #todo. "rename away from 'wrapper'"
 	implementations programInterfaceQuery: GLDirectProgramInterfaceQueryImp new.
-	implementations uniformSetter: GLUniformDirectStateAccessImp new
+	implementations uniformSetter: GLUniformDirectStateAccessImp new.
+	implementations vertexArrayImp: GLVertexArrayDirectStateAccessImp new.
 ]
 
 {

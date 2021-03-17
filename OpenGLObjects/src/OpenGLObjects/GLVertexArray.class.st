@@ -2,11 +2,11 @@ Class {
 	#name : #GLVertexArray,
 	#superclass : #GLObject,
 	#instVars : [
-		'vertexAttributeBindings',
 		'vertexBufferBindings',
-		'elementBuffer'
+		'elementArrayBuffer',
+		'vertexAttributes'
 	],
-	#category : #'OpenGLObjects-VertexAttributes',
+	#category : #'OpenGLObjects-VertexArrays',
 	#commentStamp : ''
 }
 
@@ -29,11 +29,52 @@ GLVertexArray class >> bound [
 ]
 
 {
+	#category : #accessing,
+	#timestamp : 'stlu 3/17/2021 11:30'
+}
+GLVertexArray class >> maxNumVertexAttributes [
+
+	self flag: #todo. "GL_MAX_VERTEX_ATTRIBS"
+	^ 16
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/17/2021 11:30'
+}
+GLVertexArray class >> maxNumVertexBufferBindings [
+
+	self flag: #todo. "GL_MAX_VERTEX_ATTRIB_BINDINGS"
+	^ 16
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/17/2021 11:30'
+}
+GLVertexArray class >> maxVertexAttributeOffset [
+
+	self flag: #todo. "GL_MAX_VERTEX_ATTRIB_RELATIVE_OFFSET"
+	^ 2047
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/17/2021 11:30'
+}
+GLVertexArray class >> maxVertexAttributeStride [
+
+	self flag: #todo. "GL_MAX_VERTEX_ATTRIB_STRIDE"
+	^ 2048
+]
+
+{
 	#category : #binding,
-	#timestamp : 'stlu 3/14/2021 22:13'
+	#timestamp : 'stlu 3/16/2021 16:17'
 }
 GLVertexArray class >> unbind [
 
+	self flag: #todo. "compat profile makes 0 the default VAO"
 	GL bindVertexArray: GL_NONE.
 	GLObjectBindings current vertexArray: nil
 ]
@@ -73,7 +114,7 @@ GLVertexArray >> delete [
 ]
 
 {
-	#category : #'drawing - arrays',
+	#category : #rendering,
 	#timestamp : 'stlu 3/14/2021 16:58'
 }
 GLVertexArray >> drawArrays: primitiveTypeEnum command: aDrawArraysIndirectCommand [
@@ -85,7 +126,7 @@ GLVertexArray >> drawArrays: primitiveTypeEnum command: aDrawArraysIndirectComma
 ]
 
 {
-	#category : #'drawing - arrays',
+	#category : #rendering,
 	#timestamp : 'stlu 3/14/2021 17:13'
 }
 GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices [
@@ -97,7 +138,7 @@ GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices [
 ]
 
 {
-	#category : #'drawing - arrays',
+	#category : #rendering,
 	#timestamp : 'stlu 3/14/2021 17:13'
 }
 GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices numInstances: numInstances [
@@ -110,7 +151,7 @@ GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices numInstances: 
 ]
 
 {
-	#category : #'drawing - arrays',
+	#category : #rendering,
 	#timestamp : 'stlu 3/14/2021 17:12'
 }
 GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices numInstances: numInstances baseInstance: baseInstance [
@@ -124,7 +165,7 @@ GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices numInstances: 
 ]
 
 {
-	#category : #'drawing - arrays',
+	#category : #rendering,
 	#timestamp : 'stlu 3/14/2021 17:01'
 }
 GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices startingAt: startingIndex [
@@ -137,7 +178,7 @@ GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices startingAt: st
 ]
 
 {
-	#category : #'drawing - arrays',
+	#category : #rendering,
 	#timestamp : 'stlu 3/14/2021 17:02'
 }
 GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices startingAt: startingIndex numInstances: numInstances [
@@ -151,7 +192,7 @@ GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices startingAt: st
 ]
 
 {
-	#category : #'drawing - arrays',
+	#category : #rendering,
 	#timestamp : 'stlu 3/14/2021 17:02'
 }
 GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices startingAt: startingIndex numInstances: numInstances baseInstance: baseInstance [
@@ -166,7 +207,7 @@ GLVertexArray >> drawArrays: primitiveTypeEnum count: numVertices startingAt: st
 ]
 
 {
-	#category : #'drawing - indexed',
+	#category : #'rendering - indexed',
 	#timestamp : 'stlu 3/14/2021 17:59'
 }
 GLVertexArray >> drawElements: primitiveTypeEnum count: numVertices startingAt: elementBufferOffset type: indexTypeEnum [
@@ -177,6 +218,23 @@ GLVertexArray >> drawElements: primitiveTypeEnum count: numVertices startingAt: 
 			with: numVertices
 			with: indexTypeEnum
 			with: (ExternalAddress fromInteger: elementBufferOffset)]
+]
+
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 3/17/2021 12:30'
+}
+GLVertexArray >> initialize [
+
+	super initialize.
+	
+	vertexAttributes := Array new: self class maxNumVertexAttributes.
+	1 to: vertexAttributes size do: [:i |
+		vertexAttributes at: i put: (GLVertexAttribute vertexArray: self location: i - 1)].
+	
+	vertexBufferBindings := Array new: self class maxNumVertexBufferBindings.
+	1 to: vertexBufferBindings size do: [:i |
+		vertexBufferBindings at: i put: (GLVertexBufferBinding vertexArray: self location: i - 1)]
 ]
 
 {
@@ -198,7 +256,7 @@ GLVertexArray >> isVertexArray [
 ]
 
 {
-	#category : #'drawing - arrays',
+	#category : #rendering,
 	#timestamp : 'stlu 3/15/2021 16:09'
 }
 GLVertexArray >> multiDrawArrays: primitiveTypeEnum counts: rawBitsCountsArray startIndices: rawBitsStartsArray drawCount: drawCount [
@@ -212,7 +270,7 @@ GLVertexArray >> multiDrawArrays: primitiveTypeEnum counts: rawBitsCountsArray s
 ]
 
 {
-	#category : #'drawing - arrays',
+	#category : #rendering,
 	#timestamp : 'stlu 3/15/2021 16:10'
 }
 GLVertexArray >> multiDrawArraysIndirect: primitiveTypeEnum commands: rawBitsArrayOfDrawArraysIndirectCommand drawCount: drawCount stride: byteStride [
@@ -224,4 +282,40 @@ GLVertexArray >> multiDrawArraysIndirect: primitiveTypeEnum commands: rawBitsArr
 			with: rawBitsArrayOfDrawArraysIndirectCommand
 			with: drawCount
 			with: byteStride]
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/17/2021 12:31'
+}
+GLVertexArray >> vertexAttributeAt: location [
+
+	^ vertexAttributes at: location + 1
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/17/2021 12:31'
+}
+GLVertexArray >> vertexAttributes [
+
+	^ vertexAttributes
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/17/2021 11:27'
+}
+GLVertexArray >> vertexBufferBindingAt: location [
+
+	^ vertexBufferBindings at: location + 1
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 3/17/2021 11:27'
+}
+GLVertexArray >> vertexBufferBindings [
+
+	^ vertexBufferBindings
 ]

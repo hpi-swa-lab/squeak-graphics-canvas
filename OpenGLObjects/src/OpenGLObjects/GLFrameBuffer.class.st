@@ -20,7 +20,7 @@ Class {
 	#classVars : [
 		'CompletionStatusDescriptions'
 	],
-	#category : #'OpenGLObjects-Framebuffers',
+	#category : #'OpenGLObjects-FrameBuffers',
 	#commentStamp : 'stlu 11/13/2020 18:20'
 }
 

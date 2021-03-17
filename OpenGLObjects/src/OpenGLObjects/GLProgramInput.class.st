@@ -114,10 +114,11 @@ GLProgramInput >> printOn: aStream [
 
 {
 	#category : #configuration,
-	#timestamp : 'stlu 12/22/2020 14:43'
+	#timestamp : 'stlu 3/17/2021 23:29'
 }
 GLProgramInput >> stride: byteStride offset: byteOffset [
 
+	self flag: #todo. "adjust to new vertex array implementation"
 	self components: type numComponents stride: byteStride offset: byteOffset
 ]
 

@@ -1,7 +1,7 @@
 Class {
 	#name : #GLDisplayFrameBuffer,
 	#superclass : #GLFrameBuffer,
-	#category : #'OpenGLObjects-Framebuffers',
+	#category : #'OpenGLObjects-FrameBuffers',
 	#commentStamp : ''
 }
 

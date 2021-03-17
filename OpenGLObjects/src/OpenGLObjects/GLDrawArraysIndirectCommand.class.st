@@ -1,7 +1,7 @@
 Class {
 	#name : #GLDrawArraysIndirectCommand,
 	#superclass : #ExternalStructure,
-	#category : #'OpenGLObjects-VertexAttributes',
+	#category : #'OpenGLObjects-VertexArrays',
 	#commentStamp : ''
 }
 

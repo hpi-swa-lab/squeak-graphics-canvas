@@ -51,7 +51,7 @@ LOGLHelloTriangle >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 12/22/2020 15:14'
+	#timestamp : 'stlu 3/17/2021 22:57'
 }
 LOGLHelloTriangle >> setUp [
 
@@ -63,12 +63,12 @@ LOGLHelloTriangle >> setUp [
 	vao := GLVertexArray create.
 	
 	vao boundDuring: [
-		vbo bind.
 		vbo usage: GL_STATIC_DRAW data: self vertices.
-	
-		program inputs aPos
-			stride: 4*3
-			offset: 0].
+		(vao vertexBufferBindingAt: 0) buffer: vbo stride: 3 * 4.
+		(vao vertexAttributeAt: program inputs aPos location)
+			enable;
+			formatAsFloat: GL_FLOAT numComponents: 3 offset: 0;
+			associateVertexBufferBindingAt: 0].
 	
 	GL checkForError
 ]

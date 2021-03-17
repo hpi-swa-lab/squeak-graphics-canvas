@@ -1,7 +1,7 @@
 Class {
 	#name : #GLFramebufferDirectStateAccessImp,
 	#superclass : #GLFramebufferStateAccessImp,
-	#category : #'OpenGLObjects-Framebuffers',
+	#category : #'OpenGLObjects-FrameBuffers',
 	#commentStamp : ''
 }
 

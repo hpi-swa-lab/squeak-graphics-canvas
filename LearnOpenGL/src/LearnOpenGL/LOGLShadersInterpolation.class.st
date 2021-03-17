@@ -24,19 +24,24 @@ void main() {
 
 {
 	#category : #running,
-	#timestamp : 'stlu 1/4/2021 04:20'
+	#timestamp : 'stlu 3/17/2021 23:27'
 }
 LOGLShadersInterpolation >> setUp [
 
 	super setUp.
 	
 	vao boundDuring: [
-		program inputs aPos
-			stride: 4*6
-			offset: 0.
-		program inputs aColor
-			stride: 4*6
-			offset: 4*3].
+		(vao vertexBufferBindingAt: 0) buffer: vbo stride: 6 * 4.
+		
+		(vao vertexAttributeAt: program inputs aPos location)
+			enable;
+			formatAsFloat: GL_FLOAT numComponents: 3 offset: 0;
+			associateVertexBufferBindingAt: 0.
+		
+		(vao vertexAttributeAt: program inputs aColor location)
+			enable;
+			formatAsFloat: GL_FLOAT numComponents: 3 offset: 3 * 4;
+			associateVertexBufferBindingAt: 0].
 	
 	GL checkForError
 ]

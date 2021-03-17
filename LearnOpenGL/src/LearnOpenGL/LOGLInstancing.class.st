@@ -64,7 +64,7 @@ LOGLInstancing >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/12/2021 20:09'
+	#timestamp : 'stlu 3/17/2021 23:21'
 }
 LOGLInstancing >> setUp [
 
@@ -81,13 +81,28 @@ LOGLInstancing >> setUp [
 	vao boundDuring: [
 		quadVBO boundDuring: [
 			quadVBO usage: GL_STATIC_DRAW data: self quadVertices.
-			program inputs aPos stride: 4*5 offset: 0.
-			program inputs aColor stride: 4*5 offset: 4*2].
+			(vao vertexBufferBindingAt: 0) buffer: quadVBO stride: 5 * 4.
+			
+			(vao vertexAttributeAt: program inputs aPos location)
+				enable;
+				formatAsFloat: GL_FLOAT numComponents: 2 offset: 0;
+				associateVertexBufferBindingAt: 0.
+			
+			(vao vertexAttributeAt: program inputs aColor location)
+				enable;
+				formatAsFloat: GL_FLOAT numComponents: 3 offset: 2 * 4;
+				associateVertexBufferBindingAt: 0].
+		
 		instanceVBO boundDuring: [
 			instanceVBO usage: GL_STATIC_DRAW data: self translations.
-			program inputs aOffset stride: 4*2 offset: 0.
-			self flag: #todo. "needs new vertexarray object"
-			GL vertexAttribDivisor: program inputs aOffset location with: 1]].
+			(vao vertexBufferBindingAt: 1)
+				buffer: instanceVBO stride: 2 * 4;
+				instanceDivisor: 1.
+			
+			(vao vertexAttributeAt: program inputs aOffset location)
+				enable;
+				formatAsFloat: GL_FLOAT numComponents: 2 offset: 0;
+				associateVertexBufferBindingAt: 1]].
 	
 	GL checkForError
 ]

@@ -6,6 +6,7 @@ Class {
 	#superclass : #LOGL3DTemplate,
 	#instVars : [
 		'program',
+		'vao',
 		'cubeVAO',
 		'planeVAO',
 		'cubeVBO',
@@ -106,7 +107,7 @@ LOGLDepthTesting >> planeVertices [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/15/2021 16:21'
+	#timestamp : 'stlu 3/17/2021 23:50'
 }
 LOGLDepthTesting >> render [
 
@@ -119,21 +120,23 @@ LOGLDepthTesting >> render [
 			view: camera viewMatrix.
 		self flag: #todo. "texture binding points"
 		GL activeTexture: GL_TEXTURE0.
-		cubeVAO boundDuring: [
+		vao boundDuring: [
+			(vao vertexBufferBindingAt: 0) buffer: cubeVBO.
 			cubeTexture bind.
 			program uniforms model: (Matrix4x4 withOffset: -1.0 @ 0.0 @ -1.0).
-			cubeVAO drawArrays: GL_TRIANGLES count: 36.
+			vao drawArrays: GL_TRIANGLES count: 36.
 			program uniforms model: (Matrix4x4 withOffset: 2.0 @ 0.0 @ 0.0).
-			cubeVAO drawArrays: GL_TRIANGLES count: 36].
-		planeVAO boundDuring: [
+			vao drawArrays: GL_TRIANGLES count: 36.
+		
+			(vao vertexBufferBindingAt: 0) buffer: planeVBO.
 			planeTexture bind.
 			program uniforms model: Matrix4x4 identity.
-			planeVAO drawArrays: GL_TRIANGLES count: 6]]
+			vao drawArrays: GL_TRIANGLES count: 6]]
 ]
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/13/2021 01:59'
+	#timestamp : 'stlu 3/17/2021 23:47'
 }
 LOGLDepthTesting >> setUp [
 
@@ -148,25 +151,28 @@ LOGLDepthTesting >> setUp [
 	
 	cubeVBO := GLBuffer create.
 	planeVBO := GLBuffer create.
-	cubeVAO := GLVertexArray create.
-	planeVAO := GLVertexArray create.
+	vao := GLVertexArray create.
 	
-	self flag: #todo. "needs new vertexarray object"
-	cubeVAO boundDuring: [
-		cubeVBO boundDuring: [
-			cubeVBO usage: GL_STATIC_DRAW data: self cubeVertices.
-			program inputs aPos stride: 4*5 offset: 0.
-			program inputs aTexCoords stride: 4*5 offset: 4*3]].
-	
-	planeVAO boundDuring: [
-		planeVBO boundDuring: [
-			planeVBO usage: GL_STATIC_DRAW data: self planeVertices.
-			program inputs aPos stride: 4*5 offset: 0.
-			program inputs aTexCoords stride: 4*5 offset: 4*3]].
+	vao boundDuring: [
+		cubeVBO usage: GL_STATIC_DRAW data: self cubeVertices.
+		planeVBO usage: GL_STATIC_DRAW data: self planeVertices.
+		
+		(vao vertexBufferBindingAt: 0) buffer: cubeVBO stride: 5 * 4.
+		
+		(vao vertexAttributeAt: program inputs aPos location)
+			enable;
+			formatAsFloat: GL_FLOAT numComponents: 3 offset: 0;
+			associateVertexBufferBindingAt: 0.
+		
+		(vao vertexAttributeAt: program inputs aTexCoords location)
+			enable;
+			formatAsFloat: GL_FLOAT numComponents: 2 offset: 3 * 4;
+			associateVertexBufferBindingAt: 0].
 	
 	cubeTexture := GL2DTexture create.
 	planeTexture := GL2DTexture create.
 	
+	self flag: #todo. "avoid long texture initializations?"
 	cubeTexture boundDuring: [
 		cubeTexture
 			wrapS: GL_REPEAT;
