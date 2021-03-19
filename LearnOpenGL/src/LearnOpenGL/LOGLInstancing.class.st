@@ -50,21 +50,23 @@ LOGLInstancing >> quadVertices [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/13/2021 12:53'
+	#timestamp : 'stlu 3/18/2021 11:05'
 }
 LOGLInstancing >> render [
 
 	GL setClearColor: (Color r: 0.1 g: 0.1 b: 0.1 alpha: 0.1).
 	GL clear: (GL_COLOR_BUFFER_BIT bitOr: GL_DEPTH_BUFFER_BIT).
 	
-	vao boundDuring: [
-		program useDuring: [
-			GL drawArraysInstanced: GL_TRIANGLES with: 0 with: 6 with: 100]]
+	program useDuring: [
+		vao
+			drawArrays: GL_TRIANGLES
+			count: 6
+			numInstances: 100]
 ]
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/17/2021 23:21'
+	#timestamp : 'stlu 3/18/2021 10:51'
 }
 LOGLInstancing >> setUp [
 
@@ -79,30 +81,28 @@ LOGLInstancing >> setUp [
 	vao := GLVertexArray create.
 	
 	vao boundDuring: [
-		quadVBO boundDuring: [
-			quadVBO usage: GL_STATIC_DRAW data: self quadVertices.
-			(vao vertexBufferBindingAt: 0) buffer: quadVBO stride: 5 * 4.
-			
-			(vao vertexAttributeAt: program inputs aPos location)
-				enable;
-				formatAsFloat: GL_FLOAT numComponents: 2 offset: 0;
-				associateVertexBufferBindingAt: 0.
-			
-			(vao vertexAttributeAt: program inputs aColor location)
-				enable;
-				formatAsFloat: GL_FLOAT numComponents: 3 offset: 2 * 4;
-				associateVertexBufferBindingAt: 0].
+		quadVBO usage: GL_STATIC_DRAW data: self quadVertices.
+		(vao vertexBufferBindingAt: 0) buffer: quadVBO stride: 5 * 4.
 		
-		instanceVBO boundDuring: [
-			instanceVBO usage: GL_STATIC_DRAW data: self translations.
-			(vao vertexBufferBindingAt: 1)
-				buffer: instanceVBO stride: 2 * 4;
-				instanceDivisor: 1.
-			
-			(vao vertexAttributeAt: program inputs aOffset location)
-				enable;
-				formatAsFloat: GL_FLOAT numComponents: 2 offset: 0;
-				associateVertexBufferBindingAt: 1]].
+		(vao vertexAttributeAt: program inputs aPos location)
+			enable;
+			formatAsFloat: GL_FLOAT numComponents: 2 offset: 0;
+			associateVertexBufferBindingAt: 0.
+		
+		(vao vertexAttributeAt: program inputs aColor location)
+			enable;
+			formatAsFloat: GL_FLOAT numComponents: 3 offset: 2 * 4;
+			associateVertexBufferBindingAt: 0.
+		
+		instanceVBO usage: GL_STATIC_DRAW data: self translations.
+		(vao vertexBufferBindingAt: 1)
+			buffer: instanceVBO stride: 2 * 4;
+			instanceDivisor: 1.
+		
+		(vao vertexAttributeAt: program inputs aOffset location)
+			enable;
+			formatAsFloat: GL_FLOAT numComponents: 2 offset: 0;
+			associateVertexBufferBindingAt: 1].
 	
 	GL checkForError
 ]

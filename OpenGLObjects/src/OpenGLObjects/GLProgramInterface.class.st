@@ -95,11 +95,11 @@ GLProgramInterface >> errorUnknownResourceName: aString [
 
 {
 	#category : #'error handling',
-	#timestamp : 'stlu 1/10/2021 23:21'
+	#timestamp : 'stlu 3/19/2021 14:02'
 }
 GLProgramInterface >> ignoreName: aString [
 
-	nameToVariable
+	^ nameToVariable
 		at: aString
 		put: (GLNullProgramResource
 				program: program
