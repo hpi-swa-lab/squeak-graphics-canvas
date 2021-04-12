@@ -1,6 +1,6 @@
 Class {
-	#name : #KhrEnum,
-	#superclass : #KhrRegistryObject,
+	#name : #GLGenEnum,
+	#superclass : #GLGenRegistryObject,
 	#instVars : [
 		'value',
 		'namespace',
@@ -20,7 +20,7 @@ Class {
 	#category : #helpers,
 	#timestamp : 'stlu 10/31/2020 23:06'
 }
-KhrEnum class >> convertEnumValueString: aString [
+GLGenEnum class >> convertEnumValueString: aString [
 
 	^ (aString beginsWith: '0x')
 		ifTrue: [	Number
@@ -33,7 +33,7 @@ KhrEnum class >> convertEnumValueString: aString [
 	#category : #'instance creation',
 	#timestamp : 'stlu 3/4/2021 11:36'
 }
-KhrEnum class >> fromXMLTag: tag [
+GLGenEnum class >> fromXMLTag: tag [
 
 	^ self new
 		initializeWithXMLTag: tag;
@@ -41,19 +41,10 @@ KhrEnum class >> fromXMLTag: tag [
 ]
 
 {
-	#category : #visiting,
-	#timestamp : 'stlu 12/28/2020 13:03'
-}
-KhrEnum >> acceptVisitor: aVisitor [
-
-	^ aVisitor visitEnum: self
-]
-
-{
 	#category : #accessing,
 	#timestamp : 'stlu 3/4/2021 12:09'
 }
-KhrEnum >> addAlias: aString [
+GLGenEnum >> addAlias: aString [
 
 	aliases add: aString
 ]
@@ -62,7 +53,7 @@ KhrEnum >> addAlias: aString [
 	#category : #accessing,
 	#timestamp : 'stlu 3/5/2021 12:50'
 }
-KhrEnum >> addGroup: aString [
+GLGenEnum >> addGroup: aString [
 
 	groups add: aString
 ]
@@ -71,7 +62,7 @@ KhrEnum >> addGroup: aString [
 	#category : #accessing,
 	#timestamp : 'stlu 3/4/2021 11:40'
 }
-KhrEnum >> aliases [
+GLGenEnum >> aliases [
 
 	^ aliases
 ]
@@ -80,7 +71,7 @@ KhrEnum >> aliases [
 	#category : #accessing,
 	#timestamp : 'stlu 3/4/2021 12:05'
 }
-KhrEnum >> api [
+GLGenEnum >> api [
 
 	^ api
 ]
@@ -89,7 +80,7 @@ KhrEnum >> api [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:19'
 }
-KhrEnum >> groups [
+GLGenEnum >> groups [
 
 	^ groups
 ]
@@ -98,7 +89,7 @@ KhrEnum >> groups [
 	#category : #initialization,
 	#timestamp : 'stlu 3/5/2021 12:47'
 }
-KhrEnum >> initialize [
+GLGenEnum >> initialize [
 
 	super initialize.
 	groups := Set new.
@@ -109,7 +100,7 @@ KhrEnum >> initialize [
 	#category : #initialization,
 	#timestamp : 'stlu 3/5/2021 13:03'
 }
-KhrEnum >> initializeWithXMLTag: tag [
+GLGenEnum >> initializeWithXMLTag: tag [
 
 	name := tag attributeAt: #name.
 	value := self class convertEnumValueString: (tag attributeAt: #value).
@@ -132,7 +123,7 @@ KhrEnum >> initializeWithXMLTag: tag [
 	#category : #testing,
 	#timestamp : 'stlu 3/4/2021 12:13'
 }
-KhrEnum >> isBitmask [
+GLGenEnum >> isBitmask [
 
 	^ type = 'bitmask'
 ]
@@ -141,7 +132,7 @@ KhrEnum >> isBitmask [
 	#category : #testing,
 	#timestamp : 'stlu 12/28/2020 13:52'
 }
-KhrEnum >> isEnum [
+GLGenEnum >> isEnum [
 
 	^ true
 ]
@@ -150,7 +141,7 @@ KhrEnum >> isEnum [
 	#category : #accessing,
 	#timestamp : 'stlu 3/4/2021 12:24'
 }
-KhrEnum >> namespace [
+GLGenEnum >> namespace [
 
 	^ namespace
 ]
@@ -159,7 +150,7 @@ KhrEnum >> namespace [
 	#category : #accessing,
 	#timestamp : 'stlu 3/4/2021 12:24'
 }
-KhrEnum >> namespace: anObject [
+GLGenEnum >> namespace: anObject [
 
 	namespace := anObject
 ]
@@ -168,7 +159,7 @@ KhrEnum >> namespace: anObject [
 	#category : #printing,
 	#timestamp : 'stlu 3/5/2021 13:31'
 }
-KhrEnum >> printOn: aStream [
+GLGenEnum >> printOn: aStream [
 
 	aStream
 		nextPutAll: name;
@@ -180,7 +171,7 @@ KhrEnum >> printOn: aStream [
 	#category : #accessing,
 	#timestamp : 'stlu 3/4/2021 12:27'
 }
-KhrEnum >> suffix [
+GLGenEnum >> suffix [
 
 	^ suffix
 ]
@@ -189,7 +180,7 @@ KhrEnum >> suffix [
 	#category : #accessing,
 	#timestamp : 'stlu 3/4/2021 12:14'
 }
-KhrEnum >> type [
+GLGenEnum >> type [
 
 	^ type
 ]
@@ -198,7 +189,7 @@ KhrEnum >> type [
 	#category : #accessing,
 	#timestamp : 'stlu 3/4/2021 12:14'
 }
-KhrEnum >> type: anObject [
+GLGenEnum >> type: anObject [
 
 	type := anObject
 ]
@@ -207,7 +198,7 @@ KhrEnum >> type: anObject [
 	#category : #accessing,
 	#timestamp : 'stlu 3/4/2021 12:19'
 }
-KhrEnum >> typeSuffix [
+GLGenEnum >> typeSuffix [
 
 	^ typeSuffix
 ]
@@ -216,7 +207,7 @@ KhrEnum >> typeSuffix [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 23:00'
 }
-KhrEnum >> value [
+GLGenEnum >> value [
 
 	^ value
 ]
@@ -225,7 +216,7 @@ KhrEnum >> value [
 	#category : #printing,
 	#timestamp : 'stlu 3/5/2021 13:30'
 }
-KhrEnum >> valueString [
+GLGenEnum >> valueString [
 
 	^ value storeStringBase: (self isBitmask ifTrue: [2] ifFalse: [16])
 ]
@@ -234,7 +225,7 @@ KhrEnum >> valueString [
 	#category : #accessing,
 	#timestamp : 'stlu 3/4/2021 11:40'
 }
-KhrEnum >> vendor [
+GLGenEnum >> vendor [
 
 	^ vendor
 ]
@@ -243,7 +234,7 @@ KhrEnum >> vendor [
 	#category : #accessing,
 	#timestamp : 'stlu 3/4/2021 11:40'
 }
-KhrEnum >> vendor: anObject [
+GLGenEnum >> vendor: anObject [
 
 	vendor := anObject
 ]

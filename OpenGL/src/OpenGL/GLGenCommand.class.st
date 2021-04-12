@@ -1,6 +1,6 @@
 Class {
-	#name : #KhrCommand,
-	#superclass : #KhrRegistryObject,
+	#name : #GLGenCommand,
+	#superclass : #GLGenRegistryObject,
 	#instVars : [
 		'parameters',
 		'returnType',
@@ -12,29 +12,20 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/1/2020 20:13'
+	#timestamp : 'stlu 4/11/2021 13:54'
 }
-KhrCommand class >> registry: registry tag: commandTag [
+GLGenCommand class >> fromXMLTag: tag [
 
 	^ self new
-		registry: registry tag: commandTag;
+		initializeWithXMLTag: tag;
 		yourself
-]
-
-{
-	#category : #visiting,
-	#timestamp : 'stlu 12/28/2020 13:03'
-}
-KhrCommand >> acceptVisitor: aVisitor [
-
-	^ aVisitor visitCommand: self
 ]
 
 {
 	#category : #accessing,
 	#timestamp : 'stlu 11/1/2020 00:23'
 }
-KhrCommand >> addParameter: param [
+GLGenCommand >> addParameter: param [
 
 	parameters add: param
 ]
@@ -43,7 +34,7 @@ KhrCommand >> addParameter: param [
 	#category : #printing,
 	#timestamp : 'stlu 12/28/2020 16:36'
 }
-KhrCommand >> ffiPragma [
+GLGenCommand >> ffiPragma [
 
 	^ String streamContents: [:stream |
 		self printFFIPragmaOn: stream]
@@ -51,19 +42,29 @@ KhrCommand >> ffiPragma [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/1/2020 20:27'
+	#timestamp : 'stlu 4/12/2021 16:58'
 }
-KhrCommand >> initialize [
+GLGenCommand >> initializeWithXMLTag: commandTag [
 
-	super initialize.
-	parameters := OrderedCollection new
+	| protoTag |
+	protoTag := commandTag firstTagNamed: #proto.
+	name := (protoTag firstTagNamed: #name) contentString.
+	returnType := GLGenParameter getType: protoTag.
+	returnGroup := commandTag attributes at: #group ifAbsent: [].
+	
+	parameters := OrderedCollection new.
+	commandTag tagsNamed: #param do: [:paramTag |
+		| param |
+		param := GLGenParameter fromXMLTag: paramTag.
+		param command: self.
+		self addParameter: param].
 ]
 
 {
 	#category : #testing,
 	#timestamp : 'stlu 12/28/2020 13:52'
 }
-KhrCommand >> isCommand [
+GLGenCommand >> isCommand [
 
 	^ true
 ]
@@ -72,7 +73,7 @@ KhrCommand >> isCommand [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:20'
 }
-KhrCommand >> parameters [
+GLGenCommand >> parameters [
 
 	^ parameters
 ]
@@ -81,7 +82,7 @@ KhrCommand >> parameters [
 	#category : #printing,
 	#timestamp : 'stlu 11/2/2020 19:53'
 }
-KhrCommand >> printFFIPragmaOn: aStream [
+GLGenCommand >> printFFIPragmaOn: aStream [
 
 	aStream
 		nextPutAll: '<apicall: ';
@@ -101,7 +102,7 @@ KhrCommand >> printFFIPragmaOn: aStream [
 	#category : #printing,
 	#timestamp : 'stlu 11/1/2020 20:56'
 }
-KhrCommand >> printOn: aStream [
+GLGenCommand >> printOn: aStream [
 
 	aStream
 		nextPutAll: returnType;
@@ -115,27 +116,10 @@ KhrCommand >> printOn: aStream [
 ]
 
 {
-	#category : #initialization,
-	#timestamp : 'stlu 3/3/2021 13:12'
-}
-KhrCommand >> registry: registry tag: commandTag [
-
-	| protoTag |
-	protoTag := commandTag firstTagNamed: #proto.
-	name := (protoTag firstTagNamed: #name) contentString.
-	returnType := KhrParameter getType: protoTag.
-	returnGroup := commandTag attributes at: #group ifAbsent: [].
-	
-	commandTag tagsNamed: #param do: [:paramTag |
-		KhrParameter registry: registry command: self tag: paramTag].
-	registry addCommand: self
-]
-
-{
 	#category : #accessing,
 	#timestamp : 'stlu 3/3/2021 13:11'
 }
-KhrCommand >> returnGroup [
+GLGenCommand >> returnGroup [
 
 	^ returnGroup
 ]
@@ -144,7 +128,7 @@ KhrCommand >> returnGroup [
 	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:20'
 }
-KhrCommand >> returnType [
+GLGenCommand >> returnType [
 
 	^ returnType
 ]

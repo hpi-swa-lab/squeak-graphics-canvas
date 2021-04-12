@@ -5938,11 +5938,10 @@ Class {
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize [
 
-	<generated>
 	self initialize01.
 	self initialize02.
 	self initialize03.
@@ -6007,11 +6006,10 @@ GLConstants class >> initialize [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize01 [
 
-	<generated>
 	GL_MESH_VERTICES_OUT_NV := 38265.
 	GL_DRAW_BUFFER14_NV := 34867.
 	GL_MAX_SHADER_BUFFER_ADDRESS_NV := 36661.
@@ -6116,11 +6114,10 @@ GLConstants class >> initialize01 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize02 [
 
-	<generated>
 	GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x3x3_OES := 37857.
 	GL_MAX_COLOR_ATTACHMENTS := 36063.
 	GL_BLEND_SRC_ALPHA_EXT := 32971.
@@ -6225,11 +6222,10 @@ GLConstants class >> initialize02 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize03 [
 
-	<generated>
 	GL_C4F_N3F_V3F := 10790.
 	GL_2D := 1536.
 	GL_TRANSFORM_FEEDBACK_VARYINGS_EXT := 35971.
@@ -6334,11 +6330,10 @@ GLConstants class >> initialize03 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize04 [
 
-	<generated>
 	GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR := 37846.
 	GL_MODELVIEW13_ARB := 34605.
 	GL_INT16_VEC3_NV := 36838.
@@ -6443,11 +6438,10 @@ GLConstants class >> initialize04 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize05 [
 
-	<generated>
 	GL_GPU_DISJOINT_EXT := 36795.
 	GL_DRAW_BUFFER := 3073.
 	GL_NO_RESET_NOTIFICATION_ARB := 33377.
@@ -6552,11 +6546,10 @@ GLConstants class >> initialize05 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize06 [
 
-	<generated>
 	GL_SPOT_DIRECTION := 4612.
 	GL_R1UI_T2F_C4F_N3F_V3F_SUN := 34251.
 	GL_DRAW_FRAMEBUFFER_BINDING_NV := 36006.
@@ -6661,11 +6654,10 @@ GLConstants class >> initialize06 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize07 [
 
-	<generated>
 	GL_SCALE_BY_ONE_HALF_NV := 34112.
 	GL_AVERAGE_HP := 33120.
 	GL_MAX_TESS_EVALUATION_OUTPUT_COMPONENTS_OES := 36486.
@@ -6770,11 +6762,10 @@ GLConstants class >> initialize07 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize08 [
 
-	<generated>
 	GL_MAX_TESS_EVALUATION_INPUT_COMPONENTS_EXT := 34925.
 	GL_CONSTANT_ALPHA_EXT := 32771.
 	GL_TEXTURE1_ARB := 33985.
@@ -6879,11 +6870,10 @@ GLConstants class >> initialize08 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize09 [
 
-	<generated>
 	GL_CURRENT_INDEX := 2817.
 	GL_RG8_SNORM := 36757.
 	GL_MINMAX_SINK_EXT := 32816.
@@ -6988,11 +6978,10 @@ GLConstants class >> initialize09 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize10 [
 
-	<generated>
 	GL_SHADER_STORAGE_BLOCK := 37606.
 	GL_TEXTURE_CLIPMAP_DEPTH_SGIX := 33142.
 	GL_FRAGMENT_PROGRAM_POSITION_MESA := 35760.
@@ -7097,11 +7086,10 @@ GLConstants class >> initialize10 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize11 [
 
-	<generated>
 	GL_CLAMP_TO_BORDER_EXT := 33069.
 	GL_DOT_PRODUCT_DEPTH_REPLACE_NV := 34541.
 	GL_CURRENT_PROGRAM := 35725.
@@ -7206,11 +7194,10 @@ GLConstants class >> initialize11 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize12 [
 
-	<generated>
 	GL_PROXY_TEXTURE_CUBE_MAP := 34075.
 	GL_T := 8193.
 	GL_COLOR_TABLE_SCALE_SGI := 32982.
@@ -7315,11 +7302,10 @@ GLConstants class >> initialize12 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize13 [
 
-	<generated>
 	GL_SAMPLE_MASK_INVERT_SGIS := 32939.
 	GL_VERTEX_SHADER_LOCAL_CONSTANTS_EXT := 34770.
 	GL_LINE_WIDTH_RANGE := 2850.
@@ -7424,11 +7410,10 @@ GLConstants class >> initialize13 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize14 [
 
-	<generated>
 	GL_CMYK_EXT := 32780.
 	GL_SRGB8_EXT := 35905.
 	GL_VERTEX_ARRAY_SIZE_EXT := 32890.
@@ -7533,11 +7518,10 @@ GLConstants class >> initialize14 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize15 [
 
-	<generated>
 	GL_VIRTUAL_PAGE_SIZE_Y_ARB := 37270.
 	GL_VIEWPORT_SWIZZLE_Y_NV := 37721.
 	GL_TESS_GEN_MODE_EXT := 36470.
@@ -7642,11 +7626,10 @@ GLConstants class >> initialize15 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize16 [
 
-	<generated>
 	GL_MINUS_NV := 37535.
 	GL_MULTISAMPLE_RASTERIZATION_ALLOWED_EXT := 37675.
 	GL_MAX_DRAW_MESH_TASKS_COUNT_NV := 38205.
@@ -7751,11 +7734,10 @@ GLConstants class >> initialize16 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize17 [
 
-	<generated>
 	GL_TEXTURE_DS_SIZE_NV := 34589.
 	GL_MAP1_VERTEX_ATTRIB14_4_NV := 34414.
 	GL_RGBA32F_ARB := 34836.
@@ -7860,11 +7842,10 @@ GLConstants class >> initialize17 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize18 [
 
-	<generated>
 	GL_TRANSFORM_FEEDBACK_NV := 36386.
 	GL_COLOR_ARRAY_PARALLEL_POINTERS_INTEL := 33783.
 	GL_3D_COLOR_TEXTURE := 1539.
@@ -7969,11 +7950,10 @@ GLConstants class >> initialize18 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize19 [
 
-	<generated>
 	GL_READ_FRAMEBUFFER_APPLE := 36008.
 	GL_GUILTY_CONTEXT_RESET := 33363.
 	GL_MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS_OES := 36482.
@@ -8078,11 +8058,10 @@ GLConstants class >> initialize19 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize20 [
 
-	<generated>
 	GL_CLOSE_PATH_NV := 0.
 	GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_ARRAY_EXT := 36972.
 	GL_STATIC_DRAW_ARB := 35044.
@@ -8187,11 +8166,10 @@ GLConstants class >> initialize20 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize21 [
 
-	<generated>
 	GL_EVAL_FRACTIONAL_TESSELLATION_NV := 34501.
 	GL_MAX_ELEMENT_INDEX := 36203.
 	GL_GUILTY_CONTEXT_RESET_ARB := 33363.
@@ -8296,11 +8274,10 @@ GLConstants class >> initialize21 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize22 [
 
-	<generated>
 	GL_OP_POWER_EXT := 34707.
 	GL_MESH_OUTPUT_PER_VERTEX_GRANULARITY_NV := 37599.
 	GL_POINT_FADE_THRESHOLD_SIZE := 33064.
@@ -8405,11 +8382,10 @@ GLConstants class >> initialize22 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize23 [
 
-	<generated>
 	GL_TEXTURE_ALPHA_SIZE := 32863.
 	GL_UNSIGNED_BYTE_3_3_2 := 32818.
 	GL_4PASS_2_EXT := 32934.
@@ -8514,11 +8490,10 @@ GLConstants class >> initialize23 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize24 [
 
-	<generated>
 	GL_DEPTH_TEST := 2929.
 	GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR := 33358.
 	GL_MAX_COMBINED_CLIP_AND_CULL_DISTANCES_EXT := 33530.
@@ -8623,11 +8598,10 @@ GLConstants class >> initialize24 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize25 [
 
-	<generated>
 	GL_LUMINANCE16_ALPHA16_EXT := 32840.
 	GL_COMPRESSED_ALPHA := 34025.
 	GL_PROXY_TEXTURE_RECTANGLE_ARB := 34039.
@@ -8732,11 +8706,10 @@ GLConstants class >> initialize25 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize26 [
 
-	<generated>
 	GL_UNPACK_SKIP_IMAGES_EXT := 32877.
 	GL_FLOAT_MAT4x2 := 35689.
 	GL_PATH_COVER_DEPTH_FUNC_NV := 37055.
@@ -8841,11 +8814,10 @@ GLConstants class >> initialize26 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize27 [
 
-	<generated>
 	GL_TEXTURE21_ARB := 34005.
 	GL_TEXTURE_RED_SIZE_EXT := 32860.
 	GL_PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED := 33313.
@@ -8950,11 +8922,10 @@ GLConstants class >> initialize27 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize28 [
 
-	<generated>
 	GL_SAMPLE_ALPHA_TO_MASK_SGIS := 32926.
 	GL_TEXTURE_4DSIZE_SGIS := 33078.
 	GL_LAST_VERTEX_CONVENTION_OES := 36430.
@@ -9059,11 +9030,10 @@ GLConstants class >> initialize28 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize29 [
 
-	<generated>
 	GL_UNIFORM_BLOCK_REFERENCED_BY_TESS_EVALUATION_SHADER := 34033.
 	GL_VIEWPORT_POSITION_W_SCALE_Y_COEFF_NV := 37758.
 	GL_LINE_RESET_TOKEN := 1799.
@@ -9168,11 +9138,10 @@ GLConstants class >> initialize29 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize30 [
 
-	<generated>
 	GL_RENDERBUFFER_DEPTH_SIZE_EXT := 36180.
 	GL_RED_BITS := 3410.
 	GL_MEMORY_ATTACHABLE_ALIGNMENT_NV := 38310.
@@ -9277,11 +9246,10 @@ GLConstants class >> initialize30 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize31 [
 
-	<generated>
 	GL_DEVICE_NODE_MASK_EXT := 38298.
 	GL_RED_BIAS := 3349.
 	GL_MAX_COMPUTE_ATOMIC_COUNTERS := 33381.
@@ -9386,11 +9354,10 @@ GLConstants class >> initialize31 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize32 [
 
-	<generated>
 	GL_POST_CONVOLUTION_ALPHA_SCALE_EXT := 32799.
 	GL_COLOR_ATTACHMENT8_NV := 36072.
 	GL_MAP2_GRID_DOMAIN := 3538.
@@ -9495,11 +9462,10 @@ GLConstants class >> initialize32 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize33 [
 
-	<generated>
 	GL_RGB_RAW_422_APPLE := 35409.
 	GL_DEPTH_BITS := 3414.
 	GL_MATRIX6_NV := 34358.
@@ -9604,11 +9570,10 @@ GLConstants class >> initialize33 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize34 [
 
-	<generated>
 	GL_MAX_SHADER_COMPILER_THREADS_ARB := 37296.
 	GL_TESS_GEN_VERTEX_ORDER := 36472.
 	GL_TEXTURE_WRAP_R_EXT := 32882.
@@ -9713,11 +9678,10 @@ GLConstants class >> initialize34 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize35 [
 
-	<generated>
 	GL_LOCATION_INDEX := 37647.
 	GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_ARB := 33357.
 	GL_TEXTURE_COORD_NV := 35961.
@@ -9822,11 +9786,10 @@ GLConstants class >> initialize35 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize36 [
 
-	<generated>
 	GL_MAX_FRAGMENT_INPUT_COMPONENTS := 37157.
 	GL_GEOMETRY_SHADER_BIT_OES := 4.
 	GL_DEPTH_BUFFER_BIT0_QCOM := 256.
@@ -9931,11 +9894,10 @@ GLConstants class >> initialize36 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize37 [
 
-	<generated>
 	GL_3_BYTES_NV := 5128.
 	GL_RG8 := 33323.
 	GL_ALL_PIXELS_AMD := 4294967295.
@@ -10040,11 +10002,10 @@ GLConstants class >> initialize37 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize38 [
 
-	<generated>
 	GL_COLOR_ATTACHMENT0 := 36064.
 	GL_UNKNOWN_CONTEXT_RESET := 33365.
 	GL_LIGHTING := 2896.
@@ -10149,11 +10110,10 @@ GLConstants class >> initialize38 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize39 [
 
-	<generated>
 	GL_POINT_SPRITE_COORD_ORIGIN := 36000.
 	GL_MAX_VERTEX_OUTPUT_COMPONENTS := 37154.
 	GL_SPIR_V_EXTENSIONS := 38227.
@@ -10258,11 +10218,10 @@ GLConstants class >> initialize39 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize40 [
 
-	<generated>
 	GL_RESTART_SUN := 1.
 	GL_PATH_MAX_MODELVIEW_STACK_DEPTH_NV := 3382.
 	GL_ARRAY_BUFFER_BINDING_ARB := 34964.
@@ -10367,11 +10326,10 @@ GLConstants class >> initialize40 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize41 [
 
-	<generated>
 	GL_DEBUG_SOURCE_API := 33350.
 	GL_DEPTH_STENCIL_OES := 34041.
 	GL_MAP_COHERENT_BIT := 128.
@@ -10476,11 +10434,10 @@ GLConstants class >> initialize41 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize42 [
 
-	<generated>
 	GL_LUMINANCE16I_EXT := 36236.
 	GL_WEIGHT_ARRAY_TYPE_OES := 34473.
 	GL_AUX1 := 1034.
@@ -10585,11 +10542,10 @@ GLConstants class >> initialize42 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize43 [
 
-	<generated>
 	GL_DOUBLE_MAT3_EXT := 36679.
 	GL_MAP_FLUSH_EXPLICIT_BIT_EXT := 16.
 	GL_FRAMEBUFFER_SRGB_CAPABLE_EXT := 36282.
@@ -10694,11 +10650,10 @@ GLConstants class >> initialize43 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize44 [
 
-	<generated>
 	GL_SHADING_RATE_4X2_PIXELS_QCOM := 38572.
 	GL_COLOR_INDEX8_EXT := 32997.
 	GL_COMBINER_MUX_SUM_NV := 34119.
@@ -10803,11 +10758,10 @@ GLConstants class >> initialize44 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize45 [
 
-	<generated>
 	GL_COMPILE_AND_EXECUTE := 4865.
 	GL_SUBGROUP_FEATURE_PARTITIONED_BIT_NV := 256.
 	GL_TEXTURE_BUFFER_BINDING := 35882.
@@ -10912,11 +10866,10 @@ GLConstants class >> initialize45 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize46 [
 
-	<generated>
 	GL_REPLACE_VALUE_AMD := 34635.
 	GL_BUFFER_IMMUTABLE_STORAGE := 33311.
 	GL_VIEWPORT_INDEX_PROVOKING_VERTEX_NV := 33375.
@@ -11021,11 +10974,10 @@ GLConstants class >> initialize46 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize47 [
 
-	<generated>
 	GL_FRONT_RIGHT := 1025.
 	GL_HALF_BIAS_NORMAL_NV := 34106.
 	GL_TEXTURE_COORD_ARRAY_LENGTH_NV := 36655.
@@ -11130,11 +11082,10 @@ GLConstants class >> initialize47 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize48 [
 
-	<generated>
 	GL_MAX_GEOMETRY_VARYING_COMPONENTS_EXT := 36317.
 	GL_SPRITE_MODE_SGIX := 33097.
 	GL_MAP1_TEXTURE_COORD_1 := 3475.
@@ -11239,11 +11190,10 @@ GLConstants class >> initialize48 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize49 [
 
-	<generated>
 	GL_VERTEX_ATTRIB_ARRAY_DIVISOR_ANGLE := 35070.
 	GL_X_EXT := 34773.
 	GL_BOOL := 35670.
@@ -11348,11 +11298,10 @@ GLConstants class >> initialize49 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize50 [
 
-	<generated>
 	GL_COLOR_ATTACHMENT11_EXT := 36075.
 	GL_MAX_TESS_EVALUATION_UNIFORM_COMPONENTS_OES := 36480.
 	GL_TEXTURE_CLIPMAP_LOD_OFFSET_SGIX := 33141.
@@ -11457,11 +11406,10 @@ GLConstants class >> initialize50 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize51 [
 
-	<generated>
 	GL_DEBUG_SOURCE_WINDOW_SYSTEM_KHR := 33351.
 	GL_SIGNED_RGB8_NV := 34559.
 	GL_ONE_MINUS_SRC_ALPHA := 771.
@@ -11566,11 +11514,10 @@ GLConstants class >> initialize51 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize52 [
 
-	<generated>
 	GL_COMPRESSED_RGBA_ASTC_10x10_KHR := 37819.
 	GL_ROUNDED_RECT8_NV := 238.
 	GL_ARRAY_BUFFER := 34962.
@@ -11675,11 +11622,10 @@ GLConstants class >> initialize52 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize53 [
 
-	<generated>
 	GL_RGBA_FLOAT32_ATI := 34836.
 	GL_ELEMENT_ARRAY_BUFFER := 34963.
 	GL_PRIMARY_COLOR_NV := 34092.
@@ -11784,11 +11730,10 @@ GLConstants class >> initialize53 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize54 [
 
-	<generated>
 	GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_EXT := 36050.
 	GL_MAP_ATTRIB_V_ORDER_NV := 34500.
 	GL_HANDLE_TYPE_D3D11_IMAGE_KMT_EXT := 38284.
@@ -11893,11 +11838,10 @@ GLConstants class >> initialize54 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize55 [
 
-	<generated>
 	GL_MAX_PROGRAM_PARAMETER_BUFFER_BINDINGS_NV := 36256.
 	GL_PROGRAM_ERROR_POSITION_NV := 34379.
 	GL_LIGHT_MODEL_SPECULAR_VECTOR_APPLE := 34224.
@@ -12002,11 +11946,10 @@ GLConstants class >> initialize55 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize56 [
 
-	<generated>
 	GL_VERTEX_ATTRIB_ARRAY10_NV := 34394.
 	GL_COMPRESSED_SIGNED_RG_RGTC2 := 36286.
 	GL_POST_CONVOLUTION_RED_BIAS := 32800.
@@ -12111,11 +12054,10 @@ GLConstants class >> initialize56 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize57 [
 
-	<generated>
 	GL_SEMAPHORE_TYPE_BINARY_NV := 38324.
 	GL_ALWAYS_SOFT_HINT_PGI := 107021.
 	GL_HISTOGRAM_WIDTH_EXT := 32806.
@@ -12220,11 +12162,10 @@ GLConstants class >> initialize57 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize58 [
 
-	<generated>
 	GL_MAX_DETACHED_BUFFERS_NV := 38317.
 	GL_SCISSOR_COMMAND_NV := 17.
 	GL_ALPHA_INTEGER_EXT := 36247.
@@ -12329,11 +12270,10 @@ GLConstants class >> initialize58 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize59 [
 
-	<generated>
 	GL_CLIENT_STORAGE_BIT_EXT := 512.
 	GL_VIEW_CLASS_S3TC_DXT1_RGB := 33484.
 	GL_MESH_PRIMITIVES_OUT_NV := 38266.
@@ -12438,11 +12378,10 @@ GLConstants class >> initialize59 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 2/22/2021 12:31'
+	#timestamp : 'stlu 4/12/2021 18:10'
 }
 GLConstants class >> initialize60 [
 
-	<generated>
 	GL_FRAMEBUFFER_INCOMPLETE_FOVEATION_QCOM := 35839.
 	GL_MALI_SHADER_BINARY_ARM := 36704.
 	GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY_OES := 37125.
