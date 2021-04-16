@@ -8,6 +8,9 @@ Class {
 		'callbacks',
 		'contexts'
 	],
+	#classVars : [
+		'ErrorMessages'
+	],
 	#pools : [
 		'GLFWConstants'
 	],
@@ -69,14 +72,39 @@ GLFWLibrary class >> example1 [ "self example1"
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 11/13/2020 14:23'
+	#timestamp : 'stlu 4/16/2021 11:10'
 }
 GLFWLibrary class >> initialize [
 
 	Smalltalk addToShutDownList: self after: GLContext. "hard dependency on OpenGL"
 	Smalltalk addToStartUpList: self.
+	self initializeErrorMessages.
 	self registerNewInstance.
 	self startUp
+]
+
+{
+	#category : #'class initialization',
+	#timestamp : 'stlu 4/16/2021 11:09'
+}
+GLFWLibrary class >> initializeErrorMessages [
+
+	ErrorMessages := {
+		GLFW_NO_ERROR -> 'No error. No error has occurred. Yay.'.
+		GLFW_NOT_INITIALIZED -> 'Not initialized. A GLFW function was called that must not be called unless the library is initialized.'.
+		GLFW_NO_CURRENT_CONTEXT -> 'No current context. A GLFW function was called that needs and operates on the current OpenGL or OpenGL ES context but no context is current on the calling thread.'.
+		GLFW_INVALID_ENUM -> 'Invalid enum. One of the arguments to the function was an invalid enum value.'.
+		GLFW_INVALID_VALUE -> 'Invalid value. One of the arguments to the function was an invalid value.'.
+		GLFW_OUT_OF_MEMORY -> 'Out of memory. A memory allocation failed. A bug in GLFW or the underlying operating system.'.
+		GLFW_API_UNAVAILABLE -> 'API unavailable. GLFW could not find support for the requested API on the system. The installed graphics driver does not support the requested API, or does not support it via the chosen context creation backend.'.
+		GLFW_VERSION_UNAVAILABLE -> 'Version unavailable. The requested OpenGL or OpenGL ES version (including any requested context or framebuffer hints) is not available on this machine.'.
+		GLFW_PLATFORM_ERROR -> 'Platform error. A platform-specific error occurred that does not match any of the more specific categories. A bug or configuration error in GLFW, the underlying operating system or its drivers, or a lack of required resources.'.
+		GLFW_FORMAT_UNAVAILABLE -> 'Format unavailable. The requested format is not supported or available.'.
+		GLFW_NO_WINDOW_CONTEXT -> 'No window context. A window that does not have an OpenGL or OpenGL ES context was passed to a function that requires it to have one.'.
+		GLFW_CURSOR_UNAVAILABLE -> 'Cursor unavailable. The specified standard cursor shape is not available, either because the current system cursor theme does not provide it or because it is not available on the platform.'.
+		GLFW_FEATURE_UNAVAILABLE -> 'Feature unavailable. The requested feature is not provided by the platform, so GLFW is unable to implement it.'.
+		GLFW_FEATURE_UNIMPLEMENTED -> 'Feature unimplemented. The requested feature has not yet been implemented in GLFW for this platform.'
+	} as: Dictionary
 ]
 
 {
@@ -3259,6 +3287,18 @@ GLFWLibrary >> callbacksForWindow: aWindow [
 ]
 
 {
+	#category : #helpers,
+	#timestamp : 'stlu 4/14/2021 18:07'
+}
+GLFWLibrary >> checkForError [
+	"Check for any GLFW errors, and raise an Error if any exist."
+	| errorCode |
+	errorCode := self getError.
+	errorCode ~= GLFW_NO_ERROR ifTrue: [
+		self error: (self messageForErrorCode: errorCode)]
+]
+
+{
 	#category : #contexts,
 	#timestamp : 'stlu 11/11/2020 14:15'
 }
@@ -4051,6 +4091,17 @@ GLFWLibrary >> maximizeWindow: window [
 
 	<apicall: void 'glfwMaximizeWindow' (GLFWWindow*)>
 	^ self externalCallFailed
+]
+
+{
+	#category : #helpers,
+	#timestamp : 'stlu 4/14/2021 18:09'
+}
+GLFWLibrary >> messageForErrorCode: anInteger [
+
+	^ ErrorMessages
+		at: anInteger
+		ifAbsent: ['Unknown error ' , anInteger asString]
 ]
 
 {
