@@ -26,6 +26,15 @@ PicDrawImage class >> form: aForm origin: aPoint sourceRect: aRectangle rule: an
 ]
 
 {
+	#category : #visiting,
+	#timestamp : 'stlu 3/18/2021 13:04'
+}
+PicDrawImage >> acceptVisitor: aVisitor [
+
+	aVisitor visitImage: self
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }

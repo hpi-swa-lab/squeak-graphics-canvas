@@ -30,6 +30,15 @@ PicDrawString class >> contents: aString from: startIndex to: stopIndex in: boun
 ]
 
 {
+	#category : #visiting,
+	#timestamp : 'stlu 3/18/2021 13:05'
+}
+PicDrawString >> acceptVisitor: aVisitor [
+
+	aVisitor visitString: self
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }

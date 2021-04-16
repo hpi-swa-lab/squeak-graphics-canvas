@@ -25,6 +25,15 @@ PicGroup class >> children: aCollection [
 ]
 
 {
+	#category : #visiting,
+	#timestamp : 'stlu 3/18/2021 13:05'
+}
+PicGroup >> acceptVisitor: aVisitor [
+
+	aVisitor visitGroup: self
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }

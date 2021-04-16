@@ -26,6 +26,15 @@ PicDrawLine class >> from: from to: to width: width color: color [
 ]
 
 {
+	#category : #visiting,
+	#timestamp : 'stlu 3/18/2021 13:04'
+}
+PicDrawLine >> acceptVisitor: aVisitor [
+
+	aVisitor visitLine: self
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }

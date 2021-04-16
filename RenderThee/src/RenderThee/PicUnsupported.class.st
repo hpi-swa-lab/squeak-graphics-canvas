@@ -38,6 +38,15 @@ PicUnsupported class >> type: aSymbol [
 ]
 
 {
+	#category : #visiting,
+	#timestamp : 'stlu 3/18/2021 13:06'
+}
+PicUnsupported >> acceptVisitor: aVisitor [
+
+	aVisitor visitUnsupported: self
+]
+
+{
 	#category : #drawing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }

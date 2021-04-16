@@ -6,6 +6,15 @@ Class {
 }
 
 {
+	#category : #visiting,
+	#timestamp : 'stlu 3/18/2021 13:05'
+}
+PicDrawOval >> acceptVisitor: aVisitor [
+
+	aVisitor visitOval: self
+]
+
+{
 	#category : #drawing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }

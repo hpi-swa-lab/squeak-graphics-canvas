@@ -23,6 +23,15 @@ PicDrawRoundedRectangle class >> bounds: aRectangle radius: cornerRadius fillSty
 ]
 
 {
+	#category : #visiting,
+	#timestamp : 'stlu 3/18/2021 13:05'
+}
+PicDrawRoundedRectangle >> acceptVisitor: aVisitor [
+
+	aVisitor visitRoundedRectangle: self
+]
+
+{
 	#category : #drawing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }

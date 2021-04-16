@@ -24,6 +24,15 @@ PicDrawParagraph class >> paragraph: aParagraph bounds: aRectangle color: aColor
 ]
 
 {
+	#category : #visiting,
+	#timestamp : 'stlu 3/18/2021 13:05'
+}
+PicDrawParagraph >> acceptVisitor: aVisitor [
+
+	aVisitor visitParagraph: self
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }

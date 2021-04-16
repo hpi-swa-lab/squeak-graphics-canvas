@@ -24,6 +24,15 @@ PicTransform class >> matrix: aMatrix2x3 [
 ]
 
 {
+	#category : #visiting,
+	#timestamp : 'stlu 3/18/2021 13:06'
+}
+PicTransform >> acceptVisitor: aVisitor [
+
+	aVisitor visitTransform: self
+]
+
+{
 	#category : #drawing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
@@ -41,6 +50,15 @@ PicTransform >> drawOn: aCanvas [
 PicTransform >> estimatedBounds [
 
 	^ matrix localBoundsToGlobal: self estimatedChildrenBounds
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 3/18/2021 13:48'
+}
+PicTransform >> isTransform [
+
+	^ true
 ]
 
 {

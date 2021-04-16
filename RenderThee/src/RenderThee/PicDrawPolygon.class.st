@@ -22,6 +22,15 @@ PicDrawPolygon class >> vertices: collectionOfPoints fillStyle: aFillStyle borde
 ]
 
 {
+	#category : #visiting,
+	#timestamp : 'stlu 3/18/2021 13:05'
+}
+PicDrawPolygon >> acceptVisitor: aVisitor [
+
+	aVisitor visitPolygon: self
+]
+
+{
 	#category : #drawing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }

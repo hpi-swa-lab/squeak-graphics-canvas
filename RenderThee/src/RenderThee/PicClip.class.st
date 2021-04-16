@@ -24,6 +24,15 @@ PicClip class >> rect: aRectangle [
 ]
 
 {
+	#category : #visiting,
+	#timestamp : 'stlu 3/18/2021 13:06'
+}
+PicClip >> acceptVisitor: aVisitor [
+
+	aVisitor visitClip: self
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
@@ -59,4 +68,13 @@ PicClip >> drawOn: aCanvas [
 PicClip >> estimatedBounds [
 
 	^ self estimatedChildrenBounds intersect: clipRect
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 3/18/2021 13:49'
+}
+PicClip >> isClip [
+
+	^ true
 ]

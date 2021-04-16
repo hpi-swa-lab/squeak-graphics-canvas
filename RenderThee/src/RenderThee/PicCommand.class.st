@@ -10,6 +10,15 @@ Class {
 }
 
 {
+	#category : #visiting,
+	#timestamp : 'stlu 3/18/2021 13:03'
+}
+PicCommand >> acceptVisitor: aVisitor [
+
+	self subclassResponsibility
+]
+
+{
 	#category : #converting,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
@@ -51,10 +60,37 @@ PicCommand >> estimatedBounds [
 
 {
 	#category : #testing,
+	#timestamp : 'stlu 3/18/2021 13:48'
+}
+PicCommand >> isClip [
+
+	^ false
+]
+
+{
+	#category : #testing,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 PicCommand >> isDrawing [
 	"Returns true if drawing me onto a canvas results in a change of the underlying pixel store."
+	^ false
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 3/13/2021 12:27'
+}
+PicCommand >> isRectangle [
+
+	^ false
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 3/18/2021 13:48'
+}
+PicCommand >> isTransform [
+
 	^ false
 ]
 
