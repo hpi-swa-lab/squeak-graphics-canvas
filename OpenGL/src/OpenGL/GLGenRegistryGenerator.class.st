@@ -10,7 +10,19 @@ Class {
 
 {
 	#category : #'method sources',
-	#timestamp : 'stlu 4/12/2021 13:59'
+	#timestamp : 'stlu 4/13/2021 12:14'
+}
+GLGenRegistryGenerator >> commandCategory: aCommand [
+
+	aCommand definitions ifEmpty: [^ #'commands - unused'].
+	^ aCommand isOnlyDefinedInExtensions
+		ifTrue: [#'commands - extensions']
+		ifFalse: [#'commands']
+]
+
+{
+	#category : #'method sources',
+	#timestamp : 'stlu 4/13/2021 12:28'
 }
 GLGenRegistryGenerator >> commandSource: aCommand [
 
@@ -18,12 +30,23 @@ GLGenRegistryGenerator >> commandSource: aCommand [
 		self printCommandSignature: aCommand on: stream.
 		stream cr; cr; tab.
 		self printDefinitionPragmas: aCommand on: stream.
-		stream cr; cr; tab.
 		self printCommandPragmas: aCommand on: stream.
-		stream cr; cr; tab.
+		stream cr; tab.
 		aCommand printFFIPragmaOn: stream.
 		stream cr; tab.
 		stream nextPutAll: '^ self externalCallFailed']
+]
+
+{
+	#category : #'method sources',
+	#timestamp : 'stlu 4/13/2021 12:14'
+}
+GLGenRegistryGenerator >> enumCategory: anEnum [
+
+	anEnum definitions ifEmpty: [^ #'enums - unused'].
+	^ anEnum isOnlyDefinedInExtensions
+		ifTrue: [#'enums - extensions']
+		ifFalse: [#'enums']
 ]
 
 {
@@ -41,7 +64,7 @@ GLGenRegistryGenerator >> enumSignature: anEnum [
 
 {
 	#category : #'method sources',
-	#timestamp : 'stlu 4/12/2021 13:59'
+	#timestamp : 'stlu 4/13/2021 12:31'
 }
 GLGenRegistryGenerator >> enumSource: anEnum [
 
@@ -49,9 +72,7 @@ GLGenRegistryGenerator >> enumSource: anEnum [
 		self printEnumSignature: anEnum on: stream.
 		stream cr; cr; tab.
 		self printDefinitionPragmas: anEnum on: stream.
-		stream cr; cr; tab.
 		self printEnumPragmas: anEnum on: stream.
-		stream cr; tab.
 		stream
 			nextPutAll: '^ ';
 			nextPutAll: anEnum name]
@@ -68,69 +89,68 @@ GLGenRegistryGenerator >> generate: aRegistry [
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 4/12/2021 17:19'
+	#timestamp : 'stlu 4/12/2021 18:47'
 }
 GLGenRegistryGenerator >> generateCommand: aCommand [
 
-	aCommand parameters size >= 16 ifTrue: [
-		^ Transcript showln: aCommand name].
-	(aCommand parameters anySatisfy: [:each | each type last = $]]) ifTrue: [
-		^ Transcript showln: aCommand name].
+	aCommand numParameters >= 16 ifTrue: [
+		"Cannot generate methods with more than 15 arguments"
+		^ Transcript showln: 'Too many arguments (', aCommand numParameters , '): ' , aCommand name].
 	
 	self
 		compile: (self commandSource: aCommand)
-		classified: #commands
+		classified: (self commandCategory: aCommand)
 		into: self targetClass.
 ]
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 4/12/2021 17:21'
+	#timestamp : 'stlu 4/12/2021 20:19'
 }
-GLGenRegistryGenerator >> generateCommands: aRegistry [
+GLGenRegistryGenerator >> generateCommands: aCollection [
 
 	'Compile commands'
-		displayProgressFrom: 0 to: aRegistry commands size
+		displayProgressFrom: 0 to: aCollection size
 		during: [:bar |
-			aRegistry commands asArray withIndexDo: [:each :i |
+			aCollection asArray withIndexDo: [:each :i |
 				self generateCommand: each.
 				bar value: i]].
 ]
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 4/12/2021 17:19'
+	#timestamp : 'stlu 4/12/2021 18:32'
 }
 GLGenRegistryGenerator >> generateEnum: anEnum [
 
 	self
 		compile: (self enumSource: anEnum)
-		classified: #'enums'
+		classified: (self enumCategory: anEnum)
 		into: self targetClass
 ]
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 4/12/2021 17:21'
+	#timestamp : 'stlu 4/12/2021 20:19'
 }
-GLGenRegistryGenerator >> generateEnums: aRegistry [
+GLGenRegistryGenerator >> generateEnums: aCollection [
 
 	'Compile enums'
-		displayProgressFrom: 0 to: aRegistry enums size
+		displayProgressFrom: 0 to: aCollection size
 		during: [:bar |
-			aRegistry enums asArray withIndexDo: [:each :i |
+			aCollection asArray withIndexDo: [:each :i |
 				self generateEnum: each.
 				bar value: i]].
 ]
 
 {
 	#category : #generation,
-	#timestamp : 'stlu 4/12/2021 17:42'
+	#timestamp : 'stlu 4/12/2021 20:20'
 }
 GLGenRegistryGenerator >> generateRegistry: aRegistry [
 
-	self generateCommands: aRegistry.
-	self generateEnums: aRegistry.
+	self generateCommands: aRegistry commands.
+	self generateEnums: aRegistry enums.
 	self removeNonGeneratedMethodsIn: self targetClass.
 ]
 
@@ -146,50 +166,51 @@ GLGenRegistryGenerator >> initialize [
 
 {
 	#category : #'method sources',
-	#timestamp : 'stlu 4/6/2021 09:38'
+	#timestamp : 'stlu 4/13/2021 12:26'
 }
 GLGenRegistryGenerator >> printCommandPragmas: aCommand on: aStream [
 
 	aStream
 		nextPutAll: '<glCommand: ';
 		store: aCommand name asSymbol;
-		nextPut: $>.
+		nextPut: $>;
+		cr; tab.
+	
+	aCommand aliases ifNotEmpty: [:aliases |
+		aStream
+			nextPutAll: '<glAliases: ';
+			store: (aliases collect: [:alias | alias asSymbol] as: Array);
+			nextPut: $>;
+			cr; tab].
 	
 	aStream
-		cr;
-		tab;
 		nextPutAll: '<glReturn: ';
 		store: aCommand returnType asString.
 	aCommand returnGroup ifNotNil: [:group |
 		aStream
 			nextPutAll: ' group: ';
 			store: group asSymbol].
-	aStream nextPut: $>.
+	aStream
+		nextPut: $>;
+		cr; tab.
 	
-	aCommand parameters ifNotEmpty: [
+	aCommand parameters do: [:param |
 		aStream
-			cr;
-			tab].
-	aCommand parameters
-		do: [:param |
+			nextPutAll: '<glArg: ';
+			store: param name asString;
+			nextPutAll: ' type: ';
+			store: param type asString.
+		param group ifNotNil: [:group |
 			aStream
-				nextPutAll: '<glArg: ';
-				store: param name asString;
-				nextPutAll: ' type: ';
-				store: param type asString.
-			param group ifNotNil: [:group |
-				aStream
-					nextPutAll: ' group: ';
-					store: group asSymbol].
-			param length ifNotNil: [:length |
-				aStream
-					nextPutAll: ' size: ';
-					store: length].
-			aStream nextPut: $>]
-		separatedBy: [
+				nextPutAll: ' group: ';
+				store: group asSymbol].
+		param length ifNotNil: [:length |
 			aStream
-				cr;
-				tab]
+				nextPutAll: ' size: ';
+				store: length].
+		aStream
+			nextPut: $>;
+			cr; tab].
 ]
 
 {
@@ -256,67 +277,77 @@ GLGenRegistryGenerator >> printDefinitionPragma: anArray on: aStream [
 
 {
 	#category : #'method sources',
-	#timestamp : 'stlu 4/12/2021 13:58'
+	#timestamp : 'stlu 4/13/2021 12:24'
 }
 GLGenRegistryGenerator >> printDefinitionPragmas: aRegistryObject on: aStream [
 
-	aRegistryObject definitions
-		do: [:definition | self printDefinitionPragma: definition on: aStream]
-		separatedBy: [aStream cr; tab]
+	aRegistryObject definitions do: [:definition |
+		self printDefinitionPragma: definition on: aStream.
+		aStream cr; tab].
+	aRegistryObject definitions ifNotEmpty: [
+		aStream cr; tab].
 ]
 
 {
 	#category : #'method sources',
-	#timestamp : 'stlu 4/7/2021 13:23'
+	#timestamp : 'stlu 4/13/2021 12:20'
 }
 GLGenRegistryGenerator >> printEnumPragmas: anEnum on: aStream [
 
 	aStream
 		nextPutAll: '<glEnum: ';
 		store: anEnum name asSymbol;
-		nextPut: $>.
+		nextPut: $>;
+		cr; tab.
+	
+	anEnum aliases ifNotEmpty: [:aliases |
+		aStream
+			nextPutAll: '<glAliases: ';
+			store: (aliases collect: [:alias | alias asSymbol] as: Array);
+			nextPut: $>;
+			cr; tab].
 	
 	aStream
-		cr; tab;
 		nextPutAll: '<glValue: ';
 		nextPutAll: anEnum valueString;
-		nextPut: $>.
+		nextPut: $>;
+		cr; tab.
 	
 	anEnum groups ifNotEmpty: [:groups |
 		| groupArray |
 		groupArray := groups collect: [:group | group asSymbol] as: Array.
 		groupArray sort.
 		aStream
-			cr; tab;
 			nextPutAll: '<glGroups: ';
 			store: groupArray;
-			nextPut: $>].
+			nextPut: $>;
+			cr; tab].
 	
 	self flag: #todo. "additional newline"
 	
 	anEnum vendor ifNotNil: [:vendor |
 		aStream
-			cr; tab;
 			nextPutAll: '<glVendor: ';
 			store: vendor asSymbol;
-			nextPut: $>].
+			nextPut: $>;
+			cr; tab].
 		
 	anEnum suffix ifNotNil: [:suffix |
 		aStream
-			cr; tab;
 			nextPutAll: '<glSuffix: ';
 			store: suffix asSymbol;
-			nextPut: $>].
+			nextPut: $>;
+			cr; tab].
 	
 	anEnum isBitmask ifTrue: [
 		aStream
-			cr; tab;
-			nextPutAll: '<glBitmask>'].
+			nextPutAll: '<glBitmask>';
+			cr; tab].
 ]
 
 {
 	#category : #'method sources',
-	#timestamp : 'stlu 3/3/2021 13:40'
+	#timestamp : 'stlu 4/13/2021 12:22'
 }
 GLGenRegistryGenerator >> printEnumSignature: anEnum on: aStream [
 

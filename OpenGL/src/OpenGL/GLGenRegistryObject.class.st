@@ -3,7 +3,8 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'name',
-		'definitions'
+		'definitions',
+		'aliases'
 	],
 	#classVars : [
 		'Suffixes'
@@ -24,11 +25,58 @@ GLGenRegistryObject class >> suffixes [
 
 {
 	#category : #accessing,
+	#timestamp : 'stlu 4/12/2021 19:37'
+}
+GLGenRegistryObject >> addAlias: aString [
+
+	aString ~= name ifTrue: [
+		aliases add: aString]
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 4/12/2021 18:49'
+}
+GLGenRegistryObject >> aliases [
+
+	^ aliases
+]
+
+{
+	#category : #accessing,
 	#timestamp : 'stlu 4/11/2021 12:56'
 }
 GLGenRegistryObject >> definitions [
 
 	^ definitions ifNil: [definitions := OrderedCollection new]
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 4/12/2021 18:49'
+}
+GLGenRegistryObject >> definitions: anObject [
+
+	definitions := anObject
+]
+
+{
+	#category : #initialization,
+	#timestamp : 'stlu 4/12/2021 18:50'
+}
+GLGenRegistryObject >> initialize [
+
+	aliases := Set new
+]
+
+{
+	#category : #testing,
+	#timestamp : 'stlu 4/12/2021 18:30'
+}
+GLGenRegistryObject >> isOnlyDefinedInExtensions [
+
+	^ definitions allSatisfy: [:each |
+		each first = #extension]
 ]
 
 {

@@ -121,11 +121,29 @@ GLGenRegistry >> addType: aType [
 
 {
 	#category : #accessing,
+	#timestamp : 'stlu 4/12/2021 19:41'
+}
+GLGenRegistry >> commandNamed: aString [
+
+	^ commands at: aString
+]
+
+{
+	#category : #accessing,
 	#timestamp : 'stlu 10/31/2020 22:19'
 }
 GLGenRegistry >> commands [
 
 	^ commands
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 4/12/2021 19:41'
+}
+GLGenRegistry >> enumNamed: aString [
+
+	^ enums at: aString
 ]
 
 {
@@ -139,7 +157,7 @@ GLGenRegistry >> enums [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/12/2021 16:59'
+	#timestamp : 'stlu 4/12/2021 19:51'
 }
 GLGenRegistry >> gatherCommands: registryTag [
 
@@ -148,11 +166,18 @@ GLGenRegistry >> gatherCommands: registryTag [
 			| command |
 			command := GLGenCommand fromXMLTag: commandTag.
 			self addCommand: command]].
+	
+	self commands values do: [:command |
+		command aliases copy do: [:alias |
+			(self commandNamed: alias) aliases do: [:transitiveAlias |
+				command addAlias: transitiveAlias]].
+		command aliases do: [:alias |
+			(self commandNamed: alias) addAlias: command name]]
 ]
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/12/2021 16:59'
+	#timestamp : 'stlu 4/12/2021 19:42'
 }
 GLGenRegistry >> gatherEnums: registryTag [
 
@@ -170,6 +195,13 @@ GLGenRegistry >> gatherEnums: registryTag [
 			enum namespace: namespace.
 			group ifNotNil: [enum addGroup: group].
 			self addEnum: enum]].
+	
+	self enums values do: [:enum |
+		enum aliases copy do: [:alias |
+			(self enumNamed: alias) aliases do: [:transitiveAlias |
+				enum addAlias: transitiveAlias]].
+		enum aliases do: [:alias |
+			(self enumNamed: alias) addAlias: enum name]]
 ]
 
 {
@@ -210,7 +242,7 @@ GLGenRegistry >> gatherExtensions: registryTag [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/12/2021 12:49'
+	#timestamp : 'stlu 4/12/2021 19:42'
 }
 GLGenRegistry >> gatherFeatures: registryTag [
 
@@ -227,9 +259,9 @@ GLGenRegistry >> gatherFeatures: registryTag [
 				name := targetTag attributes at: #name.
 				type := targetTag tag.
 				target := type caseOf: {
-					[#enum] -> [self enums at: name].
-					[#command] -> [self commands at: name].
-					[#type] -> [self types at: name]}.
+					[#enum] -> [self enumNamed: name].
+					[#command] -> [self commandNamed: name].
+					[#type] -> [self typeNamed: name]}.
 				action caseOf: {
 					[#require] -> [target requireIn: api profile: profile version: version].
 					[#remove] -> [target removeIn: api profile: profile version: version]}]]].
@@ -272,6 +304,15 @@ GLGenRegistry >> initializeWithXMLTag: registryTag [
 	self gatherCommands: registryTag.
 	self gatherFeatures: registryTag.
 	self gatherExtensions: registryTag.
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 4/12/2021 19:41'
+}
+GLGenRegistry >> typeNamed: aString [
+
+	^ types at: aString
 ]
 
 {

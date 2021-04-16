@@ -1,6 +1,6 @@
 Class {
-	#name : #GL15,
-	#superclass : #GL14,
+	#name : #GL42,
+	#superclass : #GL41,
 	#category : #'OpenGL-Versions',
 	#commentStamp : ''
 }
@@ -9,16 +9,16 @@ Class {
 	#category : #accessing,
 	#timestamp : 'stlu 4/15/2021 18:02'
 }
-GL15 class >> major [
+GL42 class >> major [
 
-	^ 1
+	^ 4
 ]
 
 {
 	#category : #accessing,
 	#timestamp : 'stlu 4/15/2021 18:01'
 }
-GL15 class >> minor [
+GL42 class >> minor [
 
-	^ 5
+	^ 2
 ]

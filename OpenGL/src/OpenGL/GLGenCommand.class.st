@@ -42,7 +42,7 @@ GLGenCommand >> ffiPragma [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/12/2021 16:58'
+	#timestamp : 'stlu 4/12/2021 19:47'
 }
 GLGenCommand >> initializeWithXMLTag: commandTag [
 
@@ -51,6 +51,10 @@ GLGenCommand >> initializeWithXMLTag: commandTag [
 	name := (protoTag firstTagNamed: #name) contentString.
 	returnType := GLGenParameter getType: protoTag.
 	returnGroup := commandTag attributes at: #group ifAbsent: [].
+	
+	aliases := Set new.
+	commandTag tagsNamed: #alias do: [:aliasTag |
+		self addAlias: (aliasTag attributes at: #name)].
 	
 	parameters := OrderedCollection new.
 	commandTag tagsNamed: #param do: [:paramTag |
@@ -67,6 +71,15 @@ GLGenCommand >> initializeWithXMLTag: commandTag [
 GLGenCommand >> isCommand [
 
 	^ true
+]
+
+{
+	#category : #accessing,
+	#timestamp : 'stlu 4/12/2021 18:47'
+}
+GLGenCommand >> numParameters [
+
+	^ parameters size
 ]
 
 {

@@ -8,7 +8,6 @@ Class {
 		'groups',
 		'vendor',
 		'suffix',
-		'aliases',
 		'type',
 		'typeSuffix'
 	],
@@ -42,29 +41,11 @@ GLGenEnum class >> fromXMLTag: tag [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/4/2021 12:09'
-}
-GLGenEnum >> addAlias: aString [
-
-	aliases add: aString
-]
-
-{
-	#category : #accessing,
 	#timestamp : 'stlu 3/5/2021 12:50'
 }
 GLGenEnum >> addGroup: aString [
 
 	groups add: aString
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 3/4/2021 11:40'
-}
-GLGenEnum >> aliases [
-
-	^ aliases
 ]
 
 {
@@ -87,13 +68,12 @@ GLGenEnum >> groups [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/5/2021 12:47'
+	#timestamp : 'stlu 4/12/2021 18:49'
 }
 GLGenEnum >> initialize [
 
 	super initialize.
-	groups := Set new.
-	aliases := Set new
+	groups := Set new
 ]
 
 {
