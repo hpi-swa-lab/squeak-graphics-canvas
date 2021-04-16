@@ -622,3 +622,12 @@ GLLibrary >> viewport: aRectangle during: aBlock [
 	aBlock value.
 	self viewport: previousViewport
 ]
+
+{
+	#category : #converting,
+	#timestamp : 'stlu 4/16/2021 15:23'
+}
+GLLibrary >> withErrorChecking [
+
+	^ GLErrorCheckingLibrary around: self
+]
