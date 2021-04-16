@@ -64,12 +64,12 @@ SLDemo >> cubeData [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/14/2021 18:01'
+	#timestamp : 'stlu 4/15/2021 12:10'
 }
 SLDemo >> render [
 
 	GL enable: GL_DEPTH_TEST.
-	GL setClearColor: (Color r: 0.1 g: 0.1 b: 0.1).
+	GL clearColor: (Color r: 0.1 g: 0.1 b: 0.1).
 	GL clear: (GL_COLOR_BUFFER_BIT bitOr: GL_DEPTH_BUFFER_BIT).
 	
 	vao boundDuring: [

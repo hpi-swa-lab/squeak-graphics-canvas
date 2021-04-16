@@ -357,6 +357,19 @@ GLLibrary >> checkForError [
 ]
 
 {
+	#category : #'convencience api',
+	#timestamp : 'stlu 4/15/2021 12:05'
+}
+GLLibrary >> clearColor: aColor [
+
+	self
+		clearColor: aColor red
+		with: aColor green
+		with: aColor blue
+		with: aColor alpha
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 10/16/2020 12:43'
 }
@@ -404,6 +417,24 @@ GLLibrary >> errorString: error [
 ]
 
 {
+	#category : #'convencience api',
+	#timestamp : 'stlu 4/15/2021 19:11'
+}
+GLLibrary >> extensions [
+
+	^ self context version getExtensions: self
+]
+
+{
+	#category : #'convencience api',
+	#timestamp : 'stlu 4/15/2021 18:24'
+}
+GLLibrary >> extensionsString [
+
+	^ self stringStateNamed: GL_EXTENSIONS
+]
+
+{
 	#category : #'error handling',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
@@ -425,204 +456,67 @@ GLLibrary >> externalCallFailed [
 ]
 
 {
-	#category : #parameters,
-	#timestamp : 'stlu 11/3/2020 15:01'
+	#category : #'state access',
+	#timestamp : 'stlu 4/15/2021 11:54'
 }
-GLLibrary >> getClearColor [
+GLLibrary >> getIntegerParameter: enum [
 
-	| color |
-	color := Float32Array new: 4.
-	self getFloatv: GL_COLOR_CLEAR_VALUE with: color.
-	^ Color
-		r: color first
-		g: color second
-		b: color third
-		alpha: color fourth
+	self deprecated: 'Use #integerStateNamed: instead.'.
+	^ self integerStateNamed: enum
 ]
 
 {
-	#category : #api,
-	#timestamp : 'stlu 3/6/2021 14:43'
+	#category : #'state access',
+	#timestamp : 'stlu 4/15/2021 11:54'
 }
-GLLibrary >> getError [
+GLLibrary >> getIntegerParameters: enum size: numElements [
 
-	<generated>
-	<apicall: GLenum 'glGetError' ()>
-	^ self externalCallFailed
+	self deprecated: 'Use #integerStateNamed:ofSize: instead.'.
+	^ self integerStateNamed: enum ofSize: numElements
 ]
 
 {
-	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 14:17'
+	#category : #'state access',
+	#timestamp : 'stlu 4/15/2021 11:55'
 }
-GLLibrary >> getExtensions [
+GLLibrary >> getStringParameter: enum [
 
-	| extensionsString |
-	extensionsString := self getExtensionsString.
-	^ extensionsString splitBy: ' '
+	self deprecated: 'Use #stringStateNamed: instead.'.
+	^ self stringStateNamed: enum
 ]
 
 {
-	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 14:06'
+	#category : #'state access',
+	#timestamp : 'stlu 4/15/2021 11:56'
 }
-GLLibrary >> getExtensionsString [
+GLLibrary >> getStringParameter: enum at: index [
 
-	^ self getStringParameter: GL_EXTENSIONS
+	self deprecated: 'Use #stringStateNamed:at: instead.'.
+	^ self stringStateNamed: enum at: index
 ]
 
 {
-	#category : #'parameters - helpers',
-	#timestamp : 'stlu 11/3/2020 15:15'
+	#category : #'state access',
+	#timestamp : 'stlu 4/15/2021 11:53'
 }
-GLLibrary >> getIntegerParameter: name [
-
-	IntegerArray new: 1 during: [:result |
-		self getIntegerv: name with: result.
-		^ result first]
-]
-
-{
-	#category : #'parameters - helpers',
-	#timestamp : 'stlu 11/3/2020 15:17'
-}
-GLLibrary >> getIntegerParameters: name size: numParameters [
+GLLibrary >> integerStateNamed: enum [
 
 	| data |
-	data := IntegerArray new: numParameters.
-	self getIntegerv: name with: data.
+	data := IntegerArray new: 1.
+	self getIntegerv: enum with: data.
+	^ data at: 1
+]
+
+{
+	#category : #'state access',
+	#timestamp : 'stlu 4/15/2021 11:52'
+}
+GLLibrary >> integerStateNamed: enum ofSize: numElements [
+
+	| data |
+	data := IntegerArray new: numElements.
+	self getIntegerv: enum with: data.
 	^ data
-]
-
-{
-	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 13:26'
-}
-GLLibrary >> getNumExtensions [
-
-	^ self getIntegerParameter: GL_NUM_EXTENSIONS
-]
-
-{
-	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 15:10'
-}
-GLLibrary >> getProfile [
-
-	^ #'' "by default none"
-]
-
-{
-	#category : #parameters,
-	#timestamp : 'stlu 11/11/2020 15:13'
-}
-GLLibrary >> getRendererString [
-
-	^ self getStringParameter: GL_RENDERER
-]
-
-{
-	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 14:34'
-}
-GLLibrary >> getShadingLanguageVersion [
-
-	^ #(0 0) "by default unsupported"
-]
-
-{
-	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 14:04'
-}
-GLLibrary >> getShadingLanguageVersionString [
-
-	^ self getStringParameter: GL_SHADING_LANGUAGE_VERSION
-]
-
-{
-	#category : #api,
-	#timestamp : 'stlu 3/6/2021 14:43'
-}
-GLLibrary >> getString: name [
-
-	<generated>
-	<apicall: GLubyte* 'glGetString' (GLenum)>
-	^ self externalCallFailed
-]
-
-{
-	#category : #'parameters - helpers',
-	#timestamp : 'stlu 11/3/2020 15:13'
-}
-GLLibrary >> getStringParameter: name [
-
-	| data |
-	data := self getString: name.
-	data isNull ifTrue: [^ self checkForError].
-	^ (data asType: ExternalType string) fromCString
-]
-
-{
-	#category : #'parameters - helpers',
-	#timestamp : 'stlu 11/3/2020 15:13'
-}
-GLLibrary >> getStringParameter: name at: index [
-
-	| data |
-	data := self getStringi: name with: index.
-	data isNull ifTrue: [^ self checkForError].
-	^ (data asType: ExternalType string) fromCString
-]
-
-{
-	#category : #parameters,
-	#timestamp : 'stlu 11/11/2020 15:13'
-}
-GLLibrary >> getVendorString [
-
-	^ self getStringParameter: GL_VENDOR
-]
-
-{
-	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 15:06'
-}
-GLLibrary >> getVersion [
-	"Returns an array of two elements, the major version and the minor version."
-	self subclassResponsibility
-]
-
-{
-	#category : #parameters,
-	#timestamp : 'stlu 11/12/2020 13:26'
-}
-GLLibrary >> getVersionNumber [
-
-	| version |
-	version := self getVersion.
-	^ version first * 10 + version second
-]
-
-{
-	#category : #parameters,
-	#timestamp : 'stlu 11/11/2020 15:13'
-}
-GLLibrary >> getVersionString [
-
-	^ self getStringParameter: GL_VERSION
-]
-
-{
-	#category : #parameters,
-	#timestamp : 'stlu 11/3/2020 15:17'
-}
-GLLibrary >> getViewport [
-
-	| viewport |
-	viewport := self getIntegerParameters: GL_VIEWPORT size: 4.
-	^ Rectangle
-		origin: viewport first @ viewport second
-		extent: viewport third @ viewport fourth
 ]
 
 {
@@ -681,71 +575,71 @@ GLLibrary >> makeCurrentDuring: aBlock [
 ]
 
 {
-	#category : #parameters,
-	#timestamp : 'stlu 1/4/2021 15:35'
+	#category : #limits,
+	#timestamp : 'stlu 4/15/2021 18:37'
 }
 GLLibrary >> maxArrayTextureLayers [
 	"Maximum number of layers allowed in an array texture. At least 256."
-	^ self getIntegerParameter: GL_MAX_ARRAY_TEXTURE_LAYERS
+	^ self integerStateNamed: GL_MAX_ARRAY_TEXTURE_LAYERS
 ]
 
 {
-	#category : #parameters,
-	#timestamp : 'stlu 1/4/2021 15:32'
+	#category : #limits,
+	#timestamp : 'stlu 4/15/2021 18:37'
 }
 GLLibrary >> maxCombinedTextureImageUnits [
 	"Maximum number of texture image units. At least 80."
-	^ self getIntegerParameter: GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS
+	^ self integerStateNamed: GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS
 ]
 
 {
-	#category : #parameters,
-	#timestamp : 'stlu 1/4/2021 15:34'
+	#category : #limits,
+	#timestamp : 'stlu 4/15/2021 18:37'
 }
 GLLibrary >> maxTextureSize [
 	"Rough estimate of the largest texture that the GL can handle. At least 1024."
-	^ self getIntegerParameter: GL_MAX_TEXTURE_SIZE
+	^ self integerStateNamed: GL_MAX_TEXTURE_SIZE
 ]
 
 {
-	#category : #parameters,
-	#timestamp : 'stlu 1/4/2021 15:39'
+	#category : #limits,
+	#timestamp : 'stlu 4/15/2021 18:38'
 }
 GLLibrary >> maxUniformBlockSize [
 	"Maximum size in basic machine units of a uniform block. At least 16384."
-	^ self getIntegerParameter: GL_MAX_UNIFORM_BLOCK_SIZE
+	^ self integerStateNamed: GL_MAX_UNIFORM_BLOCK_SIZE
 ]
 
 {
-	#category : #parameters,
-	#timestamp : 'stlu 1/4/2021 15:40'
+	#category : #limits,
+	#timestamp : 'stlu 4/15/2021 18:38'
 }
 GLLibrary >> maxUniformBufferBindings [
 	"Maximum number of uniform buffer binding points on the context. At least 36."
-	^ self getIntegerParameter: GL_MAX_UNIFORM_BUFFER_BINDINGS
+	^ self integerStateNamed: GL_MAX_UNIFORM_BUFFER_BINDINGS
 ]
 
 {
-	#category : #parameters,
-	#timestamp : 'stlu 1/4/2021 15:39'
+	#category : #limits,
+	#timestamp : 'stlu 4/15/2021 18:39'
 }
 GLLibrary >> maxUniformLocations [
 	"Maximum number of explicitly assignable uniform locations. At least 1024."
-	^ self getIntegerParameter: GL_MAX_UNIFORM_LOCATIONS
+	^ self integerStateNamed: GL_MAX_UNIFORM_LOCATIONS
 ]
 
 {
-	#category : #parameters,
-	#timestamp : 'stlu 1/4/2021 15:42'
+	#category : #limits,
+	#timestamp : 'stlu 4/15/2021 18:39'
 }
 GLLibrary >> maxVaryingComponents [
 	"Number of components for varying variables. At least 60."
-	^ self getIntegerParameter: GL_MAX_VARYING_COMPONENTS
+	^ self integerStateNamed: GL_MAX_VARYING_COMPONENTS
 ]
 
 {
-	#category : #parameters,
-	#timestamp : 'stlu 1/4/2021 15:43'
+	#category : #limits,
+	#timestamp : 'stlu 4/15/2021 18:38'
 }
 GLLibrary >> maxVaryingVectors [
 	"Number of 4-vectors for varying variables. Equivalent to #maxVaryingComponents / 4. At least 15."
@@ -753,21 +647,22 @@ GLLibrary >> maxVaryingVectors [
 ]
 
 {
-	#category : #parameters,
-	#timestamp : 'stlu 1/4/2021 15:49'
+	#category : #limits,
+	#timestamp : 'stlu 4/15/2021 18:39'
 }
 GLLibrary >> maxVertexAttributeBindings [
 	"Maximum number of vertex buffers that may be bound."
-	^ self getIntegerParameter: GL_MAX_VERTEX_ATTRIB_BINDINGS
+	^ self integerStateNamed: GL_MAX_VERTEX_ATTRIB_BINDINGS
 ]
 
 {
-	#category : #parameters,
-	#timestamp : 'stlu 1/4/2021 15:46'
+	#category : #limits,
+	#timestamp : 'stlu 4/15/2021 19:08'
 }
 GLLibrary >> maxVertexAttributes [
 	"Maximum number of 4-component generic vertex attributes accessible to a vertex shader. At least 16."
-	^ self getIntegerParameter: GL_MAX_VERTEX_ATTRIBS
+	self flag: #todo. "Move these context-specific constants to GLContext"
+	^ self integerStateNamed: GL_MAX_VERTEX_ATTRIBS
 ]
 
 {
@@ -792,6 +687,15 @@ GLLibrary >> newFrameDo: aBlock. [
 		self flag: #todo. "can we get rid of endFrame?"
 		self checkForError.
 		self swapBuffers]
+]
+
+{
+	#category : #'convencience api',
+	#timestamp : 'stlu 4/15/2021 18:23'
+}
+GLLibrary >> numExtensions [
+
+	^ self integerStateNamed: GL_NUM_EXTENSIONS
 ]
 
 {
@@ -840,29 +744,30 @@ GLLibrary >> registerObject: glObject [
 ]
 
 {
-	#category : #helpers,
-	#timestamp : 'stlu 11/3/2020 15:01'
+	#category : #'convencience api',
+	#timestamp : 'stlu 4/15/2021 18:32'
 }
-GLLibrary >> setClearColor: aColor [
+GLLibrary >> rendererString [
 
-	self
-		clearColor: aColor red
-		with: aColor green
-		with: aColor blue
-		with: aColor alpha
+	^ self stringStateNamed: GL_RENDERER
 ]
 
 {
-	#category : #helpers,
-	#timestamp : 'stlu 11/3/2020 15:03'
+	#category : #'convencience api',
+	#timestamp : 'stlu 4/15/2021 19:21'
 }
-GLLibrary >> setViewport: aRectangle [
+GLLibrary >> shadingLanguageVersion [
 
-	self
-		viewport: aRectangle left
-		with: aRectangle top
-		with: aRectangle width
-		with: aRectangle height
+	^ self context version getShadingLanguageVersion: self
+]
+
+{
+	#category : #'convencience api',
+	#timestamp : 'stlu 4/15/2021 18:33'
+}
+GLLibrary >> shadingLanguageVersionString [
+
+	^ self stringStateNamed: GL_SHADING_LANGUAGE_VERSION
 ]
 
 {
@@ -873,6 +778,30 @@ GLLibrary >> shouldClose [
 
 	self flag: #todo. "does this really belong here?"
 	^ context shouldClose
+]
+
+{
+	#category : #'state access',
+	#timestamp : 'stlu 4/15/2021 11:51'
+}
+GLLibrary >> stringStateNamed: enum [
+
+	| data |
+	data := self getString: enum.
+	data isNull ifTrue: [^ self checkForError].
+	^ (data asType: ExternalType string) fromCString
+]
+
+{
+	#category : #'state access',
+	#timestamp : 'stlu 4/15/2021 11:51'
+}
+GLLibrary >> stringStateNamed: enum at: index [
+
+	| data |
+	data := self getStringi: enum with: index.
+	data isNull ifTrue: [^ self checkForError].
+	^ (data asType: ExternalType string) fromCString
 ]
 
 {
@@ -894,12 +823,21 @@ GLLibrary >> userData [
 ]
 
 {
-	#category : #accessing,
-	#timestamp : 'stlu 11/2/2020 15:01'
+	#category : #'convencience api',
+	#timestamp : 'stlu 4/15/2021 18:34'
+}
+GLLibrary >> vendorString [
+
+	^ self stringStateNamed: GL_VENDOR
+]
+
+{
+	#category : #'convencience api',
+	#timestamp : 'stlu 4/15/2021 19:22'
 }
 GLLibrary >> version [
 
-	^ self class versionNumber
+	^ self context version getVersion: self
 ]
 
 {
@@ -912,14 +850,49 @@ GLLibrary >> versionError [
 ]
 
 {
-	#category : #helpers,
-	#timestamp : 'stlu 11/3/2020 15:04'
+	#category : #'convencience api',
+	#timestamp : 'stlu 4/15/2021 18:34'
+}
+GLLibrary >> versionString [
+
+	^ self stringStateNamed: GL_VERSION
+]
+
+{
+	#category : #'convencience api',
+	#timestamp : 'stlu 4/15/2021 12:08'
+}
+GLLibrary >> viewport [
+
+	| viewport |
+	viewport := self integerStateNamed: GL_VIEWPORT ofSize: 4.
+	^ Rectangle
+		origin: viewport first @ viewport second
+		extent: viewport third @ viewport fourth
+]
+
+{
+	#category : #'convencience api',
+	#timestamp : 'stlu 4/15/2021 12:05'
+}
+GLLibrary >> viewport: aRectangle [
+
+	self
+		viewport: aRectangle left
+		with: aRectangle top
+		with: aRectangle width
+		with: aRectangle height
+]
+
+{
+	#category : #'convencience api',
+	#timestamp : 'stlu 4/15/2021 12:07'
 }
 GLLibrary >> viewport: aRectangle during: aBlock [
 
 	| previousViewport |
-	previousViewport := self getViewport.
-	self setViewport: aRectangle.
+	previousViewport := self viewport.
+	self viewport: aRectangle.
 	aBlock value.
-	self setViewport: previousViewport
+	self viewport: previousViewport
 ]

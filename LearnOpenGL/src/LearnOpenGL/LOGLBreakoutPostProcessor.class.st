@@ -31,12 +31,12 @@ LOGLBreakoutPostProcessor class >> extent: aPoint [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 1/8/2021 18:38'
+	#timestamp : 'stlu 4/15/2021 12:10'
 }
 LOGLBreakoutPostProcessor >> beginRender [
 
 	msfbo bind.
-	GL setClearColor: Color black.
+	GL clearColor: Color black.
 	GL clear: GL COLOR_BUFFER_BIT
 ]
 

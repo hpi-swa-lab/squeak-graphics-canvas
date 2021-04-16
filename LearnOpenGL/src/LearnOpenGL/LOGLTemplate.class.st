@@ -239,10 +239,10 @@ LOGLTemplate >> window [
 
 {
 	#category : #callbacks,
-	#timestamp : 'stlu 1/7/2021 17:49'
+	#timestamp : 'stlu 4/15/2021 12:11'
 }
 LOGLTemplate >> windowExtentChanged: newExtent [
 	"glfw: whenever the window size changed (by OS or user resize) this callback function executes"
 	window context library makeCurrentDuring: [
-		GL setViewport: (0@0 extent: newExtent)]
+		GL viewport: (0@0 extent: newExtent)]
 ]

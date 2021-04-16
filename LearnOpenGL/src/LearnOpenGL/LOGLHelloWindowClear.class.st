@@ -10,10 +10,10 @@ Class {
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 11/3/2020 15:01'
+	#timestamp : 'stlu 4/15/2021 12:10'
 }
 LOGLHelloWindowClear >> render [
 
-	GL setClearColor: (Color r: 0.2 g: 0.3 b: 0.3).
+	GL clearColor: (Color r: 0.2 g: 0.3 b: 0.3).
 	GL clear: GL_COLOR_BUFFER_BIT
 ]

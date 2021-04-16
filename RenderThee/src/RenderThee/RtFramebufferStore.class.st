@@ -211,11 +211,11 @@ RtFramebufferStore >> release [
 
 {
 	#category : #'gl calls',
-	#timestamp : 'stlu 11/3/2020 15:44'
+	#timestamp : 'stlu 4/15/2021 12:11'
 }
 RtFramebufferStore >> resetViewport [
 
-	self glLibrary setViewport: (0 @ 0 extent: extent)
+	self glLibrary viewport: (0 @ 0 extent: extent)
 ]
 
 {

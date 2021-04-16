@@ -321,14 +321,14 @@ LOGLBreakout >> projection [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 1/9/2021 18:41'
+	#timestamp : 'stlu 4/15/2021 12:09'
 }
 LOGLBreakout >> render [
 
 	| resources |
 	resources := LOGLBreakoutResourceManager instance.
 	
-	GL setClearColor: Color black.
+	GL clearColor: Color black.
 	GL clear: GL_COLOR_BUFFER_BIT.
 	
 	self isActive ifTrue: [

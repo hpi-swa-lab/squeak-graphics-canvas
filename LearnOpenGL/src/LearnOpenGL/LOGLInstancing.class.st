@@ -50,11 +50,11 @@ LOGLInstancing >> quadVertices [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/18/2021 11:05'
+	#timestamp : 'stlu 4/15/2021 12:10'
 }
 LOGLInstancing >> render [
 
-	GL setClearColor: (Color r: 0.1 g: 0.1 b: 0.1 alpha: 0.1).
+	GL clearColor: (Color r: 0.1 g: 0.1 b: 0.1 alpha: 0.1).
 	GL clear: (GL_COLOR_BUFFER_BIT bitOr: GL_DEPTH_BUFFER_BIT).
 	
 	program useDuring: [

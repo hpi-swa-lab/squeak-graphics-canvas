@@ -406,11 +406,11 @@ GLBatchingCanvas >> rectangle: aRectangle solidColor: aColor [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/19/2021 13:08'
+	#timestamp : 'stlu 4/15/2021 12:09'
 }
 GLBatchingCanvas >> reset [
 
-	GL setClearColor: (Color r: 0.1 g: 0.1 b: 0.1 alpha: 0.1).
+	GL clearColor: (Color r: 0.1 g: 0.1 b: 0.1 alpha: 0.1).
 	GL clear: (GL_COLOR_BUFFER_BIT bitOr: GL_DEPTH_BUFFER_BIT).
 	
 	z := 0

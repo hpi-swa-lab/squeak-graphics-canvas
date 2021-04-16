@@ -141,7 +141,7 @@ GLContext >> initialize [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 12/3/2020 18:45'
+	#timestamp : 'stlu 4/15/2021 19:15'
 }
 GLContext >> initializeLibrary [
 
@@ -151,7 +151,7 @@ GLContext >> initializeLibrary [
 	"determine the version"
 	libraryClass := GLLibrary api: api.
 	library := libraryClass context: self.
-	version := library getVersion.
+	version := library version.
 	library checkForError. "just called 1st OpenGL command - check it worked"
 	
 	"determine the profile"
@@ -162,7 +162,7 @@ GLContext >> initializeLibrary [
 	library := libraryClass context: self profile: profile.
 	
 	"determine available extensions"
-	extensions := library getExtensions.
+	extensions := library extensions.
 	
 	self deactivate
 ]
