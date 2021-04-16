@@ -3,17 +3,14 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'library',
+		'version',
+		'extensions',
 		'objectBindings',
+		'objectImps',
 		'objectStore',
 		'programs',
 		'userData',
-		'api',
-		'version',
-		'profile',
-		'extensions',
-		'resources',
-		'isDestroyed',
-		'objectImps'
+		'isDestroyed'
 	],
 	#pools : [
 		'GLConstants'
@@ -67,24 +64,6 @@ GLContext >> activate [
 ]
 
 {
-	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:51'
-}
-GLContext >> api [
-
-	^ api
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 12/3/2020 19:39'
-}
-GLContext >> api: aSymbol [
-
-	api := aSymbol
-]
-
-{
 	#category : #activation,
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
@@ -94,7 +73,7 @@ GLContext >> deactivate [
 ]
 
 {
-	#category : #'initialize-release',
+	#category : #'context actions',
 	#timestamp : 'stlu 4/15/2021 12:38'
 }
 GLContext >> destroy [
@@ -104,7 +83,7 @@ GLContext >> destroy [
 ]
 
 {
-	#category : #'initialize-release',
+	#category : #'context actions',
 	#timestamp : 'stlu 10/16/2020 12:25'
 }
 GLContext >> endFrame [
@@ -124,13 +103,15 @@ GLContext >> extensions [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 4/15/2021 12:37'
+	#timestamp : 'stlu 4/16/2021 14:02'
 }
 GLContext >> initialize [
 
 	isDestroyed := false.
 	userData := Dictionary new.
+	self initializeVersion.
 	self initializeLibrary.
+	self initializeExtensions.
 	
 	self flag: #todo. "GLObject dependency"
 	objectStore := OrderedCollection new.
@@ -141,30 +122,21 @@ GLContext >> initialize [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 4/15/2021 19:15'
+	#timestamp : 'stlu 4/16/2021 13:00'
+}
+GLContext >> initializeExtensions [
+
+	library makeCurrentDuring: [
+		extensions := library extensions]
+]
+
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 4/16/2021 13:01'
 }
 GLContext >> initializeLibrary [
 
-	| libraryClass |
-	self activate.
-	
-	"determine the version"
-	libraryClass := GLLibrary api: api.
-	library := libraryClass context: self.
-	version := library version.
-	library checkForError. "just called 1st OpenGL command - check it worked"
-	
-	"determine the profile"
-	libraryClass := libraryClass majorVersion: version first minorVersion: version second.
-	library := libraryClass context: self.
-	profile := library getProfile.
-	library checkForError.
-	library := libraryClass context: self profile: profile.
-	
-	"determine available extensions"
-	extensions := library extensions.
-	
-	self deactivate
+	library := GLExternalLibrary context: self.
 ]
 
 {
@@ -183,12 +155,21 @@ GLContext >> initializeObjectBindings [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 4/15/2021 12:32'
+	#timestamp : 'stlu 4/16/2021 14:44'
 }
 GLContext >> initializeObjectImps [
 
 	self flag: #todo. "always adheres to the context's version by default"
-	objectImps := GLObjectImps forVersion: version
+	objectImps := GLObjectImps forVersion: self version
+]
+
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 4/16/2021 13:02'
+}
+GLContext >> initializeVersion [
+
+	self subclassResponsibility
 ]
 
 {
@@ -229,15 +210,6 @@ GLContext >> objectImps [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/9/2020 14:51'
-}
-GLContext >> profile [
-
-	^ profile
-]
-
-{
-	#category : #accessing,
 	#timestamp : 'stlu 12/3/2020 18:43'
 }
 GLContext >> programs [
@@ -246,7 +218,7 @@ GLContext >> programs [
 ]
 
 {
-	#category : #'initialize-release',
+	#category : #'context actions',
 	#timestamp : 'stlu 4/14/2021 17:04'
 }
 GLContext >> resolveFunctionAddress: functionName [
@@ -265,7 +237,7 @@ GLContext >> shouldClose [
 ]
 
 {
-	#category : #'initialize-release',
+	#category : #'context actions',
 	#timestamp : 'stlu 10/16/2020 12:24'
 }
 GLContext >> swapBuffers [

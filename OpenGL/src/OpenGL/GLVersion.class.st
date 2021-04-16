@@ -144,6 +144,15 @@ GLVersion >> getExtensions: aLibrary [
 
 {
 	#category : #parameters,
+	#timestamp : 'stlu 4/16/2021 14:08'
+}
+GLVersion >> getProfile: aLibrary [
+
+	^ nil
+]
+
+{
+	#category : #parameters,
 	#timestamp : 'stlu 4/15/2021 19:14'
 }
 GLVersion >> getShadingLanguageVersion: aLibrary [

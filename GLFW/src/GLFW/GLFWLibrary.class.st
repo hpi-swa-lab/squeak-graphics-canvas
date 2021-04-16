@@ -39,19 +39,22 @@ GLFWLibrary class >> compileConstantAccessors [
 
 {
 	#category : #'instance management',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 4/16/2021 14:42'
 }
 GLFWLibrary class >> example [
 	" self example "
-
-	| window |
+	| window context |
 	window := GLFWWindow extent: 100 asPoint title: 'My pretty window'.
 	window ifNil: [^ self error: 'GLFW Error'].
+	context := window context.
 	
-	[window context library makeCurrentDuring: [
-		[window shouldClose] whileFalse: [GL newFrameDo: [
-			" your GL code here "
-			]]]] ensure: [window destroy]
+	[context library makeCurrentDuring: [
+		[window shouldClose] whileFalse: [
+			GL clear: GL COLOR_BUFFER_BIT.
+			"your OpenGL code here"
+			context swapBuffers.
+			GLFW pollEvents]]
+	] ensure: [context destroy]
 ]
 
 {

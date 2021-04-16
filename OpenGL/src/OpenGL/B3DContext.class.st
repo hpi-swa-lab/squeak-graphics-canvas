@@ -48,7 +48,7 @@ B3DContext >> deactivate [
 ]
 
 {
-	#category : #'initialize-release',
+	#category : #'context actions',
 	#timestamp : 'stlu 11/9/2020 15:43'
 }
 B3DContext >> destroy [
@@ -58,7 +58,7 @@ B3DContext >> destroy [
 ]
 
 {
-	#category : #'initialize-release',
+	#category : #'context actions',
 	#timestamp : 'stlu 11/9/2020 15:42'
 }
 B3DContext >> endFrame [
@@ -66,13 +66,27 @@ B3DContext >> endFrame [
 ]
 
 {
-	#category : #'initialize-release',
-	#timestamp : 'stlu 11/11/2020 13:12'
+	#category : #initialization,
+	#timestamp : 'stlu 4/16/2021 14:19'
 }
-B3DContext >> initialize [
+B3DContext >> initializeVersion [
 
-	api := #gl.
-	super initialize
+	| tempLib |
+	"B3D does not offer any information on the created context.
+	We need to determine the version through api calls."
+	version := GL10 new.
+	tempLib := GLExternalLibrary context: self.
+	
+	tempLib makeCurrentDuring: [
+		| majorMinor profile |
+		majorMinor := tempLib version.
+		tempLib checkForError. "just called 1st OpenGL command - check it worked"
+		profile := tempLib profile.
+		version := GLVersion
+					api: #gl
+					major: majorMinor first
+					minor: majorMinor second
+					profile: profile].
 ]
 
 {
@@ -94,6 +108,17 @@ B3DContext >> renderer: anObject [
 ]
 
 {
+	#category : #'context actions',
+	#timestamp : 'stlu 4/16/2021 14:18'
+}
+B3DContext >> resolveFunctionAddress: functionName [
+
+	self flag: #todo. "This is where B3D breaks apart."
+	"leave resolution to FFI plugin and hope for the best"
+	^ ExternalAddress new
+]
+
+{
 	#category : #testing,
 	#timestamp : 'stlu 11/9/2020 15:42'
 }
@@ -103,7 +128,7 @@ B3DContext >> shouldClose [
 ]
 
 {
-	#category : #'initialize-release',
+	#category : #'context actions',
 	#timestamp : 'stlu 11/9/2020 15:41'
 }
 B3DContext >> swapBuffers [

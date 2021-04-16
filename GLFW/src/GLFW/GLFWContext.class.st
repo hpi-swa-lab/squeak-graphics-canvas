@@ -134,7 +134,7 @@ GLFWContext >> deactivate [
 ]
 
 {
-	#category : #'initialize-release',
+	#category : #'context actions',
 	#timestamp : 'stlu 12/8/2020 17:47'
 }
 GLFWContext >> destroy [
@@ -146,7 +146,7 @@ GLFWContext >> destroy [
 ]
 
 {
-	#category : #'initialize-release',
+	#category : #'context actions',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWContext >> endFrame [
@@ -165,20 +165,15 @@ GLFWContext >> generatesErrors [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 4/16/2021 10:18'
+	#timestamp : 'stlu 4/16/2021 13:00'
 }
-GLFWContext >> initializeLibrary [
+GLFWContext >> initializeVersion [
 
 	version := GLVersion
 				api: self clientAPIName
 				major: self clientAPIMajorVersion
 				minor: self clientAPIMinorVersion
-				profile: self openGLProfile.
-	
-	library := GLExternalLibrary context: self.
-	
-	library makeCurrentDuring: [
-		extensions := library extensions]
+				profile: self openGLProfile
 ]
 
 {
@@ -235,13 +230,13 @@ GLFWContext >> releaseBehavior [
 ]
 
 {
-	#category : #'initialize-release',
-	#timestamp : 'stlu 4/14/2021 17:38'
+	#category : #'context actions',
+	#timestamp : 'stlu 4/16/2021 14:07'
 }
 GLFWContext >> resolveFunctionAddress: functionName [
 
 	| result |
-	self flag: #todo. "assert window is current context"
+	self assert: self = GL context.
 	^ (result := GLFW getProcAddress: functionName) isNull ifFalse: [result getHandle]
 ]
 
@@ -264,7 +259,7 @@ GLFWContext >> shouldClose [
 ]
 
 {
-	#category : #'initialize-release',
+	#category : #'context actions',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 GLFWContext >> swapBuffers [
@@ -273,7 +268,7 @@ GLFWContext >> swapBuffers [
 ]
 
 {
-	#category : #'initialize-release',
+	#category : #'context actions',
 	#timestamp : 'stlu 10/19/2020 16:50'
 }
 GLFWContext >> useMorphicEventHandling [

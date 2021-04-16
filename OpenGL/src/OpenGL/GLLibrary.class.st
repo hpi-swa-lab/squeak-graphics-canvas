@@ -32,7 +32,7 @@ GLLibrary class >> context: aContext [
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 4/15/2021 19:13'
+	#timestamp : 'stlu 4/16/2021 14:34'
 }
 GLLibrary class >> example1 [ "self example1"
 	"A minimal OpenGL example.
@@ -40,7 +40,6 @@ GLLibrary class >> example1 [ "self example1"
 	| lib bounds |
 	self flag: #todo. "Correct place for this example?"
 	self flag: #todo. "Move away from B3D since the plugin is only really available on LInux"
-	self flag: #todo. "Adjust to GL instance refactorings"
 	bounds := 0@0 extent: 400@400.
 	lib := (B3DContext bounds: bounds) library.
 	[
@@ -53,12 +52,12 @@ GLLibrary class >> example1 [ "self example1"
 		lib extensions do: [:ext |
 			Transcript nextPutAll: ext; cr].
 		Transcript flush
-	] ensure: [lib destroy]
+	] ensure: [lib context destroy]
 ]
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 4/15/2021 17:53'
+	#timestamp : 'stlu 4/16/2021 14:37'
 }
 GLLibrary class >> example2 [ "self example2"
 	"A very simple OpenGL 1.0 example showing a rotating red rectangle on white background.
@@ -69,22 +68,23 @@ GLLibrary class >> example2 [ "self example2"
 	self flag: #todo. "Adjust to GL instance refactorings"
 	context := B3DContext bounds: (0@0 extent: 400@400).
 	[
-		(GL10 context: context) makeCurrentDuring: [
+		context library makeCurrentDuring: [
 			GL disable: GL_DEPTH_TEST.
 			GL clearColor: 1.0 with: 1.0 with: 1.0 with: 1.0.
 			[Sensor anyButtonPressed] whileFalse: [
-				GL newFrameDo: [
-					GL clear: GL_COLOR_BUFFER_BIT.
-
-					GL rotatef: 5.0 with: 0.0 with: 0.0 with: 1.0.
-					GL color3f: 1.0 with: 0.0 with: 0.0.
-
-					GL begin: GL_POLYGON.
-						GL vertex2f: -0.7 with: -0.7.
-						GL vertex2f:  0.7 with: -0.7.
-						GL vertex2f:  0.7 with:  0.7.
-						GL vertex2f: -0.7 with:  0.7.
-					GL end]]]
+				GL clear: GL_COLOR_BUFFER_BIT.
+				
+				GL rotatef: 5.0 with: 0.0 with: 0.0 with: 1.0.
+				GL color3f: 1.0 with: 0.0 with: 0.0.
+				
+				GL begin: GL_POLYGON.
+					GL vertex2f: -0.7 with: -0.7.
+					GL vertex2f:  0.7 with: -0.7.
+					GL vertex2f:  0.7 with:  0.7.
+					GL vertex2f: -0.7 with:  0.7.
+				GL end.
+				
+				context swapBuffers]]
 	] ensure: [context destroy]
 ]
 
@@ -456,6 +456,15 @@ GLLibrary >> newFrameDo: aBlock. [
 GLLibrary >> numExtensions [
 
 	^ self integerStateNamed: GL_NUM_EXTENSIONS
+]
+
+{
+	#category : #'convencience api',
+	#timestamp : 'stlu 4/16/2021 14:12'
+}
+GLLibrary >> profile [
+
+	^ self context version getProfile: self
 ]
 
 {
