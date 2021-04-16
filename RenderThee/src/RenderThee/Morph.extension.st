@@ -67,14 +67,14 @@ Morph >> isRepaintBoundary [
 
 {
 	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#timestamp : 'stlu 3/14/2021 22:36'
 }
 Morph >> markNeedsRedraw [
 
 	"assumption (for now): own repaint boundary == own texture"
-	self isRepaintBoundary
+	"self isRepaintBoundary
 		ifTrue: [ActiveWorld morphsToRedraw add: self]
-		ifFalse: [self owner ifNotNil: [:o | o markNeedsRedraw]]
+		ifFalse: [self owner ifNotNil: [:o | o markNeedsRedraw]]"
 ]
 
 {
