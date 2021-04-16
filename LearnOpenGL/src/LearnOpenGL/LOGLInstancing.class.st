@@ -66,7 +66,7 @@ LOGLInstancing >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/18/2021 10:51'
+	#timestamp : 'stlu 4/16/2021 15:33'
 }
 LOGLInstancing >> setUp [
 
@@ -103,8 +103,6 @@ LOGLInstancing >> setUp [
 			enable;
 			formatAsFloat: GL_FLOAT numComponents: 2 offset: 0;
 			associateVertexBufferBindingAt: 1].
-	
-	GL checkForError
 ]
 
 {

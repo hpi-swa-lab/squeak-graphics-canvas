@@ -51,7 +51,7 @@ LOGLHelloTriangle >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/17/2021 22:57'
+	#timestamp : 'stlu 4/16/2021 15:32'
 }
 LOGLHelloTriangle >> setUp [
 
@@ -69,8 +69,6 @@ LOGLHelloTriangle >> setUp [
 			enable;
 			formatAsFloat: GL_FLOAT numComponents: 3 offset: 0;
 			associateVertexBufferBindingAt: 0].
-	
-	GL checkForError
 ]
 
 {

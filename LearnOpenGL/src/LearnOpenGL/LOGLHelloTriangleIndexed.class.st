@@ -47,7 +47,7 @@ LOGLHelloTriangleIndexed >> isWireframe [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 1/7/2021 11:15'
+	#timestamp : 'stlu 4/16/2021 15:33'
 }
 LOGLHelloTriangleIndexed >> setUp [
 
@@ -62,8 +62,6 @@ LOGLHelloTriangleIndexed >> setUp [
 	vao boundDuring: [
 		ebo bind.
 		ebo usage: GL_STATIC_DRAW data: self indices].
-	
-	GL checkForError
 ]
 
 {

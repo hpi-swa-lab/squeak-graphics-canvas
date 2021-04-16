@@ -136,7 +136,7 @@ LOGLDepthTesting >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/17/2021 23:47'
+	#timestamp : 'stlu 4/16/2021 15:32'
 }
 LOGLDepthTesting >> setUp [
 
@@ -192,8 +192,6 @@ LOGLDepthTesting >> setUp [
 			generateMipmap].
 	
 	program uniforms texture1: 0.
-	
-	GL checkForError.
 ]
 
 {

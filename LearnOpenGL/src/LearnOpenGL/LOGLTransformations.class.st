@@ -61,7 +61,7 @@ LOGLTransformations >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 1/29/2021 14:48'
+	#timestamp : 'stlu 4/16/2021 15:32'
 }
 LOGLTransformations >> setUp [
 
@@ -80,8 +80,6 @@ LOGLTransformations >> setUp [
 	program uniforms
 		texture1: 0;
 		texture2: 1.
-	
-	GL checkForError
 ]
 
 {

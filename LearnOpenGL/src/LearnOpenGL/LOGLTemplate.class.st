@@ -145,7 +145,7 @@ LOGLTemplate >> renderLoop [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/16/2021 10:35'
+	#timestamp : 'stlu 4/16/2021 15:24'
 }
 LOGLTemplate >> run [
 
@@ -159,7 +159,7 @@ LOGLTemplate >> run [
 	
 	window ifNil: [^ self error: 'Failed to create GLFW window'].
 	
-	library := window context library.
+	library := window context library withErrorChecking.
 	
 	library makeCurrentDuring: [
 		self registerCallbacks.

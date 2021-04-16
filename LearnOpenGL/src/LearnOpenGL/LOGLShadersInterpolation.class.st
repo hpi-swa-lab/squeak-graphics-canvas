@@ -24,7 +24,7 @@ void main() {
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/17/2021 23:27'
+	#timestamp : 'stlu 4/16/2021 15:30'
 }
 LOGLShadersInterpolation >> setUp [
 
@@ -42,8 +42,6 @@ LOGLShadersInterpolation >> setUp [
 			enable;
 			formatAsFloat: GL_FLOAT numComponents: 3 offset: 3 * 4;
 			associateVertexBufferBindingAt: 0].
-	
-	GL checkForError
 ]
 
 {
