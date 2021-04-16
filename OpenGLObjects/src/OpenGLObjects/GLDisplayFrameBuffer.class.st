@@ -34,14 +34,14 @@ GLDisplayFrameBuffer class >> create [
 
 {
 	#category : #binding,
-	#timestamp : 'stlu 12/3/2020 19:26'
+	#timestamp : 'stlu 4/15/2021 11:37'
 }
 GLDisplayFrameBuffer class >> initializeBindings [
 
 	| display |
-	display := GL userData at: self put: self create.
-	GL rememberBinding: GL_DRAW_FRAMEBUFFER as: display.
-	GL rememberBinding: GL_READ_FRAMEBUFFER as: display
+	display := self create.
+	GLObjectBindings current drawFrameBuffer: display.
+	GLObjectBindings current readFrameBuffer: display.
 ]
 
 {

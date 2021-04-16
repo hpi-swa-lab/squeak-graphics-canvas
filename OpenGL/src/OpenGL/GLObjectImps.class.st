@@ -21,14 +21,26 @@ GLObjectImps class >> current [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 12/13/2020 15:33'
+	#timestamp : 'stlu 4/15/2021 12:24'
 }
-GLObjectImps class >> forLibrary: glLibrary [
+GLObjectImps class >> forVersion: aVersion [
 
-	| inst |
-	inst := self new.
-	glLibrary initializeWrapperImplementations: inst.
-	^ inst
+	^ self new
+		initializeForVersion: aVersion;
+		yourself
+]
+
+{
+	#category : #initialization,
+	#timestamp : 'stlu 4/15/2021 12:40'
+}
+GLObjectImps >> initializeForVersion: aVersion [
+
+	self flag: #todo. "aVersion initializeObjectImps: self."
+	self flag: #todo. "instVar suffix 'imp' ?"
+	programInterfaceQuery := GLDirectProgramInterfaceQueryImp new.
+	uniformSetter := GLUniformDirectStateAccessImp new.
+	vertexArrayImp := GLVertexArrayDirectStateAccessImp new.
 ]
 
 {

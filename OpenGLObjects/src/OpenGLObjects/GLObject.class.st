@@ -274,9 +274,10 @@ GLObject >> printOn: aStream [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 10/26/2020 12:14'
+	#timestamp : 'stlu 4/15/2021 11:58'
 }
 GLObject >> register [
 
-	GL registerObject: self
+	self flag: #todo. "GLObjectStore current"
+	GL context registerObject: self
 ]

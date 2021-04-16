@@ -425,15 +425,6 @@ GLLibrary >> externalCallFailed [
 ]
 
 {
-	#category : #bindings,
-	#timestamp : 'stlu 12/3/2020 19:40'
-}
-GLLibrary >> forgetBinding: bindingEnum [
-
-	^ context forgetBinding: bindingEnum
-]
-
-{
 	#category : #parameters,
 	#timestamp : 'stlu 11/3/2020 15:01'
 }
@@ -840,30 +831,12 @@ GLLibrary >> programs [
 ]
 
 {
-	#category : #bindings,
-	#timestamp : 'stlu 12/3/2020 19:40'
-}
-GLLibrary >> recallBinding: bindingEnum [
-
-	^ context recallBinding: bindingEnum
-]
-
-{
 	#category : #resources,
 	#timestamp : 'stlu 10/26/2020 12:15'
 }
 GLLibrary >> registerObject: glObject [
 
 	context registerObject: glObject
-]
-
-{
-	#category : #bindings,
-	#timestamp : 'stlu 12/3/2020 19:40'
-}
-GLLibrary >> rememberBinding: bindingEnum as: anObject [
-
-	^ context rememberBinding: bindingEnum as: anObject
 ]
 
 {
