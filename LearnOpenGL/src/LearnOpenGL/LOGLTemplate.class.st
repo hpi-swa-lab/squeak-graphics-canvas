@@ -145,12 +145,12 @@ LOGLTemplate >> renderLoop [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 2/18/2021 22:48'
+	#timestamp : 'stlu 4/16/2021 10:35'
 }
 LOGLTemplate >> run [
 
 	"GLFW init."
-	GLFW targetLibrary: GL33Core.
+	GLFW targetVersion: (GL33 profile: #core).
 	GLFW windowHint: GLFW_FLOATING with: true.
 
 	window := GLFWWindow
@@ -197,7 +197,7 @@ LOGLTemplate >> shouldClose [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 1/7/2021 12:24'
+	#timestamp : 'stlu 4/16/2021 10:42'
 }
 LOGLTemplate >> spawnNewRenderProcess [
 
@@ -205,7 +205,7 @@ LOGLTemplate >> spawnNewRenderProcess [
 		[self renderLoop]
 			ensure: [
 				self tearDown.
-				library destroy]
+				library context destroy]
 	] newProcess priority: self processPriority.
 	renderProcess resume
 ]

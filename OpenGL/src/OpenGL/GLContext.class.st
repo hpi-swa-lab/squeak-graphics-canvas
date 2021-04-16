@@ -95,11 +95,11 @@ GLContext >> deactivate [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 12/8/2020 16:16'
+	#timestamp : 'stlu 4/15/2021 12:38'
 }
 GLContext >> destroy [
 
-	"objectStore do: [:each | each cleanUp]"
+	self flag: #todo. "objectStore do: [:each | each cleanUp]"
 	isDestroyed := true
 ]
 
@@ -243,6 +243,15 @@ GLContext >> profile [
 GLContext >> programs [
 
 	^ programs
+]
+
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 4/14/2021 17:04'
+}
+GLContext >> resolveFunctionAddress: functionName [
+
+	self subclassResponsibility
 ]
 
 {

@@ -1,3 +1,10 @@
+"
+I am a shared pool holding all constants (enums) defined by OpenGL registry.
+
+I was generated from the XML maintained in the official GitHub repository https://github.com/KhronosGroup/OpenGL-Registry
+Changes made to this class may be disregarded during code generation.
+Code generation logic can be found in the GLGenConstantsPoolGenerator class, if loaded.
+"
 Class {
 	#name : #GLConstants,
 	#superclass : #SharedPool,
@@ -5933,7 +5940,7 @@ Class {
 		'GL_Z_EXT'
 	],
 	#category : #'OpenGL-API',
-	#commentStamp : ''
+	#commentStamp : 'stlu 4/14/2021 14:48'
 }
 
 {

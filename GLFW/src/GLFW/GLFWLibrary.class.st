@@ -4955,33 +4955,24 @@ GLFWLibrary >> swapInterval: aNumber [
 
 {
 	#category : #helpers,
-	#timestamp : 'stlu 11/11/2020 13:45'
+	#timestamp : 'stlu 4/16/2021 10:31'
 }
-GLFWLibrary >> targetLibrary: aGLLibraryClass [
+GLFWLibrary >> targetVersion: aGLVersion [
 
-	self targetLibrary: aGLLibraryClass profile: aGLLibraryClass defaultProfile
-]
-
-{
-	#category : #helpers,
-	#timestamp : 'stlu 11/11/2020 14:17'
-}
-GLFWLibrary >> targetLibrary: aGLLibraryClass profile: aSymbol [
-
-	self hintMajorVersion: aGLLibraryClass majorVersion.
-	self hintMinorVersion: aGLLibraryClass minorVersion.
-	
-	aGLLibraryClass api caseOf: {
+	aGLVersion api caseOf: {
 		[#gl] -> [self hintGLAPI].
 		[#gles1] -> [self hintGLES1API].
 		[#gles2] -> [self hintGLES2API]
 	} otherwise: [^ self error: 'API not supported by GLFW'].
 	
+	self hintMajorVersion: aGLVersion major.
+	self hintMinorVersion: aGLVersion minor.
+	
 	"If requesting an OpenGL version below 3.2, 'any profile' must be used."
-	(aGLLibraryClass api = #gl and: [aGLLibraryClass versionNumber < 32]) ifTrue: [
+	(aGLVersion api = #gl and: [aGLVersion asNumber < 32]) ifTrue: [
 		^ self hintAnyProfile].
 	
-	aSymbol caseOf: {
+	aGLVersion profile caseOf: {
 		[#core] -> [self hintCoreProfile].
 		[#compatibility] -> [self hintCompatibilityProfile]
 	} otherwise: [self hintAnyProfile].

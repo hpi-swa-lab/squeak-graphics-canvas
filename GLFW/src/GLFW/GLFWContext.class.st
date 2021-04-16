@@ -13,12 +13,12 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 2/18/2021 22:47'
+	#timestamp : 'stlu 4/16/2021 10:35'
 }
-GLFWContext class >> newIn: bounds forLibraryClass: aLibraryClass title: aString [
+GLFWContext class >> newIn: bounds version: aGLVersion title: aString [
 
 	self flag: #todo. "Deprecated"
-	GLFW targetLibrary: GL33Core.
+	GLFW targetVersion: aGLVersion.
 	^ self window: (GLFWWindow
 						extent: bounds extent
 						title: aString)
@@ -165,25 +165,20 @@ GLFWContext >> generatesErrors [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 2/12/2021 22:59'
+	#timestamp : 'stlu 4/16/2021 10:18'
 }
 GLFWContext >> initializeLibrary [
 
-	| major minor libraryClass |
-	api := self clientAPIName.
-	major := self clientAPIMajorVersion.
-	minor := self clientAPIMinorVersion.
-	version := { major . minor }.
-	profile := self openGLProfile.
+	version := GLVersion
+				api: self clientAPIName
+				major: self clientAPIMajorVersion
+				minor: self clientAPIMinorVersion
+				profile: self openGLProfile.
 	
-	libraryClass := GLLibrary
-					api: api
-					majorVersion: major
-					minorVersion: minor.
-	library := libraryClass context: self.
+	library := GLExternalLibrary context: self.
 	
 	library makeCurrentDuring: [
-		extensions := library getExtensions]
+		extensions := library extensions]
 ]
 
 {
@@ -206,11 +201,14 @@ GLFWContext >> isForwardCompatible [
 
 {
 	#category : #'client api',
-	#timestamp : 'stlu 2/12/2021 22:44'
+	#timestamp : 'stlu 4/16/2021 10:13'
 }
 GLFWContext >> openGLProfile [
 
-	^ window getAttribute: GLFW_OPENGL_PROFILE
+	^ (window getAttribute: GLFW_OPENGL_PROFILE) caseOf: {
+		[GLFW_OPENGL_CORE_PROFILE] -> [#core].
+		[GLFW_OPENGL_COMPAT_PROFILE] -> [#compatibility].
+		[GLFW_OPENGL_ANY_PROFILE] -> [nil] }
 ]
 
 {
@@ -234,6 +232,17 @@ GLFWContext >> openGLProfileName [
 GLFWContext >> releaseBehavior [
 
 	^ window getAttribute: GLFW_CONTEXT_RELEASE_BEHAVIOR
+]
+
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 4/14/2021 17:38'
+}
+GLFWContext >> resolveFunctionAddress: functionName [
+
+	| result |
+	self flag: #todo. "assert window is current context"
+	^ (result := GLFW getProcAddress: functionName) isNull ifFalse: [result getHandle]
 ]
 
 {
