@@ -102,12 +102,12 @@ GLUniform >> getValue [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 12/14/2020 17:43'
+	#timestamp : 'stlu 4/15/2021 12:18'
 }
 GLUniform >> initialize [
 
 	super initialize.
-	stateAccessImp := GL uniformSetterImplementation
+	stateAccessImp := GLObjectImps current uniformSetter
 ]
 
 {

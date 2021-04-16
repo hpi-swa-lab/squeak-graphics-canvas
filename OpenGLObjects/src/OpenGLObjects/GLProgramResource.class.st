@@ -76,11 +76,11 @@ GLProgramResource class >> propertiesToQuery [
 
 {
 	#category : #querying,
-	#timestamp : 'stlu 12/16/2020 20:32'
+	#timestamp : 'stlu 4/15/2021 12:17'
 }
 GLProgramResource class >> queryImp [
 
-	^ GL programInterfaceQueryImplementation
+	^ GLObjectImps current programInterfaceQuery
 ]
 
 {

@@ -5,7 +5,6 @@ Class {
 		'library',
 		'objectBindings',
 		'objectStore',
-		'wrapperImplementations',
 		'programs',
 		'userData',
 		'api',
@@ -13,7 +12,8 @@ Class {
 		'profile',
 		'extensions',
 		'resources',
-		'isDestroyed'
+		'isDestroyed',
+		'objectImps'
 	],
 	#pools : [
 		'GLConstants'
@@ -124,31 +124,19 @@ GLContext >> extensions [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 12/13/2020 15:36'
+	#timestamp : 'stlu 4/15/2021 12:37'
 }
 GLContext >> initialize [
 
 	isDestroyed := false.
-	objectStore := OrderedCollection new.
-	programs := IdentityDictionary new.
 	userData := Dictionary new.
 	self initializeLibrary.
-	self initializeBindings.
-	self initializeWrapperImplementations
-]
-
-{
-	#category : #'initialize-release',
-	#timestamp : 'stlu 3/14/2021 18:25'
-}
-GLContext >> initializeBindings [
-
-	objectBindings := GLObjectBindings new.
-	self flag: #todo. "do not depend on library class hierarchy"
-	library makeCurrentDuring: [
-		GLObject allSubclassesDo: [:cls |
-			(cls theMetaClass includesSelector: #initializeBindings) ifTrue: [
-				cls initializeBindings]]]
+	
+	self flag: #todo. "GLObject dependency"
+	objectStore := OrderedCollection new.
+	programs := IdentityDictionary new.
+	self initializeObjectBindings.
+	self initializeObjectImps
 ]
 
 {
@@ -181,12 +169,26 @@ GLContext >> initializeLibrary [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 3/17/2021 12:33'
+	#timestamp : 'stlu 4/15/2021 12:36'
 }
-GLContext >> initializeWrapperImplementations [
+GLContext >> initializeObjectBindings [
 
-	self flag: #todo. "always adheres to the context's library by default"
-	wrapperImplementations := GLObjectImps forLibrary: library
+	objectBindings := GLObjectBindings new.
+	self flag: #todo. "do not depend on GLObject class hierarchy"
+	library makeCurrentDuring: [
+		GLObject allSubclassesDo: [:cls |
+			(cls theMetaClass includesSelector: #initializeBindings) ifTrue: [
+				cls initializeBindings]]]
+]
+
+{
+	#category : #'initialize-release',
+	#timestamp : 'stlu 4/15/2021 12:32'
+}
+GLContext >> initializeObjectImps [
+
+	self flag: #todo. "always adheres to the context's version by default"
+	objectImps := GLObjectImps forVersion: version
 ]
 
 {
@@ -218,11 +220,11 @@ GLContext >> objectBindings [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/17/2021 23:05'
+	#timestamp : 'stlu 4/15/2021 12:33'
 }
 GLContext >> objectImps [
 
-	^ wrapperImplementations
+	^ objectImps
 ]
 
 {
@@ -278,13 +280,4 @@ GLContext >> userData [
 GLContext >> version [
 
 	^ version
-]
-
-{
-	#category : #accessing,
-	#timestamp : 'stlu 12/13/2020 15:38'
-}
-GLContext >> wrapperImplementations [
-
-	^ wrapperImplementations
 ]
