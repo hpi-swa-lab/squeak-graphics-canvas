@@ -16,15 +16,6 @@ GL10 class >> api [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 13:56'
-}
-GL10 class >> defaultProfile [
-
-	^ #core
-]
-
-{
-	#category : #accessing,
 	#timestamp : 'stlu 4/15/2021 18:02'
 }
 GL10 class >> major [

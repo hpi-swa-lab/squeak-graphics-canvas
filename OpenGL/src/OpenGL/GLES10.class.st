@@ -16,15 +16,6 @@ GLES10 class >> api [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 13:58'
-}
-GLES10 class >> defaultProfile [
-
-	^ #common
-]
-
-{
-	#category : #accessing,
 	#timestamp : 'stlu 4/15/2021 18:02'
 }
 GLES10 class >> major [
