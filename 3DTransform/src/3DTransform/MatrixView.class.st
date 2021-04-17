@@ -81,21 +81,23 @@ MatrixView class >> store: aCollection start: startIndex numColumns: numColumns 
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 1/21/2021 16:29'
+	#timestamp : 'stlu 3/19/2021 15:34'
 }
 MatrixView class >> store: aCollection start: startIndex numColumns: numColumns numRows: numRows columnMajor: isColumnMajor [
 
-	| columns vec |
+	| vec vecArray |
 	vec := FloatVectorView
 			store: aCollection
-			size: numRows
+			size: (isColumnMajor ifTrue: [numRows] ifFalse: [numColumns])
 			start: startIndex
 			stride: 1.
-	columns := SmallVectorArrayView
+	vecArray := SmallVectorArrayView
 				startVector: vec
-				size: numColumns
+				size: (isColumnMajor ifTrue: [numColumns] ifFalse: [numRows])
 				stride: vec stride * vec size.
-	^ self columns: columns
+	^ isColumnMajor
+		ifTrue: [self columns: vecArray]
+		ifFalse: [self rows: vecArray]
 ]
 
 {
@@ -294,6 +296,20 @@ MatrixView >> numRows [
 ]
 
 {
+	#category : #printing,
+	#timestamp : 'stlu 3/19/2021 15:26'
+}
+MatrixView >> printOn: aStream [
+
+	rows
+		do: [:row |
+			row
+				do: [:each | aStream print: each]
+				separatedBy: [aStream space]]
+		separatedBy: [aStream cr]
+]
+
+{
 	#category : #arithmetic,
 	#timestamp : 'stlu 1/19/2021 14:07'
 }
@@ -320,11 +336,16 @@ MatrixView >> privateMultiplyNumber: aNumber [
 
 {
 	#category : #arithmetic,
-	#timestamp : 'stlu 1/19/2021 12:33'
+	#timestamp : 'stlu 3/19/2021 14:54'
 }
 MatrixView >> privateMultiplyVector: aVector [
 
-	self notYetImplemented
+	| result |
+	self assert: aVector size = self numRows.
+	result := aVector species new: aVector size.
+	rows withIndexDo: [:row :i |
+		result at: i put: (aVector dot: row)].
+	^ result
 ]
 
 {
