@@ -147,18 +147,6 @@ GLSLScalar >> isUnsignedInteger [
 ]
 
 {
-	#category : #testing,
-	#timestamp : 'zagto 12/15/2020 18:14'
-}
-GLSLScalar >> max: another [
-	self = another ifFalse: [
-		^ self error: 'tried to take max of ', self, ' and ', another].
-	^ SLMappingToCall new
-			type: self;
-			targetSelector: 'max'
-]
-
-{
 	#category : #accessing,
 	#timestamp : 'stlu 12/14/2020 18:50'
 }

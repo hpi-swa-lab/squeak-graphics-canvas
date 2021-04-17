@@ -107,6 +107,18 @@ GLSLScalar >> cos [
 
 {
 	#category : #'*ShadingLanguage',
+	#timestamp : 'zagto 12/15/2020 18:14'
+}
+GLSLScalar >> max: another [
+	self = another ifFalse: [
+		^ self error: 'tried to take max of ', self, ' and ', another].
+	^ SLMappingToCall new
+			type: self;
+			targetSelector: 'max'
+]
+
+{
+	#category : #'*ShadingLanguage',
 	#timestamp : 'stlu 12/15/2020 13:07'
 }
 GLSLScalar >> negated [
