@@ -2,12 +2,12 @@
 4.10.1
 "
 Class {
-	#name : #LOGLBatching,
+	#name : #RtBatching,
 	#superclass : #LOGLTemplate,
 	#instVars : [
 		'canvas'
 	],
-	#category : #'LearnOpenGL-Advanced',
+	#category : #'RenderThee-Batching',
 	#commentStamp : '<historical>'
 }
 
@@ -15,7 +15,7 @@ Class {
 	#category : #accessing,
 	#timestamp : 'stlu 3/19/2021 17:20'
 }
-LOGLBatching >> projectionMatrix [
+RtBatching >> projectionMatrix [
 
 	^ ((Matrix4x4
 		ortho: ActiveWorld bounds
@@ -28,7 +28,7 @@ LOGLBatching >> projectionMatrix [
 	#category : #running,
 	#timestamp : 'stlu 4/17/2021 10:44'
 }
-LOGLBatching >> render [
+RtBatching >> render [
 
 	canvas reset.
 	canvas fullDraw: ActiveWorld.
@@ -39,7 +39,7 @@ LOGLBatching >> render [
 	#category : #running,
 	#timestamp : 'stlu 3/19/2021 13:08'
 }
-LOGLBatching >> setUp [
+RtBatching >> setUp [
 
 	canvas := GLBatchingCanvas new.
 	canvas projectionMatrix: self projectionMatrix
