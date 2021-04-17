@@ -46,7 +46,7 @@ GLLibrary class >> example1 [ "self example1"
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 4/16/2021 14:37'
+	#timestamp : 'stlu 4/17/2021 11:19'
 }
 GLLibrary class >> example2 [ "self example2"
 	"A very simple OpenGL 1.0 example showing a rotating red rectangle on white background.
@@ -54,10 +54,9 @@ GLLibrary class >> example2 [ "self example2"
 	| context |
 	self flag: #todo. "Correct place for this example?"
 	self flag: #todo. "Move away from B3D since the plugin is only really available on LInux"
-	self flag: #todo. "Adjust to GL instance refactorings"
 	context := B3DContext bounds: (0@0 extent: 400@400).
 	[
-		context library makeCurrentDuring: [
+		(context library withVersionChecking: GL10 new) makeCurrentDuring: [
 			GL disable: GL_DEPTH_TEST.
 			GL clearColor: 1.0 with: 1.0 with: 1.0 with: 1.0.
 			[Sensor anyButtonPressed] whileFalse: [
@@ -619,4 +618,36 @@ GLLibrary >> viewport: aRectangle during: aBlock [
 GLLibrary >> withErrorChecking [
 
 	^ GLErrorCheckingLibrary around: self
+]
+
+{
+	#category : #converting,
+	#timestamp : 'stlu 4/17/2021 10:40'
+}
+GLLibrary >> withVersionChecking [
+
+	^ GLVersionCheckingLibrary around: self
+]
+
+{
+	#category : #converting,
+	#timestamp : 'stlu 4/17/2021 10:42'
+}
+GLLibrary >> withVersionChecking: targetVersion [
+
+	^ GLVersionCheckingLibrary
+		around: self
+		targetVersion: targetVersion
+]
+
+{
+	#category : #converting,
+	#timestamp : 'stlu 4/17/2021 10:42'
+}
+GLLibrary >> withVersionChecking: targetVersion extensions: collectionOfSymbols [
+
+	^ GLVersionCheckingLibrary
+		around: self
+		targetVersion: targetVersion
+		targetExtensions: collectionOfSymbols
 ]

@@ -179,6 +179,21 @@ GLVersion >> getVersion: aLibrary [
 ]
 
 {
+	#category : #'version testing',
+	#timestamp : 'stlu 4/16/2021 20:30'
+}
+GLVersion >> includesMethod: aRegistryMethod [
+
+	| result |
+	result := false.
+	aRegistryMethod pragmas do: [:pragma |
+		(pragma keyword beginsWith: 'glAPI') ifTrue: [
+			(pragma message sendTo: self) ifNotNil: [:newResult |
+				result := newResult]]].
+	^ result
+]
+
+{
 	#category : #initialization,
 	#timestamp : 'stlu 4/15/2021 18:07'
 }
@@ -188,12 +203,58 @@ GLVersion >> initializeWithProfile: aSymbol [
 ]
 
 {
+	#category : #'version testing',
+	#timestamp : 'stlu 4/17/2021 10:21'
+}
+GLVersion >> isAPI: apiSymbol [
+
+	^ self api = apiSymbol
+]
+
+{
+	#category : #'version testing',
+	#timestamp : 'stlu 4/16/2021 20:39'
+}
+GLVersion >> isBelowMajor: major minor: minor [
+
+	self major < major ifTrue: [^ true].
+	^ (self major = major)
+		and: [self minor < minor]
+]
+
+{
+	#category : #'version testing',
+	#timestamp : 'stlu 4/16/2021 20:41'
+}
+GLVersion >> isBelowVersionString: versionString [
+
+	| majorMinor |
+	majorMinor := versionString splitBy: '.'.
+	^ self
+		isBelowMajor: majorMinor first asNumber
+		minor: majorMinor second asNumber
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 4/15/2021 18:06'
 }
 GLVersion >> major [
 
 	^ self class major
+]
+
+{
+	#category : #'version testing',
+	#timestamp : 'stlu 4/17/2021 10:21'
+}
+GLVersion >> matchesProfile: profileSymbol [
+
+	profileSymbol ifNil: [^ true].
+	self profile ifNil: [^ true].
+	self profile = profileSymbol ifTrue: [^ true].
+	
+	^ false
 ]
 
 {
