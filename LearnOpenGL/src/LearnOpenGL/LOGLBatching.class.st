@@ -26,16 +26,13 @@ LOGLBatching >> projectionMatrix [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/19/2021 18:26'
+	#timestamp : 'stlu 4/17/2021 10:44'
 }
 LOGLBatching >> render [
 
-	| time |
-	time := Time microsecondsToRun: [
-		canvas reset.
-		canvas fullDraw: ActiveWorld.
-		canvas draw].
-	self log: time asString
+	canvas reset.
+	canvas fullDraw: ActiveWorld.
+	canvas draw.
 ]
 
 {
