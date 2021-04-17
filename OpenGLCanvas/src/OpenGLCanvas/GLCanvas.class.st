@@ -356,15 +356,13 @@ GLCanvas >> drawPolygonBorder: numVertices borderWidth: borderWidth borderColor:
 
 {
 	#category : #'drawing-text',
-	#timestamp : 'stlu 3/9/2021 16:06'
+	#timestamp : 'stlu 3/9/2021 18:11'
 }
 GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c [
 
 	self bindAndUseProgram: self fontProgram during: [
 		| bitmapFont x |
-		self fontProgram uniforms
-			image: 0;
-			color: c.
+		self fontProgram uniforms color: c.
 		
 		x := 0.
 		bitmapFont := resources font: fontOrNil.
@@ -750,7 +748,7 @@ GLCanvas >> setUniformsFrom: aFillStyle for: aDictionary during: aBlock [
 
 {
 	#category : #'drawing-images',
-	#timestamp : 'stlu 3/9/2021 16:49'
+	#timestamp : 'stlu 3/9/2021 18:10'
 }
 GLCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor [
 	
@@ -764,7 +762,6 @@ GLCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor
 						sourcePosition: sourceRect origin asFloatPoint / store extent asFloatPoint;
 						sourceExtent: sourceRect extent asFloatPoint / store extent asFloatPoint;
 						color: aColor;
-						image: 0;
 						modelMatrix: transform * (Matrix4x4 withScale: store extent @ 1.0).
 					
 					GL drawArrays: GL_TRIANGLE_STRIP with: 0 with: 4]]]].
