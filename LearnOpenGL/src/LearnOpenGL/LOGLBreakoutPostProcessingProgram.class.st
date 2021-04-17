@@ -1,6 +1,6 @@
 Class {
 	#name : #LOGLBreakoutPostProcessingProgram,
-	#superclass : #SLStaticProgram,
+	#superclass : #GLStaticProgram,
 	#category : #'LearnOpenGL-Breakout',
 	#commentStamp : ''
 }
