@@ -1,7 +1,7 @@
 Class {
 	#name : #FFICallbackResult,
 	#superclass : #ExternalUnion,
-	#category : #'Vulkan-FFI-Support',
+	#category : #'OpenGL-FFI-Support',
 	#commentStamp : ''
 }
 

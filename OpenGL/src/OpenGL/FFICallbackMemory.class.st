@@ -22,8 +22,8 @@ Class {
 		'ExecutablePages',
 		'LifoCallbackSemaphore'
 	],
-	#category : #'Vulkan-FFI-Support',
-	#commentStamp : ''
+	#category : #'OpenGL-FFI-Support',
+	#commentStamp : 'stlu 11/13/2020 18:20'
 }
 
 {

@@ -11,7 +11,7 @@ Class {
 	#classVars : [
 		'ThunkToCallbackMap'
 	],
-	#category : #'Vulkan-FFI-Support',
+	#category : #'OpenGL-FFI-Support',
 	#commentStamp : ''
 }
 

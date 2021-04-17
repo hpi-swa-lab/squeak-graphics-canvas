@@ -1,7 +1,7 @@
 Class {
 	#name : #FFICallbackContext,
 	#superclass : #ExternalStructure,
-	#category : #'Vulkan-FFI-Support',
+	#category : #'OpenGL-FFI-Support',
 	#commentStamp : ''
 }
 
