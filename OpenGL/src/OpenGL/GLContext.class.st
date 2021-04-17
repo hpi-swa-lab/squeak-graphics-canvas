@@ -218,6 +218,15 @@ GLContext >> programs [
 ]
 
 {
+	#category : #accessing,
+	#timestamp : 'stlu 12/3/2020 18:49'
+}
+GLContext >> registerObject: glObject [
+
+	objectStore add: glObject
+]
+
+{
 	#category : #'context actions',
 	#timestamp : 'stlu 4/14/2021 17:04'
 }
