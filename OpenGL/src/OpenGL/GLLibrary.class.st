@@ -20,17 +20,6 @@ Class {
 }
 
 {
-	#category : #'instance creation',
-	#timestamp : 'stlu 4/15/2021 22:01'
-}
-GLLibrary class >> context: aContext [
-
-	^ self new
-		context: aContext;
-		yourself
-]
-
-{
 	#category : #examples,
 	#timestamp : 'stlu 4/16/2021 14:34'
 }

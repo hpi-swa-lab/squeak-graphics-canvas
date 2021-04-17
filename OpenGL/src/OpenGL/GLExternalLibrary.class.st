@@ -29,11 +29,11 @@ GLExternalLibrary class >> context: aContext [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/15/2021 22:00'
+	#timestamp : 'stlu 4/16/2021 17:03'
 }
 GLExternalLibrary class >> context: aContext moduleName: aString [
 
-	^ self newInstance
+	^ self new
 		context: aContext;
 		moduleName: aString;
 		yourself
@@ -68,11 +68,11 @@ GLExternalLibrary class >> invalidateInstances [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/15/2021 22:01'
+	#timestamp : 'stlu 4/16/2021 17:04'
 }
-GLExternalLibrary class >> newInstance [
+GLExternalLibrary class >> new [
 
-	^ Instances add: self newSubclass new
+	^ Instances add: (self newSubclass basicNew initialize; yourself)
 ]
 
 {

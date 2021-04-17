@@ -22,12 +22,13 @@ Class {
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 4/15/2021 22:22'
+	#timestamp : 'stlu 4/17/2021 10:29'
 }
 GLErrorCheckingLibrary class >> around: aLibrary [
 
 	^ self new
 		library: aLibrary;
+		context: aLibrary context;
 		yourself
 ]
 
@@ -94,12 +95,11 @@ GLErrorCheckingLibrary >> library [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 4/15/2021 22:23'
+	#timestamp : 'stlu 4/17/2021 10:29'
 }
 GLErrorCheckingLibrary >> library: aLibrary [
 
-	library := aLibrary.
-	context := library context
+	library := aLibrary
 ]
 
 {
