@@ -33,6 +33,15 @@ GL10 class >> minor [
 ]
 
 {
+	#category : #printing,
+	#timestamp : 'stlu 4/17/2021 09:54'
+}
+GL10 >> apiString [
+
+	^ 'OpenGL'
+]
+
+{
 	#category : #parameters,
 	#timestamp : 'stlu 4/15/2021 19:14'
 }

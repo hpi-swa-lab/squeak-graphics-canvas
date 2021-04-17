@@ -122,6 +122,15 @@ GLVersion >> api [
 ]
 
 {
+	#category : #printing,
+	#timestamp : 'stlu 4/17/2021 09:57'
+}
+GLVersion >> apiString [
+
+	^ self api asString
+]
+
+{
 	#category : #converting,
 	#timestamp : 'stlu 4/16/2021 10:30'
 }
@@ -206,10 +215,46 @@ GLVersion >> moduleName [
 ]
 
 {
+	#category : #printing,
+	#timestamp : 'stlu 4/17/2021 10:10'
+}
+GLVersion >> printOn: aStream [
+
+	aStream
+		nextPutAll: self apiString;
+		space;
+		nextPutAll: self versionString.
+	
+	self profile ifNotNil: [
+		aStream
+			nextPutAll: ' (';
+			nextPutAll: self profileString;
+			nextPutAll: ' Profile)']
+]
+
+{
 	#category : #accessing,
 	#timestamp : 'stlu 11/3/2020 12:53'
 }
 GLVersion >> profile [
 
 	^ profile
+]
+
+{
+	#category : #printing,
+	#timestamp : 'stlu 4/17/2021 10:08'
+}
+GLVersion >> profileString [
+
+	^ self profile asString capitalized
+]
+
+{
+	#category : #printing,
+	#timestamp : 'stlu 4/17/2021 09:57'
+}
+GLVersion >> versionString [
+
+	^ self major asString , '.' , self minor asString
 ]

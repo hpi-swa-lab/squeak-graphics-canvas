@@ -33,6 +33,15 @@ GLSC20 class >> minor [
 ]
 
 {
+	#category : #printing,
+	#timestamp : 'stlu 4/17/2021 09:54'
+}
+GLSC20 >> apiString [
+
+	^ 'OpenGL SC'
+]
+
+{
 	#category : #parameters,
 	#timestamp : 'stlu 4/15/2021 19:18'
 }
