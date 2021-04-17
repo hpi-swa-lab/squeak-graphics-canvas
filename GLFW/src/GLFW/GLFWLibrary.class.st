@@ -4349,11 +4349,11 @@ GLFWLibrary >> requestWindowAttention: window [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 10/19/2020 16:32'
+	#timestamp : 'stlu 4/16/2021 17:24'
 }
 GLFWLibrary >> reset [
 
-	callbacks := Dictionary new.
+	callbacks := WeakKeyDictionary new.
 	contexts := Dictionary new
 ]
 
