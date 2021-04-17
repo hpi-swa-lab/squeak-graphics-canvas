@@ -7,12 +7,3 @@ Extension { #name : #Float }
 Float >> glslType [
 	^ GLSLFloat instance
 ]
-
-{
-	#category : #'*OpenGLObjects',
-	#timestamp : 'stlu 11/3/2020 15:29'
-}
-Float >> putAtUniform: location [
-
-	GL uniform1f: location with: self
-]
