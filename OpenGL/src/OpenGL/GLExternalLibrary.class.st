@@ -51,7 +51,7 @@ GLExternalLibrary class >> initialize [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 4/15/2021 22:20'
+	#timestamp : 'stlu 4/16/2021 17:05'
 }
 GLExternalLibrary class >> invalidateInstances [
 	"Make sure everybody interacting with an OpenGL library will notice a no longer valid instance."
@@ -63,7 +63,8 @@ GLExternalLibrary class >> invalidateInstances [
 	
 	self flag: #todo. "Do we want to migrate context instances? Those can hold valuable state."
 	replacements := Array new: instances size withAll: GLInvalidLibrary new.
-	instances elementsForwardIdentityTo: replacements
+	instances elementsForwardIdentityTo: replacements.
+	Instances reset
 ]
 
 {
