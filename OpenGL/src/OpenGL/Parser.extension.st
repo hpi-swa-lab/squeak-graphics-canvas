@@ -1,7 +1,7 @@
 Extension { #name : #Parser }
 
 {
-	#category : #'*Vulkan-FFI-Support',
+	#category : #'*OpenGL-FFI-Support',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Parser >> callback [
@@ -35,7 +35,7 @@ Parser >> callback [
 ]
 
 {
-	#category : #'*Vulkan-FFI-Support',
+	#category : #'*OpenGL-FFI-Support',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 Parser >> externalType: descriptorClass [

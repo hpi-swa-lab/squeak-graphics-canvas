@@ -1,7 +1,7 @@
 Extension { #name : #FFIPlatformDescription }
 
 {
-	#category : #'*Vulkan-FFI-Support',
+	#category : #'*OpenGL-FFI-Support',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 FFIPlatformDescription >> abi [

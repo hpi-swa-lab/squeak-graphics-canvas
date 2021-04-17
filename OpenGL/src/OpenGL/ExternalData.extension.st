@@ -1,7 +1,7 @@
 Extension { #name : #ExternalData }
 
 {
-	#category : #'*Vulkan-FFI-Support-override',
+	#category : #'*OpenGL-FFI-Support-override',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalData >> at: index [
@@ -19,7 +19,7 @@ ExternalData >> at: index [
 ]
 
 {
-	#category : #'*Vulkan-FFI-Support',
+	#category : #'*OpenGL-FFI-Support',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalData >> blockAt: byteIndex byteSize: numBytes [
@@ -30,7 +30,7 @@ ExternalData >> blockAt: byteIndex byteSize: numBytes [
 ]
 
 {
-	#category : #'*Vulkan-FFI-Support',
+	#category : #'*OpenGL-FFI-Support',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalData class >> fromHandle: aHandle byteSize: byteSize [
@@ -40,7 +40,7 @@ ExternalData class >> fromHandle: aHandle byteSize: byteSize [
 ]
 
 {
-	#category : #'*Vulkan-FFI-Support',
+	#category : #'*OpenGL-FFI-Support',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalData >> pointerAt: byteOffset [
@@ -49,7 +49,7 @@ ExternalData >> pointerAt: byteOffset [
 ]
 
 {
-	#category : #'*Vulkan-FFI-Support',
+	#category : #'*OpenGL-FFI-Support',
 	#timestamp : 'stlu 11/13/2020 18:20'
 }
 ExternalData >> pointerAt: byteOffset length: numBytes [
