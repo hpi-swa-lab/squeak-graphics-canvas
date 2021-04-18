@@ -1,11 +1,5 @@
 OrderedDictionary {
-	'Vulkan/src/Vulkan' : #SquotTonelSerializer,
-	'GLFW/src/GLFW' : #SquotTonelSerializer,
-	'LearnOpenGL/src/LearnOpenGL' : #SquotTonelSerializer,
-	'RenderThee/src/RenderThee' : #SquotTonelSerializer,
 	'OpenGLCanvas/src/OpenGLCanvas' : #SquotTonelSerializer,
-	'OpenGLObjects/src/OpenGLObjects' : #SquotTonelSerializer,
-	'3DTransform/src/3DTransform' : #SquotTonelSerializer,
-	'OpenGL/src/OpenGL' : #SquotTonelSerializer,
+	'RenderThee/src/RenderThee' : #SquotTonelSerializer,
 	'ShadingLanguage/src/ShadingLanguage' : #SquotTonelSerializer
 }
