@@ -5,12 +5,12 @@ Class {
 		'renderer'
 	],
 	#category : #'RenderThee-Project',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #canvas,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtWorldState >> canvas: aCanvas [
 
@@ -19,7 +19,7 @@ RtWorldState >> canvas: aCanvas [
 
 {
 	#category : #canvas,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtWorldState >> doFullRepaint [
 
@@ -27,7 +27,7 @@ RtWorldState >> doFullRepaint [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtWorldState >> initialize [
 
@@ -39,7 +39,7 @@ RtWorldState >> initialize [
 
 {
 	#category : #canvas,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtWorldState >> recordDamagedRect: damageRect [
 
@@ -48,7 +48,7 @@ RtWorldState >> recordDamagedRect: damageRect [
 
 {
 	#category : #canvas,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtWorldState >> recordDamagedRect: damageRect from: aMorph [
 
@@ -57,7 +57,7 @@ RtWorldState >> recordDamagedRect: damageRect from: aMorph [
 
 {
 	#category : #'update cycle',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtWorldState >> renderWorld: aWorld [
 	"Update this world's display."
@@ -68,7 +68,7 @@ RtWorldState >> renderWorld: aWorld [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtWorldState >> renderer [
 
@@ -77,7 +77,7 @@ RtWorldState >> renderer [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtWorldState >> renderer: anObject [
 
@@ -86,7 +86,7 @@ RtWorldState >> renderer: anObject [
 
 {
 	#category : #canvas,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtWorldState >> resetDamageRecorder [
 

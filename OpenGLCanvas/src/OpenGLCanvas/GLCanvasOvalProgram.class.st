@@ -2,12 +2,12 @@ Class {
 	#name : #GLCanvasOvalProgram,
 	#superclass : #GLCanvasFillStyleProgram,
 	#category : #'OpenGLCanvas-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasOvalProgram class >> fragmentShaderMain [
 
@@ -31,7 +31,7 @@ GLCanvasOvalProgram class >> fragmentShaderMain [
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasOvalProgram class >> fragmentShaderPrimitivePreamble [
 
@@ -48,7 +48,7 @@ uniform float borderWidth;'
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 3/9/2021 16:51'
+	#'squeak_changestamp' : 'stlu 3/9/2021 16:51'
 }
 GLCanvasOvalProgram class >> vertexShader [
 

@@ -6,12 +6,12 @@ Class {
 		'end'
 	],
 	#category : #ShadingLanguage,
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/10/2021 13:42'
+	#'squeak_changestamp' : 'stlu 1/10/2021 13:42'
 }
 SLMappingToForLoop >> end [
 
@@ -20,7 +20,7 @@ SLMappingToForLoop >> end [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/10/2021 13:42'
+	#'squeak_changestamp' : 'stlu 1/10/2021 13:42'
 }
 SLMappingToForLoop >> end: anObject [
 
@@ -29,7 +29,7 @@ SLMappingToForLoop >> end: anObject [
 
 {
 	#category : #generation,
-	#timestamp : 'zagto 2/28/2021 19:26'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:26'
 }
 SLMappingToForLoop >> generate: aMessageNode for: aGenerator [
 
@@ -38,7 +38,7 @@ SLMappingToForLoop >> generate: aMessageNode for: aGenerator [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/10/2021 13:42'
+	#'squeak_changestamp' : 'stlu 1/10/2021 13:42'
 }
 SLMappingToForLoop >> start [
 
@@ -47,7 +47,7 @@ SLMappingToForLoop >> start [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/10/2021 13:42'
+	#'squeak_changestamp' : 'stlu 1/10/2021 13:42'
 }
 SLMappingToForLoop >> start: anObject [
 

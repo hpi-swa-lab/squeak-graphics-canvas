@@ -2,12 +2,12 @@ Class {
 	#name : #RtMorphicProject,
 	#superclass : #MorphicProject,
 	#category : #'RenderThee-Project',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtMorphicProject >> canApplyUserInterfaceTheme [
 
@@ -16,7 +16,7 @@ RtMorphicProject >> canApplyUserInterfaceTheme [
 
 {
 	#category : #enter,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtMorphicProject >> finalEnterActions: leavingProject [
 
@@ -26,7 +26,7 @@ RtMorphicProject >> finalEnterActions: leavingProject [
 
 {
 	#category : #enter,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtMorphicProject >> finalExitActions: enteringProject [
 
@@ -36,7 +36,7 @@ RtMorphicProject >> finalExitActions: enteringProject [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtMorphicProject >> initialize [
 	"Initialize a new Morphic Project"
@@ -46,7 +46,7 @@ RtMorphicProject >> initialize [
 
 {
 	#category : #'scheduling & debugging',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtMorphicProject >> interruptName: labelString [
 

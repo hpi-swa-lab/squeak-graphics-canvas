@@ -24,12 +24,12 @@ Class {
 		'GLConstants'
 	],
 	#category : #'OpenGLCanvas-Batching',
-	#commentStamp : '<historical>'
+	#'squeak_changestamp' : '<historical>'
 }
 
 {
 	#category : #'drawing-support',
-	#timestamp : 'stlu 3/10/2021 12:52'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:52'
 }
 GLBatchingCanvas >> clipBy: aRectangle during: aBlock [
 
@@ -40,7 +40,7 @@ GLBatchingCanvas >> clipBy: aRectangle during: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLBatchingCanvas >> clipRect [
 	"Answers the rectangle by which all incoming draw commands are clipped.
@@ -51,7 +51,7 @@ GLBatchingCanvas >> clipRect [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLBatchingCanvas >> clipRect: anObject [
 
@@ -60,7 +60,7 @@ GLBatchingCanvas >> clipRect: anObject [
 
 {
 	#category : #'drawing-support',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLBatchingCanvas >> clipRect: aRectangle during: aBlock [
 	"Scoped setter for `clipRect` variable."
@@ -73,7 +73,7 @@ GLBatchingCanvas >> clipRect: aRectangle during: aBlock [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/19/2021 16:09'
+	#'squeak_changestamp' : 'stlu 3/19/2021 16:09'
 }
 GLBatchingCanvas >> draw [
 
@@ -89,7 +89,7 @@ GLBatchingCanvas >> draw [
 
 {
 	#category : #'drawing-polygons',
-	#timestamp : 'stlu 3/10/2021 12:50'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:50'
 }
 GLBatchingCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderColor: bc [
 
@@ -98,7 +98,7 @@ GLBatchingCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderCo
 
 {
 	#category : #'drawing-polygons',
-	#timestamp : 'stlu 3/10/2021 12:50'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:50'
 }
 GLBatchingCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -107,7 +107,7 @@ GLBatchingCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBo
 
 {
 	#category : #'drawing-polygons',
-	#timestamp : 'stlu 3/10/2021 12:50'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:50'
 }
 GLBatchingCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: bw borderColor: bc [
 
@@ -116,7 +116,7 @@ GLBatchingCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: bw 
 
 {
 	#category : #'drawing-text',
-	#timestamp : 'stlu 3/10/2021 12:56'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:56'
 }
 GLBatchingCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c [
 
@@ -125,7 +125,7 @@ GLBatchingCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect 
 
 {
 	#category : #'drawing-ovals',
-	#timestamp : 'stlu 3/10/2021 12:50'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:50'
 }
 GLBatchingCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderColor [
 
@@ -134,7 +134,7 @@ GLBatchingCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: b
 
 {
 	#category : #'drawing-ovals',
-	#timestamp : 'stlu 3/10/2021 12:50'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:50'
 }
 GLBatchingCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -143,7 +143,7 @@ GLBatchingCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderStyle: aBor
 
 {
 	#category : #'drawing-ovals',
-	#timestamp : 'stlu 3/10/2021 12:50'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:50'
 }
 GLBatchingCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderWidth: bw borderColor: bc [
 
@@ -152,7 +152,7 @@ GLBatchingCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderWidth: bw b
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 3/19/2021 12:14'
+	#'squeak_changestamp' : 'stlu 3/19/2021 12:14'
 }
 GLBatchingCanvas >> fillRectangle: aRectangle fillStyle: aFillStyle [
 
@@ -164,7 +164,7 @@ GLBatchingCanvas >> fillRectangle: aRectangle fillStyle: aFillStyle [
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 3/19/2021 12:14'
+	#'squeak_changestamp' : 'stlu 3/19/2021 12:14'
 }
 GLBatchingCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
 
@@ -176,7 +176,7 @@ GLBatchingCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: b
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 3/19/2021 17:39'
+	#'squeak_changestamp' : 'stlu 3/19/2021 17:39'
 }
 GLBatchingCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -194,7 +194,7 @@ GLBatchingCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle bord
 
 {
 	#category : #'drawing-rounded rectangles',
-	#timestamp : 'stlu 3/19/2021 17:24'
+	#'squeak_changestamp' : 'stlu 3/19/2021 17:24'
 }
 GLBatchingCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -205,7 +205,7 @@ GLBatchingCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillS
 
 {
 	#category : #'drawing-rounded rectangles',
-	#timestamp : 'stlu 3/19/2021 17:23'
+	#'squeak_changestamp' : 'stlu 3/19/2021 17:23'
 }
 GLBatchingCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: fillStyle borderWidth: bw borderColor: bc [
 
@@ -218,7 +218,7 @@ GLBatchingCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillS
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 3/19/2021 12:15'
+	#'squeak_changestamp' : 'stlu 3/19/2021 12:15'
 }
 GLBatchingCanvas >> frameRectangle: aRectangle borderStyle: aBorderStyle [
 
@@ -230,7 +230,7 @@ GLBatchingCanvas >> frameRectangle: aRectangle borderStyle: aBorderStyle [
 
 {
 	#category : #'drawing-images',
-	#timestamp : 'stlu 3/10/2021 12:50'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:50'
 }
 GLBatchingCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
@@ -239,7 +239,7 @@ GLBatchingCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/19/2021 17:19'
+	#'squeak_changestamp' : 'stlu 3/19/2021 17:19'
 }
 GLBatchingCanvas >> initialize [
 
@@ -316,7 +316,7 @@ GLBatchingCanvas >> initialize [
 
 {
 	#category : #'drawing-lines',
-	#timestamp : 'stlu 3/19/2021 17:30'
+	#'squeak_changestamp' : 'stlu 3/19/2021 17:30'
 }
 GLBatchingCanvas >> line: from to: to width: width color: color [
 
@@ -331,7 +331,7 @@ GLBatchingCanvas >> line: from to: to width: width color: color [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLBatchingCanvas >> origin [
 	"Answers the global coordinate of the currently active local origin."
@@ -340,7 +340,7 @@ GLBatchingCanvas >> origin [
 
 {
 	#category : #'drawing-text',
-	#timestamp : 'stlu 3/10/2021 12:56'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:56'
 }
 GLBatchingCanvas >> paragraph: aParagraph bounds: aRectangle color: aColor [
 
@@ -349,7 +349,7 @@ GLBatchingCanvas >> paragraph: aParagraph bounds: aRectangle color: aColor [
 
 {
 	#category : #'drawing-support',
-	#timestamp : 'stlu 3/10/2021 12:52'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:52'
 }
 GLBatchingCanvas >> preserveStateDuring: aBlock [
 
@@ -358,7 +358,7 @@ GLBatchingCanvas >> preserveStateDuring: aBlock [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/19/2021 13:18'
+	#'squeak_changestamp' : 'stlu 3/19/2021 13:18'
 }
 GLBatchingCanvas >> projectionMatrix: aMatrix4x4 [
 
@@ -367,7 +367,7 @@ GLBatchingCanvas >> projectionMatrix: aMatrix4x4 [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/19/2021 13:58'
+	#'squeak_changestamp' : 'stlu 3/19/2021 13:58'
 }
 GLBatchingCanvas >> quadVertices [
 
@@ -384,7 +384,7 @@ GLBatchingCanvas >> quadVertices [
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 3/19/2021 16:58'
+	#'squeak_changestamp' : 'stlu 3/19/2021 16:58'
 }
 GLBatchingCanvas >> rectangle: aRectangle solidColor: aColor [
 
@@ -406,7 +406,7 @@ GLBatchingCanvas >> rectangle: aRectangle solidColor: aColor [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/15/2021 12:09'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:09'
 }
 GLBatchingCanvas >> reset [
 
@@ -418,7 +418,7 @@ GLBatchingCanvas >> reset [
 
 {
 	#category : #'drawing-support',
-	#timestamp : 'stlu 3/18/2021 17:36'
+	#'squeak_changestamp' : 'stlu 3/18/2021 17:36'
 }
 GLBatchingCanvas >> scaleBy: aPoint during: aBlock [
 	
@@ -429,7 +429,7 @@ GLBatchingCanvas >> scaleBy: aPoint during: aBlock [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/19/2021 14:11'
+	#'squeak_changestamp' : 'stlu 3/19/2021 14:11'
 }
 GLBatchingCanvas >> solidRectangleFragmentShader [
 
@@ -446,7 +446,7 @@ void main() {
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/19/2021 18:24'
+	#'squeak_changestamp' : 'stlu 3/19/2021 18:24'
 }
 GLBatchingCanvas >> solidRectangleVertexShader [
 
@@ -473,7 +473,7 @@ void main() {
 
 {
 	#category : #'drawing-images',
-	#timestamp : 'stlu 3/10/2021 12:49'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:49'
 }
 GLBatchingCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor [
 
@@ -482,7 +482,7 @@ GLBatchingCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLBatchingCanvas >> transform [
 	"Answers the Matrix2x3 by which all drawing commands are currently transformed.
@@ -492,7 +492,7 @@ GLBatchingCanvas >> transform [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLBatchingCanvas >> transform: anObject [
 
@@ -501,7 +501,7 @@ GLBatchingCanvas >> transform: anObject [
 
 {
 	#category : #'drawing-support',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLBatchingCanvas >> transform: aTransform during: aBlock [
 	"Scoped setter for `transform` variable."
@@ -514,7 +514,7 @@ GLBatchingCanvas >> transform: aTransform during: aBlock [
 
 {
 	#category : #'drawing-support',
-	#timestamp : 'stlu 3/18/2021 17:26'
+	#'squeak_changestamp' : 'stlu 3/18/2021 17:26'
 }
 GLBatchingCanvas >> transformBy: aTransform during: aBlock [
 
@@ -528,7 +528,7 @@ GLBatchingCanvas >> transformBy: aTransform during: aBlock [
 
 {
 	#category : #'drawing-support',
-	#timestamp : 'stlu 3/18/2021 17:26'
+	#'squeak_changestamp' : 'stlu 3/18/2021 17:26'
 }
 GLBatchingCanvas >> translateBy: aPoint during: aBlock [
 
@@ -539,7 +539,7 @@ GLBatchingCanvas >> translateBy: aPoint during: aBlock [
 
 {
 	#category : #'drawing-images',
-	#timestamp : 'stlu 3/10/2021 12:49'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:49'
 }
 GLBatchingCanvas >> warpImage: aForm transform: aTransform at: extraOffset sourceRect: sourceRect cellSize: cellSize [
 

@@ -8,12 +8,12 @@ Class {
 		'analyzer'
 	],
 	#category : #ShadingLanguage,
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 12/2/2020 04:22'
+	#'squeak_changestamp' : 'stlu 12/2/2020 04:22'
 }
 SLGenerator class >> example1 [
 	"self example1"
@@ -24,7 +24,7 @@ SLGenerator class >> example1 [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'zagto 2/28/2021 19:27'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:27'
 }
 SLGenerator class >> initialize [
 	CodeHolder 	addContentsSymbolQuint: #(#glsl #toggleGeneratedGLSL #showingGeneratedGLSLString 'GLSL' 'generated GLSL') afterPosition: (CodeHolder contentsSymbolQuints size).
@@ -34,7 +34,7 @@ SLGenerator class >> initialize [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 12/2/2020 04:19'
+	#'squeak_changestamp' : 'stlu 12/2/2020 04:19'
 }
 SLGenerator class >> transform: sourceString [
 
@@ -47,7 +47,7 @@ SLGenerator class >> transform: sourceString [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 18:58'
+	#'squeak_changestamp' : 'zagto 2/28/2021 18:58'
 }
 SLGenerator >> acceptAssignmentNode: anAssignmentNode [
 
@@ -58,7 +58,7 @@ SLGenerator >> acceptAssignmentNode: anAssignmentNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 18:58'
+	#'squeak_changestamp' : 'zagto 2/28/2021 18:58'
 }
 SLGenerator >> acceptBlockNode: aBlockNode [
 
@@ -67,7 +67,7 @@ SLGenerator >> acceptBlockNode: aBlockNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 18:58'
+	#'squeak_changestamp' : 'zagto 2/28/2021 18:58'
 }
 SLGenerator >> acceptLiteralNode: aLiteralNode [
 
@@ -76,7 +76,7 @@ SLGenerator >> acceptLiteralNode: aLiteralNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 18:58'
+	#'squeak_changestamp' : 'zagto 2/28/2021 18:58'
 }
 SLGenerator >> acceptMessageNode: aMessageNode [
 
@@ -85,7 +85,7 @@ SLGenerator >> acceptMessageNode: aMessageNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:13'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:13'
 }
 SLGenerator >> acceptMethodNode: aMethodNode [
 
@@ -104,7 +104,7 @@ SLGenerator >> acceptMethodNode: aMethodNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 18:59'
+	#'squeak_changestamp' : 'zagto 2/28/2021 18:59'
 }
 SLGenerator >> acceptSequenceNode: aSequenceNode [
 
@@ -127,7 +127,7 @@ SLGenerator >> acceptSequenceNode: aSequenceNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 18:59'
+	#'squeak_changestamp' : 'zagto 2/28/2021 18:59'
 }
 SLGenerator >> acceptVariableNode: aVariableNode [
 
@@ -136,7 +136,7 @@ SLGenerator >> acceptVariableNode: aVariableNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 1/10/2021 20:21'
+	#'squeak_changestamp' : 'stlu 1/10/2021 20:21'
 }
 SLGenerator >> actualName: varName [
 
@@ -147,7 +147,7 @@ SLGenerator >> actualName: varName [
 
 {
 	#category : #'glsl snippets',
-	#timestamp : 'zagto 2/28/2021 18:35'
+	#'squeak_changestamp' : 'zagto 2/28/2021 18:35'
 }
 SLGenerator >> closeBlock [
 
@@ -158,7 +158,7 @@ SLGenerator >> closeBlock [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:01'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:01'
 }
 SLGenerator >> findUnusedName: name [
 
@@ -172,7 +172,7 @@ SLGenerator >> findUnusedName: name [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:01'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:01'
 }
 SLGenerator >> generate: aMessageNode call: callName [
 
@@ -188,7 +188,7 @@ SLGenerator >> generate: aMessageNode call: callName [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:22'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:22'
 }
 SLGenerator >> generate: aMessageNode componentRead: componentName [
 
@@ -200,7 +200,7 @@ SLGenerator >> generate: aMessageNode componentRead: componentName [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:22'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:22'
 }
 SLGenerator >> generate: aMessageNode componentWrite: componentName [
 
@@ -214,7 +214,7 @@ SLGenerator >> generate: aMessageNode componentWrite: componentName [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:22'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:22'
 }
 SLGenerator >> generate: aMessageNode conditionExpression: isNegated [
 
@@ -231,7 +231,7 @@ SLGenerator >> generate: aMessageNode conditionExpression: isNegated [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:22'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:22'
 }
 SLGenerator >> generate: aMessageNode conditionStatement: isNegated [
 
@@ -253,7 +253,7 @@ SLGenerator >> generate: aMessageNode conditionStatement: isNegated [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:06'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:06'
 }
 SLGenerator >> generate: aMessageNode forLoopFrom: from to: to [
 
@@ -281,7 +281,7 @@ SLGenerator >> generate: aMessageNode forLoopFrom: from to: to [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:22'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:22'
 }
 SLGenerator >> generate: aMessageNode operator: operator [
 
@@ -299,7 +299,7 @@ SLGenerator >> generate: aMessageNode operator: operator [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:22'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:22'
 }
 SLGenerator >> generate: aMessageNode resourceRead: resourceName [
 
@@ -308,7 +308,7 @@ SLGenerator >> generate: aMessageNode resourceRead: resourceName [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:22'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:22'
 }
 SLGenerator >> generate: aMessageNode resourceWrites: resourceNames [
 
@@ -328,7 +328,7 @@ SLGenerator >> generate: aMessageNode resourceWrites: resourceNames [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:22'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:22'
 }
 SLGenerator >> generateArrayRead: aMessageNode [
 
@@ -340,7 +340,7 @@ SLGenerator >> generateArrayRead: aMessageNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:23'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:23'
 }
 SLGenerator >> generateArrayWrite: aMessageNode [
 
@@ -353,7 +353,7 @@ SLGenerator >> generateArrayWrite: aMessageNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:11'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:11'
 }
 SLGenerator >> generateResourceVariables [
 	analyzer resourceVariableToInterface keysAndValuesDo: [:name :interface |
@@ -371,7 +371,7 @@ SLGenerator >> generateResourceVariables [
 
 {
 	#category : #stream,
-	#timestamp : 'zagto 2/28/2021 19:23'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:23'
 }
 SLGenerator >> indent [
 
@@ -380,7 +380,7 @@ SLGenerator >> indent [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'zagto 2/28/2021 19:14'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:14'
 }
 SLGenerator >> initialize [
 
@@ -392,7 +392,7 @@ SLGenerator >> initialize [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:11'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:11'
 }
 SLGenerator >> isGLIntegrated: resourceName [
 
@@ -401,7 +401,7 @@ SLGenerator >> isGLIntegrated: resourceName [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:01'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:01'
 }
 SLGenerator >> maximumAliasAttempts [
 
@@ -410,7 +410,7 @@ SLGenerator >> maximumAliasAttempts [
 
 {
 	#category : #stream,
-	#timestamp : 'zagto 2/28/2021 19:23'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:23'
 }
 SLGenerator >> newLine [
 
@@ -421,7 +421,7 @@ SLGenerator >> newLine [
 
 {
 	#category : #'glsl snippets',
-	#timestamp : 'zagto 2/28/2021 19:04'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:04'
 }
 SLGenerator >> openBlock [
 
@@ -432,7 +432,7 @@ SLGenerator >> openBlock [
 
 {
 	#category : #'glsl snippets',
-	#timestamp : 'zagto 2/28/2021 19:23'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:23'
 }
 SLGenerator >> openMainBlock [
 
@@ -442,7 +442,7 @@ SLGenerator >> openMainBlock [
 
 {
 	#category : #stream,
-	#timestamp : 'zagto 2/28/2021 19:23'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:23'
 }
 SLGenerator >> outdent [
 
@@ -451,7 +451,7 @@ SLGenerator >> outdent [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 2/28/2021 19:14'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:14'
 }
 SLGenerator >> result [
 
@@ -460,7 +460,7 @@ SLGenerator >> result [
 
 {
 	#category : #'glsl snippets',
-	#timestamp : 'zagto 2/28/2021 19:09'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:09'
 }
 SLGenerator >> statementSeparator [
 
@@ -469,7 +469,7 @@ SLGenerator >> statementSeparator [
 
 {
 	#category : #'glsl snippets',
-	#timestamp : 'zagto 2/28/2021 18:29'
+	#'squeak_changestamp' : 'zagto 2/28/2021 18:29'
 }
 SLGenerator >> versionHeader [
 

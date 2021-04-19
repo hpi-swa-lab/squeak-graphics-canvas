@@ -2,12 +2,12 @@ Class {
 	#name : #GLCanvasTextureProgram,
 	#superclass : #GLStaticProgram,
 	#category : #'OpenGLCanvas-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasTextureProgram class >> fragmentShader [
 
@@ -25,7 +25,7 @@ void main() {
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 3/9/2021 16:52'
+	#'squeak_changestamp' : 'stlu 3/9/2021 16:52'
 }
 GLCanvasTextureProgram class >> vertexShader [
 

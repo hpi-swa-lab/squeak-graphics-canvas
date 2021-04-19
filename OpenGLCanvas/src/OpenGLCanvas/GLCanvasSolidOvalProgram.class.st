@@ -2,12 +2,12 @@ Class {
 	#name : #GLCanvasSolidOvalProgram,
 	#superclass : #GLCanvasOvalProgram,
 	#category : #'OpenGLCanvas-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasSolidOvalProgram class >> fragmentShaderFillColor [
 

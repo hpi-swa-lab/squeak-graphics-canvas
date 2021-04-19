@@ -21,12 +21,12 @@ Class {
 		'GLConstants'
 	],
 	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore class >> defaultCanvasClass [
 
@@ -35,7 +35,7 @@ RtFramebufferStore class >> defaultCanvasClass [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore class >> extent: aPoint [
 
@@ -46,7 +46,7 @@ RtFramebufferStore class >> extent: aPoint [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore class >> form: aForm [
 
@@ -57,7 +57,7 @@ RtFramebufferStore class >> form: aForm [
 
 {
 	#category : #'gl calls',
-	#timestamp : 'stlu 11/3/2020 15:43'
+	#'squeak_changestamp' : 'stlu 11/3/2020 15:43'
 }
 RtFramebufferStore >> clear [
 
@@ -67,7 +67,7 @@ RtFramebufferStore >> clear [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> displayTransform [
 
@@ -76,7 +76,7 @@ RtFramebufferStore >> displayTransform [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> extent [
 
@@ -85,7 +85,7 @@ RtFramebufferStore >> extent [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> extent: aPoint [
 
@@ -94,7 +94,7 @@ RtFramebufferStore >> extent: aPoint [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> extentChanged [
 
@@ -103,7 +103,7 @@ RtFramebufferStore >> extentChanged [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> form [
 
@@ -112,7 +112,7 @@ RtFramebufferStore >> form [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> framebuffer [
 
@@ -121,7 +121,7 @@ RtFramebufferStore >> framebuffer [
 
 {
 	#category : #private,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> getCanvas [
 
@@ -130,7 +130,7 @@ RtFramebufferStore >> getCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 12:21'
+	#'squeak_changestamp' : 'stlu 10/26/2020 12:21'
 }
 RtFramebufferStore >> glLibrary [
 
@@ -139,7 +139,7 @@ RtFramebufferStore >> glLibrary [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> glTextureDo: aBlock [
 
@@ -148,7 +148,7 @@ RtFramebufferStore >> glTextureDo: aBlock [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/3/2020 15:43'
+	#'squeak_changestamp' : 'stlu 11/3/2020 15:43'
 }
 RtFramebufferStore >> initializeGLSettings [
 
@@ -157,7 +157,7 @@ RtFramebufferStore >> initializeGLSettings [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 10/28/2020 23:48'
+	#'squeak_changestamp' : 'stlu 10/28/2020 23:48'
 }
 RtFramebufferStore >> initializeWithExtent: aPoint [
 
@@ -172,7 +172,7 @@ RtFramebufferStore >> initializeWithExtent: aPoint [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 10/28/2020 23:48'
+	#'squeak_changestamp' : 'stlu 10/28/2020 23:48'
 }
 RtFramebufferStore >> initializeWithForm: aForm [
 
@@ -183,7 +183,7 @@ RtFramebufferStore >> initializeWithForm: aForm [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
@@ -199,7 +199,7 @@ RtFramebufferStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> release [
 
@@ -211,7 +211,7 @@ RtFramebufferStore >> release [
 
 {
 	#category : #'gl calls',
-	#timestamp : 'stlu 4/15/2021 12:11'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:11'
 }
 RtFramebufferStore >> resetViewport [
 
@@ -220,7 +220,7 @@ RtFramebufferStore >> resetViewport [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFramebufferStore >> texture [
 

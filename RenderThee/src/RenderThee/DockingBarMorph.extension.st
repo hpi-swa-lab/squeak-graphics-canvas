@@ -2,7 +2,7 @@ Extension { #name : #DockingBarMorph }
 
 {
 	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 DockingBarMorph >> isRepaintBoundary [
 

@@ -1,1 +1,4 @@
-Package { #name : #OpenGLCanvas }
+Package {
+	#'squeak_changestamp' : true,
+	#name : #OpenGLCanvas
+}

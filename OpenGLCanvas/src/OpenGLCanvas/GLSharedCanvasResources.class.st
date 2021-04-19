@@ -26,12 +26,12 @@ Class {
 		'GLConstants'
 	],
 	#category : #'OpenGLCanvas-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #updating,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLSharedCanvasResources class >> updateIn: aGLLibrary [
 	
@@ -43,7 +43,7 @@ GLSharedCanvasResources class >> updateIn: aGLLibrary [
 
 {
 	#category : #programs,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLSharedCanvasResources >> bitmapOvalProgram [
 
@@ -52,7 +52,7 @@ GLSharedCanvasResources >> bitmapOvalProgram [
 
 {
 	#category : #programs,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLSharedCanvasResources >> bitmapPolygonProgram [
 
@@ -61,7 +61,7 @@ GLSharedCanvasResources >> bitmapPolygonProgram [
 
 {
 	#category : #programs,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLSharedCanvasResources >> bitmapRectangleProgram [
 
@@ -70,7 +70,7 @@ GLSharedCanvasResources >> bitmapRectangleProgram [
 
 {
 	#category : #buffers,
-	#timestamp : 'stlu 3/9/2021 15:28'
+	#'squeak_changestamp' : 'stlu 3/9/2021 15:28'
 }
 GLSharedCanvasResources >> dynamicVBO [
 
@@ -79,7 +79,7 @@ GLSharedCanvasResources >> dynamicVBO [
 
 {
 	#category : #fonts,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLSharedCanvasResources >> font: aFont [
 
@@ -91,7 +91,7 @@ GLSharedCanvasResources >> font: aFont [
 
 {
 	#category : #programs,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLSharedCanvasResources >> fontProgram [
 
@@ -100,7 +100,7 @@ GLSharedCanvasResources >> fontProgram [
 
 {
 	#category : #programs,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLSharedCanvasResources >> gradientOvalProgram [
 
@@ -109,7 +109,7 @@ GLSharedCanvasResources >> gradientOvalProgram [
 
 {
 	#category : #programs,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLSharedCanvasResources >> gradientPolygonProgram [
 
@@ -118,7 +118,7 @@ GLSharedCanvasResources >> gradientPolygonProgram [
 
 {
 	#category : #programs,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLSharedCanvasResources >> gradientRectangleProgram [
 
@@ -127,7 +127,7 @@ GLSharedCanvasResources >> gradientRectangleProgram [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/9/2021 15:47'
+	#'squeak_changestamp' : 'stlu 3/9/2021 15:47'
 }
 GLSharedCanvasResources >> initialize [
 
@@ -140,7 +140,7 @@ GLSharedCanvasResources >> initialize [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/9/2021 15:49'
+	#'squeak_changestamp' : 'stlu 3/9/2021 15:49'
 }
 GLSharedCanvasResources >> initializeBuffers [
 
@@ -174,7 +174,7 @@ GLSharedCanvasResources >> initializeBuffers [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/9/2021 14:56'
+	#'squeak_changestamp' : 'stlu 3/9/2021 14:56'
 }
 GLSharedCanvasResources >> initializeFonts [
 
@@ -183,7 +183,7 @@ GLSharedCanvasResources >> initializeFonts [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/9/2021 12:54'
+	#'squeak_changestamp' : 'stlu 3/9/2021 12:54'
 }
 GLSharedCanvasResources >> initializePrograms [
 	
@@ -207,7 +207,7 @@ GLSharedCanvasResources >> initializePrograms [
 
 {
 	#category : #programs,
-	#timestamp : 'stlu 3/9/2021 14:54'
+	#'squeak_changestamp' : 'stlu 3/9/2021 14:54'
 }
 GLSharedCanvasResources >> ovalPrograms [
 	
@@ -220,7 +220,7 @@ GLSharedCanvasResources >> ovalPrograms [
 
 {
 	#category : #programs,
-	#timestamp : 'stlu 3/9/2021 14:54'
+	#'squeak_changestamp' : 'stlu 3/9/2021 14:54'
 }
 GLSharedCanvasResources >> polygonPrograms [
 
@@ -233,7 +233,7 @@ GLSharedCanvasResources >> polygonPrograms [
 
 {
 	#category : #programs,
-	#timestamp : 'stlu 3/9/2021 16:44'
+	#'squeak_changestamp' : 'stlu 3/9/2021 16:44'
 }
 GLSharedCanvasResources >> programsDo: aBlock [
 
@@ -256,7 +256,7 @@ GLSharedCanvasResources >> programsDo: aBlock [
 
 {
 	#category : #buffers,
-	#timestamp : 'stlu 3/9/2021 15:00'
+	#'squeak_changestamp' : 'stlu 3/9/2021 15:00'
 }
 GLSharedCanvasResources >> quadVBO [
 
@@ -265,7 +265,7 @@ GLSharedCanvasResources >> quadVBO [
 
 {
 	#category : #programs,
-	#timestamp : 'stlu 3/9/2021 14:55'
+	#'squeak_changestamp' : 'stlu 3/9/2021 14:55'
 }
 GLSharedCanvasResources >> rectanglePrograms [
 	
@@ -278,7 +278,7 @@ GLSharedCanvasResources >> rectanglePrograms [
 
 {
 	#category : #programs,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLSharedCanvasResources >> solidOvalProgram [
 
@@ -287,7 +287,7 @@ GLSharedCanvasResources >> solidOvalProgram [
 
 {
 	#category : #programs,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLSharedCanvasResources >> solidPolygonProgram [
 
@@ -296,7 +296,7 @@ GLSharedCanvasResources >> solidPolygonProgram [
 
 {
 	#category : #programs,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLSharedCanvasResources >> solidRectangleProgram [
 
@@ -305,7 +305,7 @@ GLSharedCanvasResources >> solidRectangleProgram [
 
 {
 	#category : #programs,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLSharedCanvasResources >> stencilProgram [
 
@@ -314,7 +314,7 @@ GLSharedCanvasResources >> stencilProgram [
 
 {
 	#category : #programs,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLSharedCanvasResources >> textureProgram [
 
@@ -323,7 +323,7 @@ GLSharedCanvasResources >> textureProgram [
 
 {
 	#category : #buffers,
-	#timestamp : 'stlu 3/9/2021 15:04'
+	#'squeak_changestamp' : 'stlu 3/9/2021 15:04'
 }
 GLSharedCanvasResources >> vao [
 

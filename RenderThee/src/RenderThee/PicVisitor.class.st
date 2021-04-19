@@ -2,12 +2,12 @@ Class {
 	#name : #PicVisitor,
 	#superclass : #Object,
 	#category : #'RenderThee-Pictures',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:14'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:14'
 }
 PicVisitor >> visit: anObject [
 
@@ -16,7 +16,7 @@ PicVisitor >> visit: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:13'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:13'
 }
 PicVisitor >> visitClip: anObject [
 
@@ -25,7 +25,7 @@ PicVisitor >> visitClip: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:12'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:12'
 }
 PicVisitor >> visitGroup: aGroup [
 
@@ -35,7 +35,7 @@ PicVisitor >> visitGroup: aGroup [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:11'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:11'
 }
 PicVisitor >> visitImage: anObject [
 
@@ -44,7 +44,7 @@ PicVisitor >> visitImage: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:11'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:11'
 }
 PicVisitor >> visitLine: anObject [
 
@@ -53,7 +53,7 @@ PicVisitor >> visitLine: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:11'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:11'
 }
 PicVisitor >> visitOval: anObject [
 
@@ -62,7 +62,7 @@ PicVisitor >> visitOval: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:11'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:11'
 }
 PicVisitor >> visitParagraph: anObject [
 
@@ -71,7 +71,7 @@ PicVisitor >> visitParagraph: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:11'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:11'
 }
 PicVisitor >> visitPolygon: anObject [
 
@@ -80,7 +80,7 @@ PicVisitor >> visitPolygon: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:11'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:11'
 }
 PicVisitor >> visitRectangle: anObject [
 
@@ -89,7 +89,7 @@ PicVisitor >> visitRectangle: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:11'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:11'
 }
 PicVisitor >> visitRoundedRectangle: anObject [
 
@@ -98,7 +98,7 @@ PicVisitor >> visitRoundedRectangle: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:11'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:11'
 }
 PicVisitor >> visitString: anObject [
 
@@ -107,7 +107,7 @@ PicVisitor >> visitString: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:13'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:13'
 }
 PicVisitor >> visitTransform: anObject [
 
@@ -116,7 +116,7 @@ PicVisitor >> visitTransform: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:11'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:11'
 }
 PicVisitor >> visitUnsupported: anObject [
 

@@ -2,12 +2,12 @@ Class {
 	#name : #SgSpace,
 	#superclass : #Morph,
 	#category : #'RenderThee-Demo-SpaceGame',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 SgSpace >> createStars: numStars [
 
@@ -23,7 +23,7 @@ SgSpace >> createStars: numStars [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 SgSpace >> initialize [
 
@@ -33,7 +33,7 @@ SgSpace >> initialize [
 
 {
 	#category : #'repaint boundary',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 SgSpace >> isRepaintBoundary [
 

@@ -5,12 +5,12 @@ Class {
 		'vertices'
 	],
 	#category : #'RenderThee-Pictures',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawPolygon class >> vertices: collectionOfPoints fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -23,7 +23,7 @@ PicDrawPolygon class >> vertices: collectionOfPoints fillStyle: aFillStyle borde
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:05'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
 PicDrawPolygon >> acceptVisitor: aVisitor [
 
@@ -32,7 +32,7 @@ PicDrawPolygon >> acceptVisitor: aVisitor [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawPolygon >> drawOn: aCanvas [
 
@@ -45,7 +45,7 @@ PicDrawPolygon >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawPolygon >> estimatedBounds [
 
@@ -54,7 +54,7 @@ PicDrawPolygon >> estimatedBounds [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawPolygon >> vertices [
 
@@ -63,7 +63,7 @@ PicDrawPolygon >> vertices [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawPolygon >> vertices: anObject [
 

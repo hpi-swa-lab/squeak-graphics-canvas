@@ -2,12 +2,12 @@ Class {
 	#name : #RtLayerTreeRenderer,
 	#superclass : #RtMorphicRenderer,
 	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtLayerTreeRenderer class >> morph: aMorph imageStore: anImageStore [
 
@@ -18,7 +18,7 @@ RtLayerTreeRenderer class >> morph: aMorph imageStore: anImageStore [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtLayerTreeRenderer >> initializeWithMorph: aMorph imageStore: anImageStore [
 
@@ -32,7 +32,7 @@ RtLayerTreeRenderer >> initializeWithMorph: aMorph imageStore: anImageStore [
 
 {
 	#category : #'initialize-release',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtLayerTreeRenderer >> release [
 
@@ -41,7 +41,7 @@ RtLayerTreeRenderer >> release [
 
 {
 	#category : #rendering,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtLayerTreeRenderer >> renderFrame [
 

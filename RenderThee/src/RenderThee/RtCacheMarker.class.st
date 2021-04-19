@@ -5,12 +5,12 @@ Class {
 		'cachingStrategy'
 	],
 	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtCacheMarker >> cachingStrategy [
 	^ cachingStrategy
@@ -18,7 +18,7 @@ RtCacheMarker >> cachingStrategy [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtCacheMarker >> cachingStrategy: anObject [
 	cachingStrategy := anObject
@@ -26,7 +26,7 @@ RtCacheMarker >> cachingStrategy: anObject [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtCacheMarker >> shouldCacheDrawLayer: aLayer [
 
@@ -35,7 +35,7 @@ RtCacheMarker >> shouldCacheDrawLayer: aLayer [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtCacheMarker >> shouldCacheGroupLayer: aLayer [
 
@@ -44,7 +44,7 @@ RtCacheMarker >> shouldCacheGroupLayer: aLayer [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtCacheMarker >> visitDrawLayer: aLayer [
 
@@ -54,7 +54,7 @@ RtCacheMarker >> visitDrawLayer: aLayer [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtCacheMarker >> visitGroupLayer: aLayer [
 

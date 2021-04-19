@@ -2,12 +2,12 @@ Class {
 	#name : #RtRecordingCanvasTest,
 	#superclass : #RtCanvasTest,
 	#category : #'RenderThee-Tests',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtRecordingCanvasTest >> canvasForm [
 
@@ -16,7 +16,7 @@ RtRecordingCanvasTest >> canvasForm [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtRecordingCanvasTest >> createCanvas [
 

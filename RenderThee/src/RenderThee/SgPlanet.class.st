@@ -5,12 +5,12 @@ Class {
 		'rotationSpeed'
 	],
 	#category : #'RenderThee-Demo-SpaceGame',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 SgPlanet class >> planet: aNumber [
 
@@ -21,7 +21,7 @@ SgPlanet class >> planet: aNumber [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 SgPlanet >> id: anInteger [
 

@@ -6,12 +6,12 @@ Class {
 		'type'
 	],
 	#category : #ShadingLanguage,
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #generation,
-	#timestamp : 'zagto 2/28/2021 19:25'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:25'
 }
 SLMessageMapping >> generate: aMessageNode for: aGenerator [
 	
@@ -20,7 +20,7 @@ SLMessageMapping >> generate: aMessageNode for: aGenerator [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 14:48'
+	#'squeak_changestamp' : 'zagto 12/1/2020 14:48'
 }
 SLMessageMapping >> targetSelector [
 
@@ -29,7 +29,7 @@ SLMessageMapping >> targetSelector [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 2/28/2021 19:25'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:25'
 }
 SLMessageMapping >> targetSelector: anObject [
 
@@ -38,7 +38,7 @@ SLMessageMapping >> targetSelector: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 12/1/2020 14:49'
+	#'squeak_changestamp' : 'zagto 12/1/2020 14:49'
 }
 SLMessageMapping >> type [
 
@@ -47,7 +47,7 @@ SLMessageMapping >> type [
 
 {
 	#category : #accessing,
-	#timestamp : 'zagto 2/28/2021 19:25'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:25'
 }
 SLMessageMapping >> type: anObject [
 

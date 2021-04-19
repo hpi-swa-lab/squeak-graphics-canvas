@@ -2,7 +2,7 @@ Extension { #name : #GLSLScalar }
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 12/15/2020 18:27'
+	#'squeak_changestamp' : 'zagto 12/15/2020 18:27'
 }
 GLSLScalar >> * another [
 	(self = another or: [(another isVector or: [another isMatrix]) and: [another componentType = self]]) ifFalse: [
@@ -16,7 +16,7 @@ GLSLScalar >> * another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/15/2020 13:07'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:07'
 }
 GLSLScalar >> + another [
 	(another isScalar or: [another isVector]) ifFalse: [
@@ -32,7 +32,7 @@ GLSLScalar >> + another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 1/10/2021 00:16'
+	#'squeak_changestamp' : 'stlu 1/10/2021 00:16'
 }
 GLSLScalar >> - another [
 
@@ -47,7 +47,7 @@ GLSLScalar >> - another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 12/1/2020 17:54'
+	#'squeak_changestamp' : 'zagto 12/1/2020 17:54'
 }
 GLSLScalar >> / another [
 	self = another ifFalse: [
@@ -61,7 +61,7 @@ GLSLScalar >> / another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/15/2020 13:12'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:12'
 }
 GLSLScalar >> @ another [
 	| resultSize resultType |
@@ -82,7 +82,7 @@ GLSLScalar >> @ another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/15/2020 13:12'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:12'
 }
 GLSLScalar >> asVector3 [
 	| resultType |
@@ -94,7 +94,7 @@ GLSLScalar >> asVector3 [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 1/9/2021 23:52'
+	#'squeak_changestamp' : 'stlu 1/9/2021 23:52'
 }
 GLSLScalar >> cos [
 
@@ -107,7 +107,7 @@ GLSLScalar >> cos [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 12/15/2020 18:14'
+	#'squeak_changestamp' : 'zagto 12/15/2020 18:14'
 }
 GLSLScalar >> max: another [
 	self = another ifFalse: [
@@ -119,7 +119,7 @@ GLSLScalar >> max: another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/15/2020 13:07'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:07'
 }
 GLSLScalar >> negated [
 	^ SLMappingToOperator new
@@ -129,7 +129,7 @@ GLSLScalar >> negated [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 12/15/2020 18:04'
+	#'squeak_changestamp' : 'zagto 12/15/2020 18:04'
 }
 GLSLScalar >> normalized [
 	(self componentType isFloat or: [ self componentType isDouble ]) ifFalse: [
@@ -141,7 +141,7 @@ GLSLScalar >> normalized [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 1/9/2021 23:52'
+	#'squeak_changestamp' : 'stlu 1/9/2021 23:52'
 }
 GLSLScalar >> sin [
 

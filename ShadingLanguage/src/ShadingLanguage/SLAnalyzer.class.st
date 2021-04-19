@@ -13,12 +13,12 @@ Class {
 		'SwizzlingSetters'
 	],
 	#category : #ShadingLanguage,
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'class initialization',
-	#timestamp : 'zagto 2/28/2021 19:27'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:27'
 }
 SLAnalyzer class >> initialize [
 
@@ -28,7 +28,7 @@ SLAnalyzer class >> initialize [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 12/18/2020 14:36'
+	#'squeak_changestamp' : 'stlu 12/18/2020 14:36'
 }
 SLAnalyzer class >> initializeInterfaceTypeMap [
 
@@ -41,7 +41,7 @@ SLAnalyzer class >> initializeInterfaceTypeMap [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 12/17/2020 13:36'
+	#'squeak_changestamp' : 'stlu 12/17/2020 13:36'
 }
 SLAnalyzer class >> initializeSwizzlingSelectors [
 
@@ -62,7 +62,7 @@ SLAnalyzer class >> initializeSwizzlingSelectors [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:19'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:19'
 }
 SLAnalyzer >> acceptAssignmentNode: anAssignmentNode [
 
@@ -76,7 +76,7 @@ SLAnalyzer >> acceptAssignmentNode: anAssignmentNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 1/10/2021 19:36'
+	#'squeak_changestamp' : 'stlu 1/10/2021 19:36'
 }
 SLAnalyzer >> acceptBlockNode: aBlockNode [
 
@@ -88,7 +88,7 @@ SLAnalyzer >> acceptBlockNode: aBlockNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:20'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:20'
 }
 SLAnalyzer >> acceptLiteralNode: aLiteralNode [
 
@@ -98,7 +98,7 @@ SLAnalyzer >> acceptLiteralNode: aLiteralNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:20'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:20'
 }
 SLAnalyzer >> acceptMessageNode: aMessageNode [
 
@@ -121,7 +121,7 @@ SLAnalyzer >> acceptMessageNode: aMessageNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 12/18/2020 22:05'
+	#'squeak_changestamp' : 'stlu 12/18/2020 22:05'
 }
 SLAnalyzer >> acceptMethodNode: aMethodNode [
 
@@ -137,7 +137,7 @@ SLAnalyzer >> acceptMethodNode: aMethodNode [
 
 {
 	#category : #visiting,
-	#timestamp : 'zagto 2/28/2021 19:20'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:20'
 }
 SLAnalyzer >> acceptVariableNode: aVariableNode [
 
@@ -153,7 +153,7 @@ SLAnalyzer >> acceptVariableNode: aVariableNode [
 
 {
 	#category : #'program resources',
-	#timestamp : 'zagto 2/28/2021 19:20'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:20'
 }
 SLAnalyzer >> declareResourceVariable: resourceName toInterface: interfaceSymbol [
 
@@ -168,7 +168,7 @@ SLAnalyzer >> declareResourceVariable: resourceName toInterface: interfaceSymbol
 
 {
 	#category : #'program resources',
-	#timestamp : 'zagto 2/28/2021 19:20'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:20'
 }
 SLAnalyzer >> declareResourceVariable: name toType: glslType [
 
@@ -183,7 +183,7 @@ SLAnalyzer >> declareResourceVariable: name toType: glslType [
 
 {
 	#category : #'program resources',
-	#timestamp : 'zagto 2/28/2021 19:20'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:20'
 }
 SLAnalyzer >> declareVariable: name toType: glslType [
 
@@ -198,7 +198,7 @@ SLAnalyzer >> declareVariable: name toType: glslType [
 
 {
 	#category : #'message mapping',
-	#timestamp : 'stlu 1/10/2021 20:06'
+	#'squeak_changestamp' : 'stlu 1/10/2021 20:06'
 }
 SLAnalyzer >> findMessageMapping: aMessageNode [
 
@@ -214,7 +214,7 @@ SLAnalyzer >> findMessageMapping: aMessageNode [
 
 {
 	#category : #initialization,
-	#timestamp : 'zagto 2/28/2021 19:20'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:20'
 }
 SLAnalyzer >> gatherInterfaceVariables: aMethodNode [
 
@@ -232,7 +232,7 @@ SLAnalyzer >> gatherInterfaceVariables: aMethodNode [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/21/2020 13:59'
+	#'squeak_changestamp' : 'stlu 12/21/2020 13:59'
 }
 SLAnalyzer >> interfaceVariables [
 
@@ -241,7 +241,7 @@ SLAnalyzer >> interfaceVariables [
 
 {
 	#category : #'message mapping',
-	#timestamp : 'stlu 1/10/2021 20:07'
+	#'squeak_changestamp' : 'stlu 1/10/2021 20:07'
 }
 SLAnalyzer >> mapCondition: aMessageNode [
 
@@ -271,7 +271,7 @@ SLAnalyzer >> mapCondition: aMessageNode [
 
 {
 	#category : #'message mapping',
-	#timestamp : 'stlu 1/10/2021 14:27'
+	#'squeak_changestamp' : 'stlu 1/10/2021 14:27'
 }
 SLAnalyzer >> mapForLoop: aMesageNode [
 
@@ -295,7 +295,7 @@ SLAnalyzer >> mapForLoop: aMesageNode [
 
 {
 	#category : #'message mapping',
-	#timestamp : 'stlu 1/10/2021 14:55'
+	#'squeak_changestamp' : 'stlu 1/10/2021 14:55'
 }
 SLAnalyzer >> mapInterfaceAccess: aMessageNode [
 
@@ -328,7 +328,7 @@ SLAnalyzer >> mapInterfaceAccess: aMessageNode [
 
 {
 	#category : #'message mapping',
-	#timestamp : 'stlu 1/10/2021 17:36'
+	#'squeak_changestamp' : 'stlu 1/10/2021 17:36'
 }
 SLAnalyzer >> mapSwizzling: aMessageNode [
 
@@ -361,7 +361,7 @@ SLAnalyzer >> mapSwizzling: aMessageNode [
 
 {
 	#category : #'message mapping',
-	#timestamp : 'stlu 1/10/2021 17:00'
+	#'squeak_changestamp' : 'stlu 1/10/2021 17:00'
 }
 SLAnalyzer >> mapTyping: aMessageNode [
 
@@ -405,7 +405,7 @@ SLAnalyzer >> mapTyping: aMessageNode [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/21/2020 13:59'
+	#'squeak_changestamp' : 'stlu 12/21/2020 13:59'
 }
 SLAnalyzer >> resourceVariableToInterface [
 
@@ -414,7 +414,7 @@ SLAnalyzer >> resourceVariableToInterface [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/21/2020 13:59'
+	#'squeak_changestamp' : 'stlu 12/21/2020 13:59'
 }
 SLAnalyzer >> resourceVariableToType [
 
@@ -423,7 +423,7 @@ SLAnalyzer >> resourceVariableToType [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/2/2020 00:33'
+	#'squeak_changestamp' : 'stlu 12/2/2020 00:33'
 }
 SLAnalyzer >> variableToType [
 

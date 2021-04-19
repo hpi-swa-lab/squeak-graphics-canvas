@@ -2,7 +2,7 @@ Extension { #name : #Canvas }
 
 {
 	#category : #'*RenderThee-LayerTree',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Canvas >> cacheLayer: aLayer [
 
@@ -11,7 +11,7 @@ Canvas >> cacheLayer: aLayer [
 
 {
 	#category : #'*RenderThee-LayerTree',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Canvas >> drawDrawLayer: aLayer [
 
@@ -20,7 +20,7 @@ Canvas >> drawDrawLayer: aLayer [
 
 {
 	#category : #'*RenderThee-LayerTree',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Canvas >> drawGroupLayer: aLayer [
 
@@ -29,7 +29,7 @@ Canvas >> drawGroupLayer: aLayer [
 
 {
 	#category : #'*RenderThee-LayerTree',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Canvas >> drawLayer: aLayer [
 
@@ -38,7 +38,7 @@ Canvas >> drawLayer: aLayer [
 
 {
 	#category : #'*RenderThee-LayerTree',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Canvas >> imageStoreClass [
 
@@ -47,7 +47,7 @@ Canvas >> imageStoreClass [
 
 {
 	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Canvas >> paintImageStore: anImageStore [
 
@@ -56,7 +56,7 @@ Canvas >> paintImageStore: anImageStore [
 
 {
 	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Canvas >> paintImageStore: anImageStore sourceRect: aRectangle [
 
@@ -65,7 +65,7 @@ Canvas >> paintImageStore: anImageStore sourceRect: aRectangle [
 
 {
 	#category : #'*RenderThee-override',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Canvas >> transformBy: aDisplayTransform clippingTo: aClipRect during: aBlock [
 	"Transform the receiver by the given display transformation during the execution of aBlock. The given clip rectangle defines the *global* (e.g., outer) rectangle against which the receiver should clip (which would be equivalent to 'self clipRect: aClipRect; transformBy: aDisplayTransform')."
@@ -75,7 +75,7 @@ Canvas >> transformBy: aDisplayTransform clippingTo: aClipRect during: aBlock [
 
 {
 	#category : #'*RenderThee-override',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Canvas >> transformBy: aDisplayTransform clippingTo: aClipRect during: aBlock smoothing: cellSize [
 	"Transform the receiver by the given display transformation during the execution of aBlock. The given clip rectangle defines the *global* (e.g., outer) rectangle against which the receiver should clip (which would be equivalent to 'self clipRect: aClipRect; transformBy: aDisplayTransform')."
@@ -84,7 +84,7 @@ Canvas >> transformBy: aDisplayTransform clippingTo: aClipRect during: aBlock sm
 
 {
 	#category : #'*RenderThee',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Canvas >> transformBy: aDisplayTransform during: aBlock [
 
@@ -93,7 +93,7 @@ Canvas >> transformBy: aDisplayTransform during: aBlock [
 
 {
 	#category : #'*RenderThee-override',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Canvas >> translateBy: aPoint clippingTo: aRectangle during: aBlock [
 

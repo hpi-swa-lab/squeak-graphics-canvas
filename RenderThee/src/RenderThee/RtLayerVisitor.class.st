@@ -2,12 +2,12 @@ Class {
 	#name : #RtLayerVisitor,
 	#superclass : #Object,
 	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtLayerVisitor >> visit: anObject [
 
@@ -16,7 +16,7 @@ RtLayerVisitor >> visit: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtLayerVisitor >> visitDrawLayer: aLayer [
 
@@ -25,7 +25,7 @@ RtLayerVisitor >> visitDrawLayer: aLayer [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtLayerVisitor >> visitGroupLayer: aLayer [
 

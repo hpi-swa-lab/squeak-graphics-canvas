@@ -2,7 +2,7 @@ Extension { #name : #Integer }
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 1/10/2021 11:51'
+	#'squeak_changestamp' : 'stlu 1/10/2021 11:51'
 }
 Integer >> asGLSLLiteral [
 
@@ -11,7 +11,7 @@ Integer >> asGLSLLiteral [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 1/10/2021 11:49'
+	#'squeak_changestamp' : 'stlu 1/10/2021 11:49'
 }
 Integer >> glslType [
 

@@ -2,7 +2,7 @@ Extension { #name : #GLSLMatrix }
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 12/15/2020 16:25'
+	#'squeak_changestamp' : 'zagto 12/15/2020 16:25'
 }
 GLSLMatrix >> * another [
 	(another isMatrix or: [ another isVector ] or: [ another isScalar ]) ifFalse: [
@@ -32,7 +32,7 @@ GLSLMatrix >> * another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/15/2020 13:07'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:07'
 }
 GLSLMatrix >> negated [
 	^ SLMappingToOperator new

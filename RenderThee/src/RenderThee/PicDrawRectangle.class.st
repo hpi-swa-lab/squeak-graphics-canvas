@@ -2,12 +2,12 @@ Class {
 	#name : #PicDrawRectangle,
 	#superclass : #PicDrawShape,
 	#category : #'RenderThee-Pictures',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:05'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
 PicDrawRectangle >> acceptVisitor: aVisitor [
 
@@ -16,7 +16,7 @@ PicDrawRectangle >> acceptVisitor: aVisitor [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawRectangle >> drawOn: aCanvas [
 
@@ -28,7 +28,7 @@ PicDrawRectangle >> drawOn: aCanvas [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 3/13/2021 12:28'
+	#'squeak_changestamp' : 'stlu 3/13/2021 12:28'
 }
 PicDrawRectangle >> isRectangle [
 

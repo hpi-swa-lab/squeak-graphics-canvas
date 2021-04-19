@@ -2,12 +2,12 @@ Class {
 	#name : #SLMappingToArrayRead,
 	#superclass : #SLMessageMapping,
 	#category : #ShadingLanguage,
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #generation,
-	#timestamp : 'zagto 2/28/2021 19:25'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:25'
 }
 SLMappingToArrayRead >> generate: aMessageNode for: aGenerator [
 

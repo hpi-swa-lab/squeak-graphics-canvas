@@ -5,12 +5,12 @@ Class {
 		'samples'
 	],
 	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #drawing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 RtMultisampleDisplayFramebufferStore >> canvasDo: aBlock [
 
@@ -49,7 +49,7 @@ RtMultisampleDisplayFramebufferStore >> canvasDo: aBlock [
 
 {
 	#category : #'initialize-release',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 RtMultisampleDisplayFramebufferStore >> initialize [
 	
@@ -58,7 +58,7 @@ RtMultisampleDisplayFramebufferStore >> initialize [
 
 {
 	#category : #initialization,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 RtMultisampleDisplayFramebufferStore >> initializeGLSettings [
 	
@@ -68,7 +68,7 @@ RtMultisampleDisplayFramebufferStore >> initializeGLSettings [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 RtMultisampleDisplayFramebufferStore >> samples [
 	
@@ -77,7 +77,7 @@ RtMultisampleDisplayFramebufferStore >> samples [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 RtMultisampleDisplayFramebufferStore >> samples: anInteger [
 	

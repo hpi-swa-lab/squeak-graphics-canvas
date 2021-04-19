@@ -8,12 +8,12 @@ Class {
 		'color'
 	],
 	#category : #'RenderThee-Pictures',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawLine class >> from: from to: to width: width color: color [
 
@@ -27,7 +27,7 @@ PicDrawLine class >> from: from to: to width: width color: color [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:04'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:04'
 }
 PicDrawLine >> acceptVisitor: aVisitor [
 
@@ -36,7 +36,7 @@ PicDrawLine >> acceptVisitor: aVisitor [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawLine >> color [
 
@@ -45,7 +45,7 @@ PicDrawLine >> color [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawLine >> color: anObject [
 
@@ -54,7 +54,7 @@ PicDrawLine >> color: anObject [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawLine >> drawOn: aCanvas [
 
@@ -67,7 +67,7 @@ PicDrawLine >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawLine >> estimatedBounds [
 
@@ -76,7 +76,7 @@ PicDrawLine >> estimatedBounds [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawLine >> from [
 
@@ -85,7 +85,7 @@ PicDrawLine >> from [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawLine >> from: anObject [
 
@@ -94,7 +94,7 @@ PicDrawLine >> from: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawLine >> to [
 
@@ -103,7 +103,7 @@ PicDrawLine >> to [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawLine >> to: anObject [
 
@@ -112,7 +112,7 @@ PicDrawLine >> to: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawLine >> width [
 
@@ -121,7 +121,7 @@ PicDrawLine >> width [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawLine >> width: anObject [
 

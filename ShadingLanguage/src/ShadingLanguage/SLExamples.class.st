@@ -2,12 +2,12 @@ Class {
 	#name : #SLExamples,
 	#superclass : #Object,
 	#category : #'ShadingLanguage-Examples',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 2/14/2021 15:59'
+	#'squeak_changestamp' : 'stlu 2/14/2021 15:59'
 }
 SLExamples class >> chaosEffect: out inputs: in uniforms: u [
 
@@ -21,7 +21,7 @@ SLExamples class >> chaosEffect: out inputs: in uniforms: u [
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 2/14/2021 15:50'
+	#'squeak_changestamp' : 'stlu 2/14/2021 15:50'
 }
 SLExamples class >> confusionEffect: out inputs: in uniforms: u [
 
@@ -33,7 +33,7 @@ SLExamples class >> confusionEffect: out inputs: in uniforms: u [
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 2/14/2021 15:53'
+	#'squeak_changestamp' : 'stlu 2/14/2021 15:53'
 }
 SLExamples class >> noEffect: out inputs: in uniforms: u [
 
@@ -43,7 +43,7 @@ SLExamples class >> noEffect: out inputs: in uniforms: u [
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 2/14/2021 16:00'
+	#'squeak_changestamp' : 'stlu 2/14/2021 16:00'
 }
 SLExamples class >> postProcessing: out inputs: in uniforms: u [
 
@@ -63,7 +63,7 @@ SLExamples class >> postProcessing: out inputs: in uniforms: u [
 
 {
 	#category : #examples,
-	#timestamp : 'stlu 2/14/2021 15:59'
+	#'squeak_changestamp' : 'stlu 2/14/2021 15:59'
 }
 SLExamples class >> shakeEffect: out inputs: in uniforms: u [
 

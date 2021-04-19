@@ -9,12 +9,12 @@ Class {
 		'matrix'
 	],
 	#category : #'RenderThee-Pictures',
-	#commentStamp : 'stlu 8/21/2020 13:12'
+	#'squeak_changestamp' : 'stlu 8/21/2020 13:12'
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicTransform class >> matrix: aMatrix2x3 [
 
@@ -25,7 +25,7 @@ PicTransform class >> matrix: aMatrix2x3 [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:06'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:06'
 }
 PicTransform >> acceptVisitor: aVisitor [
 
@@ -34,7 +34,7 @@ PicTransform >> acceptVisitor: aVisitor [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicTransform >> drawOn: aCanvas [
 
@@ -45,7 +45,7 @@ PicTransform >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicTransform >> estimatedBounds [
 
@@ -54,7 +54,7 @@ PicTransform >> estimatedBounds [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 3/18/2021 13:48'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:48'
 }
 PicTransform >> isTransform [
 
@@ -63,7 +63,7 @@ PicTransform >> isTransform [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicTransform >> matrix [
 	^ matrix
@@ -71,7 +71,7 @@ PicTransform >> matrix [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicTransform >> matrix: anObject [
 	matrix := anObject

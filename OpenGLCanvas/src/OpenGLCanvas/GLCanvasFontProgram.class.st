@@ -10,12 +10,12 @@ Class {
 		'imageLocation'
 	],
 	#category : #'OpenGLCanvas-Fonts',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasFontProgram class >> fragmentShader [
 
@@ -35,7 +35,7 @@ void main()
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 3/9/2021 16:51'
+	#'squeak_changestamp' : 'stlu 3/9/2021 16:51'
 }
 GLCanvasFontProgram class >> vertexShader [
 

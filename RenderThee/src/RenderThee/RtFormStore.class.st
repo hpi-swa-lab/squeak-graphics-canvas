@@ -5,12 +5,12 @@ Class {
 		'form'
 	],
 	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFormStore class >> defaultCanvasClass [
 
@@ -19,7 +19,7 @@ RtFormStore class >> defaultCanvasClass [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFormStore class >> extent: aPoint [
 
@@ -28,7 +28,7 @@ RtFormStore class >> extent: aPoint [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFormStore class >> form: aForm [
 
@@ -39,7 +39,7 @@ RtFormStore class >> form: aForm [
 
 {
 	#category : #textures,
-	#timestamp : 'stlu 11/3/2020 16:00'
+	#'squeak_changestamp' : 'stlu 11/3/2020 16:00'
 }
 RtFormStore >> createGLTexture [
 
@@ -50,7 +50,7 @@ RtFormStore >> createGLTexture [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFormStore >> extent [
 
@@ -59,7 +59,7 @@ RtFormStore >> extent [
 
 {
 	#category : #textures,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFormStore >> form [
 
@@ -68,7 +68,7 @@ RtFormStore >> form [
 
 {
 	#category : #textures,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFormStore >> form: aForm [
 
@@ -77,7 +77,7 @@ RtFormStore >> form: aForm [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFormStore >> getCanvas [
 
@@ -86,7 +86,7 @@ RtFormStore >> getCanvas [
 
 {
 	#category : #textures,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtFormStore >> glTextureDo: aBlock [
 

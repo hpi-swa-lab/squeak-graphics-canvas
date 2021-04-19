@@ -2,7 +2,7 @@ Extension { #name : #GLSLBoolean }
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 12/1/2020 16:58'
+	#'squeak_changestamp' : 'zagto 12/1/2020 16:58'
 }
 GLSLBoolean >> negated [
 	self shouldNotImplement
@@ -10,7 +10,7 @@ GLSLBoolean >> negated [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 1/10/2021 13:14'
+	#'squeak_changestamp' : 'stlu 1/10/2021 13:14'
 }
 GLSLBoolean >> or: aType [
 	^ SLMappingToOperator new

@@ -2,12 +2,12 @@ Class {
 	#name : #RtDisplayFormStore,
 	#superclass : #RtFormStore,
 	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtDisplayFormStore >> form: aForm [
 
@@ -16,7 +16,7 @@ RtDisplayFormStore >> form: aForm [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtDisplayFormStore >> initialize [
 
@@ -26,7 +26,7 @@ RtDisplayFormStore >> initialize [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtDisplayFormStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
@@ -41,7 +41,7 @@ RtDisplayFormStore >> prepareForDrawingOn: aCanvas during: aBlock [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtDisplayFormStore >> tryDeferringUpdates [
 

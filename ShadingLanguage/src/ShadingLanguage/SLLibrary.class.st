@@ -2,12 +2,12 @@ Class {
 	#name : #SLLibrary,
 	#superclass : #Object,
 	#category : #'ShadingLanguage-Examples',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'std lib',
-	#timestamp : 'stlu 2/14/2021 16:04'
+	#'squeak_changestamp' : 'stlu 2/14/2021 16:04'
 }
 SLLibrary class >> convolve: aTexture at: texCoords kernel: kernel offsets: offsets [
 

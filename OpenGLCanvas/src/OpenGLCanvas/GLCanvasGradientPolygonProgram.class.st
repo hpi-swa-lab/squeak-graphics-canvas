@@ -2,12 +2,12 @@ Class {
 	#name : #GLCanvasGradientPolygonProgram,
 	#superclass : #GLCanvasPolygonProgram,
 	#category : #'OpenGLCanvas-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasGradientPolygonProgram class >> fragmentShaderFillColor [
 

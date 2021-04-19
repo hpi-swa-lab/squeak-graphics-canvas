@@ -2,12 +2,12 @@ Class {
 	#name : #GLCanvasSolidRectangleProgram,
 	#superclass : #GLCanvasRectangleProgram,
 	#category : #'OpenGLCanvas-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasSolidRectangleProgram class >> fragmentShaderFillColor [
 

@@ -2,12 +2,12 @@ Class {
 	#name : #GLCanvasRectangleProgram,
 	#superclass : #GLCanvasFillStyleProgram,
 	#category : #'OpenGLCanvas-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasRectangleProgram class >> fragmentShaderMain [
 
@@ -36,7 +36,7 @@ GLCanvasRectangleProgram class >> fragmentShaderMain [
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasRectangleProgram class >> fragmentShaderPrimitivePreamble [
 
@@ -54,7 +54,7 @@ uniform float cornerRadius;'
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 3/9/2021 16:51'
+	#'squeak_changestamp' : 'stlu 3/9/2021 16:51'
 }
 GLCanvasRectangleProgram class >> vertexShader [
 

@@ -6,12 +6,12 @@ Class {
 	#name : #GLCanvasFillStyleProgram,
 	#superclass : #GLStaticProgram,
 	#category : #'OpenGLCanvas-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasFillStyleProgram class >> fragmentShader [
 
@@ -20,7 +20,7 @@ GLCanvasFillStyleProgram class >> fragmentShader [
 
 {
 	#category : #'fill styles',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasFillStyleProgram class >> fragmentShaderBitmapFillStyle [
 	
@@ -40,7 +40,7 @@ vec4 getColor()
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasFillStyleProgram class >> fragmentShaderFillColor [
 
@@ -49,7 +49,7 @@ GLCanvasFillStyleProgram class >> fragmentShaderFillColor [
 
 {
 	#category : #'fill styles',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasFillStyleProgram class >> fragmentShaderGradientFillStyle [
 
@@ -70,7 +70,7 @@ vec4 getColor()
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasFillStyleProgram class >> fragmentShaderMain [
 
@@ -79,7 +79,7 @@ GLCanvasFillStyleProgram class >> fragmentShaderMain [
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasFillStyleProgram class >> fragmentShaderPrimitivePreamble [
 
@@ -88,7 +88,7 @@ GLCanvasFillStyleProgram class >> fragmentShaderPrimitivePreamble [
 
 {
 	#category : #'fill styles',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasFillStyleProgram class >> fragmentShaderSolidFillStyle [
 	

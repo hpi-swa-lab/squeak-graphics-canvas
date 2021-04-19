@@ -2,12 +2,12 @@ Class {
 	#name : #SgSpaceship,
 	#superclass : #ThumbnailImageMorph,
 	#category : #'RenderThee-Demo-SpaceGame',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'event handling',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 SgSpaceship >> handlesKeyboard: evt [
 
@@ -16,7 +16,7 @@ SgSpaceship >> handlesKeyboard: evt [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 SgSpaceship >> initialize [
 
@@ -28,7 +28,7 @@ SgSpaceship >> initialize [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 SgSpaceship >> initializeRotation [
 
@@ -40,7 +40,7 @@ SgSpaceship >> initializeRotation [
 
 {
 	#category : #'repaint boundary',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 SgSpaceship >> isRepaintBoundary [
 
@@ -49,7 +49,7 @@ SgSpaceship >> isRepaintBoundary [
 
 {
 	#category : #'stepping and presenter',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 SgSpaceship >> step [
 
@@ -58,7 +58,7 @@ SgSpaceship >> step [
 
 {
 	#category : #'stepping and presenter',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 SgSpaceship >> stepTime [
 

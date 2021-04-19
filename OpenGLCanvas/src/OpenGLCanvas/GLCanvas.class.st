@@ -18,12 +18,12 @@ Class {
 		'GLConstants'
 	],
 	#category : #'OpenGLCanvas-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas class >> displayWithExtent: extent samples: samples [
 
@@ -39,7 +39,7 @@ GLCanvas class >> displayWithExtent: extent samples: samples [
 
 {
 	#category : #example,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas class >> exampleBrowser [
 	"self exampleBrowser"
@@ -50,7 +50,7 @@ GLCanvas class >> exampleBrowser [
 
 {
 	#category : #example,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas class >> exampleChineseCheckers [
 	"self exampleChineseCheckers"
@@ -61,7 +61,7 @@ GLCanvas class >> exampleChineseCheckers [
 
 {
 	#category : #example,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas class >> exampleChineseCheckersAA [
 	"self exampleChineseCheckersAA"
@@ -72,7 +72,7 @@ GLCanvas class >> exampleChineseCheckersAA [
 
 {
 	#category : #example,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas class >> exampleWorld [
 	"self exampleWorld"
@@ -81,7 +81,7 @@ GLCanvas class >> exampleWorld [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas class >> extent: aPoint framebuffer: glFrameBuffer [
 
@@ -92,7 +92,7 @@ GLCanvas class >> extent: aPoint framebuffer: glFrameBuffer [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas class >> openAndDraw: anObject [
 
@@ -102,7 +102,7 @@ GLCanvas class >> openAndDraw: anObject [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas class >> openAndDraw: anObject doing: aBlock [
 
@@ -111,7 +111,7 @@ GLCanvas class >> openAndDraw: anObject doing: aBlock [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas class >> openAndDraw: anObject doing: aBlock samples: samples [
 
@@ -135,7 +135,7 @@ GLCanvas class >> openAndDraw: anObject doing: aBlock samples: samples [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas class >> openAndDraw: anObject samples: samples [
 
@@ -145,7 +145,7 @@ GLCanvas class >> openAndDraw: anObject samples: samples [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas class >> openAndDrawCreatingMorphs: anObject [
 	
@@ -155,7 +155,7 @@ GLCanvas class >> openAndDrawCreatingMorphs: anObject [
 
 {
 	#category : #'instance creation',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas class >> openAndDrawSavingImages: anObject [
 
@@ -169,7 +169,7 @@ GLCanvas class >> openAndDrawSavingImages: anObject [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 3/9/2021 14:34'
+	#'squeak_changestamp' : 'stlu 3/9/2021 14:34'
 }
 GLCanvas class >> profileUsing: anObject times: aNumber [
 
@@ -185,7 +185,7 @@ GLCanvas class >> profileUsing: anObject times: aNumber [
 
 {
 	#category : #binding,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> bindAndUseProgram: aProgram during: aBlock [
 	
@@ -196,7 +196,7 @@ GLCanvas >> bindAndUseProgram: aProgram during: aBlock [
 
 {
 	#category : #binding,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> boundDuring: aBlock [
 
@@ -205,7 +205,7 @@ GLCanvas >> boundDuring: aBlock [
 
 {
 	#category : #'drawing-support',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> clipBy: aRectangle during: aBlock [
 
@@ -214,7 +214,7 @@ GLCanvas >> clipBy: aRectangle during: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> clipRect [
 
@@ -223,7 +223,7 @@ GLCanvas >> clipRect [
 
 {
 	#category : #'drawing-support',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> clipRect: aRectangle during: aBlock [
 
@@ -240,7 +240,7 @@ GLCanvas >> clipRect: aRectangle during: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/9/2021 14:31'
+	#'squeak_changestamp' : 'stlu 3/9/2021 14:31'
 }
 GLCanvas >> contentsOfArea: aRectangle into: aForm [
 	
@@ -260,7 +260,7 @@ GLCanvas >> contentsOfArea: aRectangle into: aForm [
 
 {
 	#category : #'drawing-polygons',
-	#timestamp : 'stlu 3/9/2021 16:18'
+	#'squeak_changestamp' : 'stlu 3/9/2021 16:18'
 }
 GLCanvas >> drawBasePolygon: numVertices [
 
@@ -284,7 +284,7 @@ GLCanvas >> drawBasePolygon: numVertices [
 
 {
 	#category : #'drawing-text',
-	#timestamp : 'stlu 3/9/2021 16:48'
+	#'squeak_changestamp' : 'stlu 3/9/2021 16:48'
 }
 GLCanvas >> drawCharacter: character bitmapFont: bitmapFont position: position [
 	"Draw the character's texture onto a rectangle. self fontProgram and bitmapFont texture need to be bound and the color for self fontProgram needs to be set"
@@ -305,7 +305,7 @@ GLCanvas >> drawCharacter: character bitmapFont: bitmapFont position: position [
 
 {
 	#category : #'drawing-polygons',
-	#timestamp : 'stlu 3/9/2021 16:48'
+	#'squeak_changestamp' : 'stlu 3/9/2021 16:48'
 }
 GLCanvas >> drawPolygon: vertices borderWidth: borderWidth borderColor: borderColor withProgram: aProgram [
 
@@ -325,7 +325,7 @@ GLCanvas >> drawPolygon: vertices borderWidth: borderWidth borderColor: borderCo
 
 {
 	#category : #'drawing-polygons',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> drawPolygon: vertices color: fillColor borderWidth: borderWidth borderColor: borderColor [
 
@@ -334,7 +334,7 @@ GLCanvas >> drawPolygon: vertices color: fillColor borderWidth: borderWidth bord
 
 {
 	#category : #'drawing-polygons',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor [
 	
@@ -344,7 +344,7 @@ GLCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: borderWidth
 
 {
 	#category : #'drawing-polygons',
-	#timestamp : 'stlu 3/9/2021 16:19'
+	#'squeak_changestamp' : 'stlu 3/9/2021 16:19'
 }
 GLCanvas >> drawPolygonBorder: numVertices borderWidth: borderWidth borderColor: borderColor [
 
@@ -356,7 +356,7 @@ GLCanvas >> drawPolygonBorder: numVertices borderWidth: borderWidth borderColor:
 
 {
 	#category : #'drawing-text',
-	#timestamp : 'stlu 3/9/2021 18:11'
+	#'squeak_changestamp' : 'stlu 3/9/2021 18:11'
 }
 GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c [
 
@@ -377,7 +377,7 @@ GLCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fo
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/9/2021 15:28'
+	#'squeak_changestamp' : 'stlu 3/9/2021 15:28'
 }
 GLCanvas >> dynamicVBO [
 
@@ -386,7 +386,7 @@ GLCanvas >> dynamicVBO [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> extent [
 
@@ -395,7 +395,7 @@ GLCanvas >> extent [
 
 {
 	#category : #'drawing-ovals',
-	#timestamp : 'stlu 3/9/2021 16:49'
+	#'squeak_changestamp' : 'stlu 3/9/2021 16:49'
 }
 GLCanvas >> fillOval: r borderWidth: borderWidth borderColor: borderColor withProgram: aProgram [
 
@@ -411,7 +411,7 @@ GLCanvas >> fillOval: r borderWidth: borderWidth borderColor: borderColor withPr
 
 {
 	#category : #'drawing-ovals',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderColor [
 	
@@ -420,7 +420,7 @@ GLCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderCol
 
 {
 	#category : #'drawing-ovals',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> fillOval: r fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor [
 	
@@ -430,7 +430,7 @@ GLCanvas >> fillOval: r fillStyle: aFillStyle borderWidth: borderWidth borderCol
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> fontProgram [
 
@@ -439,7 +439,7 @@ GLCanvas >> fontProgram [
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> frameAndFillRectangle: aRectangle fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
 	
@@ -448,7 +448,7 @@ GLCanvas >> frameAndFillRectangle: aRectangle fillColor: fillColor borderWidth: 
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 	
@@ -458,7 +458,7 @@ GLCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle:
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 3/9/2021 16:49'
+	#'squeak_changestamp' : 'stlu 3/9/2021 16:49'
 }
 GLCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius borderWidth: borderWidth borderColor: borderColor withProgram: aProgram [
 	
@@ -475,7 +475,7 @@ GLCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius borderWidth: 
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: aFillStyle borderWidth: bw borderColor: bc [
 	
@@ -485,7 +485,7 @@ GLCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: aF
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> framebuffer [
 
@@ -494,7 +494,7 @@ GLCanvas >> framebuffer [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> framebuffer: aFrameBuffer [
 
@@ -503,7 +503,7 @@ GLCanvas >> framebuffer: aFrameBuffer [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> getPixelData [
 	
@@ -515,7 +515,7 @@ GLCanvas >> getPixelData [
 
 {
 	#category : #'drawing-images',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
@@ -525,7 +525,7 @@ GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/9/2021 16:50'
+	#'squeak_changestamp' : 'stlu 3/9/2021 16:50'
 }
 GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 
@@ -546,7 +546,7 @@ GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 3/9/2021 16:49'
+	#'squeak_changestamp' : 'stlu 3/9/2021 16:49'
 }
 GLCanvas >> line: pt1 to: pt2 width: w color: c [
 	
@@ -568,7 +568,7 @@ GLCanvas >> line: pt1 to: pt2 width: w color: c [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> lineProgram [
 
@@ -577,7 +577,7 @@ GLCanvas >> lineProgram [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> origin [
 
@@ -586,7 +586,7 @@ GLCanvas >> origin [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> ovalPrograms [
 
@@ -595,7 +595,7 @@ GLCanvas >> ovalPrograms [
 
 {
 	#category : #'drawing-text',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> paragraph: paragraph bounds: bounds color: c [
 
@@ -613,7 +613,7 @@ GLCanvas >> paragraph: paragraph bounds: bounds color: c [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> polygonPrograms [
 
@@ -622,7 +622,7 @@ GLCanvas >> polygonPrograms [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/9/2021 15:05'
+	#'squeak_changestamp' : 'stlu 3/9/2021 15:05'
 }
 GLCanvas >> quadVBO [
 
@@ -631,7 +631,7 @@ GLCanvas >> quadVBO [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> rectanglePrograms [
 
@@ -640,7 +640,7 @@ GLCanvas >> rectanglePrograms [
 
 {
 	#category : #'drawing-support',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> scaleBy: aPoint during: aBlock [
 	
@@ -651,7 +651,7 @@ GLCanvas >> scaleBy: aPoint during: aBlock [
 
 {
 	#category : #'setting-uniforms',
-	#timestamp : 'stlu 3/9/2021 16:13'
+	#'squeak_changestamp' : 'stlu 3/9/2021 16:13'
 }
 GLCanvas >> setBitmapUniformsFrom: aFillStyle for: aProgram during: aBlock [
 
@@ -674,7 +674,7 @@ GLCanvas >> setBitmapUniformsFrom: aFillStyle for: aProgram during: aBlock [
 
 {
 	#category : #'setting-uniforms',
-	#timestamp : 'stlu 3/9/2021 16:14'
+	#'squeak_changestamp' : 'stlu 3/9/2021 16:14'
 }
 GLCanvas >> setGradientUniformsFrom: aFillStyle for: aProgram during: aBlock [
 
@@ -698,7 +698,7 @@ GLCanvas >> setGradientUniformsFrom: aFillStyle for: aProgram during: aBlock [
 
 {
 	#category : #'drawing-support',
-	#timestamp : 'stlu 3/9/2021 17:07'
+	#'squeak_changestamp' : 'stlu 3/9/2021 17:07'
 }
 GLCanvas >> setScissorRectangle [
 
@@ -715,7 +715,7 @@ GLCanvas >> setScissorRectangle [
 
 {
 	#category : #'setting-uniforms',
-	#timestamp : 'stlu 3/9/2021 16:14'
+	#'squeak_changestamp' : 'stlu 3/9/2021 16:14'
 }
 GLCanvas >> setSolidUniformsFrom: aFillStyle for: aProgram during: aBlock [
 
@@ -727,7 +727,7 @@ GLCanvas >> setSolidUniformsFrom: aFillStyle for: aProgram during: aBlock [
 
 {
 	#category : #'setting-uniforms',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> setUniformsFrom: aFillStyle for: aDictionary during: aBlock [
 
@@ -748,7 +748,7 @@ GLCanvas >> setUniformsFrom: aFillStyle for: aDictionary during: aBlock [
 
 {
 	#category : #'drawing-images',
-	#timestamp : 'stlu 3/9/2021 18:10'
+	#'squeak_changestamp' : 'stlu 3/9/2021 18:10'
 }
 GLCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor [
 	
@@ -769,7 +769,7 @@ GLCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> stencilProgram [
 
@@ -778,7 +778,7 @@ GLCanvas >> stencilProgram [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> textureProgram [
 
@@ -787,7 +787,7 @@ GLCanvas >> textureProgram [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> transform [
 
@@ -796,7 +796,7 @@ GLCanvas >> transform [
 
 {
 	#category : #'drawing-support',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> transform: aMatrix during: aBlock [
 
@@ -811,7 +811,7 @@ GLCanvas >> transform: aMatrix during: aBlock [
 
 {
 	#category : #'drawing-support',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> transformBy: aTransform during: aBlock [
 
@@ -824,7 +824,7 @@ GLCanvas >> transformBy: aTransform during: aBlock [
 
 {
 	#category : #'drawing-support',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> translateBy: aPoint during: aBlock [
 	
@@ -835,7 +835,7 @@ GLCanvas >> translateBy: aPoint during: aBlock [
 
 {
 	#category : #'drawing-images',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> warpImage: aForm transform: aTransform at: extraOffset sourceRect: sourceRect cellSize: cellSize [
 

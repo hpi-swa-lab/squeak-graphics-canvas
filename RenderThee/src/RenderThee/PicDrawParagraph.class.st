@@ -7,12 +7,12 @@ Class {
 		'paragraph'
 	],
 	#category : #'RenderThee-Pictures',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawParagraph class >> paragraph: aParagraph bounds: aRectangle color: aColor [
 
@@ -25,7 +25,7 @@ PicDrawParagraph class >> paragraph: aParagraph bounds: aRectangle color: aColor
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:05'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
 PicDrawParagraph >> acceptVisitor: aVisitor [
 
@@ -34,7 +34,7 @@ PicDrawParagraph >> acceptVisitor: aVisitor [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawParagraph >> bounds [
 
@@ -43,7 +43,7 @@ PicDrawParagraph >> bounds [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawParagraph >> bounds: anObject [
 
@@ -52,7 +52,7 @@ PicDrawParagraph >> bounds: anObject [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawParagraph >> color [
 
@@ -61,7 +61,7 @@ PicDrawParagraph >> color [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawParagraph >> color: anObject [
 
@@ -70,7 +70,7 @@ PicDrawParagraph >> color: anObject [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawParagraph >> drawOn: aCanvas [
 
@@ -82,7 +82,7 @@ PicDrawParagraph >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawParagraph >> estimatedBounds [
 
@@ -91,7 +91,7 @@ PicDrawParagraph >> estimatedBounds [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawParagraph >> paragraph [
 
@@ -100,7 +100,7 @@ PicDrawParagraph >> paragraph [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawParagraph >> paragraph: anObject [
 

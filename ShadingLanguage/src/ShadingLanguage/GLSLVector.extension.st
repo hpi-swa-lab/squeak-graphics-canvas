@@ -2,7 +2,7 @@ Extension { #name : #GLSLVector }
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/16/2020 14:31'
+	#'squeak_changestamp' : 'stlu 12/16/2020 14:31'
 }
 GLSLVector >> * another [
 	(another isMatrix or: [ another isVector ] or: [ another isScalar ]) ifFalse: [
@@ -32,7 +32,7 @@ GLSLVector >> * another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/15/2020 13:09'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:09'
 }
 GLSLVector >> + another [
 	(another isScalar or: [another isVector]) ifFalse: [
@@ -51,7 +51,7 @@ GLSLVector >> + another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 12/1/2020 18:39'
+	#'squeak_changestamp' : 'zagto 12/1/2020 18:39'
 }
 GLSLVector >> - another [
 	(self = another or: [another = self componentType]) ifFalse: [
@@ -65,7 +65,7 @@ GLSLVector >> - another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 1/11/2021 00:06'
+	#'squeak_changestamp' : 'stlu 1/11/2021 00:06'
 }
 GLSLVector >> / another [
 	(another isVector or: [another isScalar]) ifFalse: [
@@ -85,7 +85,7 @@ GLSLVector >> / another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/15/2020 13:10'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:10'
 }
 GLSLVector >> @ another [
 	| resultSize resultType |
@@ -106,7 +106,7 @@ GLSLVector >> @ another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 1/10/2021 00:13'
+	#'squeak_changestamp' : 'stlu 1/10/2021 00:13'
 }
 GLSLVector >> cos [
 
@@ -119,7 +119,7 @@ GLSLVector >> cos [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 12/15/2020 18:25'
+	#'squeak_changestamp' : 'zagto 12/15/2020 18:25'
 }
 GLSLVector >> dot: another [
 	(self componentType isFloat or: [ self componentType isDouble ]) ifFalse: [
@@ -135,7 +135,7 @@ GLSLVector >> dot: another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 12/15/2020 18:13'
+	#'squeak_changestamp' : 'zagto 12/15/2020 18:13'
 }
 GLSLVector >> max: another [
 	(self = another or: [another = self componentType]) ifFalse: [
@@ -147,7 +147,7 @@ GLSLVector >> max: another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/15/2020 13:10'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:10'
 }
 GLSLVector >> negated [
 	^ SLMappingToOperator new
@@ -157,7 +157,7 @@ GLSLVector >> negated [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 12/15/2020 18:04'
+	#'squeak_changestamp' : 'zagto 12/15/2020 18:04'
 }
 GLSLVector >> normalized [
 	(self componentType isFloat or: [ self componentType isDouble ]) ifFalse: [

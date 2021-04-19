@@ -2,7 +2,7 @@ Extension { #name : #GLSLType }
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/15/2020 13:16'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:16'
 }
 GLSLType >> ** another [
 	(self isFloat or: [self isVector and: [self componentType isFloat]]) ifFalse: [
@@ -19,7 +19,7 @@ GLSLType >> ** another [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/15/2020 13:09'
+	#'squeak_changestamp' : 'stlu 12/15/2020 13:09'
 }
 GLSLType >> exp [
 	(self isFloat or: [self isVector and: [self componentType isFloat]]) ifFalse: [

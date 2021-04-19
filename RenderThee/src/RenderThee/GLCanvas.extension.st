@@ -2,7 +2,7 @@ Extension { #name : #GLCanvas }
 
 {
 	#category : #'*RenderThee-LayerTree',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvas >> imageStoreClass [
 
@@ -11,7 +11,7 @@ GLCanvas >> imageStoreClass [
 
 {
 	#category : #'*RenderThee-LayerTree',
-	#timestamp : 'stlu 3/9/2021 18:10'
+	#'squeak_changestamp' : 'stlu 3/9/2021 18:10'
 }
 GLCanvas >> paintImageStore: aStore sourceRect: sourceRect [
 

@@ -2,7 +2,7 @@ Extension { #name : #GLSLSampler }
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/14/2020 16:57'
+	#'squeak_changestamp' : 'stlu 12/14/2020 16:57'
 }
 GLSLSampler >> at: aVector2Type [
 	self flag: #todo. "dynamic input / output dimenstions"

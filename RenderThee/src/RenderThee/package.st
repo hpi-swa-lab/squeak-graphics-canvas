@@ -1,1 +1,4 @@
-Package { #name : #RenderThee }
+Package {
+	#'squeak_changestamp' : true,
+	#name : #RenderThee
+}

@@ -10,12 +10,12 @@ Class {
 		'font'
 	],
 	#category : #'OpenGLCanvas-Fonts',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #constants,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLBitmapFont class >> characterDistance [
 	
@@ -24,7 +24,7 @@ GLBitmapFont class >> characterDistance [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLBitmapFont >> advanceFor: aCharacter [
 
@@ -33,7 +33,7 @@ GLBitmapFont >> advanceFor: aCharacter [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLBitmapFont >> extentFor: aCharacter [
 
@@ -45,7 +45,7 @@ GLBitmapFont >> extentFor: aCharacter [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLBitmapFont >> font: aFont [
 
@@ -70,7 +70,7 @@ GLBitmapFont >> font: aFont [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLBitmapFont >> hasGlyphOf: aCharacter [
 
@@ -79,7 +79,7 @@ GLBitmapFont >> hasGlyphOf: aCharacter [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLBitmapFont >> indexForCharacter: aCharacter [
 
@@ -88,7 +88,7 @@ GLBitmapFont >> indexForCharacter: aCharacter [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLBitmapFont >> offsetFor: aCharacter [
 
@@ -98,7 +98,7 @@ GLBitmapFont >> offsetFor: aCharacter [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLBitmapFont >> printableCharacters [
 
@@ -107,7 +107,7 @@ GLBitmapFont >> printableCharacters [
 
 {
 	#category : #accessing,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLBitmapFont >> texture [
 

@@ -2,12 +2,12 @@ Class {
 	#name : #GLCanvasPolygonProgram,
 	#superclass : #GLCanvasFillStyleProgram,
 	#category : #'OpenGLCanvas-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasPolygonProgram class >> fragmentShaderMain [
 
@@ -19,7 +19,7 @@ GLCanvasPolygonProgram class >> fragmentShaderMain [
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasPolygonProgram class >> fragmentShaderPrimitivePreamble [
 
@@ -33,7 +33,7 @@ uniform vec2 origin;'
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasPolygonProgram class >> primitiveUniforms [
 
@@ -42,7 +42,7 @@ GLCanvasPolygonProgram class >> primitiveUniforms [
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 3/9/2021 16:51'
+	#'squeak_changestamp' : 'stlu 3/9/2021 16:51'
 }
 GLCanvasPolygonProgram class >> vertexShader [
 

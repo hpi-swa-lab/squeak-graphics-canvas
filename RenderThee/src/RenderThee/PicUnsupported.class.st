@@ -13,12 +13,12 @@ Class {
 		'Remembrall'
 	],
 	#category : #'RenderThee-Pictures',
-	#commentStamp : 'stlu 8/21/2020 13:51'
+	#'squeak_changestamp' : 'stlu 8/21/2020 13:51'
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicUnsupported class >> Remembrall [
 
@@ -27,7 +27,7 @@ PicUnsupported class >> Remembrall [
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicUnsupported class >> type: aSymbol [
 
@@ -39,7 +39,7 @@ PicUnsupported class >> type: aSymbol [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:06'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:06'
 }
 PicUnsupported >> acceptVisitor: aVisitor [
 
@@ -48,7 +48,7 @@ PicUnsupported >> acceptVisitor: aVisitor [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicUnsupported >> drawOn: aCanvas [
 
@@ -57,7 +57,7 @@ PicUnsupported >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicUnsupported >> estimatedBounds [
 
@@ -66,7 +66,7 @@ PicUnsupported >> estimatedBounds [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicUnsupported >> type [
 
@@ -75,7 +75,7 @@ PicUnsupported >> type [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicUnsupported >> type: anObject [
 

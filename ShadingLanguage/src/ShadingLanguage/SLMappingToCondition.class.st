@@ -5,12 +5,12 @@ Class {
 		'isNegated'
 	],
 	#category : #ShadingLanguage,
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/10/2021 13:41'
+	#'squeak_changestamp' : 'stlu 1/10/2021 13:41'
 }
 SLMappingToCondition >> isNegated [
 
@@ -19,7 +19,7 @@ SLMappingToCondition >> isNegated [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 1/10/2021 13:41'
+	#'squeak_changestamp' : 'stlu 1/10/2021 13:41'
 }
 SLMappingToCondition >> isNegated: anObject [
 

@@ -2,12 +2,12 @@ Class {
 	#name : #SLStaticProgram,
 	#superclass : #GLStaticProgram,
 	#category : #ShadingLanguage,
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 12/8/2020 15:44'
+	#'squeak_changestamp' : 'stlu 12/8/2020 15:44'
 }
 SLStaticProgram class >> compileShader: selectorStart [
 
@@ -18,7 +18,7 @@ SLStaticProgram class >> compileShader: selectorStart [
 
 {
 	#category : #'shader code',
-	#timestamp : 'zagto 2/28/2021 19:27'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:27'
 }
 SLStaticProgram class >> findShader: selectorStart [
 
@@ -30,7 +30,7 @@ SLStaticProgram class >> findShader: selectorStart [
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 12/8/2020 15:44'
+	#'squeak_changestamp' : 'stlu 12/8/2020 15:44'
 }
 SLStaticProgram class >> fragmentShader [
 
@@ -39,7 +39,7 @@ SLStaticProgram class >> fragmentShader [
 
 {
 	#category : #compiling,
-	#timestamp : 'zagto 2/28/2021 19:28'
+	#'squeak_changestamp' : 'zagto 2/28/2021 19:28'
 }
 SLStaticProgram class >> noteCompilationOf: aSelector meta: isMeta [
 
@@ -65,7 +65,7 @@ SLStaticProgram class >> noteCompilationOf: aSelector meta: isMeta [
 
 {
 	#category : #'shader code',
-	#timestamp : 'stlu 12/8/2020 15:44'
+	#'squeak_changestamp' : 'stlu 12/8/2020 15:44'
 }
 SLStaticProgram class >> vertexShader [
 

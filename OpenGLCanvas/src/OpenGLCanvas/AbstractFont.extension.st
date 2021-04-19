@@ -2,7 +2,7 @@ Extension { #name : #AbstractFont }
 
 {
 	#category : #'*OpenGLCanvas',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 AbstractFont >> advanceOf: aCharacter [
 

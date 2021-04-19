@@ -5,12 +5,12 @@ Class {
 		'radius'
 	],
 	#category : #'RenderThee-Pictures',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawRoundedRectangle class >> bounds: aRectangle radius: cornerRadius fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -24,7 +24,7 @@ PicDrawRoundedRectangle class >> bounds: aRectangle radius: cornerRadius fillSty
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:05'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
 PicDrawRoundedRectangle >> acceptVisitor: aVisitor [
 
@@ -33,7 +33,7 @@ PicDrawRoundedRectangle >> acceptVisitor: aVisitor [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawRoundedRectangle >> drawOn: aCanvas [
 
@@ -46,7 +46,7 @@ PicDrawRoundedRectangle >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawRoundedRectangle >> radius [
 
@@ -55,7 +55,7 @@ PicDrawRoundedRectangle >> radius [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawRoundedRectangle >> radius: anObject [
 

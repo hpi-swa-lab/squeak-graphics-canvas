@@ -2,7 +2,7 @@ Extension { #name : #Boolean }
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 1/10/2021 21:13'
+	#'squeak_changestamp' : 'stlu 1/10/2021 21:13'
 }
 Boolean >> asGLSLLiteral [
 
@@ -11,7 +11,7 @@ Boolean >> asGLSLLiteral [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 1/10/2021 21:13'
+	#'squeak_changestamp' : 'stlu 1/10/2021 21:13'
 }
 Boolean >> glslType [
 

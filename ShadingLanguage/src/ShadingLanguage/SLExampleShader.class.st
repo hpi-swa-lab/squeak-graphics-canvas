@@ -26,12 +26,12 @@ Class {
 	#name : #SLExampleShader,
 	#superclass : #Object,
 	#category : #'ShadingLanguage-Examples',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #code,
-	#timestamp : 'stlu 12/2/2020 03:52'
+	#'squeak_changestamp' : 'stlu 12/2/2020 03:52'
 }
 SLExampleShader class >> bloom: out inputs: in uniforms: u [
 
@@ -49,7 +49,7 @@ SLExampleShader class >> bloom: out inputs: in uniforms: u [
 
 {
 	#category : #code,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 SLExampleShader class >> gaussianKernel3 [
 

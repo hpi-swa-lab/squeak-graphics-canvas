@@ -5,12 +5,12 @@ Class {
 		'GLConstants'
 	],
 	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtAlwaysCaching >> shouldCacheDrawLayer: aLayer [
 
@@ -19,7 +19,7 @@ RtAlwaysCaching >> shouldCacheDrawLayer: aLayer [
 
 {
 	#category : #'as yet unclassified',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtAlwaysCaching >> shouldCacheGroupLayer: aLayer [
 

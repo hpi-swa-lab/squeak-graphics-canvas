@@ -2,12 +2,12 @@ Class {
 	#name : #GLCanvasBitmapPolygonProgram,
 	#superclass : #GLCanvasPolygonProgram,
 	#category : #'OpenGLCanvas-Core',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'shader code',
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasBitmapPolygonProgram class >> fragmentShaderFillColor [
 

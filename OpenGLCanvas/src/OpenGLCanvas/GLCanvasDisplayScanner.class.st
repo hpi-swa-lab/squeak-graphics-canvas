@@ -5,12 +5,12 @@ Class {
 		'fillBlt'
 	],
 	#category : #'OpenGLCanvas-Fonts',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #displaying,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasDisplayScanner >> displayString: string from: startIndex to: stopIndex at: aPoint [
 
@@ -19,7 +19,7 @@ GLCanvasDisplayScanner >> displayString: string from: startIndex to: stopIndex a
 
 {
 	#category : #displaying,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasDisplayScanner >> fillTextBackground [
 
@@ -29,7 +29,7 @@ GLCanvasDisplayScanner >> fillTextBackground [
 
 {
 	#category : #private,
-	#timestamp : ''
+	#'squeak_changestamp' : ''
 }
 GLCanvasDisplayScanner >> text: t textStyle: ts foreground: foreColor background: backColor fillBlt: blt ignoreColorChanges: shadowMode [
 

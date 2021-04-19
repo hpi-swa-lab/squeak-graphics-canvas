@@ -10,12 +10,12 @@ Class {
 		'clipRect'
 	],
 	#category : #'OpenGLCanvas-Batching',
-	#commentStamp : 'stlu 4/17/2021 11:24'
+	#'squeak_changestamp' : 'stlu 4/17/2021 11:24'
 }
 
 {
 	#category : #'drawing-support',
-	#timestamp : 'stlu 3/10/2021 12:52'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:52'
 }
 GLNullCanvas >> clipBy: aRectangle during: aBlock [
 
@@ -26,7 +26,7 @@ GLNullCanvas >> clipBy: aRectangle during: aBlock [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLNullCanvas >> clipRect [
 	"Answers the rectangle by which all incoming draw commands are clipped.
@@ -37,7 +37,7 @@ GLNullCanvas >> clipRect [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLNullCanvas >> clipRect: anObject [
 
@@ -46,7 +46,7 @@ GLNullCanvas >> clipRect: anObject [
 
 {
 	#category : #'scoped state',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLNullCanvas >> clipRect: aRectangle during: aBlock [
 	"Scoped setter for `clipRect` variable."
@@ -59,7 +59,7 @@ GLNullCanvas >> clipRect: aRectangle during: aBlock [
 
 {
 	#category : #'drawing-polygons',
-	#timestamp : 'stlu 3/10/2021 12:50'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:50'
 }
 GLNullCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderColor: bc [
 
@@ -68,7 +68,7 @@ GLNullCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderColor:
 
 {
 	#category : #'drawing-polygons',
-	#timestamp : 'stlu 3/10/2021 12:50'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:50'
 }
 GLNullCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -77,7 +77,7 @@ GLNullCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBorder
 
 {
 	#category : #'drawing-polygons',
-	#timestamp : 'stlu 3/10/2021 12:50'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:50'
 }
 GLNullCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: bw borderColor: bc [
 
@@ -86,7 +86,7 @@ GLNullCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: bw bord
 
 {
 	#category : #'drawing-text',
-	#timestamp : 'stlu 3/10/2021 12:56'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:56'
 }
 GLNullCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c [
 
@@ -95,7 +95,7 @@ GLNullCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font
 
 {
 	#category : #'drawing-ovals',
-	#timestamp : 'stlu 3/10/2021 12:50'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:50'
 }
 GLNullCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderColor [
 
@@ -104,7 +104,7 @@ GLNullCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borde
 
 {
 	#category : #'drawing-ovals',
-	#timestamp : 'stlu 3/10/2021 12:50'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:50'
 }
 GLNullCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -113,7 +113,7 @@ GLNullCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderStyle: aBorderS
 
 {
 	#category : #'drawing-ovals',
-	#timestamp : 'stlu 3/10/2021 12:50'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:50'
 }
 GLNullCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderWidth: bw borderColor: bc [
 
@@ -122,7 +122,7 @@ GLNullCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderWidth: bw borde
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 3/10/2021 12:51'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:51'
 }
 GLNullCanvas >> fillRectangle: aRectangle fillStyle: aFillStyle [
 
@@ -131,7 +131,7 @@ GLNullCanvas >> fillRectangle: aRectangle fillStyle: aFillStyle [
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 3/10/2021 12:51'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:51'
 }
 GLNullCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
 
@@ -140,7 +140,7 @@ GLNullCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borde
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 3/10/2021 12:51'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:51'
 }
 GLNullCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -149,7 +149,7 @@ GLNullCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderSt
 
 {
 	#category : #'drawing-rounded rectangles',
-	#timestamp : 'stlu 3/10/2021 12:51'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:51'
 }
 GLNullCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -158,7 +158,7 @@ GLNullCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle
 
 {
 	#category : #'drawing-rounded rectangles',
-	#timestamp : 'stlu 3/10/2021 12:51'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:51'
 }
 GLNullCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: fillStyle borderWidth: bw borderColor: bc [
 
@@ -167,7 +167,7 @@ GLNullCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle
 
 {
 	#category : #'drawing-rectangles',
-	#timestamp : 'stlu 3/10/2021 12:50'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:50'
 }
 GLNullCanvas >> frameRectangle: aRectangle borderStyle: aBorderStyle [
 
@@ -176,7 +176,7 @@ GLNullCanvas >> frameRectangle: aRectangle borderStyle: aBorderStyle [
 
 {
 	#category : #'drawing-images',
-	#timestamp : 'stlu 3/10/2021 12:50'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:50'
 }
 GLNullCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
@@ -185,7 +185,7 @@ GLNullCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/10/2021 12:56'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:56'
 }
 GLNullCanvas >> initialize [
 
@@ -196,7 +196,7 @@ GLNullCanvas >> initialize [
 
 {
 	#category : #'drawing-lines',
-	#timestamp : 'stlu 3/10/2021 12:50'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:50'
 }
 GLNullCanvas >> line: from to: to width: width color: color [
 
@@ -205,7 +205,7 @@ GLNullCanvas >> line: from to: to width: width color: color [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLNullCanvas >> origin [
 	"Answers the global coordinate of the currently active local origin."
@@ -214,7 +214,7 @@ GLNullCanvas >> origin [
 
 {
 	#category : #'drawing-text',
-	#timestamp : 'stlu 3/10/2021 12:56'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:56'
 }
 GLNullCanvas >> paragraph: aParagraph bounds: aRectangle color: aColor [
 
@@ -223,7 +223,7 @@ GLNullCanvas >> paragraph: aParagraph bounds: aRectangle color: aColor [
 
 {
 	#category : #'drawing-support',
-	#timestamp : 'stlu 3/10/2021 12:52'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:52'
 }
 GLNullCanvas >> preserveStateDuring: aBlock [
 
@@ -232,7 +232,7 @@ GLNullCanvas >> preserveStateDuring: aBlock [
 
 {
 	#category : #'drawing-images',
-	#timestamp : 'stlu 3/10/2021 12:49'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:49'
 }
 GLNullCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor [
 
@@ -241,7 +241,7 @@ GLNullCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aC
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLNullCanvas >> transform [
 	"Answers the Matrix2x3 by which all drawing commands are currently transformed.
@@ -251,7 +251,7 @@ GLNullCanvas >> transform [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLNullCanvas >> transform: anObject [
 
@@ -260,7 +260,7 @@ GLNullCanvas >> transform: anObject [
 
 {
 	#category : #'scoped state',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLNullCanvas >> transform: aTransform during: aBlock [
 	"Scoped setter for `transform` variable."
@@ -273,7 +273,7 @@ GLNullCanvas >> transform: aTransform during: aBlock [
 
 {
 	#category : #'drawing-support',
-	#timestamp : 'stlu 3/10/2021 12:56'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:56'
 }
 GLNullCanvas >> transformBy: aTransform during: aBlock [
 
@@ -285,7 +285,7 @@ GLNullCanvas >> transformBy: aTransform during: aBlock [
 
 {
 	#category : #'drawing-support',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 GLNullCanvas >> translateBy: aPoint during: aBlock [
 
@@ -296,7 +296,7 @@ GLNullCanvas >> translateBy: aPoint during: aBlock [
 
 {
 	#category : #'drawing-images',
-	#timestamp : 'stlu 3/10/2021 12:49'
+	#'squeak_changestamp' : 'stlu 3/10/2021 12:49'
 }
 GLNullCanvas >> warpImage: aForm transform: aTransform at: extraOffset sourceRect: sourceRect cellSize: cellSize [
 

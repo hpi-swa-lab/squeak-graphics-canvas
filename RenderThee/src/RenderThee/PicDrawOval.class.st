@@ -2,12 +2,12 @@ Class {
 	#name : #PicDrawOval,
 	#superclass : #PicDrawShape,
 	#category : #'RenderThee-Pictures',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:05'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
 PicDrawOval >> acceptVisitor: aVisitor [
 
@@ -16,7 +16,7 @@ PicDrawOval >> acceptVisitor: aVisitor [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawOval >> drawOn: aCanvas [
 

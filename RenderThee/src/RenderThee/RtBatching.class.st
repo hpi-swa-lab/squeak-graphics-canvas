@@ -8,12 +8,12 @@ Class {
 		'canvas'
 	],
 	#category : #'RenderThee-Batching',
-	#commentStamp : '<historical>'
+	#'squeak_changestamp' : '<historical>'
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 3/19/2021 17:20'
+	#'squeak_changestamp' : 'stlu 3/19/2021 17:20'
 }
 RtBatching >> projectionMatrix [
 
@@ -26,7 +26,7 @@ RtBatching >> projectionMatrix [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 4/17/2021 10:44'
+	#'squeak_changestamp' : 'stlu 4/17/2021 10:44'
 }
 RtBatching >> render [
 
@@ -37,7 +37,7 @@ RtBatching >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/19/2021 13:08'
+	#'squeak_changestamp' : 'stlu 3/19/2021 13:08'
 }
 RtBatching >> setUp [
 

@@ -9,12 +9,12 @@ Class {
 		'clipRect'
 	],
 	#category : #'RenderThee-Pictures',
-	#commentStamp : 'stlu 8/21/2020 12:59'
+	#'squeak_changestamp' : 'stlu 8/21/2020 12:59'
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicClip class >> rect: aRectangle [
 
@@ -25,7 +25,7 @@ PicClip class >> rect: aRectangle [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:06'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:06'
 }
 PicClip >> acceptVisitor: aVisitor [
 
@@ -34,7 +34,7 @@ PicClip >> acceptVisitor: aVisitor [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicClip >> clipRect [
 
@@ -43,7 +43,7 @@ PicClip >> clipRect [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicClip >> clipRect: anObject [
 
@@ -52,7 +52,7 @@ PicClip >> clipRect: anObject [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicClip >> drawOn: aCanvas [
 
@@ -63,7 +63,7 @@ PicClip >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicClip >> estimatedBounds [
 
@@ -72,7 +72,7 @@ PicClip >> estimatedBounds [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 3/18/2021 13:49'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:49'
 }
 PicClip >> isClip [
 

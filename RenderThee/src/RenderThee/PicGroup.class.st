@@ -10,12 +10,12 @@ Class {
 		'children'
 	],
 	#category : #'RenderThee-Pictures',
-	#commentStamp : 'stlu 8/21/2020 13:52'
+	#'squeak_changestamp' : 'stlu 8/21/2020 13:52'
 }
 
 {
 	#category : #'instance creation',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicGroup class >> children: aCollection [
 
@@ -26,7 +26,7 @@ PicGroup class >> children: aCollection [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:05'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
 PicGroup >> acceptVisitor: aVisitor [
 
@@ -35,7 +35,7 @@ PicGroup >> acceptVisitor: aVisitor [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> addChild: aCommand [
 
@@ -44,7 +44,7 @@ PicGroup >> addChild: aCommand [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> children [
 	"A collection of PicCommand. Last child has front-most z-coordinate."
@@ -53,7 +53,7 @@ PicGroup >> children [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> children: aCollection [
 
@@ -62,7 +62,7 @@ PicGroup >> children: aCollection [
 
 {
 	#category : #enumerating,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> do: aBlock [
 
@@ -72,7 +72,7 @@ PicGroup >> do: aBlock [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> drawOn: aCanvas [
 
@@ -82,7 +82,7 @@ PicGroup >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> estimatedBounds [
 
@@ -91,7 +91,7 @@ PicGroup >> estimatedBounds [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> estimatedChildrenBounds [
 
@@ -100,7 +100,7 @@ PicGroup >> estimatedChildrenBounds [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> hasChildren [
 
@@ -109,7 +109,7 @@ PicGroup >> hasChildren [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> initialize [
 
@@ -119,7 +119,7 @@ PicGroup >> initialize [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> isDrawing [
 
@@ -128,7 +128,7 @@ PicGroup >> isDrawing [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> isEmpty [
 
@@ -137,7 +137,7 @@ PicGroup >> isEmpty [
 
 {
 	#category : #copying,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> postCopy [
 
@@ -147,7 +147,7 @@ PicGroup >> postCopy [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> removeAllChildren [
 
@@ -156,7 +156,7 @@ PicGroup >> removeAllChildren [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> removeLastChild [
 
@@ -165,7 +165,7 @@ PicGroup >> removeLastChild [
 
 {
 	#category : #transforming,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicGroup >> transformBy: aTransform [
 

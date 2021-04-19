@@ -8,12 +8,12 @@ Class {
 		'vao'
 	],
 	#category : #'ShadingLanguage-Examples',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 12/16/2020 18:15'
+	#'squeak_changestamp' : 'stlu 12/16/2020 18:15'
 }
 SLDemo >> cubeData [
 
@@ -64,7 +64,7 @@ SLDemo >> cubeData [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 4/15/2021 12:10'
+	#'squeak_changestamp' : 'stlu 4/15/2021 12:10'
 }
 SLDemo >> render [
 
@@ -94,7 +94,7 @@ SLDemo >> render [
 
 {
 	#category : #running,
-	#timestamp : 'stlu 3/14/2021 19:33'
+	#'squeak_changestamp' : 'stlu 3/14/2021 19:33'
 }
 SLDemo >> setUp [
 

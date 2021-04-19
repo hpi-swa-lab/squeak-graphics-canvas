@@ -2,12 +2,12 @@ Class {
 	#name : #RtPasteUpMorph,
 	#superclass : #PasteUpMorph,
 	#category : #'RenderThee-Project',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #'world state',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtPasteUpMorph >> beWorldForProject: aProject [
 
@@ -21,7 +21,7 @@ RtPasteUpMorph >> beWorldForProject: aProject [
 
 {
 	#category : #'change reporting',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtPasteUpMorph >> invalidRect: damageRect from: aMorph [
 
@@ -32,7 +32,7 @@ RtPasteUpMorph >> invalidRect: damageRect from: aMorph [
 
 {
 	#category : #'world state',
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtPasteUpMorph >> privateOuterDisplayWorld [
 
@@ -42,7 +42,7 @@ RtPasteUpMorph >> privateOuterDisplayWorld [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtPasteUpMorph >> worldState [
 

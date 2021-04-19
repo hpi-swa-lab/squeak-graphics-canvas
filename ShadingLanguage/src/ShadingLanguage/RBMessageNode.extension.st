@@ -2,7 +2,7 @@ Extension { #name : #RBMessageNode }
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/2/2020 02:53'
+	#'squeak_changestamp' : 'stlu 12/2/2020 02:53'
 }
 RBMessageNode >> mapping [
 
@@ -11,7 +11,7 @@ RBMessageNode >> mapping [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 12/2/2020 02:54'
+	#'squeak_changestamp' : 'stlu 12/2/2020 02:54'
 }
 RBMessageNode >> mapping: aMapping [
 

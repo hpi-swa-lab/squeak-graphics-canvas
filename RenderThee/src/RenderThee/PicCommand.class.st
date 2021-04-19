@@ -6,12 +6,12 @@ Class {
 	#name : #PicCommand,
 	#superclass : #Object,
 	#category : #'RenderThee-Pictures',
-	#commentStamp : 'stlu 8/21/2020 13:54'
+	#'squeak_changestamp' : 'stlu 8/21/2020 13:54'
 }
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/18/2021 13:03'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:03'
 }
 PicCommand >> acceptVisitor: aVisitor [
 
@@ -20,7 +20,7 @@ PicCommand >> acceptVisitor: aVisitor [
 
 {
 	#category : #converting,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicCommand >> asForm [
 	"Answer a Form containing the drawn representation of myself."
@@ -33,7 +33,7 @@ PicCommand >> asForm [
 
 {
 	#category : #enumerating,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicCommand >> do: aBlock [
 
@@ -42,7 +42,7 @@ PicCommand >> do: aBlock [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicCommand >> drawOn: aCanvas [
 	"Replays represented graphical command(s) onto the given canvas."
@@ -51,7 +51,7 @@ PicCommand >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicCommand >> estimatedBounds [
 	"Returns a rectangle representing the maximum bounds I draw myself into."
@@ -60,7 +60,7 @@ PicCommand >> estimatedBounds [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 3/18/2021 13:48'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:48'
 }
 PicCommand >> isClip [
 
@@ -69,7 +69,7 @@ PicCommand >> isClip [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicCommand >> isDrawing [
 	"Returns true if drawing me onto a canvas results in a change of the underlying pixel store."
@@ -78,7 +78,7 @@ PicCommand >> isDrawing [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 3/13/2021 12:27'
+	#'squeak_changestamp' : 'stlu 3/13/2021 12:27'
 }
 PicCommand >> isRectangle [
 
@@ -87,7 +87,7 @@ PicCommand >> isRectangle [
 
 {
 	#category : #testing,
-	#timestamp : 'stlu 3/18/2021 13:48'
+	#'squeak_changestamp' : 'stlu 3/18/2021 13:48'
 }
 PicCommand >> isTransform [
 
@@ -96,7 +96,7 @@ PicCommand >> isTransform [
 
 {
 	#category : #debugging,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicCommand >> open [
 

@@ -5,12 +5,12 @@ Class {
 		'glLibrary'
 	],
 	#category : #'RenderThee-LayerTree',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtDisplayFramebufferStore >> canvasDo: aBlock [
 
@@ -20,7 +20,7 @@ RtDisplayFramebufferStore >> canvasDo: aBlock [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtDisplayFramebufferStore >> extentChanged [
 
@@ -29,7 +29,7 @@ RtDisplayFramebufferStore >> extentChanged [
 
 {
 	#category : #accessing,
-	#timestamp : 'stlu 10/26/2020 12:18'
+	#'squeak_changestamp' : 'stlu 10/26/2020 12:18'
 }
 RtDisplayFramebufferStore >> glLibrary [
 
@@ -38,7 +38,7 @@ RtDisplayFramebufferStore >> glLibrary [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 11/3/2020 15:42'
+	#'squeak_changestamp' : 'stlu 11/3/2020 15:42'
 }
 RtDisplayFramebufferStore >> initializeGLSettings [
 
@@ -53,7 +53,7 @@ RtDisplayFramebufferStore >> initializeGLSettings [
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 4/16/2021 10:34'
+	#'squeak_changestamp' : 'stlu 4/16/2021 10:34'
 }
 RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 
@@ -77,7 +77,7 @@ RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 
 {
 	#category : #drawing,
-	#timestamp : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 RtDisplayFramebufferStore >> prepareForDrawingOn: aCanvas during: aBlock [
 

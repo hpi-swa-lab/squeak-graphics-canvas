@@ -2,7 +2,7 @@ Extension { #name : #CodeHolder }
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 1/5/2021 16:28'
+	#'squeak_changestamp' : 'zagto 1/5/2021 16:28'
 }
 CodeHolder >> contents [
 	"Answer the source code or documentation for the selected method"
@@ -21,7 +21,7 @@ CodeHolder >> contents [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 1/5/2021 16:39'
+	#'squeak_changestamp' : 'zagto 1/5/2021 16:39'
 }
 CodeHolder class >> contentsSymbolQuints [
 	"Answer a list of quintuplets representing information on the alternative views available in the code pane
@@ -37,7 +37,7 @@ CodeHolder class >> contentsSymbolQuints [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 1/5/2021 16:33'
+	#'squeak_changestamp' : 'zagto 1/5/2021 16:33'
 }
 CodeHolder >> generatedGLSL [
 
@@ -51,7 +51,7 @@ CodeHolder >> generatedGLSL [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 1/5/2021 16:29'
+	#'squeak_changestamp' : 'zagto 1/5/2021 16:29'
 }
 CodeHolder >> showGeneratedGLSL: aBoolean [
 	"Set the GLSL toggle as indicated"
@@ -62,7 +62,7 @@ CodeHolder >> showGeneratedGLSL: aBoolean [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 1/5/2021 16:28'
+	#'squeak_changestamp' : 'zagto 1/5/2021 16:28'
 }
 CodeHolder >> showingGeneratedGLSL [
 	
@@ -72,7 +72,7 @@ CodeHolder >> showingGeneratedGLSL [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 1/5/2021 16:28'
+	#'squeak_changestamp' : 'zagto 1/5/2021 16:28'
 }
 CodeHolder >> showingGeneratedGLSLString [
 	
@@ -85,7 +85,7 @@ CodeHolder >> showingGeneratedGLSLString [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'zagto 1/5/2021 16:28'
+	#'squeak_changestamp' : 'zagto 1/5/2021 16:28'
 }
 CodeHolder >> toggleGeneratedGLSL [
 	

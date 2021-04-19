@@ -6,12 +6,12 @@ Class {
 		'aNormalLocation'
 	],
 	#category : #'ShadingLanguage-Examples',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 12/21/2020 15:09'
+	#'squeak_changestamp' : 'stlu 12/21/2020 15:09'
 }
 SLDemoProgram class >> fragmentShader: out inputs: in uniforms: u [
 
@@ -34,7 +34,7 @@ SLDemoProgram class >> fragmentShader: out inputs: in uniforms: u [
 
 {
 	#category : #'class initialization',
-	#timestamp : 'stlu 12/8/2020 14:54'
+	#'squeak_changestamp' : 'stlu 12/8/2020 14:54'
 }
 SLDemoProgram class >> initialize [
 
@@ -43,7 +43,7 @@ SLDemoProgram class >> initialize [
 
 {
 	#category : #shaders,
-	#timestamp : 'stlu 12/21/2020 20:36'
+	#'squeak_changestamp' : 'stlu 12/21/2020 20:36'
 }
 SLDemoProgram class >> vertexShader: out inputs: in uniforms: u [
 

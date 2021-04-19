@@ -2,7 +2,7 @@ Extension { #name : #GLSLArray }
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 1/10/2021 17:27'
+	#'squeak_changestamp' : 'stlu 1/10/2021 17:27'
 }
 GLSLArray >> at: aType [
 
@@ -14,7 +14,7 @@ GLSLArray >> at: aType [
 
 {
 	#category : #'*ShadingLanguage',
-	#timestamp : 'stlu 1/10/2021 17:38'
+	#'squeak_changestamp' : 'stlu 1/10/2021 17:38'
 }
 GLSLArray >> at: aType put: otherType [
 

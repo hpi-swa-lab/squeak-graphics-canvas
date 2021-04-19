@@ -5,12 +5,12 @@ Class {
 		'counts'
 	],
 	#category : #'RenderThee-Pictures',
-	#commentStamp : ''
+	#'squeak_changestamp' : ''
 }
 
 {
 	#category : #initialization,
-	#timestamp : 'stlu 3/19/2021 20:28'
+	#'squeak_changestamp' : 'stlu 3/19/2021 20:28'
 }
 PicCounter >> initialize [
 
@@ -20,7 +20,7 @@ PicCounter >> initialize [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/19/2021 20:28'
+	#'squeak_changestamp' : 'stlu 3/19/2021 20:28'
 }
 PicCounter >> visitClip: anObject [
 
@@ -30,7 +30,7 @@ PicCounter >> visitClip: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/19/2021 20:28'
+	#'squeak_changestamp' : 'stlu 3/19/2021 20:28'
 }
 PicCounter >> visitGroup: aGroup [
 
@@ -40,7 +40,7 @@ PicCounter >> visitGroup: aGroup [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/19/2021 20:28'
+	#'squeak_changestamp' : 'stlu 3/19/2021 20:28'
 }
 PicCounter >> visitImage: anObject [
 
@@ -49,7 +49,7 @@ PicCounter >> visitImage: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/19/2021 20:28'
+	#'squeak_changestamp' : 'stlu 3/19/2021 20:28'
 }
 PicCounter >> visitLine: anObject [
 
@@ -58,7 +58,7 @@ PicCounter >> visitLine: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/19/2021 20:28'
+	#'squeak_changestamp' : 'stlu 3/19/2021 20:28'
 }
 PicCounter >> visitOval: anObject [
 
@@ -67,7 +67,7 @@ PicCounter >> visitOval: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/19/2021 20:29'
+	#'squeak_changestamp' : 'stlu 3/19/2021 20:29'
 }
 PicCounter >> visitParagraph: anObject [
 
@@ -76,7 +76,7 @@ PicCounter >> visitParagraph: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/19/2021 20:29'
+	#'squeak_changestamp' : 'stlu 3/19/2021 20:29'
 }
 PicCounter >> visitPolygon: anObject [
 
@@ -85,7 +85,7 @@ PicCounter >> visitPolygon: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/19/2021 20:29'
+	#'squeak_changestamp' : 'stlu 3/19/2021 20:29'
 }
 PicCounter >> visitRectangle: anObject [
 
@@ -94,7 +94,7 @@ PicCounter >> visitRectangle: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/19/2021 20:29'
+	#'squeak_changestamp' : 'stlu 3/19/2021 20:29'
 }
 PicCounter >> visitRoundedRectangle: anObject [
 
@@ -103,7 +103,7 @@ PicCounter >> visitRoundedRectangle: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/19/2021 20:29'
+	#'squeak_changestamp' : 'stlu 3/19/2021 20:29'
 }
 PicCounter >> visitString: anObject [
 
@@ -112,7 +112,7 @@ PicCounter >> visitString: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/19/2021 20:29'
+	#'squeak_changestamp' : 'stlu 3/19/2021 20:29'
 }
 PicCounter >> visitTransform: anObject [
 
@@ -122,7 +122,7 @@ PicCounter >> visitTransform: anObject [
 
 {
 	#category : #visiting,
-	#timestamp : 'stlu 3/19/2021 20:29'
+	#'squeak_changestamp' : 'stlu 3/19/2021 20:29'
 }
 PicCounter >> visitUnsupported: anObject [
 
