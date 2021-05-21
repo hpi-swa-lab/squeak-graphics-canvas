@@ -434,7 +434,7 @@ GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 3/9/2021 16:50'
+	#'squeak_changestamp' : 'stlu 5/18/2021 22:03'
 }
 GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 
@@ -445,12 +445,10 @@ GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
 					at: GLSharedCanvasResources
 					ifAbsentPut: [ GLSharedCanvasResources new ].
 	
-	clipRect := 0 @ 0 extent: extent.
-	transform := Matrix4x4 identity.
+	self reset.
 	
 	projectionMatrix := Matrix4x4 ortho: clipRect near: 0 far: 1.
-	resources programsDo: [:program |
-		program uniforms projectionMatrix: projectionMatrix].
+	self projectionMatrix: projectionMatrix
 ]
 
 {
@@ -516,6 +514,16 @@ GLCanvas >> polygonPrograms [
 
 {
 	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/18/2021 22:03'
+}
+GLCanvas >> projectionMatrix: aMatrix [
+
+	resources programsDo: [:program |
+		program uniforms projectionMatrix: aMatrix].
+]
+
+{
+	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 3/9/2021 15:05'
 }
 GLCanvas >> quadVBO [
@@ -527,6 +535,27 @@ GLCanvas >> quadVBO [
 GLCanvas >> rectanglePrograms [
 
 	^ resources rectanglePrograms
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 5/18/2021 22:06'
+}
+GLCanvas >> reset [
+
+	GL clearColor: (Color r: 0.1 g: 0.1 b: 0.1 alpha: 0.1).
+	GL clear: (GL_COLOR_BUFFER_BIT bitOr: GL_DEPTH_BUFFER_BIT).
+	
+	GL disable: GL_CULL_FACE.
+	GL disable: GL_DEPTH_TEST.
+	GLTexture activateTextureImageUnitAt: 0.
+	GL enable: GL_BLEND.
+	GL enable: GL_SCISSOR_TEST.
+	GL blendFuncSeparate: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA with: GL_ONE with: GL_ONE.
+	GL clearColor: 1 with: 1 with: 1 with: 0.
+
+	clipRect := 0 @ 0 extent: extent.
+	transform := Matrix4x4 identity.
 ]
 
 { #category : #'drawing-support' }
