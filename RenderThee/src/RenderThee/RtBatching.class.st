@@ -1,45 +1,79 @@
-"
-4.10.1
-"
 Class {
 	#name : #RtBatching,
 	#superclass : #LOGLTemplate,
 	#instVars : [
-		'canvas'
+		'canvas',
+		'morph'
 	],
-	#category : #'RenderThee-Batching'
+	#category : #'RenderThee-Batching',
+	#'squeak_changestamp' : 'stlu 5/18/2021 17:22'
 }
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/19/2021 17:20'
+	#'squeak_changestamp' : 'stlu 5/18/2021 17:23'
+}
+RtBatching >> canvas [
+
+	^ canvas
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/18/2021 17:23'
+}
+RtBatching >> canvas: anObject [
+
+	canvas := anObject
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/18/2021 17:23'
+}
+RtBatching >> morph [
+
+	^ morph
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/18/2021 17:23'
+}
+RtBatching >> morph: anObject [
+
+	morph := anObject
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/18/2021 17:22'
 }
 RtBatching >> projectionMatrix [
 
-	^ ((Matrix4x4
-		ortho: ActiveWorld bounds
-		near: 0 far: -10000000)
-			translatedBy: 0.0@0.0@1.0)
-				scaledBy: 1.0@1.0@0.5
+	^ Matrix4x4
+		ortho: morph bounds
+		near: -100000 far: 0
 ]
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 4/17/2021 10:44'
+	#'squeak_changestamp' : 'stlu 5/18/2021 17:22'
 }
 RtBatching >> render [
 
+	canvas projectionMatrix: self projectionMatrix.
 	canvas reset.
-	canvas fullDraw: ActiveWorld.
+	canvas fullDraw: morph.
 	canvas draw.
 ]
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 3/19/2021 13:08'
+	#'squeak_changestamp' : 'stlu 5/18/2021 17:23'
 }
 RtBatching >> setUp [
 
-	canvas := GLBatchingCanvas new.
-	canvas projectionMatrix: self projectionMatrix
+	canvas := RtBatchingCanvas new.
+	morph := ActiveWorld.
 ]

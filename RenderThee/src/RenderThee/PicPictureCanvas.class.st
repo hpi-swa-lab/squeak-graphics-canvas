@@ -9,7 +9,8 @@ Class {
 	#instVars : [
 		'transform',
 		'clipRect',
-		'groupStack'
+		'groupStack',
+		'ignoreClip'
 	],
 	#category : #'RenderThee-Pictures'
 }
@@ -75,11 +76,13 @@ PicPictureCanvas >> clipRect: anObject [
 
 {
 	#category : #'scoped state',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2021 15:27'
 }
 PicPictureCanvas >> clipRect: aRectangle during: aBlock [
 	"Scoped setter for `clipRect` variable."
 	| previousClipRect |
+	ignoreClip ifTrue: [^ aBlock cull: self].
+	
 	previousClipRect := clipRect.
 	clipRect := aRectangle.
 	aBlock cull: self.
@@ -309,6 +312,24 @@ PicPictureCanvas >> group: aGroup during: aBlock [
 ]
 
 {
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/20/2021 15:33'
+}
+PicPictureCanvas >> ignoreClip [
+
+	^ ignoreClip
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/20/2021 15:33'
+}
+PicPictureCanvas >> ignoreClip: aBoolean [
+
+	ignoreClip := aBoolean
+]
+
+{
 	#category : #'drawing-images',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
@@ -324,14 +345,15 @@ PicPictureCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2021 15:26'
 }
 PicPictureCanvas >> initialize [
 
 	super initialize.
 	groupStack := OrderedCollection with: PicGroup new.
 	transform := Matrix2x3 identity.
-	clipRect := Rectangle infinite
+	clipRect := Rectangle infinite.
+	ignoreClip := true.
 ]
 
 {
@@ -370,15 +392,26 @@ PicPictureCanvas >> origin [
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/21/2021 14:30'
 }
 PicPictureCanvas >> paragraph: aParagraph bounds: aRectangle color: aColor [
 
-	self addCommand: (PicDrawParagraph new
+	"self addCommand: (PicDrawParagraph new
 							paragraph: aParagraph;
 							bounds: aRectangle;
 							color: aColor;
-							yourself)
+							yourself)"
+	
+	| scanner |
+	scanner := GLCanvasDisplayScanner new
+		text: aParagraph text
+		textStyle: aParagraph textStyle
+		foreground: aColor
+		background: Color transparent
+		fillBlt: self
+		ignoreColorChanges: false.
+	
+	aParagraph displayOn: self using: scanner at: aRectangle topLeft.
 ]
 
 {

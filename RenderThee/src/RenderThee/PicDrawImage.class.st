@@ -35,6 +35,15 @@ PicDrawImage >> acceptVisitor: aVisitor [
 
 {
 	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/20/2021 21:54'
+}
+PicDrawImage >> bounds [
+
+	^ origin extent: sourceRect extent
+]
+
+{
+	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicDrawImage >> combinationRule [
@@ -66,11 +75,11 @@ PicDrawImage >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/20/2021 21:55'
 }
 PicDrawImage >> estimatedBounds [
 
-	^ origin extent: sourceRect extent
+	^ self bounds
 ]
 
 {

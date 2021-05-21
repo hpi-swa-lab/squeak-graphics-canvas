@@ -8,6 +8,15 @@ Class {
 }
 
 {
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/18/2021 17:25'
+}
+PicCounter >> counts [
+
+	^ counts valuesAndCounts
+]
+
+{
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 3/19/2021 20:28'
 }
