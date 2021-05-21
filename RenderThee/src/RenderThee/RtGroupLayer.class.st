@@ -5,8 +5,7 @@ Class {
 		'children',
 		'morph'
 	],
-	#category : #'RenderThee-LayerTree',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-LayerTree'
 }
 
 {

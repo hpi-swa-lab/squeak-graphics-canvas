@@ -23,8 +23,7 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'OpenGLCanvas-Batching',
-	#'squeak_changestamp' : '<historical>'
+	#category : #'OpenGLCanvas-Batching'
 }
 
 {

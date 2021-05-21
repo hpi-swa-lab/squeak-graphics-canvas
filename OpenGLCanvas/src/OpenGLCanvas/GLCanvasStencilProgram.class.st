@@ -1,14 +1,10 @@
 Class {
 	#name : #GLCanvasStencilProgram,
 	#superclass : #GLStaticProgram,
-	#category : #'OpenGLCanvas-Core',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLCanvas-Core'
 }
 
-{
-	#category : #'shader code',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'shader code' }
 GLCanvasStencilProgram class >> fragmentShader [
 
 	^'#version 330 core

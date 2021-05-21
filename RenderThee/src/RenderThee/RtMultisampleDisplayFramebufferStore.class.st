@@ -4,20 +4,19 @@ Class {
 	#instVars : [
 		'samples'
 	],
-	#category : #'RenderThee-LayerTree',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-LayerTree'
 }
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : ''
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:07'
 }
 RtMultisampleDisplayFramebufferStore >> canvasDo: aBlock [
 
 	| multiSampleFramebuffer multiSampleTexture |
 	
 	super canvasDo: [:c |
-		multiSampleTexture := GL2DMultisampleTexture create.
+		multiSampleTexture := GLMultisampleTexture2D create.
 		multiSampleTexture bind.
 		self glLibrary texImage2DMultisample: GL_TEXTURE_2D_MULTISAMPLE with: self samples with: GL_RGBA8 with: self extent x truncated with: self extent y truncated with: GL_FALSE.
 		
@@ -47,38 +46,26 @@ RtMultisampleDisplayFramebufferStore >> canvasDo: aBlock [
 	]
 ]
 
-{
-	#category : #'initialize-release',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'initialize-release' }
 RtMultisampleDisplayFramebufferStore >> initialize [
 	
 	self samples: 1.
 ]
 
-{
-	#category : #initialization,
-	#'squeak_changestamp' : ''
-}
+{ #category : #initialization }
 RtMultisampleDisplayFramebufferStore >> initializeGLSettings [
 	
 	super initializeGLSettings.
 	GL enable: GL_MULTISAMPLE.
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 RtMultisampleDisplayFramebufferStore >> samples [
 	
 	^ samples
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 RtMultisampleDisplayFramebufferStore >> samples: anInteger [
 	
 	samples := anInteger

@@ -1,8 +1,7 @@
 Class {
 	#name : #RtRecordingCanvasTest,
 	#superclass : #RtCanvasTest,
-	#category : #'RenderThee-Tests',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-Tests'
 }
 
 {

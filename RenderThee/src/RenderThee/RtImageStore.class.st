@@ -7,8 +7,7 @@ Instance Variables
 Class {
 	#name : #RtImageStore,
 	#superclass : #Object,
-	#category : #'RenderThee-LayerTree',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-LayerTree'
 }
 
 {

@@ -4,8 +4,7 @@ Class {
 	#instVars : [
 		'counts'
 	],
-	#category : #'RenderThee-Pictures',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-Pictures'
 }
 
 {

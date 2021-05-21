@@ -1,8 +1,7 @@
 Class {
 	#name : #RtDirectRenderer,
 	#superclass : #RtMorphicRenderer,
-	#category : #'RenderThee-LayerTree',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-LayerTree'
 }
 
 {

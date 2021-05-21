@@ -9,8 +9,7 @@ Class {
 		'transform',
 		'clipRect'
 	],
-	#category : #'OpenGLCanvas-Batching',
-	#'squeak_changestamp' : 'stlu 4/17/2021 11:24'
+	#category : #'OpenGLCanvas-Batching'
 }
 
 {

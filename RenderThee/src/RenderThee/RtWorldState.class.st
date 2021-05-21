@@ -4,8 +4,7 @@ Class {
 	#instVars : [
 		'renderer'
 	],
-	#category : #'RenderThee-Project',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-Project'
 }
 
 {

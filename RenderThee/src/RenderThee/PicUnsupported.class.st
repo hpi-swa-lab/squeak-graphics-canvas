@@ -12,8 +12,7 @@ Class {
 	#classVars : [
 		'Remembrall'
 	],
-	#category : #'RenderThee-Pictures',
-	#'squeak_changestamp' : 'stlu 8/21/2020 13:51'
+	#category : #'RenderThee-Pictures'
 }
 
 {

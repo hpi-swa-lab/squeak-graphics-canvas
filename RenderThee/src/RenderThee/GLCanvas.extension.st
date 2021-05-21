@@ -1,9 +1,6 @@
 Extension { #name : #GLCanvas }
 
-{
-	#category : #'*RenderThee-LayerTree',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'*RenderThee-LayerTree' }
 GLCanvas >> imageStoreClass [
 
 	^ RtFramebufferStore

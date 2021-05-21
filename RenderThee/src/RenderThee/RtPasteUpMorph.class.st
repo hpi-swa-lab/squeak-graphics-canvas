@@ -1,8 +1,7 @@
 Class {
 	#name : #RtPasteUpMorph,
 	#superclass : #PasteUpMorph,
-	#category : #'RenderThee-Project',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-Project'
 }
 
 {

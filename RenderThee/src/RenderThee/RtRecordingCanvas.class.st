@@ -9,8 +9,7 @@ Class {
 		'isReRecording',
 		'rootLayer'
 	],
-	#category : #'RenderThee-Core',
-	#'squeak_changestamp' : 'stlu 8/24/2020 10:56'
+	#category : #'RenderThee-Core'
 }
 
 {

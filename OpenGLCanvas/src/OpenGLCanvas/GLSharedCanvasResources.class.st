@@ -25,14 +25,10 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'OpenGLCanvas-Core',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLCanvas-Core'
 }
 
-{
-	#category : #updating,
-	#'squeak_changestamp' : ''
-}
+{ #category : #updating }
 GLSharedCanvasResources class >> updateIn: aGLLibrary [
 	
 	aGLLibrary makeCurrentDuring: [
@@ -41,28 +37,19 @@ GLSharedCanvasResources class >> updateIn: aGLLibrary [
 	
 ]
 
-{
-	#category : #programs,
-	#'squeak_changestamp' : ''
-}
+{ #category : #programs }
 GLSharedCanvasResources >> bitmapOvalProgram [
 
 	^ bitmapOvalProgram
 ]
 
-{
-	#category : #programs,
-	#'squeak_changestamp' : ''
-}
+{ #category : #programs }
 GLSharedCanvasResources >> bitmapPolygonProgram [
 
 	^ bitmapPolygonProgram
 ]
 
-{
-	#category : #programs,
-	#'squeak_changestamp' : ''
-}
+{ #category : #programs }
 GLSharedCanvasResources >> bitmapRectangleProgram [
 
 	^ bitmapRectangleProgram
@@ -77,10 +64,7 @@ GLSharedCanvasResources >> dynamicVBO [
 	^ dynamicVBO
 ]
 
-{
-	#category : #fonts,
-	#'squeak_changestamp' : ''
-}
+{ #category : #fonts }
 GLSharedCanvasResources >> font: aFont [
 
 	| font |
@@ -89,37 +73,25 @@ GLSharedCanvasResources >> font: aFont [
 	^ fonts at: font ifAbsentPut: [GLBitmapFont new font: font]
 ]
 
-{
-	#category : #programs,
-	#'squeak_changestamp' : ''
-}
+{ #category : #programs }
 GLSharedCanvasResources >> fontProgram [
 
 	^ fontProgram
 ]
 
-{
-	#category : #programs,
-	#'squeak_changestamp' : ''
-}
+{ #category : #programs }
 GLSharedCanvasResources >> gradientOvalProgram [
 
 	^ gradientOvalProgram
 ]
 
-{
-	#category : #programs,
-	#'squeak_changestamp' : ''
-}
+{ #category : #programs }
 GLSharedCanvasResources >> gradientPolygonProgram [
 
 	^ gradientPolygonProgram
 ]
 
-{
-	#category : #programs,
-	#'squeak_changestamp' : ''
-}
+{ #category : #programs }
 GLSharedCanvasResources >> gradientRectangleProgram [
 
 	^ gradientRectangleProgram
@@ -276,46 +248,31 @@ GLSharedCanvasResources >> rectanglePrograms [
 	} as: Dictionary
 ]
 
-{
-	#category : #programs,
-	#'squeak_changestamp' : ''
-}
+{ #category : #programs }
 GLSharedCanvasResources >> solidOvalProgram [
 
 	^ solidOvalProgram
 ]
 
-{
-	#category : #programs,
-	#'squeak_changestamp' : ''
-}
+{ #category : #programs }
 GLSharedCanvasResources >> solidPolygonProgram [
 
 	^ solidPolygonProgram
 ]
 
-{
-	#category : #programs,
-	#'squeak_changestamp' : ''
-}
+{ #category : #programs }
 GLSharedCanvasResources >> solidRectangleProgram [
 
 	^ solidRectangleProgram
 ]
 
-{
-	#category : #programs,
-	#'squeak_changestamp' : ''
-}
+{ #category : #programs }
 GLSharedCanvasResources >> stencilProgram [
 
 	^ stencilProgram
 ]
 
-{
-	#category : #programs,
-	#'squeak_changestamp' : ''
-}
+{ #category : #programs }
 GLSharedCanvasResources >> textureProgram [
 
 	^ textureProgram

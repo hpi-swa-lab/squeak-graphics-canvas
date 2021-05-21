@@ -1,14 +1,10 @@
 Class {
 	#name : #GLCanvasRectangleProgram,
 	#superclass : #GLCanvasFillStyleProgram,
-	#category : #'OpenGLCanvas-Core',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLCanvas-Core'
 }
 
-{
-	#category : #'shader code',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'shader code' }
 GLCanvasRectangleProgram class >> fragmentShaderMain [
 
 	^ 'void main()
@@ -34,10 +30,7 @@ GLCanvasRectangleProgram class >> fragmentShaderMain [
 }'
 ]
 
-{
-	#category : #'shader code',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'shader code' }
 GLCanvasRectangleProgram class >> fragmentShaderPrimitivePreamble [
 
 	^ '#version 330 core

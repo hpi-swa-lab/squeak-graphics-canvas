@@ -1,14 +1,10 @@
 Class {
 	#name : #GLCanvasGradientPolygonProgram,
 	#superclass : #GLCanvasPolygonProgram,
-	#category : #'OpenGLCanvas-Core',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLCanvas-Core'
 }
 
-{
-	#category : #'shader code',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'shader code' }
 GLCanvasGradientPolygonProgram class >> fragmentShaderFillColor [
 
 	^ self fragmentShaderGradientFillStyle

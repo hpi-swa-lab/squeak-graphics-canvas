@@ -17,14 +17,10 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'OpenGLCanvas-Core',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLCanvas-Core'
 }
 
-{
-	#category : #'instance creation',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'instance creation' }
 GLCanvas class >> displayWithExtent: extent samples: samples [
 
 	| display |
@@ -37,10 +33,7 @@ GLCanvas class >> displayWithExtent: extent samples: samples [
 	^ display
 ]
 
-{
-	#category : #example,
-	#'squeak_changestamp' : ''
-}
+{ #category : #example }
 GLCanvas class >> exampleBrowser [
 	"self exampleBrowser"
 	| window |
@@ -48,10 +41,7 @@ GLCanvas class >> exampleBrowser [
 	^ self openAndDraw: window
 ]
 
-{
-	#category : #example,
-	#'squeak_changestamp' : ''
-}
+{ #category : #example }
 GLCanvas class >> exampleChineseCheckers [
 	"self exampleChineseCheckers"
 	| morph |
@@ -59,10 +49,7 @@ GLCanvas class >> exampleChineseCheckers [
 	^ self openAndDraw: morph
 ]
 
-{
-	#category : #example,
-	#'squeak_changestamp' : ''
-}
+{ #category : #example }
 GLCanvas class >> exampleChineseCheckersAA [
 	"self exampleChineseCheckersAA"
 	| morph |
@@ -70,19 +57,13 @@ GLCanvas class >> exampleChineseCheckersAA [
 	^ self openAndDraw: morph samples: 16
 ]
 
-{
-	#category : #example,
-	#'squeak_changestamp' : ''
-}
+{ #category : #example }
 GLCanvas class >> exampleWorld [
 	"self exampleWorld"
 	^ self openAndDraw: World
 ]
 
-{
-	#category : #'instance creation',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'instance creation' }
 GLCanvas class >> extent: aPoint framebuffer: glFrameBuffer [
 
 	^ self new
@@ -90,29 +71,20 @@ GLCanvas class >> extent: aPoint framebuffer: glFrameBuffer [
 		yourself
 ]
 
-{
-	#category : #'instance creation',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'instance creation' }
 GLCanvas class >> openAndDraw: anObject [
 
 	^ self openAndDraw: anObject doing: []
 	
 ]
 
-{
-	#category : #'instance creation',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'instance creation' }
 GLCanvas class >> openAndDraw: anObject doing: aBlock [
 
 	^ self openAndDraw: anObject doing: aBlock samples: 1
 ]
 
-{
-	#category : #'instance creation',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'instance creation' }
 GLCanvas class >> openAndDraw: anObject doing: aBlock samples: samples [
 
 	| display window |
@@ -133,30 +105,21 @@ GLCanvas class >> openAndDraw: anObject doing: aBlock samples: samples [
 	^ display
 ]
 
-{
-	#category : #'instance creation',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'instance creation' }
 GLCanvas class >> openAndDraw: anObject samples: samples [
 
 	^ self openAndDraw: anObject doing: [] samples: samples
 	
 ]
 
-{
-	#category : #'instance creation',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'instance creation' }
 GLCanvas class >> openAndDrawCreatingMorphs: anObject [
 	
 	^ self openAndDraw: anObject doing: [:c | c getPixelData asMorph openInWorld]
 	
 ]
 
-{
-	#category : #'instance creation',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'instance creation' }
 GLCanvas class >> openAndDrawSavingImages: anObject [
 
 	| frame |
@@ -183,10 +146,7 @@ GLCanvas class >> profileUsing: anObject times: aNumber [
 	
 ]
 
-{
-	#category : #binding,
-	#'squeak_changestamp' : ''
-}
+{ #category : #binding }
 GLCanvas >> bindAndUseProgram: aProgram during: aBlock [
 	
 	self boundDuring: [
@@ -194,37 +154,25 @@ GLCanvas >> bindAndUseProgram: aProgram during: aBlock [
 			aBlock cull: self]].
 ]
 
-{
-	#category : #binding,
-	#'squeak_changestamp' : ''
-}
+{ #category : #binding }
 GLCanvas >> boundDuring: aBlock [
 
 	framebuffer boundDuring: aBlock.
 ]
 
-{
-	#category : #'drawing-support',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'drawing-support' }
 GLCanvas >> clipBy: aRectangle during: aBlock [
 
 	self clipRect: aRectangle during: aBlock.
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLCanvas >> clipRect [
 
 	^ clipRect
 ]
 
-{
-	#category : #'drawing-support',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'drawing-support' }
 GLCanvas >> clipRect: aRectangle during: aBlock [
 
 	| previousClipRect |
@@ -323,19 +271,13 @@ GLCanvas >> drawPolygon: vertices borderWidth: borderWidth borderColor: borderCo
 	self drawPolygonBorder: vertices size borderWidth: borderWidth borderColor: borderColor.
 ]
 
-{
-	#category : #'drawing-polygons',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'drawing-polygons' }
 GLCanvas >> drawPolygon: vertices color: fillColor borderWidth: borderWidth borderColor: borderColor [
 
 	self drawPolygon: vertices fillStyle: fillColor borderWidth: borderWidth borderColor: borderColor.
 ]
 
-{
-	#category : #'drawing-polygons',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'drawing-polygons' }
 GLCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor [
 	
 	self setUniformsFrom: aFillStyle for: self polygonPrograms during: [:aProgram |
@@ -384,10 +326,7 @@ GLCanvas >> dynamicVBO [
 	^ resources dynamicVBO
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLCanvas >> extent [
 
 	^ extent
@@ -409,47 +348,32 @@ GLCanvas >> fillOval: r borderWidth: borderWidth borderColor: borderColor withPr
 	GL drawArrays: GL_TRIANGLE_STRIP with: 0 with: 4.
 ]
 
-{
-	#category : #'drawing-ovals',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'drawing-ovals' }
 GLCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderColor [
 	
 	self fillOval: r fillStyle: c borderWidth: borderWidth borderColor: borderColor.
 ]
 
-{
-	#category : #'drawing-ovals',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'drawing-ovals' }
 GLCanvas >> fillOval: r fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor [
 	
 	self setUniformsFrom: aFillStyle for: self ovalPrograms during: [:aProgram |
 		self fillOval: r borderWidth: borderWidth borderColor: borderColor withProgram: aProgram].
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLCanvas >> fontProgram [
 
 	^ resources fontProgram
 ]
 
-{
-	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'drawing-rectangles' }
 GLCanvas >> frameAndFillRectangle: aRectangle fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
 	
 	self frameAndFillRoundRect: aRectangle radius: 0 fillStyle: fillColor borderWidth: borderWidth borderColor: borderColor.
 ]
 
-{
-	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'drawing-rectangles' }
 GLCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 	
 	self flag: #todo. "jb: All non-simple border styles are still ignored."
@@ -473,38 +397,26 @@ GLCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius borderWidth: 
 	GL drawArrays: GL_TRIANGLE_STRIP with: 0 with: 4.
 ]
 
-{
-	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'drawing-rectangles' }
 GLCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: aFillStyle borderWidth: bw borderColor: bc [
 	
 	self setUniformsFrom: aFillStyle for: self rectanglePrograms during: [:aProgram |
 		self frameAndFillRoundRect: aRectangle radius: cornerRadius borderWidth: bw borderColor: bc withProgram: aProgram].
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLCanvas >> framebuffer [
 
 	^ framebuffer
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLCanvas >> framebuffer: aFrameBuffer [
 
 	framebuffer := aFrameBuffer.
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLCanvas >> getPixelData [
 	
 	| form |
@@ -513,10 +425,7 @@ GLCanvas >> getPixelData [
 	^ form
 ]
 
-{
-	#category : #'drawing-images',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'drawing-images' }
 GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
 	self translateBy: aPoint during: [:c |
@@ -566,37 +475,25 @@ GLCanvas >> line: pt1 to: pt2 width: w color: c [
 			GL checkForError]].
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLCanvas >> lineProgram [
 
 	^ resources solidPolygonProgram
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLCanvas >> origin [
 
 	^ (transform localPointToGlobal: 0@0) truncated
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLCanvas >> ovalPrograms [
 
 	^ resources ovalPrograms
 ]
 
-{
-	#category : #'drawing-text',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'drawing-text' }
 GLCanvas >> paragraph: paragraph bounds: bounds color: c [
 
 	| scanner |
@@ -611,10 +508,7 @@ GLCanvas >> paragraph: paragraph bounds: bounds color: c [
 	paragraph displayOn: self using: scanner at: bounds topLeft.
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLCanvas >> polygonPrograms [
 
 	^ resources polygonPrograms
@@ -629,19 +523,13 @@ GLCanvas >> quadVBO [
 	^ resources quadVBO
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLCanvas >> rectanglePrograms [
 
 	^ resources rectanglePrograms
 ]
 
-{
-	#category : #'drawing-support',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'drawing-support' }
 GLCanvas >> scaleBy: aPoint during: aBlock [
 	
 	self
@@ -725,10 +613,7 @@ GLCanvas >> setSolidUniformsFrom: aFillStyle for: aProgram during: aBlock [
 		aBlock cull: aProgram].
 ]
 
-{
-	#category : #'setting-uniforms',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'setting-uniforms' }
 GLCanvas >> setUniformsFrom: aFillStyle for: aDictionary during: aBlock [
 
 	| program |
@@ -767,37 +652,25 @@ GLCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor
 					GL drawArrays: GL_TRIANGLE_STRIP with: 0 with: 4]]]].
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLCanvas >> stencilProgram [
 
 	^ resources stencilProgram
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLCanvas >> textureProgram [
 
 	^ resources textureProgram
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLCanvas >> transform [
 
 	^ transform
 ]
 
-{
-	#category : #'drawing-support',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'drawing-support' }
 GLCanvas >> transform: aMatrix during: aBlock [
 
 	| previousTransform |
@@ -809,10 +682,7 @@ GLCanvas >> transform: aMatrix during: aBlock [
 	transform := previousTransform.
 ]
 
-{
-	#category : #'drawing-support',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'drawing-support' }
 GLCanvas >> transformBy: aTransform during: aBlock [
 
 	| transformedClip |
@@ -822,10 +692,7 @@ GLCanvas >> transformBy: aTransform during: aBlock [
 	self setScissorRectangle.
 ]
 
-{
-	#category : #'drawing-support',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'drawing-support' }
 GLCanvas >> translateBy: aPoint during: aBlock [
 	
 	self
@@ -833,10 +700,7 @@ GLCanvas >> translateBy: aPoint during: aBlock [
 		during: aBlock.
 ]
 
-{
-	#category : #'drawing-images',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'drawing-images' }
 GLCanvas >> warpImage: aForm transform: aTransform at: extraOffset sourceRect: sourceRect cellSize: cellSize [
 
 	self flag: #todo. "jb: Image does not get warped yet"

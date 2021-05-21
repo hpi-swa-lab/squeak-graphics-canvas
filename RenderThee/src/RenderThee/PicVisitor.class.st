@@ -1,8 +1,7 @@
 Class {
 	#name : #PicVisitor,
 	#superclass : #Object,
-	#category : #'RenderThee-Pictures',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-Pictures'
 }
 
 {

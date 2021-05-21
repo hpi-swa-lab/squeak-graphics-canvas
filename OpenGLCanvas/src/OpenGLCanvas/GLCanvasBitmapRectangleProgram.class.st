@@ -1,14 +1,10 @@
 Class {
 	#name : #GLCanvasBitmapRectangleProgram,
 	#superclass : #GLCanvasRectangleProgram,
-	#category : #'OpenGLCanvas-Core',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLCanvas-Core'
 }
 
-{
-	#category : #'shader code',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'shader code' }
 GLCanvasBitmapRectangleProgram class >> fragmentShaderFillColor [
 
 	^ self fragmentShaderBitmapFillStyle

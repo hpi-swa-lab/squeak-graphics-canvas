@@ -5,23 +5,16 @@ I am an abstract OpenGL program for rendering a primitive that needs to support 
 Class {
 	#name : #GLCanvasFillStyleProgram,
 	#superclass : #GLStaticProgram,
-	#category : #'OpenGLCanvas-Core',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLCanvas-Core'
 }
 
-{
-	#category : #'shader code',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'shader code' }
 GLCanvasFillStyleProgram class >> fragmentShader [
 
 	^ self fragmentShaderPrimitivePreamble , self fragmentShaderFillColor , self fragmentShaderMain
 ]
 
-{
-	#category : #'fill styles',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'fill styles' }
 GLCanvasFillStyleProgram class >> fragmentShaderBitmapFillStyle [
 	
 	^ 'uniform sampler2D form;
@@ -38,19 +31,13 @@ vec4 getColor()
 }'
 ]
 
-{
-	#category : #'shader code',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'shader code' }
 GLCanvasFillStyleProgram class >> fragmentShaderFillColor [
 
 	self subclassResponsibility.
 ]
 
-{
-	#category : #'fill styles',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'fill styles' }
 GLCanvasFillStyleProgram class >> fragmentShaderGradientFillStyle [
 
 	^ 'uniform sampler2D pixelRamp;
@@ -68,28 +55,19 @@ vec4 getColor()
 }'
 ]
 
-{
-	#category : #'shader code',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'shader code' }
 GLCanvasFillStyleProgram class >> fragmentShaderMain [
 
 	self subclassResponsibility.
 ]
 
-{
-	#category : #'shader code',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'shader code' }
 GLCanvasFillStyleProgram class >> fragmentShaderPrimitivePreamble [
 
 	self subclassResponsibility.
 ]
 
-{
-	#category : #'fill styles',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'fill styles' }
 GLCanvasFillStyleProgram class >> fragmentShaderSolidFillStyle [
 	
 	^ 'uniform vec4 color;

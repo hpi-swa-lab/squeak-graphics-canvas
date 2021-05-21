@@ -1,14 +1,10 @@
 Class {
 	#name : #GLCanvasOvalProgram,
 	#superclass : #GLCanvasFillStyleProgram,
-	#category : #'OpenGLCanvas-Core',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLCanvas-Core'
 }
 
-{
-	#category : #'shader code',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'shader code' }
 GLCanvasOvalProgram class >> fragmentShaderMain [
 
 	^ 'void main()
@@ -29,10 +25,7 @@ GLCanvasOvalProgram class >> fragmentShaderMain [
 }'
 ]
 
-{
-	#category : #'shader code',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'shader code' }
 GLCanvasOvalProgram class >> fragmentShaderPrimitivePreamble [
 
 	^ '#version 330 core

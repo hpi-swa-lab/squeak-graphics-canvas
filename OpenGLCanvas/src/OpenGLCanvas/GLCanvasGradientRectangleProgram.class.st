@@ -1,14 +1,10 @@
 Class {
 	#name : #GLCanvasGradientRectangleProgram,
 	#superclass : #GLCanvasRectangleProgram,
-	#category : #'OpenGLCanvas-Core',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLCanvas-Core'
 }
 
-{
-	#category : #'shader code',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'shader code' }
 GLCanvasGradientRectangleProgram class >> fragmentShaderFillColor [
 
 	^ self fragmentShaderGradientFillStyle

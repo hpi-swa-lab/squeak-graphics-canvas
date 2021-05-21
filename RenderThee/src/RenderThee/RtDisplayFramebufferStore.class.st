@@ -4,8 +4,7 @@ Class {
 	#instVars : [
 		'glLibrary'
 	],
-	#category : #'RenderThee-LayerTree',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-LayerTree'
 }
 
 {
@@ -53,7 +52,7 @@ RtDisplayFramebufferStore >> initializeGLSettings [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/16/2021 10:34'
+	#'squeak_changestamp' : 'stlu 5/15/2021 14:28'
 }
 RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 
@@ -67,7 +66,7 @@ RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 	extent := aPoint.
 	"glLibrary := GL3_3 context: (B3DContext newIn: (0@0 extent: extent))."
 	(glLibrary := context library) makeCurrentDuring: [
-		framebuffer := GLDisplayFrameBuffer create.
+		framebuffer := GLDisplayFrameBuffer instance.
 		GLFW swapInterval: 0. "disable vsync"
 		framebuffer boundDuring: [
 			self initializeGLSettings.

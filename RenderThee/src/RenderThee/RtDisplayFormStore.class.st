@@ -1,8 +1,7 @@
 Class {
 	#name : #RtDisplayFormStore,
 	#superclass : #RtFormStore,
-	#category : #'RenderThee-LayerTree',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-LayerTree'
 }
 
 {

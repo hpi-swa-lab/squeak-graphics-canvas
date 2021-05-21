@@ -1,14 +1,10 @@
 Class {
 	#name : #GLCanvasBitmapOvalProgram,
 	#superclass : #GLCanvasOvalProgram,
-	#category : #'OpenGLCanvas-Core',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLCanvas-Core'
 }
 
-{
-	#category : #'shader code',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'shader code' }
 GLCanvasBitmapOvalProgram class >> fragmentShaderFillColor [
 
 	^ self fragmentShaderBitmapFillStyle

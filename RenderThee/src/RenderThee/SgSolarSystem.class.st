@@ -4,8 +4,7 @@ Class {
 	#instVars : [
 		'rotationSpeed'
 	],
-	#category : #'RenderThee-Demo-SpaceGame',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-Demo-SpaceGame'
 }
 
 {

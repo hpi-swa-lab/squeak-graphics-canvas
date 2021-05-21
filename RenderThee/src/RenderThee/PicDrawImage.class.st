@@ -7,8 +7,7 @@ Class {
 		'sourceRect',
 		'combinationRule'
 	],
-	#category : #'RenderThee-Pictures',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-Pictures'
 }
 
 {

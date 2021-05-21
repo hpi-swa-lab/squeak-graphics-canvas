@@ -4,8 +4,7 @@ Class {
 	#instVars : [
 		'form'
 	],
-	#category : #'RenderThee-LayerTree',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-LayerTree'
 }
 
 {
@@ -39,11 +38,11 @@ RtFormStore class >> form: aForm [
 
 {
 	#category : #textures,
-	#'squeak_changestamp' : 'stlu 11/3/2020 16:00'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:08'
 }
 RtFormStore >> createGLTexture [
 
-	^ GL2DTexture create
+	^ GLTexture2D create
 		image: form;
 		yourself
 ]

@@ -9,14 +9,10 @@ Class {
 		'offsetXLocation',
 		'imageLocation'
 	],
-	#category : #'OpenGLCanvas-Fonts',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLCanvas-Fonts'
 }
 
-{
-	#category : #'shader code',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'shader code' }
 GLCanvasFontProgram class >> fragmentShader [
 
 	^ '#version 330 core

@@ -1,8 +1,7 @@
 Class {
 	#name : #SgSpace,
 	#superclass : #Morph,
-	#category : #'RenderThee-Demo-SpaceGame',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-Demo-SpaceGame'
 }
 
 {

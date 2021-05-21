@@ -12,8 +12,7 @@ Class {
 	#instVars : [
 		'picture'
 	],
-	#category : #'RenderThee-LayerTree',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-LayerTree'
 }
 
 {

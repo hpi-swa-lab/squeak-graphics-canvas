@@ -1,14 +1,10 @@
 Class {
 	#name : #GLCanvasTextureProgram,
 	#superclass : #GLStaticProgram,
-	#category : #'OpenGLCanvas-Core',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLCanvas-Core'
 }
 
-{
-	#category : #'shader code',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'shader code' }
 GLCanvasTextureProgram class >> fragmentShader [
 
 	^'#version 330 core

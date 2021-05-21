@@ -4,8 +4,7 @@ Class {
 	#instVars : [
 		'vertices'
 	],
-	#category : #'RenderThee-Pictures',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-Pictures'
 }
 
 {

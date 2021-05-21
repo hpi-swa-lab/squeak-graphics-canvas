@@ -9,8 +9,7 @@ Class {
 		'renderer',
 		'store'
 	],
-	#category : #'RenderThee-Demo',
-	#'squeak_changestamp' : 'stlu 8/21/2020 14:39'
+	#category : #'RenderThee-Demo'
 }
 
 {

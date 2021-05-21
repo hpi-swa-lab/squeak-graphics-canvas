@@ -1,8 +1,7 @@
 Class {
 	#name : #PicDrawRectangle,
 	#superclass : #PicDrawShape,
-	#category : #'RenderThee-Pictures',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-Pictures'
 }
 
 {

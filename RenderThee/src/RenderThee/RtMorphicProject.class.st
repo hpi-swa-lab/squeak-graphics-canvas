@@ -1,8 +1,7 @@
 Class {
 	#name : #RtMorphicProject,
 	#superclass : #MorphicProject,
-	#category : #'RenderThee-Project',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-Project'
 }
 
 {

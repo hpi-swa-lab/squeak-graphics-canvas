@@ -4,8 +4,7 @@ Open me! `SgSpaceGame open`
 Class {
 	#name : #SgSpaceGame,
 	#superclass : #Morph,
-	#category : #'RenderThee-Demo-SpaceGame',
-	#'squeak_changestamp' : 'stlu 8/21/2020 14:43'
+	#category : #'RenderThee-Demo-SpaceGame'
 }
 
 {

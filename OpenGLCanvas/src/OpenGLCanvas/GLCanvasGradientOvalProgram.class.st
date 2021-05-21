@@ -1,14 +1,10 @@
 Class {
 	#name : #GLCanvasGradientOvalProgram,
 	#superclass : #GLCanvasOvalProgram,
-	#category : #'OpenGLCanvas-Core',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLCanvas-Core'
 }
 
-{
-	#category : #'shader code',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'shader code' }
 GLCanvasGradientOvalProgram class >> fragmentShaderFillColor [
 
 	^ self fragmentShaderGradientFillStyle

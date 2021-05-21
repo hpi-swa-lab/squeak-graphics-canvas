@@ -7,8 +7,7 @@ Class {
 	#instVars : [
 		'canvas'
 	],
-	#category : #'RenderThee-Batching',
-	#'squeak_changestamp' : '<historical>'
+	#category : #'RenderThee-Batching'
 }
 
 {

@@ -6,8 +6,7 @@ Class {
 		'color',
 		'paragraph'
 	],
-	#category : #'RenderThee-Pictures',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-Pictures'
 }
 
 {

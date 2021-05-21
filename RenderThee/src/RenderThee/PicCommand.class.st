@@ -5,8 +5,7 @@ A `PicPictureCanvas` is typically used to create me.
 Class {
 	#name : #PicCommand,
 	#superclass : #Object,
-	#category : #'RenderThee-Pictures',
-	#'squeak_changestamp' : 'stlu 8/21/2020 13:54'
+	#category : #'RenderThee-Pictures'
 }
 
 {

@@ -9,32 +9,22 @@ Class {
 		'texture',
 		'font'
 	],
-	#category : #'OpenGLCanvas-Fonts',
-	#'squeak_changestamp' : ''
+	#category : #'OpenGLCanvas-Fonts'
 }
 
-{
-	#category : #constants,
-	#'squeak_changestamp' : ''
-}
+{ #category : #constants }
 GLBitmapFont class >> characterDistance [
 	
 	^ 2
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLBitmapFont >> advanceFor: aCharacter [
 
 	^ font advanceOf: aCharacter
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLBitmapFont >> extentFor: aCharacter [
 
 	| index |
@@ -45,7 +35,7 @@ GLBitmapFont >> extentFor: aCharacter [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : ''
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:08'
 }
 GLBitmapFont >> font: aFont [
 
@@ -54,7 +44,7 @@ GLBitmapFont >> font: aFont [
 	
 	offsets := Array new: self printableCharacters size.
 	
-	texture := GL2DTexture create extent: (self printableCharacters collect: [:char | (aFont characterFormAt: char asCharacter) width + self class characterDistance]) sum @ aFont height.
+	texture := GLTexture2D create extent: (self printableCharacters collect: [:char | (aFont characterFormAt: char asCharacter) width + self class characterDistance]) sum @ aFont height.
 	
 	colorCollectBlock := aFont isTTCFont
 		ifTrue: [[:c | Color white alpha: c alpha]]
@@ -68,47 +58,32 @@ GLBitmapFont >> font: aFont [
 		offsets at: index put: x]
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLBitmapFont >> hasGlyphOf: aCharacter [
 
 	^ self printableCharacters includes: aCharacter asInteger
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLBitmapFont >> indexForCharacter: aCharacter [
 
 	^ aCharacter asInteger - self printableCharacters start
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLBitmapFont >> offsetFor: aCharacter [
 
 	^ ((offsets at: (self indexForCharacter: aCharacter) ifAbsent: [0]) @ font ascent)
 		 - (font characterFormAt: aCharacter) offset
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLBitmapFont >> printableCharacters [
 
 	^ 33 to: 255.
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : ''
-}
+{ #category : #accessing }
 GLBitmapFont >> texture [
 
 	^ texture

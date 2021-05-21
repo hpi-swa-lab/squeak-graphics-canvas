@@ -1,11 +1,7 @@
 Class {
 	#name : #RtNeverCaching,
 	#superclass : #RtCachingStrategy,
-	#pools : [
-		'GLConstants'
-	],
-	#category : #'RenderThee-LayerTree',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-LayerTree'
 }
 
 {

@@ -1,8 +1,7 @@
 Class {
 	#name : #SgImages,
 	#superclass : #Object,
-	#category : #'RenderThee-Demo-SpaceGame',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-Demo-SpaceGame'
 }
 
 {

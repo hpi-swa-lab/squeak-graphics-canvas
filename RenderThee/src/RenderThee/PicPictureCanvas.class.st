@@ -11,8 +11,7 @@ Class {
 		'clipRect',
 		'groupStack'
 	],
-	#category : #'RenderThee-Pictures',
-	#'squeak_changestamp' : 'stlu 8/21/2020 14:19'
+	#category : #'RenderThee-Pictures'
 }
 
 {

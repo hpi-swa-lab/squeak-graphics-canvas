@@ -8,8 +8,7 @@ Class {
 	#instVars : [
 		'wrappedCanvas'
 	],
-	#category : #'RenderThee-Core',
-	#'squeak_changestamp' : 'stlu 8/21/2020 16:58'
+	#category : #'RenderThee-Core'
 }
 
 {

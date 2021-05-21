@@ -1,9 +1,6 @@
 Extension { #name : #AbstractFont }
 
-{
-	#category : #'*OpenGLCanvas',
-	#'squeak_changestamp' : ''
-}
+{ #category : #'*OpenGLCanvas' }
 AbstractFont >> advanceOf: aCharacter [
 
 	^ self widthOf: aCharacter

@@ -20,8 +20,7 @@ Class {
 	#pools : [
 		'GLConstants'
 	],
-	#category : #'RenderThee-LayerTree',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-LayerTree'
 }
 
 {
@@ -157,14 +156,14 @@ RtFramebufferStore >> initializeGLSettings [
 
 {
 	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 10/28/2020 23:48'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:08'
 }
 RtFramebufferStore >> initializeWithExtent: aPoint [
 
 	extent := aPoint.
 	
 	framebuffer := GLFrameBuffer create.
-	texture := GL2DTexture create.
+	texture := GLTexture2D create.
 	
 	texture extent: extent.
 	framebuffer texture2D: texture
@@ -172,12 +171,12 @@ RtFramebufferStore >> initializeWithExtent: aPoint [
 
 {
 	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 10/28/2020 23:48'
+	#'squeak_changestamp' : 'stlu 5/15/2021 13:08'
 }
 RtFramebufferStore >> initializeWithForm: aForm [
 
 	extent := aForm extent.
-	texture := GL2DTexture create.
+	texture := GLTexture2D create.
 	texture image: aForm
 ]
 

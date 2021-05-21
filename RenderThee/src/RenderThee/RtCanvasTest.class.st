@@ -5,8 +5,7 @@ Class {
 		'canvas',
 		'colors'
 	],
-	#category : #'RenderThee-Tests',
-	#'squeak_changestamp' : ''
+	#category : #'RenderThee-Tests'
 }
 
 {

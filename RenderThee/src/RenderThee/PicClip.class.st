@@ -8,8 +8,7 @@ Class {
 	#instVars : [
 		'clipRect'
 	],
-	#category : #'RenderThee-Pictures',
-	#'squeak_changestamp' : 'stlu 8/21/2020 12:59'
+	#category : #'RenderThee-Pictures'
 }
 
 {
