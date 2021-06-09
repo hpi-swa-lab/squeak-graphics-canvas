@@ -345,7 +345,7 @@ PicPictureCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/20/2021 15:26'
+	#'squeak_changestamp' : 'stlu 6/8/2021 15:07'
 }
 PicPictureCanvas >> initialize [
 
@@ -353,7 +353,7 @@ PicPictureCanvas >> initialize [
 	groupStack := OrderedCollection with: PicGroup new.
 	transform := Matrix2x3 identity.
 	clipRect := Rectangle infinite.
-	ignoreClip := true.
+	ignoreClip := false.
 ]
 
 {
