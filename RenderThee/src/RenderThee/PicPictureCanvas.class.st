@@ -392,7 +392,7 @@ PicPictureCanvas >> origin [
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 5/21/2021 14:30'
+	#'squeak_changestamp' : 'stlu 6/11/2021 15:10'
 }
 PicPictureCanvas >> paragraph: aParagraph bounds: aRectangle color: aColor [
 
@@ -403,7 +403,7 @@ PicPictureCanvas >> paragraph: aParagraph bounds: aRectangle color: aColor [
 							yourself)"
 	
 	| scanner |
-	scanner := GLCanvasDisplayScanner new
+	scanner := PicPictureCanvasDisplayScanner new
 		text: aParagraph text
 		textStyle: aParagraph textStyle
 		foreground: aColor

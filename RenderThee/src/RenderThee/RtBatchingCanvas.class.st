@@ -368,12 +368,12 @@ RtBatchingCanvas >> origin [
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 5/20/2021 16:17'
+	#'squeak_changestamp' : 'stlu 6/11/2021 15:10'
 }
 RtBatchingCanvas >> paragraph: aParagraph bounds: aRectangle color: aColor [
 
 	| scanner |
-	scanner := GLCanvasDisplayScanner new
+	scanner := PicPictureCanvasDisplayScanner new
 		text: aParagraph text
 		textStyle: aParagraph textStyle
 		foreground: aColor
