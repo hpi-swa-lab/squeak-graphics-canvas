@@ -20,8 +20,10 @@ BaselineOfRenderThee >> baseline: spec [
 				spec repository: 'github://hpi-swa-lab/squeak-graphics-opengl:main/3DTransform/src/'];
 			baseline: 'GLFW' with: [
 				spec repository: 'github://hpi-swa-lab/squeak-graphics-opengl:main/GLFW/src/'];
+			baseline: 'LearnOpenGL' with: [
+				spec repository: 'github://hpi-swa-lab/squeak-graphics-opengl:main/LearnOpenGL/src/'];
 			
-			package: 'RenderThee' with: [spec requires: #('OpenGL' 'OpenGLObjects' 'GLFW' '3DTransform')].
+			package: 'RenderThee' with: [spec requires: #('OpenGL' 'OpenGLObjects' 'GLFW' '3DTransform' 'LearnOpenGL')].
 		
 		spec
 			group: 'default' with: #('all');
