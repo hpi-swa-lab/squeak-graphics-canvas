@@ -1,5 +1,7 @@
 OrderedDictionary {
-	'OpenGLCanvas/src/OpenGLCanvas' : #SquotTonelSerializer,
+	'RenderThee/src/BaselineOfRenderThee' : #SquotTonelSerializer,
 	'RenderThee/src/RenderThee' : #SquotTonelSerializer,
+	'OpenGLCanvas/src/BaselineOfOpenGLCanvas' : #SquotTonelSerializer,
+	'OpenGLCanvas/src/OpenGLCanvas' : #SquotTonelSerializer,
 	'ShadingLanguage/src/ShadingLanguage' : #SquotTonelSerializer
 }
