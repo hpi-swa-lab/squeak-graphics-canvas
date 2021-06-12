@@ -19,3 +19,4 @@ Please note, that most of this is work in progress.
 [RawBitsBulkPlugins]: ./RawBitsBulkPlugins
 [RenderThee]: ./RenderThee
 [ShadingLanguage]: ./ShadingLanguage
+[OpenGLCanvas]: ./OpenGLCanvas
