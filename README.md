@@ -1,18 +1,21 @@
 # Squeak Morphic Layers
-This repository contains multiple projects closely related to rendering.
+This repository contains multiple projects closely related to (hardware-accelerated) rendering in [Squeak/Smalltalk].
+Please note, that most of this is work in progress.
 
 | Package | Description |
-| :--- | :--- |
-| MPOpenGL | Abstractions for anything OpenGL related. |
-| 3DTransform<br>2DTransform | Various display transforms. |
-| RenderThee | Alternative Morphic rendering based on layer composition. |
-| Vulkan-FFI-Support | **WIP:** Abstractions for anything Vulkan related. |
+| --- | --- |
+| [RenderThee] | A hodgepodge of projects loosely related to hardware-accelerating [Squeak/Smalltalk]'s UI framework Morphic. |
+| [RawBitsBulkPlugins] | A plugin for [Squeak/Smalltalk]'s [VM]. Can improve data transfer speeds from Squeak to raw memory when writing multiple values at a time. |
+| [OpenGLCanvas] | A canvas implementation that immediately maps incoming messages to [OpenGL] draw calls. |
+| [ShadingLanguage] | A Smalltalk-like language for specifying shaders. Transpiles to [GLSL]. |
 
-## How to Install
-> TODO
 
-## Usage
-> TODO
+<!-- references -->
+[Squeak/Smalltalk]: https://squeak.org
+[GLSL]: https://www.khronos.org/opengl/wiki/Core_Language_(GLSL)
+[VM]: https://github.com/OpenSmalltalk/opensmalltalk-vm
+[OpenGL]: https://github.com/hpi-swa-lab/squeak-graphics-opengl
 
-## Example
-> TODO
+[RawBitsBulkPlugins]: ./RawBitsBulkPlugins
+[RenderThee]: ./RenderThee
+[ShadingLanguage]: ./ShadingLanguage
