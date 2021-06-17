@@ -64,75 +64,75 @@ jobs:
           name: ${{ env.ARTIFACT_NAME }}
           path: ${{ env.ARTIFACT_NAME }}.tar.gz
 
-  # build-windows-vm:
-  #   name: ${{ matrix.arch }}-vm
-  #   runs-on: windows-latest
+  build-windows-vm:
+    name: ${{ matrix.arch }}-vm
+    runs-on: windows-latest
     
-  #   strategy:
-  #     fail-fast: false
-  #     matrix:
-  #       include:
-  #         - arch: win64x64
-  #           mingw_arch: x86_64
-  #           cyg_root: 'C:\cygwin64'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: win64x64
+            mingw_arch: x86_64
+            cyg_root: 'C:\cygwin64'
     
-  #   env:
-  #     ARCH: ${{ matrix.arch }}
-  #     ARTIFACT_NAME: ${{ matrix.arch }}-vm
+    env:
+      ARCH: ${{ matrix.arch }}
+      ARTIFACT_NAME: ${{ matrix.arch }}-vm
     
-  #   defaults:
-  #     run:
-  #       shell: bash
+    defaults:
+      run:
+        shell: bash
     
-  #   steps:
-  #     - name: Checkout repository OpenSmalltalk/opensmalltalk-vm
-  #       uses: actions/checkout@v2
-  #       with:
-  #         repository: 'OpenSmalltalk/opensmalltalk-vm'
-  #         ref: ${{ github.event.inputs.osvm-ref }}
+    steps:
+      - name: Checkout repository OpenSmalltalk/opensmalltalk-vm
+        uses: actions/checkout@v2
+        with:
+          repository: 'OpenSmalltalk/opensmalltalk-vm'
+          ref: ${{ github.event.inputs.osvm-ref }}
 
-  #     - name: Reuse Cygwin from Cache
-  #       id: cygwin-cache
-  #       uses: actions/cache@v2
-  #       with:
-  #         path: ${{ matrix.cyg_root }}
-  #         key: cygwin-${{ matrix.arch }}-4
+      - name: Reuse Cygwin from Cache
+        id: cygwin-cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ matrix.cyg_root }}
+          key: cygwin-${{ matrix.arch }}-4
         
-  #     - name: Install Cygwin
-  #       if: ${{ !steps.cygwin-cache.outputs.cache-hit }}
-  #       run: |
-  #         curl -fsSL --retry 4 -m 600 -o "setup-x86.exe" "http://cygwin.com/setup-x86.exe"
-  #         curl -fsSL --retry 4 -m 600 -o "setup-x86_64.exe" "http://cygwin.com/setup-x86_64.exe"
+      - name: Install Cygwin
+        if: ${{ !steps.cygwin-cache.outputs.cache-hit }}
+        run: |
+          curl -fsSL --retry 4 -m 600 -o "setup-x86.exe" "http://cygwin.com/setup-x86.exe"
+          curl -fsSL --retry 4 -m 600 -o "setup-x86_64.exe" "http://cygwin.com/setup-x86_64.exe"
       
-  #     - name: Install dependencies
-  #       if: ${{ !steps.cygwin-cache.outputs.cache-hit }}
-  #       shell: cmd
-  #       run: call scripts/installCygwin.bat ${{ matrix.mingw_arch }} ${{ matrix.cyg_root }}
+      - name: Install dependencies
+        if: ${{ !steps.cygwin-cache.outputs.cache-hit }}
+        shell: cmd
+        run: call scripts/installCygwin.bat ${{ matrix.mingw_arch }} ${{ matrix.cyg_root }}
       
-  #     - name: Add Cygwin to PATH
-  #       run: echo "${{ matrix.cyg_root }}\bin" >> $GITHUB_PATH
+      - name: Add Cygwin to PATH
+        run: echo "${{ matrix.cyg_root }}\bin" >> $GITHUB_PATH
 
-  #     - name: Run source tree version substitutions
-  #       run: ./scripts/updateSCCSVersions
+      - name: Run source tree version substitutions
+        run: ./scripts/updateSCCSVersions
       
-  #     - name: Make VM
-  #       working-directory: ./build.${{ env.ARCH }}/${{ env.FLAVOR }}/
-  #       run: ./mvm -f
+      - name: Make VM
+        working-directory: ./build.${{ env.ARCH }}/${{ env.FLAVOR }}/
+        run: ./mvm -f
       
-  #     - name: Create VM archive
-  #       working-directory: ./build.${{ env.ARCH }}/${{ env.FLAVOR }}/build/vm
-  #       run: tar --create --gzip --file="${{ env.ARTIFACT_NAME }}.tar.gz" *.dll Squeak.exe* SqueakConsole.exe* && mv ${{ env.ARTIFACT_NAME }}.tar.gz ../../../../
+      - name: Create VM archive
+        working-directory: ./build.${{ env.ARCH }}/${{ env.FLAVOR }}/build/vm
+        run: tar --create --gzip --file="${{ env.ARTIFACT_NAME }}.tar.gz" *.dll Squeak.exe* SqueakConsole.exe* && mv ${{ env.ARTIFACT_NAME }}.tar.gz ../../../../
       
-  #     - name: Upload VM archive
-  #       uses: actions/upload-artifact@v2
-  #       with:
-  #         name: ${{ env.ARTIFACT_NAME }}
-  #         path: ${{ env.ARTIFACT_NAME }}.tar.gz
+      - name: Upload VM archive
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: ${{ env.ARTIFACT_NAME }}.tar.gz
   
-  setup-linux-bundle:
+  setup-bundle:
     name: ${{ matrix.arch }}-bundle
-    needs: [ build-linux-vm ]
-    runs-on: ubuntu-latest
+    needs: [build-linux-vm, build-windows-vm]
+    runs-on: ${{ matrix.os }}
     
     strategy:
       fail-fast: false
@@ -140,6 +140,10 @@ jobs:
         include:
           - arch: linux64x64
             bits: 64
+            os: ubuntu-latest
+          - arch: win64x64
+            bits: 64
+            os: windows-latest
     
     defaults:
       run:
@@ -172,7 +176,7 @@ jobs:
         working-directory: bundle
         env:
           GITHUB_TOKEN: ${{ secrets.METACELLO_TOKEN }}
-        run: ./squeak -headless ${{ env.IMAGE_NAME }}.image ../ci/install.st
+        run: ./squeak -vm-display-null -vm-sound-null ${{ env.IMAGE_NAME }}.image ../ci/install.st
       
       - name: Cleanup installation remnants
         working-directory: bundle
