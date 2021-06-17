@@ -112,11 +112,10 @@ GLSharedCanvasResources >> initialize [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 3/9/2021 15:49'
+	#'squeak_changestamp' : 'stlu 6/17/2021 10:38'
 }
 GLSharedCanvasResources >> initializeBuffers [
 
-	| vao |
 	vao := GLVertexArray create.
 	vao bind.
 
@@ -132,16 +131,12 @@ GLSharedCanvasResources >> initializeBuffers [
 	dynamicVBO := GLBuffer create.
 	dynamicVBO usage: GL_DYNAMIC_DRAW size: 100.
 	
-	GL checkForError.
-	
 	self flag: #todo. "should not take the detour over program and program inputs"
 	quadVBO boundDuring: [
 		textureProgram inputs aPos stride: 16 offset: 0.
 		textureProgram inputs aTexCoords stride: 16 offset: 8].
 	dynamicVBO boundDuring: [
 		solidPolygonProgram inputs aPos stride: 8 offset: 0].
-	
-	GL checkForError.
 ]
 
 {
@@ -155,7 +150,7 @@ GLSharedCanvasResources >> initializeFonts [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 3/9/2021 12:54'
+	#'squeak_changestamp' : 'stlu 6/17/2021 10:38'
 }
 GLSharedCanvasResources >> initializePrograms [
 	
@@ -174,7 +169,6 @@ GLSharedCanvasResources >> initializePrograms [
 	stencilProgram := GLCanvasStencilProgram instance.
 	textureProgram := GLCanvasTextureProgram instance.
 	fontProgram := GLCanvasFontProgram instance.
-	GL checkForError.
 ]
 
 {

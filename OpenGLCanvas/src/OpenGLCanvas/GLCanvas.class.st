@@ -7,7 +7,7 @@ Class {
 	#name : #GLCanvas,
 	#superclass : #Canvas,
 	#instVars : [
-		'extent',
+		'bounds',
 		'framebuffer',
 		'transform',
 		'projectionMatrix',
@@ -19,6 +19,17 @@ Class {
 	],
 	#category : #'OpenGLCanvas-Core'
 }
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:51'
+}
+GLCanvas class >> bounds: aRectangle framebuffer: glFrameBuffer [
+
+	^ self new
+		initializeWithBounds: aRectangle framebuffer: glFrameBuffer;
+		yourself
+]
 
 { #category : #'instance creation' }
 GLCanvas class >> displayWithExtent: extent samples: samples [
@@ -61,14 +72,6 @@ GLCanvas class >> exampleChineseCheckersAA [
 GLCanvas class >> exampleWorld [
 	"self exampleWorld"
 	^ self openAndDraw: World
-]
-
-{ #category : #'instance creation' }
-GLCanvas class >> extent: aPoint framebuffer: glFrameBuffer [
-
-	^ self new
-		initializeWithExtent: aPoint framebuffer: glFrameBuffer;
-		yourself
 ]
 
 { #category : #'instance creation' }
@@ -160,6 +163,25 @@ GLCanvas >> boundDuring: aBlock [
 	framebuffer boundDuring: aBlock.
 ]
 
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:53'
+}
+GLCanvas >> bounds [
+
+	^ bounds
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:56'
+}
+GLCanvas >> bounds: aRectangle [
+
+	bounds := aRectangle.
+	self projectionMatrix: (Matrix4x4 ortho: bounds near: 0 far: 1)
+]
+
 { #category : #'drawing-support' }
 GLCanvas >> clipBy: aRectangle during: aBlock [
 
@@ -188,7 +210,7 @@ GLCanvas >> clipRect: aRectangle during: aBlock [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 3/9/2021 14:31'
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:27'
 }
 GLCanvas >> contentsOfArea: aRectangle into: aForm [
 	
@@ -196,19 +218,17 @@ GLCanvas >> contentsOfArea: aRectangle into: aForm [
 	GL readBuffer: GL_BACK.
 	numerOfBytes := aRectangle area * 4.
 	data := (ByteArray new: numerOfBytes).
-	GL checkForError.
 	
 	GL
 		readPixels: aRectangle left with: aRectangle top with: aRectangle width with: aRectangle height
 		with: GL_BGRA with: GL_UNSIGNED_INT_8_8_8_8 with: data.
-		
-	GL checkForError.
+	
 	aForm bits: ((Bitmap new: numerOfBytes) copyFromByteArray: data).
 ]
 
 {
 	#category : #'drawing-polygons',
-	#'squeak_changestamp' : 'stlu 3/9/2021 16:18'
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:28'
 }
 GLCanvas >> drawBasePolygon: numVertices [
 
@@ -219,20 +239,20 @@ GLCanvas >> drawBasePolygon: numVertices [
 	GL stencilOp: GL_INVERT with: GL_INVERT with: GL_INVERT.
 	GL colorMask: GL_FALSE with: GL_FALSE with: GL_FALSE  with: GL_FALSE.
 	
-	GL drawArrays: GL_TRIANGLE_FAN with: 0 with: numVertices.
+	self vao drawArrays: GL_TRIANGLE_FAN count: numVertices.
 	
 	GL stencilFunc: GL_EQUAL with: 1 with: 1.
 	GL stencilOp: GL_KEEP with: GL_KEEP with: GL_KEEP.
 	GL colorMask: GL_TRUE with: GL_TRUE with: GL_TRUE  with: GL_TRUE.
 	
-	GL drawArrays: GL_TRIANGLE_FAN with: 0 with: numVertices.
+	self vao drawArrays: GL_TRIANGLE_FAN count: numVertices.
 	
 	GL disable: GL_STENCIL_TEST.
 ]
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 3/9/2021 16:48'
+	#'squeak_changestamp' : 'stlu 6/17/2021 10:34'
 }
 GLCanvas >> drawCharacter: character bitmapFont: bitmapFont position: position [
 	"Draw the character's texture onto a rectangle. self fontProgram and bitmapFont texture need to be bound and the color for self fontProgram needs to be set"
@@ -240,20 +260,17 @@ GLCanvas >> drawCharacter: character bitmapFont: bitmapFont position: position [
 	(bitmapFont hasGlyphOf: character) ifTrue: [ | sourceOffset |
 		sourceOffset := bitmapFont offsetFor: character.
 		
-		GL checkForError.
-		
 		self fontProgram uniforms
 			extent: (bitmapFont extentFor: character);
 			offsetX: sourceOffset x asFloat;
 			modelMatrix: transform * (Matrix4x4 withOffset: position).
 
-		GL checkForError.
-		GL drawArrays: GL_TRIANGLE_STRIP with: 0 with: 4].
+		self vao drawArrays: GL_TRIANGLE_STRIP count: 4].
 ]
 
 {
 	#category : #'drawing-polygons',
-	#'squeak_changestamp' : 'stlu 3/9/2021 16:48'
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:31'
 }
 GLCanvas >> drawPolygon: vertices borderWidth: borderWidth borderColor: borderColor withProgram: aProgram [
 
@@ -262,8 +279,8 @@ GLCanvas >> drawPolygon: vertices borderWidth: borderWidth borderColor: borderCo
 	
 	vertexData := Float32Array new: vertices size * 2 streamContents: [:s |
 						vertices do: [:position |
-							s nextPut: position x.
-							s nextPut: position y]].
+							s nextPut: position x asFloat.
+							s nextPut: position y asFloat]].
 	
 	self dynamicVBO data: vertexData.
 	
@@ -286,14 +303,14 @@ GLCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: borderWidth
 
 {
 	#category : #'drawing-polygons',
-	#'squeak_changestamp' : 'stlu 3/9/2021 16:19'
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:28'
 }
 GLCanvas >> drawPolygonBorder: numVertices borderWidth: borderWidth borderColor: borderColor [
 
 	borderWidth isZero ifFalse: [
-		self solidPolygonProgram color: borderColor.
+		self solidPolygonProgram uniforms color: borderColor.
 		GL lineWidth: borderWidth asFloat.
-		GL drawArrays: GL_LINE_LOOP with: 0 with: numVertices].
+		self vao drawArrays: GL_LINE_LOOP count: numVertices].
 ]
 
 {
@@ -326,15 +343,18 @@ GLCanvas >> dynamicVBO [
 	^ resources dynamicVBO
 ]
 
-{ #category : #accessing }
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:57'
+}
 GLCanvas >> extent [
 
-	^ extent
+	^ bounds extent
 ]
 
 {
 	#category : #'drawing-ovals',
-	#'squeak_changestamp' : 'stlu 3/9/2021 16:49'
+	#'squeak_changestamp' : 'stlu 6/17/2021 10:35'
 }
 GLCanvas >> fillOval: r borderWidth: borderWidth borderColor: borderColor withProgram: aProgram [
 
@@ -345,7 +365,7 @@ GLCanvas >> fillOval: r borderWidth: borderWidth borderColor: borderColor withPr
 		borderWidth: borderWidth asFloat;
 		modelMatrix: transform.
 	
-	GL drawArrays: GL_TRIANGLE_STRIP with: 0 with: 4.
+	self vao drawArrays: GL_TRIANGLE_STRIP count: 4.
 ]
 
 { #category : #'drawing-ovals' }
@@ -382,7 +402,7 @@ GLCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle:
 
 {
 	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : 'stlu 3/9/2021 16:49'
+	#'squeak_changestamp' : 'stlu 6/17/2021 10:35'
 }
 GLCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius borderWidth: borderWidth borderColor: borderColor withProgram: aProgram [
 	
@@ -394,7 +414,7 @@ GLCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius borderWidth: 
 		cornerRadius: cornerRadius asFloat;
 		modelMatrix: transform.
 		
-	GL drawArrays: GL_TRIANGLE_STRIP with: 0 with: 4.
+	self vao drawArrays: GL_TRIANGLE_STRIP count: 4.
 ]
 
 { #category : #'drawing-rectangles' }
@@ -425,11 +445,25 @@ GLCanvas >> getPixelData [
 	^ form
 ]
 
-{ #category : #'drawing-images' }
+{
+	#category : #'drawing-images',
+	#'squeak_changestamp' : 'stlu 6/17/2021 10:34'
+}
 GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
+	| texture |
 	self translateBy: aPoint during: [:c |
-		c paintImageStore: (RtFormStore form: aForm) sourceRect: sourceRect].
+		self bindAndUseProgram: self textureProgram during: [
+			texture := GLTexture2D create.
+			texture boundDuring: [
+				texture image: aForm.
+				self textureProgram uniforms
+					sourcePosition: (sourceRect origin / aForm extent) asFloatPoint;
+					sourceExtent: (sourceRect extent / aForm extent) asFloatPoint;
+					modelMatrix: transform * (Matrix4x4 withScale: aForm extent @ 1.0).
+				
+				self vao drawArrays: GL_TRIANGLE_STRIP count: 4].
+			texture delete]].
 ]
 
 { #category : #'image stores' }
@@ -440,43 +474,35 @@ GLCanvas >> imageStoreClass [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/18/2021 22:03'
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:55'
 }
-GLCanvas >> initializeWithExtent: aPoint framebuffer: aFrameBuffer [
+GLCanvas >> initializeWithBounds: aRectangle framebuffer: aFrameBuffer [
 
-	extent := aPoint.
 	framebuffer := aFrameBuffer.
-	
 	resources := GL userData
 					at: GLSharedCanvasResources
 					ifAbsentPut: [ GLSharedCanvasResources new ].
 	
+	self bounds: aRectangle.
 	self reset.
-	
-	projectionMatrix := Matrix4x4 ortho: clipRect near: 0 far: 1.
-	self projectionMatrix: projectionMatrix
 ]
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 3/9/2021 16:49'
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:29'
 }
 GLCanvas >> line: pt1 to: pt2 width: w color: c [
 	
-	| vbo |
 	w > 0 ifTrue: [
 		self bindAndUseProgram: self lineProgram during: [
 			self lineProgram uniforms
 				color: c;
 				modelMatrix: transform.
 			
-			vbo := self dynamicVBO.
-			vbo data: (Float32Array with: pt1 x with: pt1 y with: pt2 x with: pt2 y).
+			self dynamicVBO data: (Float32Array with: pt1 x with: pt1 y with: pt2 x with: pt2 y).
 			
 			GL lineWidth: w asFloat.
-			GL checkForError.
-			GL drawArrays: GL_LINE_STRIP with: 0 with: 2.
-			GL checkForError]].
+			self vao drawArrays: GL_LINE_STRIP count: 2]].
 ]
 
 { #category : #accessing }
@@ -495,23 +521,6 @@ GLCanvas >> origin [
 GLCanvas >> ovalPrograms [
 
 	^ resources ovalPrograms
-]
-
-{
-	#category : #'image stores',
-	#'squeak_changestamp' : 'stlu 3/9/2021 18:10'
-}
-GLCanvas >> paintImageStore: aStore sourceRect: sourceRect [
-
-	self bindAndUseProgram: self textureProgram during: [
-		aStore glTextureDo: [:texture |
-			texture boundDuring: [
-				self textureProgram uniforms
-					sourcePosition: sourceRect origin asFloatPoint / aStore extent asFloatPoint;
-					sourceExtent: sourceRect extent asFloatPoint / aStore extent asFloatPoint;
-					modelMatrix: transform * (Matrix4x4 withScale: aStore extent @ 1.0).
-				
-				GL drawArrays: GL_TRIANGLE_STRIP with: 0 with: 4]]].
 ]
 
 { #category : #'drawing-text' }
@@ -537,10 +546,11 @@ GLCanvas >> polygonPrograms [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 5/18/2021 22:03'
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:54'
 }
 GLCanvas >> projectionMatrix: aMatrix [
 
+	projectionMatrix := aMatrix.
 	resources programsDo: [:program |
 		program uniforms projectionMatrix: aMatrix].
 ]
@@ -562,22 +572,21 @@ GLCanvas >> rectanglePrograms [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/18/2021 22:06'
+	#'squeak_changestamp' : 'stlu 6/17/2021 14:35'
 }
 GLCanvas >> reset [
 
-	GL clearColor: (Color r: 0.1 g: 0.1 b: 0.1 alpha: 0.1).
-	GL clear: (GL_COLOR_BUFFER_BIT bitOr: GL_DEPTH_BUFFER_BIT).
-	
 	GL disable: GL_CULL_FACE.
 	GL disable: GL_DEPTH_TEST.
 	GLTexture activateTextureImageUnitAt: 0.
 	GL enable: GL_BLEND.
 	GL enable: GL_SCISSOR_TEST.
 	GL blendFuncSeparate: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA with: GL_ONE with: GL_ONE.
-	GL clearColor: 1 with: 1 with: 1 with: 0.
+	
+	GL clearColor: (Color r: 0.1 g: 0.1 b: 0.1 alpha: 0.1).
+	GL clear: (GL_COLOR_BUFFER_BIT bitOr: GL_DEPTH_BUFFER_BIT).
 
-	clipRect := 0 @ 0 extent: extent.
+	clipRect := bounds.
 	transform := Matrix4x4 identity.
 ]
 
@@ -591,59 +600,64 @@ GLCanvas >> scaleBy: aPoint during: aBlock [
 
 {
 	#category : #'setting-uniforms',
-	#'squeak_changestamp' : 'stlu 3/9/2021 16:13'
+	#'squeak_changestamp' : 'stlu 6/17/2021 10:12'
 }
 GLCanvas >> setBitmapUniformsFrom: aFillStyle for: aProgram during: aBlock [
 
 	| clampMode |
 	self bindAndUseProgram: aProgram during: [
-		(RtFormStore form: aFillStyle form) glTextureDo: [:texture |
-			texture boundDuring: [
-				aProgram uniforms
-					formOrigin: aFillStyle origin;
-					formDirection: aFillStyle direction;
-					formNormal: aFillStyle normal.
+		| texture |
+		texture := GLTexture2D create.
+		texture image: aFillStyle form.
+		texture boundDuring: [
+			aProgram uniforms
+				formOrigin: aFillStyle origin;
+				formDirection: aFillStyle direction;
+				formNormal: aFillStyle normal.
 					
-				clampMode := aFillStyle isTiled ifTrue: [GL_REPEAT] ifFalse: [GL_CLAMP_TO_EDGE].
-				texture
-					wrapS: clampMode;
-					wrapT: clampMode.
-				
-				aBlock cull: aProgram]]].
+			clampMode := aFillStyle isTiled ifTrue: [GL_REPEAT] ifFalse: [GL_CLAMP_TO_EDGE].
+			texture
+				wrapS: clampMode;
+				wrapT: clampMode.
+			
+			aBlock cull: aProgram].
+		texture delete].
 ]
 
 {
 	#category : #'setting-uniforms',
-	#'squeak_changestamp' : 'stlu 3/9/2021 16:14'
+	#'squeak_changestamp' : 'stlu 6/17/2021 10:15'
 }
 GLCanvas >> setGradientUniformsFrom: aFillStyle for: aProgram during: aBlock [
 
-	| ramp |
+	| ramp texture |
 	self bindAndUseProgram: aProgram during: [
 		ramp := aFillStyle pixelRamp.
-		(RtFormStore form: (Form extent: ramp size @ 1 depth: 32 bits: ramp)) glTextureDo: [:texture |
-			texture boundDuring: [
-				aProgram uniforms
-					gradientOrigin: aFillStyle origin;
-					gradientDirection: aFillStyle direction;
-					gradientRadial: aFillStyle radial;
-					pixelRamp: 0.
-				
-				texture
-					wrapS: GL_CLAMP_TO_EDGE;
-					wrapT: GL_CLAMP_TO_EDGE.
-				
-				aBlock cull: aProgram]]].
+		texture := GLTexture2D create.
+		texture image: (Form extent: ramp size @ 1 depth: 32 bits: ramp).
+		texture boundDuring: [
+			aProgram uniforms
+				gradientOrigin: aFillStyle origin;
+				gradientDirection: aFillStyle direction;
+				gradientRadial: aFillStyle radial;
+				pixelRamp: 0.
+			
+			texture
+				wrapS: GL_CLAMP_TO_EDGE;
+				wrapT: GL_CLAMP_TO_EDGE.
+			
+			aBlock cull: aProgram].
+		texture delete].
 ]
 
 {
 	#category : #'drawing-support',
-	#'squeak_changestamp' : 'stlu 3/9/2021 17:07'
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:49'
 }
 GLCanvas >> setScissorRectangle [
 
 	| screenTransform rect |
-	screenTransform := (transform translatedBy: 0.0 @ extent y negated @ 0.0) scaledBy: 1.0 @ -1.0 @ 1.0. "flip vertically since screen coordinates have their origin in bottom left not top left"
+	screenTransform := (transform translatedBy: 0.0 @ bounds height negated @ 0.0) scaledBy: 1.0 @ -1.0 @ 1.0. "flip vertically since screen coordinates have their origin in bottom left not top left"
 	screenTransform preservesAxisAlignment ifTrue: [
 		rect := (screenTransform localBoundsToGlobal: clipRect) expanded.
 		GL
@@ -684,24 +698,34 @@ GLCanvas >> setUniformsFrom: aFillStyle for: aDictionary during: aBlock [
 ]
 
 {
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/16/2021 17:33'
+}
+GLCanvas >> solidPolygonProgram [
+
+	^ resources solidPolygonProgram
+]
+
+{
 	#category : #'drawing-images',
-	#'squeak_changestamp' : 'stlu 3/9/2021 18:10'
+	#'squeak_changestamp' : 'stlu 6/17/2021 10:35'
 }
 GLCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor [
 	
-	| store |
+	| texture |
 	self translateBy: aPoint during: [:c |
-		store := RtFormStore form: stencilForm.
 		self bindAndUseProgram: self stencilProgram during: [
-			store glTextureDo: [:texture |
-				texture boundDuring: [					
-					self stencilProgram uniforms
-						sourcePosition: sourceRect origin asFloatPoint / store extent asFloatPoint;
-						sourceExtent: sourceRect extent asFloatPoint / store extent asFloatPoint;
-						color: aColor;
-						modelMatrix: transform * (Matrix4x4 withScale: store extent @ 1.0).
-					
-					GL drawArrays: GL_TRIANGLE_STRIP with: 0 with: 4]]]].
+			texture := GLTexture2D create.
+			texture boundDuring: [
+				texture image: stencilForm.
+				self stencilProgram uniforms
+					sourcePosition: (sourceRect origin / stencilForm extent) asFloatPoint;
+					sourceExtent: (sourceRect extent / stencilForm extent) asFloatPoint;
+					color: aColor;
+					modelMatrix: transform * (Matrix4x4 withScale: stencilForm extent @ 1.0).
+				
+				self vao drawArrays: GL_TRIANGLE_STRIP count: 4].
+			texture delete]].
 ]
 
 { #category : #accessing }
@@ -750,6 +774,15 @@ GLCanvas >> translateBy: aPoint during: aBlock [
 	self
 		transformBy: (Matrix4x4 withOffset: aPoint)
 		during: aBlock.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/17/2021 10:34'
+}
+GLCanvas >> vao [
+
+	^ resources vao
 ]
 
 { #category : #'drawing-images' }

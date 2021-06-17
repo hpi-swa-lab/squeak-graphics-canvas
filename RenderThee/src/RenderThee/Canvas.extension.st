@@ -98,11 +98,11 @@ Canvas >> imageStoreClass [
 
 {
 	#category : #'*RenderThee',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 6/17/2021 10:27'
 }
 Canvas >> paintImageStore: anImageStore [
 
-	self paintImageStore: anImageStore sourceRect: (0@0 extent: anImageStore extent)
+	self deprecated.
 ]
 
 {
