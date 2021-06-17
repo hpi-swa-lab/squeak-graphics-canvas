@@ -10,6 +10,15 @@ Morph >> addedMorph: aMorph [
 ]
 
 {
+	#category : #'*RenderThee-Pictures',
+	#'squeak_changestamp' : 'stlu 6/16/2021 16:19'
+}
+Morph >> getPicture [
+
+	^ (PicPictureCanvas new fullDraw: self; yourself) getPicture
+]
+
+{
 	#category : #'*RenderThee',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }

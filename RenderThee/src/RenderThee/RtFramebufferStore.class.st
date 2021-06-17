@@ -120,10 +120,11 @@ RtFramebufferStore >> framebuffer [
 
 {
 	#category : #private,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 6/17/2021 13:51'
 }
 RtFramebufferStore >> getCanvas [
 
+	self error. "Sry, broke this."
 	^ self class defaultCanvasClass extent: extent framebuffer: framebuffer
 ]
 

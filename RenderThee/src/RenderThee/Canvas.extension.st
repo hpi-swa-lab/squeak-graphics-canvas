@@ -1,6 +1,15 @@
 Extension { #name : #Canvas }
 
 {
+	#category : #'*RenderThee-drawing',
+	#'squeak_changestamp' : 'stlu 6/16/2021 14:26'
+}
+Canvas >> asBalloonCanvas [
+
+	self shouldBeImplemented.
+]
+
+{
 	#category : #'*RenderThee-LayerTree',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
@@ -16,6 +25,20 @@ Canvas >> cacheLayer: aLayer [
 Canvas >> drawDrawLayer: aLayer [
 
 	aLayer drawOn: self
+]
+
+{
+	#category : #'*RenderThee-drawing',
+	#'squeak_changestamp' : 'stlu 6/16/2021 14:47'
+}
+Canvas >> drawGeneralBezier3Shape: contours fillStyle: aFillStyle borderStyle: aBorderStyle [
+
+	self flag: #todo. "frameAndFill vs. fill vs. draw"
+	self asBalloonCanvas
+		drawGeneralBezier3Shape: contours
+		color: aFillStyle asColor
+		borderWidth: aBorderStyle width
+		borderColor: aBorderStyle color
 ]
 
 {
@@ -37,6 +60,34 @@ Canvas >> drawLayer: aLayer [
 ]
 
 {
+	#category : #'*RenderThee-drawing',
+	#'squeak_changestamp' : 'stlu 6/16/2021 14:47'
+}
+Canvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBorderStyle [
+
+	self flag: #todo. "frameAndFill vs. fill vs. draw"
+	self
+		drawPolygon: vertices
+		fillStyle: aFillStyle
+		borderWidth: aBorderStyle width
+		borderColor: aBorderStyle color
+]
+
+{
+	#category : #'*RenderThee-drawing',
+	#'squeak_changestamp' : 'stlu 6/16/2021 14:47'
+}
+Canvas >> fillOval: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
+
+	self flag: #todo. "frameAndFill vs. fill vs. draw"
+	^ self
+		fillOval: aRectangle
+		fillStyle: aFillStyle
+		borderWidth: aBorderStyle width
+		borderColor: aBorderStyle color
+]
+
+{
 	#category : #'*RenderThee-LayerTree',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
@@ -47,11 +98,11 @@ Canvas >> imageStoreClass [
 
 {
 	#category : #'*RenderThee',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 6/17/2021 10:27'
 }
 Canvas >> paintImageStore: anImageStore [
 
-	self paintImageStore: anImageStore sourceRect: (0@0 extent: anImageStore extent)
+	self deprecated.
 ]
 
 {

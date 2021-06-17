@@ -443,6 +443,18 @@ RtBatchingRenderer >> visitParagraph: aCommand [
 
 {
 	#category : #drawing,
+	#'squeak_changestamp' : 'stlu 6/17/2021 15:15'
+}
+RtBatchingRenderer >> visitPolygon: aPolygon [
+
+	self
+		frameAndFillRectangle: aPolygon estimatedBounds
+		fillStyle: aPolygon fillStyle
+		borderStyle: aPolygon borderStyle
+]
+
+{
+	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 5/20/2021 21:45'
 }
 RtBatchingRenderer >> visitRectangle: anObject [
