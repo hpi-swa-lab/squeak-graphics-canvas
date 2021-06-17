@@ -19,68 +19,78 @@ Smalltalk at: #MCMcmUpdater ifPresent: [ :updater |
         FileStream stdout nextPutAll: ex asString.
         Smalltalk snapshot: true andQuit: true ]].
 
-Utilities useAuthorInitials: 'CI' during: [
-  "Ensure Metacello is loaded."
-  Metacello new.
+[[
+  Utilities useAuthorInitials: 'CI' during: [
+    | token |
+    "Ensure Metacello is loaded."
+    Metacello new.
 
-  "Ensure Tonel is loaded."
-  [ (Smalltalk classNamed: #MCTonelMissing) signal ] valueSupplyingAnswer: true.
+    "Ensure Tonel is loaded."
+    [ (Smalltalk classNamed: #MCTonelMissing) signal ] valueSupplyingAnswer: true.
 
-  "Install OSProcess to read environment variables"
-  Installer ss project: 'OSProcess'; install: 'OSProcess'.
+    "Install OSProcess to read environment variables"
+    Installer ss project: 'OSProcess'; install: 'OSProcess'.
 
-  "Load RenderThee"
-  [ Metacello new
-    baseline: 'RenderThee';
-    repository: 'github://hpi-swa-lab/squeak-morphic-layers:main/RenderThee/src/';
-    password: (OSProcess thisOSProcess environmentAt: 'GITHUB_TOKEN');
-    onConflict: [:ex | ex pass];
-    load ] on: Warning do: [:w | w resume ].
+    token := OSProcess thisOSProcess environmentAt: 'GITHUB_TOKEN'.
+    token ifNil: [self error: 'Invalid GITHUB_TOKEN'].
 
-  "Load OpenGLCanvas"
-  [ Metacello new
-    baseline: 'OpenGLCanvas';
-    repository: 'github://hpi-swa-lab/squeak-morphic-layers:main/OpenGLCanvas/src/';
-    password: (OSProcess thisOSProcess environmentAt: 'GITHUB_TOKEN');
-    onConflict: [:ex | ex pass];
-    load ] on: Warning do: [:w | w resume ].
-  
-  "Fix FFI"
-  ExternalType resetAllTypes].
+    "Load RenderThee"
+    [ Metacello new
+      baseline: 'RenderThee';
+      repository: 'github://hpi-swa-lab/squeak-morphic-layers:main/RenderThee/src/';
+      password: token;
+      onConflict: [:ex | ex pass];
+      load ] on: Warning do: [:w | w resume ].
 
-"The best preferences"
-TranscriptStream characterLimit: 10000000. "10MB"
-Workspace shouldStyle: true.
-Model useColorfulWindows: true.
-Preferences disable: #traceMessages.
-UIManager openToolsAttachedToMouseCursor: true.
-TextEditor autoEnclose: false.
-TextEditor encloseSelection: true.
-Preferences disable: #showSharedFlaps.
-Model windowActiveOnFirstClick: true.
+    "Load OpenGLCanvas"
+    [ Metacello new
+      baseline: 'OpenGLCanvas';
+      repository: 'github://hpi-swa-lab/squeak-morphic-layers:main/OpenGLCanvas/src/';
+      password: token;
+      onConflict: [:ex | ex pass];
+      load ] on: Warning do: [:w | w resume ].
+    
+    "Fix FFI"
+    ExternalType resetAllTypes].
 
-"Open FrameRateMorph"
-FrameRateMorph new
-	openInWorld;
-	setToAdhereToEdge: #bottomRight;
-	color: Color white;
-	lock.
+  "The best preferences"
+  TranscriptStream characterLimit: 10000000. "10MB"
+  Workspace shouldStyle: true.
+  Model useColorfulWindows: true.
+  Preferences disable: #traceMessages.
+  UIManager openToolsAttachedToMouseCursor: true.
+  TextEditor autoEnclose: false.
+  TextEditor encloseSelection: true.
+  Preferences disable: #showSharedFlaps.
+  Model windowActiveOnFirstClick: true.
 
-"Open Workspace with preferences relevant for High-DPI users"
-Workspace new
-	openLabel: 'High-DPI preferences';
-	acceptContents:
-'[Preferences setDemoFonts] valueSupplyingAnswer: true.
-Preferences disable: #scrollBarsNarrow.
-Cursor useBiggerCursors: true.
-AbstractResizerMorph gripThickness: 6.'.
+  "Open FrameRateMorph"
+  FrameRateMorph new
+    openInWorld;
+    setToAdhereToEdge: #bottomRight;
+    color: Color white;
+    lock.
 
-Workspace new
-	openLabel: 'Optional preferences';
-	acceptContents:
-'Preferences enable: #mouseOverForKeyboardFocus.
-Preferences disable: #alternativeBrowseIt.
-MorphicProject worldGridEnabled: true.'.
+  "Open Workspace with preferences relevant for High-DPI users"
+  Workspace new
+    openLabel: 'High-DPI preferences';
+    acceptContents:
+  '[Preferences setDemoFonts] valueSupplyingAnswer: true.
+  Preferences disable: #scrollBarsNarrow.
+  Cursor useBiggerCursors: true.
+  AbstractResizerMorph gripThickness: 6.'.
+
+  Workspace new
+    openLabel: 'Optional preferences';
+    acceptContents:
+  'Preferences enable: #mouseOverForKeyboardFocus.
+  Preferences disable: #alternativeBrowseIt.
+  MorphicProject worldGridEnabled: true.'.
+]
+    on: Warning do: [ :ex | ex resume: true ]]
+      on: Error do: [ :ex |
+        FileStream stdout nextPutAll: ex asString.
+        Smalltalk snapshot: true andQuit: true ].
 
 "Remove stdout output"
 monitor terminate.

@@ -172,7 +172,7 @@ jobs:
         working-directory: bundle
         env:
           GITHUB_TOKEN: ${{ secrets.token }}
-        run: ./squeak -headless ${{ env.IMAGE_NAME }} ../ci/install.st
+        run: ./squeak -headless ${{ env.IMAGE_NAME }}.image ../ci/install.st
       
       - name: Cleanup installation remnants
         working-directory: bundle
