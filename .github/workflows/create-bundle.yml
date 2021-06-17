@@ -1,0 +1,189 @@
+name: 'Create bundle (VM + image)'
+
+on:
+  workflow_dispatch:
+    inputs:
+      osvm-ref:
+        description: Commit hash of opensmalltalk-vm
+        required: true
+        default: '9f1b4644e7396e473bd9bb4cf67f8a9d5a4e11d6'
+      squeak-revision:
+        description: Squeak trunk revision
+        required: true
+        default: '20536'
+
+env:
+  FLAVOR: squeak.cog.spur
+
+jobs:
+  build-linux-vm:
+    name: ${{ matrix.arch }}-vm
+    runs-on: ubuntu-latest
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: linux64x64
+    
+    env:
+      ARCH: ${{ matrix.arch }}
+      ARTIFACT_NAME: ${{ matrix.arch }}-vm
+    
+    steps:
+      - name: Checkout repository OpenSmalltalk/opensmalltalk-vm
+        uses: actions/checkout@v2
+        with:
+          repository: 'OpenSmalltalk/opensmalltalk-vm'
+          ref: ${{ github.event.inputs.osvm-ref }}
+      
+      - name: Install dependencies
+        run: ./scripts/ci/travis_install.sh
+      
+      - name: Run source tree version substitutions
+        run: ./scripts/updateSCCSVersions
+      
+      - name: Run 'make config' in platforms/unix/config ...
+        working-directory: ./platforms/unix/config/
+        run: make configure
+      
+      - name: Make VM
+        working-directory: ./build.${{ env.ARCH }}/${{ env.FLAVOR }}/build/
+        run: echo "n" | ./mvm
+      
+      - name: Create VM archive
+        working-directory: ./products/
+        run: |
+          cd sqcogspur*
+          tar --create --gzip --file="${{ env.ARTIFACT_NAME }}.tar.gz" *
+          mv ${{ env.ARTIFACT_NAME }}.tar.gz ../../
+      
+      - name: Upload VM archive
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: ${{ env.ARTIFACT_NAME }}.tar.gz
+
+  # build-windows-vm:
+  #   name: ${{ matrix.arch }}-vm
+  #   runs-on: windows-latest
+    
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       include:
+  #         - arch: win64x64
+  #           mingw_arch: x86_64
+  #           cyg_root: 'C:\cygwin64'
+    
+  #   env:
+  #     ARCH: ${{ matrix.arch }}
+  #     ARTIFACT_NAME: ${{ matrix.arch }}-vm
+    
+  #   defaults:
+  #     run:
+  #       shell: bash
+    
+  #   steps:
+  #     - name: Checkout repository OpenSmalltalk/opensmalltalk-vm
+  #       uses: actions/checkout@v2
+  #       with:
+  #         repository: 'OpenSmalltalk/opensmalltalk-vm'
+  #         ref: ${{ github.event.inputs.osvm-ref }}
+
+  #     - name: Reuse Cygwin from Cache
+  #       id: cygwin-cache
+  #       uses: actions/cache@v2
+  #       with:
+  #         path: ${{ matrix.cyg_root }}
+  #         key: cygwin-${{ matrix.arch }}-4
+        
+  #     - name: Install Cygwin
+  #       if: ${{ !steps.cygwin-cache.outputs.cache-hit }}
+  #       run: |
+  #         curl -fsSL --retry 4 -m 600 -o "setup-x86.exe" "http://cygwin.com/setup-x86.exe"
+  #         curl -fsSL --retry 4 -m 600 -o "setup-x86_64.exe" "http://cygwin.com/setup-x86_64.exe"
+      
+  #     - name: Install dependencies
+  #       if: ${{ !steps.cygwin-cache.outputs.cache-hit }}
+  #       shell: cmd
+  #       run: call scripts/installCygwin.bat ${{ matrix.mingw_arch }} ${{ matrix.cyg_root }}
+      
+  #     - name: Add Cygwin to PATH
+  #       run: echo "${{ matrix.cyg_root }}\bin" >> $GITHUB_PATH
+
+  #     - name: Run source tree version substitutions
+  #       run: ./scripts/updateSCCSVersions
+      
+  #     - name: Make VM
+  #       working-directory: ./build.${{ env.ARCH }}/${{ env.FLAVOR }}/
+  #       run: ./mvm -f
+      
+  #     - name: Create VM archive
+  #       working-directory: ./build.${{ env.ARCH }}/${{ env.FLAVOR }}/build/vm
+  #       run: tar --create --gzip --file="${{ env.ARTIFACT_NAME }}.tar.gz" *.dll Squeak.exe* SqueakConsole.exe* && mv ${{ env.ARTIFACT_NAME }}.tar.gz ../../../../
+      
+  #     - name: Upload VM archive
+  #       uses: actions/upload-artifact@v2
+  #       with:
+  #         name: ${{ env.ARTIFACT_NAME }}
+  #         path: ${{ env.ARTIFACT_NAME }}.tar.gz
+  
+  setup-linux-bundle:
+    name: ${{ matrix.arch }}-bundle
+    needs: [ build-linux-vm ]
+    runs-on: ubuntu-latest
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: linux64x64
+            bits: 64
+    
+    defaults:
+      run:
+        shell: bash
+    
+    env:
+      IMAGE_NAME: Squeak6.0alpha-${{ github.event.inputs.squeak-revision }}-${{ matrix.bits }}bit
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download VM archive
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ matrix.arch }}-vm
+      
+      - name: Download Squeak image and sources
+        run: |
+          curl -o squeak.zip http://files.squeak.org/trunk/${{ env.IMAGE_NAME }}/${{ env.IMAGE_NAME }}.zip
+          curl -o SqueakV50.sources.gz http://files.squeak.org/sources_files/SqueakV50.sources.gz
+      
+      - name: Extract to bundle
+        run: |
+          mkdir -p bundle
+          unzip -d bundle squeak.zip
+          gzip -c -d SqueakV50.sources.gz > bundle/SqueakV50.sources
+          tar --extract --gzip --file="${{ matrix.arch }}-vm.tar.gz" --directory="bundle"
+      
+      - name: Run install.st
+        working-directory: bundle
+        env:
+          GITHUB_TOKEN: ${{ secrets.token }}
+        run: ./squeak -headless ${{ env.IMAGE_NAME }} ../ci/install.st
+      
+      - name: Cleanup installation remnants
+        working-directory: bundle
+        run: rm -r *.old *.log *-cache *.st
+      
+      - name: Compress bundle
+        working-directory: bundle
+        run: tar --create --gzip --file="${{ matrix.arch }}-bundle.tar.gz" *
+      
+      - name: Upload bundle
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ matrix.arch }}-bundle
+          path: bundle/${{ matrix.arch }}-bundle.tar.gz
