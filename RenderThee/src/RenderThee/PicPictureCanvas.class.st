@@ -34,6 +34,15 @@ PicPictureCanvas >> addCommand: aCommand [
 ]
 
 {
+	#category : #'balloon-compat',
+	#'squeak_changestamp' : 'stlu 6/16/2021 14:29'
+}
+PicPictureCanvas >> asBalloonCanvas [
+
+	^ self
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
