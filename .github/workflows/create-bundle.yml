@@ -171,12 +171,12 @@ jobs:
       - name: Run install.st
         working-directory: bundle
         env:
-          GITHUB_TOKEN: ${{ secrets.token }}
+          GITHUB_TOKEN: ${{ secrets.METACELLO_TOKEN }}
         run: ./squeak -headless ${{ env.IMAGE_NAME }}.image ../ci/install.st
       
       - name: Cleanup installation remnants
         working-directory: bundle
-        run: rm -r *.old *.log *-cache *.st
+        run: rm -rf *.old *.log *-cache *.st || true
       
       - name: Compress bundle
         working-directory: bundle
