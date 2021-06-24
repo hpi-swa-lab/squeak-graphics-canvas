@@ -447,14 +447,17 @@ GLCanvas >> getPixelData [
 
 {
 	#category : #'drawing-images',
-	#'squeak_changestamp' : 'stlu 6/17/2021 10:34'
+	#'squeak_changestamp' : 'stlu 6/24/2021 13:40'
 }
 GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
 	| texture |
 	self translateBy: aPoint during: [:c |
 		self bindAndUseProgram: self textureProgram during: [
-			texture := GLTexture2D create.
+			texture := GLTexture2D create
+						minificationFilter: GL_LINEAR;
+						magnificationFilter: GL_LINEAR;
+						yourself.
 			texture boundDuring: [
 				texture image: aForm.
 				self textureProgram uniforms
@@ -600,14 +603,17 @@ GLCanvas >> scaleBy: aPoint during: aBlock [
 
 {
 	#category : #'setting-uniforms',
-	#'squeak_changestamp' : 'stlu 6/17/2021 10:12'
+	#'squeak_changestamp' : 'stlu 6/24/2021 13:36'
 }
 GLCanvas >> setBitmapUniformsFrom: aFillStyle for: aProgram during: aBlock [
 
 	| clampMode |
 	self bindAndUseProgram: aProgram during: [
 		| texture |
-		texture := GLTexture2D create.
+		texture := GLTexture2D create
+					minificationFilter: GL_LINEAR;
+					magnificationFilter: GL_LINEAR;
+					yourself.
 		texture image: aFillStyle form.
 		texture boundDuring: [
 			aProgram uniforms
@@ -626,14 +632,17 @@ GLCanvas >> setBitmapUniformsFrom: aFillStyle for: aProgram during: aBlock [
 
 {
 	#category : #'setting-uniforms',
-	#'squeak_changestamp' : 'stlu 6/17/2021 10:15'
+	#'squeak_changestamp' : 'stlu 6/24/2021 13:36'
 }
 GLCanvas >> setGradientUniformsFrom: aFillStyle for: aProgram during: aBlock [
 
 	| ramp texture |
 	self bindAndUseProgram: aProgram during: [
 		ramp := aFillStyle pixelRamp.
-		texture := GLTexture2D create.
+		texture := GLTexture2D create
+						minificationFilter: GL_LINEAR;
+						magnificationFilter: GL_LINEAR;
+						yourself.
 		texture image: (Form extent: ramp size @ 1 depth: 32 bits: ramp).
 		texture boundDuring: [
 			aProgram uniforms
@@ -708,14 +717,17 @@ GLCanvas >> solidPolygonProgram [
 
 {
 	#category : #'drawing-images',
-	#'squeak_changestamp' : 'stlu 6/17/2021 10:35'
+	#'squeak_changestamp' : 'stlu 6/24/2021 13:37'
 }
 GLCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor [
 	
 	| texture |
 	self translateBy: aPoint during: [:c |
 		self bindAndUseProgram: self stencilProgram during: [
-			texture := GLTexture2D create.
+			texture := GLTexture2D create
+						minificationFilter: GL_LINEAR;
+						magnificationFilter: GL_LINEAR;
+						yourself.
 			texture boundDuring: [
 				texture image: stencilForm.
 				self stencilProgram uniforms

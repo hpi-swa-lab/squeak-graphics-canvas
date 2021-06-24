@@ -5,8 +5,7 @@ Class {
 		'renderer',
 		'morph',
 		'picture',
-		'bounds',
-		'errorCallback'
+		'bounds'
 	],
 	#category : #'RenderThee-Batching'
 }
@@ -132,14 +131,9 @@ RtBatchingExample >> renderer: anObject [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 6/17/2021 15:25'
+	#'squeak_changestamp' : 'stlu 6/21/2021 17:06'
 }
 RtBatchingExample >> setUp [
 
-	errorCallback := FFICallback
-						signature: '<callback: void (*)(GLenum GLenum GLuint GLenum GLsizei GLchar* size_t)>'
-						block: [:source :type :id :severity :length :message :userParam | "self halt"].
-	GL debugMessageCallback: errorCallback with: nil.
-	
 	renderer := RtBatchingRenderer new.
 ]
