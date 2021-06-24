@@ -1,7 +1,7 @@
 | monitor |
 FileStream startUp: true.
 monitor := [ [
-  FileStream stdout nextPutAll: '.'.
+  FileStream stdout nextPutAll: '.'; flush.
   (Delay forMilliseconds: 5000) wait] repeat ] forkAt: 75.
 
 "Update Squeak image"
@@ -18,6 +18,9 @@ Smalltalk at: #MCMcmUpdater ifPresent: [ :updater |
       on: Error do: [ :ex |
         FileStream stdout nextPutAll: ex asString.
         Smalltalk snapshot: true andQuit: true ]].
+
+"Close update transcript"
+ReleaseBuilder deleteAllWindows.
 
 [[
   Utilities useAuthorInitials: 'CI' during: [
@@ -97,7 +100,6 @@ monitor terminate.
 monitor := nil.
 
 "Clean up and save the image."
-ReleaseBuilder deleteAllWindows.
 Smalltalk garbageCollect.
 Smalltalk condenseChanges.
 Smalltalk snapshot: true andQuit: true.
