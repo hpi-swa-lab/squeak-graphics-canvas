@@ -35,7 +35,7 @@ GLBitmapFont >> extentFor: aCharacter [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 5/15/2021 13:08'
+	#'squeak_changestamp' : 'stlu 6/24/2021 13:38'
 }
 GLBitmapFont >> font: aFont [
 
@@ -44,7 +44,12 @@ GLBitmapFont >> font: aFont [
 	
 	offsets := Array new: self printableCharacters size.
 	
-	texture := GLTexture2D create extent: (self printableCharacters collect: [:char | (aFont characterFormAt: char asCharacter) width + self class characterDistance]) sum @ aFont height.
+	texture := GLTexture2D create
+				minificationFilter: GL LINEAR;
+				magnificationFilter: GL LINEAR;
+				yourself.
+	
+	texture extent: (self printableCharacters collect: [:char | (aFont characterFormAt: char asCharacter) width + self class characterDistance]) sum @ aFont height.
 	
 	colorCollectBlock := aFont isTTCFont
 		ifTrue: [[:c | Color white alpha: c alpha]]
