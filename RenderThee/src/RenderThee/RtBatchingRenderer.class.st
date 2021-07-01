@@ -7,20 +7,12 @@ Class {
 		'program',
 		'vao',
 		'quadVBO',
-		'stride',
-		'elementSize',
-		'numElements',
 		'transformIndex',
 		'clipRectIndex',
-		'transformsData',
 		'transformsTexture',
-		'primHeadersFData',
 		'primHeadersFTexture',
-		'gpuCacheData',
 		'gpuCacheTexture',
-		'lastTransformIndex',
-		'lastGPUCacheIndex',
-		'lastPrimHeaderIndex',
+		'clipDataTexture',
 		'instanceVBO',
 		'instanceData',
 		'instanceIndex'
@@ -33,44 +25,47 @@ Class {
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/21/2021 16:39'
+	#'squeak_changestamp' : 'stlu 7/1/2021 19:34'
 }
 RtBatchingRenderer >> allocateClipRect: aRectangle [
 
-	| offset |
-	offset := lastGPUCacheIndex * 4.
-	lastGPUCacheIndex := lastGPUCacheIndex + 1.
-	
-	gpuCacheData
-		startingAt: offset + 1
-		put: aRectangle left asFloat
-		put: aRectangle top asFloat
-		put: aRectangle width asFloat
-		put: aRectangle height asFloat.
-	
-	^ lastGPUCacheIndex
+	^ (gpuCacheTexture
+		add: aRectangle left asFloat
+		add: aRectangle top asFloat
+		add: aRectangle width asFloat
+		add: aRectangle height asFloat) / 4
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/21/2021 16:39'
+	#'squeak_changestamp' : 'stlu 7/1/2021 21:39'
+}
+RtBatchingRenderer >> allocateRadius: aNumber [
+
+	| r |
+	r := aNumber asFloat.
+	^ (clipDataTexture
+		add: r
+		add: r
+		add: r
+		add: r) / 4
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 7/1/2021 19:42'
 }
 RtBatchingRenderer >> allocateTransform: aTransform [
 
-	| offset |
-	offset := lastTransformIndex * 8.
-	lastTransformIndex := lastTransformIndex + 1.
-	
-	transformsData
-		startingAt: offset + 1
-		put: aTransform a11
-		put: aTransform a21
-		put: aTransform a12
-		put: aTransform a22
-		put: aTransform a13
-		put: aTransform a23.
-	
-	^ lastTransformIndex
+	^ (transformsTexture
+		add: aTransform a11
+		add: aTransform a21
+		add: aTransform a12
+		add: aTransform a22
+		add: aTransform a13
+		add: aTransform a23
+		add: 0.0
+		add: 0.0) / 8
 ]
 
 {
@@ -84,33 +79,17 @@ RtBatchingRenderer >> clipRect [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/21/2021 17:00'
+	#'squeak_changestamp' : 'stlu 7/1/2021 21:20'
 }
 RtBatchingRenderer >> draw [
 
-	GL clearColor: Color cyan."(Color r: 0.1 g: 0.1 b: 0.1 alpha: 1.0)."
+	GL clearColor: (Color h: Time utcMicrosecondClock / 1e3 \\ 360.0 s: 1.0 v: 1.0).
 	GL clear: (GL_COLOR_BUFFER_BIT bitOr: GL_DEPTH_BUFFER_BIT).
 
-	primHeadersFTexture
-		extent: 512 @ 512
-		internalFormat: GL_RGBA32F
-		data: primHeadersFData
-		format: GL_RGBA
-		type: GL_FLOAT.
-	
-	transformsTexture
-		extent: 512 @ 512
-		internalFormat: GL_RGBA32F
-		data: transformsData
-		format: GL_RGBA
-		type: GL_FLOAT.
-	
-	gpuCacheTexture
-		extent: 512 @ 512
-		internalFormat: GL_RGBA32F
-		data: gpuCacheData
-		format: GL_RGBA
-		type: GL_FLOAT.
+	primHeadersFTexture upload.
+	transformsTexture upload.
+	gpuCacheTexture upload.
+	clipDataTexture upload.
 	
 	instanceVBO
 		data: instanceData
@@ -125,15 +104,15 @@ RtBatchingRenderer >> draw [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 6/21/2021 17:33'
+	#'squeak_changestamp' : 'stlu 7/1/2021 21:57'
 }
-RtBatchingRenderer >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
+RtBatchingRenderer >> frameAndFillRectangle: aRectangle radius: radius fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	| left right top bottom |
-	left := aRectangle left max: clipRect left.
-	right := aRectangle right min: clipRect right.
-	top := aRectangle top max: clipRect top.
-	bottom := aRectangle bottom min: clipRect bottom.
+	left := aRectangle left.
+	right := aRectangle right.
+	top := aRectangle top.
+	bottom := aRectangle bottom.
 	
 	aFillStyle isTransparent ifFalse: [
 		self
@@ -141,6 +120,7 @@ RtBatchingRenderer >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle bo
 			right: right
 			top: top
 			bottom: bottom
+			radius: radius
 			solidColor: (aFillStyle isBitmapFill ifTrue: [aFillStyle form colorAt: 1@1] ifFalse: [aFillStyle asColor])].
 	
 	aBorderStyle isTransparent ifFalse: [
@@ -153,6 +133,7 @@ RtBatchingRenderer >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle bo
 				right: x
 				top: top
 				bottom: bottom
+				radius: 0.0
 				solidColor: aBorderStyle color].
 		"right"
 		x := aRectangle right - aBorderStyle width.
@@ -162,6 +143,7 @@ RtBatchingRenderer >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle bo
 				right: aRectangle right
 				top: top
 				bottom: bottom
+				radius: 0.0
 				solidColor: aBorderStyle color].
 		"top"
 		x := aRectangle top + aBorderStyle width.
@@ -171,6 +153,7 @@ RtBatchingRenderer >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle bo
 				right: right
 				top: aRectangle top
 				bottom: x
+				radius: 0.0
 				solidColor: aBorderStyle color].
 		x := aRectangle bottom - aBorderStyle width.
 		"bottom"
@@ -180,6 +163,7 @@ RtBatchingRenderer >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle bo
 				right: right
 				top: x
 				bottom: aRectangle bottom
+				radius: 0.0
 				solidColor: aBorderStyle color]].
 ]
 
@@ -194,13 +178,10 @@ RtBatchingRenderer >> index [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/21/2021 17:26'
+	#'squeak_changestamp' : 'stlu 7/1/2021 21:38'
 }
 RtBatchingRenderer >> initialize [
 
-	primHeadersFData := ExternalType float allocate: 512 squared * 4"numElements * elementSize".
-	transformsData := ExternalType float allocate: 512 squared * 4.
-	gpuCacheData := ExternalType float allocate: 512 squared * 4.
 	instanceData := ExternalType uint32_t allocate: 512 squared // 2.
 	
 	GL enable: GL_BLEND.
@@ -208,38 +189,25 @@ RtBatchingRenderer >> initialize [
 	"GL enable: GL_DEPTH_TEST.
 	GL depthFunc: GL_LESS."
 	
-	primHeadersFTexture := GLTexture2D create.
-	primHeadersFTexture
-		wrapS: GL_REPEAT;
-		wrapT: GL_REPEAT;
-		minificationFilter: GL_LINEAR;
-		magnificationFilter: GL_LINEAR;
-		bindAt: 0.
-	
-	transformsTexture := GLTexture2D create.
-	transformsTexture
-		wrapS: GL_REPEAT;
-		wrapT: GL_REPEAT;
-		minificationFilter: GL_LINEAR;
-		magnificationFilter: GL_LINEAR;
-		bindAt: 1.
-	
-	gpuCacheTexture := GLTexture2D create.
-	gpuCacheTexture
-		wrapS: GL_REPEAT;
-		wrapT: GL_REPEAT;
-		minificationFilter: GL_LINEAR;
-		magnificationFilter: GL_LINEAR;
-		bindAt: 2.
+	primHeadersFTexture := RtTexture extent: 512 @ 512.
+	transformsTexture := RtTexture extent: 512 @ 512.
+	gpuCacheTexture := RtTexture extent: 512 @ 512.
+	clipDataTexture := RtTexture extent: 512 @ 512.
 	
 	program := GLProgram
 					vertexSource: self solidRectangleVertexShader
 					fragmentSource: self solidRectangleFragmentShader.
 	program bind.
+	
+	primHeadersFTexture texture bindAt: 1.
+	transformsTexture texture bindAt: 2.
+	gpuCacheTexture texture bindAt: 3.
+	clipDataTexture texture bindAt: 4.
 	program uniforms
-		sPrimHeadersF: 0;
-		sTransforms: 1;
-		sGPUCache: 2.
+		sPrimHeadersF: 1;
+		sTransforms: 2;
+		sGPUCache: 3;
+		sClipData: 4.
 	
 	quadVBO := GLBuffer create.
 	quadVBO usage: GL_STATIC_DRAW data: self quadVertices.
@@ -296,50 +264,45 @@ RtBatchingRenderer >> quadVertices [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 5/21/2021 15:45'
+	#'squeak_changestamp' : 'stlu 7/1/2021 22:05'
 }
-RtBatchingRenderer >> rectangle: aRectangle solidColor: aColor [
+RtBatchingRenderer >> rectangleLeft: left right: right top: top bottom: bottom radius: radius solidColor: aColor [
 
-	self
-		rectangleLeft: aRectangle left
-		right: aRectangle right
-		top: aRectangle top
-		bottom: aRectangle bottom
-		solidColor: aColor
+	| offset primHeaderIndex clipDataIndex |
+	left >= right ifTrue: [^ self].
+	top >= bottom ifTrue: [^ self].
+	
+	primHeaderIndex := (primHeadersFTexture
+							add: left asFloat
+							add: top asFloat
+							add: (right - left) asFloat
+							add: (bottom - top) asFloat
+							add: aColor red
+							add: aColor green
+							add: aColor blue
+							add: aColor alpha) / 8.
+	clipDataIndex := (clipDataTexture
+						add: instanceIndex asFloat
+						add: radius asFloat
+						add: 0.0
+						add: 0.0) / 4.
+	
+	offset := instanceIndex * 4.
+	instanceIndex := instanceIndex + 1.
+	instanceData
+		at: offset + 1 put: primHeaderIndex - 1;
+		at: offset + 2 put: transformIndex - 1;
+		at: offset + 3 put: clipRectIndex - 1;
+		at: offset + 4 put: clipDataIndex - 1.
 ]
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 6/21/2021 17:12'
+	#'squeak_changestamp' : 'stlu 7/1/2021 21:58'
 }
 RtBatchingRenderer >> rectangleLeft: left right: right top: top bottom: bottom solidColor: aColor [
 
-	| offset |
-	left >= right ifTrue: [^ self].
-	top >= bottom ifTrue: [^ self].
-	
-	offset := lastPrimHeaderIndex * 8.
-	lastPrimHeaderIndex := lastPrimHeaderIndex + 1.
-	
-	primHeadersFData
-		startingAt: offset + 1
-		put: left asFloat
-		put: top asFloat
-		put: (right - left) asFloat
-		put: (bottom - top) asFloat
-		put: aColor red
-		put: aColor green
-		put: aColor blue
-		put: aColor alpha.
-	
-	offset := instanceIndex * 4.
-	instanceIndex := instanceIndex + 1.
-	
-	instanceData
-		at: offset + 1 put: lastPrimHeaderIndex - 1;
-		at: offset + 2 put: transformIndex - 1;
-		at: offset + 3 put: clipRectIndex - 1;
-		at: offset + 4 put: instanceIndex.
+	self rectangleLeft: left right: right top: top bottom: bottom radius: 0.0 solidColor: aColor
 ]
 
 {
@@ -355,16 +318,17 @@ RtBatchingRenderer >> render: aPicture [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/21/2021 17:00'
+	#'squeak_changestamp' : 'stlu 7/1/2021 21:37'
 }
 RtBatchingRenderer >> reset [
 
 	clipRect := Rectangle infinite.
 	transform := Matrix2x3 identity.
 	
-	lastPrimHeaderIndex := 0.
-	lastGPUCacheIndex := 0.
-	lastTransformIndex := 0.
+	transformsTexture reset.
+	gpuCacheTexture reset.
+	primHeadersFTexture reset.
+	clipDataTexture reset.
 	
 	transformIndex := self allocateTransform: transform.
 	clipRectIndex := self allocateClipRect: clipRect.
@@ -373,23 +337,53 @@ RtBatchingRenderer >> reset [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/21/2021 15:52'
+	#'squeak_changestamp' : 'stlu 6/30/2021 19:28'
 }
 RtBatchingRenderer >> solidRectangleFragmentShader [
 
 	^ '#version 330 core
-in vec4 oFragColor;
+in vec4 vFragColor;
+in vec3 vClipParams;
+in vec2 vLocalPos;
 
 out vec4 color;
 
+struct RectWithExtent {
+		vec2 origin;
+		vec2 extent;
+};
+
+float computeAARange(vec2 position) {
+	vec2 w = fwidth(position);
+	return inversesqrt(0.5 * dot(w, w));
+}
+
+float distanceAA(float aa_range, float signed_distance) {
+	float dist = signed_distance * aa_range;
+	return clamp(0.5 - dist, 0.0, 1.0);
+}
+
+float sd_box(in vec2 pos, in vec2 box_size) {
+    vec2 d = abs(pos) - box_size;
+    return length(max(d, vec2(0.0))) + min(max(d.x,d.y), 0.0);
+}
+
+float sd_rounded_box(in vec2 pos, in vec2 box_size, in float radius) {
+    return sd_box(pos, box_size) - radius;
+}
+
 void main() {
-	color = oFragColor;
+	float aaRange = computeAARange(vLocalPos);
+	float dist = sd_rounded_box(vLocalPos, vClipParams.xy, vClipParams.z);
+	float alpha = distanceAA(aaRange, dist);
+
+	color = vec4(vFragColor.rgb, vFragColor.a * alpha);
 }'
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/21/2021 16:03'
+	#'squeak_changestamp' : 'stlu 7/1/2021 21:49'
 }
 RtBatchingRenderer >> solidRectangleVertexShader [
 
@@ -397,10 +391,13 @@ RtBatchingRenderer >> solidRectangleVertexShader [
 layout (location = 0) in vec2 aPosition;
 layout (location = 1) in ivec4 aData;
 
-out vec4 oFragColor;
+out vec4 vFragColor;
+out vec3 vClipParams;
+out vec2 vLocalPos;
 
 // uniform sampler2D sPrimitiveHeadersI;
 uniform sampler2D sPrimHeadersF;
+uniform sampler2D sClipData;
 uniform sampler2D sTransforms;
 uniform sampler2D sGPUCache;
 
@@ -443,7 +440,7 @@ struct Instance
     int primitiveHeaderIndex;
     int transformIndex;
 		int clipIndex;
-		int z;
+		int clipDataIndex;
 };
 
 Instance decodeInstanceAttributes() {
@@ -452,7 +449,7 @@ Instance decodeInstanceAttributes() {
     instance.primitiveHeaderIndex = aData.x;
     instance.transformIndex = aData.y;
 		instance.clipIndex = aData.z;
-		instance.z = aData.w;
+		instance.clipDataIndex = aData.w;
 
     return instance;
 }
@@ -476,9 +473,9 @@ PrimitiveHeader fetchPrimHeader(int primitiveIndex) {
 }
 
 mat4 fetchTransform(int transformIndex) {
-	ivec2 index = getFetchAddress(transformIndex, VECS_PER_TRANSFORM);
-	vec4 t1 = texelFetch(sTransforms, index, 0);
-	vec4 t2 = texelFetchOffset(sTransforms, index, 0, ivec2(1, 0));
+	ivec2 address = getFetchAddress(transformIndex, VECS_PER_TRANSFORM);
+	vec4 t1 = texelFetch(sTransforms, address, 0);
+	vec4 t2 = texelFetchOffset(sTransforms, address, 0, ivec2(1, 0));
 	return mat4x4(
 					t1[0], t1[1], 0.0, 0.0,
 					t1[2], t1[3], 0.0, 0.0,
@@ -486,19 +483,31 @@ mat4 fetchTransform(int transformIndex) {
 					t2[0], t2[1], 0.0, 1.0);
 }
 
+vec4 fetchClipData(int index) {
+    ivec2 address = getFetchAddress(index, 1u);
+    return texelFetch(sClipData, address, 0);
+}
+
 void main() {
 	Instance instance = decodeInstanceAttributes();
 
 	PrimitiveHeader primHeader = fetchPrimHeader(instance.primitiveHeaderIndex);
 	mat4x4 transform = fetchTransform(instance.transformIndex);
-	vec4 clipData = fetchFromGPUCache1(instance.clipIndex);
-	RectWithExtent localClipRect = RectWithExtent(clipData.xy, clipData.zw);
+	vec4 clip = fetchFromGPUCache1(instance.clipIndex);
+	vec4 clipData = fetchClipData(instance.clipDataIndex);
+	RectWithExtent localClipRect = RectWithExtent(clip.xy, clip.zw);
 	RectWithExtent clippedRect = intersect(primHeader.localRect, localClipRect);
+	float z = clipData.x;
+	float radius = clipData.y;
 	
 	vec2 pos = clippedRect.origin + (aPosition * clippedRect.extent);
 
-	gl_Position = uProjectionMatrix * transform * vec4(pos, instance.z, 1.0);
-	oFragColor = primHeader.color;
+	gl_Position = uProjectionMatrix * transform * vec4(pos, z, 1.0);
+	vFragColor = primHeader.color;
+
+	vec2 halfExtent = 0.5 * primHeader.localRect.extent;
+	vLocalPos = (aPosition - 0.5) * primHeader.localRect.extent;
+	vClipParams = vec3(halfExtent - vec2(radius), radius);
 }'
 ]
 
@@ -542,7 +551,7 @@ RtBatchingRenderer >> visitGroup: aGroup [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 6/8/2021 14:54'
+	#'squeak_changestamp' : 'stlu 7/1/2021 21:54'
 }
 RtBatchingRenderer >> visitImage: anImage [
 
@@ -554,18 +563,20 @@ RtBatchingRenderer >> visitImage: anImage [
 		color := form colorAt: form extent // 2]."
 	self
 		frameAndFillRectangle: anImage bounds
+		radius: 0.0
 		fillStyle: (SolidFillStyle color: color)
 		borderStyle: (SimpleBorder width: 0)
 ]
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 5/20/2021 22:32'
+	#'squeak_changestamp' : 'stlu 7/1/2021 21:55'
 }
 RtBatchingRenderer >> visitOval: anOval [
 
 	self
 		frameAndFillRectangle: anOval bounds
+		radius: 0.0
 		fillStyle: anOval fillStyle
 		borderStyle: anOval borderStyle
 ]
@@ -591,36 +602,39 @@ RtBatchingRenderer >> visitParagraph: aCommand [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 6/17/2021 15:15'
+	#'squeak_changestamp' : 'stlu 7/1/2021 21:55'
 }
 RtBatchingRenderer >> visitPolygon: aPolygon [
 
 	self
 		frameAndFillRectangle: aPolygon estimatedBounds
+		radius: 0.0
 		fillStyle: aPolygon fillStyle
 		borderStyle: aPolygon borderStyle
 ]
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 5/20/2021 21:45'
+	#'squeak_changestamp' : 'stlu 7/1/2021 21:55'
 }
 RtBatchingRenderer >> visitRectangle: anObject [
 
 	self
 		frameAndFillRectangle: anObject bounds
+		radius: 0.0
 		fillStyle: anObject fillStyle
 		borderStyle: anObject borderStyle
 ]
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 5/20/2021 22:33'
+	#'squeak_changestamp' : 'stlu 7/1/2021 22:09'
 }
 RtBatchingRenderer >> visitRoundedRectangle: aRoundedRectangle [
 
 	self
 		frameAndFillRectangle: aRoundedRectangle bounds
+		radius: aRoundedRectangle radius
 		fillStyle: aRoundedRectangle fillStyle
 		borderStyle: aRoundedRectangle borderStyle
 ]
