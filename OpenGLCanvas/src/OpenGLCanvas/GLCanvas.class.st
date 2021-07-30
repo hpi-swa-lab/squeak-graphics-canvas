@@ -22,12 +22,12 @@ Class {
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 6/17/2021 13:51'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:13'
 }
-GLCanvas class >> bounds: aRectangle framebuffer: glFrameBuffer [
+GLCanvas class >> bounds: aRectangle framebuffer: aFramebuffer [
 
 	^ self new
-		initializeWithBounds: aRectangle framebuffer: glFrameBuffer;
+		initializeWithBounds: aRectangle framebuffer: aFramebuffer;
 		yourself
 ]
 
@@ -430,10 +430,13 @@ GLCanvas >> framebuffer [
 	^ framebuffer
 ]
 
-{ #category : #accessing }
-GLCanvas >> framebuffer: aFrameBuffer [
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:13'
+}
+GLCanvas >> framebuffer: aFramebuffer [
 
-	framebuffer := aFrameBuffer.
+	framebuffer := aFramebuffer.
 ]
 
 { #category : #accessing }
@@ -477,11 +480,11 @@ GLCanvas >> imageStoreClass [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/17/2021 13:55'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:13'
 }
-GLCanvas >> initializeWithBounds: aRectangle framebuffer: aFrameBuffer [
+GLCanvas >> initializeWithBounds: aRectangle framebuffer: aFramebuffer [
 
-	framebuffer := aFrameBuffer.
+	framebuffer := aFramebuffer.
 	resources := GL userData
 					at: GLSharedCanvasResources
 					ifAbsentPut: [ GLSharedCanvasResources new ].

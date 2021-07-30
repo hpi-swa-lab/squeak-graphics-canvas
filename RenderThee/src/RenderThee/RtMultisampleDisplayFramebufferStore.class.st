@@ -9,7 +9,7 @@ Class {
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 5/15/2021 13:07'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:14'
 }
 RtMultisampleDisplayFramebufferStore >> canvasDo: aBlock [
 
@@ -22,7 +22,7 @@ RtMultisampleDisplayFramebufferStore >> canvasDo: aBlock [
 		
 		self glLibrary checkForError.
 		
-		multiSampleFramebuffer := GLFrameBuffer create.
+		multiSampleFramebuffer := GLFramebuffer create.
 		multiSampleFramebuffer boundDuring: [
 			self glLibrary framebufferTexture2D: GL_FRAMEBUFFER with: GL_COLOR_ATTACHMENT0 with: GL_TEXTURE_2D_MULTISAMPLE with: multiSampleTexture id with: 0.
 			c framebuffer: multiSampleFramebuffer.

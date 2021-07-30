@@ -117,13 +117,13 @@ GLCanvasExample >> render [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 6/17/2021 14:29'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:14'
 }
 GLCanvasExample >> setUp [
 
 	canvas := GLCanvas
 				bounds: morph bounds
-				framebuffer: GLFrameBuffer default.
+				framebuffer: GLFramebuffer default.
 ]
 
 {

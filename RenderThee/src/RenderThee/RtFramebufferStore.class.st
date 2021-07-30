@@ -157,13 +157,13 @@ RtFramebufferStore >> initializeGLSettings [
 
 {
 	#category : #'initialize-release',
-	#'squeak_changestamp' : 'stlu 5/15/2021 13:08'
+	#'squeak_changestamp' : 'stlu 7/26/2021 13:14'
 }
 RtFramebufferStore >> initializeWithExtent: aPoint [
 
 	extent := aPoint.
 	
-	framebuffer := GLFrameBuffer create.
+	framebuffer := GLFramebuffer create.
 	texture := GLTexture2D create.
 	
 	texture extent: extent.

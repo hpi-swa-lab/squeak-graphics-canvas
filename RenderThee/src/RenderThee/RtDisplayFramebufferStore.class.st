@@ -52,7 +52,7 @@ RtDisplayFramebufferStore >> initializeGLSettings [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/15/2021 14:28'
+	#'squeak_changestamp' : 'stlu 7/28/2021 14:56'
 }
 RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 
@@ -66,7 +66,7 @@ RtDisplayFramebufferStore >> initializeWithExtent: aPoint [
 	extent := aPoint.
 	"glLibrary := GL3_3 context: (B3DContext newIn: (0@0 extent: extent))."
 	(glLibrary := context library) makeCurrentDuring: [
-		framebuffer := GLDisplayFrameBuffer instance.
+		framebuffer := GLFramebuffer default.
 		GLFW swapInterval: 0. "disable vsync"
 		framebuffer boundDuring: [
 			self initializeGLSettings.
