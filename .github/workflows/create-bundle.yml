@@ -39,15 +39,13 @@ jobs:
           wget -O vm.tar.gz "https://github.com/OpenSmalltalk/opensmalltalk-vm/releases/download/latest-build/squeak.cog.spur_${{ matrix.arch }}.tar.gz"
           mkdir -p vm
           tar --extract --gzip --file="vm.tar.gz" --directory="vm"
-          cd vm/*
-          mv * ..
-          rm -rf "$(pwd -P)" && cd ..
+          mkdir -p bundle
+          mv vm/*/* bundle
 
       - name: Download and extract Squeak image and sources
         run: |
           curl -o squeak.zip http://files.squeak.org/trunk/${{ env.IMAGE_NAME }}/${{ env.IMAGE_NAME }}.zip
           curl -o SqueakV50.sources.gz http://files.squeak.org/sources_files/SqueakV50.sources.gz
-          mkdir -p bundle
           unzip -d bundle squeak.zip
           gzip -c -d SqueakV50.sources.gz > bundle/SqueakV50.sources
       
