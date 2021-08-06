@@ -67,28 +67,26 @@ ReleaseBuilder deleteAllWindows.
   Preferences disable: #showSharedFlaps.
   Model windowActiveOnFirstClick: true.
 
+  "High-DPI"
+  [Preferences setDemoFonts] valueSupplyingAnswer: true.
+  Preferences disable: #scrollBarsNarrow.
+  Cursor useBiggerCursors: true.
+  AbstractResizerMorph gripThickness: 6.
+
+  "Other preferences"
+  Preferences enable: #mouseOverForKeyboardFocus.
+  Preferences disable: #alternativeBrowseIt.
+  MorphicProject worldGridEnabled: true.
+
+  "Add GLConstants to workspace pools"
+  
+
   "Open FrameRateMorph"
   FrameRateMorph new
     openInWorld;
     setToAdhereToEdge: #bottomRight;
     color: Color white;
     lock.
-
-  "Open Workspace with preferences relevant for High-DPI users"
-  Workspace new
-    openLabel: 'High-DPI preferences';
-    acceptContents:
-  '[Preferences setDemoFonts] valueSupplyingAnswer: true.
-  Preferences disable: #scrollBarsNarrow.
-  Cursor useBiggerCursors: true.
-  AbstractResizerMorph gripThickness: 6.'.
-
-  Workspace new
-    openLabel: 'Optional preferences';
-    acceptContents:
-  'Preferences enable: #mouseOverForKeyboardFocus.
-  Preferences disable: #alternativeBrowseIt.
-  MorphicProject worldGridEnabled: true.'.
 ]
     on: Warning do: [ :ex | ex resume: true ]]
       on: Error do: [ :ex |
