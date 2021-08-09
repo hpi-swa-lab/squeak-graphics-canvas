@@ -5,8 +5,7 @@ Class {
 		'start',
 		'end'
 	],
-	#category : #ShadingLanguage,
-	#'squeak_changestamp' : ''
+	#category : #'ShadingLanguage-Core'
 }
 
 {

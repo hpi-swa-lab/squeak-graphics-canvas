@@ -1,8 +1,7 @@
 Class {
 	#name : #SLStaticProgram,
 	#superclass : #GLStaticProgram,
-	#category : #ShadingLanguage,
-	#'squeak_changestamp' : ''
+	#category : #'ShadingLanguage-Core'
 }
 
 {

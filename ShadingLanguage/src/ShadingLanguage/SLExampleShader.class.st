@@ -25,8 +25,7 @@ void main() {
 Class {
 	#name : #SLExampleShader,
 	#superclass : #Object,
-	#category : #'ShadingLanguage-Examples',
-	#'squeak_changestamp' : ''
+	#category : #'ShadingLanguage-Examples'
 }
 
 {
@@ -47,10 +46,7 @@ SLExampleShader class >> bloom: out inputs: in uniforms: u [
 	out FragColor: 1.0 @ result "hack"
 ]
 
-{
-	#category : #code,
-	#'squeak_changestamp' : ''
-}
+{ #category : #code }
 SLExampleShader class >> gaussianKernel3 [
 
 	^ #(

@@ -5,8 +5,7 @@ Class {
 		'targetSelector',
 		'type'
 	],
-	#category : #ShadingLanguage,
-	#'squeak_changestamp' : ''
+	#category : #'ShadingLanguage-Core'
 }
 
 {

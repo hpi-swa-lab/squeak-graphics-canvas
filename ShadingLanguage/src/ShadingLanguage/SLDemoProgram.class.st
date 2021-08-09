@@ -5,8 +5,7 @@ Class {
 		'aPosLocation',
 		'aNormalLocation'
 	],
-	#category : #'ShadingLanguage-Examples',
-	#'squeak_changestamp' : ''
+	#category : #'ShadingLanguage-Examples'
 }
 
 {

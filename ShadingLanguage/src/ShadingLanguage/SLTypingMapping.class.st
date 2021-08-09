@@ -1,8 +1,7 @@
 Class {
 	#name : #SLTypingMapping,
 	#superclass : #SLMessageMapping,
-	#category : #ShadingLanguage,
-	#'squeak_changestamp' : ''
+	#category : #'ShadingLanguage-Core'
 }
 
 {

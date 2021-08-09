@@ -7,8 +7,7 @@ Class {
 		'variableNameMap',
 		'analyzer'
 	],
-	#category : #ShadingLanguage,
-	#'squeak_changestamp' : ''
+	#category : #'ShadingLanguage-Core'
 }
 
 {

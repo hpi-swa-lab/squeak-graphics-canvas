@@ -4,8 +4,7 @@ Class {
 	#instVars : [
 		'isNegated'
 	],
-	#category : #ShadingLanguage,
-	#'squeak_changestamp' : ''
+	#category : #'ShadingLanguage-Core'
 }
 
 {

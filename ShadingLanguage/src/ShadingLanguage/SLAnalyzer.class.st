@@ -12,8 +12,7 @@ Class {
 		'SwizzlingGetters',
 		'SwizzlingSetters'
 	],
-	#category : #ShadingLanguage,
-	#'squeak_changestamp' : ''
+	#category : #'ShadingLanguage-Core'
 }
 
 {

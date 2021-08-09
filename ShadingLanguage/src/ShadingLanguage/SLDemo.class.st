@@ -7,8 +7,7 @@ Class {
 		'vbo',
 		'vao'
 	],
-	#category : #'ShadingLanguage-Examples',
-	#'squeak_changestamp' : ''
+	#category : #'ShadingLanguage-Examples'
 }
 
 {

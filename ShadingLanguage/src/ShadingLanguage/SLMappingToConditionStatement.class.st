@@ -1,8 +1,7 @@
 Class {
 	#name : #SLMappingToConditionStatement,
 	#superclass : #SLMappingToCondition,
-	#category : #ShadingLanguage,
-	#'squeak_changestamp' : ''
+	#category : #'ShadingLanguage-Core'
 }
 
 {

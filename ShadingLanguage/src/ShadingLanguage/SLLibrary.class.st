@@ -1,8 +1,7 @@
 Class {
 	#name : #SLLibrary,
 	#superclass : #Object,
-	#category : #'ShadingLanguage-Examples',
-	#'squeak_changestamp' : ''
+	#category : #'ShadingLanguage-Examples'
 }
 
 {
