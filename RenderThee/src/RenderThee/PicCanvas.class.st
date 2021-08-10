@@ -4,7 +4,7 @@ I ignore draw calls that do not have any effect (e.g. transparent fill color and
 My root is a `PicGroup`.
 "
 Class {
-	#name : #PicPictureCanvas,
+	#name : #PicCanvas,
 	#superclass : #Canvas,
 	#instVars : [
 		'transform',
@@ -17,18 +17,18 @@ Class {
 
 {
 	#category : #examples,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/10/2021 14:53'
 }
-PicPictureCanvas class >> example1 [
+PicCanvas class >> example1 [
 
-	(PicPictureCanvas new fullDrawMorph: ActiveWorld) getPicture open
+	(PicCanvas new fullDrawMorph: ActiveWorld) getPicture open
 ]
 
 {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> addCommand: aCommand [
+PicCanvas >> addCommand: aCommand [
 	"Adds aCommand to the currently active group (at the front-most z-coordinate)."
 	self currentGroup addChild: aCommand
 ]
@@ -37,7 +37,7 @@ PicPictureCanvas >> addCommand: aCommand [
 	#category : #'balloon-compat',
 	#'squeak_changestamp' : 'stlu 6/16/2021 14:29'
 }
-PicPictureCanvas >> asBalloonCanvas [
+PicCanvas >> asBalloonCanvas [
 
 	^ self
 ]
@@ -46,7 +46,7 @@ PicPictureCanvas >> asBalloonCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> clear [
+PicCanvas >> clear [
 	"Forget all contents of the current picture except for the current group stack."
 	groupStack do: [:group | group removeAllChildren]
 ]
@@ -55,7 +55,7 @@ PicPictureCanvas >> clear [
 	#category : #'drawing-support',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> clipBy: aRectangle during: aBlock [
+PicCanvas >> clipBy: aRectangle during: aBlock [
 
 	(aRectangle containsRect: clipRect) ifTrue: [^ aBlock value: self].
 	
@@ -67,7 +67,7 @@ PicPictureCanvas >> clipBy: aRectangle during: aBlock [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> clipRect [
+PicCanvas >> clipRect [
 	"Answers the rectangle by which all incoming draw commands are clipped.
 	Intersection of all clipping rectangles active in the current scope.
 	Not necessarily minimal. Local to the current transform."
@@ -78,7 +78,7 @@ PicPictureCanvas >> clipRect [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> clipRect: anObject [
+PicCanvas >> clipRect: anObject [
 
 	clipRect := anObject
 ]
@@ -87,7 +87,7 @@ PicPictureCanvas >> clipRect: anObject [
 	#category : #'scoped state',
 	#'squeak_changestamp' : 'stlu 5/20/2021 15:27'
 }
-PicPictureCanvas >> clipRect: aRectangle during: aBlock [
+PicCanvas >> clipRect: aRectangle during: aBlock [
 	"Scoped setter for `clipRect` variable."
 	| previousClipRect |
 	ignoreClip ifTrue: [^ aBlock cull: self].
@@ -102,7 +102,7 @@ PicPictureCanvas >> clipRect: aRectangle during: aBlock [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> currentGroup [
+PicCanvas >> currentGroup [
 	"Answers the PicGroup to which all draw commands are currently added."
 	^ groupStack last
 ]
@@ -111,7 +111,7 @@ PicPictureCanvas >> currentGroup [
 	#category : #'drawing-polygons',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderColor: bc [
+PicCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderColor: bc [
 
 	self
 		drawPolygon: vertices
@@ -121,14 +121,14 @@ PicPictureCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderCo
 
 {
 	#category : #'drawing-polygons',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/10/2021 14:47'
 }
-PicPictureCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBorderStyle [
+PicCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	(self isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle) ifTrue: [^ self].
 	vertices ifEmpty: [^ self].
 
-	self addCommand: (PicDrawPolygon new
+	self addCommand: (PicPolygon new
 							vertices: vertices;
 							fillStyle: aFillStyle;
 							borderStyle: aBorderStyle;
@@ -139,7 +139,7 @@ PicPictureCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBo
 	#category : #'drawing-polygons',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: bw borderColor: bc [
+PicCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: bw borderColor: bc [
 
 	vertices ifEmpty: [^ self].
 	self
@@ -152,7 +152,7 @@ PicPictureCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: bw 
 	#category : #'drawing-text',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c [
+PicCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c [
 
 	self addCommand: (PicDrawString new
 							contents: s;
@@ -168,7 +168,7 @@ PicPictureCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect 
 	#category : #'drawing-ovals',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderColor [
+PicCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderColor [
 
 	self
 		fillOval: r
@@ -179,14 +179,14 @@ PicPictureCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: b
 
 {
 	#category : #'drawing-ovals',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/10/2021 14:47'
 }
-PicPictureCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
+PicCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	(self isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle) ifTrue: [^ self].
 	aRectangle extent isZero ifTrue: [^ self].
 
-	self addCommand: (PicDrawOval new
+	self addCommand: (PicOval new
 							bounds: aRectangle;
 							fillStyle: aFillStyle;
 							borderStyle: aBorderStyle;
@@ -197,7 +197,7 @@ PicPictureCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderStyle: aBor
 	#category : #'drawing-ovals',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderWidth: bw borderColor: bc [
+PicCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderWidth: bw borderColor: bc [
 
 	self
 		fillOval: aRectangle
@@ -209,7 +209,7 @@ PicPictureCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderWidth: bw b
 	#category : #'drawing-rectangles',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> fillRectangle: aRectangle fillStyle: aFillStyle [
+PicCanvas >> fillRectangle: aRectangle fillStyle: aFillStyle [
 
 	self
 		frameAndFillRectangle: aRectangle
@@ -221,7 +221,7 @@ PicPictureCanvas >> fillRectangle: aRectangle fillStyle: aFillStyle [
 	#category : #'drawing-rectangles',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
+PicCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
 
 	self
 		frameAndFillRectangle: r
@@ -231,14 +231,14 @@ PicPictureCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: b
 
 {
 	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/10/2021 14:48'
 }
-PicPictureCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
+PicCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	(self isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle) ifTrue: [^ self].
 	aRectangle area isZero ifTrue: [^ self].
 
-	self addCommand: (PicDrawRectangle new
+	self addCommand: (PicRectangle new
 							bounds: aRectangle;
 							fillStyle: aFillStyle;
 							borderStyle: aBorderStyle;
@@ -247,14 +247,14 @@ PicPictureCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle bord
 
 {
 	#category : #'drawing-rounded rectangles',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/10/2021 14:48'
 }
-PicPictureCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: aFillStyle borderStyle: aBorderStyle [
+PicCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	(self isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle) ifTrue: [^ self].
 	aRectangle extent isZero ifTrue: [^ self].
 
-	self addCommand: (PicDrawRoundedRectangle new
+	self addCommand: (PicRoundedRectangle new
 							bounds: aRectangle;
 							radius: cornerRadius;
 							fillStyle: aFillStyle;
@@ -266,7 +266,7 @@ PicPictureCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillS
 	#category : #'drawing-rounded rectangles',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: fillStyle borderWidth: bw borderColor: bc [
+PicCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: fillStyle borderWidth: bw borderColor: bc [
 
 	self
 		frameAndFillRoundRect: aRectangle
@@ -279,7 +279,7 @@ PicPictureCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillS
 	#category : #'drawing-rectangles',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> frameRectangle: aRectangle borderStyle: aBorderStyle [
+PicCanvas >> frameRectangle: aRectangle borderStyle: aBorderStyle [
 
 	self
 		frameAndFillRectangle: aRectangle
@@ -291,7 +291,7 @@ PicPictureCanvas >> frameRectangle: aRectangle borderStyle: aBorderStyle [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> getPicture [
+PicCanvas >> getPicture [
 	"Answers the picture as drawn up to this point. Returns an object of kind PicGroup.
 	Creates a copy of all groups still on the group stack before combining them into the picture, so that the canvas can continue to be used afterwards."
 	| child |
@@ -310,7 +310,7 @@ PicPictureCanvas >> getPicture [
 	#category : #'scoped state',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> group: aGroup during: aBlock [
+PicCanvas >> group: aGroup during: aBlock [
 	"Scoped setter for `group` variable."
 	| group |
 	groupStack addLast: aGroup.
@@ -324,7 +324,7 @@ PicPictureCanvas >> group: aGroup during: aBlock [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/20/2021 15:33'
 }
-PicPictureCanvas >> ignoreClip [
+PicCanvas >> ignoreClip [
 
 	^ ignoreClip
 ]
@@ -333,18 +333,18 @@ PicPictureCanvas >> ignoreClip [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/20/2021 15:33'
 }
-PicPictureCanvas >> ignoreClip: aBoolean [
+PicCanvas >> ignoreClip: aBoolean [
 
 	ignoreClip := aBoolean
 ]
 
 {
 	#category : #'drawing-images',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/10/2021 14:46'
 }
-PicPictureCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
+PicCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
-	self addCommand: (PicDrawImage new
+	self addCommand: (PicImage new
 							form: aForm;
 							origin: aPoint;
 							sourceRect: sourceRect;
@@ -356,7 +356,7 @@ PicPictureCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 6/8/2021 15:07'
 }
-PicPictureCanvas >> initialize [
+PicCanvas >> initialize [
 
 	super initialize.
 	groupStack := OrderedCollection with: PicGroup new.
@@ -369,7 +369,7 @@ PicPictureCanvas >> initialize [
 	#category : #helpers,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle [
+PicCanvas >> isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	aBorderStyle isTransparent ifFalse: [^ false].
 	aFillStyle isTransparent ifFalse: [^ false].
@@ -378,11 +378,11 @@ PicPictureCanvas >> isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle
 
 {
 	#category : #'drawing-lines',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/10/2021 14:47'
 }
-PicPictureCanvas >> line: from to: to width: width color: color [
+PicCanvas >> line: from to: to width: width color: color [
 
-	self addCommand: (PicDrawLine new
+	self addCommand: (PicLine new
 							from: from;
 							to: to;
 							width: width;
@@ -394,16 +394,16 @@ PicPictureCanvas >> line: from to: to width: width color: color [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> origin [
+PicCanvas >> origin [
 	"Answers the global coordinate of the currently active local origin."
 	^ (transform localPointToGlobal: 0@0) truncated
 ]
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 6/11/2021 15:10'
+	#'squeak_changestamp' : 'stlu 8/10/2021 14:54'
 }
-PicPictureCanvas >> paragraph: aParagraph bounds: aRectangle color: aColor [
+PicCanvas >> paragraph: aParagraph bounds: aRectangle color: aColor [
 
 	"self addCommand: (PicDrawParagraph new
 							paragraph: aParagraph;
@@ -412,7 +412,7 @@ PicPictureCanvas >> paragraph: aParagraph bounds: aRectangle color: aColor [
 							yourself)"
 	
 	| scanner |
-	scanner := PicPictureCanvasDisplayScanner new
+	scanner := PicCanvasDisplayScanner new
 		text: aParagraph text
 		textStyle: aParagraph textStyle
 		foreground: aColor
@@ -427,7 +427,7 @@ PicPictureCanvas >> paragraph: aParagraph bounds: aRectangle color: aColor [
 	#category : #'drawing-support',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> preserveStateDuring: aBlock [
+PicCanvas >> preserveStateDuring: aBlock [
 
 	self unsupported: #preserveStateDuring.
 	aBlock value: self
@@ -437,7 +437,7 @@ PicPictureCanvas >> preserveStateDuring: aBlock [
 	#category : #'drawing-images',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor [
+PicCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor [
 
 	self flag: #todo.
 	self unsupported: #'stencil:at:sourceRect:color:'
@@ -447,7 +447,7 @@ PicPictureCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> transform [
+PicCanvas >> transform [
 	"Answers the Matrix2x3 by which all drawing commands are currently transformed.
 	Multiplication of all transforms active in the current scope."
 	^ transform
@@ -457,7 +457,7 @@ PicPictureCanvas >> transform [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> transform: anObject [
+PicCanvas >> transform: anObject [
 
 	transform := anObject
 ]
@@ -466,7 +466,7 @@ PicPictureCanvas >> transform: anObject [
 	#category : #'scoped state',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> transform: aTransform during: aBlock [
+PicCanvas >> transform: aTransform during: aBlock [
 	"Scoped setter for `transform` variable."
 	| previousTransform |
 	previousTransform := transform.
@@ -479,7 +479,7 @@ PicPictureCanvas >> transform: aTransform during: aBlock [
 	#category : #'drawing-support',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> transformBy: aTransform during: aBlock [
+PicCanvas >> transformBy: aTransform during: aBlock [
 
 	| transformedClip matrix2x3 |
 	aTransform isIdentity ifTrue: [^ aBlock value: self].
@@ -495,7 +495,7 @@ PicPictureCanvas >> transformBy: aTransform during: aBlock [
 	#category : #'drawing-support',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> translateBy: aPoint during: aBlock [
+PicCanvas >> translateBy: aPoint during: aBlock [
 
 	self
 		transformBy: (Matrix2x3 withOffset: aPoint)
@@ -506,7 +506,7 @@ PicPictureCanvas >> translateBy: aPoint during: aBlock [
 	#category : #private,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> unsupported: selector [
+PicCanvas >> unsupported: selector [
 	"Called whenever a currently not supported message of the Canvas interface is sent."
 	self addCommand: (PicUnsupported type: selector)
 ]
@@ -515,7 +515,7 @@ PicPictureCanvas >> unsupported: selector [
 	#category : #'drawing-images',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureCanvas >> warpImage: aForm transform: aTransform at: extraOffset sourceRect: sourceRect cellSize: cellSize [
+PicCanvas >> warpImage: aForm transform: aTransform at: extraOffset sourceRect: sourceRect cellSize: cellSize [
 
 	self flag: #todo.
 	self unsupported: #'warpImage:transform:at:sourceRect:cellSize:'

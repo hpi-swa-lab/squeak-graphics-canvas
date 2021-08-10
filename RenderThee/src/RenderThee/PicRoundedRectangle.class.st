@@ -1,6 +1,6 @@
 Class {
-	#name : #PicDrawRoundedRectangle,
-	#superclass : #PicDrawRectangle,
+	#name : #PicRoundedRectangle,
+	#superclass : #PicRectangle,
 	#instVars : [
 		'radius'
 	],
@@ -11,7 +11,7 @@ Class {
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawRoundedRectangle class >> bounds: aRectangle radius: cornerRadius fillStyle: aFillStyle borderStyle: aBorderStyle [
+PicRoundedRectangle class >> bounds: aRectangle radius: cornerRadius fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	^ self new
 		bounds: aRectangle;
@@ -25,7 +25,7 @@ PicDrawRoundedRectangle class >> bounds: aRectangle radius: cornerRadius fillSty
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
-PicDrawRoundedRectangle >> acceptVisitor: aVisitor [
+PicRoundedRectangle >> acceptVisitor: aVisitor [
 
 	aVisitor visitRoundedRectangle: self
 ]
@@ -34,7 +34,7 @@ PicDrawRoundedRectangle >> acceptVisitor: aVisitor [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawRoundedRectangle >> drawOn: aCanvas [
+PicRoundedRectangle >> drawOn: aCanvas [
 
 	aCanvas
 		frameAndFillRoundRect: bounds
@@ -47,7 +47,7 @@ PicDrawRoundedRectangle >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawRoundedRectangle >> radius [
+PicRoundedRectangle >> radius [
 
 	^ radius
 ]
@@ -56,7 +56,7 @@ PicDrawRoundedRectangle >> radius [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawRoundedRectangle >> radius: anObject [
+PicRoundedRectangle >> radius: anObject [
 
 	radius := anObject.
 ]

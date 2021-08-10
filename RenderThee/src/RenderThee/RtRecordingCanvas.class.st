@@ -81,14 +81,14 @@ RtRecordingCanvas >> addLayer: aLayer [
 
 {
 	#category : #'repaint boundaries',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/10/2021 14:54'
 }
 RtRecordingCanvas >> changeGroupLayerTo: aLayer during: aBlock [
 
 	self endPicture.
 	
 	self rootLayer: aLayer during: [
-		self pictureCanvas: PicPictureCanvas new during: [
+		self pictureCanvas: PicCanvas new during: [
 			self translateBy: aLayer offset negated during: [:c |
 				aBlock cull: c.
 				self endPicture]]].
@@ -144,12 +144,12 @@ RtRecordingCanvas >> fullDrawMorph: aMorph [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/10/2021 14:54'
 }
 RtRecordingCanvas >> initialize [
 
 	super initialize.
-	wrappedCanvas := PicPictureCanvas new
+	wrappedCanvas := PicCanvas new
 ]
 
 {

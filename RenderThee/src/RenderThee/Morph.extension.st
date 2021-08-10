@@ -11,11 +11,11 @@ Morph >> addedMorph: aMorph [
 
 {
 	#category : #'*RenderThee-Pictures',
-	#'squeak_changestamp' : 'stlu 6/16/2021 16:19'
+	#'squeak_changestamp' : 'stlu 8/10/2021 14:53'
 }
 Morph >> getPicture [
 
-	^ (PicPictureCanvas new fullDraw: self; yourself) getPicture
+	^ (PicCanvas new fullDraw: self; yourself) getPicture
 ]
 
 {
@@ -36,15 +36,6 @@ Morph >> groupLayer: aGroupLayer [
 	^ self
 		setProperty: #groupLayer
 		toValue: aGroupLayer
-]
-
-{
-	#category : #'*RenderThee-override',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-Morph >> invalidRect: damageRect [
-
-	^ self invalidRect: damageRect from: self
 ]
 
 {

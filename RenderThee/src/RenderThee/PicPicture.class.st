@@ -3,7 +3,7 @@ I represent one or multiple graphical operations.
 A `PicPictureCanvas` is typically used to create me.
 "
 Class {
-	#name : #PicCommand,
+	#name : #PicPicture,
 	#superclass : #Object,
 	#category : #'RenderThee-Pictures'
 }
@@ -12,7 +12,7 @@ Class {
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:03'
 }
-PicCommand >> acceptVisitor: aVisitor [
+PicPicture >> acceptVisitor: aVisitor [
 
 	self subclassResponsibility
 ]
@@ -21,7 +21,7 @@ PicCommand >> acceptVisitor: aVisitor [
 	#category : #converting,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicCommand >> asForm [
+PicPicture >> asForm [
 	"Answer a Form containing the drawn representation of myself."
 	| fc bounds |
 	bounds := self estimatedBounds.
@@ -34,7 +34,7 @@ PicCommand >> asForm [
 	#category : #enumerating,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicCommand >> do: aBlock [
+PicPicture >> do: aBlock [
 
 	aBlock value: self
 ]
@@ -43,7 +43,7 @@ PicCommand >> do: aBlock [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicCommand >> drawOn: aCanvas [
+PicPicture >> drawOn: aCanvas [
 	"Replays represented graphical command(s) onto the given canvas."
 	self subclassResponsibility
 ]
@@ -52,7 +52,7 @@ PicCommand >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicCommand >> estimatedBounds [
+PicPicture >> estimatedBounds [
 	"Returns a rectangle representing the maximum bounds I draw myself into."
 	self subclassResponsibility
 ]
@@ -61,7 +61,7 @@ PicCommand >> estimatedBounds [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:48'
 }
-PicCommand >> isClip [
+PicPicture >> isClip [
 
 	^ false
 ]
@@ -70,7 +70,7 @@ PicCommand >> isClip [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicCommand >> isDrawing [
+PicPicture >> isDrawing [
 	"Returns true if drawing me onto a canvas results in a change of the underlying pixel store."
 	^ false
 ]
@@ -79,7 +79,7 @@ PicCommand >> isDrawing [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 3/13/2021 12:27'
 }
-PicCommand >> isRectangle [
+PicPicture >> isRectangle [
 
 	^ false
 ]
@@ -88,7 +88,7 @@ PicCommand >> isRectangle [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:48'
 }
-PicCommand >> isTransform [
+PicPicture >> isTransform [
 
 	^ false
 ]
@@ -97,7 +97,7 @@ PicCommand >> isTransform [
 	#category : #debugging,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicCommand >> open [
+PicPicture >> open [
 
 	 ^ self asForm asMorph openInHand
 ]

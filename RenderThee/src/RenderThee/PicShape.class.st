@@ -1,6 +1,6 @@
 Class {
-	#name : #PicDrawShape,
-	#superclass : #PicDraw,
+	#name : #PicShape,
+	#superclass : #PicDrawing,
 	#instVars : [
 		'bounds',
 		'fillStyle',
@@ -13,7 +13,7 @@ Class {
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawShape class >> bounds: aRectangle borderStyle: aBorderStyle [
+PicShape class >> bounds: aRectangle borderStyle: aBorderStyle [
 
 	^ self
 		bounds: aRectangle
@@ -25,7 +25,7 @@ PicDrawShape class >> bounds: aRectangle borderStyle: aBorderStyle [
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawShape class >> bounds: aRectangle fillStyle: aFillStyle [
+PicShape class >> bounds: aRectangle fillStyle: aFillStyle [
 
 	^ self
 		bounds: aRectangle
@@ -37,7 +37,7 @@ PicDrawShape class >> bounds: aRectangle fillStyle: aFillStyle [
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawShape class >> bounds: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
+PicShape class >> bounds: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	^ self new
 		bounds: aRectangle;
@@ -50,7 +50,7 @@ PicDrawShape class >> bounds: aRectangle fillStyle: aFillStyle borderStyle: aBor
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawShape >> borderStyle [
+PicShape >> borderStyle [
 
 	^ borderStyle
 ]
@@ -59,7 +59,7 @@ PicDrawShape >> borderStyle [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawShape >> borderStyle: anObject [
+PicShape >> borderStyle: anObject [
 
 	borderStyle := anObject.
 ]
@@ -68,7 +68,7 @@ PicDrawShape >> borderStyle: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawShape >> bounds [
+PicShape >> bounds [
 
 	^ bounds
 ]
@@ -77,7 +77,7 @@ PicDrawShape >> bounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawShape >> bounds: anObject [
+PicShape >> bounds: anObject [
 
 	bounds := anObject.
 ]
@@ -86,7 +86,7 @@ PicDrawShape >> bounds: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawShape >> estimatedBounds [
+PicShape >> estimatedBounds [
 
 	^ bounds
 ]
@@ -95,7 +95,7 @@ PicDrawShape >> estimatedBounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawShape >> fillStyle [
+PicShape >> fillStyle [
 
 	^ fillStyle
 ]
@@ -104,7 +104,7 @@ PicDrawShape >> fillStyle [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawShape >> fillStyle: anObject [
+PicShape >> fillStyle: anObject [
 
 	fillStyle := anObject.
 ]

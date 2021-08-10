@@ -5,7 +5,7 @@ My class globally stores all such specifications in its class variable `Remembra
 "
 Class {
 	#name : #PicUnsupported,
-	#superclass : #PicCommand,
+	#superclass : #PicPicture,
 	#instVars : [
 		'type'
 	],

@@ -1,6 +1,6 @@
 Class {
-	#name : #PicDrawParagraph,
-	#superclass : #PicDraw,
+	#name : #PicParagraph,
+	#superclass : #PicDrawing,
 	#instVars : [
 		'bounds',
 		'color',
@@ -13,7 +13,7 @@ Class {
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawParagraph class >> paragraph: aParagraph bounds: aRectangle color: aColor [
+PicParagraph class >> paragraph: aParagraph bounds: aRectangle color: aColor [
 
 	^ self new
 		paragraph: aParagraph;
@@ -26,7 +26,7 @@ PicDrawParagraph class >> paragraph: aParagraph bounds: aRectangle color: aColor
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
-PicDrawParagraph >> acceptVisitor: aVisitor [
+PicParagraph >> acceptVisitor: aVisitor [
 
 	aVisitor visitParagraph: self
 ]
@@ -35,7 +35,7 @@ PicDrawParagraph >> acceptVisitor: aVisitor [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawParagraph >> bounds [
+PicParagraph >> bounds [
 
 	^ bounds
 ]
@@ -44,7 +44,7 @@ PicDrawParagraph >> bounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawParagraph >> bounds: anObject [
+PicParagraph >> bounds: anObject [
 
 	bounds := anObject.
 ]
@@ -53,7 +53,7 @@ PicDrawParagraph >> bounds: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawParagraph >> color [
+PicParagraph >> color [
 
 	^ color
 ]
@@ -62,7 +62,7 @@ PicDrawParagraph >> color [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawParagraph >> color: anObject [
+PicParagraph >> color: anObject [
 
 	color := anObject.
 ]
@@ -71,7 +71,7 @@ PicDrawParagraph >> color: anObject [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawParagraph >> drawOn: aCanvas [
+PicParagraph >> drawOn: aCanvas [
 
 	aCanvas
 		paragraph: paragraph
@@ -83,7 +83,7 @@ PicDrawParagraph >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawParagraph >> estimatedBounds [
+PicParagraph >> estimatedBounds [
 
 	^ bounds
 ]
@@ -92,7 +92,7 @@ PicDrawParagraph >> estimatedBounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawParagraph >> paragraph [
+PicParagraph >> paragraph [
 
 	^ paragraph
 ]
@@ -101,7 +101,7 @@ PicDrawParagraph >> paragraph [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawParagraph >> paragraph: anObject [
+PicParagraph >> paragraph: anObject [
 
 	paragraph := anObject.
 ]

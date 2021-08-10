@@ -1,6 +1,6 @@
 Class {
 	#name : #PicDrawString,
-	#superclass : #PicDraw,
+	#superclass : #PicDrawing,
 	#instVars : [
 		'contents',
 		'from',

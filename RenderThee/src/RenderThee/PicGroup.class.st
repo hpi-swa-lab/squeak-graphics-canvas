@@ -5,7 +5,7 @@ Subclasses of me modify properties of the subtree they represent.
 "
 Class {
 	#name : #PicGroup,
-	#superclass : #PicCommand,
+	#superclass : #PicPicture,
 	#instVars : [
 		'children'
 	],

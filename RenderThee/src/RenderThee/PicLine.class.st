@@ -1,6 +1,6 @@
 Class {
-	#name : #PicDrawLine,
-	#superclass : #PicDraw,
+	#name : #PicLine,
+	#superclass : #PicDrawing,
 	#instVars : [
 		'from',
 		'to',
@@ -14,7 +14,7 @@ Class {
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawLine class >> from: from to: to width: width color: color [
+PicLine class >> from: from to: to width: width color: color [
 
 	^ self new
 		from: from;
@@ -28,7 +28,7 @@ PicDrawLine class >> from: from to: to width: width color: color [
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:04'
 }
-PicDrawLine >> acceptVisitor: aVisitor [
+PicLine >> acceptVisitor: aVisitor [
 
 	aVisitor visitLine: self
 ]
@@ -37,7 +37,7 @@ PicDrawLine >> acceptVisitor: aVisitor [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawLine >> color [
+PicLine >> color [
 
 	^ color
 ]
@@ -46,7 +46,7 @@ PicDrawLine >> color [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawLine >> color: anObject [
+PicLine >> color: anObject [
 
 	color := anObject.
 ]
@@ -55,7 +55,7 @@ PicDrawLine >> color: anObject [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawLine >> drawOn: aCanvas [
+PicLine >> drawOn: aCanvas [
 
 	aCanvas
 		line: from
@@ -68,7 +68,7 @@ PicDrawLine >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawLine >> estimatedBounds [
+PicLine >> estimatedBounds [
 
 	^ from rect: to
 ]
@@ -77,7 +77,7 @@ PicDrawLine >> estimatedBounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawLine >> from [
+PicLine >> from [
 
 	^ from
 ]
@@ -86,7 +86,7 @@ PicDrawLine >> from [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawLine >> from: anObject [
+PicLine >> from: anObject [
 
 	from := anObject.
 ]
@@ -95,7 +95,7 @@ PicDrawLine >> from: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawLine >> to [
+PicLine >> to [
 
 	^ to
 ]
@@ -104,7 +104,7 @@ PicDrawLine >> to [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawLine >> to: anObject [
+PicLine >> to: anObject [
 
 	to := anObject.
 ]
@@ -113,7 +113,7 @@ PicDrawLine >> to: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawLine >> width [
+PicLine >> width [
 
 	^ width
 ]
@@ -122,7 +122,7 @@ PicDrawLine >> width [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawLine >> width: anObject [
+PicLine >> width: anObject [
 
 	width := anObject.
 ]

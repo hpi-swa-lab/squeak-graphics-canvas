@@ -1,6 +1,6 @@
 Class {
-	#name : #PicDrawPolygon,
-	#superclass : #PicDrawShape,
+	#name : #PicPolygon,
+	#superclass : #PicShape,
 	#instVars : [
 		'vertices'
 	],
@@ -11,7 +11,7 @@ Class {
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawPolygon class >> vertices: collectionOfPoints fillStyle: aFillStyle borderStyle: aBorderStyle [
+PicPolygon class >> vertices: collectionOfPoints fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	^ self new
 		vertices: collectionOfPoints;
@@ -24,7 +24,7 @@ PicDrawPolygon class >> vertices: collectionOfPoints fillStyle: aFillStyle borde
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
-PicDrawPolygon >> acceptVisitor: aVisitor [
+PicPolygon >> acceptVisitor: aVisitor [
 
 	aVisitor visitPolygon: self
 ]
@@ -33,7 +33,7 @@ PicDrawPolygon >> acceptVisitor: aVisitor [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawPolygon >> drawOn: aCanvas [
+PicPolygon >> drawOn: aCanvas [
 
 	aCanvas
 		drawPolygon: vertices
@@ -46,7 +46,7 @@ PicDrawPolygon >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawPolygon >> estimatedBounds [
+PicPolygon >> estimatedBounds [
 
 	^ Rectangle encompassing: vertices
 ]
@@ -55,7 +55,7 @@ PicDrawPolygon >> estimatedBounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawPolygon >> vertices [
+PicPolygon >> vertices [
 
 	^ vertices
 ]
@@ -64,7 +64,7 @@ PicDrawPolygon >> vertices [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawPolygon >> vertices: anObject [
+PicPolygon >> vertices: anObject [
 
 	vertices := anObject.
 ]

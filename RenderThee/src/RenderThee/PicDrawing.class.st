@@ -2,8 +2,8 @@
 I represent a single, atomic graphical operation.
 "
 Class {
-	#name : #PicDraw,
-	#superclass : #PicCommand,
+	#name : #PicDrawing,
+	#superclass : #PicPicture,
 	#category : #'RenderThee-Pictures'
 }
 
@@ -11,7 +11,7 @@ Class {
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDraw >> isDrawing [
+PicDrawing >> isDrawing [
 
 	^ true
 ]

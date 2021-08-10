@@ -1,6 +1,6 @@
 Class {
-	#name : #PicDrawImage,
-	#superclass : #PicDraw,
+	#name : #PicImage,
+	#superclass : #PicDrawing,
 	#instVars : [
 		'form',
 		'origin',
@@ -14,7 +14,7 @@ Class {
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawImage class >> form: aForm origin: aPoint sourceRect: aRectangle rule: anInteger [
+PicImage class >> form: aForm origin: aPoint sourceRect: aRectangle rule: anInteger [
 
 	^ self new
 		form: aForm;
@@ -28,7 +28,7 @@ PicDrawImage class >> form: aForm origin: aPoint sourceRect: aRectangle rule: an
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:04'
 }
-PicDrawImage >> acceptVisitor: aVisitor [
+PicImage >> acceptVisitor: aVisitor [
 
 	aVisitor visitImage: self
 ]
@@ -37,7 +37,7 @@ PicDrawImage >> acceptVisitor: aVisitor [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/20/2021 21:54'
 }
-PicDrawImage >> bounds [
+PicImage >> bounds [
 
 	^ origin extent: sourceRect extent
 ]
@@ -46,7 +46,7 @@ PicDrawImage >> bounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawImage >> combinationRule [
+PicImage >> combinationRule [
 
 	^ combinationRule
 ]
@@ -55,7 +55,7 @@ PicDrawImage >> combinationRule [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawImage >> combinationRule: anObject [
+PicImage >> combinationRule: anObject [
 
 	combinationRule := anObject
 ]
@@ -64,7 +64,7 @@ PicDrawImage >> combinationRule: anObject [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawImage >> drawOn: aCanvas [
+PicImage >> drawOn: aCanvas [
 
 	aCanvas
 		image: form
@@ -77,7 +77,7 @@ PicDrawImage >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/20/2021 21:55'
 }
-PicDrawImage >> estimatedBounds [
+PicImage >> estimatedBounds [
 
 	^ self bounds
 ]
@@ -86,7 +86,7 @@ PicDrawImage >> estimatedBounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawImage >> form [
+PicImage >> form [
 
 	^ form
 ]
@@ -95,7 +95,7 @@ PicDrawImage >> form [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawImage >> form: anObject [
+PicImage >> form: anObject [
 
 	form := anObject.
 ]
@@ -104,7 +104,7 @@ PicDrawImage >> form: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawImage >> origin [
+PicImage >> origin [
 
 	^ origin
 ]
@@ -113,7 +113,7 @@ PicDrawImage >> origin [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawImage >> origin: anObject [
+PicImage >> origin: anObject [
 
 	origin := anObject.
 ]
@@ -122,7 +122,7 @@ PicDrawImage >> origin: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawImage >> sourceRect [
+PicImage >> sourceRect [
 
 	^ sourceRect
 ]
@@ -131,7 +131,7 @@ PicDrawImage >> sourceRect [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawImage >> sourceRect: anObject [
+PicImage >> sourceRect: anObject [
 
 	sourceRect := anObject.
 ]

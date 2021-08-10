@@ -1,6 +1,6 @@
 Class {
-	#name : #PicDrawRectangle,
-	#superclass : #PicDrawShape,
+	#name : #PicRectangle,
+	#superclass : #PicShape,
 	#category : #'RenderThee-Pictures'
 }
 
@@ -8,7 +8,7 @@ Class {
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
-PicDrawRectangle >> acceptVisitor: aVisitor [
+PicRectangle >> acceptVisitor: aVisitor [
 
 	aVisitor visitRectangle: self
 ]
@@ -17,7 +17,7 @@ PicDrawRectangle >> acceptVisitor: aVisitor [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawRectangle >> drawOn: aCanvas [
+PicRectangle >> drawOn: aCanvas [
 
 	aCanvas
 		frameAndFillRectangle: bounds
@@ -29,7 +29,7 @@ PicDrawRectangle >> drawOn: aCanvas [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 3/13/2021 12:28'
 }
-PicDrawRectangle >> isRectangle [
+PicRectangle >> isRectangle [
 
 	^ true
 ]
