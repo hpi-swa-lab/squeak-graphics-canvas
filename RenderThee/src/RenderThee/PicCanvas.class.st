@@ -53,14 +53,14 @@ PicCanvas >> clear [
 
 {
 	#category : #'drawing-support',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/10/2021 15:31'
 }
 PicCanvas >> clipBy: aRectangle during: aBlock [
 
-	(aRectangle containsRect: clipRect) ifTrue: [^ aBlock value: self].
+	(aRectangle containsRect: clipRect) ifTrue: [^ aBlock cull: self].
 	
-	self clipRect: (aRectangle intersect: clipRect) during: [
-		self group: (PicClip rect: aRectangle) during: aBlock]
+	^ self group: (PicClip rect: aRectangle) during: [
+		self clipRect: (aRectangle intersect: clipRect) during: aBlock]
 ]
 
 {
@@ -85,17 +85,15 @@ PicCanvas >> clipRect: anObject [
 
 {
 	#category : #'scoped state',
-	#'squeak_changestamp' : 'stlu 5/20/2021 15:27'
+	#'squeak_changestamp' : 'stlu 8/10/2021 16:00'
 }
 PicCanvas >> clipRect: aRectangle during: aBlock [
 	"Scoped setter for `clipRect` variable."
 	| previousClipRect |
-	ignoreClip ifTrue: [^ aBlock cull: self].
-	
 	previousClipRect := clipRect.
-	clipRect := aRectangle.
-	aBlock cull: self.
-	clipRect := previousClipRect
+	ignoreClip ifFalse: [clipRect := aRectangle].
+	^ [aBlock cull: self]
+		ensure: [clipRect := previousClipRect]
 ]
 
 {
@@ -150,11 +148,11 @@ PicCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: bw borderC
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/10/2021 15:01'
 }
 PicCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c [
 
-	self addCommand: (PicDrawString new
+	self addCommand: (PicString new
 							contents: s;
 							from: firstIndex;
 							to: lastIndex;
@@ -308,16 +306,16 @@ PicCanvas >> getPicture [
 
 {
 	#category : #'scoped state',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/10/2021 16:01'
 }
 PicCanvas >> group: aGroup during: aBlock [
 	"Scoped setter for `group` variable."
-	| group |
 	groupStack addLast: aGroup.
-	aBlock cull: self.
-	group := groupStack removeLast.
-	group isEmpty ifFalse: [
-		self addCommand: group]
+	^ aBlock ensure: [
+		| group |
+		group := groupStack removeLast.
+		group isEmpty ifFalse: [
+			self addCommand: group]]
 ]
 
 {
@@ -354,14 +352,11 @@ PicCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/8/2021 15:07'
+	#'squeak_changestamp' : 'stlu 8/10/2021 15:18'
 }
 PicCanvas >> initialize [
 
-	super initialize.
-	groupStack := OrderedCollection with: PicGroup new.
-	transform := Matrix2x3 identity.
-	clipRect := Rectangle infinite.
+	self reset.
 	ignoreClip := false.
 ]
 
@@ -434,6 +429,17 @@ PicCanvas >> preserveStateDuring: aBlock [
 ]
 
 {
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 8/10/2021 15:18'
+}
+PicCanvas >> reset [
+
+	groupStack := OrderedCollection with: PicGroup new.
+	transform := Matrix2x3 identity.
+	clipRect := Rectangle infinite.
+]
+
+{
 	#category : #'drawing-images',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
@@ -464,31 +470,36 @@ PicCanvas >> transform: anObject [
 
 {
 	#category : #'scoped state',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/10/2021 15:59'
 }
-PicCanvas >> transform: aTransform during: aBlock [
+PicCanvas >> transform: aTransform clipRect: aRectangle during: aBlock [
 	"Scoped setter for `transform` variable."
-	| previousTransform |
+	| previousTransform previousClipRect |
 	previousTransform := transform.
+	previousClipRect := clipRect.
 	transform := aTransform.
-	aBlock cull: self.
-	transform := previousTransform
+	ignoreClip ifFalse: [clipRect := aRectangle].
+	^ [aBlock cull: self] ensure: [
+		transform := previousTransform.
+		clipRect := previousClipRect]
 ]
 
 {
 	#category : #'drawing-support',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/10/2021 16:03'
 }
 PicCanvas >> transformBy: aTransform during: aBlock [
 
 	| transformedClip matrix2x3 |
-	aTransform isIdentity ifTrue: [^ aBlock value: self].
+	aTransform isIdentity ifTrue: [^ aBlock cull: self].
 	
 	matrix2x3 := aTransform asMatrix2x3.
 	transformedClip := (matrix2x3 globalBoundsToLocal: clipRect) expanded.
-	self clipRect: transformedClip during: [
-		self transform: (transform composedWithLocal: matrix2x3) during: [
-			self group: (PicTransform matrix: matrix2x3) during: aBlock]]
+	^ self group: (PicTransform matrix: matrix2x3) during: [
+		self
+			transform: (transform composedWithLocal: matrix2x3)
+			clipRect: transformedClip
+			during: aBlock].
 ]
 
 {
