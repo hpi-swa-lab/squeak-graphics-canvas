@@ -1,5 +1,5 @@
 Class {
-	#name : #PicDrawString,
+	#name : #PicString,
 	#superclass : #PicDrawing,
 	#instVars : [
 		'contents',
@@ -16,7 +16,7 @@ Class {
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawString class >> contents: aString from: startIndex to: stopIndex in: boundsRect font: fontOrNil color: aColor [
+PicString class >> contents: aString from: startIndex to: stopIndex in: boundsRect font: fontOrNil color: aColor [
 
 	^ self new
 		contents: aString;
@@ -32,7 +32,7 @@ PicDrawString class >> contents: aString from: startIndex to: stopIndex in: boun
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
-PicDrawString >> acceptVisitor: aVisitor [
+PicString >> acceptVisitor: aVisitor [
 
 	aVisitor visitString: self
 ]
@@ -41,7 +41,7 @@ PicDrawString >> acceptVisitor: aVisitor [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawString >> bounds [
+PicString >> bounds [
 
 	^ bounds
 ]
@@ -50,7 +50,7 @@ PicDrawString >> bounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawString >> bounds: anObject [
+PicString >> bounds: anObject [
 
 	bounds := anObject.
 ]
@@ -59,7 +59,7 @@ PicDrawString >> bounds: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawString >> color [
+PicString >> color [
 
 	^ color
 ]
@@ -68,7 +68,7 @@ PicDrawString >> color [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawString >> color: anObject [
+PicString >> color: anObject [
 
 	color := anObject.
 ]
@@ -77,7 +77,7 @@ PicDrawString >> color: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawString >> contents [
+PicString >> contents [
 
 	^ contents
 ]
@@ -86,7 +86,7 @@ PicDrawString >> contents [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawString >> contents: anObject [
+PicString >> contents: anObject [
 
 	contents := anObject.
 ]
@@ -95,7 +95,7 @@ PicDrawString >> contents: anObject [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawString >> drawOn: aCanvas [
+PicString >> drawOn: aCanvas [
 
 	aCanvas
 		drawString: contents
@@ -110,7 +110,7 @@ PicDrawString >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawString >> estimatedBounds [
+PicString >> estimatedBounds [
 
 	^ bounds
 ]
@@ -119,7 +119,7 @@ PicDrawString >> estimatedBounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawString >> font [
+PicString >> font [
 
 	^ font
 ]
@@ -128,7 +128,7 @@ PicDrawString >> font [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawString >> font: anObject [
+PicString >> font: anObject [
 
 	font := anObject.
 ]
@@ -137,7 +137,7 @@ PicDrawString >> font: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawString >> from [
+PicString >> from [
 
 	^ from
 ]
@@ -146,7 +146,7 @@ PicDrawString >> from [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawString >> from: anObject [
+PicString >> from: anObject [
 
 	from := anObject.
 ]
@@ -155,7 +155,7 @@ PicDrawString >> from: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawString >> to [
+PicString >> to [
 
 	^ to
 ]
@@ -164,7 +164,7 @@ PicDrawString >> to [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicDrawString >> to: anObject [
+PicString >> to: anObject [
 
 	to := anObject.
 ]
