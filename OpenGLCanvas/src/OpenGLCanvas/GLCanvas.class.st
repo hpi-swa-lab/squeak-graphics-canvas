@@ -228,7 +228,7 @@ GLCanvas >> contentsOfArea: aRectangle into: aForm [
 
 {
 	#category : #'drawing-polygons',
-	#'squeak_changestamp' : 'stlu 6/17/2021 13:28'
+	#'squeak_changestamp' : 'stlu 8/11/2021 13:29'
 }
 GLCanvas >> drawBasePolygon: numVertices [
 
@@ -237,13 +237,13 @@ GLCanvas >> drawBasePolygon: numVertices [
 	
 	GL stencilFunc: GL_ALWAYS with: 0 with: 1.
 	GL stencilOp: GL_INVERT with: GL_INVERT with: GL_INVERT.
-	GL colorMask: GL_FALSE with: GL_FALSE with: GL_FALSE  with: GL_FALSE.
+	GL colorMask: false with: false with: false  with: false.
 	
 	self vao drawArrays: GL_TRIANGLE_FAN count: numVertices.
 	
 	GL stencilFunc: GL_EQUAL with: 1 with: 1.
 	GL stencilOp: GL_KEEP with: GL_KEEP with: GL_KEEP.
-	GL colorMask: GL_TRUE with: GL_TRUE with: GL_TRUE  with: GL_TRUE.
+	GL colorMask: true with: true with: true  with: true.
 	
 	self vao drawArrays: GL_TRIANGLE_FAN count: numVertices.
 	
