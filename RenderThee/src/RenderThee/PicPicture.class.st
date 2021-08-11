@@ -19,12 +19,13 @@ PicPicture >> acceptVisitor: aVisitor [
 
 {
 	#category : #converting,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/11/2021 11:40'
 }
 PicPicture >> asForm [
 	"Answer a Form containing the drawn representation of myself."
 	| fc bounds |
 	bounds := self estimatedBounds.
+	bounds ifNil: [^ Form extent: 0@0 depth: 32].
 	fc := FormCanvas extent: bounds extent.
 	fc translateBy: bounds topLeft negated during: [:c | self drawOn: c].
 	^ fc form
@@ -50,10 +51,10 @@ PicPicture >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/11/2021 11:38'
 }
 PicPicture >> estimatedBounds [
-	"Returns a rectangle representing the maximum bounds I draw myself into."
+	"Returns a rectangle representing the maximum bounds I draw myself into, or nil if I am invisible."
 	self subclassResponsibility
 ]
 

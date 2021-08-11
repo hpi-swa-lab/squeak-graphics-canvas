@@ -44,11 +44,12 @@ PicTransform >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/11/2021 11:45'
 }
 PicTransform >> estimatedBounds [
 
-	^ matrix localBoundsToGlobal: self estimatedChildrenBounds
+	^ super estimatedBounds ifNotNil: [:bounds |
+		matrix localBoundsToGlobal: bounds]
 ]
 
 {

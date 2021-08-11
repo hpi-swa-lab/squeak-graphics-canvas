@@ -81,20 +81,27 @@ PicGroup >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/11/2021 11:44'
 }
 PicGroup >> estimatedBounds [
 
-	^ self estimatedChildrenBounds
+	| childrenBounds |
+	childrenBounds := self estimatedChildrenBounds.
+	childrenBounds ifEmpty: [^ nil].
+	^ Rectangle merging: childrenBounds
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/11/2021 11:43'
 }
 PicGroup >> estimatedChildrenBounds [
 
-	^ Rectangle merging: (children collect: [:child | child estimatedBounds])
+	children ifEmpty: [^ #()].
+	^ Array streamContents: [:stream |
+		children do: [:child |
+			child estimatedBounds ifNotNil: [:childBounds |
+				stream nextPut: childBounds]]]
 ]
 
 {
@@ -108,12 +115,12 @@ PicGroup >> hasChildren [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/10/2021 18:07'
 }
 PicGroup >> initialize [
 
 	super initialize.
-	children := OrderedCollection new
+	children := OrderedCollection new.
 ]
 
 {

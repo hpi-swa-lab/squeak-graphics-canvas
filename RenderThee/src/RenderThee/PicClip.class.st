@@ -62,11 +62,12 @@ PicClip >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/11/2021 11:46'
 }
 PicClip >> estimatedBounds [
 
-	^ self estimatedChildrenBounds intersect: clipRect
+	^ super estimatedBounds ifNotNil: [:bounds |
+		bounds intersect: clipRect]
 ]
 
 {
