@@ -1,0 +1,357 @@
+Class {
+	#name : #RtWorkspaces,
+	#superclass : #Object,
+	#category : #'RenderThee-Examples'
+}
+
+{
+	#category : #creation,
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:40'
+}
+RtWorkspaces class >> allButFirstLine: aString [
+
+	aString lineIndicesDo: [:start :endWithoutDelimites :end |
+		^ aString copyFrom: end + 1 to: aString size].
+]
+
+{
+	#category : #workspaces,
+	#'squeak_changestamp' : 'stlu 8/12/2021 19:01'
+}
+RtWorkspaces class >> bulkPluginBenchmarks [ <title: 'Bulk plugin benchmarks'> <auto: true> <collapsed: true> | array |
+[1 to: 1e3 do: [:index | "do nothing" ]] bench.
+" '553,000 per second. 1.81 microseconds per run. 0 % GC time.'"
+
+array := IntegerArray new: 14.
+[1 to: 1e3 do: [:index | array at: 1 put: 42]] bench.
+" '140,000 per second. 7.13 microseconds per run. 0 % GC time.'"
+
+array := Float32Array new: 14.
+[1 to: 1e3 do: [:index | array at: 1 put: 1.0]] bench.
+" '76,200 per second. 13.1 microseconds per run. 0 % GC time.'"
+
+[1 to: 1e3 do: [:index | array primInternalPluginAt: 1 put: 1.0]] bench.
+" '31,700 per second. 31.5 microseconds per run. 0 % GC time.'"
+
+[1 to: 1e3 do: [:index | array primExternalPluginOldAt: 1 put: 1.0]] bench.
+" '31,200 per second. 32 microseconds per run. 0 % GC time.'"
+
+[1 to: 1e3 do: [:index | array primExternalPluginNewAt: 1 put: 1.0]] bench.
+" '36,200 per second. 27.6 microseconds per run. 0 % GC time.'"
+
+[1 to: 1e3 do: [:index | array primExternalPluginNoneAt: 1 put: 1.0]] bench.
+" '40,600 per second. 24.6 microseconds per run. 0 % GC time.'"
+
+[1 to: 1e3 do: [:index | array startingAt: 1 put: 1.0 put: 2.0]] bench.
+" '33,100 per second. 30.2 microseconds per run. 0 % GC time.'"
+
+
+array := Float32Array new: 14.
+array := Array new: 14.
+[1 to: 1e3 do: [:index |
+	array at: 1 put: 1.0.
+	array at: 2 put: 2.0.
+	array at: 3 put: 3.0.
+	array at: 4 put: 4.0.
+	array at: 5 put: 5.0.
+	array at: 6 put: 6.0.
+	array at: 7 put: 7.0.
+	array at: 8 put: 8.0.
+	array at: 9 put: 9.0.
+	array at: 10 put: 10.0.
+	array at: 11 put: 11.0.
+	array at: 12 put: 12.0.
+	array at: 13 put: 13.0.
+	array at: 14 put: 14.0]] bench.
+" '16,200 per second. 61.6 microseconds per run. 0 % GC time.'"
+" '7,010 per second. 143 microseconds per run. 0 % GC time.'"
+
+[1 to: 1e3 do: [:index |
+	{1.0. 2.0. 3.0 . 4.0 . 5.0 . 6.0 . 7.0 . 8.0 . 9.0 . 10.0 . 11.0 . 12.0 . 13.0 . 14.0}]] bench.
+" '5,860 per second. 171 microseconds per run. 19.67606 % GC time.'"
+
+[1 to: 1e3 do: [:index |
+	array
+		startingAt: 1
+		put: 1.0 put: 2.0 put: 3.0 put: 4.0
+		put: 5.0 put: 6.0 put: 7.0 put: 8.0
+		put: 9.0 put: 10.0 put: 11.0 put: 12.0
+		put: 13.0 put: 14.0]] bench.
+" '18,000 per second. 55.5 microseconds per run. 0 % GC time.'"
+
+[1 to: 1e3 do: [:index |
+	array at: 1 put: 1.0.
+	array at: 2 put: 2.0.
+	array at: 3 put: 3.0]] bench.
+" '31,200 per second. 32 microseconds per run. 0 % GC time.'"
+
+[1 to: 1e3 do: [:index |
+	array
+		startingAt: 1
+		put: 1.0 put: 2.0 put: 3.0]] bench.
+" '32,700 per second. 30.5 microseconds per run. 0 % GC time.'"
+
+Smalltalk unloadModule: 'Float32ArrayBulkPlugin'.
+]
+
+{
+	#category : #workspaces,
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:56'
+}
+RtWorkspaces class >> learnOpenGLExamples [ <title: 'learnopengl.com Examples'> <auto: true> <collapsed: true>
+"1.1.1" LOGLHelloWindow run.
+"1.1.2" LOGLHelloWindowClear run.
+"1.2.1" LOGLHelloTriangle run.
+"1.2.2" LOGLHelloTriangleIndexed run.
+"1.3.1" LOGLShadersUniform run.
+"1.3.2" LOGLShadersInterpolation run.
+"1.4.1" LOGLTextures run.
+"1.5.1" LOGLTransformations run.
+"1.6.1" LOGLCoordinateSystems run.
+"1.6.2" LOGLCoordinateSystemsDepth run.
+"1.6.3" LOGLCoordinateSystemsMultiple run.
+"1.7.1" LOGLCameraCircle run.
+"1.7.4" LOGLCameraClass run.
+"4.1.1" LOGLDepthTesting run.
+"4.3.1" LOGLDiscarding run.
+"4.3.2" LOGLBlending run.
+"4.10.1" LOGLInstancing run.
+LOGLBreakout run.
+
+GLFW terminate.
+]
+
+{
+	#category : #workspaces,
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:58'
+}
+RtWorkspaces class >> morphicRenderingExamples [ <title: 'Morphic rendering examples'> <auto: true> <collapsed: true>
+RtBatchingExample world.
+RtBatchingExample drawReference.
+RtBatchingExample browser.
+RtBatchingExample chineseCheckers.
+
+RtOpenGLCanvasExample world.
+RtOpenGLCanvasExample drawReference.
+RtOpenGLCanvasExample browser.
+RtOpenGLCanvasExample chineseCheckers.
+
+RtFormCanvasExample world.
+RtFormCanvasExample drawReference.
+RtFormCanvasExample browser.
+RtFormCanvasExample chineseCheckers.
+]
+
+{
+	#category : #creation,
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:51'
+}
+RtWorkspaces class >> openAll [
+
+	| availableWorkspaces |
+	availableWorkspaces := (Pragma allNamed: #auto: in: self theMetaClass)
+		select: [:each | each arguments first]
+		thenCollect: [:each | each method selector].
+	availableWorkspaces do: [:each |
+		self openWorkspace: each].
+]
+
+{
+	#category : #creation,
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:54'
+}
+RtWorkspaces class >> openWorkspace: aSymbol [
+
+	| method title closable contents workspace window collapsed |
+	closable := false.
+	method := self theMetaClass compiledMethodAt: aSymbol.
+	title := (method pragmaAt: #title:)
+		ifNil: ['Unnamed Workspace']
+		ifNotNil: [:titlePragma | titlePragma arguments first].
+	collapsed := (method pragmaAt: #collapsed:)
+		ifNil: [false]
+		ifNotNil: [:collapsedPragma | collapsedPragma arguments first].
+	contents := self allButFirstLine: method getSource asString.
+	workspace := Workspace new.
+	workspace acceptContents: contents.
+	window := workspace openLabel: title.
+	closable ifFalse: [window makeUnclosable].
+	collapsed ifTrue: [window collapse].
+]
+
+{
+	#category : #workspaces,
+	#'squeak_changestamp' : 'stlu 8/12/2021 18:52'
+}
+RtWorkspaces class >> pictureAndCanvasBenchmarking [ <title: 'Picture and Canvas Benchmarking'> <auto: true> <collapsed: true> | formCanvas fullMorphCanvas fullMorphPic fullNormalCanvas fullNormalPic morph nullCanvas sparseMorphCanvas sparseMorphPic sparseNormalCanvas sparseNormalPic visitor w1 w10 w11 w12 w13 w14 w15 w16 w2 w3 w4 w5 w6 w7 w8 w9 world |
+[
+world := (PasteUpMorph newWorldForProject: nil)
+	hResizing: #spaceFill;
+	vResizing: #spaceFill;
+	viewBox: (0@0 corner: (1920@1080) * 1);
+	layoutFrame: LayoutFrame fullFrame;
+	fillStyle: Project current world fillStyle;
+	fullBounds;
+	yourself.
+
+w1 := (ToolSet browse: Morph selector: #drawOn:) dependents detect: [:ea | ea isSystemWindow].
+w2 := ToolSet
+		browseMessageSet: (SystemNavigation default allCallsOn: #negated)
+		name: 'Senders' translated autoSelect: 'negated'.
+w3 := (Workspace new contents: '3+4 "Select and hit [CMD]+[P]."') openLabel: 'Workspace'.
+w4 := (ToolSet browse: FormCanvas selector: #transformBy:clippingTo:during:smoothing:) dependents detect: [:ea | ea isSystemWindow].
+w5 := ToolSet
+		browseMessageSet: (SystemNavigation default allCallsOn: #OrderedCollection)
+		name: 'Users of OrderedCollection' autoSelect: 'OrderedCollection'.
+w6 := ToolBuilder open: MCWorkingCopyBrowser new.
+w7 := ToolSet explore: w1.
+w8 := ToolSet inspect: w5 model messageList.
+w9 := (ToolSet browse: Dictionary selector: #scanFor:) dependents detect: [:ea | ea isSystemWindow].
+w10 := (ToolSet browse: SequenceableCollection selector: #do:) dependents detect: [:ea | ea isSystemWindow].
+w11 := (ToolSet browse: Float selector: #printOn:base:) dependents detect: [:ea | ea isSystemWindow].
+w12 := (ToolSet browse: Point selector: #normalized) dependents detect: [:ea | ea isSystemWindow].
+w13 := (ToolSet browse: Rectangle selector: #area) dependents detect: [:ea | ea isSystemWindow].
+w14 := (ToolSet browse: Color selector: #alpha:) dependents detect: [:ea | ea isSystemWindow].
+w15 := (ToolSet browse: Boolean selector: #ifTrue:ifFalse:) dependents detect: [:ea | ea isSystemWindow].
+w16 := (ToolSet browse: ProtoObject selector: #identityHash) dependents detect: [:ea | ea isSystemWindow].
+
+
+{w1. w2. w3 . w4 . w5 . w6 . w7 . w8 . w9 . w10 . w11 . w12 . w13 . w14 . w15 . w16} do: [:ea |
+	ea openInWorld: world].
+48 timesRepeat: [
+	| w |
+	w := (ToolSet browse: Dictionary selector: #scanFor:) dependents detect: [:ea | ea isSystemWindow].
+	w openInWorld: world].
+
+world openInHand.
+world abandon
+].
+
+"_______________________________________________"
+
+morph := ActiveWorld.
+morph := world.
+
+[w1 changed] bench.
+" '1,900,000 per second. 526 nanoseconds per run. 3.71851 % GC time.'"
+
+[morph picture] bench.
+" '13,900,000 per second. 71.8 nanoseconds per run. 0 % GC time.'"
+
+[morph picture: 42] bench.
+" '8,570,000 per second. 117 nanoseconds per run. 0 % GC time.'"
+
+"_______________________________________________"
+
+sparseNormalCanvas := PicCanvas new ignoreClip: false; yourself.
+fullNormalCanvas := PicCanvas new ignoreClip: true; yourself.
+sparseMorphCanvas := PicPatcherCanvas new ignoreClip: false; yourself.
+fullMorphCanvas := PicPatcherCanvas new ignoreClip: true; yourself.
+
+sparseNormalPic := (sparseNormalCanvas reset; fullDrawMorph: morph; yourself) getPicture.
+fullNormalPic := (fullNormalCanvas reset; fullDrawMorph: morph; yourself) getPicture.
+sparseMorphPic := (sparseMorphCanvas reset; fullDrawMorph: morph; yourself) getPicture.
+fullMorphPic := (fullMorphCanvas reset; fullDrawMorph: morph; yourself) getPicture.
+
+visitor := PicVisitor new.
+nullCanvas := RtNullCanvas new.
+formCanvas := FormCanvas extent: morph extent.
+
+sparseNormalPic open.
+fullNormalPic open.
+sparseMorphPic open.
+fullMorphPic open.
+
+[nullCanvas fullDrawMorph: morph] bench.
+" '296 per second. 3.38 milliseconds per run. 6.37617 % GC time.'"
+
+[formCanvas reset; fullDrawMorph: morph] bench.
+" '18.5 per second. 54.2 milliseconds per run. 0.37728 % GC time.'"
+
+[sparseNormalCanvas reset; fullDrawMorph: morph] bench.
+" '221 per second. 4.53 milliseconds per run. 6.57343 % GC time.'"
+
+[fullNormalCanvas reset; fullDrawMorph: morph] bench.
+" '38.8 per second. 25.8 milliseconds per run. 37.83243 % GC time.'"
+
+[morph allMorphsDo: [:each | each picture: nil]] bench.
+" '4,240 per second. 236 microseconds per run. 14.37712 % GC time.'"
+
+[morph allMorphsDo: [:each | each picture: nil].
+sparseMorphCanvas reset; fullDrawMorph: morph] bench.
+" '164 per second. 6.09 milliseconds per run. 6.35492 % GC time.'"
+
+[morph allMorphsDo: [:each | each picture: nil].
+fullMorphCanvas reset; fullDrawMorph: morph] bench.
+" '35.4 per second. 28.2 milliseconds per run. 38.02508 % GC time.'"
+
+
+[nullCanvas draw: sparseNormalPic] bench.
+" '8,110 per second. 123 microseconds per run. 3.21871 % GC time.'"
+
+[nullCanvas draw: fullNormalPic] bench.
+" '3,090 per second. 324 microseconds per run. 1.35946 % GC time.'"
+
+[nullCanvas draw: sparseMorphPic] bench.
+" '2,800 per second. 357 microseconds per run. 2.31954 % GC time.'"
+
+[nullCanvas draw: fullMorphPic] bench.
+" '2,800 per second. 357 microseconds per run. 2.37905 % GC time.'"
+
+
+[visitor visit: sparseNormalPic] bench.
+" '21,300 per second. 46.9 microseconds per run. 2.9994 % GC time.'"
+
+[visitor visit: fullNormalPic] bench.
+" '4,080 per second. 245 microseconds per run. 0.67973 % GC time.'"
+
+[visitor visit: sparseMorphPic] bench.
+" '3,390 per second. 295 microseconds per run. 2.01919 % GC time.'"
+
+[visitor visit: fullMorphPic] bench.
+" '3,530 per second. 283 microseconds per run. 2.05959 % GC time.'"
+
+
+PicCounter new visit: sparseNormalPic; counts.
+PicCounter new visit: fullNormalPic; counts.
+PicCounter new visit: sparseMorphPic; counts.
+PicCounter new visit: fullMorphPic; counts.
+
+
+RtOpenGLCanvasExample morph: morph.
+RtBatchingExample morph: morph.
+RtFormCanvasExample morph: morph.
+
+
+]
+
+{
+	#category : #workspaces,
+	#'squeak_changestamp' : 'stlu 8/12/2021 19:02'
+}
+RtWorkspaces class >> textureAtlasAllocator [ <title: 'Texture atles allocator'> <auto: true> <collapsed: true> | allocations allocator fc requests |
+allocator := RtBucketAllocator extent: 1024 @ 1024.
+allocator numColumns: 2.
+
+[[1 to: 1000 do: [:index |
+	allocator allocate: 64 atRandom @ 64 atRandom].
+allocator clear] benchFor: 30 seconds] timeProfile.
+" '24.9 per second. 40.2 milliseconds per run. 0.05977 % GC time.'"
+
+requests := OrderedCollection new.
+600 timesRepeat: [requests add: 61 atRandom @ 61 atRandom + 3].
+
+allocator := RtBucketAllocator extent: 1024 @ 1024 numColumns: 2.
+allocations := OrderedCollection new.
+requests do: [:extent | allocations add: (allocator allocate: extent)].
+allocator imageForm asMorph openInHand.
+
+fc := FormCanvas extent: allocator extent.
+fc fillColor: Color white.
+fc frameRectangle: (0@0 extent: fc extent) color: Color black.
+allocations with: requests do: [:alloc :request |
+	fc fillRectangle: alloc rectangle color: Color red.
+	fc fillRectangle: (alloc rectangle origin extent: request) color: Color green.
+	fc frameRectangle: alloc rectangle color: Color black].
+fc form asMorph openInHand.
+]
