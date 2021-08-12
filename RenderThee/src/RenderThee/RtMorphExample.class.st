@@ -404,13 +404,15 @@ RtMorphExample >> printWindowTitleOn: aStream [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 8/11/2021 17:10'
+	#'squeak_changestamp' : 'stlu 8/12/2021 13:24'
 }
 RtMorphExample >> updatePicture [
 
-	| elapsed |
+	| patcher elapsed |
+	patcher := PicPatcherCanvas new.
+	patcher invalidationStamp: numFrames.
 	elapsed := Time microsecondsToRun: [
-		PicPatcherCanvas new fullDrawMorph: morph].
+		patcher fullDrawMorph: morph].
 	pictureUpdateTimes add: elapsed.
 	picture := morph picture.
 ]

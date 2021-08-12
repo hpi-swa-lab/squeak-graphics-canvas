@@ -4,13 +4,16 @@ I traverse a Morph tree and try to patch / recapture the parallel picture tree.
 Class {
 	#name : #PicPatcherCanvas,
 	#superclass : #PicCanvas,
+	#instVars : [
+		'invalidationStamp'
+	],
 	#category : #'RenderThee-Pictures',
 	#'squeak_changestamp' : 'stlu 8/10/2021 16:29'
 }
 
 {
 	#category : #'drawing-general',
-	#'squeak_changestamp' : 'stlu 8/11/2021 14:02'
+	#'squeak_changestamp' : 'stlu 8/12/2021 13:41'
 }
 PicPatcherCanvas >> fullDrawMorph: aMorph [
 
@@ -31,7 +34,8 @@ PicPatcherCanvas >> fullDrawMorph: aMorph [
 	picture
 		ifNil: [aMorph picture: (picture := PicMorph new)]
 		ifNotNil: [picture removeAllChildren].
-	picture position: aMorph position.
+	picture invalidationStamp: invalidationStamp.
+	picture bounds: aMorph bounds.
 	self group: picture during: [
 		aMorph fullDrawOn: self].
 	picture markValid.
@@ -45,4 +49,22 @@ PicPatcherCanvas >> initialize [
 
 	super initialize.
 	ignoreClip := true.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/12/2021 13:19'
+}
+PicPatcherCanvas >> invalidationStamp [
+
+	^ invalidationStamp
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/12/2021 13:19'
+}
+PicPatcherCanvas >> invalidationStamp: anObject [
+
+	invalidationStamp := anObject.
 ]

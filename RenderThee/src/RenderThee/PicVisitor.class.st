@@ -52,6 +52,15 @@ PicVisitor >> visitLine: anObject [
 
 {
 	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 8/12/2021 13:29'
+}
+PicVisitor >> visitMorph: anObject [
+
+	self visitGroup: anObject.
+]
+
+{
+	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:11'
 }
 PicVisitor >> visitOval: anObject [

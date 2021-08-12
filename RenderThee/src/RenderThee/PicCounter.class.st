@@ -66,6 +66,16 @@ PicCounter >> visitLine: anObject [
 
 {
 	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 8/12/2021 13:29'
+}
+PicCounter >> visitMorph: anObject [
+
+	super visitMorph: anObject.
+	counts add: #morph.
+]
+
+{
+	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/19/2021 20:28'
 }
 PicCounter >> visitOval: anObject [

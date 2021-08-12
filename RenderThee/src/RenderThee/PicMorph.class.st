@@ -3,20 +3,67 @@ Class {
 	#superclass : #PicGroup,
 	#instVars : [
 		'isValid',
-		'position'
+		'bounds',
+		'invalidationStamp'
 	],
 	#category : #'RenderThee-Pictures'
 }
 
 {
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 8/12/2021 13:28'
+}
+PicMorph >> acceptVisitor: aVisitor [
+
+	aVisitor visitMorph: self.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/12/2021 13:39'
+}
+PicMorph >> bounds [
+
+	^ bounds
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/12/2021 13:39'
+}
+PicMorph >> bounds: anObject [
+
+	bounds := anObject.
+]
+
+{
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/11/2021 13:48'
+	#'squeak_changestamp' : 'stlu 8/12/2021 13:40'
 }
 PicMorph >> initialize [
 
 	super initialize.
 	isValid := true.
-	position := 0@0.
+	bounds := 0@0 corner: 0@0.
+	invalidationStamp := 0.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/12/2021 13:17'
+}
+PicMorph >> invalidationStamp [
+
+	^ invalidationStamp
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/12/2021 13:17'
+}
+PicMorph >> invalidationStamp: anObject [
+
+	invalidationStamp := anObject.
 ]
 
 {
@@ -48,18 +95,9 @@ PicMorph >> markValid [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/11/2021 13:53'
+	#'squeak_changestamp' : 'stlu 8/12/2021 13:42'
 }
 PicMorph >> position [
 
-	^ position
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/11/2021 13:53'
-}
-PicMorph >> position: anObject [
-
-	position := anObject.
+	^ bounds topLeft
 ]
