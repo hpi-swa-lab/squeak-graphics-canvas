@@ -8,13 +8,20 @@ Class {
 		'rectangleBatch',
 		'transformIndex',
 		'clipRectIndex',
-		'transformsTexture',
-		'primHeadersFTexture',
-		'primHeadersITexture',
-		'colorsTexture',
-		'clipRectsTexture',
 		'zIndex',
-		'currentFrame'
+		'currentFrame',
+		'transientStoreF',
+		'transientStoreI',
+		'persistentStoreF',
+		'rectangleProgram',
+		'textProgram',
+		'colorStore',
+		'vao',
+		'quadVBO',
+		'colorToIndexTable',
+		'glyphStore',
+		'fontCache',
+		'textBatch'
 	],
 	#pools : [
 		'GLConstants'
@@ -23,31 +30,31 @@ Class {
 }
 
 {
-	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/7/2021 16:03'
+	#category : #allocation,
+	#'squeak_changestamp' : 'stlu 8/23/2021 17:30'
 }
 RtBatchingRenderer >> allocateClipRect: aRectangle [
 
-	^ (clipRectsTexture
+	^ transientStoreF
 		add: aRectangle left asFloat
 		add: aRectangle top asFloat
-		add: aRectangle width asFloat
-		add: aRectangle height asFloat) / 4
+		add: aRectangle right asFloat
+		add: aRectangle bottom asFloat
 ]
 
 {
-	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/7/2021 16:01'
+	#category : #allocation,
+	#'squeak_changestamp' : 'stlu 8/23/2021 16:54'
 }
 RtBatchingRenderer >> allocateTransform: aTransform [
 
-	^ (transformsTexture
+	^ transientStoreF
 		add: aTransform a11
 		add: aTransform a21
 		add: aTransform a12
 		add: aTransform a22
 		add: aTransform a13
-		add: aTransform a23) / 8
+		add: aTransform a23
 ]
 
 {
@@ -70,11 +77,32 @@ RtBatchingRenderer >> bounds: aRectangle [
 
 {
 	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/23/2021 09:51'
+}
+RtBatchingRenderer >> clearColor [
+
+	^ Color
+		h: Time utcMicrosecondClock / 1e3 \\ 360.0
+		s: 1.0
+		v: 1.0
+]
+
+{
+	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 6/9/2021 12:44'
 }
 RtBatchingRenderer >> clipRect [
 
 	^ clipRect
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/23/2021 15:16'
+}
+RtBatchingRenderer >> clipRectIndex [
+
+	^ clipRectIndex
 ]
 
 {
@@ -96,29 +124,42 @@ RtBatchingRenderer >> currentFrame: anObject [
 ]
 
 {
-	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/9/2021 09:23'
+	#category : #drawing,
+	#'squeak_changestamp' : 'stlu 8/26/2021 15:05'
 }
 RtBatchingRenderer >> draw [
 
-	GL clearColor: (Color h: Time utcMicrosecondClock / 1e3 \\ 360.0 s: 1.0 v: 1.0).
+	GL clearColor: self clearColor.
 	GL clear: (GL_COLOR_BUFFER_BIT bitOr: GL_DEPTH_BUFFER_BIT).
 
-	primHeadersFTexture texture bindAt: 1.
-	primHeadersITexture texture bindAt: 2.
-	transformsTexture texture bindAt: 3.
-	clipRectsTexture texture bindAt: 4.
-	colorsTexture texture bindAt: 5.
+	transientStoreF texture bindAt: 1.
+	transientStoreI texture bindAt: 2.
+	persistentStoreF texture bindAt: 3.
+	colorStore texture bindAt: 5.
+	glyphStore texture bindAt: 6.
 	
-	primHeadersFTexture upload.
-	primHeadersITexture upload.
-	transformsTexture upload.
-	clipRectsTexture upload.
-	colorsTexture upload.
+	transientStoreF upload.
+	transientStoreI upload.
+	persistentStoreF upload.
+	colorStore upload.
+	
+	rectangleProgram uniforms uProjectionMatrix: self projectionMatrix.
+	textProgram uniforms uProjectionMatrix: self projectionMatrix.
 	
 	rectangleBatch isAlpha: true.
-	rectangleBatch program uniforms uProjectionMatrix: self projectionMatrix.
 	rectangleBatch draw.
+	
+	textBatch isAlpha: true.
+	textBatch draw.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/26/2021 13:25'
+}
+RtBatchingRenderer >> fontCache [
+
+	^ fontCache
 ]
 
 {
@@ -180,26 +221,153 @@ RtBatchingRenderer >> frameAndFillRectangle: aRectangle radius: radius fillStyle
 ]
 
 {
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/26/2021 15:00'
+}
+RtBatchingRenderer >> glyphStore [
+
+	^ glyphStore
+]
+
+{
+	#category : #allocation,
+	#'squeak_changestamp' : 'stlu 8/25/2021 10:42'
+}
+RtBatchingRenderer >> indexForColor: aColor [
+
+	^ colorToIndexTable
+		at: aColor
+		ifAbsentPut: [
+			colorStore add: (aColor pixelValueForDepth: 32)]
+]
+
+{
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/8/2021 20:03'
+	#'squeak_changestamp' : 'stlu 8/26/2021 13:25'
 }
 RtBatchingRenderer >> initialize [
+
+	self initializeGPUStores.
+	self initializeQuadVBO.
+	self initializeVAO.
+	self initializePrograms.
+	self initializeBatches.
+	self initializeColors.
+	
+	fontCache := IdentityDictionary new.
+	
+	self reset.
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 8/26/2021 13:31'
+}
+RtBatchingRenderer >> initializeBatches [
+
+	rectangleBatch := RtRectangleBatch new.
+	rectangleBatch renderer: self.
+	
+	textBatch := RtTextBatch new.
+	textBatch renderer: self.
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 8/25/2021 10:42'
+}
+RtBatchingRenderer >> initializeColors [
+
+	colorToIndexTable := Dictionary new.
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 8/26/2021 11:32'
+}
+RtBatchingRenderer >> initializeGPUStores [
 
 	| texSize |
 	self flag: #todo. "choose texSize based on GL maxTextureSize"
 	texSize := 512. "square textures have performance benefits on Intel GPUs"
-	primHeadersFTexture := RtFloat4Texture extent: texSize @ texSize.
-	primHeadersITexture := RtInt4Texture extent: texSize @ texSize.
-	transformsTexture := RtFloat4Texture extent: texSize @ texSize.
-	clipRectsTexture := RtFloat4Texture extent: texSize @ texSize.
-	colorsTexture := RtColorTexture extent: texSize @ texSize.
+	transientStoreF := RtFloat4Texture extent: texSize @ texSize.
+	transientStoreI := RtInt4Texture extent: texSize @ texSize.
+	persistentStoreF := RtFloat4Texture extent: texSize @ texSize.
+	colorStore := RtColorTexture extent: texSize @ texSize.
+	glyphStore := RtManagedGPUStore extent: texSize @ texSize.
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 8/26/2021 11:33'
+}
+RtBatchingRenderer >> initializePrograms [
+
+	rectangleProgram := GLProgram
+		vertexSource: self rectangleVertexShader
+		fragmentSource: self rectangleFragmentShader.
+	rectangleProgram uniforms
+		sTransientStoreF: 1;
+		sColorStore: 5.
 	
-	rectangleBatch := RtRectangleBatch new.
-	rectangleBatch primHeadersFTexture: primHeadersFTexture.
-	rectangleBatch primHeadersITexture: primHeadersITexture.
-	rectangleBatch colorsTexture: colorsTexture.
-	
-	self reset.
+	textProgram := GLProgram
+		vertexSource: self textVertexShader
+		fragmentSource: self textFragmentShader.
+	textProgram uniforms
+		sTransientStoreF: 1;
+		sTransientStoreI: 2;
+		sPersistentStoreF: 3;
+		sColorStore: 5;
+		sGlyphStore: 6.
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 8/23/2021 10:04'
+}
+RtBatchingRenderer >> initializeQuadVBO [
+
+	quadVBO := GLBuffer create.
+	quadVBO usage: GL_STATIC_DRAW data: #(
+			0.0 1.0	"bottom-left"
+			1.0 0.0	"top-right"
+			0.0 0.0	"top-left"
+			
+			0.0 1.0	"bottom-left"
+			1.0 0.0	"top-right"
+			1.0 1.0	"bottom-right"
+		) asFloat32Array.
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 8/23/2021 10:04'
+}
+RtBatchingRenderer >> initializeVAO [
+
+	vao := GLVertexArray create.
+	vao boundDuring: [
+		(vao vertexAttributeAt: 0)
+			enable;
+			formatAsFloat: GL_FLOAT numComponents: 2 offset: 0;
+			associateVertexBufferBindingAt: 0.
+		
+		(vao vertexAttributeAt: 1)
+			enable;
+			formatAsInteger: GL_UNSIGNED_INT numComponents: 4 offset: 0;
+			associateVertexBufferBindingAt: 1.
+		
+		(vao vertexBufferBindingAt: 0) buffer: quadVBO stride: 2 * 4.
+		(vao vertexBufferBindingAt: 1) instanceDivisor: 1].
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/26/2021 15:01'
+}
+RtBatchingRenderer >> persistentStoreF [
+
+	^ persistentStoreF
 ]
 
 {
@@ -231,39 +399,190 @@ RtBatchingRenderer >> quadVertices [
 ]
 
 {
+	#category : #shaders,
+	#'squeak_changestamp' : 'stlu 8/23/2021 10:24'
+}
+RtBatchingRenderer >> rectangleFragmentShader [
+
+	^ '#version 330 core
+in vec4 vFillColor;
+in vec2 vExtent;
+in float vCornerRadius;
+in vec2 vCenterOffset;
+
+out vec4 oColor;
+
+struct RectWithExtent {
+		vec2 origin;
+		vec2 extent;
+};
+
+float computeAARange(vec2 position) {
+	vec2 w = fwidth(position);
+	return inversesqrt(0.5 * dot(w, w));
+}
+
+float distanceAA(float aaRange, float signedDistance) {
+	float dist = signedDistance * aaRange;
+	return clamp(0.5 - dist, 0.0, 1.0);
+}
+
+float signedDistanceRectangle(vec2 localPoint, vec2 extent) {
+	vec2 d = abs(localPoint) - extent;
+	return length(max(d, vec2(0.0))) + min(max(d.x,d.y), 0.0);
+}
+
+float signedDistanceRoundedRectangle(vec2 localPoint, vec2 extent, float radius) {
+	return signedDistanceRectangle(localPoint, extent) - radius;
+}
+
+void main() {
+	float aaRange = computeAARange(vCenterOffset);
+	float dist = signedDistanceRoundedRectangle(vCenterOffset, vExtent, vCornerRadius);
+	vec4 color = vFillColor;
+	float alpha = distanceAA(aaRange, dist);
+
+	oColor = vec4(color.rgb, color.a * alpha);
+}'
+]
+
+{
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 8/12/2021 16:30'
+	#'squeak_changestamp' : 'stlu 8/23/2021 17:26'
 }
 RtBatchingRenderer >> rectangleLeft: left right: right top: top bottom: bottom radius: radius solidColor: aColor [
 
-	self assert: clipRect hasPositiveExtent.
-	self assert: left <= right.
-	self assert: top <= bottom.
 	(left > clipRect right
 		or: [right < clipRect left]
 		or: [top > clipRect bottom]
 		or: [bottom < clipRect top]) ifTrue: [^ self].
+	(left > right
+		or: [top > bottom]) ifTrue: [^ self].
 	rectangleBatch
-		rectangle: (Rectangle left: left right: right top: top bottom: bottom)
+		rectangleLeft: left
+		right: right
+		top: top
+		bottom: bottom
 		radius: radius
 		fillColor: aColor
-		clipRect: clipRectIndex
-		transform: transformIndex
 		z: zIndex.
 	zIndex := zIndex + 1.
 ]
 
 {
-	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 7/1/2021 21:58'
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/23/2021 17:06'
 }
-RtBatchingRenderer >> rectangleLeft: left right: right top: top bottom: bottom solidColor: aColor [
+RtBatchingRenderer >> rectangleProgram [
 
-	self rectangleLeft: left right: right top: top bottom: bottom radius: 0.0 solidColor: aColor
+	^ rectangleProgram
 ]
 
 {
-	#category : #initialization,
+	#category : #shaders,
+	#'squeak_changestamp' : 'stlu 8/23/2021 17:14'
+}
+RtBatchingRenderer >> rectangleVertexShader [
+
+	^ '#version 330 core
+#define MAX_VERTEX_TEXTURE_WIDTH 512u
+
+layout (location = 0) in vec2 aPosition;
+layout (location = 1) in ivec4 aInstanceData;
+
+out vec4 vFillColor;
+out float vCornerRadius;
+out vec2 vExtent;
+out vec2 vCenterOffset;
+
+// uniform sampler2D sPersistentStoreF;
+// uniform isampler2D sPersistentStoreI;
+uniform sampler2D sTransientStoreF;
+uniform isampler2D sTransientStoreI;
+// uniform sampler2D sGlyphStore;
+uniform sampler2D sColorStore;
+
+uniform mat4 uProjectionMatrix; //orthographic projection
+
+ivec2 getFetchAddress(int index) {
+    return ivec2(uint(index) % MAX_VERTEX_TEXTURE_WIDTH,
+                 uint(index) / MAX_VERTEX_TEXTURE_WIDTH);
+}
+
+struct Rectangle {
+	vec2 origin;
+	vec2 corner;
+};
+
+Rectangle intersect(Rectangle a, Rectangle b) {
+	Rectangle result;
+	result.origin = max(a.origin, b.origin);
+	result.corner = min(a.corner, b.corner);
+	return result;
+}
+
+vec2 extent(Rectangle r) {
+	return r.corner - r.origin;
+}
+
+mat4 fetchTransform(sampler2D store, int index) {
+	ivec2 address1 = getFetchAddress(index);
+	ivec2 address2 = getFetchAddress(index+1);
+	vec4 t1 = texelFetch(store, address1, 0);
+	vec4 t2 = texelFetch(store, address2, 0);
+	return mat4x4(
+		t1[0], t1[1], 0.0, 0.0,
+		t1[2], t1[3], 0.0, 0.0,
+		0.0, 0.0, 1.0, 0.0,
+		t2[0], t2[1], 0.0, 1.0);
+}
+
+Rectangle fetchRectangle(sampler2D store, int index) {
+	ivec2 address = getFetchAddress(index);
+	vec4 data = texelFetch(store, address, 0);
+	return Rectangle(data.xy, data.zw);
+}
+
+ivec4 fetch(isampler2D store, int index) {
+	ivec2 address = getFetchAddress(index);
+	return texelFetch(store, address, 0);
+}
+
+vec4 fetch(sampler2D store, int index) {
+	ivec2 address = getFetchAddress(index);
+	return texelFetch(store, address, 0);
+}
+
+void main() {
+	/* Fetch data */
+	int rectangleIndex = aInstanceData.x;
+	int clipRectIndex = aInstanceData.y;
+	int transformIndex = aInstanceData.z;
+	int fillColorIndex = aInstanceData.w;
+
+	Rectangle rectangleBounds = fetchRectangle(sTransientStoreF, rectangleIndex);
+	vec4 rectangleData = fetch(sTransientStoreF, rectangleIndex+1);
+	vCornerRadius = rectangleData.x;
+	float z = rectangleData.y;
+
+	Rectangle clipRect = fetchRectangle(sTransientStoreF, clipRectIndex);
+	mat4 modelMatrix = fetchTransform(sTransientStoreF, transformIndex);
+	vFillColor = fetch(sColorStore, fillColorIndex);
+	
+	/* Processing */
+	Rectangle visibleBounds = intersect(rectangleBounds, clipRect);
+
+	vec2 vertexPosition = visibleBounds.origin + (aPosition * extent(visibleBounds));
+	gl_Position = uProjectionMatrix * modelMatrix * vec4(vertexPosition, z, 1.0);
+
+	vec2 halfExtent = 0.5 * extent(rectangleBounds);
+	vExtent = halfExtent - vec2(vCornerRadius);
+	vCenterOffset = (aPosition - 0.5) * extent(rectangleBounds);
+}'
+]
+
+{
+	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 6/8/2021 10:35'
 }
 RtBatchingRenderer >> render: aPicture [
@@ -275,15 +594,12 @@ RtBatchingRenderer >> render: aPicture [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/9/2021 09:22'
+	#'squeak_changestamp' : 'stlu 8/26/2021 15:06'
 }
 RtBatchingRenderer >> reset [
 
-	primHeadersFTexture reset.
-	primHeadersITexture reset.
-	transformsTexture reset.
-	clipRectsTexture reset.
-	colorsTexture reset.
+	transientStoreF reset.
+	transientStoreI reset.
 	
 	self flag: #todo. "reset to bounds"
 	clipRect := Rectangle infinite.
@@ -294,6 +610,149 @@ RtBatchingRenderer >> reset [
 	zIndex := 1.
 	
 	rectangleBatch reset.
+	textBatch reset.
+]
+
+{
+	#category : #shaders,
+	#'squeak_changestamp' : 'stlu 8/26/2021 18:00'
+}
+RtBatchingRenderer >> textFragmentShader [
+
+	^ '#version 330 core
+in vec4 vTextColor;
+in vec2 vGlyphCoords;
+
+out vec4 oColor;
+
+uniform sampler2D sGlyphStore;
+
+void main() {
+	vec4 texel = texture(sGlyphStore, vGlyphCoords);
+	float alpha = 1.0 - texel.r;
+	oColor = vTextColor * alpha;
+}'
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/25/2021 10:41'
+}
+RtBatchingRenderer >> textProgram [
+
+	^ textProgram
+]
+
+{
+	#category : #shaders,
+	#'squeak_changestamp' : 'stlu 8/26/2021 17:56'
+}
+RtBatchingRenderer >> textVertexShader [
+
+	^ '#version 330 core
+#define MAX_VERTEX_TEXTURE_WIDTH 512u
+
+layout (location = 0) in vec2 aPosition;
+layout (location = 1) in ivec4 aInstanceData;
+
+out vec4 vTextColor;
+out vec2 vGlyphCoords;
+
+uniform sampler2D sPersistentStoreF;
+// uniform isampler2D sPersistentStoreI;
+uniform sampler2D sTransientStoreF;
+uniform isampler2D sTransientStoreI;
+// uniform sampler2D sGlyphStore;
+uniform sampler2D sColorStore;
+
+uniform mat4 uProjectionMatrix; //orthographic projection
+
+ivec2 getFetchAddress(int index) {
+    return ivec2(uint(index) % MAX_VERTEX_TEXTURE_WIDTH,
+                 uint(index) / MAX_VERTEX_TEXTURE_WIDTH);
+}
+
+struct Rectangle {
+	vec2 origin;
+	vec2 corner;
+};
+
+Rectangle intersect(Rectangle a, Rectangle b) {
+	Rectangle result;
+	result.origin = max(a.origin, b.origin);
+	result.corner = min(a.corner, b.corner);
+	return result;
+}
+
+vec2 extent(Rectangle r) {
+	return r.corner - r.origin;
+}
+
+mat4 fetchTransform(sampler2D store, int index) {
+	ivec2 address1 = getFetchAddress(index);
+	ivec2 address2 = getFetchAddress(index+1);
+	vec4 t1 = texelFetch(store, address1, 0);
+	vec4 t2 = texelFetch(store, address2, 0);
+	return mat4x4(
+		t1[0], t1[1], 0.0, 0.0,
+		t1[2], t1[3], 0.0, 0.0,
+		0.0, 0.0, 1.0, 0.0,
+		t2[0], t2[1], 0.0, 1.0);
+}
+
+Rectangle fetchRectangle(sampler2D store, int index) {
+	ivec2 address = getFetchAddress(index);
+	vec4 data = texelFetch(store, address, 0);
+	return Rectangle(data.xy, data.zw);
+}
+
+ivec4 fetch(isampler2D store, int index) {
+	ivec2 address = getFetchAddress(index);
+	return texelFetch(store, address, 0);
+}
+
+vec4 fetch(sampler2D store, int index) {
+	ivec2 address = getFetchAddress(index);
+	return texelFetch(store, address, 0);
+}
+
+void main() {
+	/* Fetch data */
+	int textRunIndex = aInstanceData.x;
+	int charIndex = aInstanceData.y;
+	int glyphIndex = aInstanceData.z;
+	float z = float(aInstanceData.w);
+
+	ivec4 textRun = fetch(sTransientStoreI, textRunIndex);
+	int clipRectIndex = textRun.x;
+	int transformIndex = textRun.y;
+	int textColorIndex = textRun.z;
+	int textRunBoundsIndex = textRun.w;
+
+	Rectangle clipRect = fetchRectangle(sTransientStoreF, clipRectIndex);
+	mat4 modelMatrix = fetchTransform(sTransientStoreF, transformIndex);
+	vTextColor = fetch(sColorStore, textColorIndex);
+	Rectangle textRunBounds = fetchRectangle(sTransientStoreF, textRunBoundsIndex);
+
+	int charDataIndex = textRunBoundsIndex + 1 + int(uint(charIndex) >> 2);
+	vec4 charData = fetch(sTransientStoreF, charDataIndex);
+	float charRightOffset = charData[uint(charIndex) % 4U];
+
+	Rectangle glyphBounds = fetchRectangle(sPersistentStoreF, glyphIndex);
+
+	/* Processing */
+	vec2 charExtent = extent(glyphBounds);
+	vec2 charOffset = textRunBounds.origin + vec2(charRightOffset - charExtent.x, 0.0);
+	Rectangle charBounds = Rectangle(charOffset, charOffset + charExtent);
+	Rectangle visibleBounds = intersect(intersect(textRunBounds, clipRect), charBounds);
+	
+	vec2 vertexPosition = visibleBounds.origin + (aPosition * extent(visibleBounds));
+	gl_Position = uProjectionMatrix * modelMatrix * vec4(vertexPosition, z, 1.0);
+
+	vec2 relativeGlyphPosition = (vertexPosition - charBounds.origin) / charExtent;
+	vGlyphCoords = glyphBounds.origin + (extent(glyphBounds) * relativeGlyphPosition);
+	vGlyphCoords = vGlyphCoords / MAX_VERTEX_TEXTURE_WIDTH;
+}'
 ]
 
 {
@@ -306,31 +765,63 @@ RtBatchingRenderer >> transform [
 ]
 
 {
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/23/2021 15:16'
+}
+RtBatchingRenderer >> transformIndex [
+
+	^ transformIndex
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/23/2021 17:17'
+}
+RtBatchingRenderer >> transientStoreF [
+
+	^ transientStoreF
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/26/2021 15:12'
+}
+RtBatchingRenderer >> transientStoreI [
+
+	^ transientStoreI
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/23/2021 17:18'
+}
+RtBatchingRenderer >> vao [
+
+	^ vao
+]
+
+{
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:03'
+	#'squeak_changestamp' : 'stlu 8/26/2021 13:34'
 }
 RtBatchingRenderer >> visitClip: aPicClip [
 
 	| previousClipRect previousClipRectIndex |
 	previousClipRect := clipRect.
-	previousClipRectIndex := clipRectIndex.
-	
-	clipRect := clipRect intersect: aPicClip clipRect.
-	clipRectIndex := self allocateClipRect: clipRect.
-	
-	self visitGroup: aPicClip.
-	
+	(clipRect := clipRect intersect: aPicClip clipRect) hasPositiveExtent ifTrue: [
+		previousClipRectIndex := clipRectIndex.
+		clipRectIndex := self allocateClipRect: clipRect.
+		self visitGroup: aPicClip.
+		clipRectIndex := previousClipRectIndex].
 	clipRect := previousClipRect.
-	clipRectIndex := previousClipRectIndex.
 ]
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 8/12/2021 17:30'
+	#'squeak_changestamp' : 'stlu 8/26/2021 13:43'
 }
 RtBatchingRenderer >> visitGroup: aPicGroup [
 
-	clipRect area <= 0 ifTrue: [^ self].
 	aPicGroup children do: [:child |
 		child acceptVisitor: self].
 ]
@@ -446,63 +937,45 @@ RtBatchingRenderer >> visitRoundedRectangle: aPicRoundedRectangle [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 8/12/2021 16:27'
+	#'squeak_changestamp' : 'stlu 8/26/2021 15:07'
 }
 RtBatchingRenderer >> visitString: aPicString [
 
-	| font left top bottom bounds visibleLeft visibleTop visibleRight visibleBottom |
-	false ifTrue: [^ self].
-	font := aPicString font ifNil: [TextStyle defaultFont].
-	bounds := aPicString bounds.
+	| bounds |
+	"true ifTrue: [^ self]."
+	bounds := aPicString bounds ifNil: [^ self].
+	(bounds intersects: clipRect) ifFalse: [^ self].
 	
-	top := bounds top.
-	visibleTop := top max: clipRect top.
-	bottom := bounds bottom.
-	visibleBottom := (bottom min: top + font height) min: clipRect bottom.
-	visibleTop >= visibleBottom ifTrue: [^ self].
-	
-	left := bounds left.
-	visibleLeft := left max: clipRect left.
-	visibleRight := bounds right min: clipRect right.
-	visibleLeft >= visibleRight ifTrue: [^ self].
-	
-	aPicString from to: aPicString to do: [:index |
-		| char width right |
-		char := aPicString contents at: index.
-		width := font widthOf: char.
-		right := (left + width) min: visibleRight.
-		right >= visibleLeft ifTrue: [
-			self
-				rectangleLeft: (left max: visibleLeft)
-				right: right
-				top: visibleTop
-				bottom: visibleBottom
-				solidColor: aPicString color].
-		left := left + width.
-		left >= visibleRight ifTrue: [^ self]]
+	textBatch textRun: aPicString.
 ]
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:04'
+	#'squeak_changestamp' : 'stlu 8/26/2021 13:46'
 }
 RtBatchingRenderer >> visitTransform: aPicTransform [
 
 	| previousTransform previousClipRect previousTransformIndex previousClipRectIndex |
 	previousTransform := transform.
 	previousClipRect := clipRect.
-	previousTransformIndex := transformIndex.
-	previousClipRectIndex := clipRectIndex.
-	
 	transform := transform * aPicTransform matrix.
-	clipRect := (transform globalBoundsToLocal: clipRect) expanded.
-	transformIndex := self allocateTransform: transform.
-	clipRectIndex := self allocateClipRect: clipRect.
-	
-	self visitGroup: aPicTransform.
-	
+	(clipRect := (transform globalBoundsToLocal: clipRect) expanded) hasPositiveExtent ifTrue: [
+		previousTransformIndex := transformIndex.
+		previousClipRectIndex := clipRectIndex.
+		transformIndex := self allocateTransform: transform.
+		clipRectIndex := self allocateClipRect: clipRect.
+		self visitGroup: aPicTransform.
+		transformIndex := previousTransformIndex.
+		clipRectIndex := previousClipRectIndex].
 	transform := previousTransform.
 	clipRect := previousClipRect.
-	transformIndex := previousTransformIndex.
-	clipRectIndex := previousClipRectIndex.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/26/2021 15:13'
+}
+RtBatchingRenderer >> zIndex [
+
+	^ zIndex
 ]

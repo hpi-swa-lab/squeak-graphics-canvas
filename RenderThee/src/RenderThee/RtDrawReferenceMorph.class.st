@@ -6,12 +6,13 @@ Class {
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 6/17/2021 09:55'
+	#'squeak_changestamp' : 'stlu 8/26/2021 13:06'
 }
 RtDrawReferenceMorph >> drawOn: aCanvas [
 
 	aCanvas clipBy: self bounds during: [:canvas |
 		| strip stripHeight |
+		canvas fillColor: Color red.
 		stripHeight := 20.
 		strip := 1.
 		[strip - 1 * stripHeight <= self height] whileTrue: [

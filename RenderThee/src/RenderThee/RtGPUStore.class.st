@@ -1,10 +1,8 @@
 Class {
-	#name : #RtTexture,
+	#name : #RtGPUStore,
 	#superclass : #Object,
 	#instVars : [
 		'texture',
-		'stagingBuffer',
-		'lastElementIndex',
 		'extent',
 		'dataFormat',
 		'textureFormat',
@@ -20,7 +18,7 @@ Class {
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 7/1/2021 19:19'
 }
-RtTexture class >> extent: aPoint [
+RtGPUStore class >> extent: aPoint [
 
 	^ self basicNew
 		extent: aPoint;
@@ -32,7 +30,7 @@ RtTexture class >> extent: aPoint [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 7/1/2021 19:10'
 }
-RtTexture >> dataFormat [
+RtGPUStore >> dataFormat [
 
 	^ dataFormat
 ]
@@ -41,7 +39,7 @@ RtTexture >> dataFormat [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 7/1/2021 19:10'
 }
-RtTexture >> dataFormat: anObject [
+RtGPUStore >> dataFormat: anObject [
 
 	dataFormat := anObject
 ]
@@ -50,7 +48,7 @@ RtTexture >> dataFormat: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 7/1/2021 19:10'
 }
-RtTexture >> extent [
+RtGPUStore >> extent [
 
 	^ extent
 ]
@@ -59,7 +57,7 @@ RtTexture >> extent [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 7/1/2021 19:10'
 }
-RtTexture >> extent: anObject [
+RtGPUStore >> extent: anObject [
 
 	extent := anObject
 ]
@@ -68,7 +66,7 @@ RtTexture >> extent: anObject [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 7/8/2021 14:58'
 }
-RtTexture >> initialize [
+RtGPUStore >> initialize [
 
 	self initializeFormat.
 	self initializeTexture.
@@ -79,7 +77,7 @@ RtTexture >> initialize [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 7/8/2021 14:59'
 }
-RtTexture >> initializeFormat [
+RtGPUStore >> initializeFormat [
 
 	self subclassResponsibility.
 ]
@@ -88,7 +86,7 @@ RtTexture >> initializeFormat [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 7/8/2021 20:01'
 }
-RtTexture >> initializeTexture [
+RtGPUStore >> initializeTexture [
 
 	texture := GLTexture2D create
 				wrapS: GL_REPEAT;
@@ -106,55 +104,19 @@ RtTexture >> initializeTexture [
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 7/1/2021 19:10'
-}
-RtTexture >> lastElementIndex [
-
-	^ lastElementIndex
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 7/1/2021 19:10'
-}
-RtTexture >> lastElementIndex: anObject [
-
-	lastElementIndex := anObject
-]
-
-{
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/1/2021 19:32'
+	#'squeak_changestamp' : 'stlu 8/25/2021 11:27'
 }
-RtTexture >> reset [
+RtGPUStore >> reset [
 
-	lastElementIndex := 0.
+	
 ]
 
 {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 7/1/2021 19:03'
 }
-RtTexture >> stagingBuffer [
-
-	^ stagingBuffer
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 7/1/2021 19:03'
-}
-RtTexture >> stagingBuffer: anObject [
-
-	stagingBuffer := anObject
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 7/1/2021 19:03'
-}
-RtTexture >> texture [
+RtGPUStore >> texture [
 
 	^ texture
 ]
@@ -163,7 +125,7 @@ RtTexture >> texture [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 7/1/2021 19:03'
 }
-RtTexture >> texture: anObject [
+RtGPUStore >> texture: anObject [
 
 	texture := anObject
 ]
@@ -172,7 +134,7 @@ RtTexture >> texture: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 7/1/2021 19:10'
 }
-RtTexture >> textureFormat [
+RtGPUStore >> textureFormat [
 
 	^ textureFormat
 ]
@@ -181,7 +143,7 @@ RtTexture >> textureFormat [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 7/1/2021 19:10'
 }
-RtTexture >> textureFormat: anObject [
+RtGPUStore >> textureFormat: anObject [
 
 	textureFormat := anObject
 ]
@@ -190,7 +152,7 @@ RtTexture >> textureFormat: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 7/1/2021 19:10'
 }
-RtTexture >> textureType [
+RtGPUStore >> textureType [
 
 	^ textureType
 ]
@@ -199,34 +161,7 @@ RtTexture >> textureType [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 7/1/2021 19:10'
 }
-RtTexture >> textureType: anObject [
+RtGPUStore >> textureType: anObject [
 
 	textureType := anObject
-]
-
-{
-	#category : #staging,
-	#'squeak_changestamp' : 'stlu 7/1/2021 20:50'
-}
-RtTexture >> upload [
-
-	| height |
-	height := lastElementIndex - 1 // extent x + 1.
-	texture
-		extent: extent x @ height
-		internalFormat: dataFormat
-		data: stagingBuffer
-		format: textureFormat
-		type: textureType
-	
-	"GL
-		textureSubImage2D: texture id
-		with: 0
-		with: 0
-		with: 0
-		with: extent x
-		with: height
-		with: textureFormat
-		with: textureType
-		with: stagingBuffer"
 ]

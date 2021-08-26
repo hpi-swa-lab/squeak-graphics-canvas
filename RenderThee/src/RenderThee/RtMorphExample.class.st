@@ -390,7 +390,7 @@ RtMorphExample >> picture [
 
 {
 	#category : #'window title',
-	#'squeak_changestamp' : 'stlu 8/11/2021 17:16'
+	#'squeak_changestamp' : 'stlu 8/26/2021 13:10'
 }
 RtMorphExample >> printWindowTitleOn: aStream [
 
@@ -398,20 +398,20 @@ RtMorphExample >> printWindowTitleOn: aStream [
 	pictureUpdateTimes ifNotEmpty: [
 		aStream
 			nextPutAll: ' | Pic: ';
-			nextPutAll: (pictureUpdateTimes average printShowingDecimalPlaces: 3);
+			nextPutAll: (pictureUpdateTimes average / 1e3 printShowingDecimalPlaces: 3);
 			nextPutAll: 'us'].
 ]
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:24'
+	#'squeak_changestamp' : 'stlu 8/26/2021 13:08'
 }
 RtMorphExample >> updatePicture [
 
 	| patcher elapsed |
 	patcher := PicPatcherCanvas new.
 	patcher invalidationStamp: numFrames.
-	elapsed := Time microsecondsToRun: [
+	elapsed := Time nanosecondsToRun: [
 		patcher fullDrawMorph: morph].
 	pictureUpdateTimes add: elapsed.
 	picture := morph picture.
