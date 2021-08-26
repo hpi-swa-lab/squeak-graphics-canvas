@@ -148,15 +148,32 @@ PicCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: bw borderC
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 8/10/2021 15:01'
+	#'squeak_changestamp' : 'stlu 8/25/2021 15:08'
+}
+PicCanvas >> drawString: s from: firstIndex to: lastIndex at: pt font: fontOrNil color: aColor [
+
+	self addCommand: (PicString new
+							contents: s;
+							startIndex: firstIndex;
+							stopIndex: lastIndex;
+							position: pt;
+							font: fontOrNil;
+							color: aColor;
+							yourself)
+]
+
+{
+	#category : #'drawing-text',
+	#'squeak_changestamp' : 'stlu 8/25/2021 15:08'
 }
 PicCanvas >> drawString: s from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: c [
 
 	self addCommand: (PicString new
 							contents: s;
-							from: firstIndex;
-							to: lastIndex;
-							bounds: boundsRect;
+							startIndex: firstIndex;
+							stopIndex: lastIndex;
+							position: boundsRect origin;
+							maxExtent: boundsRect extent;
 							font: fontOrNil;
 							color: c;
 							yourself)

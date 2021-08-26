@@ -3,11 +3,14 @@ Class {
 	#superclass : #PicDrawing,
 	#instVars : [
 		'contents',
-		'from',
-		'to',
-		'bounds',
+		'startIndex',
+		'stopIndex',
+		'position',
+		'maxExtent',
 		'font',
-		'color'
+		'color',
+		'fullExtent',
+		'rightEdges'
 	],
 	#category : #'RenderThee-Pictures'
 }
@@ -23,20 +26,35 @@ PicString >> acceptVisitor: aVisitor [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/25/2021 15:46'
 }
 PicString >> bounds [
 
-	^ bounds
+	| extent |
+	extent := self extent.
+	extent > (0@0) ifFalse: [^ nil].
+	^ position extent: extent
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 8/26/2021 14:41'
 }
-PicString >> bounds: anObject [
+PicString >> calculateRightEdges [
 
-	bounds := anObject.
+	| font left |
+	font := self font.
+	rightEdges := ExternalType float allocate: self length.
+	
+	left := 0.
+	startIndex to: stopIndex do: [:charIndex |
+		| char width |
+		char := contents at: charIndex.
+		width := font widthOf: char.
+		left := left + width.
+		rightEdges at: charIndex - startIndex + 1 put: left].
+	
+	fullExtent := left @ font height.
 ]
 
 {
@@ -77,35 +95,54 @@ PicString >> contents: anObject [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/25/2021 13:52'
 }
 PicString >> drawOn: aCanvas [
 
-	aCanvas
-		drawString: contents
-		from: from
-		to: to
-		in: bounds
-		font: font
-		color: color
+	maxExtent
+		ifNil: [
+			aCanvas
+				drawString: contents
+				from: startIndex to: stopIndex
+				at: position
+				font: font
+				color: color]
+		ifNotNil: [
+			aCanvas
+				drawString: contents
+				from: startIndex to: stopIndex
+				in: (position extent: maxExtent)
+				font: font
+				color: color]
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/25/2021 15:47'
 }
 PicString >> estimatedBounds [
 
-	^ bounds
+	^ self bounds
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/25/2021 15:43'
+}
+PicString >> extent [
+
+	^ self maxExtent
+		ifNil: [self fullExtent]
+		ifNotNil: [:ext | self fullExtent min: ext]
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/25/2021 15:07'
 }
 PicString >> font [
 
-	^ font
+	^ font ifNil: [font := TextStyle defaultFont]
 ]
 
 {
@@ -119,20 +156,20 @@ PicString >> font: anObject [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/25/2021 16:29'
 }
-PicString >> from [
+PicString >> fullExtent [
 
-	^ from
+	^ self rightEdges last @ font height
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/25/2021 15:38'
 }
-PicString >> from: anObject [
+PicString >> fullExtent: anObject [
 
-	from := anObject.
+	fullExtent := anObject.
 ]
 
 {
@@ -146,18 +183,101 @@ PicString >> isTranslucent [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/25/2021 14:21'
 }
-PicString >> to [
+PicString >> length [
 
-	^ to
+	^ stopIndex - startIndex + 1
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/25/2021 16:30'
 }
-PicString >> to: anObject [
+PicString >> maxCorner [
 
-	to := anObject.
+	^ maxExtent ifNotNil: [position + maxExtent]
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/20/2021 12:58'
+}
+PicString >> maxExtent [
+
+	^ maxExtent
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/20/2021 12:58'
+}
+PicString >> maxExtent: anObject [
+
+	maxExtent := anObject.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/25/2021 15:08'
+}
+PicString >> position [
+
+	^ position
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/25/2021 15:08'
+}
+PicString >> position: anObject [
+
+	position := anObject.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/25/2021 16:26'
+}
+PicString >> rightEdges [
+
+	^ rightEdges ifNil: [
+		self calculateRightEdges.
+		rightEdges]
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/20/2021 12:26'
+}
+PicString >> startIndex [
+
+	^ startIndex
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/20/2021 12:26'
+}
+PicString >> startIndex: anObject [
+
+	startIndex := anObject.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/20/2021 12:26'
+}
+PicString >> stopIndex [
+
+	^ stopIndex
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 8/20/2021 12:26'
+}
+PicString >> stopIndex: anObject [
+
+	stopIndex := anObject.
 ]
