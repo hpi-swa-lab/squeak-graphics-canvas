@@ -6,12 +6,27 @@ Class {
 
 {
 	#category : #creation,
-	#'squeak_changestamp' : 'stlu 8/12/2021 18:40'
+	#'squeak_changestamp' : 'stlu 8/13/2021 12:56'
 }
 RtWorkspaces class >> allButFirstLine: aString [
 
 	aString lineIndicesDo: [:start :endWithoutDelimites :end |
+		end >= aString size ifTrue: [^ ''].
 		^ aString copyFrom: end + 1 to: aString size].
+]
+
+{
+	#category : #workspaces,
+	#'squeak_changestamp' : 'stlu 8/27/2021 00:20'
+}
+RtWorkspaces class >> batchedTextRendering [ <title: 'Rudimentary batched text rendering'> <auto: true> <collapsed: false> | example glyphTexture renderer |
+"Batched text rendering is finally working. There's still a lot of issues with it like glyph quality, no interleaved batches, etc."
+example := RtBatchingExample world.
+
+"We are finally actually using the texture atlas."
+renderer := example renderer.
+glyphTexture := renderer glyphStore texture.
+(glyphTexture library withErrorChecking makeCurrentDuring: [glyphTexture asForm]) asMorph openInHand.
 ]
 
 {
@@ -92,6 +107,37 @@ array := Array new: 14.
 " '32,700 per second. 30.5 microseconds per run. 0 % GC time.'"
 
 Smalltalk unloadModule: 'Float32ArrayBulkPlugin'.
+]
+
+{
+	#category : #workspaces,
+	#'squeak_changestamp' : 'stlu 8/27/2021 00:04'
+}
+RtWorkspaces class >> copyingMemoryIsFast [ <title: 'Advantages in Caching'> <auto: true> <collapsed: false> | original repIndex repSize replacement |
+"-----------------------------------------------------------"
+"Copying chunks of memory is MUCH faster"
+"-----------------------------------------------------------"
+repSize := 1000.
+replacement := Float32Array new: repSize.
+1 to: repSize do: [:index | replacement at: index put: index asFloat].
+original := Float32Array new: 512 squared.
+repIndex := 2.
+"-----------------------------------------------------------"
+
+[original replaceFrom: repIndex to: repIndex + repSize - 1 with: replacement startingAt: 1] bench.
+"1000|512^2 '3,040,000 per second. 329 nanoseconds per run. 0 % GC time.'"
+"100|512^2 '18,200,000 per second. 54.9 nanoseconds per run. 0 % GC time.'"
+"10|1000 '37,200,000 per second. 26.9 nanoseconds per run. 0 % GC time.'"
+
+[1 to: repSize do: [:index | original at: repIndex + index - 1 put: (replacement at: index)]] bench.
+"1000|512^2 '35,800 per second. 28 microseconds per run. 0 % GC time.'"
+"100|512^2 '354,000 per second. 2.82 microseconds per run. 0 % GC time.'"
+"10|1000 '3,400,000 per second. 294 nanoseconds per run. 0 % GC time.'"
+
+"-----------------------------------------------------------"
+
+"We could use this extensively, but right now we're only using it for Picstring"
+PicString >> #calculateRightEdges.
 ]
 
 {
@@ -181,7 +227,7 @@ RtWorkspaces class >> openWorkspace: aSymbol [
 
 {
 	#category : #workspaces,
-	#'squeak_changestamp' : 'stlu 8/12/2021 18:52'
+	#'squeak_changestamp' : 'stlu 8/20/2021 13:01'
 }
 RtWorkspaces class >> pictureAndCanvasBenchmarking [ <title: 'Picture and Canvas Benchmarking'> <auto: true> <collapsed: true> | formCanvas fullMorphCanvas fullMorphPic fullNormalCanvas fullNormalPic morph nullCanvas sparseMorphCanvas sparseMorphPic sparseNormalCanvas sparseNormalPic visitor w1 w10 w11 w12 w13 w14 w15 w16 w2 w3 w4 w5 w6 w7 w8 w9 world |
 [
@@ -238,7 +284,7 @@ morph := world.
 [morph picture] bench.
 " '13,900,000 per second. 71.8 nanoseconds per run. 0 % GC time.'"
 
-[morph picture: 42] bench.
+[morph picture: fullMorphPic] bench.
 " '8,570,000 per second. 117 nanoseconds per run. 0 % GC time.'"
 
 "_______________________________________________"
@@ -327,9 +373,9 @@ RtFormCanvasExample morph: morph.
 
 {
 	#category : #workspaces,
-	#'squeak_changestamp' : 'stlu 8/12/2021 19:02'
+	#'squeak_changestamp' : 'stlu 8/13/2021 11:03'
 }
-RtWorkspaces class >> textureAtlasAllocator [ <title: 'Texture atles allocator'> <auto: true> <collapsed: true> | allocations allocator fc requests |
+RtWorkspaces class >> textureAtlasAllocator [ <title: 'Texture atlas allocator'> <auto: true> <collapsed: true> | allocations allocator fc requests |
 allocator := RtBucketAllocator extent: 1024 @ 1024.
 allocator numColumns: 2.
 
