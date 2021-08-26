@@ -142,6 +142,15 @@ PicGroup >> isEmpty [
 ]
 
 {
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 8/13/2021 13:16'
+}
+PicGroup >> isTranslucent [
+
+	^ children anySatisfy: [:each | each isTranslucent]
+]
+
+{
 	#category : #copying,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }

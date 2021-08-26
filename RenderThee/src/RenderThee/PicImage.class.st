@@ -101,6 +101,15 @@ PicImage >> form: anObject [
 ]
 
 {
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 8/13/2021 13:12'
+}
+PicImage >> isTranslucent [
+
+	^ form isTranslucent "most likely true even if actually opaque"
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }

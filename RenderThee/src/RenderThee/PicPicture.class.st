@@ -95,6 +95,15 @@ PicPicture >> isTransform [
 ]
 
 {
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 8/13/2021 13:10'
+}
+PicPicture >> isTranslucent [
+
+	self subclassResponsibility.
+]
+
+{
 	#category : #debugging,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }

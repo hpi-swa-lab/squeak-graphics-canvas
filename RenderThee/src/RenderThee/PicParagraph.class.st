@@ -89,6 +89,15 @@ PicParagraph >> estimatedBounds [
 ]
 
 {
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 8/13/2021 13:14'
+}
+PicParagraph >> isTranslucent [
+
+	^ color isTranslucent
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }

@@ -108,3 +108,12 @@ PicShape >> fillStyle: anObject [
 
 	fillStyle := anObject.
 ]
+
+{
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 8/13/2021 13:14'
+}
+PicShape >> isTranslucent [
+
+	^ fillStyle isTranslucent
+]
