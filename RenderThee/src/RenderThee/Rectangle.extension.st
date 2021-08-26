@@ -2,11 +2,11 @@ Extension { #name : #Rectangle }
 
 {
 	#category : #'*RenderThee',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 8/26/2021 12:27'
 }
 Rectangle class >> infinite [
 
 	^ self
-		origin: -1e10 asPoint
-		corner: 1e10 asPoint
+		origin: SmallInteger minVal asPoint
+		corner: SmallInteger maxVal asPoint
 ]
