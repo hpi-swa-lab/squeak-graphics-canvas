@@ -10,43 +10,6 @@ Class {
 }
 
 {
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicShape class >> bounds: aRectangle borderStyle: aBorderStyle [
-
-	^ self
-		bounds: aRectangle
-		fillStyle: (SolidFillStyle color: Color transparent)
-		borderStyle: aBorderStyle
-]
-
-{
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicShape class >> bounds: aRectangle fillStyle: aFillStyle [
-
-	^ self
-		bounds: aRectangle
-		fillStyle: aFillStyle
-		borderStyle: (SimpleBorder width: 0)
-]
-
-{
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicShape class >> bounds: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
-
-	^ self new
-		bounds: aRectangle;
-		fillStyle: aFillStyle;
-		borderStyle: aBorderStyle;
-		yourself
-]
-
-{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }

@@ -8,20 +8,6 @@ Class {
 }
 
 {
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicRoundedRectangle class >> bounds: aRectangle radius: cornerRadius fillStyle: aFillStyle borderStyle: aBorderStyle [
-
-	^ self new
-		bounds: aRectangle;
-		radius: cornerRadius;
-		fillStyle: aFillStyle;
-		borderStyle: aBorderStyle;
-		yourself
-]
-
-{
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }

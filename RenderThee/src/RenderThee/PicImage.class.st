@@ -11,20 +11,6 @@ Class {
 }
 
 {
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicImage class >> form: aForm origin: aPoint sourceRect: aRectangle rule: anInteger [
-
-	^ self new
-		form: aForm;
-		origin: aPoint;
-		sourceRect: aRectangle;
-		combinationRule: anInteger;
-		yourself
-]
-
-{
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:04'
 }

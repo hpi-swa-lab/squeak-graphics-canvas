@@ -10,19 +10,6 @@ Class {
 }
 
 {
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicParagraph class >> paragraph: aParagraph bounds: aRectangle color: aColor [
-
-	^ self new
-		paragraph: aParagraph;
-		bounds: aRectangle;
-		color: aColor;
-		yourself
-]
-
-{
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }

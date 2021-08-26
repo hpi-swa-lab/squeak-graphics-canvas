@@ -11,20 +11,6 @@ Class {
 }
 
 {
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicLine class >> from: from to: to width: width color: color [
-
-	^ self new
-		from: from;
-		to: to;
-		width: width;
-		color: color;
-		yourself
-]
-
-{
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:04'
 }

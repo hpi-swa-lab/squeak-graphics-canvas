@@ -13,22 +13,6 @@ Class {
 }
 
 {
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicString class >> contents: aString from: startIndex to: stopIndex in: boundsRect font: fontOrNil color: aColor [
-
-	^ self new
-		contents: aString;
-		from: startIndex;
-		to: stopIndex;
-		bounds: boundsRect;
-		font: fontOrNil;
-		color: aColor;
-		yourself
-]
-
-{
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
