@@ -87,6 +87,25 @@ PicImage >> form: anObject [
 ]
 
 {
+	#category : #thumbnail,
+	#'squeak_changestamp' : 'stlu 8/13/2021 16:44'
+}
+PicImage >> iconOrThumbnailOfSize: aNumberOrPoint [ 
+	"Answer an appropiate form to represent the receiver"
+	| canvas |
+	canvas := FormCanvas extent: aNumberOrPoint asPoint depth: 32.
+	canvas
+		transformBy: (MorphicTransform new withScale: (aNumberOrPoint asPoint / sourceRect extent))
+		during: [:c |
+			c
+				image: form
+				at: 0@0
+				sourceRect: sourceRect
+				rule: combinationRule].
+	^ canvas form
+]
+
+{
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 8/13/2021 13:12'
 }

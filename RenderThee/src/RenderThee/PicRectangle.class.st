@@ -26,6 +26,21 @@ PicRectangle >> drawOn: aCanvas [
 ]
 
 {
+	#category : #thumbnail,
+	#'squeak_changestamp' : 'stlu 8/13/2021 16:45'
+}
+PicRectangle >> iconOrThumbnailOfSize: aNumberOrPoint [ 
+	"Answer an appropiate form to represent the receiver"
+	| canvas |
+	canvas := FormCanvas extent: aNumberOrPoint asPoint depth: 32.
+	canvas
+		frameAndFillRectangle: (0@0 extent: aNumberOrPoint)
+		fillStyle: fillStyle
+		borderStyle: borderStyle.
+	^ canvas form
+]
+
+{
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 3/13/2021 12:28'
 }
