@@ -87,6 +87,15 @@ PicPicture >> isRectangle [
 
 {
 	#category : #testing,
+	#'squeak_changestamp' : 'stlu 8/13/2021 13:04'
+}
+PicPicture >> isShape [
+
+	^ false
+]
+
+{
+	#category : #testing,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:48'
 }
 PicPicture >> isTransform [
