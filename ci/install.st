@@ -21,6 +21,7 @@ Smalltalk at: #MCMcmUpdater ifPresent: [ :updater |
 
 "Close update transcript"
 ReleaseBuilder deleteAllWindows.
+PreferenceWizardMorph allInstancesDo: [:each | each abandon].
 
 [[
   Utilities useAuthorInitials: 'CI' during: [
@@ -78,8 +79,9 @@ ReleaseBuilder deleteAllWindows.
   Preferences disable: #alternativeBrowseIt.
   MorphicProject worldGridEnabled: true.
 
-  "Add GLConstants to workspace pools"
-  
+  "Add constants to workspace pools"
+  Workspace addLookupPool: GLConstants.
+  Workspace addLookupPool: GLFWConstants.
 
   "Open FrameRateMorph"
   FrameRateMorph new
@@ -87,6 +89,16 @@ ReleaseBuilder deleteAllWindows.
     setToAdhereToEdge: #bottomRight;
     color: Color white;
     lock.
+  
+  "Open MagnifierMorph"
+  MagnifierMorph new
+    openInWorld;
+    setToAdhereToEdge: #bottomLeft;
+    magnification: 4;
+    lock.
+  
+  "Open pre-prepared workspaces"
+  RtWorkspaces openAll.
 ]
     on: Warning do: [ :ex | ex resume: true ]]
       on: Error do: [ :ex |
