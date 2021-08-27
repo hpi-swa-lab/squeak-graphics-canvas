@@ -1,4 +1,4 @@
 Package {
-	#'squeak_changestamp' : true,
-	#name : #'RawBitsBulkPlugins-Primitives'
+	#name : #'RawBitsBulkPlugins-Primitives',
+	#'squeak_changestamp' : true
 }
