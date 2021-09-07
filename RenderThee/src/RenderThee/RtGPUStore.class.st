@@ -84,15 +84,15 @@ RtGPUStore >> initializeFormat [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/8/2021 20:01'
+	#'squeak_changestamp' : 'stlu 9/1/2021 14:09'
 }
 RtGPUStore >> initializeTexture [
 
 	texture := GLTexture2D create
 				wrapS: GL_REPEAT;
 				wrapT: GL_REPEAT;
-				minificationFilter: GL_NEAREST;
-				magnificationFilter: GL_NEAREST;
+				minificationFilter: self minMagFilter;
+				magnificationFilter: self minMagFilter;
 				yourself.
 	
 	texture
@@ -101,6 +101,15 @@ RtGPUStore >> initializeTexture [
 		data: nil
 		format: textureFormat
 		type: textureType
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/1/2021 14:09'
+}
+RtGPUStore >> minMagFilter [
+
+	^ GL_NEAREST
 ]
 
 {

@@ -32,24 +32,12 @@ RtManagedGPUStore >> initializeFormat [
 ]
 
 {
-	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/26/2021 18:03'
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/1/2021 14:09'
 }
-RtManagedGPUStore >> initializeTexture [
+RtManagedGPUStore >> minMagFilter [
 
-	texture := GLTexture2D create
-				wrapS: GL_REPEAT;
-				wrapT: GL_REPEAT;
-				minificationFilter: GL_LINEAR;
-				magnificationFilter: GL_LINEAR;
-				yourself.
-	
-	texture
-		extent: extent
-		internalFormat: dataFormat
-		data: nil
-		format: textureFormat
-		type: textureType
+	^ GL_LINEAR
 ]
 
 {
