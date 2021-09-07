@@ -183,20 +183,20 @@ RtLinearGPUStore >> stagingBuffer: anObject [
 
 {
 	#category : #staging,
-	#'squeak_changestamp' : 'stlu 7/1/2021 20:50'
+	#'squeak_changestamp' : 'stlu 8/27/2021 10:44'
 }
 RtLinearGPUStore >> upload [
 
 	| height |
-	height := lastElementIndex - 1 // extent x + 1.
-	texture
+	height := lastElementIndex // alignment - 1 // extent x + 1.
+	"texture
 		extent: extent x @ height
 		internalFormat: dataFormat
 		data: stagingBuffer
 		format: textureFormat
-		type: textureType
+		type: textureType"
 	
-	"GL
+	GL
 		textureSubImage2D: texture id
 		with: 0
 		with: 0
@@ -205,5 +205,5 @@ RtLinearGPUStore >> upload [
 		with: height
 		with: textureFormat
 		with: textureType
-		with: stagingBuffer"
+		with: stagingBuffer
 ]
