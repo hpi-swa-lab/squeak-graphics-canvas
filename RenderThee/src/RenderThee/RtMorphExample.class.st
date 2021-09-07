@@ -67,11 +67,22 @@ RtMorphExample class >> world [
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 7/2/2021 19:05'
+	#'squeak_changestamp' : 'stlu 8/30/2021 16:52'
 }
 RtMorphExample >> activeModifierKeys [
 
-	^ 0 "can't be polled. should we remember it?"
+	| bits |
+	bits := 0.
+	((window getKey: GLFW_KEY_LEFT_SHIFT) = GLFW_PRESS
+		or: [(window getKey: GLFW_KEY_RIGHT_SHIFT) = GLFW_PRESS]) ifTrue: [
+			bits := bits bitOr: ShiftKeyBit].
+	((window getKey: GLFW_KEY_LEFT_CONTROL) = GLFW_PRESS
+		or: [(window getKey: GLFW_KEY_RIGHT_CONTROL) = GLFW_PRESS]) ifTrue: [
+			bits := bits bitOr: CtrlKeyBit].
+	((window getKey: GLFW_KEY_LEFT_ALT) = GLFW_PRESS
+		or: [(window getKey: GLFW_KEY_RIGHT_ALT) = GLFW_PRESS]) ifTrue: [
+			bits := bits bitOr: CommandKeyBit].
+	^ bits
 ]
 
 {
@@ -129,59 +140,78 @@ RtMorphExample >> initialize [
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 7/3/2021 18:12'
+	#'squeak_changestamp' : 'stlu 9/6/2021 13:58'
 }
 RtMorphExample >> key: key scanCode: scanCode changedTo: state with: mods [
 
-	| eventBuffer type char charCode modifierBits |
+	| eventBuffer type keyCode codePoint modifierBits virtualKey |
+	super key: key scanCode: scanCode changedTo: state with: mods.
 	type := state caseOf: {
 		[GLFW_RELEASE] -> [EventKeyUp].
 		[GLFW_PRESS] -> [EventKeyDown].
-		[GLFW_REPEAT] -> [^ self].}.
-	FileStream stdout nextPutAll: (scanCode printStringBase: 16); cr; flush.
-	char := (self keyCodeTable at: key) ifNil: [^ self].
-	charCode := char asInteger.
+		[GLFW_REPEAT] -> [^ self]}.
+	keyCode := (self keyCodeForKey: key) ifNil: [^ self].
+	virtualKey := EventSensor virtualKeyAt: keyCode.
 	modifierBits := self convertModifierKeys: mods.
+	(virtualKey isCharacter
+		and: [virtualKey isAlphaNumeric]
+		and: [(modifierBits noMask: ShiftKeyBit)]) ifTrue: [
+			virtualKey := virtualKey asLowercase].
+	
+	codePoint := virtualKey isCharacter ifTrue: [virtualKey codePoint] ifFalse: [0].
 	
 	eventBuffer := {
 		EventTypeKeyboard.
 		0.
-		charCode.
+		keyCode.
 		type.
 		modifierBits.
-		char codePoint.
+		codePoint.
 		0.
-		1}.
+		0}.
+	self log: 'K ' , eventBuffer asString.
 	EventSensor default queueEvent: eventBuffer.
 	
-	(type = EventKeyUp and: [charCode < 32]) ifTrue: [
-		"Squeak expects keystroke events for these keys, while GLFW does not report them as such."
+	type = EventKeyDown ifTrue: [
+		virtualKey isCharacter ifFalse: [^ self].
+		(virtualKey isAlphaNumeric and: [mods = 0 or: [mods anyMask: ShiftKeyBit]]) ifTrue: [^ self]. "handled by keyStroke:"
 		eventBuffer := {
 			EventTypeKeyboard.
 			0.
-			charCode.
+			keyCode.
 			EventKeyChar.
 			modifierBits.
-			char codePoint.
+			codePoint.
 			0.
-			1}.
+			0}.
+		self log: 'K ' , eventBuffer asString.
 		EventSensor default queueEvent: eventBuffer].
 ]
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 7/2/2021 23:35'
+	#'squeak_changestamp' : 'stlu 8/30/2021 16:15'
+}
+RtMorphExample >> keyCodeForKey: aGLFWKey [
+
+	^ self keyCodeTable at: aGLFWKey
+]
+
+{
+	#category : #input,
+	#'squeak_changestamp' : 'stlu 8/30/2021 17:16'
 }
 RtMorphExample >> keyCodeTable [
 
 	^ keyCodeTable ifNil: [
-		keyCodeTable := Dictionary newFromPairs: {
+		| virtualKeys |
+		virtualKeys := {
 			GLFW_KEY_UNKNOWN. nil.
 			GLFW_KEY_SPACE. Character space.
 			GLFW_KEY_APOSTROPHE. $'.
-			GLFW_KEY_COMMA. $,.
+			GLFW_KEY_COMMA. #squeakComma.
 			GLFW_KEY_MINUS. $-.
-			GLFW_KEY_PERIOD. $..
+			GLFW_KEY_PERIOD. #squeakPeriod.
 			GLFW_KEY_SLASH. $/.
 			GLFW_KEY_0. $0.
 			GLFW_KEY_1. $1.
@@ -228,7 +258,7 @@ RtMorphExample >> keyCodeTable [
 			GLFW_KEY_WORLD_1. nil.
 			GLFW_KEY_WORLD_2. nil.
 			GLFW_KEY_ESCAPE. Character escape.
-			GLFW_KEY_ENTER. Character enter.
+			GLFW_KEY_ENTER. Character return.
 			GLFW_KEY_TAB. Character tab.
 			GLFW_KEY_BACKSPACE. Character backspace.
 			GLFW_KEY_INSERT. Character insert.
@@ -242,66 +272,72 @@ RtMorphExample >> keyCodeTable [
 			GLFW_KEY_HOME. Character home.
 			GLFW_KEY_END. Character end.
 			GLFW_KEY_CAPS_LOCK. #capsLock.
-			GLFW_KEY_SCROLL_LOCK. nil.
-			GLFW_KEY_NUM_LOCK. nil.
-			GLFW_KEY_PRINT_SCREEN. nil.
-			GLFW_KEY_PAUSE. nil.
-			GLFW_KEY_F1. nil.
-			GLFW_KEY_F2. nil.
-			GLFW_KEY_F3. nil.
-			GLFW_KEY_F4. nil.
-			GLFW_KEY_F5. nil.
-			GLFW_KEY_F6. nil.
-			GLFW_KEY_F7. nil.
-			GLFW_KEY_F8. nil.
-			GLFW_KEY_F9. nil.
-			GLFW_KEY_F10. nil.
-			GLFW_KEY_F11. nil.
-			GLFW_KEY_F12. nil.
-			GLFW_KEY_F13. nil.
-			GLFW_KEY_F14. nil.
-			GLFW_KEY_F15. nil.
-			GLFW_KEY_F16. nil.
-			GLFW_KEY_F17. nil.
-			GLFW_KEY_F18. nil.
-			GLFW_KEY_F19. nil.
-			GLFW_KEY_F20. nil.
-			GLFW_KEY_F21. nil.
-			GLFW_KEY_F22. nil.
-			GLFW_KEY_F23. nil.
-			GLFW_KEY_F24. nil.
-			GLFW_KEY_F25. nil.
-			GLFW_KEY_KP_0. $0.
-			GLFW_KEY_KP_1. $1.
-			GLFW_KEY_KP_2. $2.
-			GLFW_KEY_KP_3. $3.
-			GLFW_KEY_KP_4. $4.
-			GLFW_KEY_KP_5. $5.
-			GLFW_KEY_KP_6. $6.
-			GLFW_KEY_KP_7. $7.
-			GLFW_KEY_KP_8. $8.
-			GLFW_KEY_KP_9. $9.
-			GLFW_KEY_KP_DECIMAL. $,.
-			GLFW_KEY_KP_DIVIDE. $/.
-			GLFW_KEY_KP_MULTIPLY. $*.
-			GLFW_KEY_KP_SUBTRACT. $-.
-			GLFW_KEY_KP_ADD. $+.
+			GLFW_KEY_SCROLL_LOCK. #'VK_SCROLL'.
+			GLFW_KEY_NUM_LOCK. #'VK_NUMLOCK'.
+			GLFW_KEY_PRINT_SCREEN. #'VK_SNAPSHOT'.
+			GLFW_KEY_PAUSE. #'VK_PAUSE'.
+			GLFW_KEY_F1. #F1.
+			GLFW_KEY_F2. #F1.
+			GLFW_KEY_F3. #F3.
+			GLFW_KEY_F4. #F4.
+			GLFW_KEY_F5. #F5.
+			GLFW_KEY_F6. #F6.
+			GLFW_KEY_F7. #F7.
+			GLFW_KEY_F8. #F8.
+			GLFW_KEY_F9. #F9.
+			GLFW_KEY_F10. #F10.
+			GLFW_KEY_F11. #F11.
+			GLFW_KEY_F12. #F12.
+			GLFW_KEY_F13. #F13.
+			GLFW_KEY_F14. #F14.
+			GLFW_KEY_F15. #F15.
+			GLFW_KEY_F16. #F16.
+			GLFW_KEY_F17. #F17.
+			GLFW_KEY_F18. #F18.
+			GLFW_KEY_F19. #F19.
+			GLFW_KEY_F20. #F20.
+			GLFW_KEY_F21. #F21.
+			GLFW_KEY_F22. #F22.
+			GLFW_KEY_F23. #F23.
+			GLFW_KEY_F24. #F24.
+			GLFW_KEY_F25. #F25.
+			GLFW_KEY_KP_0. #num0.
+			GLFW_KEY_KP_1. #num1.
+			GLFW_KEY_KP_2. #num2.
+			GLFW_KEY_KP_3. #num3.
+			GLFW_KEY_KP_4. #num4.
+			GLFW_KEY_KP_5. #num5.
+			GLFW_KEY_KP_6. #num6.
+			GLFW_KEY_KP_7. #num7.
+			GLFW_KEY_KP_8. #num8.
+			GLFW_KEY_KP_9. #num9.
+			GLFW_KEY_KP_DECIMAL. #'VK_SEPARATOR'.
+			GLFW_KEY_KP_DIVIDE. #numDiv.
+			GLFW_KEY_KP_MULTIPLY. #numMul.
+			GLFW_KEY_KP_SUBTRACT. #numSub.
+			GLFW_KEY_KP_ADD. #numAdd.
 			GLFW_KEY_KP_ENTER. Character enter.
 			GLFW_KEY_KP_EQUAL. $=.
-			GLFW_KEY_LEFT_SHIFT. nil.
-			GLFW_KEY_LEFT_CONTROL. nil.
-			GLFW_KEY_LEFT_ALT. nil.
+			GLFW_KEY_LEFT_SHIFT. #shift.
+			GLFW_KEY_LEFT_CONTROL. EventSensor mapControlKeysToCommandKeys ifTrue: [#command] ifFalse: [#control].
+			GLFW_KEY_LEFT_ALT. EventSensor mapAltKeysToOptionKeys ifTrue: [#option] ifFalse: [#command].
 			GLFW_KEY_LEFT_SUPER. nil.
-			GLFW_KEY_RIGHT_SHIFT. nil.
-			GLFW_KEY_RIGHT_CONTROL. nil.
-			GLFW_KEY_RIGHT_ALT. nil.
+			GLFW_KEY_RIGHT_SHIFT. #shift.
+			GLFW_KEY_RIGHT_CONTROL. EventSensor mapControlKeysToCommandKeys ifTrue: [#command] ifFalse: [#control].
+			GLFW_KEY_RIGHT_ALT. EventSensor mapAltKeysToOptionKeys ifTrue: [#option] ifFalse: [#command].
 			GLFW_KEY_RIGHT_SUPER. nil.
-			GLFW_KEY_MENU. nil }]
+			GLFW_KEY_MENU. nil }.
+		keyCodeTable := Dictionary new.
+		virtualKeys pairsDo: [:glfwKey :virtualKey |
+			| keyCode |
+			keyCode := EventSensor virtualKeyTable keyAtValue: virtualKey ifAbsent: nil.
+			keyCodeTable at: glfwKey put: keyCode].
+		keyCodeTable].
 ]
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 7/2/2021 23:54'
+	#'squeak_changestamp' : 'stlu 8/30/2021 17:20'
 }
 RtMorphExample >> keyStroke: codePoint [
 
@@ -311,10 +347,11 @@ RtMorphExample >> keyStroke: codePoint [
 		0.
 		codePoint.
 		EventKeyChar.
-		0. "mods"
+		self activeModifierKeys.
 		codePoint.
 		0.
-		1}.
+		0}.
+	self log: 'S ' , eventBuffer asString.
 	EventSensor default queueEvent: eventBuffer.
 ]
 
@@ -341,7 +378,7 @@ RtMorphExample >> morph: aMorph [
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 7/3/2021 18:56'
+	#'squeak_changestamp' : 'stlu 8/30/2021 17:04'
 }
 RtMorphExample >> mouseButton: button changedTo: state with: modifierKeys [
 
@@ -355,13 +392,13 @@ RtMorphExample >> mouseButton: button changedTo: state with: modifierKeys [
 		self activeMouseButtons.
 		self convertModifierKeys: modifierKeys.
 		0.
-		1 }.
+		0 }.
 	EventSensor default processEvent: eventBuffer.
 ]
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 7/3/2021 18:57'
+	#'squeak_changestamp' : 'stlu 8/30/2021 17:04'
 }
 RtMorphExample >> mousePositionChangedTo: aPoint [
 
@@ -375,7 +412,7 @@ RtMorphExample >> mousePositionChangedTo: aPoint [
 		self activeMouseButtons.
 		self activeModifierKeys.
 		0.
-		1 }.
+		0 }.
 	EventSensor default processEvent: eventBuffer.
 ]
 
@@ -400,6 +437,35 @@ RtMorphExample >> printWindowTitleOn: aStream [
 			nextPutAll: ' | Pic: ';
 			nextPutAll: (pictureUpdateTimes average / 1e3 printShowingDecimalPlaces: 3);
 			nextPutAll: 'us'].
+]
+
+{
+	#category : #running,
+	#'squeak_changestamp' : 'stlu 9/6/2021 15:14'
+}
+RtMorphExample >> render [
+
+	self subclassResponsibility.
+]
+
+{
+	#category : #input,
+	#'squeak_changestamp' : 'stlu 8/30/2021 14:21'
+}
+RtMorphExample >> scrolledBy: aPoint [
+
+	| delta eventBuffer |
+	delta := (aPoint * MouseWheelEvent scrollUnitsPerMouseWheelNotch) ceiling.
+	eventBuffer := {
+		EventTypeMouseWheel.
+		0.
+		delta x.
+		delta y.
+		self activeMouseButtons.
+		self activeModifierKeys.
+		0.
+		1 }.
+	EventSensor default processEvent: eventBuffer.
 ]
 
 {
