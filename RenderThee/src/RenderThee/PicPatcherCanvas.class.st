@@ -13,7 +13,7 @@ Class {
 
 {
 	#category : #'drawing-general',
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:41'
+	#'squeak_changestamp' : 'stlu 8/27/2021 15:15'
 }
 PicPatcherCanvas >> fullDrawMorph: aMorph [
 
@@ -22,6 +22,7 @@ PicPatcherCanvas >> fullDrawMorph: aMorph [
 	
 	(picture notNil and: [picture isValid]) ifTrue: [
 		| offset |
+		picture isEmpty ifTrue: [^ self].
 		offset := aMorph position - picture position.
 		offset isZero
 			ifTrue: [
