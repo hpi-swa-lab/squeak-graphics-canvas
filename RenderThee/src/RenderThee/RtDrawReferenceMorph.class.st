@@ -6,20 +6,22 @@ Class {
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 8/26/2021 13:06'
+	#'squeak_changestamp' : 'stlu 9/1/2021 15:37'
 }
 RtDrawReferenceMorph >> drawOn: aCanvas [
 
 	aCanvas clipBy: self bounds during: [:canvas |
-		| strip stripHeight |
+		| stripe stripeHeight stripeTop |
 		canvas fillColor: Color red.
-		stripHeight := 20.
-		strip := 1.
-		[strip - 1 * stripHeight <= self height] whileTrue: [
+		stripeHeight := 20.
+		stripe := 1.
+		stripeTop := self top.
+		[stripeTop < self bottom] whileTrue: [
 			canvas
-				fillRectangle: ((self left @ (strip - 1 * stripHeight + self top)) extent: self width @ stripHeight)
-				color: (strip even ifTrue: [Color blue] ifFalse: [Color gray]).
-			strip := strip + 1.]]
+				fillRectangle: ((self left @ stripeTop) corner: self right @ stripeTop + stripeHeight)
+				color: (stripe even ifTrue: [Color blue] ifFalse: [Color gray]).
+			stripeTop := stripeTop + stripeHeight.
+			stripe := stripe + 1]].
 ]
 
 {
