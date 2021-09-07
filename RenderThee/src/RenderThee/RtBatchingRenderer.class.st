@@ -613,21 +613,21 @@ RtBatchingRenderer >> render: aPicture [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/26/2021 15:06'
+	#'squeak_changestamp' : 'stlu 9/1/2021 16:38'
 }
 RtBatchingRenderer >> reset [
 
 	transientStoreF reset.
 	transientStoreI reset.
 	
-	self flag: #todo. "reset to bounds"
-	clipRect := Rectangle infinite.
+	clipRect := bounds ifNil: [Rectangle infinite].
 	transform := Matrix2x3 identity.
 	
 	transformIndex := self allocateTransform: transform.
 	clipRectIndex := self allocateClipRect: clipRect.
 	zIndex := 1.
 	
+	opaqueRectangleBatch reset.
 	rectangleBatch reset.
 	textBatch reset.
 ]
@@ -866,13 +866,12 @@ RtBatchingRenderer >> visitImage: aPicImage [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:48'
+	#'squeak_changestamp' : 'stlu 9/7/2021 10:25'
 }
 RtBatchingRenderer >> visitMorph: aPicMorph [
 
-	| dist |
 	self visitGroup: aPicMorph.
-	dist := currentFrame - aPicMorph invalidationStamp.
+	"dist := currentFrame - aPicMorph invalidationStamp.
 	dist < 15 ifTrue: [
 		| color |
 		color := Color green alpha: (15 - dist) / 15.0.
@@ -880,7 +879,7 @@ RtBatchingRenderer >> visitMorph: aPicMorph [
 			frameAndFillRectangle: aPicMorph bounds
 			radius: 0.0
 			fillStyle: (SolidFillStyle color: Color transparent)
-			borderStyle: (SimpleBorder width: 1 color: color)].
+			borderStyle: (SimpleBorder width: 1 color: color)]."
 ]
 
 {
