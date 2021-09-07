@@ -951,7 +951,7 @@ RtBatchingRenderer >> visitString: aPicString [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 8/26/2021 13:46'
+	#'squeak_changestamp' : 'stlu 9/1/2021 13:38'
 }
 RtBatchingRenderer >> visitTransform: aPicTransform [
 
@@ -959,7 +959,7 @@ RtBatchingRenderer >> visitTransform: aPicTransform [
 	previousTransform := transform.
 	previousClipRect := clipRect.
 	transform := transform * aPicTransform matrix.
-	(clipRect := (transform globalBoundsToLocal: clipRect) expanded) hasPositiveExtent ifTrue: [
+	(clipRect := (aPicTransform matrix globalBoundsToLocal: clipRect) expanded) hasPositiveExtent ifTrue: [
 		previousTransformIndex := transformIndex.
 		previousClipRectIndex := clipRectIndex.
 		transformIndex := self allocateTransform: transform.
