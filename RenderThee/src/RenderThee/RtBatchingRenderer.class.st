@@ -956,16 +956,18 @@ RtBatchingRenderer >> visitRoundedRectangle: aPicRoundedRectangle [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 8/26/2021 15:07'
+	#'squeak_changestamp' : 'stlu 9/1/2021 14:53'
 }
 RtBatchingRenderer >> visitString: aPicString [
 
-	| bounds |
+	| bounds stringClip |
 	"true ifTrue: [^ self]."
 	bounds := aPicString bounds ifNil: [^ self].
-	(bounds intersects: clipRect) ifFalse: [^ self].
+	stringClip := bounds intersect: clipRect.
+	stringClip hasPositiveExtent ifFalse: [^ self].
 	
-	textBatch textRun: aPicString.
+	textBatch textRun: aPicString in: stringClip.
+	zIndex := zIndex + 1.
 ]
 
 {
