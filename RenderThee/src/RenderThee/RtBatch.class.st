@@ -25,22 +25,23 @@ RtBatch >> colorStore [
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 8/23/2021 17:11'
+	#'squeak_changestamp' : 'stlu 9/1/2021 14:51'
 }
 RtBatch >> draw [
 
 	self uploadInstanceData.
 	
+	GL enable: GL_DEPTH_TEST.
+	GL depthFunc: GL_LESS.
 	isAlpha
 		ifTrue: [
 			self flag: #todo. "depth read-only"
-			GL disable: GL_DEPTH_TEST.
+			GL depthMask: GL_FALSE.
 			GL enable: GL_BLEND.
 			GL blendFuncSeparate: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA with: GL_ONE with: GL_ONE]
 		ifFalse: [
-			GL disable: GL_BLEND.
-			GL enable: GL_DEPTH_TEST.
-			GL depthFunc: GL_LESS].
+			GL depthMask: GL_TRUE.
+			GL disable: GL_BLEND].
 	
 	(self vao vertexBufferBindingAt: 1) buffer: instanceVBO.
 	

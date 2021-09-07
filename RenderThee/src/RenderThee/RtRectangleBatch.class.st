@@ -15,9 +15,9 @@ RtRectangleBatch >> program [
 
 {
 	#category : #instances,
-	#'squeak_changestamp' : 'stlu 8/23/2021 16:59'
+	#'squeak_changestamp' : 'stlu 9/1/2021 14:48'
 }
-RtRectangleBatch >> rectangleLeft: left right: right top: top bottom: bottom radius: radius fillColor: aColor z: zIndex [
+RtRectangleBatch >> rectangleLeft: left right: right top: top bottom: bottom radius: radius fillColor: aColor [
 
 	| offset rectangleIndex fillColorIndex |
 	rectangleIndex := renderer transientStoreF
@@ -26,7 +26,7 @@ RtRectangleBatch >> rectangleLeft: left right: right top: top bottom: bottom rad
 		add: right asFloat
 		add: bottom asFloat
 		add: radius asFloat
-		add: zIndex asFloat.
+		add: renderer zIndex asFloat.
 	
 	fillColorIndex := renderer indexForColor: aColor.
 	

@@ -5,6 +5,7 @@ Class {
 		'transform',
 		'clipRect',
 		'bounds',
+		'opaqueRectangleBatch',
 		'rectangleBatch',
 		'transformIndex',
 		'clipRectIndex',
@@ -21,7 +22,8 @@ Class {
 		'colorToIndexTable',
 		'glyphStore',
 		'fontCache',
-		'textBatch'
+		'textBatch',
+		'textureUploadTimeQueries'
 	],
 	#pools : [
 		'GLConstants'
@@ -125,11 +127,12 @@ RtBatchingRenderer >> currentFrame: anObject [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 8/26/2021 15:05'
+	#'squeak_changestamp' : 'stlu 9/6/2021 14:14'
 }
 RtBatchingRenderer >> draw [
 
 	GL clearColor: self clearColor.
+	GL depthMask: GL_TRUE.
 	GL clear: (GL_COLOR_BUFFER_BIT bitOr: GL_DEPTH_BUFFER_BIT).
 
 	transientStoreF texture bindAt: 1.
@@ -138,13 +141,17 @@ RtBatchingRenderer >> draw [
 	colorStore texture bindAt: 5.
 	glyphStore texture bindAt: 6.
 	
-	transientStoreF upload.
-	transientStoreI upload.
-	persistentStoreF upload.
-	colorStore upload.
+	"(textureUploadTimeQueries addLast: GLTimeElapsedQuery create) during: ["
+		transientStoreF upload.
+		transientStoreI upload.
+		persistentStoreF upload.
+		colorStore upload"]".
 	
 	rectangleProgram uniforms uProjectionMatrix: self projectionMatrix.
 	textProgram uniforms uProjectionMatrix: self projectionMatrix.
+	
+	opaqueRectangleBatch isAlpha: false.
+	opaqueRectangleBatch draw.
 	
 	rectangleBatch isAlpha: true.
 	rectangleBatch draw.
@@ -261,9 +268,12 @@ RtBatchingRenderer >> initialize [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/26/2021 13:31'
+	#'squeak_changestamp' : 'stlu 9/1/2021 14:22'
 }
 RtBatchingRenderer >> initializeBatches [
+
+	opaqueRectangleBatch := RtRectangleBatch new.
+	opaqueRectangleBatch renderer: self.
 
 	rectangleBatch := RtRectangleBatch new.
 	rectangleBatch renderer: self.
@@ -372,13 +382,13 @@ RtBatchingRenderer >> persistentStoreF [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 7/9/2021 09:20'
+	#'squeak_changestamp' : 'stlu 9/1/2021 14:59'
 }
 RtBatchingRenderer >> projectionMatrix [
 
 	^ Matrix4x4
 		ortho: bounds
-		near: -100000 far: 0
+		near: -1000000 far: 0
 ]
 
 {
@@ -448,7 +458,7 @@ void main() {
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 8/23/2021 17:26'
+	#'squeak_changestamp' : 'stlu 9/1/2021 14:48'
 }
 RtBatchingRenderer >> rectangleLeft: left right: right top: top bottom: bottom radius: radius solidColor: aColor [
 
@@ -458,14 +468,23 @@ RtBatchingRenderer >> rectangleLeft: left right: right top: top bottom: bottom r
 		or: [bottom < clipRect top]) ifTrue: [^ self].
 	(left > right
 		or: [top > bottom]) ifTrue: [^ self].
-	rectangleBatch
-		rectangleLeft: left
-		right: right
-		top: top
-		bottom: bottom
-		radius: radius
-		fillColor: aColor
-		z: zIndex.
+	(aColor isTranslucent or: [radius isZero not])
+		ifTrue: [
+			rectangleBatch
+				rectangleLeft: left
+				right: right
+				top: top
+				bottom: bottom
+				radius: radius
+				fillColor: aColor]
+		ifFalse: [
+			opaqueRectangleBatch
+				rectangleLeft: left
+				right: right
+				top: top
+				bottom: bottom
+				radius: radius
+				fillColor: aColor].
 	zIndex := zIndex + 1.
 ]
 
@@ -645,7 +664,7 @@ RtBatchingRenderer >> textProgram [
 
 {
 	#category : #shaders,
-	#'squeak_changestamp' : 'stlu 8/26/2021 17:56'
+	#'squeak_changestamp' : 'stlu 9/1/2021 14:12'
 }
 RtBatchingRenderer >> textVertexShader [
 
@@ -744,7 +763,7 @@ void main() {
 	vec2 charExtent = extent(glyphBounds);
 	vec2 charOffset = textRunBounds.origin + vec2(charRightOffset - charExtent.x, 0.0);
 	Rectangle charBounds = Rectangle(charOffset, charOffset + charExtent);
-	Rectangle visibleBounds = intersect(intersect(textRunBounds, clipRect), charBounds);
+	Rectangle visibleBounds = intersect(clipRect, charBounds);
 	
 	vec2 vertexPosition = visibleBounds.origin + (aPosition * extent(visibleBounds));
 	gl_Position = uProjectionMatrix * modelMatrix * vec4(vertexPosition, z, 1.0);
