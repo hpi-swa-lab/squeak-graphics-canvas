@@ -140,7 +140,7 @@ RtMorphExample >> initialize [
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 9/6/2021 13:58'
+	#'squeak_changestamp' : 'stlu 9/7/2021 12:53'
 }
 RtMorphExample >> key: key scanCode: scanCode changedTo: state with: mods [
 
@@ -169,7 +169,6 @@ RtMorphExample >> key: key scanCode: scanCode changedTo: state with: mods [
 		codePoint.
 		0.
 		0}.
-	self log: 'K ' , eventBuffer asString.
 	EventSensor default queueEvent: eventBuffer.
 	
 	type = EventKeyDown ifTrue: [
@@ -184,7 +183,6 @@ RtMorphExample >> key: key scanCode: scanCode changedTo: state with: mods [
 			codePoint.
 			0.
 			0}.
-		self log: 'K ' , eventBuffer asString.
 		EventSensor default queueEvent: eventBuffer].
 ]
 
@@ -337,7 +335,7 @@ RtMorphExample >> keyCodeTable [
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 8/30/2021 17:20'
+	#'squeak_changestamp' : 'stlu 9/7/2021 12:53'
 }
 RtMorphExample >> keyStroke: codePoint [
 
@@ -351,7 +349,6 @@ RtMorphExample >> keyStroke: codePoint [
 		codePoint.
 		0.
 		0}.
-	self log: 'S ' , eventBuffer asString.
 	EventSensor default queueEvent: eventBuffer.
 ]
 
