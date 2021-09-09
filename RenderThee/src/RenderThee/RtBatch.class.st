@@ -64,13 +64,13 @@ RtBatch >> initialize [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/7/2021 16:55'
+	#'squeak_changestamp' : 'stlu 9/7/2021 12:57'
 }
 RtBatch >> initializeInstanceVBO [
 
-	instanceData := ExternalType uint32_t allocate: 512 squared.
+	instanceData := ExternalType uint32_t allocate: 512 squared * 4.
 	instanceVBO := GLBuffer create.
-	instanceVBO usage: GL_DYNAMIC_DRAW size: instanceData size * 4.
+	instanceVBO usage: GL_DYNAMIC_DRAW size: instanceData byteSize.
 ]
 
 {
