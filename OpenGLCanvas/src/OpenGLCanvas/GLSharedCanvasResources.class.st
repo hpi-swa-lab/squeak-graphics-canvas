@@ -112,7 +112,7 @@ GLSharedCanvasResources >> initialize [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/17/2021 10:38'
+	#'squeak_changestamp' : 'stlu 9/9/2021 15:45'
 }
 GLSharedCanvasResources >> initializeBuffers [
 
@@ -132,10 +132,10 @@ GLSharedCanvasResources >> initializeBuffers [
 	dynamicVBO usage: GL_DYNAMIC_DRAW size: 100.
 	
 	self flag: #todo. "should not take the detour over program and program inputs"
-	quadVBO boundDuring: [
+	quadVBO boundAsArrayBufferDuring: [
 		textureProgram inputs aPos stride: 16 offset: 0.
 		textureProgram inputs aTexCoords stride: 16 offset: 8].
-	dynamicVBO boundDuring: [
+	dynamicVBO boundAsArrayBufferDuring: [
 		solidPolygonProgram inputs aPos stride: 8 offset: 0].
 ]
 
