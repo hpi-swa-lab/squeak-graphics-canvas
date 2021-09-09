@@ -22,8 +22,7 @@ Class {
 		'colorToIndexTable',
 		'glyphStore',
 		'fontCache',
-		'textBatch',
-		'textureUploadTimeQueries'
+		'textBatch'
 	],
 	#pools : [
 		'GLConstants'
@@ -127,7 +126,7 @@ RtBatchingRenderer >> currentFrame: anObject [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 9/6/2021 14:14'
+	#'squeak_changestamp' : 'stlu 9/9/2021 10:22'
 }
 RtBatchingRenderer >> draw [
 
@@ -141,11 +140,10 @@ RtBatchingRenderer >> draw [
 	colorStore texture bindAt: 5.
 	glyphStore texture bindAt: 6.
 	
-	"(textureUploadTimeQueries addLast: GLTimeElapsedQuery create) during: ["
-		transientStoreF upload.
-		transientStoreI upload.
-		persistentStoreF upload.
-		colorStore upload"]".
+	transientStoreF upload.
+	transientStoreI upload.
+	persistentStoreF upload.
+	colorStore upload.
 	
 	rectangleProgram uniforms uProjectionMatrix: self projectionMatrix.
 	textProgram uniforms uProjectionMatrix: self projectionMatrix.
