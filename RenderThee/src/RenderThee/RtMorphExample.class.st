@@ -467,6 +467,18 @@ RtMorphExample >> scrolledBy: aPoint [
 
 {
 	#category : #running,
+	#'squeak_changestamp' : 'stlu 9/7/2021 12:55'
+}
+RtMorphExample >> updateMorph [
+
+	self currentHand processEvents.
+	(self isModal and: [morph isWorldMorph]) ifTrue: [
+		morph runStepMethods].
+	self updatePicture.
+]
+
+{
+	#category : #running,
 	#'squeak_changestamp' : 'stlu 8/26/2021 13:08'
 }
 RtMorphExample >> updatePicture [

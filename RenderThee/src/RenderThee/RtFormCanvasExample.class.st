@@ -47,11 +47,11 @@ void main() {
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 8/11/2021 16:48'
+	#'squeak_changestamp' : 'stlu 9/7/2021 12:56'
 }
 RtFormCanvasExample >> render [
 
-	self updatePicture.
+	self updateMorph.
 
 	morph extent = canvas extent
 		ifTrue: [canvas reset]
