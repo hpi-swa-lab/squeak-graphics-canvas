@@ -228,7 +228,7 @@ GLCanvas >> contentsOfArea: aRectangle into: aForm [
 
 {
 	#category : #'drawing-polygons',
-	#'squeak_changestamp' : 'stlu 8/11/2021 13:29'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:03'
 }
 GLCanvas >> drawBasePolygon: numVertices [
 
@@ -239,20 +239,20 @@ GLCanvas >> drawBasePolygon: numVertices [
 	GL stencilOp: GL_INVERT with: GL_INVERT with: GL_INVERT.
 	GL colorMask: false with: false with: false  with: false.
 	
-	self vao drawArrays: GL_TRIANGLE_FAN count: numVertices.
+	self vao drawArrays: GL_TRIANGLE_FAN numVertices: numVertices.
 	
 	GL stencilFunc: GL_EQUAL with: 1 with: 1.
 	GL stencilOp: GL_KEEP with: GL_KEEP with: GL_KEEP.
 	GL colorMask: true with: true with: true  with: true.
 	
-	self vao drawArrays: GL_TRIANGLE_FAN count: numVertices.
+	self vao drawArrays: GL_TRIANGLE_FAN numVertices: numVertices.
 	
 	GL disable: GL_STENCIL_TEST.
 ]
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 6/17/2021 10:34'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:03'
 }
 GLCanvas >> drawCharacter: character bitmapFont: bitmapFont position: position [
 	"Draw the character's texture onto a rectangle. self fontProgram and bitmapFont texture need to be bound and the color for self fontProgram needs to be set"
@@ -265,7 +265,7 @@ GLCanvas >> drawCharacter: character bitmapFont: bitmapFont position: position [
 			offsetX: sourceOffset x asFloat;
 			modelMatrix: transform * (Matrix4x4 withOffset: position).
 
-		self vao drawArrays: GL_TRIANGLE_STRIP count: 4].
+		self vao drawArrays: GL_TRIANGLE_STRIP numVertices: 4].
 ]
 
 {
@@ -303,14 +303,14 @@ GLCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: borderWidth
 
 {
 	#category : #'drawing-polygons',
-	#'squeak_changestamp' : 'stlu 6/17/2021 13:28'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:03'
 }
 GLCanvas >> drawPolygonBorder: numVertices borderWidth: borderWidth borderColor: borderColor [
 
 	borderWidth isZero ifFalse: [
 		self solidPolygonProgram uniforms color: borderColor.
 		GL lineWidth: borderWidth asFloat.
-		self vao drawArrays: GL_LINE_LOOP count: numVertices].
+		self vao drawArrays: GL_LINE_LOOP numVertices: numVertices].
 ]
 
 {
@@ -354,7 +354,7 @@ GLCanvas >> extent [
 
 {
 	#category : #'drawing-ovals',
-	#'squeak_changestamp' : 'stlu 6/17/2021 10:35'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:03'
 }
 GLCanvas >> fillOval: r borderWidth: borderWidth borderColor: borderColor withProgram: aProgram [
 
@@ -365,7 +365,7 @@ GLCanvas >> fillOval: r borderWidth: borderWidth borderColor: borderColor withPr
 		borderWidth: borderWidth asFloat;
 		modelMatrix: transform.
 	
-	self vao drawArrays: GL_TRIANGLE_STRIP count: 4.
+	self vao drawArrays: GL_TRIANGLE_STRIP numVertices: 4.
 ]
 
 { #category : #'drawing-ovals' }
@@ -402,7 +402,7 @@ GLCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle:
 
 {
 	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : 'stlu 6/17/2021 10:35'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:04'
 }
 GLCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius borderWidth: borderWidth borderColor: borderColor withProgram: aProgram [
 	
@@ -414,7 +414,7 @@ GLCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius borderWidth: 
 		cornerRadius: cornerRadius asFloat;
 		modelMatrix: transform.
 		
-	self vao drawArrays: GL_TRIANGLE_STRIP count: 4.
+	self vao drawArrays: GL_TRIANGLE_STRIP numVertices: 4.
 ]
 
 { #category : #'drawing-rectangles' }
@@ -450,7 +450,7 @@ GLCanvas >> getPixelData [
 
 {
 	#category : #'drawing-images',
-	#'squeak_changestamp' : 'stlu 6/24/2021 13:40'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:04'
 }
 GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
@@ -468,7 +468,7 @@ GLCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 					sourceExtent: (sourceRect extent / aForm extent) asFloatPoint;
 					modelMatrix: transform * (Matrix4x4 withScale: aForm extent @ 1.0).
 				
-				self vao drawArrays: GL_TRIANGLE_STRIP count: 4].
+				self vao drawArrays: GL_TRIANGLE_STRIP numVertices: 4].
 			texture delete]].
 ]
 
@@ -495,7 +495,7 @@ GLCanvas >> initializeWithBounds: aRectangle framebuffer: aFramebuffer [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 6/17/2021 13:29'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:04'
 }
 GLCanvas >> line: pt1 to: pt2 width: w color: c [
 	
@@ -508,7 +508,7 @@ GLCanvas >> line: pt1 to: pt2 width: w color: c [
 			self dynamicVBO data: (Float32Array with: pt1 x with: pt1 y with: pt2 x with: pt2 y).
 			
 			GL lineWidth: w asFloat.
-			self vao drawArrays: GL_LINE_STRIP count: 2]].
+			self vao drawArrays: GL_LINE_STRIP numVertices: 2]].
 ]
 
 { #category : #accessing }
@@ -720,7 +720,7 @@ GLCanvas >> solidPolygonProgram [
 
 {
 	#category : #'drawing-images',
-	#'squeak_changestamp' : 'stlu 6/24/2021 13:37'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:04'
 }
 GLCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor [
 	
@@ -739,7 +739,7 @@ GLCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aColor
 					color: aColor;
 					modelMatrix: transform * (Matrix4x4 withScale: stencilForm extent @ 1.0).
 				
-				self vao drawArrays: GL_TRIANGLE_STRIP count: 4].
+				self vao drawArrays: GL_TRIANGLE_STRIP numVertices: 4].
 			texture delete]].
 ]
 

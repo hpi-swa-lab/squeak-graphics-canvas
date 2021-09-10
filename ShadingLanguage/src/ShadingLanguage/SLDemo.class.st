@@ -63,7 +63,7 @@ SLDemo >> cubeData [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 4/15/2021 12:10'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:10'
 }
 SLDemo >> render [
 
@@ -86,7 +86,7 @@ SLDemo >> render [
 			program uniforms
 				model: model;
 				projection: projection.
-			vao drawArrays: GL_TRIANGLES count: 36]].
+			vao drawArrays: GL_TRIANGLES numVertices: 36]].
 	
 	GL checkForError.
 ]

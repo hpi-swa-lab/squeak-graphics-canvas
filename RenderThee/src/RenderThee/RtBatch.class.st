@@ -25,7 +25,7 @@ RtBatch >> colorStore [
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 9/1/2021 14:51'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:09'
 }
 RtBatch >> draw [
 
@@ -35,7 +35,6 @@ RtBatch >> draw [
 	GL depthFunc: GL_LESS.
 	isAlpha
 		ifTrue: [
-			self flag: #todo. "depth read-only"
 			GL depthMask: GL_FALSE.
 			GL enable: GL_BLEND.
 			GL blendFuncSeparate: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA with: GL_ONE with: GL_ONE]
@@ -48,7 +47,7 @@ RtBatch >> draw [
 	self program boundDuring: [
 		self vao
 			drawArrays: GL_TRIANGLES
-			count: 6
+			numVertices: 6
 			numInstances: instanceIndex].
 ]
 

@@ -87,7 +87,7 @@ RtFormCanvasExample >> setUp [
 
 {
 	#category : #'texture transfer',
-	#'squeak_changestamp' : 'stlu 8/11/2021 16:46'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:10'
 }
 RtFormCanvasExample >> transferForm: aForm [
 
@@ -103,7 +103,7 @@ RtFormCanvasExample >> transferForm: aForm [
 	GL clear: GL_COLOR_BUFFER_BIT.
 	
 	program useDuring: [
-		vao drawArrays: GL_TRIANGLES count: 6].
+		vao drawArrays: GL_TRIANGLES numVertices: 6].
 	
 	texture delete.
 ]
