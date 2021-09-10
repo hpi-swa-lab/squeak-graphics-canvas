@@ -25,7 +25,7 @@ RtBatch >> colorStore [
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 9/10/2021 13:09'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:44'
 }
 RtBatch >> draw [
 
@@ -46,8 +46,9 @@ RtBatch >> draw [
 	
 	self program boundDuring: [
 		self vao
-			drawArrays: GL_TRIANGLES
+			drawElements: GL_TRIANGLES
 			numVertices: 6
+			indexType: GL_UNSIGNED_BYTE
 			numInstances: instanceIndex].
 ]
 

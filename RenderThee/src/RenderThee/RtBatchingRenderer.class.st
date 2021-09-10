@@ -19,6 +19,7 @@ Class {
 		'colorStore',
 		'vao',
 		'quadVBO',
+		'quadEBO',
 		'colorToIndexTable',
 		'glyphStore',
 		'fontCache',
@@ -331,30 +332,32 @@ RtBatchingRenderer >> initializePrograms [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/23/2021 10:04'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:40'
 }
 RtBatchingRenderer >> initializeQuadVBO [
 
 	quadVBO := GLBuffer create.
 	quadVBO usage: GL_STATIC_DRAW data: #(
-			0.0 1.0	"bottom-left"
-			1.0 0.0	"top-right"
 			0.0 0.0	"top-left"
-			
-			0.0 1.0	"bottom-left"
 			1.0 0.0	"top-right"
+			0.0 1.0	"bottom-left"
 			1.0 1.0	"bottom-right"
 		) asFloat32Array.
+	
+	quadEBO := GLBuffer create.
+	quadEBO usage: GL_STATIC_DRAW data: #[0 1 2 1 2 3].
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/23/2021 10:04'
+	#'squeak_changestamp' : 'stlu 9/10/2021 13:42'
 }
 RtBatchingRenderer >> initializeVAO [
 
 	vao := GLVertexArray create.
 	vao boundDuring: [
+		vao elementArrayBuffer: quadEBO.
+		
 		(vao vertexAttributeAt: 0)
 			enable;
 			formatAsFloat: GL_FLOAT numComponents: 2 offset: 0;
