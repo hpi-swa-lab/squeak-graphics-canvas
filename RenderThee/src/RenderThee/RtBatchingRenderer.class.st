@@ -635,7 +635,7 @@ RtBatchingRenderer >> reset [
 
 {
 	#category : #shaders,
-	#'squeak_changestamp' : 'stlu 8/26/2021 18:00'
+	#'squeak_changestamp' : 'stlu 9/10/2021 15:08'
 }
 RtBatchingRenderer >> textFragmentShader [
 
@@ -649,7 +649,7 @@ uniform sampler2D sGlyphStore;
 
 void main() {
 	vec4 texel = texture(sGlyphStore, vGlyphCoords);
-	float alpha = 1.0 - texel.r;
+	float alpha = 1.0 - min(texel.r, min(texel.g, texel.b));
 	oColor = vTextColor * alpha;
 }'
 ]
