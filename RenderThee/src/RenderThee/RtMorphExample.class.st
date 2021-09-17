@@ -4,8 +4,9 @@ Class {
 	#instVars : [
 		'morph',
 		'picture',
-		'keyCodeTable',
-		'pictureUpdateTimes'
+		'pictureUpdateTimes',
+		'keyEnumToVirtualKeyTable',
+		'virtualKeyToKeyCodeTable'
 	],
 	#pools : [
 		'EventSensorConstants'
@@ -140,70 +141,67 @@ RtMorphExample >> initialize [
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 9/7/2021 12:53'
+	#'squeak_changestamp' : 'stlu 9/17/2021 13:35'
 }
-RtMorphExample >> key: key scanCode: scanCode changedTo: state with: mods [
+RtMorphExample >> key: keyEnum scanCode: scanCode changedTo: state with: mods [
 
-	| eventBuffer type keyCode codePoint modifierBits virtualKey |
-	super key: key scanCode: scanCode changedTo: state with: mods.
+	| eventBuffer type keyName keyCode modifierBits virtualKey isShiftPressed codePoint |
+	"true ifTrue: [^ self]."
+	super key: keyEnum scanCode: scanCode changedTo: state with: mods.
+	isShiftPressed := mods anyMask: ShiftKeyBit.
 	type := state caseOf: {
 		[GLFW_RELEASE] -> [EventKeyUp].
 		[GLFW_PRESS] -> [EventKeyDown].
 		[GLFW_REPEAT] -> [^ self]}.
-	keyCode := (self keyCodeForKey: key) ifNil: [^ self].
-	virtualKey := EventSensor virtualKeyAt: keyCode.
+	keyName := GLFW getKeyName: keyEnum with: scanCode.
+	virtualKey := (keyName notNil and: [keyName size = 1])
+		ifTrue: [keyName first]
+		ifFalse: [self keyEnumToVirtualKeyTable at: keyEnum ifAbsent: [^ self]].
+	virtualKey isCharacter
+		ifTrue: [
+			virtualKey := isShiftPressed
+				ifTrue: [virtualKey asUppercase]
+				ifFalse: [virtualKey asLowercase].
+			keyCode := codePoint := virtualKey asInteger]
+		ifFalse: [
+			codePoint := 0.
+			keyCode := self virtualKeyToKeyCodeTable at: virtualKey ifAbsent: [^ self]].
 	modifierBits := self convertModifierKeys: mods.
-	(virtualKey isCharacter
-		and: [virtualKey isAlphaNumeric]
-		and: [(modifierBits noMask: ShiftKeyBit)]) ifTrue: [
-			virtualKey := virtualKey asLowercase].
-	
-	codePoint := virtualKey isCharacter ifTrue: [virtualKey codePoint] ifFalse: [0].
 	
 	eventBuffer := {
 		EventTypeKeyboard.
-		0.
+		EventSensor default eventTimeNow.
 		keyCode.
 		type.
 		modifierBits.
 		codePoint.
 		0.
 		0}.
-	EventSensor default queueEvent: eventBuffer.
+	EventSensor default processEvent: eventBuffer.
 	
 	type = EventKeyDown ifTrue: [
 		virtualKey isCharacter ifFalse: [^ self].
-		(virtualKey isAlphaNumeric and: [mods = 0 or: [mods anyMask: ShiftKeyBit]]) ifTrue: [^ self]. "handled by keyStroke:"
+		(virtualKey isAlphaNumeric and: [mods = 0 or: [mods = 1 and: [isShiftPressed]]]) ifTrue: [^ self]. "handled by keyStroke:"
 		eventBuffer := {
 			EventTypeKeyboard.
-			0.
+			EventSensor default eventTimeNow.
 			keyCode.
 			EventKeyChar.
 			modifierBits.
 			codePoint.
 			0.
 			0}.
-		EventSensor default queueEvent: eventBuffer].
+		EventSensor default processEvent: eventBuffer].
 ]
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 8/30/2021 16:15'
+	#'squeak_changestamp' : 'stlu 9/17/2021 12:42'
 }
-RtMorphExample >> keyCodeForKey: aGLFWKey [
+RtMorphExample >> keyEnumToVirtualKeyTable [
 
-	^ self keyCodeTable at: aGLFWKey
-]
-
-{
-	#category : #input,
-	#'squeak_changestamp' : 'stlu 8/30/2021 17:16'
-}
-RtMorphExample >> keyCodeTable [
-
-	^ keyCodeTable ifNil: [
-		| virtualKeys |
-		virtualKeys := {
+	^ keyEnumToVirtualKeyTable ifNil: [
+		keyEnumToVirtualKeyTable := Dictionary newFromPairs: {
 			GLFW_KEY_UNKNOWN. nil.
 			GLFW_KEY_SPACE. Character space.
 			GLFW_KEY_APOSTROPHE. $'.
@@ -324,32 +322,27 @@ RtMorphExample >> keyCodeTable [
 			GLFW_KEY_RIGHT_CONTROL. EventSensor mapControlKeysToCommandKeys ifTrue: [#command] ifFalse: [#control].
 			GLFW_KEY_RIGHT_ALT. EventSensor mapAltKeysToOptionKeys ifTrue: [#option] ifFalse: [#command].
 			GLFW_KEY_RIGHT_SUPER. nil.
-			GLFW_KEY_MENU. nil }.
-		keyCodeTable := Dictionary new.
-		virtualKeys pairsDo: [:glfwKey :virtualKey |
-			| keyCode |
-			keyCode := EventSensor virtualKeyTable keyAtValue: virtualKey ifAbsent: nil.
-			keyCodeTable at: glfwKey put: keyCode].
-		keyCodeTable].
+			GLFW_KEY_MENU. nil.
+		}]
 ]
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 9/7/2021 12:53'
+	#'squeak_changestamp' : 'stlu 9/17/2021 13:35'
 }
 RtMorphExample >> keyStroke: codePoint [
 
 	| eventBuffer |
 	eventBuffer := {
 		EventTypeKeyboard.
-		0.
+		EventSensor default eventTimeNow.
 		codePoint.
 		EventKeyChar.
 		self activeModifierKeys.
 		codePoint.
 		0.
 		0}.
-	EventSensor default queueEvent: eventBuffer.
+	EventSensor default processEvent: eventBuffer.
 ]
 
 {
@@ -375,7 +368,7 @@ RtMorphExample >> morph: aMorph [
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 8/30/2021 17:04'
+	#'squeak_changestamp' : 'stlu 9/17/2021 10:13'
 }
 RtMorphExample >> mouseButton: button changedTo: state with: modifierKeys [
 
@@ -383,7 +376,7 @@ RtMorphExample >> mouseButton: button changedTo: state with: modifierKeys [
 	position := self mapMousePosition: window cursorPosition.
 	eventBuffer := {
 		EventTypeMouse.
-		0.
+		EventSensor default eventTimeNow.
 		position x.
 		position y.
 		self activeMouseButtons.
@@ -395,7 +388,7 @@ RtMorphExample >> mouseButton: button changedTo: state with: modifierKeys [
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 8/30/2021 17:04'
+	#'squeak_changestamp' : 'stlu 9/17/2021 10:13'
 }
 RtMorphExample >> mousePositionChangedTo: aPoint [
 
@@ -403,7 +396,7 @@ RtMorphExample >> mousePositionChangedTo: aPoint [
 	position := self mapMousePosition: aPoint.
 	eventBuffer := {
 		EventTypeMouse.
-		0.
+		EventSensor default eventTimeNow.
 		position x.
 		position y.
 		self activeMouseButtons.
@@ -447,7 +440,7 @@ RtMorphExample >> render [
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 8/30/2021 14:21'
+	#'squeak_changestamp' : 'stlu 9/17/2021 10:13'
 }
 RtMorphExample >> scrolledBy: aPoint [
 
@@ -455,13 +448,13 @@ RtMorphExample >> scrolledBy: aPoint [
 	delta := (aPoint * MouseWheelEvent scrollUnitsPerMouseWheelNotch) ceiling.
 	eventBuffer := {
 		EventTypeMouseWheel.
-		0.
+		EventSensor default eventTimeNow.
 		delta x.
 		delta y.
 		self activeMouseButtons.
 		self activeModifierKeys.
 		0.
-		1 }.
+		0 }.
 	EventSensor default processEvent: eventBuffer.
 ]
 
@@ -479,7 +472,7 @@ RtMorphExample >> updateMorph [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 8/26/2021 13:08'
+	#'squeak_changestamp' : 'stlu 9/15/2021 17:37'
 }
 RtMorphExample >> updatePicture [
 
@@ -487,7 +480,25 @@ RtMorphExample >> updatePicture [
 	patcher := PicPatcherCanvas new.
 	patcher invalidationStamp: numFrames.
 	elapsed := Time nanosecondsToRun: [
-		patcher fullDrawMorph: morph].
+		patcher fullDrawMorph: morph.
+		self currentHand ifNotNil: [:hand |
+			patcher fullDrawMorph: hand.
+			hand submorphs do: [:each |
+				patcher fullDrawMorph: each]]].
 	pictureUpdateTimes add: elapsed.
 	picture := morph picture.
+	"self currentHand submorphs ifNotEmpty: [
+		[self currentHand submorphs copy explore] once]."
+]
+
+{
+	#category : #input,
+	#'squeak_changestamp' : 'stlu 9/17/2021 12:49'
+}
+RtMorphExample >> virtualKeyToKeyCodeTable [
+
+	^ virtualKeyToKeyCodeTable ifNil: [
+		virtualKeyToKeyCodeTable := Dictionary new.
+		EventSensor virtualKeyTable keysAndValuesDo: [:keyCode :virtualKey |
+			virtualKeyToKeyCodeTable at: virtualKey put: keyCode]]
 ]
