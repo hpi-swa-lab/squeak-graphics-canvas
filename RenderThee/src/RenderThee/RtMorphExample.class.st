@@ -141,7 +141,7 @@ RtMorphExample >> initialize [
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 9/17/2021 13:35'
+	#'squeak_changestamp' : 'stlu 9/17/2021 16:54'
 }
 RtMorphExample >> key: keyEnum scanCode: scanCode changedTo: state with: mods [
 
@@ -181,7 +181,7 @@ RtMorphExample >> key: keyEnum scanCode: scanCode changedTo: state with: mods [
 	
 	type = EventKeyDown ifTrue: [
 		virtualKey isCharacter ifFalse: [^ self].
-		(virtualKey isAlphaNumeric and: [mods = 0 or: [mods = 1 and: [isShiftPressed]]]) ifTrue: [^ self]. "handled by keyStroke:"
+		(virtualKey isPrintable and: [mods = 0 or: [mods = 1 and: [isShiftPressed]]]) ifTrue: [^ self]. "handled by keyStroke:"
 		eventBuffer := {
 			EventTypeKeyboard.
 			EventSensor default eventTimeNow.
