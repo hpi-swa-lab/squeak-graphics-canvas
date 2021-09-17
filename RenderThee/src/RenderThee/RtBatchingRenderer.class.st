@@ -867,6 +867,23 @@ RtBatchingRenderer >> visitImage: aPicImage [
 
 {
 	#category : #drawing,
+	#'squeak_changestamp' : 'stlu 9/17/2021 14:22'
+}
+RtBatchingRenderer >> visitLine: aPicLine [
+
+	| rect |
+	rect := aPicLine from rect: aPicLine to.
+	self
+		rectangleLeft: rect left
+		right: rect right + 1
+		top: rect top
+		bottom: rect bottom + 1
+		radius: 0.0
+		solidColor: aPicLine color.
+]
+
+{
+	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 9/7/2021 10:25'
 }
 RtBatchingRenderer >> visitMorph: aPicMorph [
