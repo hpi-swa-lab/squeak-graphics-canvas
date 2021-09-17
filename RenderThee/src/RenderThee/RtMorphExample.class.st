@@ -460,35 +460,36 @@ RtMorphExample >> scrolledBy: aPoint [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 9/7/2021 12:55'
+	#'squeak_changestamp' : 'stlu 9/17/2021 14:01'
 }
 RtMorphExample >> updateMorph [
 
-	self currentHand processEvents.
-	(self isModal and: [morph isWorldMorph]) ifTrue: [
-		morph runStepMethods].
+	morph isWorldMorph ifTrue: [
+		DisplayScreen checkForNewScreenSize.
+		morph worldState processUserInputEvents ifFalse: [^ self].
+		self isModal ifTrue: [morph runStepMethods]].
 	self updatePicture.
 ]
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 9/15/2021 17:37'
+	#'squeak_changestamp' : 'stlu 9/17/2021 16:42'
 }
 RtMorphExample >> updatePicture [
 
 	| patcher elapsed |
 	patcher := PicPatcherCanvas new.
 	patcher invalidationStamp: numFrames.
+	
 	elapsed := Time nanosecondsToRun: [
 		patcher fullDrawMorph: morph.
-		self currentHand ifNotNil: [:hand |
-			patcher fullDrawMorph: hand.
-			hand submorphs do: [:each |
-				patcher fullDrawMorph: each]]].
+		morph isWorldMorph ifTrue: [
+			morph worldState hands reverseDo: [:hand |
+				hand submorphs do: [:each |
+					patcher fullDrawMorph: each]]]].
+	
 	pictureUpdateTimes add: elapsed.
-	picture := morph picture.
-	"self currentHand submorphs ifNotEmpty: [
-		[self currentHand submorphs copy explore] once]."
+	picture := patcher getPicture.
 ]
 
 {
