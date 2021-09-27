@@ -26,11 +26,11 @@ PicCanvas class >> example1 [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:42'
 }
-PicCanvas >> addCommand: aCommand [
-	"Adds aCommand to the currently active group (at the front-most z-coordinate)."
-	self currentGroup addChild: aCommand
+PicCanvas >> addNode: aNode [
+	"Adds aNode to the currently active group (at the front-most z-coordinate)."
+	self currentGroup addChild: aNode.
 ]
 
 {
@@ -119,18 +119,18 @@ PicCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderColor: bc
 
 {
 	#category : #'drawing-polygons',
-	#'squeak_changestamp' : 'stlu 9/27/2021 15:15'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:43'
 }
 PicCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	vertices ifEmpty: [^ self].
 	(aFillStyle isTransparent and: [aBorderStyle isTransparent]) ifTrue: [^ self].
 
-	self addCommand: (PicPolygonNode new
-							vertices: vertices;
-							fillStyle: aFillStyle;
-							borderStyle: aBorderStyle;
-							yourself).
+	self addNode: (PicPolygonNode new
+		vertices: vertices;
+		fillStyle: aFillStyle;
+		borderStyle: aBorderStyle;
+		yourself).
 ]
 
 {
@@ -147,26 +147,26 @@ PicCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: bw borderC
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 9/27/2021 15:40'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:43'
 }
 PicCanvas >> drawString: aString from: startIndex to: stopIndex at: topLeft font: fontOrNil color: aColor [
 
 	aColor isTransparent ifTrue: [^ self].
 	stopIndex < startIndex ifTrue: [^ self].
 
-	self addCommand: (PicStringNode new
-							contents: aString;
-							startIndex: startIndex;
-							stopIndex: stopIndex;
-							position: topLeft;
-							font: fontOrNil;
-							color: aColor;
-							yourself).
+	self addNode: (PicStringNode new
+		contents: aString;
+		startIndex: startIndex;
+		stopIndex: stopIndex;
+		position: topLeft;
+		font: fontOrNil;
+		color: aColor;
+		yourself).
 ]
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 9/27/2021 15:17'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:43'
 }
 PicCanvas >> drawString: aString from: startIndex to: stopIndex in: boundsRect font: fontOrNil color: aColor [
 
@@ -174,15 +174,15 @@ PicCanvas >> drawString: aString from: startIndex to: stopIndex in: boundsRect f
 	stopIndex < startIndex ifTrue: [^ self].
 	boundsRect hasPositiveExtent ifFalse: [^ self].
 
-	self addCommand: (PicStringNode new
-							contents: aString;
-							startIndex: startIndex;
-							stopIndex: stopIndex;
-							position: boundsRect origin;
-							maxExtent: boundsRect extent;
-							font: fontOrNil;
-							color: aColor;
-							yourself).
+	self addNode: (PicStringNode new
+		contents: aString;
+		startIndex: startIndex;
+		stopIndex: stopIndex;
+		position: boundsRect origin;
+		maxExtent: boundsRect extent;
+		font: fontOrNil;
+		color: aColor;
+		yourself).
 ]
 
 {
@@ -200,18 +200,18 @@ PicCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderCo
 
 {
 	#category : #'drawing-ovals',
-	#'squeak_changestamp' : 'stlu 9/27/2021 15:27'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:43'
 }
 PicCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	(aFillStyle isTransparent and: [aBorderStyle isTransparent]) ifTrue: [^ self].
 	aRectangle hasPositiveExtent ifFalse: [^ self].
 
-	self addCommand: (PicOvalNode new
-							bounds: aRectangle;
-							fillStyle: aFillStyle;
-							borderStyle: aBorderStyle;
-							yourself).
+	self addNode: (PicOvalNode new
+		bounds: aRectangle;
+		fillStyle: aFillStyle;
+		borderStyle: aBorderStyle;
+		yourself).
 ]
 
 {
@@ -252,23 +252,23 @@ PicCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWi
 
 {
 	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : 'stlu 9/27/2021 15:27'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:43'
 }
 PicCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	(aFillStyle isTransparent and: [aBorderStyle isTransparent]) ifTrue: [^ self].
 	aRectangle area isZero ifTrue: [^ self].
 
-	self addCommand: (PicRectangleNode new
-							bounds: aRectangle;
-							fillStyle: aFillStyle;
-							borderStyle: aBorderStyle;
-							yourself).
+	self addNode: (PicRectangleNode new
+		bounds: aRectangle;
+		fillStyle: aFillStyle;
+		borderStyle: aBorderStyle;
+		yourself).
 ]
 
 {
 	#category : #'drawing-rounded rectangles',
-	#'squeak_changestamp' : 'stlu 9/27/2021 15:30'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:44'
 }
 PicCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -281,12 +281,12 @@ PicCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: a
 	(aFillStyle isTransparent and: [aBorderStyle isTransparent]) ifTrue: [^ self].
 	aRectangle hasPositiveExtent ifFalse: [^ self].
 
-	self addCommand: (PicRoundedRectangleNode new
-							bounds: aRectangle;
-							radius: cornerRadius;
-							fillStyle: aFillStyle;
-							borderStyle: aBorderStyle;
-							yourself).
+	self addNode: (PicRoundedRectangleNode new
+		bounds: aRectangle;
+		radius: cornerRadius;
+		fillStyle: aFillStyle;
+		borderStyle: aBorderStyle;
+		yourself).
 ]
 
 {
@@ -335,7 +335,7 @@ PicCanvas >> getPicture [
 
 {
 	#category : #'scoped state',
-	#'squeak_changestamp' : 'stlu 8/10/2021 16:01'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:44'
 }
 PicCanvas >> group: aGroup during: aBlock [
 	"Scoped setter for `group` variable."
@@ -344,7 +344,7 @@ PicCanvas >> group: aGroup during: aBlock [
 		| group |
 		group := groupStack removeLast.
 		group isEmpty ifFalse: [
-			self addCommand: group]]
+			self addNode: group]]
 ]
 
 {
@@ -367,19 +367,19 @@ PicCanvas >> ignoreClip: aBoolean [
 
 {
 	#category : #'drawing-images',
-	#'squeak_changestamp' : 'stlu 9/27/2021 15:26'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:44'
 }
 PicCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
 	sourceRect hasPositiveExtent ifFalse: [^ self].
 	sourceRect origin <= aForm extent ifFalse: [^ self].
 
-	self addCommand: (PicImageNode new
-							form: aForm;
-							origin: aPoint;
-							sourceRect: sourceRect;
-							combinationRule: rule;
-							yourself).
+	self addNode: (PicImageNode new
+		form: aForm;
+		origin: aPoint;
+		sourceRect: sourceRect;
+		combinationRule: rule;
+		yourself).
 ]
 
 {
@@ -394,19 +394,19 @@ PicCanvas >> initialize [
 
 {
 	#category : #'drawing-lines',
-	#'squeak_changestamp' : 'stlu 9/27/2021 15:26'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:44'
 }
 PicCanvas >> line: from to: to width: width color: color [
 
 	width isZero ifTrue: [^ self].
 	color isTransparent ifTrue: [^ self].
 	
-	self addCommand: (PicLineNode new
-							from: from;
-							to: to;
-							width: width;
-							color: color;
-							yourself).
+	self addNode: (PicLineNode new
+		from: from;
+		to: to;
+		width: width;
+		color: color;
+		yourself).
 ]
 
 {

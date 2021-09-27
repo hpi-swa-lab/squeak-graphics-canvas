@@ -13,7 +13,7 @@ Class {
 
 {
 	#category : #'drawing-general',
-	#'squeak_changestamp' : 'stlu 9/27/2021 12:34'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:44'
 }
 PicPatcherCanvas >> fullDrawMorph: aMorph [
 
@@ -26,10 +26,10 @@ PicPatcherCanvas >> fullDrawMorph: aMorph [
 		offset := aMorph position - picture position.
 		offset isZero
 			ifTrue: [
-				self addCommand: picture]
+				self addNode: picture]
 			ifFalse: [
 				self translateBy: offset during: [
-					self addCommand: picture]].
+					self addNode: picture]].
 		^ self].
 	
 	picture
