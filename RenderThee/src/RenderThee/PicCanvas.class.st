@@ -119,38 +119,40 @@ PicCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderColor: bc
 
 {
 	#category : #'drawing-polygons',
-	#'squeak_changestamp' : 'stlu 9/27/2021 15:10'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:15'
 }
 PicCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBorderStyle [
 
-	(aFillStyle isTransparent and: [aBorderStyle isTransparent]) ifTrue: [^ self].
 	vertices ifEmpty: [^ self].
+	(aFillStyle isTransparent and: [aBorderStyle isTransparent]) ifTrue: [^ self].
 
 	self addCommand: (PicPolygonNode new
 							vertices: vertices;
 							fillStyle: aFillStyle;
 							borderStyle: aBorderStyle;
-							yourself)
+							yourself).
 ]
 
 {
 	#category : #'drawing-polygons',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:14'
 }
 PicCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: bw borderColor: bc [
 
-	vertices ifEmpty: [^ self].
 	self
 		drawPolygon: vertices
 		fillStyle: aFillStyle
-		borderStyle: (SimpleBorder width: bw color: bc)
+		borderStyle: (SimpleBorder width: bw color: bc).
 ]
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 9/27/2021 12:44'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:40'
 }
 PicCanvas >> drawString: aString from: startIndex to: stopIndex at: topLeft font: fontOrNil color: aColor [
+
+	aColor isTransparent ifTrue: [^ self].
+	stopIndex < startIndex ifTrue: [^ self].
 
 	self addCommand: (PicStringNode new
 							contents: aString;
@@ -159,14 +161,18 @@ PicCanvas >> drawString: aString from: startIndex to: stopIndex at: topLeft font
 							position: topLeft;
 							font: fontOrNil;
 							color: aColor;
-							yourself)
+							yourself).
 ]
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 9/27/2021 12:44'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:17'
 }
 PicCanvas >> drawString: aString from: startIndex to: stopIndex in: boundsRect font: fontOrNil color: aColor [
+
+	aColor isTransparent ifTrue: [^ self].
+	stopIndex < startIndex ifTrue: [^ self].
+	boundsRect hasPositiveExtent ifFalse: [^ self].
 
 	self addCommand: (PicStringNode new
 							contents: aString;
@@ -176,7 +182,7 @@ PicCanvas >> drawString: aString from: startIndex to: stopIndex in: boundsRect f
 							maxExtent: boundsRect extent;
 							font: fontOrNil;
 							color: aColor;
-							yourself)
+							yourself).
 ]
 
 {
@@ -194,18 +200,18 @@ PicCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderCo
 
 {
 	#category : #'drawing-ovals',
-	#'squeak_changestamp' : 'stlu 9/27/2021 15:09'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:27'
 }
 PicCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	(aFillStyle isTransparent and: [aBorderStyle isTransparent]) ifTrue: [^ self].
-	aRectangle extent isZero ifTrue: [^ self].
+	aRectangle hasPositiveExtent ifFalse: [^ self].
 
 	self addCommand: (PicOvalNode new
 							bounds: aRectangle;
 							fillStyle: aFillStyle;
 							borderStyle: aBorderStyle;
-							yourself)
+							yourself).
 ]
 
 {
@@ -246,7 +252,7 @@ PicCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWi
 
 {
 	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : 'stlu 9/27/2021 15:09'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:27'
 }
 PicCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -257,24 +263,30 @@ PicCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle
 							bounds: aRectangle;
 							fillStyle: aFillStyle;
 							borderStyle: aBorderStyle;
-							yourself)
+							yourself).
 ]
 
 {
 	#category : #'drawing-rounded rectangles',
-	#'squeak_changestamp' : 'stlu 9/27/2021 15:09'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:30'
 }
 PicCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: aFillStyle borderStyle: aBorderStyle [
 
+	cornerRadius isZero ifTrue: [
+		^ self
+			frameAndFillRectangle: aRectangle
+			fillStyle: aFillStyle
+			borderStyle: aBorderStyle].
+
 	(aFillStyle isTransparent and: [aBorderStyle isTransparent]) ifTrue: [^ self].
-	aRectangle extent isZero ifTrue: [^ self].
+	aRectangle hasPositiveExtent ifFalse: [^ self].
 
 	self addCommand: (PicRoundedRectangleNode new
 							bounds: aRectangle;
 							radius: cornerRadius;
 							fillStyle: aFillStyle;
 							borderStyle: aBorderStyle;
-							yourself)
+							yourself).
 ]
 
 {
@@ -355,16 +367,19 @@ PicCanvas >> ignoreClip: aBoolean [
 
 {
 	#category : #'drawing-images',
-	#'squeak_changestamp' : 'stlu 9/27/2021 12:41'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:26'
 }
 PicCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
+
+	sourceRect hasPositiveExtent ifFalse: [^ self].
+	sourceRect origin <= aForm extent ifFalse: [^ self].
 
 	self addCommand: (PicImageNode new
 							form: aForm;
 							origin: aPoint;
 							sourceRect: sourceRect;
 							combinationRule: rule;
-							yourself)
+							yourself).
 ]
 
 {
@@ -379,16 +394,19 @@ PicCanvas >> initialize [
 
 {
 	#category : #'drawing-lines',
-	#'squeak_changestamp' : 'stlu 9/27/2021 12:41'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:26'
 }
 PicCanvas >> line: from to: to width: width color: color [
 
+	width isZero ifTrue: [^ self].
+	color isTransparent ifTrue: [^ self].
+	
 	self addCommand: (PicLineNode new
 							from: from;
 							to: to;
 							width: width;
 							color: color;
-							yourself)
+							yourself).
 ]
 
 {
@@ -402,7 +420,7 @@ PicCanvas >> origin [
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 8/10/2021 14:54'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:34'
 }
 PicCanvas >> paragraph: aParagraph bounds: aRectangle color: aColor [
 
@@ -413,6 +431,9 @@ PicCanvas >> paragraph: aParagraph bounds: aRectangle color: aColor [
 							yourself)"
 	
 	| scanner |
+	aColor isTransparent ifTrue: [^ self].
+	aRectangle hasPositiveExtent ifFalse: [^ self].
+	
 	scanner := PicCanvasDisplayScanner new
 		text: aParagraph text
 		textStyle: aParagraph textStyle
@@ -492,7 +513,7 @@ PicCanvas >> transform: aTransform clipRect: aRectangle during: aBlock [
 
 {
 	#category : #'drawing-support',
-	#'squeak_changestamp' : 'stlu 9/27/2021 12:34'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:32'
 }
 PicCanvas >> transformBy: aTransform during: aBlock [
 
@@ -505,7 +526,7 @@ PicCanvas >> transformBy: aTransform during: aBlock [
 		self
 			transform: (transform composedWithLocal: matrix2x3)
 			clipRect: transformedClip
-			during: aBlock].
+			during: aBlock]
 ]
 
 {
