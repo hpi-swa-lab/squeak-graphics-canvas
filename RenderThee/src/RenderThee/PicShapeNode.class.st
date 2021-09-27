@@ -1,6 +1,6 @@
 Class {
-	#name : #PicShape,
-	#superclass : #PicDrawing,
+	#name : #PicShapeNode,
+	#superclass : #PicPrimitiveNode,
 	#instVars : [
 		'bounds',
 		'fillStyle',
@@ -13,7 +13,7 @@ Class {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicShape >> borderStyle [
+PicShapeNode >> borderStyle [
 
 	^ borderStyle
 ]
@@ -22,7 +22,7 @@ PicShape >> borderStyle [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicShape >> borderStyle: anObject [
+PicShapeNode >> borderStyle: anObject [
 
 	borderStyle := anObject.
 ]
@@ -31,7 +31,7 @@ PicShape >> borderStyle: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicShape >> bounds [
+PicShapeNode >> bounds [
 
 	^ bounds
 ]
@@ -40,7 +40,7 @@ PicShape >> bounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicShape >> bounds: anObject [
+PicShapeNode >> bounds: anObject [
 
 	bounds := anObject.
 ]
@@ -49,7 +49,7 @@ PicShape >> bounds: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicShape >> estimatedBounds [
+PicShapeNode >> estimatedBounds [
 
 	^ bounds
 ]
@@ -58,7 +58,7 @@ PicShape >> estimatedBounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicShape >> fillStyle [
+PicShapeNode >> fillStyle [
 
 	^ fillStyle
 ]
@@ -67,16 +67,16 @@ PicShape >> fillStyle [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicShape >> fillStyle: anObject [
+PicShapeNode >> fillStyle: anObject [
 
 	fillStyle := anObject.
 ]
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 8/13/2021 13:04'
+	#'squeak_changestamp' : 'stlu 9/27/2021 13:00'
 }
-PicShape >> isShape [
+PicShapeNode >> isShapeNode [
 
 	^ true
 ]
@@ -85,7 +85,7 @@ PicShape >> isShape [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 8/13/2021 13:14'
 }
-PicShape >> isTranslucent [
+PicShapeNode >> isTranslucent [
 
 	^ fillStyle isTranslucent
 ]

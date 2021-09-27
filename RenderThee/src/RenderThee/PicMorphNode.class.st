@@ -1,6 +1,6 @@
 Class {
-	#name : #PicMorph,
-	#superclass : #PicGroup,
+	#name : #PicMorphNode,
+	#superclass : #PicGroupNode,
 	#instVars : [
 		'isValid',
 		'bounds',
@@ -13,7 +13,7 @@ Class {
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 8/12/2021 13:28'
 }
-PicMorph >> acceptVisitor: aVisitor [
+PicMorphNode >> acceptVisitor: aVisitor [
 
 	aVisitor visitMorph: self.
 ]
@@ -22,7 +22,7 @@ PicMorph >> acceptVisitor: aVisitor [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/12/2021 13:39'
 }
-PicMorph >> bounds [
+PicMorphNode >> bounds [
 
 	^ bounds
 ]
@@ -31,7 +31,7 @@ PicMorph >> bounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/12/2021 13:39'
 }
-PicMorph >> bounds: anObject [
+PicMorphNode >> bounds: anObject [
 
 	bounds := anObject.
 ]
@@ -40,7 +40,7 @@ PicMorph >> bounds: anObject [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 8/12/2021 13:40'
 }
-PicMorph >> initialize [
+PicMorphNode >> initialize [
 
 	super initialize.
 	isValid := true.
@@ -52,7 +52,7 @@ PicMorph >> initialize [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/12/2021 13:17'
 }
-PicMorph >> invalidationStamp [
+PicMorphNode >> invalidationStamp [
 
 	^ invalidationStamp
 ]
@@ -61,7 +61,7 @@ PicMorph >> invalidationStamp [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/12/2021 13:17'
 }
-PicMorph >> invalidationStamp: anObject [
+PicMorphNode >> invalidationStamp: anObject [
 
 	invalidationStamp := anObject.
 ]
@@ -70,7 +70,7 @@ PicMorph >> invalidationStamp: anObject [
 	#category : #validity,
 	#'squeak_changestamp' : 'stlu 8/10/2021 18:07'
 }
-PicMorph >> isValid [
+PicMorphNode >> isValid [
 
 	^ isValid
 ]
@@ -79,7 +79,7 @@ PicMorph >> isValid [
 	#category : #validity,
 	#'squeak_changestamp' : 'stlu 8/11/2021 11:19'
 }
-PicMorph >> markInvalid [
+PicMorphNode >> markInvalid [
 
 	isValid := false.
 ]
@@ -88,7 +88,7 @@ PicMorph >> markInvalid [
 	#category : #validity,
 	#'squeak_changestamp' : 'stlu 8/11/2021 11:19'
 }
-PicMorph >> markValid [
+PicMorphNode >> markValid [
 
 	isValid := true.
 ]
@@ -97,7 +97,7 @@ PicMorph >> markValid [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/12/2021 13:42'
 }
-PicMorph >> position [
+PicMorphNode >> position [
 
 	^ bounds topLeft
 ]

@@ -3,7 +3,7 @@ I represent one or multiple graphical operations.
 A `PicPictureCanvas` is typically used to create me.
 "
 Class {
-	#name : #PicPicture,
+	#name : #PicPictureNode,
 	#superclass : #Object,
 	#category : #'RenderThee-Pictures'
 }
@@ -12,7 +12,7 @@ Class {
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:03'
 }
-PicPicture >> acceptVisitor: aVisitor [
+PicPictureNode >> acceptVisitor: aVisitor [
 
 	self subclassResponsibility
 ]
@@ -21,7 +21,7 @@ PicPicture >> acceptVisitor: aVisitor [
 	#category : #converting,
 	#'squeak_changestamp' : 'stlu 8/11/2021 11:40'
 }
-PicPicture >> asForm [
+PicPictureNode >> asForm [
 	"Answer a Form containing the drawn representation of myself."
 	| fc bounds |
 	bounds := self estimatedBounds.
@@ -35,7 +35,7 @@ PicPicture >> asForm [
 	#category : #enumerating,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPicture >> do: aBlock [
+PicPictureNode >> do: aBlock [
 
 	aBlock value: self
 ]
@@ -44,7 +44,7 @@ PicPicture >> do: aBlock [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPicture >> drawOn: aCanvas [
+PicPictureNode >> drawOn: aCanvas [
 	"Replays represented graphical command(s) onto the given canvas."
 	self subclassResponsibility
 ]
@@ -53,16 +53,16 @@ PicPicture >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/11/2021 11:38'
 }
-PicPicture >> estimatedBounds [
+PicPictureNode >> estimatedBounds [
 	"Returns a rectangle representing the maximum bounds I draw myself into, or nil if I am invisible."
 	self subclassResponsibility
 ]
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:48'
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:54'
 }
-PicPicture >> isClip [
+PicPictureNode >> isClipNode [
 
 	^ false
 ]
@@ -71,34 +71,34 @@ PicPicture >> isClip [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPicture >> isDrawing [
+PicPictureNode >> isDrawing [
 	"Returns true if drawing me onto a canvas results in a change of the underlying pixel store."
 	^ false
 ]
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 3/13/2021 12:27'
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:59'
 }
-PicPicture >> isRectangle [
+PicPictureNode >> isRectangleNode [
 
 	^ false
 ]
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 8/13/2021 13:04'
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:59'
 }
-PicPicture >> isShape [
+PicPictureNode >> isShapeNode [
 
 	^ false
 ]
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:48'
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:59'
 }
-PicPicture >> isTransform [
+PicPictureNode >> isTransformNode [
 
 	^ false
 ]
@@ -107,7 +107,7 @@ PicPicture >> isTransform [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 8/13/2021 13:10'
 }
-PicPicture >> isTranslucent [
+PicPictureNode >> isTranslucent [
 
 	self subclassResponsibility.
 ]
@@ -116,7 +116,7 @@ PicPicture >> isTranslucent [
 	#category : #debugging,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPicture >> open [
+PicPictureNode >> open [
 
 	 ^ self asForm asMorph openInHand
 ]

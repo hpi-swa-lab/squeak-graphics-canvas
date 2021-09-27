@@ -111,7 +111,7 @@ Smalltalk unloadModule: 'Float32ArrayBulkPlugin'.
 
 {
 	#category : #workspaces,
-	#'squeak_changestamp' : 'stlu 8/27/2021 00:04'
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:44'
 }
 RtWorkspaces class >> copyingMemoryIsFast [ <title: 'Advantages in Caching'> <auto: true> <collapsed: false> | original repIndex repSize replacement |
 "-----------------------------------------------------------"
@@ -137,7 +137,7 @@ repIndex := 2.
 "-----------------------------------------------------------"
 
 "We could use this extensively, but right now we're only using it for Picstring"
-PicString >> #calculateRightEdges.
+PicStringNode >> #calculateRightEdges.
 ]
 
 {

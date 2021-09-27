@@ -3,8 +3,8 @@ I apply a matrix transform to the drawing of all of my children.
 The stored transform is a `Matrix2x3`.
 "
 Class {
-	#name : #PicTransform,
-	#superclass : #PicGroup,
+	#name : #PicTransformNode,
+	#superclass : #PicGroupNode,
 	#instVars : [
 		'matrix'
 	],
@@ -15,7 +15,7 @@ Class {
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicTransform class >> matrix: aMatrix2x3 [
+PicTransformNode class >> matrix: aMatrix2x3 [
 
 	^ self new
 		matrix: aMatrix2x3;
@@ -26,7 +26,7 @@ PicTransform class >> matrix: aMatrix2x3 [
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:06'
 }
-PicTransform >> acceptVisitor: aVisitor [
+PicTransformNode >> acceptVisitor: aVisitor [
 
 	aVisitor visitTransform: self
 ]
@@ -35,7 +35,7 @@ PicTransform >> acceptVisitor: aVisitor [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicTransform >> drawOn: aCanvas [
+PicTransformNode >> drawOn: aCanvas [
 
 	aCanvas
 		transformBy: matrix
@@ -46,7 +46,7 @@ PicTransform >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/11/2021 11:45'
 }
-PicTransform >> estimatedBounds [
+PicTransformNode >> estimatedBounds [
 
 	^ super estimatedBounds ifNotNil: [:bounds |
 		matrix localBoundsToGlobal: bounds]
@@ -54,9 +54,9 @@ PicTransform >> estimatedBounds [
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:48'
+	#'squeak_changestamp' : 'stlu 9/27/2021 13:00'
 }
-PicTransform >> isTransform [
+PicTransformNode >> isTransformNode [
 
 	^ true
 ]
@@ -65,7 +65,7 @@ PicTransform >> isTransform [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicTransform >> matrix [
+PicTransformNode >> matrix [
 	^ matrix
 ]
 
@@ -73,6 +73,6 @@ PicTransform >> matrix [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicTransform >> matrix: anObject [
+PicTransformNode >> matrix: anObject [
 	matrix := anObject
 ]

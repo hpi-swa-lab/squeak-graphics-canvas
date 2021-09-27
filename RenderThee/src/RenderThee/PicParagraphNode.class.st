@@ -1,6 +1,6 @@
 Class {
-	#name : #PicParagraph,
-	#superclass : #PicDrawing,
+	#name : #PicParagraphNode,
+	#superclass : #PicPrimitiveNode,
 	#instVars : [
 		'bounds',
 		'color',
@@ -13,7 +13,7 @@ Class {
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
-PicParagraph >> acceptVisitor: aVisitor [
+PicParagraphNode >> acceptVisitor: aVisitor [
 
 	aVisitor visitParagraph: self
 ]
@@ -22,7 +22,7 @@ PicParagraph >> acceptVisitor: aVisitor [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicParagraph >> bounds [
+PicParagraphNode >> bounds [
 
 	^ bounds
 ]
@@ -31,7 +31,7 @@ PicParagraph >> bounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicParagraph >> bounds: anObject [
+PicParagraphNode >> bounds: anObject [
 
 	bounds := anObject.
 ]
@@ -40,7 +40,7 @@ PicParagraph >> bounds: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicParagraph >> color [
+PicParagraphNode >> color [
 
 	^ color
 ]
@@ -49,7 +49,7 @@ PicParagraph >> color [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicParagraph >> color: anObject [
+PicParagraphNode >> color: anObject [
 
 	color := anObject.
 ]
@@ -58,7 +58,7 @@ PicParagraph >> color: anObject [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicParagraph >> drawOn: aCanvas [
+PicParagraphNode >> drawOn: aCanvas [
 
 	aCanvas
 		paragraph: paragraph
@@ -70,7 +70,7 @@ PicParagraph >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicParagraph >> estimatedBounds [
+PicParagraphNode >> estimatedBounds [
 
 	^ bounds
 ]
@@ -79,7 +79,7 @@ PicParagraph >> estimatedBounds [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 8/13/2021 13:14'
 }
-PicParagraph >> isTranslucent [
+PicParagraphNode >> isTranslucent [
 
 	^ color isTranslucent
 ]
@@ -88,7 +88,7 @@ PicParagraph >> isTranslucent [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicParagraph >> paragraph [
+PicParagraphNode >> paragraph [
 
 	^ paragraph
 ]
@@ -97,7 +97,7 @@ PicParagraph >> paragraph [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicParagraph >> paragraph: anObject [
+PicParagraphNode >> paragraph: anObject [
 
 	paragraph := anObject.
 ]

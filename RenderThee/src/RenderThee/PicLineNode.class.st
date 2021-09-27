@@ -1,6 +1,6 @@
 Class {
-	#name : #PicLine,
-	#superclass : #PicDrawing,
+	#name : #PicLineNode,
+	#superclass : #PicPrimitiveNode,
 	#instVars : [
 		'from',
 		'to',
@@ -14,7 +14,7 @@ Class {
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:04'
 }
-PicLine >> acceptVisitor: aVisitor [
+PicLineNode >> acceptVisitor: aVisitor [
 
 	aVisitor visitLine: self
 ]
@@ -23,7 +23,7 @@ PicLine >> acceptVisitor: aVisitor [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLine >> color [
+PicLineNode >> color [
 
 	^ color
 ]
@@ -32,7 +32,7 @@ PicLine >> color [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLine >> color: anObject [
+PicLineNode >> color: anObject [
 
 	color := anObject.
 ]
@@ -41,7 +41,7 @@ PicLine >> color: anObject [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLine >> drawOn: aCanvas [
+PicLineNode >> drawOn: aCanvas [
 
 	aCanvas
 		line: from
@@ -54,7 +54,7 @@ PicLine >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLine >> estimatedBounds [
+PicLineNode >> estimatedBounds [
 
 	^ from rect: to
 ]
@@ -63,7 +63,7 @@ PicLine >> estimatedBounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLine >> from [
+PicLineNode >> from [
 
 	^ from
 ]
@@ -72,7 +72,7 @@ PicLine >> from [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLine >> from: anObject [
+PicLineNode >> from: anObject [
 
 	from := anObject.
 ]
@@ -81,7 +81,7 @@ PicLine >> from: anObject [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 8/13/2021 13:13'
 }
-PicLine >> isTranslucent [
+PicLineNode >> isTranslucent [
 
 	^ color isTranslucent
 ]
@@ -90,7 +90,7 @@ PicLine >> isTranslucent [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLine >> to [
+PicLineNode >> to [
 
 	^ to
 ]
@@ -99,7 +99,7 @@ PicLine >> to [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLine >> to: anObject [
+PicLineNode >> to: anObject [
 
 	to := anObject.
 ]
@@ -108,7 +108,7 @@ PicLine >> to: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLine >> width [
+PicLineNode >> width [
 
 	^ width
 ]
@@ -117,7 +117,7 @@ PicLine >> width [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLine >> width: anObject [
+PicLineNode >> width: anObject [
 
 	width := anObject.
 ]

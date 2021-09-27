@@ -53,13 +53,13 @@ PicCanvas >> clear [
 
 {
 	#category : #'drawing-support',
-	#'squeak_changestamp' : 'stlu 8/10/2021 15:31'
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:33'
 }
 PicCanvas >> clipBy: aRectangle during: aBlock [
 
 	(aRectangle containsRect: clipRect) ifTrue: [^ aBlock cull: self].
 	
-	^ self group: (PicClip rect: aRectangle) during: [
+	^ self group: (PicClipNode rect: aRectangle) during: [
 		self clipRect: (aRectangle intersect: clipRect) during: aBlock]
 ]
 
@@ -119,14 +119,14 @@ PicCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderColor: bc
 
 {
 	#category : #'drawing-polygons',
-	#'squeak_changestamp' : 'stlu 8/10/2021 14:47'
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:43'
 }
 PicCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	(self isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle) ifTrue: [^ self].
 	vertices ifEmpty: [^ self].
 
-	self addCommand: (PicPolygon new
+	self addCommand: (PicPolygonNode new
 							vertices: vertices;
 							fillStyle: aFillStyle;
 							borderStyle: aBorderStyle;
@@ -148,11 +148,11 @@ PicCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: bw borderC
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 8/27/2021 16:30'
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:44'
 }
 PicCanvas >> drawString: aString from: startIndex to: stopIndex at: topLeft font: fontOrNil color: aColor [
 
-	self addCommand: (PicString new
+	self addCommand: (PicStringNode new
 							contents: aString;
 							startIndex: startIndex;
 							stopIndex: stopIndex;
@@ -164,11 +164,11 @@ PicCanvas >> drawString: aString from: startIndex to: stopIndex at: topLeft font
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 8/27/2021 16:36'
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:44'
 }
 PicCanvas >> drawString: aString from: startIndex to: stopIndex in: boundsRect font: fontOrNil color: aColor [
 
-	self addCommand: (PicString new
+	self addCommand: (PicStringNode new
 							contents: aString;
 							startIndex: startIndex;
 							stopIndex: stopIndex;
@@ -194,14 +194,14 @@ PicCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderCo
 
 {
 	#category : #'drawing-ovals',
-	#'squeak_changestamp' : 'stlu 8/10/2021 14:47'
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:43'
 }
 PicCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	(self isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle) ifTrue: [^ self].
 	aRectangle extent isZero ifTrue: [^ self].
 
-	self addCommand: (PicOval new
+	self addCommand: (PicOvalNode new
 							bounds: aRectangle;
 							fillStyle: aFillStyle;
 							borderStyle: aBorderStyle;
@@ -246,14 +246,14 @@ PicCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWi
 
 {
 	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : 'stlu 8/10/2021 14:48'
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:43'
 }
 PicCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	(self isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle) ifTrue: [^ self].
 	aRectangle area isZero ifTrue: [^ self].
 
-	self addCommand: (PicRectangle new
+	self addCommand: (PicRectangleNode new
 							bounds: aRectangle;
 							fillStyle: aFillStyle;
 							borderStyle: aBorderStyle;
@@ -262,14 +262,14 @@ PicCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle
 
 {
 	#category : #'drawing-rounded rectangles',
-	#'squeak_changestamp' : 'stlu 8/10/2021 14:48'
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:43'
 }
 PicCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: aFillStyle borderStyle: aBorderStyle [
 
 	(self isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle) ifTrue: [^ self].
 	aRectangle extent isZero ifTrue: [^ self].
 
-	self addCommand: (PicRoundedRectangle new
+	self addCommand: (PicRoundedRectangleNode new
 							bounds: aRectangle;
 							radius: cornerRadius;
 							fillStyle: aFillStyle;
@@ -355,11 +355,11 @@ PicCanvas >> ignoreClip: aBoolean [
 
 {
 	#category : #'drawing-images',
-	#'squeak_changestamp' : 'stlu 8/10/2021 14:46'
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:41'
 }
 PicCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
-	self addCommand: (PicImage new
+	self addCommand: (PicImageNode new
 							form: aForm;
 							origin: aPoint;
 							sourceRect: sourceRect;
@@ -390,11 +390,11 @@ PicCanvas >> isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle [
 
 {
 	#category : #'drawing-lines',
-	#'squeak_changestamp' : 'stlu 8/10/2021 14:47'
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:41'
 }
 PicCanvas >> line: from to: to width: width color: color [
 
-	self addCommand: (PicLine new
+	self addCommand: (PicLineNode new
 							from: from;
 							to: to;
 							width: width;
@@ -447,11 +447,11 @@ PicCanvas >> preserveStateDuring: aBlock [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/10/2021 15:18'
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:33'
 }
 PicCanvas >> reset [
 
-	groupStack := OrderedCollection with: PicGroup new.
+	groupStack := OrderedCollection with: PicGroupNode new.
 	transform := Matrix2x3 identity.
 	clipRect := Rectangle infinite.
 ]
@@ -503,7 +503,7 @@ PicCanvas >> transform: aTransform clipRect: aRectangle during: aBlock [
 
 {
 	#category : #'drawing-support',
-	#'squeak_changestamp' : 'stlu 8/10/2021 16:03'
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:34'
 }
 PicCanvas >> transformBy: aTransform during: aBlock [
 
@@ -512,7 +512,7 @@ PicCanvas >> transformBy: aTransform during: aBlock [
 	
 	matrix2x3 := aTransform asMatrix2x3.
 	transformedClip := (matrix2x3 globalBoundsToLocal: clipRect) expanded.
-	^ self group: (PicTransform matrix: matrix2x3) during: [
+	^ self group: (PicTransformNode matrix: matrix2x3) during: [
 		self
 			transform: (transform composedWithLocal: matrix2x3)
 			clipRect: transformedClip

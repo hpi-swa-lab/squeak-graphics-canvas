@@ -4,8 +4,8 @@ I hold a collection of children which I composite to draw myself.
 Subclasses of me modify properties of the subtree they represent.
 "
 Class {
-	#name : #PicGroup,
-	#superclass : #PicPicture,
+	#name : #PicGroupNode,
+	#superclass : #PicPictureNode,
 	#instVars : [
 		'children'
 	],
@@ -16,7 +16,7 @@ Class {
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicGroup class >> children: aCollection [
+PicGroupNode class >> children: aCollection [
 
 	^ self new
 		children: aCollection;
@@ -27,7 +27,7 @@ PicGroup class >> children: aCollection [
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
-PicGroup >> acceptVisitor: aVisitor [
+PicGroupNode >> acceptVisitor: aVisitor [
 
 	aVisitor visitGroup: self
 ]
@@ -36,7 +36,7 @@ PicGroup >> acceptVisitor: aVisitor [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicGroup >> addChild: aCommand [
+PicGroupNode >> addChild: aCommand [
 
 	^ children add: aCommand
 ]
@@ -45,7 +45,7 @@ PicGroup >> addChild: aCommand [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicGroup >> children [
+PicGroupNode >> children [
 	"A collection of PicCommand. Last child has front-most z-coordinate."
 	^ children
 ]
@@ -54,7 +54,7 @@ PicGroup >> children [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicGroup >> children: aCollection [
+PicGroupNode >> children: aCollection [
 
 	children := aCollection
 ]
@@ -63,7 +63,7 @@ PicGroup >> children: aCollection [
 	#category : #enumerating,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicGroup >> do: aBlock [
+PicGroupNode >> do: aBlock [
 
 	super do: aBlock.
 	children do: [:child | child do: aBlock]
@@ -73,7 +73,7 @@ PicGroup >> do: aBlock [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicGroup >> drawOn: aCanvas [
+PicGroupNode >> drawOn: aCanvas [
 
 	children do: [:child |
 		child drawOn: aCanvas]
@@ -83,7 +83,7 @@ PicGroup >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/11/2021 11:44'
 }
-PicGroup >> estimatedBounds [
+PicGroupNode >> estimatedBounds [
 
 	| childrenBounds |
 	childrenBounds := self estimatedChildrenBounds.
@@ -95,7 +95,7 @@ PicGroup >> estimatedBounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/11/2021 11:43'
 }
-PicGroup >> estimatedChildrenBounds [
+PicGroupNode >> estimatedChildrenBounds [
 
 	children ifEmpty: [^ #()].
 	^ Array streamContents: [:stream |
@@ -108,7 +108,7 @@ PicGroup >> estimatedChildrenBounds [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicGroup >> hasChildren [
+PicGroupNode >> hasChildren [
 
 	^ children notEmpty
 ]
@@ -117,7 +117,7 @@ PicGroup >> hasChildren [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 8/10/2021 18:07'
 }
-PicGroup >> initialize [
+PicGroupNode >> initialize [
 
 	super initialize.
 	children := OrderedCollection new.
@@ -127,7 +127,7 @@ PicGroup >> initialize [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicGroup >> isDrawing [
+PicGroupNode >> isDrawing [
 
 	^ children anySatisfy: [:child | child isDrawing]
 ]
@@ -136,7 +136,7 @@ PicGroup >> isDrawing [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicGroup >> isEmpty [
+PicGroupNode >> isEmpty [
 
 	^ children isEmpty
 ]
@@ -145,7 +145,7 @@ PicGroup >> isEmpty [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 8/13/2021 13:16'
 }
-PicGroup >> isTranslucent [
+PicGroupNode >> isTranslucent [
 
 	^ children anySatisfy: [:each | each isTranslucent]
 ]
@@ -154,7 +154,7 @@ PicGroup >> isTranslucent [
 	#category : #copying,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicGroup >> postCopy [
+PicGroupNode >> postCopy [
 
 	super postCopy.
 	children := children copy
@@ -164,7 +164,7 @@ PicGroup >> postCopy [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicGroup >> removeAllChildren [
+PicGroupNode >> removeAllChildren [
 
 	^ children reset
 ]
@@ -173,16 +173,16 @@ PicGroup >> removeAllChildren [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicGroup >> removeLastChild [
+PicGroupNode >> removeLastChild [
 
 	^ children removeLast
 ]
 
 {
 	#category : #transforming,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:34'
 }
-PicGroup >> transformBy: aTransform [
+PicGroupNode >> transformBy: aTransform [
 
-	children := { (PicTransform matrix: aTransform) children: children }
+	children := { (PicTransformNode matrix: aTransform) children: children }.
 ]

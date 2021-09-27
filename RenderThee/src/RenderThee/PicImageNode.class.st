@@ -1,6 +1,6 @@
 Class {
-	#name : #PicImage,
-	#superclass : #PicDrawing,
+	#name : #PicImageNode,
+	#superclass : #PicPrimitiveNode,
 	#instVars : [
 		'form',
 		'origin',
@@ -14,7 +14,7 @@ Class {
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:04'
 }
-PicImage >> acceptVisitor: aVisitor [
+PicImageNode >> acceptVisitor: aVisitor [
 
 	aVisitor visitImage: self
 ]
@@ -23,7 +23,7 @@ PicImage >> acceptVisitor: aVisitor [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/20/2021 21:54'
 }
-PicImage >> bounds [
+PicImageNode >> bounds [
 
 	^ origin extent: sourceRect extent
 ]
@@ -32,7 +32,7 @@ PicImage >> bounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicImage >> combinationRule [
+PicImageNode >> combinationRule [
 
 	^ combinationRule
 ]
@@ -41,7 +41,7 @@ PicImage >> combinationRule [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicImage >> combinationRule: anObject [
+PicImageNode >> combinationRule: anObject [
 
 	combinationRule := anObject
 ]
@@ -50,7 +50,7 @@ PicImage >> combinationRule: anObject [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicImage >> drawOn: aCanvas [
+PicImageNode >> drawOn: aCanvas [
 
 	aCanvas
 		image: form
@@ -63,7 +63,7 @@ PicImage >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/20/2021 21:55'
 }
-PicImage >> estimatedBounds [
+PicImageNode >> estimatedBounds [
 
 	^ self bounds
 ]
@@ -72,7 +72,7 @@ PicImage >> estimatedBounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicImage >> form [
+PicImageNode >> form [
 
 	^ form
 ]
@@ -81,7 +81,7 @@ PicImage >> form [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicImage >> form: anObject [
+PicImageNode >> form: anObject [
 
 	form := anObject.
 ]
@@ -90,7 +90,7 @@ PicImage >> form: anObject [
 	#category : #thumbnail,
 	#'squeak_changestamp' : 'stlu 8/13/2021 16:44'
 }
-PicImage >> iconOrThumbnailOfSize: aNumberOrPoint [ 
+PicImageNode >> iconOrThumbnailOfSize: aNumberOrPoint [ 
 	"Answer an appropiate form to represent the receiver"
 	| canvas |
 	canvas := FormCanvas extent: aNumberOrPoint asPoint depth: 32.
@@ -109,7 +109,7 @@ PicImage >> iconOrThumbnailOfSize: aNumberOrPoint [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 8/13/2021 13:12'
 }
-PicImage >> isTranslucent [
+PicImageNode >> isTranslucent [
 
 	^ form isTranslucent "most likely true even if actually opaque"
 ]
@@ -118,7 +118,7 @@ PicImage >> isTranslucent [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicImage >> origin [
+PicImageNode >> origin [
 
 	^ origin
 ]
@@ -127,7 +127,7 @@ PicImage >> origin [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicImage >> origin: anObject [
+PicImageNode >> origin: anObject [
 
 	origin := anObject.
 ]
@@ -136,7 +136,7 @@ PicImage >> origin: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicImage >> sourceRect [
+PicImageNode >> sourceRect [
 
 	^ sourceRect
 ]
@@ -145,7 +145,7 @@ PicImage >> sourceRect [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicImage >> sourceRect: anObject [
+PicImageNode >> sourceRect: anObject [
 
 	sourceRect := anObject.
 ]

@@ -3,8 +3,8 @@ I clip the drawing of my children to a given rectangle.
 My clipping rectangle is stored in local coordinates relative to the last transform of my parent chain.
 "
 Class {
-	#name : #PicClip,
-	#superclass : #PicGroup,
+	#name : #PicClipNode,
+	#superclass : #PicGroupNode,
 	#instVars : [
 		'clipRect'
 	],
@@ -15,7 +15,7 @@ Class {
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicClip class >> rect: aRectangle [
+PicClipNode class >> rect: aRectangle [
 
 	^ self new
 		clipRect: aRectangle;
@@ -26,7 +26,7 @@ PicClip class >> rect: aRectangle [
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:06'
 }
-PicClip >> acceptVisitor: aVisitor [
+PicClipNode >> acceptVisitor: aVisitor [
 
 	aVisitor visitClip: self
 ]
@@ -35,7 +35,7 @@ PicClip >> acceptVisitor: aVisitor [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicClip >> clipRect [
+PicClipNode >> clipRect [
 
 	^ clipRect
 ]
@@ -44,7 +44,7 @@ PicClip >> clipRect [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicClip >> clipRect: anObject [
+PicClipNode >> clipRect: anObject [
 
 	clipRect := anObject
 ]
@@ -53,7 +53,7 @@ PicClip >> clipRect: anObject [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicClip >> drawOn: aCanvas [
+PicClipNode >> drawOn: aCanvas [
 
 	aCanvas
 		clipBy: clipRect
@@ -64,7 +64,7 @@ PicClip >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/11/2021 11:46'
 }
-PicClip >> estimatedBounds [
+PicClipNode >> estimatedBounds [
 
 	^ super estimatedBounds ifNotNil: [:bounds |
 		bounds intersect: clipRect]
@@ -72,9 +72,9 @@ PicClip >> estimatedBounds [
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:49'
+	#'squeak_changestamp' : 'stlu 9/27/2021 13:00'
 }
-PicClip >> isClip [
+PicClipNode >> isClipNode [
 
 	^ true
 ]

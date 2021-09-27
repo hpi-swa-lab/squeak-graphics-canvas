@@ -1,6 +1,6 @@
 Class {
-	#name : #PicString,
-	#superclass : #PicDrawing,
+	#name : #PicStringNode,
+	#superclass : #PicPrimitiveNode,
 	#instVars : [
 		'contents',
 		'startIndex',
@@ -19,7 +19,7 @@ Class {
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
-PicString >> acceptVisitor: aVisitor [
+PicStringNode >> acceptVisitor: aVisitor [
 
 	aVisitor visitString: self
 ]
@@ -28,7 +28,7 @@ PicString >> acceptVisitor: aVisitor [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 15:46'
 }
-PicString >> bounds [
+PicStringNode >> bounds [
 
 	| extent |
 	extent := self extent.
@@ -40,7 +40,7 @@ PicString >> bounds [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 8/26/2021 14:41'
 }
-PicString >> calculateRightEdges [
+PicStringNode >> calculateRightEdges [
 
 	| font left |
 	font := self font.
@@ -61,7 +61,7 @@ PicString >> calculateRightEdges [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicString >> color [
+PicStringNode >> color [
 
 	^ color
 ]
@@ -70,7 +70,7 @@ PicString >> color [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicString >> color: anObject [
+PicStringNode >> color: anObject [
 
 	color := anObject.
 ]
@@ -79,7 +79,7 @@ PicString >> color: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicString >> contents [
+PicStringNode >> contents [
 
 	^ contents
 ]
@@ -88,7 +88,7 @@ PicString >> contents [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicString >> contents: anObject [
+PicStringNode >> contents: anObject [
 
 	contents := anObject.
 ]
@@ -97,7 +97,7 @@ PicString >> contents: anObject [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 13:52'
 }
-PicString >> drawOn: aCanvas [
+PicStringNode >> drawOn: aCanvas [
 
 	maxExtent
 		ifNil: [
@@ -120,7 +120,7 @@ PicString >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 15:47'
 }
-PicString >> estimatedBounds [
+PicStringNode >> estimatedBounds [
 
 	^ self bounds
 ]
@@ -129,7 +129,7 @@ PicString >> estimatedBounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 15:43'
 }
-PicString >> extent [
+PicStringNode >> extent [
 
 	^ self maxExtent
 		ifNil: [self fullExtent]
@@ -140,7 +140,7 @@ PicString >> extent [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 15:07'
 }
-PicString >> font [
+PicStringNode >> font [
 
 	^ font ifNil: [font := TextStyle defaultFont]
 ]
@@ -149,7 +149,7 @@ PicString >> font [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicString >> font: anObject [
+PicStringNode >> font: anObject [
 
 	font := anObject.
 ]
@@ -158,7 +158,7 @@ PicString >> font: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 16:29'
 }
-PicString >> fullExtent [
+PicStringNode >> fullExtent [
 
 	^ self rightEdges last @ font height
 ]
@@ -167,7 +167,7 @@ PicString >> fullExtent [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 15:38'
 }
-PicString >> fullExtent: anObject [
+PicStringNode >> fullExtent: anObject [
 
 	fullExtent := anObject.
 ]
@@ -176,7 +176,7 @@ PicString >> fullExtent: anObject [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 8/13/2021 13:14'
 }
-PicString >> isTranslucent [
+PicStringNode >> isTranslucent [
 
 	^ color isTranslucent
 ]
@@ -185,7 +185,7 @@ PicString >> isTranslucent [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 14:21'
 }
-PicString >> length [
+PicStringNode >> length [
 
 	^ stopIndex - startIndex + 1
 ]
@@ -194,7 +194,7 @@ PicString >> length [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 16:30'
 }
-PicString >> maxCorner [
+PicStringNode >> maxCorner [
 
 	^ maxExtent ifNotNil: [position + maxExtent]
 ]
@@ -203,7 +203,7 @@ PicString >> maxCorner [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/20/2021 12:58'
 }
-PicString >> maxExtent [
+PicStringNode >> maxExtent [
 
 	^ maxExtent
 ]
@@ -212,7 +212,7 @@ PicString >> maxExtent [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/20/2021 12:58'
 }
-PicString >> maxExtent: anObject [
+PicStringNode >> maxExtent: anObject [
 
 	maxExtent := anObject.
 ]
@@ -221,7 +221,7 @@ PicString >> maxExtent: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 15:08'
 }
-PicString >> position [
+PicStringNode >> position [
 
 	^ position
 ]
@@ -230,7 +230,7 @@ PicString >> position [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 15:08'
 }
-PicString >> position: anObject [
+PicStringNode >> position: anObject [
 
 	position := anObject.
 ]
@@ -239,7 +239,7 @@ PicString >> position: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 16:26'
 }
-PicString >> rightEdges [
+PicStringNode >> rightEdges [
 
 	^ rightEdges ifNil: [
 		self calculateRightEdges.
@@ -250,7 +250,7 @@ PicString >> rightEdges [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/20/2021 12:26'
 }
-PicString >> startIndex [
+PicStringNode >> startIndex [
 
 	^ startIndex
 ]
@@ -259,7 +259,7 @@ PicString >> startIndex [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/20/2021 12:26'
 }
-PicString >> startIndex: anObject [
+PicStringNode >> startIndex: anObject [
 
 	startIndex := anObject.
 ]
@@ -268,7 +268,7 @@ PicString >> startIndex: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/20/2021 12:26'
 }
-PicString >> stopIndex [
+PicStringNode >> stopIndex [
 
 	^ stopIndex
 ]
@@ -277,7 +277,7 @@ PicString >> stopIndex [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/20/2021 12:26'
 }
-PicString >> stopIndex: anObject [
+PicStringNode >> stopIndex: anObject [
 
 	stopIndex := anObject.
 ]
