@@ -141,7 +141,7 @@ RtMorphExample >> initialize [
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 9/17/2021 16:54'
+	#'squeak_changestamp' : 'stlu 9/27/2021 14:24'
 }
 RtMorphExample >> key: keyEnum scanCode: scanCode changedTo: state with: mods [
 
@@ -179,9 +179,16 @@ RtMorphExample >> key: keyEnum scanCode: scanCode changedTo: state with: mods [
 		0}.
 	EventSensor default processEvent: eventBuffer.
 	
+	"Some key downs don't produce key strokes
+	since they do not actually map to unicode characters."
 	type = EventKeyDown ifTrue: [
+		"Figure out whether the key is printable to avoid doubling key strokes.
+		This is incredibly brittle (especially with non-latin keyboard layouts)."
 		virtualKey isCharacter ifFalse: [^ self].
-		(virtualKey isPrintable and: [mods = 0 or: [mods = 1 and: [isShiftPressed]]]) ifTrue: [^ self]. "handled by keyStroke:"
+		((GLFW isPrintableKey: keyEnum)
+			and: [mods = 0 or: [mods = 1 and: [isShiftPressed]]]) ifTrue: [^ self].
+		keyEnum = GLFW_KEY_SPACE ifTrue: [^ self].
+		
 		eventBuffer := {
 			EventTypeKeyboard.
 			EventSensor default eventTimeNow.
