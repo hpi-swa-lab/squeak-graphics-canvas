@@ -23,12 +23,14 @@ PicGroupNode >> acceptVisitor: aVisitor [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/27/2021 16:17'
+	#'squeak_changestamp' : 'stlu 9/27/2021 17:30'
 }
-PicGroupNode >> addChild: aCommand [
+PicGroupNode >> addChild: aNode [
 
 	children ifNil: [children := OrderedCollection new].
-	^ children add: aCommand
+	"aNode should not have a (valid) parent already"
+	aNode parent: self.
+	^ children add: aNode
 ]
 
 {

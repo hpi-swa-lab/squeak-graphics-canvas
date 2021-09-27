@@ -5,6 +5,9 @@ A `PicPictureCanvas` is typically used to create me.
 Class {
 	#name : #PicPictureNode,
 	#superclass : #Object,
+	#instVars : [
+		'parent'
+	],
 	#category : #'RenderThee-Pictures'
 }
 
@@ -137,4 +140,22 @@ PicPictureNode >> isTransparent [
 PicPictureNode >> open [
 
 	 ^ self asForm asMorph openInHand
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/27/2021 17:28'
+}
+PicPictureNode >> parent [
+
+	^ parent
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/27/2021 17:28'
+}
+PicPictureNode >> parent: aNode [
+
+	parent := aNode.
 ]
