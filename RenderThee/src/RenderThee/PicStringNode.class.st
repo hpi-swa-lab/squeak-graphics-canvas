@@ -182,6 +182,15 @@ PicStringNode >> isTranslucent [
 ]
 
 {
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 9/27/2021 13:09'
+}
+PicStringNode >> isTransparent [
+
+	^ color isTransparent
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 14:21'
 }

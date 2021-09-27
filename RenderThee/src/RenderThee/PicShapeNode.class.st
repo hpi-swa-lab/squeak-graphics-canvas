@@ -83,9 +83,18 @@ PicShapeNode >> isShapeNode [
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 8/13/2021 13:14'
+	#'squeak_changestamp' : 'stlu 9/27/2021 13:08'
 }
 PicShapeNode >> isTranslucent [
 
-	^ fillStyle isTranslucent
+	^ fillStyle isTranslucent or: [borderStyle isTranslucent]
+]
+
+{
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 9/27/2021 13:08'
+}
+PicShapeNode >> isTransparent [
+
+	^ fillStyle isTransparent and: [borderStyle isTransparent]
 ]

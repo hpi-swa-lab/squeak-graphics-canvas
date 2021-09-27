@@ -98,14 +98,14 @@ RtRecordingCanvas >> changeGroupLayerTo: aLayer during: aBlock [
 
 {
 	#category : #'repaint boundaries',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 9/27/2021 13:12'
 }
 RtRecordingCanvas >> endPicture [
 
 	| picture |
 	picture := wrappedCanvas getPicture.
 	wrappedCanvas clear.
-	picture isDrawing ifTrue: [
+	picture hasPrimitiveNode ifTrue: [
 		rootLayer addChild: (RtDrawLayer picture: picture)]
 ]
 

@@ -9,9 +9,9 @@ Class {
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 9/27/2021 13:11'
 }
-PicPrimitiveNode >> isDrawing [
+PicPrimitiveNode >> hasPrimitiveNode [
 
 	^ true
 ]

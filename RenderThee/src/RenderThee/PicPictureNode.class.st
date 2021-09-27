@@ -60,19 +60,19 @@ PicPictureNode >> estimatedBounds [
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 9/27/2021 12:54'
+	#'squeak_changestamp' : 'stlu 9/27/2021 13:11'
 }
-PicPictureNode >> isClipNode [
+PicPictureNode >> hasPrimitiveNode [
 
 	^ false
 ]
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:54'
 }
-PicPictureNode >> isDrawing [
-	"Returns true if drawing me onto a canvas results in a change of the underlying pixel store."
+PicPictureNode >> isClipNode [
+
 	^ false
 ]
 
@@ -110,6 +110,15 @@ PicPictureNode >> isTransformNode [
 PicPictureNode >> isTranslucent [
 
 	self subclassResponsibility.
+]
+
+{
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:57'
+}
+PicPictureNode >> isTransparent [
+	"Returns true if applying me onto a canvas would result in a visible change."
+	^ false
 ]
 
 {

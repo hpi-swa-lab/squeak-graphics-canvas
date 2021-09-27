@@ -114,6 +114,15 @@ PicGroupNode >> hasChildren [
 ]
 
 {
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 9/27/2021 13:11'
+}
+PicGroupNode >> hasPrimitiveNode [
+
+	^ children anySatisfy: [:child | child hasPrimitiveNode]
+]
+
+{
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 8/10/2021 18:07'
 }
@@ -121,15 +130,6 @@ PicGroupNode >> initialize [
 
 	super initialize.
 	children := OrderedCollection new.
-]
-
-{
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicGroupNode >> isDrawing [
-
-	^ children anySatisfy: [:child | child isDrawing]
 ]
 
 {
@@ -148,6 +148,15 @@ PicGroupNode >> isEmpty [
 PicGroupNode >> isTranslucent [
 
 	^ children anySatisfy: [:each | each isTranslucent]
+]
+
+{
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 9/27/2021 13:03'
+}
+PicGroupNode >> isTransparent [
+
+	^ children allSatisfy: [:child | child isTransparent]
 ]
 
 {
