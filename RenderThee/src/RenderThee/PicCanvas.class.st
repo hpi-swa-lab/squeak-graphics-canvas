@@ -119,11 +119,11 @@ PicCanvas >> drawPolygon: vertices color: aColor borderWidth: bw borderColor: bc
 
 {
 	#category : #'drawing-polygons',
-	#'squeak_changestamp' : 'stlu 9/27/2021 12:43'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:10'
 }
 PicCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBorderStyle [
 
-	(self isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle) ifTrue: [^ self].
+	(aFillStyle isTransparent and: [aBorderStyle isTransparent]) ifTrue: [^ self].
 	vertices ifEmpty: [^ self].
 
 	self addCommand: (PicPolygonNode new
@@ -194,11 +194,11 @@ PicCanvas >> fillOval: r color: c borderWidth: borderWidth borderColor: borderCo
 
 {
 	#category : #'drawing-ovals',
-	#'squeak_changestamp' : 'stlu 9/27/2021 12:43'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:09'
 }
 PicCanvas >> fillOval: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
-	(self isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle) ifTrue: [^ self].
+	(aFillStyle isTransparent and: [aBorderStyle isTransparent]) ifTrue: [^ self].
 	aRectangle extent isZero ifTrue: [^ self].
 
 	self addCommand: (PicOvalNode new
@@ -246,11 +246,11 @@ PicCanvas >> frameAndFillRectangle: r fillColor: fillColor borderWidth: borderWi
 
 {
 	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : 'stlu 9/27/2021 12:43'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:09'
 }
 PicCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
-	(self isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle) ifTrue: [^ self].
+	(aFillStyle isTransparent and: [aBorderStyle isTransparent]) ifTrue: [^ self].
 	aRectangle area isZero ifTrue: [^ self].
 
 	self addCommand: (PicRectangleNode new
@@ -262,11 +262,11 @@ PicCanvas >> frameAndFillRectangle: aRectangle fillStyle: aFillStyle borderStyle
 
 {
 	#category : #'drawing-rounded rectangles',
-	#'squeak_changestamp' : 'stlu 9/27/2021 12:43'
+	#'squeak_changestamp' : 'stlu 9/27/2021 15:09'
 }
 PicCanvas >> frameAndFillRoundRect: aRectangle radius: cornerRadius fillStyle: aFillStyle borderStyle: aBorderStyle [
 
-	(self isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle) ifTrue: [^ self].
+	(aFillStyle isTransparent and: [aBorderStyle isTransparent]) ifTrue: [^ self].
 	aRectangle extent isZero ifTrue: [^ self].
 
 	self addCommand: (PicRoundedRectangleNode new
@@ -375,17 +375,6 @@ PicCanvas >> initialize [
 
 	self reset.
 	ignoreClip := false.
-]
-
-{
-	#category : #helpers,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicCanvas >> isTransparentFillStyle: aFillStyle borderStyle: aBorderStyle [
-
-	aBorderStyle isTransparent ifFalse: [^ false].
-	aFillStyle isTransparent ifFalse: [^ false].
-	^ true
 ]
 
 {
