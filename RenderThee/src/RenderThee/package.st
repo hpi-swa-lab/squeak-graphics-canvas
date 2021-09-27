@@ -1,4 +1,4 @@
 Package {
-	#'squeak_changestamp' : true,
-	#name : #RenderThee
+	#name : #RenderThee,
+	#'squeak_changestamp' : true
 }
