@@ -532,11 +532,11 @@ PicCanvas >> translateBy: aPoint during: aBlock [
 
 {
 	#category : #private,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 9/27/2021 12:47'
 }
 PicCanvas >> unsupported: selector [
 	"Called whenever a currently not supported message of the Canvas interface is sent."
-	self addCommand: (PicUnsupported type: selector)
+	self notify: 'Selector ' , selector storeString , ' not supported'.
 ]
 
 {

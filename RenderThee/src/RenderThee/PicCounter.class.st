@@ -137,12 +137,3 @@ PicCounter >> visitTransform: anObject [
 	super visitTransform: anObject.
 	counts add: #transform
 ]
-
-{
-	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/19/2021 20:29'
-}
-PicCounter >> visitUnsupported: anObject [
-
-	counts add: #unsupported
-]
