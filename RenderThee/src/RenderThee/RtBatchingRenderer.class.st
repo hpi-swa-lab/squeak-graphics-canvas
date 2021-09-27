@@ -838,12 +838,14 @@ RtBatchingRenderer >> visitClip: aPicClip [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 8/26/2021 13:43'
+	#'squeak_changestamp' : 'stlu 9/13/2021 12:49'
 }
 RtBatchingRenderer >> visitGroup: aPicGroup [
 
-	aPicGroup children do: [:child |
-		child acceptVisitor: self].
+	| children |
+	children := aPicGroup children.
+	1 to: children size do: [:childIndex |
+		(children at: childIndex) acceptVisitor: self].
 ]
 
 {
