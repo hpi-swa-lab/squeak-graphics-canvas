@@ -13,17 +13,6 @@ Class {
 }
 
 {
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicGroupNode class >> children: aCollection [
-
-	^ self new
-		children: aCollection;
-		yourself
-]
-
-{
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
@@ -34,48 +23,50 @@ PicGroupNode >> acceptVisitor: aVisitor [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 9/27/2021 16:17'
 }
 PicGroupNode >> addChild: aCommand [
 
+	children ifNil: [children := OrderedCollection new].
 	^ children add: aCommand
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 9/27/2021 16:23'
 }
 PicGroupNode >> children [
-	"A collection of PicCommand. Last child has front-most z-coordinate."
-	^ children
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicGroupNode >> children: aCollection [
-
-	children := aCollection
+	"A collection of PicPictureNode. Last child has front-most z-coordinate."
+	^ children ifNil: [#()]
 ]
 
 {
 	#category : #enumerating,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 9/27/2021 16:27'
+}
+PicGroupNode >> childrenDo: aBlock [
+
+	children ifNil: [^ self].
+	children do: [:child | aBlock value: child].
+]
+
+{
+	#category : #enumerating,
+	#'squeak_changestamp' : 'stlu 9/27/2021 16:27'
 }
 PicGroupNode >> do: aBlock [
 
 	super do: aBlock.
-	children do: [:child | child do: aBlock]
+	self childrenDo: [:child | child do: aBlock].
 ]
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 9/27/2021 16:26'
 }
 PicGroupNode >> drawOn: aCanvas [
 
-	children do: [:child |
+	self childrenDo: [:child |
 		child drawOn: aCanvas]
 ]
 
@@ -93,105 +84,78 @@ PicGroupNode >> estimatedBounds [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/11/2021 11:43'
+	#'squeak_changestamp' : 'stlu 9/27/2021 16:26'
 }
 PicGroupNode >> estimatedChildrenBounds [
 
-	children ifEmpty: [^ #()].
+	self hasChildren ifFalse: [^ #()].
 	^ Array streamContents: [:stream |
-		children do: [:child |
+		self childrenDo: [:child |
 			child estimatedBounds ifNotNil: [:childBounds |
 				stream nextPut: childBounds]]]
 ]
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 9/27/2021 16:25'
 }
 PicGroupNode >> hasChildren [
 
-	^ children notEmpty
+	^ children isNil or: [children notEmpty]
 ]
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 9/27/2021 13:11'
+	#'squeak_changestamp' : 'stlu 9/27/2021 16:24'
 }
 PicGroupNode >> hasPrimitiveNode [
 
-	^ children anySatisfy: [:child | child hasPrimitiveNode]
-]
-
-{
-	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/10/2021 18:07'
-}
-PicGroupNode >> initialize [
-
-	super initialize.
-	children := OrderedCollection new.
+	^ self children anySatisfy: [:child | child hasPrimitiveNode]
 ]
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicGroupNode >> isEmpty [
-
-	^ children isEmpty
-]
-
-{
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 8/13/2021 13:16'
+	#'squeak_changestamp' : 'stlu 9/27/2021 16:24'
 }
 PicGroupNode >> isTranslucent [
 
-	^ children anySatisfy: [:each | each isTranslucent]
+	^ self children anySatisfy: [:each | each isTranslucent]
 ]
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 9/27/2021 13:03'
+	#'squeak_changestamp' : 'stlu 9/27/2021 16:24'
 }
 PicGroupNode >> isTransparent [
 
-	^ children allSatisfy: [:child | child isTransparent]
+	^ self children allSatisfy: [:child | child isTransparent]
 ]
 
 {
 	#category : #copying,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 9/27/2021 16:21'
 }
 PicGroupNode >> postCopy [
 
 	super postCopy.
-	children := children copy
+	children := children copy.
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 9/27/2021 16:19'
 }
 PicGroupNode >> removeAllChildren [
 
-	^ children reset
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicGroupNode >> removeLastChild [
-
-	^ children removeLast
+	children ifNotNil: [
+		children reset].
 ]
 
 {
 	#category : #transforming,
-	#'squeak_changestamp' : 'stlu 9/27/2021 12:34'
+	#'squeak_changestamp' : 'stlu 9/27/2021 16:18'
 }
 PicGroupNode >> transformBy: aTransform [
 
-	children := { (PicTransformNode matrix: aTransform) children: children }.
+	self deprecated.
 ]

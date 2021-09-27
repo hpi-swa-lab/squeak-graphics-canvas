@@ -38,13 +38,12 @@ PicMorphNode >> bounds: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:40'
+	#'squeak_changestamp' : 'stlu 9/27/2021 16:32'
 }
 PicMorphNode >> initialize [
 
 	super initialize.
 	isValid := true.
-	bounds := 0@0 corner: 0@0.
 	invalidationStamp := 0.
 ]
 

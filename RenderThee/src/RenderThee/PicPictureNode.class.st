@@ -33,6 +33,15 @@ PicPictureNode >> asForm [
 
 {
 	#category : #enumerating,
+	#'squeak_changestamp' : 'stlu 9/27/2021 16:10'
+}
+PicPictureNode >> childrenDo: aBlock [
+
+	"do nothing"
+]
+
+{
+	#category : #enumerating,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicPictureNode >> do: aBlock [

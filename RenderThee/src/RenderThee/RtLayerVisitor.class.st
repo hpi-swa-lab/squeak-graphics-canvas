@@ -24,10 +24,10 @@ RtLayerVisitor >> visitDrawLayer: aLayer [
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 9/27/2021 16:11'
 }
 RtLayerVisitor >> visitGroupLayer: aLayer [
 
-	aLayer children do: [:child |
-		child accept: self]
+	aLayer childrenDo: [:child |
+		child accept: self].
 ]

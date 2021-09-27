@@ -316,7 +316,7 @@ PicCanvas >> frameRectangle: aRectangle borderStyle: aBorderStyle [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 9/27/2021 16:03'
 }
 PicCanvas >> getPicture [
 	"Answers the picture as drawn up to this point. Returns an object of kind PicGroup.
@@ -327,7 +327,7 @@ PicCanvas >> getPicture [
 		| parent |
 		parent := group copy.
 		child ifNotNil: [
-			child isEmpty ifFalse: [
+			child hasChildren ifTrue: [
 				parent addChild: child]].
 		child := parent].
 	^ child
@@ -335,7 +335,7 @@ PicCanvas >> getPicture [
 
 {
 	#category : #'scoped state',
-	#'squeak_changestamp' : 'stlu 9/27/2021 15:44'
+	#'squeak_changestamp' : 'stlu 9/27/2021 16:04'
 }
 PicCanvas >> group: aGroup during: aBlock [
 	"Scoped setter for `group` variable."
@@ -343,7 +343,7 @@ PicCanvas >> group: aGroup during: aBlock [
 	^ aBlock ensure: [
 		| group |
 		group := groupStack removeLast.
-		group isEmpty ifFalse: [
+		group hasChildren ifTrue: [
 			self addNode: group]]
 ]
 

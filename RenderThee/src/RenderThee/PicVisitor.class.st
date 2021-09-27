@@ -24,12 +24,12 @@ PicVisitor >> visitClip: anObject [
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:12'
+	#'squeak_changestamp' : 'stlu 9/27/2021 16:08'
 }
 PicVisitor >> visitGroup: aGroup [
 
-	aGroup children do: [:child |
-		child acceptVisitor: self]
+	aGroup childrenDo: [:child |
+		child acceptVisitor: self].
 ]
 
 {
