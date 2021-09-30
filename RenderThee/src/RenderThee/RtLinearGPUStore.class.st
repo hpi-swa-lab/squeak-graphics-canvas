@@ -103,6 +103,23 @@ RtLinearGPUStore >> add: num1 add: num2 add: num3 add: num4 add: num5 add: num6 
 
 {
 	#category : #adding,
+	#'squeak_changestamp' : 'stlu 9/28/2021 13:52'
+}
+RtLinearGPUStore >> addAllFrom: aCollection [
+
+	| address |
+	stagingBuffer
+		replaceFrom: lastElementIndex + 1
+		to: lastElementIndex + aCollection size
+		with: aCollection
+		startingAt: 1.
+	address := lastElementIndex // alignment.
+	lastElementIndex := lastElementIndex + aCollection size roundUpTo: alignment.
+	^ address
+]
+
+{
+	#category : #adding,
 	#'squeak_changestamp' : 'stlu 8/26/2021 14:15'
 }
 RtLinearGPUStore >> addFrom: aCollection startingAt: startIndex count: numElements [

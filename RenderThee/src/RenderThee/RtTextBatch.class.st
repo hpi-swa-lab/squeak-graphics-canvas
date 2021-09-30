@@ -15,7 +15,7 @@ RtTextBatch >> program [
 
 {
 	#category : #instances,
-	#'squeak_changestamp' : 'stlu 8/27/2021 17:05'
+	#'squeak_changestamp' : 'stlu 9/27/2021 17:38'
 }
 RtTextBatch >> textRun: aPicString in: clipRect [
 
@@ -36,7 +36,7 @@ RtTextBatch >> textRun: aPicString in: clipRect [
 	textColorIndex := renderer indexForColor: aPicString color.
 	textRunIndex := renderer transientStoreI
 		add: (renderer allocateClipRect: clipRect)
-		add: renderer transformIndex
+		add: aPicString parent effectiveTransform
 		add: textColorIndex
 		add: textRunBoundsIndex.
 	

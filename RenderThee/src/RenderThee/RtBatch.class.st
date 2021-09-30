@@ -2,6 +2,7 @@ Class {
 	#name : #RtBatch,
 	#superclass : #Object,
 	#instVars : [
+		'primitives',
 		'instanceIndex',
 		'instanceData',
 		'instanceVBO',
@@ -16,6 +17,42 @@ Class {
 
 {
 	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/28/2021 13:56'
+}
+RtBatch >> addInstance: value1 with: value2 with: value3 with: value4 [
+
+	| offset |
+	offset := instanceIndex * 4.
+	instanceData
+		at: offset + 1 put: value1;
+		at: offset + 2 put: value2;
+		at: offset + 3 put: value3;
+		at: offset + 4 put: value4.
+	instanceIndex := instanceIndex + 1.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/28/2021 15:39'
+}
+RtBatch >> addPrimitive: aPrimitive [
+
+	primitives add: aPrimitive.
+]
+
+{
+	#category : #rendering,
+	#'squeak_changestamp' : 'stlu 9/28/2021 17:30'
+}
+RtBatch >> batchPrimitives [
+
+	isAlpha
+		ifTrue: [primitives do: [:prim | prim addToBatch: self]]
+		ifFalse: [primitives reverseDo: [:prim | prim addToBatch: self]].
+]
+
+{
+	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/23/2021 10:29'
 }
 RtBatch >> colorStore [
@@ -25,11 +62,15 @@ RtBatch >> colorStore [
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 9/10/2021 13:44'
+	#'squeak_changestamp' : 'stlu 9/28/2021 17:29'
 }
 RtBatch >> draw [
 
 	self uploadInstanceData.
+	
+	GL enable: GL_CULL_FACE.
+	GL cullFace: GL_BACK.
+	GL frontFace: GL_CW.
 	
 	GL enable: GL_DEPTH_TEST.
 	GL depthFunc: GL_LESS.
@@ -53,12 +94,43 @@ RtBatch >> draw [
 ]
 
 {
+	#category : #glyphs,
+	#'squeak_changestamp' : 'stlu 9/28/2021 16:15'
+}
+RtBatch >> glyphCacheForFont: font [
+
+	^ renderer fontCache
+		at: font
+		ifAbsentPut: [Dictionary new]
+]
+
+{
+	#category : #glyphs,
+	#'squeak_changestamp' : 'stlu 9/28/2021 14:50'
+}
+RtBatch >> glyphForCharacter: aCharacter inFont: aFont cache: glyphCache [
+
+	^ glyphCache at: aCharacter ifAbsentPut: [
+		| form allocation glyphBounds glyphIndex |
+		form := aFont characterFormAt: aCharacter.
+		allocation := renderer glyphStore uploadForm: form.
+		glyphBounds := allocation rectangle origin extent: form extent.
+		glyphIndex := renderer persistentStoreF
+			add: glyphBounds left asFloat
+			add: glyphBounds top asFloat
+			add: glyphBounds right asFloat
+			add: glyphBounds bottom asFloat.
+		{ allocation . glyphIndex }].
+]
+
+{
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/23/2021 17:17'
+	#'squeak_changestamp' : 'stlu 9/28/2021 15:38'
 }
 RtBatch >> initialize [
 
 	isAlpha := true.
+	primitives := OrderedCollection new: 100.
 	self initializeInstanceVBO.
 ]
 
@@ -120,11 +192,12 @@ RtBatch >> renderer: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 7/6/2021 11:03'
+	#'squeak_changestamp' : 'stlu 9/28/2021 16:06'
 }
 RtBatch >> reset [
 
 	instanceIndex := 0.
+	primitives reset.
 ]
 
 {

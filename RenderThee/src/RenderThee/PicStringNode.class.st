@@ -138,11 +138,11 @@ PicStringNode >> extent [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/25/2021 15:07'
+	#'squeak_changestamp' : 'stlu 9/28/2021 16:16'
 }
 PicStringNode >> font [
 
-	^ font ifNil: [font := TextStyle defaultFont]
+	^ font ifNil: [TextStyle defaultFont]
 ]
 
 {

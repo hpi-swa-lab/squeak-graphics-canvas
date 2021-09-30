@@ -61,6 +61,15 @@ RtBatchingRenderer >> allocateTransform: aTransform [
 
 {
 	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/28/2021 15:35'
+}
+RtBatchingRenderer >> alphaRectangleBatch [
+
+	^ rectangleBatch
+]
+
+{
+	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 7/7/2021 16:09'
 }
 RtBatchingRenderer >> bounds [
@@ -79,12 +88,12 @@ RtBatchingRenderer >> bounds: aRectangle [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/23/2021 09:51'
+	#'squeak_changestamp' : 'stlu 9/28/2021 16:43'
 }
 RtBatchingRenderer >> clearColor [
 
 	^ Color
-		h: Time utcMicrosecondClock / 1e3 \\ 360.0
+		h: Time utcMicrosecondClock / 2e3 \\ 360.0
 		s: 1.0
 		v: 1.0
 ]
@@ -127,7 +136,7 @@ RtBatchingRenderer >> currentFrame: anObject [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 9/9/2021 10:22'
+	#'squeak_changestamp' : 'stlu 9/28/2021 17:28'
 }
 RtBatchingRenderer >> draw [
 
@@ -135,6 +144,10 @@ RtBatchingRenderer >> draw [
 	GL depthMask: GL_TRUE.
 	GL clear: (GL_COLOR_BUFFER_BIT bitOr: GL_DEPTH_BUFFER_BIT).
 
+	opaqueRectangleBatch batchPrimitives.
+	rectangleBatch batchPrimitives.
+	textBatch batchPrimitives.
+	
 	transientStoreF texture bindAt: 1.
 	transientStoreI texture bindAt: 2.
 	persistentStoreF texture bindAt: 3.
@@ -170,60 +183,65 @@ RtBatchingRenderer >> fontCache [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 8/12/2021 15:03'
+	#'squeak_changestamp' : 'stlu 9/28/2021 16:47'
 }
 RtBatchingRenderer >> frameAndFillRectangle: aRectangle radius: radius fillStyle: aFillStyle borderStyle: aBorderStyle [
 
-	| left right top bottom |
+	| primitives left right top bottom |
+	primitives := OrderedCollection new.
 	left := aRectangle left.
 	right := aRectangle right.
 	top := aRectangle top.
 	bottom := aRectangle bottom.
 	
 	aFillStyle isTransparent ifFalse: [
-		self
-			rectangleLeft: left
+		primitives add: (RtPrimRectangle new
+			left: left
 			right: right
 			top: top
 			bottom: bottom
 			radius: radius
-			solidColor: (aFillStyle isBitmapFill ifTrue: [aFillStyle form colorAt: 1@1] ifFalse: [aFillStyle asColor])].
+			color: (aFillStyle isBitmapFill
+				ifTrue: [aFillStyle form colorAt: 1@1]
+				ifFalse: [aFillStyle asColor]))].
 	
 	aBorderStyle isTransparent ifFalse: [
 		| borderWidth |
 		borderWidth := aBorderStyle width.
 		"left"
-		self
-			rectangleLeft: left
+		primitives add: (RtPrimRectangle new
+			left: left
 			right: left + borderWidth
 			top: top
 			bottom: bottom
 			radius: 0.0
-			solidColor: aBorderStyle color.
+			color: aBorderStyle color).
 		"right"
-		self
-			rectangleLeft: right - borderWidth
+		primitives add: (RtPrimRectangle new
+			left: right - borderWidth
 			right: right
 			top: top
 			bottom: bottom
 			radius: 0.0
-			solidColor: aBorderStyle color.
+			color: aBorderStyle color).
 		"top"
-		self
-			rectangleLeft: left
+		primitives add: (RtPrimRectangle new
+			left: left
 			right: right
 			top: top
 			bottom: top + borderWidth
 			radius: 0.0
-			solidColor: aBorderStyle color.
+			color: aBorderStyle color).
 		"bottom"
-		self
-			rectangleLeft: left
+		primitives add: (RtPrimRectangle new
+			left: left
 			right: right
 			top: bottom - borderWidth
 			bottom: bottom
 			radius: 0.0
-			solidColor: aBorderStyle color].
+			color: aBorderStyle color)].
+		
+	^ primitives asArray
 ]
 
 {
@@ -233,6 +251,22 @@ RtBatchingRenderer >> frameAndFillRectangle: aRectangle radius: radius fillStyle
 RtBatchingRenderer >> glyphStore [
 
 	^ glyphStore
+]
+
+{
+	#category : #drawing,
+	#'squeak_changestamp' : 'stlu 9/28/2021 17:03'
+}
+RtBatchingRenderer >> groupPrimitives: collectionOfPrimitives [
+
+	1 to: collectionOfPrimitives size do: [:i |
+		| prim |
+		prim := collectionOfPrimitives at: i.
+		(prim
+			transform: transform index: transformIndex
+			clip: clipRect index: clipRectIndex
+			z: (zIndex := zIndex + 1))
+				ifTrue: [prim chooseGroup: self]].
 ]
 
 {
@@ -332,7 +366,7 @@ RtBatchingRenderer >> initializePrograms [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 9/10/2021 13:40'
+	#'squeak_changestamp' : 'stlu 9/28/2021 16:33'
 }
 RtBatchingRenderer >> initializeQuadVBO [
 
@@ -345,7 +379,7 @@ RtBatchingRenderer >> initializeQuadVBO [
 		) asFloat32Array.
 	
 	quadEBO := GLBuffer create.
-	quadEBO usage: GL_STATIC_DRAW data: #[0 1 2 1 2 3].
+	quadEBO usage: GL_STATIC_DRAW data: #[0 1 2 2 1 3].
 ]
 
 {
@@ -374,6 +408,15 @@ RtBatchingRenderer >> initializeVAO [
 
 {
 	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/28/2021 15:35'
+}
+RtBatchingRenderer >> opaqueRectangleBatch [
+
+	^ opaqueRectangleBatch
+]
+
+{
+	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/26/2021 15:01'
 }
 RtBatchingRenderer >> persistentStoreF [
@@ -390,23 +433,6 @@ RtBatchingRenderer >> projectionMatrix [
 	^ Matrix4x4
 		ortho: bounds
 		near: -1000000 far: 0
-]
-
-{
-	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/25/2021 14:35'
-}
-RtBatchingRenderer >> quadVertices [
-
-	^ #(
-			0.0 1.0	"bottom-left"
-			1.0 0.0	"top-right"
-			0.0 0.0	"top-left"
-			
-			0.0 1.0	"bottom-left"
-			1.0 0.0	"top-right"
-			1.0 1.0	"bottom-right"
-		) asFloat32Array
 ]
 
 {
@@ -455,38 +481,6 @@ void main() {
 
 	oColor = vec4(color.rgb, color.a * alpha);
 }'
-]
-
-{
-	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 9/1/2021 14:48'
-}
-RtBatchingRenderer >> rectangleLeft: left right: right top: top bottom: bottom radius: radius solidColor: aColor [
-
-	(left > clipRect right
-		or: [right < clipRect left]
-		or: [top > clipRect bottom]
-		or: [bottom < clipRect top]) ifTrue: [^ self].
-	(left > right
-		or: [top > bottom]) ifTrue: [^ self].
-	(aColor isTranslucent or: [radius isZero not])
-		ifTrue: [
-			rectangleBatch
-				rectangleLeft: left
-				right: right
-				top: top
-				bottom: bottom
-				radius: radius
-				fillColor: aColor]
-		ifFalse: [
-			opaqueRectangleBatch
-				rectangleLeft: left
-				right: right
-				top: top
-				bottom: bottom
-				radius: radius
-				fillColor: aColor].
-	zIndex := zIndex + 1.
 ]
 
 {
@@ -614,7 +608,7 @@ RtBatchingRenderer >> render: aPicture [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 9/1/2021 16:38'
+	#'squeak_changestamp' : 'stlu 9/28/2021 16:05'
 }
 RtBatchingRenderer >> reset [
 
@@ -626,11 +620,20 @@ RtBatchingRenderer >> reset [
 	
 	transformIndex := self allocateTransform: transform.
 	clipRectIndex := self allocateClipRect: clipRect.
-	zIndex := 1.
+	zIndex := 0.
 	
 	opaqueRectangleBatch reset.
 	rectangleBatch reset.
 	textBatch reset.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 9/28/2021 15:37'
+}
+RtBatchingRenderer >> textBatch [
+
+	^ textBatch
 ]
 
 {
@@ -821,7 +824,7 @@ RtBatchingRenderer >> vao [
 ]
 
 {
-	#category : #drawing,
+	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 8/26/2021 13:34'
 }
 RtBatchingRenderer >> visitClip: aPicClip [
@@ -837,55 +840,48 @@ RtBatchingRenderer >> visitClip: aPicClip [
 ]
 
 {
-	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 9/13/2021 12:49'
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 9/28/2021 15:44'
 }
-RtBatchingRenderer >> visitGroup: aPicGroup [
+RtBatchingRenderer >> visitImage: anImageNode [
 
-	| children |
-	children := aPicGroup children.
-	1 to: children size do: [:childIndex |
-		(children at: childIndex) acceptVisitor: self].
-]
-
-{
-	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:03'
-}
-RtBatchingRenderer >> visitImage: aPicImage [
-
-	| form color |
+	"| form color |
 	form := aPicImage form.
 	color := Color red.
-	"color := (form colorAt: 1@1).
+	color := (form colorAt: 1@1).
 	color isTransparent ifTrue: [
 		color := form colorAt: form extent // 2]."
-	self
-		frameAndFillRectangle: aPicImage bounds
-		radius: 0.0
-		fillStyle: (SolidFillStyle color: color)
-		borderStyle: (SimpleBorder width: 0)
+	| primitives |
+	primitives := anImageNode primitives ifNil: [
+		anImageNode primitives: (self
+			frameAndFillRectangle: anImageNode bounds
+			radius: 0.0
+			fillStyle: (SolidFillStyle color: Color red)
+		borderStyle: (SimpleBorder width: 0))].
+	self groupPrimitives: primitives.
 ]
 
 {
-	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 9/17/2021 14:22'
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 9/28/2021 16:54'
 }
-RtBatchingRenderer >> visitLine: aPicLine [
+RtBatchingRenderer >> visitLine: aLineNode [
 
-	| rect |
-	rect := aPicLine from rect: aPicLine to.
-	self
-		rectangleLeft: rect left
-		right: rect right + 1
-		top: rect top
-		bottom: rect bottom + 1
-		radius: 0.0
-		solidColor: aPicLine color.
+	| rect primitives |
+	rect := aLineNode from rect: aLineNode to.
+	primitives := aLineNode primitives ifNil: [
+		aLineNode primitives: { RtPrimRectangle new
+			left: rect left
+			right: rect right + 1
+			top: rect top
+			bottom: rect bottom + 1
+			radius: 0.0
+			color: aLineNode color }].
+	self groupPrimitives: primitives.
 ]
 
 {
-	#category : #drawing,
+	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 9/7/2021 10:25'
 }
 RtBatchingRenderer >> visitMorph: aPicMorph [
@@ -903,20 +899,23 @@ RtBatchingRenderer >> visitMorph: aPicMorph [
 ]
 
 {
-	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:03'
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 9/28/2021 15:42'
 }
-RtBatchingRenderer >> visitOval: aPicOval [
+RtBatchingRenderer >> visitOval: anOvalNode [
 
-	self
-		frameAndFillRectangle: aPicOval bounds
-		radius: 0.0
-		fillStyle: aPicOval fillStyle
-		borderStyle: aPicOval borderStyle
+	| primitives |
+	primitives := anOvalNode primitives ifNil: [
+		anOvalNode primitives: (self
+			frameAndFillRectangle: anOvalNode bounds
+			radius: 0.0
+			fillStyle: anOvalNode fillStyle
+			borderStyle: anOvalNode borderStyle)].
+	self groupPrimitives: primitives.
 ]
 
 {
-	#category : #drawing,
+	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 8/12/2021 13:05'
 }
 RtBatchingRenderer >> visitParagraph: aPicParagraph [
@@ -935,62 +934,84 @@ RtBatchingRenderer >> visitParagraph: aPicParagraph [
 ]
 
 {
-	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:03'
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 9/28/2021 15:42'
 }
-RtBatchingRenderer >> visitPolygon: aPicPolygon [
+RtBatchingRenderer >> visitPolygon: aPolygonNode [
 
-	self
-		frameAndFillRectangle: aPicPolygon estimatedBounds
-		radius: 0.0
-		fillStyle: aPicPolygon fillStyle
-		borderStyle: aPicPolygon borderStyle
+	| primitives |
+	primitives := aPolygonNode primitives ifNil: [
+		aPolygonNode primitives: (self
+			frameAndFillRectangle: aPolygonNode estimatedBounds
+			radius: 0.0
+			fillStyle: aPolygonNode fillStyle
+			borderStyle: aPolygonNode borderStyle)].
+	self groupPrimitives: primitives.
 ]
 
 {
-	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:04'
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 9/28/2021 15:30'
 }
-RtBatchingRenderer >> visitRectangle: aPicRectangle [
+RtBatchingRenderer >> visitRectangle: aRectangleNode [
 
-	self
-		frameAndFillRectangle: aPicRectangle bounds
-		radius: 0.0
-		fillStyle: aPicRectangle fillStyle
-		borderStyle: aPicRectangle borderStyle
+	| primitives |
+	primitives := aRectangleNode primitives ifNil: [
+		aRectangleNode primitives: (self
+			frameAndFillRectangle: aRectangleNode bounds
+			radius: 0.0
+			fillStyle: aRectangleNode fillStyle
+			borderStyle: aRectangleNode borderStyle)].
+	self groupPrimitives: primitives.
 ]
 
 {
-	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:04'
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 9/28/2021 15:41'
 }
-RtBatchingRenderer >> visitRoundedRectangle: aPicRoundedRectangle [
+RtBatchingRenderer >> visitRoundedRectangle: aRoundedRectangleNode [
 
-	self
-		frameAndFillRectangle: aPicRoundedRectangle bounds
-		radius: aPicRoundedRectangle radius
-		fillStyle: aPicRoundedRectangle fillStyle
-		borderStyle: (SimpleBorder width: 0)
+	| primitives |
+	primitives := aRoundedRectangleNode primitives ifNil: [
+		aRoundedRectangleNode primitives: (self
+			frameAndFillRectangle: aRoundedRectangleNode bounds
+			radius: aRoundedRectangleNode radius
+			fillStyle: aRoundedRectangleNode fillStyle
+			borderStyle: (SimpleBorder width: 0))].
+	self groupPrimitives: primitives.
 ]
 
 {
-	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 9/1/2021 14:53'
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 9/28/2021 17:08'
 }
-RtBatchingRenderer >> visitString: aPicString [
+RtBatchingRenderer >> visitString: aStringNode [
 
-	| bounds stringClip |
+	| bounds primitives previousClipRect previousClipRectIndex |
 	"true ifTrue: [^ self]."
-	bounds := aPicString bounds ifNil: [^ self].
-	stringClip := bounds intersect: clipRect.
-	stringClip hasPositiveExtent ifFalse: [^ self].
-	
-	textBatch textRun: aPicString in: stringClip.
-	zIndex := zIndex + 1.
+	bounds := aStringNode bounds ifNil: [^ self].
+	previousClipRect := clipRect.
+	(clipRect := clipRect intersect: bounds) hasPositiveExtent ifTrue: [
+		previousClipRectIndex := clipRectIndex.
+		clipRectIndex := self allocateClipRect: clipRect.
+		
+		primitives := aStringNode primitives ifNil: [
+			aStringNode primitives: { RtPrimTextRun new
+				string: aStringNode contents
+				start: aStringNode startIndex
+				stop: aStringNode stopIndex
+				font: aStringNode font
+				color: aStringNode color
+				left: aStringNode position x
+				top: aStringNode position y}].
+		self groupPrimitives: primitives.
+		
+		clipRectIndex := previousClipRectIndex].
+	clipRect := previousClipRect.
 ]
 
 {
-	#category : #drawing,
+	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 9/1/2021 13:38'
 }
 RtBatchingRenderer >> visitTransform: aPicTransform [

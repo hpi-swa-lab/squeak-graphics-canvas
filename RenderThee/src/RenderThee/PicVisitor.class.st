@@ -24,12 +24,14 @@ PicVisitor >> visitClip: anObject [
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 9/27/2021 16:08'
+	#'squeak_changestamp' : 'stlu 9/29/2021 15:49'
 }
-PicVisitor >> visitGroup: aGroup [
+PicVisitor >> visitGroup: aGroupNode [
 
-	aGroup childrenDo: [:child |
-		child acceptVisitor: self].
+	| children |
+	children := aGroupNode children ifNil: [^ self].
+	1 to: children size do: [:childIndex |
+		(children at: childIndex) acceptVisitor: self].
 ]
 
 {
