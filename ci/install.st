@@ -23,7 +23,7 @@ Smalltalk at: #MCMcmUpdater ifPresent: [ :updater |
 ReleaseBuilder deleteAllWindows.
 PreferenceWizardMorph allInstancesDo: [:each | each abandon].
 
-[[
+[[| frameRateMorph gcPressureMorph |
   Utilities useAuthorInitials: 'CI' during: [
     | token |
     "Ensure Metacello is loaded."
@@ -52,10 +52,7 @@ PreferenceWizardMorph allInstancesDo: [:each | each abandon].
       repository: 'github://hpi-swa-lab/squeak-morphic-layers:main/OpenGLCanvas/src/';
       password: token;
       onConflict: [:ex | ex pass];
-      load ] on: Warning do: [:w | w resume ].
-    
-    "Fix FFI"
-    ExternalType resetAllTypes].
+      load ] on: Warning do: [:w | w resume ]].
 
   "The best preferences"
   TranscriptStream characterLimit: 10000000. "10MB"
@@ -84,18 +81,29 @@ PreferenceWizardMorph allInstancesDo: [:each | each abandon].
   Workspace addLookupPool: GLFWConstants.
 
   "Open FrameRateMorph"
-  FrameRateMorph new
-    openInWorld;
-    setToAdhereToEdge: #bottomRight;
+  frameRateMorph := RtFrameRateMorph new
+    setToAdhereToEdge: #right;
     color: Color white;
-    lock.
+    top: 0;
+    openInWorld;
+    lock;
+    yourself.
+  
+  "Open GCPressureMorph"
+  gcPressureMorph := RtGCPressureMorph new
+    setToAdhereToEdge: #right;
+    color: Color white;
+    top: frameRateMorph bottom;
+    openInWorld;
+    lock;
+    yourself.
   
   "Open MagnifierMorph"
-  MagnifierMorph new
+  "MagnifierMorph new
     openInWorld;
     setToAdhereToEdge: #bottomLeft;
     magnification: 4;
-    lock.
+    lock."
   
   "Open pre-prepared workspaces"
   RtWorkspaces openAll.
