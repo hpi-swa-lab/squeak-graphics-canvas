@@ -227,9 +227,9 @@ RtWorkspaces class >> openWorkspace: aSymbol [
 
 {
 	#category : #workspaces,
-	#'squeak_changestamp' : 'stlu 8/20/2021 13:01'
+	#'squeak_changestamp' : 'stlu 11/8/2021 16:01'
 }
-RtWorkspaces class >> pictureAndCanvasBenchmarking [ <title: 'Picture and Canvas Benchmarking'> <auto: true> <collapsed: true> | formCanvas fullMorphCanvas fullMorphPic fullNormalCanvas fullNormalPic morph nullCanvas sparseMorphCanvas sparseMorphPic sparseNormalCanvas sparseNormalPic visitor w1 w10 w11 w12 w13 w14 w15 w16 w2 w3 w4 w5 w6 w7 w8 w9 world |
+RtWorkspaces class >> pictureAndCanvasBenchmarking [ <title: 'Picture and Canvas Benchmarking'> <auto: true> <collapsed: true> | formCanvas morphPic morph nullCanvas picUpdaterCanvas picCanvas pic visitor w1 w10 w11 w12 w13 w14 w15 w16 w2 w3 w4 w5 w6 w7 w8 w9 world |
 [
 world := (PasteUpMorph newWorldForProject: nil)
 	hResizing: #spaceFill;
@@ -284,29 +284,23 @@ morph := world.
 [morph picture] bench.
 " '13,900,000 per second. 71.8 nanoseconds per run. 0 % GC time.'"
 
-[morph picture: fullMorphPic] bench.
+[morph picture: morphPic] bench.
 " '8,570,000 per second. 117 nanoseconds per run. 0 % GC time.'"
 
 "_______________________________________________"
 
-sparseNormalCanvas := PicCanvas new ignoreClip: false; yourself.
-fullNormalCanvas := PicCanvas new ignoreClip: true; yourself.
-sparseMorphCanvas := PicPatcherCanvas new ignoreClip: false; yourself.
-fullMorphCanvas := PicPatcherCanvas new ignoreClip: true; yourself.
+picCanvas := PicCanvas new.
+picUpdaterCanvas := PicPatcherCanvas new.
 
-sparseNormalPic := (sparseNormalCanvas reset; fullDrawMorph: morph; yourself) getPicture.
-fullNormalPic := (fullNormalCanvas reset; fullDrawMorph: morph; yourself) getPicture.
-sparseMorphPic := (sparseMorphCanvas reset; fullDrawMorph: morph; yourself) getPicture.
-fullMorphPic := (fullMorphCanvas reset; fullDrawMorph: morph; yourself) getPicture.
+pic := (picCanvas reset; fullDrawMorph: morph; yourself) getPicture.
+morphPic := (picUpdaterCanvas reset; fullDrawMorph: morph; yourself) getPicture.
 
 visitor := PicVisitor new.
 nullCanvas := RtNullCanvas new.
 formCanvas := FormCanvas extent: morph extent.
 
-sparseNormalPic open.
-fullNormalPic open.
-sparseMorphPic open.
-fullMorphPic open.
+pic open.
+morphPic open.
 
 [nullCanvas fullDrawMorph: morph] bench.
 " '296 per second. 3.38 milliseconds per run. 6.37617 % GC time.'"
@@ -314,59 +308,41 @@ fullMorphPic open.
 [formCanvas reset; fullDrawMorph: morph] bench.
 " '18.5 per second. 54.2 milliseconds per run. 0.37728 % GC time.'"
 
-[sparseNormalCanvas reset; fullDrawMorph: morph] bench.
+[picCanvas reset; fullDrawMorph: morph] bench.
 " '221 per second. 4.53 milliseconds per run. 6.57343 % GC time.'"
 
-[fullNormalCanvas reset; fullDrawMorph: morph] bench.
+[picUpdaterCanvas reset; fullDrawMorph: morph] bench.
 " '38.8 per second. 25.8 milliseconds per run. 37.83243 % GC time.'"
 
 [morph allMorphsDo: [:each | each picture: nil]] bench.
 " '4,240 per second. 236 microseconds per run. 14.37712 % GC time.'"
 
 [morph allMorphsDo: [:each | each picture: nil].
-sparseMorphCanvas reset; fullDrawMorph: morph] bench.
+picUpdaterCanvas reset; fullDrawMorph: morph] bench.
 " '164 per second. 6.09 milliseconds per run. 6.35492 % GC time.'"
 
-[morph allMorphsDo: [:each | each picture: nil].
-fullMorphCanvas reset; fullDrawMorph: morph] bench.
-" '35.4 per second. 28.2 milliseconds per run. 38.02508 % GC time.'"
 
-
-[nullCanvas draw: sparseNormalPic] bench.
+[nullCanvas draw: pic] bench.
 " '8,110 per second. 123 microseconds per run. 3.21871 % GC time.'"
 
-[nullCanvas draw: fullNormalPic] bench.
-" '3,090 per second. 324 microseconds per run. 1.35946 % GC time.'"
-
-[nullCanvas draw: sparseMorphPic] bench.
+[nullCanvas draw: morphPic] bench.
 " '2,800 per second. 357 microseconds per run. 2.31954 % GC time.'"
 
-[nullCanvas draw: fullMorphPic] bench.
-" '2,800 per second. 357 microseconds per run. 2.37905 % GC time.'"
 
-
-[visitor visit: sparseNormalPic] bench.
+[visitor visit: pic] bench.
 " '21,300 per second. 46.9 microseconds per run. 2.9994 % GC time.'"
 
-[visitor visit: fullNormalPic] bench.
-" '4,080 per second. 245 microseconds per run. 0.67973 % GC time.'"
-
-[visitor visit: sparseMorphPic] bench.
-" '3,390 per second. 295 microseconds per run. 2.01919 % GC time.'"
-
-[visitor visit: fullMorphPic] bench.
+[visitor visit: morphPic] bench.
 " '3,530 per second. 283 microseconds per run. 2.05959 % GC time.'"
 
 
-PicCounter new visit: sparseNormalPic; counts.
-PicCounter new visit: fullNormalPic; counts.
-PicCounter new visit: sparseMorphPic; counts.
-PicCounter new visit: fullMorphPic; counts.
+PicCounter new visit: pic; counts.
+PicCounter new visit: morphPic; counts.
 
 
-RtOpenGLCanvasExample morph: morph.
-RtBatchingExample morph: morph.
-RtFormCanvasExample morph: morph.
+RtOpenGLCanvasExample world: morph.
+RtBatchingExample world: morph.
+RtFormCanvasExample world: morph.
 
 
 ]

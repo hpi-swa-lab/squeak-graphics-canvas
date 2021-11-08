@@ -47,15 +47,15 @@ void main() {
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 9/7/2021 12:56'
+	#'squeak_changestamp' : 'stlu 11/8/2021 15:59'
 }
 RtFormCanvasExample >> render [
 
 	self updateMorph.
 
-	morph extent = canvas extent
+	world extent = canvas extent
 		ifTrue: [canvas reset]
-		ifFalse: [canvas := FormCanvas extent: morph extent depth: 32].
+		ifFalse: [canvas := FormCanvas extent: world extent depth: 32].
 	picture drawOn: canvas.
 	
 	self transferForm: canvas form.
@@ -63,11 +63,11 @@ RtFormCanvasExample >> render [
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 8/11/2021 16:28'
+	#'squeak_changestamp' : 'stlu 11/8/2021 15:59'
 }
 RtFormCanvasExample >> setUp [
 
-	canvas := FormCanvas extent: morph extent depth: 32.
+	canvas := FormCanvas extent: world extent depth: 32.
 	
 	program := GLProgram
 		vertexSource: self vertexShaderSource

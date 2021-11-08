@@ -27,22 +27,23 @@ RtOpenGLCanvasExample >> canvas: anObject [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 8/11/2021 15:07'
+	#'squeak_changestamp' : 'stlu 11/8/2021 16:23'
 }
 RtOpenGLCanvasExample >> render [
 
+	self updateMorph.
 	canvas reset.
-	canvas bounds: morph bounds.
-	canvas fullDrawMorph: morph.
+	canvas bounds: world bounds.
+	picture drawOn: canvas.
 ]
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 7/26/2021 13:14'
+	#'squeak_changestamp' : 'stlu 11/8/2021 16:25'
 }
 RtOpenGLCanvasExample >> setUp [
 
 	canvas := GLCanvas
-				bounds: morph bounds
-				framebuffer: GLFramebuffer default.
+		bounds: world bounds
+		framebuffer: GLFramebuffer default.
 ]

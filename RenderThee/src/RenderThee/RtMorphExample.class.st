@@ -2,11 +2,12 @@ Class {
 	#name : #RtMorphExample,
 	#superclass : #LOGLTemplate,
 	#instVars : [
-		'morph',
 		'picture',
 		'pictureUpdateTimes',
 		'keyEnumToVirtualKeyTable',
-		'virtualKeyToKeyCodeTable'
+		'virtualKeyToKeyCodeTable',
+		'shouldUpdateMorph',
+		'world'
 	],
 	#pools : [
 		'EventSensorConstants'
@@ -15,7 +16,40 @@ Class {
 }
 
 {
-	#category : #'instance creation',
+	#category : #examples,
+	#'squeak_changestamp' : 'stlu 11/8/2021 17:04'
+}
+RtMorphExample class >> benchWorld [
+
+	^ self world: self createBenchWorld
+]
+
+{
+	#category : #examples,
+	#'squeak_changestamp' : 'stlu 11/8/2021 16:08'
+}
+RtMorphExample class >> bouncingAtoms [
+
+	^ self bouncingAtoms: 500
+]
+
+{
+	#category : #examples,
+	#'squeak_changestamp' : 'stlu 11/8/2021 16:07'
+}
+RtMorphExample class >> bouncingAtoms: numAtoms [
+
+	| morph |
+	morph := BouncingAtomsMorph new
+		bounds: (0@0 extent: Display extent);
+		removeAllMorphs;
+		addAtoms: numAtoms;
+		yourself.
+	^ self morph: morph
+]
+
+{
+	#category : #examples,
 	#'squeak_changestamp' : 'stlu 6/17/2021 15:26'
 }
 RtMorphExample class >> browser [
@@ -26,7 +60,7 @@ RtMorphExample class >> browser [
 ]
 
 {
-	#category : #'instance creation',
+	#category : #examples,
 	#'squeak_changestamp' : 'stlu 6/17/2021 15:30'
 }
 RtMorphExample class >> chineseCheckers [
@@ -37,7 +71,50 @@ RtMorphExample class >> chineseCheckers [
 ]
 
 {
-	#category : #'instance creation',
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 11/8/2021 17:09'
+}
+RtMorphExample class >> createBenchWorld [
+
+	| w1 w10 w11 w12 w13 w14 w15 w16 w2 w3 w4 w5 w6 w7 w8 w9 world |
+	world := (PasteUpMorph newWorldForProject: nil)
+		hResizing: #spaceFill;
+		vResizing: #spaceFill;
+		extent: 1600@900;
+		layoutFrame: LayoutFrame fullFrame;
+		fullBounds;
+		yourself.
+
+	w1 := (ToolSet browse: Morph selector: #drawOn:) dependents detect: [:ea | ea isSystemWindow].
+	w2 := ToolSet
+			browseMessageSet: (SystemNavigation default allCallsOn: #negated)
+			name: 'Senders' translated autoSelect: 'negated'.
+	w3 := (Workspace new contents: '3+4 "Select and hit [CMD]+[P]."') openLabel: 'Workspace'.
+	w4 := (ToolSet browse: FormCanvas selector: #transformBy:clippingTo:during:smoothing:) dependents detect: [:ea | ea isSystemWindow].
+	w5 := ToolSet
+			browseMessageSet: (SystemNavigation default allCallsOn: #OrderedCollection)
+			name: 'Users of OrderedCollection' autoSelect: 'OrderedCollection'.
+	w6 := ToolBuilder open: MCWorkingCopyBrowser new.
+	w7 := ToolSet explore: w1.
+	w8 := ToolSet inspect: w5 model messageList.
+	w9 := (ToolSet browse: Dictionary selector: #scanFor:) dependents detect: [:ea | ea isSystemWindow].
+	w10 := (ToolSet browse: SequenceableCollection selector: #do:) dependents detect: [:ea | ea isSystemWindow].
+	w11 := (ToolSet browse: Float selector: #printOn:base:) dependents detect: [:ea | ea isSystemWindow].
+	w12 := (ToolSet browse: Point selector: #normalized) dependents detect: [:ea | ea isSystemWindow].
+	w13 := (ToolSet browse: Rectangle selector: #area) dependents detect: [:ea | ea isSystemWindow].
+	w14 := (ToolSet browse: Color selector: #alpha:) dependents detect: [:ea | ea isSystemWindow].
+	w15 := (ToolSet browse: Boolean selector: #ifTrue:ifFalse:) dependents detect: [:ea | ea isSystemWindow].
+	w16 := (ToolSet browse: ProtoObject selector: #identityHash) dependents detect: [:ea | ea isSystemWindow].
+
+
+	{w1. w2. w3 . w4 . w5 . w6 . w7 . w8 . w9 . w10 . w11 . w12 . w13 . w14 . w15 . w16} do: [:ea |
+		ea openInWorld: world].
+	
+	^ world
+]
+
+{
+	#category : #examples,
 	#'squeak_changestamp' : 'stlu 7/8/2021 10:18'
 }
 RtMorphExample class >> drawReference [
@@ -47,23 +124,36 @@ RtMorphExample class >> drawReference [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 6/17/2021 15:08'
+	#'squeak_changestamp' : 'stlu 11/8/2021 17:07'
 }
 RtMorphExample class >> morph: aMorph [
 
-	^ self new
-		morph: aMorph;
-		run;
-		yourself
+	| world |
+	world := PasteUpMorph newWorldForProject: nil.
+	world extent: aMorph extent.
+	aMorph openInWorld: world.
+	^ self world: world
+]
+
+{
+	#category : #examples,
+	#'squeak_changestamp' : 'stlu 11/8/2021 16:00'
+}
+RtMorphExample class >> world [
+
+	^ self world: ActiveWorld
 ]
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 6/17/2021 15:09'
+	#'squeak_changestamp' : 'stlu 11/8/2021 16:55'
 }
-RtMorphExample class >> world [
+RtMorphExample class >> world: aMorph [
 
-	^ self morph: ActiveWorld
+	^ self new
+		world: aMorph;
+		run;
+		yourself
 ]
 
 {
@@ -122,32 +212,38 @@ RtMorphExample >> convertModifierKeys: modifierKeys [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/17/2021 15:32'
+	#'squeak_changestamp' : 'stlu 11/8/2021 15:59'
 }
 RtMorphExample >> initialWindowExtent [
 
-	^ morph extent
+	^ world extent
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/11/2021 17:17'
+	#'squeak_changestamp' : 'stlu 10/3/2021 20:45'
 }
 RtMorphExample >> initialize [
 
 	super initialize.
-	pictureUpdateTimes := LOGLFrameHistory new: 30.
+	pictureUpdateTimes := RingBuffer new: 30.
+	shouldUpdateMorph := true.
 ]
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 9/27/2021 14:24'
+	#'squeak_changestamp' : 'stlu 10/3/2021 20:43'
 }
 RtMorphExample >> key: keyEnum scanCode: scanCode changedTo: state with: mods [
 
 	| eventBuffer type keyName keyCode modifierBits virtualKey isShiftPressed codePoint |
 	"true ifTrue: [^ self]."
 	super key: keyEnum scanCode: scanCode changedTo: state with: mods.
+
+	(GLFW numberOfFunctionKey: keyEnum) ifNotNil: [:fNumber |
+		state = GLFW_RELEASE ifTrue: [
+			fNumber = 11 ifTrue: [self toggleMorphUpdates]]].
+	
 	isShiftPressed := mods anyMask: ShiftKeyBit.
 	type := state caseOf: {
 		[GLFW_RELEASE] -> [EventKeyUp].
@@ -354,23 +450,13 @@ RtMorphExample >> keyStroke: codePoint [
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 7/3/2021 10:19'
+	#'squeak_changestamp' : 'stlu 11/8/2021 15:59'
 }
 RtMorphExample >> mapMousePosition: aPoint [
 
 	^ aPoint
 		scaleFrom: (0@0 extent: window extent)
-		to: morph bounds
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/11/2021 17:00'
-}
-RtMorphExample >> morph: aMorph [
-
-	morph := aMorph.
-	morph allMorphsDo: [:each | each picture: nil].
+		to: world bounds
 ]
 
 {
@@ -466,21 +552,61 @@ RtMorphExample >> scrolledBy: aPoint [
 ]
 
 {
-	#category : #running,
-	#'squeak_changestamp' : 'stlu 9/17/2021 14:01'
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 11/8/2021 16:27'
 }
-RtMorphExample >> updateMorph [
+RtMorphExample >> shouldStepMorph [
 
-	morph isWorldMorph ifTrue: [
-		DisplayScreen checkForNewScreenSize.
-		morph worldState processUserInputEvents ifFalse: [^ self].
-		self isModal ifTrue: [morph runStepMethods]].
-	self updatePicture.
+	^ world ~~ Project current world or: [self isModal]
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 10/3/2021 20:30'
+}
+RtMorphExample >> shouldUpdateMorph [
+
+	^ shouldUpdateMorph
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 10/3/2021 20:31'
+}
+RtMorphExample >> shouldUpdateMorph: aBoolean [
+
+	shouldUpdateMorph := aBoolean.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 10/3/2021 20:44'
+}
+RtMorphExample >> toggleMorphUpdates [
+
+	self shouldUpdateMorph: self shouldUpdateMorph not.
 ]
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 9/17/2021 16:42'
+	#'squeak_changestamp' : 'stlu 11/8/2021 16:17'
+}
+RtMorphExample >> updateMorph [
+
+	self shouldUpdateMorph ifFalse: [
+		pictureUpdateTimes add: 0.
+		^ self].
+	world becomeActiveDuring: [
+		world noDisplayDuring: [
+			DisplayScreen checkForNewScreenSize.
+			world worldState processUserInputEvents ifFalse: [^ self].
+			self shouldStepMorph ifTrue: [world runStepMethods].
+			self updatePicture]].
+]
+
+{
+	#category : #running,
+	#'squeak_changestamp' : 'stlu 11/8/2021 15:59'
 }
 RtMorphExample >> updatePicture [
 
@@ -489,9 +615,9 @@ RtMorphExample >> updatePicture [
 	patcher invalidationStamp: numFrames.
 	
 	elapsed := Time nanosecondsToRun: [
-		patcher fullDrawMorph: morph.
-		morph isWorldMorph ifTrue: [
-			morph worldState hands reverseDo: [:hand |
+		patcher fullDrawMorph: world.
+		world isWorldMorph ifTrue: [
+			world worldState hands reverseDo: [:hand |
 				hand submorphs do: [:each |
 					patcher fullDrawMorph: each]]]].
 	
@@ -509,4 +635,24 @@ RtMorphExample >> virtualKeyToKeyCodeTable [
 		virtualKeyToKeyCodeTable := Dictionary new.
 		EventSensor virtualKeyTable keysAndValuesDo: [:keyCode :virtualKey |
 			virtualKeyToKeyCodeTable at: virtualKey put: keyCode]]
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 11/8/2021 16:00'
+}
+RtMorphExample >> world [
+
+	^ world
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 11/8/2021 16:54'
+}
+RtMorphExample >> world: aMorph [
+
+	self assert: aMorph isWorldMorph.
+	world := aMorph.
+	world allMorphsDo: [:each | each picture: nil].
 ]

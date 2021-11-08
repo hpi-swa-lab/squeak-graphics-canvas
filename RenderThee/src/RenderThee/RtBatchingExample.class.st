@@ -9,13 +9,13 @@ Class {
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 9/7/2021 12:55'
+	#'squeak_changestamp' : 'stlu 11/8/2021 15:59'
 }
 RtBatchingExample >> render [
 
 	self updateMorph.
 	renderer currentFrame: numFrames.
-	renderer bounds: morph bounds.
+	renderer bounds: world bounds.
 	renderer render: picture.
 ]
 
