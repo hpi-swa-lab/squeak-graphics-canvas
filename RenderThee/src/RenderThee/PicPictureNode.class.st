@@ -80,6 +80,16 @@ PicPictureNode >> hasPrimitiveNode [
 ]
 
 {
+	#category : #invalidation,
+	#'squeak_changestamp' : 'stlu 10/13/2021 14:01'
+}
+PicPictureNode >> invalidate [
+
+	parent ifNil: [^ self].
+	parent invalidate.
+]
+
+{
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 12:54'
 }

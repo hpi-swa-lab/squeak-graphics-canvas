@@ -48,6 +48,18 @@ PicMorphNode >> initialize [
 ]
 
 {
+	#category : #invalidation,
+	#'squeak_changestamp' : 'stlu 10/13/2021 14:03'
+}
+PicMorphNode >> invalidate [
+
+	isValid ifFalse: [^ self].
+	isValid := false.
+	parent ifNil: [^ self].
+	parent invalidate.
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/12/2021 13:17'
 }
@@ -66,7 +78,7 @@ PicMorphNode >> invalidationStamp: anObject [
 ]
 
 {
-	#category : #validity,
+	#category : #invalidation,
 	#'squeak_changestamp' : 'stlu 8/10/2021 18:07'
 }
 PicMorphNode >> isValid [
@@ -75,7 +87,7 @@ PicMorphNode >> isValid [
 ]
 
 {
-	#category : #validity,
+	#category : #invalidation,
 	#'squeak_changestamp' : 'stlu 8/11/2021 11:19'
 }
 PicMorphNode >> markInvalid [
@@ -84,7 +96,7 @@ PicMorphNode >> markInvalid [
 ]
 
 {
-	#category : #validity,
+	#category : #invalidation,
 	#'squeak_changestamp' : 'stlu 8/11/2021 11:19'
 }
 PicMorphNode >> markValid [

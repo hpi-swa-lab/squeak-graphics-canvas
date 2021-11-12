@@ -31,11 +31,12 @@ Morph >> groupLayer: aGroupLayer [
 
 {
 	#category : #'*RenderThee-override',
-	#'squeak_changestamp' : 'stlu 8/11/2021 13:40'
+	#'squeak_changestamp' : 'stlu 10/13/2021 13:58'
 }
 Morph >> invalidRect: aRectangle from: aMorph [
 	| damageRect |
-	(self valueOfProperty: #picture "fail-safe") ifNotNil: [:picture | picture markInvalid].
+	aMorph == self ifTrue: [
+		(self valueOfProperty: #picture "fail-safe") ifNotNil: [:picture | picture invalidate]].
 	self visible ifFalse: [ ^self ].
 	aRectangle hasPositiveExtent ifFalse: [ ^self ].
 	damageRect := aRectangle.
