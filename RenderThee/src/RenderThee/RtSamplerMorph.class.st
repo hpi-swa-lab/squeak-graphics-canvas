@@ -42,13 +42,13 @@ RtSamplerMorph >> discardSamplesOlderThan: time [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 9/30/2021 19:17'
+	#'squeak_changestamp' : 'stlu 10/1/2021 16:16'
 }
 RtSamplerMorph >> initialize [
 
 	super initialize.
 	
-	sampleTimeHistory := CircularOrderedCollection new.
+	sampleTimeHistory := OrderedCollection new.
 	
 	lastUpdateTime := Time utcMicrosecondClock.
 	retentionDuration := 2e6.

@@ -52,16 +52,16 @@ RtGCPressureMorph >> discardSamples: n [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 9/30/2021 19:23'
+	#'squeak_changestamp' : 'stlu 10/1/2021 16:16'
 }
 RtGCPressureMorph >> initialize [
 
 	super initialize.
 	
-	fullGCTimeHistory := CircularOrderedCollection new.
-	fullGCCountHistory := CircularOrderedCollection new.
-	scavGCTimeHistory := CircularOrderedCollection new.
-	scavGCCountHistory := CircularOrderedCollection new.
+	fullGCTimeHistory := OrderedCollection new.
+	fullGCCountHistory := OrderedCollection new.
+	scavGCTimeHistory := OrderedCollection new.
+	scavGCCountHistory := OrderedCollection new.
 ]
 
 {
