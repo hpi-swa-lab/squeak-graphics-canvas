@@ -9,8 +9,7 @@ Class {
 	#instVars : [
 		'transform',
 		'clipRect',
-		'groupStack',
-		'ignoreClip'
+		'groupStack'
 	],
 	#category : #'RenderThee-Pictures'
 }
@@ -85,13 +84,13 @@ PicCanvas >> clipRect: anObject [
 
 {
 	#category : #'scoped state',
-	#'squeak_changestamp' : 'stlu 8/10/2021 16:00'
+	#'squeak_changestamp' : 'stlu 10/13/2021 14:31'
 }
 PicCanvas >> clipRect: aRectangle during: aBlock [
 	"Scoped setter for `clipRect` variable."
 	| previousClipRect |
 	previousClipRect := clipRect.
-	ignoreClip ifFalse: [clipRect := aRectangle].
+	clipRect := aRectangle.
 	^ [aBlock cull: self]
 		ensure: [clipRect := previousClipRect]
 ]
@@ -348,24 +347,6 @@ PicCanvas >> group: aGroup during: aBlock [
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 5/20/2021 15:33'
-}
-PicCanvas >> ignoreClip [
-
-	^ ignoreClip
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 5/20/2021 15:33'
-}
-PicCanvas >> ignoreClip: aBoolean [
-
-	ignoreClip := aBoolean
-]
-
-{
 	#category : #'drawing-images',
 	#'squeak_changestamp' : 'stlu 9/27/2021 15:44'
 }
@@ -384,12 +365,11 @@ PicCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/10/2021 15:18'
+	#'squeak_changestamp' : 'stlu 10/13/2021 14:39'
 }
 PicCanvas >> initialize [
 
 	self reset.
-	ignoreClip := false.
 ]
 
 {
@@ -497,7 +477,7 @@ PicCanvas >> transform: anObject [
 
 {
 	#category : #'scoped state',
-	#'squeak_changestamp' : 'stlu 8/10/2021 15:59'
+	#'squeak_changestamp' : 'stlu 10/13/2021 14:31'
 }
 PicCanvas >> transform: aTransform clipRect: aRectangle during: aBlock [
 	"Scoped setter for `transform` variable."
@@ -505,7 +485,7 @@ PicCanvas >> transform: aTransform clipRect: aRectangle during: aBlock [
 	previousTransform := transform.
 	previousClipRect := clipRect.
 	transform := aTransform.
-	ignoreClip ifFalse: [clipRect := aRectangle].
+	clipRect := aRectangle.
 	^ [aBlock cull: self] ensure: [
 		transform := previousTransform.
 		clipRect := previousClipRect]

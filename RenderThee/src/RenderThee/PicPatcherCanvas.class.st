@@ -13,7 +13,7 @@ Class {
 
 {
 	#category : #'drawing-general',
-	#'squeak_changestamp' : 'stlu 9/27/2021 16:06'
+	#'squeak_changestamp' : 'stlu 10/13/2021 14:41'
 }
 PicPatcherCanvas >> fullDrawMorph: aMorph [
 
@@ -38,18 +38,12 @@ PicPatcherCanvas >> fullDrawMorph: aMorph [
 	picture invalidationStamp: invalidationStamp.
 	picture bounds: aMorph bounds.
 	self group: picture during: [
-		aMorph fullDrawOn: self].
+		| previousClip |
+		previousClip := clipRect.
+		clipRect := Rectangle infinite.
+		aMorph fullDrawOn: self.
+		clipRect := previousClip].
 	picture markValid.
-]
-
-{
-	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/11/2021 16:59'
-}
-PicPatcherCanvas >> initialize [
-
-	super initialize.
-	ignoreClip := true.
 ]
 
 {

@@ -967,7 +967,7 @@ RtBatchingRenderer >> visitRectangle: aRectangleNode [
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 9/28/2021 15:41'
+	#'squeak_changestamp' : 'stlu 10/3/2021 22:07'
 }
 RtBatchingRenderer >> visitRoundedRectangle: aRoundedRectangleNode [
 
@@ -977,7 +977,7 @@ RtBatchingRenderer >> visitRoundedRectangle: aRoundedRectangleNode [
 			frameAndFillRectangle: aRoundedRectangleNode bounds
 			radius: aRoundedRectangleNode radius
 			fillStyle: aRoundedRectangleNode fillStyle
-			borderStyle: (SimpleBorder width: 0))].
+			borderStyle: aRoundedRectangleNode borderStyle)].
 	self groupPrimitives: primitives.
 ]
 
