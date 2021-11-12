@@ -23,7 +23,7 @@ Smalltalk at: #MCMcmUpdater ifPresent: [ :updater |
 ReleaseBuilder deleteAllWindows.
 PreferenceWizardMorph allInstancesDo: [:each | each abandon].
 
-[[| frameRateMorph gcPressureMorph |
+[[| frameRateMorph gcPressureMorph idleTimeMorph |
   Utilities useAuthorInitials: 'CI' during: [
     | token |
     "Ensure Metacello is loaded."
@@ -84,6 +84,7 @@ PreferenceWizardMorph allInstancesDo: [:each | each abandon].
   frameRateMorph := RtFrameRateMorph new
     setToAdhereToEdge: #right;
     color: Color white;
+    retentionDuration: 2e6;
     top: 0;
     openInWorld;
     lock;
@@ -93,7 +94,18 @@ PreferenceWizardMorph allInstancesDo: [:each | each abandon].
   gcPressureMorph := RtGCPressureMorph new
     setToAdhereToEdge: #right;
     color: Color white;
+    retentionDuration: 2e6;
     top: frameRateMorph bottom;
+    openInWorld;
+    lock;
+    yourself.
+  
+  "Open idle time morph"
+  idleTimeMorph := RtIdleTimeMorph new
+    setToAdhereToEdge: #right;
+    color: Color white;
+    retentionDuration: 2e6;
+    top: gcPressureMorph bottom;
     openInWorld;
     lock;
     yourself.
