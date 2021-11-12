@@ -17,9 +17,9 @@ RtWorkspaces class >> allButFirstLine: aString [
 
 {
 	#category : #workspaces,
-	#'squeak_changestamp' : 'stlu 8/27/2021 00:20'
+	#'squeak_changestamp' : 'stlu 11/12/2021 15:14'
 }
-RtWorkspaces class >> batchedTextRendering [ <title: 'Rudimentary batched text rendering'> <auto: true> <collapsed: false> | example glyphTexture renderer |
+RtWorkspaces class >> batchedTextRendering [ <title: 'Rudimentary batched text rendering'> <auto: false> <collapsed: false> | example glyphTexture renderer |
 "Batched text rendering is finally working. There's still a lot of issues with it like glyph quality, no interleaved batches, etc."
 example := RtBatchingExample world.
 
@@ -31,9 +31,9 @@ glyphTexture := renderer glyphStore texture.
 
 {
 	#category : #workspaces,
-	#'squeak_changestamp' : 'stlu 8/12/2021 19:01'
+	#'squeak_changestamp' : 'stlu 11/12/2021 15:14'
 }
-RtWorkspaces class >> bulkPluginBenchmarks [ <title: 'Bulk plugin benchmarks'> <auto: true> <collapsed: true> | array |
+RtWorkspaces class >> bulkPluginBenchmarks [ <title: 'Bulk plugin benchmarks'> <auto: false> <collapsed: false> | array |
 [1 to: 1e3 do: [:index | "do nothing" ]] bench.
 " '553,000 per second. 1.81 microseconds per run. 0 % GC time.'"
 
@@ -111,9 +111,9 @@ Smalltalk unloadModule: 'Float32ArrayBulkPlugin'.
 
 {
 	#category : #workspaces,
-	#'squeak_changestamp' : 'stlu 9/27/2021 12:44'
+	#'squeak_changestamp' : 'stlu 11/12/2021 15:14'
 }
-RtWorkspaces class >> copyingMemoryIsFast [ <title: 'Advantages in Caching'> <auto: true> <collapsed: false> | original repIndex repSize replacement |
+RtWorkspaces class >> copyingMemoryIsFast [ <title: 'Advantages in Caching'> <auto: false> <collapsed: false> | original repIndex repSize replacement |
 "-----------------------------------------------------------"
 "Copying chunks of memory is MUCH faster"
 "-----------------------------------------------------------"
@@ -142,9 +142,9 @@ PicStringNode >> #calculateRightEdges.
 
 {
 	#category : #workspaces,
-	#'squeak_changestamp' : 'stlu 8/12/2021 18:56'
+	#'squeak_changestamp' : 'stlu 11/12/2021 15:14'
 }
-RtWorkspaces class >> learnOpenGLExamples [ <title: 'learnopengl.com Examples'> <auto: true> <collapsed: true>
+RtWorkspaces class >> learnOpenGLExamples [ <title: 'learnopengl.com Examples'> <auto: true> <collapsed: false>
 "1.1.1" LOGLHelloWindow run.
 "1.1.2" LOGLHelloWindowClear run.
 "1.2.1" LOGLHelloTriangle run.
@@ -169,23 +169,32 @@ GLFW terminate.
 
 {
 	#category : #workspaces,
-	#'squeak_changestamp' : 'stlu 8/12/2021 18:58'
+	#'squeak_changestamp' : 'stlu 11/12/2021 15:53'
 }
-RtWorkspaces class >> morphicRenderingExamples [ <title: 'Morphic rendering examples'> <auto: true> <collapsed: true>
+RtWorkspaces class >> morphicRenderingExamples [ <title: 'Morphic rendering examples'> <auto: true> <collapsed: false>
 RtBatchingExample world.
+RtBatchingExample benchWorld.
+RtBatchingExample bouncingAtoms: 500.
 RtBatchingExample drawReference.
 RtBatchingExample browser.
 RtBatchingExample chineseCheckers.
+RtBatchingExample spaceGame.
 
 RtOpenGLCanvasExample world.
+RtOpenGLCanvasExample benchWorld.
+RtOpenGLCanvasExample bouncingAtoms: 500.
 RtOpenGLCanvasExample drawReference.
 RtOpenGLCanvasExample browser.
 RtOpenGLCanvasExample chineseCheckers.
+RtOpenGLCanvasExample spaceGame.
 
 RtFormCanvasExample world.
+RtFormCanvasExample benchWorld.
+RtFormCanvasExample bouncingAtoms: 500.
 RtFormCanvasExample drawReference.
 RtFormCanvasExample browser.
 RtFormCanvasExample chineseCheckers.
+RtFormCanvasExample spaceGame.
 ]
 
 {
@@ -227,9 +236,9 @@ RtWorkspaces class >> openWorkspace: aSymbol [
 
 {
 	#category : #workspaces,
-	#'squeak_changestamp' : 'stlu 11/8/2021 16:01'
+	#'squeak_changestamp' : 'stlu 11/12/2021 15:15'
 }
-RtWorkspaces class >> pictureAndCanvasBenchmarking [ <title: 'Picture and Canvas Benchmarking'> <auto: true> <collapsed: true> | formCanvas morphPic morph nullCanvas picUpdaterCanvas picCanvas pic visitor w1 w10 w11 w12 w13 w14 w15 w16 w2 w3 w4 w5 w6 w7 w8 w9 world |
+RtWorkspaces class >> pictureAndCanvasBenchmarking [ <title: 'Picture and Canvas Benchmarking'> <auto: false> <collapsed: false> | formCanvas morphPic morph nullCanvas picUpdaterCanvas picCanvas pic visitor w1 w10 w11 w12 w13 w14 w15 w16 w2 w3 w4 w5 w6 w7 w8 w9 world |
 [
 world := (PasteUpMorph newWorldForProject: nil)
 	hResizing: #spaceFill;
@@ -349,9 +358,9 @@ RtFormCanvasExample world: morph.
 
 {
 	#category : #workspaces,
-	#'squeak_changestamp' : 'stlu 8/13/2021 11:03'
+	#'squeak_changestamp' : 'stlu 11/12/2021 15:13'
 }
-RtWorkspaces class >> textureAtlasAllocator [ <title: 'Texture atlas allocator'> <auto: true> <collapsed: true> | allocations allocator fc requests |
+RtWorkspaces class >> textureAtlasAllocator [ <title: 'Texture atlas allocator'> <auto: false> <collapsed: false> | allocations allocator fc requests |
 allocator := RtBucketAllocator extent: 1024 @ 1024.
 allocator numColumns: 2.
 

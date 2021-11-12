@@ -137,6 +137,15 @@ RtMorphExample class >> morph: aMorph [
 
 {
 	#category : #examples,
+	#'squeak_changestamp' : 'stlu 11/12/2021 15:19'
+}
+RtMorphExample class >> spaceGame [
+
+	^ self morph: SgSpaceGame new
+]
+
+{
+	#category : #examples,
 	#'squeak_changestamp' : 'stlu 11/8/2021 16:00'
 }
 RtMorphExample class >> world [

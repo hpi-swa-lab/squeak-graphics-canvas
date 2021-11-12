@@ -9,33 +9,24 @@ Class {
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/12/2021 15:37'
 }
 SgSpaceGame class >> open [
 
-	self new open
-]
-
-{
-	#category : #'repaint boundary',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-SgSpaceGame >> isRepaintBoundary [
-
-	^ true
+	self new openInWorld
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 11/12/2021 15:53'
 }
-SgSpaceGame >> open [
+SgSpaceGame >> initialize [
 	
 	| background solarSystem |
-	self openInWorld.
-	self color: (Color red).
+	super initialize.
+	self color: Color red.
 
-	self bounds: self owner bounds.
+	self bounds: (0@0 extent: Display extent).
 	background := SgSpace new.
 	background bounds: self bounds.
 	background createStars: 1000.
@@ -54,5 +45,18 @@ SgSpaceGame >> open [
 		ship center: (self bounds insetBy: ship extent // 2) randomPoint.
 		ship initializeRotation.
 		].
-	self addMorph: (FrameRateMorph new color: Color white)
+	self addMorph: (RtFrameRateMorph new
+		setToAdhereToEdge: #right;
+		color: Color white;
+		top: 0;
+		yourself)
+]
+
+{
+	#category : #'repaint boundary',
+	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+}
+SgSpaceGame >> isRepaintBoundary [
+
+	^ true
 ]
