@@ -14,13 +14,13 @@ Class {
 
 {
 	#category : #'drawing-support',
-	#'squeak_changestamp' : 'stlu 3/10/2021 12:52'
+	#'squeak_changestamp' : 'stlu 10/14/2021 14:52'
 }
 RtNullCanvas >> clipBy: aRectangle during: aBlock [
 
 	(aRectangle containsRect: clipRect) ifTrue: [^ aBlock value: self].
 	
-	self clipRect: (aRectangle intersect: clipRect) during: aBlock.
+	^ self clipRect: (aRectangle intersect: clipRect) during: aBlock.
 ]
 
 {
@@ -45,15 +45,15 @@ RtNullCanvas >> clipRect: anObject [
 
 {
 	#category : #'scoped state',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 10/14/2021 14:50'
 }
 RtNullCanvas >> clipRect: aRectangle during: aBlock [
 	"Scoped setter for `clipRect` variable."
 	| previousClipRect |
 	previousClipRect := clipRect.
 	clipRect := aRectangle.
-	aBlock cull: self.
-	clipRect := previousClipRect
+	^ [aBlock cull: self]
+		ensure: [clipRect := previousClipRect]
 ]
 
 {
@@ -259,27 +259,34 @@ RtNullCanvas >> transform: anObject [
 
 {
 	#category : #'scoped state',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 10/14/2021 14:54'
 }
-RtNullCanvas >> transform: aTransform during: aBlock [
+RtNullCanvas >> transform: aTransform clipRect: aRectangle during: aBlock [
 	"Scoped setter for `transform` variable."
-	| previousTransform |
+	| previousTransform previousClipRect |
 	previousTransform := transform.
+	previousClipRect := clipRect.
 	transform := aTransform.
-	aBlock cull: self.
-	transform := previousTransform
+	clipRect := aRectangle.
+	^ [aBlock cull: self] ensure: [
+		transform := previousTransform.
+		clipRect := previousClipRect]
 ]
 
 {
 	#category : #'drawing-support',
-	#'squeak_changestamp' : 'stlu 3/10/2021 12:56'
+	#'squeak_changestamp' : 'stlu 10/14/2021 15:00'
 }
 RtNullCanvas >> transformBy: aTransform during: aBlock [
 
+	| matrix2x3 |
 	aTransform isIdentity ifTrue: [^ aBlock value: self].
 	
-	self clipRect: (aTransform globalBoundsToLocal: clipRect) expanded during: [
-		self transform: (transform composedWithLocal: aTransform asMatrix2x3) during: aBlock]
+	matrix2x3 := aTransform asMatrix2x3.
+	^ self
+		transform: (transform composedWithLocal: matrix2x3)
+		clipRect: (matrix2x3 globalBoundsToLocal: clipRect) expanded
+		during: aBlock
 ]
 
 {
