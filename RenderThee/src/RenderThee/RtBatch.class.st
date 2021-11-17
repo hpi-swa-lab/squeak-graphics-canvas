@@ -106,13 +106,21 @@ RtBatch >> glyphCacheForFont: font [
 
 {
 	#category : #glyphs,
-	#'squeak_changestamp' : 'stlu 9/28/2021 14:50'
+	#'squeak_changestamp' : 'stlu 11/17/2021 14:53'
 }
 RtBatch >> glyphForCharacter: aCharacter inFont: aFont cache: glyphCache [
 
 	^ glyphCache at: aCharacter ifAbsentPut: [
-		| form allocation glyphBounds glyphIndex |
-		form := aFont characterFormAt: aCharacter.
+		| form width allocation glyphBounds glyphIndex canvas |
+		width := aFont widthOf: aCharacter.
+		canvas := FormCanvas extent: width @ aFont height depth: aFont depth.
+		canvas fillColor: Color transparent.
+		canvas
+			drawString: aCharacter asString
+			in: (0@0 extent: canvas extent)
+			font: aFont
+			color: Color black.
+		form := canvas form.
 		allocation := renderer glyphStore uploadForm: form.
 		glyphBounds := allocation rectangle origin extent: form extent.
 		glyphIndex := renderer persistentStoreF
