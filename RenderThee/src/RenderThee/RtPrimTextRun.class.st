@@ -16,43 +16,11 @@ Class {
 
 {
 	#category : #batching,
-	#'squeak_changestamp' : 'stlu 9/28/2021 14:51'
+	#'squeak_changestamp' : 'stlu 12/6/2021 12:34'
 }
-RtPrimTextRun >> addToBatch: aBatch [
+RtPrimTextRun >> addToBatches: batches [
 
-	| colorIndex storeFIndex storeIIndex glyphCache |
-	colorIndex := aBatch renderer indexForColor: color.
-	storeFIndex := aBatch transientStoreF addAllFrom: transientDataF.
-	storeIIndex := aBatch transientStoreI
-		add: clipRectIndex
-		add: transformIndex
-		add: colorIndex
-		add: storeFIndex.
-	
-	glyphCache := aBatch glyphCacheForFont: font.
-	0 to: stopIndex - startIndex do: [:charIndex |
-		| rightEdge |
-		(rightEdge := transientDataF at: charIndex + 5) > visibleLeft ifTrue: [
-			| glyph |
-			glyph := aBatch
-				glyphForCharacter: (string at: startIndex + charIndex)
-				inFont: font
-				cache: glyphCache.
-			aBatch
-				addInstance: storeIIndex
-				with: charIndex
-				with: glyph second
-				with: zIndex].
-		rightEdge >= visibleRight ifTrue: [^ self]].
-]
-
-{
-	#category : #batching,
-	#'squeak_changestamp' : 'stlu 9/28/2021 15:38'
-}
-RtPrimTextRun >> chooseGroup: groups [
-
-	groups textBatch addPrimitive: self.
+	batches textBatch addPrimitive: self.
 ]
 
 {
@@ -98,4 +66,36 @@ RtPrimTextRun >> transform: aTransform index: transformIdx clip: aRectangle inde
 	visibleRight := aRectangle right - left.
 	
 	^ true
+]
+
+{
+	#category : #batching,
+	#'squeak_changestamp' : 'stlu 12/6/2021 12:29'
+}
+RtPrimTextRun >> writeToBatch: aBatch [
+
+	| colorIndex storeFIndex storeIIndex glyphCache |
+	colorIndex := aBatch renderer indexForColor: color.
+	storeFIndex := aBatch transientStoreF addAllFrom: transientDataF.
+	storeIIndex := aBatch transientStoreI
+		add: clipRectIndex
+		add: transformIndex
+		add: colorIndex
+		add: storeFIndex.
+	
+	glyphCache := aBatch glyphCacheForFont: font.
+	0 to: stopIndex - startIndex do: [:charIndex |
+		| rightEdge |
+		(rightEdge := transientDataF at: charIndex + 5) > visibleLeft ifTrue: [
+			| glyph |
+			glyph := aBatch
+				glyphForCharacter: (string at: startIndex + charIndex)
+				inFont: font
+				cache: glyphCache.
+			aBatch
+				addInstance: storeIIndex
+				with: charIndex
+				with: glyph second
+				with: zIndex].
+		rightEdge >= visibleRight ifTrue: [^ self]].
 ]

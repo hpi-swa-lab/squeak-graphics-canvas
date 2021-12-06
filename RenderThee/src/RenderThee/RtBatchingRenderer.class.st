@@ -5,8 +5,6 @@ Class {
 		'transform',
 		'clipRect',
 		'bounds',
-		'opaqueRectangleBatch',
-		'rectangleBatch',
 		'transformIndex',
 		'clipRectIndex',
 		'zIndex',
@@ -23,13 +21,37 @@ Class {
 		'colorToIndexTable',
 		'glyphStore',
 		'fontCache',
-		'textBatch'
+		'batches'
 	],
 	#pools : [
 		'GLConstants'
 	],
 	#category : #'RenderThee-Batching'
 }
+
+{
+	#category : #drawing,
+	#'squeak_changestamp' : 'stlu 12/6/2021 12:39'
+}
+RtBatchingRenderer >> addPrimitive: aPrimitive [
+
+	| isVisible |
+	isVisible := (aPrimitive
+		transform: transform index: transformIndex
+		clip: clipRect index: clipRectIndex
+		z: (zIndex := zIndex + 1)).
+	isVisible ifTrue: [aPrimitive addToBatches: batches].
+]
+
+{
+	#category : #drawing,
+	#'squeak_changestamp' : 'stlu 12/6/2021 12:41'
+}
+RtBatchingRenderer >> addPrimitives: collectionOfPrimitives [
+
+	1 to: collectionOfPrimitives size do: [:i |
+		self addPrimitive: (collectionOfPrimitives at: i)].
+]
 
 {
 	#category : #allocation,
@@ -57,15 +79,6 @@ RtBatchingRenderer >> allocateTransform: aTransform [
 		add: aTransform a22
 		add: aTransform a13
 		add: aTransform a23
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/28/2021 15:35'
-}
-RtBatchingRenderer >> alphaRectangleBatch [
-
-	^ rectangleBatch
 ]
 
 {
@@ -136,7 +149,7 @@ RtBatchingRenderer >> currentFrame: anObject [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 9/28/2021 17:28'
+	#'squeak_changestamp' : 'stlu 12/6/2021 12:46'
 }
 RtBatchingRenderer >> draw [
 
@@ -144,9 +157,7 @@ RtBatchingRenderer >> draw [
 	GL depthMask: GL_TRUE.
 	GL clear: (GL_COLOR_BUFFER_BIT bitOr: GL_DEPTH_BUFFER_BIT).
 
-	opaqueRectangleBatch batchPrimitives.
-	rectangleBatch batchPrimitives.
-	textBatch batchPrimitives.
+	batches do: [:batch | batch batchPrimitives].
 	
 	transientStoreF texture bindAt: 1.
 	transientStoreI texture bindAt: 2.
@@ -162,14 +173,7 @@ RtBatchingRenderer >> draw [
 	rectangleProgram uniforms uProjectionMatrix: self projectionMatrix.
 	textProgram uniforms uProjectionMatrix: self projectionMatrix.
 	
-	opaqueRectangleBatch isAlpha: false.
-	opaqueRectangleBatch draw.
-	
-	rectangleBatch isAlpha: true.
-	rectangleBatch draw.
-	
-	textBatch isAlpha: true.
-	textBatch draw.
+	batches do: [:batch | batch draw].
 ]
 
 {
@@ -254,22 +258,6 @@ RtBatchingRenderer >> glyphStore [
 ]
 
 {
-	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 9/28/2021 17:03'
-}
-RtBatchingRenderer >> groupPrimitives: collectionOfPrimitives [
-
-	1 to: collectionOfPrimitives size do: [:i |
-		| prim |
-		prim := collectionOfPrimitives at: i.
-		(prim
-			transform: transform index: transformIndex
-			clip: clipRect index: clipRectIndex
-			z: (zIndex := zIndex + 1))
-				ifTrue: [prim chooseGroup: self]].
-]
-
-{
 	#category : #allocation,
 	#'squeak_changestamp' : 'stlu 8/25/2021 10:42'
 }
@@ -301,18 +289,12 @@ RtBatchingRenderer >> initialize [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 9/1/2021 14:22'
+	#'squeak_changestamp' : 'stlu 12/6/2021 12:22'
 }
 RtBatchingRenderer >> initializeBatches [
 
-	opaqueRectangleBatch := RtRectangleBatch new.
-	opaqueRectangleBatch renderer: self.
-
-	rectangleBatch := RtRectangleBatch new.
-	rectangleBatch renderer: self.
-	
-	textBatch := RtTextBatch new.
-	textBatch renderer: self.
+	batches := RtBatches new.
+	batches setRenderer: self.
 ]
 
 {
@@ -404,15 +386,6 @@ RtBatchingRenderer >> initializeVAO [
 		
 		(vao vertexBufferBindingAt: 0) buffer: quadVBO stride: 2 * 4.
 		(vao vertexBufferBindingAt: 1) instanceDivisor: 1].
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/28/2021 15:35'
-}
-RtBatchingRenderer >> opaqueRectangleBatch [
-
-	^ opaqueRectangleBatch
 ]
 
 {
@@ -608,7 +581,7 @@ RtBatchingRenderer >> render: aPicture [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 9/28/2021 16:05'
+	#'squeak_changestamp' : 'stlu 12/6/2021 12:46'
 }
 RtBatchingRenderer >> reset [
 
@@ -622,18 +595,7 @@ RtBatchingRenderer >> reset [
 	clipRectIndex := self allocateClipRect: clipRect.
 	zIndex := 0.
 	
-	opaqueRectangleBatch reset.
-	rectangleBatch reset.
-	textBatch reset.
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/28/2021 15:37'
-}
-RtBatchingRenderer >> textBatch [
-
-	^ textBatch
+	batches do: [:batch | batch reset].
 ]
 
 {
@@ -841,7 +803,7 @@ RtBatchingRenderer >> visitClip: aPicClip [
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 9/28/2021 15:44'
+	#'squeak_changestamp' : 'stlu 12/6/2021 12:41'
 }
 RtBatchingRenderer >> visitImage: anImageNode [
 
@@ -858,12 +820,12 @@ RtBatchingRenderer >> visitImage: anImageNode [
 			radius: 0.0
 			fillStyle: (SolidFillStyle color: Color red)
 		borderStyle: (SimpleBorder width: 0))].
-	self groupPrimitives: primitives.
+	self addPrimitives: primitives.
 ]
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 9/28/2021 16:54'
+	#'squeak_changestamp' : 'stlu 12/6/2021 12:41'
 }
 RtBatchingRenderer >> visitLine: aLineNode [
 
@@ -877,7 +839,7 @@ RtBatchingRenderer >> visitLine: aLineNode [
 			bottom: rect bottom + 1
 			radius: 0.0
 			color: aLineNode color }].
-	self groupPrimitives: primitives.
+	self addPrimitives: primitives.
 ]
 
 {
@@ -900,7 +862,7 @@ RtBatchingRenderer >> visitMorph: aPicMorph [
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 9/28/2021 15:42'
+	#'squeak_changestamp' : 'stlu 12/6/2021 12:42'
 }
 RtBatchingRenderer >> visitOval: anOvalNode [
 
@@ -911,7 +873,7 @@ RtBatchingRenderer >> visitOval: anOvalNode [
 			radius: 0.0
 			fillStyle: anOvalNode fillStyle
 			borderStyle: anOvalNode borderStyle)].
-	self groupPrimitives: primitives.
+	self addPrimitives: primitives.
 ]
 
 {
@@ -935,7 +897,7 @@ RtBatchingRenderer >> visitParagraph: aPicParagraph [
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 9/28/2021 15:42'
+	#'squeak_changestamp' : 'stlu 12/6/2021 12:42'
 }
 RtBatchingRenderer >> visitPolygon: aPolygonNode [
 
@@ -946,12 +908,12 @@ RtBatchingRenderer >> visitPolygon: aPolygonNode [
 			radius: 0.0
 			fillStyle: aPolygonNode fillStyle
 			borderStyle: aPolygonNode borderStyle)].
-	self groupPrimitives: primitives.
+	self addPrimitives: primitives.
 ]
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 9/28/2021 15:30'
+	#'squeak_changestamp' : 'stlu 12/6/2021 12:42'
 }
 RtBatchingRenderer >> visitRectangle: aRectangleNode [
 
@@ -962,12 +924,12 @@ RtBatchingRenderer >> visitRectangle: aRectangleNode [
 			radius: 0.0
 			fillStyle: aRectangleNode fillStyle
 			borderStyle: aRectangleNode borderStyle)].
-	self groupPrimitives: primitives.
+	self addPrimitives: primitives.
 ]
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 10/3/2021 22:07'
+	#'squeak_changestamp' : 'stlu 12/6/2021 12:42'
 }
 RtBatchingRenderer >> visitRoundedRectangle: aRoundedRectangleNode [
 
@@ -978,12 +940,12 @@ RtBatchingRenderer >> visitRoundedRectangle: aRoundedRectangleNode [
 			radius: aRoundedRectangleNode radius
 			fillStyle: aRoundedRectangleNode fillStyle
 			borderStyle: aRoundedRectangleNode borderStyle)].
-	self groupPrimitives: primitives.
+	self addPrimitives: primitives.
 ]
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 9/28/2021 17:08'
+	#'squeak_changestamp' : 'stlu 12/6/2021 12:42'
 }
 RtBatchingRenderer >> visitString: aStringNode [
 
@@ -1004,7 +966,7 @@ RtBatchingRenderer >> visitString: aStringNode [
 				color: aStringNode color
 				left: aStringNode position x
 				top: aStringNode position y}].
-		self groupPrimitives: primitives.
+		self addPrimitives: primitives.
 		
 		clipRectIndex := previousClipRectIndex].
 	clipRect := previousClipRect.

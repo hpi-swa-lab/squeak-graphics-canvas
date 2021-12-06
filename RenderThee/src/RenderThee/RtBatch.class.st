@@ -42,13 +42,13 @@ RtBatch >> addPrimitive: aPrimitive [
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 9/28/2021 17:30'
+	#'squeak_changestamp' : 'stlu 12/6/2021 12:29'
 }
 RtBatch >> batchPrimitives [
 
 	isAlpha
-		ifTrue: [primitives do: [:prim | prim addToBatch: self]]
-		ifFalse: [primitives reverseDo: [:prim | prim addToBatch: self]].
+		ifTrue: [primitives do: [:prim | prim writeToBatch: self]]
+		ifFalse: [primitives reverseDo: [:prim | prim writeToBatch: self]].
 ]
 
 {

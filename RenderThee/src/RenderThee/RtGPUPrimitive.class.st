@@ -11,18 +11,9 @@ Class {
 
 {
 	#category : #batching,
-	#'squeak_changestamp' : 'stlu 9/28/2021 13:46'
+	#'squeak_changestamp' : 'stlu 12/6/2021 12:34'
 }
-RtGPUPrimitive >> addToBatch: aBatch [
-
-	self subclassResponsibility.
-]
-
-{
-	#category : #batching,
-	#'squeak_changestamp' : 'stlu 9/28/2021 15:34'
-}
-RtGPUPrimitive >> chooseGroup: groups [
+RtGPUPrimitive >> addToBatches: batches [
 
 	self subclassResponsibility.
 ]
@@ -81,6 +72,15 @@ RtGPUPrimitive >> transformIndex [
 RtGPUPrimitive >> transformIndex: anObject [
 
 	transformIndex := anObject.
+]
+
+{
+	#category : #batching,
+	#'squeak_changestamp' : 'stlu 12/6/2021 12:29'
+}
+RtGPUPrimitive >> writeToBatch: aBatch [
+
+	self subclassResponsibility.
 ]
 
 {

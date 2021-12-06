@@ -10,29 +10,13 @@ Class {
 
 {
 	#category : #batching,
-	#'squeak_changestamp' : 'stlu 9/28/2021 13:57'
+	#'squeak_changestamp' : 'stlu 12/6/2021 12:34'
 }
-RtPrimRectangle >> addToBatch: aBatch [
-
-	| colorIndex storeIndex |
-	colorIndex := aBatch renderer indexForColor: color.
-	storeIndex := aBatch transientStoreF addAllFrom: transientDataF.
-	aBatch
-		addInstance: storeIndex
-		with: clipRectIndex
-		with: transformIndex
-		with: colorIndex.
-]
-
-{
-	#category : #batching,
-	#'squeak_changestamp' : 'stlu 9/28/2021 15:36'
-}
-RtPrimRectangle >> chooseGroup: groups [
+RtPrimRectangle >> addToBatches: batches [
 
 	(self requiresBlending
-		ifTrue: [groups alphaRectangleBatch]
-		ifFalse: [groups opaqueRectangleBatch]) addPrimitive: self.
+		ifTrue: [batches translucentRectangleBatch]
+		ifFalse: [batches opaqueRectangleBatch]) addPrimitive: self.
 ]
 
 {
@@ -71,4 +55,20 @@ RtPrimRectangle >> transform: aTransform index: transformIdx clip: aRectangle in
 	transientDataF at: 6 put: zIdx.
 	
 	^ true
+]
+
+{
+	#category : #batching,
+	#'squeak_changestamp' : 'stlu 12/6/2021 12:29'
+}
+RtPrimRectangle >> writeToBatch: aBatch [
+
+	| colorIndex storeIndex |
+	colorIndex := aBatch renderer indexForColor: color.
+	storeIndex := aBatch transientStoreF addAllFrom: transientDataF.
+	aBatch
+		addInstance: storeIndex
+		with: clipRectIndex
+		with: transformIndex
+		with: colorIndex.
 ]
