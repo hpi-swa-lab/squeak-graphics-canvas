@@ -3,6 +3,7 @@ Class {
 	#superclass : #PicVisitor,
 	#instVars : [
 		'transform',
+		'transformsPool',
 		'clipRect',
 		'bounds',
 		'transformIndex',
@@ -271,7 +272,7 @@ RtBatchingRenderer >> indexForColor: aColor [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/26/2021 13:25'
+	#'squeak_changestamp' : 'stlu 12/6/2021 13:42'
 }
 RtBatchingRenderer >> initialize [
 
@@ -283,6 +284,7 @@ RtBatchingRenderer >> initialize [
 	self initializeColors.
 	
 	fontCache := IdentityDictionary new.
+	transformsPool := OrderedCollection new.
 	
 	self reset.
 ]
@@ -974,23 +976,29 @@ RtBatchingRenderer >> visitString: aStringNode [
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 9/1/2021 13:38'
+	#'squeak_changestamp' : 'stlu 12/6/2021 13:57'
 }
 RtBatchingRenderer >> visitTransform: aPicTransform [
 
 	| previousTransform previousClipRect previousTransformIndex previousClipRectIndex |
-	previousTransform := transform.
 	previousClipRect := clipRect.
-	transform := transform * aPicTransform matrix.
 	(clipRect := (aPicTransform matrix globalBoundsToLocal: clipRect) expanded) hasPositiveExtent ifTrue: [
+		previousTransform := transform.
+		transform := transformsPool isEmpty
+			ifTrue: [previousTransform shallowCopy]
+			ifFalse: [transformsPool removeLast setTo: previousTransform].
+		transform *= aPicTransform matrix.
 		previousTransformIndex := transformIndex.
 		previousClipRectIndex := clipRectIndex.
 		transformIndex := self allocateTransform: transform.
 		clipRectIndex := self allocateClipRect: clipRect.
+		
 		self visitGroup: aPicTransform.
+		
+		transformsPool addLast: transform.
+		transform := previousTransform.
 		transformIndex := previousTransformIndex.
 		clipRectIndex := previousClipRectIndex].
-	transform := previousTransform.
 	clipRect := previousClipRect.
 ]
 
