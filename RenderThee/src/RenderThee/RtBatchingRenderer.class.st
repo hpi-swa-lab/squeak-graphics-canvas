@@ -846,11 +846,13 @@ RtBatchingRenderer >> visitLine: aLineNode [
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 9/7/2021 10:25'
+	#'squeak_changestamp' : 'stlu 12/6/2021 17:12'
 }
 RtBatchingRenderer >> visitMorph: aPicMorph [
 
-	self visitGroup: aPicMorph.
+	aPicMorph offset
+		ifNil: [self visitGroup: aPicMorph]
+		ifNotNil: [self visitTransform: aPicMorph].
 	"dist := currentFrame - aPicMorph invalidationStamp.
 	dist < 15 ifTrue: [
 		| color |

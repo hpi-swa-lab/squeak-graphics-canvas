@@ -4,6 +4,7 @@ Class {
 	#instVars : [
 		'isValid',
 		'bounds',
+		'offset',
 		'invalidationStamp'
 	],
 	#category : #'RenderThee-Pictures'
@@ -34,6 +35,17 @@ PicMorphNode >> bounds [
 PicMorphNode >> bounds: anObject [
 
 	bounds := anObject.
+]
+
+{
+	#category : #drawing,
+	#'squeak_changestamp' : 'stlu 12/6/2021 17:09'
+}
+PicMorphNode >> drawOn: aCanvas [
+
+	aCanvas translateBy: offset during: [:canvas |
+		self childrenDo: [:child |
+			child drawOn: canvas]].
 ]
 
 {
@@ -102,6 +114,33 @@ PicMorphNode >> markInvalid [
 PicMorphNode >> markValid [
 
 	isValid := true.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 12/6/2021 17:11'
+}
+PicMorphNode >> matrix [
+
+	^ Matrix2x3 withOffset: offset
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 12/6/2021 17:07'
+}
+PicMorphNode >> offset [
+
+	^ offset
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 12/6/2021 17:07'
+}
+PicMorphNode >> offset: anObject [
+
+	offset := anObject.
 ]
 
 {
