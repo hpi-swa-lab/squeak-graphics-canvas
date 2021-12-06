@@ -1,6 +1,6 @@
 Class {
 	#name : #RtPrimRectangle,
-	#superclass : #RtGPUPrimitive,
+	#superclass : #RtPrimitive,
 	#instVars : [
 		'transientDataF',
 		'color'

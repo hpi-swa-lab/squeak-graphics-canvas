@@ -1,5 +1,5 @@
 Class {
-	#name : #RtGPUPrimitive,
+	#name : #RtPrimitive,
 	#superclass : #Object,
 	#instVars : [
 		'transformIndex',
@@ -13,7 +13,7 @@ Class {
 	#category : #batching,
 	#'squeak_changestamp' : 'stlu 12/6/2021 12:34'
 }
-RtGPUPrimitive >> addToBatches: batches [
+RtPrimitive >> addToBatches: batches [
 
 	self subclassResponsibility.
 ]
@@ -22,7 +22,7 @@ RtGPUPrimitive >> addToBatches: batches [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/28/2021 13:36'
 }
-RtGPUPrimitive >> clipRectIndex [
+RtPrimitive >> clipRectIndex [
 
 	^ clipRectIndex
 ]
@@ -31,7 +31,7 @@ RtGPUPrimitive >> clipRectIndex [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/28/2021 13:36'
 }
-RtGPUPrimitive >> clipRectIndex: anObject [
+RtPrimitive >> clipRectIndex: anObject [
 
 	clipRectIndex := anObject.
 ]
@@ -40,7 +40,7 @@ RtGPUPrimitive >> clipRectIndex: anObject [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/28/2021 14:45'
 }
-RtGPUPrimitive >> requiresBlending [
+RtPrimitive >> requiresBlending [
 
 	^ true
 ]
@@ -49,7 +49,7 @@ RtGPUPrimitive >> requiresBlending [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/28/2021 14:17'
 }
-RtGPUPrimitive >> transform: aTransform index: transformIdx clip: aRectangle index: clipRectIdx z: zIdx [
+RtPrimitive >> transform: aTransform index: transformIdx clip: aRectangle index: clipRectIdx z: zIdx [
 
 	transformIndex := transformIdx.
 	clipRectIndex := clipRectIdx.
@@ -60,7 +60,7 @@ RtGPUPrimitive >> transform: aTransform index: transformIdx clip: aRectangle ind
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/28/2021 13:36'
 }
-RtGPUPrimitive >> transformIndex [
+RtPrimitive >> transformIndex [
 
 	^ transformIndex
 ]
@@ -69,7 +69,7 @@ RtGPUPrimitive >> transformIndex [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/28/2021 13:36'
 }
-RtGPUPrimitive >> transformIndex: anObject [
+RtPrimitive >> transformIndex: anObject [
 
 	transformIndex := anObject.
 ]
@@ -78,7 +78,7 @@ RtGPUPrimitive >> transformIndex: anObject [
 	#category : #batching,
 	#'squeak_changestamp' : 'stlu 12/6/2021 12:29'
 }
-RtGPUPrimitive >> writeToBatch: aBatch [
+RtPrimitive >> writeToBatch: aBatch [
 
 	self subclassResponsibility.
 ]
@@ -87,7 +87,7 @@ RtGPUPrimitive >> writeToBatch: aBatch [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/28/2021 13:36'
 }
-RtGPUPrimitive >> zIndex [
+RtPrimitive >> zIndex [
 
 	^ zIndex
 ]
@@ -96,7 +96,7 @@ RtGPUPrimitive >> zIndex [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/28/2021 13:36'
 }
-RtGPUPrimitive >> zIndex: anObject [
+RtPrimitive >> zIndex: anObject [
 
 	zIndex := anObject.
 ]

@@ -1,6 +1,6 @@
 Class {
 	#name : #RtPrimTextRun,
-	#superclass : #RtGPUPrimitive,
+	#superclass : #RtPrimitive,
 	#instVars : [
 		'visibleLeft',
 		'visibleRight',
