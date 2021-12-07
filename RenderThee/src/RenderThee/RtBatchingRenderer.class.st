@@ -22,7 +22,8 @@ Class {
 		'colorToIndexTable',
 		'glyphStore',
 		'fontCache',
-		'batches'
+		'batches',
+		'projectionMatrix'
 	],
 	#pools : [
 		'GLConstants'
@@ -93,11 +94,13 @@ RtBatchingRenderer >> bounds [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 7/7/2021 16:08'
+	#'squeak_changestamp' : 'stlu 12/6/2021 14:36'
 }
 RtBatchingRenderer >> bounds: aRectangle [
 
-	bounds := aRectangle.
+	bounds ~= aRectangle ifTrue: [
+		bounds := aRectangle.
+		projectionMatrix := nil].
 ]
 
 {
@@ -401,13 +404,15 @@ RtBatchingRenderer >> persistentStoreF [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/1/2021 14:59'
+	#'squeak_changestamp' : 'stlu 12/6/2021 14:35'
 }
 RtBatchingRenderer >> projectionMatrix [
 
-	^ Matrix4x4
-		ortho: bounds
-		near: -1000000 far: 0
+	^ projectionMatrix ifNil: [
+		projectionMatrix := Matrix4x4
+			ortho: bounds
+			near: 1 - (2 ** 24)
+			far: 0]
 ]
 
 {
