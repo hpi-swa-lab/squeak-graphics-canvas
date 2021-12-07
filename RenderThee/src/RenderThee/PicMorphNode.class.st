@@ -50,13 +50,14 @@ PicMorphNode >> drawOn: aCanvas [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 9/27/2021 16:32'
+	#'squeak_changestamp' : 'stlu 12/6/2021 17:24'
 }
 PicMorphNode >> initialize [
 
 	super initialize.
 	isValid := true.
 	invalidationStamp := 0.
+	offset := 0@0.
 ]
 
 {

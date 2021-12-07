@@ -13,7 +13,7 @@ Class {
 
 {
 	#category : #'drawing-general',
-	#'squeak_changestamp' : 'stlu 12/6/2021 17:19'
+	#'squeak_changestamp' : 'stlu 12/6/2021 17:23'
 }
 PicPatcherCanvas >> fullDrawMorph: aMorph [
 
@@ -28,7 +28,7 @@ PicPatcherCanvas >> fullDrawMorph: aMorph [
 	
 	picture
 		ifNil: [aMorph picture: (picture := PicMorphNode new)]
-		ifNotNil: [picture removeAllChildren; offset: nil].
+		ifNotNil: [picture removeAllChildren; offset: 0@0].
 	picture invalidationStamp: invalidationStamp.
 	picture bounds: aMorph bounds.
 	self group: picture during: [
