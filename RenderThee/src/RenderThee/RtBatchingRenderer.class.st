@@ -583,7 +583,7 @@ RtBatchingRenderer >> render: aPicture [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 12/6/2021 12:46'
+	#'squeak_changestamp' : 'stlu 12/6/2021 14:42'
 }
 RtBatchingRenderer >> reset [
 
@@ -591,7 +591,9 @@ RtBatchingRenderer >> reset [
 	transientStoreI reset.
 	
 	clipRect := bounds ifNil: [Rectangle infinite].
-	transform := Matrix2x3 identity.
+	transform := transformsPool isEmpty
+		ifTrue: [Matrix2x3 identity]
+		ifFalse: [transformsPool removeLast setIdentity].
 	
 	transformIndex := self allocateTransform: transform.
 	clipRectIndex := self allocateClipRect: clipRect.
