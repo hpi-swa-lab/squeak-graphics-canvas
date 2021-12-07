@@ -7,7 +7,8 @@ Class {
 		'keyEnumToVirtualKeyTable',
 		'virtualKeyToKeyCodeTable',
 		'shouldUpdateMorph',
-		'world'
+		'world',
+		'shouldShowDamageRectangles'
 	],
 	#pools : [
 		'EventSensorConstants'
@@ -230,18 +231,19 @@ RtMorphExample >> initialWindowExtent [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 10/3/2021 20:45'
+	#'squeak_changestamp' : 'stlu 12/7/2021 14:09'
 }
 RtMorphExample >> initialize [
 
 	super initialize.
 	pictureUpdateTimes := RingBuffer new: 30.
 	shouldUpdateMorph := true.
+	shouldShowDamageRectangles := false.
 ]
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 10/3/2021 20:43'
+	#'squeak_changestamp' : 'stlu 12/7/2021 14:18'
 }
 RtMorphExample >> key: keyEnum scanCode: scanCode changedTo: state with: mods [
 
@@ -251,7 +253,8 @@ RtMorphExample >> key: keyEnum scanCode: scanCode changedTo: state with: mods [
 
 	(GLFW numberOfFunctionKey: keyEnum) ifNotNil: [:fNumber |
 		state = GLFW_RELEASE ifTrue: [
-			fNumber = 11 ifTrue: [self toggleMorphUpdates]]].
+			fNumber = 11 ifTrue: [self toggleMorphUpdates].
+			fNumber = 12 ifTrue: [self toggleDamageVisualization]]].
 	
 	isShiftPressed := mods anyMask: ShiftKeyBit.
 	type := state caseOf: {
@@ -561,6 +564,24 @@ RtMorphExample >> scrolledBy: aPoint [
 ]
 
 {
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 12/7/2021 14:15'
+}
+RtMorphExample >> shouldShowDamageRectangles [
+
+	^ shouldShowDamageRectangles
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 12/7/2021 14:15'
+}
+RtMorphExample >> shouldShowDamageRectangles: anObject [
+
+	shouldShowDamageRectangles := anObject.
+]
+
+{
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 11/8/2021 16:27'
 }
@@ -585,6 +606,15 @@ RtMorphExample >> shouldUpdateMorph [
 RtMorphExample >> shouldUpdateMorph: aBoolean [
 
 	shouldUpdateMorph := aBoolean.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 12/7/2021 14:17'
+}
+RtMorphExample >> toggleDamageVisualization [
+
+	self shouldShowDamageRectangles: self shouldShowDamageRectangles not.
 ]
 
 {
@@ -615,7 +645,7 @@ RtMorphExample >> updateMorph [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 11/8/2021 15:59'
+	#'squeak_changestamp' : 'stlu 12/7/2021 14:20'
 }
 RtMorphExample >> updatePicture [
 
@@ -628,7 +658,13 @@ RtMorphExample >> updatePicture [
 		world isWorldMorph ifTrue: [
 			world worldState hands reverseDo: [:hand |
 				hand submorphs do: [:each |
-					patcher fullDrawMorph: each]]]].
+					patcher fullDrawMorph: each]].
+			shouldShowDamageRectangles ifTrue: [
+				| damageRecorder rects |
+				damageRecorder := world worldState damageRecorder.
+				rects := damageRecorder invalidRectsFullBounds: world bounds.
+				rects do: [:rect | patcher frameRectangle: rect color: Color red].
+				self isModal ifTrue: [damageRecorder reset]]]].
 	
 	pictureUpdateTimes add: elapsed.
 	picture := patcher getPicture.

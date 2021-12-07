@@ -2,6 +2,15 @@ Extension { #name : #WorldState }
 
 {
 	#category : #'*RenderThee',
+	#'squeak_changestamp' : 'stlu 12/7/2021 13:48'
+}
+WorldState >> damageRecorder [
+
+	^ damageRecorder
+]
+
+{
+	#category : #'*RenderThee',
 	#'squeak_changestamp' : 'stlu 9/17/2021 13:56'
 }
 WorldState >> processUserInputEvents [
