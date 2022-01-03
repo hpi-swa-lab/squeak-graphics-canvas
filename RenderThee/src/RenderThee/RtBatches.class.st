@@ -10,15 +10,6 @@ Class {
 }
 
 {
-	#category : #batching,
-	#'squeak_changestamp' : 'stlu 12/6/2021 12:18'
-}
-RtBatches >> batchPrimitives [
-
-	self do: [:batch | batch batchPrimitives].
-]
-
-{
 	#category : #enumerating,
 	#'squeak_changestamp' : 'stlu 12/6/2021 12:17'
 }
@@ -61,15 +52,6 @@ RtBatches >> opaqueRectangleBatch [
 RtBatches >> opaqueRectangleBatch: anObject [
 
 	opaqueRectangleBatch := anObject.
-]
-
-{
-	#category : #batching,
-	#'squeak_changestamp' : 'stlu 12/6/2021 12:19'
-}
-RtBatches >> reset [
-
-	self do: [:batch | batch reset].
 ]
 
 {
