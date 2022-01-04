@@ -9,14 +9,19 @@ Class {
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 11/8/2021 15:59'
+	#'squeak_changestamp' : 'stlu 1/3/2022 17:51'
 }
 RtBatchingExample >> render [
 
 	self updateMorph.
 	renderer currentFrame: numFrames.
 	renderer bounds: world bounds.
-	renderer render: picture.
+	shouldShowDamageRectangles ifTrue: [
+		self damageRecorder doFullRepaint].
+	renderer
+		render: picture
+		damage: self damageRectangles.
+	self damageRecorder reset.
 ]
 
 {
@@ -39,9 +44,9 @@ RtBatchingExample >> renderer: anObject [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 6/21/2021 17:06'
+	#'squeak_changestamp' : 'stlu 12/10/2021 16:12'
 }
 RtBatchingExample >> setUp [
 
-	renderer := RtBatchingRenderer new.
+	renderer := RtBatchingRenderer bounds: world bounds.
 ]

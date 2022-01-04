@@ -17,19 +17,35 @@ Class {
 		'textProgram',
 		'colorStore',
 		'vao',
+		'fbo',
+		'depthStencilRBO',
+		'displayRBO',
 		'quadVBO',
 		'quadEBO',
 		'colorToIndexTable',
 		'glyphStore',
 		'fontCache',
 		'batches',
-		'projectionMatrix'
+		'projectionMatrix',
+		'damageProgram',
+		'damageBatch'
 	],
 	#pools : [
 		'GLConstants'
 	],
 	#category : #'RenderThee-Batching'
 }
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 12/10/2021 16:11'
+}
+RtBatchingRenderer class >> bounds: aRectangle [
+
+	^ self basicNew
+		initializeWithBounds: aRectangle;
+		yourself
+]
 
 {
 	#category : #drawing,
@@ -94,13 +110,27 @@ RtBatchingRenderer >> bounds [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 12/6/2021 14:36'
+	#'squeak_changestamp' : 'stlu 12/10/2021 16:09'
 }
 RtBatchingRenderer >> bounds: aRectangle [
 
 	bounds ~= aRectangle ifTrue: [
 		bounds := aRectangle.
-		projectionMatrix := nil].
+		projectionMatrix := nil.
+		self resizeRenderbuffersTo: aRectangle extent].
+]
+
+{
+	#category : #drawing,
+	#'squeak_changestamp' : 'stlu 1/3/2022 17:23'
+}
+RtBatchingRenderer >> clear [
+
+	GL clearColor: self clearColor.
+	GL clearStencil: 1.
+	GL depthMask: GL_TRUE.
+	GL stencilMask: 16rFF.
+	GL clear: (GL_DEPTH_BUFFER_BIT bitOr: GL_STENCIL_BUFFER_BIT).
 ]
 
 {
@@ -152,14 +182,52 @@ RtBatchingRenderer >> currentFrame: anObject [
 ]
 
 {
+	#category : #shaders,
+	#'squeak_changestamp' : 'stlu 1/3/2022 15:44'
+}
+RtBatchingRenderer >> damageFragmentShader [
+
+	^ '#version 330 core
+
+out vec4 oColor;
+
+void main() {
+	oColor = vec4(1.0, 0.0, 0.0, 1.0);
+}'
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 1/3/2022 15:45'
+}
+RtBatchingRenderer >> damageProgram [
+
+	^ damageProgram
+]
+
+{
+	#category : #shaders,
+	#'squeak_changestamp' : 'stlu 1/3/2022 15:44'
+}
+RtBatchingRenderer >> damageVertexShader [
+
+	^ '#version 330 core
+layout (location = 0) in vec2 aPosition;
+layout (location = 1) in ivec4 aInstanceData;
+
+uniform mat4 uProjectionMatrix; //orthographic projection
+
+void main() {
+	vec2 vertexPosition = aInstanceData.xy + (aPosition * aInstanceData.zw);
+	gl_Position = uProjectionMatrix * vec4(vertexPosition, 1.0, 1.0);
+}'
+]
+
+{
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 12/6/2021 12:46'
+	#'squeak_changestamp' : 'stlu 1/3/2022 15:59'
 }
 RtBatchingRenderer >> draw [
-
-	GL clearColor: self clearColor.
-	GL depthMask: GL_TRUE.
-	GL clear: (GL_COLOR_BUFFER_BIT bitOr: GL_DEPTH_BUFFER_BIT).
 
 	batches do: [:batch | batch batchPrimitives].
 	
@@ -176,8 +244,23 @@ RtBatchingRenderer >> draw [
 	
 	rectangleProgram uniforms uProjectionMatrix: self projectionMatrix.
 	textProgram uniforms uProjectionMatrix: self projectionMatrix.
+	damageProgram uniforms uProjectionMatrix: self projectionMatrix.
 	
 	batches do: [:batch | batch draw].
+]
+
+{
+	#category : #drawing,
+	#'squeak_changestamp' : 'stlu 1/3/2022 15:05'
+}
+RtBatchingRenderer >> flushToScreen [
+
+	self flag: #todo. "find a better name for this please"
+	fbo
+		blit: GL_COLOR_BUFFER_BIT
+		into: GLFramebuffer default
+		from: bounds
+		to: bounds.
 ]
 
 {
@@ -275,31 +358,15 @@ RtBatchingRenderer >> indexForColor: aColor [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 12/6/2021 13:42'
-}
-RtBatchingRenderer >> initialize [
-
-	self initializeGPUStores.
-	self initializeQuadVBO.
-	self initializeVAO.
-	self initializePrograms.
-	self initializeBatches.
-	self initializeColors.
-	
-	fontCache := IdentityDictionary new.
-	transformsPool := OrderedCollection new.
-	
-	self reset.
-]
-
-{
-	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 12/6/2021 12:22'
+	#'squeak_changestamp' : 'stlu 1/3/2022 15:42'
 }
 RtBatchingRenderer >> initializeBatches [
 
 	batches := RtBatches new.
 	batches setRenderer: self.
+	
+	damageBatch := RtDamageBatch new.
+	damageBatch renderer: self.
 ]
 
 {
@@ -309,6 +376,17 @@ RtBatchingRenderer >> initializeBatches [
 RtBatchingRenderer >> initializeColors [
 
 	colorToIndexTable := Dictionary new.
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 1/3/2022 14:57'
+}
+RtBatchingRenderer >> initializeFBO [
+
+	fbo := GLFramebuffer create.
+	fbo bind.
+	self resizeRenderbuffersTo: bounds extent.
 ]
 
 {
@@ -329,7 +407,7 @@ RtBatchingRenderer >> initializeGPUStores [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/26/2021 11:33'
+	#'squeak_changestamp' : 'stlu 1/3/2022 15:45'
 }
 RtBatchingRenderer >> initializePrograms [
 
@@ -349,6 +427,10 @@ RtBatchingRenderer >> initializePrograms [
 		sPersistentStoreF: 3;
 		sColorStore: 5;
 		sGlyphStore: 6.
+	
+	damageProgram := GLProgram
+		vertexSource: self damageVertexShader
+		fragmentSource: self damageFragmentShader.
 ]
 
 {
@@ -391,6 +473,28 @@ RtBatchingRenderer >> initializeVAO [
 		
 		(vao vertexBufferBindingAt: 0) buffer: quadVBO stride: 2 * 4.
 		(vao vertexBufferBindingAt: 1) instanceDivisor: 1].
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 1/3/2022 14:46'
+}
+RtBatchingRenderer >> initializeWithBounds: aRectangle [
+
+	bounds := aRectangle.
+	
+	self initializeFBO.
+	self initializeGPUStores.
+	self initializeQuadVBO.
+	self initializeVAO.
+	self initializePrograms.
+	self initializeBatches.
+	self initializeColors.
+	
+	fontCache := IdentityDictionary new.
+	transformsPool := OrderedCollection new.
+	
+	self reset.
 ]
 
 {
@@ -577,25 +681,53 @@ void main() {
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 6/8/2021 10:35'
+	#'squeak_changestamp' : 'stlu 1/3/2022 16:08'
 }
-RtBatchingRenderer >> render: aPicture [
+RtBatchingRenderer >> render: aPicture damage: damageRectangles [
 
 	self reset.
 	self visit: aPicture.
+	
+	self clear.
+	self renderStencil: damageRectangles.
 	self draw.
+	self flushToScreen.
+]
+
+{
+	#category : #drawing,
+	#'squeak_changestamp' : 'stlu 1/3/2022 17:25'
+}
+RtBatchingRenderer >> renderStencil: damageRectangles [
+
+	GL enable: GL_STENCIL_TEST.
+	GL stencilMask: 1.
+	GL stencilFunc: GL_EQUAL with: 1 with: 1.
+	GL stencilOp: GL_KEEP with: GL_ZERO with: GL_ZERO.
+	GL depthFunc: GL_NEVER.
+	damageBatch reset.
+	damageRectangles do: [:rect |
+		damageBatch
+			addInstance: rect left
+			with: rect top
+			with: rect width
+			with: rect height].
+	damageBatch draw.
+	GL depthFunc: GL_LESS.
+	GL stencilFunc: GL_EQUAL with: 0 with: 1.
+	GL stencilOp: GL_KEEP with: GL_KEEP with: GL_KEEP.
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 12/6/2021 14:42'
+	#'squeak_changestamp' : 'stlu 12/10/2021 16:13'
 }
 RtBatchingRenderer >> reset [
 
 	transientStoreF reset.
 	transientStoreI reset.
 	
-	clipRect := bounds ifNil: [Rectangle infinite].
+	clipRect := bounds.
 	transform := transformsPool isEmpty
 		ifTrue: [Matrix2x3 identity]
 		ifFalse: [transformsPool removeLast setIdentity].
@@ -605,6 +737,23 @@ RtBatchingRenderer >> reset [
 	zIndex := 0.
 	
 	batches do: [:batch | batch reset].
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 1/3/2022 14:46'
+}
+RtBatchingRenderer >> resizeRenderbuffersTo: newExtent [
+
+	depthStencilRBO ifNotNil: [depthStencilRBO delete].
+	depthStencilRBO := GLRenderbuffer create.
+	depthStencilRBO initializeStorage: newExtent format: GL_DEPTH24_STENCIL8.
+	fbo attachDepthAndStencilRenderbuffer: depthStencilRBO.
+
+	displayRBO ifNotNil: [displayRBO delete].	
+	displayRBO := GLRenderbuffer create.
+	displayRBO initializeStorage: newExtent format: GL_RGBA8.
+	fbo attachColorRenderbuffer: displayRBO at: 0.
 ]
 
 {
@@ -812,7 +961,7 @@ RtBatchingRenderer >> visitClip: aPicClip [
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 12/6/2021 12:41'
+	#'squeak_changestamp' : 'stlu 1/4/2022 14:08'
 }
 RtBatchingRenderer >> visitImage: anImageNode [
 
@@ -828,7 +977,7 @@ RtBatchingRenderer >> visitImage: anImageNode [
 			frameAndFillRectangle: anImageNode bounds
 			radius: 0.0
 			fillStyle: (SolidFillStyle color: Color red)
-		borderStyle: (SimpleBorder width: 0))].
+			borderStyle: (SimpleBorder width: 0))].
 	self addPrimitives: primitives.
 ]
 

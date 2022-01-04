@@ -156,10 +156,11 @@ RtMorphExample class >> world [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 11/8/2021 16:55'
+	#'squeak_changestamp' : 'stlu 1/3/2022 17:34'
 }
 RtMorphExample class >> world: aMorph [
 
+	aMorph fullRepaintNeeded.
 	^ self new
 		world: aMorph;
 		run;
@@ -221,6 +222,24 @@ RtMorphExample >> convertModifierKeys: modifierKeys [
 ]
 
 {
+	#category : #damage,
+	#'squeak_changestamp' : 'stlu 12/10/2021 16:30'
+}
+RtMorphExample >> damageRecorder [
+
+	^ world worldState damageRecorder
+]
+
+{
+	#category : #damage,
+	#'squeak_changestamp' : 'stlu 12/10/2021 16:31'
+}
+RtMorphExample >> damageRectangles [
+
+	^ self damageRecorder invalidRectsFullBounds: world bounds
+]
+
+{
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 11/8/2021 15:59'
 }
@@ -239,6 +258,15 @@ RtMorphExample >> initialize [
 	pictureUpdateTimes := RingBuffer new: 30.
 	shouldUpdateMorph := true.
 	shouldShowDamageRectangles := false.
+]
+
+{
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 1/3/2022 17:35'
+}
+RtMorphExample >> isModalByDefault [
+
+	^ true
 ]
 
 {
@@ -645,7 +673,7 @@ RtMorphExample >> updateMorph [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 12/7/2021 14:20'
+	#'squeak_changestamp' : 'stlu 1/3/2022 17:55'
 }
 RtMorphExample >> updatePicture [
 
@@ -658,13 +686,11 @@ RtMorphExample >> updatePicture [
 		world isWorldMorph ifTrue: [
 			world worldState hands reverseDo: [:hand |
 				hand submorphs do: [:each |
-					patcher fullDrawMorph: each]].
+					patcher fullDrawMorph: each.
+					self damageRecorder recordInvalidRect: each bounds]].
 			shouldShowDamageRectangles ifTrue: [
-				| damageRecorder rects |
-				damageRecorder := world worldState damageRecorder.
-				rects := damageRecorder invalidRectsFullBounds: world bounds.
-				rects do: [:rect | patcher frameRectangle: rect color: Color red].
-				self isModal ifTrue: [damageRecorder reset]]]].
+				self damageRectangles do: [:rect |
+					patcher frameRectangle: rect color: Color red]]]].
 	
 	pictureUpdateTimes add: elapsed.
 	picture := patcher getPicture.
