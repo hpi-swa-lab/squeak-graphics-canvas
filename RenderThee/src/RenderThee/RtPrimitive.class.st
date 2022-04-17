@@ -37,15 +37,6 @@ RtPrimitive >> clipRectIndex: anObject [
 ]
 
 {
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 9/28/2021 14:45'
-}
-RtPrimitive >> requiresBlending [
-
-	^ true
-]
-
-{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/28/2021 14:17'
 }

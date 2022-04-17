@@ -4,25 +4,45 @@ Class {
 	#instVars : [
 		'translucentRectangleBatch',
 		'opaqueRectangleBatch',
-		'textBatch'
+		'textBatch',
+		'imageBatch'
 	],
 	#category : #'RenderThee-Batching'
 }
 
 {
 	#category : #enumerating,
-	#'squeak_changestamp' : 'stlu 12/6/2021 12:17'
+	#'squeak_changestamp' : 'stlu 1/4/2022 14:40'
 }
 RtBatches >> do: aBlock [
 
 	aBlock value: opaqueRectangleBatch.
 	aBlock value: translucentRectangleBatch.
+	aBlock value: imageBatch.
 	aBlock value: textBatch.
 ]
 
 {
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 1/4/2022 14:40'
+}
+RtBatches >> imageBatch [
+
+	^ imageBatch
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 1/4/2022 14:40'
+}
+RtBatches >> imageBatch: anObject [
+
+	imageBatch := anObject.
+]
+
+{
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 12/6/2021 12:46'
+	#'squeak_changestamp' : 'stlu 1/4/2022 14:48'
 }
 RtBatches >> initialize [
 
@@ -31,6 +51,9 @@ RtBatches >> initialize [
 	
 	translucentRectangleBatch := RtRectangleBatch new.
 	translucentRectangleBatch isAlpha: true.
+	
+	imageBatch := RtImageBatch new.
+	imageBatch isAlpha: true.
 	
 	textBatch := RtTextBatch new.
 	textBatch isAlpha: true.
