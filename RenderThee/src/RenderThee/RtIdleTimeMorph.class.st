@@ -53,10 +53,10 @@ RtIdleTimeMorph >> initialize [
 
 {
 	#category : #contents,
-	#'squeak_changestamp' : 'stlu 10/1/2021 15:19'
+	#'squeak_changestamp' : 'stlu 2/8/2022 20:54'
 }
 RtIdleTimeMorph >> newContents [
 
 	^ '{1}% Idle' format: {
-		self calculateIdlePercentage printShowingMaxDecimalPlaces: 2 }
+		self calculateIdlePercentage printShowingDecimalPlaces: 2 }
 ]

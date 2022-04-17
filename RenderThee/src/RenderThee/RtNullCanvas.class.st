@@ -6,7 +6,7 @@ Class {
 	#name : #RtNullCanvas,
 	#superclass : #Canvas,
 	#instVars : [
-		'transform',
+		'origin',
 		'clipRect'
 	],
 	#category : #'RenderThee-Benchmarking'
@@ -14,13 +14,13 @@ Class {
 
 {
 	#category : #'drawing-support',
-	#'squeak_changestamp' : 'stlu 10/14/2021 14:52'
+	#'squeak_changestamp' : 'stlu 3/28/2022 16:30'
 }
 RtNullCanvas >> clipBy: aRectangle during: aBlock [
 
-	(aRectangle containsRect: clipRect) ifTrue: [^ aBlock value: self].
-	
-	^ self clipRect: (aRectangle intersect: clipRect) during: aBlock.
+	^ aBlock value: (self
+		copyOrigin: origin
+		clipRect: (aRectangle intersect: clipRect))
 ]
 
 {
@@ -35,25 +35,14 @@ RtNullCanvas >> clipRect [
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#category : #copying,
+	#'squeak_changestamp' : 'stlu 3/28/2022 16:29'
 }
-RtNullCanvas >> clipRect: anObject [
+RtNullCanvas >> copyOrigin: aPoint clipRect: aRectangle [
 
-	clipRect := anObject
-]
-
-{
-	#category : #'scoped state',
-	#'squeak_changestamp' : 'stlu 10/14/2021 14:50'
-}
-RtNullCanvas >> clipRect: aRectangle during: aBlock [
-	"Scoped setter for `clipRect` variable."
-	| previousClipRect |
-	previousClipRect := clipRect.
-	clipRect := aRectangle.
-	^ [aBlock cull: self]
-		ensure: [clipRect := previousClipRect]
+	^ self shallowCopy
+		setOrigin: aPoint
+		clipRect: aRectangle
 ]
 
 {
@@ -184,13 +173,13 @@ RtNullCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 3/10/2021 12:56'
+	#'squeak_changestamp' : 'stlu 3/28/2022 16:28'
 }
 RtNullCanvas >> initialize [
 
 	super initialize.
-	transform := Matrix2x3 identity.
-	clipRect := Rectangle infinite
+	origin := 0@0.
+	clipRect := Rectangle infinite.
 ]
 
 {
@@ -204,11 +193,11 @@ RtNullCanvas >> line: from to: to width: width color: color [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 3/28/2022 16:28'
 }
 RtNullCanvas >> origin [
-	"Answers the global coordinate of the currently active local origin."
-	^ (transform localPointToGlobal: 0@0) truncated
+
+	^ 0@0
 ]
 
 {
@@ -230,6 +219,16 @@ RtNullCanvas >> preserveStateDuring: aBlock [
 ]
 
 {
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 3/28/2022 16:29'
+}
+RtNullCanvas >> setOrigin: aPoint clipRect: aRectangle [
+
+	origin := aPoint.
+	clipRect := aRectangle.
+]
+
+{
 	#category : #'drawing-images',
 	#'squeak_changestamp' : 'stlu 3/10/2021 12:49'
 }
@@ -239,65 +238,31 @@ RtNullCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect color: aC
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-RtNullCanvas >> transform [
-	"Answers the Matrix2x3 by which all drawing commands are currently transformed.
-	Multiplication of all transforms active in the current scope."
-	^ transform
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-RtNullCanvas >> transform: anObject [
-
-	transform := anObject
-]
-
-{
-	#category : #'scoped state',
-	#'squeak_changestamp' : 'stlu 10/14/2021 14:54'
-}
-RtNullCanvas >> transform: aTransform clipRect: aRectangle during: aBlock [
-	"Scoped setter for `transform` variable."
-	| previousTransform previousClipRect |
-	previousTransform := transform.
-	previousClipRect := clipRect.
-	transform := aTransform.
-	clipRect := aRectangle.
-	^ [aBlock cull: self] ensure: [
-		transform := previousTransform.
-		clipRect := previousClipRect]
-]
-
-{
 	#category : #'drawing-support',
-	#'squeak_changestamp' : 'stlu 10/14/2021 15:00'
+	#'squeak_changestamp' : 'stlu 3/28/2022 16:35'
 }
 RtNullCanvas >> transformBy: aTransform during: aBlock [
 
-	| matrix2x3 |
-	aTransform isIdentity ifTrue: [^ aBlock value: self].
-	
-	matrix2x3 := aTransform asMatrix2x3.
-	^ self
-		transform: (transform composedWithLocal: matrix2x3)
-		clipRect: (matrix2x3 globalBoundsToLocal: clipRect) expanded
-		during: aBlock
+	| newClip |
+	aTransform isPureTranslation ifTrue: [
+		^ self
+			translateBy: (aTransform localPointToGlobal: 0@0) truncated
+			during: aBlock].
+	newClip := (aTransform globalBoundsToLocal: clipRect) truncated.
+	^ aBlock value: (self
+		copyOrigin: origin - newClip topLeft
+		clipRect: newClip)
 ]
 
 {
 	#category : #'drawing-support',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 3/28/2022 16:27'
 }
 RtNullCanvas >> translateBy: aPoint during: aBlock [
 
-	self
-		transformBy: (Matrix2x3 withOffset: aPoint)
-		during: aBlock
+	^ aBlock value: (self
+		copyOrigin: origin + aPoint
+		clipRect: (clipRect translateBy: aPoint))
 ]
 
 {

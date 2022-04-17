@@ -6,7 +6,7 @@ Class {
 
 {
 	#category : #contents,
-	#'squeak_changestamp' : 'stlu 9/30/2021 20:04'
+	#'squeak_changestamp' : 'stlu 2/8/2022 20:54'
 }
 RtFrameRateMorph >> newContents [
 
@@ -20,6 +20,6 @@ RtFrameRateMorph >> newContents [
 			millisecondsPerFrame := 1000.0.
 			frameRate := 0.0].
 	^ '{1} mSecs ({2} frames/sec)' format: {
-		millisecondsPerFrame printShowingMaxDecimalPlaces: 2.
+		millisecondsPerFrame printShowingDecimalPlaces: 2.
 		frameRate rounded }
 ]

@@ -21,16 +21,43 @@ PicPictureNode >> acceptVisitor: aVisitor [
 ]
 
 {
+	#category : #enumerating,
+	#'squeak_changestamp' : 'stlu 2/2/2022 14:38'
+}
+PicPictureNode >> allChildrenDo: aBlock [
+
+	"do nothing"
+]
+
+{
+	#category : #enumerating,
+	#'squeak_changestamp' : 'stlu 1/24/2022 16:35'
+}
+PicPictureNode >> allParents [
+
+	^ Array streamContents: [:stream |
+		self allParentsDo: [:node | stream nextPut: node]]
+]
+
+{
+	#category : #enumerating,
+	#'squeak_changestamp' : 'stlu 1/24/2022 16:33'
+}
+PicPictureNode >> allParentsDo: aBlock [
+
+	parent ifNotNil: [
+		parent withAllParentsDo: aBlock].
+]
+
+{
 	#category : #converting,
-	#'squeak_changestamp' : 'stlu 8/11/2021 11:40'
+	#'squeak_changestamp' : 'stlu 1/27/2022 12:38'
 }
 PicPictureNode >> asForm [
 	"Answer a Form containing the drawn representation of myself."
-	| fc bounds |
-	bounds := self estimatedBounds.
-	bounds ifNil: [^ Form extent: 0@0 depth: 32].
-	fc := FormCanvas extent: bounds extent.
-	fc translateBy: bounds topLeft negated during: [:c | self drawOn: c].
+	| fc |
+	fc := self getFormCanvas.
+	self drawOn: fc.
 	^ fc form
 ]
 
@@ -41,6 +68,23 @@ PicPictureNode >> asForm [
 PicPictureNode >> childrenDo: aBlock [
 
 	"do nothing"
+]
+
+{
+	#category : #copying,
+	#'squeak_changestamp' : 'stlu 1/24/2022 16:44'
+}
+PicPictureNode >> copyWithParents [
+
+	| copiedNode |
+	copiedNode := self copy.
+	self allParentsDo: [:originalParent |
+		(originalParent isTransformNode or: [originalParent isClipNode]) ifTrue: [
+			| copiedParent |
+			copiedParent := originalParent emptyCopy.
+			copiedParent addChild: copiedNode.
+			copiedNode := copiedParent]].
+	^ copiedNode
 ]
 
 {
@@ -71,6 +115,18 @@ PicPictureNode >> estimatedBounds [
 ]
 
 {
+	#category : #converting,
+	#'squeak_changestamp' : 'stlu 1/27/2022 13:00'
+}
+PicPictureNode >> getFormCanvas [
+
+	| bounds |
+	bounds := self estimatedBounds.
+	^ (FormCanvas extent: bounds extent)
+		copyOffset: bounds topLeft negated
+]
+
+{
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 13:11'
 }
@@ -94,6 +150,15 @@ PicPictureNode >> invalidate [
 	#'squeak_changestamp' : 'stlu 9/27/2021 12:54'
 }
 PicPictureNode >> isClipNode [
+
+	^ false
+]
+
+{
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 1/24/2022 16:37'
+}
+PicPictureNode >> isMorphNode [
 
 	^ false
 ]
@@ -168,4 +233,45 @@ PicPictureNode >> parent [
 PicPictureNode >> parent: aNode [
 
 	parent := aNode.
+]
+
+{
+	#category : #copying,
+	#'squeak_changestamp' : 'stlu 1/24/2022 16:07'
+}
+PicPictureNode >> postCopy [
+
+	super postCopy.
+	parent := nil.
+]
+
+{
+	#category : #enumerating,
+	#'squeak_changestamp' : 'stlu 2/2/2022 14:39'
+}
+PicPictureNode >> withAllChildren [
+
+	^ Array streamContents: [:stream |
+		self withAllChildrenDo: [:child |
+			stream nextPut: child]]
+]
+
+{
+	#category : #enumerating,
+	#'squeak_changestamp' : 'stlu 2/2/2022 14:32'
+}
+PicPictureNode >> withAllChildrenDo: aBlock [
+
+	aBlock value: self.
+]
+
+{
+	#category : #enumerating,
+	#'squeak_changestamp' : 'stlu 1/24/2022 16:32'
+}
+PicPictureNode >> withAllParentsDo: aBlock [
+
+	aBlock value: self.
+	parent ifNotNil: [
+		parent withAllParentsDo: aBlock].
 ]

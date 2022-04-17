@@ -98,6 +98,15 @@ Canvas >> imageStoreClass [
 
 {
 	#category : #'*RenderThee',
+	#'squeak_changestamp' : 'stlu 1/27/2022 16:36'
+}
+Canvas >> infiniteFillRectangle: aRectangle fillStyle: aFillStyle [
+
+	self subclassResponsibility.
+]
+
+{
+	#category : #'*RenderThee',
 	#'squeak_changestamp' : 'stlu 6/17/2021 10:27'
 }
 Canvas >> paintImageStore: anImageStore [
@@ -135,11 +144,14 @@ Canvas >> transformBy: aDisplayTransform clippingTo: aClipRect during: aBlock sm
 
 {
 	#category : #'*RenderThee',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 1/27/2022 13:03'
 }
 Canvas >> transformBy: aDisplayTransform during: aBlock [
 
-	self subclassResponsibility
+	self
+		transformBy: aDisplayTransform
+		clippingTo: self clipRect
+		during: aBlock smoothing: 1.
 ]
 
 {

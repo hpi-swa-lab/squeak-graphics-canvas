@@ -236,7 +236,7 @@ RtWorkspaces class >> openWorkspace: aSymbol [
 
 {
 	#category : #workspaces,
-	#'squeak_changestamp' : 'stlu 11/12/2021 15:15'
+	#'squeak_changestamp' : 'stlu 1/27/2022 14:14'
 }
 RtWorkspaces class >> pictureAndCanvasBenchmarking [ <title: 'Picture and Canvas Benchmarking'> <auto: false> <collapsed: false> | formCanvas morphPic morph nullCanvas picUpdaterCanvas picCanvas pic visitor w1 w10 w11 w12 w13 w14 w15 w16 w2 w3 w4 w5 w6 w7 w8 w9 world |
 [
@@ -345,8 +345,8 @@ picUpdaterCanvas reset; fullDrawMorph: morph] bench.
 " '3,530 per second. 283 microseconds per run. 2.05959 % GC time.'"
 
 
-PicCounter new visit: pic; counts.
-PicCounter new visit: morphPic; counts.
+PicProfiler new visit: pic; primitiveCountsByType.
+PicProfiler new visit: morphPic; primitiveCountsByType.
 
 
 RtOpenGLCanvasExample world: morph.

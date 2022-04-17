@@ -30,14 +30,15 @@ RtSamplerMorph >> discardSamples: n [
 
 {
 	#category : #sampling,
-	#'squeak_changestamp' : 'stlu 9/30/2021 19:16'
+	#'squeak_changestamp' : 'stlu 2/8/2022 20:37'
 }
 RtSamplerMorph >> discardSamplesOlderThan: time [
 
 	| firstValidEntry |
 	firstValidEntry := sampleTimeHistory
 		findFirst: [:sampleTime | sampleTime > time].
-	self discardSamples: firstValidEntry - 1.
+	firstValidEntry > 1 ifTrue: [
+		self discardSamples: firstValidEntry - 1].
 ]
 
 {
@@ -119,9 +120,9 @@ RtSamplerMorph >> updateInterval [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'ct 9/4/2019 15:42'
+	#'squeak_changestamp' : 'stlu 2/8/2022 20:28'
 }
 RtSamplerMorph >> updateInterval: aNumber [
 
-	updateInterval := aNumber
+	updateInterval := aNumber.
 ]

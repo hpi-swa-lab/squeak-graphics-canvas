@@ -14,24 +14,33 @@ PicVisitor >> visit: anObject [
 ]
 
 {
-	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:13'
+	#category : #helpers,
+	#'squeak_changestamp' : 'stlu 1/27/2022 11:26'
 }
-PicVisitor >> visitClip: anObject [
-
-	self visitGroup: anObject
-]
-
-{
-	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 9/29/2021 15:49'
-}
-PicVisitor >> visitGroup: aGroupNode [
+PicVisitor >> visitChildren: aGroupNode [
 
 	| children |
 	children := aGroupNode children ifNil: [^ self].
 	1 to: children size do: [:childIndex |
 		(children at: childIndex) acceptVisitor: self].
+]
+
+{
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 1/27/2022 11:27'
+}
+PicVisitor >> visitClip: anObject [
+
+	self visitChildren: anObject.
+]
+
+{
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 1/27/2022 11:26'
+}
+PicVisitor >> visitGroup: aGroupNode [
+
+	self visitChildren: aGroupNode.
 ]
 
 {
@@ -54,11 +63,11 @@ PicVisitor >> visitLine: anObject [
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:29'
+	#'squeak_changestamp' : 'stlu 1/27/2022 11:28'
 }
 PicVisitor >> visitMorph: anObject [
 
-	self visitGroup: anObject.
+	self visitChildren: anObject.
 ]
 
 {
@@ -117,9 +126,9 @@ PicVisitor >> visitString: anObject [
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:13'
+	#'squeak_changestamp' : 'stlu 1/27/2022 11:27'
 }
 PicVisitor >> visitTransform: anObject [
 
-	self visitGroup: anObject
+	self visitChildren: anObject.
 ]

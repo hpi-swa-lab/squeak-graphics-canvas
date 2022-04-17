@@ -66,10 +66,10 @@ RtGCPressureMorph >> initialize [
 
 {
 	#category : #contents,
-	#'squeak_changestamp' : 'stlu 9/30/2021 19:25'
+	#'squeak_changestamp' : 'stlu 2/8/2022 20:54'
 }
 RtGCPressureMorph >> newContents [
 
 	^ '{1}% GC' format: {
-		self calculateGCPercentage printShowingMaxDecimalPlaces: 2 }
+		self calculateGCPercentage printShowingDecimalPlaces: 2 }
 ]

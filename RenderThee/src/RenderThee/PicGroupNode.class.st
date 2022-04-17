@@ -34,6 +34,16 @@ PicGroupNode >> addChild: aNode [
 ]
 
 {
+	#category : #enumerating,
+	#'squeak_changestamp' : 'stlu 2/2/2022 14:38'
+}
+PicGroupNode >> allChildrenDo: aBlock [
+
+	self childrenDo: [:child |
+		child withAllChildrenDo: aBlock].
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 16:23'
 }
@@ -70,6 +80,15 @@ PicGroupNode >> drawOn: aCanvas [
 
 	self childrenDo: [:child |
 		child drawOn: aCanvas]
+]
+
+{
+	#category : #copying,
+	#'squeak_changestamp' : 'stlu 1/24/2022 16:11'
+}
+PicGroupNode >> emptyCopy [
+
+	^ self shallowCopy setChildren: nil
 ]
 
 {
@@ -135,12 +154,17 @@ PicGroupNode >> isTransparent [
 
 {
 	#category : #copying,
-	#'squeak_changestamp' : 'stlu 9/27/2021 16:21'
+	#'squeak_changestamp' : 'stlu 1/24/2022 16:46'
 }
 PicGroupNode >> postCopy [
 
+	| oldChildren |
 	super postCopy.
-	children := children copy.
+	oldChildren := children.
+	children := nil.
+	oldChildren ifNotNil: [
+		oldChildren do: [:child |
+			self addChild: child copy]].
 ]
 
 {
@@ -154,10 +178,30 @@ PicGroupNode >> removeAllChildren [
 ]
 
 {
+	#category : #private,
+	#'squeak_changestamp' : 'stlu 1/24/2022 16:11'
+}
+PicGroupNode >> setChildren: anObject [
+
+	children := anObject.
+]
+
+{
 	#category : #transforming,
 	#'squeak_changestamp' : 'stlu 9/27/2021 16:18'
 }
 PicGroupNode >> transformBy: aTransform [
 
 	self deprecated.
+]
+
+{
+	#category : #enumerating,
+	#'squeak_changestamp' : 'stlu 2/2/2022 14:35'
+}
+PicGroupNode >> withAllChildrenDo: aBlock [
+
+	self childrenDo: [:child |
+		child withAllChildrenDo: aBlock].
+	aBlock value: self.
 ]

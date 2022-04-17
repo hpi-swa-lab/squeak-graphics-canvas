@@ -91,6 +91,15 @@ PicMorphNode >> invalidationStamp: anObject [
 ]
 
 {
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 1/24/2022 16:37'
+}
+PicMorphNode >> isMorphNode [
+
+	^ true
+]
+
+{
 	#category : #invalidation,
 	#'squeak_changestamp' : 'stlu 8/10/2021 18:07'
 }
@@ -124,6 +133,20 @@ PicMorphNode >> markValid [
 PicMorphNode >> matrix [
 
 	^ Matrix2x3 withOffset: offset
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 1/24/2022 16:47'
+}
+PicMorphNode >> morphDepth [
+
+	| counter |
+	counter := 1.
+	self allParentsDo: [:node |
+		node isMorphNode ifTrue: [
+			counter := counter + 1]].
+	^ counter
 ]
 
 {
