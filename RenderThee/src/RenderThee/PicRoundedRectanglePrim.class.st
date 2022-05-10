@@ -1,6 +1,6 @@
 Class {
-	#name : #PicRoundedRectangleNode,
-	#superclass : #PicRectangleNode,
+	#name : #PicRoundedRectanglePrim,
+	#superclass : #PicRectanglePrim,
 	#instVars : [
 		'radius'
 	],
@@ -11,7 +11,7 @@ Class {
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
-PicRoundedRectangleNode >> acceptVisitor: aVisitor [
+PicRoundedRectanglePrim >> acceptVisitor: aVisitor [
 
 	aVisitor visitRoundedRectangle: self
 ]
@@ -20,7 +20,7 @@ PicRoundedRectangleNode >> acceptVisitor: aVisitor [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicRoundedRectangleNode >> drawOn: aCanvas [
+PicRoundedRectanglePrim >> drawOn: aCanvas [
 
 	aCanvas
 		frameAndFillRoundRect: bounds
@@ -33,7 +33,7 @@ PicRoundedRectangleNode >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicRoundedRectangleNode >> radius [
+PicRoundedRectanglePrim >> radius [
 
 	^ radius
 ]
@@ -42,7 +42,7 @@ PicRoundedRectangleNode >> radius [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicRoundedRectangleNode >> radius: anObject [
+PicRoundedRectanglePrim >> radius: anObject [
 
 	radius := anObject.
 ]

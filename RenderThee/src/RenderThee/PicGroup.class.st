@@ -4,8 +4,8 @@ I hold a collection of children which I composite to draw myself.
 Subclasses of me modify properties of the subtree they represent.
 "
 Class {
-	#name : #PicGroupNode,
-	#superclass : #PicPictureNode,
+	#name : #PicGroup,
+	#superclass : #PicNode,
 	#instVars : [
 		'children'
 	],
@@ -16,7 +16,7 @@ Class {
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
-PicGroupNode >> acceptVisitor: aVisitor [
+PicGroup >> acceptVisitor: aVisitor [
 
 	aVisitor visitGroup: self
 ]
@@ -25,7 +25,7 @@ PicGroupNode >> acceptVisitor: aVisitor [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 17:30'
 }
-PicGroupNode >> addChild: aNode [
+PicGroup >> addChild: aNode [
 
 	children ifNil: [children := OrderedCollection new].
 	"aNode should not have a (valid) parent already"
@@ -37,7 +37,7 @@ PicGroupNode >> addChild: aNode [
 	#category : #enumerating,
 	#'squeak_changestamp' : 'stlu 2/2/2022 14:38'
 }
-PicGroupNode >> allChildrenDo: aBlock [
+PicGroup >> allChildrenDo: aBlock [
 
 	self childrenDo: [:child |
 		child withAllChildrenDo: aBlock].
@@ -47,7 +47,7 @@ PicGroupNode >> allChildrenDo: aBlock [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 16:23'
 }
-PicGroupNode >> children [
+PicGroup >> children [
 	"A collection of PicPictureNode. Last child has front-most z-coordinate."
 	^ children ifNil: [#()]
 ]
@@ -56,7 +56,7 @@ PicGroupNode >> children [
 	#category : #enumerating,
 	#'squeak_changestamp' : 'stlu 9/27/2021 16:27'
 }
-PicGroupNode >> childrenDo: aBlock [
+PicGroup >> childrenDo: aBlock [
 
 	children ifNil: [^ self].
 	children do: [:child | aBlock value: child].
@@ -66,7 +66,7 @@ PicGroupNode >> childrenDo: aBlock [
 	#category : #enumerating,
 	#'squeak_changestamp' : 'stlu 9/27/2021 16:27'
 }
-PicGroupNode >> do: aBlock [
+PicGroup >> do: aBlock [
 
 	super do: aBlock.
 	self childrenDo: [:child | child do: aBlock].
@@ -76,7 +76,7 @@ PicGroupNode >> do: aBlock [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 16:26'
 }
-PicGroupNode >> drawOn: aCanvas [
+PicGroup >> drawOn: aCanvas [
 
 	self childrenDo: [:child |
 		child drawOn: aCanvas]
@@ -86,7 +86,7 @@ PicGroupNode >> drawOn: aCanvas [
 	#category : #copying,
 	#'squeak_changestamp' : 'stlu 1/24/2022 16:11'
 }
-PicGroupNode >> emptyCopy [
+PicGroup >> emptyCopy [
 
 	^ self shallowCopy setChildren: nil
 ]
@@ -95,7 +95,7 @@ PicGroupNode >> emptyCopy [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/11/2021 11:44'
 }
-PicGroupNode >> estimatedBounds [
+PicGroup >> estimatedBounds [
 
 	| childrenBounds |
 	childrenBounds := self estimatedChildrenBounds.
@@ -107,7 +107,7 @@ PicGroupNode >> estimatedBounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 16:26'
 }
-PicGroupNode >> estimatedChildrenBounds [
+PicGroup >> estimatedChildrenBounds [
 
 	self hasChildren ifFalse: [^ #()].
 	^ Array streamContents: [:stream |
@@ -120,7 +120,7 @@ PicGroupNode >> estimatedChildrenBounds [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 16:25'
 }
-PicGroupNode >> hasChildren [
+PicGroup >> hasChildren [
 
 	^ children isNil or: [children notEmpty]
 ]
@@ -129,7 +129,7 @@ PicGroupNode >> hasChildren [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 16:24'
 }
-PicGroupNode >> hasPrimitiveNode [
+PicGroup >> hasPrimitiveNode [
 
 	^ self children anySatisfy: [:child | child hasPrimitiveNode]
 ]
@@ -138,7 +138,7 @@ PicGroupNode >> hasPrimitiveNode [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 16:24'
 }
-PicGroupNode >> isTranslucent [
+PicGroup >> isTranslucent [
 
 	^ self children anySatisfy: [:each | each isTranslucent]
 ]
@@ -147,7 +147,7 @@ PicGroupNode >> isTranslucent [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 16:24'
 }
-PicGroupNode >> isTransparent [
+PicGroup >> isTransparent [
 
 	^ self children allSatisfy: [:child | child isTransparent]
 ]
@@ -156,7 +156,7 @@ PicGroupNode >> isTransparent [
 	#category : #copying,
 	#'squeak_changestamp' : 'stlu 1/24/2022 16:46'
 }
-PicGroupNode >> postCopy [
+PicGroup >> postCopy [
 
 	| oldChildren |
 	super postCopy.
@@ -171,7 +171,7 @@ PicGroupNode >> postCopy [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 16:19'
 }
-PicGroupNode >> removeAllChildren [
+PicGroup >> removeAllChildren [
 
 	children ifNotNil: [
 		children reset].
@@ -181,7 +181,7 @@ PicGroupNode >> removeAllChildren [
 	#category : #private,
 	#'squeak_changestamp' : 'stlu 1/24/2022 16:11'
 }
-PicGroupNode >> setChildren: anObject [
+PicGroup >> setChildren: anObject [
 
 	children := anObject.
 ]
@@ -190,7 +190,7 @@ PicGroupNode >> setChildren: anObject [
 	#category : #transforming,
 	#'squeak_changestamp' : 'stlu 9/27/2021 16:18'
 }
-PicGroupNode >> transformBy: aTransform [
+PicGroup >> transformBy: aTransform [
 
 	self deprecated.
 ]
@@ -199,7 +199,7 @@ PicGroupNode >> transformBy: aTransform [
 	#category : #enumerating,
 	#'squeak_changestamp' : 'stlu 2/2/2022 14:35'
 }
-PicGroupNode >> withAllChildrenDo: aBlock [
+PicGroup >> withAllChildrenDo: aBlock [
 
 	self childrenDo: [:child |
 		child withAllChildrenDo: aBlock].

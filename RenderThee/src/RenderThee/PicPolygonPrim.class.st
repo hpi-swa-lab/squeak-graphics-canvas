@@ -1,6 +1,6 @@
 Class {
-	#name : #PicPolygonNode,
-	#superclass : #PicShapeNode,
+	#name : #PicPolygonPrim,
+	#superclass : #PicShapePrim,
 	#instVars : [
 		'vertices'
 	],
@@ -11,7 +11,7 @@ Class {
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
-PicPolygonNode >> acceptVisitor: aVisitor [
+PicPolygonPrim >> acceptVisitor: aVisitor [
 
 	aVisitor visitPolygon: self
 ]
@@ -20,7 +20,7 @@ PicPolygonNode >> acceptVisitor: aVisitor [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPolygonNode >> drawOn: aCanvas [
+PicPolygonPrim >> drawOn: aCanvas [
 
 	aCanvas
 		drawPolygon: vertices
@@ -33,7 +33,7 @@ PicPolygonNode >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPolygonNode >> estimatedBounds [
+PicPolygonPrim >> estimatedBounds [
 
 	^ Rectangle encompassing: vertices
 ]
@@ -42,7 +42,7 @@ PicPolygonNode >> estimatedBounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPolygonNode >> vertices [
+PicPolygonPrim >> vertices [
 
 	^ vertices
 ]
@@ -51,7 +51,7 @@ PicPolygonNode >> vertices [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPolygonNode >> vertices: anObject [
+PicPolygonPrim >> vertices: anObject [
 
 	vertices := anObject.
 ]

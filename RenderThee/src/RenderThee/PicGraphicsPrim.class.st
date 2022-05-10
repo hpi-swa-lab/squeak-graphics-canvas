@@ -2,8 +2,8 @@
 I represent a single, atomic graphical operation.
 "
 Class {
-	#name : #PicPrimitiveNode,
-	#superclass : #PicPictureNode,
+	#name : #PicGraphicsPrim,
+	#superclass : #PicNode,
 	#instVars : [
 		'primitives'
 	],
@@ -14,7 +14,7 @@ Class {
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 13:11'
 }
-PicPrimitiveNode >> hasPrimitiveNode [
+PicGraphicsPrim >> hasPrimitiveNode [
 
 	^ true
 ]
@@ -23,7 +23,7 @@ PicPrimitiveNode >> hasPrimitiveNode [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/28/2021 15:00'
 }
-PicPrimitiveNode >> primitives [
+PicGraphicsPrim >> primitives [
 
 	^ primitives
 ]
@@ -32,7 +32,7 @@ PicPrimitiveNode >> primitives [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/28/2021 15:28'
 }
-PicPrimitiveNode >> primitives: anObject [
+PicGraphicsPrim >> primitives: anObject [
 
 	^ primitives := anObject
 ]

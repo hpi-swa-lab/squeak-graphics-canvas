@@ -1,6 +1,6 @@
 Class {
-	#name : #PicMorphNode,
-	#superclass : #PicGroupNode,
+	#name : #PicPicture,
+	#superclass : #PicGroup,
 	#instVars : [
 		'isValid',
 		'bounds',
@@ -14,7 +14,7 @@ Class {
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 8/12/2021 13:28'
 }
-PicMorphNode >> acceptVisitor: aVisitor [
+PicPicture >> acceptVisitor: aVisitor [
 
 	aVisitor visitMorph: self.
 ]
@@ -23,7 +23,7 @@ PicMorphNode >> acceptVisitor: aVisitor [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/12/2021 13:39'
 }
-PicMorphNode >> bounds [
+PicPicture >> bounds [
 
 	^ bounds
 ]
@@ -32,7 +32,7 @@ PicMorphNode >> bounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/12/2021 13:39'
 }
-PicMorphNode >> bounds: anObject [
+PicPicture >> bounds: anObject [
 
 	bounds := anObject.
 ]
@@ -41,7 +41,7 @@ PicMorphNode >> bounds: anObject [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 12/6/2021 17:09'
 }
-PicMorphNode >> drawOn: aCanvas [
+PicPicture >> drawOn: aCanvas [
 
 	aCanvas translateBy: offset during: [:canvas |
 		self childrenDo: [:child |
@@ -52,7 +52,7 @@ PicMorphNode >> drawOn: aCanvas [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 12/6/2021 17:24'
 }
-PicMorphNode >> initialize [
+PicPicture >> initialize [
 
 	super initialize.
 	isValid := true.
@@ -64,7 +64,7 @@ PicMorphNode >> initialize [
 	#category : #invalidation,
 	#'squeak_changestamp' : 'stlu 10/13/2021 14:03'
 }
-PicMorphNode >> invalidate [
+PicPicture >> invalidate [
 
 	isValid ifFalse: [^ self].
 	isValid := false.
@@ -76,7 +76,7 @@ PicMorphNode >> invalidate [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/12/2021 13:17'
 }
-PicMorphNode >> invalidationStamp [
+PicPicture >> invalidationStamp [
 
 	^ invalidationStamp
 ]
@@ -85,7 +85,7 @@ PicMorphNode >> invalidationStamp [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/12/2021 13:17'
 }
-PicMorphNode >> invalidationStamp: anObject [
+PicPicture >> invalidationStamp: anObject [
 
 	invalidationStamp := anObject.
 ]
@@ -94,7 +94,7 @@ PicMorphNode >> invalidationStamp: anObject [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 1/24/2022 16:37'
 }
-PicMorphNode >> isMorphNode [
+PicPicture >> isMorphNode [
 
 	^ true
 ]
@@ -103,7 +103,7 @@ PicMorphNode >> isMorphNode [
 	#category : #invalidation,
 	#'squeak_changestamp' : 'stlu 8/10/2021 18:07'
 }
-PicMorphNode >> isValid [
+PicPicture >> isValid [
 
 	^ isValid
 ]
@@ -112,7 +112,7 @@ PicMorphNode >> isValid [
 	#category : #invalidation,
 	#'squeak_changestamp' : 'stlu 8/11/2021 11:19'
 }
-PicMorphNode >> markInvalid [
+PicPicture >> markInvalid [
 
 	isValid := false.
 ]
@@ -121,7 +121,7 @@ PicMorphNode >> markInvalid [
 	#category : #invalidation,
 	#'squeak_changestamp' : 'stlu 8/11/2021 11:19'
 }
-PicMorphNode >> markValid [
+PicPicture >> markValid [
 
 	isValid := true.
 ]
@@ -130,7 +130,7 @@ PicMorphNode >> markValid [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 12/6/2021 17:11'
 }
-PicMorphNode >> matrix [
+PicPicture >> matrix [
 
 	^ Matrix2x3 withOffset: offset
 ]
@@ -139,7 +139,7 @@ PicMorphNode >> matrix [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 1/24/2022 16:47'
 }
-PicMorphNode >> morphDepth [
+PicPicture >> morphDepth [
 
 	| counter |
 	counter := 1.
@@ -153,7 +153,7 @@ PicMorphNode >> morphDepth [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 12/6/2021 17:07'
 }
-PicMorphNode >> offset [
+PicPicture >> offset [
 
 	^ offset
 ]
@@ -162,7 +162,7 @@ PicMorphNode >> offset [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 12/6/2021 17:07'
 }
-PicMorphNode >> offset: anObject [
+PicPicture >> offset: anObject [
 
 	offset := anObject.
 ]
@@ -171,7 +171,7 @@ PicMorphNode >> offset: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/12/2021 13:42'
 }
-PicMorphNode >> position [
+PicPicture >> position [
 
 	^ bounds topLeft
 ]

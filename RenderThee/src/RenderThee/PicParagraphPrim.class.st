@@ -1,6 +1,6 @@
 Class {
-	#name : #PicParagraphNode,
-	#superclass : #PicPrimitiveNode,
+	#name : #PicParagraphPrim,
+	#superclass : #PicGraphicsPrim,
 	#instVars : [
 		'bounds',
 		'color',
@@ -13,7 +13,7 @@ Class {
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
-PicParagraphNode >> acceptVisitor: aVisitor [
+PicParagraphPrim >> acceptVisitor: aVisitor [
 
 	aVisitor visitParagraph: self
 ]
@@ -22,7 +22,7 @@ PicParagraphNode >> acceptVisitor: aVisitor [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicParagraphNode >> bounds [
+PicParagraphPrim >> bounds [
 
 	^ bounds
 ]
@@ -31,7 +31,7 @@ PicParagraphNode >> bounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicParagraphNode >> bounds: anObject [
+PicParagraphPrim >> bounds: anObject [
 
 	bounds := anObject.
 ]
@@ -40,7 +40,7 @@ PicParagraphNode >> bounds: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicParagraphNode >> color [
+PicParagraphPrim >> color [
 
 	^ color
 ]
@@ -49,7 +49,7 @@ PicParagraphNode >> color [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicParagraphNode >> color: anObject [
+PicParagraphPrim >> color: anObject [
 
 	color := anObject.
 ]
@@ -58,7 +58,7 @@ PicParagraphNode >> color: anObject [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicParagraphNode >> drawOn: aCanvas [
+PicParagraphPrim >> drawOn: aCanvas [
 
 	aCanvas
 		paragraph: paragraph
@@ -70,7 +70,7 @@ PicParagraphNode >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicParagraphNode >> estimatedBounds [
+PicParagraphPrim >> estimatedBounds [
 
 	^ bounds
 ]
@@ -79,7 +79,7 @@ PicParagraphNode >> estimatedBounds [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 8/13/2021 13:14'
 }
-PicParagraphNode >> isTranslucent [
+PicParagraphPrim >> isTranslucent [
 
 	^ color isTranslucent
 ]
@@ -88,7 +88,7 @@ PicParagraphNode >> isTranslucent [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 13:07'
 }
-PicParagraphNode >> isTransparent [
+PicParagraphPrim >> isTransparent [
 
 	^ color isTransparent
 ]
@@ -97,7 +97,7 @@ PicParagraphNode >> isTransparent [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicParagraphNode >> paragraph [
+PicParagraphPrim >> paragraph [
 
 	^ paragraph
 ]
@@ -106,7 +106,7 @@ PicParagraphNode >> paragraph [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicParagraphNode >> paragraph: anObject [
+PicParagraphPrim >> paragraph: anObject [
 
 	paragraph := anObject.
 ]

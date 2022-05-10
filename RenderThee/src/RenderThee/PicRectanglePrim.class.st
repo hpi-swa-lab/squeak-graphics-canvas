@@ -1,6 +1,6 @@
 Class {
-	#name : #PicRectangleNode,
-	#superclass : #PicShapeNode,
+	#name : #PicRectanglePrim,
+	#superclass : #PicShapePrim,
 	#category : #'RenderThee-Pictures'
 }
 
@@ -8,7 +8,7 @@ Class {
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
 }
-PicRectangleNode >> acceptVisitor: aVisitor [
+PicRectanglePrim >> acceptVisitor: aVisitor [
 
 	aVisitor visitRectangle: self
 ]
@@ -17,7 +17,7 @@ PicRectangleNode >> acceptVisitor: aVisitor [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicRectangleNode >> drawOn: aCanvas [
+PicRectanglePrim >> drawOn: aCanvas [
 
 	aCanvas
 		frameAndFillRectangle: bounds
@@ -29,7 +29,7 @@ PicRectangleNode >> drawOn: aCanvas [
 	#category : #thumbnail,
 	#'squeak_changestamp' : 'stlu 8/13/2021 16:45'
 }
-PicRectangleNode >> iconOrThumbnailOfSize: aNumberOrPoint [ 
+PicRectanglePrim >> iconOrThumbnailOfSize: aNumberOrPoint [ 
 	"Answer an appropiate form to represent the receiver"
 	| canvas |
 	canvas := FormCanvas extent: aNumberOrPoint asPoint depth: 32.
@@ -44,7 +44,7 @@ PicRectangleNode >> iconOrThumbnailOfSize: aNumberOrPoint [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 13:00'
 }
-PicRectangleNode >> isRectangleNode [
+PicRectanglePrim >> isRectangleNode [
 
 	^ true
 ]

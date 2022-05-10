@@ -1,6 +1,6 @@
 Class {
-	#name : #PicShapeNode,
-	#superclass : #PicPrimitiveNode,
+	#name : #PicShapePrim,
+	#superclass : #PicGraphicsPrim,
 	#instVars : [
 		'bounds',
 		'fillStyle',
@@ -13,7 +13,7 @@ Class {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicShapeNode >> borderStyle [
+PicShapePrim >> borderStyle [
 
 	^ borderStyle
 ]
@@ -22,7 +22,7 @@ PicShapeNode >> borderStyle [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicShapeNode >> borderStyle: anObject [
+PicShapePrim >> borderStyle: anObject [
 
 	borderStyle := anObject.
 ]
@@ -31,7 +31,7 @@ PicShapeNode >> borderStyle: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicShapeNode >> bounds [
+PicShapePrim >> bounds [
 
 	^ bounds
 ]
@@ -40,7 +40,7 @@ PicShapeNode >> bounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicShapeNode >> bounds: anObject [
+PicShapePrim >> bounds: anObject [
 
 	bounds := anObject.
 ]
@@ -49,7 +49,7 @@ PicShapeNode >> bounds: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicShapeNode >> estimatedBounds [
+PicShapePrim >> estimatedBounds [
 
 	^ bounds
 ]
@@ -58,7 +58,7 @@ PicShapeNode >> estimatedBounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicShapeNode >> fillStyle [
+PicShapePrim >> fillStyle [
 
 	^ fillStyle
 ]
@@ -67,7 +67,7 @@ PicShapeNode >> fillStyle [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicShapeNode >> fillStyle: anObject [
+PicShapePrim >> fillStyle: anObject [
 
 	fillStyle := anObject.
 ]
@@ -76,7 +76,7 @@ PicShapeNode >> fillStyle: anObject [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 13:00'
 }
-PicShapeNode >> isShapeNode [
+PicShapePrim >> isShapeNode [
 
 	^ true
 ]
@@ -85,7 +85,7 @@ PicShapeNode >> isShapeNode [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 13:08'
 }
-PicShapeNode >> isTranslucent [
+PicShapePrim >> isTranslucent [
 
 	^ fillStyle isTranslucent or: [borderStyle isTranslucent]
 ]
@@ -94,7 +94,7 @@ PicShapeNode >> isTranslucent [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 13:08'
 }
-PicShapeNode >> isTransparent [
+PicShapePrim >> isTransparent [
 
 	^ fillStyle isTransparent and: [borderStyle isTransparent]
 ]

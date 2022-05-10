@@ -1,6 +1,6 @@
 Class {
-	#name : #PicLineNode,
-	#superclass : #PicPrimitiveNode,
+	#name : #PicLinePrim,
+	#superclass : #PicGraphicsPrim,
 	#instVars : [
 		'from',
 		'to',
@@ -14,7 +14,7 @@ Class {
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:04'
 }
-PicLineNode >> acceptVisitor: aVisitor [
+PicLinePrim >> acceptVisitor: aVisitor [
 
 	aVisitor visitLine: self
 ]
@@ -23,7 +23,7 @@ PicLineNode >> acceptVisitor: aVisitor [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLineNode >> color [
+PicLinePrim >> color [
 
 	^ color
 ]
@@ -32,7 +32,7 @@ PicLineNode >> color [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLineNode >> color: anObject [
+PicLinePrim >> color: anObject [
 
 	color := anObject.
 ]
@@ -41,7 +41,7 @@ PicLineNode >> color: anObject [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLineNode >> drawOn: aCanvas [
+PicLinePrim >> drawOn: aCanvas [
 
 	aCanvas
 		line: from
@@ -54,7 +54,7 @@ PicLineNode >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLineNode >> estimatedBounds [
+PicLinePrim >> estimatedBounds [
 
 	^ from rect: to
 ]
@@ -63,7 +63,7 @@ PicLineNode >> estimatedBounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLineNode >> from [
+PicLinePrim >> from [
 
 	^ from
 ]
@@ -72,7 +72,7 @@ PicLineNode >> from [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLineNode >> from: anObject [
+PicLinePrim >> from: anObject [
 
 	from := anObject.
 ]
@@ -81,7 +81,7 @@ PicLineNode >> from: anObject [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 8/13/2021 13:13'
 }
-PicLineNode >> isTranslucent [
+PicLinePrim >> isTranslucent [
 
 	^ color isTranslucent
 ]
@@ -90,7 +90,7 @@ PicLineNode >> isTranslucent [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 13:06'
 }
-PicLineNode >> isTransparent [
+PicLinePrim >> isTransparent [
 
 	^ color isTransparent or: [width isZero]
 ]
@@ -99,7 +99,7 @@ PicLineNode >> isTransparent [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLineNode >> to [
+PicLinePrim >> to [
 
 	^ to
 ]
@@ -108,7 +108,7 @@ PicLineNode >> to [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLineNode >> to: anObject [
+PicLinePrim >> to: anObject [
 
 	to := anObject.
 ]
@@ -117,7 +117,7 @@ PicLineNode >> to: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLineNode >> width [
+PicLinePrim >> width [
 
 	^ width
 ]
@@ -126,7 +126,7 @@ PicLineNode >> width [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicLineNode >> width: anObject [
+PicLinePrim >> width: anObject [
 
 	width := anObject.
 ]

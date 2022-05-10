@@ -3,7 +3,7 @@ I represent one or multiple graphical operations.
 A `PicPictureCanvas` is typically used to create me.
 "
 Class {
-	#name : #PicPictureNode,
+	#name : #PicNode,
 	#superclass : #Object,
 	#instVars : [
 		'parent'
@@ -15,7 +15,7 @@ Class {
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:03'
 }
-PicPictureNode >> acceptVisitor: aVisitor [
+PicNode >> acceptVisitor: aVisitor [
 
 	self subclassResponsibility
 ]
@@ -24,7 +24,7 @@ PicPictureNode >> acceptVisitor: aVisitor [
 	#category : #enumerating,
 	#'squeak_changestamp' : 'stlu 2/2/2022 14:38'
 }
-PicPictureNode >> allChildrenDo: aBlock [
+PicNode >> allChildrenDo: aBlock [
 
 	"do nothing"
 ]
@@ -33,7 +33,7 @@ PicPictureNode >> allChildrenDo: aBlock [
 	#category : #enumerating,
 	#'squeak_changestamp' : 'stlu 1/24/2022 16:35'
 }
-PicPictureNode >> allParents [
+PicNode >> allParents [
 
 	^ Array streamContents: [:stream |
 		self allParentsDo: [:node | stream nextPut: node]]
@@ -43,7 +43,7 @@ PicPictureNode >> allParents [
 	#category : #enumerating,
 	#'squeak_changestamp' : 'stlu 1/24/2022 16:33'
 }
-PicPictureNode >> allParentsDo: aBlock [
+PicNode >> allParentsDo: aBlock [
 
 	parent ifNotNil: [
 		parent withAllParentsDo: aBlock].
@@ -53,7 +53,7 @@ PicPictureNode >> allParentsDo: aBlock [
 	#category : #converting,
 	#'squeak_changestamp' : 'stlu 1/27/2022 12:38'
 }
-PicPictureNode >> asForm [
+PicNode >> asForm [
 	"Answer a Form containing the drawn representation of myself."
 	| fc |
 	fc := self getFormCanvas.
@@ -65,7 +65,7 @@ PicPictureNode >> asForm [
 	#category : #enumerating,
 	#'squeak_changestamp' : 'stlu 9/27/2021 16:10'
 }
-PicPictureNode >> childrenDo: aBlock [
+PicNode >> childrenDo: aBlock [
 
 	"do nothing"
 ]
@@ -74,7 +74,7 @@ PicPictureNode >> childrenDo: aBlock [
 	#category : #copying,
 	#'squeak_changestamp' : 'stlu 1/24/2022 16:44'
 }
-PicPictureNode >> copyWithParents [
+PicNode >> copyWithParents [
 
 	| copiedNode |
 	copiedNode := self copy.
@@ -91,7 +91,7 @@ PicPictureNode >> copyWithParents [
 	#category : #enumerating,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureNode >> do: aBlock [
+PicNode >> do: aBlock [
 
 	aBlock value: self
 ]
@@ -100,7 +100,7 @@ PicPictureNode >> do: aBlock [
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureNode >> drawOn: aCanvas [
+PicNode >> drawOn: aCanvas [
 	"Replays represented graphical command(s) onto the given canvas."
 	self subclassResponsibility
 ]
@@ -109,7 +109,7 @@ PicPictureNode >> drawOn: aCanvas [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/11/2021 11:38'
 }
-PicPictureNode >> estimatedBounds [
+PicNode >> estimatedBounds [
 	"Returns a rectangle representing the maximum bounds I draw myself into, or nil if I am invisible."
 	self subclassResponsibility
 ]
@@ -118,7 +118,7 @@ PicPictureNode >> estimatedBounds [
 	#category : #converting,
 	#'squeak_changestamp' : 'stlu 1/27/2022 13:00'
 }
-PicPictureNode >> getFormCanvas [
+PicNode >> getFormCanvas [
 
 	| bounds |
 	bounds := self estimatedBounds.
@@ -130,7 +130,7 @@ PicPictureNode >> getFormCanvas [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 13:11'
 }
-PicPictureNode >> hasPrimitiveNode [
+PicNode >> hasPrimitiveNode [
 
 	^ false
 ]
@@ -139,7 +139,7 @@ PicPictureNode >> hasPrimitiveNode [
 	#category : #invalidation,
 	#'squeak_changestamp' : 'stlu 10/13/2021 14:01'
 }
-PicPictureNode >> invalidate [
+PicNode >> invalidate [
 
 	parent ifNil: [^ self].
 	parent invalidate.
@@ -149,7 +149,7 @@ PicPictureNode >> invalidate [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 12:54'
 }
-PicPictureNode >> isClipNode [
+PicNode >> isClipNode [
 
 	^ false
 ]
@@ -158,7 +158,7 @@ PicPictureNode >> isClipNode [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 1/24/2022 16:37'
 }
-PicPictureNode >> isMorphNode [
+PicNode >> isMorphNode [
 
 	^ false
 ]
@@ -167,7 +167,7 @@ PicPictureNode >> isMorphNode [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 12:59'
 }
-PicPictureNode >> isRectangleNode [
+PicNode >> isRectangleNode [
 
 	^ false
 ]
@@ -176,7 +176,7 @@ PicPictureNode >> isRectangleNode [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 12:59'
 }
-PicPictureNode >> isShapeNode [
+PicNode >> isShapeNode [
 
 	^ false
 ]
@@ -185,7 +185,7 @@ PicPictureNode >> isShapeNode [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 12:59'
 }
-PicPictureNode >> isTransformNode [
+PicNode >> isTransformNode [
 
 	^ false
 ]
@@ -194,7 +194,7 @@ PicPictureNode >> isTransformNode [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 8/13/2021 13:10'
 }
-PicPictureNode >> isTranslucent [
+PicNode >> isTranslucent [
 
 	self subclassResponsibility.
 ]
@@ -203,7 +203,7 @@ PicPictureNode >> isTranslucent [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 12:57'
 }
-PicPictureNode >> isTransparent [
+PicNode >> isTransparent [
 	"Returns true if applying me onto a canvas would result in a visible change."
 	^ false
 ]
@@ -212,7 +212,7 @@ PicPictureNode >> isTransparent [
 	#category : #debugging,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicPictureNode >> open [
+PicNode >> open [
 
 	 ^ self asForm asMorph openInHand
 ]
@@ -221,7 +221,7 @@ PicPictureNode >> open [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 17:28'
 }
-PicPictureNode >> parent [
+PicNode >> parent [
 
 	^ parent
 ]
@@ -230,7 +230,7 @@ PicPictureNode >> parent [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 17:28'
 }
-PicPictureNode >> parent: aNode [
+PicNode >> parent: aNode [
 
 	parent := aNode.
 ]
@@ -239,7 +239,7 @@ PicPictureNode >> parent: aNode [
 	#category : #copying,
 	#'squeak_changestamp' : 'stlu 1/24/2022 16:07'
 }
-PicPictureNode >> postCopy [
+PicNode >> postCopy [
 
 	super postCopy.
 	parent := nil.
@@ -249,7 +249,7 @@ PicPictureNode >> postCopy [
 	#category : #enumerating,
 	#'squeak_changestamp' : 'stlu 2/2/2022 14:39'
 }
-PicPictureNode >> withAllChildren [
+PicNode >> withAllChildren [
 
 	^ Array streamContents: [:stream |
 		self withAllChildrenDo: [:child |
@@ -260,7 +260,7 @@ PicPictureNode >> withAllChildren [
 	#category : #enumerating,
 	#'squeak_changestamp' : 'stlu 2/2/2022 14:32'
 }
-PicPictureNode >> withAllChildrenDo: aBlock [
+PicNode >> withAllChildrenDo: aBlock [
 
 	aBlock value: self.
 ]
@@ -269,7 +269,7 @@ PicPictureNode >> withAllChildrenDo: aBlock [
 	#category : #enumerating,
 	#'squeak_changestamp' : 'stlu 1/24/2022 16:32'
 }
-PicPictureNode >> withAllParentsDo: aBlock [
+PicNode >> withAllParentsDo: aBlock [
 
 	aBlock value: self.
 	parent ifNotNil: [

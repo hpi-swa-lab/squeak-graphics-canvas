@@ -1,6 +1,6 @@
 Class {
-	#name : #PicImageNode,
-	#superclass : #PicPrimitiveNode,
+	#name : #PicImagePrim,
+	#superclass : #PicGraphicsPrim,
 	#instVars : [
 		'form',
 		'origin',
@@ -14,7 +14,7 @@ Class {
 	#category : #visiting,
 	#'squeak_changestamp' : 'stlu 3/18/2021 13:04'
 }
-PicImageNode >> acceptVisitor: aVisitor [
+PicImagePrim >> acceptVisitor: aVisitor [
 
 	aVisitor visitImage: self
 ]
@@ -23,7 +23,7 @@ PicImageNode >> acceptVisitor: aVisitor [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/20/2021 21:54'
 }
-PicImageNode >> bounds [
+PicImagePrim >> bounds [
 
 	^ origin extent: sourceRect extent
 ]
@@ -32,7 +32,7 @@ PicImageNode >> bounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicImageNode >> combinationRule [
+PicImagePrim >> combinationRule [
 
 	^ combinationRule
 ]
@@ -41,29 +41,31 @@ PicImageNode >> combinationRule [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicImageNode >> combinationRule: anObject [
+PicImagePrim >> combinationRule: anObject [
 
 	combinationRule := anObject
 ]
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/21/2022 18:36'
 }
-PicImageNode >> drawOn: aCanvas [
+PicImagePrim >> drawOn: aCanvas [
 
-	aCanvas
-		image: form
-		at: origin
-		sourceRect: sourceRect
-		rule: combinationRule
+	combinationRule = Form blend ifTrue: [
+		^ aCanvas translucentImage: form at: origin sourceRect: sourceRect].
+	combinationRule = Form paint ifTrue: [
+		^ aCanvas paintImage: form at: origin sourceRect: sourceRect].
+	combinationRule = Form over ifTrue: [
+		^ aCanvas drawImage: form at: origin sourceRect: sourceRect].
+	self flag: #todo. "probably dont even save bitblt rules"
 ]
 
 {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/20/2021 21:55'
 }
-PicImageNode >> estimatedBounds [
+PicImagePrim >> estimatedBounds [
 
 	^ self bounds
 ]
@@ -72,7 +74,7 @@ PicImageNode >> estimatedBounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicImageNode >> form [
+PicImagePrim >> form [
 
 	^ form
 ]
@@ -81,7 +83,7 @@ PicImageNode >> form [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicImageNode >> form: anObject [
+PicImagePrim >> form: anObject [
 
 	form := anObject.
 ]
@@ -90,7 +92,7 @@ PicImageNode >> form: anObject [
 	#category : #thumbnail,
 	#'squeak_changestamp' : 'stlu 8/13/2021 16:44'
 }
-PicImageNode >> iconOrThumbnailOfSize: aNumberOrPoint [ 
+PicImagePrim >> iconOrThumbnailOfSize: aNumberOrPoint [ 
 	"Answer an appropiate form to represent the receiver"
 	| canvas |
 	canvas := FormCanvas extent: aNumberOrPoint asPoint depth: 32.
@@ -109,7 +111,7 @@ PicImageNode >> iconOrThumbnailOfSize: aNumberOrPoint [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 8/13/2021 13:12'
 }
-PicImageNode >> isTranslucent [
+PicImagePrim >> isTranslucent [
 
 	^ form isTranslucent "most likely true even if actually opaque"
 ]
@@ -118,7 +120,7 @@ PicImageNode >> isTranslucent [
 	#category : #testing,
 	#'squeak_changestamp' : 'stlu 9/27/2021 13:04'
 }
-PicImageNode >> isTransparent [
+PicImagePrim >> isTransparent [
 
 	^ false
 ]
@@ -127,7 +129,7 @@ PicImageNode >> isTransparent [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicImageNode >> origin [
+PicImagePrim >> origin [
 
 	^ origin
 ]
@@ -136,7 +138,7 @@ PicImageNode >> origin [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicImageNode >> origin: anObject [
+PicImagePrim >> origin: anObject [
 
 	origin := anObject.
 ]
@@ -145,7 +147,7 @@ PicImageNode >> origin: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicImageNode >> sourceRect [
+PicImagePrim >> sourceRect [
 
 	^ sourceRect
 ]
@@ -154,7 +156,7 @@ PicImageNode >> sourceRect [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicImageNode >> sourceRect: anObject [
+PicImagePrim >> sourceRect: anObject [
 
 	sourceRect := anObject.
 ]
