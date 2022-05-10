@@ -2,217 +2,146 @@ Class {
 	#name : #RtBatch,
 	#superclass : #Object,
 	#instVars : [
-		'primitives',
-		'instanceIndex',
+		'type',
 		'instanceData',
+		'instanceDataHandle',
 		'instanceVBO',
-		'isAlpha',
-		'renderer'
-	],
-	#pools : [
-		'GLConstants'
+		'instanceVBOOffset'
 	],
 	#category : #'RenderThee-Batching'
 }
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/28/2021 13:56'
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 4/21/2022 17:19'
 }
-RtBatch >> addInstance: value1 with: value2 with: value3 with: value4 [
+RtBatch class >> type: aBatchType [
 
-	| offset |
-	offset := instanceIndex * 4.
-	instanceData
-		at: offset + 1 put: value1;
-		at: offset + 2 put: value2;
-		at: offset + 3 put: value3;
-		at: offset + 4 put: value4.
-	instanceIndex := instanceIndex + 1.
+	^ self new type: aBatchType
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/28/2021 15:39'
+	#'squeak_changestamp' : 'stlu 4/21/2022 17:10'
 }
-RtBatch >> addPrimitive: aPrimitive [
-
-	primitives add: aPrimitive.
-]
-
-{
-	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 12/6/2021 12:29'
-}
-RtBatch >> batchPrimitives [
-
-	isAlpha
-		ifTrue: [primitives do: [:prim | prim writeToBatch: self]]
-		ifFalse: [primitives reverseDo: [:prim | prim writeToBatch: self]].
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/23/2021 10:29'
-}
-RtBatch >> colorStore [
-
-	^ renderer colorStore
-]
-
-{
-	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 9/28/2021 17:29'
-}
-RtBatch >> draw [
-
-	self uploadInstanceData.
-	
-	GL enable: GL_CULL_FACE.
-	GL cullFace: GL_BACK.
-	GL frontFace: GL_CW.
-	
-	GL enable: GL_DEPTH_TEST.
-	GL depthFunc: GL_LESS.
-	isAlpha
-		ifTrue: [
-			GL depthMask: GL_FALSE.
-			GL enable: GL_BLEND.
-			GL blendFuncSeparate: GL_SRC_ALPHA with: GL_ONE_MINUS_SRC_ALPHA with: GL_ONE with: GL_ONE]
-		ifFalse: [
-			GL depthMask: GL_TRUE.
-			GL disable: GL_BLEND].
-	
-	(self vao vertexBufferBindingAt: 1) buffer: instanceVBO.
-	
-	self program boundDuring: [
-		self vao
-			drawElements: GL_TRIANGLES
-			numVertices: 6
-			indexType: GL_UNSIGNED_BYTE
-			numInstances: instanceIndex].
-]
-
-{
-	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 9/28/2021 15:38'
-}
-RtBatch >> initialize [
-
-	isAlpha := true.
-	primitives := OrderedCollection new: 100.
-	self initializeInstanceVBO.
-]
-
-{
-	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 1/3/2022 18:03'
-}
-RtBatch >> initializeInstanceVBO [
-
-	instanceData := self instanceDataType allocate: 512 squared * 4.
-	instanceVBO := GLBuffer create.
-	instanceVBO usage: GL_DYNAMIC_DRAW size: instanceData byteSize.
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 1/3/2022 18:04'
-}
-RtBatch >> instanceDataType [
-
-	^ ExternalType uint32_t
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/23/2021 17:18'
-}
-RtBatch >> isAlpha [
-
-	^ isAlpha
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/23/2021 17:18'
-}
-RtBatch >> isAlpha: anObject [
-
-	isAlpha := anObject.
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/23/2021 10:14'
-}
-RtBatch >> program [
+RtBatch >> addInstance: a1 with: a2 with: a3 with: a4 [
 
 	self subclassResponsibility.
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/23/2021 17:17'
+	#'squeak_changestamp' : 'stlu 4/21/2022 12:26'
 }
-RtBatch >> renderer [
+RtBatch >> byteSize [
 
-	^ renderer
+	^ instanceData size * 4
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/23/2021 17:17'
+	#'squeak_changestamp' : 'stlu 4/21/2022 17:10'
 }
-RtBatch >> renderer: anObject [
+RtBatch >> getInstanceDataHandle [
 
-	renderer := anObject.
+	self subclassResponsibility.
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 9/28/2021 16:06'
+	#'squeak_changestamp' : 'stlu 4/21/2022 17:12'
+}
+RtBatch >> initialize [
+
+	instanceData := UInt32Collection new.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/21/2022 10:49'
+}
+RtBatch >> instanceData [
+
+	^ instanceData
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/21/2022 13:09'
+}
+RtBatch >> instanceVBO [
+
+	^ instanceVBO
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/21/2022 13:09'
+}
+RtBatch >> instanceVBO: anObject [
+
+	instanceVBO := anObject.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/21/2022 13:09'
+}
+RtBatch >> instanceVBOOffset [
+
+	^ instanceVBOOffset
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/21/2022 13:09'
+}
+RtBatch >> instanceVBOOffset: anObject [
+
+	instanceVBOOffset := anObject.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/18/2022 16:35'
+}
+RtBatch >> program [
+
+	^ type program
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 4/18/2022 15:57'
 }
 RtBatch >> reset [
 
-	instanceIndex := 0.
-	primitives reset.
+	instanceData reset.
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/23/2021 10:29'
+	#'squeak_changestamp' : 'stlu 4/21/2022 12:26'
 }
-RtBatch >> transientStoreF [
+RtBatch >> size [
 
-	^ renderer transientStoreF
+	^ instanceData size // 4
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/23/2021 10:29'
+	#'squeak_changestamp' : 'stlu 4/18/2022 16:59'
 }
-RtBatch >> transientStoreI [
+RtBatch >> type [
 
-	^ renderer transientStoreI
-]
-
-{
-	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 8/23/2021 10:21'
-}
-RtBatch >> uploadInstanceData [
-
-	instanceVBO
-		data: instanceData
-		size: instanceIndex * instanceData bytesPerElement * 4.
+	^ type
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/23/2021 10:13'
+	#'squeak_changestamp' : 'stlu 4/18/2022 16:59'
 }
-RtBatch >> vao [
+RtBatch >> type: anObject [
 
-	^ renderer vao
+	type := anObject.
 ]

@@ -84,11 +84,11 @@ RtBatchingExample >> saveLogsOn: aStream [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 5/3/2022 13:49'
+	#'squeak_changestamp' : 'stlu 5/10/2022 20:36'
 }
 RtBatchingExample >> setUp [
 
-	renderer := RtFrameBuilder bounds: world bounds.
+	renderer := RtBatchRenderer bounds: world bounds.
 	batchingTimes := RingBuffer new: 120.
 ]
 
