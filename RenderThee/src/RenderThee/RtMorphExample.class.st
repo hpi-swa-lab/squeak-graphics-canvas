@@ -27,6 +27,15 @@ RtMorphExample class >> benchWorld [
 
 {
 	#category : #examples,
+	#'squeak_changestamp' : 'stlu 5/2/2022 11:50'
+}
+RtMorphExample class >> blueMorph [
+
+	^ self morph: (Morph new position: 0@0)
+]
+
+{
+	#category : #examples,
 	#'squeak_changestamp' : 'stlu 11/8/2021 16:08'
 }
 RtMorphExample class >> bouncingAtoms [
@@ -250,12 +259,12 @@ RtMorphExample >> initialWindowExtent [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 12/7/2021 14:09'
+	#'squeak_changestamp' : 'stlu 5/2/2022 19:58'
 }
 RtMorphExample >> initialize [
 
 	super initialize.
-	pictureUpdateTimes := RingBuffer new: 30.
+	pictureUpdateTimes := RingBuffer new: 120.
 	shouldUpdateMorph := true.
 	shouldShowDamageRectangles := false.
 ]
@@ -271,7 +280,7 @@ RtMorphExample >> isModalByDefault [
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 12/7/2021 14:18'
+	#'squeak_changestamp' : 'stlu 5/4/2022 12:25'
 }
 RtMorphExample >> key: keyEnum scanCode: scanCode changedTo: state with: mods [
 
@@ -281,6 +290,7 @@ RtMorphExample >> key: keyEnum scanCode: scanCode changedTo: state with: mods [
 
 	(GLFW numberOfFunctionKey: keyEnum) ifNotNil: [:fNumber |
 		state = GLFW_RELEASE ifTrue: [
+			fNumber = 10 ifTrue: [self triggerDebugAction].
 			fNumber = 11 ifTrue: [self toggleMorphUpdates].
 			fNumber = 12 ifTrue: [self toggleDamageVisualization]]].
 	
@@ -550,16 +560,15 @@ RtMorphExample >> picture [
 
 {
 	#category : #'window title',
-	#'squeak_changestamp' : 'stlu 8/26/2021 13:10'
+	#'squeak_changestamp' : 'stlu 5/2/2022 19:59'
 }
 RtMorphExample >> printWindowTitleOn: aStream [
 
 	super printWindowTitleOn: aStream.
 	pictureUpdateTimes ifNotEmpty: [
-		aStream
-			nextPutAll: ' | Pic: ';
-			nextPutAll: (pictureUpdateTimes average / 1e3 printShowingDecimalPlaces: 3);
-			nextPutAll: 'us'].
+		aStream nextPutAll: ' | Pic: '.
+		pictureUpdateTimes average printOn: aStream showingDecimalPlaces: 2.
+		aStream nextPutAll: 'us'].
 ]
 
 {
@@ -569,6 +578,44 @@ RtMorphExample >> printWindowTitleOn: aStream [
 RtMorphExample >> render [
 
 	self subclassResponsibility.
+]
+
+{
+	#category : #logging,
+	#'squeak_changestamp' : 'stlu 5/2/2022 20:14'
+}
+RtMorphExample >> saveLogs [
+
+	| filename |
+	filename := (Time utcMicrosecondClock // 1e6) asString , '_' , self class name , '.csv'.
+	FileDirectory default newFileNamed: filename do: [:file |
+		self saveLogsOn: file].
+]
+
+{
+	#category : #logging,
+	#'squeak_changestamp' : 'stlu 5/2/2022 20:40'
+}
+RtMorphExample >> saveLogsOn: aStream [
+
+	aStream nextPutAll: 'cycle,type,time'.
+	aStream crlf.
+	frameTimes size to: 1 by: -1 do: [:cycle || x | 
+		x := frameTimes size - cycle + 1.
+		{
+			"'frame'. [(frameTimes at: cycle) / 1e3 printOn: aStream showingDecimalPlaces: 3.]."
+			'batching'. [(renderTimes at: cycle) / 1e3 printOn: aStream showingDecimalPlaces: 3.].
+			'picture'. [(pictureUpdateTimes at: cycle) / 1e3 printOn: aStream showingDecimalPlaces: 3.].
+			'GPU'. [(gpuTimes at: cycle) / 1e6 printOn: aStream showingDecimalPlaces: 3.].
+			'GC'. [(gcHistory at: cycle * 2) - (gcHistory at: cycle * 2 + 2) printOn: aStream.].
+		} groupsOf: 2 atATimeDo: [:type :block |
+			aStream
+				print: x;
+				nextPut: $,;
+				nextPutAll: type;
+				nextPut: $,.
+			block value.
+			aStream crlf]].
 ]
 
 {
@@ -655,6 +702,15 @@ RtMorphExample >> toggleMorphUpdates [
 ]
 
 {
+	#category : #logging,
+	#'squeak_changestamp' : 'stlu 5/4/2022 12:25'
+}
+RtMorphExample >> triggerDebugAction [
+
+	"do nothing by default"
+]
+
+{
 	#category : #running,
 	#'squeak_changestamp' : 'stlu 11/8/2021 16:17'
 }
@@ -673,27 +729,27 @@ RtMorphExample >> updateMorph [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 1/3/2022 17:55'
+	#'squeak_changestamp' : 'stlu 5/2/2022 19:58'
 }
 RtMorphExample >> updatePicture [
 
-	| patcher elapsed |
-	patcher := PicPatcherCanvas new.
+	| patcher startTime |
+	patcher := PicCanvas new.
 	patcher invalidationStamp: numFrames.
 	
-	elapsed := Time nanosecondsToRun: [
-		patcher fullDrawMorph: world.
-		world isWorldMorph ifTrue: [
-			world worldState hands reverseDo: [:hand |
-				hand submorphs do: [:each |
-					patcher fullDrawMorph: each.
-					self damageRecorder recordInvalidRect: each bounds]].
-			shouldShowDamageRectangles ifTrue: [
-				self damageRectangles do: [:rect |
-					patcher frameRectangle: rect color: Color red]]]].
+	startTime := Time utcMicrosecondClock.
+	patcher fullDrawMorph: world.
+	world isWorldMorph ifTrue: [
+		world worldState hands reverseDo: [:hand |
+			hand submorphs do: [:each |
+				patcher fullDrawMorph: each.
+				self damageRecorder recordInvalidRect: each bounds]].
+		shouldShowDamageRectangles ifTrue: [
+			self damageRectangles do: [:rect |
+				patcher frameRectangle: rect color: Color red]]].
 	
-	pictureUpdateTimes add: elapsed.
-	picture := patcher getPicture.
+	pictureUpdateTimes add: Time utcMicrosecondClock - startTime.
+	picture := patcher root.
 ]
 
 {
