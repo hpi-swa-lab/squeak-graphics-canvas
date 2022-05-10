@@ -98,15 +98,15 @@ Canvas >> imageStoreClass [
 
 {
 	#category : #'*RenderThee',
-	#'squeak_changestamp' : 'stlu 1/27/2022 16:36'
+	#'squeak_changestamp' : 'stlu 5/2/2022 11:29'
 }
 Canvas >> infiniteFillRectangle: aRectangle fillStyle: aFillStyle [
-
+	"Make requirement explicit."
 	self subclassResponsibility.
 ]
 
 {
-	#category : #'*RenderThee',
+	#category : #'*RenderThee-LayerTree',
 	#'squeak_changestamp' : 'stlu 6/17/2021 10:27'
 }
 Canvas >> paintImageStore: anImageStore [
@@ -115,7 +115,7 @@ Canvas >> paintImageStore: anImageStore [
 ]
 
 {
-	#category : #'*RenderThee',
+	#category : #'*RenderThee-LayerTree',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 Canvas >> paintImageStore: anImageStore sourceRect: aRectangle [

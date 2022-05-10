@@ -6,9 +6,9 @@ Class {
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/10/2021 14:54'
+	#'squeak_changestamp' : 'stlu 4/19/2022 15:30'
 }
 RtPictureCanvasTest >> createCanvas [
 
-	^ PicCanvas new
+	^ PicBasicCanvas new
 ]

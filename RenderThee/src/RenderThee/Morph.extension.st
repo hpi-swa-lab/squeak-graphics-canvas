@@ -2,11 +2,12 @@ Extension { #name : #Morph }
 
 {
 	#category : #'*RenderThee',
-	#'squeak_changestamp' : 'stlu 8/10/2021 14:53'
+	#'squeak_changestamp' : 'stlu 5/2/2022 15:30'
 }
 Morph >> getPicture [
 
-	^ (PicCanvas new fullDraw: self; yourself) getPicture
+	PicCanvas new fullDrawMorph: self.
+	^ self picture
 ]
 
 {
@@ -31,12 +32,15 @@ Morph >> groupLayer: aGroupLayer [
 
 {
 	#category : #'*RenderThee-override',
-	#'squeak_changestamp' : 'stlu 10/13/2021 13:58'
+	#'squeak_changestamp' : 'stlu 4/19/2022 13:52'
 }
 Morph >> invalidRect: aRectangle from: aMorph [
 	| damageRect |
+	"=== begin override ==="
 	aMorph == self ifTrue: [
-		(self valueOfProperty: #picture "fail-safe") ifNotNil: [:picture | picture invalidate]].
+		(self valueOfProperty: #picture "fail-safe access")
+			ifNotNil: [:picture | picture invalidate]].
+	"=== end override ==="
 	self visible ifFalse: [ ^self ].
 	aRectangle hasPositiveExtent ifFalse: [ ^self ].
 	damageRect := aRectangle.

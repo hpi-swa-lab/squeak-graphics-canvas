@@ -236,7 +236,7 @@ RtWorkspaces class >> openWorkspace: aSymbol [
 
 {
 	#category : #workspaces,
-	#'squeak_changestamp' : 'stlu 1/27/2022 14:14'
+	#'squeak_changestamp' : 'stlu 4/19/2022 15:30'
 }
 RtWorkspaces class >> pictureAndCanvasBenchmarking [ <title: 'Picture and Canvas Benchmarking'> <auto: false> <collapsed: false> | formCanvas morphPic morph nullCanvas picUpdaterCanvas picCanvas pic visitor w1 w10 w11 w12 w13 w14 w15 w16 w2 w3 w4 w5 w6 w7 w8 w9 world |
 [
@@ -298,8 +298,8 @@ morph := world.
 
 "_______________________________________________"
 
-picCanvas := PicCanvas new.
-picUpdaterCanvas := PicPatcherCanvas new.
+picCanvas := PicBasicCanvas new.
+picUpdaterCanvas := PicCanvas new.
 
 pic := (picCanvas reset; fullDrawMorph: morph; yourself) getPicture.
 morphPic := (picUpdaterCanvas reset; fullDrawMorph: morph; yourself) getPicture.

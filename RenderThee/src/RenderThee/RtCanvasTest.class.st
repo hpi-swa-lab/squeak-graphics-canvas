@@ -65,17 +65,17 @@ RtCanvasTest >> testClipBy [
 
 {
 	#category : #tests,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 4/22/2022 22:26'
 }
 RtCanvasTest >> testTransformBy [
 
 	canvas
-		transformBy: (Matrix2x3 withAngle: 180)
+		transformBy: (Matrix2x3 withRotation: 180)
 		clippingTo: (1 @ 4 corner: 9 @ 9)
 		during: [:c |
 			self assert: (c clipRect extent >= (8 @ 5)).
 			c
-				transformBy: (Matrix2x3 withAngle: 180)
+				transformBy: (Matrix2x3 withRotation: 180)
 				clippingTo: (4 @ 1 corner: 9 @ 9)
 				during: [:c2 |
 					self assert: (c2 clipRect extent >= (4 @ 5))]]
