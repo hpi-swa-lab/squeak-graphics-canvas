@@ -6,7 +6,8 @@ Class {
 		'extent',
 		'dataFormat',
 		'textureFormat',
-		'textureType'
+		'textureType',
+		'size'
 	],
 	#pools : [
 		'GLConstants'
@@ -55,11 +56,12 @@ RtGPUStore >> extent [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 7/1/2021 19:10'
+	#'squeak_changestamp' : 'stlu 4/21/2022 14:36'
 }
 RtGPUStore >> extent: anObject [
 
-	extent := anObject
+	extent := anObject.
+	size := extent area.
 ]
 
 {

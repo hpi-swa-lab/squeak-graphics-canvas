@@ -37,7 +37,7 @@ RtLinearGPUStore >> add: num1 [
 
 {
 	#category : #adding,
-	#'squeak_changestamp' : 'stlu 8/23/2021 15:01'
+	#'squeak_changestamp' : 'stlu 4/21/2022 14:33'
 }
 RtLinearGPUStore >> add: num1 add: num2 [
 
@@ -47,7 +47,7 @@ RtLinearGPUStore >> add: num1 add: num2 [
 		at: lastElementIndex + 2 put: num2.
 	
 	address := lastElementIndex // alignment.
-	lastElementIndex := lastElementIndex + 4 roundUpTo: alignment.
+	lastElementIndex := lastElementIndex + 2 roundUpTo: alignment.
 	^ address
 ]
 
@@ -64,6 +64,23 @@ RtLinearGPUStore >> add: num1 add: num2 add: num3 add: num4 [
 	
 	address := lastElementIndex // alignment.
 	lastElementIndex := lastElementIndex + 4 roundUpTo: alignment.
+	^ address
+]
+
+{
+	#category : #adding,
+	#'squeak_changestamp' : 'stlu 4/17/2022 17:14'
+}
+RtLinearGPUStore >> add: num1 add: num2 add: num3 add: num4 add: num5 [
+
+	| address |
+	stagingBuffer
+		startingAt: lastElementIndex + 1
+		put: num1 put: num2 put: num3 put: num4
+		put: num5.
+	
+	address := lastElementIndex // alignment.
+	lastElementIndex := lastElementIndex + 5 roundUpTo: alignment.
 	^ address
 ]
 
@@ -136,6 +153,26 @@ RtLinearGPUStore >> addFrom: aCollection startingAt: startIndex count: numElemen
 ]
 
 {
+	#category : #adding,
+	#'squeak_changestamp' : 'stlu 4/21/2022 20:15'
+}
+RtLinearGPUStore >> addUnaligned: num1 [
+
+	stagingBuffer
+		at: (lastElementIndex := lastElementIndex + 1)
+		put: num1.
+]
+
+{
+	#category : #adding,
+	#'squeak_changestamp' : 'stlu 4/21/2022 20:15'
+}
+RtLinearGPUStore >> alignElementIndex [
+
+	lastElementIndex := lastElementIndex roundUpTo: alignment.
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 11:28'
 }
@@ -172,12 +209,39 @@ RtLinearGPUStore >> lastElementIndex: anObject [
 ]
 
 {
+	#category : #adding,
+	#'squeak_changestamp' : 'stlu 4/21/2022 19:56'
+}
+RtLinearGPUStore >> nextIndex [
+
+	^ lastElementIndex // alignment
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/21/2022 14:36'
+}
+RtLinearGPUStore >> remainingCapacity [
+
+	^ size - lastElementIndex
+]
+
+{
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 7/1/2021 19:32'
 }
 RtLinearGPUStore >> reset [
 
 	lastElementIndex := 0.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 4/21/2022 14:27'
+}
+RtLinearGPUStore >> size [
+
+	^ extent area
 ]
 
 {
