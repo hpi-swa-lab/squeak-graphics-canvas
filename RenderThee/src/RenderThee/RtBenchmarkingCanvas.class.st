@@ -32,7 +32,7 @@ self generate.
 
 {
 	#category : #private,
-	#'squeak_changestamp' : 'stlu 3/23/2022 15:39'
+	#'squeak_changestamp' : 'stlu 5/4/2022 12:16'
 }
 RtBenchmarkingCanvas >> bench: aBlock [
 
@@ -43,7 +43,7 @@ RtBenchmarkingCanvas >> bench: aBlock [
 	result := aBlock value.
 	endTime := Time utcMicrosecondClock.
 	gcEnd := (Smalltalk vmParameterAt: 8) + (Smalltalk vmParameterAt: 10).
-	measurements add: { msg. endTime - startTime - (gcEnd - gcStart) }.
+	measurements add: { msg. endTime - startTime. gcEnd - gcStart }.
 	^ result
 ]
 
@@ -458,12 +458,12 @@ RtBenchmarkingCanvas >> imageWithOpaqueWhite: aForm at: aPoint [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 3/23/2022 15:11'
+	#'squeak_changestamp' : 'stlu 5/4/2022 12:17'
 }
 RtBenchmarkingCanvas >> initialize [
 
 	super initialize.
-	measurements := OrderedCollection new.
+	measurements := OrderedCollection new: 10000.
 ]
 
 {
@@ -567,6 +567,15 @@ RtBenchmarkingCanvas >> render: anObject [
 ]
 
 {
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 5/4/2022 12:18'
+}
+RtBenchmarkingCanvas >> reset [
+
+	measurements reset.
+]
+
+{
 	#category : #'drawing-images',
 	#'squeak_changestamp' : 'stlu 3/23/2022 15:27'
 }
@@ -588,7 +597,7 @@ RtBenchmarkingCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect c
 
 {
 	#category : #reporting,
-	#'squeak_changestamp' : 'stlu 3/23/2022 17:00'
+	#'squeak_changestamp' : 'stlu 5/4/2022 12:19'
 }
 RtBenchmarkingCanvas >> timeByPrimitiveType [
 
@@ -597,7 +606,7 @@ RtBenchmarkingCanvas >> timeByPrimitiveType [
 	measurements do: [:measurement |
 		| msg time type |
 		msg :=  measurement first.
-		time := measurement second.
+		time := measurement second - measurement third.
 		type := SelectorToTypeTable at: msg selector.
 		times
 			at: type
