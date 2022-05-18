@@ -1,134 +1,193 @@
 Class {
 	#name : #PicVisitor,
 	#superclass : #Object,
+	#instVars : [
+		'currentNode'
+	],
 	#category : #'RenderThee-Pictures'
 }
 
 {
-	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:14'
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 5/17/2022 11:07'
 }
-PicVisitor >> visit: anObject [
+PicVisitor class >> on: aCanvas [
 
-	anObject acceptVisitor: self
-]
-
-{
-	#category : #helpers,
-	#'squeak_changestamp' : 'stlu 1/27/2022 11:26'
-}
-PicVisitor >> visitChildren: aGroupNode [
-
-	| children |
-	children := aGroupNode children ifNil: [^ self].
-	1 to: children size do: [:childIndex |
-		(children at: childIndex) acceptVisitor: self].
+	^ self new
+		canvas: aCanvas;
+		yourself
 ]
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 1/27/2022 11:27'
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:13'
 }
-PicVisitor >> visitClip: anObject [
+PicVisitor >> visit: aNode [
 
-	self visitChildren: anObject.
+	^ aNode acceptVisitor: self
 ]
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 1/27/2022 11:26'
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:17'
 }
-PicVisitor >> visitGroup: aGroupNode [
+PicVisitor >> visitAll: beginNode [
 
-	self visitChildren: aGroupNode.
+	self visitAll: beginNode until: nil.
 ]
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:11'
+	#'squeak_changestamp' : 'stlu 5/17/2022 13:14'
 }
-PicVisitor >> visitImage: anObject [
+PicVisitor >> visitAll: beginNode until: endNode [
+	"begin inclusive, end exclusive"
+	currentNode := beginNode.
+	currentNode acceptVisitor: self.
+	[endNode ~~ (currentNode := currentNode next)] whileTrue: [
+		currentNode acceptVisitor: self].
+]
+
+{
+	#category : #'visiting groups',
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:21'
+}
+PicVisitor >> visitClipBegin: aNode [
 
 	
 ]
 
 {
-	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:11'
+	#category : #'visiting groups',
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:22'
 }
-PicVisitor >> visitLine: anObject [
+PicVisitor >> visitClipEnd: aNode [
 
 	
 ]
 
 {
-	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 1/27/2022 11:28'
+	#category : #'visiting prims',
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:24'
 }
-PicVisitor >> visitMorph: anObject [
-
-	self visitChildren: anObject.
-]
-
-{
-	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:11'
-}
-PicVisitor >> visitOval: anObject [
+PicVisitor >> visitImage: aNode [
 
 	
 ]
 
 {
-	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:11'
+	#category : #'visiting prims',
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:24'
 }
-PicVisitor >> visitParagraph: anObject [
+PicVisitor >> visitLine: aNode [
 
 	
 ]
 
 {
-	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:11'
+	#category : #'visiting prims',
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:24'
 }
-PicVisitor >> visitPolygon: anObject [
+PicVisitor >> visitOval: aNode [
 
 	
 ]
 
 {
-	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:11'
+	#category : #'visiting prims',
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:24'
 }
-PicVisitor >> visitRectangle: anObject [
+PicVisitor >> visitParagraph: aNode [
 
 	
 ]
 
 {
-	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:11'
+	#category : #'visiting groups',
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:22'
 }
-PicVisitor >> visitRoundedRectangle: anObject [
+PicVisitor >> visitPictureBegin: aNode [
 
 	
 ]
 
 {
-	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:11'
+	#category : #'visiting groups',
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:22'
 }
-PicVisitor >> visitString: anObject [
+PicVisitor >> visitPictureEnd: aNode [
 
 	
 ]
 
 {
-	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 1/27/2022 11:27'
+	#category : #'visiting prims',
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:24'
 }
-PicVisitor >> visitTransform: anObject [
+PicVisitor >> visitPolygon: aNode [
 
-	self visitChildren: anObject.
+	
+]
+
+{
+	#category : #'visiting prims',
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:24'
+}
+PicVisitor >> visitRectangle: aNode [
+
+	
+]
+
+{
+	#category : #'visiting prims',
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:24'
+}
+PicVisitor >> visitRoundedRectangle: aNode [
+
+	
+]
+
+{
+	#category : #'visiting prims',
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:25'
+}
+PicVisitor >> visitTextRun: aNode [
+
+	
+]
+
+{
+	#category : #'visiting groups',
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:22'
+}
+PicVisitor >> visitTransformBegin: aNode [
+
+	
+]
+
+{
+	#category : #'visiting groups',
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:22'
+}
+PicVisitor >> visitTransformEnd: aNode [
+
+	
+]
+
+{
+	#category : #'visiting groups',
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:22'
+}
+PicVisitor >> visitTranslationBegin: aNode [
+
+	
+]
+
+{
+	#category : #'visiting groups',
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:22'
+}
+PicVisitor >> visitTranslationEnd: aNode [
+
+	
 ]

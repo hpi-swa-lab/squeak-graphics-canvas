@@ -12,11 +12,11 @@ Class {
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:04'
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:06'
 }
 PicLinePrim >> acceptVisitor: aVisitor [
 
-	aVisitor visitLine: self
+	^ aVisitor visitLine: self
 ]
 
 {
@@ -39,7 +39,7 @@ PicLinePrim >> color: anObject [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/16/2022 17:09'
 }
 PicLinePrim >> drawOn: aCanvas [
 
@@ -47,7 +47,7 @@ PicLinePrim >> drawOn: aCanvas [
 		line: from
 		to: to
 		width: width
-		color: color
+		color: color.
 ]
 
 {
@@ -93,6 +93,15 @@ PicLinePrim >> isTranslucent [
 PicLinePrim >> isTransparent [
 
 	^ color isTransparent or: [width isZero]
+]
+
+{
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:00'
+}
+PicLinePrim >> renderOn: aRenderer [
+
+	^ aRenderer renderLine: self
 ]
 
 {

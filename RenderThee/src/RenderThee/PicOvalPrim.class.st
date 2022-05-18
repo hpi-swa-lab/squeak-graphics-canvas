@@ -6,21 +6,21 @@ Class {
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:06'
 }
 PicOvalPrim >> acceptVisitor: aVisitor [
 
-	aVisitor visitOval: self
+	^ aVisitor visitOval: self
 ]
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 7/7/2021 16:33'
+	#'squeak_changestamp' : 'stlu 5/16/2022 17:49'
 }
 PicOvalPrim >> drawOn: aCanvas [
 
 	aCanvas
 		fillOval: bounds
 		fillStyle: fillStyle
-		borderStyle: borderStyle
+		borderStyle: borderStyle.
 ]

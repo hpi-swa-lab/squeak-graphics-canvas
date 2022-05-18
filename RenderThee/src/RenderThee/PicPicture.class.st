@@ -1,177 +1,216 @@
 Class {
 	#name : #PicPicture,
-	#superclass : #PicGroup,
+	#superclass : #Object,
 	#instVars : [
-		'isValid',
-		'bounds',
-		'offset',
-		'invalidationStamp'
+		'needsUpdating',
+		'beginNode',
+		'endNode',
+		'captureBounds',
+		'captureClipRect',
+		'lastUpdateTime',
+		'lastUpdateFrame'
+	],
+	#pools : [
+		'PicConstants'
 	],
 	#category : #'RenderThee-Pictures'
 }
 
 {
-	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:28'
+	#category : #debugging,
+	#'squeak_changestamp' : 'stlu 5/17/2022 11:16'
 }
-PicPicture >> acceptVisitor: aVisitor [
+PicPicture >> asForm [
 
-	aVisitor visitMorph: self.
+	| canvas |
+	canvas := FormCanvas extent: (captureBounds intersect: captureClipRect) extent.
+	canvas translateBy: captureBounds origin negated during: [:c |
+		self replayOn: c].
+	^ canvas form
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:39'
+	#'squeak_changestamp' : 'stlu 5/16/2022 14:06'
 }
-PicPicture >> bounds [
+PicPicture >> beginNode [
 
-	^ bounds
+	^ beginNode
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:39'
+	#'squeak_changestamp' : 'stlu 5/16/2022 14:06'
 }
-PicPicture >> bounds: anObject [
+PicPicture >> beginNode: anObject [
 
-	bounds := anObject.
+	beginNode := anObject.
 ]
 
 {
-	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 12/6/2021 17:09'
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/16/2022 14:06'
 }
-PicPicture >> drawOn: aCanvas [
+PicPicture >> captureBounds [
 
-	aCanvas translateBy: offset during: [:canvas |
-		self childrenDo: [:child |
-			child drawOn: canvas]].
+	^ captureBounds
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/16/2022 14:06'
+}
+PicPicture >> captureBounds: anObject [
+
+	captureBounds := anObject.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/16/2022 14:06'
+}
+PicPicture >> captureClipRect [
+
+	^ captureClipRect
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/16/2022 14:06'
+}
+PicPicture >> captureClipRect: anObject [
+
+	captureClipRect := anObject.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/16/2022 14:06'
+}
+PicPicture >> endNode [
+
+	^ endNode
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/16/2022 14:06'
+}
+PicPicture >> endNode: anObject [
+
+	endNode := anObject.
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 12/6/2021 17:24'
+	#'squeak_changestamp' : 'stlu 5/16/2022 14:49'
 }
 PicPicture >> initialize [
 
 	super initialize.
-	isValid := true.
-	invalidationStamp := 0.
-	offset := 0@0.
-]
-
-{
-	#category : #invalidation,
-	#'squeak_changestamp' : 'stlu 10/13/2021 14:03'
-}
-PicPicture >> invalidate [
-
-	isValid ifFalse: [^ self].
-	isValid := false.
-	parent ifNil: [^ self].
-	parent invalidate.
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:17'
-}
-PicPicture >> invalidationStamp [
-
-	^ invalidationStamp
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:17'
-}
-PicPicture >> invalidationStamp: anObject [
-
-	invalidationStamp := anObject.
+	beginNode := PicPictureBegin new.
+	endNode := PicPictureEnd new.
+	needsUpdating := true.
+	lastUpdateTime := 0.
+	lastUpdateFrame := 0.
 ]
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 1/24/2022 16:37'
+	#'squeak_changestamp' : 'stlu 5/17/2022 14:07'
 }
-PicPicture >> isMorphNode [
+PicPicture >> isEmpty [
 
-	^ true
+	^ beginNode next == endNode
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/16/2022 14:06'
+}
+PicPicture >> lastUpdateFrame [
+
+	^ lastUpdateFrame
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/16/2022 14:06'
+}
+PicPicture >> lastUpdateFrame: anObject [
+
+	lastUpdateFrame := anObject.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/16/2022 14:06'
+}
+PicPicture >> lastUpdateTime [
+
+	^ lastUpdateTime
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/16/2022 14:06'
+}
+PicPicture >> lastUpdateTime: anObject [
+
+	lastUpdateTime := anObject.
 ]
 
 {
 	#category : #invalidation,
-	#'squeak_changestamp' : 'stlu 8/10/2021 18:07'
-}
-PicPicture >> isValid [
-
-	^ isValid
-]
-
-{
-	#category : #invalidation,
-	#'squeak_changestamp' : 'stlu 8/11/2021 11:19'
+	#'squeak_changestamp' : 'stlu 5/17/2022 10:51'
 }
 PicPicture >> markInvalid [
 
-	isValid := false.
+	needsUpdating := true.
 ]
 
 {
 	#category : #invalidation,
-	#'squeak_changestamp' : 'stlu 8/11/2021 11:19'
+	#'squeak_changestamp' : 'stlu 5/17/2022 10:51'
 }
 PicPicture >> markValid [
 
-	isValid := true.
+	needsUpdating := false.
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 12/6/2021 17:11'
+	#'squeak_changestamp' : 'stlu 5/16/2022 14:06'
 }
-PicPicture >> matrix [
+PicPicture >> needsUpdating [
 
-	^ Matrix2x3 withOffset: offset
+	^ needsUpdating
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 1/24/2022 16:47'
+	#'squeak_changestamp' : 'stlu 5/16/2022 14:06'
 }
-PicPicture >> morphDepth [
+PicPicture >> needsUpdating: anObject [
 
-	| counter |
-	counter := 1.
-	self allParentsDo: [:node |
-		node isMorphNode ifTrue: [
-			counter := counter + 1]].
-	^ counter
+	needsUpdating := anObject.
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 12/6/2021 17:07'
+	#category : #debugging,
+	#'squeak_changestamp' : 'stlu 5/17/2022 11:18'
 }
-PicPicture >> offset [
+PicPicture >> open [
 
-	^ offset
+	self asForm asMorph openInHand.
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 12/6/2021 17:07'
+	#category : #debugging,
+	#'squeak_changestamp' : 'stlu 5/17/2022 11:16'
 }
-PicPicture >> offset: anObject [
+PicPicture >> replayOn: aCanvas [
 
-	offset := anObject.
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/12/2021 13:42'
-}
-PicPicture >> position [
-
-	^ bounds topLeft
+	^ (PicCanvasReplay on: aCanvas)
+		visitAll: beginNode until: endNode next
 ]

@@ -6,16 +6,16 @@ Class {
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:07'
 }
 PicRectanglePrim >> acceptVisitor: aVisitor [
 
-	aVisitor visitRectangle: self
+	^ aVisitor visitRectangle: self
 ]
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/13/2022 16:57'
 }
 PicRectanglePrim >> drawOn: aCanvas [
 
@@ -27,7 +27,7 @@ PicRectanglePrim >> drawOn: aCanvas [
 
 {
 	#category : #thumbnail,
-	#'squeak_changestamp' : 'stlu 8/13/2021 16:45'
+	#'squeak_changestamp' : 'stlu 5/13/2022 16:57'
 }
 PicRectanglePrim >> iconOrThumbnailOfSize: aNumberOrPoint [ 
 	"Answer an appropiate form to represent the receiver"
@@ -47,4 +47,13 @@ PicRectanglePrim >> iconOrThumbnailOfSize: aNumberOrPoint [
 PicRectanglePrim >> isRectangleNode [
 
 	^ true
+]
+
+{
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:00'
+}
+PicRectanglePrim >> renderOn: aRenderer [
+
+	^ aRenderer renderRectangle: self
 ]

@@ -12,11 +12,11 @@ Class {
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:04'
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:06'
 }
 PicImagePrim >> acceptVisitor: aVisitor [
 
-	aVisitor visitImage: self
+	^ aVisitor visitImage: self
 ]
 
 {
@@ -48,7 +48,7 @@ PicImagePrim >> combinationRule: anObject [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 4/21/2022 18:36'
+	#'squeak_changestamp' : 'stlu 5/16/2022 17:09'
 }
 PicImagePrim >> drawOn: aCanvas [
 
@@ -58,6 +58,7 @@ PicImagePrim >> drawOn: aCanvas [
 		^ aCanvas paintImage: form at: origin sourceRect: sourceRect].
 	combinationRule = Form over ifTrue: [
 		^ aCanvas drawImage: form at: origin sourceRect: sourceRect].
+	aCanvas image: form at: origin sourceRect: sourceRect rule: combinationRule.
 	self flag: #todo. "probably dont even save bitblt rules"
 ]
 
@@ -141,6 +142,15 @@ PicImagePrim >> origin [
 PicImagePrim >> origin: anObject [
 
 	origin := anObject.
+]
+
+{
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:00'
+}
+PicImagePrim >> renderOn: aRenderer [
+
+	^ aRenderer renderImage: self
 ]
 
 {

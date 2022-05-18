@@ -2,47 +2,26 @@ Extension { #name : #Morph }
 
 {
 	#category : #'*RenderThee',
-	#'squeak_changestamp' : 'stlu 5/2/2022 15:30'
+	#'squeak_changestamp' : 'stlu 5/17/2022 10:57'
 }
-Morph >> getPicture [
+Morph >> createPicture [
 
-	PicCanvas new fullDrawMorph: self.
+	self allMorphsDo: [:each | each picture: nil].
+	PicRecordingCanvas new fullDrawMorph: self.
 	^ self picture
 ]
 
 {
-	#category : #'*RenderThee',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-Morph >> groupLayer [
-
-	^ self valueOfProperty: #groupLayer
-]
-
-{
-	#category : #'*RenderThee',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-Morph >> groupLayer: aGroupLayer [
-
-	^ self
-		setProperty: #groupLayer
-		toValue: aGroupLayer
-]
-
-{
 	#category : #'*RenderThee-override',
-	#'squeak_changestamp' : 'stlu 4/19/2022 13:52'
+	#'squeak_changestamp' : 'stlu 5/17/2022 11:03'
 }
 Morph >> invalidRect: aRectangle from: aMorph [
 	| damageRect |
-	"=== begin override ==="
-	aMorph == self ifTrue: [
-		(self valueOfProperty: #picture "fail-safe access")
-			ifNotNil: [:picture | picture invalidate]].
-	"=== end override ==="
 	self visible ifFalse: [ ^self ].
 	aRectangle hasPositiveExtent ifFalse: [ ^self ].
+	"=== begin override ==="
+	self picture ifNotNil: [:picture | picture needsUpdating: true].
+	"=== end override ==="
 	damageRect := aRectangle.
 	aMorph == self ifFalse: [
 		"Clip to receiver's clipping bounds if the damage came from a child"
@@ -62,63 +41,20 @@ Morph >> isRepaintBoundary [
 
 {
 	#category : #'*RenderThee',
-	#'squeak_changestamp' : 'stlu 11/2/2020 13:13'
-}
-Morph >> morphsToRedraw [
-
-	^ (self valueOfProperty: #morphsToRedraw) ifNil: [
-		self morphsToRedraw: WeakSet new]
-]
-
-{
-	#category : #'*RenderThee',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-Morph >> morphsToRedraw: aSet [
-
-	self
-		setProperty: #morphsToRedraw
-		toValue: aSet.
-	^ aSet
-]
-
-{
-	#category : #'*RenderThee',
-	#'squeak_changestamp' : 'stlu 8/10/2021 16:26'
+	#'squeak_changestamp' : 'stlu 5/17/2022 10:38'
 }
 Morph >> picture [
 
-	^ self valueOfProperty: #picture
+	^ extension ifNotNil: [
+		extension picture]
 ]
 
 {
 	#category : #'*RenderThee',
-	#'squeak_changestamp' : 'stlu 8/10/2021 16:25'
+	#'squeak_changestamp' : 'stlu 5/17/2022 10:41'
 }
 Morph >> picture: aPicture [
 
-	self
-		setProperty: #picture
-		toValue: aPicture.
-]
-
-{
-	#category : #'*RenderThee',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-Morph >> updateLayer [
-
-	self assert: self isRepaintBoundary.
-	
-	self groupLayer ifNotNil: [:layer | layer update]
-]
-
-{
-	#category : #'*RenderThee',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-Morph >> updateLayerTree [
-
-	self morphsToRedraw do: [:morph | morph updateLayer].
-	self morphsToRedraw: nil
+	(extension isNil and: [aPicture isNil]) ifTrue: [^ self].
+	self assureExtension picture: aPicture.
 ]

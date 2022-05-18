@@ -9,16 +9,16 @@ Class {
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:07'
 }
 PicRoundedRectanglePrim >> acceptVisitor: aVisitor [
 
-	aVisitor visitRoundedRectangle: self
+	^ aVisitor visitRoundedRectangle: self
 ]
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/16/2022 17:49'
 }
 PicRoundedRectanglePrim >> drawOn: aCanvas [
 
@@ -26,7 +26,7 @@ PicRoundedRectanglePrim >> drawOn: aCanvas [
 		frameAndFillRoundRect: bounds
 		radius: radius
 		fillStyle: fillStyle
-		borderStyle: borderStyle
+		borderStyle: borderStyle.
 ]
 
 {
@@ -45,4 +45,13 @@ PicRoundedRectanglePrim >> radius [
 PicRoundedRectanglePrim >> radius: anObject [
 
 	radius := anObject.
+]
+
+{
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:00'
+}
+PicRoundedRectanglePrim >> renderOn: aRenderer [
+
+	^ aRenderer renderRoundedRectangle: self
 ]

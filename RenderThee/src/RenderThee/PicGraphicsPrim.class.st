@@ -5,34 +5,25 @@ Class {
 	#name : #PicGraphicsPrim,
 	#superclass : #PicNode,
 	#instVars : [
-		'primitives'
+		'bounds'
 	],
 	#category : #'RenderThee-Pictures'
 }
 
 {
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 9/27/2021 13:11'
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/16/2022 12:35'
 }
-PicGraphicsPrim >> hasPrimitiveNode [
+PicGraphicsPrim >> bounds [
 
-	^ true
+	^ bounds
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/28/2021 15:00'
+	#'squeak_changestamp' : 'stlu 5/16/2022 12:35'
 }
-PicGraphicsPrim >> primitives [
+PicGraphicsPrim >> bounds: aRectangle [
 
-	^ primitives
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/28/2021 15:28'
-}
-PicGraphicsPrim >> primitives: anObject [
-
-	^ primitives := anObject
+	bounds := aRectangle.
 ]

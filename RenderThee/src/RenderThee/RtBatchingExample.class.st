@@ -21,20 +21,26 @@ RtBatchingExample >> initialize [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 5/4/2022 12:30'
+	#'squeak_changestamp' : 'stlu 5/17/2022 11:40'
 }
 RtBatchingExample >> render [
 
 	| batchingStart |
 	self updateMorph.
 	renderer bounds: world bounds.
-	batchingStart := Time utcMicrosecondClock.
-	benchNextRender
+	renderer reset.
+	renderer clear.
+	
+	"benchNextRender
 		ifTrue: [
 			benchNextRender := false.
-			(renderer renderBenched: picture) explore]
-		ifFalse: [renderer render: picture].
+			(renderer renderBenched: picture) explore]"
+	
+	batchingStart := Time utcMicrosecondClock.
+	self drawPictureOn: renderer.
 	batchingTimes add: Time utcMicrosecondClock - batchingStart.
+	
+	renderer draw.
 ]
 
 {

@@ -2,9 +2,10 @@ Extension { #name : #BorderStyle }
 
 {
 	#category : #'*RenderThee',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/13/2022 16:35'
 }
 BorderStyle >> isTransparent [
 
-	^ self width isZero or: [self color isTransparent]
+	self width > 0 ifFalse: [^ true].
+	^ self color isTransparent
 ]

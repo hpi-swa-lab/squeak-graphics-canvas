@@ -2,7 +2,6 @@ Class {
 	#name : #PicShapePrim,
 	#superclass : #PicGraphicsPrim,
 	#instVars : [
-		'bounds',
 		'fillStyle',
 		'borderStyle'
 	],
@@ -11,7 +10,7 @@ Class {
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/13/2022 16:57'
 }
 PicShapePrim >> borderStyle [
 
@@ -20,29 +19,11 @@ PicShapePrim >> borderStyle [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/13/2022 16:57'
 }
 PicShapePrim >> borderStyle: anObject [
 
 	borderStyle := anObject.
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicShapePrim >> bounds [
-
-	^ bounds
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicShapePrim >> bounds: anObject [
-
-	bounds := anObject.
 ]
 
 {
@@ -56,7 +37,7 @@ PicShapePrim >> estimatedBounds [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/13/2022 16:57'
 }
 PicShapePrim >> fillStyle [
 
@@ -65,7 +46,7 @@ PicShapePrim >> fillStyle [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/13/2022 16:57'
 }
 PicShapePrim >> fillStyle: anObject [
 
@@ -83,7 +64,7 @@ PicShapePrim >> isShapeNode [
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 9/27/2021 13:08'
+	#'squeak_changestamp' : 'stlu 5/13/2022 16:57'
 }
 PicShapePrim >> isTranslucent [
 
@@ -92,7 +73,7 @@ PicShapePrim >> isTranslucent [
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 9/27/2021 13:08'
+	#'squeak_changestamp' : 'stlu 5/13/2022 16:57'
 }
 PicShapePrim >> isTransparent [
 

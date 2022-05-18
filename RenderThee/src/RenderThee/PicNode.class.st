@@ -6,7 +6,11 @@ Class {
 	#name : #PicNode,
 	#superclass : #Object,
 	#instVars : [
-		'parent'
+		'previous',
+		'next'
+	],
+	#pools : [
+		'PicConstants'
 	],
 	#category : #'RenderThee-Pictures'
 }
@@ -18,35 +22,6 @@ Class {
 PicNode >> acceptVisitor: aVisitor [
 
 	self subclassResponsibility
-]
-
-{
-	#category : #enumerating,
-	#'squeak_changestamp' : 'stlu 2/2/2022 14:38'
-}
-PicNode >> allChildrenDo: aBlock [
-
-	"do nothing"
-]
-
-{
-	#category : #enumerating,
-	#'squeak_changestamp' : 'stlu 1/24/2022 16:35'
-}
-PicNode >> allParents [
-
-	^ Array streamContents: [:stream |
-		self allParentsDo: [:node | stream nextPut: node]]
-]
-
-{
-	#category : #enumerating,
-	#'squeak_changestamp' : 'stlu 1/24/2022 16:33'
-}
-PicNode >> allParentsDo: aBlock [
-
-	parent ifNotNil: [
-		parent withAllParentsDo: aBlock].
 ]
 
 {
@@ -62,41 +37,6 @@ PicNode >> asForm [
 ]
 
 {
-	#category : #enumerating,
-	#'squeak_changestamp' : 'stlu 9/27/2021 16:10'
-}
-PicNode >> childrenDo: aBlock [
-
-	"do nothing"
-]
-
-{
-	#category : #copying,
-	#'squeak_changestamp' : 'stlu 1/24/2022 16:44'
-}
-PicNode >> copyWithParents [
-
-	| copiedNode |
-	copiedNode := self copy.
-	self allParentsDo: [:originalParent |
-		(originalParent isTransformNode or: [originalParent isClipNode]) ifTrue: [
-			| copiedParent |
-			copiedParent := originalParent emptyCopy.
-			copiedParent addChild: copiedNode.
-			copiedNode := copiedParent]].
-	^ copiedNode
-]
-
-{
-	#category : #enumerating,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicNode >> do: aBlock [
-
-	aBlock value: self
-]
-
-{
 	#category : #drawing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
@@ -107,11 +47,15 @@ PicNode >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/11/2021 11:38'
+	#'squeak_changestamp' : 'stlu 5/16/2022 15:23'
 }
-PicNode >> estimatedBounds [
-	"Returns a rectangle representing the maximum bounds I draw myself into, or nil if I am invisible."
-	self subclassResponsibility
+PicNode >> first [
+
+	| node |
+	node := self.
+	[nil ~~ node previous] whileTrue: [
+		node := node previous].
+	^ node
 ]
 
 {
@@ -133,16 +77,6 @@ PicNode >> getFormCanvas [
 PicNode >> hasPrimitiveNode [
 
 	^ false
-]
-
-{
-	#category : #invalidation,
-	#'squeak_changestamp' : 'stlu 10/13/2021 14:01'
-}
-PicNode >> invalidate [
-
-	parent ifNil: [^ self].
-	parent invalidate.
 ]
 
 {
@@ -209,6 +143,37 @@ PicNode >> isTransparent [
 ]
 
 {
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/16/2022 15:25'
+}
+PicNode >> last [
+
+	| node |
+	node := self.
+	[nil ~~ node next] whileTrue: [
+		node := node next].
+	^ node
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/12/2022 11:11'
+}
+PicNode >> next [
+
+	^ next
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/12/2022 11:11'
+}
+PicNode >> next: aNode [
+
+	next := aNode.
+]
+
+{
 	#category : #debugging,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
@@ -219,59 +184,36 @@ PicNode >> open [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/27/2021 17:28'
+	#'squeak_changestamp' : 'stlu 5/12/2022 11:11'
 }
-PicNode >> parent [
+PicNode >> previous [
 
-	^ parent
+	^ previous
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/27/2021 17:28'
+	#'squeak_changestamp' : 'stlu 5/12/2022 11:11'
 }
-PicNode >> parent: aNode [
+PicNode >> previous: aNode [
 
-	parent := aNode.
+	previous := aNode.
 ]
 
 {
-	#category : #copying,
-	#'squeak_changestamp' : 'stlu 1/24/2022 16:07'
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 5/16/2022 15:58'
 }
-PicNode >> postCopy [
+PicNode >> renderOn: aRenderer [
 
-	super postCopy.
-	parent := nil.
+	self subclassResponsibility.
 ]
 
 {
-	#category : #enumerating,
-	#'squeak_changestamp' : 'stlu 2/2/2022 14:39'
+	#category : #debugging,
+	#'squeak_changestamp' : 'stlu 5/17/2022 12:01'
 }
-PicNode >> withAllChildren [
+PicNode >> validate [
 
-	^ Array streamContents: [:stream |
-		self withAllChildrenDo: [:child |
-			stream nextPut: child]]
-]
-
-{
-	#category : #enumerating,
-	#'squeak_changestamp' : 'stlu 2/2/2022 14:32'
-}
-PicNode >> withAllChildrenDo: aBlock [
-
-	aBlock value: self.
-]
-
-{
-	#category : #enumerating,
-	#'squeak_changestamp' : 'stlu 1/24/2022 16:32'
-}
-PicNode >> withAllParentsDo: aBlock [
-
-	aBlock value: self.
-	parent ifNotNil: [
-		parent withAllParentsDo: aBlock].
+	PicValidator new visitAll: self.
 ]

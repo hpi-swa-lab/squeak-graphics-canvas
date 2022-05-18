@@ -9,16 +9,16 @@ Class {
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:07'
 }
 PicPolygonPrim >> acceptVisitor: aVisitor [
 
-	aVisitor visitPolygon: self
+	^ aVisitor visitPolygon: self
 ]
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/16/2022 17:49'
 }
 PicPolygonPrim >> drawOn: aCanvas [
 
@@ -26,7 +26,7 @@ PicPolygonPrim >> drawOn: aCanvas [
 		drawPolygon: vertices
 		fillStyle: fillStyle
 		borderWidth: borderStyle width
-		borderColor: borderStyle color
+		borderColor: borderStyle color.
 ]
 
 {
@@ -36,6 +36,15 @@ PicPolygonPrim >> drawOn: aCanvas [
 PicPolygonPrim >> estimatedBounds [
 
 	^ Rectangle encompassing: vertices
+]
+
+{
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:00'
+}
+PicPolygonPrim >> renderOn: aRenderer [
+
+	^ aRenderer renderPolygon: self
 ]
 
 {

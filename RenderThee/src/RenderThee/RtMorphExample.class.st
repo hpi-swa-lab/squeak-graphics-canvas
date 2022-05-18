@@ -249,6 +249,16 @@ RtMorphExample >> damageRectangles [
 ]
 
 {
+	#category : #running,
+	#'squeak_changestamp' : 'stlu 5/17/2022 11:39'
+}
+RtMorphExample >> drawPictureOn: aCanvas [
+
+	(PicCanvasReplay on: aCanvas)
+		visitAll: picture beginNode.
+]
+
+{
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 11/8/2021 15:59'
 }
@@ -729,13 +739,13 @@ RtMorphExample >> updateMorph [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 5/2/2022 19:58'
+	#'squeak_changestamp' : 'stlu 5/17/2022 11:32'
 }
 RtMorphExample >> updatePicture [
 
 	| patcher startTime |
-	patcher := PicCanvas new.
-	patcher invalidationStamp: numFrames.
+	patcher := PicRecordingCanvas new.
+	patcher frame: numFrames.
 	
 	startTime := Time utcMicrosecondClock.
 	patcher fullDrawMorph: world.
@@ -749,7 +759,7 @@ RtMorphExample >> updatePicture [
 				patcher frameRectangle: rect color: Color red]]].
 	
 	pictureUpdateTimes add: Time utcMicrosecondClock - startTime.
-	picture := patcher root.
+	picture := world picture.
 ]
 
 {

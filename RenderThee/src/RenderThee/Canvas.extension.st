@@ -29,12 +29,11 @@ Canvas >> drawDrawLayer: aLayer [
 
 {
 	#category : #'*RenderThee-drawing',
-	#'squeak_changestamp' : 'stlu 6/16/2021 14:47'
+	#'squeak_changestamp' : 'stlu 5/16/2022 17:24'
 }
 Canvas >> drawGeneralBezier3Shape: contours fillStyle: aFillStyle borderStyle: aBorderStyle [
 
-	self flag: #todo. "frameAndFill vs. fill vs. draw"
-	self asBalloonCanvas
+	^ self asBalloonCanvas
 		drawGeneralBezier3Shape: contours
 		color: aFillStyle asColor
 		borderWidth: aBorderStyle width
@@ -61,12 +60,11 @@ Canvas >> drawLayer: aLayer [
 
 {
 	#category : #'*RenderThee-drawing',
-	#'squeak_changestamp' : 'stlu 6/16/2021 14:47'
+	#'squeak_changestamp' : 'stlu 5/16/2022 17:24'
 }
 Canvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBorderStyle [
 
-	self flag: #todo. "frameAndFill vs. fill vs. draw"
-	self
+	^ self
 		drawPolygon: vertices
 		fillStyle: aFillStyle
 		borderWidth: aBorderStyle width
@@ -75,16 +73,27 @@ Canvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBorderStyle 
 
 {
 	#category : #'*RenderThee-drawing',
-	#'squeak_changestamp' : 'stlu 6/16/2021 14:47'
+	#'squeak_changestamp' : 'stlu 5/16/2022 17:23'
 }
 Canvas >> fillOval: aRectangle fillStyle: aFillStyle borderStyle: aBorderStyle [
 
-	self flag: #todo. "frameAndFill vs. fill vs. draw"
 	^ self
 		fillOval: aRectangle
 		fillStyle: aFillStyle
 		borderWidth: aBorderStyle width
 		borderColor: aBorderStyle color
+]
+
+{
+	#category : #'*RenderThee-drawing',
+	#'squeak_changestamp' : 'stlu 5/16/2022 17:22'
+}
+Canvas >> frameOval: aRectangle borderStyle: aBorderStyle [
+
+	^ self
+		frameOval: aRectangle
+		width: aBorderStyle width
+		color: aBorderStyle color
 ]
 
 {

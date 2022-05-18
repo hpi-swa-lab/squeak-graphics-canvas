@@ -47,7 +47,7 @@ void main() {
 
 {
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 11/8/2021 15:59'
+	#'squeak_changestamp' : 'stlu 5/17/2022 11:33'
 }
 RtFormCanvasExample >> render [
 
@@ -56,7 +56,7 @@ RtFormCanvasExample >> render [
 	world extent = canvas extent
 		ifTrue: [canvas reset]
 		ifFalse: [canvas := FormCanvas extent: world extent depth: 32].
-	picture drawOn: canvas.
+	self drawPictureOn: canvas.
 	
 	self transferForm: canvas form.
 ]

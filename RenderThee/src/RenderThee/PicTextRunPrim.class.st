@@ -1,5 +1,5 @@
 Class {
-	#name : #PicStringPrim,
+	#name : #PicTextRunPrim,
 	#superclass : #PicGraphicsPrim,
 	#instVars : [
 		'contents',
@@ -8,27 +8,27 @@ Class {
 		'position',
 		'maxExtent',
 		'font',
-		'color',
 		'fullExtent',
-		'rightEdges'
+		'rightEdges',
+		'textColor'
 	],
 	#category : #'RenderThee-Pictures'
 }
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:07'
 }
-PicStringPrim >> acceptVisitor: aVisitor [
+PicTextRunPrim >> acceptVisitor: aVisitor [
 
-	aVisitor visitString: self
+	^ aVisitor visitTextRun: self
 ]
 
 {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 15:46'
 }
-PicStringPrim >> bounds [
+PicTextRunPrim >> bounds [
 
 	| extent |
 	extent := self extent.
@@ -40,7 +40,7 @@ PicStringPrim >> bounds [
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 8/26/2021 14:41'
 }
-PicStringPrim >> calculateRightEdges [
+PicTextRunPrim >> calculateRightEdges [
 
 	| font left |
 	font := self font.
@@ -61,25 +61,7 @@ PicStringPrim >> calculateRightEdges [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicStringPrim >> color [
-
-	^ color
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicStringPrim >> color: anObject [
-
-	color := anObject.
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicStringPrim >> contents [
+PicTextRunPrim >> contents [
 
 	^ contents
 ]
@@ -88,16 +70,16 @@ PicStringPrim >> contents [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicStringPrim >> contents: anObject [
+PicTextRunPrim >> contents: anObject [
 
 	contents := anObject.
 ]
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 8/25/2021 13:52'
+	#'squeak_changestamp' : 'stlu 5/13/2022 23:05'
 }
-PicStringPrim >> drawOn: aCanvas [
+PicTextRunPrim >> drawOn: aCanvas [
 
 	maxExtent
 		ifNil: [
@@ -106,21 +88,21 @@ PicStringPrim >> drawOn: aCanvas [
 				from: startIndex to: stopIndex
 				at: position
 				font: font
-				color: color]
+				color: textColor]
 		ifNotNil: [
 			aCanvas
 				drawString: contents
 				from: startIndex to: stopIndex
 				in: (position extent: maxExtent)
 				font: font
-				color: color]
+				color: textColor]
 ]
 
 {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 15:47'
 }
-PicStringPrim >> estimatedBounds [
+PicTextRunPrim >> estimatedBounds [
 
 	^ self bounds
 ]
@@ -129,7 +111,7 @@ PicStringPrim >> estimatedBounds [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 15:43'
 }
-PicStringPrim >> extent [
+PicTextRunPrim >> extent [
 
 	^ self maxExtent
 		ifNil: [self fullExtent]
@@ -140,7 +122,7 @@ PicStringPrim >> extent [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 9/28/2021 16:16'
 }
-PicStringPrim >> font [
+PicTextRunPrim >> font [
 
 	^ font ifNil: [TextStyle defaultFont]
 ]
@@ -149,7 +131,7 @@ PicStringPrim >> font [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
-PicStringPrim >> font: anObject [
+PicTextRunPrim >> font: anObject [
 
 	font := anObject.
 ]
@@ -158,7 +140,7 @@ PicStringPrim >> font: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 16:29'
 }
-PicStringPrim >> fullExtent [
+PicTextRunPrim >> fullExtent [
 
 	^ self rightEdges last @ font height
 ]
@@ -167,34 +149,34 @@ PicStringPrim >> fullExtent [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 15:38'
 }
-PicStringPrim >> fullExtent: anObject [
+PicTextRunPrim >> fullExtent: anObject [
 
 	fullExtent := anObject.
 ]
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 8/13/2021 13:14'
+	#'squeak_changestamp' : 'stlu 5/13/2022 23:05'
 }
-PicStringPrim >> isTranslucent [
+PicTextRunPrim >> isTranslucent [
 
-	^ color isTranslucent
+	^ textColor isTranslucent
 ]
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 9/27/2021 13:09'
+	#'squeak_changestamp' : 'stlu 5/13/2022 23:05'
 }
-PicStringPrim >> isTransparent [
+PicTextRunPrim >> isTransparent [
 
-	^ color isTransparent
+	^ textColor isTransparent
 ]
 
 {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 14:21'
 }
-PicStringPrim >> length [
+PicTextRunPrim >> length [
 
 	^ stopIndex - startIndex + 1
 ]
@@ -203,7 +185,7 @@ PicStringPrim >> length [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 16:30'
 }
-PicStringPrim >> maxCorner [
+PicTextRunPrim >> maxCorner [
 
 	^ maxExtent ifNotNil: [position + maxExtent]
 ]
@@ -212,7 +194,7 @@ PicStringPrim >> maxCorner [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/20/2021 12:58'
 }
-PicStringPrim >> maxExtent [
+PicTextRunPrim >> maxExtent [
 
 	^ maxExtent
 ]
@@ -221,7 +203,7 @@ PicStringPrim >> maxExtent [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/20/2021 12:58'
 }
-PicStringPrim >> maxExtent: anObject [
+PicTextRunPrim >> maxExtent: anObject [
 
 	maxExtent := anObject.
 ]
@@ -230,7 +212,7 @@ PicStringPrim >> maxExtent: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 15:08'
 }
-PicStringPrim >> position [
+PicTextRunPrim >> position [
 
 	^ position
 ]
@@ -239,16 +221,25 @@ PicStringPrim >> position [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 15:08'
 }
-PicStringPrim >> position: anObject [
+PicTextRunPrim >> position: anObject [
 
 	position := anObject.
+]
+
+{
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:00'
+}
+PicTextRunPrim >> renderOn: aRenderer [
+
+	^ aRenderer renderTextRun: self
 ]
 
 {
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 16:26'
 }
-PicStringPrim >> rightEdges [
+PicTextRunPrim >> rightEdges [
 
 	^ rightEdges ifNil: [
 		self calculateRightEdges.
@@ -259,7 +250,7 @@ PicStringPrim >> rightEdges [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/20/2021 12:26'
 }
-PicStringPrim >> startIndex [
+PicTextRunPrim >> startIndex [
 
 	^ startIndex
 ]
@@ -268,7 +259,7 @@ PicStringPrim >> startIndex [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/20/2021 12:26'
 }
-PicStringPrim >> startIndex: anObject [
+PicTextRunPrim >> startIndex: anObject [
 
 	startIndex := anObject.
 ]
@@ -277,7 +268,7 @@ PicStringPrim >> startIndex: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/20/2021 12:26'
 }
-PicStringPrim >> stopIndex [
+PicTextRunPrim >> stopIndex [
 
 	^ stopIndex
 ]
@@ -286,7 +277,25 @@ PicStringPrim >> stopIndex [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/20/2021 12:26'
 }
-PicStringPrim >> stopIndex: anObject [
+PicTextRunPrim >> stopIndex: anObject [
 
 	stopIndex := anObject.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/16/2022 14:58'
+}
+PicTextRunPrim >> textColor [
+
+	^ textColor
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/16/2022 14:58'
+}
+PicTextRunPrim >> textColor: anObject [
+
+	textColor := anObject.
 ]

@@ -2,7 +2,6 @@ Class {
 	#name : #PicParagraphPrim,
 	#superclass : #PicGraphicsPrim,
 	#instVars : [
-		'bounds',
 		'color',
 		'paragraph'
 	],
@@ -11,29 +10,11 @@ Class {
 
 {
 	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 3/18/2021 13:05'
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:06'
 }
 PicParagraphPrim >> acceptVisitor: aVisitor [
 
-	aVisitor visitParagraph: self
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicParagraphPrim >> bounds [
-
-	^ bounds
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-PicParagraphPrim >> bounds: anObject [
-
-	bounds := anObject.
+	^ aVisitor visitParagraph: self
 ]
 
 {
@@ -56,14 +37,14 @@ PicParagraphPrim >> color: anObject [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
+	#'squeak_changestamp' : 'stlu 5/16/2022 17:10'
 }
 PicParagraphPrim >> drawOn: aCanvas [
 
 	aCanvas
 		paragraph: paragraph
 		bounds: bounds
-		color: color
+		color: color.
 ]
 
 {
@@ -109,4 +90,13 @@ PicParagraphPrim >> paragraph [
 PicParagraphPrim >> paragraph: anObject [
 
 	paragraph := anObject.
+]
+
+{
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 5/16/2022 16:00'
+}
+PicParagraphPrim >> renderOn: aRenderer [
+
+	^ aRenderer renderParagraph: self
 ]

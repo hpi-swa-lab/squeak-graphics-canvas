@@ -27,14 +27,14 @@ RtOpenGLCanvasExample >> canvas: anObject [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 11/8/2021 16:23'
+	#'squeak_changestamp' : 'stlu 5/17/2022 11:33'
 }
 RtOpenGLCanvasExample >> render [
 
 	self updateMorph.
 	canvas reset.
 	canvas bounds: world bounds.
-	picture drawOn: canvas.
+	self drawPictureOn: canvas.
 ]
 
 {
