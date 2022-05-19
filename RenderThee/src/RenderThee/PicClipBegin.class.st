@@ -36,18 +36,37 @@ PicClipBegin >> clipRect [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 5/13/2022 15:09'
+	#'squeak_changestamp' : 'stlu 5/19/2022 14:43'
 }
-PicClipBegin >> clipRect: anObject [
+PicClipBegin >> clipRect: aRectangle [
 
-	clipRect := anObject.
+	clipRect rectangle: aRectangle.
 ]
 
 {
-	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 5/16/2022 16:01'
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/19/2022 14:41'
 }
-PicClipBegin >> renderOn: aRenderer [
+PicClipBegin >> endClass [
 
-	^ aRenderer pushClip: self
+	^ PicClipEnd
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 5/19/2022 14:45'
+}
+PicClipBegin >> initialize [
+
+	super initialize.
+	clipRect := PicRectangle new.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/19/2022 14:52'
+}
+PicClipBegin >> pool [
+
+	^ ClipBeginPool
 ]

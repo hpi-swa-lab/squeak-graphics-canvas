@@ -24,3 +24,12 @@ PicOvalPrim >> drawOn: aCanvas [
 		fillStyle: fillStyle
 		borderStyle: borderStyle.
 ]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/19/2022 14:51'
+}
+PicOvalPrim >> pool [
+
+	^ OvalPrimPool
+]

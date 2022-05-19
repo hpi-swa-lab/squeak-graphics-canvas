@@ -210,6 +210,15 @@ PicTextRunPrim >> maxExtent: anObject [
 
 {
 	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/19/2022 14:51'
+}
+PicTextRunPrim >> pool [
+
+	^ TextRunPrimPool
+]
+
+{
+	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/25/2021 15:08'
 }
 PicTextRunPrim >> position [
@@ -224,15 +233,6 @@ PicTextRunPrim >> position [
 PicTextRunPrim >> position: anObject [
 
 	position := anObject.
-]
-
-{
-	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 5/16/2022 16:00'
-}
-PicTextRunPrim >> renderOn: aRenderer [
-
-	^ aRenderer renderTextRun: self
 ]
 
 {

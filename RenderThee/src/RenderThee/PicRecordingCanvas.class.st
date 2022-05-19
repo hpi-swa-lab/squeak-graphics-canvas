@@ -7,6 +7,7 @@ Class {
 	#name : #PicRecordingCanvas,
 	#superclass : #Canvas,
 	#instVars : [
+		'rect',
 		'origin',
 		'clipRect',
 		'node',
@@ -51,22 +52,23 @@ PicRecordingCanvas >> asBalloonCanvas [
 
 {
 	#category : #'drawing-support',
-	#'squeak_changestamp' : 'stlu 5/13/2022 23:38'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:16'
 }
 PicRecordingCanvas >> clipBy: aRectangle during: aBlock [
 
 	| previousClip beginNode |
 	aRectangle hasPositiveExtent ifFalse: [^ self].
 	(aRectangle containsRect: clipRect) ifTrue: [^ aBlock value: self].
+	(aRectangle intersects: clipRect) ifFalse: [^ self].
 	
-	self addNode: (beginNode := PicClipBegin clipRect: aRectangle).
+	self addNode: (beginNode := ClipBeginPool borrow clipRect: aRectangle).
 	previousClip := clipRect.
 	clipRect := aRectangle intersect: clipRect.
 	[^ aBlock value: self] ensure: [
 		clipRect := previousClip.
 		node == beginNode
 			ifTrue: [self removeLastNode]
-			ifFalse: [self addNode: PicClipEnd new]].
+			ifFalse: [self addNode: beginNode end]].
 ]
 
 {
@@ -91,7 +93,7 @@ PicRecordingCanvas >> clipRect: anObject [
 
 {
 	#category : #'drawing-polygons',
-	#'squeak_changestamp' : 'stlu 5/16/2022 17:35'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:18'
 }
 PicRecordingCanvas >> drawPolygon: vertices color: fillColor borderWidth: borderWidth borderColor: borderColor [
 
@@ -110,7 +112,7 @@ PicRecordingCanvas >> drawPolygon: vertices color: fillColor borderWidth: border
 	bounds hasPositiveExtent ifFalse: [^ self].
 	(bounds intersects: clipRect) ifFalse: [^ self].
 	
-	prim := PicPolygonPrim new.
+	prim := PolygonPrimPool borrow.
 	prim vertices: vertices.
 	prim bounds: bounds.
 	prim fillStyle: fillStyle.
@@ -120,7 +122,7 @@ PicRecordingCanvas >> drawPolygon: vertices color: fillColor borderWidth: border
 
 {
 	#category : #'drawing-polygons',
-	#'squeak_changestamp' : 'stlu 5/16/2022 17:44'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:18'
 }
 PicRecordingCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -140,7 +142,7 @@ PicRecordingCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: a
 	bounds hasPositiveExtent ifFalse: [^ self].
 	(bounds intersects: clipRect) ifFalse: [^ self].
 	
-	prim := PicPolygonPrim new.
+	prim := PolygonPrimPool borrow.
 	prim vertices: vertices.
 	prim bounds: bounds.
 	prim fillStyle: fillStyle.
@@ -150,7 +152,7 @@ PicRecordingCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderStyle: a
 
 {
 	#category : #'drawing-polygons',
-	#'squeak_changestamp' : 'stlu 5/16/2022 17:38'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:19'
 }
 PicRecordingCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor [
 
@@ -170,7 +172,7 @@ PicRecordingCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: b
 	bounds hasPositiveExtent ifFalse: [^ self].
 	(bounds intersects: clipRect) ifFalse: [^ self].
 	
-	prim := PicPolygonPrim new.
+	prim := PolygonPrimPool borrow.
 	prim vertices: vertices.
 	prim bounds: bounds.
 	prim fillStyle: fillStyle.
@@ -180,7 +182,7 @@ PicRecordingCanvas >> drawPolygon: vertices fillStyle: aFillStyle borderWidth: b
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 5/13/2022 23:09'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:20'
 }
 PicRecordingCanvas >> drawString: aString from: startIndex to: stopIndex at: position font: fontOrNil color: textColor [
 
@@ -194,7 +196,7 @@ PicRecordingCanvas >> drawString: aString from: startIndex to: stopIndex at: pos
 	position y < clipRect bottom ifFalse: [^ self].
 	position y + font height > clipRect top ifFalse: [^ self].
 
-	prim := PicTextRunPrim new.
+	prim := TextRunPrimPool borrow.
 	prim contents: aString.
 	prim startIndex: startIndex.
 	prim stopIndex: stopIndex.
@@ -206,7 +208,7 @@ PicRecordingCanvas >> drawString: aString from: startIndex to: stopIndex at: pos
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 5/13/2022 23:19'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:20'
 }
 PicRecordingCanvas >> drawString: aString from: startIndex to: stopIndex in: boundsRect font: fontOrNil color: textColor [
 
@@ -224,7 +226,7 @@ PicRecordingCanvas >> drawString: aString from: startIndex to: stopIndex in: bou
 	boundsRect right > clipRect left ifFalse: [^ self].
 	boundsRect bottom > clipRect top ifFalse: [^ self].
 
-	prim := PicTextRunPrim new.
+	prim := TextRunPrimPool borrow.
 	prim contents: aString.
 	prim startIndex: startIndex.
 	prim stopIndex: stopIndex.
@@ -237,7 +239,7 @@ PicRecordingCanvas >> drawString: aString from: startIndex to: stopIndex in: bou
 
 {
 	#category : #'drawing-ovals',
-	#'squeak_changestamp' : 'stlu 5/16/2022 17:34'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:18'
 }
 PicRecordingCanvas >> fillOval: bounds color: fillColor borderWidth: borderWidth borderColor: borderColor [
 
@@ -253,7 +255,7 @@ PicRecordingCanvas >> fillOval: bounds color: fillColor borderWidth: borderWidth
 		ifFalse: [SimpleBorder width: borderWidth color: borderColor].
 	(fillStyle == TransparentFillStyle and: [borderStyle == TransparentBorderStyle]) ifTrue: [^ self].
 	
-	prim := PicOvalPrim new.
+	prim := OvalPrimPool borrow.
 	prim bounds: bounds.
 	prim fillStyle: fillStyle.
 	prim borderStyle: borderStyle.
@@ -262,7 +264,7 @@ PicRecordingCanvas >> fillOval: bounds color: fillColor borderWidth: borderWidth
 
 {
 	#category : #'drawing-ovals',
-	#'squeak_changestamp' : 'stlu 5/16/2022 17:45'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:18'
 }
 PicRecordingCanvas >> fillOval: bounds fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -278,7 +280,7 @@ PicRecordingCanvas >> fillOval: bounds fillStyle: aFillStyle borderStyle: aBorde
 		ifFalse: [aBorderStyle].
 	(fillStyle == TransparentFillStyle and: [borderStyle == TransparentBorderStyle]) ifTrue: [^ self].
 	
-	prim := PicOvalPrim new.
+	prim := OvalPrimPool borrow.
 	prim bounds: bounds.
 	prim fillStyle: fillStyle.
 	prim borderStyle: borderStyle.
@@ -287,7 +289,7 @@ PicRecordingCanvas >> fillOval: bounds fillStyle: aFillStyle borderStyle: aBorde
 
 {
 	#category : #'drawing-ovals',
-	#'squeak_changestamp' : 'stlu 5/16/2022 17:40'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:18'
 }
 PicRecordingCanvas >> fillOval: bounds fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor [
 
@@ -303,7 +305,7 @@ PicRecordingCanvas >> fillOval: bounds fillStyle: aFillStyle borderWidth: border
 		ifFalse: [SimpleBorder width: borderWidth color: borderColor].
 	(fillStyle == TransparentFillStyle and: [borderStyle == TransparentBorderStyle]) ifTrue: [^ self].
 	
-	prim := PicOvalPrim new.
+	prim := OvalPrimPool borrow.
 	prim bounds: bounds.
 	prim fillStyle: fillStyle.
 	prim borderStyle: borderStyle.
@@ -312,7 +314,7 @@ PicRecordingCanvas >> fillOval: bounds fillStyle: aFillStyle borderWidth: border
 
 {
 	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : 'stlu 5/16/2022 17:47'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:19'
 }
 PicRecordingCanvas >> fillRectangle: bounds color: fillColor [
 
@@ -322,7 +324,7 @@ PicRecordingCanvas >> fillRectangle: bounds color: fillColor [
 	bounds hasPositiveExtent ifFalse: [^ self].
 	(bounds intersects: clipRect) ifFalse: [^ self].
 	
-	prim := PicRectanglePrim new.
+	prim := RectanglePrimPool borrow.
 	prim bounds: bounds.
 	prim fillStyle: (SolidFillStyle color: fillColor).
 	prim borderStyle: TransparentBorderStyle.
@@ -331,7 +333,7 @@ PicRecordingCanvas >> fillRectangle: bounds color: fillColor [
 
 {
 	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : 'stlu 5/16/2022 17:47'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:19'
 }
 PicRecordingCanvas >> fillRectangle: bounds fillStyle: aFillStyle [
 
@@ -341,7 +343,7 @@ PicRecordingCanvas >> fillRectangle: bounds fillStyle: aFillStyle [
 	bounds hasPositiveExtent ifFalse: [^ self].
 	(bounds intersects: clipRect) ifFalse: [^ self].
 	
-	prim := PicRectanglePrim new.
+	prim := RectanglePrimPool borrow.
 	prim bounds: bounds.
 	prim fillStyle: aFillStyle.
 	prim borderStyle: TransparentBorderStyle.
@@ -350,7 +352,7 @@ PicRecordingCanvas >> fillRectangle: bounds fillStyle: aFillStyle [
 
 {
 	#category : #'drawing-rounded rectangles',
-	#'squeak_changestamp' : 'stlu 5/16/2022 17:48'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:19'
 }
 PicRecordingCanvas >> fillRoundRect: bounds radius: cornerRadius fillStyle: aFillStyle [
 
@@ -363,7 +365,7 @@ PicRecordingCanvas >> fillRoundRect: bounds radius: cornerRadius fillStyle: aFil
 	bounds hasPositiveExtent ifFalse: [^ self].
 	(bounds intersects: clipRect) ifFalse: [^ self].
 	
-	prim := PicRoundedRectanglePrim new.
+	prim := RoundedRectanglePrimPool borrow.
 	prim bounds: bounds.
 	prim fillStyle: aFillStyle.
 	prim borderStyle: TransparentBorderStyle.
@@ -391,7 +393,7 @@ PicRecordingCanvas >> frame: anObject [
 
 {
 	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : 'stlu 5/16/2022 17:35'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:19'
 }
 PicRecordingCanvas >> frameAndFillRectangle: bounds fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
 
@@ -407,7 +409,7 @@ PicRecordingCanvas >> frameAndFillRectangle: bounds fillColor: fillColor borderW
 		ifFalse: [SimpleBorder width: borderWidth color: borderColor].
 	(fillStyle == TransparentFillStyle and: [borderStyle == TransparentBorderStyle]) ifTrue: [^ self].
 	
-	prim := PicRectanglePrim new.
+	prim := RectanglePrimPool borrow.
 	prim bounds: bounds.
 	prim fillStyle: fillStyle.
 	prim borderStyle: borderStyle.
@@ -416,7 +418,7 @@ PicRecordingCanvas >> frameAndFillRectangle: bounds fillColor: fillColor borderW
 
 {
 	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : 'stlu 5/16/2022 17:45'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:19'
 }
 PicRecordingCanvas >> frameAndFillRectangle: bounds fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -432,7 +434,7 @@ PicRecordingCanvas >> frameAndFillRectangle: bounds fillStyle: aFillStyle border
 		ifFalse: [aBorderStyle].
 	(fillStyle == TransparentFillStyle and: [borderStyle == TransparentBorderStyle]) ifTrue: [^ self].
 	
-	prim := PicRectanglePrim new.
+	prim := RectanglePrimPool borrow.
 	prim bounds: bounds.
 	prim fillStyle: fillStyle.
 	prim borderStyle: borderStyle.
@@ -441,7 +443,7 @@ PicRecordingCanvas >> frameAndFillRectangle: bounds fillStyle: aFillStyle border
 
 {
 	#category : #'drawing-rounded rectangles',
-	#'squeak_changestamp' : 'stlu 5/16/2022 17:46'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:19'
 }
 PicRecordingCanvas >> frameAndFillRoundRect: bounds radius: cornerRadius fillStyle: aFillStyle borderStyle: aBorderStyle [
 
@@ -460,7 +462,7 @@ PicRecordingCanvas >> frameAndFillRoundRect: bounds radius: cornerRadius fillSty
 		ifFalse: [aBorderStyle].
 	(fillStyle == TransparentFillStyle and: [borderStyle == TransparentBorderStyle]) ifTrue: [^ self].
 	
-	prim := PicRoundedRectanglePrim new.
+	prim := RoundedRectanglePrimPool borrow.
 	prim bounds: bounds.
 	prim fillStyle: fillStyle.
 	prim borderStyle: borderStyle.
@@ -470,7 +472,7 @@ PicRecordingCanvas >> frameAndFillRoundRect: bounds radius: cornerRadius fillSty
 
 {
 	#category : #'drawing-rounded rectangles',
-	#'squeak_changestamp' : 'stlu 5/16/2022 17:40'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:20'
 }
 PicRecordingCanvas >> frameAndFillRoundRect: bounds radius: cornerRadius fillStyle: aFillStyle borderWidth: borderWidth borderColor: borderColor [
 
@@ -487,8 +489,8 @@ PicRecordingCanvas >> frameAndFillRoundRect: bounds radius: cornerRadius fillSty
 	(fillStyle == TransparentFillStyle and: [borderStyle == TransparentBorderStyle]) ifTrue: [^ self].
 	
 	prim := cornerRadius > 0
-		ifTrue: [PicRoundedRectanglePrim new radius: cornerRadius]
-		ifFalse: [PicRectanglePrim new].
+		ifTrue: [RoundedRectanglePrimPool borrow radius: cornerRadius]
+		ifFalse: [RectanglePrimPool borrow].
 	prim bounds: bounds.
 	prim fillStyle: fillStyle.
 	prim borderStyle: borderStyle.
@@ -497,7 +499,7 @@ PicRecordingCanvas >> frameAndFillRoundRect: bounds radius: cornerRadius fillSty
 
 {
 	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : 'stlu 5/16/2022 17:47'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:19'
 }
 PicRecordingCanvas >> frameRectangle: bounds borderStyle: borderStyle [
 
@@ -507,7 +509,7 @@ PicRecordingCanvas >> frameRectangle: bounds borderStyle: borderStyle [
 	bounds hasPositiveExtent ifFalse: [^ self].
 	(bounds intersects: clipRect) ifFalse: [^ self].
 	
-	prim := PicRectanglePrim new.
+	prim := RectanglePrimPool borrow.
 	prim bounds: bounds.
 	prim fillStyle: TransparentFillStyle.
 	prim borderStyle: borderStyle.
@@ -516,7 +518,7 @@ PicRecordingCanvas >> frameRectangle: bounds borderStyle: borderStyle [
 
 {
 	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : 'stlu 5/16/2022 17:47'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:19'
 }
 PicRecordingCanvas >> frameRectangle: bounds width: borderWidth color: borderColor [
 
@@ -527,7 +529,7 @@ PicRecordingCanvas >> frameRectangle: bounds width: borderWidth color: borderCol
 	bounds hasPositiveExtent ifFalse: [^ self].
 	(bounds intersects: clipRect) ifFalse: [^ self].
 	
-	prim := PicRectanglePrim new.
+	prim := RectanglePrimPool borrow.
 	prim bounds: bounds.
 	prim fillStyle: TransparentFillStyle.
 	prim borderStyle: (SimpleBorder width: borderWidth color: borderColor).
@@ -536,7 +538,7 @@ PicRecordingCanvas >> frameRectangle: bounds width: borderWidth color: borderCol
 
 {
 	#category : #'drawing-rounded rectangles',
-	#'squeak_changestamp' : 'stlu 5/16/2022 17:48'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:20'
 }
 PicRecordingCanvas >> frameRoundRect: bounds radius: cornerRadius borderStyle: aBorderStyle [
 
@@ -548,7 +550,7 @@ PicRecordingCanvas >> frameRoundRect: bounds radius: cornerRadius borderStyle: a
 	bounds hasPositiveExtent ifFalse: [^ self].
 	(bounds intersects: clipRect) ifFalse: [^ self].
 	
-	prim := PicRoundedRectanglePrim new.
+	prim := RoundedRectanglePrimPool borrow.
 	prim bounds: bounds.
 	prim fillStyle: TransparentFillStyle.
 	prim borderStyle: aBorderStyle.
@@ -558,27 +560,27 @@ PicRecordingCanvas >> frameRoundRect: bounds radius: cornerRadius borderStyle: a
 
 {
 	#category : #'drawing-morphs',
-	#'squeak_changestamp' : 'stlu 5/17/2022 14:08'
+	#'squeak_changestamp' : 'stlu 5/19/2022 14:08'
 }
 PicRecordingCanvas >> fullDrawMorph: aMorph [
 
 	| picture |
-	(picture := aMorph picture) ifNil: [
-		aMorph picture: (picture := PicPicture new)].
-	self addNode: picture beginNode.
+	picture := aMorph picture.
 	
-	picture needsUpdating ifFalse: [| offset |
+	(picture isNil or: [picture needsUpdating]) ifFalse: [| offset |
 		offset := aMorph position - picture captureBounds topLeft.
 		((clipRect translateBy: offset) containsRect: picture captureClipRect) ifTrue: [
-			picture isEmpty ifTrue: [
-				self removeLastNode.
-				^ self].
+			picture isEmpty ifTrue: [^ self].
+			self addNode: picture beginNode.
 			node offset: offset.
 			node := picture endNode.
 			node next: nil.
 			^ self]].
 	
-	"todo: reclaim picture nodes into object pools"
+	picture
+		ifNil: [aMorph picture: (picture := PicPicture new)]
+		ifNotNil: [self reclaimPicture: picture].
+	self addNode: picture beginNode.
 	
 	node offset: ZeroPointInt.
 	picture captureBounds: aMorph bounds.
@@ -590,7 +592,7 @@ PicRecordingCanvas >> fullDrawMorph: aMorph [
 	aMorph fullDrawOn: self.
 	
 	node == picture beginNode
-		ifTrue: [
+		ifTrue: ["picture is empty"
 			picture beginNode next: picture endNode.
 			picture endNode previous: picture beginNode.
 			self removeLastNode]
@@ -601,7 +603,7 @@ PicRecordingCanvas >> fullDrawMorph: aMorph [
 
 {
 	#category : #'drawing-images',
-	#'squeak_changestamp' : 'stlu 5/16/2022 13:31'
+	#'squeak_changestamp' : 'stlu 5/19/2022 14:56'
 }
 PicRecordingCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: blendRule [
 
@@ -612,7 +614,7 @@ PicRecordingCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: blend
 	bounds := aPoint extent: sourceRect extent.
 	(bounds intersects: clipRect) ifFalse: [^ self].
 
-	prim := PicImagePrim new.
+	prim := ImagePrimPool borrow.
 	prim bounds: bounds.
 	prim form: aForm.
 	prim origin: aPoint.
@@ -632,7 +634,7 @@ PicRecordingCanvas >> initialize [
 
 {
 	#category : #'drawing-lines',
-	#'squeak_changestamp' : 'stlu 5/16/2022 12:24'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:18'
 }
 PicRecordingCanvas >> line: from to: to width: strokeWidth color: strokeColor [
 
@@ -642,7 +644,7 @@ PicRecordingCanvas >> line: from to: to width: strokeWidth color: strokeColor [
 	strokeColor isTransparent ifTrue: [^ self].
 	"(((from rect: to) outsetBy: strokeWidth asFloat / 2) intersects: clipRect) ifFalse: [^ self]."
 	
-	prim := PicLinePrim new.
+	prim := LinePrimPool borrow.
 	prim from: from.
 	prim to: to.
 	prim width: strokeWidth.
@@ -670,7 +672,7 @@ PicRecordingCanvas >> origin [
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 5/13/2022 23:36'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:20'
 }
 PicRecordingCanvas >> paragraph: aParagraph bounds: bounds color: aColor [
 
@@ -678,7 +680,7 @@ PicRecordingCanvas >> paragraph: aParagraph bounds: bounds color: aColor [
 	bounds hasPositiveExtent ifFalse: [^ self].
 	(bounds intersects: clipRect) ifFalse: [^ self].
 	
-	prim := PicParagraphPrim new.
+	prim := ParagraphPrimPool borrow.
 	prim paragraph: aParagraph.
 	prim bounds: bounds.
 	prim color: aColor.
@@ -696,6 +698,25 @@ PicRecordingCanvas >> preserveStateDuring: aBlock [
 ]
 
 {
+	#category : #'drawing-morphs',
+	#'squeak_changestamp' : 'stlu 5/19/2022 14:26'
+}
+PicRecordingCanvas >> reclaimPicture: aPicture [
+
+	
+	| end node |
+	end := aPicture endNode.
+	node := aPicture beginNode next.
+	[node ~~ end] whileTrue: [
+		node isPictureBegin
+			ifTrue: [node := node end next]
+			ifFalse: [| next |
+				next := node next.
+				node reclaim.
+				node := next]].
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/13/2022 15:57'
 }
@@ -707,7 +728,7 @@ PicRecordingCanvas >> removeLastNode [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/17/2022 11:24'
+	#'squeak_changestamp' : 'stlu 5/18/2022 17:42'
 }
 PicRecordingCanvas >> reset [
 
@@ -715,6 +736,7 @@ PicRecordingCanvas >> reset [
 	clipRect := InfiniteRectangle.
 	frame := 0.
 	node := nil.
+	rect := RectanglePool borrow.
 ]
 
 {
@@ -729,7 +751,7 @@ PicRecordingCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect col
 
 {
 	#category : #'drawing-support',
-	#'squeak_changestamp' : 'stlu 5/13/2022 15:59'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:15'
 }
 PicRecordingCanvas >> transformBy: aTransform during: aBlock [
 
@@ -739,7 +761,7 @@ PicRecordingCanvas >> transformBy: aTransform during: aBlock [
 		^ self translateBy: (aTransform localPointToGlobal: ZeroPointInt) during: aBlock].
 	
 	matrix2x3 := aTransform asMatrix2x3.
-	self addNode: (beginNode := PicTransformBegin transform: matrix2x3).
+	self addNode: (beginNode := TransformBeginPool borrow transform: matrix2x3).
 	previousClip := clipRect.
 	previousOrigin := origin.
 	clipRect := matrix2x3 globalBoundsToLocal: clipRect.
@@ -749,19 +771,19 @@ PicRecordingCanvas >> transformBy: aTransform during: aBlock [
 		origin := previousOrigin.
 		node == beginNode
 			ifTrue: [self removeLastNode]
-			ifFalse: [self addNode: PicTransformEnd new]].
+			ifFalse: [self addNode: beginNode end]].
 ]
 
 {
 	#category : #'drawing-support',
-	#'squeak_changestamp' : 'stlu 5/16/2022 16:49'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:03'
 }
 PicRecordingCanvas >> translateBy: aPoint during: aBlock [
 
 	| previousClip previousOrigin beginNode |
 	aPoint isZero ifTrue: [^ aBlock value: self].
 	
-	self addNode: (beginNode := PicTranslationBegin translation: aPoint).
+	self addNode: (beginNode := TranslationBeginPool borrow translation: aPoint).
 	previousOrigin := origin.
 	previousClip := clipRect.
 	clipRect := clipRect translateBy: aPoint negated.
@@ -771,7 +793,7 @@ PicRecordingCanvas >> translateBy: aPoint during: aBlock [
 		origin := previousOrigin.
 		node == beginNode
 			ifTrue: [self removeLastNode]
-			ifFalse: [self addNode: PicTranslationEnd new]].
+			ifFalse: [self addNode: beginNode end]].
 ]
 
 {

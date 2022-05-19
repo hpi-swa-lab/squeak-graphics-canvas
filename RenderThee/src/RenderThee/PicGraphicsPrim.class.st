@@ -27,3 +27,13 @@ PicGraphicsPrim >> bounds: aRectangle [
 
 	bounds := aRectangle.
 ]
+
+{
+	#category : #reclaiming,
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:13'
+}
+PicGraphicsPrim >> reclaim [
+
+	self unlink.
+	self pool return: self.
+]

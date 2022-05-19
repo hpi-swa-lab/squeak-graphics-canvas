@@ -27,6 +27,24 @@ PicTranslationBegin >> acceptVisitor: aVisitor [
 
 {
 	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/19/2022 14:41'
+}
+PicTranslationBegin >> endClass [
+
+	^ PicTranslationEnd
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/19/2022 14:52'
+}
+PicTranslationBegin >> pool [
+
+	^ TranslationBeginPool
+]
+
+{
+	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/16/2022 16:48'
 }
 PicTranslationBegin >> translation [

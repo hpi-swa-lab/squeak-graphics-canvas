@@ -103,13 +103,15 @@ PicPicture >> endNode: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/16/2022 14:49'
+	#'squeak_changestamp' : 'stlu 5/19/2022 13:49'
 }
 PicPicture >> initialize [
 
 	super initialize.
 	beginNode := PicPictureBegin new.
 	endNode := PicPictureEnd new.
+	beginNode end: endNode.
+	endNode begin: beginNode.
 	needsUpdating := true.
 	lastUpdateTime := 0.
 	lastUpdateFrame := 0.

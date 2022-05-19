@@ -93,10 +93,10 @@ PicParagraphPrim >> paragraph: anObject [
 ]
 
 {
-	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 5/16/2022 16:00'
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/19/2022 14:50'
 }
-PicParagraphPrim >> renderOn: aRenderer [
+PicParagraphPrim >> pool [
 
-	^ aRenderer renderParagraph: self
+	^ ParagraphPrimPool
 ]

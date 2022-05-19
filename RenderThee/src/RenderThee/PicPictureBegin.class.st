@@ -17,6 +17,15 @@ PicPictureBegin >> acceptVisitor: aVisitor [
 ]
 
 {
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/19/2022 14:41'
+}
+PicPictureBegin >> endClass [
+
+	^ PicPictureEnd
+]
+
+{
 	#category : #initialization,
 	#'squeak_changestamp' : 'stlu 5/16/2022 14:45'
 }
@@ -24,6 +33,15 @@ PicPictureBegin >> initialize [
 
 	super initialize.
 	offset := ZeroPointInt.
+]
+
+{
+	#category : #testing,
+	#'squeak_changestamp' : 'stlu 5/19/2022 13:41'
+}
+PicPictureBegin >> isPictureBegin [
+
+	^ true
 ]
 
 {
@@ -42,6 +60,15 @@ PicPictureBegin >> offset [
 PicPictureBegin >> offset: anObject [
 
 	offset := anObject.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:12'
+}
+PicPictureBegin >> pool [
+
+	^ PictureBeginPool
 ]
 
 {

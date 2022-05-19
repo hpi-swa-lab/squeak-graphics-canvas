@@ -2,10 +2,22 @@ Class {
 	#name : #PicConstants,
 	#superclass : #SharedPool,
 	#classVars : [
+		'ClipBeginPool',
+		'ImagePrimPool',
 		'InfiniteRectangle',
+		'LinePrimPool',
+		'OvalPrimPool',
+		'ParagraphPrimPool',
+		'PictureBeginPool',
 		'PointPool',
+		'PolygonPrimPool',
 		'RectanglePool',
+		'RectanglePrimPool',
+		'RoundedRectanglePrimPool',
+		'TextRunPrimPool',
+		'TransformBeginPool',
 		'TransformPool',
+		'TranslationBeginPool',
 		'TransparentBorderStyle',
 		'TransparentFillStyle',
 		'ZeroPointFloat',
@@ -50,15 +62,29 @@ self initializeConstants.
 
 {
 	#category : #'class initialization',
-	#'squeak_changestamp' : 'stlu 5/17/2022 10:23'
+	#'squeak_changestamp' : 'stlu 5/19/2022 15:12'
 }
 PicConstants class >> initializeObjectPools [
 "
 self initializeObjectPools.
 "
 	PointPool := PicObjectPool instantiation: [Point new].
-	RectanglePool := PicObjectPool instantiation: [Rectangle new].
+	RectanglePool := PicObjectPool instantiation: [PicRectangle basicNew].
 	TransformPool := PicObjectPool instantiation: [Matrix2x3 new].
+	
+	ImagePrimPool := PicObjectPool instantiation: [PicImagePrim new].
+	LinePrimPool := PicObjectPool instantiation: [PicLinePrim new].
+	ParagraphPrimPool := PicObjectPool instantiation: [PicParagraphPrim new].
+	OvalPrimPool := PicObjectPool instantiation: [PicOvalPrim new].
+	PolygonPrimPool := PicObjectPool instantiation: [PicPolygonPrim new].
+	RectanglePrimPool := PicObjectPool instantiation: [PicRectanglePrim new].
+	RoundedRectanglePrimPool := PicObjectPool instantiation: [PicRoundedRectanglePrim new].
+	TextRunPrimPool := PicObjectPool instantiation: [PicTextRunPrim new].
+	
+	ClipBeginPool := PicObjectPool instantiation: [PicClipBegin new].
+	PictureBeginPool := PicObjectPool instantiation: [PicPictureBegin new].
+	TransformBeginPool := PicObjectPool instantiation: [PicTransformBegin new].
+	TranslationBeginPool := PicObjectPool instantiation: [PicTranslationBegin new].
 ]
 
 {

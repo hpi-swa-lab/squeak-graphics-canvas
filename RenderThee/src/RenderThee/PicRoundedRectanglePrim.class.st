@@ -31,6 +31,15 @@ PicRoundedRectanglePrim >> drawOn: aCanvas [
 
 {
 	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/19/2022 14:51'
+}
+PicRoundedRectanglePrim >> pool [
+
+	^ RoundedRectanglePrimPool
+]
+
+{
+	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicRoundedRectanglePrim >> radius [
@@ -45,13 +54,4 @@ PicRoundedRectanglePrim >> radius [
 PicRoundedRectanglePrim >> radius: anObject [
 
 	radius := anObject.
-]
-
-{
-	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 5/16/2022 16:00'
-}
-PicRoundedRectanglePrim >> renderOn: aRenderer [
-
-	^ aRenderer renderRoundedRectangle: self
 ]

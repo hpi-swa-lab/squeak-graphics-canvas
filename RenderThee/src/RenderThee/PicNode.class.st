@@ -72,27 +72,9 @@ PicNode >> getFormCanvas [
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 9/27/2021 13:11'
+	#'squeak_changestamp' : 'stlu 5/19/2022 13:42'
 }
-PicNode >> hasPrimitiveNode [
-
-	^ false
-]
-
-{
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 9/27/2021 12:54'
-}
-PicNode >> isClipNode [
-
-	^ false
-]
-
-{
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 1/24/2022 16:37'
-}
-PicNode >> isMorphNode [
+PicNode >> isPictureBegin [
 
 	^ false
 ]
@@ -111,15 +93,6 @@ PicNode >> isRectangleNode [
 	#'squeak_changestamp' : 'stlu 9/27/2021 12:59'
 }
 PicNode >> isShapeNode [
-
-	^ false
-]
-
-{
-	#category : #testing,
-	#'squeak_changestamp' : 'stlu 9/27/2021 12:59'
-}
-PicNode >> isTransformNode [
 
 	^ false
 ]
@@ -201,12 +174,48 @@ PicNode >> previous: aNode [
 ]
 
 {
-	#category : #visiting,
-	#'squeak_changestamp' : 'stlu 5/16/2022 15:58'
+	#category : #reclaiming,
+	#'squeak_changestamp' : 'stlu 5/19/2022 14:54'
 }
-PicNode >> renderOn: aRenderer [
+PicNode >> reclaim [
 
-	self subclassResponsibility.
+	self unlink.
+]
+
+{
+	#category : #linking,
+	#'squeak_changestamp' : 'stlu 5/19/2022 13:39'
+}
+PicNode >> unlink [
+
+	next ifNotNil: [
+		next previous: nil.
+		next := nil].
+	previous ifNotNil: [
+		previous next: nil.
+		previous := nil].
+]
+
+{
+	#category : #linking,
+	#'squeak_changestamp' : 'stlu 5/19/2022 14:03'
+}
+PicNode >> unlinkNext [
+
+	next ifNotNil: [
+		next previous: nil.
+		next := nil].
+]
+
+{
+	#category : #linking,
+	#'squeak_changestamp' : 'stlu 5/19/2022 14:03'
+}
+PicNode >> unlinkPrevious [
+
+	previous ifNotNil: [
+		previous next: nil.
+		previous := nil].
 ]
 
 {
