@@ -21,7 +21,7 @@ RtBatchingExample >> initialize [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 5/17/2022 11:40'
+	#'squeak_changestamp' : 'stlu 5/20/2022 12:49'
 }
 RtBatchingExample >> render [
 
@@ -37,7 +37,7 @@ RtBatchingExample >> render [
 			(renderer renderBenched: picture) explore]"
 	
 	batchingStart := Time utcMicrosecondClock.
-	self drawPictureOn: renderer.
+	renderer visitAll: picture beginNode.
 	batchingTimes add: Time utcMicrosecondClock - batchingStart.
 	
 	renderer draw.

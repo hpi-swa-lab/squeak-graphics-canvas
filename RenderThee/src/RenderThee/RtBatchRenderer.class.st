@@ -36,7 +36,10 @@ Class {
 		'lastTranslucentType',
 		'closedTranslucentBatches',
 		'translucentBatchPool',
-		'displayScanner'
+		'displayScanner',
+		'clipStack',
+		'transformStack',
+		'currentNode'
 	],
 	#pools : [
 		'GLConstants'
@@ -345,9 +348,18 @@ RtBatchRenderer >> fillOval: aRectangle color: fillColor borderWidth: borderWidt
 
 {
 	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : 'stlu 4/21/2022 17:34'
+	#'squeak_changestamp' : 'stlu 5/20/2022 12:52'
 }
 RtBatchRenderer >> fillRectangle: aRectangle color: aColor [
+
+	self fillRectangle: aRectangle color: aColor radius: 0.0.
+]
+
+{
+	#category : #'drawing-rectangles',
+	#'squeak_changestamp' : 'stlu 5/20/2022 12:54'
+}
+RtBatchRenderer >> fillRectangle: aRectangle color: aColor radius: radius [
 
 	| type |
 	type := aColor isTranslucent
@@ -362,7 +374,7 @@ RtBatchRenderer >> fillRectangle: aRectangle color: aColor [
 		top: aRectangle top asFloat
 		right: aRectangle right asFloat
 		bottom: aRectangle bottom asFloat
-		radius: 0.0
+		radius: radius asFloat
 		color: (self indexForColor: aColor).
 	zIndex := zIndex + 1.
 ]
@@ -605,7 +617,7 @@ RtBatchRenderer >> initializeVAO [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/24/2022 16:04'
+	#'squeak_changestamp' : 'stlu 5/19/2022 17:49'
 }
 RtBatchRenderer >> initializeWithBounds: aRectangle [
 
@@ -623,6 +635,9 @@ RtBatchRenderer >> initializeWithBounds: aRectangle [
 	transformsPool := OrderedCollection new.
 	translucentBatchPool := OrderedCollection new.
 	displayScanner := RtDisplayScanner new canvas: self.
+	
+	clipStack := OrderedCollection new.
+	transformStack := OrderedCollection new.
 	
 	self reset.
 ]
@@ -763,14 +778,16 @@ RtBatchRenderer >> renderMorph: aMorph [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 4/21/2022 22:00'
+	#'squeak_changestamp' : 'stlu 5/20/2022 12:50'
 }
 RtBatchRenderer >> reset [
 
 	transientStoreF reset.
 	transientStoreI reset.
 	
+	clipStack reset.
 	clipRect := bounds.
+	transformStack reset.
 	transform := transformsPool isEmpty
 		ifTrue: [Matrix2x3 identity]
 		ifFalse: [transformsPool removeLast setIdentity].
@@ -933,6 +950,236 @@ RtBatchRenderer >> upcomingTranslucentType: aBatchType [
 RtBatchRenderer >> vao [
 
 	^ vao
+]
+
+{
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 5/20/2022 12:52'
+}
+RtBatchRenderer >> visitAll: beginNode [
+
+	self visitAll: beginNode until: nil.
+]
+
+{
+	#category : #visiting,
+	#'squeak_changestamp' : 'stlu 5/20/2022 12:52'
+}
+RtBatchRenderer >> visitAll: beginNode until: endNode [
+	"begin inclusive, end exclusive"
+	currentNode := beginNode.
+	currentNode acceptVisitor: self.
+	[endNode ~~ (currentNode := currentNode next)] whileTrue: [
+		currentNode acceptVisitor: self].
+]
+
+{
+	#category : #'visiting groups',
+	#'squeak_changestamp' : 'stlu 5/20/2022 12:47'
+}
+RtBatchRenderer >> visitClipBegin: aNode [
+
+	clipStack addLast: clipRect.
+	clipStack addLast: clipRectIndex.
+	
+	clipRect := clipRect intersect: aNode clipRect.
+	clipRectIndex := self allocateClipRect: clipRect.
+]
+
+{
+	#category : #'visiting groups',
+	#'squeak_changestamp' : 'stlu 5/20/2022 12:48'
+}
+RtBatchRenderer >> visitClipEnd: aNode [
+
+	clipRectIndex := clipStack removeLast.
+	clipRect := clipStack removeLast.
+]
+
+{
+	#category : #'visiting prims',
+	#'squeak_changestamp' : 'stlu 5/19/2022 17:33'
+}
+RtBatchRenderer >> visitImage: aNode [
+
+	self fillRectangle: aNode bounds color: Color red.
+]
+
+{
+	#category : #'visiting prims',
+	#'squeak_changestamp' : 'stlu 5/20/2022 12:55'
+}
+RtBatchRenderer >> visitLine: aNode [
+
+	self fillRectangle: aNode bounds color: aNode color.
+]
+
+{
+	#category : #'visiting prims',
+	#'squeak_changestamp' : 'stlu 5/19/2022 17:22'
+}
+RtBatchRenderer >> visitOval: aNode [
+
+	self visitRectangle: aNode.
+]
+
+{
+	#category : #'visiting prims',
+	#'squeak_changestamp' : 'stlu 5/19/2022 17:34'
+}
+RtBatchRenderer >> visitParagraph: aNode [
+
+	aNode drawOn: self.
+]
+
+{
+	#category : #'visiting groups',
+	#'squeak_changestamp' : 'stlu 5/19/2022 16:41'
+}
+RtBatchRenderer >> visitPictureBegin: aNode [
+
+	
+]
+
+{
+	#category : #'visiting groups',
+	#'squeak_changestamp' : 'stlu 5/19/2022 16:41'
+}
+RtBatchRenderer >> visitPictureEnd: aNode [
+
+	
+]
+
+{
+	#category : #'visiting prims',
+	#'squeak_changestamp' : 'stlu 5/19/2022 17:22'
+}
+RtBatchRenderer >> visitPolygon: aNode [
+
+	self visitRectangle: aNode.
+]
+
+{
+	#category : #'visiting prims',
+	#'squeak_changestamp' : 'stlu 5/19/2022 17:20'
+}
+RtBatchRenderer >> visitRectangle: aNode [
+
+	| fillStyle borderStyle |
+	fillStyle := aNode fillStyle.
+	borderStyle := aNode borderStyle.
+	
+	fillStyle ifNotNil: [| rect |
+		rect := aNode bounds.
+		borderStyle ifNotNil: [
+			rect := aNode bounds insetBy: borderStyle width].
+		self fillRectangle: rect color: fillStyle asColor].
+	
+	borderStyle ifNotNil: [
+		self frameRectangle: aNode bounds width: borderStyle width color: borderStyle color].
+]
+
+{
+	#category : #'visiting prims',
+	#'squeak_changestamp' : 'stlu 5/19/2022 17:46'
+}
+RtBatchRenderer >> visitRoundedRectangle: aNode [
+
+	| fillStyle borderStyle |
+	fillStyle := aNode fillStyle.
+	borderStyle := aNode borderStyle.
+	
+	fillStyle ifNotNil: [| rect |
+		rect := aNode bounds.
+		borderStyle ifNotNil: [
+			rect := aNode bounds insetBy: borderStyle width].
+		self fillRectangle: rect color: fillStyle asColor radius: aNode radius].
+	
+	borderStyle ifNotNil: [
+		self frameRectangle: aNode bounds width: borderStyle width color: borderStyle color].
+]
+
+{
+	#category : #'visiting prims',
+	#'squeak_changestamp' : 'stlu 5/19/2022 17:33'
+}
+RtBatchRenderer >> visitTextRun: aNode [
+
+	aNode drawOn: self.
+]
+
+{
+	#category : #'visiting groups',
+	#'squeak_changestamp' : 'stlu 5/20/2022 12:47'
+}
+RtBatchRenderer >> visitTransformBegin: aNode [
+
+	| matrix |
+	matrix := aNode transform.
+	clipStack addLast: clipRect.
+	clipStack addLast: clipRectIndex.
+	transformStack addLast: transform.
+	transformStack addLast: transformIndex.
+	
+	clipRect := matrix globalBoundsToLocal: clipRect.
+	clipRectIndex := self allocateClipRect: clipRect.
+	
+	transform := transformsPool isEmpty
+		ifTrue: [transform shallowCopy]
+		ifFalse: [transformsPool removeLast setTo: transform].
+	transform composeWithLocal: matrix.
+	transformIndex := self allocateTransform: transform.
+]
+
+{
+	#category : #'visiting groups',
+	#'squeak_changestamp' : 'stlu 5/20/2022 12:40'
+}
+RtBatchRenderer >> visitTransformEnd: aNode [
+
+	clipRectIndex := clipStack removeLast.
+	clipRect := clipStack removeLast.
+	
+	transformsPool addLast: transform.
+	transformIndex := transformStack removeLast.
+	transform := transformStack removeLast.
+]
+
+{
+	#category : #'visiting groups',
+	#'squeak_changestamp' : 'stlu 5/20/2022 12:47'
+}
+RtBatchRenderer >> visitTranslationBegin: aNode [
+
+	| translation |
+	translation := aNode translation.
+	clipStack addLast: clipRect.
+	clipStack addLast: clipRectIndex.
+	transformStack addLast: transform.
+	transformStack addLast: transformIndex.
+	
+	clipRect := clipRect translateBy: translation negated.
+	clipRectIndex := self allocateClipRect: clipRect.
+	
+	transform := transformsPool isEmpty
+		ifTrue: [transform shallowCopy]
+		ifFalse: [transformsPool removeLast setTo: transform].
+	transform translateBy: translation.
+	transformIndex := self allocateTransform: transform.
+]
+
+{
+	#category : #'visiting groups',
+	#'squeak_changestamp' : 'stlu 5/20/2022 12:45'
+}
+RtBatchRenderer >> visitTranslationEnd: aNode [
+
+	clipRectIndex := clipStack removeLast.
+	clipRect := clipStack removeLast.
+	
+	transformsPool addLast: transform.
+	transformIndex := transformStack removeLast.
+	transform := transformStack removeLast.
 ]
 
 {

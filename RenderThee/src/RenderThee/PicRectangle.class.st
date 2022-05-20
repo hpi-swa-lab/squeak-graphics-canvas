@@ -620,20 +620,11 @@ PicRectangle >> innerCorners [
 
 {
 	#category : #'rectangle functions',
-	#'squeak_changestamp' : 'stlu 5/18/2022 14:50'
+	#'squeak_changestamp' : 'stlu 5/19/2022 17:17'
 }
 PicRectangle >> insetBy: delta [ 
-	"Answer a Rectangle that is inset from the receiver by delta. delta is a 
-	Rectangle, Point, or scalar."
-
-	
-	(delta isRectangle)
-		ifTrue: [^Rectangle 
-					origin: origin + delta origin 
-					corner: corner - delta corner]
-		ifFalse: [^Rectangle 
-					origin: origin + delta 
-					corner: corner - delta]
+	"Answer a Rectangle that is inset from the receiver by delta. delta is a Rectangle, Point, or scalar."
+	^ self shallowCopy setInsetBy: delta
 ]
 
 {
@@ -863,19 +854,11 @@ PicRectangle >> origin [
 
 {
 	#category : #'rectangle functions',
-	#'squeak_changestamp' : 'stlu 5/18/2022 14:50'
+	#'squeak_changestamp' : 'stlu 5/19/2022 17:16'
 }
-PicRectangle >> outsetBy: delta [ 
-	"Answer a Rectangle that is outset from the receiver by delta. delta is a 
-	Rectangle, Point, or scalar."
-
-	(delta isRectangle)
-		ifTrue: [^Rectangle 
-					origin: origin - delta origin 
-					corner: corner + delta corner]
-		ifFalse: [^Rectangle 
-					origin: origin - delta 
-					corner: corner + delta]
+PicRectangle >> outsetBy: delta [
+	"Answer a Rectangle that is outset from the receiver by delta. delta is a Rectangle, Point, or scalar."
+	^ self shallowCopy setOutsetBy: delta
 ]
 
 {
@@ -1169,6 +1152,28 @@ PicRectangle >> setFloor [
 
 {
 	#category : #'rectangle functions',
+	#'squeak_changestamp' : 'stlu 5/19/2022 17:15'
+}
+PicRectangle >> setInsetBy: delta [
+
+	delta isRectangle
+		ifTrue: [
+			left := left + delta left.
+			top := top + delta top.
+			right := right - delta right.
+			bottom := bottom - delta bottom]
+		ifFalse: [| x y |
+			delta isPoint
+				ifTrue: [x := delta x. y := delta y]
+				ifFalse: [x := y := delta].
+			left := left + x.
+			top := top + y.
+			right := right - x.
+			bottom := bottom - y].
+]
+
+{
+	#category : #'rectangle functions',
 	#'squeak_changestamp' : 'stlu 5/19/2022 12:43'
 }
 PicRectangle >> setIntersect: aRectangle [ 
@@ -1189,6 +1194,28 @@ PicRectangle >> setOrigin: topLeft corner: bottomRight [
 	top := topLeft y.
 	right := bottomRight x.
 	bottom := bottomRight y.
+]
+
+{
+	#category : #'rectangle functions',
+	#'squeak_changestamp' : 'stlu 5/19/2022 17:16'
+}
+PicRectangle >> setOutsetBy: delta [
+
+	delta isRectangle
+		ifTrue: [
+			left := left - delta left.
+			top := top - delta top.
+			right := right + delta right.
+			bottom := bottom + delta bottom]
+		ifFalse: [| x y |
+			delta isPoint
+				ifTrue: [x := delta x. y := delta y]
+				ifFalse: [x := y := delta].
+			left := left - x.
+			top := top - y.
+			right := right + x.
+			bottom := bottom + y].
 ]
 
 {
