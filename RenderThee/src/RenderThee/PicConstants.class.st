@@ -62,7 +62,7 @@ self initializeConstants.
 
 {
 	#category : #'class initialization',
-	#'squeak_changestamp' : 'stlu 5/19/2022 15:12'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:41'
 }
 PicConstants class >> initializeObjectPools [
 "
@@ -70,7 +70,7 @@ self initializeObjectPools.
 "
 	PointPool := PicObjectPool instantiation: [Point new].
 	RectanglePool := PicObjectPool instantiation: [PicRectangle basicNew].
-	TransformPool := PicObjectPool instantiation: [Matrix2x3 new].
+	TransformPool := PicObjectPool instantiation: [Matrix2x3 identity].
 	
 	ImagePrimPool := PicObjectPool instantiation: [PicImagePrim new].
 	LinePrimPool := PicObjectPool instantiation: [PicLinePrim new].

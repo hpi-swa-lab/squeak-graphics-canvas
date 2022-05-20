@@ -6,7 +6,6 @@ Class {
 	#superclass : #Canvas,
 	#instVars : [
 		'transform',
-		'transformsPool',
 		'clipRect',
 		'bounds',
 		'transformIndex',
@@ -42,7 +41,8 @@ Class {
 		'currentNode'
 	],
 	#pools : [
-		'GLConstants'
+		'GLConstants',
+		'PicConstants'
 	],
 	#category : #'RenderThee-Batching',
 	#'squeak_changestamp' : 'stlu 4/17/2022 11:06'
@@ -617,7 +617,7 @@ RtBatchRenderer >> initializeVAO [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/19/2022 17:49'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:42'
 }
 RtBatchRenderer >> initializeWithBounds: aRectangle [
 
@@ -632,8 +632,8 @@ RtBatchRenderer >> initializeWithBounds: aRectangle [
 	instanceVBOManager := RtInstanceVBOManager new.
 	closedTranslucentBatches := OrderedCollection new.
 	fontCache := IdentityDictionary new.
-	transformsPool := OrderedCollection new.
-	translucentBatchPool := OrderedCollection new.
+	self flag: #todo. "extract PicObjectPool to shared dependency"
+	translucentBatchPool := PicObjectPool instantiation: [RtTranslucentBatch new].
 	displayScanner := RtDisplayScanner new canvas: self.
 	
 	clipStack := OrderedCollection new.
@@ -778,7 +778,7 @@ RtBatchRenderer >> renderMorph: aMorph [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/20/2022 12:50'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:43'
 }
 RtBatchRenderer >> reset [
 
@@ -788,9 +788,7 @@ RtBatchRenderer >> reset [
 	clipStack reset.
 	clipRect := bounds.
 	transformStack reset.
-	transform := transformsPool isEmpty
-		ifTrue: [Matrix2x3 identity]
-		ifFalse: [transformsPool removeLast setIdentity].
+	transform := TransformPool borrow setIdentity.
 	
 	transformIndex := self allocateTransform: transform.
 	clipRectIndex := self allocateClipRect: clipRect.
@@ -801,7 +799,7 @@ RtBatchRenderer >> reset [
 	lastTranslucentType := nil.
 	closedTranslucentBatches do: [:batch |
 		batch reset.
-		translucentBatchPool addLast: batch].
+		translucentBatchPool return: batch].
 	closedTranslucentBatches reset.
 	instanceVBOManager reset.
 ]
@@ -928,16 +926,14 @@ RtBatchRenderer >> translucentImage: aForm at: aPoint sourceRect: sourceRect [
 
 {
 	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : 'stlu 4/21/2022 22:04'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:27'
 }
 RtBatchRenderer >> upcomingTranslucentType: aBatchType [
 
 	lastTranslucentType ~~ aBatchType ifTrue: [
 		lastTranslucentType ifNotNil: [| newBatch |
 			closedTranslucentBatches addLast: lastTranslucentType currentBatch.
-			newBatch := translucentBatchPool isEmpty
-				ifTrue: [RtTranslucentBatch new]
-				ifFalse: [translucentBatchPool removeLast].
+			newBatch := translucentBatchPool borrow.
 			newBatch type: lastTranslucentType.
 			lastTranslucentType currentBatch: newBatch].
 		lastTranslucentType := aBatchType].
@@ -1110,7 +1106,7 @@ RtBatchRenderer >> visitTextRun: aNode [
 
 {
 	#category : #'visiting groups',
-	#'squeak_changestamp' : 'stlu 5/20/2022 12:47'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:42'
 }
 RtBatchRenderer >> visitTransformBegin: aNode [
 
@@ -1124,30 +1120,28 @@ RtBatchRenderer >> visitTransformBegin: aNode [
 	clipRect := matrix globalBoundsToLocal: clipRect.
 	clipRectIndex := self allocateClipRect: clipRect.
 	
-	transform := transformsPool isEmpty
-		ifTrue: [transform shallowCopy]
-		ifFalse: [transformsPool removeLast setTo: transform].
+	transform := TransformPool borrow setTo: transform.
 	transform composeWithLocal: matrix.
 	transformIndex := self allocateTransform: transform.
 ]
 
 {
 	#category : #'visiting groups',
-	#'squeak_changestamp' : 'stlu 5/20/2022 12:40'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:42'
 }
 RtBatchRenderer >> visitTransformEnd: aNode [
 
 	clipRectIndex := clipStack removeLast.
 	clipRect := clipStack removeLast.
 	
-	transformsPool addLast: transform.
+	TransformPool return: transform.
 	transformIndex := transformStack removeLast.
 	transform := transformStack removeLast.
 ]
 
 {
 	#category : #'visiting groups',
-	#'squeak_changestamp' : 'stlu 5/20/2022 12:47'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:42'
 }
 RtBatchRenderer >> visitTranslationBegin: aNode [
 
@@ -1161,23 +1155,21 @@ RtBatchRenderer >> visitTranslationBegin: aNode [
 	clipRect := clipRect translateBy: translation negated.
 	clipRectIndex := self allocateClipRect: clipRect.
 	
-	transform := transformsPool isEmpty
-		ifTrue: [transform shallowCopy]
-		ifFalse: [transformsPool removeLast setTo: transform].
+	transform := TransformPool borrow setTo: transform.
 	transform translateBy: translation.
 	transformIndex := self allocateTransform: transform.
 ]
 
 {
 	#category : #'visiting groups',
-	#'squeak_changestamp' : 'stlu 5/20/2022 12:45'
+	#'squeak_changestamp' : 'stlu 5/20/2022 13:42'
 }
 RtBatchRenderer >> visitTranslationEnd: aNode [
 
 	clipRectIndex := clipStack removeLast.
 	clipRect := clipStack removeLast.
 	
-	transformsPool addLast: transform.
+	TransformPool return: transform.
 	transformIndex := transformStack removeLast.
 	transform := transformStack removeLast.
 ]
