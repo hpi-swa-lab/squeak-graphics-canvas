@@ -18,15 +18,17 @@ PicPolygonPrim >> acceptVisitor: aVisitor [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 5/16/2022 17:49'
+	#'squeak_changestamp' : 'stlu 5/19/2022 17:05'
 }
 PicPolygonPrim >> drawOn: aCanvas [
 
+	| theBorderStyle |
+	theBorderStyle := borderStyle ifNil: [TransparentBorderStyle].
 	aCanvas
 		drawPolygon: vertices
-		fillStyle: fillStyle
-		borderWidth: borderStyle width
-		borderColor: borderStyle color.
+		fillStyle: (fillStyle ifNil: [TransparentFillStyle])
+		borderWidth: theBorderStyle width
+		borderColor: theBorderStyle color.
 ]
 
 {

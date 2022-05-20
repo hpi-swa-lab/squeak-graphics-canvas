@@ -15,14 +15,14 @@ PicRectanglePrim >> acceptVisitor: aVisitor [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 5/13/2022 16:57'
+	#'squeak_changestamp' : 'stlu 5/19/2022 17:03'
 }
 PicRectanglePrim >> drawOn: aCanvas [
 
 	aCanvas
 		frameAndFillRectangle: bounds
-		fillStyle: fillStyle
-		borderStyle: borderStyle
+		fillStyle: (fillStyle ifNil: [TransparentFillStyle])
+		borderStyle: (borderStyle ifNil: [TransparentBorderStyle])
 ]
 
 {

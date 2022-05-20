@@ -18,15 +18,15 @@ PicRoundedRectanglePrim >> acceptVisitor: aVisitor [
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 5/16/2022 17:49'
+	#'squeak_changestamp' : 'stlu 5/19/2022 17:03'
 }
 PicRoundedRectanglePrim >> drawOn: aCanvas [
 
 	aCanvas
 		frameAndFillRoundRect: bounds
 		radius: radius
-		fillStyle: fillStyle
-		borderStyle: borderStyle.
+		fillStyle: (fillStyle ifNil: [TransparentFillStyle])
+		borderStyle: (borderStyle ifNil: [TransparentBorderStyle]).
 ]
 
 {
