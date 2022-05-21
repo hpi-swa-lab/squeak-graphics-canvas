@@ -21,30 +21,30 @@ PicRectangle class >> encompassing: listOfPoints [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 5/18/2022 15:46'
+	#'squeak_changestamp' : 'stlu 5/20/2022 14:38'
 }
 PicRectangle class >> left: leftNum right: rightNum top: topNum bottom: botNum [
 
-	^ self basicNew left: leftNum top: topNum right: rightNum bottom: botNum
+	^ self basicNew setLeft: leftNum top: topNum right: rightNum bottom: botNum
 ]
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 5/18/2022 15:46'
+	#'squeak_changestamp' : 'stlu 5/20/2022 14:38'
 }
 PicRectangle class >> left: leftNum top: topNum right: rightNum bottom: botNum [
 
-	^ self basicNew left: leftNum top: topNum right: rightNum bottom: botNum
+	^ self basicNew setLeft: leftNum top: topNum right: rightNum bottom: botNum
 ]
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 5/18/2022 15:43'
+	#'squeak_changestamp' : 'stlu 5/20/2022 14:38'
 }
 PicRectangle class >> origin: originPoint corner: cornerPoint [ 
 
 	^ self basicNew
-		left: originPoint x
+		setLeft: originPoint x
 		top: originPoint y
 		right: cornerPoint x
 		bottom: cornerPoint y
@@ -52,12 +52,12 @@ PicRectangle class >> origin: originPoint corner: cornerPoint [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 5/18/2022 15:43'
+	#'squeak_changestamp' : 'stlu 5/20/2022 14:38'
 }
 PicRectangle class >> origin: originPoint extent: extentPoint [ 
 
 	^ self basicNew
-		left: originPoint x
+		setLeft: originPoint x
 		top: originPoint y
 		right: originPoint x + extentPoint x
 		bottom: originPoint y + extentPoint y
@@ -1182,6 +1182,18 @@ PicRectangle >> setIntersect: aRectangle [
 	top < aRectangle top ifTrue: [top := aRectangle top].
 	right > aRectangle right ifTrue: [right := aRectangle right].
 	bottom > aRectangle bottom ifTrue: [bottom := aRectangle bottom].
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 5/20/2022 14:37'
+}
+PicRectangle >> setLeft: leftNum top: topNum right: rightNum bottom: botNum [
+
+	left := leftNum.
+	top := topNum.
+	right := rightNum.
+	bottom := botNum.
 ]
 
 {
