@@ -733,20 +733,21 @@ PicRecordingCanvas >> stencil: stencilForm at: aPoint sourceRect: sourceRect col
 
 {
 	#category : #'drawing-support',
-	#'squeak_changestamp' : 'stlu 5/19/2022 15:15'
+	#'squeak_changestamp' : 'stlu 5/20/2022 15:30'
 }
 PicRecordingCanvas >> transformBy: aTransform during: aBlock [
 
-	| previousClip previousOrigin matrix2x3 beginNode |
+	| previousClip previousOrigin beginNode |
 	aTransform isIdentity ifTrue: [^ aBlock value: self].
 	aTransform isPureTranslation ifTrue: [
 		^ self translateBy: (aTransform localPointToGlobal: ZeroPointInt) during: aBlock].
 	
-	matrix2x3 := aTransform asMatrix2x3.
-	self addNode: (beginNode := TransformBeginPool borrow transform: matrix2x3).
+	self addNode: (beginNode := TransformBeginPool borrow).
+	beginNode matrix setToTransform: aTransform.
+	
 	previousClip := clipRect.
 	previousOrigin := origin.
-	clipRect := matrix2x3 globalBoundsToLocal: clipRect.
+	clipRect := beginNode matrix globalBoundsToLocal: clipRect.
 	origin := clipRect topLeft negated.
 	[^ aBlock value: self] ensure: [
 		clipRect := previousClip.
