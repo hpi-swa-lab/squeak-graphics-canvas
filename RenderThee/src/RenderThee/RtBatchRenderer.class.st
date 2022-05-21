@@ -3,7 +3,7 @@ Not happy with name. Builds more than a batch. More like a frame or scene or wha
 "
 Class {
 	#name : #RtBatchRenderer,
-	#superclass : #Canvas,
+	#superclass : #Object,
 	#instVars : [
 		'transform',
 		'clipRect',
@@ -99,7 +99,7 @@ RtBatchRenderer >> allocationForForm: aForm [
 ]
 
 {
-	#category : #drawing,
+	#category : #batching,
 	#'squeak_changestamp' : 'stlu 4/21/2022 17:51'
 }
 RtBatchRenderer >> batchesDo: aBlock [
@@ -129,7 +129,7 @@ RtBatchRenderer >> bounds: aRectangle [
 ]
 
 {
-	#category : #drawing,
+	#category : #rendering,
 	#'squeak_changestamp' : 'stlu 4/17/2022 15:15'
 }
 RtBatchRenderer >> clear [
@@ -152,26 +152,6 @@ RtBatchRenderer >> clearColor [
 ]
 
 {
-	#category : #'drawing-support',
-	#'squeak_changestamp' : 'stlu 4/17/2022 12:43'
-}
-RtBatchRenderer >> clipBy: aRectangle during: aBlock [
-
-	| newClipRect previousClipRect previousClipRectIndex |
-	newClipRect := clipRect intersect: aRectangle.
-	newClipRect hasPositiveExtent ifFalse: [^ self].
-	
-	previousClipRect := clipRect.
-	clipRect := newClipRect.
-	previousClipRectIndex := clipRectIndex.
-	clipRectIndex := self allocateClipRect: clipRect.
-	
-	[aBlock value: self] ensure: [
-		clipRect := previousClipRect.
-		clipRectIndex := previousClipRectIndex].
-]
-
-{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 6/9/2021 12:44'
 }
@@ -190,7 +170,7 @@ RtBatchRenderer >> clipRectIndex [
 ]
 
 {
-	#category : #drawing,
+	#category : #rendering,
 	#'squeak_changestamp' : 'stlu 4/21/2022 17:52'
 }
 RtBatchRenderer >> draw [
@@ -234,7 +214,7 @@ RtBatchRenderer >> draw [
 ]
 
 {
-	#category : #drawing,
+	#category : #batching,
 	#'squeak_changestamp' : 'stlu 4/21/2022 13:14'
 }
 RtBatchRenderer >> drawBatch: aBatch [
@@ -251,31 +231,7 @@ RtBatchRenderer >> drawBatch: aBatch [
 ]
 
 {
-	#category : #'drawing-images',
-	#'squeak_changestamp' : 'stlu 4/17/2022 16:19'
-}
-RtBatchRenderer >> drawImage: aForm at: aPoint sourceRect: sourceRect [
-
-	self fillRectangle: (Rectangle origin: aForm extent: sourceRect extent) color: Color orange.
-]
-
-{
-	#category : #'drawing-polygons',
-	#'squeak_changestamp' : 'stlu 4/17/2022 16:11'
-}
-RtBatchRenderer >> drawPolygon: vertices color: aColor borderWidth: bw borderColor: bc [
-
-	vertices size >= 2 ifFalse: [^ self].
-	
-	self
-		frameAndFillRectangle: (Rectangle encompassing: vertices)
-		fillColor: aColor
-		borderWidth: bw
-		borderColor: bc.
-]
-
-{
-	#category : #'drawing-text',
+	#category : #batching,
 	#'squeak_changestamp' : 'stlu 5/2/2022 12:11'
 }
 RtBatchRenderer >> drawString: aString from: firstIndex to: lastIndex at: aPoint font: fontOrNil color: aColor [
@@ -318,7 +274,7 @@ RtBatchRenderer >> drawString: aString from: firstIndex to: lastIndex at: aPoint
 ]
 
 {
-	#category : #'drawing-text',
+	#category : #batching,
 	#'squeak_changestamp' : 'stlu 5/21/2022 12:32'
 }
 RtBatchRenderer >> drawString: aString from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: aColor [
@@ -335,20 +291,7 @@ RtBatchRenderer >> drawString: aString from: firstIndex to: lastIndex in: bounds
 ]
 
 {
-	#category : #'drawing-ovals',
-	#'squeak_changestamp' : 'stlu 4/17/2022 16:31'
-}
-RtBatchRenderer >> fillOval: aRectangle color: fillColor borderWidth: borderWidth borderColor: borderColor [
-
-	self
-		frameAndFillRectangle: aRectangle
-		fillColor: fillColor
-		borderWidth: borderWidth
-		borderColor: borderColor.
-]
-
-{
-	#category : #'drawing-rectangles',
+	#category : #batching,
 	#'squeak_changestamp' : 'stlu 5/20/2022 12:52'
 }
 RtBatchRenderer >> fillRectangle: aRectangle color: aColor [
@@ -357,7 +300,7 @@ RtBatchRenderer >> fillRectangle: aRectangle color: aColor [
 ]
 
 {
-	#category : #'drawing-rectangles',
+	#category : #batching,
 	#'squeak_changestamp' : 'stlu 5/20/2022 12:54'
 }
 RtBatchRenderer >> fillRectangle: aRectangle color: aColor radius: radius [
@@ -381,15 +324,6 @@ RtBatchRenderer >> fillRectangle: aRectangle color: aColor radius: radius [
 ]
 
 {
-	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 5/2/2022 12:15'
-}
-RtBatchRenderer >> fillRectangle: aRectangle fillStyle: aFillStyle [
-
-	super fillRectangle: aRectangle fillStyle: aFillStyle.
-]
-
-{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/26/2021 13:25'
 }
@@ -399,18 +333,8 @@ RtBatchRenderer >> fontCache [
 ]
 
 {
-	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : 'stlu 4/21/2022 17:39'
-}
-RtBatchRenderer >> frameAndFillRectangle: aRectangle fillColor: fillColor borderWidth: borderWidth borderColor: borderColor [
-
-	self fillRectangle: (aRectangle insetBy: borderWidth) color: fillColor.
-	self frameRectangle: aRectangle width: borderWidth color: borderColor.
-]
-
-{
-	#category : #'drawing-rectangles',
-	#'squeak_changestamp' : 'stlu 4/21/2022 17:38'
+	#category : #batching,
+	#'squeak_changestamp' : 'stlu 5/21/2022 12:56'
 }
 RtBatchRenderer >> frameRectangle: aRectangle width: borderWidth color: borderColor [
 
@@ -451,7 +375,7 @@ RtBatchRenderer >> frameRectangle: aRectangle width: borderWidth color: borderCo
 ]
 
 {
-	#category : #'drawing-text',
+	#category : #batching,
 	#'squeak_changestamp' : 'stlu 4/21/2022 19:38'
 }
 RtBatchRenderer >> glyphForCharacter: aCharacter inFont: aFont cache: glyphCache [
@@ -484,15 +408,6 @@ RtBatchRenderer >> glyphForCharacter: aCharacter inFont: aFont cache: glyphCache
 RtBatchRenderer >> glyphStore [
 
 	^ glyphStore
-]
-
-{
-	#category : #'drawing-images',
-	#'squeak_changestamp' : 'stlu 4/21/2022 22:19'
-}
-RtBatchRenderer >> image: aForm at: aPoint sourceRect: sourceRect rule: rule [
-
-	self fillRectangle: (Rectangle origin: aPoint extent: sourceRect extent) color: Color random.
 ]
 
 {
@@ -644,16 +559,16 @@ RtBatchRenderer >> initializeWithBounds: aRectangle [
 ]
 
 {
-	#category : #'drawing-lines',
-	#'squeak_changestamp' : 'stlu 4/17/2022 16:33'
+	#category : #compat,
+	#'squeak_changestamp' : 'stlu 5/21/2022 12:58'
 }
-RtBatchRenderer >> line: pt1 to: pt2 width: width color: aColor [
+RtBatchRenderer >> isShadowDrawing [
 
-	self fillRectangle: (pt1 rect: pt2) color: aColor.
+	^ false
 ]
 
 {
-	#category : #drawing,
+	#category : #batching,
 	#'squeak_changestamp' : 'stlu 4/21/2022 17:50'
 }
 RtBatchRenderer >> opaqueBatchesDo: aBlock [
@@ -665,16 +580,7 @@ RtBatchRenderer >> opaqueBatchesDo: aBlock [
 ]
 
 {
-	#category : #'drawing-images',
-	#'squeak_changestamp' : 'stlu 4/21/2022 18:37'
-}
-RtBatchRenderer >> paintImage: aForm at: aPoint sourceRect: sourceRect [
-
-	self fillRectangle: (Rectangle origin: aPoint extent: sourceRect extent) color: Color red.
-]
-
-{
-	#category : #'drawing-text',
+	#category : #batching,
 	#'squeak_changestamp' : 'stlu 5/2/2022 12:11'
 }
 RtBatchRenderer >> paragraph: aParagraph bounds: bounds color: aColor [
@@ -797,7 +703,7 @@ RtBatchRenderer >> pushTranslation: aPoint [
 ]
 
 {
-	#category : #'drawing-rectangles',
+	#category : #batching,
 	#'squeak_changestamp' : 'stlu 4/21/2022 18:32'
 }
 RtBatchRenderer >> rectangleBatch: aBatch left: left top: top right: right bottom: bottom radius: radius color: colorIndex [
@@ -818,46 +724,7 @@ RtBatchRenderer >> rectangleBatch: aBatch left: left top: top right: right botto
 ]
 
 {
-	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 5/4/2022 12:28'
-}
-RtBatchRenderer >> render: aPicture [
-
-	self reset.
-	aPicture drawOn: self.
-	self clear.
-	self draw.
-]
-
-{
-	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 5/4/2022 12:29'
-}
-RtBatchRenderer >> renderBenched: aPicture [
-
-	| canvas |
-	self reset.
-	canvas := RtBenchmarkingCanvas canvas: self.
-	aPicture drawOn: canvas.
-	self clear.
-	self draw.
-	^ canvas
-]
-
-{
-	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 4/21/2022 22:11'
-}
-RtBatchRenderer >> renderMorph: aMorph [
-
-	self reset.
-	self fullDrawMorph: aMorph.
-	self clear.
-	self draw.
-]
-
-{
-	#category : #initialization,
+	#category : #rendering,
 	#'squeak_changestamp' : 'stlu 5/20/2022 15:11'
 }
 RtBatchRenderer >> reset [
@@ -897,39 +764,6 @@ RtBatchRenderer >> transform [
 ]
 
 {
-	#category : #'drawing-support',
-	#'squeak_changestamp' : 'stlu 4/22/2022 21:56'
-}
-RtBatchRenderer >> transformBy: aTransform during: aBlock [
-
-	| newClipRect previousTransform previousClipRect previousTransformIndex previousClipRectIndex |
-	aTransform isIdentity ifTrue: [^ aBlock value: self].
-	
-	newClipRect := (aTransform globalBoundsToLocal: clipRect) expanded.
-	newClipRect hasPositiveExtent ifFalse: [^ self].
-	previousClipRect := clipRect.
-	clipRect := newClipRect.
-	
-	previousTransform := transform.
-	transform := transformsPool isEmpty
-		ifTrue: [previousTransform shallowCopy]
-		ifFalse: [transformsPool removeLast setTo: previousTransform].
-	transform composeWithLocal: aTransform asMatrix2x3.
-	
-	previousTransformIndex := transformIndex.
-	previousClipRectIndex := clipRectIndex.
-	transformIndex := self allocateTransform: transform.
-	clipRectIndex := self allocateClipRect: clipRect.
-	
-	[aBlock value: self] ensure: [
-		transformsPool addLast: transform.
-		transform := previousTransform.
-		transformIndex := previousTransformIndex.
-		clipRect := previousClipRect.
-		clipRectIndex := previousClipRectIndex].
-]
-
-{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/23/2021 15:16'
 }
@@ -957,38 +791,7 @@ RtBatchRenderer >> transientStoreI [
 ]
 
 {
-	#category : #'drawing-support',
-	#'squeak_changestamp' : 'stlu 4/22/2022 21:46'
-}
-RtBatchRenderer >> translateBy: aPoint during: aBlock [
-
-	| previousTransform previousClipRect previousTransformIndex previousClipRectIndex |
-	aPoint isZero ifTrue: [^ aBlock value: self].
-	
-	previousClipRect := clipRect.
-	clipRect := clipRect translateBy: aPoint negated.
-	
-	previousTransform := transform.
-	transform := transformsPool isEmpty
-		ifTrue: [previousTransform shallowCopy]
-		ifFalse: [transformsPool removeLast setTo: previousTransform].
-	transform translateBy: aPoint.
-	
-	previousTransformIndex := transformIndex.
-	previousClipRectIndex := clipRectIndex.
-	transformIndex := self allocateTransform: transform.
-	clipRectIndex := self allocateClipRect: clipRect.
-	
-	[aBlock value: self] ensure: [
-		transformsPool addLast: transform.
-		transform := previousTransform.
-		transformIndex := previousTransformIndex.
-		clipRect := previousClipRect.
-		clipRectIndex := previousClipRectIndex].
-]
-
-{
-	#category : #drawing,
+	#category : #batching,
 	#'squeak_changestamp' : 'stlu 4/21/2022 17:54'
 }
 RtBatchRenderer >> translucentBatchesDo: aBlock [
@@ -999,16 +802,7 @@ RtBatchRenderer >> translucentBatchesDo: aBlock [
 ]
 
 {
-	#category : #'drawing-images',
-	#'squeak_changestamp' : 'stlu 4/21/2022 18:37'
-}
-RtBatchRenderer >> translucentImage: aForm at: aPoint sourceRect: sourceRect [
-
-	self fillRectangle: (Rectangle origin: aPoint extent: sourceRect extent) color: Color yellow.
-]
-
-{
-	#category : #'drawing-rectangles',
+	#category : #batching,
 	#'squeak_changestamp' : 'stlu 5/20/2022 13:27'
 }
 RtBatchRenderer >> upcomingTranslucentType: aBatchType [
@@ -1032,7 +826,7 @@ RtBatchRenderer >> vao [
 ]
 
 {
-	#category : #visiting,
+	#category : #rendering,
 	#'squeak_changestamp' : 'stlu 5/20/2022 12:52'
 }
 RtBatchRenderer >> visitAll: beginNode [
@@ -1041,7 +835,7 @@ RtBatchRenderer >> visitAll: beginNode [
 ]
 
 {
-	#category : #visiting,
+	#category : #rendering,
 	#'squeak_changestamp' : 'stlu 5/20/2022 12:52'
 }
 RtBatchRenderer >> visitAll: beginNode until: endNode [
