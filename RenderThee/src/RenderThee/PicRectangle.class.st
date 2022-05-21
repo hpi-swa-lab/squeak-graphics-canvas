@@ -1275,6 +1275,22 @@ PicRectangle >> setTranslateBy: factor [
 ]
 
 {
+	#category : #transforming,
+	#'squeak_changestamp' : 'stlu 5/20/2022 15:44'
+}
+PicRectangle >> setTranslateByNegated: factor [ 
+
+	| x y |
+	factor isPoint
+		ifTrue: [x := factor x. y := factor y]
+		ifFalse: [x := y := factor].
+	left := left - x.
+	top := top - y.
+	right := right - x.
+	bottom := bottom - y.
+]
+
+{
 	#category : #'truncation and round off',
 	#'squeak_changestamp' : 'stlu 5/19/2022 12:51'
 }

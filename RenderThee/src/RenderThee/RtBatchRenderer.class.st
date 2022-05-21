@@ -319,18 +319,19 @@ RtBatchRenderer >> drawString: aString from: firstIndex to: lastIndex at: aPoint
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 4/21/2022 20:39'
+	#'squeak_changestamp' : 'stlu 5/21/2022 12:32'
 }
 RtBatchRenderer >> drawString: aString from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: aColor [
 
-	self clipBy: boundsRect during: [:c |
-		self
-			drawString: aString
-			from: firstIndex
-			to: lastIndex
-			at: boundsRect origin
-			font: fontOrNil
-			color: aColor].
+	self pushClipRect: boundsRect.
+	self
+		drawString: aString
+		from: firstIndex
+		to: lastIndex
+		at: boundsRect origin
+		font: fontOrNil
+		color: aColor.
+	self popClipRect.
 ]
 
 {
@@ -696,6 +697,32 @@ RtBatchRenderer >> persistentStoreF [
 ]
 
 {
+	#category : #stacking,
+	#'squeak_changestamp' : 'stlu 5/21/2022 12:27'
+}
+RtBatchRenderer >> popClipRect [
+
+	RectanglePool return: clipRect.
+	clipRectIndex := clipStack removeLast.
+	clipRect := clipStack removeLast.
+]
+
+{
+	#category : #stacking,
+	#'squeak_changestamp' : 'stlu 5/21/2022 12:29'
+}
+RtBatchRenderer >> popTransform [
+
+	RectanglePool return: clipRect.
+	clipRectIndex := clipStack removeLast.
+	clipRect := clipStack removeLast.
+	
+	TransformPool return: transform.
+	transformIndex := transformStack removeLast.
+	transform := transformStack removeLast.
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 4/21/2022 18:17'
 }
@@ -714,6 +741,59 @@ RtBatchRenderer >> projectionMatrixForBounds: aRectangle [
 		ortho: aRectangle
 		near: 1 - (2 ** 24)
 		far: 0
+]
+
+{
+	#category : #stacking,
+	#'squeak_changestamp' : 'stlu 5/21/2022 12:27'
+}
+RtBatchRenderer >> pushClipRect: aRectangle [
+
+	clipStack addLast: clipRect.
+	clipStack addLast: clipRectIndex.
+	
+	clipRect := RectanglePool borrow rectangle: clipRect.
+	clipRect setIntersect: aRectangle.
+	clipRectIndex := self allocateClipRect: clipRect.
+]
+
+{
+	#category : #stacking,
+	#'squeak_changestamp' : 'stlu 5/21/2022 12:30'
+}
+RtBatchRenderer >> pushTransform: aMatrix2x3 [
+
+	clipStack addLast: clipRect.
+	clipStack addLast: clipRectIndex.
+	transformStack addLast: transform.
+	transformStack addLast: transformIndex.
+	
+	clipRect := aMatrix2x3 globalBounds: clipRect toLocal: RectanglePool borrow.
+	clipRectIndex := self allocateClipRect: clipRect.
+	
+	transform := TransformPool borrow setToMatrix2x3: transform.
+	transform composeWithLocal: aMatrix2x3.
+	transformIndex := self allocateTransform: transform.
+]
+
+{
+	#category : #stacking,
+	#'squeak_changestamp' : 'stlu 5/21/2022 12:28'
+}
+RtBatchRenderer >> pushTranslation: aPoint [
+
+	clipStack addLast: clipRect.
+	clipStack addLast: clipRectIndex.
+	transformStack addLast: transform.
+	transformStack addLast: transformIndex.
+	
+	clipRect := RectanglePool borrow rectangle: clipRect.
+	clipRect setTranslateByNegated: aPoint.
+	clipRectIndex := self allocateClipRect: clipRect.
+	
+	transform := TransformPool borrow setToMatrix2x3: transform.
+	transform translateBy: aPoint.
+	transformIndex := self allocateTransform: transform.
 ]
 
 {
@@ -778,7 +858,7 @@ RtBatchRenderer >> renderMorph: aMorph [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/20/2022 13:43'
+	#'squeak_changestamp' : 'stlu 5/20/2022 15:11'
 }
 RtBatchRenderer >> reset [
 
@@ -786,9 +866,12 @@ RtBatchRenderer >> reset [
 	transientStoreI reset.
 	
 	clipStack reset.
-	clipRect := bounds.
+	clipRect ifNil: [clipRect := RectanglePool borrow].
+	clipRect rectangle: bounds.
+	
 	transformStack reset.
-	transform := TransformPool borrow setIdentity.
+	transform ifNil: [transform := TransformPool borrow].
+	transform setIdentity.
 	
 	transformIndex := self allocateTransform: transform.
 	clipRectIndex := self allocateClipRect: clipRect.
@@ -971,25 +1054,20 @@ RtBatchRenderer >> visitAll: beginNode until: endNode [
 
 {
 	#category : #'visiting groups',
-	#'squeak_changestamp' : 'stlu 5/20/2022 12:47'
+	#'squeak_changestamp' : 'stlu 5/21/2022 12:26'
 }
 RtBatchRenderer >> visitClipBegin: aNode [
 
-	clipStack addLast: clipRect.
-	clipStack addLast: clipRectIndex.
-	
-	clipRect := clipRect intersect: aNode clipRect.
-	clipRectIndex := self allocateClipRect: clipRect.
+	self pushClipRect: aNode clipRect.
 ]
 
 {
 	#category : #'visiting groups',
-	#'squeak_changestamp' : 'stlu 5/20/2022 12:48'
+	#'squeak_changestamp' : 'stlu 5/21/2022 12:27'
 }
 RtBatchRenderer >> visitClipEnd: aNode [
 
-	clipRectIndex := clipStack removeLast.
-	clipRect := clipStack removeLast.
+	self popClipRect.
 ]
 
 {
@@ -1030,20 +1108,20 @@ RtBatchRenderer >> visitParagraph: aNode [
 
 {
 	#category : #'visiting groups',
-	#'squeak_changestamp' : 'stlu 5/19/2022 16:41'
+	#'squeak_changestamp' : 'stlu 5/21/2022 12:30'
 }
 RtBatchRenderer >> visitPictureBegin: aNode [
 
-	
+	self pushTranslation: aNode offset.
 ]
 
 {
 	#category : #'visiting groups',
-	#'squeak_changestamp' : 'stlu 5/19/2022 16:41'
+	#'squeak_changestamp' : 'stlu 5/21/2022 12:31'
 }
 RtBatchRenderer >> visitPictureEnd: aNode [
 
-	
+	self popTransform.
 ]
 
 {
@@ -1106,72 +1184,38 @@ RtBatchRenderer >> visitTextRun: aNode [
 
 {
 	#category : #'visiting groups',
-	#'squeak_changestamp' : 'stlu 5/20/2022 13:42'
+	#'squeak_changestamp' : 'stlu 5/21/2022 12:29'
 }
 RtBatchRenderer >> visitTransformBegin: aNode [
 
-	| matrix |
-	matrix := aNode transform.
-	clipStack addLast: clipRect.
-	clipStack addLast: clipRectIndex.
-	transformStack addLast: transform.
-	transformStack addLast: transformIndex.
-	
-	clipRect := matrix globalBoundsToLocal: clipRect.
-	clipRectIndex := self allocateClipRect: clipRect.
-	
-	transform := TransformPool borrow setTo: transform.
-	transform composeWithLocal: matrix.
-	transformIndex := self allocateTransform: transform.
+	self pushTransform: aNode matrix.
 ]
 
 {
 	#category : #'visiting groups',
-	#'squeak_changestamp' : 'stlu 5/20/2022 13:42'
+	#'squeak_changestamp' : 'stlu 5/21/2022 12:29'
 }
 RtBatchRenderer >> visitTransformEnd: aNode [
 
-	clipRectIndex := clipStack removeLast.
-	clipRect := clipStack removeLast.
-	
-	TransformPool return: transform.
-	transformIndex := transformStack removeLast.
-	transform := transformStack removeLast.
+	self popTransform.
 ]
 
 {
 	#category : #'visiting groups',
-	#'squeak_changestamp' : 'stlu 5/20/2022 13:42'
+	#'squeak_changestamp' : 'stlu 5/21/2022 12:28'
 }
 RtBatchRenderer >> visitTranslationBegin: aNode [
 
-	| translation |
-	translation := aNode translation.
-	clipStack addLast: clipRect.
-	clipStack addLast: clipRectIndex.
-	transformStack addLast: transform.
-	transformStack addLast: transformIndex.
-	
-	clipRect := clipRect translateBy: translation negated.
-	clipRectIndex := self allocateClipRect: clipRect.
-	
-	transform := TransformPool borrow setTo: transform.
-	transform translateBy: translation.
-	transformIndex := self allocateTransform: transform.
+	self pushTranslation: aNode translation.
 ]
 
 {
 	#category : #'visiting groups',
-	#'squeak_changestamp' : 'stlu 5/20/2022 13:42'
+	#'squeak_changestamp' : 'stlu 5/21/2022 12:29'
 }
 RtBatchRenderer >> visitTranslationEnd: aNode [
 
-	clipRectIndex := clipStack removeLast.
-	clipRect := clipStack removeLast.
-	
-	TransformPool return: transform.
-	transformIndex := transformStack removeLast.
-	transform := transformStack removeLast.
+	self popTransform.
 ]
 
 {
