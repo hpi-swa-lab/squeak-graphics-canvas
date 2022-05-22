@@ -232,28 +232,56 @@ RtBatchRenderer >> drawBatch: aBatch [
 
 {
 	#category : #batching,
-	#'squeak_changestamp' : 'stlu 5/2/2022 12:11'
+	#'squeak_changestamp' : 'stlu 5/21/2022 13:24'
 }
 RtBatchRenderer >> drawString: aString from: firstIndex to: lastIndex at: aPoint font: fontOrNil color: aColor [
+
+	self drawString: aString from: firstIndex to: lastIndex left: aPoint x top: aPoint y font: fontOrNil color: aColor.
+]
+
+{
+	#category : #batching,
+	#'squeak_changestamp' : 'stlu 5/21/2022 13:22'
+}
+RtBatchRenderer >> drawString: aString from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: aColor [
+
+	self pushClipRect: boundsRect.
+	self
+		drawString: aString
+		from: firstIndex
+		to: lastIndex
+		left: boundsRect left
+		top: boundsRect top
+		font: fontOrNil
+		color: aColor.
+	self popClipRect.
+]
+
+{
+	#category : #batching,
+	#'squeak_changestamp' : 'stlu 5/21/2022 20:12'
+}
+RtBatchRenderer >> drawString: aString from: firstIndex to: lastIndex left: left top: top font: fontOrNil color: aColor [
 
 	| font right colorIndex glyphCache textRunIndex batch textRunBoundsIndex visibleLeft visibleRight |
 	font := fontOrNil ifNil: [TextStyle defaultFont].
 	self upcomingTranslucentType: textRunType.
 	batch := textRunType currentBatch.
 	colorIndex := self indexForColor: aColor.
-	glyphCache := fontCache at: font ifAbsentPut: [Dictionary new].
+	glyphCache := (fontCache at: font ifAbsent: nil) ifNil: [
+		fontCache at: font put: Dictionary new].
 	textRunIndex := transientStoreI
 		add: clipRectIndex
 		add: transformIndex
 		add: colorIndex
 		add: zIndex.
 	textRunBoundsIndex := transientStoreF
-		add: aPoint x asFloat
-		add: aPoint y asFloat.
+		add: left asFloat
+		add: top asFloat.
 	
 	zIndex := zIndex + 1. "should be the same within a paragraph"
-	visibleLeft := clipRect left - aPoint x.
-	visibleRight := clipRect right - aPoint x.
+	visibleLeft := clipRect left - left.
+	visibleRight := clipRect right - left.
 	right := 0.
 	0 to: lastIndex - firstIndex do: [:charIndex |
 		| char width |
@@ -271,23 +299,6 @@ RtBatchRenderer >> drawString: aString from: firstIndex to: lastIndex at: aPoint
 		right >= visibleRight ifTrue: [
 			transientStoreF alignElementIndex. ^ self]].
 	transientStoreF alignElementIndex.
-]
-
-{
-	#category : #batching,
-	#'squeak_changestamp' : 'stlu 5/21/2022 12:32'
-}
-RtBatchRenderer >> drawString: aString from: firstIndex to: lastIndex in: boundsRect font: fontOrNil color: aColor [
-
-	self pushClipRect: boundsRect.
-	self
-		drawString: aString
-		from: firstIndex
-		to: lastIndex
-		at: boundsRect origin
-		font: fontOrNil
-		color: aColor.
-	self popClipRect.
 ]
 
 {
@@ -376,11 +387,11 @@ RtBatchRenderer >> frameRectangle: aRectangle width: borderWidth color: borderCo
 
 {
 	#category : #batching,
-	#'squeak_changestamp' : 'stlu 4/21/2022 19:38'
+	#'squeak_changestamp' : 'stlu 5/21/2022 20:12'
 }
 RtBatchRenderer >> glyphForCharacter: aCharacter inFont: aFont cache: glyphCache [
 
-	^ glyphCache at: aCharacter ifAbsentPut: [
+	^ (glyphCache at: aCharacter ifAbsent: nil) ifNil: [
 		| form width allocation glyphBounds glyphIndex canvas |
 		width := aFont widthOf: aCharacter.
 		canvas := FormCanvas extent: width @ aFont height depth: aFont depth.
@@ -398,7 +409,7 @@ RtBatchRenderer >> glyphForCharacter: aCharacter inFont: aFont cache: glyphCache
 			add: glyphBounds top asFloat
 			add: glyphBounds right asFloat
 			add: glyphBounds bottom asFloat.
-		{ allocation . glyphIndex }].
+		glyphCache at: aCharacter put: { allocation . glyphIndex }].
 ]
 
 {
