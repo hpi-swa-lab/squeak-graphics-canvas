@@ -103,15 +103,15 @@ PicPicture >> endNode: anObject [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/19/2022 13:49'
+	#'squeak_changestamp' : 'stlu 6/2/2022 13:12'
 }
 PicPicture >> initialize [
 
 	super initialize.
-	beginNode := PicPictureBegin new.
-	endNode := PicPictureEnd new.
-	beginNode end: endNode.
-	endNode begin: beginNode.
+	beginNode := PictureBeginPool borrow.
+	beginNode reset.
+	beginNode picture: self.
+	endNode := beginNode end.
 	needsUpdating := true.
 	lastUpdateTime := 0.
 	lastUpdateFrame := 0.

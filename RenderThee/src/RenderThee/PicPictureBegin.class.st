@@ -2,6 +2,7 @@ Class {
 	#name : #PicPictureBegin,
 	#superclass : #PicGroupBegin,
 	#instVars : [
+		'picture',
 		'offset'
 	],
 	#category : #'RenderThee-Pictures'
@@ -27,12 +28,12 @@ PicPictureBegin >> endClass [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/16/2022 14:45'
+	#'squeak_changestamp' : 'stlu 6/2/2022 13:11'
 }
 PicPictureBegin >> initialize [
 
 	super initialize.
-	offset := ZeroPointInt.
+	self reset.
 ]
 
 {
@@ -64,11 +65,39 @@ PicPictureBegin >> offset: anObject [
 
 {
 	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/2/2022 13:12'
+}
+PicPictureBegin >> picture [
+
+	^ picture
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/2/2022 13:12'
+}
+PicPictureBegin >> picture: anObject [
+
+	picture := anObject.
+	picture := nil.
+]
+
+{
+	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 5/19/2022 15:12'
 }
 PicPictureBegin >> pool [
 
 	^ PictureBeginPool
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 6/2/2022 13:11'
+}
+PicPictureBegin >> reset [
+
+	offset := ZeroPointInt.
 ]
 
 {
