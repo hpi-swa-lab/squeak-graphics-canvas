@@ -38,7 +38,11 @@ Class {
 		'displayScanner',
 		'clipStack',
 		'transformStack',
-		'currentNode'
+		'currentNode',
+		'pictureStack',
+		'currentPicture',
+		'currentFrame',
+		'numBatches'
 	],
 	#pools : [
 		'GLConstants',
@@ -544,7 +548,7 @@ RtBatchRenderer >> initializeVAO [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/20/2022 13:42'
+	#'squeak_changestamp' : 'stlu 6/7/2022 14:42'
 }
 RtBatchRenderer >> initializeWithBounds: aRectangle [
 
@@ -559,12 +563,14 @@ RtBatchRenderer >> initializeWithBounds: aRectangle [
 	instanceVBOManager := RtInstanceVBOManager new.
 	closedTranslucentBatches := OrderedCollection new.
 	fontCache := IdentityDictionary new.
+	formCache := WeakIdentityKeyDictionary new.
 	self flag: #todo. "extract PicObjectPool to shared dependency"
 	translucentBatchPool := PicObjectPool instantiation: [RtTranslucentBatch new].
 	displayScanner := RtDisplayScanner new canvas: self.
 	
 	clipStack := OrderedCollection new.
 	transformStack := OrderedCollection new.
+	pictureStack := OrderedCollection new.
 	
 	self reset.
 ]
@@ -735,8 +741,8 @@ RtBatchRenderer >> rectangleBatch: aBatch left: left top: top right: right botto
 ]
 
 {
-	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 5/20/2022 15:11'
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 6/2/2022 13:22'
 }
 RtBatchRenderer >> reset [
 
@@ -750,6 +756,9 @@ RtBatchRenderer >> reset [
 	transformStack reset.
 	transform ifNil: [transform := TransformPool borrow].
 	transform setIdentity.
+	
+	pictureStack reset.
+	currentPicture := nil.
 	
 	transformIndex := self allocateTransform: transform.
 	clipRectIndex := self allocateClipRect: clipRect.
@@ -913,19 +922,22 @@ RtBatchRenderer >> visitParagraph: aNode [
 
 {
 	#category : #'visiting groups',
-	#'squeak_changestamp' : 'stlu 5/21/2022 12:30'
+	#'squeak_changestamp' : 'stlu 6/2/2022 13:23'
 }
 RtBatchRenderer >> visitPictureBegin: aNode [
 
+	pictureStack addLast: currentPicture.
+	currentPicture := aNode picture.
 	self pushTranslation: aNode offset.
 ]
 
 {
 	#category : #'visiting groups',
-	#'squeak_changestamp' : 'stlu 5/21/2022 12:31'
+	#'squeak_changestamp' : 'stlu 6/2/2022 13:23'
 }
 RtBatchRenderer >> visitPictureEnd: aNode [
 
+	currentPicture := pictureStack removeLast.
 	self popTransform.
 ]
 
