@@ -25,7 +25,7 @@ void main() {
 
 {
 	#category : #shaders,
-	#'squeak_changestamp' : 'stlu 4/17/2022 13:51'
+	#'squeak_changestamp' : 'stlu 6/7/2022 15:25'
 }
 RtImageBatchType class >> vertexShader [
 
@@ -37,7 +37,7 @@ layout (location = 1) in ivec4 aInstanceData;
 
 out vec2 vImageCoords;
 
-// uniform sampler2D sPersistentStoreF;
+uniform sampler2D sPersistentStoreF;
 // uniform isampler2D sPersistentStoreI;
 uniform sampler2D sTransientStoreF;
 // uniform isampler2D sTransientStoreI;
@@ -98,15 +98,15 @@ vec4 fetch(sampler2D store, int index) {
 
 void main() {
 	/* Fetch data */
-	int imageIndex = aInstanceData.x;
+	int boundsIndex = aInstanceData.x;
 	int clipRectIndex = aInstanceData.y;
 	int transformIndex = aInstanceData.z;
-	int zIndex = aInstanceData.w;
+	int atlasRegionIndex = aInstanceData.w;
 
-	Rectangle bounds = fetchRectangle(sTransientStoreF, imageIndex);
-	Rectangle imageBounds = fetchRectangle(sTransientStoreF, imageIndex+1);
-
-	float z = float(zIndex);
+	Rectangle bounds = fetchRectangle(sTransientStoreF, boundsIndex);
+	vec4 data = fetch(sTransientStoreF, boundsIndex+1);
+	float z = data.x;
+	Rectangle imageBounds = fetchRectangle(sPersistentStoreF, atlasRegionIndex);
 
 	Rectangle clipRect = fetchRectangle(sTransientStoreF, clipRectIndex);
 	mat4 modelMatrix = fetchTransform(sTransientStoreF, transformIndex);

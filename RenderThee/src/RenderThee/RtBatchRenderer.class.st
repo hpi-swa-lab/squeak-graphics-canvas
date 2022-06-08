@@ -78,6 +78,31 @@ RtBatchRenderer >> allocateClipRect: aRectangle [
 
 {
 	#category : #allocation,
+	#'squeak_changestamp' : 'stlu 6/7/2022 15:23'
+}
+RtBatchRenderer >> allocateTextureHandleForForm: aForm [
+
+	| region regionBounds regionIndex left top handle |
+	region := imageStore uploadForm: aForm.
+	region ifNil: [^ nil].
+	regionBounds := region rectangle.
+	left := regionBounds left asFloat.
+	top := regionBounds top asFloat.
+	regionIndex :=  persistentStoreF
+		add: left
+		add: top
+		add: left + aForm width asFloat
+		add: top + aForm height asFloat.
+	
+	handle := TextureHandlePool borrow.
+	handle reset.
+	handle atlasRegion: region.
+	handle regionIndex: regionIndex.
+	^ handle
+]
+
+{
+	#category : #allocation,
 	#'squeak_changestamp' : 'stlu 8/23/2021 16:54'
 }
 RtBatchRenderer >> allocateTransform: aTransform [
@@ -89,17 +114,6 @@ RtBatchRenderer >> allocateTransform: aTransform [
 		add: aTransform a22
 		add: aTransform a13
 		add: aTransform a23
-]
-
-{
-	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 1/4/2022 17:08'
-}
-RtBatchRenderer >> allocationForForm: aForm [
-
-	^ imageAllocation
-	"^ formCache at: aForm ifAbsentPut: [
-		imageStore uploadForm: aForm]."
 ]
 
 {
@@ -512,7 +526,7 @@ RtBatchRenderer >> initializeColors [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 1/4/2022 17:09'
+	#'squeak_changestamp' : 'stlu 6/7/2022 14:41'
 }
 RtBatchRenderer >> initializeGPUStores [
 
@@ -525,7 +539,6 @@ RtBatchRenderer >> initializeGPUStores [
 	colorStore := RtColorTexture extent: texSize @ texSize.
 	glyphStore := RtManagedGPUStore extent: texSize @ texSize.
 	imageStore := RtManagedGPUStore extent: texSize @ texSize.
-	imageAllocation := imageStore uploadForm: (ToolIcons iconNamed: #arrowUp).
 ]
 
 {
@@ -817,6 +830,17 @@ RtBatchRenderer >> reset [
 ]
 
 {
+	#category : #allocation,
+	#'squeak_changestamp' : 'stlu 6/7/2022 14:56'
+}
+RtBatchRenderer >> textureHandleForForm: aForm [
+
+	^ (formCache at: aForm ifAbsent: nil) ifNil: [| handle |
+		handle := self allocateTextureHandleForForm: aForm.
+		formCache at: aForm put: handle]
+]
+
+{
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 6/9/2021 12:44'
 }
@@ -928,11 +952,45 @@ RtBatchRenderer >> visitClipEnd: aNode [
 
 {
 	#category : #'visiting prims',
-	#'squeak_changestamp' : 'stlu 5/19/2022 17:33'
+	#'squeak_changestamp' : 'stlu 6/7/2022 15:22'
 }
 RtBatchRenderer >> visitImage: aNode [
 
-	self fillRectangle: aNode bounds color: Color red.
+	| type bounds texHandle cache storeIndex |
+	bounds := aNode bounds.
+	(bounds width > 100 or: [bounds height > 100]) ifTrue: [
+		^ self frameRectangle: bounds width: 1.0 color: Color red].
+	
+	type := aNode isTranslucent
+		ifFalse: [opaqueImageType]
+		ifTrue: [
+			self upcomingTranslucentType: translucentImageType.
+			translucentImageType].
+	
+	(cache := aNode cache)
+		ifNil: [
+			cache := RtImageCache new.
+			texHandle := self textureHandleForForm: aNode form.
+			texHandle addReference.
+			cache textureHandle: texHandle]
+		ifNotNil: [
+			texHandle := cache textureHandle].
+	texHandle lastFrame: currentFrame.
+	
+	storeIndex := transientStoreF
+		add: bounds left asFloat
+		add: bounds top asFloat
+		add: bounds right asFloat
+		add: bounds bottom asFloat
+		add: zIndex asFloat.
+	
+	type currentBatch
+		addInstance: storeIndex
+		with: clipRectIndex
+		with: transformIndex
+		with: texHandle regionIndex.
+	
+	zIndex := zIndex + 1.
 ]
 
 {
