@@ -283,7 +283,7 @@ RtBatchRenderer >> drawString: aString from: firstIndex to: lastIndex in: bounds
 
 {
 	#category : #batching,
-	#'squeak_changestamp' : 'stlu 5/21/2022 20:12'
+	#'squeak_changestamp' : 'stlu 6/7/2022 10:56'
 }
 RtBatchRenderer >> drawString: aString from: firstIndex to: lastIndex left: left top: top font: fontOrNil color: aColor [
 
@@ -318,7 +318,7 @@ RtBatchRenderer >> drawString: aString from: firstIndex to: lastIndex left: left
 			batch
 				addInstance: textRunIndex
 				with: charIndex
-				with: glyph second
+				with: (glyph at: 2)
 				with: textRunBoundsIndex].
 		right >= visibleRight ifTrue: [
 			transientStoreF alignElementIndex. ^ self]].
@@ -410,14 +410,17 @@ RtBatchRenderer >> frameRectangle: aRectangle width: borderWidth color: borderCo
 ]
 
 {
-	#category : #batching,
-	#'squeak_changestamp' : 'stlu 5/21/2022 20:12'
+	#category : #allocation,
+	#'squeak_changestamp' : 'stlu 6/7/2022 14:01'
 }
 RtBatchRenderer >> glyphForCharacter: aCharacter inFont: aFont cache: glyphCache [
 
 	^ (glyphCache at: aCharacter ifAbsent: nil) ifNil: [
 		| form width allocation glyphBounds glyphIndex canvas |
 		width := aFont widthOf: aCharacter.
+		
+		"to get rid of the prebaked subpixel optimizations, we apply
+		the glyph to a transparent background to produce pure alpha values"
 		canvas := FormCanvas extent: width @ aFont height depth: aFont depth.
 		canvas fillColor: Color transparent.
 		canvas
@@ -426,6 +429,7 @@ RtBatchRenderer >> glyphForCharacter: aCharacter inFont: aFont cache: glyphCache
 			font: aFont
 			color: Color black.
 		form := canvas form.
+		
 		allocation := glyphStore uploadForm: form.
 		glyphBounds := allocation rectangle origin extent: form extent.
 		glyphIndex := persistentStoreF
@@ -602,6 +606,15 @@ RtBatchRenderer >> initializeWithBounds: aRectangle [
 RtBatchRenderer >> isShadowDrawing [
 
 	^ false
+]
+
+{
+	#category : #compat,
+	#'squeak_changestamp' : 'stlu 5/25/2022 15:53'
+}
+RtBatchRenderer >> line: from to: to color: aColor [
+
+	self fillRectangle: ((from rect: to) outsetBy: 0.5@0) color: aColor.
 ]
 
 {
@@ -841,13 +854,13 @@ RtBatchRenderer >> transientStoreI [
 
 {
 	#category : #batching,
-	#'squeak_changestamp' : 'stlu 4/21/2022 17:54'
+	#'squeak_changestamp' : 'stlu 5/23/2022 13:50'
 }
 RtBatchRenderer >> translucentBatchesDo: aBlock [
 
 	closedTranslucentBatches do: aBlock.
-	lastTranslucentType ifNotNil: [:type |
-		aBlock value: type currentBatch].
+	lastTranslucentType ifNotNil: [
+		aBlock value: lastTranslucentType currentBatch].
 ]
 
 {
@@ -981,7 +994,7 @@ RtBatchRenderer >> visitPolygon: aNode [
 
 {
 	#category : #'visiting prims',
-	#'squeak_changestamp' : 'stlu 5/19/2022 17:20'
+	#'squeak_changestamp' : 'stlu 5/25/2022 16:04'
 }
 RtBatchRenderer >> visitRectangle: aNode [
 
@@ -989,11 +1002,14 @@ RtBatchRenderer >> visitRectangle: aNode [
 	fillStyle := aNode fillStyle.
 	borderStyle := aNode borderStyle.
 	
-	fillStyle ifNotNil: [| rect |
+	fillStyle ifNotNil: [| rect color |
 		rect := aNode bounds.
 		borderStyle ifNotNil: [
 			rect := aNode bounds insetBy: borderStyle width].
-		self fillRectangle: rect color: fillStyle asColor].
+		color := fillStyle isBitmapFill
+			ifTrue: [fillStyle form colorAt: ZeroPointInt]
+			ifFalse: [fillStyle asColor].
+		self fillRectangle: rect color: color].
 	
 	borderStyle ifNotNil: [
 		self frameRectangle: aNode bounds width: borderStyle width color: borderStyle color].

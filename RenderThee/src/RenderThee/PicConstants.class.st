@@ -71,12 +71,17 @@ self initializeConstants.
 
 {
 	#category : #'class initialization',
-	#'squeak_changestamp' : 'stlu 5/20/2022 15:32'
+	#'squeak_changestamp' : 'stlu 6/7/2022 14:30'
 }
 PicConstants class >> initializeObjectPools [
 "
 self initializeObjectPools.
 "
+	self flag: #todo. "object pools technically belong to separate modules"
+	ArrayPool := PicArrayPool ofClass: Array.
+	Float32ArrayPool := PicArrayPool ofClass: Float32Array.
+	UInt32ArrayPool := PicArrayPool ofClass: WordArray.
+	
 	PointPool := PicObjectPool instantiation: [Point new].
 	RectanglePool := PicObjectPool instantiation: [PicRectangle basicNew].
 	TransformPool := PicObjectPool instantiation: [PicMatrix2x3 identity].
@@ -94,6 +99,8 @@ self initializeObjectPools.
 	PictureBeginPool := PicObjectPool instantiation: [PicPictureBegin new].
 	TransformBeginPool := PicObjectPool instantiation: [PicTransformBegin new].
 	TranslationBeginPool := PicObjectPool instantiation: [PicTranslationBegin new].
+	
+	TextureHandlePool := PicObjectPool instantiation: [RtTextureHandle new].
 ]
 
 {
