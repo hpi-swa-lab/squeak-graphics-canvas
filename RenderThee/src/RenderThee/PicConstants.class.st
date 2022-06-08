@@ -2,7 +2,11 @@ Class {
 	#name : #PicConstants,
 	#superclass : #SharedPool,
 	#classVars : [
+		'ArrayPool',
+		'BlankIcon12',
+		'BlankIcon16',
 		'ClipBeginPool',
+		'Float32ArrayPool',
 		'ImagePrimPool',
 		'InfiniteRectangle',
 		'LinePrimPool',
@@ -15,11 +19,13 @@ Class {
 		'RectanglePrimPool',
 		'RoundedRectanglePrimPool',
 		'TextRunPrimPool',
+		'TextureHandlePool',
 		'TransformBeginPool',
 		'TransformPool',
 		'TranslationBeginPool',
 		'TransparentBorderStyle',
 		'TransparentFillStyle',
+		'UInt32ArrayPool',
 		'ZeroPointFloat',
 		'ZeroPointInt'
 	],
@@ -42,7 +48,7 @@ self initialize.
 
 {
 	#category : #'class initialization',
-	#'squeak_changestamp' : 'stlu 5/17/2022 10:22'
+	#'squeak_changestamp' : 'stlu 6/1/2022 14:06'
 }
 PicConstants class >> initializeConstants [
 "
@@ -58,6 +64,9 @@ self initializeConstants.
 	
 	{ZeroPointInt. ZeroPointFloat. TransparentFillStyle. TransparentBorderStyle. InfiniteRectangle } do: [:obj |
 		obj beReadOnlyObject].
+	
+	BlankIcon12 := ToolIcons iconNamed: #blank.
+	BlankIcon16 := ToolIcons iconNamed: #blank16.
 ]
 
 {

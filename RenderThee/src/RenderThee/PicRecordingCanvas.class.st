@@ -583,13 +583,15 @@ PicRecordingCanvas >> fullDrawMorph: aMorph [
 
 {
 	#category : #'drawing-images',
-	#'squeak_changestamp' : 'stlu 5/19/2022 14:56'
+	#'squeak_changestamp' : 'stlu 6/1/2022 14:07'
 }
 PicRecordingCanvas >> image: aForm at: aPoint sourceRect: sourceRect rule: blendRule [
 
 	| prim bounds |
 	sourceRect hasPositiveExtent ifFalse: [^ self].
 	sourceRect origin <= aForm extent ifFalse: [^ self].
+	aForm == BlankIcon12 ifTrue: [^ self].
+	aForm == BlankIcon16 ifTrue: [^ self].
 	
 	bounds := aPoint extent: sourceRect extent.
 	(bounds intersects: clipRect) ifFalse: [^ self].
