@@ -42,20 +42,21 @@ RtManagedGPUStore >> minMagFilter [
 
 {
 	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 1/4/2022 15:17'
+	#'squeak_changestamp' : 'stlu 6/7/2022 15:50'
 }
 RtManagedGPUStore >> uploadForm: aForm [
 
-	| form allocation offset |
+	| form allocation rect |
 	form := aForm asFormOfDepth: 32.
+	form == aForm ifTrue: [form unhibernate].
 	allocation := allocator allocate: form extent.
 	allocation ifNil: [^ nil].
-	offset := allocation rectangle origin.
+	rect := allocation rectangle.
 	GL
 		textureSubImage2D: texture id
 		with: 0
-		with: offset x
-		with: offset y
+		with: rect left
+		with: rect top
 		with: form width
 		with: form height
 		with: textureFormat

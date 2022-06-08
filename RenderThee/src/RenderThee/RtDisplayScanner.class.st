@@ -40,13 +40,13 @@ RtDisplayScanner >> defaultTextColor [
 
 {
 	#category : #displaying,
-	#'squeak_changestamp' : 'stlu 4/24/2022 15:55'
+	#'squeak_changestamp' : 'stlu 6/7/2022 13:39'
 }
-RtDisplayScanner >> displayEmbeddedForm: aForm [
+RtDisplayScanner >> displayEmbeddedForm: aForm at: aPoint [
 
 	canvas
 		drawImage: aForm
-		at: destX @ (lineY + line baseline - aForm height).
+		at: aPoint.
 ]
 
 {

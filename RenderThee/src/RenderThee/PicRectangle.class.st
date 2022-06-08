@@ -181,27 +181,25 @@ PicRectangle >> area [
 
 {
 	#category : #'rectangle functions',
-	#'squeak_changestamp' : 'stlu 5/18/2022 14:50'
+	#'squeak_changestamp' : 'stlu 6/1/2022 13:54'
 }
 PicRectangle >> areasOutside: aRectangle [
-	"Answer an Array of Rectangles comprising the parts of the receiver not 
-	intersecting aRectangle."
+	"Answer an Array of Rectangles comprising the parts of the receiver not intersecting aRectangle."
 
-	| areas yOrigin yCorner |
+	| areas rTop rBottom |
 	"Make sure the intersection is non-empty"
-     (self intersects: aRectangle)
-		ifFalse: [^Array with: self].
+     (self intersects: aRectangle) ifFalse: [^ Array with: self].
 	areas := OrderedCollection new.
-	aRectangle origin y > origin y
-		ifTrue: [areas addLast: (origin corner: corner x @ (yOrigin := aRectangle origin y))]
-		ifFalse: [yOrigin := origin y].
-	aRectangle corner y < corner y
-		ifTrue: [areas addLast: (origin x @ (yCorner := aRectangle corner y) corner: corner)]
-		ifFalse: [yCorner := corner y].
-	aRectangle origin x > origin x 
-		ifTrue: [areas addLast: (origin x @ yOrigin corner: aRectangle origin x @ yCorner)].
-	aRectangle corner x < corner x 
-		ifTrue: [areas addLast: (aRectangle corner x @ yOrigin corner: corner x @ yCorner)].
+	aRectangle top > top
+		ifTrue: [areas addLast: (Rectangle left: left top: top right: right bottom: (rTop := aRectangle top))]
+		ifFalse: [rTop := top].
+	aRectangle bottom < bottom
+		ifTrue: [areas addLast: (Rectangle left: left top: (rBottom := aRectangle bottom) right: right bottom: bottom)]
+		ifFalse: [rBottom := bottom].
+	aRectangle left > left ifTrue: [
+		areas addLast: (Rectangle left: left top: rTop right: aRectangle left bottom: rBottom)].
+	aRectangle right < right ifTrue: [
+		areas addLast: (Rectangle left: aRectangle right top: rTop right: right bottom: rBottom)].
 	^areas
 ]
 

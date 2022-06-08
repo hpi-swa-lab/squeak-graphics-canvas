@@ -255,6 +255,22 @@ PicMatrix2x3 >> a23: anObject [
 
 {
 	#category : #converting,
+	#'squeak_changestamp' : 'stlu 6/2/2022 13:36'
+}
+PicMatrix2x3 >> asFloat32Array [
+
+	^ (Float32Array new: 6)
+		at: 1 put: c1r1;
+		at: 2 put: c2r1;
+		at: 3 put: c3r1;
+		at: 4 put: c1r2;
+		at: 5 put: c2r2;
+		at: 6 put: c3r2;
+		yourself
+]
+
+{
+	#category : #converting,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicMatrix2x3 >> asMatrix2x3 [

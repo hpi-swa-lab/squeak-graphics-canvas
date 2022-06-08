@@ -13,6 +13,15 @@ Rectangle class >> infinite [
 
 {
 	#category : #'*RenderThee',
+	#'squeak_changestamp' : 'stlu 6/1/2022 12:40'
+}
+Rectangle class >> left: leftNum top: topNum right: rightNum bottom: botNum [
+
+	^ self basicNew setLeft: leftNum top: topNum right: rightNum bottom: botNum
+]
+
+{
+	#category : #'*RenderThee',
 	#'squeak_changestamp' : 'stlu 5/20/2022 14:39'
 }
 Rectangle >> setLeft: leftNum top: topNum right: rightNum bottom: botNum [

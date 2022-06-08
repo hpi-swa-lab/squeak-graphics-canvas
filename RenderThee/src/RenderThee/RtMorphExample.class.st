@@ -290,7 +290,7 @@ RtMorphExample >> isModalByDefault [
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 5/4/2022 12:25'
+	#'squeak_changestamp' : 'stlu 5/30/2022 17:36'
 }
 RtMorphExample >> key: keyEnum scanCode: scanCode changedTo: state with: mods [
 
@@ -332,7 +332,7 @@ RtMorphExample >> key: keyEnum scanCode: scanCode changedTo: state with: mods [
 		modifierBits.
 		codePoint.
 		0.
-		0}.
+		1}.
 	EventSensor default processEvent: eventBuffer.
 	
 	"Some key downs don't produce key strokes
@@ -353,7 +353,7 @@ RtMorphExample >> key: keyEnum scanCode: scanCode changedTo: state with: mods [
 			modifierBits.
 			codePoint.
 			0.
-			0}.
+			1}.
 		EventSensor default processEvent: eventBuffer].
 ]
 
@@ -491,7 +491,7 @@ RtMorphExample >> keyEnumToVirtualKeyTable [
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 9/17/2021 13:35'
+	#'squeak_changestamp' : 'stlu 5/30/2022 17:35'
 }
 RtMorphExample >> keyStroke: codePoint [
 
@@ -504,7 +504,7 @@ RtMorphExample >> keyStroke: codePoint [
 		self activeModifierKeys.
 		codePoint.
 		0.
-		0}.
+		1}.
 	EventSensor default processEvent: eventBuffer.
 ]
 
@@ -521,7 +521,7 @@ RtMorphExample >> mapMousePosition: aPoint [
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 9/17/2021 10:13'
+	#'squeak_changestamp' : 'stlu 5/30/2022 17:35'
 }
 RtMorphExample >> mouseButton: button changedTo: state with: modifierKeys [
 
@@ -535,13 +535,13 @@ RtMorphExample >> mouseButton: button changedTo: state with: modifierKeys [
 		self activeMouseButtons.
 		self convertModifierKeys: modifierKeys.
 		0.
-		0 }.
+		1 }.
 	EventSensor default processEvent: eventBuffer.
 ]
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 9/17/2021 10:13'
+	#'squeak_changestamp' : 'stlu 5/30/2022 17:35'
 }
 RtMorphExample >> mousePositionChangedTo: aPoint [
 
@@ -555,7 +555,7 @@ RtMorphExample >> mousePositionChangedTo: aPoint [
 		self activeMouseButtons.
 		self activeModifierKeys.
 		0.
-		0 }.
+		1 }.
 	EventSensor default processEvent: eventBuffer.
 ]
 
@@ -630,7 +630,7 @@ RtMorphExample >> saveLogsOn: aStream [
 
 {
 	#category : #input,
-	#'squeak_changestamp' : 'stlu 9/17/2021 10:13'
+	#'squeak_changestamp' : 'stlu 5/30/2022 17:35'
 }
 RtMorphExample >> scrolledBy: aPoint [
 
@@ -644,7 +644,7 @@ RtMorphExample >> scrolledBy: aPoint [
 		self activeMouseButtons.
 		self activeModifierKeys.
 		0.
-		0 }.
+		1 }.
 	EventSensor default processEvent: eventBuffer.
 ]
 
