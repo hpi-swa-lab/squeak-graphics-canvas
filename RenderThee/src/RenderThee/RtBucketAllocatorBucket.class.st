@@ -2,50 +2,59 @@ Class {
 	#name : #RtBucketAllocatorBucket,
 	#superclass : #Object,
 	#instVars : [
-		'index',
+		'shelf',
 		'x',
-		'freeSpace',
 		'next',
 		'referenceCount',
-		'itemCount',
-		'shelf',
-		'generation'
+		'freeWidth'
+	],
+	#pools : [
+		'PicConstants'
 	],
 	#category : #'RenderThee-Atlas'
 }
 
 {
 	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 6/28/2021 15:00'
+	#'squeak_changestamp' : 'stlu 6/7/2022 14:10'
 }
 RtBucketAllocatorBucket >> allocate: width [
 
 	| minX minY rectangle |
-	minX := x + shelf bucketWidth - freeSpace.
+	minX := x + shelf bucketWidth - freeWidth.
 	minY := shelf y.
-	rectangle := Rectangle
-					left: minX
-					right: minX + width
-					top: minY
-					bottom: minY + shelf height.
+	rectangle := RectanglePool borrow
+		setLeft: minX
+		top: minY
+		right: minX + width
+		bottom: minY + shelf height.
 	
-	freeSpace := freeSpace - width.
+	freeWidth := freeWidth - width.
 	referenceCount := referenceCount + 1.
-	itemCount := itemCount + 1.
+	self atlas spaceAllocated: rectangle area.
 	
-	^ RtAtlasAllocation
+	^ RtAtlasRegion
 		rectangle: rectangle
 		provider: self
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 6/29/2021 09:51'
+	#'squeak_changestamp' : 'stlu 6/1/2022 16:54'
 }
 RtBucketAllocatorBucket >> allocatedBounds [
 
 	^ x @ shelf y
-		extent: shelf bucketWidth - freeSpace @ shelf height
+		extent: shelf bucketWidth - freeWidth @ shelf height
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/1/2022 17:04'
+}
+RtBucketAllocatorBucket >> atlas [
+
+	^ shelf atlas
 ]
 
 {
@@ -59,39 +68,32 @@ RtBucketAllocatorBucket >> bounds [
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 6/28/2021 11:22'
+	#category : #allocation,
+	#'squeak_changestamp' : 'stlu 6/1/2022 14:58'
 }
-RtBucketAllocatorBucket >> freeSpace [
+RtBucketAllocatorBucket >> deallocate: anAllocation [
 
-	^ freeSpace
+	referenceCount := referenceCount - 1.
+	referenceCount > 0 ifTrue: [^ self].
+	shelf deallocate: self.
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 6/28/2021 11:22'
+	#'squeak_changestamp' : 'stlu 6/1/2022 16:55'
 }
-RtBucketAllocatorBucket >> freeSpace: anObject [
+RtBucketAllocatorBucket >> freeWidth [
 
-	freeSpace := anObject
+	^ freeWidth
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 6/28/2021 11:22'
+	#'squeak_changestamp' : 'stlu 6/1/2022 16:55'
 }
-RtBucketAllocatorBucket >> generation [
+RtBucketAllocatorBucket >> freeWidth: anInteger [
 
-	^ generation
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 6/28/2021 11:22'
-}
-RtBucketAllocatorBucket >> generation: anObject [
-
-	generation := anObject
+	freeWidth := anInteger.
 ]
 
 {
@@ -104,49 +106,12 @@ RtBucketAllocatorBucket >> height [
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 6/28/2021 13:28'
-}
-RtBucketAllocatorBucket >> index [
-
-	^ index
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 6/28/2021 13:28'
-}
-RtBucketAllocatorBucket >> index: anObject [
-
-	index := anObject
-]
-
-{
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/28/2021 16:41'
+	#'squeak_changestamp' : 'stlu 6/1/2022 15:03'
 }
 RtBucketAllocatorBucket >> initialize [
 
 	referenceCount := 0.
-	itemCount := 0.
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 6/28/2021 11:22'
-}
-RtBucketAllocatorBucket >> itemCount [
-
-	^ itemCount
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 6/28/2021 11:22'
-}
-RtBucketAllocatorBucket >> itemCount: anObject [
-
-	itemCount := anObject
 ]
 
 {

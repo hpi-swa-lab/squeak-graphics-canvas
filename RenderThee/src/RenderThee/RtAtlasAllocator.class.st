@@ -2,7 +2,8 @@ Class {
 	#name : #RtAtlasAllocator,
 	#superclass : #Object,
 	#instVars : [
-		'extent'
+		'width',
+		'height'
 	],
 	#category : #'RenderThee-Atlas'
 }
@@ -20,19 +21,101 @@ RtAtlasAllocator class >> extent: aPoint [
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 6/28/2021 09:27'
+	#category : #allocation,
+	#'squeak_changestamp' : 'stlu 6/1/2022 15:18'
 }
-RtAtlasAllocator >> extent [
+RtAtlasAllocator >> allocate: requestedExtent [
 
-	^ extent
+	^ self allocateWidth: requestedExtent x height: requestedExtent y
+]
+
+{
+	#category : #allocation,
+	#'squeak_changestamp' : 'stlu 6/1/2022 15:18'
+}
+RtAtlasAllocator >> allocateWidth: requestedWidth height: requestedHeight [
+
+	self subclassResponsibility.
 ]
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 6/28/2021 09:27'
+	#'squeak_changestamp' : 'stlu 6/1/2022 15:13'
 }
-RtAtlasAllocator >> extent: anObject [
+RtAtlasAllocator >> allocatedSpace [
 
-	extent := anObject
+	self subclassResponsibility
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/30/2022 17:50'
+}
+RtAtlasAllocator >> extent [
+
+	^ width @ height
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 5/30/2022 17:50'
+}
+RtAtlasAllocator >> extent: aPoint [
+
+	width := aPoint x.
+	height := aPoint y.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/1/2022 15:14'
+}
+RtAtlasAllocator >> freeSpace [
+
+	^ self totalSpace - self allocatedSpace
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/1/2022 15:14'
+}
+RtAtlasAllocator >> height [
+
+	^ height
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/1/2022 15:14'
+}
+RtAtlasAllocator >> height: anObject [
+
+	height := anObject.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/1/2022 15:14'
+}
+RtAtlasAllocator >> totalSpace [
+
+	^ width * height
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/1/2022 15:14'
+}
+RtAtlasAllocator >> width [
+
+	^ width
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/1/2022 15:14'
+}
+RtAtlasAllocator >> width: anObject [
+
+	width := anObject.
 ]

@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'shelves',
 		'availableHeight',
-		'alignment',
 		'currentColumn',
 		'columnWidth',
 		'numColumns',
@@ -15,123 +14,95 @@ Class {
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 6/29/2021 10:38'
+	#'squeak_changestamp' : 'stlu 6/1/2022 17:19'
 }
 RtBucketAllocator class >> extent: anExtent [
 
 	^ self
 		extent: anExtent
 		numColumns: 1
-		alignment: 1@1
 ]
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 6/29/2021 10:37'
+	#'squeak_changestamp' : 'stlu 6/1/2022 17:18'
 }
 RtBucketAllocator class >> extent: anExtent numColumns: numColumns [
-
-	^ self
-		extent: anExtent
-		numColumns: numColumns
-		alignment: 1@1
-]
-
-{
-	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 6/29/2021 10:39'
-}
-RtBucketAllocator class >> extent: anExtent numColumns: numColumns alignment: aPoint [
 
 	^ self basicNew
 		extent: anExtent;
 		numColumns: numColumns;
-		alignment: aPoint;
 		initialize;
 		yourself
 ]
 
 {
 	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 6/29/2021 10:08'
+	#'squeak_changestamp' : 'stlu 6/1/2022 16:58'
 }
-RtBucketAllocator >> addShelf: itemExtent [
+RtBucketAllocator >> addShelfOfHeight: shelfHeight [
 
-	| height numBuckets bucketWidth previousBucket shelf |
-	(availableHeight ~= 0 and: [availableHeight < itemExtent y] and: [self canAddColumn]) ifTrue: [
+	| numBuckets bucketWidth previousBucket shelf |
+	(availableHeight ~= 0 and: [shelfHeight > availableHeight and: [self canAddColumn]]) ifTrue: [
 		"We have room to add a shelf in a new column but current one doesn't have enough available space.
 		First add a shelf to fill the current column's remaining height."
-		self addShelf: 0@availableHeight].
+		self addShelfOfHeight: availableHeight].
 	
 	(availableHeight = 0 and: [self canAddColumn]) ifTrue: [
 		currentColumn := currentColumn + 1.
-		availableHeight := extent y].
+		availableHeight := height].
 	
-	height := itemExtent y.
-	numBuckets := self numBucketsForExtent: itemExtent.
+	numBuckets := self numBucketsForWidth: columnWidth height: shelfHeight.
 	bucketWidth := columnWidth // numBuckets.
 	
 	shelf := RtBucketAllocatorShelf new
-				x: currentColumn - 1 * columnWidth;
-				y: extent y - availableHeight;
-				height: height;
-				bucketWidth: bucketWidth.
+		atlas: self;
+		x: currentColumn - 1 * columnWidth;
+		y: height - availableHeight;
+		height: shelfHeight;
+		bucketWidth: bucketWidth.
 	
 	"Initialize buckets for new shelf"
 	previousBucket := nil.
-	0 to: numBuckets - 1 do: [:index |
+	numBuckets - 1 to: 0 by: -1 do: [:index |
 		previousBucket := RtBucketAllocatorBucket new
-							next: previousBucket;
-							x: index * bucketWidth + shelf x;
-							freeSpace: bucketWidth;
-							shelf: shelf].
+			next: previousBucket;
+			x: index * bucketWidth + shelf x;
+			freeWidth: bucketWidth;
+			shelf: shelf].
 	shelf firstBucket: previousBucket.
-	shelves add: shelf.
+	shelves addLast: shelf.
 	
-	availableHeight := availableHeight - height.
+	availableHeight := availableHeight - shelfHeight.
 	
 	^ shelf
 ]
 
 {
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 6/28/2021 09:26'
-}
-RtBucketAllocator >> alignment [
-
-	^ alignment
-]
-
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 6/28/2021 09:26'
-}
-RtBucketAllocator >> alignment: anObject [
-
-	alignment := anObject
-]
-
-{
 	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 6/28/2021 14:40'
+	#'squeak_changestamp' : 'stlu 6/1/2022 17:44'
 }
-RtBucketAllocator >> allocate: requestedExtent [
+RtBucketAllocator >> allocateWidth: requestedWidth height: requestedHeight [
 
-	| alignedExtent selectedBucket allocation |
-	alignedExtent := requestedExtent roundUpTo: alignment.
-	(alignedExtent x > columnWidth or: [alignedExtent y > extent y]) ifTrue: [^ nil].
+	| selectedBucket |
+	(requestedWidth > columnWidth or: [requestedHeight > height]) ifTrue: [^ nil].
 	
-	selectedBucket := self findBucketOfExtent: alignedExtent.
+	selectedBucket := self findBucketOfWidth: requestedWidth height: requestedHeight.
 	selectedBucket ifNil: [
-		(self canAddShelfOfHeight: alignedExtent y)
-			ifTrue: [selectedBucket := (self addShelf: alignedExtent) firstBucket]
-			ifFalse: [selectedBucket := self coalesceShelves: alignedExtent]].
+		(self canAddShelfOfHeight: requestedHeight) ifTrue: [
+			selectedBucket := (self addShelfOfHeight: requestedHeight) firstBucket]].
 	
-	selectedBucket ifNotNil: [
-		allocation := selectedBucket allocate: alignedExtent x.
-		allocatedSpace := allocatedSpace + allocation rectangle area.
-		^ allocation].
-	^ nil
+	^ selectedBucket ifNotNil: [
+		selectedBucket allocate: requestedWidth]
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/1/2022 15:17'
+}
+RtBucketAllocator >> allocatedSpace [
+
+	^ allocatedSpace
 ]
 
 {
@@ -154,28 +125,29 @@ RtBucketAllocator >> canAddShelfOfHeight: shelfHeight [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/29/2021 08:49'
+	#'squeak_changestamp' : 'stlu 5/30/2022 17:50'
 }
 RtBucketAllocator >> clear [
 
 	shelves := OrderedCollection new.
-	availableHeight := extent y.
+	availableHeight := height.
 	currentColumn := 1.
 	allocatedSpace := 0.
 ]
 
 {
 	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 6/29/2021 10:28'
+	#'squeak_changestamp' : 'stlu 5/30/2022 14:07'
 }
 RtBucketAllocator >> coalesceShelves: itemExtent [
 
+	"not yet implemented"
 	^ nil
 ]
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 6/29/2021 09:30'
+	#'squeak_changestamp' : 'stlu 5/30/2022 17:51'
 }
 RtBucketAllocator >> drawOn: aCanvas [
 
@@ -183,7 +155,7 @@ RtBucketAllocator >> drawOn: aCanvas [
 	allocatedColor := Color r: 70 g: 70 b: 180 range: 255.
 	unallocatedColor := Color r: 50 g: 50 b: 50 range: 255.
 	gridColor := Color black.
-	aCanvas fillRectangle: (0@0 extent: extent) color: unallocatedColor.
+	aCanvas fillRectangle: (0@0 extent: self extent) color: unallocatedColor.
 	shelves do: [:shelf |
 		| bucket |
 		bucket := shelf firstBucket.
@@ -195,34 +167,30 @@ RtBucketAllocator >> drawOn: aCanvas [
 	1 to: numColumns - 1 do: [:index |
 		| x |
 		x := index * columnWidth.
-		aCanvas line: x @ 0 to: x @ extent y color: gridColor]
+		aCanvas line: x @ 0 to: x @ height color: gridColor]
 ]
 
 {
 	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 6/28/2021 20:23'
+	#'squeak_changestamp' : 'stlu 6/1/2022 17:32'
 }
-RtBucketAllocator >> findBucketOfExtent: minExtent [
+RtBucketAllocator >> findBucketOfWidth: minWidth height: minHeight [
 
-	| w h bestWaste canAddShelf selectedBucket |
-	w := minExtent x.
-	h := minExtent y.
-	
-	bestWaste := extent y.
-	canAddShelf := self canAddShelfOfHeight: h.
+	| bestWaste canAddShelf selectedBucket |
+	bestWaste := height.
+	canAddShelf := self canAddShelfOfHeight: minHeight.
 	
 	1 to: shelves size do: [:shelfIndex |
 		| shelf |
 		shelf := shelves at: shelfIndex.
-		(shelf height >= h and: [shelf bucketWidth >= w]) ifTrue: [
+		(shelf height >= minHeight and: [shelf bucketWidth >= minWidth]) ifTrue: [
 			| yWaste |
-			yWaste := shelf height - h.
+			yWaste := shelf height - minHeight.
 			"only allow massive waste (2*h) if no more shelves can be added"
-			(yWaste <= bestWaste and: [canAddShelf not or: [yWaste <= h]]) ifTrue: [
-				selectedBucket := self findBucketOfWidth: w inShelf: shelf.
+			(yWaste <= bestWaste and: [canAddShelf not or: [yWaste <= minHeight]]) ifTrue: [
+				selectedBucket := self findBucketOfWidth: minWidth inShelf: shelf.
 				selectedBucket ifNotNil: [
-					(yWaste = 0 and: [selectedBucket freeSpace = w]) ifTrue: [
-						^ selectedBucket "perfect match"].
+					yWaste = 0 ifTrue: [^ selectedBucket].
 					bestWaste := yWaste]]]].
 	
 	^ selectedBucket
@@ -230,26 +198,26 @@ RtBucketAllocator >> findBucketOfExtent: minExtent [
 
 {
 	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 6/28/2021 20:22'
+	#'squeak_changestamp' : 'stlu 6/1/2022 16:56'
 }
 RtBucketAllocator >> findBucketOfWidth: minWidth inShelf: aShelf [
 
 	| bucket |
 	bucket := aShelf firstBucket.
-	[bucket ~~ nil] whileTrue: [
-		bucket freeSpace >= minWidth ifTrue: [^ bucket].
+	[nil ~~ bucket] whileTrue: [
+		bucket freeWidth >= minWidth ifTrue: [^ bucket].
 		bucket := bucket next].
 	^ nil
 ]
 
 {
 	#category : #drawing,
-	#'squeak_changestamp' : 'stlu 6/29/2021 09:24'
+	#'squeak_changestamp' : 'stlu 5/30/2022 17:51'
 }
 RtBucketAllocator >> imageForm [
 
 	| fc |
-	fc := FormCanvas extent: extent.
+	fc := FormCanvas extent: self extent.
 	self drawOn: fc.
 	^ fc form
 ]
@@ -274,12 +242,12 @@ RtBucketAllocator >> isEmpty [
 
 {
 	#category : #allocation,
-	#'squeak_changestamp' : 'stlu 6/28/2021 16:12'
+	#'squeak_changestamp' : 'stlu 5/30/2022 17:40'
 }
-RtBucketAllocator >> numBucketsForExtent: shelfExtent [
+RtBucketAllocator >> numBucketsForWidth: shelfWidth height: shelfHeight [
 
 	| n |
-	n := columnWidth // (shelfExtent x max: shelfExtent y).
+	n := columnWidth // (shelfWidth min: shelfHeight).
 	n <= 4 ifTrue: [^ 1].
 	n <= 16 ifTrue: [^ 2].
 	n <= 32 ifTrue: [^ 4].
@@ -297,10 +265,28 @@ RtBucketAllocator >> numColumns [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 6/29/2021 08:24'
+	#'squeak_changestamp' : 'stlu 5/30/2022 17:51'
 }
 RtBucketAllocator >> numColumns: aNumber [
 
 	numColumns := aNumber.
-	columnWidth := extent x // aNumber.
+	columnWidth := width // aNumber.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/1/2022 17:07'
+}
+RtBucketAllocator >> spaceAllocated: anInteger [
+
+	allocatedSpace := allocatedSpace + anInteger.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/1/2022 17:10'
+}
+RtBucketAllocator >> spaceDeallocated: anInteger [
+
+	allocatedSpace := allocatedSpace - anInteger.
 ]

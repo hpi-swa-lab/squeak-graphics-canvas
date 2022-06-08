@@ -2,6 +2,7 @@ Class {
 	#name : #RtBucketAllocatorShelf,
 	#superclass : #Object,
 	#instVars : [
+		'atlas',
 		'x',
 		'y',
 		'height',
@@ -10,6 +11,24 @@ Class {
 	],
 	#category : #'RenderThee-Atlas'
 }
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/1/2022 15:10'
+}
+RtBucketAllocatorShelf >> atlas [
+
+	^ atlas
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/1/2022 15:10'
+}
+RtBucketAllocatorShelf >> atlas: anObject [
+
+	atlas := anObject.
+]
 
 {
 	#category : #accessing,
@@ -27,6 +46,17 @@ RtBucketAllocatorShelf >> bucketWidth [
 RtBucketAllocatorShelf >> bucketWidth: anObject [
 
 	bucketWidth := anObject
+]
+
+{
+	#category : #allocation,
+	#'squeak_changestamp' : 'stlu 6/1/2022 17:17'
+}
+RtBucketAllocatorShelf >> deallocate: aBucket [
+
+	atlas spaceDeallocated: bucketWidth - aBucket freeWidth * height.
+	aBucket freeWidth: bucketWidth.
+	self flag: #todo. "we may want to handle empty shelves specially"
 ]
 
 {

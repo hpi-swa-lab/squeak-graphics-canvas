@@ -1,5 +1,5 @@
 Class {
-	#name : #RtAtlasAllocation,
+	#name : #RtAtlasRegion,
 	#superclass : #Object,
 	#instVars : [
 		'rectangle',
@@ -12,7 +12,7 @@ Class {
 	#category : #'instance creation',
 	#'squeak_changestamp' : 'stlu 6/28/2021 14:59'
 }
-RtAtlasAllocation class >> rectangle: aRectangle provider: anObject [
+RtAtlasRegion class >> rectangle: aRectangle provider: anObject [
 
 	^ self basicNew
 		rectangle: aRectangle;
@@ -20,10 +20,19 @@ RtAtlasAllocation class >> rectangle: aRectangle provider: anObject [
 ]
 
 {
+	#category : #allocation,
+	#'squeak_changestamp' : 'stlu 6/1/2022 14:53'
+}
+RtAtlasRegion >> deallocate [
+
+	provider deallocate: self.
+]
+
+{
 	#category : #printing,
 	#'squeak_changestamp' : 'stlu 6/28/2021 20:24'
 }
-RtAtlasAllocation >> printOn: aStream [
+RtAtlasRegion >> printOn: aStream [
 
 	super printOn: aStream.
 	aStream
@@ -36,7 +45,7 @@ RtAtlasAllocation >> printOn: aStream [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 6/28/2021 14:58'
 }
-RtAtlasAllocation >> provider [
+RtAtlasRegion >> provider [
 
 	^ provider
 ]
@@ -45,7 +54,7 @@ RtAtlasAllocation >> provider [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 6/28/2021 14:58'
 }
-RtAtlasAllocation >> provider: anObject [
+RtAtlasRegion >> provider: anObject [
 
 	provider := anObject
 ]
@@ -54,7 +63,7 @@ RtAtlasAllocation >> provider: anObject [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 6/28/2021 14:58'
 }
-RtAtlasAllocation >> rectangle [
+RtAtlasRegion >> rectangle [
 
 	^ rectangle
 ]
@@ -63,7 +72,7 @@ RtAtlasAllocation >> rectangle [
 	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 6/28/2021 14:58'
 }
-RtAtlasAllocation >> rectangle: anObject [
+RtAtlasRegion >> rectangle: anObject [
 
 	rectangle := anObject
 ]
