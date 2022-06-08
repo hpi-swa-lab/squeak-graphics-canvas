@@ -21,15 +21,6 @@ PicImagePrim >> acceptVisitor: aVisitor [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 5/20/2021 21:54'
-}
-PicImagePrim >> bounds [
-
-	^ origin extent: sourceRect extent
-]
-
-{
-	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
 PicImagePrim >> combinationRule [
@@ -110,11 +101,12 @@ PicImagePrim >> iconOrThumbnailOfSize: aNumberOrPoint [
 
 {
 	#category : #testing,
-	#'squeak_changestamp' : 'stlu 8/13/2021 13:12'
+	#'squeak_changestamp' : 'stlu 6/7/2022 15:15'
 }
 PicImagePrim >> isTranslucent [
 
-	^ form isTranslucent "most likely true even if actually opaque"
+	self flag: #todo. "test against combinationRule"
+	^ true
 ]
 
 {

@@ -26,25 +26,21 @@ PicTextRunPrim >> acceptVisitor: aVisitor [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 8/25/2021 15:46'
+	#'squeak_changestamp' : 'stlu 6/2/2022 13:53'
 }
-PicTextRunPrim >> bounds [
+PicTextRunPrim >> actualContents [
 
-	| extent |
-	extent := self extent.
-	extent > (0@0) ifFalse: [^ nil].
-	^ position extent: extent
+	^ contents copyFrom: startIndex to: stopIndex
 ]
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 8/26/2021 14:41'
+	#'squeak_changestamp' : 'stlu 6/2/2022 15:16'
 }
 PicTextRunPrim >> calculateRightEdges [
 
-	| font left |
-	font := self font.
-	rightEdges := ExternalType float allocate: self length.
+	| left rightEdges |
+	rightEdges := Float32Array new: self length.
 	
 	left := 0.
 	startIndex to: stopIndex do: [:charIndex |
@@ -54,7 +50,7 @@ PicTextRunPrim >> calculateRightEdges [
 		left := left + width.
 		rightEdges at: charIndex - startIndex + 1 put: left].
 	
-	fullExtent := left @ font height.
+	^ rightEdges
 ]
 
 {
@@ -120,11 +116,11 @@ PicTextRunPrim >> extent [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/28/2021 16:16'
+	#'squeak_changestamp' : 'stlu 6/2/2022 14:00'
 }
 PicTextRunPrim >> font [
 
-	^ font ifNil: [TextStyle defaultFont]
+	^ font
 ]
 
 {
@@ -248,6 +244,15 @@ PicTextRunPrim >> rightEdges [
 
 {
 	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/2/2022 13:52'
+}
+PicTextRunPrim >> size [
+
+	^ stopIndex - startIndex + 1
+]
+
+{
+	#category : #accessing,
 	#'squeak_changestamp' : 'stlu 8/20/2021 12:26'
 }
 PicTextRunPrim >> startIndex [
@@ -280,6 +285,23 @@ PicTextRunPrim >> stopIndex [
 PicTextRunPrim >> stopIndex: anObject [
 
 	stopIndex := anObject.
+]
+
+{
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 6/7/2022 10:26'
+}
+PicTextRunPrim >> storeRightEdgesInto: anArray [
+
+	| left |
+	left := 0.
+	startIndex to: stopIndex do: [:charIndex |
+		| char width |
+		char := contents at: charIndex.
+		width := font widthOf: char.
+		left := left + width.
+		anArray at: charIndex - startIndex + 1 put: left].
+	^ anArray
 ]
 
 {

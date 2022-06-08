@@ -47,10 +47,10 @@ PicGroupBegin >> initialize [
 
 {
 	#category : #reclaiming,
-	#'squeak_changestamp' : 'stlu 5/19/2022 15:13'
+	#'squeak_changestamp' : 'stlu 6/2/2022 12:53'
 }
 PicGroupBegin >> reclaim [
 
-	self unlink.
+	super reclaim.
 	self pool return: self.
 ]

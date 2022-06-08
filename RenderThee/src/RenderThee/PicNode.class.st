@@ -7,7 +7,8 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'previous',
-		'next'
+		'next',
+		'cache'
 	],
 	#pools : [
 		'PicConstants'
@@ -34,6 +35,24 @@ PicNode >> asForm [
 	fc := self getFormCanvas.
 	self drawOn: fc.
 	^ fc form
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/2/2022 12:54'
+}
+PicNode >> cache [
+
+	^ cache
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/2/2022 12:54'
+}
+PicNode >> cache: anObject [
+
+	cache := anObject.
 ]
 
 {
@@ -175,10 +194,13 @@ PicNode >> previous: aNode [
 
 {
 	#category : #reclaiming,
-	#'squeak_changestamp' : 'stlu 5/19/2022 14:54'
+	#'squeak_changestamp' : 'stlu 6/2/2022 12:57'
 }
 PicNode >> reclaim [
 
+	cache ifNotNil: [
+		cache invalidate.
+		cache := nil].
 	self unlink.
 ]
 

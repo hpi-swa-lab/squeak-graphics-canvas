@@ -29,11 +29,38 @@ PicGraphicsPrim >> bounds: aRectangle [
 ]
 
 {
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/8/2022 12:23'
+}
+PicGraphicsPrim >> extent [
+
+	^ bounds extent
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/7/2022 15:19'
+}
+PicGraphicsPrim >> height [
+
+	^ bounds height
+]
+
+{
 	#category : #reclaiming,
-	#'squeak_changestamp' : 'stlu 5/19/2022 15:13'
+	#'squeak_changestamp' : 'stlu 6/2/2022 12:53'
 }
 PicGraphicsPrim >> reclaim [
 
-	self unlink.
+	super reclaim.
 	self pool return: self.
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/7/2022 15:18'
+}
+PicGraphicsPrim >> width [
+
+	^ bounds width
 ]
