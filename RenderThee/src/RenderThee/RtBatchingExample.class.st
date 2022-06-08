@@ -20,14 +20,27 @@ RtBatchingExample >> initialize [
 ]
 
 {
+	#category : #logging,
+	#'squeak_changestamp' : 'stlu 6/7/2022 15:30'
+}
+RtBatchingExample >> printWindowTitleOn: aStream [
+
+	super printWindowTitleOn: aStream.
+	(renderer notNil and: [renderer numBatches notNil]) ifTrue: [
+		aStream nextPutAll: ' | B: '.
+		aStream store: renderer numBatches].
+]
+
+{
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 5/20/2022 12:49'
+	#'squeak_changestamp' : 'stlu 6/7/2022 11:04'
 }
 RtBatchingExample >> render [
 
 	| batchingStart |
 	self updateMorph.
 	renderer bounds: world bounds.
+	renderer currentFrame: numFrames.
 	renderer reset.
 	renderer clear.
 	

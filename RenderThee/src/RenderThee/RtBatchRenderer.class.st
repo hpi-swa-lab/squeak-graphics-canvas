@@ -174,8 +174,26 @@ RtBatchRenderer >> clipRectIndex [
 ]
 
 {
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/7/2022 11:03'
+}
+RtBatchRenderer >> currentFrame [
+
+	^ currentFrame
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/7/2022 11:03'
+}
+RtBatchRenderer >> currentFrame: anObject [
+
+	currentFrame := anObject.
+]
+
+{
 	#category : #rendering,
-	#'squeak_changestamp' : 'stlu 4/21/2022 17:52'
+	#'squeak_changestamp' : 'stlu 6/7/2022 15:27'
 }
 RtBatchRenderer >> draw [
 
@@ -203,7 +221,9 @@ RtBatchRenderer >> draw [
 	GL depthMask: GL_TRUE.
 	GL disable: GL_BLEND.
 	
+	numBatches := 0.
 	self batchesDo: [:batch |
+		numBatches := numBatches + 1.
 		instanceVBOManager storeBatch: batch].
 	
 	self opaqueBatchesDo: [:batch |
@@ -582,6 +602,15 @@ RtBatchRenderer >> initializeWithBounds: aRectangle [
 RtBatchRenderer >> isShadowDrawing [
 
 	^ false
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/7/2022 15:28'
+}
+RtBatchRenderer >> numBatches [
+
+	^ numBatches
 ]
 
 {
