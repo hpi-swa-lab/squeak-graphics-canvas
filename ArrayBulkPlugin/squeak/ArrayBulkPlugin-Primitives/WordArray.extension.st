@@ -1,8 +1,8 @@
 Extension { #name : #WordArray }
 
 {
-	#category : #'*RawBitsBulkPlugins-Primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:13'
+	#category : #'*ArrayBulkPlugin-Primitives',
+	#'squeak_changestamp' : 'stlu 6/10/2022 17:18'
 }
 WordArray >> startingAt: index put: value1 put: value2 [
 
@@ -12,8 +12,8 @@ WordArray >> startingAt: index put: value1 put: value2 [
 ]
 
 {
-	#category : #'*RawBitsBulkPlugins-Primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:13'
+	#category : #'*ArrayBulkPlugin-Primitives',
+	#'squeak_changestamp' : 'stlu 6/10/2022 17:18'
 }
 WordArray >> startingAt: index put: value1 put: value2 put: value3 [
 
@@ -24,8 +24,8 @@ WordArray >> startingAt: index put: value1 put: value2 put: value3 [
 ]
 
 {
-	#category : #'*RawBitsBulkPlugins-Primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:13'
+	#category : #'*ArrayBulkPlugin-Primitives',
+	#'squeak_changestamp' : 'stlu 6/10/2022 17:18'
 }
 WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 [
 
@@ -37,8 +37,8 @@ WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 [
 ]
 
 {
-	#category : #'*RawBitsBulkPlugins-Primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:13'
+	#category : #'*ArrayBulkPlugin-Primitives',
+	#'squeak_changestamp' : 'stlu 6/10/2022 17:18'
 }
 WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 put: value5 [
 
@@ -51,8 +51,8 @@ WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 p
 ]
 
 {
-	#category : #'*RawBitsBulkPlugins-Primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:13'
+	#category : #'*ArrayBulkPlugin-Primitives',
+	#'squeak_changestamp' : 'stlu 6/10/2022 17:18'
 }
 WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 put: value5 put: value6 [
 
@@ -66,8 +66,8 @@ WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 p
 ]
 
 {
-	#category : #'*RawBitsBulkPlugins-Primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:13'
+	#category : #'*ArrayBulkPlugin-Primitives',
+	#'squeak_changestamp' : 'stlu 6/10/2022 17:18'
 }
 WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 put: value5 put: value6 put: value7 [
 
@@ -82,8 +82,8 @@ WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 p
 ]
 
 {
-	#category : #'*RawBitsBulkPlugins-Primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:13'
+	#category : #'*ArrayBulkPlugin-Primitives',
+	#'squeak_changestamp' : 'stlu 6/10/2022 17:18'
 }
 WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 put: value5 put: value6 put: value7 put: value8 [
 
@@ -99,8 +99,8 @@ WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 p
 ]
 
 {
-	#category : #'*RawBitsBulkPlugins-Primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:13'
+	#category : #'*ArrayBulkPlugin-Primitives',
+	#'squeak_changestamp' : 'stlu 6/10/2022 17:18'
 }
 WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 put: value5 put: value6 put: value7 put: value8 put: value9 [
 
@@ -117,8 +117,8 @@ WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 p
 ]
 
 {
-	#category : #'*RawBitsBulkPlugins-Primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:13'
+	#category : #'*ArrayBulkPlugin-Primitives',
+	#'squeak_changestamp' : 'stlu 6/10/2022 17:18'
 }
 WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 put: value5 put: value6 put: value7 put: value8 put: value9 put: value10 [
 
@@ -136,8 +136,8 @@ WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 p
 ]
 
 {
-	#category : #'*RawBitsBulkPlugins-Primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:13'
+	#category : #'*ArrayBulkPlugin-Primitives',
+	#'squeak_changestamp' : 'stlu 6/10/2022 17:18'
 }
 WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 put: value5 put: value6 put: value7 put: value8 put: value9 put: value10 put: value11 [
 
@@ -156,8 +156,8 @@ WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 p
 ]
 
 {
-	#category : #'*RawBitsBulkPlugins-Primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:13'
+	#category : #'*ArrayBulkPlugin-Primitives',
+	#'squeak_changestamp' : 'stlu 6/10/2022 17:18'
 }
 WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 put: value5 put: value6 put: value7 put: value8 put: value9 put: value10 put: value11 put: value12 [
 
@@ -177,8 +177,8 @@ WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 p
 ]
 
 {
-	#category : #'*RawBitsBulkPlugins-Primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:13'
+	#category : #'*ArrayBulkPlugin-Primitives',
+	#'squeak_changestamp' : 'stlu 6/10/2022 17:18'
 }
 WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 put: value5 put: value6 put: value7 put: value8 put: value9 put: value10 put: value11 put: value12 put: value13 [
 
@@ -199,8 +199,8 @@ WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 p
 ]
 
 {
-	#category : #'*RawBitsBulkPlugins-Primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:13'
+	#category : #'*ArrayBulkPlugin-Primitives',
+	#'squeak_changestamp' : 'stlu 6/10/2022 17:18'
 }
 WordArray >> startingAt: index put: value1 put: value2 put: value3 put: value4 put: value5 put: value6 put: value7 put: value8 put: value9 put: value10 put: value11 put: value12 put: value13 put: value14 [
 

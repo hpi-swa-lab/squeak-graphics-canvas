@@ -1,13 +1,10 @@
 Class {
 	#name : #ArrayBulkPluginGenerator,
 	#superclass : #Object,
-	#category : #'RawBitsBulkPlugins-Plugins'
+	#category : #'ArrayBulkPlugin-Plugin'
 }
 
-{
-	#category : #compilation,
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #compilation }
 ArrayBulkPluginGenerator >> generatePluginPrimitives [
 "
 self new generatePluginPrimitives.
@@ -28,10 +25,7 @@ self new generatePluginPrimitives.
 				classified: spec first asLowercase , ' primitives']].
 ]
 
-{
-	#category : #compilation,
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:13'
-}
+{ #category : #compilation }
 ArrayBulkPluginGenerator >> generateUserMethods [
 "
 self new generateUserMethods.
@@ -55,28 +49,19 @@ self new generateUserMethods.
 			classified: self userMessageCategory].
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/20/2022 15:23'
-}
+{ #category : #accessing }
 ArrayBulkPluginGenerator >> pluginClass [
 
 	^ ArrayBulkPlugin
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/20/2022 15:23'
-}
+{ #category : #accessing }
 ArrayBulkPluginGenerator >> pluginName [
 
 	^ self pluginClass moduleName
 ]
 
-{
-	#category : #'code generation',
-	#'squeak_changestamp' : 'stlu 4/20/2022 16:51'
-}
+{ #category : #'code generation' }
 ArrayBulkPluginGenerator >> pluginTemplateForStartingAtPut: numSlots [
 
 	^ String streamContents: [:stream |
@@ -110,19 +95,13 @@ ArrayBulkPluginGenerator >> pluginTemplateForStartingAtPut: numSlots [
 			nextPutAll: 'interpreterProxy pop: '; store: numSlots + 1; nextPutAll: '.']
 ]
 
-{
-	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 4/20/2022 15:48'
-}
+{ #category : #accessing }
 ArrayBulkPluginGenerator >> userMessageCategory [
 
-	^ #'*RawBitsBulkPlugins-Primitives'
+	^ #'*ArrayBulkPlugin-Primitives'
 ]
 
-{
-	#category : #'code generation',
-	#'squeak_changestamp' : 'stlu 4/20/2022 15:46'
-}
+{ #category : #'code generation' }
 ArrayBulkPluginGenerator >> userSourceForFallbackStartingAtPut: numSlots [
 
 	^ String streamContents: [:stream |
@@ -143,10 +122,7 @@ ArrayBulkPluginGenerator >> userSourceForFallbackStartingAtPut: numSlots [
 				nextPutAll: '.']]
 ]
 
-{
-	#category : #'code generation',
-	#'squeak_changestamp' : 'stlu 4/20/2022 15:41'
-}
+{ #category : #'code generation' }
 ArrayBulkPluginGenerator >> userTemplateForStartingAtPut: numSlots [
 
 	^ String streamContents: [:stream |

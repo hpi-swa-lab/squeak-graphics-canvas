@@ -4,22 +4,15 @@ FloatArrayPlugin provides fast access to FloatArrays for batch processing of flo
 Class {
 	#name : #ArrayBulkPlugin,
 	#superclass : #InterpreterPlugin,
-	#category : #'RawBitsBulkPlugins-Plugins',
-	#'squeak_changestamp' : '<historical>'
+	#category : #'ArrayBulkPlugin-Plugin'
 }
 
-{
-	#category : #'translation to C',
-	#'squeak_changestamp' : 'ar 9/15/1998 00:30'
-}
+{ #category : #'translation to C' }
 ArrayBulkPlugin class >> declareCVarsIn: cg [
 	"Nothing to declare..."
 ]
 
-{
-	#category : #'float32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float32 primitives' }
 ArrayBulkPlugin >> primitiveFloat32StartingAtPut10 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -51,10 +44,7 @@ ArrayBulkPlugin >> primitiveFloat32StartingAtPut10 [
 	interpreterProxy pop: 11.
 ]
 
-{
-	#category : #'float32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float32 primitives' }
 ArrayBulkPlugin >> primitiveFloat32StartingAtPut11 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -87,10 +77,7 @@ ArrayBulkPlugin >> primitiveFloat32StartingAtPut11 [
 	interpreterProxy pop: 12.
 ]
 
-{
-	#category : #'float32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float32 primitives' }
 ArrayBulkPlugin >> primitiveFloat32StartingAtPut12 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -124,10 +111,7 @@ ArrayBulkPlugin >> primitiveFloat32StartingAtPut12 [
 	interpreterProxy pop: 13.
 ]
 
-{
-	#category : #'float32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float32 primitives' }
 ArrayBulkPlugin >> primitiveFloat32StartingAtPut13 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -162,10 +146,7 @@ ArrayBulkPlugin >> primitiveFloat32StartingAtPut13 [
 	interpreterProxy pop: 14.
 ]
 
-{
-	#category : #'float32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float32 primitives' }
 ArrayBulkPlugin >> primitiveFloat32StartingAtPut14 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -201,10 +182,7 @@ ArrayBulkPlugin >> primitiveFloat32StartingAtPut14 [
 	interpreterProxy pop: 15.
 ]
 
-{
-	#category : #'float32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float32 primitives' }
 ArrayBulkPlugin >> primitiveFloat32StartingAtPut2 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -228,10 +206,7 @@ ArrayBulkPlugin >> primitiveFloat32StartingAtPut2 [
 	interpreterProxy pop: 3.
 ]
 
-{
-	#category : #'float32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float32 primitives' }
 ArrayBulkPlugin >> primitiveFloat32StartingAtPut3 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -256,10 +231,7 @@ ArrayBulkPlugin >> primitiveFloat32StartingAtPut3 [
 	interpreterProxy pop: 4.
 ]
 
-{
-	#category : #'float32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float32 primitives' }
 ArrayBulkPlugin >> primitiveFloat32StartingAtPut4 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -285,10 +257,7 @@ ArrayBulkPlugin >> primitiveFloat32StartingAtPut4 [
 	interpreterProxy pop: 5.
 ]
 
-{
-	#category : #'float32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float32 primitives' }
 ArrayBulkPlugin >> primitiveFloat32StartingAtPut5 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -315,10 +284,7 @@ ArrayBulkPlugin >> primitiveFloat32StartingAtPut5 [
 	interpreterProxy pop: 6.
 ]
 
-{
-	#category : #'float32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float32 primitives' }
 ArrayBulkPlugin >> primitiveFloat32StartingAtPut6 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -346,10 +312,7 @@ ArrayBulkPlugin >> primitiveFloat32StartingAtPut6 [
 	interpreterProxy pop: 7.
 ]
 
-{
-	#category : #'float32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float32 primitives' }
 ArrayBulkPlugin >> primitiveFloat32StartingAtPut7 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -378,10 +341,7 @@ ArrayBulkPlugin >> primitiveFloat32StartingAtPut7 [
 	interpreterProxy pop: 8.
 ]
 
-{
-	#category : #'float32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float32 primitives' }
 ArrayBulkPlugin >> primitiveFloat32StartingAtPut8 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -411,10 +371,7 @@ ArrayBulkPlugin >> primitiveFloat32StartingAtPut8 [
 	interpreterProxy pop: 9.
 ]
 
-{
-	#category : #'float32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float32 primitives' }
 ArrayBulkPlugin >> primitiveFloat32StartingAtPut9 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -445,10 +402,7 @@ ArrayBulkPlugin >> primitiveFloat32StartingAtPut9 [
 	interpreterProxy pop: 10.
 ]
 
-{
-	#category : #'float64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float64 primitives' }
 ArrayBulkPlugin >> primitiveFloat64StartingAtPut10 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -480,10 +434,7 @@ ArrayBulkPlugin >> primitiveFloat64StartingAtPut10 [
 	interpreterProxy pop: 11.
 ]
 
-{
-	#category : #'float64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float64 primitives' }
 ArrayBulkPlugin >> primitiveFloat64StartingAtPut11 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -516,10 +467,7 @@ ArrayBulkPlugin >> primitiveFloat64StartingAtPut11 [
 	interpreterProxy pop: 12.
 ]
 
-{
-	#category : #'float64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float64 primitives' }
 ArrayBulkPlugin >> primitiveFloat64StartingAtPut12 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -553,10 +501,7 @@ ArrayBulkPlugin >> primitiveFloat64StartingAtPut12 [
 	interpreterProxy pop: 13.
 ]
 
-{
-	#category : #'float64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float64 primitives' }
 ArrayBulkPlugin >> primitiveFloat64StartingAtPut13 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -591,10 +536,7 @@ ArrayBulkPlugin >> primitiveFloat64StartingAtPut13 [
 	interpreterProxy pop: 14.
 ]
 
-{
-	#category : #'float64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float64 primitives' }
 ArrayBulkPlugin >> primitiveFloat64StartingAtPut14 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -630,10 +572,7 @@ ArrayBulkPlugin >> primitiveFloat64StartingAtPut14 [
 	interpreterProxy pop: 15.
 ]
 
-{
-	#category : #'float64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float64 primitives' }
 ArrayBulkPlugin >> primitiveFloat64StartingAtPut2 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -657,10 +596,7 @@ ArrayBulkPlugin >> primitiveFloat64StartingAtPut2 [
 	interpreterProxy pop: 3.
 ]
 
-{
-	#category : #'float64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float64 primitives' }
 ArrayBulkPlugin >> primitiveFloat64StartingAtPut3 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -685,10 +621,7 @@ ArrayBulkPlugin >> primitiveFloat64StartingAtPut3 [
 	interpreterProxy pop: 4.
 ]
 
-{
-	#category : #'float64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float64 primitives' }
 ArrayBulkPlugin >> primitiveFloat64StartingAtPut4 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -714,10 +647,7 @@ ArrayBulkPlugin >> primitiveFloat64StartingAtPut4 [
 	interpreterProxy pop: 5.
 ]
 
-{
-	#category : #'float64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float64 primitives' }
 ArrayBulkPlugin >> primitiveFloat64StartingAtPut5 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -744,10 +674,7 @@ ArrayBulkPlugin >> primitiveFloat64StartingAtPut5 [
 	interpreterProxy pop: 6.
 ]
 
-{
-	#category : #'float64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float64 primitives' }
 ArrayBulkPlugin >> primitiveFloat64StartingAtPut6 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -775,10 +702,7 @@ ArrayBulkPlugin >> primitiveFloat64StartingAtPut6 [
 	interpreterProxy pop: 7.
 ]
 
-{
-	#category : #'float64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float64 primitives' }
 ArrayBulkPlugin >> primitiveFloat64StartingAtPut7 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -807,10 +731,7 @@ ArrayBulkPlugin >> primitiveFloat64StartingAtPut7 [
 	interpreterProxy pop: 8.
 ]
 
-{
-	#category : #'float64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float64 primitives' }
 ArrayBulkPlugin >> primitiveFloat64StartingAtPut8 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -840,10 +761,7 @@ ArrayBulkPlugin >> primitiveFloat64StartingAtPut8 [
 	interpreterProxy pop: 9.
 ]
 
-{
-	#category : #'float64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'float64 primitives' }
 ArrayBulkPlugin >> primitiveFloat64StartingAtPut9 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -874,10 +792,7 @@ ArrayBulkPlugin >> primitiveFloat64StartingAtPut9 [
 	interpreterProxy pop: 10.
 ]
 
-{
-	#category : #'int32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int32 primitives' }
 ArrayBulkPlugin >> primitiveInt32StartingAtPut10 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -909,10 +824,7 @@ ArrayBulkPlugin >> primitiveInt32StartingAtPut10 [
 	interpreterProxy pop: 11.
 ]
 
-{
-	#category : #'int32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int32 primitives' }
 ArrayBulkPlugin >> primitiveInt32StartingAtPut11 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -945,10 +857,7 @@ ArrayBulkPlugin >> primitiveInt32StartingAtPut11 [
 	interpreterProxy pop: 12.
 ]
 
-{
-	#category : #'int32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int32 primitives' }
 ArrayBulkPlugin >> primitiveInt32StartingAtPut12 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -982,10 +891,7 @@ ArrayBulkPlugin >> primitiveInt32StartingAtPut12 [
 	interpreterProxy pop: 13.
 ]
 
-{
-	#category : #'int32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int32 primitives' }
 ArrayBulkPlugin >> primitiveInt32StartingAtPut13 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1020,10 +926,7 @@ ArrayBulkPlugin >> primitiveInt32StartingAtPut13 [
 	interpreterProxy pop: 14.
 ]
 
-{
-	#category : #'int32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int32 primitives' }
 ArrayBulkPlugin >> primitiveInt32StartingAtPut14 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1059,10 +962,7 @@ ArrayBulkPlugin >> primitiveInt32StartingAtPut14 [
 	interpreterProxy pop: 15.
 ]
 
-{
-	#category : #'int32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int32 primitives' }
 ArrayBulkPlugin >> primitiveInt32StartingAtPut2 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1086,10 +986,7 @@ ArrayBulkPlugin >> primitiveInt32StartingAtPut2 [
 	interpreterProxy pop: 3.
 ]
 
-{
-	#category : #'int32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int32 primitives' }
 ArrayBulkPlugin >> primitiveInt32StartingAtPut3 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1114,10 +1011,7 @@ ArrayBulkPlugin >> primitiveInt32StartingAtPut3 [
 	interpreterProxy pop: 4.
 ]
 
-{
-	#category : #'int32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int32 primitives' }
 ArrayBulkPlugin >> primitiveInt32StartingAtPut4 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1143,10 +1037,7 @@ ArrayBulkPlugin >> primitiveInt32StartingAtPut4 [
 	interpreterProxy pop: 5.
 ]
 
-{
-	#category : #'int32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int32 primitives' }
 ArrayBulkPlugin >> primitiveInt32StartingAtPut5 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1173,10 +1064,7 @@ ArrayBulkPlugin >> primitiveInt32StartingAtPut5 [
 	interpreterProxy pop: 6.
 ]
 
-{
-	#category : #'int32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int32 primitives' }
 ArrayBulkPlugin >> primitiveInt32StartingAtPut6 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1204,10 +1092,7 @@ ArrayBulkPlugin >> primitiveInt32StartingAtPut6 [
 	interpreterProxy pop: 7.
 ]
 
-{
-	#category : #'int32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int32 primitives' }
 ArrayBulkPlugin >> primitiveInt32StartingAtPut7 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1236,10 +1121,7 @@ ArrayBulkPlugin >> primitiveInt32StartingAtPut7 [
 	interpreterProxy pop: 8.
 ]
 
-{
-	#category : #'int32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int32 primitives' }
 ArrayBulkPlugin >> primitiveInt32StartingAtPut8 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1269,10 +1151,7 @@ ArrayBulkPlugin >> primitiveInt32StartingAtPut8 [
 	interpreterProxy pop: 9.
 ]
 
-{
-	#category : #'int32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int32 primitives' }
 ArrayBulkPlugin >> primitiveInt32StartingAtPut9 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1303,10 +1182,7 @@ ArrayBulkPlugin >> primitiveInt32StartingAtPut9 [
 	interpreterProxy pop: 10.
 ]
 
-{
-	#category : #'int64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int64 primitives' }
 ArrayBulkPlugin >> primitiveInt64StartingAtPut10 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1338,10 +1214,7 @@ ArrayBulkPlugin >> primitiveInt64StartingAtPut10 [
 	interpreterProxy pop: 11.
 ]
 
-{
-	#category : #'int64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int64 primitives' }
 ArrayBulkPlugin >> primitiveInt64StartingAtPut11 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1374,10 +1247,7 @@ ArrayBulkPlugin >> primitiveInt64StartingAtPut11 [
 	interpreterProxy pop: 12.
 ]
 
-{
-	#category : #'int64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int64 primitives' }
 ArrayBulkPlugin >> primitiveInt64StartingAtPut12 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1411,10 +1281,7 @@ ArrayBulkPlugin >> primitiveInt64StartingAtPut12 [
 	interpreterProxy pop: 13.
 ]
 
-{
-	#category : #'int64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int64 primitives' }
 ArrayBulkPlugin >> primitiveInt64StartingAtPut13 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1449,10 +1316,7 @@ ArrayBulkPlugin >> primitiveInt64StartingAtPut13 [
 	interpreterProxy pop: 14.
 ]
 
-{
-	#category : #'int64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int64 primitives' }
 ArrayBulkPlugin >> primitiveInt64StartingAtPut14 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1488,10 +1352,7 @@ ArrayBulkPlugin >> primitiveInt64StartingAtPut14 [
 	interpreterProxy pop: 15.
 ]
 
-{
-	#category : #'int64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int64 primitives' }
 ArrayBulkPlugin >> primitiveInt64StartingAtPut2 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1515,10 +1376,7 @@ ArrayBulkPlugin >> primitiveInt64StartingAtPut2 [
 	interpreterProxy pop: 3.
 ]
 
-{
-	#category : #'int64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int64 primitives' }
 ArrayBulkPlugin >> primitiveInt64StartingAtPut3 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1543,10 +1401,7 @@ ArrayBulkPlugin >> primitiveInt64StartingAtPut3 [
 	interpreterProxy pop: 4.
 ]
 
-{
-	#category : #'int64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int64 primitives' }
 ArrayBulkPlugin >> primitiveInt64StartingAtPut4 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1572,10 +1427,7 @@ ArrayBulkPlugin >> primitiveInt64StartingAtPut4 [
 	interpreterProxy pop: 5.
 ]
 
-{
-	#category : #'int64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int64 primitives' }
 ArrayBulkPlugin >> primitiveInt64StartingAtPut5 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1602,10 +1454,7 @@ ArrayBulkPlugin >> primitiveInt64StartingAtPut5 [
 	interpreterProxy pop: 6.
 ]
 
-{
-	#category : #'int64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int64 primitives' }
 ArrayBulkPlugin >> primitiveInt64StartingAtPut6 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1633,10 +1482,7 @@ ArrayBulkPlugin >> primitiveInt64StartingAtPut6 [
 	interpreterProxy pop: 7.
 ]
 
-{
-	#category : #'int64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int64 primitives' }
 ArrayBulkPlugin >> primitiveInt64StartingAtPut7 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1665,10 +1511,7 @@ ArrayBulkPlugin >> primitiveInt64StartingAtPut7 [
 	interpreterProxy pop: 8.
 ]
 
-{
-	#category : #'int64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int64 primitives' }
 ArrayBulkPlugin >> primitiveInt64StartingAtPut8 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1698,10 +1541,7 @@ ArrayBulkPlugin >> primitiveInt64StartingAtPut8 [
 	interpreterProxy pop: 9.
 ]
 
-{
-	#category : #'int64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'int64 primitives' }
 ArrayBulkPlugin >> primitiveInt64StartingAtPut9 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1732,10 +1572,7 @@ ArrayBulkPlugin >> primitiveInt64StartingAtPut9 [
 	interpreterProxy pop: 10.
 ]
 
-{
-	#category : #'uint32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint32 primitives' }
 ArrayBulkPlugin >> primitiveUInt32StartingAtPut10 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1767,10 +1604,7 @@ ArrayBulkPlugin >> primitiveUInt32StartingAtPut10 [
 	interpreterProxy pop: 11.
 ]
 
-{
-	#category : #'uint32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint32 primitives' }
 ArrayBulkPlugin >> primitiveUInt32StartingAtPut11 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1803,10 +1637,7 @@ ArrayBulkPlugin >> primitiveUInt32StartingAtPut11 [
 	interpreterProxy pop: 12.
 ]
 
-{
-	#category : #'uint32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint32 primitives' }
 ArrayBulkPlugin >> primitiveUInt32StartingAtPut12 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1840,10 +1671,7 @@ ArrayBulkPlugin >> primitiveUInt32StartingAtPut12 [
 	interpreterProxy pop: 13.
 ]
 
-{
-	#category : #'uint32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint32 primitives' }
 ArrayBulkPlugin >> primitiveUInt32StartingAtPut13 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1878,10 +1706,7 @@ ArrayBulkPlugin >> primitiveUInt32StartingAtPut13 [
 	interpreterProxy pop: 14.
 ]
 
-{
-	#category : #'uint32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint32 primitives' }
 ArrayBulkPlugin >> primitiveUInt32StartingAtPut14 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1917,10 +1742,7 @@ ArrayBulkPlugin >> primitiveUInt32StartingAtPut14 [
 	interpreterProxy pop: 15.
 ]
 
-{
-	#category : #'uint32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint32 primitives' }
 ArrayBulkPlugin >> primitiveUInt32StartingAtPut2 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1944,10 +1766,7 @@ ArrayBulkPlugin >> primitiveUInt32StartingAtPut2 [
 	interpreterProxy pop: 3.
 ]
 
-{
-	#category : #'uint32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint32 primitives' }
 ArrayBulkPlugin >> primitiveUInt32StartingAtPut3 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -1972,10 +1791,7 @@ ArrayBulkPlugin >> primitiveUInt32StartingAtPut3 [
 	interpreterProxy pop: 4.
 ]
 
-{
-	#category : #'uint32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint32 primitives' }
 ArrayBulkPlugin >> primitiveUInt32StartingAtPut4 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -2001,10 +1817,7 @@ ArrayBulkPlugin >> primitiveUInt32StartingAtPut4 [
 	interpreterProxy pop: 5.
 ]
 
-{
-	#category : #'uint32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint32 primitives' }
 ArrayBulkPlugin >> primitiveUInt32StartingAtPut5 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -2031,10 +1844,7 @@ ArrayBulkPlugin >> primitiveUInt32StartingAtPut5 [
 	interpreterProxy pop: 6.
 ]
 
-{
-	#category : #'uint32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint32 primitives' }
 ArrayBulkPlugin >> primitiveUInt32StartingAtPut6 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -2062,10 +1872,7 @@ ArrayBulkPlugin >> primitiveUInt32StartingAtPut6 [
 	interpreterProxy pop: 7.
 ]
 
-{
-	#category : #'uint32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint32 primitives' }
 ArrayBulkPlugin >> primitiveUInt32StartingAtPut7 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -2094,10 +1901,7 @@ ArrayBulkPlugin >> primitiveUInt32StartingAtPut7 [
 	interpreterProxy pop: 8.
 ]
 
-{
-	#category : #'uint32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint32 primitives' }
 ArrayBulkPlugin >> primitiveUInt32StartingAtPut8 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -2127,10 +1931,7 @@ ArrayBulkPlugin >> primitiveUInt32StartingAtPut8 [
 	interpreterProxy pop: 9.
 ]
 
-{
-	#category : #'uint32 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint32 primitives' }
 ArrayBulkPlugin >> primitiveUInt32StartingAtPut9 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -2161,10 +1962,7 @@ ArrayBulkPlugin >> primitiveUInt32StartingAtPut9 [
 	interpreterProxy pop: 10.
 ]
 
-{
-	#category : #'uint64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint64 primitives' }
 ArrayBulkPlugin >> primitiveUInt64StartingAtPut10 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -2196,10 +1994,7 @@ ArrayBulkPlugin >> primitiveUInt64StartingAtPut10 [
 	interpreterProxy pop: 11.
 ]
 
-{
-	#category : #'uint64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint64 primitives' }
 ArrayBulkPlugin >> primitiveUInt64StartingAtPut11 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -2232,10 +2027,7 @@ ArrayBulkPlugin >> primitiveUInt64StartingAtPut11 [
 	interpreterProxy pop: 12.
 ]
 
-{
-	#category : #'uint64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint64 primitives' }
 ArrayBulkPlugin >> primitiveUInt64StartingAtPut12 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -2269,10 +2061,7 @@ ArrayBulkPlugin >> primitiveUInt64StartingAtPut12 [
 	interpreterProxy pop: 13.
 ]
 
-{
-	#category : #'uint64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint64 primitives' }
 ArrayBulkPlugin >> primitiveUInt64StartingAtPut13 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -2307,10 +2096,7 @@ ArrayBulkPlugin >> primitiveUInt64StartingAtPut13 [
 	interpreterProxy pop: 14.
 ]
 
-{
-	#category : #'uint64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint64 primitives' }
 ArrayBulkPlugin >> primitiveUInt64StartingAtPut14 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -2346,10 +2132,7 @@ ArrayBulkPlugin >> primitiveUInt64StartingAtPut14 [
 	interpreterProxy pop: 15.
 ]
 
-{
-	#category : #'uint64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint64 primitives' }
 ArrayBulkPlugin >> primitiveUInt64StartingAtPut2 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -2373,10 +2156,7 @@ ArrayBulkPlugin >> primitiveUInt64StartingAtPut2 [
 	interpreterProxy pop: 3.
 ]
 
-{
-	#category : #'uint64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint64 primitives' }
 ArrayBulkPlugin >> primitiveUInt64StartingAtPut3 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -2401,10 +2181,7 @@ ArrayBulkPlugin >> primitiveUInt64StartingAtPut3 [
 	interpreterProxy pop: 4.
 ]
 
-{
-	#category : #'uint64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint64 primitives' }
 ArrayBulkPlugin >> primitiveUInt64StartingAtPut4 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -2430,10 +2207,7 @@ ArrayBulkPlugin >> primitiveUInt64StartingAtPut4 [
 	interpreterProxy pop: 5.
 ]
 
-{
-	#category : #'uint64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint64 primitives' }
 ArrayBulkPlugin >> primitiveUInt64StartingAtPut5 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -2460,10 +2234,7 @@ ArrayBulkPlugin >> primitiveUInt64StartingAtPut5 [
 	interpreterProxy pop: 6.
 ]
 
-{
-	#category : #'uint64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint64 primitives' }
 ArrayBulkPlugin >> primitiveUInt64StartingAtPut6 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -2491,10 +2262,7 @@ ArrayBulkPlugin >> primitiveUInt64StartingAtPut6 [
 	interpreterProxy pop: 7.
 ]
 
-{
-	#category : #'uint64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint64 primitives' }
 ArrayBulkPlugin >> primitiveUInt64StartingAtPut7 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -2523,10 +2291,7 @@ ArrayBulkPlugin >> primitiveUInt64StartingAtPut7 [
 	interpreterProxy pop: 8.
 ]
 
-{
-	#category : #'uint64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint64 primitives' }
 ArrayBulkPlugin >> primitiveUInt64StartingAtPut8 [
 
 	| startSlot slotPtr rcvr numSlots |
@@ -2556,10 +2321,7 @@ ArrayBulkPlugin >> primitiveUInt64StartingAtPut8 [
 	interpreterProxy pop: 9.
 ]
 
-{
-	#category : #'uint64 primitives',
-	#'squeak_changestamp' : 'stlu 4/20/2022 17:04'
-}
+{ #category : #'uint64 primitives' }
 ArrayBulkPlugin >> primitiveUInt64StartingAtPut9 [
 
 	| startSlot slotPtr rcvr numSlots |
