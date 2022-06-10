@@ -1,7 +1,7 @@
 Class {
 	#name : #SgImages,
 	#superclass : #Object,
-	#category : #'RenderThee-Demo-SpaceGame'
+	#category : #'RenderThee-Examples-SpaceGame'
 }
 
 {

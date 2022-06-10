@@ -5,7 +5,7 @@ My subclasses can redefine my methods to intercept messages to the wrapped canva
 Class {
 	#name : #RtColorMappingCanvas,
 	#superclass : #RtWrapperCanvas,
-	#category : #'RenderThee-Core',
+	#category : #'RenderThee-Canvases',
 	#'squeak_changestamp' : '<historical>'
 }
 

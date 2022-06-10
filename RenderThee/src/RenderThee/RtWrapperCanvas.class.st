@@ -11,7 +11,7 @@ Class {
 	#classVars : [
 		'SelectorToTypeTable'
 	],
-	#category : #'RenderThee-Core'
+	#category : #'RenderThee-Canvases'
 }
 
 {

@@ -7,7 +7,7 @@ Class {
 		'primitiveCounts',
 		'colors'
 	],
-	#category : #'RenderThee-Core'
+	#category : #'RenderThee-Canvases'
 }
 
 {

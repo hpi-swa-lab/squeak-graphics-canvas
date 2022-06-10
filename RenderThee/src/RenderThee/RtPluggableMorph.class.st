@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'drawBlock'
 	],
-	#category : #'RenderThee-Tools'
+	#category : #'RenderThee-Examples-Reference'
 }
 
 {

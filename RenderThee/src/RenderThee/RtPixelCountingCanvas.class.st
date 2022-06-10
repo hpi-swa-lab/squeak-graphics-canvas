@@ -6,7 +6,7 @@ Class {
 		'simulationForm',
 		'referenceForm'
 	],
-	#category : #'RenderThee-Core'
+	#category : #'RenderThee-Canvases'
 }
 
 {

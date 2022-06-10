@@ -1,7 +1,7 @@
 Class {
 	#name : #SgSpaceship,
 	#superclass : #ThumbnailImageMorph,
-	#category : #'RenderThee-Demo-SpaceGame'
+	#category : #'RenderThee-Examples-SpaceGame'
 }
 
 {

@@ -5,7 +5,7 @@ Class {
 		'color',
 		'fillStyle'
 	],
-	#category : #'RenderThee-Core'
+	#category : #'RenderThee-Canvases'
 }
 
 {

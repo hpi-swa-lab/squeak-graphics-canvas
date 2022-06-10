@@ -4,7 +4,7 @@ Open me! `SgSpaceGame open`
 Class {
 	#name : #SgSpaceGame,
 	#superclass : #Morph,
-	#category : #'RenderThee-Demo-SpaceGame'
+	#category : #'RenderThee-Examples-SpaceGame'
 }
 
 {

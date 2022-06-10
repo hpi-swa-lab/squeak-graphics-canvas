@@ -1,7 +1,7 @@
 Class {
 	#name : #RtDrawReferenceMorph,
 	#superclass : #Morph,
-	#category : #'RenderThee-Tools'
+	#category : #'RenderThee-Examples-Reference'
 }
 
 {

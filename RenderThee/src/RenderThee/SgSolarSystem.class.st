@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'rotationSpeed'
 	],
-	#category : #'RenderThee-Demo-SpaceGame'
+	#category : #'RenderThee-Examples-SpaceGame'
 }
 
 {

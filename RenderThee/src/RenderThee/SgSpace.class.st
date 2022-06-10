@@ -1,7 +1,7 @@
 Class {
 	#name : #SgSpace,
 	#superclass : #Morph,
-	#category : #'RenderThee-Demo-SpaceGame'
+	#category : #'RenderThee-Examples-SpaceGame'
 }
 
 {

@@ -7,7 +7,7 @@ Class {
 		'overdrawColor',
 		'overdrawFillStyle'
 	],
-	#category : #'RenderThee-Core'
+	#category : #'RenderThee-Canvases'
 }
 
 {

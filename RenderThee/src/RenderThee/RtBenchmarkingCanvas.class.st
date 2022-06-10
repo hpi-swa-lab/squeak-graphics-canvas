@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'measurements'
 	],
-	#category : #'RenderThee-Core'
+	#category : #'RenderThee-Canvases'
 }
 
 {

@@ -9,7 +9,7 @@ Class {
 		'origin',
 		'clipRect'
 	],
-	#category : #'RenderThee-Benchmarking'
+	#category : #'RenderThee-Canvases'
 }
 
 {

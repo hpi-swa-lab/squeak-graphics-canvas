@@ -9,7 +9,7 @@ Class {
 		'isReRecording',
 		'rootLayer'
 	],
-	#category : #'RenderThee-Core'
+	#category : #'RenderThee-Canvases'
 }
 
 {
