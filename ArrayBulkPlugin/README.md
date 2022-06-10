@@ -1,7 +1,5 @@
-# Bulk Plugins
+# Array Bulk Plugin
 Plugins for [Squeak/Smalltalk]'s [VM]. Can improve data transfer speeds from Squeak to raw memory when writing multiple values at a time.
-
-At the moment there is only a plugin for `Float32Array`s.
 
 ## Installation (for plugin users)
 > Requires a build of the plugin accessible to the VM in order for the bulk primitives to work.
@@ -12,14 +10,19 @@ At the moment there is only a plugin for `Float32Array`s.
 
 ```smalltalk
 Metacello new
-	baseline: 'RawBitsBulkPlugins';
-	repository: 'github://hpi-swa-lab/squeak-morphic-layers:main/RawBitsBulkPlugins/squeak/';
+	baseline: 'ArrayBulkPlugin';
+	repository: 'github://hpi-swa-lab/squeak-morphic-layers:main/ArrayBulkPlugin/squeak/';
 	password: ''; "<-- put your GitHub personal access token here"
 	load.
 ```
-To see which dependencies will be installed or to find different load targets, look at the project's Metacello [baseline](./squeak/BaselineOfRawBitsBulkPlugins/BaselineOfRawBitsBulkPlugins.class.st).
+To see which dependencies will be installed or to find different load targets, look at the project's Metacello [baseline](./squeak/BaselineOfArrayBulkPlugin/BaselineOfArrayBulkPlugin.class.st).
 
-## Benchmark
+## Benchmarks
+
+![](./docs/benchmark-table.png)
+![](./docs/benchmark-graphs.png)
+
+### Example Code
 ```smalltalk
 array := Float32Array new: 14.
 [1 to: 1e3 do: [:index |
