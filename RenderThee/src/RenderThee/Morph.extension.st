@@ -32,15 +32,6 @@ Morph >> invalidRect: aRectangle from: aMorph [
 
 {
 	#category : #'*RenderThee',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-Morph >> isRepaintBoundary [
-
-	^ false
-]
-
-{
-	#category : #'*RenderThee',
 	#'squeak_changestamp' : 'stlu 5/17/2022 10:38'
 }
 Morph >> picture [

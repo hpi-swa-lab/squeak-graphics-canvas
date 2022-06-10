@@ -51,12 +51,3 @@ SgSpaceGame >> initialize [
 		top: 0;
 		yourself)
 ]
-
-{
-	#category : #'repaint boundary',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-SgSpaceGame >> isRepaintBoundary [
-
-	^ true
-]

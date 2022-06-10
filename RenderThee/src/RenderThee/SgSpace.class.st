@@ -29,12 +29,3 @@ SgSpace >> initialize [
 	super initialize.
 	self color: Color black
 ]
-
-{
-	#category : #'repaint boundary',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-SgSpace >> isRepaintBoundary [
-
-	^ true
-]

@@ -38,15 +38,6 @@ SgSpaceship >> initializeRotation [
 ]
 
 {
-	#category : #'repaint boundary',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-SgSpaceship >> isRepaintBoundary [
-
-	^ false
-]
-
-{
 	#category : #'stepping and presenter',
 	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
 }
