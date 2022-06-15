@@ -34,7 +34,7 @@ Class {
 
 {
 	#category : #'class initialization',
-	#'squeak_changestamp' : 'stlu 5/17/2022 10:23'
+	#'squeak_changestamp' : 'stlu 6/15/2022 14:50'
 }
 PicConstants class >> initialize [
 "
@@ -43,6 +43,7 @@ self initialize.
 	self initializeConstants.
 	self initializeObjectPools.
 	self initializePictureProperty.
+	self overrideMorphInvalidation.
 	Smalltalk addToShutDownList: self.
 ]
 
@@ -120,6 +121,27 @@ self initializePictureProperty.
 
 {
 	#category : #'class initialization',
+	#'squeak_changestamp' : 'stlu 6/15/2022 14:48'
+}
+PicConstants class >> overrideMorphInvalidation [
+
+	Morph compile: 'invalidRect: aRectangle from: aMorph
+	| damageRect |
+	self visible ifFalse: [ ^self ].
+	aRectangle hasPositiveExtent ifFalse: [ ^self ].
+	"=== begin override ==="
+	self picture ifNotNil: [:picture | picture needsUpdating: true].
+	"=== end override ==="
+	damageRect := aRectangle.
+	aMorph == self ifFalse: [
+		"Clip to receiver''s clipping bounds if the damage came from a child"
+		self clipSubmorphs ifTrue:[
+			damageRect := aRectangle intersect: self clippingBounds]].
+	owner ifNotNil: [owner invalidRect: damageRect from: self].' classified: #'*override'.
+]
+
+{
+	#category : #'class initialization',
 	#'squeak_changestamp' : 'stlu 5/17/2022 10:33'
 }
 PicConstants class >> removePictureProperty [
@@ -134,6 +156,24 @@ self removePictureProperty.
 ]
 
 {
+	#category : #'class initialization',
+	#'squeak_changestamp' : 'stlu 6/15/2022 14:50'
+}
+PicConstants class >> revertMorphInvalidationOverride [
+
+	Morph compile: 'invalidRect: aRectangle from: aMorph
+	| damageRect |
+	self visible ifFalse: [ ^self ].
+	aRectangle hasPositiveExtent ifFalse: [ ^self ].
+	damageRect := aRectangle.
+	aMorph == self ifFalse: [
+		"Clip to receiver''s clipping bounds if the damage came from a child"
+		self clipSubmorphs ifTrue:[
+			damageRect := aRectangle intersect: self clippingBounds]].
+	owner ifNotNil: [owner invalidRect: damageRect from: self].' classified: #'change reporting'.
+]
+
+{
 	#category : #'system startup',
 	#'squeak_changestamp' : 'stlu 5/13/2022 15:23'
 }
@@ -144,10 +184,11 @@ PicConstants class >> shutDown: quitting [
 
 {
 	#category : #'class initialization',
-	#'squeak_changestamp' : 'stlu 5/17/2022 10:34'
+	#'squeak_changestamp' : 'stlu 6/15/2022 14:51'
 }
 PicConstants class >> unload [
 
 	Smalltalk removeFromShutDownList: self.
+	self revertMorphInvalidationOverride.
 	self removePictureProperty.
 ]

@@ -12,25 +12,6 @@ Morph >> createPicture [
 ]
 
 {
-	#category : #'*RenderThee-override',
-	#'squeak_changestamp' : 'stlu 5/17/2022 11:03'
-}
-Morph >> invalidRect: aRectangle from: aMorph [
-	| damageRect |
-	self visible ifFalse: [ ^self ].
-	aRectangle hasPositiveExtent ifFalse: [ ^self ].
-	"=== begin override ==="
-	self picture ifNotNil: [:picture | picture needsUpdating: true].
-	"=== end override ==="
-	damageRect := aRectangle.
-	aMorph == self ifFalse: [
-		"Clip to receiver's clipping bounds if the damage came from a child"
-		self clipSubmorphs ifTrue:[
-			damageRect := aRectangle intersect: self clippingBounds]].
-	owner ifNotNil: [owner invalidRect: damageRect from: self].
-]
-
-{
 	#category : #'*RenderThee',
 	#'squeak_changestamp' : 'stlu 5/17/2022 10:38'
 }
