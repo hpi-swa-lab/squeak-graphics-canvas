@@ -1,70 +1,17 @@
 name: 'Create bundle'
 
-on:
-  workflow_dispatch:
-    inputs:
-      squeak-revision:
-        description: Squeak trunk revision
-        required: true
-        default: '20536'
+on: [push, workflow_dispatch]
 
 jobs:
-  setup-bundle:
-    runs-on: ${{ matrix.os }}
-    
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - arch: linux64x64
-            bits: 64
-            os: ubuntu-latest
-            ext: tar.gz
-          # - arch: win64x64
-          #   bits: 64
-          #   os: windows-latest
-    
-    defaults:
-      run:
-        shell: bash
-    
-    env:
-      IMAGE_NAME: Squeak6.0alpha-${{ github.event.inputs.squeak-revision }}-${{ matrix.bits }}bit
-
+  create-image:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Download and extract VM
-        run: |
-          wget -O vm.tar.gz "https://github.com/OpenSmalltalk/opensmalltalk-vm/releases/download/latest-build/squeak.cog.spur_${{ matrix.arch }}.tar.gz"
-          mkdir -p vm
-          tar --extract --gzip --file="vm.tar.gz" --directory="vm"
-          mkdir -p bundle
-          mv vm/*/* bundle
-
-      - name: Download and extract Squeak image and sources
-        run: |
-          curl -o squeak.zip http://files.squeak.org/trunk/${{ env.IMAGE_NAME }}/${{ env.IMAGE_NAME }}.zip
-          curl -o SqueakV50.sources.gz http://files.squeak.org/sources_files/SqueakV50.sources.gz
-          unzip -d bundle squeak.zip
-          gzip -c -d SqueakV50.sources.gz > bundle/SqueakV50.sources
-      
-      - name: Run install.st
-        working-directory: bundle
-        env:
-          GITHUB_TOKEN: ${{ secrets.METACELLO_TOKEN }}
-        run: ./squeak -vm-display-null -vm-sound-null ${{ env.IMAGE_NAME }}.image ../ci/install.st
-      
-      - name: Cleanup installation remnants
-        working-directory: bundle
-        run: rm -rf *.old *.log *-cache *.st || true
-      
-      - name: Compress bundle
-        working-directory: bundle
-        run: tar --create --gzip --file="${{ matrix.arch }}-bundle.tar.gz" *
-      
-      - name: Upload bundle
-        uses: actions/upload-artifact@v2
+      - uses: actions/checkout@v3
+      - uses: LinqLover/create-image@master
+        id: create-image
         with:
-          name: ${{ matrix.arch }}-bundle
-          path: bundle/${{ matrix.arch }}-bundle.tar.gz
+          prepare-script: ./scripts/prepareImage.st
+      - uses: actions/upload-artifact@master
+        with:
+          name: image
+          path: ${{ steps.create-image.outputs.bundle-path }}
