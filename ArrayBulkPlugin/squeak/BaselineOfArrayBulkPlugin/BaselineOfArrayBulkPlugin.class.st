@@ -12,14 +12,14 @@ BaselineOfArrayBulkPlugin >> baseline: spec [
 	<baseline>
 	spec for: #common do: [
 		spec
-			package: 'RawBitsBulkPlugins-Plugins'; "requires VMMaker"
-			package: 'RawBitsBulkPlugins-Primitives'.
+			package: 'ArrayBulkPlugin-Plugin'; "requires VMMaker"
+			package: 'ArrayBulkPlugin-Primitives'.
 		
 		spec
 			group: 'default' with: #('primitives');
-			group: 'primitives' with: #('RawBitsBulkPlugins-Primitives');
-			group: 'plugins' with: #('RawBitsBulkPlugins-Plugins');
-			group: 'all' with: #('primitives' 'plugins')]
+			group: 'primitives' with: #('ArrayBulkPlugin-Primitives');
+			group: 'plugin' with: #('ArrayBulkPlugin-Plugin');
+			group: 'all' with: #('primitives' 'plugin')]
 ]
 
 {

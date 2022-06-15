@@ -22,10 +22,10 @@ BaselineOfRenderThee >> baseline: spec [
 				spec repository: 'github://hpi-swa-lab/squeak-graphics-opengl:main/GLFW/src/'];
 			baseline: 'LearnOpenGL' with: [
 				spec repository: 'github://hpi-swa-lab/squeak-graphics-opengl:main/LearnOpenGL/src/'];
-			baseline: 'RawBitsBulkPlugins' with: [
-				spec repository: 'github://hpi-swa-lab/squeak-morphic-layers:main/RawBitsBulkPlugins/squeak/'];
+			baseline: 'ArrayBulkPlugin' with: [
+				spec repository: 'github://hpi-swa-lab/squeak-morphic-layers:main/ArrayBulkPlugin/squeak/'];
 			
-			package: 'RenderThee' with: [spec requires: #('OpenGL' 'OpenGLObjects' 'GLFW' '3DTransform' 'LearnOpenGL' 'RawBitsBulkPlugins')].
+			package: 'RenderThee' with: [spec requires: #('OpenGL' 'OpenGLObjects' 'GLFW' '3DTransform' 'LearnOpenGL' 'ArrayBulkPlugin')].
 		
 		spec
 			group: 'default' with: #('all');
