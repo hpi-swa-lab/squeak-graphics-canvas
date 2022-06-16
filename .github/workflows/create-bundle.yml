@@ -13,7 +13,7 @@ jobs:
         with:
           prepare-script: ./scripts/prepareImage.st
       
-      - name: Clean up bundle
+      - name: Unzip and clean up bundle
         run: |
           unzip -d bundle ${{ steps.create-image.outputs.bundle-path }}
           cd bundle/*.app/Contents/Resources/
@@ -26,8 +26,13 @@ jobs:
           SRC=$(find glfw-win-64/**/lib-vc2019/glfw3.dll)
           DEST="bundle/*.app/Contents/Windows-x86_64"
           cp ${SRC} ${DEST}
+      
+      - name: Rezip bundle
+        run: |
+          cd bundle
+          zip -r squeak-graphics-canvas-bundle .
 
       - uses: actions/upload-artifact@master
         with:
           name: image
-          path: bundle
+          path: bundle/squeak-graphics-canvas-bundle.zip
