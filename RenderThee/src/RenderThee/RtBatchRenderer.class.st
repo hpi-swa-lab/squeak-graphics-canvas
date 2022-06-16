@@ -159,12 +159,12 @@ RtBatchRenderer >> clear [
 
 {
 	#category : #accessing,
-	#'squeak_changestamp' : 'stlu 9/28/2021 16:43'
+	#'squeak_changestamp' : 'stlu 6/15/2022 17:52'
 }
 RtBatchRenderer >> clearColor [
 
 	^ Color
-		h: Time utcMicrosecondClock / 2e3 \\ 360.0
+		h: Time utcMicrosecondClock / 10e3 \\ 360.0
 		s: 1.0
 		v: 1.0
 ]
@@ -350,12 +350,12 @@ RtBatchRenderer >> fillRectangle: aRectangle color: aColor [
 
 {
 	#category : #batching,
-	#'squeak_changestamp' : 'stlu 5/20/2022 12:54'
+	#'squeak_changestamp' : 'stlu 6/8/2022 13:40'
 }
 RtBatchRenderer >> fillRectangle: aRectangle color: aColor radius: radius [
 
 	| type |
-	type := aColor isTranslucent
+	type := (aColor isTranslucent or: [radius > 0.0])
 		ifFalse: [opaqueRectangleType]
 		ifTrue: [
 			self upcomingTranslucentType: translucentRectangleType.
@@ -1013,11 +1013,20 @@ RtBatchRenderer >> visitOval: aNode [
 
 {
 	#category : #'visiting prims',
-	#'squeak_changestamp' : 'stlu 5/19/2022 17:34'
+	#'squeak_changestamp' : 'stlu 6/15/2022 17:42'
 }
 RtBatchRenderer >> visitParagraph: aNode [
 
-	aNode drawOn: self.
+	| paragraph |
+	paragraph := aNode paragraph.
+	displayScanner
+		reset;
+		text: paragraph text textStyle: paragraph textStyle;
+		textColor: aNode color.
+
+	self pushClipRect: aNode bounds.
+	paragraph displayOn: self using: displayScanner at: aNode bounds topLeft.
+	self popClipRect.
 ]
 
 {
