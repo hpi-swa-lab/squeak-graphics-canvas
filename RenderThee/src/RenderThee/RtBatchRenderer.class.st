@@ -269,6 +269,15 @@ RtBatchRenderer >> drawBatch: aBatch [
 ]
 
 {
+	#category : #compat,
+	#'squeak_changestamp' : 'stlu 6/16/2022 14:31'
+}
+RtBatchRenderer >> drawImage: aForm at: aPoint [
+
+	self fillRectangle: (aPoint extent: aForm extent) color: Color red.
+]
+
+{
 	#category : #batching,
 	#'squeak_changestamp' : 'stlu 5/21/2022 13:24'
 }
@@ -1013,7 +1022,7 @@ RtBatchRenderer >> visitOval: aNode [
 
 {
 	#category : #'visiting prims',
-	#'squeak_changestamp' : 'stlu 6/15/2022 17:42'
+	#'squeak_changestamp' : 'stlu 6/16/2022 15:25'
 }
 RtBatchRenderer >> visitParagraph: aNode [
 
@@ -1021,8 +1030,12 @@ RtBatchRenderer >> visitParagraph: aNode [
 	paragraph := aNode paragraph.
 	displayScanner
 		reset;
-		text: paragraph text textStyle: paragraph textStyle;
-		textColor: aNode color.
+		text: paragraph text
+		textStyle: paragraph textStyle
+		foreground: aNode color
+		background: Color transparent
+		fillBlt: nil
+		ignoreColorChanges: false.
 
 	self pushClipRect: aNode bounds.
 	paragraph displayOn: self using: displayScanner at: aNode bounds topLeft.

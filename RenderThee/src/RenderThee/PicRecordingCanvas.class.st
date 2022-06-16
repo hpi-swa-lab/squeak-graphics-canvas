@@ -656,12 +656,13 @@ PicRecordingCanvas >> origin [
 
 {
 	#category : #'drawing-text',
-	#'squeak_changestamp' : 'stlu 5/19/2022 15:20'
+	#'squeak_changestamp' : 'stlu 6/16/2022 14:50'
 }
 PicRecordingCanvas >> paragraph: aParagraph bounds: bounds color: aColor [
 
 	| prim |
 	bounds hasPositiveExtent ifFalse: [^ self].
+	aParagraph text isEmpty ifTrue: [^ self].
 	(bounds intersects: clipRect) ifFalse: [^ self].
 	
 	prim := ParagraphPrimPool borrow.

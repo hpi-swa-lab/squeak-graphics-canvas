@@ -30,16 +30,6 @@ RtDisplayScanner >> canvas: aCanvas [
 
 {
 	#category : #displaying,
-	#'squeak_changestamp' : 'stlu 4/24/2022 16:39'
-}
-RtDisplayScanner >> defaultTextColor [
-
-	defaultTextColor ifNil: [defaultTextColor := Color white "lol"].
-	^ defaultTextColor
-]
-
-{
-	#category : #displaying,
 	#'squeak_changestamp' : 'stlu 6/7/2022 13:39'
 }
 RtDisplayScanner >> displayEmbeddedForm: aForm at: aPoint [
