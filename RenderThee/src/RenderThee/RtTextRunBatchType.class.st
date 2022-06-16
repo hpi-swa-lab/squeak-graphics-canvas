@@ -6,11 +6,11 @@ Class {
 
 {
 	#category : #shaders,
-	#'squeak_changestamp' : 'stlu 4/17/2022 13:50'
+	#'squeak_changestamp' : 'stlu 6/16/2022 16:21'
 }
 RtTextRunBatchType class >> fragmentShader [
 
-	^ '#version 330 core
+	^ '#version 420 core
 layout(early_fragment_tests) in;
 in vec4 vTextColor;
 in vec2 vGlyphCoords;
@@ -28,11 +28,11 @@ void main() {
 
 {
 	#category : #shaders,
-	#'squeak_changestamp' : 'stlu 4/21/2022 20:26'
+	#'squeak_changestamp' : 'stlu 6/16/2022 16:21'
 }
 RtTextRunBatchType class >> vertexShader [
 
-	^ '#version 330 core
+	^ '#version 420 core
 #define MAX_VERTEX_TEXTURE_WIDTH 512u
 
 layout (location = 0) in vec2 aPosition;

@@ -6,11 +6,11 @@ Class {
 
 {
 	#category : #shaders,
-	#'squeak_changestamp' : 'stlu 4/17/2022 13:51'
+	#'squeak_changestamp' : 'stlu 6/16/2022 16:21'
 }
 RtImageBatchType class >> fragmentShader [
 
-	^ '#version 330 core
+	^ '#version 420 core
 layout(early_fragment_tests) in;
 in vec2 vImageCoords;
 
@@ -25,11 +25,11 @@ void main() {
 
 {
 	#category : #shaders,
-	#'squeak_changestamp' : 'stlu 6/7/2022 15:25'
+	#'squeak_changestamp' : 'stlu 6/16/2022 16:21'
 }
 RtImageBatchType class >> vertexShader [
 
-	^ '#version 330 core
+	^ '#version 420 core
 #define MAX_VERTEX_TEXTURE_WIDTH 512u
 
 layout (location = 0) in vec2 aPosition;
