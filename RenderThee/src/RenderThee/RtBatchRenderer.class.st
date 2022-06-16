@@ -806,7 +806,7 @@ RtBatchRenderer >> rectangleBatch: aBatch left: left top: top right: right botto
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/2/2022 13:22'
+	#'squeak_changestamp' : 'stlu 6/16/2022 15:42'
 }
 RtBatchRenderer >> reset [
 
@@ -826,7 +826,7 @@ RtBatchRenderer >> reset [
 	
 	transformIndex := self allocateTransform: transform.
 	clipRectIndex := self allocateClipRect: clipRect.
-	zIndex := 0.
+	zIndex := 1.
 	
 	batchTypes do: [:type |
 		type currentBatch reset].
