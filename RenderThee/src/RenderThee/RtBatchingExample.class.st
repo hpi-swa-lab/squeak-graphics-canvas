@@ -112,6 +112,15 @@ RtBatchingExample >> setUp [
 ]
 
 {
+	#category : #initialization,
+	#'squeak_changestamp' : 'stlu 6/16/2022 16:32'
+}
+RtBatchingExample >> targetVersion [
+
+	^ GL42 profile: #core
+]
+
+{
 	#category : #logging,
 	#'squeak_changestamp' : 'stlu 6/16/2022 14:26'
 }
