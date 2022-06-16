@@ -7,11 +7,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - uses: LinqLover/create-image@master
         id: create-image
         with:
           prepare-script: ./scripts/prepareImage.st
+      
+      - name: Clean up bundle
+        working-directory: ${{ steps.create-image.outputs.bundle-path }}
+        run: |
+          unzip -d bundle *.zip
+          cd bundle/*.app/Contents/Resources/
+          rm -rf *.old *.log *-cache *.st || true
+      
+      - name: Include GLFW
+        working-directory: ${{ steps.create-image.outputs.bundle-path }}
+        run: |
+          wget -O glfw-win-64.zip "https://github.com/glfw/glfw/releases/download/3.3.7/glfw-3.3.7.bin.WIN64.zip"
+          unzip -d glfw-win-64 glfw-win-64.zip
+          SRC=$(find glfw-win-64/**/lib-vc2022/glfw3.dll)
+          DEST="bundle/*.app/Contents/Windows-x86_64"
+          cp ${SRC} ${DEST}
+
       - uses: actions/upload-artifact@master
         with:
           name: image
-          path: ${{ steps.create-image.outputs.bundle-path }}
+          path: ${{ steps.create-image.outputs.bundle-path }}/bundle
