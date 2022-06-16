@@ -53,14 +53,16 @@ RtLinearGPUStore >> add: num1 add: num2 [
 
 {
 	#category : #adding,
-	#'squeak_changestamp' : 'stlu 8/23/2021 14:59'
+	#'squeak_changestamp' : 'stlu 6/16/2022 14:14'
 }
 RtLinearGPUStore >> add: num1 add: num2 add: num3 add: num4 [
 
 	| address |
 	stagingBuffer
-		startingAt: lastElementIndex + 1
-		put: num1 put: num2 put: num3 put: num4.
+		at: lastElementIndex + 1 put: num1;
+		at: lastElementIndex + 2 put: num2;
+		at: lastElementIndex + 3 put: num3;
+		at: lastElementIndex + 4 put: num4.
 	
 	address := lastElementIndex // alignment.
 	lastElementIndex := lastElementIndex + 4 roundUpTo: alignment.
@@ -69,15 +71,17 @@ RtLinearGPUStore >> add: num1 add: num2 add: num3 add: num4 [
 
 {
 	#category : #adding,
-	#'squeak_changestamp' : 'stlu 4/17/2022 17:14'
+	#'squeak_changestamp' : 'stlu 6/16/2022 14:14'
 }
 RtLinearGPUStore >> add: num1 add: num2 add: num3 add: num4 add: num5 [
 
 	| address |
 	stagingBuffer
-		startingAt: lastElementIndex + 1
-		put: num1 put: num2 put: num3 put: num4
-		put: num5.
+		at: lastElementIndex + 1 put: num1;
+		at: lastElementIndex + 2 put: num2;
+		at: lastElementIndex + 3 put: num3;
+		at: lastElementIndex + 4 put: num4;
+		at: lastElementIndex + 5 put: num5.
 	
 	address := lastElementIndex // alignment.
 	lastElementIndex := lastElementIndex + 5 roundUpTo: alignment.
@@ -86,15 +90,18 @@ RtLinearGPUStore >> add: num1 add: num2 add: num3 add: num4 add: num5 [
 
 {
 	#category : #adding,
-	#'squeak_changestamp' : 'stlu 8/23/2021 16:57'
+	#'squeak_changestamp' : 'stlu 6/16/2022 14:14'
 }
 RtLinearGPUStore >> add: num1 add: num2 add: num3 add: num4 add: num5 add: num6 [
 
 	| address |
 	stagingBuffer
-		startingAt: lastElementIndex + 1
-		put: num1 put: num2 put: num3 put: num4
-		put: num5 put: num6.
+		at: lastElementIndex + 1 put: num1;
+		at: lastElementIndex + 2 put: num2;
+		at: lastElementIndex + 3 put: num3;
+		at: lastElementIndex + 4 put: num4;
+		at: lastElementIndex + 5 put: num5;
+		at: lastElementIndex + 6 put: num6.
 	
 	address := lastElementIndex // alignment.
 	lastElementIndex := lastElementIndex + 6 roundUpTo: alignment.
@@ -103,15 +110,20 @@ RtLinearGPUStore >> add: num1 add: num2 add: num3 add: num4 add: num5 add: num6 
 
 {
 	#category : #adding,
-	#'squeak_changestamp' : 'stlu 8/23/2021 16:57'
+	#'squeak_changestamp' : 'stlu 6/16/2022 14:15'
 }
 RtLinearGPUStore >> add: num1 add: num2 add: num3 add: num4 add: num5 add: num6 add: num7 add: num8 [
 
 	| address |
 	stagingBuffer
-		startingAt: lastElementIndex + 1
-		put: num1 put: num2 put: num3 put: num4
-		put: num5 put: num6 put: num7 put: num8.
+		at: lastElementIndex + 1 put: num1;
+		at: lastElementIndex + 2 put: num2;
+		at: lastElementIndex + 3 put: num3;
+		at: lastElementIndex + 4 put: num4;
+		at: lastElementIndex + 5 put: num5;
+		at: lastElementIndex + 6 put: num6;
+		at: lastElementIndex + 7 put: num7;
+		at: lastElementIndex + 8 put: num8.
 	
 	address := lastElementIndex // alignment.
 	lastElementIndex := lastElementIndex + 8 roundUpTo: alignment.
