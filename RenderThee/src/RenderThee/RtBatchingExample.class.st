@@ -4,19 +4,19 @@ Class {
 	#instVars : [
 		'batchingTimes',
 		'renderer',
-		'benchNextRender'
+		'debugNextCycle'
 	],
 	#category : #'RenderThee-Examples'
 }
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/4/2022 12:26'
+	#'squeak_changestamp' : 'stlu 6/16/2022 14:26'
 }
 RtBatchingExample >> initialize [
 
 	super initialize.
-	benchNextRender := false.
+	debugNextCycle := false.
 ]
 
 {
@@ -113,9 +113,9 @@ RtBatchingExample >> setUp [
 
 {
 	#category : #logging,
-	#'squeak_changestamp' : 'stlu 5/4/2022 12:27'
+	#'squeak_changestamp' : 'stlu 6/16/2022 14:26'
 }
 RtBatchingExample >> triggerDebugAction [
 
-	benchNextRender := true.
+	debugNextCycle := true.
 ]
