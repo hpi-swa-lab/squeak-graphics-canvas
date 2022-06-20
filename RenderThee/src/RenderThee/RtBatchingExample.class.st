@@ -113,11 +113,11 @@ RtBatchingExample >> setUp [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 6/16/2022 16:32'
+	#'squeak_changestamp' : 'stlu 6/20/2022 15:06'
 }
 RtBatchingExample >> targetVersion [
 
-	^ GL42 profile: #core
+	^ GL42Core
 ]
 
 {
