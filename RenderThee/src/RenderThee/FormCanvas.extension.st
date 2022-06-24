@@ -1,27 +1,6 @@
 Extension { #name : #FormCanvas }
 
 {
-	#category : #'*RenderThee-LayerTree',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-FormCanvas >> imageStoreClass [
-
-	^ RtFormStore
-]
-
-{
-	#category : #'*RenderThee-LayerTree',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-FormCanvas >> paintImageStore: anImageStore sourceRect: aRectangle [
-
-	self
-		translucentImage: anImageStore form
-		at: 0@0
-		sourceRect: aRectangle
-]
-
-{
 	#category : #'*RenderThee-override',
 	#'squeak_changestamp' : 'stlu 6/24/2022 12:57'
 }

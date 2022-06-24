@@ -10,24 +10,6 @@ Canvas >> asBalloonCanvas [
 ]
 
 {
-	#category : #'*RenderThee-LayerTree',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-Canvas >> cacheLayer: aLayer [
-
-	aLayer validCache: (aLayer createCacheOfType: self imageStoreClass)
-]
-
-{
-	#category : #'*RenderThee-LayerTree',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-Canvas >> drawDrawLayer: aLayer [
-
-	aLayer drawOn: self
-]
-
-{
 	#category : #'*RenderThee-drawing',
 	#'squeak_changestamp' : 'stlu 5/16/2022 17:24'
 }
@@ -38,24 +20,6 @@ Canvas >> drawGeneralBezier3Shape: contours fillStyle: aFillStyle borderStyle: a
 		color: aFillStyle asColor
 		borderWidth: aBorderStyle width
 		borderColor: aBorderStyle color
-]
-
-{
-	#category : #'*RenderThee-LayerTree',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-Canvas >> drawGroupLayer: aLayer [
-
-	aLayer drawOn: self
-]
-
-{
-	#category : #'*RenderThee-LayerTree',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-Canvas >> drawLayer: aLayer [
-
-	aLayer drawLayerOn: self
 ]
 
 {
@@ -97,39 +61,12 @@ Canvas >> frameOval: aRectangle borderStyle: aBorderStyle [
 ]
 
 {
-	#category : #'*RenderThee-LayerTree',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-Canvas >> imageStoreClass [
-
-	self subclassResponsibility
-]
-
-{
 	#category : #'*RenderThee',
 	#'squeak_changestamp' : 'stlu 5/2/2022 11:29'
 }
 Canvas >> infiniteFillRectangle: aRectangle fillStyle: aFillStyle [
 	"Make requirement explicit."
 	self subclassResponsibility.
-]
-
-{
-	#category : #'*RenderThee-LayerTree',
-	#'squeak_changestamp' : 'stlu 6/17/2021 10:27'
-}
-Canvas >> paintImageStore: anImageStore [
-
-	self deprecated.
-]
-
-{
-	#category : #'*RenderThee-LayerTree',
-	#'squeak_changestamp' : 'stlu 11/13/2020 18:20'
-}
-Canvas >> paintImageStore: anImageStore sourceRect: aRectangle [
-
-	self subclassResponsibility
 ]
 
 {
