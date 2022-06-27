@@ -134,14 +134,46 @@ RtMorphExample class >> drawReference [
 
 {
 	#category : #'instance creation',
-	#'squeak_changestamp' : 'stlu 11/8/2021 17:07'
+	#'squeak_changestamp' : 'stlu 6/27/2022 13:23'
 }
 RtMorphExample class >> morph: aMorph [
 
+	^ self morphs: { aMorph }
+]
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 6/27/2022 13:23'
+}
+RtMorphExample class >> morphs: collectionOfMorphs [
+
+	^ self morphs: collectionOfMorphs extent: collectionOfMorphs first extent
+]
+
+{
+	#category : #'instance creation',
+	#'squeak_changestamp' : 'stlu 6/27/2022 13:22'
+}
+RtMorphExample class >> morphs: collectionOfMorphs extent: anExtent [
+
 	| world |
 	world := PasteUpMorph newWorldForProject: nil.
-	world extent: aMorph extent.
-	aMorph openInWorld: world.
+	world extent: anExtent.
+	collectionOfMorphs do: [:each |
+		each openInWorld: world].
+	^ self world: world
+]
+
+{
+	#category : #examples,
+	#'squeak_changestamp' : 'stlu 6/27/2022 15:04'
+}
+RtMorphExample class >> movingBenchWorld [
+
+	| world |
+	world := self createBenchWorld.
+	world submorphs do: [:each |
+		each startDemoMove].
 	^ self world: world
 ]
 
