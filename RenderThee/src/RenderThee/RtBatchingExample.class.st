@@ -80,21 +80,28 @@ RtBatchingExample >> renderer: anObject [
 
 {
 	#category : #logging,
-	#'squeak_changestamp' : 'stlu 5/3/2022 14:04'
+	#'squeak_changestamp' : 'stlu 6/27/2022 15:11'
 }
 RtBatchingExample >> saveLogsOn: aStream [
 
 	aStream nextPutAll: 'cycle,type,time'.
 	aStream crlf.
-	frameTimes size to: 1 by: -1 do: [:cycle || x gc | 
+	frameTimes size to: 1 by: -1 do: [:cycle || x gc ft st bt pt | 
 		x := frameTimes size - cycle + 1.
+		ft := (frameTimes at: cycle) / 1e3.
+		st := (stepTimes at: cycle) / 1e3.
+		bt := (batchingTimes at: cycle) / 1e3.
+		pt := (pictureUpdateTimes at: cycle) / 1e3.
 		gc := (gcHistory at: cycle * 2) - (gcHistory at: cycle * 2 + 2).
 		{
-			'"Frame Time"'. [(frameTimes at: cycle) / 1e3 - gc printOn: aStream showingDecimalPlaces: 3.].
-			'Batching'. [(batchingTimes at: cycle) / 1e3 printOn: aStream showingDecimalPlaces: 3.].
-			'Picture'. [(pictureUpdateTimes at: cycle) / 1e3 printOn: aStream showingDecimalPlaces: 3.].
-			'GPU'. [(gpuTimes at: cycle) / 1e6 printOn: aStream showingDecimalPlaces: 3.].
-			'GC'. [gc printOn: aStream.].
+			'"Frame Time"'. [ft - gc printOn: aStream showingDecimalPlaces: 3].
+			'Batching'. [bt printOn: aStream showingDecimalPlaces: 3].
+			'"Picture Update"'. [pt printOn: aStream showingDecimalPlaces: 3].
+			'GPU'. [(gpuTimes at: cycle) / 1e6 printOn: aStream showingDecimalPlaces: 3].
+			'GC'. [gc printOn: aStream].
+			'Input'. [(inputTimes at: cycle) / 1e3 printOn: aStream showingDecimalPlaces: 3].
+			'Stepping'. [st printOn: aStream showingDecimalPlaces: 3].
+			'Other'. [ft - gc - st - bt - pt printOn: aStream showingDecimalPlaces: 3].
 		} groupsOf: 2 atATimeDo: [:type :block |
 			aStream
 				print: x;

@@ -4,6 +4,8 @@ Class {
 	#instVars : [
 		'picture',
 		'pictureUpdateTimes',
+		'stepTimes',
+		'inputTimes',
 		'keyEnumToVirtualKeyTable',
 		'virtualKeyToKeyCodeTable',
 		'shouldUpdateMorph',
@@ -308,6 +310,18 @@ RtMorphExample >> damageRectangles [
 
 {
 	#category : #running,
+	#'squeak_changestamp' : 'stlu 6/27/2022 14:11'
+}
+RtMorphExample >> doSteps [
+
+	| startTime |
+	startTime := Time utcMicrosecondClock.
+	self shouldStepMorph ifTrue: [world runStepMethods].
+	stepTimes add: Time utcMicrosecondClock - startTime.
+]
+
+{
+	#category : #running,
 	#'squeak_changestamp' : 'stlu 5/17/2022 11:39'
 }
 RtMorphExample >> drawPictureOn: aCanvas [
@@ -327,12 +341,14 @@ RtMorphExample >> initialWindowExtent [
 
 {
 	#category : #initialization,
-	#'squeak_changestamp' : 'stlu 5/2/2022 19:58'
+	#'squeak_changestamp' : 'stlu 6/27/2022 14:10'
 }
 RtMorphExample >> initialize [
 
 	super initialize.
 	pictureUpdateTimes := RingBuffer new: 120.
+	stepTimes := RingBuffer new: 120.
+	inputTimes := RingBuffer new: 120.
 	shouldUpdateMorph := true.
 	shouldShowDamageRectangles := false.
 ]
@@ -641,6 +657,18 @@ RtMorphExample >> printWindowTitleOn: aStream [
 
 {
 	#category : #running,
+	#'squeak_changestamp' : 'stlu 6/27/2022 14:12'
+}
+RtMorphExample >> processUserInputEvents [
+
+	| startTime |
+	startTime := Time utcMicrosecondClock.
+	world worldState processUserInputEvents.
+	inputTimes add: Time utcMicrosecondClock - startTime.
+]
+
+{
+	#category : #running,
 	#'squeak_changestamp' : 'stlu 9/6/2021 15:14'
 }
 RtMorphExample >> render [
@@ -780,18 +808,20 @@ RtMorphExample >> triggerDebugAction [
 
 {
 	#category : #running,
-	#'squeak_changestamp' : 'stlu 11/8/2021 16:17'
+	#'squeak_changestamp' : 'stlu 6/27/2022 14:14'
 }
 RtMorphExample >> updateMorph [
 
 	self shouldUpdateMorph ifFalse: [
 		pictureUpdateTimes add: 0.
+		stepTimes add: 0.
+		inputTimes add: 0.
 		^ self].
 	world becomeActiveDuring: [
 		world noDisplayDuring: [
 			DisplayScreen checkForNewScreenSize.
-			world worldState processUserInputEvents ifFalse: [^ self].
-			self shouldStepMorph ifTrue: [world runStepMethods].
+			self processUserInputEvents.
+			self doSteps.
 			self updatePicture]].
 ]
 
