@@ -45,17 +45,11 @@ RtMorphExample class >> bouncingAtoms [
 
 {
 	#category : #examples,
-	#'squeak_changestamp' : 'stlu 11/8/2021 16:07'
+	#'squeak_changestamp' : 'stlu 6/27/2022 13:43'
 }
 RtMorphExample class >> bouncingAtoms: numAtoms [
 
-	| morph |
-	morph := BouncingAtomsMorph new
-		bounds: (0@0 extent: Display extent);
-		removeAllMorphs;
-		addAtoms: numAtoms;
-		yourself.
-	^ self morph: morph
+	^ self morph: (self createBouncingAtomsMorph: numAtoms)
 ]
 
 {
@@ -121,6 +115,38 @@ RtMorphExample class >> createBenchWorld [
 		ea openInWorld: world].
 	
 	^ world
+]
+
+{
+	#category : #accessing,
+	#'squeak_changestamp' : 'stlu 6/27/2022 13:42'
+}
+RtMorphExample class >> createBouncingAtomsMorph: numAtoms [
+
+	| group baMorph |
+	baMorph := BouncingAtomsMorph new
+		bounds: (0@0 extent: Display extent);
+		removeAllMorphs;
+		addAtoms: numAtoms;
+		yourself.
+	
+	group := Morph new
+		color: Color transparent;
+		extent: baMorph extent;
+		addMorph: baMorph;
+		yourself.
+	
+	{ RtFrameRateMorph. RtGCPressureMorph. RtIdleTimeMorph } inject: 0 into: [:top :cls |
+		cls new
+			in: [:m | group addMorph: m];
+			setToAdhereToEdge: #right;
+			color: Color black;
+			retentionDuration: 2e6;
+			top: top;
+			lock;
+			bottom].
+	
+	^ group
 ]
 
 {
