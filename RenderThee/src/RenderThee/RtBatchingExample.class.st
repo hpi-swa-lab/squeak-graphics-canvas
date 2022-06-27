@@ -21,11 +21,15 @@ RtBatchingExample >> initialize [
 
 {
 	#category : #logging,
-	#'squeak_changestamp' : 'stlu 6/7/2022 15:30'
+	#'squeak_changestamp' : 'stlu 6/21/2022 13:49'
 }
 RtBatchingExample >> printWindowTitleOn: aStream [
 
 	super printWindowTitleOn: aStream.
+	(batchingTimes notNil and: [batchingTimes notEmpty]) ifTrue: [
+		aStream nextPutAll: ' | BT: '.
+		batchingTimes average / 1e3 printOn: aStream showingDecimalPlaces: 2.
+		aStream nextPutAll: 'ms'].
 	(renderer notNil and: [renderer numBatches notNil]) ifTrue: [
 		aStream nextPutAll: ' | B: '.
 		aStream store: renderer numBatches].
