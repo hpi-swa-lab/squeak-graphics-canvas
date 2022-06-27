@@ -644,7 +644,7 @@ RtMorphExample >> picture [
 
 {
 	#category : #'window title',
-	#'squeak_changestamp' : 'stlu 5/2/2022 19:59'
+	#'squeak_changestamp' : 'stlu 6/25/2022 11:40'
 }
 RtMorphExample >> printWindowTitleOn: aStream [
 
@@ -652,6 +652,8 @@ RtMorphExample >> printWindowTitleOn: aStream [
 	pictureUpdateTimes ifNotEmpty: [
 		aStream nextPutAll: ' | Pic: '.
 		pictureUpdateTimes average printOn: aStream showingDecimalPlaces: 2.
+		aStream nextPutAll: ' - '.
+		pictureUpdateTimes max printOn: aStream showingDecimalPlaces: 2.
 		aStream nextPutAll: 'us'].
 ]
 
